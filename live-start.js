@@ -65,15 +65,51 @@
     });
   }
 
+  async function injectPredictionCompacts() {
+    try { await window.CBMarketsPrediction?.load(); } catch { return; }
+    for (const game of window.CBLiveData?.state.games || []) {
+      const projection = game.projection;
+      if (!projection) continue;
+      const html = window.CBMarketsPrediction?.renderCompact(game, projection);
+      if (!html) continue;
+      const row = document.getElementById(`game-${projection.gameId}`);
+      if (row) {
+        let slot = row.querySelector('.projection-prediction-inline');
+        if (!slot) {
+          slot = document.createElement('div');
+          slot.className = 'projection-prediction-inline';
+          row.querySelector('.game-cell')?.appendChild(slot);
+        }
+        slot.innerHTML = html;
+      }
+      const card = document.getElementById(`card-${projection.gameId}`);
+      if (card) {
+        let slot = card.querySelector('.projection-prediction-inline');
+        if (!slot) {
+          slot = document.createElement('div');
+          slot.className = 'projection-prediction-inline';
+          card.querySelector('.projection-live-inline')?.insertAdjacentElement('afterend', slot);
+        }
+        if (slot) slot.innerHTML = html;
+      }
+    }
+  }
+
   function decorate() {
     ensureDisclaimer();
     ensureGlossary();
     relocateProjectionClickTargets();
     enhanceKeyboardAccess();
+    injectPredictionCompacts();
   }
 
   document.addEventListener('cb:live-update', () => requestAnimationFrame(decorate));
   document.addEventListener('cb:sportsbooks-update', () => requestAnimationFrame(decorate));
+  document.addEventListener('cb:prediction-markets-update', () => requestAnimationFrame(() => {
+    relocateProjectionClickTargets();
+    enhanceKeyboardAccess();
+    injectPredictionCompacts();
+  }));
 
   try {
     window.CBLiveData?.init();
