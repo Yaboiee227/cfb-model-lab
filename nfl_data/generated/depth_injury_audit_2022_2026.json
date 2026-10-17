@@ -1,0 +1,245 @@
+{
+  "decision": {
+    "current_release_policy": "Official NFL injury/inactive status and timestamped current depth override schedule-feed QB fields.",
+    "exact_timestamp_depth_backtest_seasons": [
+      2025,
+      2026
+    ],
+    "injury_files_available_seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "injury_policy": "Use only rows with date_modified strictly before kickoff; do not assume unreleased earlier revisions exist.",
+    "legacy_week_scoped_depth_proxy_seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "starter_v2_historical_policy": "Use timestamped depth directly only where latest snapshot is strictly before kickoff. Legacy weekly depth is a separate proxy candidate and must not be labeled exact timestamp-safe."
+  },
+  "depth": {
+    "2022": {
+      "any_qb_depth_coverage_rate": 1.0,
+      "mode": "WEEK_SCOPED_NO_EXACT_TIMESTAMP",
+      "pregame_safety_class": "WEEK_SCOPED_PROXY_ONLY",
+      "qb2_coverage_rate": 0.983395,
+      "qb_rank_distribution": {
+        "1": 646,
+        "2": 639,
+        "3": 252
+      },
+      "qb_rows": 1537,
+      "rows": 37780,
+      "team_games": 542,
+      "team_games_with_any_qb_depth": 542,
+      "team_games_with_qb2": 533,
+      "team_games_with_unique_qb1": 540,
+      "teams": 32,
+      "unique_qb1_coverage_rate": 0.99631
+    },
+    "2023": {
+      "any_qb_depth_coverage_rate": 0.998162,
+      "mode": "WEEK_SCOPED_NO_EXACT_TIMESTAMP",
+      "pregame_safety_class": "WEEK_SCOPED_PROXY_ONLY",
+      "qb2_coverage_rate": 0.985294,
+      "qb_rank_distribution": {
+        "1": 644,
+        "2": 642,
+        "3": 268
+      },
+      "qb_rows": 1554,
+      "rows": 37327,
+      "team_games": 544,
+      "team_games_with_any_qb_depth": 543,
+      "team_games_with_qb2": 536,
+      "team_games_with_unique_qb1": 536,
+      "teams": 32,
+      "unique_qb1_coverage_rate": 0.985294
+    },
+    "2024": {
+      "any_qb_depth_coverage_rate": 1.0,
+      "mode": "WEEK_SCOPED_NO_EXACT_TIMESTAMP",
+      "pregame_safety_class": "WEEK_SCOPED_PROXY_ONLY",
+      "qb2_coverage_rate": 0.966912,
+      "qb_rank_distribution": {
+        "1": 641,
+        "2": 629,
+        "3": 269
+      },
+      "qb_rows": 1539,
+      "rows": 37312,
+      "team_games": 544,
+      "team_games_with_any_qb_depth": 544,
+      "team_games_with_qb2": 526,
+      "team_games_with_unique_qb1": 538,
+      "teams": 32,
+      "unique_qb1_coverage_rate": 0.988971
+    },
+    "2025": {
+      "median_hours_before_kickoff": 10.77,
+      "mode": "TIMESTAMPED_DAILY",
+      "pregame_safety_class": "EXACT_TIMESTAMP_FILTERABLE",
+      "pregame_snapshot_coverage_rate": 1.0,
+      "qb2_coverage_rate": 1.0,
+      "qb_rank_distribution": {
+        "1": 7071,
+        "2": 7064,
+        "3": 5373,
+        "4": 1541,
+        "5": 360,
+        "6": 20
+      },
+      "qb_rows": 21429,
+      "rows": 554215,
+      "selected_snapshot_prior_utc_date": 112,
+      "selected_snapshot_same_utc_date_as_kickoff": 432,
+      "team_games": 544,
+      "team_games_with_only_postkick_or_no_pregame": 0,
+      "team_games_with_pregame_snapshot": 544,
+      "team_games_with_qb2": 544,
+      "team_games_with_unique_qb1": 544,
+      "team_games_without_pregame_snapshot": 0,
+      "teams": 32,
+      "unique_qb1_coverage_rate": 1.0
+    },
+    "2026": {
+      "median_hours_before_kickoff": 601.687,
+      "mode": "TIMESTAMPED_DAILY",
+      "pregame_safety_class": "EXACT_TIMESTAMP_FILTERABLE",
+      "pregame_snapshot_coverage_rate": 1.0,
+      "qb2_coverage_rate": 1.0,
+      "qb_rank_distribution": {
+        "1": 7732,
+        "2": 7718,
+        "3": 6660,
+        "4": 3411,
+        "5": 106
+      },
+      "qb_rows": 25627,
+      "rows": 663879,
+      "selected_snapshot_prior_utc_date": 418,
+      "selected_snapshot_same_utc_date_as_kickoff": 126,
+      "team_games": 544,
+      "team_games_with_only_postkick_or_no_pregame": 0,
+      "team_games_with_pregame_snapshot": 544,
+      "team_games_with_qb2": 544,
+      "team_games_with_unique_qb1": 544,
+      "team_games_without_pregame_snapshot": 0,
+      "teams": 32,
+      "unique_qb1_coverage_rate": 1.0
+    }
+  },
+  "depth_sources": [
+    "https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2022.parquet",
+    "https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2023.parquet",
+    "https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2024.parquet",
+    "https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2025.parquet",
+    "https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.parquet"
+  ],
+  "generated_at_utc": "2026-10-17T22:13:08.195486+00:00",
+  "injuries": {
+    "2022": {
+      "load_status": "OK",
+      "postkick_qb_rows_excluded": 0,
+      "practice_status_distribution": {
+        "\n    ": 27,
+        "Did Not Participate In Practice": 1746,
+        "Full Participation in Practice": 2399,
+        "Limited Participation in Practice": 1510
+      },
+      "pregame_qb_rows": 196,
+      "pregame_safety_class": "ROW_TIMESTAMP_FILTERABLE_BUT_REVISION_HISTORY_NOT_ASSUMED",
+      "qb_rows": 212,
+      "report_status_distribution": {
+        "Doubtful": 156,
+        "Out": 1078,
+        "Questionable": 1511
+      },
+      "rows": 5682,
+      "rows_missing_date_modified": 0,
+      "team_games": 542,
+      "team_games_with_any_injury_row": 539,
+      "team_games_with_at_least_one_pregame_timestamped_injury_row": 539,
+      "team_games_with_pregame_qb_injury_row": 171,
+      "teams": 32
+    },
+    "2023": {
+      "load_status": "OK",
+      "postkick_qb_rows_excluded": 0,
+      "practice_status_distribution": {
+        "\n    ": 33,
+        "Did Not Participate In Practice": 1588,
+        "Full Participation in Practice": 2525,
+        "Limited Participation in Practice": 1453
+      },
+      "pregame_qb_rows": 191,
+      "pregame_safety_class": "ROW_TIMESTAMP_FILTERABLE_BUT_REVISION_HISTORY_NOT_ASSUMED",
+      "qb_rows": 197,
+      "report_status_distribution": {
+        "Doubtful": 142,
+        "Out": 996,
+        "Questionable": 1583
+      },
+      "rows": 5599,
+      "rows_missing_date_modified": 0,
+      "team_games": 544,
+      "team_games_with_any_injury_row": 543,
+      "team_games_with_at_least_one_pregame_timestamped_injury_row": 543,
+      "team_games_with_pregame_qb_injury_row": 167,
+      "teams": 32
+    },
+    "2024": {
+      "load_status": "OK",
+      "postkick_qb_rows_excluded": 0,
+      "practice_status_distribution": {
+        "\n    ": 36,
+        "Did Not Participate In Practice": 1537,
+        "Full Participation in Practice": 3145,
+        "Limited Participation in Practice": 1496,
+        "Note": 1
+      },
+      "pregame_qb_rows": 188,
+      "pregame_safety_class": "ROW_TIMESTAMP_FILTERABLE_BUT_REVISION_HISTORY_NOT_ASSUMED",
+      "qb_rows": 201,
+      "report_status_distribution": {
+        "Doubtful": 194,
+        "Note": 6,
+        "Out": 1116,
+        "Questionable": 1513
+      },
+      "rows": 6215,
+      "rows_missing_date_modified": 0,
+      "team_games": 544,
+      "team_games_with_any_injury_row": 543,
+      "team_games_with_at_least_one_pregame_timestamped_injury_row": 543,
+      "team_games_with_pregame_qb_injury_row": 170,
+      "teams": 32
+    },
+    "2025": {
+      "error": "Injuries 2025 missing ['date_modified']",
+      "load_status": "UNAVAILABLE",
+      "pregame_safety_class": "UNAVAILABLE"
+    },
+    "2026": {
+      "error": "Injuries 2026 missing ['date_modified']",
+      "load_status": "UNAVAILABLE",
+      "pregame_safety_class": "UNAVAILABLE"
+    }
+  },
+  "injury_sources": [
+    "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2022.parquet",
+    "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2023.parquet",
+    "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2024.parquet"
+  ],
+  "release_state": "HOLD_AUDIT_ONLY",
+  "schedule_source": "https://github.com/nflverse/nflverse-data/releases/download/schedules/games.parquet",
+  "seasons": [
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "website_publish_allowed": false
+}
