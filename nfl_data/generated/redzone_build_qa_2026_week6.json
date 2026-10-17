@@ -1,0 +1,56 @@
+{
+  "current_max_week_used": 5,
+  "current_rows": 32,
+  "current_target_or_future_rows_used": 0,
+  "definition": "Red zone = offensive scrimmage play with yardline_100 <= 20; nullified plays, kneels, spikes excluded.",
+  "generated_at_utc": "2026-10-17T23:51:13.628676+00:00",
+  "historical_leakage_rows": 0,
+  "historical_rows": 2304,
+  "release_state": "HOLD_RESEARCH_ONLY",
+  "seasons": {
+    "2021": {
+      "def_team_weeks": 532,
+      "off_team_weeks": 532,
+      "redzone_core_plays": 5408,
+      "regular_season_rows": 47651,
+      "teams": 32
+    },
+    "2022": {
+      "def_team_weeks": 536,
+      "off_team_weeks": 536,
+      "redzone_core_plays": 5023,
+      "regular_season_rows": 47157,
+      "teams": 32
+    },
+    "2023": {
+      "def_team_weeks": 530,
+      "off_team_weeks": 530,
+      "redzone_core_plays": 5064,
+      "regular_season_rows": 47399,
+      "teams": 32
+    },
+    "2024": {
+      "def_team_weeks": 534,
+      "off_team_weeks": 534,
+      "redzone_core_plays": 5282,
+      "regular_season_rows": 47274,
+      "teams": 32
+    },
+    "2025": {
+      "def_team_weeks": 538,
+      "off_team_weeks": 538,
+      "redzone_core_plays": 5269,
+      "regular_season_rows": 46452,
+      "teams": 32
+    },
+    "2026": {
+      "def_team_weeks": 157,
+      "off_team_weeks": 157,
+      "redzone_core_plays": 1562,
+      "regular_season_rows": 14031,
+      "teams": 32
+    }
+  },
+  "source_template": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_{season}.parquet",
+  "website_publish_allowed": false
+}

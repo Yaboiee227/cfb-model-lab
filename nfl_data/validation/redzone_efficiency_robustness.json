@@ -1,0 +1,221 @@
+{
+  "design": "Leakage-safe red-zone EPA/success family; parameters selected 2022 only; outer 2023-2025. Spread tested on canonical final architecture; totals on canonical core.",
+  "generated_at_utc": "2026-10-17T23:51:22.253873+00:00",
+  "production_promotion_allowed": false,
+  "recommendation_release_allowed": false,
+  "release_state": "HOLD_NO_ROBUST_INCREMENT",
+  "source_leakage_rows": 0,
+  "source_rows": 2304,
+  "variants": {
+    "spread": {
+      "aggregate": {
+        "candidate_mae": 10.2659,
+        "candidate_minus_reference_mae": 0.0095,
+        "n": 816,
+        "paired_bootstrap_reference_minus_candidate": {
+          "bootstrap_95_ci": [
+            -0.05636,
+            0.03559
+          ],
+          "draws": 10000,
+          "mean_improvement": -0.00954,
+          "probability_gt_0": 0.3364
+        },
+        "reference_mae": 10.2564,
+        "seasons_improved": 2
+      },
+      "folds": {
+        "2023": {
+          "candidate_mae": 10.5028,
+          "candidate_minus_reference_mae": -0.0008,
+          "n": 272,
+          "reference_mae": 10.5036
+        },
+        "2024": {
+          "candidate_mae": 10.0034,
+          "candidate_minus_reference_mae": -0.0101,
+          "n": 272,
+          "reference_mae": 10.0135
+        },
+        "2025": {
+          "candidate_mae": 10.2916,
+          "candidate_minus_reference_mae": 0.0395,
+          "n": 272,
+          "reference_mae": 10.2521
+        }
+      },
+      "robust_incremental_value": false,
+      "selected_2022_only": {
+        "lambda": 100.0,
+        "mae": 9.243123344141464,
+        "redzone_pseudo_plays": 200.0,
+        "rmse": 12.038975411972984,
+        "validation_games": 91
+      },
+      "top_2022_candidates": [
+        {
+          "lambda": 100.0,
+          "mae": 9.243123344141464,
+          "redzone_pseudo_plays": 200.0,
+          "rmse": 12.038975411972984,
+          "validation_games": 91
+        },
+        {
+          "lambda": 300.0,
+          "mae": 9.244817969157571,
+          "redzone_pseudo_plays": 200.0,
+          "rmse": 12.116031139262525,
+          "validation_games": 91
+        },
+        {
+          "lambda": 300.0,
+          "mae": 9.245198897834713,
+          "redzone_pseudo_plays": 100.0,
+          "rmse": 12.1134415016539,
+          "validation_games": 91
+        },
+        {
+          "lambda": 100.0,
+          "mae": 9.269159714143832,
+          "redzone_pseudo_plays": 100.0,
+          "rmse": 12.05695563445667,
+          "validation_games": 91
+        },
+        {
+          "lambda": 300.0,
+          "mae": 9.270819852612602,
+          "redzone_pseudo_plays": 50.0,
+          "rmse": 12.137517472422056,
+          "validation_games": 91
+        },
+        {
+          "lambda": 300.0,
+          "mae": 9.31404935637365,
+          "redzone_pseudo_plays": 25.0,
+          "rmse": 12.172271397639179,
+          "validation_games": 91
+        },
+        {
+          "lambda": 100.0,
+          "mae": 9.32188120180838,
+          "redzone_pseudo_plays": 50.0,
+          "rmse": 12.098539340753044,
+          "validation_games": 91
+        },
+        {
+          "lambda": 300.0,
+          "mae": 9.343344099478328,
+          "redzone_pseudo_plays": 10.0,
+          "rmse": 12.197770160631993,
+          "validation_games": 91
+        }
+      ]
+    },
+    "total": {
+      "aggregate": {
+        "candidate_mae": 10.5509,
+        "candidate_minus_reference_mae": 0.0508,
+        "n": 816,
+        "paired_bootstrap_reference_minus_candidate": {
+          "bootstrap_95_ci": [
+            -0.10279,
+            0.00033
+          ],
+          "draws": 10000,
+          "mean_improvement": -0.05076,
+          "probability_gt_0": 0.0259
+        },
+        "reference_mae": 10.5001,
+        "seasons_improved": 0
+      },
+      "folds": {
+        "2023": {
+          "candidate_mae": 10.5136,
+          "candidate_minus_reference_mae": 0.0067,
+          "n": 272,
+          "reference_mae": 10.5069
+        },
+        "2024": {
+          "candidate_mae": 10.1603,
+          "candidate_minus_reference_mae": 0.0895,
+          "n": 272,
+          "reference_mae": 10.0708
+        },
+        "2025": {
+          "candidate_mae": 10.9787,
+          "candidate_minus_reference_mae": 0.056,
+          "n": 272,
+          "reference_mae": 10.9227
+        }
+      },
+      "robust_incremental_value": false,
+      "selected_2022_only": {
+        "lambda": 100.0,
+        "mae": 10.75449996447397,
+        "redzone_pseudo_plays": 25.0,
+        "rmse": 13.579237179374458,
+        "validation_games": 91
+      },
+      "top_2022_candidates": [
+        {
+          "lambda": 100.0,
+          "mae": 10.75449996447397,
+          "redzone_pseudo_plays": 25.0,
+          "rmse": 13.579237179374458,
+          "validation_games": 91
+        },
+        {
+          "lambda": 100.0,
+          "mae": 10.760719412803484,
+          "redzone_pseudo_plays": 10.0,
+          "rmse": 13.598695683452316,
+          "validation_games": 91
+        },
+        {
+          "lambda": 300.0,
+          "mae": 10.76479925174788,
+          "redzone_pseudo_plays": 200.0,
+          "rmse": 13.46655901599521,
+          "validation_games": 91
+        },
+        {
+          "lambda": 100.0,
+          "mae": 10.779107677825925,
+          "redzone_pseudo_plays": 50.0,
+          "rmse": 13.567323953307337,
+          "validation_games": 91
+        },
+        {
+          "lambda": 300.0,
+          "mae": 10.795162066319316,
+          "redzone_pseudo_plays": 100.0,
+          "rmse": 13.514330456156475,
+          "validation_games": 91
+        },
+        {
+          "lambda": 300.0,
+          "mae": 10.800871949702026,
+          "redzone_pseudo_plays": 10.0,
+          "rmse": 13.572877734073648,
+          "validation_games": 91
+        },
+        {
+          "lambda": 100.0,
+          "mae": 10.801353104514762,
+          "redzone_pseudo_plays": 200.0,
+          "rmse": 13.501078157905013,
+          "validation_games": 91
+        },
+        {
+          "lambda": 30.0,
+          "mae": 10.804079571289003,
+          "redzone_pseudo_plays": 25.0,
+          "rmse": 13.621510987734354,
+          "validation_games": 91
+        }
+      ]
+    }
+  },
+  "website_publish_allowed": false,
+  "week6_frozen_snapshot_may_be_rewritten": false
+}
