@@ -1,0 +1,75 @@
+name: NFL Prospective Validation Registry
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - nfl-model-development
+    paths:
+      - 'scripts/build_nfl_prospective_validation_registry.py'
+      - 'nfl_data/prospective/grades/*.json'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nfl-prospective-validation-registry-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build-registry:
+    if: github.ref == 'refs/heads/nfl-model-development'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout development branch
+        uses: actions/checkout@v4
+        with:
+          ref: nfl-model-development
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build multi-week prospective registry
+        run: python scripts/build_nfl_prospective_validation_registry.py
+
+      - name: Enforce research-only safety policy
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('nfl_data/prospective/validation_registry/nfl_prospective_validation_registry.json')
+          d = json.loads(p.read_text())
+          assert d['website_publish_allowed'] is False
+          assert d['recommendation_release_allowed'] is False
+          assert d['automatic_threshold_promotion_allowed'] is False
+          assert d['roi_claims_allowed'] is False
+          assert d['clv_claims_allowed'] is False
+          for row in d.get('edge_bucket_summaries', {}).get('spread', []):
+              assert row['research_only'] is True
+          for row in d.get('edge_bucket_summaries', {}).get('total', []):
+              assert row['research_only'] is True
+          print('research-only safety policy passed')
+          PY
+
+      - name: Verify live website files are untouched
+        run: |
+          if git status --porcelain -- index.html app.js script.js styles.css data/projections.csv data/results.csv | grep .; then
+            echo 'Live CFB website path changed unexpectedly'
+            exit 1
+          fi
+          echo 'Live CFB website guard passed'
+
+      - name: Commit registry artifacts
+        run: |
+          if git status --porcelain -- nfl_data/prospective/validation_registry/ | grep .; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add nfl_data/prospective/validation_registry/
+            git commit -m 'Update NFL prospective validation registry'
+            git push origin nfl-model-development
+          else
+            echo 'No registry changes to commit'
+          fi
