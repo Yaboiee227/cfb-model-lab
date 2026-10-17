@@ -1,0 +1,79 @@
+name: NFL Week 6 FTN50 Shadow Snapshot
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [nfl-model-development]
+    paths:
+      - 'scripts/build_nfl_week6_ftn50_shadow_snapshot.py'
+      - '.github/workflows/nfl-week6-ftn50-shadow.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nfl-week6-ftn50-shadow-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  freeze-shadow:
+    if: github.ref == 'refs/heads/nfl-model-development'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout isolated NFL development branch
+        uses: actions/checkout@v4
+        with:
+          ref: nfl-model-development
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install numpy pandas pyarrow
+
+      - name: Freeze Week 6 FTN50 shadow snapshot
+        run: python scripts/build_nfl_week6_ftn50_shadow_snapshot.py
+
+      - name: Enforce shadow-only safety policy
+        run: |
+          python - <<'PY'
+          import glob, json
+          files=sorted(glob.glob('nfl_data/prospective/shadow/week6_ftn50_shadow_*.json'))
+          assert files, 'shadow snapshot not generated'
+          d=json.load(open(files[-1]))
+          m=d['manifest']
+          assert m['canonical_snapshot_id']=='NFL_2026_W6_PRELOCK_20261017T225656Z'
+          assert m['canonical_snapshot_immutable'] is True
+          assert m['recommendation_release_allowed'] is False
+          assert m['website_publish_allowed'] is False
+          assert len(d['rows'])==13
+          for r in d['rows']:
+              assert r['canonical_model_superseded'] is False
+              assert r['recommendation']=='HOLD'
+              assert r['website_publish_allowed'] is False
+          print('shadow-only safety policy passed:', m['shadow_snapshot_id'])
+          PY
+
+      - name: Verify immutable canonical snapshot and live CFB site untouched
+        run: |
+          if git status --porcelain -- nfl_data/prospective/week6_prelock_20261017T225656Z.json nfl_data/prospective/week6_prelock_20261017T225656Z.csv index.html app.js script.js styles.css data/projections.csv data/results.csv | grep .; then
+            echo 'Canonical snapshot or live CFB path changed unexpectedly'
+            exit 1
+          fi
+          echo 'Canonical snapshot and live CFB guards passed'
+
+      - name: Commit frozen shadow snapshot
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add nfl_data/prospective/shadow/
+          if git diff --cached --quiet; then
+            echo 'No shadow snapshot changes to commit'
+          else
+            git commit -m 'Freeze Week 6 FTN50 shadow snapshot'
+            git pull --rebase origin nfl-model-development
+            git push origin nfl-model-development
+          fi
