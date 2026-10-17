@@ -119,12 +119,19 @@ def download_rows(season: int, stat_type: str):
                     reader = csv.DictReader(text)
                     fields = set(reader.fieldnames or [])
                     cfg = CONFIG[stat_type]
-                    required = COMMON_REQUIRED | {cfg["weight"]} | set(cfg["avg"]) | set(cfg["sum"])
-                    missing = sorted(required - fields)
-                    if missing:
+                    # Usage/count fields define the row and remain mandatory. NGS
+                    # adds/retires advanced averages over time; those remain null
+                    # with availability flags instead of being fabricated/backfilled.
+                    required = COMMON_REQUIRED | {cfg["weight"]} | set(cfg["sum"])
+                    missing_required = sorted(required - fields)
+                    if missing_required:
                         raise RuntimeError(
-                            f"NGS schema missing columns for {season} {stat_type}: {missing}"
+                            f"NGS schema missing required columns for {season} {stat_type}: {missing_required}"
                         )
+                    schema = {
+                        "available_optional_avg": sorted(set(cfg["avg"]) & fields),
+                        "missing_optional_avg": sorted(set(cfg["avg"]) - fields),
+                    }
                     rows = []
                     for row in reader:
                         if str(row.get("season_type", "")).upper() != "REG":
@@ -134,7 +141,7 @@ def download_rows(season: int, stat_type: str):
                         if week is None or week <= 0:
                             continue
                         rows.append(row)
-                    return url, rows
+                    return url, rows, schema
     except Exception as exc:
         raise RuntimeError(f"Unable to load NGS asset {url}: {exc}") from exc
 
@@ -185,6 +192,7 @@ def aggregate(rows, stat_type: str, group_fields):
             den = bucket["weighted_den"].get(field, 0.0)
             value = None if den <= 0 else bucket["weighted_num"][field] / den
             result[f"{prefix}_{field}"] = rnd(value)
+            result[f"{prefix}_{field}_available"] = den > 0
         output[key] = result
     return output
 
@@ -206,7 +214,7 @@ def aggregate_qb(pass_rows):
     )
     rows = []
     for (team, player_id, player_name), metrics in grouped.items():
-        row = {
+        rows.append({
             "season": CURRENT_SEASON,
             "target_week": TARGET_WEEK,
             "team": team,
@@ -214,8 +222,7 @@ def aggregate_qb(pass_rows):
             "player_display_name": player_name,
             **metrics,
             "release_state": "HOLD_RESEARCH_ONLY",
-        }
-        rows.append(row)
+        })
     rows.sort(key=lambda r: (r["team"], -(r.get("pass_attempts") or 0), r["player_display_name"]))
     return rows
 
@@ -242,8 +249,7 @@ def write_csv(path: Path, rows):
     path.parent.mkdir(parents=True, exist_ok=True)
     if not rows:
         raise RuntimeError(f"Refusing to write empty output: {path}")
-    fieldnames = []
-    seen = set()
+    fieldnames, seen = [], set()
     for row in rows:
         for key in row:
             if key not in seen:
@@ -278,8 +284,7 @@ def build_historical(data):
             }
             for stat in STAT_TYPES:
                 for source_row in current_selected[stat]:
-                    source_week = as_int(source_row.get("week")) or 0
-                    if source_week >= target_week:
+                    if (as_int(source_row.get("week")) or 0) >= target_week:
                         qa["target_or_future_source_rows_used"] += 1
             current_agg = aggregate_team(current_selected)
             teams = sorted(set(prior_agg) | set(current_agg))
@@ -288,18 +293,15 @@ def build_historical(data):
                     f"Expected 32 NGS teams for season={season}, target_week={target_week}; got {len(teams)}"
                 )
             for team in teams:
-                cur = current_agg.get(team, {})
-                prior = prior_agg.get(team, {})
-                row = {
+                rows.append({
                     "season": season,
                     "target_week": target_week,
                     "team": team,
                     "max_current_week_allowed": target_week - 1,
-                    **prefix_metrics(cur, "cur_"),
-                    **prefix_metrics(prior, "prior_"),
+                    **prefix_metrics(current_agg.get(team, {}), "cur_"),
+                    **prefix_metrics(prior_agg.get(team, {}), "prior_"),
                     "release_state": "HOLD_RESEARCH_ONLY",
-                }
-                rows.append(row)
+                })
                 season_count += 1
         qa["season_counts"][str(season)] = season_count
 
@@ -318,22 +320,23 @@ def main():
     data = defaultdict(dict)
     source_urls = []
     source_counts = {}
+    schema_by_season = {}
     for season in LOAD_SEASONS:
         source_counts[str(season)] = {}
+        schema_by_season[str(season)] = {}
         for stat_type in STAT_TYPES:
-            url, rows = download_rows(season, stat_type)
+            url, rows, schema = download_rows(season, stat_type)
             data[season][stat_type] = rows
             source_urls.append(url)
             source_counts[str(season)][stat_type] = len(rows)
+            schema_by_season[str(season)][stat_type] = schema
 
     current_selected = {
         stat: select_rows(data[CURRENT_SEASON][stat], CURRENT_SEASON, max_week=CUTOFF_WEEK)
         for stat in STAT_TYPES
     }
     target_or_future_current = sum(
-        1
-        for stat in STAT_TYPES
-        for row in current_selected[stat]
+        1 for stat in STAT_TYPES for row in current_selected[stat]
         if (as_int(row.get("week")) or 0) >= TARGET_WEEK
     )
     if target_or_future_current:
@@ -349,17 +352,15 @@ def main():
 
     current_team_rows = []
     for team in teams:
-        current_team_rows.append(
-            {
-                "season": CURRENT_SEASON,
-                "target_week": TARGET_WEEK,
-                "team": team,
-                "max_current_week_allowed": CUTOFF_WEEK,
-                **prefix_metrics(current_agg.get(team, {}), "cur_"),
-                **prefix_metrics(prior_agg.get(team, {}), "prior_"),
-                "release_state": "HOLD_RESEARCH_ONLY",
-            }
-        )
+        current_team_rows.append({
+            "season": CURRENT_SEASON,
+            "target_week": TARGET_WEEK,
+            "team": team,
+            "max_current_week_allowed": CUTOFF_WEEK,
+            **prefix_metrics(current_agg.get(team, {}), "cur_"),
+            **prefix_metrics(prior_agg.get(team, {}), "prior_"),
+            "release_state": "HOLD_RESEARCH_ONLY",
+        })
 
     current_qb_rows = aggregate_qb(current_selected["passing"])
     historical_rows, historical_qa = build_historical(data)
@@ -381,6 +382,7 @@ def main():
         "source_family": "nflverse mirror of NFL Next Gen Stats",
         "source_urls": source_urls,
         "source_row_counts": source_counts,
+        "schema_by_season": schema_by_season,
         "current_team_rows": len(current_team_rows),
         "current_qb_rows": len(current_qb_rows),
         "current_target_or_future_rows_used": target_or_future_current,
