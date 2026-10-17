@@ -1,0 +1,43 @@
+name: NFL penalty robustness (development only)
+
+on:
+  push:
+    branches: [nfl-model-development]
+    paths:
+      - 'scripts/validate_nfl_penalties_robustness.py'
+      - 'nfl_data/historical/team_week_penalties_2022_2025.csv'
+      - '.github/workflows/nfl-penalties-robustness.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  validate-penalties:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout isolated NFL development branch
+        uses: actions/checkout@v4
+        with:
+          ref: nfl-model-development
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install numpy
+      - name: Run frozen penalty robustness validation
+        run: python scripts/validate_nfl_penalties_robustness.py
+      - name: Commit penalty robustness artifact safely
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add nfl_data/validation/penalties_robustness.json
+          if git diff --cached --quiet; then
+            echo "No penalty robustness changes to commit"
+          else
+            git commit -m "Validate NFL penalty robustness"
+            git pull --rebase origin nfl-model-development
+            git push origin nfl-model-development
+          fi
