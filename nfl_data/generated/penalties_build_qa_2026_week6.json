@@ -1,0 +1,65 @@
+{
+  "current_max_week_used": 5,
+  "current_rows": 32,
+  "current_target_or_future_rows_used": 0,
+  "generated_at_utc": "2026-10-17T22:37:33.779142+00:00",
+  "historical_leakage_rows": 0,
+  "historical_rows": 2304,
+  "metrics": [
+    "penalties_per_game",
+    "penalty_yards_per_game",
+    "false_start_per_game",
+    "offensive_holding_per_game",
+    "dpi_per_game",
+    "defensive_holding_per_game",
+    "offsides_encroachment_per_game",
+    "personal_foul_per_game"
+  ],
+  "policy": "Team penalty tendencies only; referee causality and penalty EPA counterfactual are not assumed.",
+  "release_state": "HOLD_RESEARCH_ONLY",
+  "seasons": {
+    "2021": {
+      "penalty_rows_used": 3213,
+      "penalty_type_available": true,
+      "reg_pbp_rows": 47651,
+      "team_weeks": 544,
+      "teams": 32
+    },
+    "2022": {
+      "penalty_rows_used": 3031,
+      "penalty_type_available": true,
+      "reg_pbp_rows": 47157,
+      "team_weeks": 542,
+      "teams": 32
+    },
+    "2023": {
+      "penalty_rows_used": 3104,
+      "penalty_type_available": true,
+      "reg_pbp_rows": 47399,
+      "team_weeks": 544,
+      "teams": 32
+    },
+    "2024": {
+      "penalty_rows_used": 3499,
+      "penalty_type_available": true,
+      "reg_pbp_rows": 47274,
+      "team_weeks": 544,
+      "teams": 32
+    },
+    "2025": {
+      "penalty_rows_used": 3461,
+      "penalty_type_available": true,
+      "reg_pbp_rows": 46452,
+      "team_weeks": 544,
+      "teams": 32
+    },
+    "2026": {
+      "penalty_rows_used": 1203,
+      "penalty_type_available": true,
+      "reg_pbp_rows": 14031,
+      "team_weeks": 160,
+      "teams": 32
+    }
+  },
+  "website_publish_allowed": false
+}
