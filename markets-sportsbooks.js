@@ -1,6 +1,7 @@
 (() => {
   const state = { data:null, lastFetch:0, timer:null, previous:new Map() };
   const BOOKS = ['fanduel','draftkings'];
+  const STALE_MS = 15 * 60 * 1000;
   const bookLabel = key => key === 'fanduel' ? 'FanDuel' : 'DraftKings';
   const esc = v => typeof escapeHtml === 'function' ? escapeHtml(v) : String(v ?? '').replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]));
   const moneylineProb = ml => {
@@ -48,19 +49,28 @@
     return `<svg class="market-spark" viewBox="0 0 100 28" aria-hidden="true"><polyline points="${pts}" fill="none" vector-effect="non-scaling-stroke"/></svg>`;
   }
 
+  function ageState(value) {
+    if (!value) return { stale:true, label:'Update time unavailable' };
+    const d = new Date(value);
+    if (Number.isNaN(d.getTime())) return { stale:true, label:`Updated ${String(value)}` };
+    const stale = Date.now() - d.getTime() > STALE_MS;
+    return { stale, label:`Updated ${formatTime(value)}${stale?' · STALE':''}` };
+  }
+
   function currentSummary(book) {
     if (!book) return 'No market listed';
     const spread = Number.isFinite(Number(book.spread?.home)) ? `Home ${lineText(book.spread.home)}` : 'Spread —';
     const total = Number.isFinite(Number(book.total?.point)) ? `O/U ${Number(book.total.point).toFixed(1)}` : 'O/U —';
-    return `${spread} · ${total}`;
+    const ml = Number.isFinite(Number(book.moneyline?.home)) || Number.isFinite(Number(book.moneyline?.away)) ? `ML ${mlText(book.moneyline?.home)}/${mlText(book.moneyline?.away)}` : 'ML —';
+    return `${spread} · ${total} · ${ml}`;
   }
 
   function renderCompact(liveGame) {
     const row = matchGame(liveGame);
     if (!row) return '<span class="market-source-missing">Sportsbooks: no current market file match</span>';
     return `<div class="compact-market-grid">${BOOKS.map(key=>{
-      const book=row.books?.[key];
-      return `<div><span>${bookLabel(key)}</span><strong>${esc(currentSummary(book))}</strong><small>${book?.updatedAt?`Updated ${esc(formatTime(book.updatedAt))}`:'No market listed'}</small></div>`;
+      const book=row.books?.[key], age=ageState(book?.updatedAt);
+      return `<div class="${age.stale?'market-stale':''}"><span>${bookLabel(key)}</span><strong>${esc(currentSummary(book))}</strong><small>${book?esc(age.label):'No market listed'}</small></div>`;
     }).join('')}</div>`;
   }
 
@@ -85,10 +95,11 @@
     container.innerHTML=`<div class="market-detail-grid">${BOOKS.map(key=>{
       const book=row.books?.[key];
       if (!book) return `<article class="market-source-card"><h4>${bookLabel(key)}</h4><p class="market-source-missing">No market listed</p></article>`;
-      const nv=noVig(book), diff=modelDiff(projection,book);
+      const nv=noVig(book), diff=modelDiff(projection,book), age=ageState(book.updatedAt);
       const open=book.opening||{};
-      return `<article class="market-source-card">
-        <div class="market-source-head"><h4>${bookLabel(key)}</h4><span>${book.updatedAt?`Updated ${esc(formatTime(book.updatedAt))}`:'Update time unavailable'}</span></div>
+      return `<article class="market-source-card ${age.stale?'market-stale':''}">
+        <div class="market-source-head"><h4>${bookLabel(key)}</h4><span>${esc(age.label)}</span></div>
+        ${age.stale?'<div class="stale-market-note"><strong>Stale market data</strong><span>This snapshot is older than 15 minutes. Treat it as historical context until a newer update arrives.</span></div>':''}
         <div class="market-line-grid">
           <div><span>Spread</span><strong>${lineText(book.spread?.home)} home</strong><small>Open ${lineText(open.spread?.home)}</small></div>
           <div><span>Total</span><strong>${Number.isFinite(Number(book.total?.point))?Number(book.total.point).toFixed(1):'—'}</strong><small>Open ${Number.isFinite(Number(open.total?.point))?Number(open.total.point).toFixed(1):'—'}</small></div>
@@ -123,5 +134,5 @@
   document.addEventListener('cb:live-update', async event=>{ if (event.detail.games.some(g=>g.state==='in')) await load(); schedule(); });
   document.addEventListener('visibilitychange',()=>{clearTimeout(state.timer);if(!document.hidden){load(true);schedule();}});
 
-  window.CBMarketsSportsbooks={state,load,matchGame,noVig,renderCompact,renderDetail,changedKeys,moneylineProb};
+  window.CBMarketsSportsbooks={state,load,matchGame,noVig,renderCompact,renderDetail,changedKeys,moneylineProb,ageState};
 })();
