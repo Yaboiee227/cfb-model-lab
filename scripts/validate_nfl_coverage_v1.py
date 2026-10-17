@@ -48,8 +48,7 @@ def blend(r,side,src,m,k):
 def extras(r,kind,variant,k):
  h={m:blend(r,'home','cov',m,k) for m in COV_MET};a={m:blend(r,'away','cov',m,k) for m in COV_MET};op=base.diff if kind=='spread' else base.summ;suf='diff' if kind=='spread' else 'sum';names=[f'cov_{m}_{suf}' for m in COV_MET];vals=[op(h[m],a[m]) for m in COV_MET]
  if variant=='coverage_receiving_matchup':
-  hr={m:blend(r,'home','ngs',m,k) for m in REC_MET};ar={m:blend(r,'away','ngs',m,k) for m in REC_MET]
-  # Direct receiving traits plus three interpretable offense-vs-defense matchup composites.
+  hr={m:blend(r,'home','ngs',m,k) for m in REC_MET};ar={m:blend(r,'away','ngs',m,k) for m in REC_MET}
   names += [f'rec_{m}_{suf}' for m in REC_MET]; vals += [op(hr[m],ar[m]) for m in REC_MET]
   hm_yac=None if hr['rec_avg_yac_above_expectation'] is None or a['coverage_yac_per_completion'] is None else hr['rec_avg_yac_above_expectation']+a['coverage_yac_per_completion'];am_yac=None if ar['rec_avg_yac_above_expectation'] is None or h['coverage_yac_per_completion'] is None else ar['rec_avg_yac_above_expectation']+h['coverage_yac_per_completion']
   hm_catch=None if hr['rec_catch_percentage'] is None or a['coverage_completion_pct'] is None else hr['rec_catch_percentage']+100*a['coverage_completion_pct'];am_catch=None if ar['rec_catch_percentage'] is None or h['coverage_completion_pct'] is None else ar['rec_catch_percentage']+100*h['coverage_completion_pct']
