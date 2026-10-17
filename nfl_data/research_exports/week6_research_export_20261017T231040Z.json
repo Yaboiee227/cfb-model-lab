@@ -1,0 +1,1023 @@
+{
+  "architecture": {
+    "spread": {
+      "absolute_error_68pct": 12.6803,
+      "absolute_error_80pct": 17.2328,
+      "absolute_error_90pct": 22.4361,
+      "model": "frozen core + defensive coverage + market-independent win Elo + margin rating",
+      "oos_bias_pred_minus_actual": -0.0126,
+      "oos_games_2023_2025": 816,
+      "oos_mae": 10.2564,
+      "oos_rmse": 13.2903,
+      "status": "EARNED_WEEK6_RESEARCH_INCLUSION_HOLD_PROSPECTIVE"
+    },
+    "total": {
+      "absolute_error_68pct": 13.1899,
+      "absolute_error_80pct": 16.5569,
+      "absolute_error_90pct": 22.5405,
+      "model": "frozen core only",
+      "oos_bias_pred_minus_actual": -1.2723,
+      "oos_games_2023_2025": 816,
+      "oos_mae": 10.5001,
+      "oos_rmse": 13.4958,
+      "status": "HOLD_RESEARCH_ONLY"
+    }
+  },
+  "contract_purpose": "Future site/data integration dry-run only; never consumed by live main while NFL remains HOLD.",
+  "created_at_utc": "2026-10-17T23:10:40.025151+00:00",
+  "edge_thresholds": {
+    "note": "Larger model-vs-market disagreement did not produce increasing ATS/OU win rates. Current model is a projection engine, not a validated betting-signal engine.",
+    "spread": "NONE_EARNED",
+    "total": "NONE_EARNED"
+  },
+  "games": [
+    {
+      "away_team": "HOU",
+      "game_id": "2026_06_HOU_JAX",
+      "gameday": "2026-10-18",
+      "gametime_et": "09:30",
+      "home_team": "JAX",
+      "market_capture": {
+        "away_spread": 2.5,
+        "away_spread_odds_decimal": 1.95,
+        "book": "BetMGM",
+        "captured_at_utc": "2026-10-17T22:59:10.614579+00:00",
+        "home_spread": -2.5,
+        "home_spread_odds_decimal": 1.87,
+        "over_odds_decimal": 1.93,
+        "spread_direction": "HOME_SIDE_OF_BOOK_LINE",
+        "spread_disagreement": 1.613,
+        "total": 42.5,
+        "total_direction": "OVER_SIDE_OF_BOOK_TOTAL",
+        "total_disagreement": 2.4,
+        "under_odds_decimal": 1.9,
+        "user_account_execution_verified": false
+      },
+      "projection": {
+        "home_margin": "4.113",
+        "home_spread": "-4.113",
+        "spread_model": "FROZEN_CORE_PLUS_DEFENSIVE_COVERAGE_PLUS_WIN_ELO_PLUS_MARGIN_RATING",
+        "total": "44.9",
+        "total_model": "FROZEN_CORE_ONLY"
+      },
+      "release": {
+        "historical_spread_edge_threshold_earned": false,
+        "historical_total_edge_threshold_earned": false,
+        "recommendation": "HOLD_NO_VALIDATED_EDGE_THRESHOLD",
+        "website_publish_allowed": false
+      },
+      "reliability": {
+        "spread_reason": "No confirmed QB break, but final inactive verification remains incomplete.",
+        "spread_tier": "B \u2014 STANDARD_MODEL_PENDING_FINAL_GATES",
+        "state_point_adjustment_applied": false,
+        "total_reason": "Final weather/roof state is unresolved and totals have no validated weather coefficient.",
+        "total_tier": "C \u2014 ELEVATED_ENVIRONMENT_UNCERTAINTY"
+      },
+      "state_gates": {
+        "execution_price": "PENDING_DIRECT_BOOK_PRICE",
+        "hard_qb_break": false,
+        "personnel": "NO_QB_BREAK_IDENTIFIED_CURRENT_REPORT_FINAL_INACTIVES_PENDING",
+        "weather_roof": "LONDON_OUTDOOR_FORECAST_REFRESH_REQUIRED"
+      },
+      "uncertainty": {
+        "spread_68": [
+          -8.067,
+          17.493
+        ],
+        "spread_80": [
+          -12.299,
+          22.375
+        ],
+        "spread_90": [
+          -18.084,
+          27.35
+        ],
+        "total_68": [
+          33.404,
+          59.333
+        ],
+        "total_80": [
+          29.895,
+          64.014
+        ],
+        "total_90": [
+          26.107,
+          70.103
+        ]
+      }
+    },
+    {
+      "away_team": "BAL",
+      "game_id": "2026_06_BAL_CLE",
+      "gameday": "2026-10-18",
+      "gametime_et": "13:00",
+      "home_team": "CLE",
+      "market_capture": {
+        "away_spread": -3.0,
+        "away_spread_odds_decimal": 1.9,
+        "book": "BetMGM",
+        "captured_at_utc": "2026-10-17T22:59:10.614579+00:00",
+        "home_spread": 3.0,
+        "home_spread_odds_decimal": 1.93,
+        "over_odds_decimal": 1.88,
+        "spread_direction": "AWAY_SIDE_OF_BOOK_LINE",
+        "spread_disagreement": -4.174,
+        "total": 39.5,
+        "total_direction": "OVER_SIDE_OF_BOOK_TOTAL",
+        "total_disagreement": 4.023,
+        "under_odds_decimal": 1.93,
+        "user_account_execution_verified": false
+      },
+      "projection": {
+        "home_margin": "-7.174",
+        "home_spread": "7.174",
+        "spread_model": "FROZEN_CORE_PLUS_DEFENSIVE_COVERAGE_PLUS_WIN_ELO_PLUS_MARGIN_RATING",
+        "total": "43.523",
+        "total_model": "FROZEN_CORE_ONLY"
+      },
+      "release": {
+        "historical_spread_edge_threshold_earned": false,
+        "historical_total_edge_threshold_earned": false,
+        "recommendation": "HOLD_NO_VALIDATED_EDGE_THRESHOLD",
+        "website_publish_allowed": false
+      },
+      "reliability": {
+        "spread_reason": "Confirmed expected-starter QB break; no validated historical QB injury coefficient.",
+        "spread_tier": "D \u2014 OUT_OF_DISTRIBUTION_QB_BREAK",
+        "state_point_adjustment_applied": false,
+        "total_reason": "Confirmed QB break can materially alter scoring distribution; no validated injury total adjustment.",
+        "total_tier": "D \u2014 OUT_OF_DISTRIBUTION_QB_BREAK"
+      },
+      "state_gates": {
+        "execution_price": "PENDING_DIRECT_BOOK_PRICE",
+        "hard_qb_break": true,
+        "personnel": "HARD_QB_BREAK_AWAY_CONFIRMED",
+        "weather_roof": "OUTDOOR_FINAL_FORECAST_REFRESH_REQUIRED"
+      },
+      "uncertainty": {
+        "spread_68": [
+          -19.354,
+          6.206
+        ],
+        "spread_80": [
+          -23.586,
+          11.088
+        ],
+        "spread_90": [
+          -29.371,
+          16.063
+        ],
+        "total_68": [
+          32.027,
+          57.956
+        ],
+        "total_80": [
+          28.518,
+          62.637
+        ],
+        "total_90": [
+          24.73,
+          68.726
+        ]
+      }
+    },
+    {
+      "away_team": "CAR",
+      "game_id": "2026_06_CAR_PHI",
+      "gameday": "2026-10-18",
+      "gametime_et": "13:00",
+      "home_team": "PHI",
+      "market_capture": {
+        "away_spread": -3.0,
+        "away_spread_odds_decimal": 1.85,
+        "book": "BetMGM",
+        "captured_at_utc": "2026-10-17T22:59:10.614579+00:00",
+        "home_spread": 3.0,
+        "home_spread_odds_decimal": 1.98,
+        "over_odds_decimal": 1.9,
+        "spread_direction": "HOME_SIDE_OF_BOOK_LINE",
+        "spread_disagreement": 0.121,
+        "total": 39.0,
+        "total_direction": "OVER_SIDE_OF_BOOK_TOTAL",
+        "total_disagreement": 4.914,
+        "under_odds_decimal": 1.93,
+        "user_account_execution_verified": false
+      },
+      "projection": {
+        "home_margin": "-2.879",
+        "home_spread": "2.879",
+        "spread_model": "FROZEN_CORE_PLUS_DEFENSIVE_COVERAGE_PLUS_WIN_ELO_PLUS_MARGIN_RATING",
+        "total": "43.914",
+        "total_model": "FROZEN_CORE_ONLY"
+      },
+      "release": {
+        "historical_spread_edge_threshold_earned": false,
+        "historical_total_edge_threshold_earned": false,
+        "recommendation": "HOLD_NO_VALIDATED_EDGE_THRESHOLD",
+        "website_publish_allowed": false
+      },
+      "reliability": {
+        "spread_reason": "Confirmed expected-starter QB break; no validated historical QB injury coefficient.",
+        "spread_tier": "D \u2014 OUT_OF_DISTRIBUTION_QB_BREAK",
+        "state_point_adjustment_applied": false,
+        "total_reason": "Confirmed QB break can materially alter scoring distribution; no validated injury total adjustment.",
+        "total_tier": "D \u2014 OUT_OF_DISTRIBUTION_QB_BREAK"
+      },
+      "state_gates": {
+        "execution_price": "PENDING_DIRECT_BOOK_PRICE",
+        "hard_qb_break": true,
+        "personnel": "HARD_QB_BREAK_HOME_CONFIRMED",
+        "weather_roof": "OUTDOOR_FINAL_FORECAST_REFRESH_REQUIRED"
+      },
+      "uncertainty": {
+        "spread_68": [
+          -15.059,
+          10.501
+        ],
+        "spread_80": [
+          -19.291,
+          15.383
+        ],
+        "spread_90": [
+          -25.076,
+          20.358
+        ],
+        "total_68": [
+          32.418,
+          58.347
+        ],
+        "total_80": [
+          28.909,
+          63.028
+        ],
+        "total_90": [
+          25.121,
+          69.117
+        ]
+      }
+    },
+    {
+      "away_team": "CHI",
+      "game_id": "2026_06_CHI_ATL",
+      "gameday": "2026-10-18",
+      "gametime_et": "13:00",
+      "home_team": "ATL",
+      "market_capture": {
+        "away_spread": -1.0,
+        "away_spread_odds_decimal": 1.95,
+        "book": "BetMGM",
+        "captured_at_utc": "2026-10-17T22:59:10.614579+00:00",
+        "home_spread": 1.0,
+        "home_spread_odds_decimal": 1.88,
+        "over_odds_decimal": 1.9,
+        "spread_direction": "HOME_SIDE_OF_BOOK_LINE",
+        "spread_disagreement": 0.591,
+        "total": 52.0,
+        "total_direction": "UNDER_SIDE_OF_BOOK_TOTAL",
+        "total_disagreement": -7.084,
+        "under_odds_decimal": 1.93,
+        "user_account_execution_verified": false
+      },
+      "projection": {
+        "home_margin": "-0.409",
+        "home_spread": "0.409",
+        "spread_model": "FROZEN_CORE_PLUS_DEFENSIVE_COVERAGE_PLUS_WIN_ELO_PLUS_MARGIN_RATING",
+        "total": "44.916",
+        "total_model": "FROZEN_CORE_ONLY"
+      },
+      "release": {
+        "historical_spread_edge_threshold_earned": false,
+        "historical_total_edge_threshold_earned": false,
+        "recommendation": "HOLD_NO_VALIDATED_EDGE_THRESHOLD",
+        "website_publish_allowed": false
+      },
+      "reliability": {
+        "spread_reason": "Returning QB state is not equivalent to a stable normal-starter state.",
+        "spread_tier": "C \u2014 ELEVATED_STATE_UNCERTAINTY",
+        "state_point_adjustment_applied": false,
+        "total_reason": "Personnel state is materially unresolved or non-standard.",
+        "total_tier": "C \u2014 ELEVATED_STATE_UNCERTAINTY"
+      },
+      "state_gates": {
+        "execution_price": "PENDING_DIRECT_BOOK_PRICE",
+        "hard_qb_break": false,
+        "personnel": "QB_RETURN_EXPECTED_AWAY_FINAL_ACTIVE_STATUS_PENDING",
+        "weather_roof": "ATLANTA_RETRACTABLE_ROOF_DECISION_PENDING"
+      },
+      "uncertainty": {
+        "spread_68": [
+          -12.589,
+          12.971
+        ],
+        "spread_80": [
+          -16.821,
+          17.853
+        ],
+        "spread_90": [
+          -22.606,
+          22.828
+        ],
+        "total_68": [
+          33.42,
+          59.349
+        ],
+        "total_80": [
+          29.911,
+          64.03
+        ],
+        "total_90": [
+          26.123,
+          70.119
+        ]
+      }
+    },
+    {
+      "away_team": "NO",
+      "game_id": "2026_06_NO_NYG",
+      "gameday": "2026-10-18",
+      "gametime_et": "13:00",
+      "home_team": "NYG",
+      "market_capture": {
+        "away_spread": -1.0,
+        "away_spread_odds_decimal": 1.95,
+        "book": "BetMGM",
+        "captured_at_utc": "2026-10-17T22:59:10.614579+00:00",
+        "home_spread": 1.0,
+        "home_spread_odds_decimal": 1.87,
+        "over_odds_decimal": 1.93,
+        "spread_direction": "HOME_SIDE_OF_BOOK_LINE",
+        "spread_disagreement": 6.846,
+        "total": 46.0,
+        "total_direction": "UNDER_SIDE_OF_BOOK_TOTAL",
+        "total_disagreement": -1.416,
+        "under_odds_decimal": 1.9,
+        "user_account_execution_verified": false
+      },
+      "projection": {
+        "home_margin": "5.846",
+        "home_spread": "-5.846",
+        "spread_model": "FROZEN_CORE_PLUS_DEFENSIVE_COVERAGE_PLUS_WIN_ELO_PLUS_MARGIN_RATING",
+        "total": "44.584",
+        "total_model": "FROZEN_CORE_ONLY"
+      },
+      "release": {
+        "historical_spread_edge_threshold_earned": false,
+        "historical_total_edge_threshold_earned": false,
+        "recommendation": "HOLD_NO_VALIDATED_EDGE_THRESHOLD",
+        "website_publish_allowed": false
+      },
+      "reliability": {
+        "spread_reason": "No confirmed QB break, but final inactive verification remains incomplete.",
+        "spread_tier": "B \u2014 STANDARD_MODEL_PENDING_FINAL_GATES",
+        "state_point_adjustment_applied": false,
+        "total_reason": "Final weather/roof state is unresolved and totals have no validated weather coefficient.",
+        "total_tier": "C \u2014 ELEVATED_ENVIRONMENT_UNCERTAINTY"
+      },
+      "state_gates": {
+        "execution_price": "PENDING_DIRECT_BOOK_PRICE",
+        "hard_qb_break": false,
+        "personnel": "NO_QB_BREAK_IDENTIFIED_NONQB_UNCERTAINTY_REMAINS",
+        "weather_roof": "OUTDOOR_FINAL_FORECAST_REFRESH_REQUIRED"
+      },
+      "uncertainty": {
+        "spread_68": [
+          -6.334,
+          19.226
+        ],
+        "spread_80": [
+          -10.566,
+          24.108
+        ],
+        "spread_90": [
+          -16.351,
+          29.083
+        ],
+        "total_68": [
+          33.088,
+          59.017
+        ],
+        "total_80": [
+          29.579,
+          63.698
+        ],
+        "total_90": [
+          25.791,
+          69.787
+        ]
+      }
+    },
+    {
+      "away_team": "NYJ",
+      "game_id": "2026_06_NYJ_NE",
+      "gameday": "2026-10-18",
+      "gametime_et": "13:00",
+      "home_team": "NE",
+      "market_capture": {
+        "away_spread": 7.0,
+        "away_spread_odds_decimal": 1.95,
+        "book": "BetMGM",
+        "captured_at_utc": "2026-10-17T22:59:10.614579+00:00",
+        "home_spread": -7.0,
+        "home_spread_odds_decimal": 1.88,
+        "over_odds_decimal": 1.9,
+        "spread_direction": "HOME_SIDE_OF_BOOK_LINE",
+        "spread_disagreement": 4.012,
+        "total": 43.5,
+        "total_direction": "OVER_SIDE_OF_BOOK_TOTAL",
+        "total_disagreement": 2.878,
+        "under_odds_decimal": 1.93,
+        "user_account_execution_verified": false
+      },
+      "projection": {
+        "home_margin": "11.012",
+        "home_spread": "-11.012",
+        "spread_model": "FROZEN_CORE_PLUS_DEFENSIVE_COVERAGE_PLUS_WIN_ELO_PLUS_MARGIN_RATING",
+        "total": "46.378",
+        "total_model": "FROZEN_CORE_ONLY"
+      },
+      "release": {
+        "historical_spread_edge_threshold_earned": false,
+        "historical_total_edge_threshold_earned": false,
+        "recommendation": "HOLD_NO_VALIDATED_EDGE_THRESHOLD",
+        "website_publish_allowed": false
+      },
+      "reliability": {
+        "spread_reason": "Major non-QB absences remain; historical injury burden did not earn a learned coefficient.",
+        "spread_tier": "C \u2014 ELEVATED_STATE_UNCERTAINTY",
+        "state_point_adjustment_applied": false,
+        "total_reason": "Personnel state is materially unresolved or non-standard.",
+        "total_tier": "C \u2014 ELEVATED_STATE_UNCERTAINTY"
+      },
+      "state_gates": {
+        "execution_price": "PENDING_DIRECT_BOOK_PRICE",
+        "hard_qb_break": false,
+        "personnel": "NO_QB_BREAK_IDENTIFIED_MAJOR_NONQB_ABSENCES",
+        "weather_roof": "OUTDOOR_FINAL_FORECAST_REFRESH_REQUIRED"
+      },
+      "uncertainty": {
+        "spread_68": [
+          -1.168,
+          24.392
+        ],
+        "spread_80": [
+          -5.4,
+          29.274
+        ],
+        "spread_90": [
+          -11.185,
+          34.249
+        ],
+        "total_68": [
+          34.882,
+          60.811
+        ],
+        "total_80": [
+          31.373,
+          65.492
+        ],
+        "total_90": [
+          27.585,
+          71.581
+        ]
+      }
+    },
+    {
+      "away_team": "PIT",
+      "game_id": "2026_06_PIT_TB",
+      "gameday": "2026-10-18",
+      "gametime_et": "13:00",
+      "home_team": "TB",
+      "market_capture": {
+        "away_spread": -2.5,
+        "away_spread_odds_decimal": 1.88,
+        "book": "BetMGM",
+        "captured_at_utc": "2026-10-17T22:59:10.614579+00:00",
+        "home_spread": 2.5,
+        "home_spread_odds_decimal": 1.95,
+        "over_odds_decimal": 1.93,
+        "spread_direction": "HOME_SIDE_OF_BOOK_LINE",
+        "spread_disagreement": 4.527,
+        "total": 39.0,
+        "total_direction": "OVER_SIDE_OF_BOOK_TOTAL",
+        "total_disagreement": 6.459,
+        "under_odds_decimal": 1.9,
+        "user_account_execution_verified": false
+      },
+      "projection": {
+        "home_margin": "2.027",
+        "home_spread": "-2.027",
+        "spread_model": "FROZEN_CORE_PLUS_DEFENSIVE_COVERAGE_PLUS_WIN_ELO_PLUS_MARGIN_RATING",
+        "total": "45.459",
+        "total_model": "FROZEN_CORE_ONLY"
+      },
+      "release": {
+        "historical_spread_edge_threshold_earned": false,
+        "historical_total_edge_threshold_earned": false,
+        "recommendation": "HOLD_NO_VALIDATED_EDGE_THRESHOLD",
+        "website_publish_allowed": false
+      },
+      "reliability": {
+        "spread_reason": "Confirmed expected-starter QB break; no validated historical QB injury coefficient.",
+        "spread_tier": "D \u2014 OUT_OF_DISTRIBUTION_QB_BREAK",
+        "state_point_adjustment_applied": false,
+        "total_reason": "Confirmed QB break can materially alter scoring distribution; no validated injury total adjustment.",
+        "total_tier": "D \u2014 OUT_OF_DISTRIBUTION_QB_BREAK"
+      },
+      "state_gates": {
+        "execution_price": "PENDING_DIRECT_BOOK_PRICE",
+        "hard_qb_break": true,
+        "personnel": "HARD_QB_BREAK_HOME_CONFIRMED",
+        "weather_roof": "OUTDOOR_BREEZY_FORECAST_FINAL_REFRESH_REQUIRED"
+      },
+      "uncertainty": {
+        "spread_68": [
+          -10.153,
+          15.407
+        ],
+        "spread_80": [
+          -14.385,
+          20.289
+        ],
+        "spread_90": [
+          -20.17,
+          25.264
+        ],
+        "total_68": [
+          33.963,
+          59.892
+        ],
+        "total_80": [
+          30.454,
+          64.573
+        ],
+        "total_90": [
+          26.666,
+          70.662
+        ]
+      }
+    },
+    {
+      "away_team": "TEN",
+      "game_id": "2026_06_TEN_IND",
+      "gameday": "2026-10-18",
+      "gametime_et": "13:00",
+      "home_team": "IND",
+      "market_capture": {
+        "away_spread": 7.0,
+        "away_spread_odds_decimal": 1.87,
+        "book": "BetMGM",
+        "captured_at_utc": "2026-10-17T22:59:10.614579+00:00",
+        "home_spread": -7.0,
+        "home_spread_odds_decimal": 1.98,
+        "over_odds_decimal": 1.9,
+        "spread_direction": "HOME_SIDE_OF_BOOK_LINE",
+        "spread_disagreement": 0.105,
+        "total": 44.5,
+        "total_direction": "UNDER_SIDE_OF_BOOK_TOTAL",
+        "total_disagreement": -2.312,
+        "under_odds_decimal": 1.93,
+        "user_account_execution_verified": false
+      },
+      "projection": {
+        "home_margin": "7.105",
+        "home_spread": "-7.105",
+        "spread_model": "FROZEN_CORE_PLUS_DEFENSIVE_COVERAGE_PLUS_WIN_ELO_PLUS_MARGIN_RATING",
+        "total": "42.188",
+        "total_model": "FROZEN_CORE_ONLY"
+      },
+      "release": {
+        "historical_spread_edge_threshold_earned": false,
+        "historical_total_edge_threshold_earned": false,
+        "recommendation": "HOLD_NO_VALIDATED_EDGE_THRESHOLD",
+        "website_publish_allowed": false
+      },
+      "reliability": {
+        "spread_reason": "No confirmed QB break, but final inactive verification remains incomplete.",
+        "spread_tier": "B \u2014 STANDARD_MODEL_PENDING_FINAL_GATES",
+        "state_point_adjustment_applied": false,
+        "total_reason": "Final weather/roof state is unresolved and totals have no validated weather coefficient.",
+        "total_tier": "C \u2014 ELEVATED_ENVIRONMENT_UNCERTAINTY"
+      },
+      "state_gates": {
+        "execution_price": "PENDING_DIRECT_BOOK_PRICE",
+        "hard_qb_break": false,
+        "personnel": "NO_QB_BREAK_IDENTIFIED_FINAL_INACTIVES_PENDING",
+        "weather_roof": "INDIANAPOLIS_RETRACTABLE_ROOF_DECISION_PENDING"
+      },
+      "uncertainty": {
+        "spread_68": [
+          -5.075,
+          20.485
+        ],
+        "spread_80": [
+          -9.307,
+          25.367
+        ],
+        "spread_90": [
+          -15.092,
+          30.342
+        ],
+        "total_68": [
+          30.692,
+          56.621
+        ],
+        "total_80": [
+          27.183,
+          61.302
+        ],
+        "total_90": [
+          23.395,
+          67.391
+        ]
+      }
+    },
+    {
+      "away_team": "ARI",
+      "game_id": "2026_06_ARI_LA",
+      "gameday": "2026-10-18",
+      "gametime_et": "16:05",
+      "home_team": "LA",
+      "market_capture": {
+        "away_spread": 12.5,
+        "away_spread_odds_decimal": 1.9,
+        "book": "BetMGM",
+        "captured_at_utc": "2026-10-17T22:59:10.614579+00:00",
+        "home_spread": -12.5,
+        "home_spread_odds_decimal": 1.93,
+        "over_odds_decimal": 1.93,
+        "spread_direction": "AWAY_SIDE_OF_BOOK_LINE",
+        "spread_disagreement": -2.339,
+        "total": 51.5,
+        "total_direction": "UNDER_SIDE_OF_BOOK_TOTAL",
+        "total_disagreement": -3.126,
+        "under_odds_decimal": 1.9,
+        "user_account_execution_verified": false
+      },
+      "projection": {
+        "home_margin": "10.161",
+        "home_spread": "-10.161",
+        "spread_model": "FROZEN_CORE_PLUS_DEFENSIVE_COVERAGE_PLUS_WIN_ELO_PLUS_MARGIN_RATING",
+        "total": "48.374",
+        "total_model": "FROZEN_CORE_ONLY"
+      },
+      "release": {
+        "historical_spread_edge_threshold_earned": false,
+        "historical_total_edge_threshold_earned": false,
+        "recommendation": "HOLD_NO_VALIDATED_EDGE_THRESHOLD",
+        "website_publish_allowed": false
+      },
+      "reliability": {
+        "spread_reason": "No confirmed QB break, but final inactive verification remains incomplete.",
+        "spread_tier": "B \u2014 STANDARD_MODEL_PENDING_FINAL_GATES",
+        "state_point_adjustment_applied": false,
+        "total_reason": "No confirmed QB break; final inactive/market execution gates remain incomplete.",
+        "total_tier": "B \u2014 STANDARD_MODEL_PENDING_FINAL_GATES"
+      },
+      "state_gates": {
+        "execution_price": "PENDING_DIRECT_BOOK_PRICE",
+        "hard_qb_break": false,
+        "personnel": "NO_QB_BREAK_IDENTIFIED_NONQB_UNCERTAINTY_REMAINS",
+        "weather_roof": "COVERED_VENUE_NO_OUTDOOR_WEATHER_ADJUSTMENT_PLANNED"
+      },
+      "uncertainty": {
+        "spread_68": [
+          -2.019,
+          23.541
+        ],
+        "spread_80": [
+          -6.251,
+          28.423
+        ],
+        "spread_90": [
+          -12.036,
+          33.398
+        ],
+        "total_68": [
+          36.878,
+          62.807
+        ],
+        "total_80": [
+          33.369,
+          67.488
+        ],
+        "total_90": [
+          29.581,
+          73.577
+        ]
+      }
+    },
+    {
+      "away_team": "BUF",
+      "game_id": "2026_06_BUF_LV",
+      "gameday": "2026-10-18",
+      "gametime_et": "16:25",
+      "home_team": "LV",
+      "market_capture": {
+        "away_spread": -4.5,
+        "away_spread_odds_decimal": 1.9,
+        "book": "BetMGM",
+        "captured_at_utc": "2026-10-17T22:59:10.614579+00:00",
+        "home_spread": 4.5,
+        "home_spread_odds_decimal": 1.93,
+        "over_odds_decimal": 1.9,
+        "spread_direction": "AWAY_SIDE_OF_BOOK_LINE",
+        "spread_disagreement": -2.442,
+        "total": 53.5,
+        "total_direction": "UNDER_SIDE_OF_BOOK_TOTAL",
+        "total_disagreement": -5.312,
+        "under_odds_decimal": 1.93,
+        "user_account_execution_verified": false
+      },
+      "projection": {
+        "home_margin": "-6.942",
+        "home_spread": "6.942",
+        "spread_model": "FROZEN_CORE_PLUS_DEFENSIVE_COVERAGE_PLUS_WIN_ELO_PLUS_MARGIN_RATING",
+        "total": "48.188",
+        "total_model": "FROZEN_CORE_ONLY"
+      },
+      "release": {
+        "historical_spread_edge_threshold_earned": false,
+        "historical_total_edge_threshold_earned": false,
+        "recommendation": "HOLD_NO_VALIDATED_EDGE_THRESHOLD",
+        "website_publish_allowed": false
+      },
+      "reliability": {
+        "spread_reason": "No confirmed QB break, but final inactive verification remains incomplete.",
+        "spread_tier": "B \u2014 STANDARD_MODEL_PENDING_FINAL_GATES",
+        "state_point_adjustment_applied": false,
+        "total_reason": "No confirmed QB break; final inactive/market execution gates remain incomplete.",
+        "total_tier": "B \u2014 STANDARD_MODEL_PENDING_FINAL_GATES"
+      },
+      "state_gates": {
+        "execution_price": "PENDING_DIRECT_BOOK_PRICE",
+        "hard_qb_break": false,
+        "personnel": "NO_QB_BREAK_IDENTIFIED_NONQB_UNCERTAINTY_REMAINS",
+        "weather_roof": "INDOOR_FIXED_ROOF"
+      },
+      "uncertainty": {
+        "spread_68": [
+          -19.122,
+          6.438
+        ],
+        "spread_80": [
+          -23.354,
+          11.32
+        ],
+        "spread_90": [
+          -29.139,
+          16.295
+        ],
+        "total_68": [
+          36.692,
+          62.621
+        ],
+        "total_80": [
+          33.183,
+          67.302
+        ],
+        "total_90": [
+          29.395,
+          73.391
+        ]
+      }
+    },
+    {
+      "away_team": "LAC",
+      "game_id": "2026_06_LAC_KC",
+      "gameday": "2026-10-18",
+      "gametime_et": "16:25",
+      "home_team": "KC",
+      "market_capture": {
+        "away_spread": 7.5,
+        "away_spread_odds_decimal": 1.9,
+        "book": "BetMGM",
+        "captured_at_utc": "2026-10-17T22:59:10.614579+00:00",
+        "home_spread": -7.5,
+        "home_spread_odds_decimal": 1.93,
+        "over_odds_decimal": 1.95,
+        "spread_direction": "HOME_SIDE_OF_BOOK_LINE",
+        "spread_disagreement": 3.426,
+        "total": 41.5,
+        "total_direction": "OVER_SIDE_OF_BOOK_TOTAL",
+        "total_disagreement": 1.334,
+        "under_odds_decimal": 1.88,
+        "user_account_execution_verified": false
+      },
+      "projection": {
+        "home_margin": "10.926",
+        "home_spread": "-10.926",
+        "spread_model": "FROZEN_CORE_PLUS_DEFENSIVE_COVERAGE_PLUS_WIN_ELO_PLUS_MARGIN_RATING",
+        "total": "42.834",
+        "total_model": "FROZEN_CORE_ONLY"
+      },
+      "release": {
+        "historical_spread_edge_threshold_earned": false,
+        "historical_total_edge_threshold_earned": false,
+        "recommendation": "HOLD_NO_VALIDATED_EDGE_THRESHOLD",
+        "website_publish_allowed": false
+      },
+      "reliability": {
+        "spread_reason": "Major non-QB absences remain; historical injury burden did not earn a learned coefficient.",
+        "spread_tier": "C \u2014 ELEVATED_STATE_UNCERTAINTY",
+        "state_point_adjustment_applied": false,
+        "total_reason": "Personnel state is materially unresolved or non-standard.",
+        "total_tier": "C \u2014 ELEVATED_STATE_UNCERTAINTY"
+      },
+      "state_gates": {
+        "execution_price": "PENDING_DIRECT_BOOK_PRICE",
+        "hard_qb_break": false,
+        "personnel": "NO_QB_BREAK_IDENTIFIED_MAJOR_NONQB_ABSENCES",
+        "weather_roof": "OUTDOOR_FINAL_FORECAST_REFRESH_REQUIRED"
+      },
+      "uncertainty": {
+        "spread_68": [
+          -1.254,
+          24.306
+        ],
+        "spread_80": [
+          -5.486,
+          29.188
+        ],
+        "spread_90": [
+          -11.271,
+          34.163
+        ],
+        "total_68": [
+          31.338,
+          57.267
+        ],
+        "total_80": [
+          27.829,
+          61.948
+        ],
+        "total_90": [
+          24.041,
+          68.037
+        ]
+      }
+    },
+    {
+      "away_team": "DAL",
+      "game_id": "2026_06_DAL_GB",
+      "gameday": "2026-10-18",
+      "gametime_et": "20:20",
+      "home_team": "GB",
+      "market_capture": {
+        "away_spread": 1.0,
+        "away_spread_odds_decimal": 1.93,
+        "book": "BetMGM",
+        "captured_at_utc": "2026-10-17T22:59:10.614579+00:00",
+        "home_spread": -1.0,
+        "home_spread_odds_decimal": 1.9,
+        "over_odds_decimal": 1.9,
+        "spread_direction": "HOME_SIDE_OF_BOOK_LINE",
+        "spread_disagreement": 2.54,
+        "total": 53.0,
+        "total_direction": "UNDER_SIDE_OF_BOOK_TOTAL",
+        "total_disagreement": -2.294,
+        "under_odds_decimal": 1.93,
+        "user_account_execution_verified": false
+      },
+      "projection": {
+        "home_margin": "3.54",
+        "home_spread": "-3.54",
+        "spread_model": "FROZEN_CORE_PLUS_DEFENSIVE_COVERAGE_PLUS_WIN_ELO_PLUS_MARGIN_RATING",
+        "total": "50.706",
+        "total_model": "FROZEN_CORE_ONLY"
+      },
+      "release": {
+        "historical_spread_edge_threshold_earned": false,
+        "historical_total_edge_threshold_earned": false,
+        "recommendation": "HOLD_NO_VALIDATED_EDGE_THRESHOLD",
+        "website_publish_allowed": false
+      },
+      "reliability": {
+        "spread_reason": "No confirmed QB break, but final inactive verification remains incomplete.",
+        "spread_tier": "B \u2014 STANDARD_MODEL_PENDING_FINAL_GATES",
+        "state_point_adjustment_applied": false,
+        "total_reason": "Final weather/roof state is unresolved and totals have no validated weather coefficient.",
+        "total_tier": "C \u2014 ELEVATED_ENVIRONMENT_UNCERTAINTY"
+      },
+      "state_gates": {
+        "execution_price": "PENDING_DIRECT_BOOK_PRICE",
+        "hard_qb_break": false,
+        "personnel": "NO_QB_BREAK_IDENTIFIED_FINAL_INACTIVES_PENDING",
+        "weather_roof": "OUTDOOR_WIND_MONITOR_FINAL_FORECAST_REQUIRED"
+      },
+      "uncertainty": {
+        "spread_68": [
+          -8.64,
+          16.92
+        ],
+        "spread_80": [
+          -12.872,
+          21.802
+        ],
+        "spread_90": [
+          -18.657,
+          26.777
+        ],
+        "total_68": [
+          39.21,
+          65.139
+        ],
+        "total_80": [
+          35.701,
+          69.82
+        ],
+        "total_90": [
+          31.913,
+          75.909
+        ]
+      }
+    },
+    {
+      "away_team": "WAS",
+      "game_id": "2026_06_WAS_SF",
+      "gameday": "2026-10-19",
+      "gametime_et": "20:15",
+      "home_team": "SF",
+      "market_capture": {
+        "away_spread": 7.5,
+        "away_spread_odds_decimal": 1.9,
+        "book": "BetMGM",
+        "captured_at_utc": "2026-10-17T22:59:10.614579+00:00",
+        "home_spread": -7.5,
+        "home_spread_odds_decimal": 1.93,
+        "over_odds_decimal": 1.9,
+        "spread_direction": "HOME_SIDE_OF_BOOK_LINE",
+        "spread_disagreement": 3.458,
+        "total": 52.0,
+        "total_direction": "UNDER_SIDE_OF_BOOK_TOTAL",
+        "total_disagreement": -3.951,
+        "under_odds_decimal": 1.93,
+        "user_account_execution_verified": false
+      },
+      "projection": {
+        "home_margin": "10.958",
+        "home_spread": "-10.958",
+        "spread_model": "FROZEN_CORE_PLUS_DEFENSIVE_COVERAGE_PLUS_WIN_ELO_PLUS_MARGIN_RATING",
+        "total": "48.049",
+        "total_model": "FROZEN_CORE_ONLY"
+      },
+      "release": {
+        "historical_spread_edge_threshold_earned": false,
+        "historical_total_edge_threshold_earned": false,
+        "recommendation": "HOLD_NO_VALIDATED_EDGE_THRESHOLD",
+        "website_publish_allowed": false
+      },
+      "reliability": {
+        "spread_reason": "Monday final personnel status is unresolved at snapshot time.",
+        "spread_tier": "C \u2014 ELEVATED_STATE_UNCERTAINTY",
+        "state_point_adjustment_applied": false,
+        "total_reason": "Personnel state is materially unresolved or non-standard.",
+        "total_tier": "C \u2014 ELEVATED_STATE_UNCERTAINTY"
+      },
+      "state_gates": {
+        "execution_price": "PENDING_DIRECT_BOOK_PRICE",
+        "hard_qb_break": false,
+        "personnel": "MONDAY_FINAL_STATUS_PENDING_NO_CONFIRMED_QB_BREAK",
+        "weather_roof": "OUTDOOR_MONDAY_FINAL_FORECAST_REQUIRED"
+      },
+      "uncertainty": {
+        "spread_68": [
+          -1.222,
+          24.338
+        ],
+        "spread_80": [
+          -5.454,
+          29.22
+        ],
+        "spread_90": [
+          -11.239,
+          34.195
+        ],
+        "total_68": [
+          36.553,
+          62.482
+        ],
+        "total_80": [
+          33.044,
+          67.163
+        ],
+        "total_90": [
+          29.256,
+          73.252
+        ]
+      }
+    }
+  ],
+  "league": "NFL",
+  "live_site_target": null,
+  "projection_state": "HOLD_PROSPECTIVE_VALIDATION_REQUIRED",
+  "schema_version": "nfl-research-v1",
+  "season": 2026,
+  "snapshot_id": "NFL_2026_W6_PRELOCK_20261017T225656Z",
+  "source_timestamps": {
+    "direct_book_capture_utc": "2026-10-17T22:59:10.614579+00:00",
+    "model_snapshot_utc": "2026-10-17T22:56:56.303277+00:00",
+    "reliability_utc": "2026-10-17T23:08:53.983061+00:00"
+  },
+  "website_publish_allowed": false,
+  "week": 6
+}
