@@ -303,3 +303,12 @@
     document.head.appendChild(script);
   }
 })();
+
+(() => {
+  if (document.querySelector('script[data-cb-live-suite-loader]')) return;
+  const script = document.createElement('script');
+  script.src = 'live-suite-loader.js';
+  script.async = false;
+  script.dataset.cbLiveSuiteLoader = 'true';
+  document.body.appendChild(script);
+})();
