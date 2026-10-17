@@ -208,7 +208,7 @@
     ensureTopSignals(); refresh();
     const observer = new MutationObserver(refresh);
     const hero = document.querySelector('.hero'), body = document.getElementById('projectionBody'), cards = document.getElementById('projectionCards');
-    if (hero) observer.observe(hero, { childList:true, subtree:true });
+    if (hero) observer.observe(hero, { childList:true });
     if (body) observer.observe(body, { childList:true });
     if (cards) observer.observe(cards, { childList:true });
     const drawerContent = document.getElementById('drawerContent');
