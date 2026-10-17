@@ -1,0 +1,1757 @@
+{
+  "aggregate": {
+    "spread": {
+      "absolute_error_quantiles": {
+        "0.5": 8.054,
+        "0.68": 12.6803,
+        "0.75": 15.174,
+        "0.8": 17.2328,
+        "0.9": 22.4361,
+        "0.95": 26.5931
+      },
+      "bias_pred_minus_actual": -0.0126,
+      "mae": 10.2564,
+      "n": 816,
+      "rmse": 13.2903,
+      "signed_actual_minus_pred_quantiles": {
+        "0.05": -22.1966,
+        "0.1": -16.4118,
+        "0.16": -12.18,
+        "0.25": -8.0337,
+        "0.5": -0.7298,
+        "0.75": 8.0517,
+        "0.84": 13.3801,
+        "0.9": 18.2623,
+        "0.95": 23.2372
+      }
+    },
+    "total": {
+      "absolute_error_quantiles": {
+        "0.5": 8.2426,
+        "0.68": 13.1899,
+        "0.75": 15.0109,
+        "0.8": 16.5569,
+        "0.9": 22.5405,
+        "0.95": 27.3762
+      },
+      "bias_pred_minus_actual": -1.2723,
+      "mae": 10.5001,
+      "n": 816,
+      "rmse": 13.4958,
+      "signed_actual_minus_pred_quantiles": {
+        "0.05": -18.7934,
+        "0.1": -15.005,
+        "0.16": -11.4956,
+        "0.25": -7.6635,
+        "0.5": 0.6218,
+        "0.75": 9.3149,
+        "0.84": 14.4328,
+        "0.9": 19.1144,
+        "0.95": 25.2032
+      }
+    }
+  },
+  "architecture": {
+    "spread": "frozen core + defensive coverage + win Elo + margin rating",
+    "total": "frozen core only"
+  },
+  "edge_buckets": {
+    "spread": {
+      "0_to_1": {
+        "decisions": 205,
+        "losses": 93,
+        "minus110_break_even": 0.5238,
+        "n": 210,
+        "pushes": 5,
+        "seasons": {
+          "2023": {
+            "decisions": 65,
+            "losses": 27,
+            "n": 69,
+            "pushes": 4,
+            "win_rate": 0.5846,
+            "wins": 38
+          },
+          "2024": {
+            "decisions": 58,
+            "losses": 31,
+            "n": 59,
+            "pushes": 1,
+            "win_rate": 0.4655,
+            "wins": 27
+          },
+          "2025": {
+            "decisions": 82,
+            "losses": 35,
+            "n": 82,
+            "pushes": 0,
+            "win_rate": 0.5732,
+            "wins": 47
+          }
+        },
+        "wilson_95": [
+          0.478,
+          0.613
+        ],
+        "win_rate": 0.5463,
+        "wins": 112
+      },
+      "10_plus": {
+        "decisions": 11,
+        "losses": 4,
+        "minus110_break_even": 0.5238,
+        "n": 11,
+        "pushes": 0,
+        "seasons": {
+          "2023": {
+            "decisions": 1,
+            "losses": 1,
+            "n": 1,
+            "pushes": 0,
+            "win_rate": 0.0,
+            "wins": 0
+          },
+          "2024": {
+            "decisions": 6,
+            "losses": 1,
+            "n": 6,
+            "pushes": 0,
+            "win_rate": 0.8333,
+            "wins": 5
+          },
+          "2025": {
+            "decisions": 4,
+            "losses": 2,
+            "n": 4,
+            "pushes": 0,
+            "win_rate": 0.5,
+            "wins": 2
+          }
+        },
+        "wilson_95": [
+          0.3538,
+          0.8483
+        ],
+        "win_rate": 0.6364,
+        "wins": 7
+      },
+      "1_to_2": {
+        "decisions": 151,
+        "losses": 66,
+        "minus110_break_even": 0.5238,
+        "n": 153,
+        "pushes": 2,
+        "seasons": {
+          "2023": {
+            "decisions": 47,
+            "losses": 19,
+            "n": 48,
+            "pushes": 1,
+            "win_rate": 0.5957,
+            "wins": 28
+          },
+          "2024": {
+            "decisions": 48,
+            "losses": 20,
+            "n": 49,
+            "pushes": 1,
+            "win_rate": 0.5833,
+            "wins": 28
+          },
+          "2025": {
+            "decisions": 56,
+            "losses": 27,
+            "n": 56,
+            "pushes": 0,
+            "win_rate": 0.5179,
+            "wins": 29
+          }
+        },
+        "wilson_95": [
+          0.4832,
+          0.6395
+        ],
+        "win_rate": 0.5629,
+        "wins": 85
+      },
+      "2_to_3": {
+        "decisions": 151,
+        "losses": 73,
+        "minus110_break_even": 0.5238,
+        "n": 156,
+        "pushes": 5,
+        "seasons": {
+          "2023": {
+            "decisions": 53,
+            "losses": 24,
+            "n": 56,
+            "pushes": 3,
+            "win_rate": 0.5472,
+            "wins": 29
+          },
+          "2024": {
+            "decisions": 53,
+            "losses": 24,
+            "n": 54,
+            "pushes": 1,
+            "win_rate": 0.5472,
+            "wins": 29
+          },
+          "2025": {
+            "decisions": 45,
+            "losses": 25,
+            "n": 46,
+            "pushes": 1,
+            "win_rate": 0.4444,
+            "wins": 20
+          }
+        },
+        "wilson_95": [
+          0.4374,
+          0.5949
+        ],
+        "win_rate": 0.5166,
+        "wins": 78
+      },
+      "3_to_4": {
+        "decisions": 91,
+        "losses": 43,
+        "minus110_break_even": 0.5238,
+        "n": 96,
+        "pushes": 5,
+        "seasons": {
+          "2023": {
+            "decisions": 34,
+            "losses": 16,
+            "n": 38,
+            "pushes": 4,
+            "win_rate": 0.5294,
+            "wins": 18
+          },
+          "2024": {
+            "decisions": 28,
+            "losses": 14,
+            "n": 29,
+            "pushes": 1,
+            "win_rate": 0.5,
+            "wins": 14
+          },
+          "2025": {
+            "decisions": 29,
+            "losses": 13,
+            "n": 29,
+            "pushes": 0,
+            "win_rate": 0.5517,
+            "wins": 16
+          }
+        },
+        "wilson_95": [
+          0.4259,
+          0.6268
+        ],
+        "win_rate": 0.5275,
+        "wins": 48
+      },
+      "4_to_5": {
+        "decisions": 73,
+        "losses": 39,
+        "minus110_break_even": 0.5238,
+        "n": 75,
+        "pushes": 2,
+        "seasons": {
+          "2023": {
+            "decisions": 29,
+            "losses": 16,
+            "n": 31,
+            "pushes": 2,
+            "win_rate": 0.4483,
+            "wins": 13
+          },
+          "2024": {
+            "decisions": 22,
+            "losses": 13,
+            "n": 22,
+            "pushes": 0,
+            "win_rate": 0.4091,
+            "wins": 9
+          },
+          "2025": {
+            "decisions": 22,
+            "losses": 10,
+            "n": 22,
+            "pushes": 0,
+            "win_rate": 0.5455,
+            "wins": 12
+          }
+        },
+        "wilson_95": [
+          0.3559,
+          0.579
+        ],
+        "win_rate": 0.4658,
+        "wins": 34
+      },
+      "5_to_7": {
+        "decisions": 78,
+        "losses": 40,
+        "minus110_break_even": 0.5238,
+        "n": 78,
+        "pushes": 0,
+        "seasons": {
+          "2023": {
+            "decisions": 17,
+            "losses": 11,
+            "n": 17,
+            "pushes": 0,
+            "win_rate": 0.3529,
+            "wins": 6
+          },
+          "2024": {
+            "decisions": 34,
+            "losses": 13,
+            "n": 34,
+            "pushes": 0,
+            "win_rate": 0.6176,
+            "wins": 21
+          },
+          "2025": {
+            "decisions": 27,
+            "losses": 16,
+            "n": 27,
+            "pushes": 0,
+            "win_rate": 0.4074,
+            "wins": 11
+          }
+        },
+        "wilson_95": [
+          0.3795,
+          0.5961
+        ],
+        "win_rate": 0.4872,
+        "wins": 38
+      },
+      "7_to_10": {
+        "decisions": 37,
+        "losses": 21,
+        "minus110_break_even": 0.5238,
+        "n": 37,
+        "pushes": 0,
+        "seasons": {
+          "2023": {
+            "decisions": 12,
+            "losses": 7,
+            "n": 12,
+            "pushes": 0,
+            "win_rate": 0.4167,
+            "wins": 5
+          },
+          "2024": {
+            "decisions": 19,
+            "losses": 11,
+            "n": 19,
+            "pushes": 0,
+            "win_rate": 0.4211,
+            "wins": 8
+          },
+          "2025": {
+            "decisions": 6,
+            "losses": 3,
+            "n": 6,
+            "pushes": 0,
+            "win_rate": 0.5,
+            "wins": 3
+          }
+        },
+        "wilson_95": [
+          0.2867,
+          0.5909
+        ],
+        "win_rate": 0.4324,
+        "wins": 16
+      }
+    },
+    "total": {
+      "0_to_1": {
+        "decisions": 201,
+        "losses": 90,
+        "minus110_break_even": 0.5238,
+        "n": 202,
+        "pushes": 1,
+        "seasons": {
+          "2023": {
+            "decisions": 77,
+            "losses": 30,
+            "n": 78,
+            "pushes": 1,
+            "win_rate": 0.6104,
+            "wins": 47
+          },
+          "2024": {
+            "decisions": 64,
+            "losses": 31,
+            "n": 64,
+            "pushes": 0,
+            "win_rate": 0.5156,
+            "wins": 33
+          },
+          "2025": {
+            "decisions": 60,
+            "losses": 29,
+            "n": 60,
+            "pushes": 0,
+            "win_rate": 0.5167,
+            "wins": 31
+          }
+        },
+        "wilson_95": [
+          0.4832,
+          0.6194
+        ],
+        "win_rate": 0.5522,
+        "wins": 111
+      },
+      "10_plus": {
+        "decisions": 3,
+        "losses": 1,
+        "minus110_break_even": 0.5238,
+        "n": 3,
+        "pushes": 0,
+        "seasons": {
+          "2023": {
+            "decisions": 1,
+            "losses": 1,
+            "n": 1,
+            "pushes": 0,
+            "win_rate": 0.0,
+            "wins": 0
+          },
+          "2024": {
+            "decisions": 2,
+            "losses": 0,
+            "n": 2,
+            "pushes": 0,
+            "win_rate": 1.0,
+            "wins": 2
+          },
+          "2025": {
+            "decisions": 0,
+            "losses": 0,
+            "n": 0,
+            "pushes": 0,
+            "win_rate": null,
+            "wins": 0
+          }
+        },
+        "wilson_95": [
+          0.2077,
+          0.9385
+        ],
+        "win_rate": 0.6667,
+        "wins": 2
+      },
+      "1_to_2": {
+        "decisions": 171,
+        "losses": 79,
+        "minus110_break_even": 0.5238,
+        "n": 172,
+        "pushes": 1,
+        "seasons": {
+          "2023": {
+            "decisions": 60,
+            "losses": 30,
+            "n": 60,
+            "pushes": 0,
+            "win_rate": 0.5,
+            "wins": 30
+          },
+          "2024": {
+            "decisions": 57,
+            "losses": 24,
+            "n": 58,
+            "pushes": 1,
+            "win_rate": 0.5789,
+            "wins": 33
+          },
+          "2025": {
+            "decisions": 54,
+            "losses": 25,
+            "n": 54,
+            "pushes": 0,
+            "win_rate": 0.537,
+            "wins": 29
+          }
+        },
+        "wilson_95": [
+          0.4633,
+          0.6111
+        ],
+        "win_rate": 0.538,
+        "wins": 92
+      },
+      "2_to_3": {
+        "decisions": 130,
+        "losses": 72,
+        "minus110_break_even": 0.5238,
+        "n": 130,
+        "pushes": 0,
+        "seasons": {
+          "2023": {
+            "decisions": 32,
+            "losses": 13,
+            "n": 32,
+            "pushes": 0,
+            "win_rate": 0.5938,
+            "wins": 19
+          },
+          "2024": {
+            "decisions": 52,
+            "losses": 34,
+            "n": 52,
+            "pushes": 0,
+            "win_rate": 0.3462,
+            "wins": 18
+          },
+          "2025": {
+            "decisions": 46,
+            "losses": 25,
+            "n": 46,
+            "pushes": 0,
+            "win_rate": 0.4565,
+            "wins": 21
+          }
+        },
+        "wilson_95": [
+          0.3635,
+          0.5319
+        ],
+        "win_rate": 0.4462,
+        "wins": 58
+      },
+      "3_to_4": {
+        "decisions": 114,
+        "losses": 61,
+        "minus110_break_even": 0.5238,
+        "n": 115,
+        "pushes": 1,
+        "seasons": {
+          "2023": {
+            "decisions": 43,
+            "losses": 22,
+            "n": 43,
+            "pushes": 0,
+            "win_rate": 0.4884,
+            "wins": 21
+          },
+          "2024": {
+            "decisions": 30,
+            "losses": 14,
+            "n": 31,
+            "pushes": 1,
+            "win_rate": 0.5333,
+            "wins": 16
+          },
+          "2025": {
+            "decisions": 41,
+            "losses": 25,
+            "n": 41,
+            "pushes": 0,
+            "win_rate": 0.3902,
+            "wins": 16
+          }
+        },
+        "wilson_95": [
+          0.376,
+          0.5561
+        ],
+        "win_rate": 0.4649,
+        "wins": 53
+      },
+      "4_to_5": {
+        "decisions": 80,
+        "losses": 44,
+        "minus110_break_even": 0.5238,
+        "n": 80,
+        "pushes": 0,
+        "seasons": {
+          "2023": {
+            "decisions": 27,
+            "losses": 14,
+            "n": 27,
+            "pushes": 0,
+            "win_rate": 0.4815,
+            "wins": 13
+          },
+          "2024": {
+            "decisions": 25,
+            "losses": 13,
+            "n": 25,
+            "pushes": 0,
+            "win_rate": 0.48,
+            "wins": 12
+          },
+          "2025": {
+            "decisions": 28,
+            "losses": 17,
+            "n": 28,
+            "pushes": 0,
+            "win_rate": 0.3929,
+            "wins": 11
+          }
+        },
+        "wilson_95": [
+          0.3458,
+          0.5588
+        ],
+        "win_rate": 0.45,
+        "wins": 36
+      },
+      "5_to_7": {
+        "decisions": 78,
+        "losses": 37,
+        "minus110_break_even": 0.5238,
+        "n": 80,
+        "pushes": 2,
+        "seasons": {
+          "2023": {
+            "decisions": 21,
+            "losses": 11,
+            "n": 22,
+            "pushes": 1,
+            "win_rate": 0.4762,
+            "wins": 10
+          },
+          "2024": {
+            "decisions": 28,
+            "losses": 13,
+            "n": 29,
+            "pushes": 1,
+            "win_rate": 0.5357,
+            "wins": 15
+          },
+          "2025": {
+            "decisions": 29,
+            "losses": 13,
+            "n": 29,
+            "pushes": 0,
+            "win_rate": 0.5517,
+            "wins": 16
+          }
+        },
+        "wilson_95": [
+          0.4162,
+          0.6326
+        ],
+        "win_rate": 0.5256,
+        "wins": 41
+      },
+      "7_to_10": {
+        "decisions": 34,
+        "losses": 18,
+        "minus110_break_even": 0.5238,
+        "n": 34,
+        "pushes": 0,
+        "seasons": {
+          "2023": {
+            "decisions": 9,
+            "losses": 5,
+            "n": 9,
+            "pushes": 0,
+            "win_rate": 0.4444,
+            "wins": 4
+          },
+          "2024": {
+            "decisions": 11,
+            "losses": 4,
+            "n": 11,
+            "pushes": 0,
+            "win_rate": 0.6364,
+            "wins": 7
+          },
+          "2025": {
+            "decisions": 14,
+            "losses": 9,
+            "n": 14,
+            "pushes": 0,
+            "win_rate": 0.3571,
+            "wins": 5
+          }
+        },
+        "wilson_95": [
+          0.3145,
+          0.6326
+        ],
+        "win_rate": 0.4706,
+        "wins": 16
+      }
+    }
+  },
+  "edge_thresholds": {
+    "spread": {
+      "0.0": {
+        "decisions": 797,
+        "historical_verdict": "NO_HISTORICAL_RELEASE_EVIDENCE",
+        "losses": 379,
+        "minus110_break_even": 0.5238,
+        "n": 816,
+        "pushes": 19,
+        "seasons": {
+          "2023": {
+            "decisions": 258,
+            "losses": 121,
+            "n": 272,
+            "pushes": 14,
+            "win_rate": 0.531,
+            "wins": 137
+          },
+          "2024": {
+            "decisions": 268,
+            "losses": 127,
+            "n": 272,
+            "pushes": 4,
+            "win_rate": 0.5261,
+            "wins": 141
+          },
+          "2025": {
+            "decisions": 271,
+            "losses": 131,
+            "n": 272,
+            "pushes": 1,
+            "win_rate": 0.5166,
+            "wins": 140
+          }
+        },
+        "wilson_95": [
+          0.4898,
+          0.5589
+        ],
+        "win_rate": 0.5245,
+        "wins": 418
+      },
+      "1.0": {
+        "decisions": 592,
+        "historical_verdict": "NO_HISTORICAL_RELEASE_EVIDENCE",
+        "losses": 286,
+        "minus110_break_even": 0.5238,
+        "n": 606,
+        "pushes": 14,
+        "seasons": {
+          "2023": {
+            "decisions": 193,
+            "losses": 94,
+            "n": 203,
+            "pushes": 10,
+            "win_rate": 0.513,
+            "wins": 99
+          },
+          "2024": {
+            "decisions": 210,
+            "losses": 96,
+            "n": 213,
+            "pushes": 3,
+            "win_rate": 0.5429,
+            "wins": 114
+          },
+          "2025": {
+            "decisions": 189,
+            "losses": 96,
+            "n": 190,
+            "pushes": 1,
+            "win_rate": 0.4921,
+            "wins": 93
+          }
+        },
+        "wilson_95": [
+          0.4767,
+          0.5569
+        ],
+        "win_rate": 0.5169,
+        "wins": 306
+      },
+      "2.0": {
+        "decisions": 441,
+        "historical_verdict": "NO_HISTORICAL_RELEASE_EVIDENCE",
+        "losses": 220,
+        "minus110_break_even": 0.5238,
+        "n": 453,
+        "pushes": 12,
+        "seasons": {
+          "2023": {
+            "decisions": 146,
+            "losses": 75,
+            "n": 155,
+            "pushes": 9,
+            "win_rate": 0.4863,
+            "wins": 71
+          },
+          "2024": {
+            "decisions": 162,
+            "losses": 76,
+            "n": 164,
+            "pushes": 2,
+            "win_rate": 0.5309,
+            "wins": 86
+          },
+          "2025": {
+            "decisions": 133,
+            "losses": 69,
+            "n": 134,
+            "pushes": 1,
+            "win_rate": 0.4812,
+            "wins": 64
+          }
+        },
+        "wilson_95": [
+          0.4547,
+          0.5476
+        ],
+        "win_rate": 0.5011,
+        "wins": 221
+      },
+      "3.0": {
+        "decisions": 290,
+        "historical_verdict": "NO_HISTORICAL_RELEASE_EVIDENCE",
+        "losses": 147,
+        "minus110_break_even": 0.5238,
+        "n": 297,
+        "pushes": 7,
+        "seasons": {
+          "2023": {
+            "decisions": 93,
+            "losses": 51,
+            "n": 99,
+            "pushes": 6,
+            "win_rate": 0.4516,
+            "wins": 42
+          },
+          "2024": {
+            "decisions": 109,
+            "losses": 52,
+            "n": 110,
+            "pushes": 1,
+            "win_rate": 0.5229,
+            "wins": 57
+          },
+          "2025": {
+            "decisions": 88,
+            "losses": 44,
+            "n": 88,
+            "pushes": 0,
+            "win_rate": 0.5,
+            "wins": 44
+          }
+        },
+        "wilson_95": [
+          0.436,
+          0.5504
+        ],
+        "win_rate": 0.4931,
+        "wins": 143
+      },
+      "4.0": {
+        "decisions": 199,
+        "historical_verdict": "NO_HISTORICAL_RELEASE_EVIDENCE",
+        "losses": 104,
+        "minus110_break_even": 0.5238,
+        "n": 201,
+        "pushes": 2,
+        "seasons": {
+          "2023": {
+            "decisions": 59,
+            "losses": 35,
+            "n": 61,
+            "pushes": 2,
+            "win_rate": 0.4068,
+            "wins": 24
+          },
+          "2024": {
+            "decisions": 81,
+            "losses": 38,
+            "n": 81,
+            "pushes": 0,
+            "win_rate": 0.5309,
+            "wins": 43
+          },
+          "2025": {
+            "decisions": 59,
+            "losses": 31,
+            "n": 59,
+            "pushes": 0,
+            "win_rate": 0.4746,
+            "wins": 28
+          }
+        },
+        "wilson_95": [
+          0.4091,
+          0.5466
+        ],
+        "win_rate": 0.4774,
+        "wins": 95
+      },
+      "5.0": {
+        "decisions": 126,
+        "historical_verdict": "NO_HISTORICAL_RELEASE_EVIDENCE",
+        "losses": 65,
+        "minus110_break_even": 0.5238,
+        "n": 126,
+        "pushes": 0,
+        "seasons": {
+          "2023": {
+            "decisions": 30,
+            "losses": 19,
+            "n": 30,
+            "pushes": 0,
+            "win_rate": 0.3667,
+            "wins": 11
+          },
+          "2024": {
+            "decisions": 59,
+            "losses": 25,
+            "n": 59,
+            "pushes": 0,
+            "win_rate": 0.5763,
+            "wins": 34
+          },
+          "2025": {
+            "decisions": 37,
+            "losses": 21,
+            "n": 37,
+            "pushes": 0,
+            "win_rate": 0.4324,
+            "wins": 16
+          }
+        },
+        "wilson_95": [
+          0.3986,
+          0.5706
+        ],
+        "win_rate": 0.4841,
+        "wins": 61
+      },
+      "6.0": {
+        "decisions": 78,
+        "historical_verdict": "INSUFFICIENT_SAMPLE",
+        "losses": 39,
+        "minus110_break_even": 0.5238,
+        "n": 78,
+        "pushes": 0,
+        "seasons": {
+          "2023": {
+            "decisions": 17,
+            "losses": 11,
+            "n": 17,
+            "pushes": 0,
+            "win_rate": 0.3529,
+            "wins": 6
+          },
+          "2024": {
+            "decisions": 38,
+            "losses": 16,
+            "n": 38,
+            "pushes": 0,
+            "win_rate": 0.5789,
+            "wins": 22
+          },
+          "2025": {
+            "decisions": 23,
+            "losses": 12,
+            "n": 23,
+            "pushes": 0,
+            "win_rate": 0.4783,
+            "wins": 11
+          }
+        },
+        "wilson_95": [
+          0.3917,
+          0.6083
+        ],
+        "win_rate": 0.5,
+        "wins": 39
+      },
+      "7.0": {
+        "decisions": 48,
+        "historical_verdict": "INSUFFICIENT_SAMPLE",
+        "losses": 25,
+        "minus110_break_even": 0.5238,
+        "n": 48,
+        "pushes": 0,
+        "seasons": {
+          "2023": {
+            "decisions": 13,
+            "losses": 8,
+            "n": 13,
+            "pushes": 0,
+            "win_rate": 0.3846,
+            "wins": 5
+          },
+          "2024": {
+            "decisions": 25,
+            "losses": 12,
+            "n": 25,
+            "pushes": 0,
+            "win_rate": 0.52,
+            "wins": 13
+          },
+          "2025": {
+            "decisions": 10,
+            "losses": 5,
+            "n": 10,
+            "pushes": 0,
+            "win_rate": 0.5,
+            "wins": 5
+          }
+        },
+        "wilson_95": [
+          0.3447,
+          0.6167
+        ],
+        "win_rate": 0.4792,
+        "wins": 23
+      },
+      "8.0": {
+        "decisions": 33,
+        "historical_verdict": "INSUFFICIENT_SAMPLE",
+        "losses": 15,
+        "minus110_break_even": 0.5238,
+        "n": 33,
+        "pushes": 0,
+        "seasons": {
+          "2023": {
+            "decisions": 8,
+            "losses": 4,
+            "n": 8,
+            "pushes": 0,
+            "win_rate": 0.5,
+            "wins": 4
+          },
+          "2024": {
+            "decisions": 16,
+            "losses": 7,
+            "n": 16,
+            "pushes": 0,
+            "win_rate": 0.5625,
+            "wins": 9
+          },
+          "2025": {
+            "decisions": 9,
+            "losses": 4,
+            "n": 9,
+            "pushes": 0,
+            "win_rate": 0.5556,
+            "wins": 5
+          }
+        },
+        "wilson_95": [
+          0.3799,
+          0.7016
+        ],
+        "win_rate": 0.5455,
+        "wins": 18
+      }
+    },
+    "total": {
+      "0.0": {
+        "decisions": 811,
+        "historical_verdict": "NO_HISTORICAL_RELEASE_EVIDENCE",
+        "losses": 402,
+        "minus110_break_even": 0.5238,
+        "n": 816,
+        "pushes": 5,
+        "seasons": {
+          "2023": {
+            "decisions": 270,
+            "losses": 126,
+            "n": 272,
+            "pushes": 2,
+            "win_rate": 0.5333,
+            "wins": 144
+          },
+          "2024": {
+            "decisions": 269,
+            "losses": 133,
+            "n": 272,
+            "pushes": 3,
+            "win_rate": 0.5056,
+            "wins": 136
+          },
+          "2025": {
+            "decisions": 272,
+            "losses": 143,
+            "n": 272,
+            "pushes": 0,
+            "win_rate": 0.4743,
+            "wins": 129
+          }
+        },
+        "wilson_95": [
+          0.47,
+          0.5386
+        ],
+        "win_rate": 0.5043,
+        "wins": 409
+      },
+      "1.0": {
+        "decisions": 610,
+        "historical_verdict": "NO_HISTORICAL_RELEASE_EVIDENCE",
+        "losses": 312,
+        "minus110_break_even": 0.5238,
+        "n": 614,
+        "pushes": 4,
+        "seasons": {
+          "2023": {
+            "decisions": 193,
+            "losses": 96,
+            "n": 194,
+            "pushes": 1,
+            "win_rate": 0.5026,
+            "wins": 97
+          },
+          "2024": {
+            "decisions": 205,
+            "losses": 102,
+            "n": 208,
+            "pushes": 3,
+            "win_rate": 0.5024,
+            "wins": 103
+          },
+          "2025": {
+            "decisions": 212,
+            "losses": 114,
+            "n": 212,
+            "pushes": 0,
+            "win_rate": 0.4623,
+            "wins": 98
+          }
+        },
+        "wilson_95": [
+          0.4491,
+          0.5281
+        ],
+        "win_rate": 0.4885,
+        "wins": 298
+      },
+      "2.0": {
+        "decisions": 439,
+        "historical_verdict": "NO_HISTORICAL_RELEASE_EVIDENCE",
+        "losses": 233,
+        "minus110_break_even": 0.5238,
+        "n": 442,
+        "pushes": 3,
+        "seasons": {
+          "2023": {
+            "decisions": 133,
+            "losses": 66,
+            "n": 134,
+            "pushes": 1,
+            "win_rate": 0.5038,
+            "wins": 67
+          },
+          "2024": {
+            "decisions": 148,
+            "losses": 78,
+            "n": 150,
+            "pushes": 2,
+            "win_rate": 0.473,
+            "wins": 70
+          },
+          "2025": {
+            "decisions": 158,
+            "losses": 89,
+            "n": 158,
+            "pushes": 0,
+            "win_rate": 0.4367,
+            "wins": 69
+          }
+        },
+        "wilson_95": [
+          0.423,
+          0.516
+        ],
+        "win_rate": 0.4692,
+        "wins": 206
+      },
+      "3.0": {
+        "decisions": 309,
+        "historical_verdict": "NO_HISTORICAL_RELEASE_EVIDENCE",
+        "losses": 161,
+        "minus110_break_even": 0.5238,
+        "n": 312,
+        "pushes": 3,
+        "seasons": {
+          "2023": {
+            "decisions": 101,
+            "losses": 53,
+            "n": 102,
+            "pushes": 1,
+            "win_rate": 0.4752,
+            "wins": 48
+          },
+          "2024": {
+            "decisions": 96,
+            "losses": 44,
+            "n": 98,
+            "pushes": 2,
+            "win_rate": 0.5417,
+            "wins": 52
+          },
+          "2025": {
+            "decisions": 112,
+            "losses": 64,
+            "n": 112,
+            "pushes": 0,
+            "win_rate": 0.4286,
+            "wins": 48
+          }
+        },
+        "wilson_95": [
+          0.4239,
+          0.5346
+        ],
+        "win_rate": 0.479,
+        "wins": 148
+      },
+      "4.0": {
+        "decisions": 195,
+        "historical_verdict": "NO_HISTORICAL_RELEASE_EVIDENCE",
+        "losses": 100,
+        "minus110_break_even": 0.5238,
+        "n": 197,
+        "pushes": 2,
+        "seasons": {
+          "2023": {
+            "decisions": 58,
+            "losses": 31,
+            "n": 59,
+            "pushes": 1,
+            "win_rate": 0.4655,
+            "wins": 27
+          },
+          "2024": {
+            "decisions": 66,
+            "losses": 30,
+            "n": 67,
+            "pushes": 1,
+            "win_rate": 0.5455,
+            "wins": 36
+          },
+          "2025": {
+            "decisions": 71,
+            "losses": 39,
+            "n": 71,
+            "pushes": 0,
+            "win_rate": 0.4507,
+            "wins": 32
+          }
+        },
+        "wilson_95": [
+          0.418,
+          0.5569
+        ],
+        "win_rate": 0.4872,
+        "wins": 95
+      },
+      "5.0": {
+        "decisions": 115,
+        "historical_verdict": "NO_HISTORICAL_RELEASE_EVIDENCE",
+        "losses": 56,
+        "minus110_break_even": 0.5238,
+        "n": 117,
+        "pushes": 2,
+        "seasons": {
+          "2023": {
+            "decisions": 31,
+            "losses": 17,
+            "n": 32,
+            "pushes": 1,
+            "win_rate": 0.4516,
+            "wins": 14
+          },
+          "2024": {
+            "decisions": 41,
+            "losses": 17,
+            "n": 42,
+            "pushes": 1,
+            "win_rate": 0.5854,
+            "wins": 24
+          },
+          "2025": {
+            "decisions": 43,
+            "losses": 22,
+            "n": 43,
+            "pushes": 0,
+            "win_rate": 0.4884,
+            "wins": 21
+          }
+        },
+        "wilson_95": [
+          0.4228,
+          0.6025
+        ],
+        "win_rate": 0.513,
+        "wins": 59
+      },
+      "6.0": {
+        "decisions": 70,
+        "historical_verdict": "INSUFFICIENT_SAMPLE",
+        "losses": 35,
+        "minus110_break_even": 0.5238,
+        "n": 71,
+        "pushes": 1,
+        "seasons": {
+          "2023": {
+            "decisions": 21,
+            "losses": 11,
+            "n": 21,
+            "pushes": 0,
+            "win_rate": 0.4762,
+            "wins": 10
+          },
+          "2024": {
+            "decisions": 26,
+            "losses": 12,
+            "n": 27,
+            "pushes": 1,
+            "win_rate": 0.5385,
+            "wins": 14
+          },
+          "2025": {
+            "decisions": 23,
+            "losses": 12,
+            "n": 23,
+            "pushes": 0,
+            "win_rate": 0.4783,
+            "wins": 11
+          }
+        },
+        "wilson_95": [
+          0.386,
+          0.614
+        ],
+        "win_rate": 0.5,
+        "wins": 35
+      },
+      "7.0": {
+        "decisions": 37,
+        "historical_verdict": "INSUFFICIENT_SAMPLE",
+        "losses": 19,
+        "minus110_break_even": 0.5238,
+        "n": 37,
+        "pushes": 0,
+        "seasons": {
+          "2023": {
+            "decisions": 10,
+            "losses": 6,
+            "n": 10,
+            "pushes": 0,
+            "win_rate": 0.4,
+            "wins": 4
+          },
+          "2024": {
+            "decisions": 13,
+            "losses": 4,
+            "n": 13,
+            "pushes": 0,
+            "win_rate": 0.6923,
+            "wins": 9
+          },
+          "2025": {
+            "decisions": 14,
+            "losses": 9,
+            "n": 14,
+            "pushes": 0,
+            "win_rate": 0.3571,
+            "wins": 5
+          }
+        },
+        "wilson_95": [
+          0.3345,
+          0.6411
+        ],
+        "win_rate": 0.4865,
+        "wins": 18
+      },
+      "8.0": {
+        "decisions": 22,
+        "historical_verdict": "INSUFFICIENT_SAMPLE",
+        "losses": 11,
+        "minus110_break_even": 0.5238,
+        "n": 22,
+        "pushes": 0,
+        "seasons": {
+          "2023": {
+            "decisions": 8,
+            "losses": 4,
+            "n": 8,
+            "pushes": 0,
+            "win_rate": 0.5,
+            "wins": 4
+          },
+          "2024": {
+            "decisions": 7,
+            "losses": 3,
+            "n": 7,
+            "pushes": 0,
+            "win_rate": 0.5714,
+            "wins": 4
+          },
+          "2025": {
+            "decisions": 7,
+            "losses": 4,
+            "n": 7,
+            "pushes": 0,
+            "win_rate": 0.4286,
+            "wins": 3
+          }
+        },
+        "wilson_95": [
+          0.3072,
+          0.6928
+        ],
+        "win_rate": 0.5,
+        "wins": 11
+      }
+    }
+  },
+  "folds": {
+    "2023": {
+      "spread": {
+        "absolute_error_quantiles": {
+          "0.5": 8.376,
+          "0.68": 13.4494,
+          "0.75": 16.4021,
+          "0.8": 18.2283,
+          "0.9": 22.835,
+          "0.95": 26.964
+        },
+        "bias_pred_minus_actual": -0.6309,
+        "mae": 10.5036,
+        "n": 272,
+        "rmse": 13.7234,
+        "signed_actual_minus_pred_quantiles": {
+          "0.05": -22.2264,
+          "0.1": -17.0217,
+          "0.16": -11.5518,
+          "0.25": -7.5132,
+          "0.5": -0.5152,
+          "0.75": 9.1519,
+          "0.84": 14.6787,
+          "0.9": 18.4253,
+          "0.95": 23.5821
+        }
+      },
+      "total": {
+        "absolute_error_quantiles": {
+          "0.5": 8.353,
+          "0.68": 13.0969,
+          "0.75": 14.723,
+          "0.8": 16.8337,
+          "0.9": 22.7647,
+          "0.95": 26.812
+        },
+        "bias_pred_minus_actual": -0.9916,
+        "mae": 10.5069,
+        "n": 272,
+        "rmse": 13.6117,
+        "signed_actual_minus_pred_quantiles": {
+          "0.05": -18.7984,
+          "0.1": -14.3605,
+          "0.16": -11.3433,
+          "0.25": -7.846,
+          "0.5": -0.9162,
+          "0.75": 9.1759,
+          "0.84": 14.6565,
+          "0.9": 20.4763,
+          "0.95": 24.7272
+        }
+      }
+    },
+    "2024": {
+      "spread": {
+        "absolute_error_quantiles": {
+          "0.5": 7.7924,
+          "0.68": 12.5444,
+          "0.75": 14.82,
+          "0.8": 16.9529,
+          "0.9": 23.4566,
+          "0.95": 27.1473
+        },
+        "bias_pred_minus_actual": 0.5145,
+        "mae": 10.0135,
+        "n": 272,
+        "rmse": 13.185,
+        "signed_actual_minus_pred_quantiles": {
+          "0.05": -22.2174,
+          "0.1": -16.5769,
+          "0.16": -12.4123,
+          "0.25": -8.5137,
+          "0.5": -1.1569,
+          "0.75": 6.7849,
+          "0.84": 12.3816,
+          "0.9": 17.11,
+          "0.95": 23.738
+        }
+      },
+      "total": {
+        "absolute_error_quantiles": {
+          "0.5": 7.3208,
+          "0.68": 12.2698,
+          "0.75": 14.1128,
+          "0.8": 15.8638,
+          "0.9": 22.2604,
+          "0.95": 27.3629
+        },
+        "bias_pred_minus_actual": -2.2116,
+        "mae": 10.0708,
+        "n": 272,
+        "rmse": 13.1663,
+        "signed_actual_minus_pred_quantiles": {
+          "0.05": -16.6343,
+          "0.1": -13.5244,
+          "0.16": -10.1295,
+          "0.25": -6.5963,
+          "0.5": 2.5039,
+          "0.75": 9.1371,
+          "0.84": 13.8396,
+          "0.9": 17.9896,
+          "0.95": 23.9168
+        }
+      }
+    },
+    "2025": {
+      "spread": {
+        "absolute_error_quantiles": {
+          "0.5": 8.054,
+          "0.68": 12.3437,
+          "0.75": 14.8473,
+          "0.8": 16.5844,
+          "0.9": 21.8954,
+          "0.95": 25.3236
+        },
+        "bias_pred_minus_actual": 0.0785,
+        "mae": 10.2521,
+        "n": 272,
+        "rmse": 12.9507,
+        "signed_actual_minus_pred_quantiles": {
+          "0.05": -21.0645,
+          "0.1": -15.8189,
+          "0.16": -12.3804,
+          "0.25": -8.0337,
+          "0.5": -0.7979,
+          "0.75": 7.9815,
+          "0.84": 12.2787,
+          "0.9": 17.4795,
+          "0.95": 22.2144
+        }
+      },
+      "total": {
+        "absolute_error_quantiles": {
+          "0.5": 9.5468,
+          "0.68": 13.9094,
+          "0.75": 15.6347,
+          "0.8": 16.8109,
+          "0.9": 22.5703,
+          "0.95": 27.6329
+        },
+        "bias_pred_minus_actual": -0.6136,
+        "mae": 10.9227,
+        "n": 272,
+        "rmse": 13.7034,
+        "signed_actual_minus_pred_quantiles": {
+          "0.05": -20.2818,
+          "0.1": -16.0021,
+          "0.16": -13.461,
+          "0.25": -9.5398,
+          "0.5": -0.1352,
+          "0.75": 9.4427,
+          "0.84": 14.6897,
+          "0.9": 18.8033,
+          "0.95": 26.5954
+        }
+      }
+    }
+  },
+  "frozen_params": {
+    "coverage": {
+      "feature_k": 1.0,
+      "lambda": 100.0,
+      "mae": 9.253145825908062,
+      "rmse": 12.11675150556487,
+      "team_k": 8.0
+    },
+    "ratings": {
+      "elo_hfa": 35.0,
+      "elo_k": 40.0,
+      "lambda": 100.0,
+      "margin_hfa": 3.0,
+      "margin_k": 0.05,
+      "offseason_regression": 0.25
+    },
+    "total": {
+      "k": 8.0,
+      "lambda": 100.0,
+      "mae": 10.805254515528455,
+      "n": 91,
+      "rmse": 13.633007925124653
+    }
+  },
+  "games": 816,
+  "generated_at_utc": "2026-10-17T22:51:36.332591+00:00",
+  "market_policy": "Historical schedule/market references are calibration benchmarks only; no executable price or juice assumed, so no ROI is reported.",
+  "release_state": "HOLD_CALIBRATION_RESEARCH",
+  "website_publish_allowed": false,
+  "week_buckets": {
+    "spread": {
+      "weeks_13_18": {
+        "absolute_error_quantiles": {
+          "0.5": 8.6925,
+          "0.68": 13.5691,
+          "0.75": 15.6701,
+          "0.8": 17.0701,
+          "0.9": 21.7514,
+          "0.95": 25.0084
+        },
+        "bias_pred_minus_actual": -0.0522,
+        "mae": 10.4613,
+        "n": 279,
+        "rmse": 13.1505,
+        "signed_actual_minus_pred_quantiles": {
+          "0.05": -22.2254,
+          "0.1": -15.7204,
+          "0.16": -12.2982,
+          "0.25": -8.6631,
+          "0.5": -1.3002,
+          "0.75": 8.6632,
+          "0.84": 14.8435,
+          "0.9": 17.6729,
+          "0.95": 20.0375
+        }
+      },
+      "weeks_1_5": {
+        "absolute_error_quantiles": {
+          "0.5": 7.6906,
+          "0.68": 12.237,
+          "0.75": 16.069,
+          "0.8": 18.4429,
+          "0.9": 24.4817,
+          "0.95": 27.7712
+        },
+        "bias_pred_minus_actual": 0.1923,
+        "mae": 10.5975,
+        "n": 234,
+        "rmse": 14.0915,
+        "signed_actual_minus_pred_quantiles": {
+          "0.05": -22.978,
+          "0.1": -17.5595,
+          "0.16": -11.312,
+          "0.25": -7.7358,
+          "0.5": -1.2559,
+          "0.75": 7.3838,
+          "0.84": 13.1742,
+          "0.9": 19.0694,
+          "0.95": 25.7393
+        }
+      },
+      "weeks_6_12": {
+        "absolute_error_quantiles": {
+          "0.5": 7.5913,
+          "0.68": 12.2942,
+          "0.75": 14.6145,
+          "0.8": 16.5285,
+          "0.9": 21.8873,
+          "0.95": 26.5334
+        },
+        "bias_pred_minus_actual": -0.1344,
+        "mae": 9.8043,
+        "n": 303,
+        "rmse": 12.7708,
+        "signed_actual_minus_pred_quantiles": {
+          "0.05": -19.9919,
+          "0.1": -16.3764,
+          "0.16": -12.9298,
+          "0.25": -7.5102,
+          "0.5": 0.1015,
+          "0.75": 7.4452,
+          "0.84": 11.9344,
+          "0.9": 16.5935,
+          "0.95": 21.943
+        }
+      }
+    },
+    "total": {
+      "weeks_13_18": {
+        "absolute_error_quantiles": {
+          "0.5": 8.8584,
+          "0.68": 14.3692,
+          "0.75": 16.4442,
+          "0.8": 17.6857,
+          "0.9": 24.405,
+          "0.95": 29.905
+        },
+        "bias_pred_minus_actual": -1.7591,
+        "mae": 11.3191,
+        "n": 279,
+        "rmse": 14.7614,
+        "signed_actual_minus_pred_quantiles": {
+          "0.05": -18.8269,
+          "0.1": -15.5724,
+          "0.16": -11.0737,
+          "0.25": -7.8322,
+          "0.5": 1.2547,
+          "0.75": 9.8799,
+          "0.84": 17.1069,
+          "0.9": 22.3098,
+          "0.95": 28.0309
+        }
+      },
+      "weeks_1_5": {
+        "absolute_error_quantiles": {
+          "0.5": 8.1775,
+          "0.68": 13.1469,
+          "0.75": 14.7915,
+          "0.8": 15.8339,
+          "0.9": 21.1064,
+          "0.95": 24.8485
+        },
+        "bias_pred_minus_actual": -1.677,
+        "mae": 10.2438,
+        "n": 234,
+        "rmse": 12.8975,
+        "signed_actual_minus_pred_quantiles": {
+          "0.05": -16.8378,
+          "0.1": -14.0187,
+          "0.16": -11.1944,
+          "0.25": -7.7221,
+          "0.5": 0.6879,
+          "0.75": 9.7424,
+          "0.84": 14.7858,
+          "0.9": 19.197,
+          "0.95": 24.8485
+        }
+      },
+      "weeks_6_12": {
+        "absolute_error_quantiles": {
+          "0.5": 8.1066,
+          "0.68": 12.6574,
+          "0.75": 13.9544,
+          "0.8": 15.3168,
+          "0.9": 20.8346,
+          "0.95": 25.3692
+        },
+        "bias_pred_minus_actual": -0.5114,
+        "mae": 9.9439,
+        "n": 303,
+        "rmse": 12.7046,
+        "signed_actual_minus_pred_quantiles": {
+          "0.05": -20.0191,
+          "0.1": -15.0863,
+          "0.16": -12.5594,
+          "0.25": -7.3134,
+          "0.5": -0.1203,
+          "0.75": 8.7363,
+          "0.84": 12.9849,
+          "0.9": 15.547,
+          "0.95": 22.526
+        }
+      }
+    }
+  }
+}
