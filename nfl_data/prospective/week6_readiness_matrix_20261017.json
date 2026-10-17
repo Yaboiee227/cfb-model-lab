@@ -1,7 +1,7 @@
 {
   "capture_created_at_utc": "2026-10-17T22:59:10.614579+00:00",
   "capture_policy": "Public sportsbook web-board capture. Prices may move and may differ by jurisdiction/account. This is not proof of an executable price in the user's logged-in account.",
-  "generated_at_utc": "2026-10-17T23:09:42.962563+00:00",
+  "generated_at_utc": "2026-10-17T23:28:01.751243+00:00",
   "policy": "Readiness matrix only. Does not modify locked projection or create recommendations.",
   "promotion_policy": "Prospective outcomes must be accumulated across timestamped weeks before any betting threshold or alt-line logic can be promoted.",
   "rows": [
@@ -18,7 +18,7 @@
       "home_team": "JAX",
       "model_home_margin": 4.113,
       "model_total": 44.9,
-      "personnel_state": "NO_QB_BREAK_IDENTIFIED_CURRENT_REPORT_FINAL_INACTIVES_PENDING",
+      "personnel_state": "FINAL_STATUS_REPORT_AVAILABLE_NO_QB_BREAK_FINAL_INACTIVES_PENDING",
       "public_book_capture_state": "CAPTURED_TIMESTAMPED_PUBLIC_WEB_BOARD",
       "recommendation": "HOLD_NO_VALIDATED_EDGE_THRESHOLD",
       "release_blockers": "NO_VALIDATED_EDGE_THRESHOLD|FINAL_WEATHER_OR_ROOF_PENDING|USER_ACCOUNT_EXECUTION_NOT_VERIFIED",
@@ -28,7 +28,7 @@
       "total_disagreement_vs_betmgm": 2.4,
       "user_account_execution_verified": false,
       "weather_roof_final_for_release": false,
-      "weather_roof_state": "LONDON_OUTDOOR_FORECAST_REFRESH_REQUIRED",
+      "weather_roof_state": "OUTDOOR_FORECAST_CHECKED_LOW_IMPACT_AT_KICKOFF_GAME_DAY_CONFIRMATION_PENDING",
       "website_publish_allowed": false
     },
     {
@@ -44,7 +44,7 @@
       "home_team": "CLE",
       "model_home_margin": -7.174,
       "model_total": 43.523,
-      "personnel_state": "HARD_QB_BREAK_AWAY_CONFIRMED",
+      "personnel_state": "HARD_QB_BREAK_AWAY_CONFIRMED_FINAL_STATUS_REPORT_AVAILABLE",
       "public_book_capture_state": "CAPTURED_TIMESTAMPED_PUBLIC_WEB_BOARD",
       "recommendation": "HOLD_NO_VALIDATED_EDGE_THRESHOLD",
       "release_blockers": "NO_VALIDATED_EDGE_THRESHOLD|HARD_QB_STATE_BREAK|FINAL_WEATHER_OR_ROOF_PENDING|USER_ACCOUNT_EXECUTION_NOT_VERIFIED",
@@ -54,7 +54,7 @@
       "total_disagreement_vs_betmgm": 4.023,
       "user_account_execution_verified": false,
       "weather_roof_final_for_release": false,
-      "weather_roof_state": "OUTDOOR_FINAL_FORECAST_REFRESH_REQUIRED",
+      "weather_roof_state": "OUTDOOR_FORECAST_CHECKED_LOW_IMPACT_GAME_DAY_CONFIRMATION_PENDING",
       "website_publish_allowed": false
     },
     {
@@ -70,7 +70,7 @@
       "home_team": "PHI",
       "model_home_margin": -2.879,
       "model_total": 43.914,
-      "personnel_state": "HARD_QB_BREAK_HOME_CONFIRMED",
+      "personnel_state": "HARD_QB_BREAK_HOME_CONFIRMED_MULTI_OFFENSIVE_ABSENCES_FINAL_STATUS_REPORT_AVAILABLE",
       "public_book_capture_state": "CAPTURED_TIMESTAMPED_PUBLIC_WEB_BOARD",
       "recommendation": "HOLD_NO_VALIDATED_EDGE_THRESHOLD",
       "release_blockers": "NO_VALIDATED_EDGE_THRESHOLD|HARD_QB_STATE_BREAK|FINAL_WEATHER_OR_ROOF_PENDING|USER_ACCOUNT_EXECUTION_NOT_VERIFIED",
@@ -80,7 +80,7 @@
       "total_disagreement_vs_betmgm": 4.914,
       "user_account_execution_verified": false,
       "weather_roof_final_for_release": false,
-      "weather_roof_state": "OUTDOOR_FINAL_FORECAST_REFRESH_REQUIRED",
+      "weather_roof_state": "OUTDOOR_FORECAST_CHECKED_LOW_IMPACT_GAME_DAY_CONFIRMATION_PENDING",
       "website_publish_allowed": false
     },
     {
@@ -96,7 +96,7 @@
       "home_team": "ATL",
       "model_home_margin": -0.409,
       "model_total": 44.916,
-      "personnel_state": "QB_RETURN_EXPECTED_AWAY_FINAL_ACTIVE_STATUS_PENDING",
+      "personnel_state": "QB_RETURN_EXPECTED_AWAY_REPORTED_STARTER_FINAL_ACTIVE_STATUS_PENDING",
       "public_book_capture_state": "CAPTURED_TIMESTAMPED_PUBLIC_WEB_BOARD",
       "recommendation": "HOLD_NO_VALIDATED_EDGE_THRESHOLD",
       "release_blockers": "NO_VALIDATED_EDGE_THRESHOLD|FINAL_WEATHER_OR_ROOF_PENDING|USER_ACCOUNT_EXECUTION_NOT_VERIFIED",
@@ -106,7 +106,7 @@
       "total_disagreement_vs_betmgm": -7.084,
       "user_account_execution_verified": false,
       "weather_roof_final_for_release": false,
-      "weather_roof_state": "ATLANTA_RETRACTABLE_ROOF_DECISION_PENDING",
+      "weather_roof_state": "ATLANTA_RETRACTABLE_ROOF_DECISION_PENDING_EXTERNAL_FORECAST_LOW_RISK",
       "website_publish_allowed": false
     },
     {
@@ -122,7 +122,7 @@
       "home_team": "NYG",
       "model_home_margin": 5.846,
       "model_total": 44.584,
-      "personnel_state": "NO_QB_BREAK_IDENTIFIED_NONQB_UNCERTAINTY_REMAINS",
+      "personnel_state": "FINAL_STATUS_REPORT_AVAILABLE_NO_QB_BREAK_NONQB_UNCERTAINTY_FINAL_INACTIVES_PENDING",
       "public_book_capture_state": "CAPTURED_TIMESTAMPED_PUBLIC_WEB_BOARD",
       "recommendation": "HOLD_NO_VALIDATED_EDGE_THRESHOLD",
       "release_blockers": "NO_VALIDATED_EDGE_THRESHOLD|FINAL_WEATHER_OR_ROOF_PENDING|USER_ACCOUNT_EXECUTION_NOT_VERIFIED",
@@ -132,7 +132,7 @@
       "total_disagreement_vs_betmgm": -1.416,
       "user_account_execution_verified": false,
       "weather_roof_final_for_release": false,
-      "weather_roof_state": "OUTDOOR_FINAL_FORECAST_REFRESH_REQUIRED",
+      "weather_roof_state": "OUTDOOR_FORECAST_CHECKED_LOW_IMPACT_GAME_DAY_CONFIRMATION_PENDING",
       "website_publish_allowed": false
     },
     {
@@ -148,7 +148,7 @@
       "home_team": "NE",
       "model_home_margin": 11.012,
       "model_total": 46.378,
-      "personnel_state": "NO_QB_BREAK_IDENTIFIED_MAJOR_NONQB_ABSENCES",
+      "personnel_state": "FINAL_STATUS_REPORT_AVAILABLE_NO_QB_BREAK_MAJOR_NONQB_ABSENCES_FINAL_INACTIVES_PENDING",
       "public_book_capture_state": "CAPTURED_TIMESTAMPED_PUBLIC_WEB_BOARD",
       "recommendation": "HOLD_NO_VALIDATED_EDGE_THRESHOLD",
       "release_blockers": "NO_VALIDATED_EDGE_THRESHOLD|FINAL_WEATHER_OR_ROOF_PENDING|USER_ACCOUNT_EXECUTION_NOT_VERIFIED",
@@ -158,7 +158,7 @@
       "total_disagreement_vs_betmgm": 2.878,
       "user_account_execution_verified": false,
       "weather_roof_final_for_release": false,
-      "weather_roof_state": "OUTDOOR_FINAL_FORECAST_REFRESH_REQUIRED",
+      "weather_roof_state": "OUTDOOR_FORECAST_CHECKED_LOW_IMPACT_GAME_DAY_CONFIRMATION_PENDING",
       "website_publish_allowed": false
     },
     {
@@ -174,7 +174,7 @@
       "home_team": "TB",
       "model_home_margin": 2.027,
       "model_total": 45.459,
-      "personnel_state": "HARD_QB_BREAK_HOME_CONFIRMED",
+      "personnel_state": "HARD_QB_BREAK_HOME_CONFIRMED_FINAL_STATUS_REPORT_AVAILABLE",
       "public_book_capture_state": "CAPTURED_TIMESTAMPED_PUBLIC_WEB_BOARD",
       "recommendation": "HOLD_NO_VALIDATED_EDGE_THRESHOLD",
       "release_blockers": "NO_VALIDATED_EDGE_THRESHOLD|HARD_QB_STATE_BREAK|FINAL_WEATHER_OR_ROOF_PENDING|USER_ACCOUNT_EXECUTION_NOT_VERIFIED",
@@ -184,7 +184,7 @@
       "total_disagreement_vs_betmgm": 6.459,
       "user_account_execution_verified": false,
       "weather_roof_final_for_release": false,
-      "weather_roof_state": "OUTDOOR_BREEZY_FORECAST_FINAL_REFRESH_REQUIRED",
+      "weather_roof_state": "OUTDOOR_FORECAST_CHECKED_ELEVATED_WIND_GAME_DAY_CONFIRMATION_PENDING",
       "website_publish_allowed": false
     },
     {
@@ -200,7 +200,7 @@
       "home_team": "IND",
       "model_home_margin": 7.105,
       "model_total": 42.188,
-      "personnel_state": "NO_QB_BREAK_IDENTIFIED_FINAL_INACTIVES_PENDING",
+      "personnel_state": "FINAL_STATUS_REPORT_AVAILABLE_NO_QB_BREAK_FINAL_INACTIVES_PENDING",
       "public_book_capture_state": "CAPTURED_TIMESTAMPED_PUBLIC_WEB_BOARD",
       "recommendation": "HOLD_NO_VALIDATED_EDGE_THRESHOLD",
       "release_blockers": "NO_VALIDATED_EDGE_THRESHOLD|FINAL_WEATHER_OR_ROOF_PENDING|USER_ACCOUNT_EXECUTION_NOT_VERIFIED",
@@ -210,7 +210,7 @@
       "total_disagreement_vs_betmgm": -2.312,
       "user_account_execution_verified": false,
       "weather_roof_final_for_release": false,
-      "weather_roof_state": "INDIANAPOLIS_RETRACTABLE_ROOF_DECISION_PENDING",
+      "weather_roof_state": "INDIANAPOLIS_RETRACTABLE_ROOF_AND_WINDOW_TBD_OFFICIAL",
       "website_publish_allowed": false
     },
     {
@@ -226,7 +226,7 @@
       "home_team": "LA",
       "model_home_margin": 10.161,
       "model_total": 48.374,
-      "personnel_state": "NO_QB_BREAK_IDENTIFIED_NONQB_UNCERTAINTY_REMAINS",
+      "personnel_state": "FINAL_STATUS_REPORT_AVAILABLE_NO_QB_BREAK_NONQB_UNCERTAINTY_FINAL_INACTIVES_PENDING",
       "public_book_capture_state": "CAPTURED_TIMESTAMPED_PUBLIC_WEB_BOARD",
       "recommendation": "HOLD_NO_VALIDATED_EDGE_THRESHOLD",
       "release_blockers": "NO_VALIDATED_EDGE_THRESHOLD|USER_ACCOUNT_EXECUTION_NOT_VERIFIED",
@@ -252,7 +252,7 @@
       "home_team": "LV",
       "model_home_margin": -6.942,
       "model_total": 48.188,
-      "personnel_state": "NO_QB_BREAK_IDENTIFIED_NONQB_UNCERTAINTY_REMAINS",
+      "personnel_state": "FINAL_STATUS_REPORT_AVAILABLE_NO_QB_BREAK_NONQB_UNCERTAINTY_FINAL_INACTIVES_PENDING",
       "public_book_capture_state": "CAPTURED_TIMESTAMPED_PUBLIC_WEB_BOARD",
       "recommendation": "HOLD_NO_VALIDATED_EDGE_THRESHOLD",
       "release_blockers": "NO_VALIDATED_EDGE_THRESHOLD|USER_ACCOUNT_EXECUTION_NOT_VERIFIED",
@@ -278,7 +278,7 @@
       "home_team": "KC",
       "model_home_margin": 10.926,
       "model_total": 42.834,
-      "personnel_state": "NO_QB_BREAK_IDENTIFIED_MAJOR_NONQB_ABSENCES",
+      "personnel_state": "FINAL_STATUS_REPORT_AVAILABLE_NO_QB_BREAK_MAJOR_NONQB_ABSENCES_FINAL_INACTIVES_PENDING",
       "public_book_capture_state": "CAPTURED_TIMESTAMPED_PUBLIC_WEB_BOARD",
       "recommendation": "HOLD_NO_VALIDATED_EDGE_THRESHOLD",
       "release_blockers": "NO_VALIDATED_EDGE_THRESHOLD|FINAL_WEATHER_OR_ROOF_PENDING|USER_ACCOUNT_EXECUTION_NOT_VERIFIED",
@@ -288,7 +288,7 @@
       "total_disagreement_vs_betmgm": 1.334,
       "user_account_execution_verified": false,
       "weather_roof_final_for_release": false,
-      "weather_roof_state": "OUTDOOR_FINAL_FORECAST_REFRESH_REQUIRED",
+      "weather_roof_state": "OUTDOOR_FORECAST_CHECKED_LOW_TO_MODERATE_WIND_GAME_DAY_CONFIRMATION_PENDING",
       "website_publish_allowed": false
     },
     {
@@ -304,7 +304,7 @@
       "home_team": "GB",
       "model_home_margin": 3.54,
       "model_total": 50.706,
-      "personnel_state": "NO_QB_BREAK_IDENTIFIED_FINAL_INACTIVES_PENDING",
+      "personnel_state": "FINAL_STATUS_REPORT_AVAILABLE_NO_QB_BREAK_FINAL_INACTIVES_PENDING",
       "public_book_capture_state": "CAPTURED_TIMESTAMPED_PUBLIC_WEB_BOARD",
       "recommendation": "HOLD_NO_VALIDATED_EDGE_THRESHOLD",
       "release_blockers": "NO_VALIDATED_EDGE_THRESHOLD|FINAL_WEATHER_OR_ROOF_PENDING|USER_ACCOUNT_EXECUTION_NOT_VERIFIED",
@@ -314,7 +314,7 @@
       "total_disagreement_vs_betmgm": -2.294,
       "user_account_execution_verified": false,
       "weather_roof_final_for_release": false,
-      "weather_roof_state": "OUTDOOR_WIND_MONITOR_FINAL_FORECAST_REQUIRED",
+      "weather_roof_state": "OUTDOOR_FORECAST_CHECKED_MODERATE_WIND_GAME_DAY_CONFIRMATION_PENDING",
       "website_publish_allowed": false
     },
     {
@@ -330,7 +330,7 @@
       "home_team": "SF",
       "model_home_margin": 10.958,
       "model_total": 48.049,
-      "personnel_state": "MONDAY_FINAL_STATUS_PENDING_NO_CONFIRMED_QB_BREAK",
+      "personnel_state": "MONDAY_FINAL_STATUS_REPORT_AVAILABLE_NO_CONFIRMED_STARTER_QB_BREAK_FINAL_INACTIVES_PENDING",
       "public_book_capture_state": "CAPTURED_TIMESTAMPED_PUBLIC_WEB_BOARD",
       "recommendation": "HOLD_NO_VALIDATED_EDGE_THRESHOLD",
       "release_blockers": "NO_VALIDATED_EDGE_THRESHOLD|FINAL_WEATHER_OR_ROOF_PENDING|USER_ACCOUNT_EXECUTION_NOT_VERIFIED",
@@ -340,7 +340,7 @@
       "total_disagreement_vs_betmgm": -3.951,
       "user_account_execution_verified": false,
       "weather_roof_final_for_release": false,
-      "weather_roof_state": "OUTDOOR_MONDAY_FINAL_FORECAST_REQUIRED",
+      "weather_roof_state": "OUTDOOR_FORECAST_CHECKED_LOW_IMPACT_MONDAY_CONFIRMATION_PENDING",
       "website_publish_allowed": false
     }
   ],
