@@ -1,0 +1,42 @@
+name: NFL rating system robustness (development only)
+
+on:
+  push:
+    branches: [nfl-model-development]
+    paths:
+      - 'scripts/validate_nfl_rating_system_robustness.py'
+      - '.github/workflows/nfl-rating-system-robustness.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  validate-rating-systems:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout isolated NFL development branch
+        uses: actions/checkout@v4
+        with:
+          ref: nfl-model-development
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install numpy pandas
+      - name: Run frozen market-independent rating validation
+        run: python scripts/validate_nfl_rating_system_robustness.py
+      - name: Commit rating robustness artifact safely
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add nfl_data/validation/rating_system_robustness.json
+          if git diff --cached --quiet; then
+            echo "No rating robustness changes to commit"
+          else
+            git commit -m "Validate NFL rating-system robustness"
+            git pull --rebase origin nfl-model-development
+            git push origin nfl-model-development
+          fi
