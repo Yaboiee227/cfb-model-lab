@@ -286,3 +286,20 @@
     scheduleEnhance();
   });
 })();
+
+(() => {
+  if (!document.querySelector('link[data-cb-model-product]')) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'model-product.css';
+    link.dataset.cbModelProduct = 'true';
+    document.head.appendChild(link);
+  }
+  if (!document.querySelector('script[data-cb-model-product]')) {
+    const script = document.createElement('script');
+    script.src = 'model-product-live.js';
+    script.async = false;
+    script.dataset.cbModelProduct = 'true';
+    document.head.appendChild(script);
+  }
+})();
