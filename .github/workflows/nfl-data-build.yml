@@ -1,0 +1,43 @@
+name: NFL model data build (development only)
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - nfl-model-development
+    paths:
+      - 'scripts/build_nfl_efficiency.py'
+      - '.github/workflows/nfl-data-build.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build-current-nfl-efficiency:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout isolated NFL development branch
+        uses: actions/checkout@v4
+        with:
+          ref: nfl-model-development
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build Week 6 pregame snapshot from Weeks 1-5 only
+        run: python scripts/build_nfl_efficiency.py
+
+      - name: Commit generated development data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add nfl_data/generated/
+          if git diff --cached --quiet; then
+            echo "No generated data changes."
+            exit 0
+          fi
+          git commit -m "Build NFL Week 6 pregame efficiency snapshot"
+          git push origin HEAD:nfl-model-development
