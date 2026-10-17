@@ -1,4 +1,14 @@
 const D = window.CFB_DATA;
+Object.assign(D, {
+  snapshotTime: "Oct 17, 2026 • 10:46 AM ET",
+  modelVersion: "Advanced Calibrated 0.9J - Prospective Qualification + Totals Shadow v1",
+  spreadValidation: "HOLD",
+  totalValidation: "HOLD",
+  openGames: 52,
+  releasedBets: 0,
+  publicationStatus: "INFO ONLY — NO RELEASED BETS",
+  note: "Model projections are informational while validation holds. Computed alternative lines marked unpriced are not executable sportsbook prices."
+});
 const $ = s => document.querySelector(s);
 const fmt = (n,d=1) => n == null || Number.isNaN(Number(n)) ? "—" : Number(n).toFixed(d);
 const line = n => n == null ? "—" : (Number(n) > 0 ? "+" : "") + fmt(n,1);
