@@ -7,7 +7,6 @@ early values remain missing rather than being fabricated.
 """
 from __future__ import annotations
 import json,math
-from collections import defaultdict
 from datetime import datetime,timezone
 from pathlib import Path
 import pandas as pd
@@ -36,7 +35,11 @@ def load_season(s):
  p=p[(pd.to_numeric(p['season'],errors='coerce')==s)&(p['season_type'].astype(str).str.upper()=='REG')].copy();p['posteam']=p['posteam'].map(nt);p['defteam']=p['defteam'].map(nt)
  f=f[pd.to_numeric(f['season'],errors='coerce')==s].copy()
  f['_gid']=f['nflverse_game_id'].astype(str);f['_pid']=pd.to_numeric(f['nflverse_play_id'],errors='coerce').astype('Int64');p['_gid']=p['game_id'].astype(str);p['_pid']=pd.to_numeric(p['play_id'],errors='coerce').astype('Int64')
- cols=['_gid','_pid','week','posteam','defteam'];j=f.merge(p[cols],how='left',on=['_gid','_pid'],validate='many_to_one')
+ # PBP is authoritative for week and possession/defense team identity. Rename
+ # those fields before merging so similarly named FTN metadata cannot shadow them.
+ pjoin=p[['_gid','_pid','week','posteam','defteam']].rename(columns={'week':'pbp_week','posteam':'pbp_posteam','defteam':'pbp_defteam'})
+ j=f.merge(pjoin,how='left',on=['_gid','_pid'],validate='many_to_one')
+ j['week']=pd.to_numeric(j['pbp_week'],errors='coerce').astype('Int64');j['posteam']=j['pbp_posteam'].map(nt);j['defteam']=j['pbp_defteam'].map(nt)
  for c in BINARY:
   if c not in j:j[c]=float('nan')
   if j[c].dtype==bool:j[c]=j[c].astype(float)
@@ -44,7 +47,6 @@ def load_season(s):
  for c in NUMERIC:
   if c not in j:j[c]=float('nan')
   j[c]=pd.to_numeric(j[c],errors='coerce')
- j['week']=pd.to_numeric(j['week'],errors='coerce').astype('Int64')
  return f,p,j
 def aggregate_rows(g,prefix=''):
  if not len(g):return {m:None for m in (OFF_METRICS if not prefix else DEF_METRICS)}
@@ -76,12 +78,12 @@ def snap(s,tw,team,off,deff,prior_off,prior_def):
  for m in ALL:r[f'cur_{m}']=clean(cur[m]);r[f'last3_{m}']=clean(rec[m]);r[f'prior_{m}']=clean(prv[m])
  r['release_state']='HOLD_RESEARCH_ONLY';return r
 def main():
- OUT_H.parent.mkdir(parents=True,exist_ok=True);OUT_C.parent.mkdir(parents=True,exist_ok=True);data={};qa={'generated_at_utc':datetime.now(timezone.utc).isoformat(),'release_state':'HOLD_RESEARCH_ONLY','website_publish_allowed':False,'postgame_shift_rule':'Target week uses FTN charting only from weeks strictly before target_week.','seasons':{}}
+ OUT_H.parent.mkdir(parents=True,exist_ok=True);OUT_C.parent.mkdir(parents=True,exist_ok=True);data={};qa={'generated_at_utc':datetime.now(timezone.utc).isoformat(),'release_state':'HOLD_RESEARCH_ONLY','website_publish_allowed':False,'postgame_shift_rule':'Target week uses FTN charting only from weeks strictly before target_week.','join_authority':'PBP supplies canonical week/posteam/defteam; FTN supplies charting labels only.','seasons':{}}
  for s in SEASONS:
-  f,p,j=load_season(s);off,deff=weekly(j);teams=sorted(set(t for t,_ in off)|set(t for t,_ in deff));data[s]=(off,deff,teams);qa['seasons'][str(s)]={'ftn_rows':len(f),'reg_pbp_rows':len(p),'joined_rows':len(j),'joined_with_team':int(j['posteam'].notna().sum()),'join_rate':round(float(j['posteam'].notna().mean()),6),'team_weeks_offense':len(off),'team_weeks_defense':len(deff),'teams':len(teams),'max_joined_week':int(j['week'].dropna().max())}
+  f,p,j=load_season(s);off,deff=weekly(j);teams=sorted(set(t for t,_ in off)|set(t for t,_ in deff));data[s]=(off,deff,teams);joined=int(j['posteam'].notna().sum());qa['seasons'][str(s)]={'ftn_rows':len(f),'reg_pbp_rows':len(p),'joined_rows':len(j),'joined_with_team':joined,'join_rate':round(joined/len(j),6) if len(j) else None,'team_weeks_offense':len(off),'team_weeks_defense':len(deff),'teams':len(teams),'max_joined_week':int(j['week'].dropna().max()) if j['week'].notna().any() else None}
  hist=[];leak=0
  for s in TARGETS:
-  off,deff,teams=data[s];prior=data.get(s-1);po=pd_ = None
+  off,deff,teams=data[s];prior=data.get(s-1)
   if prior is None:po,pd_,pt=None,None,[]
   else:po,pd_,pt=prior
   for tw in range(1,19):
