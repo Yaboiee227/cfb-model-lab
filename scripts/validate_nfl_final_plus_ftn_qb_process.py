@@ -32,13 +32,14 @@ LAMBDA_GRID = [10.0, 30.0, 100.0, 300.0]
 DRAWS = 10000
 SEED = 20261017
 
-# Frozen final-architecture rating dynamics selected before this nested test.
+# Canonical frozen final-architecture rating dynamics from
+# validate_nfl_final_architecture_calibration.py. Keep these synchronized.
 RATING = {
-    "elo_k": 10.0,
+    "elo_k": 40.0,
     "elo_hfa": 35.0,
-    "offseason_regression": 0.5,
+    "offseason_regression": 0.25,
     "margin_k": 0.05,
-    "margin_hfa": 1.5,
+    "margin_hfa": 3.0,
     "lambda": 100.0,
 }
 
