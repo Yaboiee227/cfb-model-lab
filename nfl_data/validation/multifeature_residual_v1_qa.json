@@ -1,0 +1,217 @@
+{
+  "validation_name": "NFL multifeature market-residual walk-forward v1",
+  "input": "nfl_data/historical/game_pregame_features_2022_2025.csv",
+  "features": [
+    "std_net_epa_diff",
+    "std_net_success_diff",
+    "std_pass_matchup_diff",
+    "std_rush_matchup_diff",
+    "std_pass_explosive_matchup_diff",
+    "std_rush_explosive_matchup_diff",
+    "std_sack_matchup_diff",
+    "std_neutral_pass_rate_diff",
+    "last3_net_epa_diff",
+    "last3_net_success_diff",
+    "prior_net_epa_diff",
+    "prior_net_success_diff",
+    "prior_pass_epa_diff",
+    "prior_rush_epa_diff",
+    "prior_sack_balance_diff",
+    "rest_diff",
+    "neutral_site"
+  ],
+  "evaluation_seasons": [
+    2023,
+    2024,
+    2025
+  ],
+  "anti_leakage": "all current-season source weeks < target week; same-week games excluded from training",
+  "preseason_settings": {
+    "2023": {
+      "lambda": 300.0,
+      "threshold": 0.5,
+      "tuning_train_games": 136,
+      "tuning_validation_games": 135,
+      "tuning_validation_mae": 8.61606900148611,
+      "threshold_validation_grade": {
+        "bets": 91,
+        "wins": 43,
+        "losses": 43,
+        "pushes": 5,
+        "graded": 86,
+        "win_rate_ex_push": 0.5,
+        "units_at_minus_110": -4.300000000000004,
+        "roi_at_minus_110": -0.05000000000000005
+      },
+      "lambda_candidates": [
+        1.0,
+        3.0,
+        10.0,
+        30.0,
+        100.0,
+        300.0
+      ],
+      "threshold_candidates": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0
+      ]
+    },
+    "2024": {
+      "lambda": 300.0,
+      "threshold": 0.5,
+      "tuning_train_games": 271,
+      "tuning_validation_games": 272,
+      "tuning_validation_mae": 10.015489409976292,
+      "threshold_validation_grade": {
+        "bets": 184,
+        "wins": 85,
+        "losses": 90,
+        "pushes": 9,
+        "graded": 175,
+        "win_rate_ex_push": 0.4857142857142857,
+        "units_at_minus_110": -14.000000000000014,
+        "roi_at_minus_110": -0.08000000000000008
+      },
+      "lambda_candidates": [
+        1.0,
+        3.0,
+        10.0,
+        30.0,
+        100.0,
+        300.0
+      ],
+      "threshold_candidates": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0
+      ]
+    },
+    "2025": {
+      "lambda": 300.0,
+      "threshold": 0.5,
+      "tuning_train_games": 543,
+      "tuning_validation_games": 272,
+      "tuning_validation_mae": 9.730736757278235,
+      "threshold_validation_grade": {
+        "bets": 181,
+        "wins": 87,
+        "losses": 92,
+        "pushes": 2,
+        "graded": 179,
+        "win_rate_ex_push": 0.4860335195530726,
+        "units_at_minus_110": -14.200000000000003,
+        "roi_at_minus_110": -0.0793296089385475
+      },
+      "lambda_candidates": [
+        1.0,
+        3.0,
+        10.0,
+        30.0,
+        100.0,
+        300.0
+      ],
+      "threshold_candidates": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0
+      ]
+    }
+  },
+  "overall_forecast": {
+    "games": 816,
+    "market_mae": 9.744485294117647,
+    "model_mae": 9.841032427704178,
+    "market_rmse": 12.653263839196342,
+    "model_rmse": 12.707832694401827,
+    "predicted_vs_actual_residual_correlation": -0.027058105559335726
+  },
+  "overall_selected_ats": {
+    "bets": 549,
+    "wins": 260,
+    "losses": 280,
+    "pushes": 9,
+    "win_rate_ex_push": 0.48148148148148145,
+    "units_at_minus_110": -48.0,
+    "roi_at_minus_110": -0.08888888888888889
+  },
+  "by_season": {
+    "2023": {
+      "forecast": {
+        "games": 272,
+        "market_mae": 9.900735294117647,
+        "model_mae": 10.01731354749775,
+        "market_rmse": 13.07072109716981,
+        "model_rmse": 13.177350981101524,
+        "predicted_vs_actual_residual_correlation": -0.10141147486019762
+      },
+      "selected_ats": {
+        "bets": 168,
+        "wins": 75,
+        "losses": 86,
+        "pushes": 7,
+        "win_rate_ex_push": 0.4658385093167702,
+        "units_at_minus_110": -19.60000000000001,
+        "roi_at_minus_110": -0.12173913043478266
+      }
+    },
+    "2024": {
+      "forecast": {
+        "games": 272,
+        "market_mae": 9.610294117647058,
+        "model_mae": 9.655169586759621,
+        "market_rmse": 12.6051460079744,
+        "model_rmse": 12.544559926596754,
+        "predicted_vs_actual_residual_correlation": 0.09412596268641782
+      },
+      "selected_ats": {
+        "bets": 195,
+        "wins": 103,
+        "losses": 91,
+        "pushes": 1,
+        "win_rate_ex_push": 0.5309278350515464,
+        "units_at_minus_110": 2.8999999999999915,
+        "roi_at_minus_110": 0.014948453608247378
+      }
+    },
+    "2025": {
+      "forecast": {
+        "games": 272,
+        "market_mae": 9.722426470588236,
+        "model_mae": 9.850614148855167,
+        "market_rmse": 12.271177672521421,
+        "model_rmse": 12.387835676001258,
+        "predicted_vs_actual_residual_correlation": -0.0768824023303064
+      },
+      "selected_ats": {
+        "bets": 186,
+        "wins": 82,
+        "losses": 103,
+        "pushes": 1,
+        "win_rate_ex_push": 0.44324324324324327,
+        "units_at_minus_110": -31.30000000000001,
+        "roi_at_minus_110": -0.16918918918918924
+      }
+    }
+  },
+  "release_state": "HOLD",
+  "model_use": "RESEARCH_VALIDATION_ONLY",
+  "notes": [
+    "Historical market spread is the baseline and is not presented as timestamped executable pricing.",
+    "Lambda and actionable edge threshold are selected only from data predating each evaluation season.",
+    "Threshold selection requires at least 35 graded bets in its prior validation sample.",
+    "Current PBP, last-three form, prior-season priors, rest and neutral-site context are included.",
+    "QB identity, injuries, weather, travel distance/time zones, price/vig, line movement and CLV remain separate required layers.",
+    "No output authorizes website publication or wager release."
+  ],
+  "generated_utc": "2026-10-17T21:25:01.605144+00:00"
+}
