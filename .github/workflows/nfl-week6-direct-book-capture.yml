@@ -27,11 +27,27 @@ jobs:
           python-version: '3.12'
       - name: Timestamp direct sportsbook web-board capture
         run: python scripts/build_nfl_week6_direct_book_capture.py
-      - name: Commit market capture safely
+      - name: Refresh public market movement tracker
+        run: python scripts/build_nfl_week6_market_movement_tracker.py
+      - name: Enforce market-observation safety policy
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('nfl_data/prospective/week6_public_market_movement_20261017.json')
+          d=json.loads(p.read_text())
+          assert d['website_publish_allowed'] is False
+          assert d['release_state']=='HOLD_MARKET_OBSERVATION_ONLY'
+          for r in d['rows']:
+              assert r['movement_is_clv'] is False
+              assert r['recommendation']=='HOLD_NO_VALIDATED_EDGE_THRESHOLD'
+          print('market observation safety policy passed:', d['summary'])
+          PY
+      - name: Commit market capture and movement tracker safely
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add nfl_data/prospective/market_captures/week6_betmgm_web_capture_*.csv nfl_data/prospective/market_captures/week6_betmgm_web_capture_*.json
+          git add nfl_data/prospective/market_captures/week6_betmgm_web_capture_*.csv nfl_data/prospective/market_captures/week6_betmgm_web_capture_*.json nfl_data/prospective/week6_public_market_movement_20261017.json nfl_data/prospective/week6_public_market_movement_20261017.csv
           if git diff --cached --quiet; then
             echo "No market capture changes to commit"
           else
