@@ -2,9 +2,6 @@ name: Refresh sportsbook markets
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - '.github/workflows/refresh-sportsbook-markets.yml'
   schedule:
     - cron: '*/5 * * * *'
 
