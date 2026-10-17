@@ -2,99 +2,140 @@
   "checked_at_utc": "2026-10-17T23:00:00Z",
   "season": 2026,
   "week": 6,
-  "policy": "These are prospective release-gate observations, not learned point adjustments. Final inactive/roof/weather/executable-price verification remains required near kickoff.",
-  "default_official_injury_source": "https://www.nfl.com/injuries/league/2026/REG6",
+  "policy": "Prospective release-gate observations only. These states do not create learned point adjustments. Official game-status reports, Saturday starter reporting, venue/forecast checks and a timestamped public sportsbook capture are incorporated. Final inactives, final roof decisions where applicable, near-kickoff weather and user-account executable prices remain separate release requirements.",
+  "default_official_injury_source": "https://www.nfl.com/news/nfl-week-6-injury-report-2026-season",
+  "public_book_capture_state": "CAPTURED_TIMESTAMPED_PUBLIC_WEB_BOARD_ACCOUNT_EXECUTION_UNVERIFIED",
+  "public_book_capture_artifact": "nfl_data/prospective/market_captures/week6_betmgm_web_capture_20261017T225910Z.json",
   "games": {
     "2026_06_HOU_JAX": {
-      "personnel_state": "NO_QB_BREAK_IDENTIFIED_CURRENT_REPORT_FINAL_INACTIVES_PENDING",
-      "personnel_note": "NFL game center lists C.J. Stroud and Trevor Lawrence as current passing leaders; Texans have multiple non-QB absences/questions and Jaguars have secondary/specialist absences. Final inactive verification still required.",
-      "personnel_sources": ["https://www.nfl.com/games/texans-at-jaguars-2026-reg-6", "https://www.nfl.com/injuries/league/2026/REG6"],
-      "weather_roof_state": "LONDON_OUTDOOR_FORECAST_REFRESH_REQUIRED",
-      "execution_price_state": "PENDING_DIRECT_BOOK_PRICE"
+      "personnel_state": "FINAL_STATUS_REPORT_AVAILABLE_NO_QB_BREAK_FINAL_INACTIVES_PENDING",
+      "personnel_note": "No confirmed starting-QB break. Houston lists David Montgomery, Tank Dell and Jalen Pitre out; both teams still have questionable non-QB players. Final inactives remain required.",
+      "personnel_sources": ["https://www.nfl.com/news/nfl-week-6-injury-report-2026-season"],
+      "final_inactives_state": "PENDING_GAME_DAY",
+      "weather_roof_state": "OUTDOOR_FORECAST_CHECKED_LOW_IMPACT_AT_KICKOFF_GAME_DAY_CONFIRMATION_PENDING",
+      "weather_note": "Wembley forecast is cool and mainly cloudy around the 2:30 p.m. local kickoff with the higher rain risk arriving later in the afternoon/evening. No validated weather point adjustment is applied.",
+      "weather_sources": ["https://weather.metoffice.gov.uk/forecast/gcpv307jh?new-design=false"],
+      "execution_price_state": "PUBLIC_BOOK_CAPTURED_TIMESTAMPED_ACCOUNT_EXECUTION_UNVERIFIED"
     },
     "2026_06_BAL_CLE": {
-      "personnel_state": "HARD_QB_BREAK_AWAY_CONFIRMED",
-      "personnel_note": "Lamar Jackson ruled out with ankle injury; Tyler Huntley announced as Baltimore starter. Raw normal-starter projection is not release-ready.",
-      "personnel_sources": ["https://www.nfl.com/news/ravens-qb-lamar-jackson-ankle-out-sunday-vs-browns-tyler-huntley-to-start-again", "https://www.nfl.com/injuries/league/2026/REG6"],
-      "weather_roof_state": "OUTDOOR_FINAL_FORECAST_REFRESH_REQUIRED",
-      "execution_price_state": "PENDING_DIRECT_BOOK_PRICE"
+      "personnel_state": "HARD_QB_BREAK_AWAY_CONFIRMED_FINAL_STATUS_REPORT_AVAILABLE",
+      "personnel_note": "Lamar Jackson is out and Tyler Huntley is the announced Baltimore starter. Cleveland QB Dillon Gabriel is also out, but the Browns' Week 6 depth chart lists Deshaun Watson first and Gabriel is not the projected starter. Final inactives remain required for the remaining questionable players.",
+      "personnel_sources": ["https://www.nfl.com/news/ravens-qb-lamar-jackson-ankle-out-sunday-vs-browns-tyler-huntley-to-start-again", "https://www.nfl.com/news/nfl-week-6-injury-report-2026-season", "https://www.clevelandbrowns.com/news/browns-announce-unofficial-depth-chart-for-week-6-vs-the-ravens"],
+      "final_inactives_state": "PENDING_GAME_DAY",
+      "weather_roof_state": "OUTDOOR_FORECAST_CHECKED_LOW_IMPACT_GAME_DAY_CONFIRMATION_PENDING",
+      "weather_note": "Cleveland forecast is sunny near 61 F with southwest wind around 6-8 mph. No validated weather point adjustment is applied.",
+      "weather_sources": ["https://forecast.weather.gov/MapClick.php?FcstType=text&TextType=2&lat=41.4858&lg=english&lon=-81.6944&unit=0"],
+      "execution_price_state": "PUBLIC_BOOK_CAPTURED_TIMESTAMPED_ACCOUNT_EXECUTION_UNVERIFIED"
     },
     "2026_06_CAR_PHI": {
-      "personnel_state": "HARD_QB_BREAK_HOME_CONFIRMED",
-      "personnel_note": "Jalen Hurts is unavailable and Tanner McKee is set to start; Saquon Barkley is also out. Raw normal-starter projection is not release-ready.",
-      "personnel_sources": ["https://www.nfl.com/news/eagles-tanner-mckee-ready-to-make-the-most-of-starting-chance-jalen-hurts-sidelined", "https://www.nfl.com/injuries/league/2026/REG6"],
-      "weather_roof_state": "OUTDOOR_FINAL_FORECAST_REFRESH_REQUIRED",
-      "execution_price_state": "PENDING_DIRECT_BOOK_PRICE"
+      "personnel_state": "HARD_QB_BREAK_HOME_CONFIRMED_MULTI_OFFENSIVE_ABSENCES_FINAL_STATUS_REPORT_AVAILABLE",
+      "personnel_note": "Jalen Hurts is out and Tanner McKee is the confirmed Philadelphia starter. Saquon Barkley and multiple additional Eagles offensive players are also out. The QB scenario layer resolved McKee by exact prior-season identity but authorizes zero operational point adjustment. Final inactives remain required.",
+      "personnel_sources": ["https://www.nfl.com/news/eagles-tanner-mckee-ready-to-make-the-most-of-starting-chance-jalen-hurts-sidelined", "https://www.nfl.com/news/nfl-week-6-injury-report-2026-season"],
+      "final_inactives_state": "PENDING_GAME_DAY",
+      "weather_roof_state": "OUTDOOR_FORECAST_CHECKED_LOW_IMPACT_GAME_DAY_CONFIRMATION_PENDING",
+      "weather_note": "Philadelphia forecast is sunny near 58 F with northeast wind around 5-10 mph. No validated weather point adjustment is applied.",
+      "weather_sources": ["https://forecast.weather.gov/MapClick.php?TextType=2&f6=1&lat=39.95538&lg=ep&lon=-75.19106&mp=0&unit=0"],
+      "execution_price_state": "PUBLIC_BOOK_CAPTURED_TIMESTAMPED_ACCOUNT_EXECUTION_UNVERIFIED"
     },
     "2026_06_CHI_ATL": {
-      "personnel_state": "QB_RETURN_EXPECTED_AWAY_FINAL_ACTIVE_STATUS_PENDING",
-      "personnel_note": "Chicago is planning to start Caleb Williams after hamstring absence; he remains listed questionable. Treat as a returning-QB state, not normal-state certainty.",
-      "personnel_sources": ["https://www.nfl.com/news/nfl-network-bears-qb-caleb-williams-hamstring-expected-to-start-sunday-vs-falcons", "https://www.nfl.com/injuries/league/2026/REG6"],
-      "weather_roof_state": "ATLANTA_RETRACTABLE_ROOF_DECISION_PENDING",
-      "execution_price_state": "PENDING_DIRECT_BOOK_PRICE"
+      "personnel_state": "QB_RETURN_EXPECTED_AWAY_REPORTED_STARTER_FINAL_ACTIVE_STATUS_PENDING",
+      "personnel_note": "Caleb Williams remains officially questionable but is reported expected to start after a full practice week. Atlanta QB Michael Penix Jr. has no injury designation. Treat Chicago as a returning-QB state until active status is official.",
+      "personnel_sources": ["https://www.nfl.com/news/nfl-network-bears-qb-caleb-williams-hamstring-expected-to-start-sunday-vs-falcons", "https://www.nfl.com/news/nfl-week-6-injury-report-2026-season"],
+      "final_inactives_state": "PENDING_GAME_DAY",
+      "weather_roof_state": "ATLANTA_RETRACTABLE_ROOF_DECISION_PENDING_EXTERNAL_FORECAST_LOW_RISK",
+      "weather_note": "Falcons' official game preview cites a sunny external forecast near 65 F, 0% precipitation and ENE wind near 12 mph. Mercedes-Benz Stadium roof status still requires final confirmation.",
+      "weather_sources": ["https://www.atlantafalcons.com/news/where-watch-atlanta-falcons-chicago-bears-stream-tv-radio"],
+      "execution_price_state": "PUBLIC_BOOK_CAPTURED_TIMESTAMPED_ACCOUNT_EXECUTION_UNVERIFIED"
     },
     "2026_06_NO_NYG": {
-      "personnel_state": "NO_QB_BREAK_IDENTIFIED_NONQB_UNCERTAINTY_REMAINS",
-      "personnel_note": "No confirmed QB starter break identified in current official injury reporting; notable skill/defensive questions remain. Final inactives required.",
-      "personnel_sources": ["https://www.nfl.com/injuries/league/2026/REG6"],
-      "weather_roof_state": "OUTDOOR_FINAL_FORECAST_REFRESH_REQUIRED",
-      "execution_price_state": "PENDING_DIRECT_BOOK_PRICE"
+      "personnel_state": "FINAL_STATUS_REPORT_AVAILABLE_NO_QB_BREAK_NONQB_UNCERTAINTY_FINAL_INACTIVES_PENDING",
+      "personnel_note": "No confirmed starting-QB break. New Orleans has Alvin Kamara and Chris Olave among questionable players; New York has both starting tackles and Abdul Carter questionable. Final inactives remain required.",
+      "personnel_sources": ["https://www.nfl.com/news/nfl-week-6-injury-report-2026-season"],
+      "final_inactives_state": "PENDING_GAME_DAY",
+      "weather_roof_state": "OUTDOOR_FORECAST_CHECKED_LOW_IMPACT_GAME_DAY_CONFIRMATION_PENDING",
+      "weather_note": "East Rutherford forecast is sunny around 60-61 F with light north wind near 3-6 mph. No validated weather point adjustment is applied.",
+      "weather_sources": ["https://forecast.weather.gov/MapClick.php?FcstType=text&TextType=2&lat=40.8135&lg=english&lon=-74.0743&unit=0"],
+      "execution_price_state": "PUBLIC_BOOK_CAPTURED_TIMESTAMPED_ACCOUNT_EXECUTION_UNVERIFIED"
     },
     "2026_06_NYJ_NE": {
-      "personnel_state": "NO_QB_BREAK_IDENTIFIED_MAJOR_NONQB_ABSENCES",
-      "personnel_note": "No confirmed QB starter break identified; New York has major skill/OL absences and New England has OL/secondary questions. Final inactives required.",
-      "personnel_sources": ["https://www.nfl.com/injuries/league/2026/REG6"],
-      "weather_roof_state": "OUTDOOR_FINAL_FORECAST_REFRESH_REQUIRED",
-      "execution_price_state": "PENDING_DIRECT_BOOK_PRICE"
+      "personnel_state": "FINAL_STATUS_REPORT_AVAILABLE_NO_QB_BREAK_MAJOR_NONQB_ABSENCES_FINAL_INACTIVES_PENDING",
+      "personnel_note": "No confirmed starting-QB break. The Jets list Breece Hall and multiple others out; New England has two corners out and several offensive/questionable players. Final inactives remain required.",
+      "personnel_sources": ["https://www.nfl.com/news/nfl-week-6-injury-report-2026-season"],
+      "final_inactives_state": "PENDING_GAME_DAY",
+      "weather_roof_state": "OUTDOOR_FORECAST_CHECKED_LOW_IMPACT_GAME_DAY_CONFIRMATION_PENDING",
+      "weather_note": "Foxborough forecast is sunny and cold near the low-to-mid 50s with calm/light wind by game time. No validated weather point adjustment is applied.",
+      "weather_sources": ["https://forecast.weather.gov/MapClick.php?FcstType=text&TextType=2&lat=42.0812&lg=english&lon=-71.2434&unit=1"],
+      "execution_price_state": "PUBLIC_BOOK_CAPTURED_TIMESTAMPED_ACCOUNT_EXECUTION_UNVERIFIED"
     },
     "2026_06_PIT_TB": {
-      "personnel_state": "HARD_QB_BREAK_HOME_CONFIRMED",
-      "personnel_note": "Baker Mayfield ruled out; Tampa Bay says Jalon Daniels is expected to make his third straight start. Raw normal-starter projection is not release-ready.",
-      "personnel_sources": ["https://www.buccaneers.com/news/2026-game-preview-steelers-buccaneers-week-6", "https://www.buccaneers.com/news/jalon-daniels-will-remain-bucs-starter-baker-mayfield-absence", "https://www.nfl.com/injuries/league/2026/REG6"],
-      "weather_roof_state": "OUTDOOR_BREEZY_FORECAST_FINAL_REFRESH_REQUIRED",
-      "execution_price_state": "PENDING_DIRECT_BOOK_PRICE"
+      "personnel_state": "HARD_QB_BREAK_HOME_CONFIRMED_FINAL_STATUS_REPORT_AVAILABLE",
+      "personnel_note": "Baker Mayfield is out and Tampa Bay has identified Jalon Daniels as the expected starter. Antoine Winfield Jr. is also out and both teams retain questionable non-QB players. Final inactives remain required.",
+      "personnel_sources": ["https://www.buccaneers.com/news/2026-game-preview-steelers-buccaneers-week-6", "https://www.buccaneers.com/news/jalon-daniels-will-remain-bucs-starter-baker-mayfield-absence", "https://www.nfl.com/news/nfl-week-6-injury-report-2026-season"],
+      "final_inactives_state": "PENDING_GAME_DAY",
+      "weather_roof_state": "OUTDOOR_FORECAST_CHECKED_ELEVATED_WIND_GAME_DAY_CONFIRMATION_PENDING",
+      "weather_note": "Tampa forecast is sunny but breezy, roughly 14-18 mph from the north/northeast with gusts commonly forecast in the upper 20s and some nearby point forecasts near 30+ mph. This is an elevated totals/field-goal uncertainty gate, not a point adjustment.",
+      "weather_sources": ["https://forecast.weather.gov/MapClick.php?FcstType=text&TextType=2&lat=27.9641&lg=english&lon=-82.4738&unit=0"],
+      "execution_price_state": "PUBLIC_BOOK_CAPTURED_TIMESTAMPED_ACCOUNT_EXECUTION_UNVERIFIED"
     },
     "2026_06_TEN_IND": {
-      "personnel_state": "NO_QB_BREAK_IDENTIFIED_FINAL_INACTIVES_PENDING",
-      "personnel_note": "No confirmed QB starter break identified in current official reporting. Final inactives required.",
-      "personnel_sources": ["https://www.nfl.com/injuries/league/2026/REG6"],
-      "weather_roof_state": "INDIANAPOLIS_RETRACTABLE_ROOF_DECISION_PENDING",
-      "execution_price_state": "PENDING_DIRECT_BOOK_PRICE"
+      "personnel_state": "FINAL_STATUS_REPORT_AVAILABLE_NO_QB_BREAK_FINAL_INACTIVES_PENDING",
+      "personnel_note": "No confirmed starting-QB break. Tennessee lists Tyjae Spears questionable; Indianapolis lists Tyler Warren questionable. Final inactives remain required.",
+      "personnel_sources": ["https://www.nfl.com/news/nfl-week-6-injury-report-2026-season"],
+      "final_inactives_state": "PENDING_GAME_DAY",
+      "weather_roof_state": "INDIANAPOLIS_RETRACTABLE_ROOF_AND_WINDOW_TBD_OFFICIAL",
+      "weather_note": "The Colts' official Week 6 gameday page lists both roof and window status as TBD. Release gate remains open until the official venue decision.",
+      "weather_sources": ["https://www.colts.com/game-day/regular-season-game-3"],
+      "execution_price_state": "PUBLIC_BOOK_CAPTURED_TIMESTAMPED_ACCOUNT_EXECUTION_UNVERIFIED"
     },
     "2026_06_ARI_LA": {
-      "personnel_state": "NO_QB_BREAK_IDENTIFIED_NONQB_UNCERTAINTY_REMAINS",
-      "personnel_note": "No confirmed QB starter break identified; non-QB absences/questions remain. Final inactives required.",
-      "personnel_sources": ["https://www.nfl.com/injuries/league/2026/REG6"],
+      "personnel_state": "FINAL_STATUS_REPORT_AVAILABLE_NO_QB_BREAK_NONQB_UNCERTAINTY_FINAL_INACTIVES_PENDING",
+      "personnel_note": "No confirmed starting-QB break. Arizona has Jeremiyah Love out and multiple defensive players questionable; the Rams list two defensive backs questionable. Final inactives remain required.",
+      "personnel_sources": ["https://www.nfl.com/news/nfl-week-6-injury-report-2026-season"],
+      "final_inactives_state": "PENDING_GAME_DAY",
       "weather_roof_state": "COVERED_VENUE_NO_OUTDOOR_WEATHER_ADJUSTMENT_PLANNED",
-      "execution_price_state": "PENDING_DIRECT_BOOK_PRICE"
+      "weather_note": "SoFi Stadium is treated as a covered-venue environment for the model release gate. Final personnel verification remains separate.",
+      "weather_sources": [],
+      "execution_price_state": "PUBLIC_BOOK_CAPTURED_TIMESTAMPED_ACCOUNT_EXECUTION_UNVERIFIED"
     },
     "2026_06_BUF_LV": {
-      "personnel_state": "NO_QB_BREAK_IDENTIFIED_NONQB_UNCERTAINTY_REMAINS",
-      "personnel_note": "No confirmed QB starter break identified; Raiders primary skill players reported full while Buffalo has multiple defensive/questionable pieces. Final inactives required.",
-      "personnel_sources": ["https://www.nfl.com/injuries/league/2026/REG6"],
+      "personnel_state": "FINAL_STATUS_REPORT_AVAILABLE_NO_QB_BREAK_NONQB_UNCERTAINTY_FINAL_INACTIVES_PENDING",
+      "personnel_note": "No confirmed starting-QB break. Buffalo has several questionable skill/defensive players; Las Vegas has three players out. Final inactives remain required.",
+      "personnel_sources": ["https://www.nfl.com/news/nfl-week-6-injury-report-2026-season"],
+      "final_inactives_state": "PENDING_GAME_DAY",
       "weather_roof_state": "INDOOR_FIXED_ROOF",
-      "execution_price_state": "PENDING_DIRECT_BOOK_PRICE"
+      "weather_note": "Allegiant Stadium fixed-roof environment resolves the outdoor weather gate; personnel and price gates remain separate.",
+      "weather_sources": [],
+      "execution_price_state": "PUBLIC_BOOK_CAPTURED_TIMESTAMPED_ACCOUNT_EXECUTION_UNVERIFIED"
     },
     "2026_06_LAC_KC": {
-      "personnel_state": "NO_QB_BREAK_IDENTIFIED_MAJOR_NONQB_ABSENCES",
-      "personnel_note": "No confirmed QB starter break identified; Chargers have major OL/secondary absences and Kansas City has key WR/OL absences. Final inactives required.",
-      "personnel_sources": ["https://www.nfl.com/injuries/league/2026/REG6"],
-      "weather_roof_state": "OUTDOOR_FINAL_FORECAST_REFRESH_REQUIRED",
-      "execution_price_state": "PENDING_DIRECT_BOOK_PRICE"
+      "personnel_state": "FINAL_STATUS_REPORT_AVAILABLE_NO_QB_BREAK_MAJOR_NONQB_ABSENCES_FINAL_INACTIVES_PENDING",
+      "personnel_note": "No confirmed starting-QB break. The Chargers list Joe Alt, Derwin James and multiple others out/questionable; Kansas City lists Rashee Rice and Josh Simmons out. Final inactives remain required.",
+      "personnel_sources": ["https://www.nfl.com/news/nfl-week-6-injury-report-2026-season"],
+      "final_inactives_state": "PENDING_GAME_DAY",
+      "weather_roof_state": "OUTDOOR_FORECAST_CHECKED_LOW_TO_MODERATE_WIND_GAME_DAY_CONFIRMATION_PENDING",
+      "weather_note": "Kansas City forecast is sunny near the mid-to-upper 60s with south wind roughly 5-10 mph and gusts around 18 mph. No validated weather point adjustment is applied.",
+      "weather_sources": ["https://forecast.weather.gov/MapClick.php?FcstType=text&lat=39.1&lon=-94.57"],
+      "execution_price_state": "PUBLIC_BOOK_CAPTURED_TIMESTAMPED_ACCOUNT_EXECUTION_UNVERIFIED"
     },
     "2026_06_DAL_GB": {
-      "personnel_state": "NO_QB_BREAK_IDENTIFIED_FINAL_INACTIVES_PENDING",
-      "personnel_note": "No confirmed QB starter break identified. Final inactives required.",
-      "personnel_sources": ["https://www.nfl.com/injuries/league/2026/REG6"],
-      "weather_roof_state": "OUTDOOR_WIND_MONITOR_FINAL_FORECAST_REQUIRED",
-      "execution_price_state": "PENDING_DIRECT_BOOK_PRICE"
+      "personnel_state": "FINAL_STATUS_REPORT_AVAILABLE_NO_QB_BREAK_FINAL_INACTIVES_PENDING",
+      "personnel_note": "No confirmed starting-QB break. Both teams carry multiple questionable/out non-QB players into Sunday night. Final inactives remain required.",
+      "personnel_sources": ["https://www.nfl.com/news/nfl-week-6-injury-report-2026-season"],
+      "final_inactives_state": "PENDING_GAME_DAY",
+      "weather_roof_state": "OUTDOOR_FORECAST_CHECKED_MODERATE_WIND_GAME_DAY_CONFIRMATION_PENDING",
+      "weather_note": "Green Bay is forecast sunny near 60 F during the day with southwest wind 13-16 mph and gusts up to about 31 mph; the Sunday-night forecast eases toward roughly 5-10 mph with gusts still possible into the low 20s. Recheck near the 8:20 p.m. ET kickoff.",
+      "weather_sources": ["https://forecast.weather.gov/MapClick.php?FcstType=text&TextType=1&lat=44.52160&lg=ep&lon=-87.98980"],
+      "execution_price_state": "PUBLIC_BOOK_CAPTURED_TIMESTAMPED_ACCOUNT_EXECUTION_UNVERIFIED"
     },
     "2026_06_WAS_SF": {
-      "personnel_state": "MONDAY_FINAL_STATUS_PENDING_NO_CONFIRMED_QB_BREAK",
-      "personnel_note": "Monday game statuses are not final; no confirmed QB starter break identified, but multiple skill/front-seven statuses remain unresolved.",
-      "personnel_sources": ["https://www.nfl.com/injuries/league/2026/REG6"],
-      "weather_roof_state": "OUTDOOR_MONDAY_FINAL_FORECAST_REQUIRED",
-      "execution_price_state": "PENDING_DIRECT_BOOK_PRICE"
+      "personnel_state": "MONDAY_FINAL_STATUS_REPORT_AVAILABLE_NO_CONFIRMED_STARTER_QB_BREAK_FINAL_INACTIVES_PENDING",
+      "personnel_note": "Washington lists backup QB Marcus Mariota out, but no starting-QB break is identified. Both teams have multiple skill/defensive absences and questionable players. Monday inactives remain required.",
+      "personnel_sources": ["https://www.nfl.com/news/nfl-week-6-injury-report-2026-season"],
+      "final_inactives_state": "PENDING_MONDAY_GAME_DAY",
+      "weather_roof_state": "OUTDOOR_FORECAST_CHECKED_LOW_IMPACT_MONDAY_CONFIRMATION_PENDING",
+      "weather_note": "Santa Clara Monday forecast is mostly sunny near the upper 60s with light west/northwest wind. Recheck on Monday because the game is more than a day away.",
+      "weather_sources": ["https://forecast.weather.gov/MapClick.php?FcstType=text&TextType=1&lat=37.3501&lg=english&lon=-121.985&unit=1"],
+      "execution_price_state": "PUBLIC_BOOK_CAPTURED_TIMESTAMPED_ACCOUNT_EXECUTION_UNVERIFIED"
     }
   }
 }
