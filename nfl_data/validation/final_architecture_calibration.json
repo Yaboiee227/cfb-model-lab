@@ -1,0 +1,499 @@
+{
+  "aggregate": {
+    "spread": {
+      "absolute_error_quantiles": {
+        "p50": 8.054,
+        "p68": 12.68,
+        "p80": 17.233,
+        "p90": 22.436,
+        "p95": 26.593
+      },
+      "bias_pred_minus_actual": -0.0126,
+      "mae": 10.2564,
+      "n": 816,
+      "rmse": 13.2903
+    },
+    "spread_edge_calibration": {
+      "edge_bins": {
+        "0-1": {
+          "bets_including_pushes": 210,
+          "decided": 205,
+          "losses": 93,
+          "pushes": 5,
+          "wilson_95_ci": [
+            0.478,
+            0.613
+          ],
+          "win_rate": 0.5463,
+          "wins": 112
+        },
+        "1-2": {
+          "bets_including_pushes": 153,
+          "decided": 151,
+          "losses": 66,
+          "pushes": 2,
+          "wilson_95_ci": [
+            0.4832,
+            0.6395
+          ],
+          "win_rate": 0.5629,
+          "wins": 85
+        },
+        "2-3": {
+          "bets_including_pushes": 156,
+          "decided": 151,
+          "losses": 73,
+          "pushes": 5,
+          "wilson_95_ci": [
+            0.4374,
+            0.5949
+          ],
+          "win_rate": 0.5166,
+          "wins": 78
+        },
+        "3-4": {
+          "bets_including_pushes": 96,
+          "decided": 91,
+          "losses": 43,
+          "pushes": 5,
+          "wilson_95_ci": [
+            0.4259,
+            0.6268
+          ],
+          "win_rate": 0.5275,
+          "wins": 48
+        },
+        "4-5": {
+          "bets_including_pushes": 75,
+          "decided": 73,
+          "losses": 39,
+          "pushes": 2,
+          "wilson_95_ci": [
+            0.3559,
+            0.579
+          ],
+          "win_rate": 0.4658,
+          "wins": 34
+        },
+        "5-7": {
+          "bets_including_pushes": 78,
+          "decided": 78,
+          "losses": 40,
+          "pushes": 0,
+          "wilson_95_ci": [
+            0.3795,
+            0.5961
+          ],
+          "win_rate": 0.4872,
+          "wins": 38
+        },
+        ">=7": {
+          "bets_including_pushes": 48,
+          "decided": 48,
+          "losses": 25,
+          "pushes": 0,
+          "wilson_95_ci": [
+            0.3447,
+            0.6167
+          ],
+          "win_rate": 0.4792,
+          "wins": 23
+        }
+      },
+      "edge_thresholds": {
+        "1": {
+          "beats_52_38pct_point_estimate": false,
+          "bets_including_pushes": 606,
+          "decided": 592,
+          "losses": 286,
+          "lower_ci_above_50pct": false,
+          "pushes": 14,
+          "wilson_95_ci": [
+            0.4767,
+            0.5569
+          ],
+          "win_rate": 0.5169,
+          "wins": 306
+        },
+        "2": {
+          "beats_52_38pct_point_estimate": false,
+          "bets_including_pushes": 453,
+          "decided": 441,
+          "losses": 220,
+          "lower_ci_above_50pct": false,
+          "pushes": 12,
+          "wilson_95_ci": [
+            0.4547,
+            0.5476
+          ],
+          "win_rate": 0.5011,
+          "wins": 221
+        },
+        "3": {
+          "beats_52_38pct_point_estimate": false,
+          "bets_including_pushes": 297,
+          "decided": 290,
+          "losses": 147,
+          "lower_ci_above_50pct": false,
+          "pushes": 7,
+          "wilson_95_ci": [
+            0.436,
+            0.5504
+          ],
+          "win_rate": 0.4931,
+          "wins": 143
+        },
+        "4": {
+          "beats_52_38pct_point_estimate": false,
+          "bets_including_pushes": 201,
+          "decided": 199,
+          "losses": 104,
+          "lower_ci_above_50pct": false,
+          "pushes": 2,
+          "wilson_95_ci": [
+            0.4091,
+            0.5466
+          ],
+          "win_rate": 0.4774,
+          "wins": 95
+        },
+        "5": {
+          "beats_52_38pct_point_estimate": false,
+          "bets_including_pushes": 126,
+          "decided": 126,
+          "losses": 65,
+          "lower_ci_above_50pct": false,
+          "pushes": 0,
+          "wilson_95_ci": [
+            0.3986,
+            0.5706
+          ],
+          "win_rate": 0.4841,
+          "wins": 61
+        },
+        "7": {
+          "beats_52_38pct_point_estimate": false,
+          "bets_including_pushes": 48,
+          "decided": 48,
+          "losses": 25,
+          "lower_ci_above_50pct": false,
+          "pushes": 0,
+          "wilson_95_ci": [
+            0.3447,
+            0.6167
+          ],
+          "win_rate": 0.4792,
+          "wins": 23
+        }
+      },
+      "note": "Schedule/closing reference lines are benchmark-only. No profitability claim is made without executable odds."
+    },
+    "total": {
+      "absolute_error_quantiles": {
+        "p50": 8.243,
+        "p68": 13.19,
+        "p80": 16.557,
+        "p90": 22.541,
+        "p95": 27.376
+      },
+      "bias_pred_minus_actual": -1.2723,
+      "mae": 10.5001,
+      "n": 816,
+      "rmse": 13.4958
+    },
+    "total_edge_calibration": {
+      "edge_bins": {
+        "0-1": {
+          "bets_including_pushes": 202,
+          "decided": 201,
+          "losses": 90,
+          "pushes": 1,
+          "wilson_95_ci": [
+            0.4832,
+            0.6194
+          ],
+          "win_rate": 0.5522,
+          "wins": 111
+        },
+        "1-2": {
+          "bets_including_pushes": 172,
+          "decided": 171,
+          "losses": 79,
+          "pushes": 1,
+          "wilson_95_ci": [
+            0.4633,
+            0.6111
+          ],
+          "win_rate": 0.538,
+          "wins": 92
+        },
+        "2-3": {
+          "bets_including_pushes": 130,
+          "decided": 130,
+          "losses": 72,
+          "pushes": 0,
+          "wilson_95_ci": [
+            0.3635,
+            0.5319
+          ],
+          "win_rate": 0.4462,
+          "wins": 58
+        },
+        "3-4": {
+          "bets_including_pushes": 115,
+          "decided": 114,
+          "losses": 61,
+          "pushes": 1,
+          "wilson_95_ci": [
+            0.376,
+            0.5561
+          ],
+          "win_rate": 0.4649,
+          "wins": 53
+        },
+        "4-5": {
+          "bets_including_pushes": 80,
+          "decided": 80,
+          "losses": 44,
+          "pushes": 0,
+          "wilson_95_ci": [
+            0.3458,
+            0.5588
+          ],
+          "win_rate": 0.45,
+          "wins": 36
+        },
+        "5-7": {
+          "bets_including_pushes": 80,
+          "decided": 78,
+          "losses": 37,
+          "pushes": 2,
+          "wilson_95_ci": [
+            0.4162,
+            0.6326
+          ],
+          "win_rate": 0.5256,
+          "wins": 41
+        },
+        ">=7": {
+          "bets_including_pushes": 37,
+          "decided": 37,
+          "losses": 19,
+          "pushes": 0,
+          "wilson_95_ci": [
+            0.3345,
+            0.6411
+          ],
+          "win_rate": 0.4865,
+          "wins": 18
+        }
+      },
+      "edge_thresholds": {
+        "1": {
+          "beats_52_38pct_point_estimate": false,
+          "bets_including_pushes": 614,
+          "decided": 610,
+          "losses": 312,
+          "lower_ci_above_50pct": false,
+          "pushes": 4,
+          "wilson_95_ci": [
+            0.4491,
+            0.5281
+          ],
+          "win_rate": 0.4885,
+          "wins": 298
+        },
+        "2": {
+          "beats_52_38pct_point_estimate": false,
+          "bets_including_pushes": 442,
+          "decided": 439,
+          "losses": 233,
+          "lower_ci_above_50pct": false,
+          "pushes": 3,
+          "wilson_95_ci": [
+            0.423,
+            0.516
+          ],
+          "win_rate": 0.4692,
+          "wins": 206
+        },
+        "3": {
+          "beats_52_38pct_point_estimate": false,
+          "bets_including_pushes": 312,
+          "decided": 309,
+          "losses": 161,
+          "lower_ci_above_50pct": false,
+          "pushes": 3,
+          "wilson_95_ci": [
+            0.4239,
+            0.5346
+          ],
+          "win_rate": 0.479,
+          "wins": 148
+        },
+        "4": {
+          "beats_52_38pct_point_estimate": false,
+          "bets_including_pushes": 197,
+          "decided": 195,
+          "losses": 100,
+          "lower_ci_above_50pct": false,
+          "pushes": 2,
+          "wilson_95_ci": [
+            0.418,
+            0.5569
+          ],
+          "win_rate": 0.4872,
+          "wins": 95
+        },
+        "5": {
+          "beats_52_38pct_point_estimate": false,
+          "bets_including_pushes": 117,
+          "decided": 115,
+          "losses": 56,
+          "lower_ci_above_50pct": false,
+          "pushes": 2,
+          "wilson_95_ci": [
+            0.4228,
+            0.6025
+          ],
+          "win_rate": 0.513,
+          "wins": 59
+        },
+        "7": {
+          "beats_52_38pct_point_estimate": false,
+          "bets_including_pushes": 37,
+          "decided": 37,
+          "losses": 19,
+          "lower_ci_above_50pct": false,
+          "pushes": 0,
+          "wilson_95_ci": [
+            0.3345,
+            0.6411
+          ],
+          "win_rate": 0.4865,
+          "wins": 18
+        }
+      },
+      "note": "Schedule/closing reference lines are benchmark-only. No profitability claim is made without executable odds."
+    }
+  },
+  "architecture": {
+    "market_policy": "market excluded from fitting/tuning; benchmark/edge grading only",
+    "spread": "frozen core + defensive coverage + win Elo + margin rating",
+    "spread_params": {
+      "coverage": {
+        "feature_k": 1.0,
+        "lambda": 100.0,
+        "mae": 9.253145825908062,
+        "rmse": 12.11675150556487,
+        "team_k": 8.0
+      },
+      "ratings": {
+        "elo_hfa": 35.0,
+        "elo_k": 40.0,
+        "lambda": 100.0,
+        "margin_hfa": 3.0,
+        "margin_k": 0.05,
+        "offseason_regression": 0.25
+      }
+    },
+    "total": "frozen core only",
+    "total_params": {
+      "k": 8.0,
+      "lambda": 100.0,
+      "mae": 10.805254515528455,
+      "n": 91,
+      "rmse": 13.633007925124653
+    }
+  },
+  "confidence_release_rule": "No confidence tier or alternative line is production-authorized solely from these retrospective bins. Require prospective validation and executable prices.",
+  "folds": {
+    "2023": {
+      "spread": {
+        "absolute_error_quantiles": {
+          "p50": 8.376,
+          "p68": 13.449,
+          "p80": 18.228,
+          "p90": 22.835,
+          "p95": 26.964
+        },
+        "bias_pred_minus_actual": -0.6309,
+        "mae": 10.5036,
+        "n": 272,
+        "rmse": 13.7234
+      },
+      "total": {
+        "absolute_error_quantiles": {
+          "p50": 8.353,
+          "p68": 13.097,
+          "p80": 16.834,
+          "p90": 22.765,
+          "p95": 26.812
+        },
+        "bias_pred_minus_actual": -0.9916,
+        "mae": 10.5069,
+        "n": 272,
+        "rmse": 13.6117
+      }
+    },
+    "2024": {
+      "spread": {
+        "absolute_error_quantiles": {
+          "p50": 7.792,
+          "p68": 12.544,
+          "p80": 16.953,
+          "p90": 23.457,
+          "p95": 27.147
+        },
+        "bias_pred_minus_actual": 0.5145,
+        "mae": 10.0135,
+        "n": 272,
+        "rmse": 13.185
+      },
+      "total": {
+        "absolute_error_quantiles": {
+          "p50": 7.321,
+          "p68": 12.27,
+          "p80": 15.864,
+          "p90": 22.26,
+          "p95": 27.363
+        },
+        "bias_pred_minus_actual": -2.2116,
+        "mae": 10.0708,
+        "n": 272,
+        "rmse": 13.1663
+      }
+    },
+    "2025": {
+      "spread": {
+        "absolute_error_quantiles": {
+          "p50": 8.054,
+          "p68": 12.344,
+          "p80": 16.584,
+          "p90": 21.895,
+          "p95": 25.324
+        },
+        "bias_pred_minus_actual": 0.0785,
+        "mae": 10.2521,
+        "n": 272,
+        "rmse": 12.9507
+      },
+      "total": {
+        "absolute_error_quantiles": {
+          "p50": 9.547,
+          "p68": 13.909,
+          "p80": 16.811,
+          "p90": 22.57,
+          "p95": 27.633
+        },
+        "bias_pred_minus_actual": -0.6136,
+        "mae": 10.9227,
+        "n": 272,
+        "rmse": 13.7034
+      }
+    }
+  },
+  "generated_at_utc": "2026-10-17T23:07:56.957667+00:00",
+  "production_verdict": "HOLD_PROSPECTIVE_VALIDATION_REQUIRED",
+  "website_publish_allowed": false
+}
