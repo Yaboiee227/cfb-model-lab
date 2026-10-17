@@ -57,7 +57,7 @@ def metric(a):
 
 def process_season(season,qa):
     req=urllib.request.Request(PBP_URL.format(season=season),headers={"User-Agent":"cb-model-projections/1.0"})
-    drives={}; prev={}; games=defaultdict(lambda:defaultdict(set)); scanned=0
+    drives={};prev={};games=defaultdict(lambda:defaultdict(set));scanned=0
     with urllib.request.urlopen(req,timeout=180) as resp:
         with gzip.GzipFile(fileobj=resp) as gz:
             with io.TextIOWrapper(gz,encoding="utf-8-sig",newline="") as text:
@@ -73,7 +73,6 @@ def process_season(season,qa):
                     games[posteam][week].add(gid);games[defteam][week].add(gid)
                     key=(week,gid,drv,posteam)
                     d=drives.setdefault(key,{"week":week,"game_id":gid,"posteam":posteam,"defteam":defteam,"plays":0.0,"epa":0.0,"rz":0.0,"start_yardline":None,"start_score":None,"end_score":None,"neutral_seconds":0.0,"neutral_intervals":0.0,"seconds":0.0,"intervals":0.0})
-                    # Score state is updated on any possession row so tries/scores can be retained.
                     pre=num(r.get("posteam_score"));post=num(r.get("posteam_score_post"))
                     if d["start_score"] is None and pre is not None:d["start_score"]=pre
                     if post is not None:d["end_score"]=post
@@ -91,15 +90,12 @@ def process_season(season,qa):
                     pkey=(gid,drv,posteam);prior=prev.get(pkey)
                     if prior and clock is not None and prior["clock"] is not None:
                         delta=prior["clock"]-clock
-                        # Remove quarter/timeout/drive-artifact gaps; retain normal snap cadence.
                         if 5<=delta<=50:
                             d["seconds"]+=delta;d["intervals"]+=1
                             if neutral and prior["neutral"]:
                                 d["neutral_seconds"]+=delta;d["neutral_intervals"]+=1
                     if clock is not None:prev[pkey]={"clock":clock,"neutral":neutral}
-    weekly_off=defaultdict(lambda:defaultdict(lambda:defaultdict(float)))
-    weekly_def=defaultdict(lambda:defaultdict(lambda:defaultdict(float)))
-    valid_drives=0
+    weekly_off=defaultdict(lambda:defaultdict(lambda:defaultdict(float)));weekly_def=defaultdict(lambda:defaultdict(lambda:defaultdict(float)));valid_drives=0
     for d in drives.values():
         if d["plays"]<=0:continue
         valid_drives+=1;pts=0.0
@@ -146,7 +142,8 @@ def main():
                 if rec["max_week_used"]>=tw:raise RuntimeError(f"Leakage {s} W{tw} {team}")
     keys=sorted({k for r in rows for k in r},key=lambda k:(0 if k in ["season","target_week","team","games_before","max_week_used"] else 1,k))
     team_path=OUT_DIR/"team_week_drive_pace_2022_2025.csv"
-    with team_path.open("w",newline="",encoding="utf-8") as f:w=csv.DictWriter(f,fieldnames=keys);w.writeheader();w.writerows(rows)
+    with team_path.open("w",newline="",encoding="utf-8") as f:
+        w=csv.DictWriter(f,fieldnames=keys,extrasaction="ignore");w.writeheader();w.writerows(rows)
     with BASE_GAME.open(encoding="utf-8") as f:base=list(csv.DictReader(f))
     games=[];missing=0
     for r in base:
@@ -158,7 +155,9 @@ def main():
                 if k not in {"season","target_week","team","release_state"}:out[f"{side}_{k}"]=v
         out["release_state"]="HISTORICAL_RESEARCH";games.append(out)
     game_path=OUT_DIR/"game_drive_pace_2022_2025.csv"
-    with game_path.open("w",newline="",encoding="utf-8") as f:w=csv.DictWriter(f,fieldnames=list(games[0]));w.writeheader();w.writerows(games)
+    game_keys=sorted({k for g in games for k in g},key=lambda k:(0 if k in ["game_id","season","week","gameday","away_team","home_team","game_total","market_total_reference","neutral_site","away_rest","home_rest"] else 1,k))
+    with game_path.open("w",newline="",encoding="utf-8") as f:
+        w=csv.DictWriter(f,fieldnames=game_keys,extrasaction="ignore");w.writeheader();w.writerows(games)
     qa.update({"team_week_rows":len(rows),"game_rows":len(games),"missing_game_snapshots":missing,"pace_definition":"mean game-clock seconds between consecutive qualifying scrimmage snaps within same fixed_drive, keeping 5-50 second intervals; neutral requires both snaps on early downs Q1-Q3 with 0.20<=wp<=0.80","drive_definition":"fixed_drive with at least one non-nullified non-kneel/spike scrimmage play","points_per_drive_definition":"posteam score change across fixed_drive; nonnegative","anti_leakage":"max_week_used < target_week for every snapshot","generated_utc":datetime.now(timezone.utc).isoformat()})
     (OUT_DIR/"drive_pace_build_qa.json").write_text(json.dumps(qa,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(qa,indent=2));print(team_path);print(game_path)
