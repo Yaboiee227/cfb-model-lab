@@ -1,0 +1,80 @@
+name: NFL Week 6 game-day final gates (development only)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [nfl-model-development]
+    paths:
+      - 'scripts/build_nfl_week6_gameday_final_gate_checklist.py'
+      - 'scripts/build_nfl_week6_readiness_matrix.py'
+      - 'nfl_data/prospective/2026_week6_gate_inputs.json'
+      - 'nfl_data/prospective/week6_readiness_matrix_20261017.json'
+      - '.github/workflows/nfl-week6-gameday-final-gates.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nfl-model-development-week6-gameday-final-gates
+  cancel-in-progress: false
+
+jobs:
+  build-final-gate-checklist:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout isolated NFL development branch
+        uses: actions/checkout@v4
+        with:
+          ref: nfl-model-development
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build game-day final gate checklist
+        run: python scripts/build_nfl_week6_gameday_final_gate_checklist.py
+      - name: Assert observation-only policy
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('nfl_data/prospective/week6_gameday_final_gate_checklist_20261017.json')
+          data = json.loads(p.read_text())
+          assert data['release_state'] == 'HOLD_OBSERVATION_ONLY'
+          assert data['website_publish_allowed'] is False
+          assert data['summary']['recommendation_release_games'] == 0
+          assert all(r['model_snapshot_mutable'] is False for r in data['rows'])
+          assert all(r['point_adjustment_allowed'] is False for r in data['rows'])
+          assert all(r['recommendation_release_allowed'] is False for r in data['rows'])
+          print('Observation-only final-gate policy passed.')
+          PY
+      - name: Commit final gate checklist safely
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add nfl_data/prospective/week6_gameday_final_gate_checklist_20261017.json nfl_data/prospective/week6_gameday_final_gate_checklist_20261017.csv
+          if git diff --cached --quiet; then
+            echo "No final-gate checklist changes to commit"
+            exit 0
+          fi
+          git commit -m "Build NFL Week 6 game-day final gate checklist"
+          for attempt in 1 2 3; do
+            git fetch origin nfl-model-development
+            if git rebase origin/nfl-model-development && git push origin HEAD:nfl-model-development; then
+              exit 0
+            fi
+            git rebase --abort || true
+            sleep $((attempt * 2))
+          done
+          echo "Unable to update development branch after retrying."
+          exit 1
+      - name: Verify immutable model and website paths unchanged
+        run: |
+          if git diff --name-only HEAD~1 HEAD | grep 'nfl_data/prospective/week6_prelock_20261017T225656Z' ; then
+            echo "Immutable prospective snapshot changed" >&2
+            exit 1
+          fi
+          if git diff --name-only HEAD~1 HEAD | grep -E '^(data/|app\.js$|index\.html$|.*\.css$|.*\.js$)' ; then
+            echo "Unexpected website path changed" >&2
+            exit 1
+          fi
