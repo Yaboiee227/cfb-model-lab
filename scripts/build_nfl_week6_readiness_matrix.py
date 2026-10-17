@@ -29,6 +29,7 @@ RESOLVED_WEATHER_PREFIXES = (
     'INDOOR_FIXED_ROOF',
     'COVERED_VENUE_NO_OUTDOOR_WEATHER_ADJUSTMENT_PLANNED',
 )
+OFFICIAL_FINAL_STATUS_SOURCE_TOKEN = 'nfl-week-6-injury-report-2026-season'
 
 
 def load(path):
@@ -80,7 +81,11 @@ def main():
 
         inactive_state = g.get('final_inactives_state', 'UNKNOWN')
         final_inactives_resolved = bool_starts(inactive_state, 'FINAL_')
-        final_status_report_available = 'FINAL_STATUS_REPORT_AVAILABLE' in g.get('personnel_state', '')
+        personnel_sources = [str(src) for src in (g.get('personnel_sources') or [])]
+        final_status_report_available = (
+            'FINAL_STATUS_REPORT_AVAILABLE' in g.get('personnel_state', '')
+            or any(OFFICIAL_FINAL_STATUS_SOURCE_TOKEN in src for src in personnel_sources)
+        )
 
         account_verified = bool(c.get('user_account_execution_verified'))
         public_book_captured = bool_starts(g.get('execution_price_state'), 'PUBLIC_BOOK_CAPTURED')
