@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071019">
+<title>CFB Model Lab — Weekly Dashboard</title>
+<meta name="description" content="Validation-aware college football model projections, market comparisons, and release readiness.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <div class="brand"><h1>CFB Model Lab</h1><p><span id="modelVersion"></span><br>Snapshot: <span id="snapshot"></span></p></div>
+    <div class="status-pill" id="pubStatus">INFO ONLY</div>
+  </header>
+
+  <section class="hold-banner" aria-label="Validation status">
+    <div class="copy"><strong>Validation-aware release control</strong><div class="big">No released bets</div><div>Model projections may be displayed while betting recommendations remain blocked by validation and readiness gates.</div></div>
+    <div><strong>Spread validation</strong><div class="big" id="spreadGate"></div></div>
+    <div><strong>Total validation</strong><div class="big" id="totalGate"></div></div>
+    <div><strong>Released bets</strong><div class="big" id="released"></div></div>
+  </section>
+
+  <section class="summary">
+    <div class="stat"><div class="label">Open games</div><div class="value" id="openGames"></div></div>
+    <div class="stat"><div class="label">Projection coverage</div><div class="value" id="projectionCount"></div></div>
+    <div class="stat"><div class="label">Average data quality</div><div class="value" id="avgDQ"></div></div>
+    <div class="stat"><div class="label">Largest spread edge</div><div class="value" id="maxSpread"></div></div>
+    <div class="stat"><div class="label">Largest total edge</div><div class="value" id="maxTotal"></div></div>
+  </section>
+
+  <section class="controls" aria-label="Game filters">
+    <input class="control" id="search" type="search" placeholder="Search team…" aria-label="Search team">
+    <select class="control" id="dateFilter" aria-label="Filter by date"><option value="">All dates</option></select>
+    <select class="control" id="viewFilter" aria-label="Filter games">
+      <option value="all">All games</option><option value="notable">Notable model edges</option>
+      <option value="baseline">Projection available</option><option value="missing">Missing baseline</option>
+    </select>
+    <select class="control" id="sort" aria-label="Sort games">
+      <option value="kickoff">Sort: kickoff</option><option value="spread">Largest spread edge</option>
+      <option value="total">Largest total edge</option><option value="quality">Highest data quality</option>
+    </select>
+  </section>
+
+  <div class="section-head"><h2>Upcoming slate</h2><span id="count"></span></div>
+  <section id="games" class="games"></section>
+
+  <footer class="footer">
+    <strong>Important:</strong> <span id="note"></span><br>
+    “Edge” is the difference between the model estimate and the market observation in this saved snapshot. Release status and blockers are authoritative for this page.
+  </footer>
+</main>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
