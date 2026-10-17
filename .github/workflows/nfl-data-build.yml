@@ -9,6 +9,8 @@ on:
       - 'scripts/build_nfl_efficiency.py'
       - 'scripts/build_nfl_pbp_features.py'
       - 'scripts/validate_nfl_feature_layers.py'
+      - 'scripts/build_nfl_opponent_adjusted.py'
+      - 'scripts/validate_nfl_opponent_adjusted_walkforward.py'
       - '.github/workflows/nfl-data-build.yml'
 
 permissions:
@@ -38,14 +40,20 @@ jobs:
       - name: Cross-check independent NFL feature layers
         run: python scripts/validate_nfl_feature_layers.py
 
-      - name: Commit generated development data
+      - name: Build Week 6 opponent-adjusted research ratings
+        run: python scripts/build_nfl_opponent_adjusted.py
+
+      - name: Run historical walk-forward validation
+        run: python scripts/validate_nfl_opponent_adjusted_walkforward.py
+
+      - name: Commit generated development data and validation artifacts
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add nfl_data/generated/
+          git add nfl_data/generated/ nfl_data/validation/
           if git diff --cached --quiet; then
             echo "No generated data changes."
             exit 0
           fi
-          git commit -m "Build and validate NFL Week 6 pregame research snapshots"
+          git commit -m "Build and validate NFL pregame research layers"
           git push origin HEAD:nfl-model-development
