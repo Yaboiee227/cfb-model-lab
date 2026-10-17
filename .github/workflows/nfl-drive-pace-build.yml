@@ -1,0 +1,44 @@
+name: NFL drive and pace research build (development only)
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - nfl-model-development
+    paths:
+      - 'scripts/build_nfl_historical_drive_pace.py'
+      - '.github/workflows/nfl-drive-pace-build.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build-drive-pace:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout isolated NFL development branch
+        uses: actions/checkout@v4
+        with:
+          ref: nfl-model-development
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build leakage-safe 2022-2025 drive and pace history
+        run: python scripts/build_nfl_historical_drive_pace.py
+
+      - name: Commit research-only drive and pace outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add nfl_data/historical/team_week_drive_pace_2022_2025.csv nfl_data/historical/game_drive_pace_2022_2025.csv nfl_data/historical/drive_pace_build_qa.json
+          if git diff --cached --quiet; then
+            echo "No drive/pace changes."
+            exit 0
+          fi
+          git commit -m "Build NFL historical drive and pace research layer"
+          git pull --rebase origin nfl-model-development
+          git push origin HEAD:nfl-model-development
