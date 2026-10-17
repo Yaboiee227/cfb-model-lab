@@ -11,6 +11,7 @@ on:
       - 'scripts/validate_nfl_feature_layers.py'
       - 'scripts/build_nfl_opponent_adjusted.py'
       - 'scripts/validate_nfl_opponent_adjusted_walkforward.py'
+      - 'scripts/validate_nfl_market_residual_v1.py'
       - '.github/workflows/nfl-data-build.yml'
 
 permissions:
@@ -45,6 +46,9 @@ jobs:
 
       - name: Run historical walk-forward validation
         run: python scripts/validate_nfl_opponent_adjusted_walkforward.py
+
+      - name: Run market-anchored spread residual validation
+        run: python scripts/validate_nfl_market_residual_v1.py
 
       - name: Commit generated development data and validation artifacts
         run: |
