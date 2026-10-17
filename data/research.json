@@ -1,0 +1,66 @@
+{
+  "updated": "October 17, 2026 · game-day research",
+  "categories": [
+    {
+      "id": "availability",
+      "label": "Injuries & availability",
+      "short": "Availability",
+      "status": "Live audit",
+      "summary": "Player status, starter/depth role and whether confirmed absences are already absorbed by the model baseline.",
+      "items": [
+        {"title":"Personnel gate split","detail":"The audit separates true Questionable/Doubtful/Unknown status uncertainty from confirmed-out impact reconciliation. This prevents a resolved Out from being treated like a game-time decision.","tag":"Model QA"},
+        {"title":"UNLV–Air Force","detail":"UNLV starting QB Jackson Arnold remains a material game-day availability item in the research layer.","tag":"QB watch"},
+        {"title":"Alabama–Tennessee / Auburn–Georgia","detail":"Current audit has no material status uncertainty, but confirmed absences still require impact reconciliation before personnel can clear.","tag":"Impact review"}
+      ]
+    },
+    {
+      "id":"weather","label":"Weather & venue","short":"Weather","status":"Game-day","summary":"Wind, precipitation, temperature, altitude and venue context are reviewed before kickoff.",
+      "items":[
+        {"title":"Weather is a gate, not decoration","detail":"Environmental inputs can affect totals, kicking and explosive-play assumptions. Missing/uncertain weather remains a readiness blocker when material.","tag":"Environment"},
+        {"title":"Venue context","detail":"Neutral site, altitude and stadium context can be stored alongside each game and updated without changing site code.","tag":"Venue"}
+      ]
+    },
+    {
+      "id":"market","label":"Line movement & market","short":"Market","status":"Public reference","summary":"Current public-reference spread/total prices are kept separate from the frozen validation snapshot.",
+      "items":[
+        {"title":"Frozen vs. current market","detail":"Historical validation uses the saved snapshot. The site may show a newer public reference separately so live movement does not contaminate the prospective test.","tag":"Integrity"},
+        {"title":"Execution verification","detail":"Public book references are research context. A displayed line is not treated as an executable wager unless location-specific price verification clears.","tag":"Price QA"}
+      ]
+    },
+    {
+      "id":"efficiency","label":"Efficiency, SOS & rankings","short":"Efficiency","status":"Core input","summary":"Opponent-adjusted efficiency and schedule context form the statistical backbone of the projection.",
+      "items":[
+        {"title":"Efficiency blend","detail":"EPA, success rate, explosiveness and havoc are combined with opponent adjustment and recency weighting.","tag":"Core model"},
+        {"title":"Strength of schedule","detail":"Opponent quality and FBS/FCS context keep raw box-score production from being treated equally across schedules.","tag":"Context"}
+      ]
+    },
+    {
+      "id":"tempo","label":"Tempo, pace & matchup style","short":"Tempo","status":"Totals input","summary":"Possessions, drive pace and run/pass style help translate efficiency into scoring expectations.",
+      "items":[
+        {"title":"Possession environment","detail":"Pace and drive volume influence projected scoring opportunities and are especially important for totals.","tag":"Pace"},
+        {"title":"Style interaction","detail":"Run/pass tendencies, explosiveness and defensive disruption help identify matchup-specific friction.","tag":"Matchup"}
+      ]
+    },
+    {
+      "id":"schedule","label":"Travel, rest & scheduling","short":"Schedule","status":"Context","summary":"Rest days, travel distance, time-zone changes and situational scheduling spots are tracked explicitly.",
+      "items":[
+        {"title":"Travel & rest","detail":"Travel miles, time-zone crossings and short/long rest are maintained as distinct inputs with validation-aware coefficients.","tag":"Logistics"},
+        {"title":"Spot context","detail":"Bye weeks, rivalry games and lookahead/letdown flags are research context, not automatic betting rules.","tag":"Situational"}
+      ]
+    },
+    {
+      "id":"roster","label":"Coaching, transfers & depth","short":"Roster","status":"Research","summary":"Depth-chart changes, transfer impact and coaching continuity are used to interpret whether team baselines remain representative.",
+      "items":[
+        {"title":"Depth reconciliation","detail":"Starter and replacement roles matter more than raw injury counts. Unknown roles remain conservative review items.","tag":"Depth"},
+        {"title":"Roster change","detail":"Transfer and coaching changes can change how quickly prior performance should be trusted, especially early in a season.","tag":"Continuity"}
+      ]
+    },
+    {
+      "id":"situational","label":"Situational trends","short":"Situational","status":"Research only","summary":"Rivalry, bye, revenge and scheduling narratives are tracked as hypotheses, not standalone picks.",
+      "items":[
+        {"title":"No trend-shopping","detail":"Situational angles need prospective evidence before they can affect release status. Post-hoc patterns remain research notes.","tag":"Discipline"},
+        {"title":"Validation first","detail":"A large model/market difference cannot override a HOLD validation state or incomplete game-level readiness.","tag":"Release rule"}
+      ]
+    }
+  ]
+}
