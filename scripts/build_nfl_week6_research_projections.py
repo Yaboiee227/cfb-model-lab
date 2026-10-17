@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """Build isolated NFL Week 6 research projections from the validated architecture.
 
-Spread: frozen core + defensive coverage.
+Spread: frozen core + defensive coverage + validated recursive ratings.
 Total: frozen core baseline only.
 
 Training uses completed 2022-2025 regular-season games. Current team state uses
 2026 regular-season Weeks 1-5 only plus completed 2025 prior-season context.
-The completed Week-6 Thursday game is excluded. Schedule market lines are
-benchmark/reference fields only and are NOT execution-verified prices.
+The completed Week-6 Thursday game is excluded from the projection board.
+Schedule market lines are benchmark/reference fields only and are NOT
+execution-verified prices.
 
 Every output remains HOLD_RESEARCH_ONLY. This script does not publish website
 artifacts and must run only on nfl-model-development.
@@ -17,22 +18,21 @@ from __future__ import annotations
 import csv
 import json
 import sys
-from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
-
-import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build_nfl_historical_features as hist
 import run_nfl_walk_forward as base
 import validate_nfl_coverage_v1 as cov
+import validate_nfl_rating_system_robustness as rat
 
 SEASON = 2026
 TARGET_WEEK = 6
 CUTOFF_WEEK = 5
 OUT_DIR = Path("nfl_data/generated")
 COVERAGE_CURRENT = OUT_DIR / "coverage_2026_week6_pregame.csv"
+RATING_STABILITY = Path("nfl_data/validation/rating_system_stability.json")
 
 
 def tf(v):
@@ -170,6 +170,21 @@ def build_current_games(team_rows, coverage):
     return games, completed_excluded
 
 
+def load_rating_spec():
+    spec = json.loads(RATING_STABILITY.read_text(encoding="utf-8"))
+    if spec.get("stability_verdict") != "EARNED_WEEK6_RESEARCH_INCLUSION":
+        raise RuntimeError(f"Rating layer not cleared for Week-6 research inclusion: {spec.get('stability_verdict')}")
+    p = spec["frozen_rating_params"]
+    return spec, {
+        "elo_hfa": float(p["elo_hfa"]),
+        "elo_k": float(p["elo_k"]),
+        "lambda": float(p["lambda"]),
+        "margin_hfa": float(p["margin_hfa"]),
+        "margin_k": float(p["margin_k"]),
+        "offseason_regression": float(p["offseason_regression"]),
+    }
+
+
 def main():
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     historical = base.load_rows()
@@ -182,6 +197,7 @@ def main():
     frozen_spread, spread_top = cov.select(spread_2022, "spread", "coverage")
     total_2022 = [r for r in historical if r["season"] == 2022]
     frozen_total, total_top = base.select_params(total_2022, "total")
+    rating_stability, rating_params = load_rating_spec()
 
     team_rows, pbp_qa, max_source_week, future_rows_used = build_team_snapshot()
     current_cov = load_current_coverage()
@@ -191,13 +207,42 @@ def main():
     if len(current_games) != 13:
         raise RuntimeError(f"Expected 13 remaining Week-6 games after completed Thursday exclusion, got {len(current_games)}")
 
-    spread_pred, spread_coef = cov.fitp(
+    # Audit comparison: coverage-only spread.
+    coverage_pred, coverage_coef = cov.fitp(
         historical_cov,
         current_games,
         "spread",
         "coverage",
         {"team_k": frozen_spread["team_k"], "feature_k": frozen_spread["feature_k"], "lambda": frozen_spread["lambda"]},
     )
+
+    # Final research spread: core + coverage + market-independent recursive ratings.
+    games_df = rat.fetch_games()
+    rating_map = rat.rating_maps(
+        games_df,
+        rating_params["elo_k"],
+        rating_params["elo_hfa"],
+        rating_params["offseason_regression"],
+        rating_params["margin_k"],
+        rating_params["margin_hfa"],
+    )
+    historical_rated = rat.attach(historical_cov, rating_map)
+    current_rated = rat.attach(current_games, rating_map)
+    rating_fit = rat.fit(
+        historical_rated,
+        "both",
+        frozen_spread["team_k"],
+        rating_params["lambda"],
+        frozen_spread["feature_k"],
+    )
+    spread_pred = rat.pred(
+        current_rated,
+        "both",
+        frozen_spread["team_k"],
+        frozen_spread["feature_k"],
+        rating_fit,
+    )
+
     total_pred, total_model, total_prep, total_names, total_coef = base.fit_and_predict(
         historical,
         current_games,
@@ -207,8 +252,8 @@ def main():
     )
 
     output = []
-    for r, ps, pt in zip(current_games, spread_pred, total_pred):
-        ps = float(ps); pt = float(pt)
+    for r, pc, ps, pt in zip(current_games, coverage_pred, spread_pred, total_pred):
+        pc = float(pc); ps = float(ps); pt = float(pt)
         qsp = tf(r.get("market_home_spread_reference")); qtot = tf(r.get("market_total_reference"))
         output.append({
             "game_id": r["game_id"],
@@ -218,19 +263,22 @@ def main():
             "gametime": r.get("gametime", ""),
             "away_team": r["away_team"],
             "home_team": r["home_team"],
-            "pred_home_margin": round(ps, 3),
+            "coverage_only_home_margin": round(pc, 3),
+            "rating_adjusted_home_margin": round(ps, 3),
+            "rating_layer_margin_delta": round(ps - pc, 3),
             "projected_home_spread": round(-ps, 3),
             "pred_total": round(pt, 3),
             "schedule_home_spread_reference": "" if qsp is None else round(qsp, 3),
             "schedule_total_reference": "" if qtot is None else round(qtot, 3),
             "spread_edge_vs_schedule_reference": "" if qsp is None else round(ps + qsp, 3),
             "total_edge_vs_schedule_reference": "" if qtot is None else round(pt - qtot, 3),
-            "spread_model": "FROZEN_CORE_PLUS_DEFENSIVE_COVERAGE",
+            "spread_model": "FROZEN_CORE_PLUS_DEFENSIVE_COVERAGE_PLUS_WIN_ELO_PLUS_MARGIN_RATING",
             "total_model": "FROZEN_CORE_ONLY",
             "market_policy": "SCHEDULE_REFERENCE_ONLY_NOT_EXECUTION_VERIFIED_NOT_MODEL_FEATURE",
             "personnel_gate": "PENDING_OFFICIAL_STARTER_INACTIVE_VERIFICATION",
             "roof_weather_gate": "PENDING_FINAL_VERIFICATION",
             "execution_price_gate": "PENDING_DIRECT_BOOK_PRICE",
+            "prospective_validation_gate": "PENDING",
             "recommendation": "HOLD",
             "release_state": "HOLD_RESEARCH_ONLY",
             "website_publish_allowed": False,
@@ -253,13 +301,17 @@ def main():
         "completed_week6_games_excluded": completed_excluded,
         "max_current_source_week_used": max_source_week,
         "current_target_or_future_rows_used": future_rows_used,
-        "frozen_spread_params": frozen_spread,
-        "frozen_spread_2022_top_candidates": spread_top,
+        "frozen_coverage_params": frozen_spread,
+        "frozen_coverage_2022_top_candidates": spread_top,
+        "frozen_rating_params": rating_params,
+        "rating_stability_verdict": rating_stability.get("stability_verdict"),
+        "rating_production_verdict": rating_stability.get("production_verdict"),
         "frozen_total_params": frozen_total,
         "frozen_total_2022_top_candidates": total_top,
-        "spread_model": "core baseline + defensive coverage only",
+        "spread_model": "core baseline + defensive coverage + market-independent win Elo + margin rating",
+        "spread_audit_comparison": "coverage-only projection retained beside rating-adjusted projection",
         "total_model": "core baseline only",
-        "spread_training_feature_count": len(spread_coef),
+        "coverage_training_feature_count": len(coverage_coef),
         "total_training_feature_count": len(total_coef),
         "pbp_source_qa_2025_2026": pbp_qa,
         "market_policy": "schedule line retained only as non-execution-verified benchmark; excluded from all model features and fitting",
@@ -269,7 +321,7 @@ def main():
     }
     qa_path = OUT_DIR / "week6_research_projections_qa.json"
     qa_path.write_text(json.dumps(qa, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    print(json.dumps({"prediction_output": str(pred_path), "qa_output": str(qa_path), "games": len(output), "spread_params": frozen_spread, "total_params": frozen_total, "release_state": qa["release_state"]}, indent=2))
+    print(json.dumps({"prediction_output": str(pred_path), "qa_output": str(qa_path), "games": len(output), "coverage_params": frozen_spread, "rating_params": rating_params, "total_params": frozen_total, "release_state": qa["release_state"]}, indent=2))
 
 
 if __name__ == "__main__":
