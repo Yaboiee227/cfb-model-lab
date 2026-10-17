@@ -3,24 +3,33 @@
   const animationsEnabled=()=>localStorage.getItem('cb-live-animations')!=='0'&&!prefersReduced();
   const esc=v=>typeof escapeHtml==='function'?escapeHtml(v):String(v??'');
 
+  function latestFieldPlay(summary){
+    const drivePlays=summary?.drives?.current?.plays||[];
+    const all=drivePlays.length?drivePlays:(summary?.plays||[]);
+    return all.slice().reverse().find(p=>Number.isFinite(Number(p.start?.yardLine))&&Number.isFinite(Number(p.end?.yardLine)))||null;
+  }
+
   function fieldPosition(game,summary){
     const competition=summary?.header?.competitions?.[0]||{};
     const situation=competition.situation||{};
-    let yard=Number(situation.yardLine??game.yardLine);
+    const play=latestFieldPlay(summary);
+    let yard=Number(play?.end?.yardLine??situation.yardLine??game.yardLine);
     if(!Number.isFinite(yard))return null;
     yard=Math.max(0,Math.min(100,yard));
-    const possession=String(situation.possession||game.possessionTeamId||'');
-    const homeId=String(game.home.id),awayId=String(game.away.id);
-    let x=yard;
-    if(possession&&possession===homeId)x=100-yard;
-    return {x,down:Number(situation.down??game.down)||null,distance:Number(situation.distance??game.distance)||null,possession};
+    const start=Number(play?.start?.yardLine),end=Number(play?.end?.yardLine);
+    let direction=1;
+    if(Number.isFinite(start)&&Number.isFinite(end)&&Math.abs(end-start)>.1)direction=end>start?1:-1;
+    const possession=String(situation.possession||play?.team?.id||game.possessionTeamId||'');
+    const offense=possession===String(game.home.id)?game.home.name:possession===String(game.away.id)?game.away.name:'Offense';
+    return {x:yard,down:Number(situation.down??game.down)||null,distance:Number(situation.distance??game.distance)||null,possession,offense,direction};
   }
 
   function renderField(container,game,summary){
     const pos=fieldPosition(game,summary);
     if(!pos){container.innerHTML='<div class="graphic-unavailable">Field position not available for this game.</div>';return;}
-    const first=Math.max(0,Math.min(100,pos.x+(pos.possession===String(game.home.id)?-1:1)*(pos.distance||0)));
-    container.innerHTML=`<div class="football-field ${animationsEnabled()?'field-animate':''}"><div class="endzone left">${esc(game.away.name)}</div><div class="field-inner"><div class="yard-grid"></div><div class="line-scrimmage" style="left:${pos.x}%"></div>${pos.distance!==null?`<div class="first-down-line" style="left:${first}%"></div>`:''}<div class="ball-marker" style="left:${pos.x}%" title="Ball position"><span>◆</span></div></div><div class="endzone right">${esc(game.home.name)}</div></div><div class="field-caption"><strong>${pos.down?`${ordinal(pos.down)} & ${pos.distance??'—'}`:'Current field position'}</strong><span>${esc(game.lastPlay||'')}</span></div>`;
+    const first=pos.distance!==null?Math.max(0,Math.min(100,pos.x+pos.direction*(pos.distance||0))):null;
+    const arrow=pos.direction>0?'→':'←';
+    container.innerHTML=`<div class="field-offense-label"><span>Possession</span><strong>${esc(pos.offense)}</strong><b>${arrow}</b></div><div class="football-field ${animationsEnabled()?'field-animate':''}"><div class="endzone left">OWN</div><div class="field-inner"><div class="yard-grid"></div><div class="line-scrimmage" style="left:${pos.x}%"></div>${first!==null?`<div class="first-down-line" style="left:${first}%"></div>`:''}<div class="ball-marker" style="left:${pos.x}%" title="Ball position"><span>◆</span></div><div class="play-direction-arrow ${pos.direction<0?'left':''}" style="left:${pos.x}%">${arrow}</div></div><div class="endzone right">OPP</div></div><div class="field-caption"><strong>${pos.down?`${ordinal(pos.down)} & ${pos.distance??'—'}`:'Current field position'}</strong><span>${esc(game.lastPlay||'')}</span></div>`;
   }
   const ordinal=n=>n===1?'1st':n===2?'2nd':n===3?'3rd':`${n}th`;
 
@@ -60,7 +69,7 @@
   }
 
   function render(container,{game,summary,projection}){
-    if(!container)return;container.innerHTML=`<div class="graphics-toolbar"><span>Live graphics use ESPN fields when available.</span><label><input type="checkbox" id="liveAnimationsToggle" ${animationsEnabled()?'checked':''}> Animations</label></div>${eventBanner(summary)}<div class="live-graphics-grid"><article><div class="graphic-head"><h4>Field position</h4><button class="tooltip-button" type="button" title="Shows approximate ball position, line of scrimmage and first-down line from the current ESPN situation.">?</button></div><div data-live-field></div></article><article><div class="graphic-head"><h4>Current drive</h4><button class="tooltip-button" type="button" title="Tracks current-drive plays, yardage and time when ESPN publishes drive data.">?</button></div><div data-live-drive></div></article><article><div class="graphic-head"><h4>Win probability</h4><button class="tooltip-button" type="button" title="Live ESPN win probability with your pregame model probability shown as a reference line.">?</button></div><div data-live-winprob></div></article><article><div class="graphic-head"><h4>Score margin</h4><button class="tooltip-button" type="button" title="Tracks the home-team score margin across available play snapshots.">?</button></div><div data-live-momentum></div></article></div>`;renderField(container.querySelector('[data-live-field]'),game,summary);renderDrive(container.querySelector('[data-live-drive]'),summary);renderWinProbability(container.querySelector('[data-live-winprob]'),summary,projection);renderMomentum(container.querySelector('[data-live-momentum]'),summary);container.querySelector('#liveAnimationsToggle')?.addEventListener('change',e=>{localStorage.setItem('cb-live-animations',e.target.checked?'1':'0');render(container,{game,summary,projection})});
+    if(!container)return;container.innerHTML=`<div class="graphics-toolbar"><span>Live graphics use ESPN fields when available.</span><label><input type="checkbox" id="liveAnimationsToggle" ${animationsEnabled()?'checked':''}> Animations</label></div>${eventBanner(summary)}<div class="live-graphics-grid"><article><div class="graphic-head"><h4>Field position</h4><button class="tooltip-button" type="button" title="Shows ESPN's offense-relative field position, line of scrimmage, first-down target, and play direction inferred from the latest play when available.">?</button></div><div data-live-field></div></article><article><div class="graphic-head"><h4>Current drive</h4><button class="tooltip-button" type="button" title="Tracks current-drive plays, yardage and time when ESPN publishes drive data.">?</button></div><div data-live-drive></div></article><article><div class="graphic-head"><h4>Win probability</h4><button class="tooltip-button" type="button" title="Live ESPN win probability with your pregame model probability shown as a reference line.">?</button></div><div data-live-winprob></div></article><article><div class="graphic-head"><h4>Score margin</h4><button class="tooltip-button" type="button" title="Tracks the home-team score margin across available play snapshots.">?</button></div><div data-live-momentum></div></article></div>`;renderField(container.querySelector('[data-live-field]'),game,summary);renderDrive(container.querySelector('[data-live-drive]'),summary);renderWinProbability(container.querySelector('[data-live-winprob]'),summary,projection);renderMomentum(container.querySelector('[data-live-momentum]'),summary);container.querySelector('#liveAnimationsToggle')?.addEventListener('change',e=>{localStorage.setItem('cb-live-animations',e.target.checked?'1':'0');render(container,{game,summary,projection})});
   }
 
   window.CBLiveGraphics={render,renderField,renderDrive,renderWinProbability,renderMomentum,animationsEnabled};
