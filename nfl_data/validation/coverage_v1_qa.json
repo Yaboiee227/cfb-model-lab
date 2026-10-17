@@ -1,0 +1,1809 @@
+{
+  "baseline": {
+    "spread": {
+      "aggregate": {
+        "bias": -0.0526,
+        "mae": 10.3413,
+        "market_reference_mae": 9.7445,
+        "n": 816,
+        "rmse": 13.3201
+      },
+      "folds": [
+        {
+          "bias": -0.7102,
+          "edge_grading": {
+            "1": {
+              "losses": 99,
+              "n": 210,
+              "pushes": 9,
+              "win_rate": 0.5075,
+              "wins": 102
+            },
+            "2": {
+              "losses": 78,
+              "n": 167,
+              "pushes": 8,
+              "win_rate": 0.5094,
+              "wins": 81
+            },
+            "3": {
+              "losses": 52,
+              "n": 118,
+              "pushes": 6,
+              "win_rate": 0.5357,
+              "wins": 60
+            },
+            "4": {
+              "losses": 34,
+              "n": 78,
+              "pushes": 4,
+              "win_rate": 0.5405,
+              "wins": 40
+            },
+            "5": {
+              "losses": 23,
+              "n": 46,
+              "pushes": 1,
+              "win_rate": 0.4889,
+              "wins": 22
+            }
+          },
+          "mae": 10.5132,
+          "market_reference_mae": 9.9007,
+          "n": 272,
+          "rmse": 13.7484,
+          "season": 2023
+        },
+        {
+          "bias": 0.5182,
+          "edge_grading": {
+            "1": {
+              "losses": 103,
+              "n": 216,
+              "pushes": 4,
+              "win_rate": 0.5142,
+              "wins": 109
+            },
+            "2": {
+              "losses": 72,
+              "n": 162,
+              "pushes": 3,
+              "win_rate": 0.5472,
+              "wins": 87
+            },
+            "3": {
+              "losses": 54,
+              "n": 120,
+              "pushes": 2,
+              "win_rate": 0.5424,
+              "wins": 64
+            },
+            "4": {
+              "losses": 39,
+              "n": 77,
+              "pushes": 1,
+              "win_rate": 0.4868,
+              "wins": 37
+            },
+            "5": {
+              "losses": 22,
+              "n": 46,
+              "pushes": 0,
+              "win_rate": 0.5217,
+              "wins": 24
+            }
+          },
+          "mae": 10.1672,
+          "market_reference_mae": 9.6103,
+          "n": 272,
+          "rmse": 13.0916,
+          "season": 2024
+        },
+        {
+          "bias": 0.0343,
+          "edge_grading": {
+            "1": {
+              "losses": 109,
+              "n": 207,
+              "pushes": 1,
+              "win_rate": 0.4709,
+              "wins": 97
+            },
+            "2": {
+              "losses": 81,
+              "n": 148,
+              "pushes": 0,
+              "win_rate": 0.4527,
+              "wins": 67
+            },
+            "3": {
+              "losses": 56,
+              "n": 102,
+              "pushes": 0,
+              "win_rate": 0.451,
+              "wins": 46
+            },
+            "4": {
+              "losses": 38,
+              "n": 70,
+              "pushes": 0,
+              "win_rate": 0.4571,
+              "wins": 32
+            },
+            "5": {
+              "losses": 23,
+              "n": 45,
+              "pushes": 0,
+              "win_rate": 0.4889,
+              "wins": 22
+            }
+          },
+          "mae": 10.3435,
+          "market_reference_mae": 9.7224,
+          "n": 272,
+          "rmse": 13.1204,
+          "season": 2025
+        }
+      ]
+    },
+    "total": {
+      "aggregate": {
+        "bias": -1.2438,
+        "mae": 10.5472,
+        "market_reference_mae": 10.1207,
+        "n": 816,
+        "rmse": 13.5362
+      },
+      "folds": [
+        {
+          "bias": -0.9916,
+          "edge_grading": {
+            "1": {
+              "losses": 96,
+              "n": 194,
+              "pushes": 1,
+              "win_rate": 0.5026,
+              "wins": 97
+            },
+            "2": {
+              "losses": 66,
+              "n": 134,
+              "pushes": 1,
+              "win_rate": 0.5038,
+              "wins": 67
+            },
+            "3": {
+              "losses": 53,
+              "n": 102,
+              "pushes": 1,
+              "win_rate": 0.4752,
+              "wins": 48
+            },
+            "4": {
+              "losses": 31,
+              "n": 59,
+              "pushes": 1,
+              "win_rate": 0.4655,
+              "wins": 27
+            },
+            "5": {
+              "losses": 17,
+              "n": 32,
+              "pushes": 1,
+              "win_rate": 0.4516,
+              "wins": 14
+            }
+          },
+          "mae": 10.5069,
+          "market_reference_mae": 10.239,
+          "n": 272,
+          "rmse": 13.6117,
+          "season": 2023
+        },
+        {
+          "bias": -2.2116,
+          "edge_grading": {
+            "1": {
+              "losses": 102,
+              "n": 208,
+              "pushes": 3,
+              "win_rate": 0.5024,
+              "wins": 103
+            },
+            "2": {
+              "losses": 78,
+              "n": 150,
+              "pushes": 2,
+              "win_rate": 0.473,
+              "wins": 70
+            },
+            "3": {
+              "losses": 44,
+              "n": 98,
+              "pushes": 2,
+              "win_rate": 0.5417,
+              "wins": 52
+            },
+            "4": {
+              "losses": 30,
+              "n": 67,
+              "pushes": 1,
+              "win_rate": 0.5455,
+              "wins": 36
+            },
+            "5": {
+              "losses": 17,
+              "n": 42,
+              "pushes": 1,
+              "win_rate": 0.5854,
+              "wins": 24
+            }
+          },
+          "mae": 10.0708,
+          "market_reference_mae": 9.7298,
+          "n": 272,
+          "rmse": 13.1663,
+          "season": 2024
+        },
+        {
+          "bias": -0.5283,
+          "edge_grading": {
+            "1": {
+              "losses": 114,
+              "n": 216,
+              "pushes": 0,
+              "win_rate": 0.4722,
+              "wins": 102
+            },
+            "2": {
+              "losses": 86,
+              "n": 159,
+              "pushes": 0,
+              "win_rate": 0.4591,
+              "wins": 73
+            },
+            "3": {
+              "losses": 71,
+              "n": 124,
+              "pushes": 0,
+              "win_rate": 0.4274,
+              "wins": 53
+            },
+            "4": {
+              "losses": 53,
+              "n": 93,
+              "pushes": 0,
+              "win_rate": 0.4301,
+              "wins": 40
+            },
+            "5": {
+              "losses": 35,
+              "n": 59,
+              "pushes": 0,
+              "win_rate": 0.4068,
+              "wins": 24
+            }
+          },
+          "mae": 11.064,
+          "market_reference_mae": 10.3934,
+          "n": 272,
+          "rmse": 13.8305,
+          "season": 2025
+        }
+      ]
+    }
+  },
+  "coverage_source_rows": 2304,
+  "generated_at_utc": "2026-10-17T22:22:51.431273+00:00",
+  "market_policy": "BENCHMARK_ONLY_NOT_MODEL_FEATURE",
+  "ngs_source_rows": 2304,
+  "release_state": "HOLD_RESEARCH_ONLY",
+  "source_leakage_rows": 0,
+  "variants": {
+    "coverage": {
+      "spread": {
+        "aggregate": {
+          "bias": -0.0523,
+          "mae": 9.685,
+          "market_reference_mae": 9.7445,
+          "n": 816,
+          "rmse": 12.5276
+        },
+        "folds": [
+          {
+            "bias": -0.6147,
+            "edge_grading": {
+              "1": {
+                "losses": 93,
+                "n": 208,
+                "pushes": 14,
+                "win_rate": 0.5206,
+                "wins": 101
+              },
+              "2": {
+                "losses": 74,
+                "n": 156,
+                "pushes": 10,
+                "win_rate": 0.4932,
+                "wins": 72
+              },
+              "3": {
+                "losses": 54,
+                "n": 109,
+                "pushes": 6,
+                "win_rate": 0.4757,
+                "wins": 49
+              },
+              "4": {
+                "losses": 37,
+                "n": 69,
+                "pushes": 4,
+                "win_rate": 0.4308,
+                "wins": 28
+              },
+              "5": {
+                "losses": 22,
+                "n": 36,
+                "pushes": 1,
+                "win_rate": 0.3714,
+                "wins": 13
+              }
+            },
+            "feature_k": 1.0,
+            "inner_top_candidates": [
+              {
+                "feature_k": 1.0,
+                "lambda": 100.0,
+                "mae": 9.253145825908062,
+                "rmse": 12.11675150556487,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 1.0,
+                "lambda": 100.0,
+                "mae": 9.254753077789644,
+                "rmse": 12.117636808326608,
+                "team_k": 6.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 100.0,
+                "mae": 9.261213552489236,
+                "rmse": 12.134844575638096,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 100.0,
+                "mae": 9.262129948110084,
+                "rmse": 12.134856531312876,
+                "team_k": 6.0
+              },
+              {
+                "feature_k": 1.0,
+                "lambda": 30.0,
+                "mae": 9.265993609302363,
+                "rmse": 12.103191465187813,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 1.0,
+                "lambda": 100.0,
+                "mae": 9.273613770529304,
+                "rmse": 12.137998800993541,
+                "team_k": 4.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 100.0,
+                "mae": 9.277719806059192,
+                "rmse": 12.153900895110915,
+                "team_k": 4.0
+              },
+              {
+                "feature_k": 1.0,
+                "lambda": 30.0,
+                "mae": 9.278680464304278,
+                "rmse": 12.115591418404646,
+                "team_k": 6.0
+              },
+              {
+                "feature_k": 4.0,
+                "lambda": 100.0,
+                "mae": 9.283982989610609,
+                "rmse": 12.156242619728557,
+                "team_k": 6.0
+              },
+              {
+                "feature_k": 4.0,
+                "lambda": 100.0,
+                "mae": 9.290393772106736,
+                "rmse": 12.157288132478737,
+                "team_k": 8.0
+              }
+            ],
+            "lambda": 100.0,
+            "mae": 9.253145825908062,
+            "market_reference_mae": 9.9007,
+            "n": 272,
+            "rmse": 12.11675150556487,
+            "season": 2023,
+            "team_k": 8.0
+          },
+          {
+            "bias": 0.4802,
+            "edge_grading": {
+              "1": {
+                "losses": 92,
+                "n": 206,
+                "pushes": 3,
+                "win_rate": 0.5468,
+                "wins": 111
+              },
+              "2": {
+                "losses": 80,
+                "n": 172,
+                "pushes": 3,
+                "win_rate": 0.5266,
+                "wins": 89
+              },
+              "3": {
+                "losses": 60,
+                "n": 128,
+                "pushes": 2,
+                "win_rate": 0.5238,
+                "wins": 66
+              },
+              "4": {
+                "losses": 38,
+                "n": 90,
+                "pushes": 1,
+                "win_rate": 0.573,
+                "wins": 51
+              },
+              "5": {
+                "losses": 31,
+                "n": 63,
+                "pushes": 0,
+                "win_rate": 0.5079,
+                "wins": 32
+              }
+            },
+            "feature_k": 16.0,
+            "inner_top_candidates": [
+              {
+                "feature_k": 16.0,
+                "lambda": 30.0,
+                "mae": 10.268343967212294,
+                "rmse": 13.307298817428727,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 16.0,
+                "lambda": 10.0,
+                "mae": 10.273372409861153,
+                "rmse": 13.258077231603712,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 16.0,
+                "lambda": 3.0,
+                "mae": 10.279774504078635,
+                "rmse": 13.236682643510742,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 16.0,
+                "lambda": 30.0,
+                "mae": 10.281484535261939,
+                "rmse": 13.302185237610814,
+                "team_k": 2.0
+              },
+              {
+                "feature_k": 16.0,
+                "lambda": 1.0,
+                "mae": 10.283126392072115,
+                "rmse": 13.230270615053545,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 16.0,
+                "lambda": 0.1,
+                "mae": 10.284928906113104,
+                "rmse": 13.227378252225911,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 16.0,
+                "lambda": 30.0,
+                "mae": 10.28952273377915,
+                "rmse": 13.310628714850377,
+                "team_k": 3.0
+              },
+              {
+                "feature_k": 16.0,
+                "lambda": 30.0,
+                "mae": 10.29309432157745,
+                "rmse": 13.322538731574182,
+                "team_k": 4.0
+              },
+              {
+                "feature_k": 16.0,
+                "lambda": 10.0,
+                "mae": 10.294317591897553,
+                "rmse": 13.254348774439896,
+                "team_k": 2.0
+              },
+              {
+                "feature_k": 16.0,
+                "lambda": 100.0,
+                "mae": 10.298275937420618,
+                "rmse": 13.399163037118592,
+                "team_k": 2.0
+              }
+            ],
+            "lambda": 30.0,
+            "mae": 10.268343967212294,
+            "market_reference_mae": 9.6103,
+            "n": 272,
+            "rmse": 13.307298817428727,
+            "season": 2024,
+            "team_k": 1.0
+          },
+          {
+            "bias": -0.0224,
+            "edge_grading": {
+              "1": {
+                "losses": 106,
+                "n": 210,
+                "pushes": 1,
+                "win_rate": 0.4928,
+                "wins": 103
+              },
+              "2": {
+                "losses": 84,
+                "n": 163,
+                "pushes": 1,
+                "win_rate": 0.4815,
+                "wins": 78
+              },
+              "3": {
+                "losses": 65,
+                "n": 128,
+                "pushes": 1,
+                "win_rate": 0.4882,
+                "wins": 62
+              },
+              "4": {
+                "losses": 44,
+                "n": 88,
+                "pushes": 1,
+                "win_rate": 0.4943,
+                "wins": 43
+              },
+              "5": {
+                "losses": 31,
+                "n": 61,
+                "pushes": 0,
+                "win_rate": 0.4918,
+                "wins": 30
+              }
+            },
+            "feature_k": 1.0,
+            "inner_top_candidates": [
+              {
+                "feature_k": 1.0,
+                "lambda": 30.0,
+                "mae": 9.533511341046458,
+                "rmse": 12.158721907760684,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 30.0,
+                "mae": 9.534933274349141,
+                "rmse": 12.147696264326928,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 1.0,
+                "lambda": 10.0,
+                "mae": 9.542435002516427,
+                "rmse": 12.155897703123902,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 30.0,
+                "mae": 9.544189458094683,
+                "rmse": 12.159922270228536,
+                "team_k": 2.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 10.0,
+                "mae": 9.54446096262799,
+                "rmse": 12.14316160728275,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 1.0,
+                "lambda": 3.0,
+                "mae": 9.547963669187668,
+                "rmse": 12.159157737616109,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 1.0,
+                "lambda": 1.0,
+                "mae": 9.549912011816643,
+                "rmse": 12.160815083301694,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 10.0,
+                "mae": 9.550293524787115,
+                "rmse": 12.16114666333138,
+                "team_k": 2.0
+              },
+              {
+                "feature_k": 1.0,
+                "lambda": 0.1,
+                "mae": 9.550853866432558,
+                "rmse": 12.161694753252547,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 3.0,
+                "mae": 9.551166073682849,
+                "rmse": 12.146031608070828,
+                "team_k": 1.0
+              }
+            ],
+            "lambda": 30.0,
+            "mae": 9.533511341046458,
+            "market_reference_mae": 9.7224,
+            "n": 272,
+            "rmse": 12.158721907760684,
+            "season": 2025,
+            "team_k": 1.0
+          }
+        ],
+        "historical_verdict": "EARNED_FURTHER_TESTING",
+        "mae_delta_vs_baseline": -0.6563,
+        "production_verdict": "HOLD_RESEARCH_ONLY",
+        "seasons_with_lower_mae": 2
+      },
+      "total": {
+        "aggregate": {
+          "bias": -0.6931,
+          "mae": 11.0256,
+          "market_reference_mae": 10.1207,
+          "n": 816,
+          "rmse": 14.5096
+        },
+        "folds": [
+          {
+            "bias": -0.2319,
+            "edge_grading": {
+              "1": {
+                "losses": 106,
+                "n": 220,
+                "pushes": 2,
+                "win_rate": 0.5138,
+                "wins": 112
+              },
+              "2": {
+                "losses": 90,
+                "n": 180,
+                "pushes": 0,
+                "win_rate": 0.5,
+                "wins": 90
+              },
+              "3": {
+                "losses": 69,
+                "n": 136,
+                "pushes": 0,
+                "win_rate": 0.4926,
+                "wins": 67
+              },
+              "4": {
+                "losses": 55,
+                "n": 106,
+                "pushes": 0,
+                "win_rate": 0.4811,
+                "wins": 51
+              },
+              "5": {
+                "losses": 40,
+                "n": 75,
+                "pushes": 0,
+                "win_rate": 0.4667,
+                "wins": 35
+              }
+            },
+            "feature_k": 2.0,
+            "inner_top_candidates": [
+              {
+                "feature_k": 2.0,
+                "lambda": 30.0,
+                "mae": 10.660310988429519,
+                "rmse": 13.529716813484287,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 10.0,
+                "mae": 10.675682331091728,
+                "rmse": 13.536755350279252,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 1.0,
+                "lambda": 30.0,
+                "mae": 10.67671516454329,
+                "rmse": 13.533100914727044,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 10.0,
+                "mae": 10.67817325430821,
+                "rmse": 13.560814297675472,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 4.0,
+                "lambda": 30.0,
+                "mae": 10.681339942017182,
+                "rmse": 13.594771188144172,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 3.0,
+                "mae": 10.685973458070135,
+                "rmse": 13.53132917270011,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 0.1,
+                "mae": 10.6880777971322,
+                "rmse": 13.516512420535065,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 1.0,
+                "mae": 10.688287386302898,
+                "rmse": 13.522915884102908,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 30.0,
+                "mae": 10.691702983316164,
+                "rmse": 13.553865957539658,
+                "team_k": 6.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 100.0,
+                "mae": 10.694369319579149,
+                "rmse": 13.518142686499258,
+                "team_k": 8.0
+              }
+            ],
+            "lambda": 30.0,
+            "mae": 10.660310988429519,
+            "market_reference_mae": 10.239,
+            "n": 272,
+            "rmse": 13.529716813484287,
+            "season": 2023,
+            "team_k": 8.0
+          },
+          {
+            "bias": -1.5836,
+            "edge_grading": {
+              "1": {
+                "losses": 109,
+                "n": 224,
+                "pushes": 2,
+                "win_rate": 0.509,
+                "wins": 113
+              },
+              "2": {
+                "losses": 88,
+                "n": 180,
+                "pushes": 2,
+                "win_rate": 0.5056,
+                "wins": 90
+              },
+              "3": {
+                "losses": 72,
+                "n": 142,
+                "pushes": 2,
+                "win_rate": 0.4857,
+                "wins": 68
+              },
+              "4": {
+                "losses": 54,
+                "n": 108,
+                "pushes": 2,
+                "win_rate": 0.4906,
+                "wins": 52
+              },
+              "5": {
+                "losses": 39,
+                "n": 81,
+                "pushes": 2,
+                "win_rate": 0.5063,
+                "wins": 40
+              }
+            },
+            "feature_k": 4.0,
+            "inner_top_candidates": [
+              {
+                "feature_k": 4.0,
+                "lambda": 0.1,
+                "mae": 11.139488984158161,
+                "rmse": 14.449752402019152,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 4.0,
+                "lambda": 0.1,
+                "mae": 11.140124071546436,
+                "rmse": 14.46591308452829,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 4.0,
+                "lambda": 1.0,
+                "mae": 11.141872536029545,
+                "rmse": 14.446162710408382,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 4.0,
+                "lambda": 1.0,
+                "mae": 11.143899655520068,
+                "rmse": 14.463129707436122,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 4.0,
+                "lambda": 3.0,
+                "mae": 11.145780531080119,
+                "rmse": 14.440260523617921,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 0.1,
+                "mae": 11.149041854894772,
+                "rmse": 14.516385048989838,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 4.0,
+                "lambda": 3.0,
+                "mae": 11.150839646501606,
+                "rmse": 14.458591365178576,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 1.0,
+                "mae": 11.152435786037989,
+                "rmse": 14.514188330109564,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 0.1,
+                "mae": 11.15280579084932,
+                "rmse": 14.525134200533142,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 4.0,
+                "lambda": 0.1,
+                "mae": 11.15347947280492,
+                "rmse": 14.46199500393719,
+                "team_k": 6.0
+              }
+            ],
+            "lambda": 0.1,
+            "mae": 11.139488984158161,
+            "market_reference_mae": 9.7298,
+            "n": 272,
+            "rmse": 14.449752402019152,
+            "season": 2024,
+            "team_k": 8.0
+          },
+          {
+            "bias": -0.2639,
+            "edge_grading": {
+              "1": {
+                "losses": 113,
+                "n": 211,
+                "pushes": 0,
+                "win_rate": 0.4645,
+                "wins": 98
+              },
+              "2": {
+                "losses": 88,
+                "n": 170,
+                "pushes": 0,
+                "win_rate": 0.4824,
+                "wins": 82
+              },
+              "3": {
+                "losses": 72,
+                "n": 139,
+                "pushes": 0,
+                "win_rate": 0.482,
+                "wins": 67
+              },
+              "4": {
+                "losses": 53,
+                "n": 104,
+                "pushes": 0,
+                "win_rate": 0.4904,
+                "wins": 51
+              },
+              "5": {
+                "losses": 45,
+                "n": 76,
+                "pushes": 0,
+                "win_rate": 0.4079,
+                "wins": 31
+              }
+            },
+            "feature_k": 2.0,
+            "inner_top_candidates": [
+              {
+                "feature_k": 2.0,
+                "lambda": 0.1,
+                "mae": 11.277101169501574,
+                "rmse": 15.549471568224513,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 1.0,
+                "mae": 11.282625582574566,
+                "rmse": 15.549293481140708,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 1.0,
+                "lambda": 0.1,
+                "mae": 11.28640244082609,
+                "rmse": 15.531769800207393,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 1.0,
+                "lambda": 1.0,
+                "mae": 11.291649729639818,
+                "rmse": 15.531784242699466,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 3.0,
+                "mae": 11.294027562338377,
+                "rmse": 15.548937235852746,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 4.0,
+                "lambda": 0.1,
+                "mae": 11.297144132336086,
+                "rmse": 15.576001631835895,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 0.1,
+                "mae": 11.300816205369044,
+                "rmse": 15.556859444295206,
+                "team_k": 6.0
+              },
+              {
+                "feature_k": 1.0,
+                "lambda": 3.0,
+                "mae": 11.302514641819704,
+                "rmse": 15.531789323839636,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 4.0,
+                "lambda": 1.0,
+                "mae": 11.3026109157442,
+                "rmse": 15.575520941959034,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 1.0,
+                "mae": 11.305881288496337,
+                "rmse": 15.556605160018963,
+                "team_k": 6.0
+              }
+            ],
+            "lambda": 0.1,
+            "mae": 11.277101169501574,
+            "market_reference_mae": 10.3934,
+            "n": 272,
+            "rmse": 15.549471568224513,
+            "season": 2025,
+            "team_k": 8.0
+          }
+        ],
+        "historical_verdict": "NO_PROMOTION",
+        "mae_delta_vs_baseline": 0.4784,
+        "production_verdict": "HOLD_RESEARCH_ONLY",
+        "seasons_with_lower_mae": 0
+      }
+    },
+    "coverage_receiving_matchup": {
+      "spread": {
+        "aggregate": {
+          "bias": -0.053,
+          "mae": 9.6276,
+          "market_reference_mae": 9.7445,
+          "n": 816,
+          "rmse": 12.479
+        },
+        "folds": [
+          {
+            "bias": -0.6021,
+            "edge_grading": {
+              "1": {
+                "losses": 102,
+                "n": 215,
+                "pushes": 10,
+                "win_rate": 0.5024,
+                "wins": 103
+              },
+              "2": {
+                "losses": 73,
+                "n": 169,
+                "pushes": 8,
+                "win_rate": 0.5466,
+                "wins": 88
+              },
+              "3": {
+                "losses": 56,
+                "n": 120,
+                "pushes": 6,
+                "win_rate": 0.5088,
+                "wins": 58
+              },
+              "4": {
+                "losses": 41,
+                "n": 85,
+                "pushes": 5,
+                "win_rate": 0.4875,
+                "wins": 39
+              },
+              "5": {
+                "losses": 24,
+                "n": 49,
+                "pushes": 3,
+                "win_rate": 0.4783,
+                "wins": 22
+              }
+            },
+            "feature_k": 8.0,
+            "inner_top_candidates": [
+              {
+                "feature_k": 8.0,
+                "lambda": 100.0,
+                "mae": 8.99282537821202,
+                "rmse": 11.905592381900368,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 8.0,
+                "lambda": 100.0,
+                "mae": 8.995055481254884,
+                "rmse": 11.910416924613292,
+                "team_k": 6.0
+              },
+              {
+                "feature_k": 16.0,
+                "lambda": 100.0,
+                "mae": 9.003131612892322,
+                "rmse": 11.932136579045011,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 16.0,
+                "lambda": 100.0,
+                "mae": 9.007480804668448,
+                "rmse": 11.938845507925853,
+                "team_k": 6.0
+              },
+              {
+                "feature_k": 8.0,
+                "lambda": 100.0,
+                "mae": 9.01165518655469,
+                "rmse": 11.932595459944583,
+                "team_k": 4.0
+              },
+              {
+                "feature_k": 16.0,
+                "lambda": 100.0,
+                "mae": 9.025424528940846,
+                "rmse": 11.962788209863856,
+                "team_k": 4.0
+              },
+              {
+                "feature_k": 8.0,
+                "lambda": 100.0,
+                "mae": 9.027792139056652,
+                "rmse": 11.956889620221434,
+                "team_k": 3.0
+              },
+              {
+                "feature_k": 4.0,
+                "lambda": 100.0,
+                "mae": 9.039785042081233,
+                "rmse": 11.923119418731094,
+                "team_k": 6.0
+              },
+              {
+                "feature_k": 4.0,
+                "lambda": 100.0,
+                "mae": 9.041740008647238,
+                "rmse": 11.919312785213236,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 16.0,
+                "lambda": 100.0,
+                "mae": 9.04368466012519,
+                "rmse": 11.987478540937758,
+                "team_k": 3.0
+              }
+            ],
+            "lambda": 100.0,
+            "mae": 8.99282537821202,
+            "market_reference_mae": 9.9007,
+            "n": 272,
+            "rmse": 11.905592381900368,
+            "season": 2023,
+            "team_k": 8.0
+          },
+          {
+            "bias": 0.4957,
+            "edge_grading": {
+              "1": {
+                "losses": 96,
+                "n": 211,
+                "pushes": 1,
+                "win_rate": 0.5429,
+                "wins": 114
+              },
+              "2": {
+                "losses": 77,
+                "n": 168,
+                "pushes": 1,
+                "win_rate": 0.5389,
+                "wins": 90
+              },
+              "3": {
+                "losses": 59,
+                "n": 120,
+                "pushes": 0,
+                "win_rate": 0.5083,
+                "wins": 61
+              },
+              "4": {
+                "losses": 38,
+                "n": 83,
+                "pushes": 0,
+                "win_rate": 0.5422,
+                "wins": 45
+              },
+              "5": {
+                "losses": 25,
+                "n": 58,
+                "pushes": 0,
+                "win_rate": 0.569,
+                "wins": 33
+              }
+            },
+            "feature_k": 1.0,
+            "inner_top_candidates": [
+              {
+                "feature_k": 1.0,
+                "lambda": 100.0,
+                "mae": 10.323808227221145,
+                "rmse": 13.479680529557829,
+                "team_k": 2.0
+              },
+              {
+                "feature_k": 1.0,
+                "lambda": 100.0,
+                "mae": 10.327841010141123,
+                "rmse": 13.466631240689367,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 1.0,
+                "lambda": 100.0,
+                "mae": 10.33463338265164,
+                "rmse": 13.502411111344585,
+                "team_k": 3.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 100.0,
+                "mae": 10.339519098756456,
+                "rmse": 13.512610274882622,
+                "team_k": 2.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 100.0,
+                "mae": 10.33970090172147,
+                "rmse": 13.531950739398003,
+                "team_k": 3.0
+              },
+              {
+                "feature_k": 1.0,
+                "lambda": 30.0,
+                "mae": 10.34442250933791,
+                "rmse": 13.436689520739906,
+                "team_k": 2.0
+              },
+              {
+                "feature_k": 1.0,
+                "lambda": 30.0,
+                "mae": 10.345123806409587,
+                "rmse": 13.413760326887088,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 1.0,
+                "lambda": 30.0,
+                "mae": 10.347649646411952,
+                "rmse": 13.46681310342119,
+                "team_k": 3.0
+              },
+              {
+                "feature_k": 1.0,
+                "lambda": 100.0,
+                "mae": 10.351742236604741,
+                "rmse": 13.525781789669235,
+                "team_k": 4.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 100.0,
+                "mae": 10.35278993746233,
+                "rmse": 13.504795483871838,
+                "team_k": 1.0
+              }
+            ],
+            "lambda": 100.0,
+            "mae": 10.323808227221145,
+            "market_reference_mae": 9.6103,
+            "n": 272,
+            "rmse": 13.479680529557829,
+            "season": 2024,
+            "team_k": 2.0
+          },
+          {
+            "bias": -0.0525,
+            "edge_grading": {
+              "1": {
+                "losses": 113,
+                "n": 220,
+                "pushes": 0,
+                "win_rate": 0.4864,
+                "wins": 107
+              },
+              "2": {
+                "losses": 92,
+                "n": 170,
+                "pushes": 0,
+                "win_rate": 0.4588,
+                "wins": 78
+              },
+              "3": {
+                "losses": 70,
+                "n": 128,
+                "pushes": 0,
+                "win_rate": 0.4531,
+                "wins": 58
+              },
+              "4": {
+                "losses": 51,
+                "n": 96,
+                "pushes": 0,
+                "win_rate": 0.4688,
+                "wins": 45
+              },
+              "5": {
+                "losses": 41,
+                "n": 76,
+                "pushes": 0,
+                "win_rate": 0.4605,
+                "wins": 35
+              }
+            },
+            "feature_k": 4.0,
+            "inner_top_candidates": [
+              {
+                "feature_k": 4.0,
+                "lambda": 0.1,
+                "mae": 9.566140025330691,
+                "rmse": 12.051850259310713,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 4.0,
+                "lambda": 0.1,
+                "mae": 9.567906382554956,
+                "rmse": 12.0567275857108,
+                "team_k": 2.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 0.1,
+                "mae": 9.572072878372415,
+                "rmse": 12.079875475926652,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 30.0,
+                "mae": 9.572306319850192,
+                "rmse": 12.092918350958682,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 1.0,
+                "lambda": 30.0,
+                "mae": 9.576776275445958,
+                "rmse": 12.116787302502335,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 10.0,
+                "mae": 9.58050356160217,
+                "rmse": 12.092926890238276,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 8.0,
+                "lambda": 0.1,
+                "mae": 9.582672278370415,
+                "rmse": 12.041610925440548,
+                "team_k": 2.0
+              },
+              {
+                "feature_k": 8.0,
+                "lambda": 0.1,
+                "mae": 9.58535859216755,
+                "rmse": 12.071995825622137,
+                "team_k": 3.0
+              },
+              {
+                "feature_k": 1.0,
+                "lambda": 10.0,
+                "mae": 9.585678679359228,
+                "rmse": 12.117851049968412,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 0.1,
+                "mae": 9.586529943181013,
+                "rmse": 12.098224352930465,
+                "team_k": 2.0
+              }
+            ],
+            "lambda": 0.1,
+            "mae": 9.566140025330691,
+            "market_reference_mae": 9.7224,
+            "n": 272,
+            "rmse": 12.051850259310713,
+            "season": 2025,
+            "team_k": 1.0
+          }
+        ],
+        "historical_verdict": "EARNED_FURTHER_TESTING",
+        "mae_delta_vs_baseline": -0.7137,
+        "production_verdict": "HOLD_RESEARCH_ONLY",
+        "seasons_with_lower_mae": 2
+      },
+      "total": {
+        "aggregate": {
+          "bias": -0.131,
+          "mae": 11.141,
+          "market_reference_mae": 10.1207,
+          "n": 816,
+          "rmse": 14.6196
+        },
+        "folds": [
+          {
+            "bias": 1.6693,
+            "edge_grading": {
+              "1": {
+                "losses": 127,
+                "n": 242,
+                "pushes": 2,
+                "win_rate": 0.4708,
+                "wins": 113
+              },
+              "2": {
+                "losses": 111,
+                "n": 214,
+                "pushes": 2,
+                "win_rate": 0.4764,
+                "wins": 101
+              },
+              "3": {
+                "losses": 101,
+                "n": 190,
+                "pushes": 1,
+                "win_rate": 0.4656,
+                "wins": 88
+              },
+              "4": {
+                "losses": 82,
+                "n": 154,
+                "pushes": 1,
+                "win_rate": 0.4641,
+                "wins": 71
+              },
+              "5": {
+                "losses": 75,
+                "n": 138,
+                "pushes": 1,
+                "win_rate": 0.4526,
+                "wins": 62
+              }
+            },
+            "feature_k": 2.0,
+            "inner_top_candidates": [
+              {
+                "feature_k": 2.0,
+                "lambda": 0.1,
+                "mae": 10.719255860747554,
+                "rmse": 13.509250315804954,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 1.0,
+                "mae": 10.722187456231957,
+                "rmse": 13.519084445295396,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 3.0,
+                "mae": 10.729667489724333,
+                "rmse": 13.534784507615129,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 4.0,
+                "lambda": 3.0,
+                "mae": 10.741897796138687,
+                "rmse": 13.565569723291178,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 4.0,
+                "lambda": 1.0,
+                "mae": 10.750875557740088,
+                "rmse": 13.558887316091866,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 4.0,
+                "lambda": 10.0,
+                "mae": 10.755096093838839,
+                "rmse": 13.585816824883231,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 4.0,
+                "lambda": 0.1,
+                "mae": 10.757185790135308,
+                "rmse": 13.556262398429155,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 10.0,
+                "mae": 10.769330744977403,
+                "rmse": 13.562120391408172,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 30.0,
+                "mae": 10.819988513156517,
+                "rmse": 13.596464526065668,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 4.0,
+                "lambda": 30.0,
+                "mae": 10.820572026351053,
+                "rmse": 13.624212011997983,
+                "team_k": 1.0
+              }
+            ],
+            "lambda": 0.1,
+            "mae": 10.719255860747554,
+            "market_reference_mae": 10.239,
+            "n": 272,
+            "rmse": 13.509250315804954,
+            "season": 2023,
+            "team_k": 1.0
+          },
+          {
+            "bias": -1.6413,
+            "edge_grading": {
+              "1": {
+                "losses": 111,
+                "n": 231,
+                "pushes": 3,
+                "win_rate": 0.5132,
+                "wins": 117
+              },
+              "2": {
+                "losses": 92,
+                "n": 189,
+                "pushes": 2,
+                "win_rate": 0.508,
+                "wins": 95
+              },
+              "3": {
+                "losses": 73,
+                "n": 143,
+                "pushes": 2,
+                "win_rate": 0.4823,
+                "wins": 68
+              },
+              "4": {
+                "losses": 58,
+                "n": 108,
+                "pushes": 2,
+                "win_rate": 0.4528,
+                "wins": 48
+              },
+              "5": {
+                "losses": 36,
+                "n": 76,
+                "pushes": 2,
+                "win_rate": 0.5135,
+                "wins": 38
+              }
+            },
+            "feature_k": 4.0,
+            "inner_top_candidates": [
+              {
+                "feature_k": 4.0,
+                "lambda": 3.0,
+                "mae": 11.152432497500714,
+                "rmse": 14.56810957488514,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 4.0,
+                "lambda": 10.0,
+                "mae": 11.155359295974941,
+                "rmse": 14.553932210245154,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 4.0,
+                "lambda": 1.0,
+                "mae": 11.158644408082417,
+                "rmse": 14.57631143140026,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 4.0,
+                "lambda": 0.1,
+                "mae": 11.16166467178823,
+                "rmse": 14.581060346878965,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 4.0,
+                "lambda": 10.0,
+                "mae": 11.17301812839006,
+                "rmse": 14.560554212299612,
+                "team_k": 2.0
+              },
+              {
+                "feature_k": 4.0,
+                "lambda": 3.0,
+                "mae": 11.178501922708529,
+                "rmse": 14.57986169065248,
+                "team_k": 2.0
+              },
+              {
+                "feature_k": 16.0,
+                "lambda": 0.1,
+                "mae": 11.181337245020321,
+                "rmse": 14.466918557893443,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 10.0,
+                "mae": 11.182810556425903,
+                "rmse": 14.649493977713552,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 8.0,
+                "lambda": 0.1,
+                "mae": 11.183907829336023,
+                "rmse": 14.520439107107956,
+                "team_k": 1.0
+              },
+              {
+                "feature_k": 4.0,
+                "lambda": 1.0,
+                "mae": 11.184011080447064,
+                "rmse": 14.590651964689133,
+                "team_k": 2.0
+              }
+            ],
+            "lambda": 3.0,
+            "mae": 11.152432497500714,
+            "market_reference_mae": 9.7298,
+            "n": 272,
+            "rmse": 14.56810957488514,
+            "season": 2024,
+            "team_k": 1.0
+          },
+          {
+            "bias": -0.4211,
+            "edge_grading": {
+              "1": {
+                "losses": 115,
+                "n": 211,
+                "pushes": 0,
+                "win_rate": 0.455,
+                "wins": 96
+              },
+              "2": {
+                "losses": 88,
+                "n": 169,
+                "pushes": 0,
+                "win_rate": 0.4793,
+                "wins": 81
+              },
+              "3": {
+                "losses": 71,
+                "n": 131,
+                "pushes": 0,
+                "win_rate": 0.458,
+                "wins": 60
+              },
+              "4": {
+                "losses": 56,
+                "n": 101,
+                "pushes": 0,
+                "win_rate": 0.4455,
+                "wins": 45
+              },
+              "5": {
+                "losses": 41,
+                "n": 74,
+                "pushes": 0,
+                "win_rate": 0.4459,
+                "wins": 33
+              }
+            },
+            "feature_k": 1.0,
+            "inner_top_candidates": [
+              {
+                "feature_k": 1.0,
+                "lambda": 0.1,
+                "mae": 11.551317918365136,
+                "rmse": 15.78153304338623,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 16.0,
+                "lambda": 0.1,
+                "mae": 11.552001156707911,
+                "rmse": 15.628242874032876,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 8.0,
+                "lambda": 0.1,
+                "mae": 11.552478743355074,
+                "rmse": 15.732324589354132,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 1.0,
+                "lambda": 1.0,
+                "mae": 11.553250543536103,
+                "rmse": 15.779280279493072,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 0.1,
+                "mae": 11.554578313149625,
+                "rmse": 15.804807292601085,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 4.0,
+                "lambda": 0.1,
+                "mae": 11.555713142577252,
+                "rmse": 15.80331568715489,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 2.0,
+                "lambda": 1.0,
+                "mae": 11.558372005922426,
+                "rmse": 15.8023928860829,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 1.0,
+                "lambda": 3.0,
+                "mae": 11.560771850807322,
+                "rmse": 15.779274499831912,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 8.0,
+                "lambda": 1.0,
+                "mae": 11.562747872245753,
+                "rmse": 15.731651479980298,
+                "team_k": 8.0
+              },
+              {
+                "feature_k": 4.0,
+                "lambda": 1.0,
+                "mae": 11.563483612145898,
+                "rmse": 15.801053789489542,
+                "team_k": 8.0
+              }
+            ],
+            "lambda": 0.1,
+            "mae": 11.551317918365136,
+            "market_reference_mae": 10.3934,
+            "n": 272,
+            "rmse": 15.78153304338623,
+            "season": 2025,
+            "team_k": 8.0
+          }
+        ],
+        "historical_verdict": "NO_PROMOTION",
+        "mae_delta_vs_baseline": 0.5938,
+        "production_verdict": "HOLD_RESEARCH_ONLY",
+        "seasons_with_lower_mae": 0
+      }
+    }
+  },
+  "website_publish_allowed": false
+}
