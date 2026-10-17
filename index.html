@@ -1,1 +1,208 @@
-<!doctype html><html lang="en" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark light"><meta name="theme-color" content="#07111f"><meta name="description" content="CB Model Projections: weekly college football model projections, performance tracking, and research context. Research and entertainment only."><meta name="robots" content="index,follow"><meta property="og:title" content="CB Model Projections"><meta property="og:description" content="College football model projections, record tracking, and research context."><meta property="og:type" content="website"><meta property="og:url" content="https://yaboiee227.github.io/cfb-model-lab/"><title>CB Model Projections | College Football Research</title><link rel="stylesheet" href="styles.css"></head><body><a class="skip-link" href="#main">Skip to main content</a><header class="site-header" id="top"><div class="header-inner"><a class="brand" href="#home" aria-label="CB Model Projections home"><span class="brand-mark" aria-hidden="true">CB</span><span class="brand-copy"><strong>CB Model Projections</strong><small>College football research</small></span></a><nav class="primary-nav" aria-label="Primary navigation"><a href="#projections">Projections</a><a href="#record">Record</a><a href="#research">Research</a><a href="#methodology">Methodology</a><a href="#glossary">Glossary</a><a href="#support">Support</a><a href="#about">About</a></nav><button class="theme-toggle icon-button" id="themeToggle" type="button" aria-label="Switch to light mode" title="Toggle dark/light mode"><span class="theme-icon" aria-hidden="true">☼</span></button></div></header><main id="main"><section class="hero section-shell" id="home" aria-labelledby="heroTitle"><div class="hero-grid"><div class="hero-copy"><p class="eyebrow">FBS MODEL • WEEKLY PROJECTIONS</p><h1 id="heroTitle">Numbers first.<br><span>Context always.</span></h1><p class="hero-lede">Weekly college football projections for spread, total, win probability, and model-implied moneyline—paired with the research context that can move a game.</p><div class="hero-actions"><a class="button button-primary" href="#projections">View this week</a><a class="button button-ghost" href="#methodology">How it works</a></div><p class="hero-note">Model projections only. No official wager recommendations.</p></div><aside class="hero-panel" aria-label="Model status"><div class="scoreboard-top"><span>MODEL STATUS</span><span class="live-chip"><i></i><span id="lastUpdated">Loading…</span></span></div><div class="status-grid"><div class="status-card"><span>Spread validation</span><strong id="spreadValidation">—</strong></div><div class="status-card"><span>Total validation</span><strong id="totalValidation">—</strong></div><div class="status-card"><span>Games loaded</span><strong id="gamesLoaded">—</strong></div><div class="status-card"><span>Model version</span><strong id="modelVersion">—</strong></div></div><div class="field-lines" aria-hidden="true"><i></i><i></i><i></i><i></i></div></aside></div><div class="hero-metrics" aria-label="Projection summary"><div><span>Avg model total</span><strong id="metricTotal">—</strong></div><div><span>Avg favorite margin</span><strong id="metricMargin">—</strong></div><div><span>Highest win probability</span><strong id="metricWinProb">—</strong></div><div><span>Market references</span><strong id="metricMarkets">—</strong></div></div></section><section class="section-shell" id="projections" aria-labelledby="projectionsTitle"><div class="section-heading"><div><p class="eyebrow">THIS WEEK</p><h2 id="projectionsTitle">Model projections</h2><p>Sort and filter the slate. Market lines are comparison points; the model line is the model’s independent projection.</p></div><div class="section-actions"><button class="button button-ghost button-small" id="exportCsv" type="button">Export filtered CSV</button></div></div><div class="disclaimer-callout" role="note"><strong>Research only.</strong><span id="projectionDisclaimer">All projections are informational and are not official wager recommendations.</span></div><div class="filter-panel" aria-label="Projection filters"><label class="search-field"><span>Search teams</span><input id="teamSearch" type="search" placeholder="e.g. Alabama, BYU, Michigan" autocomplete="off"></label><label><span>Week</span><select id="weekFilter"><option value="">All weeks</option></select></label><label><span>Conference</span><select id="conferenceFilter"><option value="">All conferences</option></select></label><label><span>Date</span><select id="dateFilter"><option value="">All dates</option></select></label><label><span>Sort</span><select id="sortFilter"><option value="kickoff">Kickoff</option><option value="winprob">Win probability</option><option value="spreadgap">Spread gap</option><option value="totalgap">Total gap</option><option value="quality">Data quality</option></select></label><button class="button button-quiet" id="resetFilters" type="button">Reset</button></div><div class="table-meta"><span id="projectionCount" aria-live="polite">Loading projections…</span><span class="table-key"><i class="dot model"></i> model <i class="dot market"></i> public market reference</span></div><div class="table-wrap" tabindex="0" aria-label="Scrollable projections table"><table class="data-table projection-table"><thead><tr><th scope="col">Game</th><th scope="col">Model score</th><th scope="col">Model spread</th><th scope="col">Market spread</th><th scope="col">Spread gap</th><th scope="col">Model total</th><th scope="col">Market total</th><th scope="col">Win probability</th><th scope="col">Implied ML</th><th scope="col">Data</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead><tbody id="projectionBody"></tbody></table></div><div class="projection-cards" id="projectionCards" aria-label="Mobile projections"></div><div class="empty-state" id="projectionEmpty" hidden>No games match those filters.</div></section><section class="section-shell alt-section" id="record" aria-labelledby="recordTitle"><div class="section-heading"><div><p class="eyebrow">PERFORMANCE</p><h2 id="recordTitle">Record tracker</h2><p>Tracks how model projections graded—not wagers placed and not a betting recommendation history.</p></div></div><div class="record-grid"><article class="record-card featured"><div class="record-card-head"><span>ATS</span><small>Against the spread</small></div><strong id="atsRecord">—</strong><div class="record-sub"><span id="atsPct">—</span> win rate <span>•</span><span id="atsPushes">— pushes</span></div></article><article class="record-card"><div class="record-card-head"><span>SU</span><small>Straight up</small></div><strong id="suRecord">—</strong><div class="record-sub"><span id="suPct">—</span> win rate</div></article><article class="record-card"><div class="record-card-head"><span>Tracked</span><small>Projection results</small></div><strong id="gradedCount">—</strong><div class="record-sub">rows in results.csv</div></article></div><div class="record-layout"><article class="panel chart-panel"><div class="panel-head"><div><p class="eyebrow">TREND</p><h3>ATS cumulative performance</h3></div><span>projection grading</span></div><div class="chart-wrap"><canvas id="recordChart" width="900" height="330" aria-label="Cumulative ATS performance chart" role="img"></canvas></div></article><article class="panel"><div class="panel-head"><div><p class="eyebrow">WEEKLY</p><h3>Weekly record</h3></div></div><div class="compact-table-wrap"><table class="compact-table"><thead><tr><th>Week</th><th>ATS</th><th>ATS %</th><th>SU</th><th>SU %</th></tr></thead><tbody id="weeklyRecordBody"></tbody></table></div></article></div><article class="panel conference-panel"><div class="panel-head"><div><p class="eyebrow">BREAKDOWN</p><h3>By conference</h3></div><span>Based on completed rows available in results.csv</span></div><div class="compact-table-wrap"><table class="compact-table"><thead><tr><th>Conference</th><th>ATS</th><th>ATS %</th><th>SU</th><th>SU %</th><th>Games</th></tr></thead><tbody id="conferenceRecordBody"></tbody></table></div></article></section><section class="section-shell" id="research" aria-labelledby="researchTitle"><div class="section-heading"><div><p class="eyebrow">RESEARCH HUB</p><h2 id="researchTitle">What can move the number</h2><p>Organized context around the inputs and uncertainties that matter before kickoff.</p></div><span class="updated-label" id="researchUpdated">Loading…</span></div><div class="research-shell"><div class="research-tabs" id="researchTabs" role="tablist" aria-label="Research categories"></div><div class="research-panel" id="researchPanel" role="tabpanel" tabindex="0"></div></div></section><section class="section-shell alt-section" id="methodology" aria-labelledby="methodologyTitle"><div class="section-heading"><div><p class="eyebrow">METHODOLOGY</p><h2 id="methodologyTitle">How the model works</h2><p>A plain-English view of the pipeline. The goal is disciplined projection, not false precision.</p></div></div><div class="method-grid"><article class="method-card"><span>01</span><h3>Build team strength</h3><p>Start with team efficiency, including EPA, success rate, explosiveness, havoc, scoring and drive-level production. Recent games receive more relevance than older ones.</p></article><article class="method-card"><span>02</span><h3>Adjust for opponents</h3><p>Raw production is adjusted for schedule quality and opponent strength so the same stat line is not treated equally against very different competition.</p></article><article class="method-card"><span>03</span><h3>Project the matchup</h3><p>Offense and defense are paired with pace, drive volume and matchup style to estimate each team’s points, the home spread and the game total.</p></article><article class="method-card"><span>04</span><h3>Add game context</h3><p>Availability, depth, weather, travel, rest and venue context are audited separately. Material uncertainty can keep a projection in review even when the statistical model is complete.</p></article><article class="method-card"><span>05</span><h3>Compare with market</h3><p>The model projection is compared with a market reference. The difference is a research gap—not automatically a bet, edge, or expected profit.</p></article><article class="method-card"><span>06</span><h3>Validate prospectively</h3><p>Spread and totals architectures must earn promotion through out-of-sample performance. A validation HOLD cannot be overridden by one large model/market discrepancy.</p></article></div><div class="limitations panel"><h3>Important limitations</h3><p>College football changes quickly. Injury reporting can be incomplete, depth roles can shift, market prices move, and historical relationships can fail out of sample. Model probabilities are estimates—not certainties. Current validation states are displayed prominently because calibration matters as much as raw projection error.</p></div></section><section class="section-shell" id="glossary" aria-labelledby="glossaryTitle"><div class="section-heading"><div><p class="eyebrow">HOW TO READ IT</p><h2 id="glossaryTitle">Glossary</h2><p>Quick definitions for first-time visitors.</p></div></div><div class="glossary-grid"><article><h3>Spread</h3><p>A handicap expressed in points. A favorite has a negative spread; an underdog has a positive spread.</p></article><article><h3>ATS</h3><p>Against the spread. Grades whether a projected side covered the market spread used for comparison.</p></article><article><h3>Moneyline</h3><p>A price on which team wins outright. This site converts model win probability into a display-only implied American moneyline.</p></article><article><h3>Total</h3><p>The combined points line for both teams. The model total is the projected combined score.</p></article><article><h3>Push</h3><p>A tie against the spread or total. Pushes are separated from wins and losses.</p></article><article><h3>Win probability</h3><p>The model’s estimated chance that a team wins the game outright.</p></article><article><h3>Model/market gap</h3><p>The numerical difference between the model projection and a market reference. It is a research signal, not a wager instruction.</p></article><article><h3>Data quality</h3><p>A completeness/readiness measure for required model inputs. High input coverage does not guarantee predictive accuracy.</p></article></div></section><section class="section-shell support-section" id="support" aria-labelledby="supportTitle"><div class="support-card"><div><p class="eyebrow">SUPPORT MY WORK</p><h2 id="supportTitle">If the work helps you, support is appreciated.</h2><p>Support is completely optional—not required or necessary. All CB Model Projections content stays free regardless.</p></div><a class="button button-primary support-button" id="venmoLink" href="https://venmo.com/u/Kaleb_InThe_Cut" target="_blank" rel="noopener noreferrer">Support via Venmo <span aria-hidden="true">↗</span></a></div></section><section class="section-shell alt-section" id="about" aria-labelledby="aboutTitle"><div class="about-grid"><div><p class="eyebrow">ABOUT</p><h2 id="aboutTitle">Built to make the model easier to inspect.</h2><p>CB Model Projections is a transparent front end for weekly college football projections and their supporting research. It separates model output, market comparison, data quality and validation so visitors can see what the numbers mean—and what they do not mean.</p></div><div class="contact-card"><h3>Contact & project</h3><p>Questions, feedback, or a bug report? The public GitHub repository is the best place to review the site source and open an issue.</p><a class="text-link" id="repoLink" href="https://github.com/Yaboiee227/cfb-model-lab" target="_blank" rel="noopener noreferrer">Open GitHub repository ↗</a></div></div></section></main><footer class="site-footer"><div class="footer-inner"><a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true">CB</span><strong>CB Model Projections</strong></a><p id="footerDisclaimer">All content on CB Model Projections is model-generated and provided for research and entertainment purposes only. It is not betting advice and not an official wager recommendation. Past performance does not guarantee future results. Must be 21+ (or the legal age in your jurisdiction). If you or someone you know has a gambling problem, call 1-800-GAMBLER.</p><div class="footer-links"><a href="#projections">Projections</a><a href="#methodology">Methodology</a><a href="#support">Support</a><a href="#top">Back to top ↑</a></div></div></footer><div class="toast" id="toast" role="status" aria-live="polite"></div><script src="script.js" defer></script></body></html>
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#07101d">
+  <meta name="description" content="CB Model Projections: weekly college football projections, transparent performance tracking, and research context.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="CB Model Projections">
+  <meta property="og:description" content="Independent college football projections, market comparison, performance tracking, and research context.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yaboiee227.github.io/cfb-model-lab/">
+  <title>CB Model Projections | College Football Research</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header" id="top">
+  <div class="header-inner">
+    <a class="brand" href="#home" aria-label="CB Model Projections home">
+      <span class="brand-mark" aria-hidden="true">CB</span>
+      <span class="brand-copy"><strong>CB Model Projections</strong><small>College football intelligence</small></span>
+    </a>
+    <nav class="primary-nav" aria-label="Primary navigation">
+      <a href="#projections">Projections</a>
+      <a href="#record">Record</a>
+      <a href="#research">Research</a>
+      <a href="#methodology">Methodology</a>
+      <a href="#glossary">Glossary</a>
+      <a href="#support">Support</a>
+      <a href="#about">About</a>
+    </nav>
+    <button class="theme-toggle icon-button" id="themeToggle" type="button" aria-label="Switch to light mode" title="Toggle dark/light mode"><span class="theme-icon" aria-hidden="true">☼</span></button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero section-shell" id="home" aria-labelledby="heroTitle">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="hero-kicker-row">
+          <p class="eyebrow">FBS MODEL • WEEKLY COMMAND CENTER</p>
+          <span class="research-chip">Research only</span>
+        </div>
+        <h1 id="heroTitle">Project the game.<br><span>Audit the context.</span></h1>
+        <p class="hero-lede">Independent college football projections for score, spread, total and win probability—paired with market comparison, input quality and the context that can change a matchup.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projections">Open the slate <span aria-hidden="true">↓</span></a>
+          <a class="button button-ghost" href="#research">Research hub</a>
+        </div>
+        <div class="trust-row" aria-label="Product principles">
+          <span><i aria-hidden="true"></i> Projection first</span>
+          <span><i aria-hidden="true"></i> Context visible</span>
+          <span><i aria-hidden="true"></i> Validation enforced</span>
+        </div>
+      </div>
+
+      <aside class="command-center" aria-label="Model command center">
+        <div class="command-head">
+          <div>
+            <span class="command-label">MODEL COMMAND CENTER</span>
+            <strong>Current slate status</strong>
+          </div>
+          <span class="live-chip"><i></i><span id="lastUpdated">Loading…</span></span>
+        </div>
+        <div class="status-grid">
+          <article class="status-card status-primary"><span>Spread validation</span><strong id="spreadValidation">—</strong><small>Release gate</small></article>
+          <article class="status-card status-primary"><span>Total validation</span><strong id="totalValidation">—</strong><small>Release gate</small></article>
+          <article class="status-card"><span>Games loaded</span><strong id="gamesLoaded">—</strong><small>Current dataset</small></article>
+          <article class="status-card"><span>Model version</span><strong id="modelVersion">—</strong><small>Active build</small></article>
+        </div>
+        <div class="hold-note"><span>HOLD</span><p>A validation hold means projections remain research output. It is not overridden by a large model/market gap.</p></div>
+      </aside>
+    </div>
+
+    <div class="hero-metrics" aria-label="Slate projection summary">
+      <div><span>Average model total</span><strong id="metricTotal">—</strong><small>Projected combined points</small></div>
+      <div><span>Average favorite margin</span><strong id="metricMargin">—</strong><small>Absolute model spread</small></div>
+      <div><span>Highest win probability</span><strong id="metricWinProb">—</strong><small>Across loaded games</small></div>
+      <div><span>Market references</span><strong id="metricMarkets">—</strong><small>Games with comparison data</small></div>
+    </div>
+  </section>
+
+  <section class="section-shell projections-section" id="projections" aria-labelledby="projectionsTitle">
+    <div class="section-heading projections-heading">
+      <div>
+        <p class="eyebrow">WEEKLY BOARD</p>
+        <h2 id="projectionsTitle">Projection board</h2>
+        <p>Scan the full slate, compare the independent model with a public market reference, and inspect data readiness before drawing conclusions.</p>
+      </div>
+      <div class="section-actions"><button class="button button-ghost button-small" id="exportCsv" type="button">Export filtered CSV</button></div>
+    </div>
+
+    <div class="projection-rules" role="note">
+      <div class="rule-item"><span class="legend-swatch model-swatch"></span><div><strong>Model</strong><small>Independent projection</small></div></div>
+      <div class="rule-item"><span class="legend-swatch market-swatch"></span><div><strong>Market</strong><small>Comparison reference</small></div></div>
+      <div class="rule-item"><span class="legend-swatch hold-swatch"></span><div><strong>Validation</strong><small>Release status stays separate</small></div></div>
+      <p id="projectionDisclaimer">All projections are informational and are not official wager recommendations.</p>
+    </div>
+
+    <div class="filter-panel" aria-label="Projection filters">
+      <label class="search-field"><span>Search teams</span><input id="teamSearch" type="search" placeholder="Search Alabama, BYU, Michigan…" autocomplete="off"></label>
+      <label><span>Week</span><select id="weekFilter"><option value="">All weeks</option></select></label>
+      <label><span>Conference</span><select id="conferenceFilter"><option value="">All conferences</option></select></label>
+      <label><span>Date</span><select id="dateFilter"><option value="">All dates</option></select></label>
+      <label><span>Sort</span><select id="sortFilter"><option value="kickoff">Kickoff</option><option value="winprob">Win probability</option><option value="spreadgap">Spread gap</option><option value="totalgap">Total gap</option><option value="quality">Data quality</option></select></label>
+      <button class="button button-quiet" id="resetFilters" type="button">Reset</button>
+    </div>
+
+    <div class="table-meta">
+      <span id="projectionCount" aria-live="polite">Loading projections…</span>
+      <span class="scan-note">★ Saved games stay at the top of your board</span>
+    </div>
+
+    <div class="table-wrap" tabindex="0" aria-label="Scrollable projections table">
+      <table class="data-table projection-table">
+        <thead><tr><th scope="col">Game</th><th scope="col">Model score</th><th scope="col">Model spread</th><th scope="col">Market spread</th><th scope="col">Spread gap</th><th scope="col">Model total</th><th scope="col">Market total</th><th scope="col">Win probability</th><th scope="col">Implied ML</th><th scope="col">Data</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead>
+        <tbody id="projectionBody"></tbody>
+      </table>
+    </div>
+    <div class="projection-cards" id="projectionCards" aria-label="Mobile projections"></div>
+    <div class="empty-state" id="projectionEmpty" hidden>No games match those filters.</div>
+  </section>
+
+  <section class="section-shell alt-section" id="record" aria-labelledby="recordTitle">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">TRANSPARENT PERFORMANCE</p>
+        <h2 id="recordTitle">Projection record</h2>
+        <p>This grades model projections against the tracked comparison number. It is not a wager ledger.</p>
+      </div>
+      <span class="audit-badge">Audit view</span>
+    </div>
+    <div class="record-grid">
+      <article class="record-card featured"><div class="record-card-head"><span>ATS</span><small>Against the spread</small></div><strong id="atsRecord">—</strong><div class="record-sub"><span id="atsPct">—</span> win rate <span>•</span><span id="atsPushes">— pushes</span></div></article>
+      <article class="record-card"><div class="record-card-head"><span>SU</span><small>Straight up</small></div><strong id="suRecord">—</strong><div class="record-sub"><span id="suPct">—</span> win rate</div></article>
+      <article class="record-card"><div class="record-card-head"><span>Tracked</span><small>Projection results</small></div><strong id="gradedCount">—</strong><div class="record-sub">graded rows in results.csv</div></article>
+    </div>
+    <div class="record-layout">
+      <article class="panel chart-panel"><div class="panel-head"><div><p class="eyebrow">TREND</p><h3>ATS cumulative performance</h3></div><span>projection grading</span></div><div class="chart-wrap"><canvas id="recordChart" width="900" height="330" aria-label="Cumulative ATS performance chart" role="img"></canvas></div></article>
+      <article class="panel"><div class="panel-head"><div><p class="eyebrow">WEEKLY</p><h3>Weekly record</h3></div></div><div class="compact-table-wrap"><table class="compact-table"><thead><tr><th>Week</th><th>ATS</th><th>ATS %</th><th>SU</th><th>SU %</th></tr></thead><tbody id="weeklyRecordBody"></tbody></table></div></article>
+    </div>
+    <article class="panel conference-panel"><div class="panel-head"><div><p class="eyebrow">BREAKDOWN</p><h3>Conference audit</h3></div><span>Completed projection rows</span></div><div class="compact-table-wrap"><table class="compact-table"><thead><tr><th>Conference</th><th>ATS</th><th>ATS %</th><th>SU</th><th>SU %</th><th>Games</th></tr></thead><tbody id="conferenceRecordBody"></tbody></table></div></article>
+  </section>
+
+  <section class="section-shell" id="research" aria-labelledby="researchTitle">
+    <div class="section-heading">
+      <div><p class="eyebrow">EVIDENCE CENTER</p><h2 id="researchTitle">Research hub</h2><p>Availability, weather, market movement, efficiency, tempo, roster and situational context—organized around what can move a projection.</p></div>
+      <span class="updated-label" id="researchUpdated">Loading…</span>
+    </div>
+    <div class="research-shell"><div class="research-tabs" id="researchTabs" role="tablist" aria-label="Research categories"></div><div class="research-panel" id="researchPanel" role="tabpanel" tabindex="0"></div></div>
+  </section>
+
+  <section class="section-shell alt-section" id="methodology" aria-labelledby="methodologyTitle">
+    <div class="section-heading"><div><p class="eyebrow">MODEL PIPELINE</p><h2 id="methodologyTitle">How the projection is built</h2><p>The process is designed to separate statistical projection, contextual review, market comparison and validation.</p></div></div>
+    <div class="method-grid">
+      <article class="method-card"><span>01</span><h3>Build team strength</h3><p>Team efficiency begins with EPA, success rate, explosiveness, havoc, scoring and drive-level production, with recency weighted deliberately.</p></article>
+      <article class="method-card"><span>02</span><h3>Adjust for opponents</h3><p>Production is normalized for schedule and opponent quality so identical box-score output is not treated equally across very different competition.</p></article>
+      <article class="method-card"><span>03</span><h3>Project the matchup</h3><p>Offense and defense are paired with pace, drive volume and matchup style to estimate team points, home spread and game total.</p></article>
+      <article class="method-card"><span>04</span><h3>Add game context</h3><p>Availability, depth, weather, travel, rest and venue conditions are audited separately. Material uncertainty can keep a matchup in review.</p></article>
+      <article class="method-card"><span>05</span><h3>Compare with market</h3><p>The independent projection is compared with a public market reference. The difference is a research signal, not automatic expected value.</p></article>
+      <article class="method-card"><span>06</span><h3>Validate prospectively</h3><p>Spread and totals systems must earn promotion through out-of-sample results. A validation HOLD cannot be bypassed by one attractive number.</p></article>
+    </div>
+    <div class="limitations panel"><div><p class="eyebrow">WHY THE GATES MATTER</p><h3>Accuracy before action.</h3></div><p>College football changes quickly. Injury information can be incomplete, depth roles can move, market prices can change, and historical relationships can weaken out of sample. The site therefore keeps projection, market gap, input quality and release status separate.</p></div>
+  </section>
+
+  <section class="section-shell" id="glossary" aria-labelledby="glossaryTitle">
+    <div class="section-heading"><div><p class="eyebrow">READ THE BOARD</p><h2 id="glossaryTitle">Glossary</h2><p>Fast definitions for the numbers shown throughout the site.</p></div></div>
+    <div class="glossary-grid">
+      <article><h3>Spread</h3><p>A point handicap. A favorite has a negative number; an underdog has a positive number.</p></article>
+      <article><h3>ATS</h3><p>Against the spread. Grades whether the projected side covered the tracked comparison spread.</p></article>
+      <article><h3>Moneyline</h3><p>The outright-win price. This site converts model win probability into a display-only implied American moneyline.</p></article>
+      <article><h3>Total</h3><p>The projected combined score of both teams, compared with the current reference total when available.</p></article>
+      <article><h3>Push</h3><p>A tie against the tracked spread or total. Pushes are separated from wins and losses.</p></article>
+      <article><h3>Win probability</h3><p>The model's estimated chance that a team wins outright.</p></article>
+      <article><h3>Model / market gap</h3><p>The numerical difference between the independent model and a market reference. It is a research signal, not a wager instruction.</p></article>
+      <article><h3>Data quality</h3><p>A completeness/readiness measure for required inputs. High coverage does not guarantee predictive accuracy.</p></article>
+    </div>
+  </section>
+
+  <section class="section-shell support-section" id="support" aria-labelledby="supportTitle">
+    <div class="support-card">
+      <div><p class="eyebrow">SUPPORT THE PROJECT</p><h2 id="supportTitle">Keep the research free and public.</h2><p>Support is optional. Every projection, record update and research page remains free regardless.</p></div>
+      <a class="button button-primary support-button" id="venmoLink" href="https://venmo.com/u/Kaleb_InThe_Cut" target="_blank" rel="noopener noreferrer">Support via Venmo <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+
+  <section class="section-shell alt-section" id="about" aria-labelledby="aboutTitle">
+    <div class="about-grid">
+      <div><p class="eyebrow">ABOUT CB MODEL PROJECTIONS</p><h2 id="aboutTitle">A transparent front end for the model.</h2><p>CB Model Projections exists to make weekly college football projections easier to inspect. It puts the independent number, market comparison, research context, data quality and validation state in the same place without blurring the difference between them.</p></div>
+      <div class="contact-card"><span class="command-label">PROJECT SOURCE</span><h3>Inspect the build</h3><p>Questions, feedback or bugs can be reviewed through the public repository.</p><a class="text-link" id="repoLink" href="https://github.com/Yaboiee227/cfb-model-lab" target="_blank" rel="noopener noreferrer">Open GitHub repository ↗</a></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true">CB</span><strong>CB Model Projections</strong></a>
+    <p id="footerDisclaimer">All content on CB Model Projections is model-generated and provided for research and entertainment purposes only. It is not betting advice and not an official wager recommendation. Past performance does not guarantee future results. Must be 21+ (or the legal age in your jurisdiction). If you or someone you know has a gambling problem, call 1-800-GAMBLER.</p>
+    <div class="footer-links"><a href="#projections">Projections</a><a href="#methodology">Methodology</a><a href="#support">Support</a><a href="#top">Back to top ↑</a></div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="script.js" defer></script>
+</body>
+</html>
