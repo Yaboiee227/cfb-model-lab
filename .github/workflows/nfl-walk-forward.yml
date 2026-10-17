@@ -1,0 +1,47 @@
+name: NFL walk-forward baseline (development only)
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - nfl-model-development
+    paths:
+      - 'scripts/run_nfl_walk_forward.py'
+      - 'nfl_data/historical/**'
+      - '.github/workflows/nfl-walk-forward.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  validate-baseline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout isolated NFL development branch
+        uses: actions/checkout@v4
+        with:
+          ref: nfl-model-development
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install numerical dependency
+        run: python -m pip install --disable-pip-version-check numpy
+
+      - name: Run 2023-2025 season-level walk-forward validation
+        run: python scripts/run_nfl_walk_forward.py
+
+      - name: Commit research-only validation outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add nfl_data/validation/
+          if git diff --cached --quiet; then
+            echo "No validation changes."
+            exit 0
+          fi
+          git commit -m "Run NFL 2023-2025 walk-forward baseline"
+          git push origin HEAD:nfl-model-development
