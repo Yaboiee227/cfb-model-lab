@@ -1,0 +1,43 @@
+name: NFL historical pregame build (development only)
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - nfl-model-development
+    paths:
+      - 'scripts/build_nfl_historical_features.py'
+      - '.github/workflows/nfl-historical-build.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build-historical-pregame:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout isolated NFL development branch
+        uses: actions/checkout@v4
+        with:
+          ref: nfl-model-development
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build 2022-2025 leakage-safe pregame history
+        run: python scripts/build_nfl_historical_features.py
+
+      - name: Commit historical research files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add nfl_data/historical/
+          if git diff --cached --quiet; then
+            echo "No historical changes."
+            exit 0
+          fi
+          git commit -m "Build NFL 2022-2025 historical pregame features"
+          git push origin HEAD:nfl-model-development
