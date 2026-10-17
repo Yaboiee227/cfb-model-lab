@@ -1,0 +1,59 @@
+{
+  "release_state": "HOLD",
+  "context_seasons": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "target_seasons": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "2021": {
+    "rows_scanned": 49922,
+    "drive_keys": 6020,
+    "valid_drives": 5708,
+    "offense_teams": 32,
+    "defense_teams": 32
+  },
+  "2022": {
+    "rows_scanned": 49434,
+    "drive_keys": 6031,
+    "valid_drives": 5725,
+    "offense_teams": 32,
+    "defense_teams": 32
+  },
+  "2023": {
+    "rows_scanned": 49665,
+    "drive_keys": 6141,
+    "valid_drives": 5832,
+    "offense_teams": 32,
+    "defense_teams": 32
+  },
+  "2024": {
+    "rows_scanned": 49492,
+    "drive_keys": 5944,
+    "valid_drives": 5636,
+    "offense_teams": 32,
+    "defense_teams": 32
+  },
+  "2025": {
+    "rows_scanned": 48771,
+    "drive_keys": 5829,
+    "valid_drives": 5521,
+    "offense_teams": 32,
+    "defense_teams": 32
+  },
+  "team_week_rows": 2304,
+  "game_rows": 1087,
+  "missing_game_snapshots": 0,
+  "pace_definition": "mean game-clock seconds between consecutive qualifying scrimmage snaps within same fixed_drive, keeping 5-50 second intervals; neutral requires both snaps on early downs Q1-Q3 with 0.20<=wp<=0.80",
+  "drive_definition": "fixed_drive with at least one non-nullified non-kneel/spike scrimmage play",
+  "points_per_drive_definition": "posteam score change across fixed_drive; nonnegative",
+  "anti_leakage": "max_week_used < target_week for every snapshot",
+  "generated_utc": "2026-10-17T21:28:57.474284+00:00"
+}
