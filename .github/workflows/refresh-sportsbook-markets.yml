@@ -9,8 +9,8 @@ permissions:
   contents: write
 
 concurrency:
-  group: refresh-sportsbook-markets
-  cancel-in-progress: true
+  group: market-snapshot-writes
+  cancel-in-progress: false
 
 jobs:
   refresh:
