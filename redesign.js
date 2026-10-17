@@ -13,6 +13,56 @@
     catch { return null; }
   };
 
+  function ensureSlateAudit() {
+    const metrics = document.querySelector('.hero-metrics');
+    if (!metrics || document.getElementById('slateAudit')) return;
+    const section = document.createElement('section');
+    section.className = 'slate-audit';
+    section.id = 'slateAudit';
+    section.setAttribute('aria-label', 'Slate readiness audit');
+    section.innerHTML = `
+      <div class="slate-audit-head">
+        <div><span class="command-label">WEEKLY OPS</span><strong>Slate readiness audit</strong></div>
+        <span class="audit-badge">Live from projections.csv</span>
+      </div>
+      <div class="slate-audit-grid">
+        <article><span>High signal</span><strong id="auditHighSignal">—</strong><small>loaded matchups</small></article>
+        <article><span>Spread reference</span><strong id="auditSpreadCoverage">—</strong><small>market coverage</small></article>
+        <article><span>Total reference</span><strong id="auditTotalCoverage">—</strong><small>market coverage</small></article>
+        <article><span>Avg data quality</span><strong id="auditDataQuality">—</strong><small>input completeness</small></article>
+        <article><span>Execution verified</span><strong id="auditExecution">—</strong><small>current prices</small></article>
+      </div>
+      <div class="slate-audit-foot"><span id="auditHoldCount">—</span><span id="auditContextFlags">—</span><small>Coverage and input completeness do not equal predictive validation.</small></div>`;
+    metrics.insertAdjacentElement('afterend', section);
+  }
+
+  function updateSlateAudit() {
+    let games = [];
+    try { games = STATE.projections || []; } catch { return; }
+    if (!games.length) return;
+    const total = games.length;
+    const high = games.filter(g => String(g.signalStrength || '').toUpperCase() === 'HIGH').length;
+    const spread = games.filter(g => g.marketSpreadHome !== null && g.marketSpreadHome !== undefined).length;
+    const totals = games.filter(g => g.marketTotal !== null && g.marketTotal !== undefined).length;
+    const verified = games.filter(g => g.executionVerified).length;
+    const holds = games.filter(g => /HOLD/i.test(String(g.releaseStatus || ''))).length;
+    const context = games.filter(g => /(personnel|absence|injur|availability|depth|starter)/i.test(String(g.notes || ''))).length;
+    const qualities = games.map(g => {
+      const raw = Number(g.dataQuality);
+      if (!Number.isFinite(raw)) return null;
+      return raw <= 1 ? raw * 100 : raw;
+    }).filter(v => v !== null);
+    const avg = qualities.length ? qualities.reduce((a,b) => a+b, 0) / qualities.length : null;
+    const set = (id, text) => { const el = document.getElementById(id); if (el) el.textContent = text; };
+    set('auditHighSignal', `${high}/${total}`);
+    set('auditSpreadCoverage', `${spread}/${total}`);
+    set('auditTotalCoverage', `${totals}/${total}`);
+    set('auditDataQuality', avg === null ? '—' : `${Math.round(avg)}%`);
+    set('auditExecution', `${verified}/${total}`);
+    set('auditHoldCount', `${holds} game${holds === 1 ? '' : 's'} currently carry a HOLD status`);
+    set('auditContextFlags', `${context} matchup${context === 1 ? '' : 's'} carry personnel / availability context`);
+  }
+
   function ensurePriorityToolbar() {
     const filterPanel = document.querySelector('.filter-panel');
     if (!filterPanel || document.getElementById('priorityToolbar')) return;
@@ -210,6 +260,8 @@
   function scheduleEnhance() {
     clearTimeout(renderTimer);
     renderTimer = setTimeout(() => {
+      ensureSlateAudit();
+      updateSlateAudit();
       ensurePriorityToolbar();
       ensureDrawer();
       enhanceRenderedGames();
@@ -223,6 +275,7 @@
   });
 
   document.addEventListener('DOMContentLoaded', () => {
+    ensureSlateAudit();
     ensurePriorityToolbar();
     ensureDrawer();
     const body = document.getElementById('projectionBody');
