@@ -1,0 +1,171 @@
+{
+  "aggregate": {
+    "candidate_mae": 10.2285,
+    "candidate_minus_reference_mae": -0.0279,
+    "n": 816,
+    "paired_bootstrap_reference_minus_candidate": {
+      "bootstrap_95_ci": [
+        -0.06582,
+        0.12474
+      ],
+      "draws": 10000,
+      "mean_improvement": 0.02789,
+      "probability_gt_0": 0.7203,
+      "seed": 20261017
+    },
+    "reference_mae": 10.2564,
+    "seasons_improved": 2
+  },
+  "coverage_params": {
+    "feature_k": 1.0,
+    "lambda": 100.0,
+    "mae": 9.253145825908062,
+    "rmse": 12.11675150556487,
+    "team_k": 8.0
+  },
+  "design": "Nested incremental test of the pre-existing full turnover/regression family on top of the canonical final spread architecture. Candidate shrinkage/lambda selected from 2022 only; outer evaluation 2023-2025.",
+  "family": "full_turnover_regression",
+  "folds": {
+    "2023": {
+      "candidate_mae": 10.3938,
+      "candidate_minus_reference_mae": -0.1098,
+      "n": 272,
+      "reference_final_architecture_mae": 10.5036
+    },
+    "2024": {
+      "candidate_mae": 10.1837,
+      "candidate_minus_reference_mae": 0.1703,
+      "n": 272,
+      "reference_final_architecture_mae": 10.0135
+    },
+    "2025": {
+      "candidate_mae": 10.108,
+      "candidate_minus_reference_mae": -0.1441,
+      "n": 272,
+      "reference_final_architecture_mae": 10.2521
+    }
+  },
+  "generated_at_utc": "2026-10-17T23:56:35.592307+00:00",
+  "historical_promotion_earned": false,
+  "production_promotion_allowed": false,
+  "promotion_rule": "Candidate must improve aggregate MAE, improve at least 2 of 3 outer seasons, and have paired-bootstrap 95% CI for reference-minus-candidate entirely above zero.",
+  "recommendation_release_allowed": false,
+  "reference_architecture": "core + defensive coverage + market-independent win Elo + margin rating",
+  "reference_rating_params": {
+    "elo_hfa": 35.0,
+    "elo_k": 40.0,
+    "lambda": 100.0,
+    "margin_hfa": 3.0,
+    "margin_k": 0.05,
+    "offseason_regression": 0.25
+  },
+  "release_state": "HOLD_NO_INCREMENTAL_PROMOTION",
+  "selected_candidate_params_2022_only": {
+    "lambda": 300.0,
+    "mae": 9.206663585555058,
+    "rmse": 12.06956338282552,
+    "turnover_feature_k": 1.0,
+    "validation_games": 91
+  },
+  "source_leakage_rows": 0,
+  "source_turnover_rows": 2304,
+  "top_2022_candidates": [
+    {
+      "lambda": 300.0,
+      "mae": 9.206663585555058,
+      "rmse": 12.06956338282552,
+      "turnover_feature_k": 1.0,
+      "validation_games": 91
+    },
+    {
+      "lambda": 300.0,
+      "mae": 9.208020717430388,
+      "rmse": 12.07771073384361,
+      "turnover_feature_k": 2.0,
+      "validation_games": 91
+    },
+    {
+      "lambda": 300.0,
+      "mae": 9.215791276874969,
+      "rmse": 12.098231104243618,
+      "turnover_feature_k": 4.0,
+      "validation_games": 91
+    },
+    {
+      "lambda": 100.0,
+      "mae": 9.223707440318869,
+      "rmse": 11.947020934244712,
+      "turnover_feature_k": 1.0,
+      "validation_games": 91
+    },
+    {
+      "lambda": 100.0,
+      "mae": 9.23033096089536,
+      "rmse": 11.959678976575256,
+      "turnover_feature_k": 2.0,
+      "validation_games": 91
+    },
+    {
+      "lambda": 100.0,
+      "mae": 9.241428405723584,
+      "rmse": 11.987935685503766,
+      "turnover_feature_k": 4.0,
+      "validation_games": 91
+    },
+    {
+      "lambda": 300.0,
+      "mae": 9.249192994174164,
+      "rmse": 12.127783892093259,
+      "turnover_feature_k": 8.0,
+      "validation_games": 91
+    },
+    {
+      "lambda": 300.0,
+      "mae": 9.290244628188166,
+      "rmse": 12.145040097466632,
+      "turnover_feature_k": 16.0,
+      "validation_games": 91
+    }
+  ],
+  "turnover_feature_coefficients_by_test_season": {
+    "2023": {
+      "to_def_fumble_recovery_rate_diff": 0.343404,
+      "to_def_int_rate_diff": 0.298227,
+      "to_giveaways_per_game_diff": 0.314581,
+      "to_off_fumble_loss_rate_diff": 0.138161,
+      "to_off_int_rate_diff": 0.124321,
+      "to_one_score_games_share_diff": -0.755693,
+      "to_one_score_win_pct_diff": 0.053657,
+      "to_takeaways_per_game_diff": 0.060624,
+      "to_turnover_margin_per_game_diff": -0.167658,
+      "to_win_pct_minus_pythag_diff": -0.141441
+    },
+    "2024": {
+      "to_def_fumble_recovery_rate_diff": 0.473089,
+      "to_def_int_rate_diff": 0.462704,
+      "to_giveaways_per_game_diff": 0.504982,
+      "to_off_fumble_loss_rate_diff": 0.019873,
+      "to_off_int_rate_diff": 0.080317,
+      "to_one_score_games_share_diff": -0.968973,
+      "to_one_score_win_pct_diff": 0.253459,
+      "to_takeaways_per_game_diff": 0.165791,
+      "to_turnover_margin_per_game_diff": -0.218432,
+      "to_win_pct_minus_pythag_diff": -0.510847
+    },
+    "2025": {
+      "to_def_fumble_recovery_rate_diff": 0.414266,
+      "to_def_int_rate_diff": 0.408206,
+      "to_giveaways_per_game_diff": 0.315164,
+      "to_off_fumble_loss_rate_diff": 0.081103,
+      "to_off_int_rate_diff": -0.081901,
+      "to_one_score_games_share_diff": -0.377766,
+      "to_one_score_win_pct_diff": 0.410437,
+      "to_takeaways_per_game_diff": 0.147036,
+      "to_turnover_margin_per_game_diff": -0.100884,
+      "to_win_pct_minus_pythag_diff": -0.477074
+    }
+  },
+  "website_publish_allowed": false,
+  "week6_canonical_snapshot_may_be_rewritten": false,
+  "week6_ftn_shadow_snapshot_may_be_rewritten": false
+}
