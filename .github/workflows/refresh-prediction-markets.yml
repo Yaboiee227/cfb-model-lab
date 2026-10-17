@@ -9,8 +9,8 @@ permissions:
   contents: write
 
 concurrency:
-  group: refresh-prediction-markets
-  cancel-in-progress: true
+  group: market-snapshot-writes
+  cancel-in-progress: false
 
 jobs:
   refresh:
@@ -51,9 +51,9 @@ jobs:
           }
           const arr=v=>Array.isArray(v)?v:(()=>{try{return JSON.parse(v)}catch{return[]}})();
           function polymarketFor(game,markets){
-            const candidates=(Array.isArray(markets)?markets:markets?.data||[]).filter(m=>{const blob=`${m.question||''} ${m.title||''} ${m.description||''} ${m.slug||''}`;return overlap(blob,game.home.name)&&overlap(blob,game.away.name)});
+            const candidates=(Array.isArray(markets)?markets:markets?.data||[]).filter(m=>{const blob=`${m.question||''} ${m.title||''} ${m.description||''} ${m.slug||''} ${m.eventTitle||''}`;return overlap(blob,game.home.name)&&overlap(blob,game.away.name)});
             let home=null,away=null,volume=0,liquidity=0;
-            for(const m of candidates){const outcomes=arr(m.outcomes),prices=arr(m.outcomePrices).map(Number);outcomes.forEach((o,i)=>{if(overlap(o,game.home.name)&&Number.isFinite(prices[i]))home=prices[i];if(overlap(o,game.away.name)&&Number.isFinite(prices[i]))away=prices[i]});if(outcomes.length===2&&home===null&&away===null){const yi=outcomes.findIndex(o=>/^yes$/i.test(o));if(yi>=0&&Number.isFinite(prices[yi])){const q=`${m.question||''} ${m.title||''}`;if(overlap(q,game.home.name)){home=prices[yi];away=1-home}else if(overlap(q,game.away.name)){away=prices[yi];home=1-away}}}volume+=Number(m.volumeNum||m.volume||0)||0;liquidity+=Number(m.liquidityNum||m.liquidity||0)||0;}
+            for(const m of candidates){const outcomes=arr(m.outcomes),prices=arr(m.outcomePrices).map(Number);outcomes.forEach((o,i)=>{if(overlap(o,game.home.name)&&Number.isFinite(prices[i]))home=prices[i];if(overlap(o,game.away.name)&&Number.isFinite(prices[i]))away=prices[i]});if(outcomes.length===2&&home===null&&away===null){const yi=outcomes.findIndex(o=>/^yes$/i.test(o));if(yi>=0&&Number.isFinite(prices[yi])){const q=`${m.question||''} ${m.title||''} ${m.eventTitle||''}`;if(overlap(q,game.home.name)){home=prices[yi];away=1-home}else if(overlap(q,game.away.name)){away=prices[yi];home=1-away}}}volume+=Number(m.volumeNum||m.volume||0)||0;liquidity+=Number(m.liquidityNum||m.liquidity||0)||0;}
             if(home===null&&away!==null)home=1-away;if(away===null&&home!==null)away=1-home;
             return home===null&&away===null?{matched:false,error:'No market listed / no reliable match'}:{matched:true,updatedAt:new Date().toISOString(),homeProbability:home,awayProbability:away,volume,liquidity};
           }
@@ -64,7 +64,18 @@ jobs:
             if(!games.length){console.log('No live/upcoming game window; skipping prediction-market requests.');return;}
             let kalshiEvents=[];try{const k=await j('https://external-api.kalshi.com/trade-api/v2/events?status=open&limit=200&with_nested_markets=true');kalshiEvents=k.events||[]}catch(e){console.warn('Kalshi unavailable:',e.message)}
             const out=[];
-            for(const game of games){let poly=[];try{const q=encodeURIComponent(`${game.away.name} ${game.home.name}`);poly=await j(`https://gamma-api.polymarket.com/markets?closed=false&active=true&limit=100&q=${q}`)}catch(e){console.warn('Polymarket unavailable for',game.eventId,e.message)}const prior=previousFor(game.eventId,game.home.name,game.away.name);const kalshi=append(prior?.kalshi,kalshiFor(game,kalshiEvents));const polymarket=append(prior?.polymarket,polymarketFor(game,poly));out.push({eventId:game.eventId,date:game.date,homeTeam:game.home.name,awayTeam:game.away.name,kalshi,polymarket});}
+            for(const game of games){
+              let poly=[];
+              try{
+                const q=encodeURIComponent(`${game.away.name} ${game.home.name}`);
+                const search=await j(`https://gamma-api.polymarket.com/public-search?q=${q}&limit_per_type=10&search_profiles=false`);
+                poly=(search.events||[]).flatMap(event=>(event.markets||[]).map(m=>({...m,eventTitle:event.title||''})));
+              }catch(e){console.warn('Polymarket unavailable for',game.eventId,e.message)}
+              const prior=previousFor(game.eventId,game.home.name,game.away.name);
+              const kalshi=append(prior?.kalshi,kalshiFor(game,kalshiEvents));
+              const polymarket=append(prior?.polymarket,polymarketFor(game,poly));
+              out.push({eventId:game.eventId,date:game.date,homeTeam:game.home.name,awayTeam:game.away.name,kalshi,polymarket});
+            }
             fs.writeFileSync(path,JSON.stringify({generatedAt:new Date().toISOString(),sources:['kalshi','polymarket'],games:out,note:'Public read-only API snapshots collected by GitHub Actions to avoid browser CORS dependencies.'},null,2)+'\n');
             console.log(`Wrote ${out.length} prediction-market game snapshots.`);
           })().catch(e=>{console.error(e);process.exit(1)});
