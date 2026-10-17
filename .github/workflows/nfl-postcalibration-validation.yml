@@ -1,0 +1,49 @@
+name: NFL post-calibration validation (development only)
+
+on:
+  push:
+    branches: [nfl-model-development]
+    paths:
+      - 'scripts/validate_nfl_postcalibration.py'
+      - '.github/workflows/nfl-postcalibration-validation.yml'
+      - 'nfl_data/calibration/final_architecture_oos_predictions_2023_2025.csv'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  validate-postcalibration:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout isolated NFL development branch
+        uses: actions/checkout@v4
+        with:
+          ref: nfl-model-development
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install numpy
+      - name: Validate sequential post-calibration
+        run: python scripts/validate_nfl_postcalibration.py
+      - name: Commit post-calibration artifact safely
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add nfl_data/calibration/postcalibration_validation.json
+          if git diff --cached --quiet; then
+            echo "No post-calibration changes to commit"
+          else
+            git commit -m "Validate NFL post-calibration"
+            git pull --rebase origin nfl-model-development
+            git push origin nfl-model-development
+          fi
+      - name: Verify no website publication paths changed
+        run: |
+          if git diff --name-only HEAD~1 HEAD | grep -E '^(data/|app\.js$|index\.html$|.*\.css$|.*\.js$)' ; then
+            echo "Unexpected website path changed" >&2
+            exit 1
+          fi
