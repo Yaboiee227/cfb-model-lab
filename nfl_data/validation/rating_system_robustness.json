@@ -1,0 +1,159 @@
+{
+  "design": "Market-independent recursive ratings. Rating dynamics and ridge lambda selected using 2022 only; frozen for 2023-2025. Compared with frozen coverage reference.",
+  "frozen_coverage": {
+    "feature_k": 1.0,
+    "lambda": 100.0,
+    "mae": 9.253145825908062,
+    "rmse": 12.11675150556487,
+    "team_k": 8.0
+  },
+  "generated_at_utc": "2026-10-17T22:46:20.489768+00:00",
+  "release_state": "HOLD_ROBUSTNESS_ONLY",
+  "variants": {
+    "both": {
+      "aggregate": {
+        "bootstrap": {
+          "bootstrap_95_ci": [
+            0.02774,
+            0.1463
+          ],
+          "draws": 5000,
+          "mean_improvement": 0.08596,
+          "probability_gt_0": 0.998
+        },
+        "candidate_mae": 10.2564,
+        "delta": -0.086,
+        "n": 816,
+        "reference_mae": 10.3424,
+        "seasons_improved": 3
+      },
+      "folds": {
+        "2023": {
+          "candidate_mae": 10.5036,
+          "coverage_reference_mae": 10.5504,
+          "delta": -0.0468,
+          "n": 272
+        },
+        "2024": {
+          "candidate_mae": 10.0135,
+          "coverage_reference_mae": 10.0934,
+          "delta": -0.0799,
+          "n": 272
+        },
+        "2025": {
+          "candidate_mae": 10.2521,
+          "coverage_reference_mae": 10.3833,
+          "delta": -0.1311,
+          "n": 272
+        }
+      },
+      "frozen_params": {
+        "elo_hfa": 35.0,
+        "elo_k": 40.0,
+        "lambda": 100.0,
+        "mae": 9.22152336880381,
+        "margin_hfa": 3.0,
+        "margin_k": 0.05,
+        "offseason_regression": 0.25,
+        "rmse": 12.014710918457268
+      }
+    },
+    "margin_rating": {
+      "aggregate": {
+        "bootstrap": {
+          "bootstrap_95_ci": [
+            0.01327,
+            0.10546
+          ],
+          "draws": 5000,
+          "mean_improvement": 0.05904,
+          "probability_gt_0": 0.9946
+        },
+        "candidate_mae": 10.2833,
+        "delta": -0.059,
+        "n": 816,
+        "reference_mae": 10.3424,
+        "seasons_improved": 3
+      },
+      "folds": {
+        "2023": {
+          "candidate_mae": 10.513,
+          "coverage_reference_mae": 10.5504,
+          "delta": -0.0374,
+          "n": 272
+        },
+        "2024": {
+          "candidate_mae": 10.0332,
+          "coverage_reference_mae": 10.0934,
+          "delta": -0.0602,
+          "n": 272
+        },
+        "2025": {
+          "candidate_mae": 10.3037,
+          "coverage_reference_mae": 10.3833,
+          "delta": -0.0795,
+          "n": 272
+        }
+      },
+      "frozen_params": {
+        "elo_hfa": 35.0,
+        "elo_k": 10.0,
+        "lambda": 100.0,
+        "mae": 9.228369224280897,
+        "margin_hfa": 3.0,
+        "margin_k": 0.05,
+        "offseason_regression": 0.25,
+        "rmse": 12.063156977072735
+      }
+    },
+    "win_elo": {
+      "aggregate": {
+        "bootstrap": {
+          "bootstrap_95_ci": [
+            0.02324,
+            0.12054
+          ],
+          "draws": 5000,
+          "mean_improvement": 0.07177,
+          "probability_gt_0": 0.9984
+        },
+        "candidate_mae": 10.2706,
+        "delta": -0.0718,
+        "n": 816,
+        "reference_mae": 10.3424,
+        "seasons_improved": 3
+      },
+      "folds": {
+        "2023": {
+          "candidate_mae": 10.5199,
+          "coverage_reference_mae": 10.5504,
+          "delta": -0.0306,
+          "n": 272
+        },
+        "2024": {
+          "candidate_mae": 10.0365,
+          "coverage_reference_mae": 10.0934,
+          "delta": -0.0568,
+          "n": 272
+        },
+        "2025": {
+          "candidate_mae": 10.2553,
+          "coverage_reference_mae": 10.3833,
+          "delta": -0.1279,
+          "n": 272
+        }
+      },
+      "frozen_params": {
+        "elo_hfa": 65.0,
+        "elo_k": 40.0,
+        "lambda": 100.0,
+        "mae": 9.23511988649944,
+        "margin_hfa": 1.5,
+        "margin_k": 0.05,
+        "offseason_regression": 0.25,
+        "rmse": 12.032061627624932
+      }
+    }
+  },
+  "website_publish_allowed": false
+}
