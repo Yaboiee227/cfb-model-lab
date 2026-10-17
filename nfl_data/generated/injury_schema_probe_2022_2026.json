@@ -1,0 +1,177 @@
+{
+  "generated_at_utc": "2026-10-17T22:14:04.729002+00:00",
+  "release_state": "HOLD_AUDIT_ONLY",
+  "seasons": {
+    "2022": {
+      "columns": [
+        "season",
+        "game_type",
+        "team",
+        "week",
+        "gsis_id",
+        "position",
+        "full_name",
+        "first_name",
+        "last_name",
+        "report_primary_injury",
+        "report_secondary_injury",
+        "report_status",
+        "practice_primary_injury",
+        "practice_secondary_injury",
+        "practice_status",
+        "date_modified"
+      ],
+      "load_status": "OK",
+      "rows": 5682,
+      "season_values": [
+        "2022"
+      ],
+      "timestamp_candidate_columns": [
+        "date_modified"
+      ],
+      "timestamp_samples": {
+        "date_modified": [
+          "2022-09-07 21:10:03+00:00",
+          "2022-09-09 19:55:06+00:00",
+          "2022-09-09 19:55:29+00:00",
+          "2022-09-09 19:55:44+00:00",
+          "2022-09-09 19:55:49+00:00"
+        ]
+      },
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2022.parquet"
+    },
+    "2023": {
+      "columns": [
+        "season",
+        "game_type",
+        "team",
+        "week",
+        "gsis_id",
+        "position",
+        "full_name",
+        "first_name",
+        "last_name",
+        "report_primary_injury",
+        "report_secondary_injury",
+        "report_status",
+        "practice_primary_injury",
+        "practice_secondary_injury",
+        "practice_status",
+        "date_modified"
+      ],
+      "load_status": "OK",
+      "rows": 5599,
+      "season_values": [
+        "2023"
+      ],
+      "timestamp_candidate_columns": [
+        "date_modified"
+      ],
+      "timestamp_samples": {
+        "date_modified": [
+          "2023-09-08 18:49:43+00:00",
+          "2023-09-08 18:50:25+00:00",
+          "2023-09-08 18:50:02+00:00",
+          "2023-09-08 18:50:02+00:00",
+          "2023-09-06 20:54:47+00:00"
+        ]
+      },
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2023.parquet"
+    },
+    "2024": {
+      "columns": [
+        "season",
+        "game_type",
+        "team",
+        "week",
+        "gsis_id",
+        "position",
+        "full_name",
+        "first_name",
+        "last_name",
+        "report_primary_injury",
+        "report_secondary_injury",
+        "report_status",
+        "practice_primary_injury",
+        "practice_secondary_injury",
+        "practice_status",
+        "date_modified"
+      ],
+      "load_status": "OK",
+      "rows": 6215,
+      "season_values": [
+        "2024"
+      ],
+      "timestamp_candidate_columns": [
+        "date_modified"
+      ],
+      "timestamp_samples": {
+        "date_modified": [
+          "2024-09-06 19:05:30+00:00",
+          "2024-09-06 19:05:21+00:00",
+          "2024-09-06 19:05:21+00:00",
+          "2024-09-06 18:35:04+00:00",
+          "2024-09-06 18:35:48+00:00"
+        ]
+      },
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2024.parquet"
+    },
+    "2025": {
+      "columns": [
+        "season",
+        "season_type",
+        "game_type",
+        "team",
+        "week",
+        "gsis_id",
+        "position",
+        "full_name",
+        "first_name",
+        "last_name",
+        "report_primary_injury",
+        "report_secondary_injury",
+        "report_status",
+        "practice_primary_injury",
+        "practice_secondary_injury",
+        "practice_status"
+      ],
+      "load_status": "OK",
+      "rows": 6068,
+      "season_values": [
+        "2025"
+      ],
+      "timestamp_candidate_columns": [],
+      "timestamp_samples": {},
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2025.parquet"
+    },
+    "2026": {
+      "columns": [
+        "season",
+        "season_type",
+        "game_type",
+        "team",
+        "week",
+        "gsis_id",
+        "position",
+        "full_name",
+        "first_name",
+        "last_name",
+        "report_primary_injury",
+        "report_secondary_injury",
+        "report_status",
+        "practice_primary_injury",
+        "practice_secondary_injury",
+        "practice_status"
+      ],
+      "load_status": "OK",
+      "rows": 1787,
+      "season_values": [
+        "2026"
+      ],
+      "timestamp_candidate_columns": [],
+      "timestamp_samples": {},
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.parquet"
+    }
+  },
+  "website_publish_allowed": false
+}
