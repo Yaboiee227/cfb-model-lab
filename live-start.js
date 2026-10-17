@@ -28,13 +28,34 @@
     }
   }
 
+  function relocateProjectionClickTargets() {
+    document.querySelectorAll('#projectionBody tr[data-live-event]').forEach(row => {
+      const eventId = row.dataset.liveEvent;
+      const cell = row.querySelector('.game-cell');
+      if (!cell) return;
+      cell.dataset.liveEvent = eventId;
+      cell.classList.add('live-clickable');
+      delete row.dataset.liveEvent;
+      row.classList.remove('live-clickable');
+    });
+    document.querySelectorAll('#projectionCards .projection-card[data-live-event]').forEach(card => {
+      const eventId = card.dataset.liveEvent;
+      for (const target of [card.querySelector('.projection-card-head'), card.querySelector('.projection-card-grid')].filter(Boolean)) {
+        target.dataset.liveEvent = eventId;
+        target.classList.add('live-clickable');
+      }
+      delete card.dataset.liveEvent;
+      card.classList.remove('live-clickable');
+    });
+  }
+
   function enhanceKeyboardAccess() {
     document.querySelectorAll('[data-live-event].live-clickable').forEach(el => {
       if (el.dataset.liveKeyboardReady === '1') return;
       el.dataset.liveKeyboardReady = '1';
       el.tabIndex = 0;
       el.setAttribute('role','button');
-      el.setAttribute('aria-label', `Open live game detail for ${el.querySelector('.game-matchup, h3')?.textContent?.trim() || 'this game'}`);
+      el.setAttribute('aria-label', `Open live game detail for ${el.querySelector('.game-matchup, h3')?.textContent?.trim() || el.closest('tr,article')?.querySelector('.game-matchup, h3')?.textContent?.trim() || 'this game'}`);
       el.addEventListener('keydown', event => {
         if (event.key !== 'Enter' && event.key !== ' ') return;
         if (event.target.closest('button,a,input,select')) return;
@@ -47,6 +68,7 @@
   function decorate() {
     ensureDisclaimer();
     ensureGlossary();
+    relocateProjectionClickTargets();
     enhanceKeyboardAccess();
   }
 
