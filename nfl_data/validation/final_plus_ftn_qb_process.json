@@ -1,19 +1,19 @@
 {
   "aggregate": {
-    "candidate_mae": 10.2612,
-    "candidate_minus_reference_mae": -0.0382,
+    "candidate_mae": 10.1698,
+    "candidate_minus_reference_mae": -0.0866,
     "n": 816,
     "paired_bootstrap_reference_minus_candidate": {
       "bootstrap_95_ci": [
-        -0.06062,
-        0.13671
+        -0.00253,
+        0.17759
       ],
       "draws": 10000,
-      "mean_improvement": 0.03821,
-      "probability_gt_0": 0.7823
+      "mean_improvement": 0.08658,
+      "probability_gt_0": 0.9712
     },
-    "reference_mae": 10.2995,
-    "seasons_improved": 1
+    "reference_mae": 10.2564,
+    "seasons_improved": 3
   },
   "coverage_params": {
     "feature_k": 1.0,
@@ -25,80 +25,80 @@
   "design": "Nested test of FTN QB-process features on top of the frozen final spread architecture. New-family hyperparameters selected from 2022 only; outer evaluation 2023-2025.",
   "folds": {
     "2023": {
-      "candidate_mae": 10.5456,
-      "candidate_minus_reference_mae": 0.0245,
+      "candidate_mae": 10.4524,
+      "candidate_minus_reference_mae": -0.0512,
       "n": 272,
-      "reference_final_architecture_mae": 10.5211
+      "reference_final_architecture_mae": 10.5036
     },
     "2024": {
-      "candidate_mae": 9.9192,
-      "candidate_minus_reference_mae": -0.1463,
+      "candidate_mae": 9.8634,
+      "candidate_minus_reference_mae": -0.15,
       "n": 272,
-      "reference_final_architecture_mae": 10.0655
+      "reference_final_architecture_mae": 10.0135
     },
     "2025": {
-      "candidate_mae": 10.319,
-      "candidate_minus_reference_mae": 0.0072,
+      "candidate_mae": 10.1936,
+      "candidate_minus_reference_mae": -0.0585,
       "n": 272,
-      "reference_final_architecture_mae": 10.3118
+      "reference_final_architecture_mae": 10.2521
     }
   },
-  "generated_at_utc": "2026-10-17T23:46:46.889861+00:00",
+  "generated_at_utc": "2026-10-17T23:48:18.419314+00:00",
   "historical_promotion_earned": false,
   "new_feature_coefficients_by_test_season": {
     "2023": {
-      "ftn_catchable_rate_diff": 0.0422,
-      "ftn_contested_rate_diff": 0.616755,
-      "ftn_created_reception_rate_diff": -0.747584,
-      "ftn_def_catchable_allowed_rate_diff": -0.261706,
-      "ftn_def_contested_rate_diff": 0.680915,
-      "ftn_def_created_reception_allowed_rate_diff": 0.487121,
-      "ftn_def_drop_rate_diff": 0.673689,
-      "ftn_def_interception_worthy_forced_rate_diff": 0.359246,
-      "ftn_def_qb_fault_sack_rate_diff": -0.129311,
-      "ftn_def_qb_out_of_pocket_faced_rate_diff": -0.061195,
-      "ftn_def_throwaway_forced_rate_diff": 0.285027,
-      "ftn_drop_rate_diff": -0.453734,
-      "ftn_interception_worthy_rate_diff": 0.198334,
-      "ftn_qb_fault_sack_rate_diff": 0.444963,
-      "ftn_qb_out_of_pocket_rate_diff": 0.606623,
-      "ftn_throwaway_rate_diff": -0.277064
+      "ftn_catchable_rate_diff": -0.005891,
+      "ftn_contested_rate_diff": 0.341018,
+      "ftn_created_reception_rate_diff": -0.375128,
+      "ftn_def_catchable_allowed_rate_diff": -0.020106,
+      "ftn_def_contested_rate_diff": 0.454859,
+      "ftn_def_created_reception_allowed_rate_diff": 0.378866,
+      "ftn_def_drop_rate_diff": 0.39098,
+      "ftn_def_interception_worthy_forced_rate_diff": 0.19784,
+      "ftn_def_qb_fault_sack_rate_diff": -0.060321,
+      "ftn_def_qb_out_of_pocket_faced_rate_diff": -0.051119,
+      "ftn_def_throwaway_forced_rate_diff": 0.324942,
+      "ftn_drop_rate_diff": -0.198928,
+      "ftn_interception_worthy_rate_diff": 0.043788,
+      "ftn_qb_fault_sack_rate_diff": 0.175916,
+      "ftn_qb_out_of_pocket_rate_diff": 0.298341,
+      "ftn_throwaway_rate_diff": -0.170901
     },
     "2024": {
-      "ftn_catchable_rate_diff": -0.230406,
-      "ftn_contested_rate_diff": 0.090422,
-      "ftn_created_reception_rate_diff": -0.95033,
-      "ftn_def_catchable_allowed_rate_diff": -0.310612,
-      "ftn_def_contested_rate_diff": 1.049149,
-      "ftn_def_created_reception_allowed_rate_diff": 0.436227,
-      "ftn_def_drop_rate_diff": 0.785329,
-      "ftn_def_interception_worthy_forced_rate_diff": -0.386965,
-      "ftn_def_qb_fault_sack_rate_diff": -0.050808,
-      "ftn_def_qb_out_of_pocket_faced_rate_diff": 0.06733,
-      "ftn_def_throwaway_forced_rate_diff": -0.011809,
-      "ftn_drop_rate_diff": -0.071565,
-      "ftn_interception_worthy_rate_diff": -0.132594,
-      "ftn_qb_fault_sack_rate_diff": 0.039282,
-      "ftn_qb_out_of_pocket_rate_diff": 0.239548,
-      "ftn_throwaway_rate_diff": -1.166716
+      "ftn_catchable_rate_diff": -0.108491,
+      "ftn_contested_rate_diff": 0.123445,
+      "ftn_created_reception_rate_diff": -0.635441,
+      "ftn_def_catchable_allowed_rate_diff": -0.017063,
+      "ftn_def_contested_rate_diff": 0.628662,
+      "ftn_def_created_reception_allowed_rate_diff": 0.415243,
+      "ftn_def_drop_rate_diff": 0.470809,
+      "ftn_def_interception_worthy_forced_rate_diff": -0.211652,
+      "ftn_def_qb_fault_sack_rate_diff": 0.043347,
+      "ftn_def_qb_out_of_pocket_faced_rate_diff": 0.015602,
+      "ftn_def_throwaway_forced_rate_diff": 0.11167,
+      "ftn_drop_rate_diff": -0.012539,
+      "ftn_interception_worthy_rate_diff": -0.112645,
+      "ftn_qb_fault_sack_rate_diff": -0.045451,
+      "ftn_qb_out_of_pocket_rate_diff": 0.092364,
+      "ftn_throwaway_rate_diff": -0.8734
     },
     "2025": {
-      "ftn_catchable_rate_diff": 0.215468,
-      "ftn_contested_rate_diff": -0.661992,
-      "ftn_created_reception_rate_diff": -0.887889,
-      "ftn_def_catchable_allowed_rate_diff": -0.455189,
-      "ftn_def_contested_rate_diff": 1.45845,
-      "ftn_def_created_reception_allowed_rate_diff": 0.389725,
-      "ftn_def_drop_rate_diff": 0.746322,
-      "ftn_def_interception_worthy_forced_rate_diff": -0.378378,
-      "ftn_def_qb_fault_sack_rate_diff": 0.145974,
-      "ftn_def_qb_out_of_pocket_faced_rate_diff": -0.155923,
-      "ftn_def_throwaway_forced_rate_diff": 0.233564,
-      "ftn_drop_rate_diff": -0.182746,
-      "ftn_interception_worthy_rate_diff": -0.33619,
-      "ftn_qb_fault_sack_rate_diff": 0.059681,
-      "ftn_qb_out_of_pocket_rate_diff": 0.48422,
-      "ftn_throwaway_rate_diff": -1.428385
+      "ftn_catchable_rate_diff": 0.118018,
+      "ftn_contested_rate_diff": -0.341658,
+      "ftn_created_reception_rate_diff": -0.725955,
+      "ftn_def_catchable_allowed_rate_diff": -0.095526,
+      "ftn_def_contested_rate_diff": 0.871135,
+      "ftn_def_created_reception_allowed_rate_diff": 0.408972,
+      "ftn_def_drop_rate_diff": 0.481762,
+      "ftn_def_interception_worthy_forced_rate_diff": -0.205602,
+      "ftn_def_qb_fault_sack_rate_diff": 0.135885,
+      "ftn_def_qb_out_of_pocket_faced_rate_diff": -0.210775,
+      "ftn_def_throwaway_forced_rate_diff": 0.237685,
+      "ftn_drop_rate_diff": -0.133448,
+      "ftn_interception_worthy_rate_diff": -0.282544,
+      "ftn_qb_fault_sack_rate_diff": 0.012779,
+      "ftn_qb_out_of_pocket_rate_diff": 0.254945,
+      "ftn_throwaway_rate_diff": -1.075425
     }
   },
   "promotion_rule": "Candidate must improve aggregate MAE, improve at least 2 of 3 seasons, and have paired-bootstrap 95% CI for reference-minus-candidate entirely above zero.",
@@ -106,18 +106,18 @@
   "reference_architecture": "core + defensive coverage + market-independent win Elo + margin rating",
   "reference_rating_params": {
     "elo_hfa": 35.0,
-    "elo_k": 10.0,
+    "elo_k": 40.0,
     "lambda": 100.0,
-    "margin_hfa": 1.5,
+    "margin_hfa": 3.0,
     "margin_k": 0.05,
-    "offseason_regression": 0.5
+    "offseason_regression": 0.25
   },
   "release_state": "HOLD_NO_INCREMENTAL_PROMOTION",
   "selected_candidate_params_2022_only": {
     "feature_k": 1.0,
-    "lambda": 100.0,
-    "mae": 9.326590582613214,
-    "rmse": 12.082642343898224,
+    "lambda": 300.0,
+    "mae": 9.287578495429901,
+    "rmse": 12.082098786767094,
     "validation_games": 91
   },
   "source_ftn_rows": 2304,
@@ -125,58 +125,58 @@
   "top_2022_candidates": [
     {
       "feature_k": 1.0,
-      "lambda": 100.0,
-      "mae": 9.326590582613214,
-      "rmse": 12.082642343898224,
+      "lambda": 300.0,
+      "mae": 9.287578495429901,
+      "rmse": 12.082098786767094,
       "validation_games": 91
     },
     {
       "feature_k": 2.0,
-      "lambda": 100.0,
-      "mae": 9.326590582613214,
-      "rmse": 12.082642343898224,
+      "lambda": 300.0,
+      "mae": 9.287578495429901,
+      "rmse": 12.082098786767094,
       "validation_games": 91
     },
     {
       "feature_k": 4.0,
-      "lambda": 100.0,
-      "mae": 9.326590582613214,
-      "rmse": 12.082642343898224,
+      "lambda": 300.0,
+      "mae": 9.287578495429901,
+      "rmse": 12.082098786767094,
       "validation_games": 91
     },
     {
       "feature_k": 8.0,
-      "lambda": 100.0,
-      "mae": 9.326590582613214,
-      "rmse": 12.082642343898224,
+      "lambda": 300.0,
+      "mae": 9.287578495429901,
+      "rmse": 12.082098786767094,
       "validation_games": 91
     },
     {
       "feature_k": 16.0,
-      "lambda": 100.0,
-      "mae": 9.326590582613214,
-      "rmse": 12.082642343898224,
+      "lambda": 300.0,
+      "mae": 9.287578495429901,
+      "rmse": 12.082098786767094,
       "validation_games": 91
     },
     {
       "feature_k": 1.0,
-      "lambda": 300.0,
-      "mae": 9.330531668281724,
-      "rmse": 12.151270291984488,
+      "lambda": 100.0,
+      "mae": 9.298384618422741,
+      "rmse": 12.026180892223875,
       "validation_games": 91
     },
     {
       "feature_k": 2.0,
-      "lambda": 300.0,
-      "mae": 9.330531668281724,
-      "rmse": 12.151270291984488,
+      "lambda": 100.0,
+      "mae": 9.298384618422741,
+      "rmse": 12.026180892223875,
       "validation_games": 91
     },
     {
       "feature_k": 4.0,
-      "lambda": 300.0,
-      "mae": 9.330531668281724,
-      "rmse": 12.151270291984488,
+      "lambda": 100.0,
+      "mae": 9.298384618422741,
+      "rmse": 12.026180892223875,
       "validation_games": 91
     }
   ],
