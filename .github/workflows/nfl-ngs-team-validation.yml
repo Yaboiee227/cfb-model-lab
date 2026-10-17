@@ -5,6 +5,7 @@ on:
     branches: [nfl-model-development]
     paths:
       - 'scripts/validate_nfl_ngs_team_v1.py'
+      - 'scripts/validate_nfl_ngs_team_v1_aliasfix.py'
       - '.github/workflows/nfl-ngs-team-validation.yml'
       - 'nfl_data/historical/team_week_ngs_2022_2025.csv'
   workflow_dispatch:
@@ -28,7 +29,7 @@ jobs:
       - name: Install dependencies
         run: pip install numpy
       - name: Validate team-level Next Gen feature families
-        run: python scripts/validate_nfl_ngs_team_v1.py
+        run: python scripts/validate_nfl_ngs_team_v1_aliasfix.py
       - name: Commit NGS validation artifacts safely
         run: |
           git config user.name "github-actions[bot]"
