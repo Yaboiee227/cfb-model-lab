@@ -17,6 +17,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: nfl-model-development-data-build
+  cancel-in-progress: false
+
 jobs:
   build-current-nfl-efficiency:
     runs-on: ubuntu-latest
@@ -50,7 +54,7 @@ jobs:
       - name: Run market-anchored spread residual validation
         run: python scripts/validate_nfl_market_residual_v1.py
 
-      - name: Commit generated development data and validation artifacts
+      - name: Commit generated development data and validation artifacts safely
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -60,4 +64,13 @@ jobs:
             exit 0
           fi
           git commit -m "Build and validate NFL pregame research layers"
-          git push origin HEAD:nfl-model-development
+          for attempt in 1 2 3; do
+            git fetch origin nfl-model-development
+            if git rebase origin/nfl-model-development && git push origin HEAD:nfl-model-development; then
+              exit 0
+            fi
+            git rebase --abort || true
+            sleep $((attempt * 2))
+          done
+          echo "Unable to update development branch after retrying."
+          exit 1
