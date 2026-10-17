@@ -1,0 +1,77 @@
+name: NFL Week 6 public market movement (development only)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [nfl-model-development]
+    paths:
+      - 'scripts/build_nfl_week6_market_movement_tracker.py'
+      - 'nfl_data/prospective/market_captures/week6_betmgm_web_capture_*.json'
+      - '.github/workflows/nfl-week6-market-movement.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nfl-model-development-week6-market-movement
+  cancel-in-progress: false
+
+jobs:
+  build-market-movement:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout isolated NFL development branch
+        uses: actions/checkout@v4
+        with:
+          ref: nfl-model-development
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build public market movement tracker
+        run: python scripts/build_nfl_week6_market_movement_tracker.py
+      - name: Assert market observation safety policy
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('nfl_data/prospective/week6_public_market_movement_20261017.json')
+          data = json.loads(p.read_text())
+          assert data['release_state'] == 'HOLD_MARKET_OBSERVATION_ONLY'
+          assert data['website_publish_allowed'] is False
+          assert data['summary']['recommendation_release_games'] == 0
+          assert all(r['movement_is_clv'] is False for r in data['rows'])
+          assert all(r['website_publish_allowed'] is False for r in data['rows'])
+          print('Market observation safety policy passed.')
+          PY
+      - name: Commit market movement artifacts safely
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add nfl_data/prospective/week6_public_market_movement_20261017.json nfl_data/prospective/week6_public_market_movement_20261017.csv
+          if git diff --cached --quiet; then
+            echo "No market movement changes to commit"
+            exit 0
+          fi
+          git commit -m "Track NFL Week 6 public market movement"
+          for attempt in 1 2 3; do
+            git fetch origin nfl-model-development
+            if git rebase origin/nfl-model-development && git push origin HEAD:nfl-model-development; then
+              exit 0
+            fi
+            git rebase --abort || true
+            sleep $((attempt * 2))
+          done
+          echo "Unable to update development branch after retrying."
+          exit 1
+      - name: Verify immutable model and website paths unchanged
+        run: |
+          if git diff --name-only HEAD~1 HEAD | grep 'nfl_data/prospective/week6_prelock_20261017T225656Z' ; then
+            echo "Immutable prospective snapshot changed" >&2
+            exit 1
+          fi
+          if git diff --name-only HEAD~1 HEAD | grep -E '^(data/|app\.js$|index\.html$|.*\.css$|.*\.js$)' ; then
+            echo "Unexpected website path changed" >&2
+            exit 1
+          fi
