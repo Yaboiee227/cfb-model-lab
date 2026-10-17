@@ -1,0 +1,53 @@
+name: Live suite QA
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'live-*.js'
+      - 'markets-*.js'
+      - 'redesign.js'
+      - 'model-product-live.js'
+      - 'data/team-aliases.json'
+      - 'data/mock-live.json'
+      - 'data/markets-*.json'
+      - '.github/workflows/refresh-*-markets.yml'
+      - '.github/workflows/live-suite-check.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Check JavaScript syntax
+        run: |
+          for file in \
+            live-data.js \
+            markets-sportsbooks.js \
+            markets-prediction.js \
+            live-graphics.js \
+            game-detail.js \
+            live-ui.js \
+            live-start.js \
+            live-detail-extensions.js \
+            live-suite-loader.js \
+            redesign.js \
+            model-product-live.js; do
+            echo "Checking $file"
+            node --check "$file"
+          done
+      - name: Validate JSON data files
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          for (const file of ['data/team-aliases.json','data/mock-live.json','data/markets-sportsbooks.json','data/markets-prediction.json']) {
+            JSON.parse(fs.readFileSync(file,'utf8'));
+            console.log('Valid JSON:',file);
+          }
+          NODE
