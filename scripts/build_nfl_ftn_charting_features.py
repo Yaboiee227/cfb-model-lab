@@ -23,7 +23,10 @@ DEF_METRICS=['def_no_huddle_faced_rate','def_motion_faced_rate','def_play_action
 ALL=OFF_METRICS+DEF_METRICS
 
 def nt(v):
- s=str(v or '').strip().upper();return ALIASES.get(s,s)
+ if v is None or pd.isna(v):return None
+ s=str(v).strip().upper()
+ if not s or s in {'NAN','NONE','NULL'}:return None
+ return ALIASES.get(s,s)
 def num(v):
  try:
   x=float(v);return x if math.isfinite(x) else None
