@@ -3,8 +3,9 @@
 
 This is prospective market-observation infrastructure only. It compares the
 first timestamped BetMGM public web-board capture with the most recent capture.
-It does NOT call the movement CLV because no user-account executable bet price
-was verified, and it never creates a recommendation.
+It tracks both headline spread/total movement and displayed decimal-price
+movement. It does NOT call the movement CLV because no user-account executable
+bet price was verified, and it never creates a recommendation.
 """
 from __future__ import annotations
 
@@ -20,8 +21,7 @@ OUT_CSV = Path('nfl_data/prospective/week6_public_market_movement_20261017.csv')
 
 
 def load_capture(path):
-    data = json.loads(Path(path).read_text(encoding='utf-8'))
-    return data
+    return json.loads(Path(path).read_text(encoding='utf-8'))
 
 
 def signed_direction(v):
@@ -30,6 +30,20 @@ def signed_direction(v):
     if v < 0:
         return 'NEGATIVE_AWAY_OR_UNDER_MODEL_DISAGREEMENT'
     return 'ZERO_DISAGREEMENT'
+
+
+def num(v):
+    return None if v is None else float(v)
+
+
+def move(latest, baseline):
+    if latest is None or baseline is None:
+        return None
+    return round(float(latest) - float(baseline), 3)
+
+
+def changed(v):
+    return v is not None and abs(v) > 1e-12
 
 
 def main():
@@ -67,6 +81,15 @@ def main():
         btd = float(b['total_disagreement_vs_direct_book'])
         ltd = float(l['total_disagreement_vs_direct_book'])
 
+        baseline_home_price = num(b.get('home_spread_odds'))
+        latest_home_price = num(l.get('home_spread_odds'))
+        baseline_away_price = num(b.get('away_spread_odds'))
+        latest_away_price = num(l.get('away_spread_odds'))
+        baseline_over_price = num(b.get('over_odds'))
+        latest_over_price = num(l.get('over_odds'))
+        baseline_under_price = num(b.get('under_odds'))
+        latest_under_price = num(l.get('under_odds'))
+
         rows.append({
             'game_id': gid,
             'away_team': b['away_team'],
@@ -78,9 +101,21 @@ def main():
             'baseline_home_spread': bspread,
             'latest_home_spread': lspread,
             'home_spread_public_board_move': round(lspread - bspread, 3),
+            'baseline_home_spread_decimal_odds': baseline_home_price,
+            'latest_home_spread_decimal_odds': latest_home_price,
+            'home_spread_decimal_odds_move': move(latest_home_price, baseline_home_price),
+            'baseline_away_spread_decimal_odds': baseline_away_price,
+            'latest_away_spread_decimal_odds': latest_away_price,
+            'away_spread_decimal_odds_move': move(latest_away_price, baseline_away_price),
             'baseline_total': btotal,
             'latest_total': ltotal,
             'total_public_board_move': round(ltotal - btotal, 3),
+            'baseline_over_decimal_odds': baseline_over_price,
+            'latest_over_decimal_odds': latest_over_price,
+            'over_decimal_odds_move': move(latest_over_price, baseline_over_price),
+            'baseline_under_decimal_odds': baseline_under_price,
+            'latest_under_decimal_odds': latest_under_price,
+            'under_decimal_odds_move': move(latest_under_price, baseline_under_price),
             'baseline_model_spread_disagreement': bsd,
             'latest_model_spread_disagreement': lsd,
             'spread_disagreement_change': round(lsd - bsd, 3),
@@ -93,10 +128,6 @@ def main():
             'latest_spread_disagreement_direction': signed_direction(lsd),
             'baseline_total_disagreement_direction': signed_direction(btd),
             'latest_total_disagreement_direction': signed_direction(ltd),
-            'latest_home_spread_decimal_odds': l.get('home_spread_odds'),
-            'latest_away_spread_decimal_odds': l.get('away_spread_odds'),
-            'latest_over_decimal_odds': l.get('over_odds'),
-            'latest_under_decimal_odds': l.get('under_odds'),
             'movement_is_clv': False,
             'user_account_execution_verified': bool(l.get('user_account_execution_verified')),
             'recommendation': 'HOLD_NO_VALIDATED_EDGE_THRESHOLD',
@@ -106,8 +137,12 @@ def main():
     summary = {
         'captures': len(captures),
         'games': len(rows),
-        'games_with_spread_move': sum(abs(r['home_spread_public_board_move']) > 1e-12 for r in rows),
-        'games_with_total_move': sum(abs(r['total_public_board_move']) > 1e-12 for r in rows),
+        'games_with_spread_move': sum(changed(r['home_spread_public_board_move']) for r in rows),
+        'games_with_total_move': sum(changed(r['total_public_board_move']) for r in rows),
+        'games_with_home_spread_price_move': sum(changed(r['home_spread_decimal_odds_move']) for r in rows),
+        'games_with_away_spread_price_move': sum(changed(r['away_spread_decimal_odds_move']) for r in rows),
+        'games_with_over_price_move': sum(changed(r['over_decimal_odds_move']) for r in rows),
+        'games_with_under_price_move': sum(changed(r['under_decimal_odds_move']) for r in rows),
         'spread_disagreement_direction_flips': sum(r['spread_disagreement_direction_flipped'] for r in rows),
         'total_disagreement_direction_flips': sum(r['total_disagreement_direction_flipped'] for r in rows),
         'account_executable_verified_games_latest_capture': sum(r['user_account_execution_verified'] for r in rows),
@@ -121,7 +156,8 @@ def main():
         'latest_capture_at_utc': latest['capture_created_at_utc'],
         'capture_files': paths,
         'policy': (
-            'Public-board movement only. Do not label as CLV or realized betting value without a verified account-level executable price.'
+            'Public-board movement only, including displayed decimal-price movement. '
+            'Do not label as CLV or realized betting value without a verified account-level executable price.'
         ),
         'summary': summary,
         'rows': rows,
