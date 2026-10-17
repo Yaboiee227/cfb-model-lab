@@ -1,0 +1,67 @@
+name: NFL Final + Turnover Regression Test
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [nfl-model-development]
+    paths:
+      - 'scripts/validate_nfl_final_plus_turnover.py'
+      - '.github/workflows/nfl-final-plus-turnover.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nfl-final-plus-turnover-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    if: github.ref == 'refs/heads/nfl-model-development'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout isolated NFL development branch
+        uses: actions/checkout@v4
+        with:
+          ref: nfl-model-development
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install numpy pandas
+      - name: Run turnover nested test
+        run: python scripts/validate_nfl_final_plus_turnover.py
+      - name: Enforce research-only guard
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('nfl_data/validation/final_plus_turnover.json').read_text())
+          assert d['production_promotion_allowed'] is False
+          assert d['website_publish_allowed'] is False
+          assert d['recommendation_release_allowed'] is False
+          assert d['week6_canonical_snapshot_may_be_rewritten'] is False
+          assert d['week6_ftn_shadow_snapshot_may_be_rewritten'] is False
+          print('turnover research guard passed:', d['release_state'])
+          PY
+      - name: Verify frozen Week 6 evidence and live CFB site untouched
+        run: |
+          if git status --porcelain -- nfl_data/prospective/week6_prelock_20261017T225656Z.json nfl_data/prospective/week6_prelock_20261017T225656Z.csv nfl_data/prospective/shadow/week6_ftn50_shadow_20261017T235342Z.json nfl_data/prospective/shadow/week6_ftn50_shadow_20261017T235342Z.csv index.html app.js script.js styles.css data/projections.csv data/results.csv | grep .; then
+            echo 'Frozen NFL evidence or live CFB path changed unexpectedly'
+            exit 1
+          fi
+          echo 'Frozen NFL evidence and live CFB guards passed'
+      - name: Commit validation artifact
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add nfl_data/validation/final_plus_turnover.json
+          if git diff --cached --quiet; then
+            echo 'No turnover validation changes to commit'
+          else
+            git commit -m 'Validate turnover regression on final NFL architecture'
+            git pull --rebase origin nfl-model-development
+            git push origin nfl-model-development
+          fi
