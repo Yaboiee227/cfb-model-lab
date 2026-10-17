@@ -1,0 +1,73 @@
+name: NFL Final + FTN QB Process Blend
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [nfl-model-development]
+    paths:
+      - 'scripts/validate_nfl_final_ftn_qb_process_blend.py'
+      - '.github/workflows/nfl-final-ftn-qb-process-blend.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nfl-final-ftn-qb-process-blend-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    if: github.ref == 'refs/heads/nfl-model-development'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout isolated NFL development branch
+        uses: actions/checkout@v4
+        with:
+          ref: nfl-model-development
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install numpy pandas
+
+      - name: Run conservative fixed blend validation
+        run: python scripts/validate_nfl_final_ftn_qb_process_blend.py
+
+      - name: Enforce research-only guard
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('nfl_data/validation/final_ftn_qb_process_blend.json').read_text())
+          assert d['production_promotion_allowed'] is False
+          assert d['website_publish_allowed'] is False
+          assert d['recommendation_release_allowed'] is False
+          assert d['week6_frozen_snapshot_may_be_rewritten'] is False
+          assert d['blend_weight_selected_from_outer_results'] is False
+          print('research-only blend guard passed:', d['release_state'])
+          PY
+
+      - name: Verify live CFB site untouched
+        run: |
+          if git status --porcelain -- index.html app.js script.js styles.css data/projections.csv data/results.csv | grep .; then
+            echo 'Live CFB website path changed unexpectedly'
+            exit 1
+          fi
+          echo 'Live CFB website guard passed'
+
+      - name: Commit validation artifact
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add nfl_data/validation/final_ftn_qb_process_blend.json
+          if git diff --cached --quiet; then
+            echo 'No blend validation changes to commit'
+          else
+            git commit -m 'Validate conservative NFL FTN QB process blend'
+            git pull --rebase origin nfl-model-development
+            git push origin nfl-model-development
+          fi
