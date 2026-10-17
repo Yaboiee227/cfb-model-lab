@@ -1,0 +1,59 @@
+name: NFL depth and injury audit (development only)
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - nfl-model-development
+    paths:
+      - 'scripts/audit_nfl_depth_injury_history.py'
+      - '.github/workflows/nfl-depth-injury-audit.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nfl-model-development-depth-injury-audit
+  cancel-in-progress: false
+
+jobs:
+  audit-depth-injury:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout isolated NFL development branch
+        uses: actions/checkout@v4
+        with:
+          ref: nfl-model-development
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check pandas pyarrow
+
+      - name: Audit depth and injury timestamp safety
+        run: python scripts/audit_nfl_depth_injury_history.py
+
+      - name: Commit audit artifacts safely
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add nfl_data/generated/depth_injury_audit_2022_2026.json nfl_data/generated/qb_depth_snapshot_audit_2022_2026.csv nfl_data/generated/qb_injury_timestamp_audit_2022_2026.csv
+          if git diff --cached --quiet; then
+            echo "No depth/injury audit artifact changes."
+            exit 0
+          fi
+          git commit -m "Audit NFL depth and injury timestamp safety"
+          for attempt in 1 2 3; do
+            git fetch origin nfl-model-development
+            if git rebase origin/nfl-model-development && git push origin HEAD:nfl-model-development; then
+              exit 0
+            fi
+            git rebase --abort || true
+            sleep $((attempt * 2))
+          done
+          echo "Unable to update development branch after retrying."
+          exit 1
