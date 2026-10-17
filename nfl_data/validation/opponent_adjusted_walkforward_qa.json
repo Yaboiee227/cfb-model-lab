@@ -1,0 +1,271 @@
+{
+  "validation_name": "NFL opponent-adjusted EPA walk-forward v1",
+  "source_seasons": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "evaluation_seasons": [
+    2023,
+    2024,
+    2025
+  ],
+  "target_weeks": [
+    4,
+    18
+  ],
+  "snapshots_built": 60,
+  "candidate_games": 672,
+  "validated_games": 570,
+  "minimum_prior_calibration_games": 100,
+  "parameters": {
+    "recency_decay_per_week": 0.88,
+    "ridge_equivalent_plays": 120.0,
+    "edge_thresholds": [
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      4.0
+    ]
+  },
+  "overall": {
+    "games": 570,
+    "model_mae": 10.290133531688902,
+    "model_rmse": 13.088094809290693,
+    "model_actual_correlation": 0.4120578092837737,
+    "market_games": 570,
+    "market_mae": 9.652631578947368,
+    "market_actual_correlation": 0.5190248220246462,
+    "ats_by_edge_threshold": {
+      "1.5": {
+        "bets": 370,
+        "wins": 181,
+        "losses": 184,
+        "pushes": 5,
+        "win_rate_ex_push": 0.4958904109589041,
+        "units_at_minus_110": -21.400000000000006,
+        "roi_at_minus_110": -0.05863013698630139
+      },
+      "2.0": {
+        "bets": 313,
+        "wins": 152,
+        "losses": 156,
+        "pushes": 5,
+        "win_rate_ex_push": 0.4935064935064935,
+        "units_at_minus_110": -19.600000000000023,
+        "roi_at_minus_110": -0.06363636363636371
+      },
+      "2.5": {
+        "bets": 264,
+        "wins": 128,
+        "losses": 132,
+        "pushes": 4,
+        "win_rate_ex_push": 0.49230769230769234,
+        "units_at_minus_110": -17.200000000000017,
+        "roi_at_minus_110": -0.06615384615384622
+      },
+      "3.0": {
+        "bets": 215,
+        "wins": 100,
+        "losses": 113,
+        "pushes": 2,
+        "win_rate_ex_push": 0.4694835680751174,
+        "units_at_minus_110": -24.30000000000001,
+        "roi_at_minus_110": -0.11408450704225358
+      },
+      "4.0": {
+        "bets": 140,
+        "wins": 65,
+        "losses": 73,
+        "pushes": 2,
+        "win_rate_ex_push": 0.47101449275362317,
+        "units_at_minus_110": -15.300000000000011,
+        "roi_at_minus_110": -0.11086956521739139
+      }
+    }
+  },
+  "by_season": {
+    "2023": {
+      "games": 122,
+      "model_mae": 10.383379301551729,
+      "model_rmse": 13.370078159870653,
+      "model_actual_correlation": 0.3212792256571299,
+      "market_games": 122,
+      "market_mae": 9.844262295081966,
+      "market_actual_correlation": 0.4275915247836515,
+      "ats_by_edge_threshold": {
+        "1.5": {
+          "bets": 85,
+          "wins": 44,
+          "losses": 38,
+          "pushes": 3,
+          "win_rate_ex_push": 0.5365853658536586,
+          "units_at_minus_110": 2.1999999999999957,
+          "roi_at_minus_110": 0.026829268292682874
+        },
+        "2.0": {
+          "bets": 72,
+          "wins": 37,
+          "losses": 32,
+          "pushes": 3,
+          "win_rate_ex_push": 0.5362318840579711,
+          "units_at_minus_110": 1.7999999999999972,
+          "roi_at_minus_110": 0.02608695652173909
+        },
+        "2.5": {
+          "bets": 64,
+          "wins": 34,
+          "losses": 28,
+          "pushes": 2,
+          "win_rate_ex_push": 0.5483870967741935,
+          "units_at_minus_110": 3.1999999999999957,
+          "roi_at_minus_110": 0.05161290322580638
+        },
+        "3.0": {
+          "bets": 52,
+          "wins": 27,
+          "losses": 23,
+          "pushes": 2,
+          "win_rate_ex_push": 0.54,
+          "units_at_minus_110": 1.6999999999999993,
+          "roi_at_minus_110": 0.03399999999999999
+        },
+        "4.0": {
+          "bets": 40,
+          "wins": 18,
+          "losses": 20,
+          "pushes": 2,
+          "win_rate_ex_push": 0.47368421052631576,
+          "units_at_minus_110": -4.0,
+          "roi_at_minus_110": -0.10526315789473684
+        }
+      }
+    },
+    "2024": {
+      "games": 224,
+      "model_mae": 10.115412321516,
+      "model_rmse": 12.999648460491851,
+      "model_actual_correlation": 0.45140029551223093,
+      "market_games": 224,
+      "market_mae": 9.276785714285714,
+      "market_actual_correlation": 0.5751155714097058,
+      "ats_by_edge_threshold": {
+        "1.5": {
+          "bets": 138,
+          "wins": 65,
+          "losses": 71,
+          "pushes": 2,
+          "win_rate_ex_push": 0.47794117647058826,
+          "units_at_minus_110": -13.100000000000009,
+          "roi_at_minus_110": -0.09632352941176477
+        },
+        "2.0": {
+          "bets": 118,
+          "wins": 56,
+          "losses": 60,
+          "pushes": 2,
+          "win_rate_ex_push": 0.4827586206896552,
+          "units_at_minus_110": -10.0,
+          "roi_at_minus_110": -0.08620689655172414
+        },
+        "2.5": {
+          "bets": 101,
+          "wins": 45,
+          "losses": 54,
+          "pushes": 2,
+          "win_rate_ex_push": 0.45454545454545453,
+          "units_at_minus_110": -14.400000000000006,
+          "roi_at_minus_110": -0.1454545454545455
+        },
+        "3.0": {
+          "bets": 83,
+          "wins": 36,
+          "losses": 47,
+          "pushes": 0,
+          "win_rate_ex_push": 0.43373493975903615,
+          "units_at_minus_110": -15.700000000000003,
+          "roi_at_minus_110": -0.18915662650602413
+        },
+        "4.0": {
+          "bets": 45,
+          "wins": 19,
+          "losses": 26,
+          "pushes": 0,
+          "win_rate_ex_push": 0.4222222222222222,
+          "units_at_minus_110": -9.600000000000001,
+          "roi_at_minus_110": -0.21333333333333337
+        }
+      }
+    },
+    "2025": {
+      "games": 224,
+      "model_mae": 10.414069099347232,
+      "model_rmse": 13.020834820100605,
+      "model_actual_correlation": 0.41499605474513485,
+      "market_games": 224,
+      "market_mae": 9.924107142857142,
+      "market_actual_correlation": 0.5161095068349201,
+      "ats_by_edge_threshold": {
+        "1.5": {
+          "bets": 147,
+          "wins": 72,
+          "losses": 75,
+          "pushes": 0,
+          "win_rate_ex_push": 0.4897959183673469,
+          "units_at_minus_110": -10.5,
+          "roi_at_minus_110": -0.07142857142857142
+        },
+        "2.0": {
+          "bets": 123,
+          "wins": 59,
+          "losses": 64,
+          "pushes": 0,
+          "win_rate_ex_push": 0.4796747967479675,
+          "units_at_minus_110": -11.400000000000006,
+          "roi_at_minus_110": -0.09268292682926833
+        },
+        "2.5": {
+          "bets": 99,
+          "wins": 49,
+          "losses": 50,
+          "pushes": 0,
+          "win_rate_ex_push": 0.494949494949495,
+          "units_at_minus_110": -6.000000000000007,
+          "roi_at_minus_110": -0.06060606060606068
+        },
+        "3.0": {
+          "bets": 80,
+          "wins": 37,
+          "losses": 43,
+          "pushes": 0,
+          "win_rate_ex_push": 0.4625,
+          "units_at_minus_110": -10.300000000000004,
+          "roi_at_minus_110": -0.12875000000000006
+        },
+        "4.0": {
+          "bets": 55,
+          "wins": 28,
+          "losses": 27,
+          "pushes": 0,
+          "win_rate_ex_push": 0.509090909090909,
+          "units_at_minus_110": -1.7000000000000028,
+          "roi_at_minus_110": -0.030909090909090962
+        }
+      }
+    }
+  },
+  "release_state": "HOLD",
+  "model_use": "RESEARCH_VALIDATION_ONLY",
+  "market_line_limitation": "nflverse spread_line is suitable for historical benchmark testing but is not treated as a guaranteed timestamped executable sportsbook price. Production release requires timestamped line/price capture and CLV QA.",
+  "notes": [
+    "Every weekly rating snapshot uses only weeks before the target game week.",
+    "Margin calibration for each game uses only earlier season/week validation rows.",
+    "Market spread is excluded from rating construction and margin calibration; it is used only for benchmark/edge grading.",
+    "ATS ROI assumes -110 pricing solely for a common-denominator research check; executable-price validation remains required.",
+    "Totals, moneyline, alt lines, injuries, weather, rest/travel, QB changes, and personnel are not validated by this script.",
+    "Passing this structural test does not authorize public release or website publication."
+  ],
+  "generated_utc": "2026-10-17T21:20:20.896464+00:00"
+}

@@ -1,0 +1,37 @@
+{
+  "season": 2026,
+  "target_week": 6,
+  "cutoff_week": 5,
+  "input": "nfl_data/generated/team_stats_2026_w1_5_raw.csv",
+  "eligible_rows": 158,
+  "observations_used": 158,
+  "teams_found": 32,
+  "min_games_per_team": 4,
+  "max_games_per_team": 5,
+  "max_week_used": 5,
+  "target_or_future_rows_used": 0,
+  "duplicate_team_game_rows": 0,
+  "bad_rows_skipped": 0,
+  "league_epa_per_play_baseline": 0.010296,
+  "parameters": {
+    "recency_decay_per_week": 0.88,
+    "ridge_equivalent_plays": 120.0,
+    "model_equation": "centered observed EPA/play = offense_strength - defense_strength"
+  },
+  "convergence": {
+    "converged": true,
+    "iterations": 22,
+    "max_delta": 4.623878363529954e-11,
+    "tolerance": 1e-10
+  },
+  "release_state": "HOLD",
+  "model_use": "RESEARCH_INPUT_ONLY",
+  "notes": [
+    "All inputs are restricted to regular-season Weeks 1-5 for a Week 6 pregame snapshot.",
+    "Recency decay and ridge strength are candidate parameters and require historical walk-forward selection/validation.",
+    "Opponent adjustment is iterative and uses no target-week or future observations.",
+    "Research power rank is diagnostic only; it is not a spread, total, moneyline, alt-line, or wager recommendation.",
+    "No output is approved for website publication or public release."
+  ],
+  "generated_utc": "2026-10-17T21:20:19.638193+00:00"
+}
