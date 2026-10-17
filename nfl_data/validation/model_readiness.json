@@ -1,0 +1,157 @@
+{
+  "as_of_utc": "2026-10-17T22:54:00Z",
+  "league": "NFL",
+  "season": 2026,
+  "target_week": 6,
+  "branch": "nfl-model-development",
+  "production_release_state": "HOLD_PROSPECTIVE_VALIDATION_REQUIRED",
+  "website_publish_allowed": false,
+  "market_policy": "Independent core remains market-free. Historical market/schedule prices are benchmark and calibration references only. No market residual, blend, or edge threshold has earned promotion.",
+  "final_research_architecture": {
+    "spread": {
+      "model": "frozen core + defensive coverage + market-independent win Elo + margin rating",
+      "status": "EARNED_WEEK6_RESEARCH_INCLUSION_HOLD_PROSPECTIVE",
+      "oos_games_2023_2025": 816,
+      "oos_mae": 10.2564,
+      "oos_rmse": 13.2903,
+      "oos_bias_pred_minus_actual": -0.0126,
+      "absolute_error_68pct": 12.6803,
+      "absolute_error_80pct": 17.2328,
+      "absolute_error_90pct": 22.4361
+    },
+    "total": {
+      "model": "frozen core only",
+      "status": "HOLD_RESEARCH_ONLY",
+      "oos_games_2023_2025": 816,
+      "oos_mae": 10.5001,
+      "oos_rmse": 13.4958,
+      "oos_bias_pred_minus_actual": -1.2723,
+      "absolute_error_68pct": 13.1899,
+      "absolute_error_80pct": 16.5569,
+      "absolute_error_90pct": 22.5405
+    }
+  },
+  "learned_feature_registry": [
+    {
+      "family": "core_efficiency_matchups_rest_neutral",
+      "spread": "PROMOTED_CORE",
+      "total": "PROMOTED_CORE",
+      "note": "Leakage-safe frozen baseline. Rest and neutral site are already included and must not be double-counted."
+    },
+    {
+      "family": "defensive_coverage",
+      "spread": "PROMOTED_RESEARCH_LAYER",
+      "total": "NO_PROMOTION",
+      "note": "Survived frozen 2022-only robustness with positive bootstrap support."
+    },
+    {
+      "family": "recursive_win_elo_and_margin_rating",
+      "spread": "PROMOTED_RESEARCH_LAYER",
+      "total": "NOT_APPLICABLE",
+      "note": "Market-independent recursive ratings; improved all three unseen seasons; stable positive coefficient signs; prospective validation still required."
+    },
+    {
+      "family": "qb_historical_additive",
+      "spread": "NO_PROMOTION",
+      "total": "NO_PROMOTION",
+      "note": "Current confirmed starter state remains a release gate, not a learned baseline coefficient."
+    },
+    {
+      "family": "ngs_tracking",
+      "spread": "NO_PROMOTION",
+      "total": "NO_PROMOTION",
+      "note": "Initial tuned gains did not survive frozen robustness; totals worsened."
+    },
+    {
+      "family": "trench_pressure_ol_continuity",
+      "spread": "NO_PROMOTION",
+      "total": "NO_PROMOTION",
+      "note": "Context only."
+    },
+    {
+      "family": "drive_pace",
+      "spread": "CONTEXT_ONLY",
+      "total": "NO_PROMOTION",
+      "note": "Did not improve totals."
+    },
+    {
+      "family": "turnover_outcomes_and_luck",
+      "spread": "NO_INCREMENTAL_PROMOTION_AFTER_COVERAGE",
+      "total": "NO_PROMOTION",
+      "note": "Standalone robust signal became redundant in nested model."
+    },
+    {
+      "family": "special_teams_punting_returns_kicking",
+      "spread": "NO_INCREMENTAL_PROMOTION_AFTER_COVERAGE",
+      "total": "NO_PROMOTION",
+      "note": "Punting/returns survived alone but did not add in nested stack; kicking failed."
+    },
+    {
+      "family": "injury_personnel_historical_burden",
+      "spread": "NO_PROMOTION",
+      "total": "NO_PROMOTION",
+      "note": "Historical coefficients unstable. Current official starter/inactive status is a hard prospective release/confidence gate."
+    },
+    {
+      "family": "ftn_charting_scheme_box_qb_process",
+      "spread": "NO_PROMOTION",
+      "total": "NO_PROMOTION",
+      "note": "QB/process only directionally useful; confidence interval crossed zero."
+    },
+    {
+      "family": "penalties",
+      "spread": "NO_PROMOTION",
+      "total": "NO_PROMOTION",
+      "note": "Descriptive context only."
+    },
+    {
+      "family": "travel_timezone_roof_surface_static_context",
+      "spread": "NO_PROMOTION",
+      "total": "NO_PROMOTION",
+      "note": "Context/release information only; observed historical weather intentionally excluded."
+    },
+    {
+      "family": "weather",
+      "spread": "PROSPECTIVE_CONTEXT_ONLY",
+      "total": "PROSPECTIVE_CONTEXT_ONLY",
+      "note": "Use official pregame forecast/roof state only. No learned historical weather coefficient without archived pregame forecasts."
+    }
+  ],
+  "calibration_registry": {
+    "spread_market_blend": {
+      "status": "NO_PROMOTION",
+      "2023_selected_weight_on_independent_model": 0.0,
+      "2023_selected_weight_on_market": 1.0,
+      "holdout_2024_2025_market_mae": 9.6664,
+      "holdout_2024_2025_independent_mae": 10.1328
+    },
+    "total_market_blend": {
+      "status": "NO_PROMOTION",
+      "2023_selected_weight_on_independent_model": 0.0,
+      "2023_selected_weight_on_market": 1.0,
+      "holdout_2024_2025_market_mae": 10.0616,
+      "holdout_2024_2025_independent_mae": 10.4967
+    },
+    "total_sequential_bias_correction": {
+      "status": "NO_PROMOTION",
+      "holdout_raw_mae": 10.4967,
+      "holdout_corrected_mae": 10.4709,
+      "bootstrap_95_ci_improvement": [-0.08356, 0.13771]
+    },
+    "betting_edge_thresholds": {
+      "spread": "NONE_EARNED",
+      "total": "NONE_EARNED",
+      "note": "Larger model-vs-market disagreement did not produce increasing ATS/OU win rates. Current model is a projection engine, not a validated betting-signal engine."
+    }
+  },
+  "hard_release_gates": [
+    "official expected starter and inactive verification",
+    "direct executable sportsbook price verification",
+    "final official roof state where relevant",
+    "final official pregame weather forecast where relevant",
+    "prospective timestamped validation sample",
+    "no recommendation unless a future threshold earns evidence"
+  ],
+  "alt_line_policy": "HOLD. Alternative-line recommendation logic cannot be activated until a base side/total recommendation threshold is prospectively validated.",
+  "website_policy": "Do not merge to main or publish any NFL output until the entire validation and prospective-readiness process is complete and explicitly reviewed."
+}
