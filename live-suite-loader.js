@@ -10,7 +10,7 @@
   async function boot(){
     loadCss('live-suite.css');
     loadCss('live-suite-fixes.css');
-    for (const src of ['live-data.js','markets-sportsbooks.js','markets-prediction.js','live-graphics.js','game-detail.js','live-ui.js','live-start.js']) {
+    for (const src of ['live-data.js','markets-sportsbooks.js','markets-prediction.js','live-graphics.js','game-detail.js','live-ui.js','live-start.js','live-detail-extensions.js']) {
       await loadScript(src);
     }
   }
