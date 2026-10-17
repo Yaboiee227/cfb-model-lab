@@ -52,3 +52,15 @@ jobs:
             console.log('Valid JSON:',file);
           }
           NODE
+      - name: Parse embedded market workflow JavaScript
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          for (const file of ['.github/workflows/refresh-sportsbook-markets.yml','.github/workflows/refresh-prediction-markets.yml']) {
+            const text=fs.readFileSync(file,'utf8');
+            const match=text.match(/node <<'NODE'\n([\s\S]*?)\n\s*NODE/);
+            if(!match) throw new Error(`Embedded Node script not found in ${file}`);
+            new Function(match[1]);
+            console.log('Embedded JavaScript parses:',file);
+          }
+          NODE
