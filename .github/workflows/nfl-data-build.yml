@@ -8,6 +8,7 @@ on:
     paths:
       - 'scripts/build_nfl_efficiency.py'
       - 'scripts/build_nfl_pbp_features.py'
+      - 'scripts/validate_nfl_feature_layers.py'
       - '.github/workflows/nfl-data-build.yml'
 
 permissions:
@@ -34,6 +35,9 @@ jobs:
       - name: Build Week 6 play-by-play feature snapshot from Weeks 1-5 only
         run: python scripts/build_nfl_pbp_features.py
 
+      - name: Cross-check independent NFL feature layers
+        run: python scripts/validate_nfl_feature_layers.py
+
       - name: Commit generated development data
         run: |
           git config user.name "github-actions[bot]"
@@ -43,5 +47,5 @@ jobs:
             echo "No generated data changes."
             exit 0
           fi
-          git commit -m "Build NFL Week 6 pregame research snapshots"
+          git commit -m "Build and validate NFL Week 6 pregame research snapshots"
           git push origin HEAD:nfl-model-development
