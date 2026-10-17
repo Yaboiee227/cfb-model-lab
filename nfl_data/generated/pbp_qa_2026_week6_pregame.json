@@ -1,0 +1,39 @@
+{
+  "season": 2026,
+  "target_week": 6,
+  "cutoff_week": 5,
+  "source": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2026.csv.gz",
+  "rows_scanned": 14031,
+  "rows_regular_season_through_cutoff": 13842,
+  "core_scrimmage_plays_used": 9693,
+  "pass_dropbacks_used": 5902,
+  "rush_attempts_used": 4100,
+  "neutral_early_down_plays_used": 4181,
+  "target_or_future_rows_used": 0,
+  "max_week_used": 5,
+  "drive_column": "fixed_drive",
+  "no_play_column_present": false,
+  "release_state": "HOLD",
+  "teams_found": 32,
+  "offense_teams_with_plays": 32,
+  "defense_teams_with_plays": 32,
+  "output_rows": 32,
+  "feature_rules": {
+    "nullified_play_guard": "play_type == no_play; use no_play flag too when source column exists",
+    "core_play": "pass/run or qb_dropback/rush_attempt; exclude nullified, kneels, spikes",
+    "success": "nflfastR success field",
+    "explosive_pass_candidate": "yards_gained >= 20 on dropback",
+    "explosive_rush_candidate": "yards_gained >= 10 on rush_attempt",
+    "neutral_early_down_candidate": "down 1-2, qtr <= 3, 0.20 <= wp <= 0.80",
+    "red_zone": "yardline_100 <= 20",
+    "drive": "fixed_drive"
+  },
+  "notes": [
+    "Regular-season Weeks 1-5 only for the Week 6 pregame snapshot.",
+    "Explosive and neutral-script thresholds are candidates pending historical validation.",
+    "Turnover rates are descriptive and must be shrunk/regressed before model use.",
+    "Raw net EPA/success are diagnostics, not released power ratings.",
+    "No value is approved for website publication or wager release."
+  ],
+  "generated_utc": "2026-10-17T21:17:53.990556+00:00"
+}
