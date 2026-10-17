@@ -1,5 +1,6 @@
 (() => {
   const STALE_MS = 15 * 60 * 1000;
+  const PREKICKOFF_LOOKBACK_MS = 45 * 60 * 1000;
   const CACHE_KEY = 'cb-pregame-market-freeze-v1';
   const BOOKS = ['fanduel', 'draftkings'];
   let aliasData = null;
@@ -44,17 +45,30 @@
     return rows.find(row => sameTeam(game.homeTeam, row.homeTeam, map) && sameTeam(game.awayTeam, row.awayTeam, map)) || null;
   }
 
-  function freshCandidate(row, type) {
-    if (!row) return null;
-    const candidates = BOOKS.map(key => ({ key, book:row.books?.[key] }))
+  function candidateRows(row, type) {
+    return BOOKS.map(key => ({ key, book:row?.books?.[key] }))
       .filter(({book}) => {
         if (!book?.updatedAt) return false;
-        const ts = new Date(book.updatedAt).getTime();
-        if (!Number.isFinite(ts) || Date.now() - ts > STALE_MS) return false;
         return type === 'spread' ? hasNum(book.spread?.home) : hasNum(book.total?.point);
+      });
+  }
+
+  function freshCandidate(row, type) {
+    return candidateRows(row, type)
+      .filter(({book}) => {
+        const ts = new Date(book.updatedAt).getTime();
+        return Number.isFinite(ts) && Date.now() - ts <= STALE_MS;
       })
-      .sort((a,b) => new Date(b.book.updatedAt).getTime() - new Date(a.book.updatedAt).getTime());
-    return candidates[0] || null;
+      .sort((a,b) => new Date(b.book.updatedAt).getTime() - new Date(a.book.updatedAt).getTime())[0] || null;
+  }
+
+  function preKickoffCandidate(row, type, kickoff) {
+    return candidateRows(row, type)
+      .filter(({book}) => {
+        const ts = new Date(book.updatedAt).getTime();
+        return Number.isFinite(ts) && ts <= kickoff && kickoff - ts <= PREKICKOFF_LOOKBACK_MS;
+      })
+      .sort((a,b) => new Date(b.book.updatedAt).getTime() - new Date(a.book.updatedAt).getTime())[0] || null;
   }
 
   function preserveOriginal(game) {
@@ -78,7 +92,7 @@
     game._liveMarketReference = true;
   }
 
-  function freezeReference(game, row, spread, total, cache) {
+  function freezeReference(game, row, spread, total, cache, label='live pregame') {
     const sources = [];
     if (spread) sources.push(`${bookLabel(spread.key)} spread`);
     if (total) sources.push(`${bookLabel(total.key)} total`);
@@ -87,7 +101,7 @@
     const ref = {
       marketSpreadHome:spread ? Number(spread.book.spread.home) : game.marketSpreadHome,
       marketTotal:total ? Number(total.book.total.point) : game.marketTotal,
-      marketSource:sources.length ? `${sources.join(' · ')} · live pregame` : game.marketSource,
+      marketSource:sources.length ? `${sources.join(' · ')} · ${label}` : game.marketSource,
       marketObservedAt:timestamps[0] || game.marketObservedAt,
       executionVerified:Boolean(spread && total),
       cachedAt:new Date().toISOString(),
@@ -136,7 +150,18 @@
         const kickoff = new Date(row.commenceTime || 0).getTime();
         const pregame = Number.isFinite(kickoff) && kickoff > Date.now();
         if (!pregame) {
-          if (restoreFrozen(game, cache)) changed = true;
+          if (restoreFrozen(game, cache)) {
+            changed = true;
+            continue;
+          }
+          if (Number.isFinite(kickoff)) {
+            const spread = preKickoffCandidate(row, 'spread', kickoff);
+            const total = preKickoffCandidate(row, 'total', kickoff);
+            if (spread || total) {
+              freezeReference(game, row, spread, total, cache, 'frozen pregame');
+              changed = true;
+            }
+          }
           continue;
         }
 
