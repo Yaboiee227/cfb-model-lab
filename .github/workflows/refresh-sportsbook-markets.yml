@@ -1,0 +1,134 @@
+name: Refresh sportsbook markets
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/5 * * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-sportsbook-markets
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check game window and fetch FanDuel / DraftKings
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = 'data/markets-sportsbooks.json';
+          const scoreboardUrl = 'https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?limit=200';
+          const norm = value => String(value || '').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+          const same = (a,b) => norm(a) === norm(b) || norm(a).includes(norm(b)) || norm(b).includes(norm(a));
+          const now = Date.now();
+
+          async function json(url) {
+            const r = await fetch(url, { headers: { 'Accept':'application/json' } });
+            if (!r.ok) throw new Error(`${r.status} ${r.statusText}: ${url}`);
+            return r.json();
+          }
+          function readExisting() {
+            try { return JSON.parse(fs.readFileSync(path,'utf8')); }
+            catch { return { generatedAt:null, provider:'The Odds API', books:['fanduel','draftkings'], games:[] }; }
+          }
+          function market(book, key) { return (book.markets || []).find(m => m.key === key); }
+          function outcome(market, name) { return market?.outcomes?.find(o => same(o.name,name)); }
+          function totalOutcome(market, name) { return market?.outcomes?.find(o => String(o.name).toLowerCase() === name); }
+          function currentBook(book, event) {
+            const h2h=market(book,'h2h'), spread=market(book,'spreads'), total=market(book,'totals');
+            const homeMl=outcome(h2h,event.home_team), awayMl=outcome(h2h,event.away_team);
+            const homeSp=outcome(spread,event.home_team), awaySp=outcome(spread,event.away_team);
+            const over=totalOutcome(total,'over'), under=totalOutcome(total,'under');
+            if (!h2h && !spread && !total) return null;
+            return {
+              updatedAt: book.last_update || h2h?.last_update || spread?.last_update || total?.last_update || new Date().toISOString(),
+              moneyline: { home: homeMl?.price ?? null, away: awayMl?.price ?? null },
+              spread: { home: homeSp?.point ?? null, homePrice: homeSp?.price ?? null, away: awaySp?.point ?? null, awayPrice: awaySp?.price ?? null },
+              total: { point: over?.point ?? under?.point ?? null, overPrice: over?.price ?? null, underPrice: under?.price ?? null }
+            };
+          }
+          function openingFrom(current) {
+            return { moneyline:{...current.moneyline}, spread:{home:current.spread.home,away:current.spread.away}, total:{point:current.total.point} };
+          }
+          function historyPoint(current) {
+            return { ts: current.updatedAt || new Date().toISOString(), spreadHome:current.spread.home, total:current.total.point, homeMl:current.moneyline.home, awayMl:current.moneyline.away };
+          }
+          function appendHistory(history, point) {
+            const arr = Array.isArray(history) ? [...history] : [];
+            const last = arr[arr.length-1];
+            const sig = p => JSON.stringify([p?.spreadHome,p?.total,p?.homeMl,p?.awayMl]);
+            if (!last || sig(last) !== sig(point)) arr.push(point);
+            return arr.slice(-160);
+          }
+
+          (async () => {
+            const score = await json(scoreboardUrl);
+            const events = score.events || [];
+            const active = events.some(e => {
+              const c=e.competitions?.[0], state=c?.status?.type?.state;
+              if (state === 'in') return true;
+              if (state !== 'pre') return false;
+              const t=new Date(e.date || c?.date).getTime();
+              return Number.isFinite(t) && t-now > -30*60*1000 && t-now < 6*60*60*1000;
+            });
+            if (!active) { console.log('No live game or kickoff within six hours; skipping odds request.'); return; }
+            if (!process.env.ODDS_API_KEY) { console.log('ODDS_API_KEY is not configured; leaving existing snapshot untouched.'); return; }
+
+            const params = new URLSearchParams({
+              apiKey: process.env.ODDS_API_KEY,
+              bookmakers: 'fanduel,draftkings',
+              markets: 'h2h,spreads,totals',
+              oddsFormat: 'american',
+              dateFormat: 'iso'
+            });
+            const odds = await json(`https://api.the-odds-api.com/v4/sports/americanfootball_ncaaf/odds?${params}`);
+            const old = readExisting();
+            const games = odds.map(event => {
+              const previous = (old.games || []).find(g => same(g.homeTeam,event.home_team) && same(g.awayTeam,event.away_team));
+              const books = {};
+              for (const key of ['fanduel','draftkings']) {
+                const raw = (event.bookmakers || []).find(b => b.key === key);
+                if (!raw) continue;
+                const current = currentBook(raw,event);
+                if (!current) continue;
+                const prior = previous?.books?.[key];
+                books[key] = {
+                  ...current,
+                  opening: prior?.opening || openingFrom(current),
+                  history: appendHistory(prior?.history, historyPoint(current))
+                };
+              }
+              return { id:event.id, sportKey:event.sport_key, commenceTime:event.commence_time, homeTeam:event.home_team, awayTeam:event.away_team, books };
+            });
+            const output = { generatedAt:new Date().toISOString(), provider:'The Odds API', books:['fanduel','draftkings'], games, note:'Generated by GitHub Actions. API key is stored only in GitHub Secrets.' };
+            fs.writeFileSync(path, JSON.stringify(output,null,2)+'\n');
+            console.log(`Wrote ${games.length} NCAAF games.`);
+          })().catch(err => { console.error(err); process.exit(1); });
+          NODE
+
+      - name: Commit changed snapshot
+        run: |
+          if git diff --quiet -- data/markets-sportsbooks.json; then
+            echo "No sportsbook snapshot change."
+            exit 0
+          fi
+          git config user.name "cb-model-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/markets-sportsbooks.json
+          git commit -m "Update sportsbook market snapshot [skip ci]"
+          git pull --rebase origin main
+          git push origin HEAD:main
