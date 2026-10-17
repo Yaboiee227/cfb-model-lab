@@ -7,6 +7,7 @@ on:
       - nfl-model-development
     paths:
       - 'scripts/build_nfl_efficiency.py'
+      - 'scripts/build_nfl_pbp_features.py'
       - '.github/workflows/nfl-data-build.yml'
 
 permissions:
@@ -27,8 +28,11 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Build Week 6 pregame snapshot from Weeks 1-5 only
+      - name: Build Week 6 summary-stat snapshot from Weeks 1-5 only
         run: python scripts/build_nfl_efficiency.py
+
+      - name: Build Week 6 play-by-play feature snapshot from Weeks 1-5 only
+        run: python scripts/build_nfl_pbp_features.py
 
       - name: Commit generated development data
         run: |
@@ -39,5 +43,5 @@ jobs:
             echo "No generated data changes."
             exit 0
           fi
-          git commit -m "Build NFL Week 6 pregame efficiency snapshot"
+          git commit -m "Build NFL Week 6 pregame research snapshots"
           git push origin HEAD:nfl-model-development
