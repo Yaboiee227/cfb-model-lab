@@ -1,0 +1,95 @@
+{
+  "current_max_week_used": 5,
+  "current_rows": 32,
+  "current_target_or_future_rows_used": 0,
+  "generated_at_utc": "2026-10-17T22:21:18.920123+00:00",
+  "historical_leakage_rows": 0,
+  "historical_rows": 2304,
+  "metrics": [
+    "coverage_completion_pct",
+    "coverage_yards_per_target",
+    "coverage_td_rate",
+    "coverage_int_rate",
+    "coverage_passer_rating_allowed",
+    "coverage_adot_allowed",
+    "coverage_yac_per_completion",
+    "coverage_missed_tackle_rate"
+  ],
+  "pregame_rule": "target-season source weeks strictly less than target_week",
+  "release_state": "HOLD_RESEARCH_ONLY",
+  "seasons": {
+    "2021": {
+      "max_week": 18,
+      "non_null": {
+        "adot": 5331,
+        "missed": 8062,
+        "rating": 5342,
+        "targets": 8062
+      },
+      "rows": 8062,
+      "team_weeks": 544,
+      "teams": 32
+    },
+    "2022": {
+      "max_week": 18,
+      "non_null": {
+        "adot": 5155,
+        "missed": 7517,
+        "rating": 5162,
+        "targets": 7517
+      },
+      "rows": 7517,
+      "team_weeks": 542,
+      "teams": 32
+    },
+    "2023": {
+      "max_week": 18,
+      "non_null": {
+        "adot": 5115,
+        "missed": 7573,
+        "rating": 5117,
+        "targets": 7573
+      },
+      "rows": 7573,
+      "team_weeks": 542,
+      "teams": 32
+    },
+    "2024": {
+      "max_week": 18,
+      "non_null": {
+        "adot": 5112,
+        "missed": 7632,
+        "rating": 5118,
+        "targets": 7632
+      },
+      "rows": 7632,
+      "team_weeks": 540,
+      "teams": 32
+    },
+    "2025": {
+      "max_week": 18,
+      "non_null": {
+        "adot": 5186,
+        "missed": 7557,
+        "rating": 5192,
+        "targets": 7557
+      },
+      "rows": 7557,
+      "team_weeks": 541,
+      "teams": 32
+    },
+    "2026": {
+      "max_week": 5,
+      "non_null": {
+        "adot": 1551,
+        "missed": 2250,
+        "rating": 1551,
+        "targets": 2250
+      },
+      "rows": 2250,
+      "team_weeks": 158,
+      "teams": 32
+    }
+  },
+  "website_publish_allowed": false
+}
