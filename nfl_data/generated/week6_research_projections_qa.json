@@ -1,0 +1,205 @@
+{
+  "completed_week6_games_excluded": [
+    "2026_06_SEA_DEN"
+  ],
+  "current_remaining_games": 13,
+  "current_target_or_future_rows_used": 0,
+  "current_team_rows": 32,
+  "cutoff_week": 5,
+  "frozen_spread_2022_top_candidates": [
+    {
+      "feature_k": 1.0,
+      "lambda": 100.0,
+      "mae": 9.253145825908062,
+      "rmse": 12.11675150556487,
+      "team_k": 8.0
+    },
+    {
+      "feature_k": 1.0,
+      "lambda": 100.0,
+      "mae": 9.254753077789644,
+      "rmse": 12.117636808326608,
+      "team_k": 6.0
+    },
+    {
+      "feature_k": 2.0,
+      "lambda": 100.0,
+      "mae": 9.261213552489236,
+      "rmse": 12.134844575638096,
+      "team_k": 8.0
+    },
+    {
+      "feature_k": 2.0,
+      "lambda": 100.0,
+      "mae": 9.262129948110084,
+      "rmse": 12.134856531312876,
+      "team_k": 6.0
+    },
+    {
+      "feature_k": 1.0,
+      "lambda": 30.0,
+      "mae": 9.265993609302363,
+      "rmse": 12.103191465187813,
+      "team_k": 8.0
+    },
+    {
+      "feature_k": 1.0,
+      "lambda": 100.0,
+      "mae": 9.273613770529304,
+      "rmse": 12.137998800993541,
+      "team_k": 4.0
+    },
+    {
+      "feature_k": 2.0,
+      "lambda": 100.0,
+      "mae": 9.277719806059192,
+      "rmse": 12.153900895110915,
+      "team_k": 4.0
+    },
+    {
+      "feature_k": 1.0,
+      "lambda": 30.0,
+      "mae": 9.278680464304278,
+      "rmse": 12.115591418404646,
+      "team_k": 6.0
+    },
+    {
+      "feature_k": 4.0,
+      "lambda": 100.0,
+      "mae": 9.283982989610609,
+      "rmse": 12.156242619728557,
+      "team_k": 6.0
+    },
+    {
+      "feature_k": 4.0,
+      "lambda": 100.0,
+      "mae": 9.290393772106736,
+      "rmse": 12.157288132478737,
+      "team_k": 8.0
+    }
+  ],
+  "frozen_spread_params": {
+    "feature_k": 1.0,
+    "lambda": 100.0,
+    "mae": 9.253145825908062,
+    "rmse": 12.11675150556487,
+    "team_k": 8.0
+  },
+  "frozen_total_2022_top_candidates": [
+    {
+      "k": 8.0,
+      "lambda": 100.0,
+      "mae": 10.805254515528455,
+      "n": 91,
+      "rmse": 13.633007925124653
+    },
+    {
+      "k": 6.0,
+      "lambda": 100.0,
+      "mae": 10.83372740282085,
+      "n": 91,
+      "rmse": 13.665101026611906
+    },
+    {
+      "k": 4.0,
+      "lambda": 100.0,
+      "mae": 10.869130149131118,
+      "n": 91,
+      "rmse": 13.702784165702287
+    },
+    {
+      "k": 8.0,
+      "lambda": 30.0,
+      "mae": 10.874171419318248,
+      "n": 91,
+      "rmse": 13.69003128580502
+    },
+    {
+      "k": 3.0,
+      "lambda": 100.0,
+      "mae": 10.888767796724677,
+      "n": 91,
+      "rmse": 13.720363612315934
+    },
+    {
+      "k": 1.0,
+      "lambda": 100.0,
+      "mae": 10.901604862762882,
+      "n": 91,
+      "rmse": 13.721905053233176
+    },
+    {
+      "k": 2.0,
+      "lambda": 100.0,
+      "mae": 10.902334299656177,
+      "n": 91,
+      "rmse": 13.730463273567858
+    },
+    {
+      "k": 6.0,
+      "lambda": 30.0,
+      "mae": 10.91252047611766,
+      "n": 91,
+      "rmse": 13.72743109283354
+    },
+    {
+      "k": 8.0,
+      "lambda": 10.0,
+      "mae": 10.947360601160273,
+      "n": 91,
+      "rmse": 13.734078383882167
+    },
+    {
+      "k": 4.0,
+      "lambda": 30.0,
+      "mae": 10.959712566043438,
+      "n": 91,
+      "rmse": 13.772478973908747
+    }
+  ],
+  "frozen_total_params": {
+    "k": 8.0,
+    "lambda": 100.0,
+    "mae": 10.805254515528455,
+    "n": 91,
+    "rmse": 13.633007925124653
+  },
+  "generated_at_utc": "2026-10-17T22:46:40.435758+00:00",
+  "hard_release_gates": [
+    "official starter/inactive verification",
+    "direct executable sportsbook price",
+    "final roof/weather verification",
+    "prospective calibration/readiness review"
+  ],
+  "market_policy": "schedule line retained only as non-execution-verified benchmark; excluded from all model features and fitting",
+  "max_current_source_week_used": 5,
+  "pbp_source_qa_2025_2026": {
+    "2025": {
+      "no_play_column": false,
+      "plays_used": 32941,
+      "rows_scanned": 48771,
+      "teams": 32
+    },
+    "2026": {
+      "no_play_column": false,
+      "plays_used": 9830,
+      "rows_scanned": 14031,
+      "teams": 32
+    }
+  },
+  "release_state": "HOLD_RESEARCH_ONLY",
+  "season": 2026,
+  "spread_model": "core baseline + defensive coverage only",
+  "spread_training_feature_count": 20,
+  "target_week": 6,
+  "total_model": "core baseline only",
+  "total_training_feature_count": 15,
+  "training_games": 1087,
+  "training_seasons": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "website_publish_allowed": false
+}
