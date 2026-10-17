@@ -1,0 +1,77 @@
+{
+  "aggregate": {
+    "blend_minus_reference_mae": -0.0548,
+    "fixed_50_50_blend_mae": 10.2016,
+    "n": 816,
+    "paired_bootstrap_reference_minus_blend": {
+      "bootstrap_95_ci": [
+        0.00985,
+        0.10082
+      ],
+      "draws": 10000,
+      "mean_improvement": 0.05478,
+      "probability_gt_0": 0.9916
+    },
+    "reference_mae": 10.2564,
+    "seasons_improved": 3,
+    "unblended_candidate_mae": 10.1698
+  },
+  "blend_candidate_weight": 0.5,
+  "blend_weight_selected_from_outer_results": false,
+  "candidate_params_selected_2022_only": {
+    "feature_k": 1.0,
+    "lambda": 300.0,
+    "mae": 9.287578495429901,
+    "rmse": 12.082098786767094,
+    "validation_games": 91
+  },
+  "coverage_params": {
+    "feature_k": 1.0,
+    "lambda": 100.0,
+    "mae": 9.253145825908062,
+    "rmse": 12.11675150556487,
+    "team_k": 8.0
+  },
+  "design": "Fixed 50/50 prediction blend: canonical final spread architecture + 2022-selected FTN QB-process candidate; outer evaluation 2023-2025.",
+  "folds": {
+    "2023": {
+      "blend_minus_reference_mae": -0.0402,
+      "candidate_mae": 10.4524,
+      "fixed_50_50_blend_mae": 10.4634,
+      "n": 272,
+      "reference_mae": 10.5036
+    },
+    "2024": {
+      "blend_minus_reference_mae": -0.0829,
+      "candidate_mae": 9.8634,
+      "fixed_50_50_blend_mae": 9.9306,
+      "n": 272,
+      "reference_mae": 10.0135
+    },
+    "2025": {
+      "blend_minus_reference_mae": -0.0413,
+      "candidate_mae": 10.1936,
+      "fixed_50_50_blend_mae": 10.2108,
+      "n": 272,
+      "reference_mae": 10.2521
+    }
+  },
+  "generated_at_utc": "2026-10-17T23:49:35.505833+00:00",
+  "production_promotion_allowed": false,
+  "promotion_rule": "Fixed blend must improve aggregate MAE, improve at least 2 of 3 outer seasons, and have paired-bootstrap 95% CI for reference-minus-blend entirely above zero.",
+  "reason_production_remains_locked": "Even a robust historical shadow blend requires prospective validation before replacing the frozen canonical architecture.",
+  "recommendation_release_allowed": false,
+  "reference_architecture": "core + defensive coverage + market-independent win Elo + margin rating",
+  "reference_rating_params": {
+    "elo_hfa": 35.0,
+    "elo_k": 40.0,
+    "lambda": 100.0,
+    "margin_hfa": 3.0,
+    "margin_k": 0.05,
+    "offseason_regression": 0.25
+  },
+  "release_state": "ROBUST_SHADOW_BLEND_ELIGIBLE",
+  "robust_shadow_blend_earned": true,
+  "website_publish_allowed": false,
+  "week6_frozen_snapshot_may_be_rewritten": false
+}
