@@ -1,0 +1,177 @@
+{
+  "aggregate": {
+    "games": 0,
+    "public_book_spread_direction_record": {
+      "decisions": 0,
+      "losses": 0,
+      "no_grades": 0,
+      "pushes": 0,
+      "win_rate_ex_push": null,
+      "wins": 0
+    },
+    "public_book_total_direction_record": {
+      "decisions": 0,
+      "losses": 0,
+      "no_grades": 0,
+      "pushes": 0,
+      "win_rate_ex_push": null,
+      "wins": 0
+    },
+    "spread_bias_actual_minus_pred": null,
+    "spread_mae": null,
+    "total_bias_actual_minus_pred": null,
+    "total_mae": null
+  },
+  "automatic_threshold_promotion_allowed": false,
+  "canonical_snapshot_registry": [
+    {
+      "canonical_grade_file": "nfl_data/prospective/grades/week6_grade_20261017T232948Z.json",
+      "completed_games_graded": 0,
+      "duplicate_grade_artifacts_seen": 3,
+      "graded_at_utc": "2026-10-17T23:29:48.092614+00:00",
+      "pending_games": 13,
+      "season": 2026,
+      "snapshot_id": "NFL_2026_W6_PRELOCK_20261017T225656Z",
+      "week": 6
+    }
+  ],
+  "clv_claims_allowed": false,
+  "completed_prospective_games": 0,
+  "distinct_prospective_weeks_with_snapshot": 1,
+  "edge_bucket_summaries": {
+    "spread": [],
+    "total": []
+  },
+  "generated_at_utc": "2026-10-17T23:43:49.685984+00:00",
+  "grade_artifacts_seen": 3,
+  "historical_reference": {
+    "production_release_state": "HOLD_PROSPECTIVE_VALIDATION_REQUIRED",
+    "source": "nfl_data/validation/model_readiness.json",
+    "spread_oos_games": 816,
+    "spread_oos_mae": 10.2564,
+    "total_oos_games": 816,
+    "total_oos_mae": 10.5001
+  },
+  "league": "NFL",
+  "milestones": {
+    "automatic_threshold_promotion": false,
+    "projection_beta_minimum_evidence_rule": ">=40 completed prospective games across >=3 frozen weeks; still requires explicit review.",
+    "projection_beta_review_eligible": false,
+    "recommendation_calibration_review_eligible": false,
+    "recommendation_review_minimum_evidence_rule": ">=75 completed prospective games across >=5 frozen weeks; this only permits calibration review, not automatic release."
+  },
+  "model_health_alerts": [],
+  "policy": {
+    "clv": "No CLV claim from public web-board movement alone.",
+    "edge_buckets": "Descriptive research only. Larger disagreement is not assumed to mean better betting value.",
+    "market_prices": "Public-book captures are benchmarks unless account-level executable verification is explicitly present.",
+    "roi": "No ROI claim without verified account-executable pricing and a prospectively frozen recommendation policy.",
+    "website": "NFL outputs remain isolated from the live CFB site until explicit release review."
+  },
+  "prospective_vs_historical_oos": {
+    "interpretation_policy": "Do not interpret prospective-vs-historical deltas as stable until the prospective sample is sufficiently large and spans multiple weeks.",
+    "spread_mae_delta": null,
+    "total_mae_delta": null
+  },
+  "purpose": "Canonical multi-week prospective audit and calibration evidence registry.",
+  "recommendation_release_allowed": false,
+  "roi_claims_allowed": false,
+  "rows": [],
+  "sample_state": "WAITING_FOR_FIRST_COMPLETED_PROSPECTIVE_GAMES",
+  "state_splits": {
+    "account_executable_price_verified": {
+      "games": 0,
+      "public_book_spread_direction_record": {
+        "decisions": 0,
+        "losses": 0,
+        "no_grades": 0,
+        "pushes": 0,
+        "win_rate_ex_push": null,
+        "wins": 0
+      },
+      "public_book_total_direction_record": {
+        "decisions": 0,
+        "losses": 0,
+        "no_grades": 0,
+        "pushes": 0,
+        "win_rate_ex_push": null,
+        "wins": 0
+      },
+      "spread_bias_actual_minus_pred": null,
+      "spread_mae": null,
+      "total_bias_actual_minus_pred": null,
+      "total_mae": null
+    },
+    "elevated_weather": {
+      "games": 0,
+      "public_book_spread_direction_record": {
+        "decisions": 0,
+        "losses": 0,
+        "no_grades": 0,
+        "pushes": 0,
+        "win_rate_ex_push": null,
+        "wins": 0
+      },
+      "public_book_total_direction_record": {
+        "decisions": 0,
+        "losses": 0,
+        "no_grades": 0,
+        "pushes": 0,
+        "win_rate_ex_push": null,
+        "wins": 0
+      },
+      "spread_bias_actual_minus_pred": null,
+      "spread_mae": null,
+      "total_bias_actual_minus_pred": null,
+      "total_mae": null
+    },
+    "hard_qb_break": {
+      "games": 0,
+      "public_book_spread_direction_record": {
+        "decisions": 0,
+        "losses": 0,
+        "no_grades": 0,
+        "pushes": 0,
+        "win_rate_ex_push": null,
+        "wins": 0
+      },
+      "public_book_total_direction_record": {
+        "decisions": 0,
+        "losses": 0,
+        "no_grades": 0,
+        "pushes": 0,
+        "win_rate_ex_push": null,
+        "wins": 0
+      },
+      "spread_bias_actual_minus_pred": null,
+      "spread_mae": null,
+      "total_bias_actual_minus_pred": null,
+      "total_mae": null
+    },
+    "non_hard_qb_break": {
+      "games": 0,
+      "public_book_spread_direction_record": {
+        "decisions": 0,
+        "losses": 0,
+        "no_grades": 0,
+        "pushes": 0,
+        "win_rate_ex_push": null,
+        "wins": 0
+      },
+      "public_book_total_direction_record": {
+        "decisions": 0,
+        "losses": 0,
+        "no_grades": 0,
+        "pushes": 0,
+        "win_rate_ex_push": null,
+        "wins": 0
+      },
+      "spread_bias_actual_minus_pred": null,
+      "spread_mae": null,
+      "total_bias_actual_minus_pred": null,
+      "total_mae": null
+    }
+  },
+  "unique_frozen_snapshots": 1,
+  "website_publish_allowed": false
+}
