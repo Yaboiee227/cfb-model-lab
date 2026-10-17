@@ -1,0 +1,285 @@
+{
+  "validation_name": "NFL market-anchored spread residual v1",
+  "input": "nfl_data/validation/opponent_adjusted_walkforward_2023_2025.csv",
+  "validated_games": 464,
+  "minimum_prior_games": 100,
+  "ridge_lambda": 12.0,
+  "features": [
+    "opponent_adjusted_net_rating_difference",
+    "market_spread"
+  ],
+  "target": "actual_home_margin - historical_market_spread",
+  "overall": {
+    "games": 464,
+    "market_mae": 9.59375,
+    "residual_model_mae": 9.699390889653209,
+    "market_rmse": 12.163819833055506,
+    "residual_model_rmse": 12.14615312385865,
+    "predicted_vs_actual_residual_correlation": 0.06547282046218922,
+    "mean_abs_predicted_edge": 1.2988777584344526,
+    "ats_by_edge_threshold": {
+      "0.25": {
+        "bets": 406,
+        "wins": 196,
+        "losses": 206,
+        "pushes": 4,
+        "win_rate_ex_push": 0.48756218905472637,
+        "units_at_minus_110": -30.600000000000023,
+        "roi_at_minus_110": -0.07611940298507468
+      },
+      "0.5": {
+        "bets": 367,
+        "wins": 176,
+        "losses": 187,
+        "pushes": 4,
+        "win_rate_ex_push": 0.48484848484848486,
+        "units_at_minus_110": -29.700000000000017,
+        "roi_at_minus_110": -0.08181818181818186
+      },
+      "0.75": {
+        "bets": 321,
+        "wins": 153,
+        "losses": 165,
+        "pushes": 3,
+        "win_rate_ex_push": 0.4811320754716981,
+        "units_at_minus_110": -28.50000000000003,
+        "roi_at_minus_110": -0.08962264150943405
+      },
+      "1.0": {
+        "bets": 283,
+        "wins": 136,
+        "losses": 144,
+        "pushes": 3,
+        "win_rate_ex_push": 0.4857142857142857,
+        "units_at_minus_110": -22.400000000000006,
+        "roi_at_minus_110": -0.08000000000000002
+      },
+      "1.5": {
+        "bets": 155,
+        "wins": 80,
+        "losses": 75,
+        "pushes": 0,
+        "win_rate_ex_push": 0.5161290322580645,
+        "units_at_minus_110": -2.5,
+        "roi_at_minus_110": -0.016129032258064516
+      },
+      "2.0": {
+        "bets": 84,
+        "wins": 49,
+        "losses": 35,
+        "pushes": 0,
+        "win_rate_ex_push": 0.5833333333333334,
+        "units_at_minus_110": 10.5,
+        "roi_at_minus_110": 0.125
+      }
+    }
+  },
+  "by_season": {
+    "2023": {
+      "games": 16,
+      "market_mae": 9.40625,
+      "residual_model_mae": 9.770543216184922,
+      "market_rmse": 11.790488751531889,
+      "residual_model_rmse": 11.956829560944282,
+      "predicted_vs_actual_residual_correlation": -0.269783042103544,
+      "mean_abs_predicted_edge": 1.4424964562416855,
+      "ats_by_edge_threshold": {
+        "0.25": {
+          "bets": 16,
+          "wins": 8,
+          "losses": 8,
+          "pushes": 0,
+          "win_rate_ex_push": 0.5,
+          "units_at_minus_110": -0.8000000000000007,
+          "roi_at_minus_110": -0.050000000000000044
+        },
+        "0.5": {
+          "bets": 16,
+          "wins": 8,
+          "losses": 8,
+          "pushes": 0,
+          "win_rate_ex_push": 0.5,
+          "units_at_minus_110": -0.8000000000000007,
+          "roi_at_minus_110": -0.050000000000000044
+        },
+        "0.75": {
+          "bets": 14,
+          "wins": 6,
+          "losses": 8,
+          "pushes": 0,
+          "win_rate_ex_push": 0.42857142857142855,
+          "units_at_minus_110": -2.8000000000000007,
+          "roi_at_minus_110": -0.20000000000000004
+        },
+        "1.0": {
+          "bets": 13,
+          "wins": 5,
+          "losses": 8,
+          "pushes": 0,
+          "win_rate_ex_push": 0.38461538461538464,
+          "units_at_minus_110": -3.8000000000000007,
+          "roi_at_minus_110": -0.2923076923076924
+        },
+        "1.5": {
+          "bets": 6,
+          "wins": 1,
+          "losses": 5,
+          "pushes": 0,
+          "win_rate_ex_push": 0.16666666666666666,
+          "units_at_minus_110": -4.5,
+          "roi_at_minus_110": -0.75
+        },
+        "2.0": {
+          "bets": 1,
+          "wins": 0,
+          "losses": 1,
+          "pushes": 0,
+          "win_rate_ex_push": 0.0,
+          "units_at_minus_110": -1.1,
+          "roi_at_minus_110": -1.1
+        }
+      }
+    },
+    "2024": {
+      "games": 224,
+      "market_mae": 9.276785714285714,
+      "residual_model_mae": 9.302311304381073,
+      "market_rmse": 12.094401745081424,
+      "residual_model_rmse": 12.017343927109202,
+      "predicted_vs_actual_residual_correlation": 0.09849520299826715,
+      "mean_abs_predicted_edge": 1.1924217928361387,
+      "ats_by_edge_threshold": {
+        "0.25": {
+          "bets": 204,
+          "wins": 104,
+          "losses": 97,
+          "pushes": 3,
+          "win_rate_ex_push": 0.5174129353233831,
+          "units_at_minus_110": -2.700000000000003,
+          "roi_at_minus_110": -0.013432835820895536
+        },
+        "0.5": {
+          "bets": 179,
+          "wins": 89,
+          "losses": 87,
+          "pushes": 3,
+          "win_rate_ex_push": 0.5056818181818182,
+          "units_at_minus_110": -6.700000000000003,
+          "roi_at_minus_110": -0.038068181818181834
+        },
+        "0.75": {
+          "bets": 153,
+          "wins": 76,
+          "losses": 75,
+          "pushes": 2,
+          "win_rate_ex_push": 0.5033112582781457,
+          "units_at_minus_110": -6.5,
+          "roi_at_minus_110": -0.04304635761589404
+        },
+        "1.0": {
+          "bets": 130,
+          "wins": 66,
+          "losses": 62,
+          "pushes": 2,
+          "win_rate_ex_push": 0.515625,
+          "units_at_minus_110": -2.200000000000003,
+          "roi_at_minus_110": -0.017187500000000022
+        },
+        "1.5": {
+          "bets": 62,
+          "wins": 36,
+          "losses": 26,
+          "pushes": 0,
+          "win_rate_ex_push": 0.5806451612903226,
+          "units_at_minus_110": 7.399999999999999,
+          "roi_at_minus_110": 0.11935483870967739
+        },
+        "2.0": {
+          "bets": 28,
+          "wins": 18,
+          "losses": 10,
+          "pushes": 0,
+          "win_rate_ex_push": 0.6428571428571429,
+          "units_at_minus_110": 7.0,
+          "roi_at_minus_110": 0.25
+        }
+      }
+    },
+    "2025": {
+      "games": 224,
+      "market_mae": 9.924107142857142,
+      "residual_model_mae": 10.091388165887363,
+      "market_rmse": 12.258925319945464,
+      "residual_model_rmse": 12.286881772021696,
+      "predicted_vs_actual_residual_correlation": 0.0549640441592781,
+      "mean_abs_predicted_edge": 1.395075245617964,
+      "ats_by_edge_threshold": {
+        "0.25": {
+          "bets": 186,
+          "wins": 84,
+          "losses": 101,
+          "pushes": 1,
+          "win_rate_ex_push": 0.4540540540540541,
+          "units_at_minus_110": -27.10000000000001,
+          "roi_at_minus_110": -0.14648648648648654
+        },
+        "0.5": {
+          "bets": 172,
+          "wins": 79,
+          "losses": 92,
+          "pushes": 1,
+          "win_rate_ex_push": 0.4619883040935672,
+          "units_at_minus_110": -22.200000000000003,
+          "roi_at_minus_110": -0.1298245614035088
+        },
+        "0.75": {
+          "bets": 154,
+          "wins": 71,
+          "losses": 82,
+          "pushes": 1,
+          "win_rate_ex_push": 0.46405228758169936,
+          "units_at_minus_110": -19.200000000000003,
+          "roi_at_minus_110": -0.1254901960784314
+        },
+        "1.0": {
+          "bets": 140,
+          "wins": 65,
+          "losses": 74,
+          "pushes": 1,
+          "win_rate_ex_push": 0.4676258992805755,
+          "units_at_minus_110": -16.400000000000006,
+          "roi_at_minus_110": -0.11798561151079141
+        },
+        "1.5": {
+          "bets": 87,
+          "wins": 43,
+          "losses": 44,
+          "pushes": 0,
+          "win_rate_ex_push": 0.4942528735632184,
+          "units_at_minus_110": -5.400000000000006,
+          "roi_at_minus_110": -0.06206896551724145
+        },
+        "2.0": {
+          "bets": 55,
+          "wins": 31,
+          "losses": 24,
+          "pushes": 0,
+          "win_rate_ex_push": 0.5636363636363636,
+          "units_at_minus_110": 4.599999999999998,
+          "roi_at_minus_110": 0.08363636363636359
+        }
+      }
+    }
+  },
+  "release_state": "HOLD",
+  "model_use": "RESEARCH_VALIDATION_ONLY",
+  "notes": [
+    "The historical market spread is the baseline forecast; the football model predicts only a residual adjustment.",
+    "Every residual fit uses only earlier season/week rows; same-week games are never used to fit one another.",
+    "Ridge lambda is a candidate research setting, not a selected production hyperparameter.",
+    "Historical nflverse spread_line is not treated as guaranteed executable timestamped pricing.",
+    "This test does not include PBP success/explosiveness, QB/personnel, injuries, weather, rest/travel, or price/CLV layers.",
+    "No result authorizes website publication or wager release."
+  ],
+  "generated_utc": "2026-10-17T21:23:02.366172+00:00"
+}
