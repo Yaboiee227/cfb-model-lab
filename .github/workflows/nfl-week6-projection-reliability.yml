@@ -1,0 +1,52 @@
+name: NFL Week 6 projection reliability (development only)
+
+on:
+  push:
+    branches: [nfl-model-development]
+    paths:
+      - 'scripts/build_nfl_week6_projection_reliability.py'
+      - 'nfl_data/calibration/final_architecture_calibration.json'
+      - 'nfl_data/prospective/week6_prelock_20261017T225656Z.json'
+      - '.github/workflows/nfl-week6-projection-reliability.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-reliability:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout isolated NFL development branch
+        uses: actions/checkout@v4
+        with:
+          ref: nfl-model-development
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build empirical uncertainty and reliability layer
+        run: python scripts/build_nfl_week6_projection_reliability.py
+      - name: Commit reliability artifacts safely
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add nfl_data/prospective/week6_projection_reliability_*.csv nfl_data/prospective/week6_projection_reliability_*.json
+          if git diff --cached --quiet; then
+            echo "No reliability artifacts to commit"
+          else
+            git commit -m "Build NFL Week 6 projection reliability layer"
+            git pull --rebase origin nfl-model-development
+            git push origin nfl-model-development
+          fi
+      - name: Verify immutable snapshot unchanged and no website publication paths changed
+        run: |
+          if git diff --name-only HEAD~1 HEAD | grep 'nfl_data/prospective/week6_prelock_20261017T225656Z' ; then
+            echo "Immutable prospective snapshot changed" >&2
+            exit 1
+          fi
+          if git diff --name-only HEAD~1 HEAD | grep -E '^(data/|app\.js$|index\.html$|.*\.css$|.*\.js$)' ; then
+            echo "Unexpected website path changed" >&2
+            exit 1
+          fi
