@@ -6,6 +6,7 @@ on:
     paths:
       - 'live-*.js'
       - 'markets-*.js'
+      - 'market-runtime-sync.js'
       - 'redesign.js'
       - 'model-product-live.js'
       - 'data/team-aliases.json'
@@ -30,6 +31,7 @@ jobs:
           for file in \
             live-data.js \
             markets-sportsbooks.js \
+            market-runtime-sync.js \
             markets-prediction.js \
             live-graphics.js \
             game-detail.js \
