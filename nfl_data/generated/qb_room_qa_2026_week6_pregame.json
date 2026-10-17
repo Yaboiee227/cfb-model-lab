@@ -1,0 +1,65 @@
+{
+  "current_primary_proxy_sources": {
+    "CURRENT_PRIOR_WEEKS": 32
+  },
+  "current_recent_primary_switch_flags": 2,
+  "current_replacement_proxy_sources": {
+    "CURRENT_PRIOR_WEEKS_SECONDARY": 15,
+    "LEAGUE_REPLACEMENT_NEEDED": 1,
+    "PRIOR_SEASON_TEAM_SECONDARY": 16
+  },
+  "current_rows": 32,
+  "current_season": 2026,
+  "current_target_or_future_rows_used": 0,
+  "expected_historical_rows": 2304,
+  "generated_at_utc": "2026-10-17T22:06:29.228534+00:00",
+  "historical_rows": 2304,
+  "historical_safety_note": "No target-game realized starter is used. Primary/replacement identities are inferred only from prior observed QB opportunity.",
+  "historical_target_or_future_rows_used": 0,
+  "ngs_join_rate": 0.839976,
+  "ngs_joined_weekly_qb_rows": 2782,
+  "ngs_team_mismatch_rows_nulled": 90,
+  "player_source_schema": {
+    "2021": {
+      "players": 75,
+      "position_column": "position_group",
+      "rows": 616,
+      "teams": 32
+    },
+    "2022": {
+      "players": 83,
+      "position_column": "position_group",
+      "rows": 618,
+      "teams": 32
+    },
+    "2023": {
+      "players": 78,
+      "position_column": "position_group",
+      "rows": 636,
+      "teams": 32
+    },
+    "2024": {
+      "players": 76,
+      "position_column": "position_group",
+      "rows": 634,
+      "teams": 32
+    },
+    "2025": {
+      "players": 77,
+      "position_column": "position_group",
+      "rows": 630,
+      "teams": 32
+    },
+    "2026": {
+      "players": 51,
+      "position_column": "position_group",
+      "rows": 178,
+      "teams": 32
+    }
+  },
+  "release_state": "HOLD_RESEARCH_ONLY",
+  "replacement_note": "Observed secondary QB is a proxy, not necessarily the listed current backup. Depth/injury data must override prospectively.",
+  "target_week": 6,
+  "website_publish_allowed": false,
+  "weekly_qb_rows_2021_2026": 3312
+}
