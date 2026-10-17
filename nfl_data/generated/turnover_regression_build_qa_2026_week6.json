@@ -1,0 +1,65 @@
+{
+  "current_max_week_used": 5,
+  "current_rows": 32,
+  "current_target_or_future_rows_used": 0,
+  "generated_at_utc": "2026-10-17T22:26:25.720515+00:00",
+  "high_variance_note": "Turnover margin, fumble recovery, one-score record and win-vs-Pythagorean are regression candidates, not assumed persistent skill.",
+  "historical_leakage_rows": 0,
+  "historical_rows": 2304,
+  "metrics": [
+    "off_int_rate",
+    "off_fumble_loss_rate",
+    "giveaways_per_game",
+    "def_int_rate",
+    "def_fumble_recovery_rate",
+    "takeaways_per_game",
+    "turnover_margin_per_game",
+    "point_diff_per_game",
+    "win_pct",
+    "pythag_win_pct",
+    "win_pct_minus_pythag",
+    "one_score_win_pct",
+    "one_score_games_share"
+  ],
+  "pythagorean_exponent_candidate": 2.37,
+  "release_state": "HOLD_RESEARCH_ONLY",
+  "seasons": {
+    "2021": {
+      "completed_schedule_team_weeks": 544,
+      "feature_team_weeks": 544,
+      "team_stat_rows": 544,
+      "teams": 32
+    },
+    "2022": {
+      "completed_schedule_team_weeks": 542,
+      "feature_team_weeks": 542,
+      "team_stat_rows": 542,
+      "teams": 32
+    },
+    "2023": {
+      "completed_schedule_team_weeks": 544,
+      "feature_team_weeks": 544,
+      "team_stat_rows": 544,
+      "teams": 32
+    },
+    "2024": {
+      "completed_schedule_team_weeks": 544,
+      "feature_team_weeks": 544,
+      "team_stat_rows": 544,
+      "teams": 32
+    },
+    "2025": {
+      "completed_schedule_team_weeks": 544,
+      "feature_team_weeks": 544,
+      "team_stat_rows": 544,
+      "teams": 32
+    },
+    "2026": {
+      "completed_schedule_team_weeks": 160,
+      "feature_team_weeks": 160,
+      "team_stat_rows": 160,
+      "teams": 32
+    }
+  },
+  "website_publish_allowed": false
+}
