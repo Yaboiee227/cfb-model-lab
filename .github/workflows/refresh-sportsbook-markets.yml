@@ -24,48 +24,130 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Check game window and fetch FanDuel / DraftKings
+      - name: Adaptive free-tier FanDuel / DraftKings refresh
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
         run: |
           node <<'NODE'
           const fs = require('fs');
           const path = 'data/markets-sportsbooks.json';
           const scoreboardUrl = 'https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?limit=200';
+          const now = Date.now();
+          const nowIso = new Date(now).toISOString();
+          const manual = process.env.GITHUB_EVENT_NAME === 'workflow_dispatch';
+          const RESERVE_CREDITS = 30;
+          const BOOKS = ['fanduel','draftkings'];
+
           const norm = value => String(value || '').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
           const same = (a,b) => norm(a) === norm(b) || norm(a).includes(norm(b)) || norm(b).includes(norm(a));
-          const now = Date.now();
+          const finite = value => Number.isFinite(Number(value));
+          const numHeader = (headers, name) => {
+            const raw = headers.get(name);
+            return raw === null || raw === '' || !finite(raw) ? null : Number(raw);
+          };
+          const minutesSince = value => {
+            const t = new Date(value || 0).getTime();
+            return Number.isFinite(t) ? (now - t) / 60000 : Infinity;
+          };
+          const round5 = value => Math.max(5, Math.ceil(value / 5) * 5);
 
-          async function json(url) {
-            const r = await fetch(url, { headers: { 'Accept':'application/json' } });
-            if (!r.ok) throw new Error(`${r.status} ${r.statusText}: ${url}`);
+          async function publicJson(url) {
+            const r = await fetch(url, { headers: { Accept:'application/json' } });
+            if (!r.ok) throw new Error(`${r.status} ${r.statusText}: public data request failed`);
             return r.json();
           }
-          function readExisting() {
-            try { return JSON.parse(fs.readFileSync(path,'utf8')); }
-            catch { return { generatedAt:null, provider:'The Odds API', books:['fanduel','draftkings'], games:[] }; }
-          }
-          function market(book, key) { return (book.markets || []).find(m => m.key === key); }
-          function outcome(market, name) { return market?.outcomes?.find(o => same(o.name,name)); }
-          function totalOutcome(market, name) { return market?.outcomes?.find(o => String(o.name).toLowerCase() === name); }
-          function currentBook(book, event) {
-            const h2h=market(book,'h2h'), spread=market(book,'spreads'), total=market(book,'totals');
-            const homeMl=outcome(h2h,event.home_team), awayMl=outcome(h2h,event.away_team);
-            const homeSp=outcome(spread,event.home_team), awaySp=outcome(spread,event.away_team);
-            const over=totalOutcome(total,'over'), under=totalOutcome(total,'under');
-            if (!h2h && !spread && !total) return null;
+
+          async function oddsRequest(markets) {
+            const params = new URLSearchParams({
+              apiKey: process.env.ODDS_API_KEY,
+              bookmakers: BOOKS.join(','),
+              markets: markets.join(','),
+              oddsFormat: 'american',
+              dateFormat: 'iso'
+            });
+            const r = await fetch(`https://api.the-odds-api.com/v4/sports/americanfootball_ncaaf/odds?${params}`, {
+              headers: { Accept:'application/json' }
+            });
+            if (!r.ok) throw new Error(`The Odds API returned ${r.status} ${r.statusText}`);
+            const data = await r.json();
             return {
-              updatedAt: book.last_update || h2h?.last_update || spread?.last_update || total?.last_update || new Date().toISOString(),
-              moneyline: { home: homeMl?.price ?? null, away: awayMl?.price ?? null },
-              spread: { home: homeSp?.point ?? null, homePrice: homeSp?.price ?? null, away: awaySp?.point ?? null, awayPrice: awaySp?.price ?? null },
-              total: { point: over?.point ?? under?.point ?? null, overPrice: over?.price ?? null, underPrice: under?.price ?? null }
+              data,
+              quota: {
+                remaining: numHeader(r.headers,'x-requests-remaining'),
+                used: numHeader(r.headers,'x-requests-used'),
+                lastCost: numHeader(r.headers,'x-requests-last')
+              }
             };
           }
-          function openingFrom(current) {
-            return { moneyline:{...current.moneyline}, spread:{home:current.spread.home,away:current.spread.away}, total:{point:current.total.point} };
+
+          function readExisting() {
+            try { return JSON.parse(fs.readFileSync(path,'utf8')); }
+            catch {
+              return {
+                generatedAt:null,
+                provider:'The Odds API',
+                books:BOOKS,
+                games:[],
+                quota:{remaining:null,used:null,lastCost:null}
+              };
+            }
+          }
+
+          function market(book, key) { return (book?.markets || []).find(m => m.key === key); }
+          function outcome(mkt, name) { return mkt?.outcomes?.find(o => same(o.name,name)); }
+          function totalOutcome(mkt, name) { return mkt?.outcomes?.find(o => String(o.name).toLowerCase() === name); }
+
+          function parseCore(book, event) {
+            if (!book) return null;
+            const spread=market(book,'spreads'), total=market(book,'totals');
+            if (!spread && !total) return null;
+            const homeSp=outcome(spread,event.home_team), awaySp=outcome(spread,event.away_team);
+            const over=totalOutcome(total,'over'), under=totalOutcome(total,'under');
+            return {
+              updatedAt: book.last_update || spread?.last_update || total?.last_update || nowIso,
+              spread: {
+                home: homeSp?.point ?? null,
+                homePrice: homeSp?.price ?? null,
+                away: awaySp?.point ?? null,
+                awayPrice: awaySp?.price ?? null
+              },
+              total: {
+                point: over?.point ?? under?.point ?? null,
+                overPrice: over?.price ?? null,
+                underPrice: under?.price ?? null
+              }
+            };
+          }
+
+          function parseMoneyline(book, event) {
+            if (!book) return null;
+            const h2h=market(book,'h2h');
+            if (!h2h) return null;
+            const home=outcome(h2h,event.home_team), away=outcome(h2h,event.away_team);
+            return {
+              updatedAt: book.last_update || h2h?.last_update || nowIso,
+              moneyline: { home: home?.price ?? null, away: away?.price ?? null }
+            };
+          }
+
+          const hasAny = obj => obj && Object.values(obj).some(value => value !== null && value !== undefined);
+          function openingFrom(priorOpening, current) {
+            const old = priorOpening || {};
+            return {
+              moneyline: hasAny(old.moneyline) ? old.moneyline : { ...current.moneyline },
+              spread: hasAny(old.spread) ? old.spread : { home:current.spread.home, away:current.spread.away },
+              total: old.total?.point !== null && old.total?.point !== undefined ? old.total : { point:current.total.point }
+            };
           }
           function historyPoint(current) {
-            return { ts: current.updatedAt || new Date().toISOString(), spreadHome:current.spread.home, total:current.total.point, homeMl:current.moneyline.home, awayMl:current.moneyline.away };
+            return {
+              ts: nowIso,
+              spreadHome:current.spread.home,
+              total:current.total.point,
+              homeMl:current.moneyline.home,
+              awayMl:current.moneyline.away
+            };
           }
           function appendHistory(history, point) {
             const arr = Array.isArray(history) ? [...history] : [];
@@ -74,50 +156,182 @@ jobs:
             if (!last || sig(last) !== sig(point)) arr.push(point);
             return arr.slice(-160);
           }
+          function newestTimestamp(...values) {
+            return values.filter(Boolean).sort((a,b) => new Date(b).getTime() - new Date(a).getTime())[0] || nowIso;
+          }
+
+          function phaseFromScoreboard(events) {
+            let live = false;
+            let nearestMinutes = Infinity;
+            for (const e of events) {
+              const c=e.competitions?.[0], state=c?.status?.type?.state;
+              if (state === 'in') live = true;
+              if (state === 'pre') {
+                const t=new Date(e.date || c?.date).getTime();
+                if (Number.isFinite(t)) {
+                  const diff=(t-now)/60000;
+                  if (diff >= -30 && diff < nearestMinutes) nearestMinutes=diff;
+                }
+              }
+            }
+            if (live) return { name:'live', nearestMinutes, core:20, moneyline:60 };
+            if (nearestMinutes <= 60) return { name:'kickoff-soon', nearestMinutes, core:20, moneyline:60 };
+            if (nearestMinutes <= 180) return { name:'pregame-3h', nearestMinutes, core:45, moneyline:90 };
+            if (nearestMinutes <= 360) return { name:'pregame-6h', nearestMinutes, core:90, moneyline:180 };
+            return { name:'quiet', nearestMinutes, core:null, moneyline:null };
+          }
+
+          function quotaFactor(remaining) {
+            if (!finite(remaining)) return 1;
+            const r=Number(remaining);
+            if (r <= 45) return 3;
+            if (r <= 90) return 2;
+            if (r <= 150) return 1.5;
+            return 1;
+          }
+
+          function priorGame(old, event) {
+            return (old.games || []).find(g => String(g.id) === String(event.id)) ||
+              (old.games || []).find(g => same(g.homeTeam,event.home_team) && same(g.awayTeam,event.away_team));
+          }
+
+          function mergeGames(old, coreData, mlData) {
+            const coreMap=new Map((coreData || []).map(e => [String(e.id),e]));
+            const mlMap=new Map((mlData || []).map(e => [String(e.id),e]));
+            const ids=new Set([...coreMap.keys(),...mlMap.keys()]);
+            const out=[];
+
+            for (const id of ids) {
+              const event=coreMap.get(id) || mlMap.get(id);
+              const previous=priorGame(old,event);
+              const books={};
+
+              for (const key of BOOKS) {
+                const coreRaw=coreMap.get(id)?.bookmakers?.find(b => b.key === key);
+                const mlRaw=mlMap.get(id)?.bookmakers?.find(b => b.key === key);
+                const core=parseCore(coreRaw,event);
+                const ml=parseMoneyline(mlRaw,event);
+                const prior=previous?.books?.[key];
+                if (!core && !ml && !prior) continue;
+
+                const current={
+                  updatedAt:newestTimestamp(core?.updatedAt,ml?.updatedAt,prior?.updatedAt),
+                  moneyline:ml?.moneyline || prior?.moneyline || {home:null,away:null},
+                  spread:core?.spread || prior?.spread || {home:null,homePrice:null,away:null,awayPrice:null},
+                  total:core?.total || prior?.total || {point:null,overPrice:null,underPrice:null}
+                };
+                current.opening=openingFrom(prior?.opening,current);
+                current.history=appendHistory(prior?.history,historyPoint(current));
+                books[key]=current;
+              }
+
+              out.push({
+                id:event.id,
+                sportKey:event.sport_key || previous?.sportKey || 'americanfootball_ncaaf',
+                commenceTime:event.commence_time || previous?.commenceTime || null,
+                homeTeam:event.home_team || previous?.homeTeam || '',
+                awayTeam:event.away_team || previous?.awayTeam || '',
+                books
+              });
+            }
+            return out;
+          }
 
           (async () => {
-            const score = await json(scoreboardUrl);
-            const events = score.events || [];
-            const active = events.some(e => {
-              const c=e.competitions?.[0], state=c?.status?.type?.state;
-              if (state === 'in') return true;
-              if (state !== 'pre') return false;
-              const t=new Date(e.date || c?.date).getTime();
-              return Number.isFinite(t) && t-now > -30*60*1000 && t-now < 6*60*60*1000;
-            });
-            if (!active) { console.log('No live game or kickoff within six hours; skipping odds request.'); return; }
-            if (!process.env.ODDS_API_KEY) { console.log('ODDS_API_KEY is not configured; leaving existing snapshot untouched.'); return; }
+            const old=readExisting();
+            const score=await publicJson(scoreboardUrl);
+            const phase=phaseFromScoreboard(score.events || []);
 
-            const params = new URLSearchParams({
-              apiKey: process.env.ODDS_API_KEY,
-              bookmakers: 'fanduel,draftkings',
-              markets: 'h2h,spreads,totals',
-              oddsFormat: 'american',
-              dateFormat: 'iso'
-            });
-            const odds = await json(`https://api.the-odds-api.com/v4/sports/americanfootball_ncaaf/odds?${params}`);
-            const old = readExisting();
-            const games = odds.map(event => {
-              const previous = (old.games || []).find(g => same(g.homeTeam,event.home_team) && same(g.awayTeam,event.away_team));
-              const books = {};
-              for (const key of ['fanduel','draftkings']) {
-                const raw = (event.bookmakers || []).find(b => b.key === key);
-                if (!raw) continue;
-                const current = currentBook(raw,event);
-                if (!current) continue;
-                const prior = previous?.books?.[key];
-                books[key] = {
-                  ...current,
-                  opening: prior?.opening || openingFrom(current),
-                  history: appendHistory(prior?.history, historyPoint(current))
-                };
+            if (phase.name === 'quiet' && !manual) {
+              console.log('No live game or kickoff within six hours; no odds credits used.');
+              return;
+            }
+            if (!process.env.ODDS_API_KEY) {
+              console.log('ODDS_API_KEY is not configured; leaving existing snapshot untouched.');
+              return;
+            }
+
+            const factor=quotaFactor(old.quota?.remaining);
+            const coreInterval=phase.core === null ? null : round5(phase.core * factor);
+            const mlInterval=phase.moneyline === null ? null : round5(phase.moneyline * factor);
+            const lastCore=old.lastCoreRefresh || old.generatedAt;
+            const lastMl=old.lastMoneylineRefresh || old.generatedAt;
+            let coreDue=manual || coreInterval === null || minutesSince(lastCore) >= coreInterval;
+            let mlDue=manual || mlInterval === null || minutesSince(lastMl) >= mlInterval;
+
+            const previousRemaining=finite(old.quota?.remaining) ? Number(old.quota.remaining) : null;
+            if (!manual && previousRemaining !== null && previousRemaining <= RESERVE_CREDITS) {
+              console.log(`Quota reserve reached (${previousRemaining} remaining); automatic refresh paused.`);
+              return;
+            }
+
+            if (!coreDue && !mlDue) {
+              console.log(`Refresh not due. Phase=${phase.name}; core every ${coreInterval}m; moneyline every ${mlInterval}m.`);
+              return;
+            }
+
+            let available=previousRemaining === null ? Infinity : previousRemaining - RESERVE_CREDITS;
+            if (!manual) {
+              if (coreDue && available < 2) coreDue=false;
+              if (coreDue) available-=2;
+              if (mlDue && available < 1) mlDue=false;
+            }
+            if (!coreDue && !mlDue) {
+              console.log('Refresh would cross the quota reserve floor; no odds credits used.');
+              return;
+            }
+
+            let coreResp=null, mlResp=null, latestQuota=old.quota || {remaining:null,used:null,lastCost:null};
+            let usageThisRun=0;
+
+            if (coreDue) {
+              coreResp=await oddsRequest(['spreads','totals']);
+              latestQuota=coreResp.quota;
+              usageThisRun+=coreResp.quota.lastCost ?? 2;
+              console.log(`Spread/total refresh: ${coreResp.data.length} games; quota remaining ${coreResp.quota.remaining ?? 'unknown'}.`);
+            }
+
+            if (mlDue) {
+              if (!manual && finite(latestQuota?.remaining) && Number(latestQuota.remaining) <= RESERVE_CREDITS) {
+                console.log('Skipping moneyline refresh to preserve the reserve floor after spread/total update.');
+                mlDue=false;
+              } else {
+                mlResp=await oddsRequest(['h2h']);
+                latestQuota=mlResp.quota;
+                usageThisRun+=mlResp.quota.lastCost ?? 1;
+                console.log(`Moneyline refresh: ${mlResp.data.length} games; quota remaining ${mlResp.quota.remaining ?? 'unknown'}.`);
               }
-              return { id:event.id, sportKey:event.sport_key, commenceTime:event.commence_time, homeTeam:event.home_team, awayTeam:event.away_team, books };
-            });
-            const output = { generatedAt:new Date().toISOString(), provider:'The Odds API', books:['fanduel','draftkings'], games, note:'Generated by GitHub Actions. API key is stored only in GitHub Secrets.' };
-            fs.writeFileSync(path, JSON.stringify(output,null,2)+'\n');
-            console.log(`Wrote ${games.length} NCAAF games.`);
-          })().catch(err => { console.error(err); process.exit(1); });
+            }
+
+            const games=mergeGames(old,coreResp?.data,mlResp?.data);
+            const output={
+              generatedAt:nowIso,
+              lastCoreRefresh:coreResp ? nowIso : (old.lastCoreRefresh || old.generatedAt || null),
+              lastMoneylineRefresh:mlResp ? nowIso : (old.lastMoneylineRefresh || old.generatedAt || null),
+              provider:'The Odds API',
+              books:BOOKS,
+              quota:{
+                remaining:latestQuota?.remaining ?? old.quota?.remaining ?? null,
+                used:latestQuota?.used ?? old.quota?.used ?? null,
+                lastCost:latestQuota?.lastCost ?? null,
+                usageThisRun,
+                reserveCredits:RESERVE_CREDITS
+              },
+              refreshPolicy:{
+                phase:phase.name,
+                coreMarkets:['spreads','totals'],
+                moneylineMarket:'h2h',
+                coreIntervalMinutes:coreInterval,
+                moneylineIntervalMinutes:mlInterval,
+                quotaFactor:factor,
+                manualOverride:manual
+              },
+              games,
+              note:'Adaptive free-tier snapshot. Spreads/totals refresh more often than moneylines; automatic calls slow as quota falls and stop at the reserve floor.'
+            };
+            fs.writeFileSync(path,JSON.stringify(output,null,2)+'\n');
+            console.log(`Wrote ${games.length} NCAAF games using ${usageThisRun} credit${usageThisRun === 1 ? '' : 's'} this run.`);
+          })().catch(err => { console.error(err.message || err); process.exit(1); });
           NODE
 
       - name: Commit changed snapshot
