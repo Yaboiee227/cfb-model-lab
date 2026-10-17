@@ -1,0 +1,74 @@
+name: NFL Week 6 QB scenario diagnostics (development only)
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - nfl-model-development
+    paths:
+      - 'scripts/build_nfl_week6_qb_scenario_diagnostics.py'
+      - 'nfl_data/prospective/2026_week6_qb_scenario_inputs.json'
+      - '.github/workflows/nfl-week6-qb-scenario.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nfl-model-development-week6-qb-scenario
+  cancel-in-progress: false
+
+jobs:
+  build-week6-qb-scenarios:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout isolated NFL development branch
+        uses: actions/checkout@v4
+        with:
+          ref: nfl-model-development
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install exact-profile dependencies
+        run: python -m pip install --disable-pip-version-check pandas pyarrow
+
+      - name: Build fail-closed Week 6 QB diagnostics
+        run: python scripts/build_nfl_week6_qb_scenario_diagnostics.py
+
+      - name: Assert research-only release guard
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('nfl_data/prospective/week6_qb_scenario_diagnostics.json')
+          data = json.loads(p.read_text())
+          assert data['release_state'] == 'HOLD_RESEARCH_ONLY'
+          assert data['website_publish_allowed'] is False
+          assert all(r['operational_point_adjustment'] == 0.0 for r in data['rows'])
+          assert all(r['recommendation'] == 'HOLD' for r in data['rows'])
+          print('Research-only guard passed.')
+          PY
+
+      - name: Commit Week 6 QB diagnostic artifacts safely
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add nfl_data/prospective/week6_qb_scenario_diagnostics.json nfl_data/prospective/week6_qb_scenario_diagnostics.csv
+          if git diff --cached --quiet; then
+            echo "No QB scenario diagnostic changes."
+            exit 0
+          fi
+          git commit -m "Build Week 6 QB scenario diagnostics"
+          for attempt in 1 2 3; do
+            git fetch origin nfl-model-development
+            if git rebase origin/nfl-model-development && git push origin HEAD:nfl-model-development; then
+              exit 0
+            fi
+            git rebase --abort || true
+            sleep $((attempt * 2))
+          done
+          echo "Unable to update development branch after retrying."
+          exit 1
