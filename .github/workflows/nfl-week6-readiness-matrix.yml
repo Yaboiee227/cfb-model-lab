@@ -9,6 +9,7 @@ on:
       - 'nfl_data/prospective/week6_prelock_20261017T225656Z.json'
       - 'nfl_data/prospective/2026_week6_gate_inputs.json'
       - 'nfl_data/prospective/market_captures/week6_betmgm_web_capture_20261017T225910Z.json'
+      - 'nfl_data/prospective/week6_qb_scenario_diagnostics.json'
   workflow_dispatch:
 
 permissions:
@@ -29,6 +30,20 @@ jobs:
           python-version: '3.12'
       - name: Build readiness matrix
         run: python scripts/build_nfl_week6_readiness_matrix.py
+      - name: Assert development-only release guard
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('nfl_data/prospective/week6_readiness_matrix_20261017.json')
+          data = json.loads(p.read_text())
+          assert data['website_publish_allowed'] is False
+          assert data['summary']['recommendation_release_games'] == 0
+          assert data['summary']['qb_operational_adjustment_games'] == 0
+          assert all(r['website_publish_allowed'] is False for r in data['rows'])
+          assert all(r['recommendation'].startswith('HOLD_') for r in data['rows'])
+          print('Development-only readiness guard passed.')
+          PY
       - name: Commit readiness artifacts safely
         run: |
           git config user.name "github-actions[bot]"
