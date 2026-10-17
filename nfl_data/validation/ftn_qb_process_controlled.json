@@ -1,0 +1,106 @@
+{
+  "aggregate": {
+    "canonical_mae": 10.2564,
+    "canonical_minus_control_bootstrap": {
+      "bootstrap_95_ci": [
+        0.0,
+        0.0
+      ],
+      "draws": 10000,
+      "mean_improvement": 0.0,
+      "probability_gt_0": 0.0
+    },
+    "control_minus_canonical_mae": 0.0,
+    "control_minus_ftn_bootstrap": {
+      "bootstrap_95_ci": [
+        -0.00253,
+        0.17759
+      ],
+      "draws": 10000,
+      "mean_improvement": 0.08658,
+      "probability_gt_0": 0.9712
+    },
+    "control_seasons_improved": 0,
+    "ftn_candidate_mae": 10.1698,
+    "ftn_incremental_seasons_improved": 3,
+    "ftn_minus_control_mae": -0.0866,
+    "n": 816,
+    "tuned_no_ftn_control_mae": 10.2564
+  },
+  "canonical_lambda": 100.0,
+  "control_lambda_grid_2022": [
+    {
+      "lambda": 100.0,
+      "mae": 9.22152336880381,
+      "rmse": 12.014710918457268,
+      "validation_games": 91
+    },
+    {
+      "lambda": 300.0,
+      "mae": 9.250259257147796,
+      "rmse": 12.118992502825161,
+      "validation_games": 91
+    },
+    {
+      "lambda": 30.0,
+      "mae": 9.272124156976073,
+      "rmse": 12.039095673321063,
+      "validation_games": 91
+    },
+    {
+      "lambda": 10.0,
+      "mae": 9.329415549588528,
+      "rmse": 12.066184139400495,
+      "validation_games": 91
+    }
+  ],
+  "design": "Matched 2022-only tuning control: canonical lambda vs re-tuned no-FTN lambda vs FTN QB-process candidate; outer 2023-2025.",
+  "folds": {
+    "2023": {
+      "canonical_mae": 10.5036,
+      "control_minus_canonical_mae": 0.0,
+      "ftn_candidate_mae": 10.4524,
+      "ftn_minus_control_mae": -0.0512,
+      "n": 272,
+      "tuned_no_ftn_control_mae": 10.5036
+    },
+    "2024": {
+      "canonical_mae": 10.0135,
+      "control_minus_canonical_mae": 0.0,
+      "ftn_candidate_mae": 9.8634,
+      "ftn_minus_control_mae": -0.15,
+      "n": 272,
+      "tuned_no_ftn_control_mae": 10.0135
+    },
+    "2025": {
+      "canonical_mae": 10.2521,
+      "control_minus_canonical_mae": 0.0,
+      "ftn_candidate_mae": 10.1936,
+      "ftn_minus_control_mae": -0.0585,
+      "n": 272,
+      "tuned_no_ftn_control_mae": 10.2521
+    }
+  },
+  "ftn_incremental_value_robust": false,
+  "generated_at_utc": "2026-10-17T23:50:44.393560+00:00",
+  "interpretation": "Credit FTN only for improvement beyond the equally 2022-tuned no-FTN control. Do not credit feature value to a regularization-only gain.",
+  "production_promotion_allowed": false,
+  "recommendation_release_allowed": false,
+  "regularization_control_robust": false,
+  "release_state": "HOLD_NO_ROBUST_INCREMENT",
+  "selected_ftn_candidate_2022_only": {
+    "feature_k": 1.0,
+    "lambda": 300.0,
+    "mae": 9.287578495429901,
+    "rmse": 12.082098786767094,
+    "validation_games": 91
+  },
+  "selected_no_ftn_control_2022_only": {
+    "lambda": 100.0,
+    "mae": 9.22152336880381,
+    "rmse": 12.014710918457268,
+    "validation_games": 91
+  },
+  "website_publish_allowed": false,
+  "week6_frozen_snapshot_may_be_rewritten": false
+}
