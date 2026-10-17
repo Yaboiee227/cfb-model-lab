@@ -1,0 +1,127 @@
+{
+  "current_rows": 32,
+  "generated_at_utc": "2026-10-17T22:31:25.851089+00:00",
+  "historical_rows": 2304,
+  "importance_rule": "Mean prior offensive/defensive snap percentage, current-season pregame history first, previous completed season fallback; unknown remains unknown.",
+  "leakage_rule": "No target-game snap participation is used. 2022-24 injury revisions must predate kickoff.",
+  "metrics": [
+    "injured_count",
+    "out_count",
+    "doubtful_count",
+    "questionable_count",
+    "snap_weighted_burden",
+    "known_importance_share",
+    "high_snap_severe_count",
+    "qb_count",
+    "ol_count",
+    "skill_count",
+    "front7_count",
+    "db_count",
+    "other_count",
+    "qb_weighted_burden",
+    "ol_weighted_burden",
+    "skill_weighted_burden",
+    "front7_weighted_burden",
+    "db_weighted_burden",
+    "other_weighted_burden"
+  ],
+  "quality_counts_historical": {
+    "EXACT_PREKICKOFF_TIMESTAMP": 1625,
+    "FINAL_WEEK_REPORT_NO_REVISION_TIMESTAMP": 544,
+    "MISSING_KICKOFF_FOR_TIMESTAMP_FILTER": 2,
+    "NO_ROWS": 133
+  },
+  "release_state": "HOLD_RESEARCH_ONLY",
+  "seasons": {
+    "2021": {
+      "games_missing_exact_gametime": 0,
+      "injury_rows": 5348,
+      "kickoff_keys": 544,
+      "snap_rows": 26468,
+      "status_counts": {
+        "DOUBTFUL": 159,
+        "OUT": 879,
+        "QUESTIONABLE": 1456
+      },
+      "teams": 32,
+      "timestamp_available": true
+    },
+    "2022": {
+      "games_missing_exact_gametime": 0,
+      "injury_rows": 5450,
+      "kickoff_keys": 542,
+      "snap_rows": 26381,
+      "status_counts": {
+        "DOUBTFUL": 152,
+        "OUT": 1058,
+        "QUESTIONABLE": 1463
+      },
+      "teams": 32,
+      "timestamp_available": true
+    },
+    "2023": {
+      "games_missing_exact_gametime": 0,
+      "injury_rows": 5451,
+      "kickoff_keys": 544,
+      "snap_rows": 26540,
+      "status_counts": {
+        "DOUBTFUL": 141,
+        "OUT": 980,
+        "QUESTIONABLE": 1549
+      },
+      "teams": 32,
+      "timestamp_available": true
+    },
+    "2024": {
+      "games_missing_exact_gametime": 0,
+      "injury_rows": 5954,
+      "kickoff_keys": 544,
+      "snap_rows": 26615,
+      "status_counts": {
+        "DOUBTFUL": 190,
+        "NOTE": 6,
+        "OUT": 1091,
+        "QUESTIONABLE": 1464
+      },
+      "teams": 32,
+      "timestamp_available": true
+    },
+    "2025": {
+      "games_missing_exact_gametime": 0,
+      "injury_rows": 5783,
+      "kickoff_keys": 544,
+      "snap_rows": 26613,
+      "status_counts": {
+        "DOUBTFUL": 119,
+        "OUT": 1342,
+        "QUESTIONABLE": 1217
+      },
+      "teams": 32,
+      "timestamp_available": false
+    },
+    "2026": {
+      "games_missing_exact_gametime": 0,
+      "injury_rows": 1787,
+      "kickoff_keys": 544,
+      "snap_rows": 7463,
+      "status_counts": {
+        "DOUBTFUL": 30,
+        "OUT": 379,
+        "QUESTIONABLE": 351
+      },
+      "teams": 32,
+      "timestamp_available": false
+    }
+  },
+  "status_conflict_groups_historical": 0,
+  "status_weights_for_research_only": {
+    "DOUBTFUL": 0.75,
+    "OUT": 1.0,
+    "QUESTIONABLE": 0.35
+  },
+  "timestamp_policy": {
+    "2022_2024": "latest injury revision strictly before scheduled kickoff",
+    "2025_2026": "final week-scoped report; no revision timestamp available"
+  },
+  "website_publish_allowed": false
+}
