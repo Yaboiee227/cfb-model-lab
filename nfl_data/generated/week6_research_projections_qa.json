@@ -2,11 +2,12 @@
   "completed_week6_games_excluded": [
     "2026_06_SEA_DEN"
   ],
+  "coverage_training_feature_count": 20,
   "current_remaining_games": 13,
   "current_target_or_future_rows_used": 0,
   "current_team_rows": 32,
   "cutoff_week": 5,
-  "frozen_spread_2022_top_candidates": [
+  "frozen_coverage_2022_top_candidates": [
     {
       "feature_k": 1.0,
       "lambda": 100.0,
@@ -24,7 +25,7 @@
     {
       "feature_k": 2.0,
       "lambda": 100.0,
-      "mae": 9.261213552489236,
+      "mae": 9.261213552489235,
       "rmse": 12.134844575638096,
       "team_k": 8.0
     },
@@ -52,7 +53,7 @@
     {
       "feature_k": 2.0,
       "lambda": 100.0,
-      "mae": 9.277719806059192,
+      "mae": 9.27771980605919,
       "rmse": 12.153900895110915,
       "team_k": 4.0
     },
@@ -66,7 +67,7 @@
     {
       "feature_k": 4.0,
       "lambda": 100.0,
-      "mae": 9.283982989610609,
+      "mae": 9.28398298961061,
       "rmse": 12.156242619728557,
       "team_k": 6.0
     },
@@ -78,12 +79,20 @@
       "team_k": 8.0
     }
   ],
-  "frozen_spread_params": {
+  "frozen_coverage_params": {
     "feature_k": 1.0,
     "lambda": 100.0,
     "mae": 9.253145825908062,
     "rmse": 12.11675150556487,
     "team_k": 8.0
+  },
+  "frozen_rating_params": {
+    "elo_hfa": 35.0,
+    "elo_k": 40.0,
+    "lambda": 100.0,
+    "margin_hfa": 3.0,
+    "margin_k": 0.05,
+    "offseason_regression": 0.25
   },
   "frozen_total_2022_top_candidates": [
     {
@@ -96,7 +105,7 @@
     {
       "k": 6.0,
       "lambda": 100.0,
-      "mae": 10.83372740282085,
+      "mae": 10.833727402820848,
       "n": 91,
       "rmse": 13.665101026611906
     },
@@ -145,7 +154,7 @@
     {
       "k": 8.0,
       "lambda": 10.0,
-      "mae": 10.947360601160273,
+      "mae": 10.947360601160275,
       "n": 91,
       "rmse": 13.734078383882167
     },
@@ -154,7 +163,7 @@
       "lambda": 30.0,
       "mae": 10.959712566043438,
       "n": 91,
-      "rmse": 13.772478973908747
+      "rmse": 13.772478973908745
     }
   ],
   "frozen_total_params": {
@@ -164,7 +173,7 @@
     "n": 91,
     "rmse": 13.633007925124653
   },
-  "generated_at_utc": "2026-10-17T22:46:40.435758+00:00",
+  "generated_at_utc": "2026-10-17T22:49:41.305165+00:00",
   "hard_release_gates": [
     "official starter/inactive verification",
     "direct executable sportsbook price",
@@ -187,10 +196,12 @@
       "teams": 32
     }
   },
+  "rating_production_verdict": "HOLD_PROSPECTIVE_VALIDATION_REQUIRED",
+  "rating_stability_verdict": "EARNED_WEEK6_RESEARCH_INCLUSION",
   "release_state": "HOLD_RESEARCH_ONLY",
   "season": 2026,
-  "spread_model": "core baseline + defensive coverage only",
-  "spread_training_feature_count": 20,
+  "spread_audit_comparison": "coverage-only projection retained beside rating-adjusted projection",
+  "spread_model": "core baseline + defensive coverage + market-independent win Elo + margin rating",
   "target_week": 6,
   "total_model": "core baseline only",
   "total_training_feature_count": 15,
