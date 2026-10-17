@@ -2,15 +2,17 @@
 """Leakage-safe NFL multifeature market-residual validation v1.
 
 This validator uses the historical pregame PBP feature panel built from only
-information available before each game.  The historical market is the baseline
+information available before each game. The historical market is the baseline
 forecast; football features predict only a residual adjustment around it.
 
-Important anti-overfit rules:
+Anti-overfit/release rules:
 - Evaluation seasons are 2023-2025.
 - Ridge lambda and actionable edge threshold are chosen BEFORE each evaluation
   season using only earlier-season validation data.
-- Each target game is then fit using only games from earlier season/weeks.
+- Each target game is fit using only games from earlier season/weeks.
 - Same-week games never train one another.
+- If no prior-data threshold clears both break-even win rate and positive ROI,
+  the selected policy is NO PLAY for that evaluation season.
 - All outputs remain HOLD / RESEARCH_VALIDATION_ONLY.
 """
 from __future__ import annotations
@@ -31,6 +33,7 @@ LAMBDA_CANDIDATES = [1.0, 3.0, 10.0, 30.0, 100.0, 300.0]
 THRESHOLD_CANDIDATES = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0]
 MIN_TRAIN_GAMES = 120
 MIN_THRESHOLD_GRADED = 35
+BREAKEVEN_WIN_RATE_MINUS_110 = 1.1 / 2.1
 
 FEATURE_NAMES = [
     "std_net_epa_diff",
@@ -62,7 +65,6 @@ def f(v):
 
 def mean(xs): return None if not xs else sum(xs)/len(xs)
 
-
 def rmse(errors): return None if not errors else math.sqrt(sum(e*e for e in errors)/len(errors))
 
 
@@ -88,8 +90,6 @@ def combo4(r,h1,a1,h2,a2):
 
 
 def feature_vector(r):
-    # Matchup construction uses higher = better for the home side.
-    # For EPA/success allowed, a larger allowance helps the opposing offense.
     pass_match=combo4(r,"home_std_off_pass_epa","away_std_def_pass_epa_allowed",
                          "away_std_off_pass_epa","home_std_def_pass_epa_allowed")
     rush_match=combo4(r,"home_std_off_rush_epa","away_std_def_rush_epa_allowed",
@@ -98,38 +98,20 @@ def feature_vector(r):
                         "away_std_off_pass20_rate","home_std_def_pass20_rate_allowed")
     rush_expl=combo4(r,"home_std_off_rush10_rate","away_std_def_rush10_rate_allowed",
                         "away_std_off_rush10_rate","home_std_def_rush10_rate_allowed")
-
-    # Positive when the home defense/pass protection sack matchup is superior.
     hs=[val(r,"home_std_def_sack_rate_forced"),val(r,"away_std_off_sack_rate"),
         val(r,"away_std_def_sack_rate_forced"),val(r,"home_std_off_sack_rate")]
     sack_match=None if any(x is None for x in hs) else hs[0]+hs[1]-hs[2]-hs[3]
-
     ps=[val(r,"home_prior_def_sack_rate_forced"),val(r,"home_prior_off_sack_rate"),
         val(r,"away_prior_def_sack_rate_forced"),val(r,"away_prior_off_sack_rate")]
     prior_sack=None if any(x is None for x in ps) else (ps[0]-ps[1])-(ps[2]-ps[3])
-
     hr=val(r,"home_rest"); ar=val(r,"away_rest")
     rest=None if hr is None or ar is None else hr-ar
-
-    neutral=val(r,"neutral_site")
     return [
-        diff(r,"std_net_epa"),
-        diff(r,"std_net_success"),
-        pass_match,
-        rush_match,
-        pass_expl,
-        rush_expl,
-        sack_match,
-        diff(r,"std_off_neutral_ed_pass_rate"),
-        diff(r,"last3_net_epa"),
-        diff(r,"last3_net_success"),
-        diff(r,"prior_net_epa"),
-        diff(r,"prior_net_success"),
-        diff(r,"prior_off_pass_epa"),
-        diff(r,"prior_off_rush_epa"),
-        prior_sack,
-        rest,
-        neutral,
+        diff(r,"std_net_epa"), diff(r,"std_net_success"), pass_match, rush_match,
+        pass_expl, rush_expl, sack_match, diff(r,"std_off_neutral_ed_pass_rate"),
+        diff(r,"last3_net_epa"), diff(r,"last3_net_success"), diff(r,"prior_net_epa"),
+        diff(r,"prior_net_success"), diff(r,"prior_off_pass_epa"), diff(r,"prior_off_rush_epa"),
+        prior_sack, rest, val(r,"neutral_site"),
     ]
 
 
@@ -148,8 +130,7 @@ def solve(a,b):
 
 
 def fit_ridge(rows,lam):
-    p=len(FEATURE_NAMES)
-    means=[]; scales=[]
+    p=len(FEATURE_NAMES); means=[]; scales=[]
     for j in range(p):
         observed=[r["features"][j] for r in rows if r["features"][j] is not None]
         mu=mean(observed) or 0.0
@@ -213,7 +194,6 @@ def score_model(train,validation,lam):
 def tuning_split(rows,eval_season):
     prev=eval_season-1
     if eval_season==2023:
-        # 2022 is the only available pre-2023 season. Use an early/late split.
         train=[r for r in rows if r["season"]==2022 and r["week"]<=9]
         valid=[r for r in rows if r["season"]==2022 and r["week"]>=10]
     else:
@@ -231,25 +211,33 @@ def choose_preseason_settings(rows,eval_season):
     if not candidates: raise RuntimeError(f"No tuning candidate for {eval_season}")
     _,lam,best=min(candidates,key=lambda x:x[0])
 
-    threshold_rows=[]
+    eligible=[]; all_grades={}
     for t in THRESHOLD_CANDIDATES:
-        g=grade_threshold(best["preds"],t)
-        if g["graded"]>=MIN_THRESHOLD_GRADED:
-            threshold_rows.append((g["roi_at_minus_110"],t,g))
-    if threshold_rows:
-        _,threshold,grade=max(threshold_rows,key=lambda x:x[0])
+        g=grade_threshold(best["preds"],t); all_grades[str(t)]=g
+        if (g["graded"]>=MIN_THRESHOLD_GRADED and g["roi_at_minus_110"] is not None
+                and g["roi_at_minus_110"]>0 and g["win_rate_ex_push"] is not None
+                and g["win_rate_ex_push"]>BREAKEVEN_WIN_RATE_MINUS_110):
+            eligible.append((g["roi_at_minus_110"],t,g))
+    if eligible:
+        _,threshold,grade=max(eligible,key=lambda x:x[0]); action_state="QUALIFIED"
     else:
-        threshold=3.0; grade=grade_threshold(best["preds"],threshold)
+        threshold=None; grade={"bets":0,"wins":0,"losses":0,"pushes":0,"graded":0,
+                              "win_rate_ex_push":None,"units_at_minus_110":0.0,"roi_at_minus_110":None}
+        action_state="NO_PLAY"
     return {
-        "lambda":lam,"threshold":threshold,"tuning_train_games":len(train),"tuning_validation_games":len(valid),
+        "lambda":lam,"threshold":threshold,"action_state":action_state,
+        "tuning_train_games":len(train),"tuning_validation_games":len(valid),
         "tuning_validation_mae":best["mae"],"threshold_validation_grade":grade,
+        "all_threshold_validation_grades":all_grades,
         "lambda_candidates":LAMBDA_CANDIDATES,"threshold_candidates":THRESHOLD_CANDIDATES,
     }
 
 
 def summarize(rows,selected_only=False):
     use=[r for r in rows if (not selected_only or r["selected_play"])]
-    if not use: return {"games":0}
+    if not use:
+        return {"bets":0,"wins":0,"losses":0,"pushes":0,"win_rate_ex_push":None,
+                "units_at_minus_110":0.0,"roi_at_minus_110":None} if selected_only else {"games":0}
     if selected_only:
         w=sum(r["ats_result"]=="WIN" for r in use); l=sum(r["ats_result"]=="LOSS" for r in use); p=sum(r["ats_result"]=="PUSH" for r in use)
         graded=w+l; units=w-1.1*l
@@ -257,11 +245,9 @@ def summarize(rows,selected_only=False):
                 "units_at_minus_110":units,"roi_at_minus_110":units/graded if graded else None}
     market_err=[r["home_margin"]-r["market_margin"] for r in use]
     model_err=[r["home_margin"]-r["model_margin"] for r in use]
-    return {
-        "games":len(use),"market_mae":sum(abs(x) for x in market_err)/len(use),"model_mae":sum(abs(x) for x in model_err)/len(use),
-        "market_rmse":rmse(market_err),"model_rmse":rmse(model_err),
-        "predicted_vs_actual_residual_correlation":corr([r["predicted_residual"] for r in use],[r["actual_residual"] for r in use]),
-    }
+    return {"games":len(use),"market_mae":sum(abs(x) for x in market_err)/len(use),"model_mae":sum(abs(x) for x in model_err)/len(use),
+            "market_rmse":rmse(market_err),"model_rmse":rmse(model_err),
+            "predicted_vs_actual_residual_correlation":corr([r["predicted_residual"] for r in use],[r["actual_residual"] for r in use])}
 
 
 def main():
@@ -271,7 +257,7 @@ def main():
     for r in source:
         season=int(float(r["season"])); week=int(float(r["week"])); hm=f(r.get("home_margin")); line=f(r.get("market_home_spread_reference"))
         if hm is None or line is None: continue
-        market_margin=-line  # home +3 implies market expects home margin -3; home -3 implies +3.
+        market_margin=-line
         rows.append({
             "game_id":r.get("game_id",""),"season":season,"week":week,"gameday":r.get("gameday",""),
             "away_team":r.get("away_team",""),"home_team":r.get("home_team",""),
@@ -287,21 +273,20 @@ def main():
     settings={s:choose_preseason_settings(rows,s) for s in EVAL_SEASONS}
     out=[]
     for season in EVAL_SEASONS:
-        cfg=settings[season]
-        games=[r for r in rows if r["season"]==season]
+        cfg=settings[season]; games=[r for r in rows if r["season"]==season]
         for r in games:
             train=[x for x in rows if (x["season"],x["week"])<(season,r["week"])]
             if len(train)<MIN_TRAIN_GAMES: continue
             model=fit_ridge(train,cfg["lambda"])
             if model is None: continue
             edge=predict(model,r["features"]); mm=r["market_margin"]
+            selected=(cfg["threshold"] is not None and abs(edge)>=cfg["threshold"])
             q={k:v for k,v in r.items() if k!="features"}
-            q.update({
-                "selected_lambda":cfg["lambda"],"selected_threshold":cfg["threshold"],
-                "predicted_residual":edge,"model_margin":mm+edge,"ats_result":ats(r["home_margin"],mm,edge),
-                "selected_play":abs(edge)>=cfg["threshold"],"prior_training_games":len(train),
-                "release_state":"HOLD","model_use":"RESEARCH_VALIDATION_ONLY",
-            })
+            q.update({"selected_lambda":cfg["lambda"],"selected_threshold":cfg["threshold"],
+                      "preseason_action_state":cfg["action_state"],"predicted_residual":edge,
+                      "model_margin":mm+edge,"ats_result":ats(r["home_margin"],mm,edge),
+                      "selected_play":selected,"prior_training_games":len(train),
+                      "release_state":"HOLD","model_use":"RESEARCH_VALIDATION_ONLY"})
             out.append(q)
     if not out: raise RuntimeError("No multifeature validation rows produced")
 
@@ -312,6 +297,7 @@ def main():
         "validation_name":"NFL multifeature market-residual walk-forward v1",
         "input":str(INPUT),"features":FEATURE_NAMES,"evaluation_seasons":EVAL_SEASONS,
         "anti_leakage":"all current-season source weeks < target week; same-week games excluded from training",
+        "break_even_win_rate_minus_110":BREAKEVEN_WIN_RATE_MINUS_110,
         "preseason_settings":settings,
         "overall_forecast":summarize(out),"overall_selected_ats":summarize(out,True),
         "by_season":{str(s):{"forecast":summarize([r for r in out if r["season"]==s]),
@@ -320,7 +306,7 @@ def main():
         "notes":[
             "Historical market spread is the baseline and is not presented as timestamped executable pricing.",
             "Lambda and actionable edge threshold are selected only from data predating each evaluation season.",
-            "Threshold selection requires at least 35 graded bets in its prior validation sample.",
+            "Threshold selection requires at least 35 graded bets, positive prior-data ROI, and win rate above -110 break-even; otherwise the season is NO PLAY.",
             "Current PBP, last-three form, prior-season priors, rest and neutral-site context are included.",
             "QB identity, injuries, weather, travel distance/time zones, price/vig, line movement and CLV remain separate required layers.",
             "No output authorizes website publication or wager release."
