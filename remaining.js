@@ -1,0 +1,14 @@
+(()=>{
+const D=window.CFB_DATA;if(!D)return;
+const offset='-04:00';
+function epoch(g){const m=String(g.kickoffET||'').match(/(\d+):(\d+)\s*(AM|PM)/i);if(!m)return Infinity;let h=(+m[1])%12+(m[3].toUpperCase()==='PM'?12:0);return Date.parse(`${g.date}T${String(h).padStart(2,'0')}:${m[2]}:00${offset}`)}
+function gameFor(card){const t=[...card.querySelectorAll('.team')].map(x=>x.textContent.trim());return D.games.find(g=>g.away===t[0]&&g.home===t[1])}
+const late=D.games.filter(g=>g.date==='2026-10-17'&&epoch(g)>=Date.parse('2026-10-17T15:30:00-04:00'));
+const latePass=late.filter(g=>(g.dataQuality||0)>=.9).length;
+const stats=document.querySelectorAll('.summary .stat');if(stats[2]){stats[2].querySelector('.label').textContent='3:30+ input coverage';stats[2].querySelector('.value').textContent=`${latePass}/${late.length}`;stats[2].querySelector('.sub').textContent='games at 90%+ threshold'}
+let remainingOnly=true;
+const head=document.querySelector('.workspace-head');if(head){const wrap=document.createElement('label');wrap.className='remaining-toggle';wrap.innerHTML='<input type="checkbox" checked> <span>Remaining games only</span>';head.appendChild(wrap);wrap.querySelector('input').addEventListener('change',e=>{remainingOnly=e.target.checked;apply()})}
+const style=document.createElement('style');style.textContent='.remaining-toggle{display:flex;align-items:center;gap:7px;margin-left:auto;font-size:11px;color:#9bb0c5;border:1px solid #20354f;background:#0d1828;padding:8px 10px;border-radius:999px;cursor:pointer}.remaining-toggle input{accent-color:#59e3b4}.game.started-game{opacity:.48}.game.started-game:before{content:"STARTED";display:inline-block;font-size:8px;letter-spacing:.1em;font-weight:900;color:#8799ac;border:1px solid #294058;border-radius:999px;padding:4px 6px;margin-bottom:8px}@media(max-width:760px){.workspace-head{flex-wrap:wrap}.remaining-toggle{margin-left:0}}';document.head.appendChild(style);
+function apply(){let visible=0;document.querySelectorAll('#games .game').forEach(card=>{const g=gameFor(card);if(!g)return;const started=epoch(g)<=Date.now();card.classList.toggle('started-game',started);card.style.display=remainingOnly&&started?'none':'';if(card.style.display!=='none')visible++});const c=document.querySelector('#count');if(c)c.textContent=`${visible} game${visible===1?'':'s'}${remainingOnly?' remaining':''}`;const remaining=D.games.filter(g=>epoch(g)>Date.now()).length;const o=document.querySelector('#openGames');if(o)o.textContent=remaining;const label=stats[0]?.querySelector('.label');const sub=stats[0]?.querySelector('.sub');if(label)label.textContent='Remaining games';if(sub)sub.textContent='not yet kicked off'}
+const games=document.querySelector('#games');if(games)new MutationObserver(()=>requestAnimationFrame(apply)).observe(games,{childList:true});apply();setInterval(apply,60000);
+})();
