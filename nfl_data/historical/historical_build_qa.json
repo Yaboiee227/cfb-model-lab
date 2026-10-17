@@ -1,0 +1,58 @@
+{
+  "target_seasons": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "context_seasons": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "release_state": "HOLD",
+  "2021": {
+    "rows_scanned": 49922,
+    "plays_used": 34139,
+    "teams": 32,
+    "no_play_column": false
+  },
+  "2022": {
+    "rows_scanned": 49434,
+    "plays_used": 33770,
+    "teams": 32,
+    "no_play_column": false
+  },
+  "2023": {
+    "rows_scanned": 49665,
+    "plays_used": 33957,
+    "teams": 32,
+    "no_play_column": false
+  },
+  "2024": {
+    "rows_scanned": 49492,
+    "plays_used": 33470,
+    "teams": 32,
+    "no_play_column": false
+  },
+  "2025": {
+    "rows_scanned": 48771,
+    "plays_used": 32941,
+    "teams": 32,
+    "no_play_column": false
+  },
+  "team_week_rows": 2304,
+  "historical_games": 1087,
+  "missing_game_snapshots": 0,
+  "max_source_week_used_any_snapshot": 17,
+  "leakage_rule": "max_current_season_week_used must be < target_week for every row",
+  "prior_season_rule": "prior_* features use only the completed immediately preceding regular season",
+  "market_rule": "schedule spread/total retained only as historical benchmark; never model input",
+  "files": [
+    "nfl_data/historical/team_week_pregame_features_2022_2025.csv",
+    "nfl_data/historical/game_pregame_features_2022_2025.csv"
+  ],
+  "generated_utc": "2026-10-17T21:22:16.923941+00:00"
+}
