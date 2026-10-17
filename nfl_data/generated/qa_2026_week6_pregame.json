@@ -1,0 +1,20 @@
+{
+  "season": 2026,
+  "target_week": 6,
+  "cutoff_week": 5,
+  "team_stat_rows_used": 158,
+  "teams_found": 32,
+  "max_week_used": 5,
+  "target_or_future_rows_used": 0,
+  "team_stats_source": "https://github.com/nflverse/nflverse-data/releases/download/stats_team/stats_team_week_2026.csv",
+  "schedule_source": "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv",
+  "generated_utc": "2026-10-17T21:14:26.949666+00:00",
+  "release_state": "HOLD",
+  "notes": [
+    "Efficiency values are first-pass proxies from weekly team summary stats.",
+    "Defense is reconstructed from each opponent's offensive weekly row.",
+    "Success rate, neutral-situation pace, drive efficiency, and true play-level explosiveness require the PBP layer and are not claimed here.",
+    "No Week 6 team-stat row is used in this Week 6 pregame snapshot.",
+    "No value in this output is approved for website publication or wager release."
+  ]
+}
