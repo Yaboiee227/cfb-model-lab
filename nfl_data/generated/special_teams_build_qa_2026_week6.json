@@ -1,0 +1,56 @@
+{
+  "current_max_week_used": 5,
+  "current_rows": 32,
+  "current_target_or_future_rows_used": 0,
+  "generated_at_utc": "2026-10-17T22:28:05.233211+00:00",
+  "historical_leakage_rows": 0,
+  "historical_rows": 2304,
+  "metrics": [
+    "fg_pct",
+    "fg_40_49_pct",
+    "fg_50_plus_pct",
+    "pat_pct",
+    "punt_net_avg",
+    "punt_inside20_rate",
+    "punt_touchback_rate",
+    "punt_block_rate",
+    "punt_return_avg",
+    "kickoff_return_avg",
+    "special_teams_td_per_game"
+  ],
+  "rare_event_note": "blocks and special-teams TDs are high-variance candidates and require heavy shrinkage/validation.",
+  "release_state": "HOLD_RESEARCH_ONLY",
+  "seasons": {
+    "2021": {
+      "rows": 544,
+      "team_weeks": 544,
+      "teams": 32
+    },
+    "2022": {
+      "rows": 542,
+      "team_weeks": 542,
+      "teams": 32
+    },
+    "2023": {
+      "rows": 544,
+      "team_weeks": 544,
+      "teams": 32
+    },
+    "2024": {
+      "rows": 544,
+      "team_weeks": 544,
+      "teams": 32
+    },
+    "2025": {
+      "rows": 544,
+      "team_weeks": 544,
+      "teams": 32
+    },
+    "2026": {
+      "rows": 160,
+      "team_weeks": 160,
+      "teams": 32
+    }
+  },
+  "website_publish_allowed": false
+}
