@@ -1,0 +1,75 @@
+name: Toggle CFB game star
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  toggle-star:
+    if: startsWith(github.event.issue.title, 'CFB STAR TOGGLE ')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Reject non-owner commands
+        if: github.actor != 'Yaboiee227'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          ISSUE: ${{ github.event.issue.number }}
+        run: |
+          gh issue comment "$ISSUE" --repo "$REPO" --body "Star changes are owner-only. No change was made."
+          gh issue close "$ISSUE" --repo "$REPO"
+
+      - name: Check out repository
+        if: github.actor == 'Yaboiee227'
+        uses: actions/checkout@v4
+
+      - name: Toggle star
+        if: github.actor == 'Yaboiee227'
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+        run: |
+          python - <<'PY'
+          import json, os, re
+          from datetime import datetime, timezone
+          title=os.environ['ISSUE_TITLE']
+          game_id=title.removeprefix('CFB STAR TOGGLE ').strip()
+          if not re.fullmatch(r'[A-Z0-9-]{10,100}', game_id):
+              raise SystemExit('Invalid game id')
+          path='stars.js'
+          text=open(path,encoding='utf-8').read() if os.path.exists(path) else 'window.CFB_STARS=[];'
+          m=re.search(r'window\.CFB_STARS=(\[[^;]*\]);', text)
+          stars=json.loads(m.group(1)) if m else []
+          if game_id in stars:
+              stars.remove(game_id)
+          else:
+              stars.append(game_id)
+          stars=sorted(set(stars))
+          stamp=datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')
+          with open(path,'w',encoding='utf-8') as f:
+              f.write('window.CFB_STARS='+json.dumps(stars,separators=(',',':'))+';\n')
+              f.write('window.CFB_STARS_UPDATED='+json.dumps(stamp)+';\n')
+          PY
+
+      - name: Commit star state
+        if: github.actor == 'Yaboiee227'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add stars.js
+          git diff --cached --quiet && exit 0
+          git commit -m "Toggle game star"
+          git push
+
+      - name: Close owner command issue
+        if: github.actor == 'Yaboiee227'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          ISSUE: ${{ github.event.issue.number }}
+        run: |
+          gh issue comment "$ISSUE" --repo "$REPO" --body "Star updated. GitHub Pages will publish the new public star state automatically."
+          gh issue close "$ISSUE" --repo "$REPO"
