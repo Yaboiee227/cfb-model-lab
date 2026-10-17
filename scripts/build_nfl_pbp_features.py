@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
-"""Build a leakage-safe NFL play-by-play feature snapshot for a target week.
+"""Build a leakage-safe NFL PBP feature snapshot for 2026 Week 6.
 
-Current production target: 2026 Week 6, using regular-season Weeks 1-5 only.
-Outputs are development research inputs only. Nothing produced here is approved
-for publication, release, or wager recommendations.
+Only 2026 regular-season Weeks 1-5 are eligible. Outputs are development-only,
+HOLD research inputs and are never written to the live website path.
 """
-
 from __future__ import annotations
 
 import csv
@@ -20,25 +18,24 @@ from pathlib import Path
 
 SEASON = 2026
 TARGET_WEEK = 6
-CUTOFF_WEEK = TARGET_WEEK - 1
-PBP_URL = (
-    "https://github.com/nflverse/nflverse-data/releases/download/"
-    "pbp/play_by_play_2026.csv.gz"
-)
+CUTOFF_WEEK = 5
+PBP_URL = "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2026.csv.gz"
 OUT_DIR = Path("nfl_data/generated")
 
+# `no_play` is not present in every nflverse PBP schema/version. When absent,
+# play_type == "no_play" is the nullified-play guard instead.
 CORE_REQUIRED = {
     "season", "week", "season_type", "game_id", "posteam", "defteam",
     "play_type", "epa", "success", "yards_gained", "down", "qtr", "wp",
     "yardline_100", "qb_dropback", "rush_attempt", "sack", "interception",
-    "fumble_lost", "no_play", "qb_kneel", "qb_spike",
+    "fumble_lost", "qb_kneel", "qb_spike",
 }
 
 
-def num(value: str | None) -> float | None:
-    if value is None:
+def num(v):
+    if v is None:
         return None
-    s = str(value).strip()
+    s = str(v).strip()
     if not s or s.lower() in {"na", "nan", "none", "null"}:
         return None
     try:
@@ -48,24 +45,24 @@ def num(value: str | None) -> float | None:
         return None
 
 
-def zero(value: str | None) -> float:
-    x = num(value)
+def z(v):
+    x = num(v)
     return 0.0 if x is None else x
 
 
-def truthy_num(value: str | None) -> bool:
-    return zero(value) == 1.0
+def flag(v):
+    return z(v) == 1.0
 
 
-def safe_div(a: float, b: float) -> float | None:
+def div(a, b):
     return None if not b else a / b
 
 
-def rnd(value: float | None, digits: int = 4):
-    return "" if value is None or not math.isfinite(value) else round(value, digits)
+def rnd(v, n=4):
+    return "" if v is None or not math.isfinite(v) else round(v, n)
 
 
-def stream_rows(url: str):
+def rows_from_gzip(url):
     req = urllib.request.Request(url, headers={"User-Agent": "cb-model-projections/1.0"})
     with urllib.request.urlopen(req, timeout=120) as resp:
         with gzip.GzipFile(fileobj=resp) as gz:
@@ -79,19 +76,18 @@ def stream_rows(url: str):
                 yield fields, drive_col, reader
 
 
-def add_metric(bucket, name: str, value: float, weight: float = 1.0):
-    bucket[f"{name}_sum"] += value * weight
-    bucket[f"{name}_den"] += weight
+def rate(bucket, num_key, den_key):
+    return rnd(div(bucket[num_key], bucket[den_key]))
 
 
-def main() -> None:
+def main():
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    offense = defaultdict(lambda: defaultdict(float))
-    defense = defaultdict(lambda: defaultdict(float))
-    offense_drives = defaultdict(set)
-    defense_drives = defaultdict(set)
+    off = defaultdict(lambda: defaultdict(float))
+    deff = defaultdict(lambda: defaultdict(float))
+    off_drives = defaultdict(set)
+    def_drives = defaultdict(set)
     games = defaultdict(set)
-    all_eligible_teams = set()
+    teams = set()
 
     qa = {
         "season": SEASON,
@@ -107,17 +103,18 @@ def main() -> None:
         "target_or_future_rows_used": 0,
         "max_week_used": 0,
         "drive_column": None,
+        "no_play_column_present": False,
         "release_state": "HOLD",
     }
 
-    for fields, drive_col, reader in stream_rows(PBP_URL):
+    for fields, drive_col, reader in rows_from_gzip(PBP_URL):
         qa["drive_column"] = drive_col
+        qa["no_play_column_present"] = "no_play" in fields
         for r in reader:
             qa["rows_scanned"] += 1
-            season = int(zero(r.get("season")))
-            week = int(zero(r.get("week")))
-            if season != SEASON or str(r.get("season_type", "")).upper() != "REG":
+            if int(z(r.get("season"))) != SEASON or str(r.get("season_type", "")).upper() != "REG":
                 continue
+            week = int(z(r.get("week")))
             if not 1 <= week <= CUTOFF_WEEK:
                 continue
             qa["rows_regular_season_through_cutoff"] += 1
@@ -129,191 +126,155 @@ def main() -> None:
             defteam = str(r.get("defteam", "")).strip()
             if not posteam or not defteam:
                 continue
-            all_eligible_teams.update((posteam, defteam))
+            teams.update((posteam, defteam))
             game_id = str(r.get("game_id", "")).strip()
             games[posteam].add(game_id)
             games[defteam].add(game_id)
 
-            if truthy_num(r.get("no_play")) or truthy_num(r.get("qb_kneel")) or truthy_num(r.get("qb_spike")):
+            play_type = str(r.get("play_type", "")).strip().lower()
+            nullified = play_type == "no_play" or (qa["no_play_column_present"] and flag(r.get("no_play")))
+            if nullified or flag(r.get("qb_kneel")) or flag(r.get("qb_spike")):
                 continue
 
-            play_type = str(r.get("play_type", "")).strip().lower()
-            dropback = truthy_num(r.get("qb_dropback"))
-            rush = truthy_num(r.get("rush_attempt"))
-            # Include official pass/run scrimmage plays; retain sacks as dropbacks.
-            core_play = play_type in {"pass", "run"} or dropback or rush
-            if not core_play:
+            dropback = flag(r.get("qb_dropback"))
+            rush = flag(r.get("rush_attempt"))
+            if not (play_type in {"pass", "run"} or dropback or rush):
                 continue
 
             epa = num(r.get("epa"))
-            success = num(r.get("success"))
-            yards = num(r.get("yards_gained"))
             if epa is None:
                 continue
+            success = num(r.get("success"))
+            yards = num(r.get("yards_gained"))
             qa["core_scrimmage_plays_used"] += 1
 
-            o = offense[posteam]
-            d = defense[defteam]
-            o["plays"] += 1
-            d["plays"] += 1
-            o["epa"] += epa
-            d["epa"] += epa
+            o, d = off[posteam], deff[defteam]
+            o["plays"] += 1; d["plays"] += 1
+            o["epa"] += epa; d["epa"] += epa
             if success is not None:
-                o["success_sum"] += success; o["success_den"] += 1
-                d["success_sum"] += success; d["success_den"] += 1
+                o["success"] += success; o["success_n"] += 1
+                d["success"] += success; d["success_n"] += 1
 
-            # Drive tracking on eligible offensive scrimmage plays.
             if drive_col:
-                drv = str(r.get(drive_col, "")).strip()
-                if drv:
-                    key = (game_id, drv, posteam)
-                    offense_drives[posteam].add(key)
-                    defense_drives[defteam].add(key)
+                drive = str(r.get(drive_col, "")).strip()
+                if drive:
+                    key = (game_id, drive, posteam)
+                    off_drives[posteam].add(key)
+                    def_drives[defteam].add(key)
 
-            # Passing / dropback layer.
             if dropback:
                 qa["pass_dropbacks_used"] += 1
                 o["dropbacks"] += 1; d["dropbacks"] += 1
                 o["pass_epa"] += epa; d["pass_epa"] += epa
                 if success is not None:
-                    o["pass_success_sum"] += success; o["pass_success_den"] += 1
-                    d["pass_success_sum"] += success; d["pass_success_den"] += 1
+                    o["pass_success"] += success; o["pass_success_n"] += 1
+                    d["pass_success"] += success; d["pass_success_n"] += 1
                 if yards is not None and yards >= 20:
-                    o["explosive_pass20"] += 1; d["explosive_pass20"] += 1
-                if truthy_num(r.get("sack")):
+                    o["pass20"] += 1; d["pass20"] += 1
+                if flag(r.get("sack")):
                     o["sacks"] += 1; d["sacks"] += 1
 
-            # Rushing layer. nflfastR rush_attempt excludes scrambles differently by definition;
-            # keep this raw definition explicit and validate alternatives historically.
             if rush:
                 qa["rush_attempts_used"] += 1
                 o["rushes"] += 1; d["rushes"] += 1
                 o["rush_epa"] += epa; d["rush_epa"] += epa
                 if success is not None:
-                    o["rush_success_sum"] += success; o["rush_success_den"] += 1
-                    d["rush_success_sum"] += success; d["rush_success_den"] += 1
+                    o["rush_success"] += success; o["rush_success_n"] += 1
+                    d["rush_success"] += success; d["rush_success_n"] += 1
                 if yards is not None and yards >= 10:
-                    o["explosive_rush10"] += 1; d["explosive_rush10"] += 1
+                    o["rush10"] += 1; d["rush10"] += 1
 
-            # Turnover events on eligible scrimmage plays.
-            turnover = truthy_num(r.get("interception")) or truthy_num(r.get("fumble_lost"))
-            if turnover:
+            if flag(r.get("interception")) or flag(r.get("fumble_lost")):
                 o["turnovers"] += 1; d["turnovers"] += 1
 
-            # Early-down play calling and neutral-script proxy.
-            down = num(r.get("down"))
-            qtr = num(r.get("qtr"))
-            wp = num(r.get("wp"))
+            down, qtr, wp = num(r.get("down")), num(r.get("qtr")), num(r.get("wp"))
             if down in {1.0, 2.0}:
-                o["early_down_plays"] += 1; d["early_down_plays"] += 1
+                o["ed"] += 1; d["ed"] += 1
                 if dropback:
-                    o["early_down_dropbacks"] += 1; d["early_down_dropbacks"] += 1
+                    o["ed_pass"] += 1; d["ed_pass"] += 1
                 if qtr is not None and qtr <= 3 and wp is not None and 0.20 <= wp <= 0.80:
                     qa["neutral_early_down_plays_used"] += 1
-                    o["neutral_early_down_plays"] += 1; d["neutral_early_down_plays"] += 1
+                    o["neutral_ed"] += 1; d["neutral_ed"] += 1
                     if dropback:
-                        o["neutral_early_down_dropbacks"] += 1; d["neutral_early_down_dropbacks"] += 1
+                        o["neutral_ed_pass"] += 1; d["neutral_ed_pass"] += 1
 
-            # Red-zone layer.
             yardline = num(r.get("yardline_100"))
             if yardline is not None and yardline <= 20:
-                o["rz_plays"] += 1; d["rz_plays"] += 1
+                o["rz"] += 1; d["rz"] += 1
                 o["rz_epa"] += epa; d["rz_epa"] += epa
                 if success is not None:
-                    o["rz_success_sum"] += success; o["rz_success_den"] += 1
-                    d["rz_success_sum"] += success; d["rz_success_den"] += 1
+                    o["rz_success"] += success; o["rz_success_n"] += 1
+                    d["rz_success"] += success; d["rz_success_n"] += 1
 
-    if qa["target_or_future_rows_used"] != 0:
-        raise RuntimeError(f"Leakage guard failed: {qa}")
-    if qa["max_week_used"] != CUTOFF_WEEK:
-        raise RuntimeError(f"Expected max week {CUTOFF_WEEK}, got {qa['max_week_used']}")
-    if len(all_eligible_teams) != 32:
-        raise RuntimeError(f"Expected 32 teams in eligible PBP, found {len(all_eligible_teams)}")
+    if qa["target_or_future_rows_used"] != 0 or qa["max_week_used"] != CUTOFF_WEEK:
+        raise RuntimeError(f"Pregame leakage QA failed: {qa}")
+    if len(teams) != 32:
+        raise RuntimeError(f"Expected 32 teams, found {len(teams)}")
 
-    records = []
-    for team in sorted(all_eligible_teams):
-        o = offense[team]; d = defense[team]
-        odrives = len(offense_drives[team]); ddrives = len(defense_drives[team])
-        records.append({
-            "season": SEASON,
-            "target_week": TARGET_WEEK,
-            "data_through_week": CUTOFF_WEEK,
-            "team": team,
-            "games": len(games[team]),
-            "off_plays": int(o["plays"]),
-            "off_epa_per_play": rnd(safe_div(o["epa"], o["plays"])),
-            "off_success_rate": rnd(safe_div(o["success_sum"], o["success_den"])),
-            "off_dropbacks": int(o["dropbacks"]),
-            "off_pass_epa_per_dropback": rnd(safe_div(o["pass_epa"], o["dropbacks"])),
-            "off_pass_success_rate": rnd(safe_div(o["pass_success_sum"], o["pass_success_den"])),
-            "off_explosive_pass20_rate": rnd(safe_div(o["explosive_pass20"], o["dropbacks"])),
-            "off_sack_rate": rnd(safe_div(o["sacks"], o["dropbacks"])),
-            "off_rushes": int(o["rushes"]),
-            "off_rush_epa_per_attempt": rnd(safe_div(o["rush_epa"], o["rushes"])),
-            "off_rush_success_rate": rnd(safe_div(o["rush_success_sum"], o["rush_success_den"])),
-            "off_explosive_rush10_rate": rnd(safe_div(o["explosive_rush10"], o["rushes"])),
-            "off_turnover_event_rate": rnd(safe_div(o["turnovers"], o["plays"])),
-            "off_early_down_pass_rate": rnd(safe_div(o["early_down_dropbacks"], o["early_down_plays"])),
-            "off_neutral_early_down_pass_rate_proxy": rnd(safe_div(o["neutral_early_down_dropbacks"], o["neutral_early_down_plays"])),
-            "off_red_zone_epa_per_play": rnd(safe_div(o["rz_epa"], o["rz_plays"])),
-            "off_red_zone_success_rate": rnd(safe_div(o["rz_success_sum"], o["rz_success_den"])),
-            "off_drives": odrives,
-            "off_plays_per_drive": rnd(safe_div(o["plays"], odrives), 3),
-            "def_plays": int(d["plays"]),
-            "def_epa_per_play_allowed": rnd(safe_div(d["epa"], d["plays"])),
-            "def_success_rate_allowed": rnd(safe_div(d["success_sum"], d["success_den"])),
-            "def_dropbacks": int(d["dropbacks"]),
-            "def_pass_epa_per_dropback_allowed": rnd(safe_div(d["pass_epa"], d["dropbacks"])),
-            "def_pass_success_rate_allowed": rnd(safe_div(d["pass_success_sum"], d["pass_success_den"])),
-            "def_explosive_pass20_rate_allowed": rnd(safe_div(d["explosive_pass20"], d["dropbacks"])),
-            "def_sack_rate_forced": rnd(safe_div(d["sacks"], d["dropbacks"])),
-            "def_rushes_faced": int(d["rushes"]),
-            "def_rush_epa_per_attempt_allowed": rnd(safe_div(d["rush_epa"], d["rushes"])),
-            "def_rush_success_rate_allowed": rnd(safe_div(d["rush_success_sum"], d["rush_success_den"])),
-            "def_explosive_rush10_rate_allowed": rnd(safe_div(d["explosive_rush10"], d["rushes"])),
-            "def_takeaway_event_rate": rnd(safe_div(d["turnovers"], d["plays"])),
-            "def_early_down_pass_rate_faced": rnd(safe_div(d["early_down_dropbacks"], d["early_down_plays"])),
-            "def_neutral_early_down_pass_rate_faced_proxy": rnd(safe_div(d["neutral_early_down_dropbacks"], d["neutral_early_down_plays"])),
-            "def_red_zone_epa_per_play_allowed": rnd(safe_div(d["rz_epa"], d["rz_plays"])),
-            "def_red_zone_success_rate_allowed": rnd(safe_div(d["rz_success_sum"], d["rz_success_den"])),
-            "def_drives_faced": ddrives,
-            "def_plays_per_drive_faced": rnd(safe_div(d["plays"], ddrives), 3),
-            "raw_net_epa_per_play": rnd(
-                (safe_div(o["epa"], o["plays"]) or 0.0) -
-                (safe_div(d["epa"], d["plays"]) or 0.0)
-            ),
-            "raw_net_success_rate": rnd(
-                (safe_div(o["success_sum"], o["success_den"]) or 0.0) -
-                (safe_div(d["success_sum"], d["success_den"]) or 0.0)
-            ),
-            "release_state": "HOLD",
-            "model_use": "RESEARCH_INPUT_ONLY",
+    output = []
+    for team in sorted(teams):
+        o, d = off[team], deff[team]
+        od, dd = len(off_drives[team]), len(def_drives[team])
+        off_epa = div(o["epa"], o["plays"])
+        def_epa = div(d["epa"], d["plays"])
+        off_sr = div(o["success"], o["success_n"])
+        def_sr = div(d["success"], d["success_n"])
+        output.append({
+            "season": SEASON, "target_week": TARGET_WEEK, "data_through_week": CUTOFF_WEEK,
+            "team": team, "games": len(games[team]),
+            "off_plays": int(o["plays"]), "off_epa_per_play": rnd(off_epa), "off_success_rate": rnd(off_sr),
+            "off_dropbacks": int(o["dropbacks"]), "off_pass_epa_per_dropback": rnd(div(o["pass_epa"], o["dropbacks"])),
+            "off_pass_success_rate": rnd(div(o["pass_success"], o["pass_success_n"])),
+            "off_explosive_pass20_rate": rnd(div(o["pass20"], o["dropbacks"])), "off_sack_rate": rnd(div(o["sacks"], o["dropbacks"])),
+            "off_rushes": int(o["rushes"]), "off_rush_epa_per_attempt": rnd(div(o["rush_epa"], o["rushes"])),
+            "off_rush_success_rate": rnd(div(o["rush_success"], o["rush_success_n"])),
+            "off_explosive_rush10_rate": rnd(div(o["rush10"], o["rushes"])),
+            "off_turnover_event_rate": rnd(div(o["turnovers"], o["plays"])),
+            "off_early_down_pass_rate": rnd(div(o["ed_pass"], o["ed"])),
+            "off_neutral_early_down_pass_rate_proxy": rnd(div(o["neutral_ed_pass"], o["neutral_ed"])),
+            "off_red_zone_epa_per_play": rnd(div(o["rz_epa"], o["rz"])),
+            "off_red_zone_success_rate": rnd(div(o["rz_success"], o["rz_success_n"])),
+            "off_drives": od, "off_plays_per_drive": rnd(div(o["plays"], od), 3),
+            "def_plays": int(d["plays"]), "def_epa_per_play_allowed": rnd(def_epa), "def_success_rate_allowed": rnd(def_sr),
+            "def_dropbacks": int(d["dropbacks"]), "def_pass_epa_per_dropback_allowed": rnd(div(d["pass_epa"], d["dropbacks"])),
+            "def_pass_success_rate_allowed": rnd(div(d["pass_success"], d["pass_success_n"])),
+            "def_explosive_pass20_rate_allowed": rnd(div(d["pass20"], d["dropbacks"])),
+            "def_sack_rate_forced": rnd(div(d["sacks"], d["dropbacks"])),
+            "def_rushes_faced": int(d["rushes"]), "def_rush_epa_per_attempt_allowed": rnd(div(d["rush_epa"], d["rushes"])),
+            "def_rush_success_rate_allowed": rnd(div(d["rush_success"], d["rush_success_n"])),
+            "def_explosive_rush10_rate_allowed": rnd(div(d["rush10"], d["rushes"])),
+            "def_takeaway_event_rate": rnd(div(d["turnovers"], d["plays"])),
+            "def_early_down_pass_rate_faced": rnd(div(d["ed_pass"], d["ed"])),
+            "def_neutral_early_down_pass_rate_faced_proxy": rnd(div(d["neutral_ed_pass"], d["neutral_ed"])),
+            "def_red_zone_epa_per_play_allowed": rnd(div(d["rz_epa"], d["rz"])),
+            "def_red_zone_success_rate_allowed": rnd(div(d["rz_success"], d["rz_success_n"])),
+            "def_drives_faced": dd, "def_plays_per_drive_faced": rnd(div(d["plays"], dd), 3),
+            "raw_net_epa_per_play": rnd((off_epa or 0.0) - (def_epa or 0.0)),
+            "raw_net_success_rate": rnd((off_sr or 0.0) - (def_sr or 0.0)),
+            "release_state": "HOLD", "model_use": "RESEARCH_INPUT_ONLY",
         })
 
-    records.sort(key=lambda r: float(r["raw_net_epa_per_play"] or -999), reverse=True)
-    out_csv = OUT_DIR / f"pbp_features_{SEASON}_week{TARGET_WEEK}_pregame.csv"
-    with out_csv.open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=list(records[0].keys()))
-        writer.writeheader(); writer.writerows(records)
+    output.sort(key=lambda r: float(r["raw_net_epa_per_play"] or -999), reverse=True)
+    csv_path = OUT_DIR / f"pbp_features_{SEASON}_week{TARGET_WEEK}_pregame.csv"
+    with csv_path.open("w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=list(output[0].keys())); w.writeheader(); w.writerows(output)
 
     qa.update({
-        "teams_found": len(all_eligible_teams),
-        "offense_teams_with_plays": len(offense),
-        "defense_teams_with_plays": len(defense),
-        "output_rows": len(records),
+        "teams_found": len(teams), "offense_teams_with_plays": len(off), "defense_teams_with_plays": len(deff),
+        "output_rows": len(output),
         "feature_rules": {
-            "core_play": "play_type pass/run OR qb_dropback==1 OR rush_attempt==1; exclude no_play, kneel, spike",
+            "nullified_play_guard": "play_type == no_play; use no_play flag too when source column exists",
+            "core_play": "pass/run or qb_dropback/rush_attempt; exclude nullified, kneels, spikes",
             "success": "nflfastR success field",
             "explosive_pass_candidate": "yards_gained >= 20 on dropback",
             "explosive_rush_candidate": "yards_gained >= 10 on rush_attempt",
-            "neutral_early_down_candidate": "down 1-2, qtr <= 3, wp between 0.20 and 0.80",
-            "red_zone": "yardline_100 <= 20",
-            "drive": qa["drive_column"],
+            "neutral_early_down_candidate": "down 1-2, qtr <= 3, 0.20 <= wp <= 0.80",
+            "red_zone": "yardline_100 <= 20", "drive": qa["drive_column"],
         },
         "notes": [
-            "All feature rows are restricted to regular-season Weeks 1-5 for a Week 6 pregame snapshot.",
-            "Explosive and neutral-script thresholds are candidates and must be validated historically before coefficient use.",
-            "Turnover rate is descriptive and should be regressed/shrunk before model use.",
+            "Regular-season Weeks 1-5 only for the Week 6 pregame snapshot.",
+            "Explosive and neutral-script thresholds are candidates pending historical validation.",
+            "Turnover rates are descriptive and must be shrunk/regressed before model use.",
             "Raw net EPA/success are diagnostics, not released power ratings.",
             "No value is approved for website publication or wager release.",
         ],
@@ -321,10 +282,8 @@ def main() -> None:
     })
     qa_path = OUT_DIR / f"pbp_qa_{SEASON}_week{TARGET_WEEK}_pregame.json"
     qa_path.write_text(json.dumps(qa, indent=2) + "\n", encoding="utf-8")
-
     print(json.dumps(qa, indent=2))
-    print(f"Wrote {out_csv}")
-    print(f"Wrote {qa_path}")
+    print(f"Wrote {csv_path}\nWrote {qa_path}")
 
 
 if __name__ == "__main__":
