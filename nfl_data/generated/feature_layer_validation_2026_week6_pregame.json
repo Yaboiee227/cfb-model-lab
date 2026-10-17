@@ -1,0 +1,138 @@
+{
+  "season": 2026,
+  "target_week": 6,
+  "teams": 32,
+  "summary_release_state": [
+    "HOLD"
+  ],
+  "pbp_release_state": [
+    "HOLD"
+  ],
+  "checks": {
+    "off_epa": {
+      "summary_field": "off_epa_per_play_proxy",
+      "pbp_field": "off_epa_per_play",
+      "n": 32,
+      "pearson_r": 0.9958,
+      "median_abs_diff": 0.0094,
+      "max_abs_diff": 0.019,
+      "largest_differences": [
+        {
+          "team": "KC",
+          "abs_diff": 0.019
+        },
+        {
+          "team": "LAC",
+          "abs_diff": 0.019
+        },
+        {
+          "team": "IND",
+          "abs_diff": 0.0178
+        },
+        {
+          "team": "DAL",
+          "abs_diff": 0.0169
+        },
+        {
+          "team": "CLE",
+          "abs_diff": 0.0159
+        }
+      ]
+    },
+    "pass_epa": {
+      "summary_field": "off_pass_epa_per_dropback",
+      "pbp_field": "off_pass_epa_per_dropback",
+      "n": 32,
+      "pearson_r": 0.9803,
+      "median_abs_diff": 0.0202,
+      "max_abs_diff": 0.0795,
+      "largest_differences": [
+        {
+          "team": "MIA",
+          "abs_diff": 0.0795
+        },
+        {
+          "team": "BUF",
+          "abs_diff": 0.0554
+        },
+        {
+          "team": "WAS",
+          "abs_diff": 0.0546
+        },
+        {
+          "team": "NE",
+          "abs_diff": 0.0508
+        },
+        {
+          "team": "LV",
+          "abs_diff": 0.0484
+        }
+      ]
+    },
+    "rush_epa": {
+      "summary_field": "off_rush_epa_per_carry",
+      "pbp_field": "off_rush_epa_per_attempt",
+      "n": 32,
+      "pearson_r": 0.9838,
+      "median_abs_diff": 0.0128,
+      "max_abs_diff": 0.0553,
+      "largest_differences": [
+        {
+          "team": "CAR",
+          "abs_diff": 0.0553
+        },
+        {
+          "team": "LA",
+          "abs_diff": 0.0532
+        },
+        {
+          "team": "BUF",
+          "abs_diff": 0.0458
+        },
+        {
+          "team": "MIN",
+          "abs_diff": 0.045
+        },
+        {
+          "team": "PIT",
+          "abs_diff": 0.0448
+        }
+      ]
+    },
+    "net_epa": {
+      "summary_field": "raw_net_epa_per_play_proxy",
+      "pbp_field": "raw_net_epa_per_play",
+      "n": 32,
+      "pearson_r": 0.9897,
+      "median_abs_diff": 0.0184,
+      "max_abs_diff": 0.0365,
+      "largest_differences": [
+        {
+          "team": "BAL",
+          "abs_diff": 0.0365
+        },
+        {
+          "team": "PHI",
+          "abs_diff": 0.034
+        },
+        {
+          "team": "TEN",
+          "abs_diff": 0.0331
+        },
+        {
+          "team": "IND",
+          "abs_diff": 0.0315
+        },
+        {
+          "team": "LAC",
+          "abs_diff": 0.0314
+        }
+      ]
+    }
+  },
+  "warnings": [],
+  "validation_status": "PASS",
+  "release_state": "HOLD",
+  "interpretation": "Consistency test only. PASS does not promote model outputs or validate predictive value.",
+  "generated_utc": "2026-10-17T21:18:44.498811+00:00"
+}
