@@ -9,14 +9,13 @@ separate prior-season baseline.
 from __future__ import annotations
 
 import csv
-import gzip
-import io
 import json
 import math
-import urllib.request
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
+
+import pandas as pd
 
 CURRENT_SEASON = 2026
 TARGET_WEEK = 6
@@ -26,7 +25,7 @@ LOAD_SEASONS = range(2021, CURRENT_SEASON + 1)
 STAT_TYPES = ("passing", "rushing", "receiving")
 BASE_URL = (
     "https://github.com/nflverse/nflverse-data/releases/download/nextgen_stats/"
-    "ngs_{season}_{stat_type}.csv.gz"
+    "ngs_{stat_type}.parquet"
 )
 GEN_DIR = Path("nfl_data/generated")
 HIST_DIR = Path("nfl_data/historical")
@@ -37,44 +36,26 @@ COMMON_REQUIRED = {
 }
 
 PASS_AVG = [
-    "avg_time_to_throw",
-    "avg_completed_air_yards",
-    "avg_intended_air_yards",
-    "avg_air_yards_differential",
-    "aggressiveness",
-    "avg_air_yards_to_sticks",
-    "passer_rating",
-    "completion_percentage",
-    "expected_completion_percentage",
+    "avg_time_to_throw", "avg_completed_air_yards", "avg_intended_air_yards",
+    "avg_air_yards_differential", "aggressiveness", "avg_air_yards_to_sticks",
+    "passer_rating", "completion_percentage", "expected_completion_percentage",
     "completion_percentage_above_expectation",
 ]
 PASS_SUM = ["attempts", "completions", "pass_yards", "pass_touchdowns", "interceptions"]
 
 RUSH_AVG = [
-    "efficiency",
-    "percent_attempts_gte_eight_defenders",
-    "avg_time_to_los",
-    "avg_rush_yards",
-    "rush_yards_over_expected_per_att",
-    "rush_pct_over_expected",
+    "efficiency", "percent_attempts_gte_eight_defenders", "avg_time_to_los",
+    "avg_rush_yards", "rush_yards_over_expected_per_att", "rush_pct_over_expected",
 ]
 RUSH_SUM = [
-    "rush_attempts",
-    "rush_yards",
-    "expected_rush_yards",
-    "rush_yards_over_expected",
-    "rush_touchdowns",
+    "rush_attempts", "rush_yards", "expected_rush_yards",
+    "rush_yards_over_expected", "rush_touchdowns",
 ]
 
 REC_AVG = [
-    "avg_cushion",
-    "avg_separation",
-    "percent_share_of_intended_air_yards",
-    "catch_percentage",
-    "avg_yac",
-    "avg_expected_yac",
-    "avg_yac_above_expectation",
-    "avg_air_distance",
+    "avg_cushion", "avg_separation", "percent_share_of_intended_air_yards",
+    "catch_percentage", "avg_yac", "avg_expected_yac",
+    "avg_yac_above_expectation", "avg_air_distance",
 ]
 REC_SUM = ["targets", "receptions", "yards", "rec_touchdowns"]
 
@@ -88,13 +69,10 @@ CONFIG = {
 def num(value):
     if value is None:
         return None
-    text = str(value).strip()
-    if not text or text.lower() in {"na", "nan", "none", "null"}:
-        return None
     try:
-        value = float(text)
+        value = float(value)
         return value if math.isfinite(value) else None
-    except ValueError:
+    except (TypeError, ValueError):
         return None
 
 
@@ -109,52 +87,50 @@ def rnd(value, digits=5):
     return round(value, digits)
 
 
-def download_rows(season: int, stat_type: str):
-    url = BASE_URL.format(season=season, stat_type=stat_type)
-    req = urllib.request.Request(url, headers={"User-Agent": "cb-model-projections/1.0"})
-    try:
-        with urllib.request.urlopen(req, timeout=120) as resp:
-            with gzip.GzipFile(fileobj=resp) as gz:
-                with io.TextIOWrapper(gz, encoding="utf-8-sig", newline="") as text:
-                    reader = csv.DictReader(text)
-                    fields = set(reader.fieldnames or [])
-                    cfg = CONFIG[stat_type]
-                    # Usage/count fields define the row and remain mandatory. NGS
-                    # adds/retires advanced averages over time; those remain null
-                    # with availability flags instead of being fabricated/backfilled.
-                    required = COMMON_REQUIRED | {cfg["weight"]} | set(cfg["sum"])
-                    missing_required = sorted(required - fields)
-                    if missing_required:
-                        raise RuntimeError(
-                            f"NGS schema missing required columns for {season} {stat_type}: {missing_required}"
-                        )
-                    schema = {
-                        "available_optional_avg": sorted(set(cfg["avg"]) & fields),
-                        "missing_optional_avg": sorted(set(cfg["avg"]) - fields),
-                    }
-                    rows = []
-                    for row in reader:
-                        if str(row.get("season_type", "")).upper() != "REG":
-                            continue
-                        week = as_int(row.get("week"))
-                        # Week 0 is a season summary and would leak future games into pregame rows.
-                        if week is None or week <= 0:
-                            continue
-                        rows.append(row)
-                    return url, rows, schema
-    except Exception as exc:
-        raise RuntimeError(f"Unable to load NGS asset {url}: {exc}") from exc
+def load_ngs(stat_type: str):
+    """Load the canonical consolidated nflverse NGS parquet for one stat type."""
+    url = BASE_URL.format(stat_type=stat_type)
+    df = pd.read_parquet(url)
+    fields = set(df.columns)
+    cfg = CONFIG[stat_type]
+    required = COMMON_REQUIRED | {cfg["weight"]} | set(cfg["sum"])
+    missing_required = sorted(required - fields)
+    if missing_required:
+        raise RuntimeError(
+            f"NGS schema missing required columns for {stat_type}: {missing_required}"
+        )
+
+    # Keep only regular-season player-week records for the seasons the research build uses.
+    # Week 0 is a season summary and is explicitly excluded to prevent target-season leakage.
+    df = df[
+        (df["season_type"].astype(str).str.upper() == "REG")
+        & (pd.to_numeric(df["season"], errors="coerce").isin(list(LOAD_SEASONS)))
+        & (pd.to_numeric(df["week"], errors="coerce") > 0)
+    ].copy()
+
+    rows = df.to_dict(orient="records")
+    season_availability = {}
+    for season in LOAD_SEASONS:
+        sdf = df[pd.to_numeric(df["season"], errors="coerce") == season]
+        season_availability[str(season)] = {
+            "rows": int(len(sdf)),
+            "optional_avg_non_null_rows": {
+                field: int(pd.to_numeric(sdf[field], errors="coerce").notna().sum()) if field in sdf.columns else 0
+                for field in cfg["avg"]
+            },
+        }
+    return url, rows, season_availability
 
 
 def aggregate(rows, stat_type: str, group_fields):
     cfg = CONFIG[stat_type]
     weight_field = cfg["weight"]
     prefix = cfg["prefix"]
-
     buckets = {}
+
     for row in rows:
         key = tuple(str(row.get(field, "")).strip() for field in group_fields)
-        if not all(key):
+        if not all(key) or any(part.lower() in {"nan", "none"} for part in key):
             continue
         bucket = buckets.setdefault(
             key,
@@ -190,8 +166,9 @@ def aggregate(rows, stat_type: str, group_fields):
             result[f"{prefix}_{field}"] = rnd(bucket["sums"].get(field, 0.0), 3)
         for field in cfg["avg"]:
             den = bucket["weighted_den"].get(field, 0.0)
-            value = None if den <= 0 else bucket["weighted_num"][field] / den
-            result[f"{prefix}_{field}"] = rnd(value)
+            result[f"{prefix}_{field}"] = rnd(
+                None if den <= 0 else bucket["weighted_num"][field] / den
+            )
             result[f"{prefix}_{field}_available"] = den > 0
         output[key] = result
     return output
@@ -208,9 +185,7 @@ def aggregate_team(rows_by_type):
 
 def aggregate_qb(pass_rows):
     grouped = aggregate(
-        pass_rows,
-        "passing",
-        ("team_abbr", "player_gsis_id", "player_display_name"),
+        pass_rows, "passing", ("team_abbr", "player_gsis_id", "player_display_name")
     )
     rows = []
     for (team, player_id, player_name), metrics in grouped.items():
@@ -275,11 +250,11 @@ def build_historical(data):
     for season in HISTORICAL_TARGET_SEASONS:
         season_count = 0
         prior_agg = aggregate_team(
-            {stat: select_rows(data[season - 1][stat], season - 1) for stat in STAT_TYPES}
+            {stat: select_rows(data[stat], season - 1) for stat in STAT_TYPES}
         )
         for target_week in range(1, 19):
             current_selected = {
-                stat: select_rows(data[season][stat], season, max_week=target_week - 1)
+                stat: select_rows(data[stat], season, max_week=target_week - 1)
                 for stat in STAT_TYPES
             }
             for stat in STAT_TYPES:
@@ -317,22 +292,19 @@ def main():
     GEN_DIR.mkdir(parents=True, exist_ok=True)
     HIST_DIR.mkdir(parents=True, exist_ok=True)
 
-    data = defaultdict(dict)
+    data = {}
     source_urls = []
     source_counts = {}
-    schema_by_season = {}
-    for season in LOAD_SEASONS:
-        source_counts[str(season)] = {}
-        schema_by_season[str(season)] = {}
-        for stat_type in STAT_TYPES:
-            url, rows, schema = download_rows(season, stat_type)
-            data[season][stat_type] = rows
-            source_urls.append(url)
-            source_counts[str(season)][stat_type] = len(rows)
-            schema_by_season[str(season)][stat_type] = schema
+    schema_availability = {}
+    for stat_type in STAT_TYPES:
+        url, rows, availability = load_ngs(stat_type)
+        data[stat_type] = rows
+        source_urls.append(url)
+        source_counts[stat_type] = len(rows)
+        schema_availability[stat_type] = availability
 
     current_selected = {
-        stat: select_rows(data[CURRENT_SEASON][stat], CURRENT_SEASON, max_week=CUTOFF_WEEK)
+        stat: select_rows(data[stat], CURRENT_SEASON, max_week=CUTOFF_WEEK)
         for stat in STAT_TYPES
     }
     target_or_future_current = sum(
@@ -344,7 +316,7 @@ def main():
 
     current_agg = aggregate_team(current_selected)
     prior_agg = aggregate_team(
-        {stat: select_rows(data[CURRENT_SEASON - 1][stat], CURRENT_SEASON - 1) for stat in STAT_TYPES}
+        {stat: select_rows(data[stat], CURRENT_SEASON - 1) for stat in STAT_TYPES}
     )
     teams = sorted(set(current_agg) | set(prior_agg))
     if len(teams) != 32:
@@ -379,10 +351,10 @@ def main():
         "current_season": CURRENT_SEASON,
         "target_week": TARGET_WEEK,
         "cutoff_week": CUTOFF_WEEK,
-        "source_family": "nflverse mirror of NFL Next Gen Stats",
+        "source_family": "canonical consolidated nflverse mirror of NFL Next Gen Stats",
         "source_urls": source_urls,
-        "source_row_counts": source_counts,
-        "schema_by_season": schema_by_season,
+        "source_row_counts_2021_2026_reg_weekly": source_counts,
+        "metric_availability_by_season": schema_availability,
         "current_team_rows": len(current_team_rows),
         "current_qb_rows": len(current_qb_rows),
         "current_target_or_future_rows_used": target_or_future_current,
