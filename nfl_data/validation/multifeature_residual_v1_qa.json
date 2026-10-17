@@ -26,22 +26,86 @@
     2025
   ],
   "anti_leakage": "all current-season source weeks < target week; same-week games excluded from training",
+  "break_even_win_rate_minus_110": 0.5238095238095238,
   "preseason_settings": {
     "2023": {
       "lambda": 300.0,
-      "threshold": 0.5,
+      "threshold": null,
+      "action_state": "NO_PLAY",
       "tuning_train_games": 136,
       "tuning_validation_games": 135,
       "tuning_validation_mae": 8.61606900148611,
       "threshold_validation_grade": {
-        "bets": 91,
-        "wins": 43,
-        "losses": 43,
-        "pushes": 5,
-        "graded": 86,
-        "win_rate_ex_push": 0.5,
-        "units_at_minus_110": -4.300000000000004,
-        "roi_at_minus_110": -0.05000000000000005
+        "bets": 0,
+        "wins": 0,
+        "losses": 0,
+        "pushes": 0,
+        "graded": 0,
+        "win_rate_ex_push": null,
+        "units_at_minus_110": 0.0,
+        "roi_at_minus_110": null
+      },
+      "all_threshold_validation_grades": {
+        "0.5": {
+          "bets": 91,
+          "wins": 43,
+          "losses": 43,
+          "pushes": 5,
+          "graded": 86,
+          "win_rate_ex_push": 0.5,
+          "units_at_minus_110": -4.300000000000004,
+          "roi_at_minus_110": -0.05000000000000005
+        },
+        "1.0": {
+          "bets": 58,
+          "wins": 25,
+          "losses": 29,
+          "pushes": 4,
+          "graded": 54,
+          "win_rate_ex_push": 0.46296296296296297,
+          "units_at_minus_110": -6.900000000000002,
+          "roi_at_minus_110": -0.12777777777777782
+        },
+        "1.5": {
+          "bets": 29,
+          "wins": 12,
+          "losses": 16,
+          "pushes": 1,
+          "graded": 28,
+          "win_rate_ex_push": 0.42857142857142855,
+          "units_at_minus_110": -5.600000000000001,
+          "roi_at_minus_110": -0.20000000000000004
+        },
+        "2.0": {
+          "bets": 12,
+          "wins": 6,
+          "losses": 6,
+          "pushes": 0,
+          "graded": 12,
+          "win_rate_ex_push": 0.5,
+          "units_at_minus_110": -0.6000000000000005,
+          "roi_at_minus_110": -0.050000000000000044
+        },
+        "2.5": {
+          "bets": 4,
+          "wins": 2,
+          "losses": 2,
+          "pushes": 0,
+          "graded": 4,
+          "win_rate_ex_push": 0.5,
+          "units_at_minus_110": -0.20000000000000018,
+          "roi_at_minus_110": -0.050000000000000044
+        },
+        "3.0": {
+          "bets": 2,
+          "wins": 0,
+          "losses": 2,
+          "pushes": 0,
+          "graded": 2,
+          "win_rate_ex_push": 0.0,
+          "units_at_minus_110": -2.2,
+          "roi_at_minus_110": -1.1
+        }
       },
       "lambda_candidates": [
         1.0,
@@ -62,19 +126,82 @@
     },
     "2024": {
       "lambda": 300.0,
-      "threshold": 0.5,
+      "threshold": null,
+      "action_state": "NO_PLAY",
       "tuning_train_games": 271,
       "tuning_validation_games": 272,
       "tuning_validation_mae": 10.015489409976292,
       "threshold_validation_grade": {
-        "bets": 184,
-        "wins": 85,
-        "losses": 90,
-        "pushes": 9,
-        "graded": 175,
-        "win_rate_ex_push": 0.4857142857142857,
-        "units_at_minus_110": -14.000000000000014,
-        "roi_at_minus_110": -0.08000000000000008
+        "bets": 0,
+        "wins": 0,
+        "losses": 0,
+        "pushes": 0,
+        "graded": 0,
+        "win_rate_ex_push": null,
+        "units_at_minus_110": 0.0,
+        "roi_at_minus_110": null
+      },
+      "all_threshold_validation_grades": {
+        "0.5": {
+          "bets": 184,
+          "wins": 85,
+          "losses": 90,
+          "pushes": 9,
+          "graded": 175,
+          "win_rate_ex_push": 0.4857142857142857,
+          "units_at_minus_110": -14.000000000000014,
+          "roi_at_minus_110": -0.08000000000000008
+        },
+        "1.0": {
+          "bets": 95,
+          "wins": 41,
+          "losses": 49,
+          "pushes": 5,
+          "graded": 90,
+          "win_rate_ex_push": 0.45555555555555555,
+          "units_at_minus_110": -12.900000000000006,
+          "roi_at_minus_110": -0.1433333333333334
+        },
+        "1.5": {
+          "bets": 47,
+          "wins": 21,
+          "losses": 23,
+          "pushes": 3,
+          "graded": 44,
+          "win_rate_ex_push": 0.4772727272727273,
+          "units_at_minus_110": -4.300000000000001,
+          "roi_at_minus_110": -0.09772727272727275
+        },
+        "2.0": {
+          "bets": 21,
+          "wins": 10,
+          "losses": 10,
+          "pushes": 1,
+          "graded": 20,
+          "win_rate_ex_push": 0.5,
+          "units_at_minus_110": -1.0,
+          "roi_at_minus_110": -0.05
+        },
+        "2.5": {
+          "bets": 9,
+          "wins": 5,
+          "losses": 3,
+          "pushes": 1,
+          "graded": 8,
+          "win_rate_ex_push": 0.625,
+          "units_at_minus_110": 1.6999999999999997,
+          "roi_at_minus_110": 0.21249999999999997
+        },
+        "3.0": {
+          "bets": 5,
+          "wins": 2,
+          "losses": 2,
+          "pushes": 1,
+          "graded": 4,
+          "win_rate_ex_push": 0.5,
+          "units_at_minus_110": -0.20000000000000018,
+          "roi_at_minus_110": -0.050000000000000044
+        }
       },
       "lambda_candidates": [
         1.0,
@@ -95,19 +222,82 @@
     },
     "2025": {
       "lambda": 300.0,
-      "threshold": 0.5,
+      "threshold": null,
+      "action_state": "NO_PLAY",
       "tuning_train_games": 543,
       "tuning_validation_games": 272,
       "tuning_validation_mae": 9.730736757278235,
       "threshold_validation_grade": {
-        "bets": 181,
-        "wins": 87,
-        "losses": 92,
-        "pushes": 2,
-        "graded": 179,
-        "win_rate_ex_push": 0.4860335195530726,
-        "units_at_minus_110": -14.200000000000003,
-        "roi_at_minus_110": -0.0793296089385475
+        "bets": 0,
+        "wins": 0,
+        "losses": 0,
+        "pushes": 0,
+        "graded": 0,
+        "win_rate_ex_push": null,
+        "units_at_minus_110": 0.0,
+        "roi_at_minus_110": null
+      },
+      "all_threshold_validation_grades": {
+        "0.5": {
+          "bets": 181,
+          "wins": 87,
+          "losses": 92,
+          "pushes": 2,
+          "graded": 179,
+          "win_rate_ex_push": 0.4860335195530726,
+          "units_at_minus_110": -14.200000000000003,
+          "roi_at_minus_110": -0.0793296089385475
+        },
+        "1.0": {
+          "bets": 91,
+          "wins": 38,
+          "losses": 51,
+          "pushes": 2,
+          "graded": 89,
+          "win_rate_ex_push": 0.42696629213483145,
+          "units_at_minus_110": -18.1,
+          "roi_at_minus_110": -0.20337078651685395
+        },
+        "1.5": {
+          "bets": 25,
+          "wins": 7,
+          "losses": 17,
+          "pushes": 1,
+          "graded": 24,
+          "win_rate_ex_push": 0.2916666666666667,
+          "units_at_minus_110": -11.700000000000003,
+          "roi_at_minus_110": -0.4875000000000001
+        },
+        "2.0": {
+          "bets": 7,
+          "wins": 4,
+          "losses": 3,
+          "pushes": 0,
+          "graded": 7,
+          "win_rate_ex_push": 0.5714285714285714,
+          "units_at_minus_110": 0.6999999999999997,
+          "roi_at_minus_110": 0.09999999999999996
+        },
+        "2.5": {
+          "bets": 1,
+          "wins": 0,
+          "losses": 1,
+          "pushes": 0,
+          "graded": 1,
+          "win_rate_ex_push": 0.0,
+          "units_at_minus_110": -1.1,
+          "roi_at_minus_110": -1.1
+        },
+        "3.0": {
+          "bets": 0,
+          "wins": 0,
+          "losses": 0,
+          "pushes": 0,
+          "graded": 0,
+          "win_rate_ex_push": null,
+          "units_at_minus_110": 0.0,
+          "roi_at_minus_110": null
+        }
       },
       "lambda_candidates": [
         1.0,
@@ -136,13 +326,13 @@
     "predicted_vs_actual_residual_correlation": -0.027058105559335726
   },
   "overall_selected_ats": {
-    "bets": 549,
-    "wins": 260,
-    "losses": 280,
-    "pushes": 9,
-    "win_rate_ex_push": 0.48148148148148145,
-    "units_at_minus_110": -48.0,
-    "roi_at_minus_110": -0.08888888888888889
+    "bets": 0,
+    "wins": 0,
+    "losses": 0,
+    "pushes": 0,
+    "win_rate_ex_push": null,
+    "units_at_minus_110": 0.0,
+    "roi_at_minus_110": null
   },
   "by_season": {
     "2023": {
@@ -155,13 +345,13 @@
         "predicted_vs_actual_residual_correlation": -0.10141147486019762
       },
       "selected_ats": {
-        "bets": 168,
-        "wins": 75,
-        "losses": 86,
-        "pushes": 7,
-        "win_rate_ex_push": 0.4658385093167702,
-        "units_at_minus_110": -19.60000000000001,
-        "roi_at_minus_110": -0.12173913043478266
+        "bets": 0,
+        "wins": 0,
+        "losses": 0,
+        "pushes": 0,
+        "win_rate_ex_push": null,
+        "units_at_minus_110": 0.0,
+        "roi_at_minus_110": null
       }
     },
     "2024": {
@@ -174,13 +364,13 @@
         "predicted_vs_actual_residual_correlation": 0.09412596268641782
       },
       "selected_ats": {
-        "bets": 195,
-        "wins": 103,
-        "losses": 91,
-        "pushes": 1,
-        "win_rate_ex_push": 0.5309278350515464,
-        "units_at_minus_110": 2.8999999999999915,
-        "roi_at_minus_110": 0.014948453608247378
+        "bets": 0,
+        "wins": 0,
+        "losses": 0,
+        "pushes": 0,
+        "win_rate_ex_push": null,
+        "units_at_minus_110": 0.0,
+        "roi_at_minus_110": null
       }
     },
     "2025": {
@@ -193,13 +383,13 @@
         "predicted_vs_actual_residual_correlation": -0.0768824023303064
       },
       "selected_ats": {
-        "bets": 186,
-        "wins": 82,
-        "losses": 103,
-        "pushes": 1,
-        "win_rate_ex_push": 0.44324324324324327,
-        "units_at_minus_110": -31.30000000000001,
-        "roi_at_minus_110": -0.16918918918918924
+        "bets": 0,
+        "wins": 0,
+        "losses": 0,
+        "pushes": 0,
+        "win_rate_ex_push": null,
+        "units_at_minus_110": 0.0,
+        "roi_at_minus_110": null
       }
     }
   },
@@ -208,10 +398,10 @@
   "notes": [
     "Historical market spread is the baseline and is not presented as timestamped executable pricing.",
     "Lambda and actionable edge threshold are selected only from data predating each evaluation season.",
-    "Threshold selection requires at least 35 graded bets in its prior validation sample.",
+    "Threshold selection requires at least 35 graded bets, positive prior-data ROI, and win rate above -110 break-even; otherwise the season is NO PLAY.",
     "Current PBP, last-three form, prior-season priors, rest and neutral-site context are included.",
     "QB identity, injuries, weather, travel distance/time zones, price/vig, line movement and CLV remain separate required layers.",
     "No output authorizes website publication or wager release."
   ],
-  "generated_utc": "2026-10-17T21:25:01.605144+00:00"
+  "generated_utc": "2026-10-17T21:26:43.452518+00:00"
 }
