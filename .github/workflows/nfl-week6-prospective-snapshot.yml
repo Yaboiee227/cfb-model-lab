@@ -1,0 +1,49 @@
+name: NFL Week 6 prospective snapshot (development only)
+
+on:
+  push:
+    branches: [nfl-model-development]
+    paths:
+      - 'scripts/build_nfl_week6_prospective_snapshot.py'
+      - 'nfl_data/prospective/2026_week6_gate_inputs.json'
+      - 'nfl_data/generated/week6_research_projections.csv'
+      - 'nfl_data/validation/model_readiness.json'
+      - '.github/workflows/nfl-week6-prospective-snapshot.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  create-prospective-snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout isolated NFL development branch
+        uses: actions/checkout@v4
+        with:
+          ref: nfl-model-development
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Create immutable prospective snapshot
+        run: python scripts/build_nfl_week6_prospective_snapshot.py
+      - name: Commit prospective snapshot safely
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add nfl_data/prospective/week6_prelock_*.csv nfl_data/prospective/week6_prelock_*.json
+          if git diff --cached --quiet; then
+            echo "No prospective snapshot changes to commit"
+          else
+            git commit -m "Lock NFL Week 6 prospective pregame snapshot"
+            git pull --rebase origin nfl-model-development
+            git push origin nfl-model-development
+          fi
+      - name: Verify no website publication paths changed
+        run: |
+          if git diff --name-only HEAD~1 HEAD | grep -E '^(data/|app\.js$|index\.html$|.*\.css$|.*\.js$)' ; then
+            echo "Unexpected website path changed" >&2
+            exit 1
+          fi
