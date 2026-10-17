@@ -1,0 +1,130 @@
+{
+  "design": "2023 OOS used only for calibration selection; 2024-2025 held out for frozen post-calibration validation. Totals sequential bias correction uses only prior OOS seasons.",
+  "generated_at_utc": "2026-10-17T22:53:40.123144+00:00",
+  "market_policy": "Market blend is a separate benchmark/calibration layer; independent core remains market-free.",
+  "release_state": "HOLD_POSTCALIBRATION_RESEARCH",
+  "tests": {
+    "spread_market_blend": {
+      "aggregate_2024_2025": {
+        "blend_delta_vs_market": 0.0,
+        "blend_mae": 9.6664,
+        "bootstrap_vs_market": {
+          "bootstrap_95_ci": [
+            0.0,
+            0.0
+          ],
+          "draws": 5000,
+          "mean_improvement": 0.0,
+          "probability_gt_0": 0.0,
+          "seed": 20261017
+        },
+        "independent_model_mae": 10.1328,
+        "market_reference_mae": 9.6664,
+        "n": 544
+      },
+      "folds": {
+        "2024": {
+          "blend_delta_vs_market": 0.0,
+          "blend_mae": 9.6103,
+          "independent_model_mae": 10.0135,
+          "market_reference_mae": 9.6103,
+          "n": 272
+        },
+        "2025": {
+          "blend_delta_vs_market": 0.0,
+          "blend_mae": 9.7224,
+          "independent_model_mae": 10.2521,
+          "market_reference_mae": 9.7224,
+          "n": 272
+        }
+      },
+      "selected_on_2023": {
+        "mae": 9.900735294117647,
+        "n": 272,
+        "rmse": 13.07072109716981,
+        "weight_on_independent_model": 0.0,
+        "weight_on_market": 1.0
+      },
+      "verdict": "NO_PROMOTION"
+    },
+    "total_market_blend": {
+      "aggregate_2024_2025": {
+        "blend_delta_vs_market": 0.0,
+        "blend_mae": 10.0616,
+        "bootstrap_vs_market": {
+          "bootstrap_95_ci": [
+            0.0,
+            0.0
+          ],
+          "draws": 5000,
+          "mean_improvement": 0.0,
+          "probability_gt_0": 0.0,
+          "seed": 20261017
+        },
+        "independent_model_mae": 10.4967,
+        "market_reference_mae": 10.0616,
+        "n": 544
+      },
+      "folds": {
+        "2024": {
+          "blend_delta_vs_market": 0.0,
+          "blend_mae": 9.7298,
+          "independent_model_mae": 10.0708,
+          "market_reference_mae": 9.7298,
+          "n": 272
+        },
+        "2025": {
+          "blend_delta_vs_market": 0.0,
+          "blend_mae": 10.3934,
+          "independent_model_mae": 10.9227,
+          "market_reference_mae": 10.3934,
+          "n": 272
+        }
+      },
+      "selected_on_2023": {
+        "mae": 10.238970588235293,
+        "n": 272,
+        "rmse": 13.130146049991891,
+        "weight_on_independent_model": 0.0,
+        "weight_on_market": 1.0
+      },
+      "verdict": "NO_PROMOTION"
+    },
+    "total_sequential_bias_correction": {
+      "aggregate_2024_2025": {
+        "bootstrap": {
+          "bootstrap_95_ci": [
+            -0.08356,
+            0.13771
+          ],
+          "draws": 5000,
+          "mean_improvement": 0.02583,
+          "probability_gt_0": 0.6742,
+          "seed": 20261017
+        },
+        "corrected_mae": 10.4709,
+        "delta": -0.0258,
+        "n": 544,
+        "raw_mae": 10.4967
+      },
+      "folds": {
+        "2024": {
+          "corrected_mae": 9.9362,
+          "delta": -0.1346,
+          "n": 272,
+          "prior_oos_mean_actual_minus_pred_correction": 0.9916,
+          "raw_mae": 10.0708
+        },
+        "2025": {
+          "corrected_mae": 11.0056,
+          "delta": 0.0829,
+          "n": 272,
+          "prior_oos_mean_actual_minus_pred_correction": 1.6016,
+          "raw_mae": 10.9227
+        }
+      },
+      "verdict": "NO_PROMOTION"
+    }
+  },
+  "website_publish_allowed": false
+}
