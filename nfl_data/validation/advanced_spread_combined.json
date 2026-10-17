@@ -1,0 +1,255 @@
+{
+  "design": "Family shrinkage and ridge lambda selected from 2022 only; frozen for 2023-2025. Coefficients refit using prior seasons only.",
+  "family_shrinkage": {
+    "coverage": 1.0,
+    "punting": 1.0,
+    "returns": 1.0,
+    "turnover": 1.0
+  },
+  "frozen_baseline": {
+    "lambda": 0.1,
+    "selection_mae": 9.285049291702839,
+    "team_k": 6.0
+  },
+  "generated_at_utc": "2026-10-17T22:32:13.936040+00:00",
+  "release_state": "HOLD_COMBINED_VALIDATION",
+  "variants": {
+    "coverage": {
+      "aggregate": {
+        "baseline_mae": 10.4669,
+        "bootstrap_vs_baseline": {
+          "bootstrap_95_ci": [
+            0.04059,
+            0.27025
+          ],
+          "draws": 5000,
+          "mean_improvement": 0.15294,
+          "probability_gt_0": 0.9952
+        },
+        "candidate_mae": 10.314,
+        "delta_vs_baseline": -0.1529,
+        "market_reference_mae": 9.7445,
+        "n": 816,
+        "seasons_better_than_baseline": 2
+      },
+      "families": [
+        "coverage"
+      ],
+      "folds": {
+        "2023": {
+          "baseline_mae": 10.5132,
+          "candidate_mae": 10.5351,
+          "delta_vs_baseline": 0.0219,
+          "market_reference_mae": 9.9007,
+          "n": 272
+        },
+        "2024": {
+          "baseline_mae": 10.3781,
+          "candidate_mae": 10.0473,
+          "delta_vs_baseline": -0.3307,
+          "market_reference_mae": 9.6103,
+          "n": 272
+        },
+        "2025": {
+          "baseline_mae": 10.5095,
+          "candidate_mae": 10.3595,
+          "delta_vs_baseline": -0.1499,
+          "market_reference_mae": 9.7224,
+          "n": 272
+        }
+      },
+      "frozen_lambda": {
+        "lambda": 100.0,
+        "mae": 9.254753077789644,
+        "rmse": 12.117636808326608
+      }
+    },
+    "coverage_turnover": {
+      "aggregate": {
+        "baseline_mae": 10.4669,
+        "bootstrap_vs_baseline": {
+          "bootstrap_95_ci": [
+            0.03434,
+            0.27668
+          ],
+          "draws": 5000,
+          "mean_improvement": 0.15586,
+          "probability_gt_0": 0.9926
+        },
+        "bootstrap_vs_previous_nested_spec": {
+          "bootstrap_95_ci": [
+            -0.05015,
+            0.05597
+          ],
+          "draws": 5000,
+          "mean_improvement": 0.00292,
+          "probability_gt_0": 0.5528
+        },
+        "candidate_mae": 10.3111,
+        "delta_vs_baseline": -0.1559,
+        "delta_vs_previous_nested_spec": -0.0029,
+        "market_reference_mae": 9.7445,
+        "n": 816,
+        "seasons_better_than_baseline": 3
+      },
+      "families": [
+        "coverage",
+        "turnover"
+      ],
+      "folds": {
+        "2023": {
+          "baseline_mae": 10.5132,
+          "candidate_mae": 10.4966,
+          "delta_vs_baseline": -0.0167,
+          "market_reference_mae": 9.9007,
+          "n": 272
+        },
+        "2024": {
+          "baseline_mae": 10.3781,
+          "candidate_mae": 10.1338,
+          "delta_vs_baseline": -0.2442,
+          "market_reference_mae": 9.6103,
+          "n": 272
+        },
+        "2025": {
+          "baseline_mae": 10.5095,
+          "candidate_mae": 10.3028,
+          "delta_vs_baseline": -0.2067,
+          "market_reference_mae": 9.7224,
+          "n": 272
+        }
+      },
+      "frozen_lambda": {
+        "lambda": 100.0,
+        "mae": 9.245427603551382,
+        "rmse": 12.161210983689909
+      }
+    },
+    "coverage_turnover_punting": {
+      "aggregate": {
+        "baseline_mae": 10.4669,
+        "bootstrap_vs_baseline": {
+          "bootstrap_95_ci": [
+            -0.00321,
+            0.2789
+          ],
+          "draws": 5000,
+          "mean_improvement": 0.14163,
+          "probability_gt_0": 0.9722
+        },
+        "bootstrap_vs_previous_nested_spec": {
+          "bootstrap_95_ci": [
+            -0.08027,
+            0.05038
+          ],
+          "draws": 5000,
+          "mean_improvement": -0.01422,
+          "probability_gt_0": 0.323
+        },
+        "candidate_mae": 10.3253,
+        "delta_vs_baseline": -0.1416,
+        "delta_vs_previous_nested_spec": 0.0142,
+        "market_reference_mae": 9.7445,
+        "n": 816,
+        "seasons_better_than_baseline": 3
+      },
+      "families": [
+        "coverage",
+        "turnover",
+        "punting"
+      ],
+      "folds": {
+        "2023": {
+          "baseline_mae": 10.5132,
+          "candidate_mae": 10.5038,
+          "delta_vs_baseline": -0.0095,
+          "market_reference_mae": 9.9007,
+          "n": 272
+        },
+        "2024": {
+          "baseline_mae": 10.3781,
+          "candidate_mae": 10.1814,
+          "delta_vs_baseline": -0.1967,
+          "market_reference_mae": 9.6103,
+          "n": 272
+        },
+        "2025": {
+          "baseline_mae": 10.5095,
+          "candidate_mae": 10.2907,
+          "delta_vs_baseline": -0.2188,
+          "market_reference_mae": 9.7224,
+          "n": 272
+        }
+      },
+      "frozen_lambda": {
+        "lambda": 100.0,
+        "mae": 9.269014302457371,
+        "rmse": 12.181376162678495
+      }
+    },
+    "coverage_turnover_punting_returns": {
+      "aggregate": {
+        "baseline_mae": 10.4669,
+        "bootstrap_vs_baseline": {
+          "bootstrap_95_ci": [
+            -0.00303,
+            0.27884
+          ],
+          "draws": 5000,
+          "mean_improvement": 0.14289,
+          "probability_gt_0": 0.9712
+        },
+        "bootstrap_vs_previous_nested_spec": {
+          "bootstrap_95_ci": [
+            -0.02877,
+            0.03281
+          ],
+          "draws": 5000,
+          "mean_improvement": 0.00125,
+          "probability_gt_0": 0.5228
+        },
+        "candidate_mae": 10.324,
+        "delta_vs_baseline": -0.1429,
+        "delta_vs_previous_nested_spec": -0.0013,
+        "market_reference_mae": 9.7445,
+        "n": 816,
+        "seasons_better_than_baseline": 2
+      },
+      "families": [
+        "coverage",
+        "turnover",
+        "punting",
+        "returns"
+      ],
+      "folds": {
+        "2023": {
+          "baseline_mae": 10.5132,
+          "candidate_mae": 10.5136,
+          "delta_vs_baseline": 0.0003,
+          "market_reference_mae": 9.9007,
+          "n": 272
+        },
+        "2024": {
+          "baseline_mae": 10.3781,
+          "candidate_mae": 10.1888,
+          "delta_vs_baseline": -0.1893,
+          "market_reference_mae": 9.6103,
+          "n": 272
+        },
+        "2025": {
+          "baseline_mae": 10.5095,
+          "candidate_mae": 10.2698,
+          "delta_vs_baseline": -0.2397,
+          "market_reference_mae": 9.7224,
+          "n": 272
+        }
+      },
+      "frozen_lambda": {
+        "lambda": 100.0,
+        "mae": 9.324704088008763,
+        "rmse": 12.216191885210742
+      }
+    }
+  },
+  "website_publish_allowed": false
+}
