@@ -74,8 +74,40 @@ def match_score(game:dict, scores:list[dict], aliases:dict):
     if not hits:return None
     raise RecordError(f"Ambiguous team match for {game['gameId']}")
 
-def result_obj(status="PENDING", pick=None, detail=None):
+def fmt_num(value):
+    n=float(value)
+    return str(int(n)) if n.is_integer() else f"{n:.2f}".rstrip("0").rstrip(".")
+
+def signed_line(value):
+    n=float(value)
+    if n == 0: return "PK"
+    return f"{'+' if n > 0 else ''}{fmt_num(n)}"
+
+def ats_position(game:dict, pick:str|None):
+    market=game.get("marketSpreadHome")
+    if market is None or pick not in {game.get("homeTeam"),game.get("awayTeam")}:
+        return None
+    team_line=float(market) if pick==game["homeTeam"] else -float(market)
+    return f"{pick} {signed_line(team_line)}"
+
+def total_position(game:dict, pick:str|None):
+    market=game.get("marketTotal")
+    if market is None or pick not in {"OVER","UNDER"}: return None
+    return f"{pick.title()} {fmt_num(market)}"
+
+def su_position(game:dict, winner:str|None):
+    if winner not in {game.get("homeTeam"),game.get("awayTeam")}: return None
+    return f"{winner} SU"
+
+def su_market_price(game:dict, winner:str|None):
+    if winner==game.get("homeTeam"): return game.get("marketMoneylineHome")
+    if winner==game.get("awayTeam"): return game.get("marketMoneylineAway")
+    return None
+
+def result_obj(status="PENDING", pick=None, detail=None, position=None, market_price=None):
     d={"pick":pick,"result":status}
+    if position is not None:d["position"]=position
+    if market_price is not None:d["marketPrice"]=market_price
     if detail:d["detail"]=detail
     return d
 
@@ -98,6 +130,8 @@ def grade_game(game:dict, score:dict|None, override:dict|None=None):
     away,home=int(score["awayScore"]),int(score["homeScore"])
     margin=home-away; combined=home+away
     final={"awayScore":away,"homeScore":home,"total":combined,"overtime":bool(score.get("overtime",False)),"source":score.get("source","ESPN")}
+
+    # ATS: the model creates the projection position; the locked market spread is the grading benchmark.
     ms,ks=game.get("projectedSpreadHome"),game.get("marketSpreadHome")
     if ks is None:
         ats=result_obj("REVIEW",detail="Missing saved market spread")
@@ -111,7 +145,9 @@ def grade_game(game:dict, score:dict|None, override:dict|None=None):
         if cover==0: r="PUSH"
         elif pick==game["homeTeam"]: r="WIN" if cover>0 else "LOSS"
         else: r="WIN" if cover<0 else "LOSS"
-        ats=result_obj(r,pick)
+        ats=result_obj(r,pick,position=ats_position(game,pick))
+
+    # Totals: model above market = Over projection; model below market = Under projection.
     mt,kt=game.get("projectedTotal"),game.get("marketTotal")
     if kt is None: totals=result_obj("REVIEW",detail="Missing saved market total")
     elif mt is None: totals=result_obj("NO_PICK",detail="Missing model total")
@@ -121,15 +157,18 @@ def grade_game(game:dict, score:dict|None, override:dict|None=None):
         if combined==float(kt):r="PUSH"
         elif pick=="OVER":r="WIN" if combined>float(kt) else "LOSS"
         else:r="WIN" if combined<float(kt) else "LOSS"
-        totals=result_obj(r,pick)
+        totals=result_obj(r,pick,position=total_position(game,pick))
+
+    # Straight Up: grade only whether the projected winner won. Moneyline price is reference metadata only.
     winner=game.get("projectedWinner")
+    price=su_market_price(game,winner)
     if away==home:
-        su=result_obj("TIE",winner,detail="Final score tied; excluded from straight-up W/L record")
+        su=result_obj("TIE",winner,detail="Final score tied; excluded from straight-up W/L record",position=su_position(game,winner),market_price=price)
     elif winner not in {game["awayTeam"],game["homeTeam"]}:
         su=result_obj("REVIEW",winner,detail="Projected winner missing or invalid")
     else:
         actual=game["homeTeam"] if home>away else game["awayTeam"]
-        su=result_obj("WIN" if winner==actual else "LOSS",winner)
+        su=result_obj("WIN" if winner==actual else "LOSS",winner,position=su_position(game,winner),market_price=price)
     return {**base,"status":"FINAL","final":final,"ats":ats,"totals":totals,"straightUp":su}
 
 def counts(games,key):
@@ -157,7 +196,7 @@ def build_summary(root:Path, league:str):
     overall={key:merge_counts(baseline_overall.get(key),generated_overall.get(key)) for key in generated_overall}
     current=by_week[-1]["week"] if by_week else None
     out={"schemaVersion":1,"league":league,"generatedAt":datetime.now(timezone.utc).isoformat().replace("+00:00","Z"),"currentWeek":current,
-         "label":"Model projections graded against the market, not real wagers.","overall":overall,"weeks":by_week,
+         "label":"Projection performance graded against locked publication-time market numbers; not a wager ledger.","overall":overall,"weeks":by_week,
          "pending":sum(int(w.get("pending",0)) for w in by_week),"review":sum(int(w.get("review",0)) for w in by_week)}
     if baseline_weeks: out["baselineSource"]=baseline.get("source")
     if league=="cfb":
