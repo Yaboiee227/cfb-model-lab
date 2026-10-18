@@ -13,13 +13,13 @@
       "awayTeam": "Baltimore",
       "homeTeam": "Pittsburgh",
       "kickoff": "2026-10-18T17:00:00Z",
-      "projectedSpreadHome": -5.0,
+      "projectedSpreadHome": -7.0,
       "projectedTotal": 42.0,
       "projectedWinner": "Pittsburgh",
-      "marketSpreadHome": -2.5,
+      "marketSpreadHome": -2.0,
       "marketTotal": 46.0,
-      "marketMoneylineHome": -140,
-      "marketMoneylineAway": 120,
+      "marketMoneylineHome": -110,
+      "marketMoneylineAway": 100,
       "marketSource": "Example published market snapshot",
       "marketObservedAt": "2026-10-18T12:00:00Z",
       "closingSpreadHome": null,
@@ -28,5 +28,9 @@
     }]
   },
   "mockFinal": {"awayTeam":"Baltimore","homeTeam":"Pittsburgh","awayScore":18,"homeScore":22,"status":"FINAL","overtime":false},
-  "expected": {"ats":"WIN","totals":"WIN","straightUp":"WIN"}
+  "expected": {
+    "ats":{"position":"Pittsburgh -2","result":"WIN"},
+    "totals":{"position":"Under 46","result":"WIN"},
+    "straightUp":{"position":"Pittsburgh SU","marketPrice":-110,"result":"WIN"}
+  }
 }
