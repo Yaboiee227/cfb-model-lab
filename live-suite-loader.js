@@ -1,4 +1,8 @@
 (() => {
+  if ((window.CB_ACTIVE_LEAGUE || 'cfb').toLowerCase() === 'nfl') {
+    console.info('CB Model Projections: CFB live suite disabled for NFL league view.');
+    return;
+  }
   const loadCss = href => {
     if (document.querySelector(`link[href="${href}"]`)) return;
     const link=document.createElement('link');link.rel='stylesheet';link.href=href;link.dataset.cbLiveSuite='true';document.head.appendChild(link);
