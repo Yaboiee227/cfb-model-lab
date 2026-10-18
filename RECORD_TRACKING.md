@@ -21,13 +21,19 @@ A weekly projection file freezes the model projection and the market spread/tota
 ## Locking and audit
 Run `python scripts/lock_projections.py <file>` before kickoff. This records a SHA-256 digest over immutable grading fields. The grader refuses to run if a locked file changes. Git history provides the second audit layer.
 
+## Migrated CFB baseline
+The audited 2026 Week 7 record is preserved in `cfb/record-baseline.json`. Future generated CFB weeks merge with that baseline instead of replacing it. Once a week exists as generated JSON, it supersedes the matching baseline week to prevent double counting.
+
 ## Score source
 `scripts/score_sources.py` is the only ESPN-specific module. It checks ESPN's displayed final team score against the sum of returned period/OT linescores when available. The rest of the grader is source-agnostic so this module can be swapped later.
 
 ## Schedule and Eastern Time
-GitHub cron is UTC and does not automatically follow US daylight saving time. Conservative year-round times are used:
+GitHub cron is UTC. Fixed UTC times shift by one local hour when Eastern Time enters or leaves daylight saving time. Conservative year-round times are used:
 - CFB: Sunday 15:00 UTC (11am EDT / 10am EST), catch-up 21:00 UTC (5pm EDT / 4pm EST).
 - NFL: Tuesday 15:00 UTC (11am EDT / 10am EST), catch-up 21:00 UTC (5pm EDT / 4pm EST).
+
+## Pages deployment
+The grading workflows explicitly dispatch `.github/workflows/deploy-pages.yml` after a successful non-dry-run grade. This is necessary because commits made with the built-in `GITHUB_TOKEN` do not themselves trigger a Pages build.
 
 ## Weekly checklist
 1. Publish the week's projections into the league's `projections/week-XX.json` with saved market lines and timestamps.
@@ -48,6 +54,9 @@ Use Actions → Run workflow with `dry_run=true`, or run the grader with `--scor
 - Voided game: add a `VOID` override with reason and timestamp.
 - Source down: workflow fails and the previous record remains published.
 - Lock violation: restore the originally published values from Git history; never relock altered post-kickoff lines.
+- Record updated in GitHub but site did not refresh: verify the `Deploy CB Model Projections Pages` workflow and the Pages source setting below.
 
-## Repository setting
-Settings → Actions → General → Workflow permissions: enable **Read and write permissions**. The workflows request `issues: write` so failures can open an issue. GitHub Actions failure email/notification preferences remain controlled by your GitHub account.
+## Repository settings
+1. Settings → Actions → General → Workflow permissions: enable **Read and write permissions**. The record workflows request `contents: write`, `issues: write`, and `actions: write`.
+2. Settings → Pages → Build and deployment → Source: select **GitHub Actions** so `deploy-pages.yml` can publish the refreshed static site.
+3. GitHub Actions failure email/notification preferences remain controlled by your GitHub account.
