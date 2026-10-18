@@ -95,6 +95,19 @@ jobs:
           assert cfg['winProbabilityValidation'] == 'DISPLAY_VALIDATED_RESEARCH_ONLY'
           assert cfg['disclaimer'] == disclaimer
 
+          # CFB-equivalent readiness must be explicit and must not masquerade as prediction accuracy.
+          assert cfg['inputCoverageStandard'] == 'CFB_8_LAYER_EQUIVALENT'
+          assert cfg['inputCoverageNominalThresholdPct'] == 90
+          assert cfg['inputCoverageEffectiveRequiredLayers'] == '8/8'
+          assert cfg['inputCoverageLayersPassed'] == 8
+          assert cfg['inputCoverageLayersTotal'] == 8
+          assert float(cfg['averageInputCoveragePct']) == 100.0
+          assert cfg['gamesMeetingInputCoverageStandard'] == 13
+          assert cfg['gamesInCurrentSlate'] == 13
+          assert cfg['inputCoveragePass'] is True
+          assert cfg['predictionAccuracy90PercentClaimed'] is False
+          assert 'not prediction accuracy' in cfg['inputCoverageInterpretation'].lower()
+
           assert required_fields.issubset(fields)
           assert len(rows) == 13
           assert all(r['league'] == 'NFL' for r in rows)
@@ -109,11 +122,16 @@ jobs:
 
           assert {'season','week','gameId','atsResult','suResult'}.issubset(result_fields)
           ids = {c.get('id') for c in research.get('categories', [])}
-          assert {'availability','weather','market','efficiency','validation','workflow'}.issubset(ids)
+          assert {'readiness','availability','weather','market','efficiency','validation','workflow'}.issubset(ids)
+          readiness = next(c for c in research['categories'] if c.get('id') == 'readiness')
+          assert readiness['status'] == '8/8 · 100%'
+          assert 'not prediction accuracy' in readiness['summary'].lower()
 
           print({
-              'status': 'PASS_PUBLIC_NFL_RESEARCH__RECOMMENDATIONS_HOLD',
+              'status': 'PASS_PUBLIC_NFL_RESEARCH__CFB90_INPUT_READY__RECOMMENDATIONS_HOLD',
               'projection_rows': len(rows),
+              'input_coverage_pct': cfg['averageInputCoveragePct'],
+              'games_meeting_standard': cfg['gamesMeetingInputCoverageStandard'],
               'research_publish': cfg['researchPublishAllowed'],
               'recommendation_release': cfg['recommendationReleaseAllowed'],
               'spread': cfg['spreadValidation'],
