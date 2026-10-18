@@ -1,0 +1,77 @@
+{
+  "updated": "2026-10-17T23:59:29.860466+00:00",
+  "categories": [
+    {
+      "id": "availability",
+      "label": "Injuries & availability",
+      "short": "Availability",
+      "status": "Game-day gate",
+      "summary": "Starting-QB identity, official game status and replacement uncertainty are tracked separately from the frozen numerical projection.",
+      "items": [
+        {"title": "Hard-QB breaks", "detail": "Confirmed starter changes are treated as reliability and release-state events. The current operational QB point adjustment remains zero because an additive coefficient has not been prospectively validated.", "tag": "QB gate"},
+        {"title": "Final inactives", "detail": "Official inactive lists are checked close to kickoff and can change contextual reliability without rewriting the frozen canonical projection.", "tag": "Inactives"},
+        {"title": "Personnel discipline", "detail": "Non-QB absences are recorded as context unless a historically validated adjustment exists.", "tag": "No discretionary points"}
+      ]
+    },
+    {
+      "id": "weather",
+      "label": "Weather & venue",
+      "short": "Weather",
+      "status": "Pregame refresh",
+      "summary": "Wind, precipitation, temperature and roof state are timestamped and surfaced as context rather than converted into arbitrary points.",
+      "items": [
+        {"title": "Forecast timing", "detail": "Outdoor forecasts are refreshed close to kickoff because early-week weather can change materially.", "tag": "Timestamped"},
+        {"title": "Roof status", "detail": "Retractable-roof decisions stay explicitly pending until an official or reliable venue update resolves them.", "tag": "Venue"},
+        {"title": "Model treatment", "detail": "Weather can elevate uncertainty or HOLD status; it does not receive a discretionary numerical adjustment.", "tag": "Research gate"}
+      ]
+    },
+    {
+      "id": "market",
+      "label": "Market comparison",
+      "short": "Market",
+      "status": "Benchmark only",
+      "summary": "The NFL projection is independent of sportsbook lines. Public prices are comparison benchmarks unless account-level execution is verified.",
+      "items": [
+        {"title": "Current benchmark", "detail": "The current Week 6 board uses a timestamped BetMGM public benchmark captured before publication.", "tag": "Public board"},
+        {"title": "Model / market difference", "detail": "A numerical difference is descriptive research only. Historical testing did not support a simple larger-difference-equals-better-edge rule.", "tag": "No edge claim"},
+        {"title": "CLV / ROI", "detail": "CLV and ROI are not reported without timestamped executable entry prices and a consistent closing-price definition.", "tag": "Locked"}
+      ]
+    },
+    {
+      "id": "efficiency",
+      "label": "Efficiency & architecture",
+      "short": "Efficiency",
+      "status": "Canonical V1",
+      "summary": "The spread model uses only feature families that survived leakage-safe out-of-sample testing; the totals model remains deliberately simpler.",
+      "items": [
+        {"title": "Canonical spread", "detail": "Frozen core efficiency plus validated defensive coverage, market-independent recursive win Elo and margin rating.", "tag": "Canonical"},
+        {"title": "Canonical total", "detail": "Frozen core totals architecture. Pace, red-zone and other tested additions did not earn robust promotion.", "tag": "Totals"},
+        {"title": "FTN50", "detail": "FTN50 remains a shadow/challenger model and cannot silently replace the canonical projection without explicit promotion review.", "tag": "Shadow"}
+      ]
+    },
+    {
+      "id": "validation",
+      "label": "Validation",
+      "short": "Validation",
+      "status": "HOLD",
+      "summary": "Historical research validation is complete, but betting recommendation thresholds remain locked while prospective frozen-week evidence accumulates.",
+      "items": [
+        {"title": "Historical sample", "detail": "The canonical architecture has 816 outer out-of-sample games from 2023-2025.", "tag": "OOS"},
+        {"title": "Win probability", "detail": "Canonical-margin win probability passed the separate walk-forward research-display calibration gate. Moneyline edge remains HOLD.", "tag": "Display validated"},
+        {"title": "Prospective milestones", "detail": "Research/Beta review begins at 40+ completed prospective games across at least 3 frozen weeks; recommendation calibration review begins at 75+ games across at least 5 weeks and still requires explicit review.", "tag": "Prospective"}
+      ]
+    },
+    {
+      "id": "workflow",
+      "label": "Weekly production workflow",
+      "short": "Workflow",
+      "status": "Active",
+      "summary": "Each week uses an immutable prediction freeze followed by separate context, market, grading and registry updates.",
+      "items": [
+        {"title": "Pregame freeze", "detail": "Canonical and challenger projections are timestamped before games and are never rewritten after results are known.", "tag": "Integrity"},
+        {"title": "Game-day gates", "detail": "Starting QB, final inactives, weather/roof and fresh public market benchmarks are refreshed separately from the frozen numerical prediction.", "tag": "Operations"},
+        {"title": "Postgame grading", "detail": "Canonical and FTN50 are graded on identical games, then the prospective registry updates model-health and release-calibration evidence.", "tag": "Audit"}
+      ]
+    }
+  ]
+}
