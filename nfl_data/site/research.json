@@ -91,6 +91,11 @@
           "tag": "Totals"
         },
         {
+          "title": "Win probability",
+          "detail": "Canonical-margin probability mapping passed the predeclared display gate. 2024 walk-forward Brier 0.215097 / log loss 0.620264; 2025 Brier 0.225016 / log loss 0.639583. This authorizes research/display probability only, not moneyline edge or wagering.",
+          "tag": "Calibration"
+        },
+        {
           "title": "Rejected layers stay rejected",
           "detail": "NGS tracking, trenches, drive/pace, red-zone, turnover, special-teams, penalties, static travel/roof and historical injury-burden candidates were not promoted when robust validation did not support them.",
           "tag": "OOS discipline"
