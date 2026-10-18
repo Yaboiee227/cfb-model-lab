@@ -1,6 +1,18 @@
 {
-  "updated": "October 17, 2026 · game-day research",
+  "updated": "October 18, 2026 · Week 7 post-game audit",
   "categories": [
+    {
+      "id":"validation",
+      "label":"Week 7 validation audit",
+      "short":"Validation",
+      "status":"Post-week audit",
+      "summary":"Week 7 projection grading: ATS 27-24-2 (52.9%), SU 34-19 (64.2%), and totals shadow 25-23 (52.1% on 48 tracked totals). Spread and totals validation remain HOLD.",
+      "items":[
+        {"title":"Saturday slate","detail":"49 Saturday matchups had a usable model baseline and were graded: 24-23-2 ATS and 31-18 straight up. Charleston Southern-Clemson, The Citadel-Texas A&M and Elon-Stanford were excluded because the model had no baseline projection.","tag":"Projection audit"},
+        {"title":"Totals shadow","detail":"44 Saturday games had a saved pre-kick total and graded 21-23. Combined with the four earlier Week 7 tracked totals, the totals-shadow record is 25-23. Missing pre-kick totals remain ungraded rather than being reconstructed after the result.","tag":"Totals validation"},
+        {"title":"Release integrity","detail":"These are projection grades against saved comparison numbers, not a wager ledger. Week 7 had no released bets, and the existing spread/totals HOLD gates are preserved after grading.","tag":"Release rule"}
+      ]
+    },
     {
       "id": "availability",
       "label": "Injuries & availability",
