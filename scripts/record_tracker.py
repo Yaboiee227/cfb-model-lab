@@ -137,20 +137,35 @@ def counts(games,key):
     w,l,p=vals.count("WIN"),vals.count("LOSS"),vals.count("PUSH")
     return {"wins":w,"losses":l,"pushes":p,"winPct":round(w/(w+l)*100,1) if w+l else None,"graded":w+l+p}
 
+def merge_counts(*parts):
+    w=sum(int((p or {}).get("wins",0)) for p in parts);l=sum(int((p or {}).get("losses",0)) for p in parts);push=sum(int((p or {}).get("pushes",0)) for p in parts)
+    return {"wins":w,"losses":l,"pushes":push,"winPct":round(w/(w+l)*100,1) if w+l else None,"graded":w+l+push}
+
 def build_summary(root:Path, league:str):
-    games=[]; by_week=[]
+    games=[]; generated_weeks=[]
     for path in sorted((root/league/"results").glob("week-*.json")):
         doc=read_json(path); gs=doc.get("games",[]); games.extend(gs)
-        by_week.append({"season":doc.get("season"),"week":doc.get("week"),"status":doc.get("status"),"ats":counts(gs,"ats"),"totals":counts(gs,"totals"),"straightUp":counts(gs,"straightUp"),"pending":sum(g.get("status")=="PENDING" for g in gs),"review":sum(g.get("status")=="REVIEW" for g in gs)})
+        generated_weeks.append({"season":doc.get("season"),"week":doc.get("week"),"status":doc.get("status"),"ats":counts(gs,"ats"),"totals":counts(gs,"totals"),"straightUp":counts(gs,"straightUp"),"pending":sum(g.get("status")=="PENDING" for g in gs),"review":sum(g.get("status")=="REVIEW" for g in gs)})
+    baseline=read_json(root/league/"record-baseline.json",{}) if (root/league/"record-baseline.json").exists() else {}
+    generated_keys={(w.get("season"),w.get("week")) for w in generated_weeks}
+    baseline_weeks=[w for w in baseline.get("weeks",[]) if (w.get("season"),w.get("week")) not in generated_keys]
+    by_week=sorted(baseline_weeks+generated_weeks,key=lambda w:(int(w.get("season") or 0),int(w.get("week") or 0)))
+    baseline_overall={"ats":{},"totals":{},"straightUp":{}}
+    for w in baseline_weeks:
+        for key in baseline_overall: baseline_overall[key]=merge_counts(baseline_overall[key],w.get(key,{}))
+    generated_overall={"ats":counts(games,"ats"),"totals":counts(games,"totals"),"straightUp":counts(games,"straightUp")}
+    overall={key:merge_counts(baseline_overall.get(key),generated_overall.get(key)) for key in generated_overall}
     current=by_week[-1]["week"] if by_week else None
     out={"schemaVersion":1,"league":league,"generatedAt":datetime.now(timezone.utc).isoformat().replace("+00:00","Z"),"currentWeek":current,
-         "label":"Model projections graded against the market, not real wagers.","overall":{"ats":counts(games,"ats"),"totals":counts(games,"totals"),"straightUp":counts(games,"straightUp")},"weeks":by_week,
-         "pending":sum(g.get("status")=="PENDING" for g in games),"review":sum(g.get("status")=="REVIEW" for g in games)}
+         "label":"Model projections graded against the market, not real wagers.","overall":overall,"weeks":by_week,
+         "pending":sum(int(w.get("pending",0)) for w in by_week),"review":sum(int(w.get("review",0)) for w in by_week)}
+    if baseline_weeks: out["baselineSource"]=baseline.get("source")
     if league=="cfb":
         groups={}
         for g in games:
             c=g.get("conference") or "Other";groups.setdefault(c,[]).append(g)
         out["byConference"]=[{"conference":c,"ats":counts(gs,"ats"),"totals":counts(gs,"totals"),"straightUp":counts(gs,"straightUp"),"games":len(gs)} for c,gs in sorted(groups.items())]
+        if baseline_weeks: out["conferenceNote"]="Conference breakdown currently covers generated JSON result weeks; the migrated Week 7 baseline remains included in overall and weekly records."
     atomic_json(root/league/"record-summary.json",out);return out
 
 def load_overrides(root,league):
