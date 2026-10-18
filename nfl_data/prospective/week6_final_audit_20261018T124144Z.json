@@ -1,0 +1,80 @@
+{
+  "league": "NFL",
+  "season": 2026,
+  "week": 6,
+  "audited_at_utc": "2026-10-18T12:41:44Z",
+  "purpose": "End-to-end Sunday morning audit of data freshness, trends, model discipline, game-day context, market consensus and website readiness. The immutable canonical projection snapshot is preserved.",
+  "status": "PASS_WITH_GAME_DAY_GATES_REMAINING",
+  "canonical_snapshot_immutable": true,
+  "recommendation_state": "HOLD",
+  "website_publish_allowed": false,
+  "data_integrity": {
+    "teams_present": 32,
+    "current_week_features_use_only_prior_games": true,
+    "week6_or_future_feature_leakage": false,
+    "pregame_source_weeks": [1,2,3,4,5],
+    "pbp_summary_consistency": "PASS",
+    "notes": "Week 6 projections remain prospectively frozen; game-day updates are isolated to context and accuracy-nowcast artifacts."
+  },
+  "model_architecture": {
+    "canonical": "NFL Canonical v1 + FTN50 shadow challenger",
+    "canonical_spread_oos_mae": 10.2564,
+    "canonical_total_oos_mae": 10.5001,
+    "market_spread_oos_mae": 9.7445,
+    "market_total_oos_mae": 10.1207,
+    "game_day_accuracy_policy": "Use current market consensus as the pure-prediction accuracy anchor while preserving canonical outputs for prospective grading.",
+    "unvalidated_layers_not_promoted": ["arbitrary QB point values","NGS tracking","trenches","drive/pace","red-zone","turnover regression","special teams","penalties","static travel/roof coefficients","historical injury-burden coefficients","editorial betting trends"],
+    "reason": "No candidate is allowed into the production core solely because it is intuitively appealing; leakage-safe robustness and prospective evidence remain required."
+  },
+  "trend_policy": {
+    "verified_entries": 24,
+    "games_with_verified_entries": 8,
+    "projection_impact": "NONE",
+    "confidence_impact": "NONE",
+    "recommendation_impact": "NONE",
+    "note": "Trend records remain descriptive context with explicit sample/record/source fields."
+  },
+  "market_refresh": {
+    "sources": [
+      "https://www.actionnetwork.com/nfl-game/texans-jaguars-score-odds-october-18-2026/290821",
+      "https://www.covers.com/sport/football/nfl/matchup/380004/odds",
+      "https://www.actionnetwork.com/nfl-game/saints-giants-score-odds-october-18-2026/290922"
+    ],
+    "hou_jax": "JAX -2.5; observed total range approximately 41.5-42.5 across live sources.",
+    "no_nyg": "Quarantined spread. Current feeds are internally/cross-source inconsistent on side direction despite prices near 1.5 points; no forced consensus is used.",
+    "account_execution_verified": false
+  },
+  "personnel_refresh": {
+    "official_week6_status_source": "https://www.nfl.com/news/nfl-week-6-injury-report-2026-season",
+    "hou_jax_primary_status_source": "https://www.houstontexans.com/news/week-6-injury-report-texans-at-jaguars",
+    "hou_roster_moves_source": "https://www.houstontexans.com/news/houston-texans-transactions-10-17-2026",
+    "jax_roster_moves_source": "https://www.jaguars.com/news/roster-moves-jaguars-elevate-ls-jacob-bobenmoyer-and-cb-jabbar-muhammad-ahead-of-houvsjax",
+    "hard_qb_break_games": ["2026_06_CAR_PHI","2026_06_PIT_TB","2026_06_BAL_CLE"],
+    "chi_atl": "Caleb Williams remains a game-day active/start confirmation gate until official inactives resolve it.",
+    "final_inactives_policy": "Official game-day inactive lists supersede questionable tags. If a primary-source final list is not verifiably available, the gate remains open rather than inferred."
+  },
+  "weather_refresh": {
+    "pit_tb": "NWS point forecast near 1 PM: roughly 77 F, sustained wind around 16 mph, gusts around 23 mph; elevated wind uncertainty remains.",
+    "dal_gb": "Latest NWS point forecast near 7-8 PM CDT: roughly mid-50s F with sustained wind around 11 mph; classify as low-to-moderate kickoff wind pending evening recheck rather than an elevated point adjustment.",
+    "weather_point_adjustment_allowed": false
+  },
+  "website_audit": {
+    "existing_stage6_state": "PASS",
+    "projection_rows": 13,
+    "all_recommendations_hold": true,
+    "league_data_isolation": true,
+    "market_difference_is_descriptive_not_edge": true,
+    "nowcast_visibility_change": "Research payload is updated to surface the timestamped market-anchored accuracy layer without adding another client fetch.",
+    "efficiency_choice": "Reuse existing research.json request and config metadata instead of adding a redundant front-end endpoint."
+  },
+  "current_nowcast_artifact": "nfl_data/prospective/week6_accuracy_nowcast_20261018T124144Z.csv",
+  "remaining_gates": [
+    "official game-day inactives by kickoff window",
+    "Caleb Williams official active/start confirmation",
+    "final roof decisions where applicable",
+    "near-kickoff weather refresh for elevated/outdoor games",
+    "fresh market consensus near decision time",
+    "account-level executable price only if explicitly verified",
+    "prospective postgame grading"
+  ]
+}
