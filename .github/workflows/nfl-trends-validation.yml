@@ -1,0 +1,100 @@
+name: NFL Trends Validation
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [nfl-model-development]
+    paths:
+      - 'trends.js'
+      - 'trends.css'
+      - 'NFL_TRENDS_GUIDE.md'
+      - 'nfl_data/site/nfl-trends.json'
+      - 'nfl_data/site/nfl-trend-results.json'
+      - 'nfl_data/schema/nfl-trends.schema.json'
+      - 'nfl_data/templates/nfl-trends-template.json'
+      - 'nfl_data/templates/nfl-trends-example.json'
+      - 'nfl_data/templates/nfl-trend-results-template.json'
+      - 'scripts/validate_nfl_trends.py'
+      - 'scripts/install_nfl_trends_assets.py'
+      - '.github/workflows/nfl-trends-validation.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout NFL development branch
+        uses: actions/checkout@v4
+        with:
+          ref: nfl-model-development
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Record CFB production data tree
+        run: find data -type f -print0 | sort -z | xargs -0 sha256sum > /tmp/trends-before.sha256
+      - name: Install NFL-only trends assets
+        run: python scripts/install_nfl_trends_assets.py
+      - name: Validate JSON files
+        run: |
+          python -m json.tool nfl_data/site/nfl-trends.json >/dev/null
+          python -m json.tool nfl_data/site/nfl-trend-results.json >/dev/null
+          python -m json.tool nfl_data/schema/nfl-trends.schema.json >/dev/null
+          python -m json.tool nfl_data/templates/nfl-trends-template.json >/dev/null
+          python -m json.tool nfl_data/templates/nfl-trends-example.json >/dev/null
+          python -m json.tool nfl_data/templates/nfl-trend-results-template.json >/dev/null
+      - name: Validate weekly trends against NFL projections
+        run: python scripts/validate_nfl_trends.py
+      - name: Syntax-check trends JavaScript
+        run: node --check trends.js
+      - name: Audit feature safety and accessibility hooks
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          js=Path('trends.js').read_text()
+          css=Path('trends.css').read_text()
+          html=Path('index.html').read_text()
+          required=[
+            'determineTrendAlignment',
+            'Aligns with model',
+            'Conflicts with model',
+            'No model lean',
+            'Trends are summarized from third-party sources',
+            'nfl-trend-results.json',
+            'mockTrends',
+            'validateTrends',
+            'aria-label',
+          ]
+          for token in required:
+            assert token in js, token
+          assert 'html[data-league="nfl"]' in css
+          assert 'href="trends.css"' in html
+          assert 'src="trends.js"' in html
+          assert 'window.CB_ACTIVE_LEAGUE !== \'nfl\'' in js
+          assert 'modelSpreadHome=' not in js
+          assert 'modelTotal=' not in js
+          print('NFL trends safety/accessibility audit passed.')
+          PY
+      - name: Verify CFB production data unchanged
+        run: |
+          find data -type f -print0 | sort -z | xargs -0 sha256sum > /tmp/trends-after.sha256
+          diff -u /tmp/trends-before.sha256 /tmp/trends-after.sha256
+      - name: Commit index asset wiring
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          if git diff --cached --quiet; then
+            echo 'NFL trends assets already wired.'
+          else
+            git commit -m 'Wire NFL trends assets into shared site'
+            git pull --rebase origin nfl-model-development
+            git push origin HEAD:nfl-model-development
+          fi
