@@ -1,0 +1,32 @@
+{
+  "projectionWeekExample": {
+    "schemaVersion": 1,
+    "league": "nfl",
+    "season": 2026,
+    "week": 99,
+    "locked": false,
+    "lockedAt": null,
+    "lockDigest": null,
+    "games": [{
+      "gameId": "test-pit",
+      "sourceGameId": null,
+      "awayTeam": "Baltimore",
+      "homeTeam": "Pittsburgh",
+      "kickoff": "2026-10-18T17:00:00Z",
+      "projectedSpreadHome": -5.0,
+      "projectedTotal": 42.0,
+      "projectedWinner": "Pittsburgh",
+      "marketSpreadHome": -2.5,
+      "marketTotal": 46.0,
+      "marketMoneylineHome": -140,
+      "marketMoneylineAway": 120,
+      "marketSource": "Example published market snapshot",
+      "marketObservedAt": "2026-10-18T12:00:00Z",
+      "closingSpreadHome": null,
+      "closingTotal": null,
+      "closingObservedAt": null
+    }]
+  },
+  "mockFinal": {"awayTeam":"Baltimore","homeTeam":"Pittsburgh","awayScore":18,"homeScore":22,"status":"FINAL","overtime":false},
+  "expected": {"ats":"WIN","totals":"WIN","straightUp":"WIN"}
+}
