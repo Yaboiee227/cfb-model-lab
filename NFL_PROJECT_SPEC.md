@@ -373,7 +373,11 @@ The CI audit additionally verifies that production CFB `data/` files remain unch
 |---|---|---|
 | 1. Core architecture | **COMPLETE / LOCKED** | Canonical research architecture frozen |
 | 2. Historical + walk-forward validation | **COMPLETE / HISTORICAL RESEARCH VALIDATED** | Historical projection validation passes; no betting-edge release |
-| 3. Context + market execution | **NEXT / INFRASTRUCTURE BUILT / FINAL GATES ACTIVE** | Audit timestamped context and execution rules next |
-| 4. Confidence / edge / release | **LOCKED / PROSPECTIVE EVIDENCE REQUIRED** | No validated betting threshold |
-| 5. Weekly production / audit | **INFRASTRUCTURE BUILT** | Week 6 is first immutable prospective sample |
-| 6. Website / operating interface | **TECHNICAL PREVIEW BUILT / PRODUCTION HOLD** | Shared CFB/NFL interface exists on NFL branch; production CFB site unchanged |
+| 3. Context + market execution | **COMPLETE / POLICY LOCKED / LIVE GATES ACTIVE** | Context and market rules are fixed; individual game-day gates refresh prospectively |
+| 4. Confidence / edge / release | **FRAMEWORK COMPLETE / RELEASE EVIDENCE NOT EARNED** | No PLAY/LEAN or validated betting threshold until prospective milestones and explicit review |
+| 5. Weekly production / audit | **COMPLETE / WEEKLY OPERATION ONGOING** | Freeze-to-context-to-market-to-grade-to-registry evidence chain is CI-verified |
+| 6. Website / operating interface | **TECHNICAL INTEGRATION COMPLETE / PRODUCTION RELEASE HOLD** | Shared CFB/NFL research interface passes Stage 6 audit; NFL production release remains gated |
+
+## Current operating state
+
+The six-stage NFL technical build is complete on `nfl-model-development`. Week 6 remains the first frozen prospective sample. Continue Stage 3 game-day refreshes and Stage 5 grading as games finish. Revisit Stage 4 at the predeclared prospective milestones before any production-main NFL release or betting-recommendation language.
