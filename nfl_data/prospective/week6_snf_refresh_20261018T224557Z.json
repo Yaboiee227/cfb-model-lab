@@ -1,0 +1,26 @@
+{
+  "league":"NFL",
+  "season":2026,
+  "week":6,
+  "captured_at_utc":"2026-10-18T22:45:57Z",
+  "canonical_snapshot_immutable":true,
+  "canonical_projection_changed":false,
+  "recommendation_state":"HOLD",
+  "current_window":"DAL_GB_SNF",
+  "locked_after_kickoff":["HOU_JAX","TEN_IND","CAR_PHI","PIT_TB","BAL_CLE","NO_NYG","CHI_ATL","NYJ_NE","ARI_LA","LAC_KC","BUF_LV"],
+  "dal_gb":{
+    "kickoff_et":"2026-10-18T20:20:00-04:00",
+    "official_inactives_state":"PENDING_AT_CAPTURE",
+    "personnel":{"DAL":"DeMarvion Overshown ruled out and did not travel; Joey Porter Jr. expected to play per NFL.com pregame report. Final official inactive list not yet populated on NFL Week 6 inactive page at capture.","GB":"Final official inactive list not yet populated on NFL Week 6 inactive page at capture."},
+    "market":{"spread":"GB -1.5","total":53.5,"moneyline":"GB approximately -114 to -118; DAL approximately -105 to +100 across current Action-displayed book snapshots","market_implied_score_mid":"GB 27.5, DAL 26.0","basis":"Current Action Network live odds plus named FanDuel/DraftKings snapshots; direct named-book quotes preferred over generic aggregation."},
+    "weather":{"venue":"Lambeau Field","roof":"OUTDOOR","nws":"Sunday night mostly clear, low around 42 F, southwest wind 8-13 mph with gusts as high as 21 mph. Action live page displayed approximately 55-56 F and 13 mph near the game window.","model_effect":"Context/reliability only; no unvalidated weather point coefficient."},
+    "travel_context":"Dallas is on the road at Green Bay and playing a second consecutive prime-time/island game after its Week 5 Thursday game; retained as situational context only.",
+    "creator_overlay":{"evan_abrams_action":"Action Week 6/SNF context shows GB -1.5 / 53.5 and a published PRO system with a 58% historical win rate; public ticket snapshot in the system article showed 61% of spread tickets on Dallas and 66% of total tickets on Over. Context only, zero canonical weight.","dr_david_chao_sic":"No newly verified SICScore signal found in this refresh that overrides official/team availability. Medical layer remains secondary to official inactives.","nick_giffen_luck":"No newly verified DAL-GB official Luck Rankings side/total signal found in this refresh. No Giffen adjustment applied."},
+    "creator_source_state":"NO_MATERIAL_VERIFIED_CREATOR_OVERRIDE_AT_CAPTURE",
+    "unresolved_blockers":["Official DAL and GB inactive lists expected near the 90-minute pre-kick window; NFL.com Week 6 inactive page had only the SNF header at 18:45 ET capture.","Recheck executable market after official inactives if needed."],
+    "accuracy_nowcast":"Market-anchored DAL 26.0, GB 27.5; GB -1.5; total 53.5.",
+    "reliability":"PENDING_FINAL_INACTIVES"
+  },
+  "source_policy":["Official NFL/team inactives override creator-source expectations.","Direct named-book quotes override aggregators for execution claims.","Abrams systems/trends are context-only.","SIC is medical-impact context until prospectively validated.","Giffen Luck is a separate challenger signal, not canonical input.","No game is altered after kickoff."],
+  "final_verdict":"NO_CANONICAL_CHANGE. Current SNF nowcast remains market anchored at GB -1.5 / 53.5, approximately GB 27.5-DAL 26.0, with final inactives still the primary unresolved gate at this capture. Recommendation remains HOLD."
+}
