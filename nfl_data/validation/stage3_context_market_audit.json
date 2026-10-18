@@ -1,0 +1,58 @@
+{
+  "audit_verdict": "PASS_STAGE3_ARCHITECTURE__LIVE_GAME_GATES_REMAIN_OPEN",
+  "current_week6_state": {
+    "account_executable_verified_games": 0,
+    "elevated_weather_game_ids": [
+      "2026_06_PIT_TB",
+      "2026_06_LAC_KC",
+      "2026_06_DAL_GB"
+    ],
+    "final_inactives_resolved_games": 0,
+    "games": 13,
+    "hard_qb_break_games": 3,
+    "hard_qb_game_ids": [
+      "2026_06_BAL_CLE",
+      "2026_06_CAR_PHI",
+      "2026_06_PIT_TB"
+    ],
+    "latest_context_refresh_utc": "2026-10-18T00:55:00Z",
+    "latest_internal_public_capture_utc": "2026-10-17T23:59:29.860466+00:00",
+    "official_final_status_report_available_games": 13,
+    "public_book_captured_games": 13,
+    "recommendation_release_games": 0,
+    "validated_edge_threshold_games": 0,
+    "weather_elevated_uncertainty_games": 3,
+    "weather_forecast_or_roof_checked_games": 13,
+    "weather_roof_final_games": 2
+  },
+  "generated_at_utc": "2026-10-18T01:40:31.994471+00:00",
+  "handoff": "Stage 3 system design is complete. Continue refreshing live Week 6 inactives, weather/roof and market observations at the locked checkpoint times. Proceed to Stage 4 calibration framework, but do not release betting confidence or edge thresholds until prospective frozen outcomes accumulate.",
+  "individual_game_release_complete": false,
+  "live_game_blockers": {
+    "account_execution_unverified": 13,
+    "final_inactives_pending": 13,
+    "validated_edge_threshold_missing": 13,
+    "weather_or_roof_pending": 11
+  },
+  "policy_checks": {
+    "closing_line_definition_locked": true,
+    "current_line_definition_locked": true,
+    "game_day_timing_locked": true,
+    "immutable_snapshot_protected": true,
+    "line_shopping_rules_locked": true,
+    "manual_context_point_adjustments_disabled": true,
+    "opening_line_definition_locked": true,
+    "public_board_movement_not_labeled_clv": true,
+    "public_board_not_treated_as_executable": true,
+    "qb_replacement_operational_points_zero": true,
+    "recommendations_still_hold": true,
+    "source_hierarchy_locked": true
+  },
+  "policy_file": "NFL_STAGE3_CONTEXT_MARKET_POLICY.md",
+  "recommendation_release_allowed": false,
+  "snapshot_id": "NFL_2026_W6_PRELOCK_20261017T225656Z",
+  "stage": 3,
+  "stage3_architecture_complete": true,
+  "stage_name": "Context + market execution",
+  "website_betting_signal_release_allowed": false
+}
