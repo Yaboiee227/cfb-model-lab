@@ -1,0 +1,56 @@
+name: NFL Market Consensus Validation
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [nfl-model-development]
+    paths:
+      - 'scripts/validate_nfl_market_consensus.py'
+      - 'nfl_data/calibration/final_architecture_oos_predictions_2023_2025.csv'
+      - '.github/workflows/nfl-market-consensus-validation.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout NFL development branch
+        uses: actions/checkout@v4
+        with:
+          ref: nfl-model-development
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Record CFB production data tree
+        run: find data -type f -print0 | sort -z | xargs -0 sha256sum > /tmp/consensus-before.sha256
+      - name: Validate market-informed consensus
+        run: python scripts/validate_nfl_market_consensus.py
+      - name: Verify release guard
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('nfl_data/validation/market_consensus_walkforward.json'))
+          assert d['recommendation_release_allowed'] is False
+          assert d['rows'] >= 800
+          print({'spread':d['spread']['robust_research_display_candidate'],'total':d['total']['robust_research_display_candidate']})
+          PY
+      - name: Verify CFB production data unchanged
+        run: |
+          find data -type f -print0 | sort -z | xargs -0 sha256sum > /tmp/consensus-after.sha256
+          diff -u /tmp/consensus-before.sha256 /tmp/consensus-after.sha256
+      - name: Commit validation artifacts
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add nfl_data/validation/market_consensus_walkforward.json nfl_data/validation/MARKET_CONSENSUS_WALKFORWARD.md
+          if git diff --cached --quiet; then
+            echo 'Consensus validation already current.'
+          else
+            git commit -m 'Refresh NFL market consensus validation'
+            git pull --rebase origin nfl-model-development
+            git push origin HEAD:nfl-model-development
+          fi
