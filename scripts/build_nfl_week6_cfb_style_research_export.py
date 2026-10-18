@@ -3,12 +3,13 @@
 
 This file is a presentation/data-contract dry run only. It exposes the frozen
 canonical model and the separately frozen FTN50 shadow side-by-side, plus the
-same reliability, market and gate context the eventual NFL site should show.
-It cannot publish to the live site or create betting recommendations.
+same reliability, latest market and gate context the eventual NFL site should
+show. It cannot publish to the live site or create betting recommendations.
 """
 from __future__ import annotations
 
 import csv
+import glob
 import json
 from datetime import datetime, timezone
 from pathlib import Path
@@ -17,7 +18,8 @@ CANON = Path('nfl_data/prospective/week6_prelock_20261017T225656Z.json')
 SHADOW = Path('nfl_data/prospective/shadow/week6_ftn50_shadow_20261017T235342Z.json')
 REL = Path('nfl_data/prospective/week6_projection_reliability_20261017T230853Z.json')
 READY = Path('nfl_data/prospective/week6_readiness_matrix_20261017.json')
-MARKET = Path('nfl_data/prospective/market_captures/week6_betmgm_web_capture_20261017T225910Z.json')
+MARKET_GLOB = 'nfl_data/prospective/market_captures/week6_betmgm_web_capture_*.json'
+MOVEMENT = Path('nfl_data/prospective/week6_public_market_movement_20261017.json')
 OUT = Path('nfl_data/research_exports')
 
 
@@ -33,30 +35,50 @@ def side_from_margin(home_team, away_team, margin):
     return 'PICK'
 
 
+def latest_market_capture():
+    paths = sorted(glob.glob(MARKET_GLOB))
+    if not paths:
+        raise RuntimeError('No timestamped Week 6 BetMGM capture found')
+    payloads = [(Path(p), json.loads(Path(p).read_text())) for p in paths]
+    payloads.sort(key=lambda item: item[1]['capture_created_at_utc'])
+    return payloads[-1]
+
+
+def write_csv(path, rows):
+    with path.open('w', newline='', encoding='utf-8') as f:
+        w = csv.DictWriter(f, fieldnames=list(rows[0]))
+        w.writeheader(); w.writerows(rows)
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     can = json.loads(CANON.read_text())
     sh = json.loads(SHADOW.read_text())
     rel = json.loads(REL.read_text())
     ready = json.loads(READY.read_text())
-    market = json.loads(MARKET.read_text())
+    market_path, market = latest_market_capture()
+    movement = json.loads(MOVEMENT.read_text()) if MOVEMENT.exists() else {'rows': []}
 
     ci = idx(can)
     si = idx(sh)
     ri = idx(rel)
     rdi = idx(ready)
     mi = idx(market)
+    mvi = idx(movement) if movement.get('rows') else {}
     sets = [set(ci), set(si), set(ri), set(rdi), set(mi)]
     if not all(s == sets[0] for s in sets[1:]):
         raise RuntimeError('canonical/shadow/reliability/readiness/market game sets differ')
     if can['manifest']['snapshot_id'] != sh['manifest']['canonical_snapshot_id']:
         raise RuntimeError('shadow does not reference canonical snapshot')
-    if any(x.get('website_publish_allowed') is not False for x in [sh['manifest'], ready]):
+    if market.get('snapshot_id') != can['manifest']['snapshot_id']:
+        raise RuntimeError('latest market capture does not reference canonical snapshot')
+    if any(x.get('website_publish_allowed') is not False for x in [sh['manifest'], ready, market]):
         raise RuntimeError('source unexpectedly publishable')
 
     rows = []
     for gid in sorted(ci, key=lambda g: (ci[g]['gameday'], ci[g]['gametime'], g)):
         c, s, r, d, m = ci[gid], si[gid], ri[gid], rdi[gid], mi[gid]
+        mv = mvi.get(gid, {})
         canonical_margin = float(c['final_research_home_margin'])
         shadow_margin = float(s['shadow_50_50_home_margin'])
         market_home_spread = float(m['home_spread'])
@@ -79,10 +101,20 @@ def main():
             'public_book': m['book'],
             'public_book_capture_utc': m['capture_created_at_utc'],
             'public_book_home_spread': market_home_spread,
+            'public_book_home_spread_decimal_odds': m.get('home_spread_odds'),
+            'public_book_away_spread_decimal_odds': m.get('away_spread_odds'),
             'canonical_spread_disagreement_vs_market': round(canonical_margin + market_home_spread, 3),
             'shadow_spread_disagreement_vs_market': round(shadow_margin + market_home_spread, 3),
             'public_book_total': market_total,
+            'public_book_over_decimal_odds': m.get('over_odds'),
+            'public_book_under_decimal_odds': m.get('under_odds'),
             'total_disagreement_vs_market': round(model_total - market_total, 3),
+            'spread_move_since_first_capture': mv.get('home_spread_public_board_move'),
+            'total_move_since_first_capture': mv.get('total_public_board_move'),
+            'home_spread_price_move_since_first_capture': mv.get('home_spread_decimal_odds_move'),
+            'away_spread_price_move_since_first_capture': mv.get('away_spread_decimal_odds_move'),
+            'over_price_move_since_first_capture': mv.get('over_decimal_odds_move'),
+            'under_price_move_since_first_capture': mv.get('under_decimal_odds_move'),
             'spread_reliability_tier': r['spread_reliability_tier'],
             'total_reliability_tier': r['total_reliability_tier'],
             'spread_68_low': r['spread_68_low'],
@@ -106,13 +138,15 @@ def main():
     now = datetime.now(timezone.utc)
     stamp = now.strftime('%Y%m%dT%H%M%SZ')
     payload = {
-        'schema_version': 'nfl-cfb-style-research-v2',
+        'schema_version': 'nfl-cfb-style-research-v3',
         'created_at_utc': now.isoformat(),
         'league': 'NFL',
         'season': 2026,
         'week': 6,
         'canonical_snapshot_id': can['manifest']['snapshot_id'],
         'shadow_snapshot_id': sh['manifest']['shadow_snapshot_id'],
+        'latest_market_capture_file': str(market_path),
+        'latest_market_capture_at_utc': market['capture_created_at_utc'],
         'display_intent': 'Mirror the CFB model product structure while preserving research-only NFL status.',
         'architecture_policy': {
             'official': 'CANONICAL_FINAL_ARCHITECTURE',
@@ -138,11 +172,23 @@ def main():
     }
     jpath = OUT / f'week6_cfb_style_research_export_{stamp}.json'
     cpath = OUT / f'week6_cfb_style_research_export_{stamp}.csv'
-    jpath.write_text(json.dumps(payload, indent=2, sort_keys=True) + '\n')
-    with cpath.open('w', newline='', encoding='utf-8') as f:
-        w = csv.DictWriter(f, fieldnames=list(rows[0]))
-        w.writeheader(); w.writerows(rows)
-    print(json.dumps({'json': str(jpath), 'csv': str(cpath), 'games': len(rows), 'schema_version': payload['schema_version'], 'website_publish_allowed': False}, indent=2))
+    stable_json = OUT / 'week6_cfb_style_research_latest.json'
+    stable_csv = OUT / 'week6_cfb_style_research_latest.csv'
+    serialized = json.dumps(payload, indent=2, sort_keys=True) + '\n'
+    jpath.write_text(serialized)
+    stable_json.write_text(serialized)
+    write_csv(cpath, rows)
+    write_csv(stable_csv, rows)
+    print(json.dumps({
+        'json': str(jpath),
+        'csv': str(cpath),
+        'stable_json': str(stable_json),
+        'stable_csv': str(stable_csv),
+        'latest_market_capture': str(market_path),
+        'games': len(rows),
+        'schema_version': payload['schema_version'],
+        'website_publish_allowed': False,
+    }, indent=2))
 
 
 if __name__ == '__main__':
