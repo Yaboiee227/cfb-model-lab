@@ -1,0 +1,92 @@
+name: NFL Stage 6 Website Audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - nfl-model-development
+    paths:
+      - scripts/audit_nfl_stage6_website.py
+      - NFL_SITE_INTEGRATION_CONTRACT.md
+      - league-bootstrap.js
+      - script.js
+      - live-suite-loader.js
+      - index.html
+      - nfl_data/site/**
+      - nfl_data/validation/stage4_confidence_release_audit.json
+      - nfl_data/validation/stage5_weekly_production_audit.json
+      - .github/workflows/nfl-stage6-website-audit.yml
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout NFL development branch
+        uses: actions/checkout@v4
+        with:
+          ref: nfl-model-development
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Record production CFB data tree
+        run: |
+          find data -type f -print0 | sort -z | xargs -0 sha256sum > /tmp/cfb-stage6-before.sha256
+
+      - name: Syntax-check website JavaScript
+        run: |
+          node --check league-bootstrap.js
+          node --check script.js
+          node --check live-suite-loader.js
+
+      - name: Run Stage 6 audit
+        run: python scripts/audit_nfl_stage6_website.py
+
+      - name: Verify Stage 6 release safety
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('nfl_data/validation/stage6_website_audit.json'))
+          assert d['audit_verdict']=='PASS_STAGE6_TECHNICAL_INTEGRATION__PRODUCTION_RELEASE_HOLD'
+          assert d['technical_integration_complete'] is True
+          assert d['production_merge_authorized'] is False
+          assert d['production_nfl_release_allowed'] is False
+          assert d['recommendation_release_allowed'] is False
+          assert d['website_betting_signal_release_allowed'] is False
+          assert d['branch_preview_research_mode_ready'] is True
+          assert all(d['checks'].values())
+          assert d['projection_rows']==13
+          print({
+              'verdict':d['audit_verdict'],
+              'checks':len(d['checks']),
+              'rows':d['projection_rows'],
+              'production_release':d['production_nfl_release_allowed']
+          })
+          PY
+
+      - name: Verify production CFB data unchanged
+        run: |
+          find data -type f -print0 | sort -z | xargs -0 sha256sum > /tmp/cfb-stage6-after.sha256
+          diff -u /tmp/cfb-stage6-before.sha256 /tmp/cfb-stage6-after.sha256
+
+      - name: Commit Stage 6 audit artifacts
+        run: |
+          if [ -z "$(git status --porcelain -- nfl_data/validation/stage6_website_audit.json nfl_data/validation/STAGE6_WEBSITE_AUDIT.md)" ]; then
+            echo 'Stage 6 audit already current.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add nfl_data/validation/stage6_website_audit.json nfl_data/validation/STAGE6_WEBSITE_AUDIT.md
+          git commit -m 'Refresh NFL Stage 6 website audit'
+          git push origin HEAD:nfl-model-development
