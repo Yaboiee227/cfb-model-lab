@@ -1,0 +1,101 @@
+{
+  "league": "NFL",
+  "season": 2026,
+  "week": 6,
+  "captured_at_utc": "2026-10-18T13:42:27Z",
+  "purpose": "Final pre-inactive-window Week 6 recheck using official/team status, current public market cross-checks, weather, and creator-source context from Evan Abrams/Action Network, Dr. David Chao/SICScore, and Nick Giffen/Action Luck Rankings.",
+  "canonical_snapshot_immutable": true,
+  "canonical_projection_changed": false,
+  "model_coefficients_changed": false,
+  "recommendation_state": "HOLD",
+  "website_betting_signal_release_allowed": false,
+  "accuracy_nowcast_artifact": "nfl_data/prospective/week6_accuracy_nowcast_20261018T134227Z.csv",
+  "creator_overlay_artifact": "nfl_data/prospective/week6_creator_source_overlay_20261018T1335Z.json",
+  "integrity_rules": [
+    "Do not retroactively change a game after kickoff.",
+    "Official NFL/team active/inactive and injury status overrides media or proprietary expectations.",
+    "Direct executable sportsbook quotes override public aggregators for any execution claim.",
+    "Abrams systems/trends remain context only until independently validated.",
+    "SICScore is a medical-effectiveness context layer until prospectively validated.",
+    "Giffen Luck Rankings remain a separate external challenger and do not rewrite the canonical model.",
+    "Market ranges are preserved when reputable sources disagree rather than collapsed into false precision."
+  ],
+  "locked_games": {
+    "HOU_JAX": {
+      "state": "GAME_STARTED",
+      "action": "NO_RETROACTIVE_UPDATE",
+      "note": "Houston-Jacksonville had kicked off before this recheck. Its prospectively captured pregame state remains frozen."
+    }
+  },
+  "material_updates": {
+    "TEN_IND": {
+      "market": "IND -6.5; total cross-source range 44.5-45.0",
+      "effect": "Nowcast total represented as a range; no canonical change."
+    },
+    "CAR_PHI": {
+      "market": "CAR -3 to -3.5; total 39",
+      "creator_context": "Abrams backup-QB research is relevant to Tanner McKee but does not provide a validated McKee-specific point value. SIC confirms Saquon Barkley out and DeVonta Smith cleared.",
+      "effect": "Hard-QB-break flag retained; market range preserved; no canonical change."
+    },
+    "PIT_TB": {
+      "market": "PIT -2.5; total 38.5",
+      "personnel": "DK Metcalf cleared from the injury report; Pat Freiermuth newly questionable with a calf issue; Baker Mayfield remains out.",
+      "weather": "Elevated Tampa wind remains relevant game-day context.",
+      "creator_context": "SIC and Giffen context both support a constrained/short-pass scoring environment, but no validated numeric weather or injury coefficient is applied.",
+      "effect": "Context refined; canonical unchanged."
+    },
+    "BAL_CLE": {
+      "market": "BAL -3 to -3.5; total 39.5",
+      "creator_context": "Abrams' backup-QB study gives Tyler Huntley a stronger historical backup ATS profile than a generic replacement assumption would imply.",
+      "effect": "Hard-QB-break remains, but confidence in a generic backup-QB penalty is reduced. No numeric model adjustment."
+    },
+    "NO_NYG": {
+      "market": "Spread remains quarantined because current public feeds contain cross-source/within-source side-direction conflict; total roughly 45.5-46.5.",
+      "effect": "No forced side consensus."
+    },
+    "CHI_ATL": {
+      "market": "CHI -1.5; total 52.5-53.0",
+      "personnel": "Michael Penix Jr. cleared; Caleb Williams expected to start but final game-day active confirmation remains a gate at this capture.",
+      "effect": "QB-return context retained; no arbitrary point adjustment."
+    },
+    "NYJ_NE": {
+      "market": "NE -7.5; total 43.0-43.5",
+      "personnel": "A.J. Brown was activated and is expected to play; TreVeyon Henderson is trending toward playing; final inactive list remains required.",
+      "creator_context": "SIC continues to highlight Jets skill-position absences and New England health uncertainty.",
+      "effect": "Availability context improved; no canonical change."
+    },
+    "LAC_KC": {
+      "market": "KC -7.5; total 41.5",
+      "creator_context": "Explicit conflict flag: SIC injury-cluster context is unfavorable for the Chargers, while Giffen's official Luck Rankings side signal favors LAC +8.5.",
+      "effect": "Treat side as higher uncertainty rather than strengthening either direction. No canonical change."
+    },
+    "BUF_LV": {
+      "market": "BUF -4.5 to -5.5; total 53.5",
+      "effect": "Largest current non-quarantined spread range across checked public feeds; nowcast uses midpoint only as a research consensus, not an executable price."
+    },
+    "DAL_GB": {
+      "market": "GB -1.5; total 53.5",
+      "weather": "Latest evening Green Bay forecast supports low-to-moderate wind rather than a major weather penalty.",
+      "effect": "No weather point adjustment; final evening recheck still required."
+    },
+    "WAS_SF": {
+      "market": "SF -7.5; total 52.0-52.5",
+      "effect": "Monday game remains pending separate final status/inactive/market refresh."
+    }
+  },
+  "creator_source_verdict": {
+    "evan_abrams_action": "Useful current-week context for backup-QB behavior, systems, key-number and market research; no new canonical coefficient earned.",
+    "dr_david_chao_sic": "Useful current-week medical/injury-cluster refinement; improves reliability/context but does not justify unvalidated point values.",
+    "nick_giffen_luck": "Useful independent expected-score/regression challenger. Week 6 has two official side signals and no official total signals; LAC +8.5 is a material conflict signal for LAC-KC."
+  },
+  "remaining_required_gates": [
+    "Official final inactives for 1 PM games around the scheduled inactive window.",
+    "Final Caleb Williams active/start confirmation.",
+    "Any unresolved retractable-roof decisions for Atlanta and Indianapolis.",
+    "Near-kick weather where outdoor conditions remain relevant.",
+    "Fresh market capture near each kickoff window.",
+    "Late-afternoon, Sunday-night and Monday inactive windows.",
+    "Account-level executable price only if an execution claim is ever requested."
+  ],
+  "final_verdict": "NO_CANONICAL_MODEL_CHANGE. REFRESH_GAME_DAY_NOWCAST_AND_CONTEXT_ONLY. The new creator-level information improves uncertainty assessment and current-week QA, especially LAC-KC, BAL-CLE, PIT-TB, CAR-PHI and NYJ-NE, but does not provide sufficient validated evidence to change frozen Week 6 model coefficients or scores."
+}
