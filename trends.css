@@ -1,0 +1,112 @@
+html[data-league="nfl"] .nfl-trends-section{scroll-margin-top:92px}
+html[data-league="nfl"] .nfl-trends-heading{align-items:flex-end}
+html[data-league="nfl"] .trend-source-credit{display:flex;flex-direction:column;align-items:flex-end;gap:5px;font-size:11px;color:var(--muted,#91a2b4)}
+html[data-league="nfl"] .trend-source-credit a,html[data-league="nfl"] .trend-source-link,html[data-league="nfl"] .trend-game-footer a{color:var(--accent,#8ff0cb);text-decoration:none;font-weight:750}
+html[data-league="nfl"] .trend-source-credit a:hover,html[data-league="nfl"] .trend-source-link:hover,html[data-league="nfl"] .trend-game-footer a:hover{text-decoration:underline}
+html[data-league="nfl"] .trend-status-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 14px}
+html[data-league="nfl"] .trend-mode-chip,html[data-league="nfl"] .trend-validation-chip{display:inline-flex;align-items:center;gap:5px;padding:6px 9px;border-radius:999px;border:1px solid var(--line,rgba(255,255,255,.13));font-size:10px;font-weight:800;letter-spacing:.04em}
+html[data-league="nfl"] .trend-mode-chip{background:rgba(245,194,66,.09);color:#d7a72d;border-color:rgba(245,194,66,.25)}
+html[data-theme="dark"][data-league="nfl"] .trend-mode-chip{color:#ffd76a}
+html[data-league="nfl"] .trend-validation-chip[data-state="ok"]{background:rgba(58,192,133,.08);color:#238a5f;border-color:rgba(58,192,133,.24)}
+html[data-theme="dark"][data-league="nfl"] .trend-validation-chip[data-state="ok"]{color:#8ff0cb}
+html[data-league="nfl"] .trend-validation-chip[data-state="warning"]{background:rgba(245,194,66,.09);color:#9a7218;border-color:rgba(245,194,66,.28)}
+html[data-theme="dark"][data-league="nfl"] .trend-validation-chip[data-state="warning"]{color:#ffd76a}
+html[data-league="nfl"] .trend-validation-chip[data-state="error"]{background:rgba(230,89,89,.08);color:#b64545;border-color:rgba(230,89,89,.25)}
+html[data-theme="dark"][data-league="nfl"] .trend-validation-chip[data-state="error"]{color:#ff9d9d}
+html[data-league="nfl"] .trend-stale-banner{padding:11px 13px;margin-bottom:14px;border:1px solid rgba(245,194,66,.28);border-radius:10px;background:rgba(245,194,66,.08);font-size:11px;line-height:1.5;color:var(--text,#edf5ff)}
+html[data-league="nfl"] .trend-top-panel{margin-bottom:14px}
+html[data-league="nfl"] .trend-explainer{font-size:12px;line-height:1.6;color:var(--muted,#91a2b4);margin-top:0}
+html[data-league="nfl"] .trend-top-games{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin-top:10px}
+html[data-league="nfl"] .trend-top-game{appearance:none;text-align:left;border:1px solid var(--line,rgba(255,255,255,.13));background:var(--panel,rgba(127,127,127,.05));border-radius:11px;padding:11px;color:var(--text,#edf5ff);cursor:pointer}
+html[data-league="nfl"] .trend-top-game:hover{border-color:rgba(143,240,203,.4);transform:translateY(-1px)}
+html[data-league="nfl"] .trend-top-game:focus-visible,html[data-league="nfl"] .nfl-trend-summary-badge:focus-visible,html[data-league="nfl"] .trend-game-card summary:focus-visible{outline:2px solid var(--accent,#8ff0cb);outline-offset:2px}
+html[data-league="nfl"] .trend-top-game strong{display:block;font-size:12px}
+html[data-league="nfl"] .trend-top-game span{display:block;margin-top:4px;font-size:10px;color:var(--muted,#91a2b4)}
+html[data-league="nfl"] .trend-filter-panel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) minmax(180px,.8fr) auto;gap:9px;align-items:end;padding:12px;border:1px solid var(--line,rgba(255,255,255,.13));border-radius:12px;background:var(--panel,rgba(127,127,127,.04));margin-bottom:13px}
+html[data-league="nfl"] .trend-filter-panel label{display:flex;flex-direction:column;gap:5px;font-size:10px;font-weight:750;color:var(--muted,#91a2b4)}
+html[data-league="nfl"] .trend-filter-panel select{min-height:40px;border:1px solid var(--line,rgba(255,255,255,.13));border-radius:9px;background:var(--surface,#0c1828);color:var(--text,#edf5ff);padding:0 10px}
+html[data-theme="light"][data-league="nfl"] .trend-filter-panel select{background:#fff}
+html[data-league="nfl"] .trend-filter-panel .trend-check{display:flex;flex-direction:row;align-items:center;gap:8px;min-height:40px;padding:0 10px;border:1px solid var(--line,rgba(255,255,255,.13));border-radius:9px;color:var(--text,#edf5ff);font-size:11px}
+html[data-league="nfl"] .trend-filter-panel .trend-check input{width:17px;height:17px;accent-color:var(--accent,#8ff0cb)}
+html[data-league="nfl"] .trend-game-list{display:grid;gap:10px}
+html[data-league="nfl"] .trend-game-card{border:1px solid var(--line,rgba(255,255,255,.13));border-radius:13px;background:var(--panel,rgba(127,127,127,.035));overflow:hidden}
+html[data-league="nfl"] .trend-game-card[open]{border-color:rgba(143,240,203,.25)}
+html[data-league="nfl"] .trend-game-card summary{list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:center;padding:14px 15px;cursor:pointer}
+html[data-league="nfl"] .trend-game-card summary::-webkit-details-marker{display:none}
+html[data-league="nfl"] .trend-game-card summary>div:first-child{display:flex;flex-direction:column;gap:3px;min-width:0}
+html[data-league="nfl"] .trend-game-card summary strong{font-size:15px;color:var(--text,#edf5ff)}
+html[data-league="nfl"] .trend-game-card summary small,html[data-league="nfl"] .trend-game-time{font-size:10px;color:var(--muted,#91a2b4);line-height:1.4}
+html[data-league="nfl"] .trend-game-summary{display:flex;flex-direction:column;align-items:flex-end;gap:3px;text-align:right;white-space:nowrap}
+html[data-league="nfl"] .trend-game-summary span{font-size:10px;font-weight:800;color:var(--accent,#8ff0cb)}
+html[data-league="nfl"] .trend-game-summary b{font-size:10px;color:var(--muted,#91a2b4)}
+html[data-league="nfl"] .trend-game-body{padding:0 15px 15px;border-top:1px solid var(--line,rgba(255,255,255,.1))}
+html[data-league="nfl"] .trend-items{display:grid;gap:9px;margin-top:13px}
+html[data-league="nfl"] .trend-item{padding:12px;border:1px solid var(--line,rgba(255,255,255,.12));border-radius:11px;background:rgba(127,127,127,.03);border-left-width:4px}
+html[data-league="nfl"] .trend-item-aligns{border-left-color:#3ac085}
+html[data-league="nfl"] .trend-item-conflicts{border-left-color:#df6767}
+html[data-league="nfl"] .trend-item-neutral{border-left-color:#8d9bab}
+html[data-league="nfl"] .trend-item-informational{border-left-color:#5aa6df}
+html[data-league="nfl"] .trend-item-head{display:flex;justify-content:space-between;gap:10px;align-items:center}
+html[data-league="nfl"] .trend-type{font-size:9px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--muted,#91a2b4)}
+html[data-league="nfl"] .trend-item p{margin:8px 0;font-size:12px;line-height:1.55;color:var(--text,#edf5ff)}
+html[data-league="nfl"] .trend-indicator{display:inline-flex;align-items:center;gap:5px;padding:5px 8px;border-radius:999px;border:1px solid var(--line,rgba(255,255,255,.12));font-size:9px;font-weight:850;white-space:nowrap}
+html[data-league="nfl"] .trend-aligns{color:#207d57;background:rgba(58,192,133,.08);border-color:rgba(58,192,133,.25)}
+html[data-theme="dark"][data-league="nfl"] .trend-aligns{color:#8ff0cb}
+html[data-league="nfl"] .trend-conflicts{color:#ae4747;background:rgba(223,103,103,.08);border-color:rgba(223,103,103,.25)}
+html[data-theme="dark"][data-league="nfl"] .trend-conflicts{color:#ffabab}
+html[data-league="nfl"] .trend-neutral{color:var(--muted,#91a2b4);background:rgba(141,155,171,.08)}
+html[data-league="nfl"] .trend-informational{color:#2777ad;background:rgba(90,166,223,.08);border-color:rgba(90,166,223,.25)}
+html[data-theme="dark"][data-league="nfl"] .trend-informational{color:#9bd6ff}
+html[data-league="nfl"] .trend-meta{display:flex;gap:11px;flex-wrap:wrap;font-size:10px;color:var(--muted,#91a2b4)}
+html[data-league="nfl"] .trend-meta strong{color:var(--text,#edf5ff)}
+html[data-league="nfl"] .trend-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
+html[data-league="nfl"] .trend-tags span{font-size:9px;padding:3px 6px;border-radius:6px;background:rgba(127,127,127,.08);color:var(--muted,#91a2b4)}
+html[data-league="nfl"] .trend-source-row{margin-top:9px;font-size:9px}
+html[data-league="nfl"] .trend-game-footer{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:13px;padding-top:11px;border-top:1px solid var(--line,rgba(255,255,255,.1));font-size:10px}
+html[data-league="nfl"] .trend-panel-disclaimer{margin:11px 0 0;font-size:9px;line-height:1.5;color:var(--muted,#91a2b4)}
+html[data-league="nfl"] .trend-bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+html[data-league="nfl"] .trend-bottom-grid p{font-size:11px;line-height:1.6;color:var(--muted,#91a2b4)}
+html[data-league="nfl"] .trend-result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:8px 0}
+html[data-league="nfl"] .trend-result-grid>div{padding:9px;border:1px solid var(--line,rgba(255,255,255,.1));border-radius:9px}
+html[data-league="nfl"] .trend-result-grid span{display:block;font-size:9px;color:var(--muted,#91a2b4)}
+html[data-league="nfl"] .trend-result-grid strong{display:block;margin-top:3px;font-size:14px;color:var(--text,#edf5ff)}
+html[data-league="nfl"] .trend-validator{margin-top:13px;padding:12px;border:1px dashed var(--line,rgba(255,255,255,.16));border-radius:10px;font-size:10px;color:var(--muted,#91a2b4)}
+html[data-league="nfl"] .trend-validator strong{color:var(--text,#edf5ff)}
+html[data-league="nfl"] .trend-validator .error{color:#d85656}
+html[data-league="nfl"] .trend-empty-inline{font-size:11px;color:var(--muted,#91a2b4)}
+html[data-league="nfl"] .nfl-trend-summary-badge{display:inline-flex;align-items:center;gap:4px;margin-top:5px;padding:4px 7px;border:1px solid var(--line,rgba(255,255,255,.13));border-radius:999px;background:rgba(90,166,223,.06);color:var(--muted,#91a2b4);font:800 9px/1.2 system-ui;cursor:pointer}
+html[data-league="nfl"] .nfl-trend-summary-badge.has-align{color:#207d57;background:rgba(58,192,133,.07);border-color:rgba(58,192,133,.22)}
+html[data-theme="dark"][data-league="nfl"] .nfl-trend-summary-badge.has-align{color:#8ff0cb}
+html[data-league="nfl"] .nfl-trend-detail[hidden]{display:none}
+html[data-league="nfl"] .nfl-trend-detail{position:fixed;inset:0;z-index:1200;display:flex;justify-content:flex-end}
+html[data-league="nfl"] .nfl-trend-detail-backdrop{position:absolute;inset:0;border:0;background:rgba(2,8,16,.68);backdrop-filter:blur(2px);cursor:pointer}
+html[data-league="nfl"] .nfl-trend-detail-panel{position:relative;width:min(760px,94vw);height:100%;overflow:auto;background:var(--bg,#07111f);border-left:1px solid var(--line,rgba(255,255,255,.13));box-shadow:-20px 0 60px rgba(0,0,0,.25)}
+html[data-theme="light"][data-league="nfl"] .nfl-trend-detail-panel{background:#f7f9fc}
+html[data-league="nfl"] .nfl-trend-detail-panel>header{position:sticky;top:0;z-index:2;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line,rgba(255,255,255,.13));background:var(--bg,#07111f)}
+html[data-theme="light"][data-league="nfl"] .nfl-trend-detail-panel>header{background:#f7f9fc}
+html[data-league="nfl"] .nfl-trend-detail-panel h2{margin:2px 0 0;font-size:18px}
+html[data-league="nfl"] .nfl-trend-detail-panel .live-tabs{padding:10px 16px;border-bottom:1px solid var(--line,rgba(255,255,255,.1));overflow-x:auto}
+html[data-league="nfl"] .nfl-trend-detail-content{padding:16px}
+html[data-league="nfl"] .trend-detail-summary{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;padding:10px;border:1px solid var(--line,rgba(255,255,255,.1));border-radius:9px;color:var(--muted,#91a2b4);font-size:10px}
+html[data-league="nfl"] .trend-detail-summary strong{color:var(--text,#edf5ff)}
+html[data-league="nfl"] .trend-context-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+html[data-league="nfl"] .trend-context-grid>div{padding:10px;border:1px solid var(--line,rgba(255,255,255,.1));border-radius:9px}
+html[data-league="nfl"] .trend-context-grid span{display:block;font-size:9px;color:var(--muted,#91a2b4)}
+html[data-league="nfl"] .trend-context-grid strong{display:block;margin-top:4px;font-size:10px;line-height:1.45;color:var(--text,#edf5ff)}
+html[data-league="nfl"] body.nfl-trend-detail-open{overflow:hidden}
+@media(max-width:900px){
+  html[data-league="nfl"] .trend-top-games{grid-template-columns:1fr 1fr}
+  html[data-league="nfl"] .trend-filter-panel{grid-template-columns:1fr 1fr}
+  html[data-league="nfl"] .trend-bottom-grid{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+  html[data-league="nfl"] .nfl-trends-heading{align-items:flex-start}
+  html[data-league="nfl"] .trend-source-credit{align-items:flex-start}
+  html[data-league="nfl"] .trend-top-games,html[data-league="nfl"] .trend-filter-panel{grid-template-columns:1fr}
+  html[data-league="nfl"] .trend-game-card summary{align-items:flex-start}
+  html[data-league="nfl"] .trend-game-summary{align-items:flex-start;text-align:left;white-space:normal}
+  html[data-league="nfl"] .trend-game-footer{align-items:flex-start;flex-direction:column}
+  html[data-league="nfl"] .trend-context-grid{grid-template-columns:1fr}
+  html[data-league="nfl"] .trend-result-grid{grid-template-columns:1fr}
+  html[data-league="nfl"] .nfl-trend-detail-panel{width:100vw}
+}
