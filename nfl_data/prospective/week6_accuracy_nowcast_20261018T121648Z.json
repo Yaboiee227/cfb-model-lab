@@ -1,0 +1,71 @@
+{
+  "league": "NFL",
+  "season": 2026,
+  "week": 6,
+  "captured_at_utc": "2026-10-18T12:16:48Z",
+  "purpose": "Accuracy-maximizing game-day research nowcast. Preserve the immutable canonical Week 6 snapshot while using the historically lower-MAE market baseline as the operational prediction benchmark.",
+  "canonical_snapshot_immutable": true,
+  "accuracy_layer": "MARKET_ANCHORED_RESEARCH_NOWCAST",
+  "rows_artifact": "nfl_data/prospective/week6_accuracy_nowcast_20261018T121648Z.csv",
+  "validation_basis": {
+    "artifact": "nfl_data/validation/MARKET_CONSENSUS_WALKFORWARD.md",
+    "walkforward_rows": 816,
+    "spread": {
+      "canonical_weight": 0.0,
+      "market_weight": 1.0,
+      "canonical_mae": 10.2564,
+      "market_mae": 9.7445
+    },
+    "total": {
+      "canonical_weight": 0.0,
+      "market_weight": 1.0,
+      "canonical_mae": 10.5001,
+      "market_mae": 10.1207
+    },
+    "robust_research_display_candidate": false,
+    "interpretation": "This is an accuracy benchmark only. It does not replace the independent canonical model, infer a betting edge, or authorize recommendations."
+  },
+  "market_sources": [
+    {
+      "name": "Action Network",
+      "url_hou_jax": "https://www.actionnetwork.com/nfl-game/texans-jaguars-score-odds-october-18-2026/290821",
+      "url_no_nyg": "https://www.actionnetwork.com/nfl-game/new-orleans-saints-new-york-giants/290922",
+      "note": "Same-day checks used for the earliest game and the conflicted NO-NYG market."
+    },
+    {
+      "name": "Covers",
+      "url": "https://www.covers.com/sport/football/nfl/odds",
+      "note": "Full-board cross-market benchmark. Sportsbook-fed values can be delayed; total ranges are retained when pages/books differ."
+    }
+  ],
+  "personnel_sources": [
+    "https://www.nfl.com/news/nfl-week-6-injury-report-2026-season",
+    "https://www.jaguars.com/news/in-and-out-2026-week-6-murray-active-brown-and-matiscik-inactive-for-texans-vs-jaguars"
+  ],
+  "gameday_policy": {
+    "no_arbitrary_injury_point_adjustments": true,
+    "no_unvalidated_weather_point_adjustments": true,
+    "hard_qb_breaks_are_out_of_distribution": true,
+    "cross_source_market_conflicts_are_quarantined": true,
+    "official_inactives_override_questionable_tags": true,
+    "account_execution_verified": false,
+    "recommendation_release_allowed": false,
+    "website_publish_allowed": false
+  },
+  "important_current_states": {
+    "HOU_JAX": "Jacksonville official inactives verified from the team primary source; HOU final primary inactive list was not independently located in this pass. Action same-day market JAX -2.5, total 42.0; weather roughly upper-50s F with low rain risk and low-teens mph wind.",
+    "CAR_PHI": "Jalen Hurts on IR; Tanner McKee starts. Treat as hard QB break/out-of-distribution.",
+    "PIT_TB": "Baker Mayfield out; Jalon Daniels starts. Elevated Tampa wind remains a totals/kicking uncertainty gate.",
+    "BAL_CLE": "Lamar Jackson out; Tyler Huntley starts. Treat as hard QB break/out-of-distribution.",
+    "CHI_ATL": "Caleb Williams expected to start after a full practice week; official active status remains pending.",
+    "NO_NYG": "Action currently shows NO -1.5 while current Covers pages disagree on which team is -1.5. Side nowcast remains quarantined rather than forcing a false consensus."
+  },
+  "next_gate_windows_et": {
+    "HOU_JAX": "Immediate final pre-kick market/weather/inactives freeze",
+    "1PM_games": "11:30 official inactives; around 12:00 fresh market/weather; around 12:45 final observation",
+    "4PM_games": "roughly 2:35-2:55 official inactives; around 3:15-3:25 fresh market/weather",
+    "SNF": "roughly 6:50 official inactives; around 7:20-8:05 fresh market/weather",
+    "MNF": "Monday game-day refresh"
+  },
+  "recommendation_state": "HOLD"
+}
