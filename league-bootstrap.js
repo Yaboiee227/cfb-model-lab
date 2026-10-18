@@ -80,7 +80,6 @@
     document.body?.classList.toggle('league-cfb', league === 'cfb');
     ensureStyle();
     ensureSwitch();
-
     if (league !== 'nfl') return;
 
     const brandSmall = document.querySelector('.brand-copy small');
@@ -88,7 +87,7 @@
     const kicker = document.querySelector('.hero-kicker-row .eyebrow');
     if (kicker) kicker.textContent = 'NFL MODEL • WEEKLY COMMAND CENTER';
     const lede = document.querySelector('.hero-lede');
-    if (lede) lede.textContent = 'Independent NFL projections for score, spread and total—paired with market comparison, reliability, personnel, weather and transparent validation gates.';
+    if (lede) lede.textContent = 'Independent NFL projections for score, spread and total—paired with calibrated research win probability, market comparison, reliability, personnel, weather and transparent validation gates.';
     const search = document.getElementById('teamSearch');
     if (search) search.placeholder = 'Search Bills, Chiefs, Steelers…';
 
@@ -101,28 +100,28 @@
       const label = metricWin.querySelector('span');
       const small = metricWin.querySelector('small');
       if (label) label.textContent = 'Win probability';
-      if (small) small.textContent = 'NFL probability layer not yet validated';
+      if (small) small.textContent = 'Walk-forward calibrated from canonical margin · research only';
     }
 
     const limits = document.querySelector('.limitations p:last-child');
-    if (limits) limits.textContent = 'NFL personnel and quarterback states can change quickly, final inactives arrive close to kickoff, roof and weather decisions can remain open, and historical relationships can weaken out of sample. The site therefore keeps projection, market gap, reliability and release status separate.';
+    if (limits) limits.textContent = 'NFL personnel and quarterback states can change quickly, final inactives arrive close to kickoff, roof and weather decisions can remain open, and historical relationships can weaken out of sample. Win probability is calibrated from the canonical margin but inherits the same matchup uncertainty and release gates.';
 
     const about = document.querySelector('#about .about-grid > div:first-child p:last-child');
     if (about) about.textContent = 'CB Model Projections is a shared front end for college football and NFL research. Each league keeps its own model, data, validation evidence and release state while using one consistent interface.';
 
     const glossary = [...document.querySelectorAll('.glossary-grid article')];
     const moneyline = glossary.find(x => x.querySelector('h3')?.textContent === 'Moneyline');
-    if (moneyline) moneyline.querySelector('p').textContent = 'NFL implied moneyline is intentionally not displayed until an NFL-specific win-probability layer is validated.';
+    if (moneyline) moneyline.querySelector('p').textContent = 'NFL model-implied moneyline is a mathematical translation of the validated research win probability. It is not a validated moneyline edge or wager recommendation.';
     const winProb = glossary.find(x => x.querySelector('h3')?.textContent === 'Win probability');
-    if (winProb) winProb.querySelector('p').textContent = 'The NFL win-probability layer remains withheld while it is unvalidated; blank probability fields are intentional, not missing estimates.';
+    if (winProb) winProb.querySelector('p').textContent = 'NFL home-win probability is walk-forward calibrated from the canonical projected margin. It is approved for research display only and does not authorize moneyline betting, sizing or confidence tiers.';
     const dataQuality = glossary.find(x => x.querySelector('h3')?.textContent === 'Data quality');
-    if (dataQuality) dataQuality.querySelector('p').textContent = 'NFL reliability grades summarize model/data uncertainty and game-state risk. They do not imply a betting recommendation.';
+    if (dataQuality) dataQuality.querySelector('p').textContent = 'NFL reliability grades summarize model/data uncertainty and game-state risk. Hard-QB breaks can remain out-of-distribution even when a research probability is displayed.';
 
     const projectionRules = document.querySelector('.projection-rules');
     if (projectionRules && !projectionRules.querySelector('.nfl-policy-note')) {
       const p = document.createElement('p');
       p.className = 'nfl-policy-note';
-      p.textContent = 'NFL alternative-line recommendations and wager thresholds remain locked until prospective calibration earns them. Model/market gaps shown here are descriptive research only.';
+      p.textContent = 'NFL alternative-line recommendations, moneyline edge, wager thresholds and sizing remain locked until prospective calibration earns them. Spread/total gaps and win probability are descriptive research outputs.';
       projectionRules.appendChild(p);
     }
 
