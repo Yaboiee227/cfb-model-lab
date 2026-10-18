@@ -1,0 +1,122 @@
+name: NFL Production Research Site Audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - index.html
+      - league-bootstrap.js
+      - live-suite-loader.js
+      - nfl_data/site/**
+      - .github/workflows/nfl-production-site-audit.yml
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Syntax-check shared site JavaScript
+        run: |
+          node --check league-bootstrap.js
+          node --check script.js
+          node --check live-suite-loader.js
+
+      - name: Audit public NFL research integration
+        run: |
+          python - <<'PY'
+          import csv, json
+          from pathlib import Path
+
+          disclaimer = (
+              'All content on CB Model Projections is model-generated and provided for research and entertainment purposes only. '
+              'It is not betting advice and not an official wager recommendation. Past performance does not guarantee future results. '
+              'Must be 21+ (or the legal age in your jurisdiction). If you or someone you know has a gambling problem, call 1-800-GAMBLER.'
+          )
+
+          html = Path('index.html').read_text(encoding='utf-8')
+          bootstrap = Path('league-bootstrap.js').read_text(encoding='utf-8')
+          live = Path('live-suite-loader.js').read_text(encoding='utf-8')
+          cfg = json.loads(Path('nfl_data/site/config.json').read_text(encoding='utf-8'))
+          research = json.loads(Path('nfl_data/site/research.json').read_text(encoding='utf-8'))
+
+          with Path('nfl_data/site/projections.csv').open(encoding='utf-8', newline='') as f:
+              reader = csv.DictReader(f)
+              rows = list(reader)
+              fields = set(reader.fieldnames or [])
+          with Path('nfl_data/site/results.csv').open(encoding='utf-8', newline='') as f:
+              result_reader = csv.DictReader(f)
+              result_fields = set(result_reader.fieldnames or [])
+
+          required_fields = {
+              'league','season','week','gameId','awayTeam','homeTeam','projectedAwayPoints','projectedHomePoints',
+              'modelSpreadHome','modelTotal','homeWinProbability','awayWinProbability','marketSpreadHome','marketTotal',
+              'marketSource','marketObservedAt','executionVerified','releaseStatus','shadowModelSpreadHome',
+              'spreadReliability','totalReliability','personnelState','hardQbStateBreak','weatherRoofState',
+              'finalInactivesResolved','releaseBlockers','preferredArchitecture','winProbabilityState','websitePublishAllowed'
+          }
+
+          assert html.count('<script src="league-bootstrap.js" defer></script>') == 1
+          assert html.index('league-bootstrap.js') < html.index('script.js')
+          assert 'nfl_data/site/' in bootstrap
+          assert 'cb-bookmarks-nfl' in bootstrap
+          assert 'Research preview • HOLD' in bootstrap
+          assert 'Model / market difference' in bootstrap
+          assert 'Reliability is not betting confidence' in bootstrap
+          assert 'alt-target-box' in bootstrap and 'alt-analysis-card' in bootstrap
+          assert disclaimer in bootstrap
+          assert "=== 'nfl'" in live
+
+          assert cfg['league'] == 'NFL'
+          assert cfg['separateNflSite'] is False
+          assert cfg['leagueSwitchEnabled'] is True
+          assert cfg['researchPublishAllowed'] is True
+          assert cfg['websitePublishAllowed'] is True
+          assert cfg['recommendationReleaseAllowed'] is False
+          assert cfg['spreadValidation'] == 'HOLD'
+          assert cfg['totalValidation'] == 'HOLD'
+          assert cfg['moneylineEdgeValidation'] == 'HOLD'
+          assert cfg['winProbabilityValidation'] == 'DISPLAY_VALIDATED_RESEARCH_ONLY'
+          assert cfg['disclaimer'] == disclaimer
+
+          assert required_fields.issubset(fields)
+          assert len(rows) == 13
+          assert all(r['league'] == 'NFL' for r in rows)
+          assert all(r['releaseStatus'].startswith('HOLD') for r in rows)
+          assert all(r['websitePublishAllowed'].lower() == 'true' for r in rows)
+          assert all(r['executionVerified'].lower() == 'false' for r in rows)
+          assert all('benchmark' in r['marketSource'].lower() for r in rows)
+          assert all(r['shadowModelSpreadHome'].strip() for r in rows)
+          assert all(r['spreadReliability'].strip() and r['totalReliability'].strip() for r in rows)
+          assert all(r['releaseBlockers'].strip() for r in rows)
+          assert all(abs(float(r['homeWinProbability']) + float(r['awayWinProbability']) - 100) < 0.05 for r in rows)
+
+          assert {'season','week','gameId','atsResult','suResult'}.issubset(result_fields)
+          ids = {c.get('id') for c in research.get('categories', [])}
+          assert {'availability','weather','market','efficiency','validation','workflow'}.issubset(ids)
+
+          print({
+              'status': 'PASS_PUBLIC_NFL_RESEARCH__RECOMMENDATIONS_HOLD',
+              'projection_rows': len(rows),
+              'research_publish': cfg['researchPublishAllowed'],
+              'recommendation_release': cfg['recommendationReleaseAllowed'],
+              'spread': cfg['spreadValidation'],
+              'total': cfg['totalValidation'],
+          })
+          PY
