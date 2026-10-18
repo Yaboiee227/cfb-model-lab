@@ -1,0 +1,72 @@
+{
+  "league": "NFL",
+  "season": 2026,
+  "week": 6,
+  "captured_at_utc": "2026-10-18T13:35:00Z",
+  "purpose": "Timestamped creator-source overlay for remaining Week 6 pre-kick research. This does not alter the frozen canonical projection and must not be applied retroactively to games already kicked off.",
+  "canonical_snapshot_immutable": true,
+  "recommendation_state": "HOLD",
+  "sources": {
+    "evan_abrams_action": {
+      "role": "betting systems/trends, backup-QB context, public/market context, key-number history, QB-value research",
+      "week6_primer_url": "https://www.actionnetwork.com/nfl/nfl-betting-primer-trends-stats-systems-for-every-game",
+      "backup_qb_url": "https://www.actionnetwork.com/nfl/nfl-backup-qb-results-index-spreads-situational-edge-totals-trends",
+      "qb_value_url": "https://www.actionnetwork.com/nfl/2026-live-nfl-quarterback-power-rankings-every-qbs-value-against-the-spread",
+      "verified_current_week_notes": [
+        "The Week 6 Primer separates Matchups, Systems, Public, Key Numbers, Weather, Records and Teams; these remain separate data families.",
+        "Abrams' backup-QB study reports 600+ backup-QB starts over 10+ seasons; in the last five years home backups were 77-66-2 ATS (53.8%) versus 47.5% ATS on the road.",
+        "Tyler Huntley is listed among four backup QBs with 10+ backup starts and a 60%+ ATS win rate in the study.",
+        "Entering Week 5, backup-QB-vs-starter games were 9-2 to the under in 2026; this is small-sample context only."
+      ],
+      "policy": "Context and external benchmark only; no automatic canonical weight. Official team/NFL status overrides listed QB state."
+    },
+    "dr_david_chao_sic": {
+      "role": "medical effectiveness, player health, injury clusters, position-group health",
+      "week6_url": "https://sicscore.com/news/2026-nfl-week-6-injury-report-latest-injuries-practice-updates-and-player-statuses",
+      "matchup_preview_url": "https://sicscore.com/news/nfl-week-6-injury-report-matchup-by-matchup-preview",
+      "verified_current_week_notes": [
+        "SIC's Week 6 matchup preview flags the Chargers for major OL injuries plus WR and secondary clusters against Kansas City.",
+        "The same preview flags Baltimore's QB/OL issues, Cleveland DL/RB/OL concerns, Philadelphia skill/OL concerns, New England CB depth, Arizona secondary issues, San Francisco DL/WR injuries, Green Bay DL/secondary issues, New York Giants OT concerns, Jacksonville CB depth and Indianapolis receiver concerns.",
+        "SIC's updated injury report confirms DeVonta Smith cleared, Ladd McConkey cleared but with possible workload uncertainty, Michael Penix Jr. cleared, Zay Flowers cleared, Saquon Barkley out, Breece Hall out, Baker Mayfield out, Lamar Jackson out and Caleb Williams still requiring final game-day confirmation at capture time."
+      ],
+      "policy": "Medical-impact and reliability context only unless prospectively validated. NFL/team official status and inactive lists are factual authority."
+    },
+    "nick_giffen_luck_rankings": {
+      "role": "external expected-score/luck-regression challenger",
+      "week6_picks_url": "https://www.actionnetwork.com/content/nfl-week-6-luck-rankings-picks-2-luck-based-games-to-consider/embed",
+      "week6_dashboard_url": "https://www.actionnetwork.com/nfl/nfl-week-6-luck-rankings-dashboard-edges-for-games-tds-ints-sacks-fgs-more/embed",
+      "verified_current_week_notes": [
+        "Week 6 Luck Rankings publishes two official side signals and no official total signals.",
+        "The Sunday signal independently visible on Action's LAC-KC page is LAC +8.5, labeled by Giffen as his Luck Rankings pick of the week.",
+        "Giffen's PIT-TB matchup commentary says Tampa Bay has a strong OL/DL edge stopping the run but not as a pass-rush unit; he also logged Under 39.5 and a Jaylen Warren reception over, which reinforces short-pass/low-total context rather than a side adjustment."
+      ],
+      "policy": "Separate challenger signal only. Log and grade versus canonical, market and actual result; do not rewrite frozen projections."
+    }
+  },
+  "material_week6_effects": {
+    "BAL_CLE": {
+      "effect": "Reduce confidence in any generic backup-QB penalty because Huntley's historical backup ATS profile is unusually strong, while still preserving the hard-QB-break reliability flag and Baltimore OL uncertainty.",
+      "numeric_projection_change": false
+    },
+    "PIT_TB": {
+      "effect": "SIC/Action context reinforces low-scoring and short-passing conditions: backup QB, Tampa run-defense matchup and wind. This strengthens qualitative under/context agreement but does not earn a new numeric coefficient.",
+      "numeric_projection_change": false
+    },
+    "LAC_KC": {
+      "effect": "Create an explicit creator-source conflict flag: SIC injury-cluster context strongly favors Kansas City / lower LAC offensive efficiency, while Giffen's Luck Rankings side signal favors LAC +8.5. Treat as high-uncertainty side with under/market context separated.",
+      "numeric_projection_change": false
+    },
+    "CAR_PHI": {
+      "effect": "Abrams backup-QB research is relevant to Tanner McKee but does not provide a validated McKee-specific point value; SIC confirms Barkley out and Smith cleared. Keep hard-QB-break flag and use official inactive window for final state.",
+      "numeric_projection_change": false
+    },
+    "NYJ_NE": {
+      "effect": "SIC confirms Breece Hall and Adonai Mitchell out and highlights New England injury uncertainty; use final inactives before kickoff. No direct Luck Rankings total signal exists for Week 6.",
+      "numeric_projection_change": false
+    }
+  },
+  "timing_rule": {
+    "HOU_JAX": "Already kicked off when this overlay was created; do not alter its pregame snapshot or evaluation.",
+    "remaining_games": "May use this overlay prospectively before kickoff, subject to official inactive and current-market refreshes."
+  }
+}
