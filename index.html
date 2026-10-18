@@ -69,12 +69,12 @@
           <span class="live-chip"><i></i><span id="lastUpdated">Loading…</span></span>
         </div>
         <div class="status-grid">
-          <article class="status-card status-primary"><span>Spread validation</span><strong id="spreadValidation">—</strong><small>Release gate</small></article>
-          <article class="status-card status-primary"><span>Total validation</span><strong id="totalValidation">—</strong><small>Release gate</small></article>
+          <article class="status-card status-primary"><span>Spread validation</span><strong id="spreadValidation">—</strong><small>Publication gate</small></article>
+          <article class="status-card status-primary"><span>Total validation</span><strong id="totalValidation">—</strong><small>Publication gate</small></article>
           <article class="status-card"><span>Games loaded</span><strong id="gamesLoaded">—</strong><small>Current dataset</small></article>
           <article class="status-card"><span>Model version</span><strong id="modelVersion">—</strong><small>Active build</small></article>
         </div>
-        <div class="hold-note"><span>HOLD</span><p>A validation hold means projections remain research output. It is not overridden by a large model/market gap.</p></div>
+        <div class="hold-note"><span>HOLD</span><p>A validation hold means projections remain research output. It is not overridden by a large model/market difference.</p></div>
       </aside>
     </div>
 
@@ -91,15 +91,15 @@
       <div>
         <p class="eyebrow">WEEKLY BOARD</p>
         <h2 id="projectionsTitle">Projection board</h2>
-        <p>Scan the full slate, compare the independent model with a public market reference, and inspect data readiness before drawing conclusions.</p>
+        <p>Scan the full slate, compare the independent model with a current public market reference, and inspect data readiness before drawing conclusions. The publication-time market snapshot is saved separately for later grading.</p>
       </div>
       <div class="section-actions"><button class="button button-ghost button-small" id="exportCsv" type="button">Export filtered CSV</button></div>
     </div>
 
     <div class="projection-rules" role="note">
       <div class="rule-item"><span class="legend-swatch model-swatch"></span><div><strong>Model</strong><small>Independent projection</small></div></div>
-      <div class="rule-item"><span class="legend-swatch market-swatch"></span><div><strong>Market</strong><small>Comparison reference</small></div></div>
-      <div class="rule-item"><span class="legend-swatch hold-swatch"></span><div><strong>Validation</strong><small>Release status stays separate</small></div></div>
+      <div class="rule-item"><span class="legend-swatch market-swatch"></span><div><strong>Market</strong><small>Current comparison; publication snapshot is locked for grading</small></div></div>
+      <div class="rule-item"><span class="legend-swatch hold-swatch"></span><div><strong>Validation</strong><small>Research and publication state stay separate</small></div></div>
       <p id="projectionDisclaimer">All projections are informational and are not official wager recommendations.</p>
     </div>
 
@@ -108,7 +108,7 @@
       <label><span>Week</span><select id="weekFilter"><option value="">All weeks</option></select></label>
       <label><span>Conference</span><select id="conferenceFilter"><option value="">All conferences</option></select></label>
       <label><span>Date</span><select id="dateFilter"><option value="">All dates</option></select></label>
-      <label><span>Sort</span><select id="sortFilter"><option value="kickoff">Kickoff</option><option value="winprob">Win probability</option><option value="spreadgap">Spread gap</option><option value="totalgap">Total gap</option><option value="quality">Data quality</option></select></label>
+      <label><span>Sort</span><select id="sortFilter"><option value="kickoff">Kickoff</option><option value="winprob">Win probability</option><option value="spreadgap">Spread difference</option><option value="totalgap">Total difference</option><option value="quality">Data quality</option></select></label>
       <button class="button button-quiet" id="resetFilters" type="button">Reset</button>
     </div>
 
@@ -119,7 +119,7 @@
 
     <div class="table-wrap" tabindex="0" aria-label="Scrollable projections table">
       <table class="data-table projection-table">
-        <thead><tr><th scope="col">Game</th><th scope="col">Model score</th><th scope="col">Model spread</th><th scope="col">Market spread</th><th scope="col">Spread gap</th><th scope="col">Model total</th><th scope="col">Market total</th><th scope="col">Win probability</th><th scope="col">Implied ML</th><th scope="col">Data</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead>
+        <thead><tr><th scope="col">Game</th><th scope="col">Model score</th><th scope="col">Model spread</th><th scope="col">Market spread</th><th scope="col">Spread difference</th><th scope="col">Model total</th><th scope="col">Market total</th><th scope="col">Win probability</th><th scope="col">Implied ML</th><th scope="col">Data</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead>
         <tbody id="projectionBody"></tbody>
       </table>
     </div>
@@ -131,15 +131,15 @@
     <div class="section-heading">
       <div>
         <p class="eyebrow">TRANSPARENT PERFORMANCE</p>
-        <h2 id="recordTitle">Projection record</h2>
-        <p>This grades model projections against the tracked comparison number. It is not a wager ledger.</p>
+        <h2 id="recordTitle">Projection performance</h2>
+        <p>Tracks model projection positions against the market spread and total saved when the projection was published. ATS, Totals and Straight Up are graded separately. This is not a wager ledger.</p>
       </div>
       <span class="audit-badge">Audit view</span>
     </div>
     <div class="record-grid">
       <article class="record-card featured"><div class="record-card-head"><span>ATS</span><small>Against the spread</small></div><strong id="atsRecord">—</strong><div class="record-sub"><span id="atsPct">—</span> win rate <span>•</span><span id="atsPushes">— pushes</span></div></article>
       <article class="record-card"><div class="record-card-head"><span>SU</span><small>Straight up</small></div><strong id="suRecord">—</strong><div class="record-sub"><span id="suPct">—</span> win rate</div></article>
-      <article class="record-card"><div class="record-card-head"><span>Tracked</span><small>Projection results</small></div><strong id="gradedCount">—</strong><div class="record-sub">graded rows in results.csv</div></article>
+      <article class="record-card"><div class="record-card-head"><span>Tracked</span><small>Projection results</small></div><strong id="gradedCount">—</strong><div class="record-sub">legacy fallback rows</div></article>
     </div>
     <div class="record-layout">
       <article class="panel chart-panel"><div class="panel-head"><div><p class="eyebrow">TREND</p><h3>ATS cumulative performance</h3></div><span>projection grading</span></div><div class="chart-wrap"><canvas id="recordChart" width="900" height="330" aria-label="Cumulative ATS performance chart" role="img"></canvas></div></article>
@@ -163,22 +163,22 @@
       <article class="method-card"><span>02</span><h3>Adjust for opponents</h3><p>Production is normalized for schedule and opponent quality so identical box-score output is not treated equally across very different competition.</p></article>
       <article class="method-card"><span>03</span><h3>Project the matchup</h3><p>Offense and defense are paired with pace, drive volume and matchup style to estimate team points, home spread and game total.</p></article>
       <article class="method-card"><span>04</span><h3>Add game context</h3><p>Availability, depth, weather, travel, rest and venue conditions are audited separately. Material uncertainty can keep a matchup in review.</p></article>
-      <article class="method-card"><span>05</span><h3>Compare with market</h3><p>The independent projection is compared with a public market reference. The difference is a research signal, not automatic expected value.</p></article>
+      <article class="method-card"><span>05</span><h3>Compare with market</h3><p>The independent projection is compared with a current public market reference. The difference creates a research direction; the publication-time market snapshot is saved separately for grading.</p></article>
       <article class="method-card"><span>06</span><h3>Validate prospectively</h3><p>Spread and totals systems must earn promotion through out-of-sample results. A validation HOLD cannot be bypassed by one attractive number.</p></article>
     </div>
-    <div class="limitations panel"><div><p class="eyebrow">WHY THE GATES MATTER</p><h3>Accuracy before action.</h3></div><p>College football changes quickly. Injury information can be incomplete, depth roles can move, market prices can change, and historical relationships can weaken out of sample. The site therefore keeps projection, market gap, input quality and release status separate.</p></div>
+    <div class="limitations panel"><div><p class="eyebrow">WHY THE GATES MATTER</p><h3>Accuracy before action.</h3></div><p>College football changes quickly. Injury information can be incomplete, depth roles can move, market prices can change, and historical relationships can weaken out of sample. The site therefore keeps projection, market difference, input quality and publication state separate.</p></div>
   </section>
 
   <section class="section-shell" id="glossary" aria-labelledby="glossaryTitle">
     <div class="section-heading"><div><p class="eyebrow">READ THE BOARD</p><h2 id="glossaryTitle">Glossary</h2><p>Fast definitions for the numbers shown throughout the site.</p></div></div>
     <div class="glossary-grid">
       <article><h3>Spread</h3><p>A point handicap. A favorite has a negative number; an underdog has a positive number.</p></article>
-      <article><h3>ATS</h3><p>Against the spread. Grades whether the projected side covered the tracked comparison spread.</p></article>
-      <article><h3>Moneyline</h3><p>The outright-win price. This site converts model win probability into a display-only implied American moneyline.</p></article>
-      <article><h3>Total</h3><p>The projected combined score of both teams, compared with the current reference total when available.</p></article>
-      <article><h3>Push</h3><p>A tie against the tracked spread or total. Pushes are separated from wins and losses.</p></article>
+      <article><h3>ATS</h3><p>Against the spread. The model/market difference identifies the projection side, then the final score is graded against the market spread saved when the projection was published.</p></article>
+      <article><h3>Moneyline</h3><p>The projection board may show a model-implied moneyline. The record tracker also saves the publication-time market moneyline for reference, but Straight-Up W/L is graded only on whether the projected winner won.</p></article>
+      <article><h3>Total</h3><p>The model total is compared with the market total to create an Over or Under projection. The record is graded against the publication-time market total.</p></article>
+      <article><h3>Push</h3><p>A tie against the saved market spread or total. Pushes are separated from wins and losses.</p></article>
       <article><h3>Win probability</h3><p>The model's estimated chance that a team wins outright.</p></article>
-      <article><h3>Model / market gap</h3><p>The numerical difference between the independent model and a market reference. It is a research signal, not a wager instruction.</p></article>
+      <article><h3>Model / market difference</h3><p>The numerical difference between the independent model and the current market reference. It identifies a projection direction; it is not automatically expected value or a wager instruction.</p></article>
       <article><h3>Data quality</h3><p>A completeness/readiness measure for required inputs. High coverage does not guarantee predictive accuracy.</p></article>
     </div>
   </section>
