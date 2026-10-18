@@ -10,6 +10,7 @@ on:
       - nfl_data/research_exports/week6_cfb_style_research_latest.csv
       - nfl_data/prospective/validation_registry/**
       - nfl_data/validation/model_readiness.json
+      - nfl_data/validation/win_probability_calibration.json
       - NFL_SITE_INTEGRATION_CONTRACT.md
       - .github/workflows/nfl-site-preview-export.yml
 
@@ -49,14 +50,19 @@ jobs:
           assert cfg['separateNflSite'] is False
           assert cfg['leagueSwitchEnabled'] is True
           assert cfg['integrationTarget'] == 'Existing CB Model Projections site'
+          assert cfg['winProbabilityValidation'] == 'DISPLAY_VALIDATED_RESEARCH_ONLY'
+          assert cfg['moneylineEdgeValidation'] == 'HOLD'
 
           rows = list(csv.DictReader(Path('nfl_data/site/projections.csv').open()))
           assert len(rows) == 13, len(rows)
           assert all(r['league'] == 'NFL' for r in rows)
           assert all(r['websitePublishAllowed'].lower() == 'false' for r in rows)
           assert all(r['releaseStatus'].startswith('HOLD') for r in rows)
-          assert all(r['homeWinProbability'] == '' and r['awayWinProbability'] == '' for r in rows)
+          assert all(r['homeWinProbability'] and r['awayWinProbability'] for r in rows)
+          assert all(0 < float(r['homeWinProbability']) < 100 for r in rows)
+          assert all(abs(float(r['homeWinProbability']) + float(r['awayWinProbability']) - 100) < 0.05 for r in rows)
           assert all(r['preferredArchitecture'] for r in rows)
+          assert all(r['winProbabilityState'] for r in rows)
 
           results_path = Path('nfl_data/site/results.csv')
           assert results_path.exists()
@@ -72,6 +78,8 @@ jobs:
             'projection_rows': len(rows),
             'result_rows': len(result_rows),
             'research_categories': sorted(ids),
+            'win_probability': cfg['winProbabilityValidation'],
+            'moneyline_edge': cfg['moneylineEdgeValidation'],
             'websitePublishAllowed': False,
             'releaseStates': sorted(set(r['releaseStatus'] for r in rows)),
           })
