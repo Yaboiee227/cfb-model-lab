@@ -1,0 +1,110 @@
+{
+  "league": "NFL",
+  "season": 2026,
+  "week": 6,
+  "captured_at_utc": "2026-10-18T00:55:00Z",
+  "purpose": "Timestamped Saturday-night release-gate refresh. This artifact does not modify the immutable Week 6 model snapshot and does not create learned point adjustments.",
+  "policy": {
+    "canonical_snapshot_immutable": true,
+    "qb_operational_adjustment_policy": "No arbitrary point adjustment. Starter changes affect uncertainty/release gating unless a historically validated coefficient exists.",
+    "weather_policy": "Official pregame forecast/roof context only; no unvalidated point adjustment.",
+    "market_policy": "Public sportsbook observations are benchmark context unless account-level execution is explicitly verified.",
+    "recommendation_state": "HOLD"
+  },
+  "verified_updates": [
+    {
+      "game_id": "2026_06_CHI_ATL",
+      "category": "QB",
+      "state": "CALEB_WILLIAMS_EXPECTED_TO_START_ACTIVE_STATUS_PENDING",
+      "detail": "NFL Network reports Chicago plans to start Caleb Williams after a full practice week; he remains officially questionable until game-day active status is posted.",
+      "sources": [
+        "https://www.nfl.com/news/nfl-network-bears-qb-caleb-williams-hamstring-expected-to-start-sunday-vs-falcons",
+        "https://www.nfl.com/news/nfl-week-6-injury-report-2026-season"
+      ]
+    },
+    {
+      "game_id": "2026_06_CAR_PHI",
+      "category": "QB_PERSONNEL",
+      "state": "JALEN_HURTS_IR_TANNER_MCKEE_CONFIRMED_STARTER",
+      "detail": "Philadelphia placed Jalen Hurts on injured reserve and confirmed Tanner McKee as the Week 6 starter. This strengthens the hard-QB-break classification but still authorizes zero operational point adjustment under the current validated policy.",
+      "sources": [
+        "https://www.philadelphiaeagles.com/news/eagles-place-jalen-hurts-on-injured-reserve-sign-jaydon-blue-to-the-active-roster-2026-nfl-week-6-panthers",
+        "https://www.nfl.com/news/eagles-place-qb-jalen-hurts-on-injured-reserve-due-to-superficial-blood-clot-in-calf"
+      ]
+    },
+    {
+      "game_id": "2026_06_BAL_CLE",
+      "category": "QB",
+      "state": "LAMAR_JACKSON_OUT_TYLER_HUNTLEY_CONFIRMED_STARTER",
+      "detail": "Lamar Jackson is ruled out and Tyler Huntley is confirmed to start for Baltimore.",
+      "sources": [
+        "https://www.nfl.com/news/ravens-qb-lamar-jackson-ankle-out-sunday-vs-browns-tyler-huntley-to-start-again",
+        "https://www.nfl.com/news/nfl-week-6-injury-report-2026-season"
+      ]
+    },
+    {
+      "game_id": "2026_06_PIT_TB",
+      "category": "QB_WEATHER",
+      "state": "JALON_DANIELS_EXPECTED_STARTER_ELEVATED_WIND",
+      "detail": "Tampa Bay continues with Jalon Daniels while Baker Mayfield is sidelined. The latest NWS point forecast around the 1 PM window is roughly 16-17 mph sustained wind with gusts in the mid-20s, keeping the weather gate elevated.",
+      "sources": [
+        "https://www.buccaneers.com/news/jalon-daniels-will-remain-bucs-starter-baker-mayfield-absence",
+        "https://forecast.weather.gov/MapClick.php?FcstType=digital&lat=27.9472&lg=english&lon=-82.4686&unit=0"
+      ]
+    },
+    {
+      "game_id": "2026_06_TEN_IND",
+      "category": "ROOF",
+      "state": "LUCAS_OIL_ROOF_WINDOW_TBD",
+      "detail": "The Colts' official gameday page still lists both the roof and window as TBD. This remains an open game-day release gate.",
+      "sources": [
+        "https://www.colts.com/game-day/regular-season-game-3"
+      ]
+    },
+    {
+      "game_id": "2026_06_HOU_JAX",
+      "category": "WEATHER",
+      "state": "WEMBLEY_LOW_IMPACT_KICKOFF_LATER_RAIN_RISK",
+      "detail": "Met Office hourly forecast remains relatively benign around the 2:30 PM local kickoff, with rain risk increasing later in the afternoon/evening. Recheck before kickoff.",
+      "sources": [
+        "https://weather.metoffice.gov.uk/forecast/gcpv307jh?new-design=false"
+      ]
+    },
+    {
+      "game_id": "2026_06_NO_NYG",
+      "category": "WEATHER",
+      "state": "EAST_RUTHERFORD_LOW_WIND",
+      "detail": "Latest NWS hourly forecast shows around 60 F and roughly 5 mph wind near 1 PM, supporting a low-impact weather classification.",
+      "sources": [
+        "https://forecast.weather.gov/MapClick.php?FcstType=digital&lat=40.8135&lg=english&lon=-74.0743"
+      ]
+    },
+    {
+      "game_id": "2026_06_BAL_CLE",
+      "category": "WEATHER",
+      "state": "CLEVELAND_LOW_WIND_SUNNY",
+      "detail": "Latest NWS forecast supports sunny conditions near 58-61 F with roughly 7 mph wind around kickoff, keeping weather low impact.",
+      "sources": [
+        "https://forecast.weather.gov/MapClick.php?FcstType=digital&cl=414797816785&site=CLE"
+      ]
+    }
+  ],
+  "market_context": {
+    "latest_internal_public_capture_utc": "2026-10-17T23:59:29.860466+00:00",
+    "latest_external_board_article_timestamp": "2026-10-17T18:10:00-04:00",
+    "external_source": "https://sports.betmgm.com/en/blog/nfl/week-6-odds-betting-lines-matchup-analysis-bm16/",
+    "decision": "Retain the later timestamped internal BetMGM public-board capture as the current benchmark. No account-executable price is claimed."
+  },
+  "remaining_hard_gates": [
+    "official game-day inactives",
+    "Caleb Williams active/start confirmation",
+    "final Atlanta roof status",
+    "final Indianapolis roof/window status",
+    "near-kickoff weather refresh for outdoor/elevated games",
+    "fresh public market capture near decision time",
+    "account-level executable price only if explicitly verified",
+    "prospective postgame grading"
+  ],
+  "website_publish_allowed": false,
+  "recommendation_release_allowed": false
+}
