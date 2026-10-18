@@ -1,0 +1,84 @@
+name: NFL Stage 2 Validation Audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - nfl-model-development
+    paths:
+      - scripts/audit_nfl_stage2_validation.py
+      - nfl_data/calibration/final_architecture_oos_predictions_2023_2025.csv
+      - nfl_data/validation/win_probability_calibration.json
+      - .github/workflows/nfl-stage2-validation-audit.yml
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout NFL development branch
+        uses: actions/checkout@v4
+        with:
+          ref: nfl-model-development
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Record production CFB data tree
+        run: |
+          find data -type f -print0 | sort -z | xargs -0 sha256sum > /tmp/cfb-stage2-before.sha256
+
+      - name: Run Stage 2 validation audit
+        run: python scripts/audit_nfl_stage2_validation.py
+
+      - name: Verify audit safety and verdict
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          p = Path('nfl_data/validation/stage2_validation_audit.json')
+          m = Path('nfl_data/validation/STAGE2_VALIDATION_AUDIT.md')
+          assert p.exists() and m.exists()
+          d = json.loads(p.read_text())
+          assert d['canonical_oos_games'] == 816
+          assert d['audit_verdict'] == 'PASS_HISTORICAL_RESEARCH_VALIDATION__PROSPECTIVE_RELEASE_STILL_REQUIRED'
+          assert d['recommendation_release_allowed'] is False
+          assert d['website_betting_signal_release_allowed'] is False
+          assert d['clv']['status'] == 'NOT_CLAIMED'
+          assert d['win_probability_calibration']['moneyline_edge_release_allowed'] is False
+          assert d['leakage_controls']['market_policy'].startswith('Market references are not canonical')
+          print({
+              'verdict': d['audit_verdict'],
+              'games': d['canonical_oos_games'],
+              'spread_mae': d['aggregate_prediction_error']['spread']['mae'],
+              'total_mae': d['aggregate_prediction_error']['total']['mae'],
+              'su_accuracy': d['straight_up']['accuracy'],
+              'clv': d['clv']['status'],
+          })
+          PY
+
+      - name: Verify production CFB data unchanged
+        run: |
+          find data -type f -print0 | sort -z | xargs -0 sha256sum > /tmp/cfb-stage2-after.sha256
+          diff -u /tmp/cfb-stage2-before.sha256 /tmp/cfb-stage2-after.sha256
+
+      - name: Commit Stage 2 audit artifacts
+        run: |
+          if [ -z "$(git status --porcelain -- nfl_data/validation/stage2_validation_audit.json nfl_data/validation/STAGE2_VALIDATION_AUDIT.md)" ]; then
+            echo 'Stage 2 validation audit already current.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add nfl_data/validation/stage2_validation_audit.json nfl_data/validation/STAGE2_VALIDATION_AUDIT.md
+          if git diff --cached --quiet; then
+            echo 'Stage 2 validation audit already current.'
+            exit 0
+          fi
+          git commit -m 'Refresh NFL Stage 2 validation audit'
+          git push origin HEAD:nfl-model-development
