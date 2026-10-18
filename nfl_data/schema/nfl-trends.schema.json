@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yaboiee227.github.io/cfb-model-lab/nfl_data/schema/nfl-trends.schema.json",
+  "title": "CB Model Projections NFL weekly trends",
+  "type": "object",
+  "required": ["schemaVersion", "season", "week", "lastUpdated", "source", "alignmentConfig", "trends"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "season": {"type": "integer", "minimum": 2020},
+    "week": {"type": "integer", "minimum": 1, "maximum": 25},
+    "lastUpdated": {"type": "string", "format": "date-time"},
+    "status": {"type": "string", "minLength": 1},
+    "mock": {"type": "boolean"},
+    "source": {
+      "type": "object",
+      "required": ["name", "url"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "url": {"type": "string", "format": "uri"}
+      },
+      "additionalProperties": false
+    },
+    "alignmentConfig": {
+      "type": "object",
+      "required": ["spreadNeutralBand", "totalNeutralBand", "moneylineNeutralBandPct"],
+      "properties": {
+        "spreadNeutralBand": {"type": "number", "minimum": 0, "maximum": 3},
+        "totalNeutralBand": {"type": "number", "minimum": 0, "maximum": 5},
+        "moneylineNeutralBandPct": {"type": "number", "minimum": 0, "maximum": 10}
+      },
+      "additionalProperties": false
+    },
+    "notes": {"type": "string"},
+    "trends": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/trend"}
+    }
+  },
+  "$defs": {
+    "trend": {
+      "type": "object",
+      "required": ["id", "gameId", "season", "week", "matchup", "subject", "trendType", "alignmentTarget", "text", "pointsTo", "sampleSize", "record", "sourceName", "sourceUrl"],
+      "properties": {
+        "id": {"type": "string", "minLength": 3, "maxLength": 100},
+        "gameId": {"type": "string", "pattern": "^\\d{4}_\\d{2}_[A-Z]{2,3}_[A-Z]{2,3}$"},
+        "season": {"type": "integer", "minimum": 2020},
+        "week": {"type": "integer", "minimum": 1, "maximum": 25},
+        "matchup": {
+          "type": "object",
+          "required": ["away", "home"],
+          "properties": {
+            "away": {"type": "string", "pattern": "^[A-Z]{2,3}$"},
+            "home": {"type": "string", "pattern": "^[A-Z]{2,3}$"}
+          },
+          "additionalProperties": false
+        },
+        "subject": {"type": "string", "pattern": "^(TOTAL|[A-Z]{2,3})$"},
+        "trendType": {"enum": ["ATS", "SU", "TOTAL", "SITUATIONAL"]},
+        "alignmentTarget": {"enum": ["spread", "moneyline", "total", "none"]},
+        "text": {"type": "string", "minLength": 5, "maxLength": 180},
+        "pointsTo": {"enum": ["home", "away", "over", "under", "none"]},
+        "sampleSize": {"type": "integer", "minimum": 1},
+        "record": {"type": "string", "minLength": 1, "maxLength": 50},
+        "sourceName": {"type": "string", "minLength": 1},
+        "sourceUrl": {"type": "string", "format": "uri"},
+        "tags": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1, "maxLength": 40},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
