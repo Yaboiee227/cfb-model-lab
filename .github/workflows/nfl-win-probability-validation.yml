@@ -1,0 +1,64 @@
+name: NFL Win Probability Validation
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - nfl-model-development
+    paths:
+      - scripts/validate_nfl_win_probability.py
+      - nfl_data/calibration/final_architecture_oos_predictions_2023_2025.csv
+      - nfl_data/research_exports/week6_cfb_style_research_latest.csv
+      - .github/workflows/nfl-win-probability-validation.yml
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout NFL development branch
+        uses: actions/checkout@v4
+        with:
+          ref: nfl-model-development
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install numerical dependency
+        run: python -m pip install numpy
+
+      - name: Validate NFL win probability mapping
+        run: python scripts/validate_nfl_win_probability.py
+
+      - name: Verify safety and output schema
+        run: |
+          python - <<'PY'
+          import csv, json
+          from pathlib import Path
+          p = json.loads(Path('nfl_data/validation/win_probability_calibration.json').read_text())
+          assert p['market_used_in_fit'] is False
+          assert p['recommendation_release_allowed'] is False
+          assert p['moneyline_edge_release_allowed'] is False
+          assert p['website_publish_allowed'] is False
+          assert len(p['validation_folds']) == 2
+          rows = list(csv.DictReader(Path('nfl_data/validation/week6_win_probability_research.csv').open()))
+          assert len(rows) == 13
+          assert all(0 < float(r['home_win_probability']) < 1 for r in rows)
+          print({'eligible':p['display_probability_eligible'],'folds':p['validation_folds'],'week6_rows':len(rows)})
+          PY
+
+      - name: Commit validation artifacts
+        run: |
+          if [ -z "$(git status --porcelain -- nfl_data/validation/win_probability_calibration.json nfl_data/validation/week6_win_probability_research.csv)" ]; then
+            echo 'Probability validation artifacts already current.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add nfl_data/validation/win_probability_calibration.json nfl_data/validation/week6_win_probability_research.csv
+          git commit -m 'Refresh NFL win probability validation'
+          git push origin HEAD:nfl-model-development
