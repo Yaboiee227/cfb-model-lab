@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18T02:12:00+00:00",
+  "updated": "2026-10-18T11:55:09+00:00",
   "categories": [
     {
       "id": "readiness",
@@ -10,43 +10,43 @@
       "items": [
         {"title": "Eight required layers", "detail": "Base stats, opponent adjustment, advanced efficiency, injuries/personnel, weather, market, travel/rest and depth chart are present for all 13 Week 6 games.", "tag": "13/13 PASS"},
         {"title": "How the 90% rule works", "detail": "Eight equally weighted layers are worth 12.5% each, so a nominal 90% minimum effectively requires all eight layers. The current NFL slate is 8/8 on every game.", "tag": "100% coverage"},
-        {"title": "What remains unresolved", "detail": "Input readiness does not clear final inactives, final roof/weather decisions, account-level executable prices or prospective recommendation calibration. Those remain separate game-day and release gates.", "tag": "Recommendations HOLD"}
+        {"title": "What remains unresolved", "detail": "Input readiness does not clear final inactives, remaining roof/weather decisions, account-level executable prices or prospective recommendation calibration. Those remain separate game-day and release gates.", "tag": "Recommendations HOLD"}
       ]
     },
     {
       "id": "availability",
       "label": "Injuries & availability",
       "short": "Availability",
-      "status": "Game-day gate",
-      "summary": "Starting-QB identity, official game status and replacement uncertainty are tracked separately from the frozen numerical projection.",
+      "status": "Game-day refreshed",
+      "summary": "Official Week 6 status reports are refreshed. Confirmed hard-QB breaks remain Baltimore with Tyler Huntley, Philadelphia with Tanner McKee and Tampa Bay with Jalon Daniels; Caleb Williams is expected back for Chicago pending final active status.",
       "items": [
-        {"title": "Hard-QB breaks", "detail": "Confirmed starter changes are treated as reliability and release-state events. The current operational QB point adjustment remains zero because an additive coefficient has not been prospectively validated.", "tag": "QB gate"},
-        {"title": "Final inactives", "detail": "Official inactive lists are checked close to kickoff and can change contextual reliability without rewriting the frozen canonical projection.", "tag": "Inactives"},
-        {"title": "Personnel discipline", "detail": "Non-QB absences are recorded as context unless a historically validated adjustment exists.", "tag": "No discretionary points"}
+        {"title": "Confirmed hard-QB breaks", "detail": "Lamar Jackson, Jalen Hurts and Baker Mayfield are out. Their replacement states are treated as reliability/release events; the operational QB point adjustment remains zero because an additive coefficient has not been prospectively validated.", "tag": "3 hard breaks"},
+        {"title": "Final inactives", "detail": "Official inactive lists are still checked close to kickoff and can change contextual reliability without rewriting the frozen canonical projection.", "tag": "Pending"},
+        {"title": "Personnel discipline", "detail": "Non-QB absences and questionable designations are recorded as context unless a historically validated numerical adjustment exists.", "tag": "No discretionary points"}
       ]
     },
     {
       "id": "weather",
       "label": "Weather & venue",
       "short": "Weather",
-      "status": "Pregame refresh",
-      "summary": "Wind, precipitation, temperature and roof state are timestamped and surfaced as context rather than converted into arbitrary points.",
+      "status": "Game-day refreshed",
+      "summary": "Weather and venue context has been refreshed for the full slate. Tampa carries the clearest elevated wind uncertainty; Indianapolis has confirmed the Lucas Oil Stadium roof and window open.",
       "items": [
-        {"title": "Forecast timing", "detail": "Outdoor forecasts are refreshed close to kickoff because early-week weather can change materially.", "tag": "Timestamped"},
-        {"title": "Roof status", "detail": "Retractable-roof decisions stay explicitly pending until an official or reliable venue update resolves them.", "tag": "Venue"},
-        {"title": "Model treatment", "detail": "Weather can elevate uncertainty or HOLD status; it does not receive a discretionary numerical adjustment.", "tag": "Research gate"}
+        {"title": "London", "detail": "Wembley is cool with a moderate breeze/gust and shower-variability profile; it remains a game-day context gate rather than a discretionary point adjustment.", "tag": "HOU-JAX"},
+        {"title": "Tampa", "detail": "Raymond James Stadium carries elevated wind with sustained northeast flow and stronger gusts. Reliability is flagged, but the frozen total is not rewritten.", "tag": "PIT-TB"},
+        {"title": "Roof status", "detail": "Indianapolis has confirmed the roof and window open. Atlanta's game-specific retractable-roof decision remains pending; SoFi and Allegiant are treated as covered/indoor venues.", "tag": "Venue"}
       ]
     },
     {
       "id": "market",
       "label": "Market comparison",
       "short": "Market",
-      "status": "Benchmark only",
-      "summary": "The NFL projection is independent of sportsbook lines. Public prices are comparison benchmarks unless account-level execution is verified.",
+      "status": "Game-day benchmark",
+      "summary": "The NFL projection remains independent of sportsbook lines. The full Week 6 board was refreshed from Action Network public game pages at 7:55 AM ET; these are comparison benchmarks, not verified executable account prices.",
       "items": [
-        {"title": "Current benchmark", "detail": "The current Week 6 board uses a timestamped BetMGM public benchmark captured before publication.", "tag": "Public board"},
+        {"title": "Current benchmark", "detail": "All 13 remaining Week 6 games now use a single game-day Action Network public benchmark source and timestamp for spread/total comparison.", "tag": "Public board"},
         {"title": "Model / market difference", "detail": "A numerical difference is descriptive research only. Historical testing did not support a simple larger-difference-equals-better-edge rule.", "tag": "No edge claim"},
-        {"title": "Consensus test", "detail": "A walk-forward model-plus-market blend was tested. The optimal historical solution collapsed to the market itself, so no market-consensus model layer was promoted.", "tag": "Rejected"}
+        {"title": "Consensus test", "detail": "A walk-forward model-plus-market blend was tested previously. The optimal historical solution collapsed to the market itself, so no market-consensus model layer was promoted.", "tag": "Rejected"}
       ]
     },
     {
