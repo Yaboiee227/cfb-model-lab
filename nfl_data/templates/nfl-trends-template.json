@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "season": 2026,
+  "week": 0,
+  "lastUpdated": "YYYY-MM-DDTHH:MM:SS-04:00",
+  "status": "DRAFT",
+  "source": {
+    "name": "Action Network",
+    "url": "https://www.actionnetwork.com/nfl/nfl-betting-primer-trends-stats-systems-for-every-game"
+  },
+  "alignmentConfig": {
+    "spreadNeutralBand": 0.25,
+    "totalNeutralBand": 1.0,
+    "moneylineNeutralBandPct": 0.5
+  },
+  "notes": "Use your own short wording. Do not copy source text verbatim.",
+  "trends": [
+    {
+      "id": "2026-W00-GAME-T01",
+      "gameId": "2026_00_AWAY_HOME",
+      "season": 2026,
+      "week": 0,
+      "matchup": {
+        "away": "AWAY",
+        "home": "HOME"
+      },
+      "subject": "AWAY",
+      "trendType": "ATS",
+      "alignmentTarget": "spread",
+      "text": "Write a short factual paraphrase here.",
+      "pointsTo": "away",
+      "sampleSize": 8,
+      "record": "5-3 ATS",
+      "sourceName": "Action Network",
+      "sourceUrl": "https://www.actionnetwork.com/nfl/nfl-betting-primer-trends-stats-systems-for-every-game",
+      "tags": ["road"]
+    }
+  ]
+}
