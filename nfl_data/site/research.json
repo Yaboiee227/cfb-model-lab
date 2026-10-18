@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18T12:41:44+00:00",
+  "updated": "2026-10-18T13:42:27+00:00",
   "categories": [
     {
       "id": "accuracy-nowcast",
@@ -15,13 +15,47 @@
         },
         {
           "title": "Latest Sunday refresh",
-          "detail": "Refreshed at 2026-10-18T12:41:44Z. Houston-Jacksonville is JAX -2.5 with a current total range around 41.5-42.5. New Orleans-New York remains spread-quarantined because current feeds conflict on side direction rather than forcing false precision.",
-          "tag": "08:41 ET"
+          "detail": "Refreshed at 2026-10-18T13:42:27Z. Cross-source ranges are preserved where reputable feeds differ: TEN-IND total 44.5-45, CAR-PHI CAR -3 to -3.5, BAL-CLE BAL -3 to -3.5, CHI-ATL total 52.5-53, NYJ-NE total 43-43.5, BUF-LV BUF -4.5 to -5.5 and WAS-SF total 52-52.5. NO-NYG remains spread-quarantined.",
+          "tag": "09:42 ET"
+        },
+        {
+          "title": "Houston-Jacksonville locked",
+          "detail": "HOU-JAX had already kicked off before the creator-source recheck. Its pregame state is locked and will not be retroactively changed by information discovered after kickoff.",
+          "tag": "Integrity"
         },
         {
           "title": "Canonical model stays frozen",
           "detail": "Game-day information changes reliability, context and the accuracy-nowcast layer only. It does not rewrite the prospectively frozen canonical scores, coefficients or Week 6 evaluation sample.",
           "tag": "No leakage"
+        }
+      ]
+    },
+    {
+      "id": "creator-sources",
+      "label": "Creator-source overlay",
+      "short": "Creators",
+      "status": "Current-week context · validation required",
+      "summary": "Creator-level outputs from Evan Abrams/Action Network, Dr. David Chao/SICScore and Nick Giffen/Action Luck Rankings are logged as distinct evidence layers rather than blended into an unvalidated expert score.",
+      "items": [
+        {
+          "title": "Abrams / Action",
+          "detail": "Abrams' Week 6 systems, backup-QB research, key-number and QB-value work are used as context and hypothesis generation. Tyler Huntley's historical backup profile reduces confidence in a generic replacement-QB penalty, but no unvalidated point value is added.",
+          "tag": "QB/context"
+        },
+        {
+          "title": "Chao / SICScore",
+          "detail": "SIC medical-effectiveness and position-group injury context refines reliability around clusters such as the Chargers' OL/secondary and other Week 6 personnel issues. Official NFL/team active-inactive status remains authoritative.",
+          "tag": "Medical"
+        },
+        {
+          "title": "Giffen / Luck Rankings",
+          "detail": "Giffen's Luck Rankings remain a separate expected-score/regression challenger. Week 6 has two official side signals and no official total signals; LAC +8.5 creates a material conflict with injury context that otherwise leans toward Kansas City.",
+          "tag": "Challenger"
+        },
+        {
+          "title": "LAC-KC conflict flag",
+          "detail": "LAC-KC is explicitly treated as higher side uncertainty: SIC injury-cluster context is unfavorable for Los Angeles, while Giffen's official Luck signal favors the Chargers at +8.5. The model does not resolve that disagreement by inventing a coefficient.",
+          "tag": "Conflict"
         }
       ]
     },
@@ -36,6 +70,11 @@
           "title": "Hard QB state breaks",
           "detail": "3 current matchup(s) are classified as hard starting-QB breaks: CAR-PHI, PIT-TB and BAL-CLE. They remain reliability/release gates; the operational QB point adjustment remains zero unless historically earned.",
           "tag": "QB gate"
+        },
+        {
+          "title": "Latest personnel refinements",
+          "detail": "New England activated A.J. Brown and he is expected to play, with TreVeyon Henderson trending toward playing; Pittsburgh cleared DK Metcalf while Pat Freiermuth was newly added as questionable with a calf issue. Final inactive lists still supersede all pregame expectations.",
+          "tag": "09:42 ET"
         },
         {
           "title": "Final inactives",
@@ -63,8 +102,13 @@
         },
         {
           "title": "Green Bay evening wind",
-          "detail": "The latest NWS point forecast near the Sunday-night kickoff trends toward roughly mid-50s F and about 11 mph sustained wind. DAL-GB is now treated as low-to-moderate kickoff wind pending the evening recheck, not as a forced total adjustment.",
+          "detail": "The latest NWS point forecast near the Sunday-night kickoff trends toward roughly mid-50s F and about 11 mph sustained wind. DAL-GB is treated as low-to-moderate kickoff wind pending the evening recheck, not as a forced total adjustment.",
           "tag": "SNF"
+        },
+        {
+          "title": "Roof decisions remain gates",
+          "detail": "Any unresolved Atlanta or Indianapolis retractable-roof decision stays pending until an authoritative game-day decision is available; the model does not infer open/closed status.",
+          "tag": "Venue"
         },
         {
           "title": "Historical weather restraint",
@@ -82,12 +126,17 @@
       "items": [
         {
           "title": "Latest cross-source audit",
-          "detail": "Same-day Action Network and Covers feeds were rechecked at 2026-10-18T12:41:44Z. Small total differences are retained as ranges rather than collapsed into false precision.",
+          "detail": "Same-day Action Network and Covers feeds were rechecked at 2026-10-18T13:42:27Z. Small disagreements are represented as ranges and research midpoints rather than false single-price precision.",
           "tag": "Timestamp"
         },
         {
+          "title": "BUF-LV dispersion",
+          "detail": "BUF-LV currently carries the widest non-quarantined checked spread range at roughly BUF -4.5 to -5.5. The displayed research midpoint is not an executable quote.",
+          "tag": "Range"
+        },
+        {
           "title": "NO-NYG conflict quarantine",
-          "detail": "Current NO-NYG sources remain contradictory on spread side direction. The spread nowcast is intentionally blank/quarantined until a stable executable consensus is available.",
+          "detail": "Current NO-NYG sources remain contradictory on spread side direction, including within-source presentation. The spread nowcast is intentionally blank/quarantined until a stable executable consensus is available.",
           "tag": "Price QA"
         },
         {
@@ -116,7 +165,7 @@
         },
         {
           "title": "Freshness policy",
-          "detail": "Current weekly systems and market-facing trends may be cross-checked against same-week sources, but stale or contradictory trend claims are excluded rather than backfilled into the model.",
+          "detail": "Current weekly systems and market-facing trends may be cross-checked against same-week creator sources, but stale or contradictory claims are excluded rather than backfilled into the model.",
           "tag": "QA"
         }
       ]
@@ -188,12 +237,12 @@
         },
         {
           "title": "Game-day gates",
-          "detail": "Final inactives, starter confirmation, roof/weather and fresh public-book benchmarks are refreshed separately from the frozen numerical prediction.",
+          "detail": "Final inactives, starter confirmation, creator-source context, roof/weather and fresh public-book benchmarks are refreshed separately from the frozen numerical prediction.",
           "tag": "Operations"
         },
         {
           "title": "Postgame grading",
-          "detail": "Canonical and FTN50 shadow models are graded on the same games, then the multi-week registry updates calibration and model-health diagnostics.",
+          "detail": "Canonical, FTN50 shadow and separately logged external challenger signals are graded without rewriting the frozen snapshot, then the multi-week registry updates calibration and model-health diagnostics.",
           "tag": "Audit"
         }
       ]
