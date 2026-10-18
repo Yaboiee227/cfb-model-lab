@@ -1,6 +1,18 @@
 {
-  "updated": "2026-10-17T23:59:29.860466+00:00",
+  "updated": "2026-10-18T02:12:00+00:00",
   "categories": [
+    {
+      "id": "readiness",
+      "label": "Input readiness",
+      "short": "Readiness",
+      "status": "8/8 · 100%",
+      "summary": "All 13 current NFL games meet the same eight-layer input-completeness standard used by the CFB model. This is a readiness score, not prediction accuracy or betting confidence.",
+      "items": [
+        {"title": "Eight required layers", "detail": "Base stats, opponent adjustment, advanced efficiency, injuries/personnel, weather, market, travel/rest and depth chart are present for all 13 Week 6 games.", "tag": "13/13 PASS"},
+        {"title": "How the 90% rule works", "detail": "Eight equally weighted layers are worth 12.5% each, so a nominal 90% minimum effectively requires all eight layers. The current NFL slate is 8/8 on every game.", "tag": "100% coverage"},
+        {"title": "What remains unresolved", "detail": "Input readiness does not clear final inactives, final roof/weather decisions, account-level executable prices or prospective recommendation calibration. Those remain separate game-day and release gates.", "tag": "Recommendations HOLD"}
+      ]
+    },
     {
       "id": "availability",
       "label": "Injuries & availability",
@@ -34,7 +46,7 @@
       "items": [
         {"title": "Current benchmark", "detail": "The current Week 6 board uses a timestamped BetMGM public benchmark captured before publication.", "tag": "Public board"},
         {"title": "Model / market difference", "detail": "A numerical difference is descriptive research only. Historical testing did not support a simple larger-difference-equals-better-edge rule.", "tag": "No edge claim"},
-        {"title": "CLV / ROI", "detail": "CLV and ROI are not reported without timestamped executable entry prices and a consistent closing-price definition.", "tag": "Locked"}
+        {"title": "Consensus test", "detail": "A walk-forward model-plus-market blend was tested. The optimal historical solution collapsed to the market itself, so no market-consensus model layer was promoted.", "tag": "Rejected"}
       ]
     },
     {
