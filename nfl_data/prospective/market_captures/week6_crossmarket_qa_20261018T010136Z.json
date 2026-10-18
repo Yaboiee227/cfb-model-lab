@@ -1,0 +1,51 @@
+{
+  "league": "NFL",
+  "season": 2026,
+  "week": 6,
+  "captured_at_utc": "2026-10-18T01:01:36Z",
+  "purpose": "Cross-market QA only. These observations do not replace the later timestamped BetMGM benchmark capture and are not account-executable prices.",
+  "primary_qa_source": {
+    "name": "Covers NFL odds / matchup pages",
+    "url": "https://www.covers.com/sport/football/nfl/odds",
+    "provider_note": "Covers states sportsbook odds are subject to a small delay. General odds page displayed Last updated Oct 17, 2026, 3:33 PM ET; matchup pages were retrieved during this QA pass."
+  },
+  "secondary_qa_sources": [
+    {
+      "name": "Action Network Texans-Jaguars",
+      "url": "https://www.actionnetwork.com/nfl-game/houston-texans-jacksonville-jaguars/290821",
+      "observed": "HOU +2.5 / JAX -2.5; total 42.5"
+    },
+    {
+      "name": "Action Network Steelers-Buccaneers",
+      "url": "https://www.actionnetwork.com/nfl-game/steelers-buccaneers-score-odds-october-18-2026/290920/",
+      "observed": "PIT -2.5 / TB +2.5; total 38.5"
+    }
+  ],
+  "games": [
+    {"game_id":"2026_06_HOU_JAX","away":"HOU","home":"JAX","home_spread":-2.5,"total":42.5},
+    {"game_id":"2026_06_TEN_IND","away":"TEN","home":"IND","home_spread":-6.5,"total":45.0},
+    {"game_id":"2026_06_CAR_PHI","away":"CAR","home":"PHI","home_spread":3.5,"total":39.0},
+    {"game_id":"2026_06_PIT_TB","away":"PIT","home":"TB","home_spread":2.5,"total":38.5},
+    {"game_id":"2026_06_BAL_CLE","away":"BAL","home":"CLE","home_spread":3.5,"total":39.5},
+    {"game_id":"2026_06_NO_NYG","away":"NO","home":"NYG","home_spread":1.5,"total":46.0},
+    {"game_id":"2026_06_CHI_ATL","away":"CHI","home":"ATL","home_spread":1.5,"total":52.5},
+    {"game_id":"2026_06_NYJ_NE","away":"NYJ","home":"NE","home_spread":-7.5,"total":43.0},
+    {"game_id":"2026_06_ARI_LA","away":"ARI","home":"LA","home_spread":-12.5,"total":51.5},
+    {"game_id":"2026_06_LAC_KC","away":"LAC","home":"KC","home_spread":-7.5,"total":41.0},
+    {"game_id":"2026_06_BUF_LV","away":"BUF","home":"LV","home_spread":4.5,"total":53.5},
+    {"game_id":"2026_06_DAL_GB","away":"DAL","home":"GB","home_spread":-1.5,"total":53.5},
+    {"game_id":"2026_06_WAS_SF","away":"WAS","home":"SF","home_spread":-7.5,"total":52.5}
+  ],
+  "qa_differences_vs_internal_betmgm_235929z": [
+    "BAL-CLE cross-market spread is BAL -3.5 vs internal BetMGM benchmark BAL -3.0",
+    "CHI-ATL cross-market spread is CHI -1.5 vs internal BetMGM benchmark CHI -1.0",
+    "TEN-IND cross-market spread is IND -6.5 vs internal BetMGM benchmark IND -7.0",
+    "CAR-PHI cross-market spread is CAR -3.5 vs internal BetMGM benchmark CAR -3.0",
+    "NO-NYG cross-market spread is NO -1.5 vs internal BetMGM benchmark NO -1.0",
+    "NYJ-NE cross-market spread is NE -7.5 vs internal BetMGM benchmark NE -7.0",
+    "Several totals differ by 0.5 point, including PIT-TB 38.5, TEN-IND 45.0, CHI-ATL 52.5, NYJ-NE 43.0, LAC-KC 41.0, DAL-GB 53.5, WAS-SF 52.5"
+  ],
+  "canonical_market_benchmark_replaced": false,
+  "account_execution_verified": false,
+  "recommendation_release_allowed": false
+}
