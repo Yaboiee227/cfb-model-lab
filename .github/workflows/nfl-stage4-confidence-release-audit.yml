@@ -1,0 +1,64 @@
+name: NFL Stage 4 Confidence Release Audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - nfl-model-development
+    paths:
+      - NFL_STAGE4_CONFIDENCE_RELEASE_POLICY.md
+      - scripts/audit_nfl_stage4_confidence_release.py
+      - nfl_data/prospective/validation_registry/nfl_prospective_validation_registry.json
+      - nfl_data/validation/stage2_validation_audit.json
+      - .github/workflows/nfl-stage4-confidence-release-audit.yml
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout NFL development branch
+        uses: actions/checkout@v4
+        with:
+          ref: nfl-model-development
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Record production CFB data tree
+        run: |
+          find data -type f -print0 | sort -z | xargs -0 sha256sum > /tmp/cfb-stage4-before.sha256
+      - name: Run Stage 4 audit
+        run: python scripts/audit_nfl_stage4_confidence_release.py
+      - name: Verify Stage 4 safety
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('nfl_data/validation/stage4_confidence_release_audit.json'))
+          assert d['audit_verdict']=='PASS_STAGE4_FRAMEWORK__RELEASE_EVIDENCE_NOT_EARNED'
+          assert d['framework_complete'] is True
+          assert d['recommendation_release_allowed'] is False
+          assert d['play_label_allowed'] is False
+          assert d['lean_label_allowed'] is False
+          assert d['validated_edge_badge_allowed'] is False
+          assert d['alt_line_recommendation_allowed'] is False
+          assert d['automatic_threshold_promotion_allowed'] is False
+          print(d)
+          PY
+      - name: Verify production CFB data unchanged
+        run: |
+          find data -type f -print0 | sort -z | xargs -0 sha256sum > /tmp/cfb-stage4-after.sha256
+          diff -u /tmp/cfb-stage4-before.sha256 /tmp/cfb-stage4-after.sha256
+      - name: Commit Stage 4 audit artifacts
+        run: |
+          if [ -z "$(git status --porcelain -- nfl_data/validation/stage4_confidence_release_audit.json nfl_data/validation/STAGE4_CONFIDENCE_RELEASE_AUDIT.md)" ]; then
+            echo 'Stage 4 audit already current.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add nfl_data/validation/stage4_confidence_release_audit.json nfl_data/validation/STAGE4_CONFIDENCE_RELEASE_AUDIT.md
+          git commit -m 'Refresh NFL Stage 4 confidence release audit'
+          git push origin HEAD:nfl-model-development
