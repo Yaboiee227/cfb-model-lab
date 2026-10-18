@@ -17,6 +17,7 @@ on:
 permissions:
   contents: write
   issues: write
+  actions: write
 concurrency:
   group: nfl-record-tracker
   cancel-in-progress: false
@@ -50,9 +51,15 @@ jobs:
           git config user.name "cb-model-record-bot"
           git config user.email "actions@users.noreply.github.com"
           git add nfl/results nfl/record-summary.json nfl/grading-log.json
-          git diff --cached --quiet && exit 0
-          git commit -m "Auto-grade NFL projection record"
-          git push
+          if ! git diff --cached --quiet; then
+            git commit -m "Auto-grade NFL projection record"
+            git push
+          fi
+      - name: Deploy refreshed Pages data
+        if: ${{ success() && steps.data.outputs.ready == 'true' && github.event.inputs.dry_run != 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy-pages.yml --ref main
       - name: Open issue on failure
         if: failure()
         uses: actions/github-script@v7
