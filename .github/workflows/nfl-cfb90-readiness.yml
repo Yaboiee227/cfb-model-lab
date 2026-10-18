@@ -1,0 +1,71 @@
+name: NFL CFB90 Readiness Audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [nfl-model-development]
+    paths:
+      - 'scripts/build_nfl_week6_schedule_context.py'
+      - 'scripts/audit_nfl_cfb90_readiness.py'
+      - '.github/workflows/nfl-cfb90-readiness.yml'
+      - 'nfl_data/generated/team_efficiency_2026_week6_pregame.csv'
+      - 'nfl_data/generated/opponent_adjusted_2026_week6_pregame.csv'
+      - 'nfl_data/generated/pbp_features_2026_week6_pregame.csv'
+      - 'nfl_data/generated/coverage_2026_week6_pregame.csv'
+      - 'nfl_data/generated/injury_personnel_2026_week6_pregame.csv'
+      - 'nfl_data/generated/qb_room_2026_week6_pregame.csv'
+      - 'nfl_data/generated/week6_research_projections_qa.json'
+      - 'nfl_data/generated/depth_injury_audit_2022_2026.json'
+      - 'nfl_data/prospective/week6_readiness_matrix_20261017.json'
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout NFL development branch
+        uses: actions/checkout@v4
+        with:
+          ref: nfl-model-development
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Record CFB production data tree
+        run: find data -type f -print0 | sort -z | xargs -0 sha256sum > /tmp/cfb90-before.sha256
+      - name: Build rest and travel context
+        run: python scripts/build_nfl_week6_schedule_context.py
+      - name: Run CFB-equivalent eight-layer readiness audit
+        run: python scripts/audit_nfl_cfb90_readiness.py
+      - name: Verify interpretation and release safety
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('nfl_data/validation/cfb90_readiness_week6.json'))
+          assert d['summary']['games']==13
+          assert d['summary']['recommendation_release_games']==0
+          assert all(r['recommendation'].startswith('HOLD_') for r in d['rows'])
+          assert all(r['input_coverage_pct'] in (0,12.5,25,37.5,50,62.5,75,87.5,100) for r in d['rows'])
+          for r in d['rows']:
+              assert r['cfb90_input_coverage_pass'] == (r['layers_passed']==8)
+          print(d['summary'])
+          PY
+      - name: Verify CFB production data unchanged
+        run: |
+          find data -type f -print0 | sort -z | xargs -0 sha256sum > /tmp/cfb90-after.sha256
+          diff -u /tmp/cfb90-before.sha256 /tmp/cfb90-after.sha256
+      - name: Commit readiness artifacts
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add nfl_data/generated/week6_schedule_context_2026.json nfl_data/generated/week6_schedule_context_2026.csv nfl_data/validation/cfb90_readiness_week6.json nfl_data/validation/cfb90_readiness_week6.csv nfl_data/validation/CFB90_READINESS_WEEK6.md
+          if git diff --cached --quiet; then
+            echo 'Readiness artifacts already current.'
+          else
+            git commit -m 'Refresh NFL CFB90 readiness audit'
+            git pull --rebase origin nfl-model-development
+            git push origin HEAD:nfl-model-development
+          fi
