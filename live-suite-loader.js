@@ -15,6 +15,35 @@
     if (el && el.textContent !== value) el.textContent=value;
   }
 
+  function legacyResultCounts(key){
+    let rows=[];
+    try { rows=(typeof STATE!=='undefined' && Array.isArray(STATE.results)) ? STATE.results : []; } catch(_){ rows=[]; }
+    let wins=0,losses=0,pushes=0;
+    rows.forEach(row=>{
+      const value=String(row?.[key]||'').toUpperCase();
+      if(value==='WIN')wins++;else if(value==='LOSS')losses++;else if(value==='PUSH')pushes++;
+    });
+    const decisions=wins+losses;
+    return {wins,losses,pushes,pct:decisions?wins/decisions*100:null};
+  }
+
+  function syncLegacyFallback(){
+    const grid=document.querySelector('#record > .record-grid');
+    if(!grid || document.getElementById('recordTrackerV2')?.parentElement?.classList.contains('record-v2-active')) return;
+    const cards=[...grid.querySelectorAll(':scope > .record-card')];
+    if(cards.length<3)return;
+    const totals=legacyResultCounts('totalResult');
+    const card=cards[2];
+    const label=card.querySelector('.record-card-head span');
+    const small=card.querySelector('.record-card-head small');
+    const strong=card.querySelector(':scope > strong');
+    const sub=card.querySelector('.record-sub');
+    if(label)label.textContent='Totals';
+    if(small)small.textContent='Over / under';
+    if(strong){strong.removeAttribute('id');strong.textContent=`${totals.wins}-${totals.losses}${totals.pushes?`-${totals.pushes}`:''}`;}
+    if(sub)sub.innerHTML=`<span>${totals.pct===null?'—':`${totals.pct.toFixed(1)}%`}</span> win rate${totals.pushes?` <span>•</span> ${totals.pushes} push${totals.pushes===1?'':'es'}`:''}`;
+  }
+
   function syncSharedCopy(){
     setText('#recordTitle','Projection performance');
     const recordIntro=document.querySelector('#record .section-heading p:not(.eyebrow)');
@@ -68,6 +97,8 @@
         const status=tracker.querySelector('.rt-meta .rt-status');
         if(status){status.className='rt-status rt-pending';status.textContent='◷ Awaiting first graded week';}
       }
+    } else {
+      syncLegacyFallback();
     }
   }
 
