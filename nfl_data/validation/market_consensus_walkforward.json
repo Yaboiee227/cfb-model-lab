@@ -1,0 +1,189 @@
+{
+  "generated_at_utc": "2026-10-18T02:11:13.567092+00:00",
+  "policy": "Independent canonical remains unchanged. Consensus is market-informed and cannot be labeled independent, edge, recommendation or execution price.",
+  "recommendation_release_allowed": false,
+  "rows": 816,
+  "spread": {
+    "all_2023_2025": {
+      "canonical": {
+        "mae": 10.256392262254902,
+        "n": 816,
+        "rmse": 13.290314731466012
+      },
+      "consensus_at_deployment_weight": {
+        "mae": 9.744485294117647,
+        "n": 816,
+        "rmse": 12.653263839196342
+      },
+      "market": {
+        "mae": 9.744485294117647,
+        "n": 816,
+        "rmse": 12.653263839196342
+      }
+    },
+    "deployment_2026_canonical_weight": 0.0,
+    "deployment_2026_market_weight": 1.0,
+    "folds": [
+      {
+        "canonical": {
+          "mae": 10.013459386029412,
+          "n": 272,
+          "rmse": 13.185034409833357
+        },
+        "canonical_weight": 0.0,
+        "consensus": {
+          "mae": 9.610294117647058,
+          "n": 272,
+          "rmse": 12.6051460079744
+        },
+        "improvement_vs_canonical_mae": 0.4031652683823541,
+        "improvement_vs_market_mae": 0.0,
+        "market": {
+          "mae": 9.610294117647058,
+          "n": 272,
+          "rmse": 12.6051460079744
+        },
+        "market_weight": 1.0,
+        "test_season": 2024,
+        "training_seasons": [
+          2023
+        ]
+      },
+      {
+        "canonical": {
+          "mae": 10.2521121875,
+          "n": 272,
+          "rmse": 12.950711226108972
+        },
+        "canonical_weight": 0.0,
+        "consensus": {
+          "mae": 9.722426470588236,
+          "n": 272,
+          "rmse": 12.271177672521421
+        },
+        "improvement_vs_canonical_mae": 0.5296857169117644,
+        "improvement_vs_market_mae": 0.0,
+        "market": {
+          "mae": 9.722426470588236,
+          "n": 272,
+          "rmse": 12.271177672521421
+        },
+        "market_weight": 1.0,
+        "test_season": 2025,
+        "training_seasons": [
+          2023,
+          2024
+        ]
+      }
+    ],
+    "paired_bootstrap_improvement_vs_canonical": {
+      "ci95_high": 0.7435922254901961,
+      "ci95_low": 0.29121069240196074,
+      "mean": 0.5119069681372549
+    },
+    "paired_bootstrap_improvement_vs_market": {
+      "ci95_high": 0.0,
+      "ci95_low": 0.0,
+      "mean": 0.0
+    },
+    "robust_research_display_candidate": false
+  },
+  "total": {
+    "all_2023_2025": {
+      "canonical": {
+        "mae": 10.500112787990195,
+        "n": 816,
+        "rmse": 13.495845000119141
+      },
+      "consensus_at_deployment_weight": {
+        "mae": 10.120710784313726,
+        "n": 816,
+        "rmse": 12.959223851880068
+      },
+      "market": {
+        "mae": 10.120710784313726,
+        "n": 816,
+        "rmse": 12.959223851880068
+      }
+    },
+    "deployment_2026_canonical_weight": 0.0,
+    "deployment_2026_market_weight": 1.0,
+    "folds": [
+      {
+        "canonical": {
+          "mae": 10.070764691176471,
+          "n": 272,
+          "rmse": 13.166340166623819
+        },
+        "canonical_weight": 0.0,
+        "consensus": {
+          "mae": 9.729779411764707,
+          "n": 272,
+          "rmse": 12.551548123403649
+        },
+        "improvement_vs_canonical_mae": 0.3409852794117647,
+        "improvement_vs_market_mae": 0.0,
+        "market": {
+          "mae": 9.729779411764707,
+          "n": 272,
+          "rmse": 12.551548123403649
+        },
+        "market_weight": 1.0,
+        "test_season": 2024,
+        "training_seasons": [
+          2023
+        ]
+      },
+      {
+        "canonical": {
+          "mae": 10.922702569852941,
+          "n": 272,
+          "rmse": 13.703418904200547
+        },
+        "canonical_weight": 0.1,
+        "consensus": {
+          "mae": 10.42040500625,
+          "n": 272,
+          "rmse": 13.196558913085248
+        },
+        "improvement_vs_canonical_mae": 0.5022975636029408,
+        "improvement_vs_market_mae": -0.027022653308824474,
+        "market": {
+          "mae": 10.393382352941176,
+          "n": 272,
+          "rmse": 13.18644580397525
+        },
+        "market_weight": 0.9,
+        "test_season": 2025,
+        "training_seasons": [
+          2023,
+          2024
+        ]
+      }
+    ],
+    "paired_bootstrap_improvement_vs_canonical": {
+      "ci95_high": 0.6062110943627449,
+      "ci95_low": 0.15801930514705867,
+      "mean": 0.3794020036764705
+    },
+    "paired_bootstrap_improvement_vs_market": {
+      "ci95_high": 0.0,
+      "ci95_low": 0.0,
+      "mean": 0.0
+    },
+    "robust_research_display_candidate": false
+  },
+  "weight_grid": [
+    0.0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ]
+}
