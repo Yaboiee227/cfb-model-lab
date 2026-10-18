@@ -7,6 +7,7 @@ on:
       - nfl-model-development
     paths:
       - scripts/audit_nfl_stage2_validation.py
+      - scripts/audit_nfl_stage2_score_metrics.py
       - nfl_data/calibration/final_architecture_oos_predictions_2023_2025.csv
       - nfl_data/validation/win_probability_calibration.json
       - .github/workflows/nfl-stage2-validation-audit.yml
@@ -32,8 +33,10 @@ jobs:
         run: |
           find data -type f -print0 | sort -z | xargs -0 sha256sum > /tmp/cfb-stage2-before.sha256
 
-      - name: Run Stage 2 validation audit
-        run: python scripts/audit_nfl_stage2_validation.py
+      - name: Run Stage 2 validation audits
+        run: |
+          python scripts/audit_nfl_stage2_validation.py
+          python scripts/audit_nfl_stage2_score_metrics.py
 
       - name: Verify audit safety and verdict
         run: |
@@ -43,9 +46,13 @@ jobs:
 
           p = Path('nfl_data/validation/stage2_validation_audit.json')
           m = Path('nfl_data/validation/STAGE2_VALIDATION_AUDIT.md')
-          assert p.exists() and m.exists()
+          s = Path('nfl_data/validation/stage2_final_score_metrics.json')
+          assert p.exists() and m.exists() and s.exists()
           d = json.loads(p.read_text())
+          scores = json.loads(s.read_text())
           assert d['canonical_oos_games'] == 816
+          assert scores['aggregate']['games'] == 816
+          assert scores['aggregate']['team_score_observations'] == 1632
           assert d['audit_verdict'] == 'PASS_HISTORICAL_RESEARCH_VALIDATION__PROSPECTIVE_RELEASE_STILL_REQUIRED'
           assert d['recommendation_release_allowed'] is False
           assert d['website_betting_signal_release_allowed'] is False
@@ -57,6 +64,8 @@ jobs:
               'games': d['canonical_oos_games'],
               'spread_mae': d['aggregate_prediction_error']['spread']['mae'],
               'total_mae': d['aggregate_prediction_error']['total']['mae'],
+              'score_mae': scores['aggregate']['all_team_scores']['mae'],
+              'score_rmse': scores['aggregate']['all_team_scores']['rmse'],
               'su_accuracy': d['straight_up']['accuracy'],
               'clv': d['clv']['status'],
           })
@@ -69,13 +78,16 @@ jobs:
 
       - name: Commit Stage 2 audit artifacts
         run: |
-          if [ -z "$(git status --porcelain -- nfl_data/validation/stage2_validation_audit.json nfl_data/validation/STAGE2_VALIDATION_AUDIT.md)" ]; then
+          if [ -z "$(git status --porcelain -- nfl_data/validation/stage2_validation_audit.json nfl_data/validation/STAGE2_VALIDATION_AUDIT.md nfl_data/validation/stage2_final_score_metrics.json)" ]; then
             echo 'Stage 2 validation audit already current.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add nfl_data/validation/stage2_validation_audit.json nfl_data/validation/STAGE2_VALIDATION_AUDIT.md
+          git add \
+            nfl_data/validation/stage2_validation_audit.json \
+            nfl_data/validation/STAGE2_VALIDATION_AUDIT.md \
+            nfl_data/validation/stage2_final_score_metrics.json
           if git diff --cached --quiet; then
             echo 'Stage 2 validation audit already current.'
             exit 0
