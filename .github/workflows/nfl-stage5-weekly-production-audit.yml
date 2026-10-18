@@ -1,0 +1,67 @@
+name: NFL Stage 5 Weekly Production Audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - nfl-model-development
+    paths:
+      - NFL_STAGE5_WEEKLY_PRODUCTION_POLICY.md
+      - scripts/audit_nfl_stage5_weekly_production.py
+      - scripts/grade_nfl_week6_prospective_snapshot.py
+      - scripts/grade_nfl_week6_ftn50_shadow.py
+      - scripts/build_nfl_prospective_validation_registry.py
+      - nfl_data/prospective/week6_prelock_20261017T225656Z.json
+      - nfl_data/prospective/shadow/week6_ftn50_shadow_20261017T235342Z.json
+      - nfl_data/prospective/validation_registry/nfl_prospective_validation_registry.json
+      - .github/workflows/nfl-stage5-weekly-production-audit.yml
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout NFL development branch
+        uses: actions/checkout@v4
+        with:
+          ref: nfl-model-development
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Record production CFB data tree
+        run: |
+          find data -type f -print0 | sort -z | xargs -0 sha256sum > /tmp/cfb-stage5-before.sha256
+      - name: Run Stage 5 audit
+        run: python scripts/audit_nfl_stage5_weekly_production.py
+      - name: Verify Stage 5 safety
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('nfl_data/validation/stage5_weekly_production_audit.json'))
+          assert d['audit_verdict']=='PASS_STAGE5_INFRASTRUCTURE__WEEKLY_OPERATION_ONGOING'
+          assert d['stage5_infrastructure_complete'] is True
+          assert d['weekly_operation_ongoing'] is True
+          assert d['recommendation_release_allowed'] is False
+          assert d['website_betting_signal_release_allowed'] is False
+          assert all(d['production_contract_checks'].values())
+          assert d['games_in_week6_snapshot']==13
+          print(d)
+          PY
+      - name: Verify production CFB data unchanged
+        run: |
+          find data -type f -print0 | sort -z | xargs -0 sha256sum > /tmp/cfb-stage5-after.sha256
+          diff -u /tmp/cfb-stage5-before.sha256 /tmp/cfb-stage5-after.sha256
+      - name: Commit Stage 5 audit artifacts
+        run: |
+          if [ -z "$(git status --porcelain -- nfl_data/validation/stage5_weekly_production_audit.json nfl_data/validation/STAGE5_WEEKLY_PRODUCTION_AUDIT.md)" ]; then
+            echo 'Stage 5 audit already current.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add nfl_data/validation/stage5_weekly_production_audit.json nfl_data/validation/STAGE5_WEEKLY_PRODUCTION_AUDIT.md
+          git commit -m 'Refresh NFL Stage 5 weekly production audit'
+          git push origin HEAD:nfl-model-development
