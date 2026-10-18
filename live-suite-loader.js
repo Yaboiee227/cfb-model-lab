@@ -59,6 +59,16 @@
       const label=box.querySelector('span');
       if(label?.textContent?.trim()==='Recommendation state') label.textContent='Projection state';
     });
+
+    const tracker=document.getElementById('recordTrackerV2');
+    if(tracker){
+      const weekMeta=[...tracker.querySelectorAll('.rt-meta > span')].find(x=>/^Week graded/i.test(x.textContent||''));
+      const weekValue=weekMeta?.querySelector('strong')?.textContent?.trim();
+      if(weekValue==='—'){
+        const status=tracker.querySelector('.rt-meta .rt-status');
+        if(status){status.className='rt-status rt-pending';status.textContent='◷ Awaiting first graded week';}
+      }
+    }
   }
 
   function syncProductCopy(){
