@@ -1,0 +1,149 @@
+{
+  "updated": "2026-10-17T23:59:29.860466+00:00",
+  "categories": [
+    {
+      "id": "availability",
+      "label": "Injuries & availability",
+      "short": "Availability",
+      "status": "Game-day gate",
+      "summary": "NFL starter identity, official game status and replacement uncertainty are kept separate from unvalidated point adjustments.",
+      "items": [
+        {
+          "title": "Hard QB state breaks",
+          "detail": "3 current matchup(s) are classified as hard starting-QB breaks. They remain reliability/release gates; the operational QB point adjustment remains zero unless historically earned.",
+          "tag": "QB gate"
+        },
+        {
+          "title": "Final inactives",
+          "detail": "0/13 games currently have final-inactive resolution. Official inactive lists are required on game day before the contextual gate can fully clear.",
+          "tag": "Inactives"
+        },
+        {
+          "title": "Replacement quality",
+          "detail": "Depth chart, prior NFL performance and personnel context are recorded, but historical injury-burden coefficients were unstable and therefore were not promoted.",
+          "tag": "Model discipline"
+        }
+      ]
+    },
+    {
+      "id": "weather",
+      "label": "Weather & venue",
+      "short": "Weather",
+      "status": "Pregame refresh",
+      "summary": "Wind, precipitation, temperature and roof state are timestamped context, with elevated uncertainty surfaced rather than converted into arbitrary points.",
+      "items": [
+        {
+          "title": "Elevated environment",
+          "detail": "3 current matchup(s) carry elevated weather uncertainty. Final forecasts are refreshed close to kickoff.",
+          "tag": "Environment"
+        },
+        {
+          "title": "Roof decisions",
+          "detail": "1 current retractable-roof decision(s) remain explicitly pending in the site export.",
+          "tag": "Venue"
+        },
+        {
+          "title": "Historical weather restraint",
+          "detail": "Observed postgame weather is not backfilled as if it were a pregame forecast. Weather remains prospective context until timestamp-safe historical forecast data supports a learned coefficient.",
+          "tag": "Leakage control"
+        }
+      ]
+    },
+    {
+      "id": "market",
+      "label": "Line movement & market",
+      "short": "Market",
+      "status": "Benchmark only",
+      "summary": "The core NFL projection remains market-independent. Public sportsbook observations are comparison benchmarks, not proof of executable prices.",
+      "items": [
+        {
+          "title": "Latest public capture",
+          "detail": "Latest exported public-book benchmark timestamp: 2026-10-17T23:59:29.860466+00:00. Market observations remain separate from the frozen model snapshot.",
+          "tag": "Timestamp"
+        },
+        {
+          "title": "Execution verification",
+          "detail": "0/13 current games have account-level execution verification. Unverified public-board prices cannot support ROI or CLV claims.",
+          "tag": "Price QA"
+        },
+        {
+          "title": "No market blend",
+          "detail": "Historical market-blend testing favored the market benchmark itself, so no market residual or market-weighted projection was promoted into the independent core.",
+          "tag": "Independence"
+        }
+      ]
+    },
+    {
+      "id": "efficiency",
+      "label": "Efficiency & model architecture",
+      "short": "Efficiency",
+      "status": "Frozen V1",
+      "summary": "The NFL spread model uses only feature families that survived leakage-safe out-of-sample testing.",
+      "items": [
+        {
+          "title": "Canonical spread",
+          "detail": "Current spread architecture: frozen core + defensive coverage + market-independent win Elo + margin rating. Historical 2023-25 OOS MAE: 10.2564.",
+          "tag": "Canonical"
+        },
+        {
+          "title": "Canonical total",
+          "detail": "Current total architecture: frozen core only. Historical 2023-25 OOS MAE: 10.5001.",
+          "tag": "Totals"
+        },
+        {
+          "title": "Rejected layers stay rejected",
+          "detail": "NGS tracking, trenches, drive/pace, red-zone, turnover, special-teams, penalties, static travel/roof and historical injury-burden candidates were not promoted when robust validation did not support them.",
+          "tag": "OOS discipline"
+        }
+      ]
+    },
+    {
+      "id": "validation",
+      "label": "Prospective validation",
+      "short": "Validation",
+      "status": "HOLD",
+      "summary": "The model can publish research projections only after prospective evidence accumulates; betting recommendation thresholds require a larger, separate evidence gate.",
+      "items": [
+        {
+          "title": "Current prospective sample",
+          "detail": "0 completed prospectively frozen game(s) across 1 frozen week(s). The Week 6 snapshot is immutable and will be graded after games finish.",
+          "tag": "Prospective"
+        },
+        {
+          "title": "Projection beta review",
+          "detail": "Review eligibility begins at 40+ completed prospective games across at least 3 frozen weeks; this is not automatic promotion.",
+          "tag": "Milestone"
+        },
+        {
+          "title": "Recommendation calibration",
+          "detail": "PLAY/LEAN/HOLD calibration review begins only at 75+ completed games across at least 5 weeks, and still requires explicit evidence review.",
+          "tag": "Release gate"
+        }
+      ]
+    },
+    {
+      "id": "workflow",
+      "label": "Weekly production workflow",
+      "short": "Workflow",
+      "status": "Active",
+      "summary": "Each NFL week follows the same frozen-snapshot, game-day-gate, grading and registry process before any website release decision.",
+      "items": [
+        {
+          "title": "Pregame freeze",
+          "detail": "Canonical and challenger projections are timestamped before games and are never rewritten after results are known.",
+          "tag": "Integrity"
+        },
+        {
+          "title": "Game-day gates",
+          "detail": "Final inactives, starter confirmation, roof/weather and fresh public-book benchmarks are refreshed separately from the frozen numerical prediction.",
+          "tag": "Operations"
+        },
+        {
+          "title": "Postgame grading",
+          "detail": "Canonical and FTN50 shadow models are graded on the same games, then the multi-week registry updates calibration and model-health diagnostics.",
+          "tag": "Audit"
+        }
+      ]
+    }
+  ]
+}
