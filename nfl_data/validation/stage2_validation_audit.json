@@ -552,7 +552,7 @@
     "reason": "A genuine CLV statistic requires a timestamped executable price at the decision time plus a consistently defined closing price. Historical schedule market references can benchmark prediction accuracy/direction, but they do not prove the price the model could have executed. Prospective timestamped market captures will be used for future CLV-style analysis only when execution/timing is verifiable.",
     "status": "NOT_CLAIMED"
   },
-  "generated_at_utc": "2026-10-18T01:34:11.414132+00:00",
+  "generated_at_utc": "2026-10-18T01:35:30.408186+00:00",
   "leakage_controls": {
     "hyperparameter_policy": "Core/tuning operations use only training-era data; promoted rating dynamics were selected on 2022 only and frozen for 2023-2025.",
     "market_policy": "Market references are not canonical model features or tuning targets; used only after prediction for benchmark comparison.",

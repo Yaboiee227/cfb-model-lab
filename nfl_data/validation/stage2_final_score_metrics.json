@@ -1,0 +1,123 @@
+{
+  "aggregate": {
+    "all_team_scores": {
+      "bias_pred_minus_actual": -0.6361,
+      "mae": 7.5138,
+      "n": 1632,
+      "rmse": 9.4706
+    },
+    "away_score": {
+      "bias_pred_minus_actual": -0.6298,
+      "mae": 7.4593,
+      "n": 816,
+      "rmse": 9.3571
+    },
+    "derivation": {
+      "actual_away_points": "(actual_total - actual_home_margin) / 2",
+      "actual_home_points": "(actual_total + actual_home_margin) / 2",
+      "projected_away_points": "(pred_total - pred_home_margin) / 2",
+      "projected_home_points": "(pred_total + pred_home_margin) / 2"
+    },
+    "games": 816,
+    "home_score": {
+      "bias_pred_minus_actual": -0.6424,
+      "mae": 7.5684,
+      "n": 816,
+      "rmse": 9.5828
+    },
+    "interpretation": "Score metrics evaluate the display score implied by the canonical spread and total; no separate score model is fitted.",
+    "team_score_observations": 1632
+  },
+  "by_season": {
+    "2023": {
+      "all_team_scores": {
+        "bias_pred_minus_actual": -0.4958,
+        "mae": 7.637,
+        "n": 544,
+        "rmse": 9.6645
+      },
+      "away_score": {
+        "bias_pred_minus_actual": -0.1804,
+        "mae": 7.4987,
+        "n": 272,
+        "rmse": 9.2543
+      },
+      "derivation": {
+        "actual_away_points": "(actual_total - actual_home_margin) / 2",
+        "actual_home_points": "(actual_total + actual_home_margin) / 2",
+        "projected_away_points": "(pred_total - pred_home_margin) / 2",
+        "projected_home_points": "(pred_total + pred_home_margin) / 2"
+      },
+      "games": 272,
+      "home_score": {
+        "bias_pred_minus_actual": -0.8113,
+        "mae": 7.7753,
+        "n": 272,
+        "rmse": 10.0579
+      },
+      "interpretation": "Score metrics evaluate the display score implied by the canonical spread and total; no separate score model is fitted.",
+      "team_score_observations": 544
+    },
+    "2024": {
+      "all_team_scores": {
+        "bias_pred_minus_actual": -1.1058,
+        "mae": 7.3161,
+        "n": 544,
+        "rmse": 9.3166
+      },
+      "away_score": {
+        "bias_pred_minus_actual": -1.3631,
+        "mae": 7.0334,
+        "n": 272,
+        "rmse": 9.104
+      },
+      "derivation": {
+        "actual_away_points": "(actual_total - actual_home_margin) / 2",
+        "actual_home_points": "(actual_total + actual_home_margin) / 2",
+        "projected_away_points": "(pred_total - pred_home_margin) / 2",
+        "projected_home_points": "(pred_total + pred_home_margin) / 2"
+      },
+      "games": 272,
+      "home_score": {
+        "bias_pred_minus_actual": -0.8485,
+        "mae": 7.5989,
+        "n": 272,
+        "rmse": 9.5245
+      },
+      "interpretation": "Score metrics evaluate the display score implied by the canonical spread and total; no separate score model is fitted.",
+      "team_score_observations": 544
+    },
+    "2025": {
+      "all_team_scores": {
+        "bias_pred_minus_actual": -0.3068,
+        "mae": 7.5884,
+        "n": 544,
+        "rmse": 9.4274
+      },
+      "away_score": {
+        "bias_pred_minus_actual": -0.346,
+        "mae": 7.8458,
+        "n": 272,
+        "rmse": 9.7026
+      },
+      "derivation": {
+        "actual_away_points": "(actual_total - actual_home_margin) / 2",
+        "actual_home_points": "(actual_total + actual_home_margin) / 2",
+        "projected_away_points": "(pred_total - pred_home_margin) / 2",
+        "projected_home_points": "(pred_total + pred_home_margin) / 2"
+      },
+      "games": 272,
+      "home_score": {
+        "bias_pred_minus_actual": -0.2675,
+        "mae": 7.331,
+        "n": 272,
+        "rmse": 9.1439
+      },
+      "interpretation": "Score metrics evaluate the display score implied by the canonical spread and total; no separate score model is fitted.",
+      "team_score_observations": 544
+    }
+  },
+  "release_effect": "NONE_METRIC_ONLY",
+  "source": "nfl_data/calibration/final_architecture_oos_predictions_2023_2025.csv",
+  "stage": 2
+}
