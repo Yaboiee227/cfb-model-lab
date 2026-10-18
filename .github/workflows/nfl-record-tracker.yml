@@ -30,14 +30,22 @@ jobs:
         with: { python-version: '3.12' }
       - name: Test grading rules
         run: python -m unittest discover -s tests -v
+      - name: Detect locked weekly files
+        id: data
+        run: |
+          if compgen -G 'nfl/projections/week-*.json' > /dev/null; then echo 'ready=true' >> "$GITHUB_OUTPUT"; else echo 'ready=false' >> "$GITHUB_OUTPUT"; fi
+      - name: No-op until first locked weekly JSON exists
+        if: steps.data.outputs.ready != 'true'
+        run: echo 'No NFL week-XX.json projection file yet; preserving the current published record.'
       - name: Grade NFL
+        if: steps.data.outputs.ready == 'true'
         env:
           WEEK: ${{ github.event.inputs.week || 'latest' }}
           DRY: ${{ github.event.inputs.dry_run || 'false' }}
         run: |
           if [ "$DRY" = "true" ]; then python scripts/record_tracker.py --league nfl --week "$WEEK" --dry-run; else python scripts/record_tracker.py --league nfl --week "$WEEK"; fi
       - name: Commit updated record files
-        if: ${{ success() && github.event.inputs.dry_run != 'true' }}
+        if: ${{ success() && steps.data.outputs.ready == 'true' && github.event.inputs.dry_run != 'true' }}
         run: |
           git config user.name "cb-model-record-bot"
           git config user.email "actions@users.noreply.github.com"
