@@ -1,6 +1,30 @@
 {
-  "updated": "2026-10-17T23:59:29.860466+00:00",
+  "updated": "2026-10-18T12:41:44+00:00",
   "categories": [
+    {
+      "id": "accuracy-nowcast",
+      "label": "Game-day accuracy nowcast",
+      "short": "Nowcast",
+      "status": "Market-anchored · research only",
+      "summary": "A separate game-day accuracy layer uses the freshest defensible market consensus and verified context while the canonical Week 6 projection remains immutable for honest prospective grading.",
+      "items": [
+        {
+          "title": "Why the market anchors today's pure prediction",
+          "detail": "Across 816 walk-forward games, market spread MAE was 9.7445 versus 10.2564 for the canonical model, and market total MAE was 10.1207 versus 10.5001. The accuracy nowcast therefore uses market consensus as the prediction anchor without replacing the independent model.",
+          "tag": "OOS evidence"
+        },
+        {
+          "title": "Latest Sunday refresh",
+          "detail": "Refreshed at 2026-10-18T12:41:44Z. Houston-Jacksonville is JAX -2.5 with a current total range around 41.5-42.5. New Orleans-New York remains spread-quarantined because current feeds conflict on side direction rather than forcing false precision.",
+          "tag": "08:41 ET"
+        },
+        {
+          "title": "Canonical model stays frozen",
+          "detail": "Game-day information changes reliability, context and the accuracy-nowcast layer only. It does not rewrite the prospectively frozen canonical scores, coefficients or Week 6 evaluation sample.",
+          "tag": "No leakage"
+        }
+      ]
+    },
     {
       "id": "availability",
       "label": "Injuries & availability",
@@ -10,12 +34,12 @@
       "items": [
         {
           "title": "Hard QB state breaks",
-          "detail": "3 current matchup(s) are classified as hard starting-QB breaks. They remain reliability/release gates; the operational QB point adjustment remains zero unless historically earned.",
+          "detail": "3 current matchup(s) are classified as hard starting-QB breaks: CAR-PHI, PIT-TB and BAL-CLE. They remain reliability/release gates; the operational QB point adjustment remains zero unless historically earned.",
           "tag": "QB gate"
         },
         {
           "title": "Final inactives",
-          "detail": "0/13 games currently have final-inactive resolution. Official inactive lists are required on game day before the contextual gate can fully clear.",
+          "detail": "Official game-day inactive lists remain a required gate by kickoff window. Primary-source confirmation supersedes questionable tags; when a final list cannot be verified, the model leaves the gate open rather than inferring availability.",
           "tag": "Inactives"
         },
         {
@@ -33,14 +57,14 @@
       "summary": "Wind, precipitation, temperature and roof state are timestamped context, with elevated uncertainty surfaced rather than converted into arbitrary points.",
       "items": [
         {
-          "title": "Elevated environment",
-          "detail": "3 current matchup(s) carry elevated weather uncertainty. Final forecasts are refreshed close to kickoff.",
+          "title": "Tampa elevated wind",
+          "detail": "The latest NWS point forecast near the 1 PM window is around 77 F with sustained wind near 16 mph and gusts around 23 mph. PIT-TB retains elevated environmental uncertainty without an arbitrary point adjustment.",
           "tag": "Environment"
         },
         {
-          "title": "Roof decisions",
-          "detail": "1 current retractable-roof decision(s) remain explicitly pending in the site export.",
-          "tag": "Venue"
+          "title": "Green Bay evening wind",
+          "detail": "The latest NWS point forecast near the Sunday-night kickoff trends toward roughly mid-50s F and about 11 mph sustained wind. DAL-GB is now treated as low-to-moderate kickoff wind pending the evening recheck, not as a forced total adjustment.",
+          "tag": "SNF"
         },
         {
           "title": "Historical weather restraint",
@@ -53,23 +77,47 @@
       "id": "market",
       "label": "Line movement & market",
       "short": "Market",
-      "status": "Benchmark only",
-      "summary": "The core NFL projection remains market-independent. Public sportsbook observations are comparison benchmarks, not proof of executable prices.",
+      "status": "Accuracy anchor · not a bet signal",
+      "summary": "The core NFL projection remains market-independent. The separate accuracy nowcast uses current consensus because historical pure-prediction MAE favors the market, while public prices remain non-executable benchmarks unless verified.",
       "items": [
         {
-          "title": "Latest public capture",
-          "detail": "Latest exported public-book benchmark timestamp: 2026-10-17T23:59:29.860466+00:00. Market observations remain separate from the frozen model snapshot.",
+          "title": "Latest cross-source audit",
+          "detail": "Same-day Action Network and Covers feeds were rechecked at 2026-10-18T12:41:44Z. Small total differences are retained as ranges rather than collapsed into false precision.",
           "tag": "Timestamp"
         },
         {
-          "title": "Execution verification",
-          "detail": "0/13 current games have account-level execution verification. Unverified public-board prices cannot support ROI or CLV claims.",
+          "title": "NO-NYG conflict quarantine",
+          "detail": "Current NO-NYG sources remain contradictory on spread side direction. The spread nowcast is intentionally blank/quarantined until a stable executable consensus is available.",
           "tag": "Price QA"
         },
         {
-          "title": "No market blend",
-          "detail": "Historical market-blend testing favored the market benchmark itself, so no market residual or market-weighted projection was promoted into the independent core.",
-          "tag": "Independence"
+          "title": "Execution verification",
+          "detail": "No current game has account-level execution verification. Public-board prices cannot support ROI or CLV claims and do not authorize PLAY/LEAN recommendations.",
+          "tag": "Execution"
+        }
+      ]
+    },
+    {
+      "id": "trends",
+      "label": "Trends & systems",
+      "short": "Trends",
+      "status": "Verified context only",
+      "summary": "Trend and system information is displayed only when the record/sample/source requirements are met; it is not allowed to move projections or recommendation strength without prospective evidence.",
+      "items": [
+        {
+          "title": "Verified trend inventory",
+          "detail": "The current NFL trend payload contains 24 verified entries across 8 games, with explicit sample/record/source fields.",
+          "tag": "24 verified"
+        },
+        {
+          "title": "No trend coefficient",
+          "detail": "ATS/OU streaks, public splits and editorial systems remain descriptive context. They have zero direct projection, confidence or recommendation weight in the canonical model.",
+          "tag": "No overfit"
+        },
+        {
+          "title": "Freshness policy",
+          "detail": "Current weekly systems and market-facing trends may be cross-checked against same-week sources, but stale or contradictory trend claims are excluded rather than backfilled into the model.",
+          "tag": "QA"
         }
       ]
     },
@@ -97,7 +145,7 @@
         },
         {
           "title": "Rejected layers stay rejected",
-          "detail": "NGS tracking, trenches, drive/pace, red-zone, turnover, special-teams, penalties, static travel/roof and historical injury-burden candidates were not promoted when robust validation did not support them.",
+          "detail": "NGS tracking, trenches, drive/pace, red-zone, turnover, special-teams, penalties, static travel/roof, historical injury-burden candidates and editorial trends were not promoted when robust validation did not support them.",
           "tag": "OOS discipline"
         }
       ]
