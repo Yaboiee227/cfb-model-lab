@@ -1,0 +1,93 @@
+name: NFL Shared Site Integration
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - nfl-model-development
+    paths:
+      - league-bootstrap.js
+      - live-suite-loader.js
+      - .github/workflows/nfl-shared-site-integration.yml
+
+permissions:
+  contents: write
+
+jobs:
+  integrate-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout NFL development branch
+        uses: actions/checkout@v4
+        with:
+          ref: nfl-model-development
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Inject league bootstrap before application loader
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('index.html')
+          text = path.read_text(encoding='utf-8')
+          marker = '<script src="script.js" defer></script>'
+          bootstrap = '<script src="league-bootstrap.js" defer></script>\n' + marker
+          if '<script src="league-bootstrap.js" defer></script>' not in text:
+              if marker not in text:
+                  raise SystemExit('script.js loader marker not found')
+              text = text.replace(marker, bootstrap, 1)
+              path.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Validate shared-site wiring
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json, csv
+
+          html = Path('index.html').read_text()
+          bootstrap = Path('league-bootstrap.js').read_text()
+          live_loader = Path('live-suite-loader.js').read_text()
+
+          assert html.count('<script src="league-bootstrap.js" defer></script>') == 1
+          assert html.index('league-bootstrap.js') < html.index('script.js')
+          assert "window.CB_ACTIVE_LEAGUE" in bootstrap
+          assert "nfl_data/site/" in bootstrap
+          for name in ['config.json','projections.csv','results.csv','research.json']:
+              assert name in bootstrap
+          assert "CB_ACTIVE_LEAGUE" in live_loader and "=== 'nfl'" in live_loader
+          assert 'alt-target-box' in bootstrap and 'alt-analysis-card' in bootstrap
+
+          cfg = json.loads(Path('nfl_data/site/config.json').read_text())
+          assert cfg['league'] == 'NFL'
+          assert cfg['websitePublishAllowed'] is False
+          assert cfg['separateNflSite'] is False
+
+          projections = list(csv.DictReader(Path('nfl_data/site/projections.csv').open()))
+          assert projections and all(row['league'] == 'NFL' for row in projections)
+          assert all(row['websitePublishAllowed'].lower() == 'false' for row in projections)
+
+          print({
+              'league_switch': 'wired',
+              'cfb_default': True,
+              'nfl_data_root': 'nfl_data/site',
+              'nfl_publish_allowed': False,
+              'cfb_live_suite_blocked_in_nfl_mode': True,
+              'nfl_alt_recommendation_ui_hidden': True,
+          })
+          PY
+
+      - name: Commit branch-only integration change
+        run: |
+          if git diff --quiet -- index.html; then
+            echo 'Shared-site loader already wired.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          git commit -m 'Wire CFB NFL shared-site league bootstrap'
+          git push origin HEAD:nfl-model-development
