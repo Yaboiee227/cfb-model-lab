@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "season": 2026,
+  "week": 6,
+  "lastUpdated": "2026-10-17T22:30:00-04:00",
+  "status": "MOCK_DATA_ONLY",
+  "mock": true,
+  "source": {
+    "name": "Action Network (example link only)",
+    "url": "https://www.actionnetwork.com/nfl/nfl-betting-primer-trends-stats-systems-for-every-game"
+  },
+  "alignmentConfig": {
+    "spreadNeutralBand": 0.25,
+    "totalNeutralBand": 1.0,
+    "moneylineNeutralBandPct": 0.5
+  },
+  "notes": "All trend records and text in this file are synthetic examples for UI testing and must not be treated as factual.",
+  "trends": [
+    {
+      "id": "MOCK-2026-W06-HOU-JAX-T01",
+      "gameId": "2026_06_HOU_JAX",
+      "season": 2026,
+      "week": 6,
+      "matchup": {"away": "HOU", "home": "JAX"},
+      "subject": "JAX",
+      "trendType": "ATS",
+      "alignmentTarget": "spread",
+      "text": "Mock example only: Jacksonville is 6-2 ATS in the sample.",
+      "pointsTo": "home",
+      "sampleSize": 8,
+      "record": "6-2 ATS",
+      "sourceName": "Action Network (mock example)",
+      "sourceUrl": "https://www.actionnetwork.com/nfl/nfl-betting-primer-trends-stats-systems-for-every-game",
+      "tags": ["mock", "home"]
+    },
+    {
+      "id": "MOCK-2026-W06-BAL-CLE-T01",
+      "gameId": "2026_06_BAL_CLE",
+      "season": 2026,
+      "week": 6,
+      "matchup": {"away": "BAL", "home": "CLE"},
+      "subject": "BAL",
+      "trendType": "SU",
+      "alignmentTarget": "moneyline",
+      "text": "Mock example only: Baltimore is 7-1 straight up in the sample.",
+      "pointsTo": "away",
+      "sampleSize": 8,
+      "record": "7-1 SU",
+      "sourceName": "Action Network (mock example)",
+      "sourceUrl": "https://www.actionnetwork.com/nfl/nfl-betting-primer-trends-stats-systems-for-every-game",
+      "tags": ["mock", "straight-up"]
+    },
+    {
+      "id": "MOCK-2026-W06-DAL-GB-T01",
+      "gameId": "2026_06_DAL_GB",
+      "season": 2026,
+      "week": 6,
+      "matchup": {"away": "DAL", "home": "GB"},
+      "subject": "TOTAL",
+      "trendType": "TOTAL",
+      "alignmentTarget": "total",
+      "text": "Mock example only: this matchup sample is 5-2 to the over.",
+      "pointsTo": "over",
+      "sampleSize": 7,
+      "record": "5-2 O/U",
+      "sourceName": "Action Network (mock example)",
+      "sourceUrl": "https://www.actionnetwork.com/nfl/nfl-betting-primer-trends-stats-systems-for-every-game",
+      "tags": ["mock", "total"]
+    }
+  ]
+}
