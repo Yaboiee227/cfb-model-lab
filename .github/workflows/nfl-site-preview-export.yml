@@ -1,0 +1,75 @@
+name: NFL Site Preview Export
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - nfl-model-development
+    paths:
+      - scripts/build_nfl_site_export.py
+      - nfl_data/research_exports/week6_cfb_style_research_latest.csv
+      - NFL_SITE_INTEGRATION_CONTRACT.md
+      - .github/workflows/nfl-site-preview-export.yml
+
+permissions:
+  contents: write
+
+jobs:
+  build-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout NFL development branch
+        uses: actions/checkout@v4
+        with:
+          ref: nfl-model-development
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Record production CFB data tree before export
+        run: |
+          find data -type f -print0 | sort -z | xargs -0 sha256sum > /tmp/cfb-data-before.sha256
+
+      - name: Build NFL site preview export
+        run: python scripts/build_nfl_site_export.py
+
+      - name: Verify NFL preview release safety
+        run: |
+          python - <<'PY'
+          import csv, json
+          from pathlib import Path
+
+          cfg = json.loads(Path('nfl_data/site/config.json').read_text())
+          assert cfg['league'] == 'NFL'
+          assert cfg['websitePublishAllowed'] is False
+          assert cfg['separateNflSite'] is False
+          assert cfg['integrationTarget'] == 'Existing CB Model Projections site'
+
+          rows = list(csv.DictReader(Path('nfl_data/site/projections.csv').open()))
+          assert len(rows) == 13, len(rows)
+          assert all(r['league'] == 'NFL' for r in rows)
+          assert all(r['websitePublishAllowed'].lower() == 'false' for r in rows)
+          assert all(r['releaseStatus'].startswith('HOLD') for r in rows)
+          assert all(r['homeWinProbability'] == '' and r['awayWinProbability'] == '' for r in rows)
+          assert all(r['preferredArchitecture'] for r in rows)
+          print({'rows': len(rows), 'websitePublishAllowed': False, 'releaseStates': sorted(set(r['releaseStatus'] for r in rows))})
+          PY
+
+      - name: Verify CFB production data unchanged
+        run: |
+          find data -type f -print0 | sort -z | xargs -0 sha256sum > /tmp/cfb-data-after.sha256
+          diff -u /tmp/cfb-data-before.sha256 /tmp/cfb-data-after.sha256
+
+      - name: Commit preview outputs when changed
+        run: |
+          if git diff --quiet -- nfl_data/site; then
+            echo 'NFL site preview already current.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add nfl_data/site/config.json nfl_data/site/projections.csv
+          git commit -m 'Refresh NFL site preview export'
+          git push origin HEAD:nfl-model-development
