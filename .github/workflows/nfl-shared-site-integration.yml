@@ -8,6 +8,8 @@ on:
     paths:
       - league-bootstrap.js
       - live-suite-loader.js
+      - NFL_SITE_INTEGRATION_CONTRACT.md
+      - nfl_data/site/**
       - .github/workflows/nfl-shared-site-integration.yml
 
 permissions:
@@ -27,6 +29,15 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Record production CFB data tree
+        run: |
+          find data -type f -print0 | sort -z | xargs -0 sha256sum > /tmp/cfb-site-before.sha256
+
       - name: Inject league bootstrap before application loader
         run: |
           python - <<'PY'
@@ -42,15 +53,22 @@ jobs:
               path.write_text(text, encoding='utf-8')
           PY
 
-      - name: Validate shared-site wiring
+      - name: Syntax-check shared JavaScript
+        run: |
+          node --check league-bootstrap.js
+          node --check script.js
+          node --check live-suite-loader.js
+
+      - name: Validate shared-site wiring and NFL release policy
         run: |
           python - <<'PY'
           from pathlib import Path
           import json, csv
 
-          html = Path('index.html').read_text()
-          bootstrap = Path('league-bootstrap.js').read_text()
-          live_loader = Path('live-suite-loader.js').read_text()
+          html = Path('index.html').read_text(encoding='utf-8')
+          bootstrap = Path('league-bootstrap.js').read_text(encoding='utf-8')
+          live_loader = Path('live-suite-loader.js').read_text(encoding='utf-8')
+          contract = Path('NFL_SITE_INTEGRATION_CONTRACT.md').read_text(encoding='utf-8')
 
           assert html.count('<script src="league-bootstrap.js" defer></script>') == 1
           assert html.index('league-bootstrap.js') < html.index('script.js')
@@ -59,16 +77,37 @@ jobs:
           for name in ['config.json','projections.csv','results.csv','research.json']:
               assert name in bootstrap
           assert "CB_ACTIVE_LEAGUE" in live_loader and "=== 'nfl'" in live_loader
-          assert 'alt-target-box' in bootstrap and 'alt-analysis-card' in bootstrap
 
-          cfg = json.loads(Path('nfl_data/site/config.json').read_text())
+          # League isolation and release-safe NFL UI.
+          assert 'cb-bookmarks-nfl' in bootstrap
+          assert 'Prospective projection audit' in bootstrap
+          assert 'Model / market difference' in bootstrap
+          assert 'Reliability is not betting confidence' in bootstrap
+          assert 'Shadow challenger' in bootstrap
+          assert 'alt-target-box' in bootstrap and 'alt-analysis-card' in bootstrap
+          assert "league === 'nfl'" in bootstrap
+          assert 'Stage 6' in contract and 'production website release: **HOLD**' in contract
+
+          cfg = json.loads(Path('nfl_data/site/config.json').read_text(encoding='utf-8'))
           assert cfg['league'] == 'NFL'
           assert cfg['websitePublishAllowed'] is False
           assert cfg['separateNflSite'] is False
+          assert cfg['moneylineEdgeValidation'] == 'HOLD'
+          assert cfg['winProbabilityValidation'] == 'DISPLAY_VALIDATED_RESEARCH_ONLY'
 
-          projections = list(csv.DictReader(Path('nfl_data/site/projections.csv').open()))
-          assert projections and all(row['league'] == 'NFL' for row in projections)
+          with Path('nfl_data/site/projections.csv').open(encoding='utf-8', newline='') as f:
+              projections = list(csv.DictReader(f))
+          assert len(projections) == 13
+          assert all(row['league'] == 'NFL' for row in projections)
           assert all(row['websitePublishAllowed'].lower() == 'false' for row in projections)
+          assert all(row['releaseStatus'].startswith('HOLD') for row in projections)
+          assert all(row['shadowModelSpreadHome'] for row in projections)
+          assert all(row['spreadReliability'] and row['totalReliability'] for row in projections)
+          assert all(row['releaseBlockers'] for row in projections)
+          assert all(row['marketSource'] and 'benchmark' in row['marketSource'].lower() for row in projections)
+          assert all(row['executionVerified'].lower() == 'false' for row in projections)
+          assert all(row['homeWinProbability'] and row['awayWinProbability'] for row in projections)
+          assert all(abs(float(row['homeWinProbability']) + float(row['awayWinProbability']) - 100) < 0.05 for row in projections)
 
           print({
               'league_switch': 'wired',
@@ -76,9 +115,17 @@ jobs:
               'nfl_data_root': 'nfl_data/site',
               'nfl_publish_allowed': False,
               'cfb_live_suite_blocked_in_nfl_mode': True,
+              'nfl_bookmarks_isolated': True,
               'nfl_alt_recommendation_ui_hidden': True,
+              'nfl_projection_rows': len(projections),
+              'nfl_release_states': sorted(set(row['releaseStatus'] for row in projections)),
           })
           PY
+
+      - name: Verify production CFB data unchanged
+        run: |
+          find data -type f -print0 | sort -z | xargs -0 sha256sum > /tmp/cfb-site-after.sha256
+          diff -u /tmp/cfb-site-before.sha256 /tmp/cfb-site-after.sha256
 
       - name: Commit branch-only integration change
         run: |
