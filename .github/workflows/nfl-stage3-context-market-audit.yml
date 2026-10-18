@@ -1,0 +1,83 @@
+name: NFL Stage 3 Context Market Audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - nfl-model-development
+    paths:
+      - NFL_STAGE3_CONTEXT_MARKET_POLICY.md
+      - scripts/audit_nfl_stage3_context_market.py
+      - nfl_data/prospective/week6_prelock_20261017T225656Z.json
+      - nfl_data/prospective/2026_week6_gate_inputs.json
+      - nfl_data/prospective/week6_readiness_matrix_20261017.json
+      - nfl_data/prospective/week6_gameday_final_gate_checklist_20261017.json
+      - nfl_data/prospective/week6_public_market_movement_20261017.json
+      - nfl_data/prospective/week6_context_refresh_20261018T0055Z.json
+      - .github/workflows/nfl-stage3-context-market-audit.yml
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout NFL development branch
+        uses: actions/checkout@v4
+        with:
+          ref: nfl-model-development
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Record production CFB data tree
+        run: |
+          find data -type f -print0 | sort -z | xargs -0 sha256sum > /tmp/cfb-stage3-before.sha256
+
+      - name: Run Stage 3 audit
+        run: python scripts/audit_nfl_stage3_context_market.py
+
+      - name: Verify Stage 3 safety
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('nfl_data/validation/stage3_context_market_audit.json')
+          d=json.loads(p.read_text())
+          assert d['audit_verdict']=='PASS_STAGE3_ARCHITECTURE__LIVE_GAME_GATES_REMAIN_OPEN'
+          assert d['stage3_architecture_complete'] is True
+          assert d['individual_game_release_complete'] is False
+          assert d['recommendation_release_allowed'] is False
+          assert d['website_betting_signal_release_allowed'] is False
+          assert all(d['policy_checks'].values())
+          assert d['current_week6_state']['games']==13
+          assert d['current_week6_state']['public_book_captured_games']==13
+          assert d['current_week6_state']['account_executable_verified_games']==0
+          print({
+            'verdict':d['audit_verdict'],
+            'hard_qb':d['current_week6_state']['hard_qb_break_games'],
+            'inactives_final':d['current_week6_state']['final_inactives_resolved_games'],
+            'weather_final':d['current_week6_state']['weather_roof_final_games'],
+            'public_book':d['current_week6_state']['public_book_captured_games']
+          })
+          PY
+
+      - name: Verify production CFB data unchanged
+        run: |
+          find data -type f -print0 | sort -z | xargs -0 sha256sum > /tmp/cfb-stage3-after.sha256
+          diff -u /tmp/cfb-stage3-before.sha256 /tmp/cfb-stage3-after.sha256
+
+      - name: Commit Stage 3 audit artifacts
+        run: |
+          if [ -z "$(git status --porcelain -- nfl_data/validation/stage3_context_market_audit.json nfl_data/validation/STAGE3_CONTEXT_MARKET_AUDIT.md)" ]; then
+            echo 'Stage 3 audit already current.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add nfl_data/validation/stage3_context_market_audit.json nfl_data/validation/STAGE3_CONTEXT_MARKET_AUDIT.md
+          git commit -m 'Refresh NFL Stage 3 context market audit'
+          git push origin HEAD:nfl-model-development
