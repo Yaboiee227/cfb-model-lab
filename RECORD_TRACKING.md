@@ -28,9 +28,9 @@ The audited 2026 Week 7 record is preserved in `cfb/record-baseline.json`. Futur
 `scripts/score_sources.py` is the only ESPN-specific module. It checks ESPN's displayed final team score against the sum of returned period/OT linescores when available. The rest of the grader is source-agnostic so this module can be swapped later.
 
 ## Schedule and Eastern Time
-GitHub cron is UTC. Fixed UTC times shift by one local hour when Eastern Time enters or leaves daylight saving time. Conservative year-round times are used:
-- CFB: Sunday 15:00 UTC (11am EDT / 10am EST), catch-up 21:00 UTC (5pm EDT / 4pm EST).
-- NFL: Tuesday 15:00 UTC (11am EDT / 10am EST), catch-up 21:00 UTC (5pm EDT / 4pm EST).
+GitHub cron is UTC. Fixed UTC times shift by one local hour when Eastern Time enters or leaves daylight saving time. The jobs are deliberately scheduled away from the top of the hour to reduce scheduler congestion:
+- CFB: Sunday 15:17 UTC (11:17am EDT / 10:17am EST), catch-up 21:17 UTC (5:17pm EDT / 4:17pm EST).
+- NFL: Tuesday 15:17 UTC (11:17am EDT / 10:17am EST), catch-up 21:17 UTC (5:17pm EDT / 4:17pm EST).
 
 ## Pages deployment
 The grading workflows explicitly dispatch `.github/workflows/deploy-pages.yml` after a successful non-dry-run grade. This is necessary because commits made with the built-in `GITHUB_TOKEN` do not themselves trigger a Pages build.
