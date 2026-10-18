@@ -38,7 +38,9 @@ jobs:
           files=sorted(glob.glob('nfl_data/research_exports/week6_cfb_style_research_export_*.json'))
           assert files
           d=json.load(open(files[-1]))
+          stable=json.load(open('nfl_data/research_exports/week6_cfb_style_research_latest.json'))
           assert d['website_publish_allowed'] is False
+          assert stable['created_at_utc'] == d['created_at_utc']
           assert d['release_policy']['recommendations_enabled'] is False
           assert d['release_policy']['validated_edge_threshold_exists'] is False
           assert d['release_policy']['alt_line_logic_enabled'] is False
@@ -46,7 +48,7 @@ jobs:
           for r in d['games']:
               assert r['website_publish_allowed'] is False
               assert r['recommendation'] == 'HOLD_NO_VALIDATED_EDGE_THRESHOLD'
-          print('CFB-style NFL research export guard passed')
+          print('CFB-style NFL research export guard passed:', d['latest_market_capture_at_utc'])
           PY
       - name: Verify live CFB site untouched
         run: |
@@ -59,7 +61,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add nfl_data/research_exports/week6_cfb_style_research_export_*.json nfl_data/research_exports/week6_cfb_style_research_export_*.csv
+          git add nfl_data/research_exports/week6_cfb_style_research_export_*.json nfl_data/research_exports/week6_cfb_style_research_export_*.csv nfl_data/research_exports/week6_cfb_style_research_latest.json nfl_data/research_exports/week6_cfb_style_research_latest.csv
           if git diff --cached --quiet; then
             echo 'No CFB-style research export changes'
           else
