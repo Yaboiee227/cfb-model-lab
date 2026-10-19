@@ -1,0 +1,52 @@
+{
+  "league": "NFL",
+  "season": 2026,
+  "week": 6,
+  "captured_at_local": "2026-10-19T18:41:46-04:00",
+  "window": "MNF_PRE_INACTIVES",
+  "game": "WAS_SF",
+  "kickoff_et": "2026-10-19T20:15:00-04:00",
+  "canonical_snapshot_immutable": true,
+  "canonical_projection_changed": false,
+  "model_coefficients_changed": false,
+  "recommendation_state": "HOLD",
+  "market": {
+    "spread": "SF -7.5",
+    "total_range": "51.5-52.5",
+    "anchor_total": 52.0,
+    "market_implied_score_at_anchor": {"WAS": 22.25, "SF": 29.75},
+    "open_spread": "SF -5.5",
+    "open_total": 50.5,
+    "notes": "Action displayed FanDuel SF -7.5 / 51.5 and DraftKings SF -7.5 / 52.5 on Oct. 19; preserve total as range rather than false precision."
+  },
+  "official_personnel": {
+    "WAS_out": ["QB Marcus Mariota (knee)", "RB Jacory Croskey-Merritt (groin; placed IR)", "DE Charles Omenihu (groin/ankle)", "LB Javontae Jean-Baptiste (pectoral; placed IR)"],
+    "WAS_roster_updates": ["CB Trey Amos activated from IR and removed from injury report", "LB Jordan Magee activated from IR and removed from injury report", "RB Jeremy McNichols activated from IR and removed from injury report"],
+    "WAS_questionable_remaining": ["WR Stefon Diggs (hamstring)", "OL Lucas Patrick (illness)", "DT Javon Kinlaw (ankle/knee)", "S Percy Butler (hamstring)", "S Nick Cross (illness)", "S Tyler Owens (hamstring)"],
+    "SF_out": ["WR Deebo Samuel (hamstring)", "DE Nick Bosa (calf)", "LB Garret Wallow (hamstring)", "S Marques Sigle (ankle)"],
+    "SF_questionable": ["WR Mike Evans (ribs/Achilles)", "WR Christian Kirk (calf)", "DT Gracen Halton (quad)", "DL Mykel Williams (knee)", "CB Upton Stout (shoulder)", "S Siran Neal (neck)"],
+    "QB_state": "Jayden Daniels and Brock Purdy have no game-status designation in the official injury report; Marcus Mariota is out.",
+    "final_inactives_state": "PENDING_OFFICIAL_90_MINUTE_LIST"
+  },
+  "weather": {
+    "venue": "Levi's Stadium, Santa Clara, CA",
+    "roof": "open_air",
+    "NWS_context": "Santa Clara Valley tonight mostly cloudy; northwest wind 5-15 mph becoming southwest up to 5 mph after midnight; temperatures around 60F near early evening, falling into the upper 50s.",
+    "Action_display": "64F, 0% rain, wind 9 mph",
+    "model_effect": "Context only; no validated weather coefficient applied."
+  },
+  "travel_context": "Washington road trip to Santa Clara; retained as context only, no unvalidated travel point adjustment.",
+  "creator_overlay": {
+    "Evan_Abrams_Action": "Action current board shows SF -7.5 with total 51.5-52.5 depending book. Public snapshot is strongly SF-heavy (roughly 75-78% money in current Action display); betting trends/systems/public data remain context-only.",
+    "David_Chao_SIC": "Medical-impact layer remains subordinate to official NFL/team status. No verified new SIC numeric signal was found in this capture that should override official designations or change the canonical model.",
+    "Nick_Giffen_Luck": "No newly verified WAS-SF official Week 6 Luck side/total signal was found in this capture. Luck remains a separate challenger only and receives zero canonical weight.",
+    "material_agreement_disagreement": "Market moved from SF -5.5 opener to -7.5 while San Francisco carries major absences (Nick Bosa, Deebo Samuel) and Washington has its leading rusher on IR. Action expert opinions are not unanimous: current Action pages contain both WAS +7.5 and SF -7.5 selections. Treat as uncertainty/context, not a model override."
+  },
+  "unresolved_blockers": [
+    "Official final inactive lists for WAS-SF",
+    "Final active status for Stefon Diggs, Lucas Patrick, Javon Kinlaw and Washington secondary questionables",
+    "Final active status for Mike Evans, Christian Kirk, Mykel Williams and other San Francisco questionables",
+    "Fresh direct-book market capture nearer kickoff"
+  ],
+  "final_verdict": "NO_CANONICAL_CHANGE. Update MNF market-anchored nowcast/reliability/QA only; recommendation remains HOLD pending existing validation gates."
+}
