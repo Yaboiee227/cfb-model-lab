@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "scope": "Tuesday October 20, 2026",
+  "role": "RESEARCH_COMPARISON_ONLY",
+  "canonicalInfluence": false,
+  "shadowModel": "cfb-rebuild-alpha-shadow-v8h",
+  "shadowAsOf": "2026-10-20T04:00:00Z",
+  "policy": "Differences are descriptive diagnostics only. Do not blend shadow, Sagarin, sportsbook or other external numbers into the canonical CB projection without validated promotion.",
+  "conventions": {
+    "homeMargin": "positive = home team favored by the model/benchmark",
+    "shadowMinusMarketMargin": "positive = shadow is more favorable to the home team than that observed market; negative = more favorable to the away team",
+    "shadowMinusSagarinMargin": "positive = shadow is more favorable to the home team than Sagarin; negative = more favorable to the away team",
+    "shadowMinusMarketTotal": "positive = shadow total is higher than observed market total"
+  },
+  "games": [
+    {
+      "gameId": "2026-10-20-MIDDLETENNESSEE-FIU",
+      "awayTeam": "Middle Tennessee",
+      "homeTeam": "FIU",
+      "shadow": {
+        "projectedScoreAway": 18.734194773128216,
+        "projectedScoreHome": 28.940591193834734,
+        "homeMargin": 10.206396420706518,
+        "projectedTotal": 47.67478596696295,
+        "homeWinProbability": 74.68322244897735
+      },
+      "sagarin": {
+        "homeMargin": 12.35,
+        "shadowMinusSagarinMargin": -2.143603579293482,
+        "ratingsThrough": "2026-10-17"
+      },
+      "observedMarkets": [
+        {
+          "book": "FanDuel",
+          "observedAt": "2026-10-19T22:00:00Z",
+          "homeMargin": 9.5,
+          "total": 45.5,
+          "shadowMinusMarketMargin": 0.706396420706518,
+          "shadowMinusMarketTotal": 2.174785966962948
+        },
+        {
+          "book": "BetMGM",
+          "observedAt": "2026-10-19T21:00:00Z",
+          "homeMargin": 10.0,
+          "total": 45.5,
+          "shadowMinusMarketMargin": 0.206396420706518,
+          "shadowMinusMarketTotal": 2.174785966962948
+        }
+      ],
+      "researchFlag": "RELATIVE_ALIGNMENT",
+      "note": "Shadow margin is close to both observed markets and falls between market and Sagarin. This is agreement context, not a release signal."
+    },
+    {
+      "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
+      "awayTeam": "Missouri State",
+      "homeTeam": "Delaware",
+      "shadow": {
+        "projectedScoreAway": 23.425669258030254,
+        "projectedScoreHome": 28.20617641994704,
+        "homeMargin": 4.780507161916788,
+        "projectedTotal": 51.631845677977296,
+        "homeWinProbability": 62.22008989731571
+      },
+      "sagarin": {
+        "homeMargin": 6.06,
+        "shadowMinusSagarinMargin": -1.279492838083212,
+        "ratingsThrough": "2026-10-17"
+      },
+      "observedMarkets": [
+        {
+          "book": "FanDuel",
+          "observedAt": "2026-10-19T22:00:00Z",
+          "homeMargin": 2.5,
+          "total": 52.5,
+          "shadowMinusMarketMargin": 2.280507161916788,
+          "shadowMinusMarketTotal": -0.868154322022704
+        },
+        {
+          "book": "BetMGM",
+          "observedAt": "2026-10-19T21:00:00Z",
+          "homeMargin": 3.0,
+          "total": 53.5,
+          "shadowMinusMarketMargin": 1.780507161916788,
+          "shadowMinusMarketTotal": -1.868154322022704
+        }
+      ],
+      "researchFlag": "PERSONNEL_BLOCKED_DISAGREEMENT",
+      "note": "Shadow and Sagarin are more favorable to Delaware than the observed market, but Delaware starting QB Nick Minicucci is out and the replacement-QB state remains unresolved. Do not interpret the numerical disagreement until personnel is refreshed."
+    },
+    {
+      "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
+      "awayTeam": "South Alabama",
+      "homeTeam": "Marshall",
+      "shadow": {
+        "projectedScoreAway": 31.129679807138004,
+        "projectedScoreHome": 30.876038881798465,
+        "homeMargin": -0.2536409253395391,
+        "projectedTotal": 62.00571868893647,
+        "homeWinProbability": 49.341178519229665
+      },
+      "sagarin": {
+        "homeMargin": -5.14,
+        "shadowMinusSagarinMargin": 4.886359074660461,
+        "ratingsThrough": "2026-10-17"
+      },
+      "observedMarkets": [
+        {
+          "book": "FanDuel",
+          "observedAt": "2026-10-19T22:00:00Z",
+          "homeMargin": -3.5,
+          "total": 64.5,
+          "shadowMinusMarketMargin": 3.246359074660461,
+          "shadowMinusMarketTotal": -2.49428131106353
+        },
+        {
+          "book": "BetMGM",
+          "observedAt": "2026-10-19T21:00:00Z",
+          "homeMargin": -3.0,
+          "total": 63.5,
+          "shadowMinusMarketMargin": 2.746359074660461,
+          "shadowMinusMarketTotal": -1.49428131106353
+        }
+      ],
+      "researchFlag": "MATERIAL_MODEL_DISAGREEMENT",
+      "note": "Shadow is nearly a toss-up while both Sagarin and the observed market favor South Alabama more strongly. Prioritize matchup/personnel/data-quality review rather than averaging the signals."
+    }
+  ]
+}
