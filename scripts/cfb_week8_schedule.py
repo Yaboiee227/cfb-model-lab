@@ -3,7 +3,8 @@
 
 This is schedule metadata only. It does not use scores, markets, ratings, or
 post-kickoff information. Team schedules are aggregated from ESPN's FBS-only
-team universe and deduplicated by ESPN event ID.
+team universe and deduplicated by ESPN event ID. Human-facing game IDs use the
+Eastern game date so evening kickoffs do not roll into the next UTC date.
 """
 from __future__ import annotations
 
@@ -14,18 +15,24 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlencode
+from zoneinfo import ZoneInfo
 
 import cfb_shadow_engine as engine
 from run_cfb_shadow_week8 import extract_grouped_team_ids
 
 ESPN_SITE_BASE = "https://site.api.espn.com/apis/site/v2/sports/football/college-football"
 ESPN_FBS_TEAMS = "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/teams"
+EASTERN = ZoneInfo("America/New_York")
 MIN_EXPECTED_GAMES = 50
 MAX_EXPECTED_GAMES = 65
 
 
 def parse_dt(value: str) -> datetime:
     return engine.parse_dt(value)
+
+
+def eastern_game_date(dt: datetime) -> str:
+    return dt.astimezone(EASTERN).date().isoformat()
 
 
 def team_display(team: dict[str, Any]) -> str:
@@ -83,9 +90,11 @@ def discover_games(start: datetime, end: datetime, season: int=2026) -> list[dic
                 venue=comp.get("venue") or {}
                 address=venue.get("address") or {}
                 away=team_display(at);home=team_display(ht)
+                game_date=eastern_game_date(kickoff)
                 events[gid]={
-                    "gameId": f"{kickoff.astimezone(timezone.utc).date().isoformat()}-{engine.canonical_school(away).upper()}-{engine.canonical_school(home).upper()}",
+                    "gameId": f"{game_date}-{engine.canonical_school(away).upper()}-{engine.canonical_school(home).upper()}",
                     "sourceGameId": gid,
+                    "gameDateET": game_date,
                     "awayTeam": away,
                     "homeTeam": home,
                     "awayTeamId": aid,
@@ -115,9 +124,10 @@ def main():
     start=parse_dt(args.start);end=parse_dt(args.end)
     games=discover_games(start,end)
     out={
-        "schemaVersion":1,"league":"cfb","season":2026,"week":8,
+        "schemaVersion":2,"league":"cfb","season":2026,"week":8,
         "role":"WEEK_SCHEDULE_STATE","canonicalInfluence":False,
         "dateWindowET":["2026-10-20","2026-10-24"],
+        "gameIdDateConvention":"America/New_York game date",
         "observedAt":engine.iso(datetime.now(timezone.utc)),
         "source":"ESPN public FBS grouped team universe + 2026 regular-season team schedules",
         "gameCount":len(games),"games":games,
@@ -125,9 +135,9 @@ def main():
     p=Path(args.output);p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(out,indent=2)+'\n',encoding='utf-8')
     by_day={}
     for g in games:
-        day=parse_dt(g['kickoff']).astimezone(timezone.utc).date().isoformat()
+        day=g['gameDateET']
         by_day[day]=by_day.get(day,0)+1
-    print(json.dumps({"gameCount":len(games),"byUtcDate":by_day,"first":games[:3],"last":games[-3:]},indent=2))
+    print(json.dumps({"gameCount":len(games),"byEasternGameDate":by_day,"first":games[:3],"last":games[-3:]},indent=2))
 
 
 if __name__=='__main__':
