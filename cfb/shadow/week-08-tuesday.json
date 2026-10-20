@@ -1,50 +1,146 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 8,
   "league": "cfb",
   "season": 2026,
   "week": 8,
-  "modelId": "cfb-rebuild-alpha-shadow-v1",
+  "modelId": "cfb-rebuild-alpha-shadow-v8h",
   "role": "SHADOW_CHALLENGER_ONLY",
   "canonicalInfluence": false,
   "asOf": "2026-10-20T04:00:00Z",
   "trainingWindowStart": "2026-08-20T04:00:00Z",
-  "trainingGames": 249,
+  "rawTrainingGames": 510,
+  "eligibleTrainingGames": 388,
+  "teamIdentity": "normalized ESPN team.location/name with explicit aliases",
+  "ingestionMode": "ESPN FBS-only team discovery + team regular-season schedules; dedupe event IDs; hard kickoff cutoff",
+  "targetCoverage": {
+    "middletennessee": {
+      "displayName": "Middle Tennessee",
+      "rawAppearances": 6,
+      "eligibleAppearances": 5,
+      "inEligibleModel": true
+    },
+    "floridainternational": {
+      "displayName": "FIU",
+      "rawAppearances": 6,
+      "eligibleAppearances": 5,
+      "inEligibleModel": true
+    },
+    "missouristate": {
+      "displayName": "Missouri State",
+      "rawAppearances": 6,
+      "eligibleAppearances": 5,
+      "inEligibleModel": true
+    },
+    "delaware": {
+      "displayName": "Delaware",
+      "rawAppearances": 6,
+      "eligibleAppearances": 5,
+      "inEligibleModel": true
+    },
+    "southalabama": {
+      "displayName": "South Alabama",
+      "rawAppearances": 6,
+      "eligibleAppearances": 5,
+      "inEligibleModel": true
+    },
+    "marshall": {
+      "displayName": "Marshall",
+      "rawAppearances": 6,
+      "eligibleAppearances": 5,
+      "inEligibleModel": true
+    }
+  },
   "source": {
-    "provider": "ESPN public college-football scoreboard",
+    "provider": "ESPN public FBS teams + college-football team schedules",
     "marketDataUsed": false,
     "externalRatingsUsed": false,
     "postKickoffDataUsed": false
   },
   "fit": {
-    "description": "ridge-shrunk opponent-adjusted team scoring model with learned home scoring advantage",
-    "selectedAlpha": 40.0,
+    "description": "separate ridge-shrunk margin and scoring-environment models with structural HFA frozen from pre-Week-8 training",
+    "selectedAlpha": 5.0,
     "selectedHalfLifeDays": 21,
-    "learnedHomeScoreAdvantage": 8.951376137148662,
-    "uncertaintyMarginSigma": 17.335893010121534,
+    "minTeamAppearances": 4,
+    "structuralHomeMarginAdvantage": 4.249132328925835,
+    "homeFieldSource": "MULTI_SEASON_FBS_HISTORICAL_MEDIAN",
+    "homeFieldSanityRange": [
+      0.0,
+      5.5
+    ],
+    "homeFieldSanityPass": true,
+    "homeFieldProvenancePass": true,
+    "uncertaintyMarginSigma": 15.358256001456759,
     "uncertaintySource": "temporal_holdout_margin_residual_std",
     "tuning": {
       "mode": "PRE_WEEK8_TEMPORAL_HOLDOUT",
       "splitAt": "2026-10-06T04:00:00Z",
-      "trainGames": 177,
-      "validationGames": 72,
-      "objective": 14.191731400960187,
+      "rawTrainGames": 390,
+      "eligibleTrainGames": 271,
+      "validationGames": 120,
+      "objective": 12.900378308783104,
       "selectedValidation": {
-        "games": 57,
-        "marginMae": 15.31508276480138,
-        "totalMae": 13.068380037118995,
-        "scoreMae": 9.586250812485712,
-        "marginRmse": 18.59802224636097,
-        "marginResidualStd": 17.335893010121534
+        "games": 117,
+        "marginMae": 12.424019218520508,
+        "totalMae": 13.3767373990457,
+        "scoreMae": 8.930090493242389,
+        "marginRmse": 15.40990052569447,
+        "marginResidualStd": 15.344517951521171
       },
-      "candidateCount": 16
+      "selectedStructuralHomeMarginAdvantage": 4.249132328925835,
+      "candidateCount": 48,
+      "structuralHfaMethod": "MEDIAN_OF_COMPLETED_2023_2025_FBS_SEASON_ESTIMATES",
+      "historicalHfaSeasons": [
+        {
+          "season": 2023,
+          "rawGames": 923,
+          "eligibleGames": 763,
+          "homeMarginAdvantage": 3.4917340983843776
+        },
+        {
+          "season": 2024,
+          "rawGames": 917,
+          "eligibleGames": 765,
+          "homeMarginAdvantage": 4.249132328925835
+        },
+        {
+          "season": 2025,
+          "rawGames": 912,
+          "eligibleGames": 763,
+          "homeMarginAdvantage": 4.297258218865318
+        }
+      ]
     },
     "fullFitDiagnostics": {
-      "games": 249,
-      "marginMae": 19.162809431759445,
-      "totalMae": 12.815556666474684,
-      "scoreMae": 11.71861720214602,
-      "marginRmse": 24.315808359464146,
-      "marginResidualStd": 23.773648719927447
+      "games": 388,
+      "marginMae": 12.684585263692549,
+      "totalMae": 10.905556503995463,
+      "scoreMae": 8.489235156201305,
+      "marginRmse": 16.24595816471817,
+      "marginResidualStd": 16.08687966949567
+    },
+    "structuralHomeFieldResearch": {
+      "method": "MEDIAN_OF_COMPLETED_2023_2025_FBS_SEASON_ESTIMATES",
+      "seasonEstimates": [
+        {
+          "season": 2023,
+          "rawGames": 923,
+          "eligibleGames": 763,
+          "homeMarginAdvantage": 3.4917340983843776
+        },
+        {
+          "season": 2024,
+          "rawGames": 917,
+          "eligibleGames": 765,
+          "homeMarginAdvantage": 4.249132328925835
+        },
+        {
+          "season": 2025,
+          "rawGames": 912,
+          "eligibleGames": 763,
+          "homeMarginAdvantage": 4.297258218865318
+        }
+      ],
+      "structuralHomeMarginAdvantage": 4.249132328925835
     }
   },
   "warning": "This output is not the unrecoverable 0.9J canonical model. It is a transparent shadow bridge and must not replace canonical/frozen projections without explicit validation and promotion.",
@@ -54,16 +150,16 @@
       "awayTeam": "Middle Tennessee",
       "homeTeam": "FIU",
       "kickoff": "2026-10-20T23:00:00Z",
-      "awayModelCode": "MTSU",
-      "homeModelCode": "FIU",
+      "awayModelCode": "middletennessee",
+      "homeModelCode": "floridainternational",
       "status": "SHADOW_READY",
       "error": null,
-      "projectedAwayPoints": 21.718113774970156,
-      "projectedHomePoints": 31.70634800589392,
-      "projectedMarginHome": 9.988234230923762,
-      "projectedSpreadHome": -9.988234230923762,
-      "projectedTotal": 53.42446178086408,
-      "homeWinProbability": 71.77462097002197,
+      "projectedAwayPoints": 18.734194773128216,
+      "projectedHomePoints": 28.940591193834734,
+      "projectedMarginHome": 10.206396420706518,
+      "projectedSpreadHome": -10.206396420706518,
+      "projectedTotal": 47.67478596696295,
+      "homeWinProbability": 74.68322244897735,
       "projectedWinner": "FIU"
     },
     {
@@ -71,16 +167,16 @@
       "awayTeam": "Missouri State",
       "homeTeam": "Delaware",
       "kickoff": "2026-10-20T23:00:00Z",
-      "awayModelCode": "MOST",
-      "homeModelCode": "DEL",
+      "awayModelCode": "missouristate",
+      "homeModelCode": "delaware",
       "status": "SHADOW_READY",
       "error": null,
-      "projectedAwayPoints": 21.985560435181227,
-      "projectedHomePoints": 31.38489031340845,
-      "projectedMarginHome": 9.399329878227224,
-      "projectedSpreadHome": -9.399329878227224,
-      "projectedTotal": 53.370450748589676,
-      "homeWinProbability": 70.615583159096,
+      "projectedAwayPoints": 23.425669258030254,
+      "projectedHomePoints": 28.20617641994704,
+      "projectedMarginHome": 4.780507161916788,
+      "projectedSpreadHome": -4.780507161916788,
+      "projectedTotal": 51.631845677977296,
+      "homeWinProbability": 62.22008989731571,
       "projectedWinner": "Delaware"
     },
     {
@@ -88,17 +184,17 @@
       "awayTeam": "South Alabama",
       "homeTeam": "Marshall",
       "kickoff": "2026-10-20T23:30:00Z",
-      "awayModelCode": "USA",
-      "homeModelCode": "MRSH",
+      "awayModelCode": "southalabama",
+      "homeModelCode": "marshall",
       "status": "SHADOW_READY",
       "error": null,
-      "projectedAwayPoints": 23.01114074812554,
-      "projectedHomePoints": 31.654202064456364,
-      "projectedMarginHome": 8.643061316330822,
-      "projectedSpreadHome": -8.643061316330822,
-      "projectedTotal": 54.665342812581905,
-      "homeWinProbability": 69.09569001265614,
-      "projectedWinner": "Marshall"
+      "projectedAwayPoints": 31.129679807138004,
+      "projectedHomePoints": 30.876038881798465,
+      "projectedMarginHome": -0.2536409253395391,
+      "projectedSpreadHome": 0.2536409253395391,
+      "projectedTotal": 62.00571868893647,
+      "homeWinProbability": 49.341178519229665,
+      "projectedWinner": "South Alabama"
     }
   ]
 }
