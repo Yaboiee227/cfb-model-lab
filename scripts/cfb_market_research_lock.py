@@ -242,15 +242,56 @@ def preserve_updated_at_if_unchanged(new: dict[str, Any], existing: dict[str, An
     return new
 
 
-def active_ids_from_scope(scope: dict[str, Any]) -> set[str]:
-    ids = {str(g.get("gameId") or "") for g in scope.get("games") or []}
-    ids.discard("")
-    expected = int(scope.get("includedGameCount") or len(ids))
-    if len(ids) != expected:
-        raise ValueError(f"active scope game count mismatch: {len(ids)}/{expected}")
+def active_ids_from_scope(
+    scope: dict[str, Any],
+    foundation_lock: dict[str, Any] | None = None,
+    aliases: dict[str, str] | None = None,
+) -> set[str]:
+    scope_games = scope.get("games") or []
+    scope_ids = {str(g.get("gameId") or "") for g in scope_games}
+    scope_ids.discard("")
+    expected = int(scope.get("includedGameCount") or len(scope_ids))
+    if len(scope_ids) != expected:
+        raise ValueError(f"active scope game count mismatch: {len(scope_ids)}/{expected}")
     if scope.get("canonicalInfluence") is not False or scope.get("canonicalPromotionAuthorized") is not False:
         raise ValueError("active scope must remain non-canonical")
-    return ids
+
+    # Schedule files use the local Eastern game date, while the frozen
+    # foundation IDs use the UTC kickoff date. Resolve differing IDs only
+    # through a unique exact kickoff + two-team match (or source ID when both
+    # files carry it); never silently drop an active matchup.
+    if foundation_lock is None:
+        return scope_ids
+    foundation_games = foundation_lock.get("games") or []
+    foundation_by_id = {str(g.get("gameId") or ""): g for g in foundation_games}
+    alias_map = aliases or {}
+    resolved: set[str] = set()
+    for scoped in scope_games:
+        scoped_id = str(scoped.get("gameId") or "")
+        if scoped_id in foundation_by_id:
+            resolved.add(scoped_id)
+            continue
+        source_id = str(scoped.get("sourceGameId") or "")
+        candidates = []
+        for candidate in foundation_games:
+            if source_id and str(candidate.get("sourceGameId") or "") == source_id:
+                candidates.append(candidate)
+                continue
+            if str(candidate.get("kickoff") or "") != str(scoped.get("kickoff") or ""):
+                continue
+            if team_matches(scoped.get("homeTeam", ""), candidate.get("homeTeam", ""), alias_map) and team_matches(
+                scoped.get("awayTeam", ""), candidate.get("awayTeam", ""), alias_map
+            ):
+                candidates.append(candidate)
+        if len(candidates) != 1:
+            raise ValueError(
+                f"active scope matchup must resolve uniquely in frozen foundation: "
+                f"{scoped_id} ({len(candidates)} matches)"
+            )
+        resolved.add(str(candidates[0].get("gameId") or ""))
+    if len(resolved) != expected:
+        raise ValueError(f"resolved active scope game count mismatch: {len(resolved)}/{expected}")
+    return resolved
 
 
 def main() -> None:
@@ -274,7 +315,7 @@ def main() -> None:
     active_game_ids = None
     if args.scope:
         scope = json.loads(Path(args.scope).read_text(encoding="utf-8"))
-        active_game_ids = active_ids_from_scope(scope)
+        active_game_ids = active_ids_from_scope(scope, foundation, load_aliases(root))
     out = merge_market_lock(
         foundation,
         markets,
