@@ -58,13 +58,21 @@ jobs:
           assert all(g['status']=='SHADOW_READY' for g in d['games']), d['games']
           print('shadow safety, coverage and fit-sanity assertions passed')
           PY
+      - name: Show Tuesday shadow summary
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('cfb/shadow/week-08-tuesday.json'))
+          for g in d['games']:
+              print(f"{g['awayTeam']} @ {g['homeTeam']}: {g['projectedAwayPoints']:.1f}-{g['projectedHomePoints']:.1f} | home spread {g['projectedSpreadHome']:+.2f} | total {g['projectedTotal']:.2f} | HWP {g['homeWinProbability']:.1f}%")
+          PY
       - name: Commit shadow output
         run: |
           git config user.name "cb-model-shadow-bot"
           git config user.email "actions@users.noreply.github.com"
-          git pull --rebase origin main
           git add cfb/shadow/week-08-tuesday.json
           if ! git diff --cached --quiet; then
             git commit -m 'Build Week 8 Tuesday shadow projections'
+            git pull --rebase origin main
             git push
           fi
