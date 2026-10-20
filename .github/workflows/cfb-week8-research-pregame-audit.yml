@@ -7,6 +7,7 @@ on:
       - 'cfb/pregame/week-08-schedule.json'
       - 'cfb/pregame/week-08-schedule-through-thursday.json'
       - 'cfb/pregame/week-08-active-through-thursday.json'
+      - 'cfb/pregame/week-08-through-thursday-effective.json'
       - 'cfb/pregame/week-08-tuesday-effective.json'
       - 'cfb/pregame/week-08-wednesday-effective.json'
       - 'cfb/pregame/week-08-thursday-effective.json'
@@ -41,9 +42,7 @@ jobs:
             --schedule cfb/pregame/week-08-schedule-through-thursday.json \
             --foundation cfb/research-locks/week-08-foundation-full.json \
             --sagarin cfb/benchmarks/week-08-sagarin-full.json \
-            --context cfb/pregame/week-08-tuesday-effective.json \
-            --context cfb/pregame/week-08-wednesday-effective.json \
-            --context cfb/pregame/week-08-thursday-effective.json \
+            --context cfb/pregame/week-08-through-thursday-effective.json \
             --market-lock cfb/research-market-locks/week-08-foundation-market.json \
             --output cfb/pregame/week-08-research-coverage-through-thursday.json
           python - <<'PY'
@@ -52,6 +51,7 @@ jobs:
           d=json.load(open(p))
           d['role']='ACTIVE_WINDOW_RESEARCH_PREGAME_COVERAGE_AUDIT'
           d['activeScope']='cfb/pregame/week-08-active-through-thursday.json'
+          d['effectiveState']='cfb/pregame/week-08-through-thursday-effective.json'
           d['pauseBeforeGameDateET']='2026-10-23'
           d['policy']=(d.get('policy','') + ' Active operational scope is Tuesday through Thursday only; Friday and Saturday are paused until explicit resumption.').strip()
           with open(p,'w') as f:
@@ -68,6 +68,7 @@ jobs:
           assert d['canonicalInfluence'] is False
           assert d['canonicalPromotionAuthorized'] is False
           assert d['activeScope']=='cfb/pregame/week-08-active-through-thursday.json'
+          assert d['effectiveState']=='cfb/pregame/week-08-through-thursday-effective.json'
           assert d['pauseBeforeGameDateET']=='2026-10-23'
           assert d['summary']['games']==7, d['summary']
           assert d['summary']['foundationLocked']==7, d['summary']
@@ -78,19 +79,10 @@ jobs:
           assert all(g['foundation']['status']=='LOCKED' for g in d['games'])
           assert all(g['benchmarks']['spPlus']=='PENDING_OFFICIAL_CAPTURE' for g in d['games'])
           assert all(g['kickoff'] < '2026-10-23T04:00:00Z' for g in d['games'])
-          expected={
-              '401871055':'cfb/pregame/week-08-tuesday-effective.json',
-              '401871069':'cfb/pregame/week-08-tuesday-effective.json',
-              '401871092':'cfb/pregame/week-08-tuesday-effective.json',
-              '401871070':'cfb/pregame/week-08-wednesday-effective.json',
-              '401869845':'cfb/pregame/week-08-thursday-effective.json',
-              '401871056':'cfb/pregame/week-08-thursday-effective.json',
-              '401862807':'cfb/pregame/week-08-thursday-effective.json',
-          }
-          assert {g.get('sourceGameId') for g in d['games']}==set(expected)
-          for source_id, source_path in expected.items():
-              game=next(g for g in d['games'] if g.get('sourceGameId')==source_id)
-              assert game['context']['contextSource']==source_path, game['context']
+          expected={'401871055','401871069','401871092','401871070','401869845','401871056','401862807'}
+          assert {g.get('sourceGameId') for g in d['games']}==expected
+          for game in d['games']:
+              assert game['context']['contextSource']=='cfb/pregame/week-08-through-thursday-effective.json', game['context']
               assert game['context']['personnel']!='NOT_CAPTURED', game['context']
               assert game['context']['weather']!='NOT_CAPTURED', game['context']
           print(json.dumps({'summary':d['summary'],'next':d['workQueue'][:10]},indent=2))
