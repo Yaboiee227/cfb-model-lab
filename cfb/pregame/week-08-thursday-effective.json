@@ -1,0 +1,353 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "status": "OPEN_EFFECTIVE",
+  "dateWindow": [
+    "2026-10-22"
+  ],
+  "policy": "Pregame-only research context around an already frozen market-independent foundation. Context, benchmarks and public markets cannot rewrite the frozen projection. Unknown stays unknown; third-party injury information is contextual unless independently confirmed.",
+  "observedAt": "2026-10-20T12:18:00Z",
+  "games": [
+    {
+      "gameId": "2026-10-22-JAMESMADISON-APPSTATE",
+      "sourceGameId": "401869845",
+      "awayTeam": "James Madison",
+      "homeTeam": "App State",
+      "conference": "Sun Belt",
+      "kickoff": "2026-10-22T23:00:00Z",
+      "venue": {
+        "name": "Kidd Brewer Stadium",
+        "city": "Boone",
+        "state": "NC"
+      },
+      "records": {
+        "away": "7-0",
+        "home": "4-2",
+        "awayConference": "4-0",
+        "homeConference": "1-1"
+      },
+      "frozenFoundationReference": {
+        "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
+        "canonicalInfluence": false,
+        "modelId": "cfb-rebuild-foundation-v1-shadow",
+        "projectedAwayPoints": 31.99311570132898,
+        "projectedHomePoints": 21.549181361152318,
+        "projectedMarginHome": -10.44393434017666,
+        "projectedSpreadHome": 10.44393434017666,
+        "projectedTotal": 53.542297062481296,
+        "homeWinProbability": 25.48493612139827,
+        "projectedWinner": "James Madison",
+        "projectionDigest": "50147bbb9df5dbcabf7857833e94a663d537996bceaf0da92379c547913d8875",
+        "source": "cfb/research-locks/week-08-foundation-full.json"
+      },
+      "personnel": {
+        "status": "MATERIAL_QB_STATUS_OPEN_OFFICIAL_APP_STATE_ROTATION_AFTER_INJURY",
+        "away": {
+          "quarterbackUsage": "ESTABLISHED_TWO_QB_USAGE",
+          "officialContext": "James Madison's Oct. 17 win over Georgia State featured both Camden Coleman and JC Evans, who combined for three passing and two rushing touchdowns. No new official material found in this capture announced a change to that established usage.",
+          "thirdPartyInjuries": [
+            {
+              "player": "Z. Collins",
+              "position": "WR",
+              "status": "QUESTIONABLE",
+              "detail": "Shoulder",
+              "sourceTier": "third_party"
+            }
+          ]
+        },
+        "home": {
+          "mostRecentStartingQB": "Malachi Singleton",
+          "materialStatus": "THURSDAY_QB_USAGE_UNRESOLVED",
+          "officialContext": "Malachi Singleton was a game-time decision due to injury before the Oct. 16 Coastal Carolina game, started and went 12-of-14 for 151 yards. Henry Hasselbeck rotated in during the first half, played the entire second half, completed 9-of-12 for 112 yards and a touchdown and rushed 21 times for 125 yards. The Thursday starter/rotation is not yet explicitly confirmed in the official material captured here.",
+          "thirdPartyQBStatus": {
+            "player": "Malachi Singleton",
+            "status": "CONFLICT_WITH_OFFICIAL_LAST_GAME_USAGE",
+            "detail": "A third-party listing marks him out with an ankle issue even though App State's official Oct. 16 recap confirms he started that game. Treat the third-party status as stale/conflicted until an authoritative update is published."
+          },
+          "thirdPartyInjuries": [
+            {
+              "player": "D. Galloway",
+              "position": "TE",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            }
+          ]
+        },
+        "sources": [
+          "https://jmusports.com/news/2026/10/17/football-dukes-dominate-in-georgia-state-win",
+          "https://appstatesports.com/news/2026/10/17/football-mountaineers-show-mettle-with-comeback-win-at-coastal.aspx",
+          "https://www.covers.com/sport/football/ncaaf/matchup/378464"
+        ],
+        "lastOfficialCheckAt": "2026-10-20T12:18:00Z",
+        "canonicalInfluence": "No inferred starter and no manual QB point adjustment. Preserve the frozen foundation; recheck App State's official Thursday QB status before kickoff."
+      },
+      "weather": {
+        "status": "NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED",
+        "observedAt": "2026-10-20T12:18:00Z",
+        "source": "National Weather Service point forecast for Boone, North Carolina",
+        "sourceLastUpdate": "2026-10-20T02:30:00-04:00",
+        "sourceUrl": "https://forecast.weather.gov/MapClick.php?lat=36.19856&lon=-81.65171",
+        "forecast": {
+          "thursday": "Sunny, high near 67 F.",
+          "thursdayNight": "Clear, low around 39 F."
+        },
+        "materiality": "Current profile is low-impact but mountain conditions can change; perform the standard stadium-level final-window recheck. No unvalidated manual points adjustment."
+      },
+      "market": {
+        "status": "APPROVED_BOOK_FINAL_WINDOW_LOCK_PENDING",
+        "note": "No stale/secondary line is promoted to the publication benchmark. FanDuel and DraftKings will be captured independently by the immutable final-window market-lock workflow."
+      },
+      "benchmarks": {
+        "sagarin": {
+          "status": "CURRENT_FOR_WEEK_8_OPEN",
+          "ratingsThrough": "2026-10-17",
+          "impliedSpreadHome": 11.309999999999992,
+          "predictorFavorite": "James Madison",
+          "source": "cfb/benchmarks/week-08-sagarin-full.json",
+          "canonicalInfluence": false
+        },
+        "spPlus": {
+          "status": "PENDING_CURRENT_OFFICIAL_CAPTURE",
+          "source": "https://www.espn.com/college-football/story/_/id/49868647/2026-college-football-sp+-rankings-all-138-fbs-teams",
+          "note": "Official-only policy remains in force; do not substitute mirrors."
+        },
+        "refMetrics": {
+          "status": "NOT_YET_POSTED",
+          "source": "https://www.refmetrics.com/",
+          "canonicalInfluence": false,
+          "lastCheckedAt": "2026-10-20T12:18:00Z",
+          "note": "RefMetrics lists the Week 8 matchup but states it does not currently have officials for upcoming NCAA Football games. Missing official means unavailable there, not that no crew exists."
+        }
+      },
+      "audit": {
+        "priority": "NEXT_72H",
+        "materialOpenItems": [
+          "App State official QB starter/rotation confirmation",
+          "final stadium-level weather recheck",
+          "referee/crew assignment if posted",
+          "immutable FanDuel/DraftKings final-window market lock",
+          "current official SP+ capture if defensibly available"
+        ]
+      }
+    },
+    {
+      "gameId": "2026-10-22-LIBERTY-KENNESAWSTATE",
+      "sourceGameId": "401871056",
+      "awayTeam": "Liberty",
+      "homeTeam": "Kennesaw State",
+      "conference": "Conference USA",
+      "kickoff": "2026-10-22T23:00:00Z",
+      "venue": {
+        "name": "Walens Family Field at Fifth Third Stadium",
+        "city": "Kennesaw",
+        "state": "GA"
+      },
+      "records": {
+        "away": "5-1",
+        "home": "1-5",
+        "awayConference": "2-0",
+        "homeConference": "0-2"
+      },
+      "frozenFoundationReference": {
+        "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
+        "canonicalInfluence": false,
+        "modelId": "cfb-rebuild-foundation-v1-shadow",
+        "projectedAwayPoints": 27.88338836095161,
+        "projectedHomePoints": 17.082584952508963,
+        "projectedMarginHome": -10.800803408442647,
+        "projectedSpreadHome": 10.800803408442647,
+        "projectedTotal": 44.96597331346057,
+        "homeWinProbability": 24.76715217474573,
+        "projectedWinner": "Liberty",
+        "projectionDigest": "f2dce35bbd39b50c1457eb063ae30cbbba26a98d6b38f7de39a2dcbc470977a7",
+        "source": "cfb/research-locks/week-08-foundation-full.json"
+      },
+      "personnel": {
+        "status": "OFFICIAL_BASELINE_CAPTURED_NO_NEW_MATERIAL_QB_CHANGE",
+        "away": {
+          "startingQB": "Deshawn Purdie",
+          "packageQB": "Ethan Vasko",
+          "officialContext": "Liberty's official Oct. 8 Sam Houston recap identifies Deshawn Purdie as the starting quarterback (10-of-14, 114 yards, one touchdown). Ethan Vasko handled a limited package and scored twice on three touches. Liberty's Oct. 19 Kennesaw State press conference did not announce a quarterback change.",
+          "thirdPartyInjuries": [
+            {"player": "B. Burklow", "position": "TE", "status": "QUESTIONABLE", "detail": "Undisclosed", "sourceTier": "third_party"},
+            {"player": "C. Wood", "position": "RB", "status": "QUESTIONABLE", "detail": "Undisclosed", "sourceTier": "third_party"},
+            {"player": "C. Ryan", "position": "TE", "status": "QUESTIONABLE", "detail": "Undisclosed", "sourceTier": "third_party"},
+            {"player": "J. Marshall", "position": "RB", "status": "OUT", "detail": "Leg / reported season absence", "sourceTier": "third_party"}
+          ]
+        },
+        "home": {
+          "startingQB": "Rickie Collins",
+          "officialContext": "Kennesaw State's official Oct. 14 Missouri State recap says Rickie Collins produced 285 yards of offense and two scores; the official cumulative statistics list him at 129-of-184 for 1,302 passing yards through six games. The Oct. 19 Liberty preview does not announce a quarterback change.",
+          "thirdPartyInjuries": [
+            {"player": "G. Bullock Jr.", "position": "TE", "status": "QUESTIONABLE", "detail": "Undisclosed", "sourceTier": "third_party"},
+            {"player": "Z. Booker", "position": "WR", "status": "QUESTIONABLE", "detail": "Undisclosed", "sourceTier": "third_party"}
+          ]
+        },
+        "sources": [
+          "https://libertyflames.com/news/2026/10/19/football-press-conference-kennesaw-state",
+          "https://libertyflames.com/news/2026/10/9/football-flames-run-their-win-streak-to-five-with-35-3-thursday-night-win",
+          "https://ksuowls.com/news/2026/10/19/football-owls-return-home-to-host-longtime-foe-liberty-on-thursday.aspx",
+          "https://ksuowls.com/news/2026/10/15/football-drops-another-heartbreaker-24-21-to-missouri-state.aspx",
+          "https://www.covers.com/sport/football/ncaaf/matchup/379090"
+        ],
+        "lastOfficialCheckAt": "2026-10-20T12:18:00Z",
+        "canonicalInfluence": "Context only. No manual injury/QB points and no change to the frozen foundation."
+      },
+      "weather": {
+        "status": "NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED",
+        "observedAt": "2026-10-20T12:18:00Z",
+        "source": "National Weather Service Peachtree City point forecast for Kennesaw, Georgia",
+        "sourceLastUpdate": "2026-10-20T02:26:00-04:00",
+        "sourceUrl": "https://forecast.weather.gov/MapClick.php?CityName=Kennesaw&site=FFC&state=GA&textField1=34.0237&textField2=-84.6163",
+        "forecast": {
+          "thursday": "Sunny, high near 76 F.",
+          "thursdayNight": "Clear, low around 48 F."
+        },
+        "materiality": "Current profile is low impact; perform the standard final-window recheck. No unvalidated manual points adjustment."
+      },
+      "market": {
+        "status": "APPROVED_BOOK_FINAL_WINDOW_LOCK_PENDING",
+        "note": "Final-window FanDuel and DraftKings observations will be captured independently. Secondary board data is not promoted to a publication benchmark."
+      },
+      "benchmarks": {
+        "sagarin": {
+          "status": "CURRENT_FOR_WEEK_8_OPEN",
+          "ratingsThrough": "2026-10-17",
+          "impliedSpreadHome": 5.429999999999997,
+          "predictorFavorite": "Liberty",
+          "source": "cfb/benchmarks/week-08-sagarin-full.json",
+          "canonicalInfluence": false
+        },
+        "spPlus": {
+          "status": "PENDING_CURRENT_OFFICIAL_CAPTURE",
+          "source": "https://www.espn.com/college-football/story/_/id/49868647/2026-college-football-sp+-rankings-all-138-fbs-teams",
+          "note": "Official-only policy remains in force; do not substitute mirrors."
+        },
+        "refMetrics": {
+          "status": "NOT_YET_POSTED",
+          "source": "https://www.refmetrics.com/",
+          "canonicalInfluence": false,
+          "lastCheckedAt": "2026-10-20T12:18:00Z",
+          "note": "Week 8 matchup is listed, but RefMetrics says upcoming NCAA Football officials are not currently available."
+        }
+      },
+      "audit": {
+        "priority": "NEXT_72H",
+        "materialOpenItems": [
+          "final official personnel recheck",
+          "final stadium-level weather recheck",
+          "referee/crew assignment if posted",
+          "immutable FanDuel/DraftKings final-window market lock",
+          "current official SP+ capture if defensibly available"
+        ]
+      }
+    },
+    {
+      "gameId": "2026-10-22-EASTCAROLINA-MEMPHIS",
+      "sourceGameId": "401862807",
+      "awayTeam": "East Carolina",
+      "homeTeam": "Memphis",
+      "conference": "American",
+      "kickoff": "2026-10-22T23:30:00Z",
+      "venue": {
+        "name": "Simmons Bank Liberty Stadium",
+        "city": "Memphis",
+        "state": "TN"
+      },
+      "records": {
+        "away": "3-3",
+        "home": "5-2",
+        "awayConference": "1-1",
+        "homeConference": "2-1"
+      },
+      "frozenFoundationReference": {
+        "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
+        "canonicalInfluence": false,
+        "modelId": "cfb-rebuild-foundation-v1-shadow",
+        "projectedAwayPoints": 18.487572445077312,
+        "projectedHomePoints": 34.76879531305596,
+        "projectedMarginHome": 16.28122286797865,
+        "projectedSpreadHome": -16.28122286797865,
+        "projectedTotal": 53.25636775813327,
+        "homeWinProbability": 84.79790917211139,
+        "projectedWinner": "Memphis",
+        "projectionDigest": "4e630ce63c2afc4ea179d3455e85efc5280b3838e8bfd6ac5feab7e23ff66409",
+        "source": "cfb/research-locks/week-08-foundation-full.json"
+      },
+      "personnel": {
+        "status": "OFFICIAL_BASELINE_CAPTURED_NO_NEW_MATERIAL_QB_CHANGE",
+        "away": {
+          "mostRecentStartingQB": "Emory Williams",
+          "officialContext": "East Carolina's official Oct. 15 UAB recap identifies Emory Williams throwing the Pirates' opening-drive touchdown and operating the offense before the overtime interception sequence. No newer official material captured here announces a quarterback change.",
+          "thirdPartyInjuries": []
+        },
+        "home": {
+          "mostRecentStartingQB": "Marcus Stokes",
+          "officialContext": "Memphis' official Oct. 16 Tulane recap says Marcus Stokes completed 20-of-37 for 306 yards and two touchdowns. Current official Memphis material still lists East Carolina as the next game and does not announce a quarterback change.",
+          "thirdPartyInjuries": [
+            {"player": "B. Kluse", "position": "WR", "status": "QUESTIONABLE", "detail": "Undisclosed", "sourceTier": "third_party"}
+          ]
+        },
+        "sources": [
+          "https://ecupirates.com/news/2026/10/15/football-ecu-falls-at-uab-in-overtime-30-17",
+          "https://gotigersgo.com/news/2026/10/17/football-memphis-falls-31-17-on-the-road-against-tulane",
+          "https://gotigersgo.com/news/2026/10/15/football-espn-sportscenter-on-campus-coming-to-tiger-lane-ahead-of-memphis-east-carolina",
+          "https://www.covers.com/sport/football/ncaaf/matchup/378463"
+        ],
+        "lastOfficialCheckAt": "2026-10-20T12:18:00Z",
+        "canonicalInfluence": "Context only. No manual injury/QB points and no change to the frozen foundation."
+      },
+      "weather": {
+        "status": "NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED",
+        "observedAt": "2026-10-20T12:18:00Z",
+        "source": "National Weather Service Memphis point forecast near Simmons Bank Liberty Stadium",
+        "sourceLastUpdate": "2026-10-20T03:05:00-05:00",
+        "sourceUrl": "https://forecast.weather.gov/MapClick.php?map.x=154&map.y=140&site=meg&zmx=1&zmy=1",
+        "forecast": {
+          "thursday": "Sunny, high near 77 F, calm wind becoming north-northeast around 5 mph in the afternoon.",
+          "thursdayNight": "Clear, low around 55 F, east-northeast wind around 5 mph."
+        },
+        "materiality": "Current profile is low impact; perform the standard final-window stadium-level recheck. No unvalidated manual points adjustment."
+      },
+      "market": {
+        "status": "APPROVED_BOOK_FINAL_WINDOW_LOCK_PENDING",
+        "note": "Final-window FanDuel and DraftKings observations will be captured independently. Secondary board data is not promoted to a publication benchmark."
+      },
+      "benchmarks": {
+        "sagarin": {
+          "status": "CURRENT_FOR_WEEK_8_OPEN",
+          "ratingsThrough": "2026-10-17",
+          "impliedSpreadHome": -13.759999999999994,
+          "predictorFavorite": "Memphis",
+          "source": "cfb/benchmarks/week-08-sagarin-full.json",
+          "canonicalInfluence": false
+        },
+        "spPlus": {
+          "status": "PENDING_CURRENT_OFFICIAL_CAPTURE",
+          "source": "https://www.espn.com/college-football/story/_/id/49868647/2026-college-football-sp+-rankings-all-138-fbs-teams",
+          "note": "Official-only policy remains in force; do not substitute mirrors."
+        },
+        "refMetrics": {
+          "status": "NOT_YET_POSTED",
+          "source": "https://www.refmetrics.com/",
+          "canonicalInfluence": false,
+          "lastCheckedAt": "2026-10-20T12:18:00Z",
+          "note": "Week 8 matchup is listed, but RefMetrics says upcoming NCAA Football officials are not currently available."
+        }
+      },
+      "audit": {
+        "priority": "NEXT_72H",
+        "materialOpenItems": [
+          "final official personnel recheck",
+          "final stadium-level weather recheck",
+          "referee/crew assignment if posted",
+          "immutable FanDuel/DraftKings final-window market lock",
+          "current official SP+ capture if defensibly available"
+        ]
+      }
+    }
+  ]
+}
