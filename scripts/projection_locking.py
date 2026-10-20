@@ -6,9 +6,9 @@ import json
 from datetime import datetime, timezone
 from typing import Any
 
-# Fields that define the published projection position and its grading benchmark.
-# External benchmarks/context are frozen with the game for auditability but never
-# participate in ATS/Total/SU grading.
+# Fields that define the published canonical projection and the publication-time
+# market benchmark used for grading. External benchmark/context observations are
+# stored separately so they can refresh without changing the canonical projection.
 IMMUTABLE_GAME_FIELDS = [
     "gameId",
     "sourceGameId",
@@ -24,8 +24,6 @@ IMMUTABLE_GAME_FIELDS = [
     "marketMoneylineAway",
     "marketSource",
     "marketObservedAt",
-    "benchmarkSnapshot",
-    "contextSnapshot",
 ]
 
 
@@ -55,7 +53,7 @@ def game_digest(game: dict[str, Any]) -> str:
 
 
 def lock_game(game: dict[str, Any], locked_at: str | None = None) -> dict[str, Any]:
-    """Lock one game without freezing later-kickoff games in the same weekly file."""
+    """Lock one published projection without freezing later-kickoff games."""
     if game.get("locked") is True:
         validate_game_lock(game)
         return game
@@ -81,7 +79,7 @@ def validate_game_lock(game: dict[str, Any]) -> None:
         raise ValueError(f"Game missing lockDigest: {game.get('gameId')}")
     if game["lockDigest"] != game_digest(game):
         raise ValueError(
-            f"LOCK VIOLATION: immutable projection/market/benchmark fields changed for {game.get('gameId')}"
+            f"LOCK VIOLATION: immutable projection/publication-market fields changed for {game.get('gameId')}"
         )
     if parse_dt(game["lockedAt"]) > parse_dt(game["kickoff"]):
         raise ValueError(f"lockedAt is after kickoff for {game.get('gameId')}")
