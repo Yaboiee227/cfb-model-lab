@@ -5,7 +5,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parents[1] / "scripts"))
-from cfb_market_research_lock import merge_market_lock, preserve_updated_at_if_unchanged, verify_existing
+from cfb_market_research_lock import active_ids_from_scope, merge_market_lock, preserve_updated_at_if_unchanged, verify_existing
 from lock_research_shadow import build_lock
 
 
@@ -78,6 +78,33 @@ class TestCfbMarketResearchLock(unittest.TestCase):
             "middletennessee": "Middle Tennessee",
             "middletennesseeblueraiders": "Middle Tennessee",
         }
+
+    def test_scope_resolves_local_date_id_to_utc_foundation_id(self):
+        foundation = self._foundation()
+        scope = {
+            "includedGameCount": 1,
+            "canonicalInfluence": False,
+            "canonicalPromotionAuthorized": False,
+            "games": [
+                {
+                    "gameId": "2026-10-20-MIDDLETENNESSEE-FIU",
+                    "sourceGameId": "espn-1",
+                    "awayTeam": "Middle Tennessee",
+                    "homeTeam": "FIU",
+                    "kickoff": "2026-10-20T23:00:00Z",
+                }
+            ],
+        }
+        active_ids = active_ids_from_scope(scope, foundation, self._aliases())
+        self.assertEqual(active_ids, {"g1"})
+        out = merge_market_lock(
+            foundation, self._markets(), None, self._aliases(),
+            datetime(2026, 10, 20, 22, 20, tzinfo=timezone.utc),
+            active_game_ids=active_ids,
+        )
+        self.assertEqual(out["counts"]["activeScopeGames"], 1)
+        self.assertEqual(out["counts"]["pausedGames"], 0)
+        self.assertEqual(out["games"][0]["status"], "PENDING")
 
     def test_does_not_lock_before_final_window(self):
         out = merge_market_lock(
