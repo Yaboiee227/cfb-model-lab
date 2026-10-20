@@ -1,0 +1,1710 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "role": "FROZEN_MODEL_VS_OFFICIAL_BENCHMARK_COMPARISON",
+  "canonicalInfluence": false,
+  "canonicalPromotionAuthorized": false,
+  "createdAt": "2026-10-20T11:49:57.288156Z",
+  "foundation": {
+    "modelId": "cfb-rebuild-foundation-v1-shadow",
+    "lockDigest": "72d0aa99176904f681264e69f57260152607914f712a1686d2cdaaf89af3115b",
+    "lockedAt": "2026-10-20T11:34:56.634210Z",
+    "sourceAsOf": "2026-10-20T04:00:00Z"
+  },
+  "benchmark": {
+    "sourceId": "sagarin-cfb",
+    "publisher": "Jeff Sagarin",
+    "officialUrl": "https://sagarin.com/sports/cfsend.htm",
+    "observedAt": "2026-10-20T11:45:56.031080Z",
+    "ratingsThrough": "2026-10-17",
+    "sourceWeek": 7
+  },
+  "coverage": {
+    "foundationGames": 56,
+    "comparedGames": 56,
+    "ratio": 1.0,
+    "reviewGames": []
+  },
+  "aggregate": {
+    "meanSignedCbMinusSagarinHomeMargin": 0.5285382383255867,
+    "meanAbsoluteDisagreement": 2.593397180657642,
+    "medianAbsoluteDisagreement": 2.030695332054297,
+    "maxAbsoluteDisagreement": 10.699900275882914,
+    "directionalWinnerAgreement": {
+      "agree": 51,
+      "graded": 56,
+      "pct": 91.07142857142857
+    },
+    "disagreementBuckets": {
+      "LT_2": 27,
+      "2_TO_LT_5": 21,
+      "5_TO_LT_10": 7,
+      "GE_10": 1
+    }
+  },
+  "largestDisagreements": [
+    {
+      "gameId": "2026-10-23-MASSACHUSETTS-UCONN",
+      "awayTeam": "Massachusetts",
+      "homeTeam": "UConn",
+      "cbHomeMargin": 7.290099724117084,
+      "sagarinHomeMargin": 17.99,
+      "absoluteDisagreement": 10.699900275882914,
+      "directionalWinnerAgreement": true
+    },
+    {
+      "gameId": "2026-10-24-BOSTONCOLLEGE-GEORGIATECH",
+      "awayTeam": "Boston College",
+      "homeTeam": "Georgia Tech",
+      "cbHomeMargin": 1.9221563073829344,
+      "sagarinHomeMargin": 9.849999999999998,
+      "absoluteDisagreement": 7.9278436926170635,
+      "directionalWinnerAgreement": true
+    },
+    {
+      "gameId": "2026-10-24-OREGON-ILLINOIS",
+      "awayTeam": "Oregon",
+      "homeTeam": "Illinois",
+      "cbHomeMargin": -3.127873269027198,
+      "sagarinHomeMargin": -10.800000000000008,
+      "absoluteDisagreement": 7.67212673097281,
+      "directionalWinnerAgreement": true
+    },
+    {
+      "gameId": "2026-10-24-UTAHSTATE-TEXASSTATE",
+      "awayTeam": "Utah State",
+      "homeTeam": "Texas State",
+      "cbHomeMargin": 7.908924829465008,
+      "sagarinHomeMargin": 14.280000000000005,
+      "absoluteDisagreement": 6.371075170534997,
+      "directionalWinnerAgreement": true
+    },
+    {
+      "gameId": "2026-10-24-BOWLINGGREEN-BUFFALO",
+      "awayTeam": "Bowling Green",
+      "homeTeam": "Buffalo",
+      "cbHomeMargin": 11.418702149383087,
+      "sagarinHomeMargin": 5.839999999999999,
+      "absoluteDisagreement": 5.578702149383088,
+      "directionalWinnerAgreement": true
+    },
+    {
+      "gameId": "2026-10-24-OKLAHOMA-MISSISSIPPISTATE",
+      "awayTeam": "Oklahoma",
+      "homeTeam": "Mississippi State",
+      "cbHomeMargin": 4.244409646580856,
+      "sagarinHomeMargin": -1.2499999999999973,
+      "absoluteDisagreement": 5.494409646580853,
+      "directionalWinnerAgreement": false
+    },
+    {
+      "gameId": "2026-10-24-HAWAII-NORTHERNILLINOIS",
+      "awayTeam": "Hawai'i",
+      "homeTeam": "Northern Illinois",
+      "cbHomeMargin": 1.3124099256545492,
+      "sagarinHomeMargin": -4.069999999999998,
+      "absoluteDisagreement": 5.382409925654547,
+      "directionalWinnerAgreement": false
+    },
+    {
+      "gameId": "2026-10-22-LIBERTY-KENNESAWSTATE",
+      "awayTeam": "Liberty",
+      "homeTeam": "Kennesaw State",
+      "cbHomeMargin": -10.800803408442647,
+      "sagarinHomeMargin": -5.429999999999997,
+      "absoluteDisagreement": 5.37080340844265,
+      "directionalWinnerAgreement": true
+    },
+    {
+      "gameId": "2026-10-24-USC-WISCONSIN",
+      "awayTeam": "USC",
+      "homeTeam": "Wisconsin",
+      "cbHomeMargin": 5.832789576936264,
+      "sagarinHomeMargin": 0.9400000000000004,
+      "absoluteDisagreement": 4.892789576936264,
+      "directionalWinnerAgreement": true
+    },
+    {
+      "gameId": "2026-10-24-RUTGERS-NORTHWESTERN",
+      "awayTeam": "Rutgers",
+      "homeTeam": "Northwestern",
+      "cbHomeMargin": 19.708140910213945,
+      "sagarinHomeMargin": 15.169999999999991,
+      "absoluteDisagreement": 4.538140910213954,
+      "directionalWinnerAgreement": true
+    }
+  ],
+  "games": [
+    {
+      "gameId": "2026-10-20-MIDDLETENNESSEE-FLORIDAINTERNATIONAL",
+      "sourceGameId": "401871055",
+      "awayTeam": "Middle Tennessee",
+      "homeTeam": "Florida International",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 13.977411077112537,
+        "projectedSpreadHome": -13.977411077112537,
+        "projectedWinner": "Florida International",
+        "homeWinProbability": 81.12113387563811,
+        "projectionDigest": "d837003b6ba482064b0d61e2f4d5d519d1110c204aabdca37ab58edaf15a4570"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 12.350000000000005,
+        "impliedSpreadHome": -12.350000000000005,
+        "predictorFavorite": "Florida International",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 1.6274110771125319,
+        "absoluteDisagreement": 1.6274110771125319,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
+      "sourceGameId": "401871069",
+      "awayTeam": "Missouri State",
+      "homeTeam": "Delaware",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 7.01075758611438,
+        "projectedSpreadHome": -7.01075758611438,
+        "projectedWinner": "Delaware",
+        "homeWinProbability": 67.09639860904643,
+        "projectionDigest": "c2f169318d0835551d45c972f4dbf953b36a585e1579988b846e2aae084321c8"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 6.059999999999998,
+        "impliedSpreadHome": -6.059999999999998,
+        "predictorFavorite": "Delaware",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 0.9507575861143822,
+        "absoluteDisagreement": 0.9507575861143822,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
+      "sourceGameId": "401871092",
+      "awayTeam": "South Alabama",
+      "homeTeam": "Marshall",
+      "kickoff": "2026-10-20T23:30:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": -4.1049020761834925,
+        "projectedSpreadHome": 4.1049020761834925,
+        "projectedWinner": "South Alabama",
+        "homeWinProbability": 39.77654933430052,
+        "projectionDigest": "1f3d9455b39a045403e0b5e7616dec22366f2c4669bb1f4903907ab43704b4b2"
+      },
+      "sagarin": {
+        "impliedHomeMargin": -5.149999999999996,
+        "impliedSpreadHome": 5.149999999999996,
+        "predictorFavorite": "South Alabama",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 1.0450979238165035,
+        "absoluteDisagreement": 1.0450979238165035,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-22-NEWMEXICOSTATE-SAMHOUSTON",
+      "sourceGameId": "401871070",
+      "awayTeam": "New Mexico State",
+      "homeTeam": "Sam Houston",
+      "kickoff": "2026-10-22T00:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": -0.3864906855700596,
+        "projectedSpreadHome": 0.3864906855700596,
+        "projectedWinner": "New Mexico State",
+        "homeWinProbability": 49.02673862307157,
+        "projectionDigest": "76573e65de4174437af8f8b604ec6730d1b183804089c333a6186c8b182c26da"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 0.4500000000000055,
+        "impliedSpreadHome": -0.4500000000000055,
+        "predictorFavorite": "Sam Houston",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": -0.8364906855700651,
+        "absoluteDisagreement": 0.8364906855700651,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": false
+      }
+    },
+    {
+      "gameId": "2026-10-22-JAMESMADISON-APPSTATE",
+      "sourceGameId": "401869845",
+      "awayTeam": "James Madison",
+      "homeTeam": "App State",
+      "kickoff": "2026-10-22T23:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": -10.44393434017666,
+        "projectedSpreadHome": 10.44393434017666,
+        "projectedWinner": "James Madison",
+        "homeWinProbability": 25.48493612139827,
+        "projectionDigest": "50147bbb9df5dbcabf7857833e94a663d537996bceaf0da92379c547913d8875"
+      },
+      "sagarin": {
+        "impliedHomeMargin": -11.309999999999992,
+        "impliedSpreadHome": 11.309999999999992,
+        "predictorFavorite": "James Madison",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 0.866065659823331,
+        "absoluteDisagreement": 0.866065659823331,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-22-LIBERTY-KENNESAWSTATE",
+      "sourceGameId": "401871056",
+      "awayTeam": "Liberty",
+      "homeTeam": "Kennesaw State",
+      "kickoff": "2026-10-22T23:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": -10.800803408442647,
+        "projectedSpreadHome": 10.800803408442647,
+        "projectedWinner": "Liberty",
+        "homeWinProbability": 24.76715217474573,
+        "projectionDigest": "f2dce35bbd39b50c1457eb063ae30cbbba26a98d6b38f7de39a2dcbc470977a7"
+      },
+      "sagarin": {
+        "impliedHomeMargin": -5.429999999999997,
+        "impliedSpreadHome": 5.429999999999997,
+        "predictorFavorite": "Liberty",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": -5.37080340844265,
+        "absoluteDisagreement": 5.37080340844265,
+        "disagreementBucket": "5_TO_LT_10",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-22-EASTCAROLINA-MEMPHIS",
+      "sourceGameId": "401862807",
+      "awayTeam": "East Carolina",
+      "homeTeam": "Memphis",
+      "kickoff": "2026-10-22T23:30:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 16.28122286797865,
+        "projectedSpreadHome": -16.28122286797865,
+        "projectedWinner": "Memphis",
+        "homeWinProbability": 84.79790917211139,
+        "projectionDigest": "4e630ce63c2afc4ea179d3455e85efc5280b3838e8bfd6ac5feab7e23ff66409"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 13.759999999999994,
+        "impliedSpreadHome": -13.759999999999994,
+        "predictorFavorite": "Memphis",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 2.521222867978654,
+        "absoluteDisagreement": 2.521222867978654,
+        "disagreementBucket": "2_TO_LT_5",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-23-DUKE-VIRGINIA",
+      "sourceGameId": "401858271",
+      "awayTeam": "Duke",
+      "homeTeam": "Virginia",
+      "kickoff": "2026-10-23T23:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 1.699188096638494,
+        "projectedSpreadHome": -1.699188096638494,
+        "projectedWinner": "Virginia",
+        "homeWinProbability": 54.27113006427374,
+        "projectionDigest": "ac8c27876df7b09dfcab509a5258b3e96fc1fae76aaf4a9ed50a925020a118be"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 3.7699999999999987,
+        "impliedSpreadHome": -3.7699999999999987,
+        "predictorFavorite": "Virginia",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": -2.0708119033615047,
+        "absoluteDisagreement": 2.0708119033615047,
+        "disagreementBucket": "2_TO_LT_5",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-23-MASSACHUSETTS-UCONN",
+      "sourceGameId": "401861965",
+      "awayTeam": "Massachusetts",
+      "homeTeam": "UConn",
+      "kickoff": "2026-10-23T23:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 7.290099724117084,
+        "projectedSpreadHome": -7.290099724117084,
+        "projectedWinner": "UConn",
+        "homeWinProbability": 67.7317593713909,
+        "projectionDigest": "e28b611abc7981dc14eab506b169856f8f7b94fbec5e9936fb378e9e7d9d1838"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 17.99,
+        "impliedSpreadHome": -17.99,
+        "predictorFavorite": "UConn",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": -10.699900275882914,
+        "absoluteDisagreement": 10.699900275882914,
+        "disagreementBucket": "GE_10",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-ARMY-TULSA",
+      "sourceGameId": "401862808",
+      "awayTeam": "Army",
+      "homeTeam": "Tulsa",
+      "kickoff": "2026-10-24T00:30:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 1.04596044841049,
+        "projectedSpreadHome": -1.04596044841049,
+        "projectedWinner": "Tulsa",
+        "homeWinProbability": 52.63228747434996,
+        "projectionDigest": "069fb25d7a8b71a2564fcff9e206994a79617b0d2721c695fe1773949e6a8f2e"
+      },
+      "sagarin": {
+        "impliedHomeMargin": -0.9999999999999973,
+        "impliedSpreadHome": 0.9999999999999973,
+        "predictorFavorite": "Army",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 2.0459604484104874,
+        "absoluteDisagreement": 2.0459604484104874,
+        "disagreementBucket": "2_TO_LT_5",
+        "directionalWinnerAgreement": false
+      }
+    },
+    {
+      "gameId": "2026-10-24-AIRFORCE-WYOMING",
+      "sourceGameId": "401864525",
+      "awayTeam": "Air Force",
+      "homeTeam": "Wyoming",
+      "kickoff": "2026-10-24T01:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": -3.608464687763565,
+        "projectedSpreadHome": 3.608464687763565,
+        "projectedWinner": "Air Force",
+        "homeWinProbability": 40.99024501033256,
+        "projectionDigest": "0f5d93d1b02d155e5a2bbc9f582826318cf4bdac375d8f66689b6727258e7ff9"
+      },
+      "sagarin": {
+        "impliedHomeMargin": -6.069999999999998,
+        "impliedSpreadHome": 6.069999999999998,
+        "predictorFavorite": "Air Force",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 2.4615353122364327,
+        "absoluteDisagreement": 2.4615353122364327,
+        "disagreementBucket": "2_TO_LT_5",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-NCSTATE-STANFORD",
+      "sourceGameId": "401858272",
+      "awayTeam": "NC State",
+      "homeTeam": "Stanford",
+      "kickoff": "2026-10-24T02:30:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": -4.8797375412655555,
+        "projectedSpreadHome": 4.8797375412655555,
+        "projectedWinner": "NC State",
+        "homeWinProbability": 37.90224863321451,
+        "projectionDigest": "eb80be12b6c2c447ae176b44dcfee1fd23b9c0649df683275c5ab147a5fb9991"
+      },
+      "sagarin": {
+        "impliedHomeMargin": -9.239999999999991,
+        "impliedSpreadHome": 9.239999999999991,
+        "predictorFavorite": "NC State",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 4.360262458734436,
+        "absoluteDisagreement": 4.360262458734436,
+        "disagreementBucket": "2_TO_LT_5",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-CALIFORNIA-SMU",
+      "sourceGameId": "401858270",
+      "awayTeam": "California",
+      "homeTeam": "SMU",
+      "kickoff": "2026-10-24T16:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 11.99795691372588,
+        "projectedSpreadHome": -11.99795691372588,
+        "projectedWinner": "SMU",
+        "homeWinProbability": 77.55977313331266,
+        "projectionDigest": "dcce36ec5b06381478354641845ef94a4fb7572cd33a5916d621718221091d02"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 14.16,
+        "impliedSpreadHome": -14.16,
+        "predictorFavorite": "SMU",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": -2.162043086274121,
+        "absoluteDisagreement": 2.162043086274121,
+        "disagreementBucket": "2_TO_LT_5",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-INDIANA-MICHIGAN",
+      "sourceGameId": "401858496",
+      "awayTeam": "Indiana",
+      "homeTeam": "Michigan",
+      "kickoff": "2026-10-24T16:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": -7.359102779190721,
+        "projectedSpreadHome": 7.359102779190721,
+        "projectedWinner": "Indiana",
+        "homeWinProbability": 32.11207885235967,
+        "projectionDigest": "b51652e6006c7f9e280eee8e900de233c6c935a6a9f189755cfa1a9db3989ef8"
+      },
+      "sagarin": {
+        "impliedHomeMargin": -6.130000000000007,
+        "impliedSpreadHome": 6.130000000000007,
+        "predictorFavorite": "Indiana",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": -1.2291027791907139,
+        "absoluteDisagreement": 1.2291027791907139,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-LSU-AUBURN",
+      "sourceGameId": "401856728",
+      "awayTeam": "LSU",
+      "homeTeam": "Auburn",
+      "kickoff": "2026-10-24T16:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": -5.710013780956473,
+        "projectedSpreadHome": 5.710013780956473,
+        "projectedWinner": "LSU",
+        "homeWinProbability": 35.92504787836478,
+        "projectionDigest": "4bd3f0e23dfe88ed74cf8b3f6e5c469f830fe7cab8869fe277a57661136010b1"
+      },
+      "sagarin": {
+        "impliedHomeMargin": -4.070000000000005,
+        "impliedSpreadHome": 4.070000000000005,
+        "predictorFavorite": "LSU",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": -1.640013780956468,
+        "absoluteDisagreement": 1.640013780956468,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-PITTSBURGH-MIAMI",
+      "sourceGameId": "401858274",
+      "awayTeam": "Pittsburgh",
+      "homeTeam": "Miami",
+      "kickoff": "2026-10-24T16:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 16.34606193549277,
+        "projectedSpreadHome": -16.34606193549277,
+        "projectedWinner": "Miami",
+        "homeWinProbability": 84.8939963500703,
+        "projectionDigest": "278795334741951ad1c9741288de44cf35c7c95ad8d0bdfd57e62b1eb4dba63d"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 16.94,
+        "impliedSpreadHome": -16.94,
+        "predictorFavorite": "Miami",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": -0.5939380645072312,
+        "absoluteDisagreement": 0.5939380645072312,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-RICE-FLORIDAATLANTIC",
+      "sourceGameId": "401862809",
+      "awayTeam": "Rice",
+      "homeTeam": "Florida Atlantic",
+      "kickoff": "2026-10-24T16:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 10.325438972253547,
+        "projectedSpreadHome": -10.325438972253547,
+        "projectedWinner": "Florida Atlantic",
+        "homeWinProbability": 74.27434426664419,
+        "projectionDigest": "15450779f24ba0cd139d3473762d99d0fc92b4fbc2d3ca0ba2483361f272dff4"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 10.73,
+        "impliedSpreadHome": -10.73,
+        "predictorFavorite": "Florida Atlantic",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": -0.4045610277464533,
+        "absoluteDisagreement": 0.4045610277464533,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-RUTGERS-NORTHWESTERN",
+      "sourceGameId": "401858498",
+      "awayTeam": "Rutgers",
+      "homeTeam": "Northwestern",
+      "kickoff": "2026-10-24T16:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 19.708140910213945,
+        "projectedSpreadHome": -19.708140910213945,
+        "projectedWinner": "Northwestern",
+        "homeWinProbability": 89.32759177602682,
+        "projectionDigest": "32a860a673d1c91476c31cafc1bc90eb73df717bc525bce4eb6f7642f840a7f4"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 15.169999999999991,
+        "impliedSpreadHome": -15.169999999999991,
+        "predictorFavorite": "Northwestern",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 4.538140910213954,
+        "absoluteDisagreement": 4.538140910213954,
+        "disagreementBucket": "2_TO_LT_5",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-TEXASTECH-CINCINNATI",
+      "sourceGameId": "401856840",
+      "awayTeam": "Texas Tech",
+      "homeTeam": "Cincinnati",
+      "kickoff": "2026-10-24T16:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": -8.26001634327963,
+        "projectedSpreadHome": 8.26001634327963,
+        "projectedWinner": "Texas Tech",
+        "homeWinProbability": 30.10301290469517,
+        "projectionDigest": "833c07f4f79449a0ab165d492a5e8446d106baaf87a5cc0c44b05bede8757912"
+      },
+      "sagarin": {
+        "impliedHomeMargin": -10.020000000000007,
+        "impliedSpreadHome": 10.020000000000007,
+        "predictorFavorite": "Texas Tech",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 1.759983656720376,
+        "absoluteDisagreement": 1.759983656720376,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-WESTVIRGINIA-TCU",
+      "sourceGameId": "401856841",
+      "awayTeam": "West Virginia",
+      "homeTeam": "TCU",
+      "kickoff": "2026-10-24T16:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 11.505430215698105,
+        "projectedSpreadHome": -11.505430215698105,
+        "projectedWinner": "TCU",
+        "homeWinProbability": 76.61778372164598,
+        "projectionDigest": "a61fc8f9a4ba78e7da5358b38483d94e515dc46ddca424140cefb048a24f01fc"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 9.489999999999998,
+        "impliedSpreadHome": -9.489999999999998,
+        "predictorFavorite": "TCU",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 2.0154302156981068,
+        "absoluteDisagreement": 2.0154302156981068,
+        "disagreementBucket": "2_TO_LT_5",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-WESTERNMICHIGAN-TOLEDO",
+      "sourceGameId": "401866450",
+      "awayTeam": "Western Michigan",
+      "homeTeam": "Toledo",
+      "kickoff": "2026-10-24T16:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 3.19404599921117,
+        "projectedSpreadHome": -3.19404599921117,
+        "projectedWinner": "Toledo",
+        "homeWinProbability": 57.98987279670173,
+        "projectionDigest": "e4d92c94803138eabefad01295256c6535fcb9b4d878a0f085dd91c250d4b740"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 2.4300000000000024,
+        "impliedSpreadHome": -2.4300000000000024,
+        "predictorFavorite": "Toledo",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 0.7640459992111674,
+        "absoluteDisagreement": 0.7640459992111674,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-AKRON-KENTSTATE",
+      "sourceGameId": "401866446",
+      "awayTeam": "Akron",
+      "homeTeam": "Kent State",
+      "kickoff": "2026-10-24T17:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 4.4382680507157914,
+        "projectedSpreadHome": -4.4382680507157914,
+        "projectedWinner": "Kent State",
+        "homeWinProbability": 61.03302640060072,
+        "projectionDigest": "0674abc73c3d06f0dd691260f76fed568a5aad1aa4ae074e5d5b24cdb83e008c"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 3.319999999999996,
+        "impliedSpreadHome": -3.319999999999996,
+        "predictorFavorite": "Kent State",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 1.1182680507157956,
+        "absoluteDisagreement": 1.1182680507157956,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-BAYLOR-KANSAS",
+      "sourceGameId": "401856834",
+      "awayTeam": "Baylor",
+      "homeTeam": "Kansas",
+      "kickoff": "2026-10-24T17:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 0.8063449922900361,
+        "projectedSpreadHome": -0.8063449922900361,
+        "projectedWinner": "Kansas",
+        "homeWinProbability": 52.02986388711369,
+        "projectionDigest": "03f9e70fab2e4da61d4412460ea77a5b0b0e087adc6f1843eac96ac86b396ae3"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 0.3799999999999981,
+        "impliedSpreadHome": -0.3799999999999981,
+        "predictorFavorite": "Kansas",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 0.42634499229003797,
+        "absoluteDisagreement": 0.42634499229003797,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-MIAMIOH-CENTRALMICHIGAN",
+      "sourceGameId": "401866476",
+      "awayTeam": "Miami (OH)",
+      "homeTeam": "Central Michigan",
+      "kickoff": "2026-10-24T17:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 3.2773811751798334,
+        "projectedSpreadHome": -3.2773811751798334,
+        "projectedWinner": "Central Michigan",
+        "homeWinProbability": 58.19541506492866,
+        "projectionDigest": "9b14ab8bb28ca7f18322c4791e426f921efba9f539189b9a15238d3b2adf4588"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 0.2999999999999998,
+        "impliedSpreadHome": -0.2999999999999998,
+        "predictorFavorite": "Central Michigan",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 2.9773811751798336,
+        "absoluteDisagreement": 2.9773811751798336,
+        "disagreementBucket": "2_TO_LT_5",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-OREGON-ILLINOIS",
+      "sourceGameId": "401858495",
+      "awayTeam": "Oregon",
+      "homeTeam": "Illinois",
+      "kickoff": "2026-10-24T19:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": -3.127873269027198,
+        "projectedSpreadHome": 3.127873269027198,
+        "projectedWinner": "Oregon",
+        "homeWinProbability": 42.17349476125669,
+        "projectionDigest": "611fe222699256ba13676866f8ebf92bad5f4caf8c18aac3c8fd70f377d579d7"
+      },
+      "sagarin": {
+        "impliedHomeMargin": -10.800000000000008,
+        "impliedSpreadHome": 10.800000000000008,
+        "predictorFavorite": "Oregon",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 7.67212673097281,
+        "absoluteDisagreement": 7.67212673097281,
+        "disagreementBucket": "5_TO_LT_10",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-BYU-UCF",
+      "sourceGameId": "401856835",
+      "awayTeam": "BYU",
+      "homeTeam": "UCF",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": -2.461765654236096,
+        "projectedSpreadHome": 2.461765654236096,
+        "projectedWinner": "BYU",
+        "homeWinProbability": 43.82502881130409,
+        "projectionDigest": "876abdaa9c4638018b01f9c128ed3ee1547ba78f213702f0cf5f6dcc564efc42"
+      },
+      "sagarin": {
+        "impliedHomeMargin": -4.7500000000000115,
+        "impliedSpreadHome": 4.7500000000000115,
+        "predictorFavorite": "BYU",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 2.2882343457639154,
+        "absoluteDisagreement": 2.2882343457639154,
+        "disagreementBucket": "2_TO_LT_5",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-BOSTONCOLLEGE-GEORGIATECH",
+      "sourceGameId": "401858273",
+      "awayTeam": "Boston College",
+      "homeTeam": "Georgia Tech",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 1.9221563073829344,
+        "projectedSpreadHome": -1.9221563073829344,
+        "projectedWinner": "Georgia Tech",
+        "homeWinProbability": 54.82900366821949,
+        "projectionDigest": "e7eff4f75aea074f20a636cd56f00608551057f9dd6919b1cef2bbeb797ef7f4"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 9.849999999999998,
+        "impliedSpreadHome": -9.849999999999998,
+        "predictorFavorite": "Georgia Tech",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": -7.9278436926170635,
+        "absoluteDisagreement": 7.9278436926170635,
+        "disagreementBucket": "5_TO_LT_10",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-BOWLINGGREEN-BUFFALO",
+      "sourceGameId": "401866448",
+      "awayTeam": "Bowling Green",
+      "homeTeam": "Buffalo",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 11.418702149383087,
+        "projectedSpreadHome": -11.418702149383087,
+        "projectedWinner": "Buffalo",
+        "homeWinProbability": 76.44967057204113,
+        "projectionDigest": "893df08229a2a0e0eabcc5427756adc8f3393446f039fcc45dd37e5d2dccca64"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 5.839999999999999,
+        "impliedSpreadHome": -5.839999999999999,
+        "predictorFavorite": "Buffalo",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 5.578702149383088,
+        "absoluteDisagreement": 5.578702149383088,
+        "disagreementBucket": "5_TO_LT_10",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-HAWAII-NORTHERNILLINOIS",
+      "sourceGameId": "401864526",
+      "awayTeam": "Hawai'i",
+      "homeTeam": "Northern Illinois",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 1.3124099256545492,
+        "projectedSpreadHome": -1.3124099256545492,
+        "projectedWinner": "Northern Illinois",
+        "homeWinProbability": 53.30146299994687,
+        "projectionDigest": "8bdfc3c88a77cc51b0d9e7ec3fe9c544ff2b839d2b6b35f32738160b14e58344"
+      },
+      "sagarin": {
+        "impliedHomeMargin": -4.069999999999998,
+        "impliedSpreadHome": 4.069999999999998,
+        "predictorFavorite": "Hawai'i",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 5.382409925654547,
+        "absoluteDisagreement": 5.382409925654547,
+        "disagreementBucket": "5_TO_LT_10",
+        "directionalWinnerAgreement": false
+      }
+    },
+    {
+      "gameId": "2026-10-24-IOWA-MINNESOTA",
+      "sourceGameId": "401858497",
+      "awayTeam": "Iowa",
+      "homeTeam": "Minnesota",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": -4.440826146646167,
+        "projectedSpreadHome": 4.440826146646167,
+        "projectedWinner": "Iowa",
+        "homeWinProbability": 38.96077926974407,
+        "projectionDigest": "fa565396a5f0d6e40af0721dadd59f1fcb84dad37c53cf133e48d27f08e124d6"
+      },
+      "sagarin": {
+        "impliedHomeMargin": -5.730000000000001,
+        "impliedSpreadHome": 5.730000000000001,
+        "predictorFavorite": "Iowa",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 1.2891738533538346,
+        "absoluteDisagreement": 1.2891738533538346,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-MICHIGANSTATE-UCLA",
+      "sourceGameId": "401858499",
+      "awayTeam": "Michigan State",
+      "homeTeam": "UCLA",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 16.894970148478087,
+        "projectedSpreadHome": -16.894970148478087,
+        "projectedWinner": "UCLA",
+        "homeWinProbability": 85.69122816340618,
+        "projectionDigest": "f380117808f067db8f3494e201878f6f1ef5cf775f2ef019e8420713fe2eeffb"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 15.15000000000001,
+        "impliedSpreadHome": -15.15000000000001,
+        "predictorFavorite": "UCLA",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 1.7449701484780782,
+        "absoluteDisagreement": 1.7449701484780782,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-NORTHTEXAS-NAVY",
+      "sourceGameId": "401862810",
+      "awayTeam": "North Texas",
+      "homeTeam": "Navy",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": -0.7603728312914271,
+        "projectedSpreadHome": 0.7603728312914271,
+        "projectedWinner": "North Texas",
+        "homeWinProbability": 48.08577323532829,
+        "projectionDigest": "50b840afc38208d17930e21768804292ace06c0c2771207639aa0a84f374e0aa"
+      },
+      "sagarin": {
+        "impliedHomeMargin": -1.8799999999999928,
+        "impliedSpreadHome": 1.8799999999999928,
+        "predictorFavorite": "North Texas",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 1.1196271687085657,
+        "absoluteDisagreement": 1.1196271687085657,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-OKLAHOMA-MISSISSIPPISTATE",
+      "sourceGameId": "401856730",
+      "awayTeam": "Oklahoma",
+      "homeTeam": "Mississippi State",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 4.244409646580856,
+        "projectedSpreadHome": -4.244409646580856,
+        "projectedWinner": "Mississippi State",
+        "homeWinProbability": 60.56280123270288,
+        "projectionDigest": "ebfe6cc5b912bc6578fd82e381c720013b5a273bd399f1435caacdb0906208d7"
+      },
+      "sagarin": {
+        "impliedHomeMargin": -1.2499999999999973,
+        "impliedSpreadHome": 1.2499999999999973,
+        "predictorFavorite": "Oklahoma",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 5.494409646580853,
+        "absoluteDisagreement": 5.494409646580853,
+        "disagreementBucket": "5_TO_LT_10",
+        "directionalWinnerAgreement": false
+      }
+    },
+    {
+      "gameId": "2026-10-24-SACRAMENTOSTATE-BALLSTATE",
+      "sourceGameId": "401866447",
+      "awayTeam": "Sacramento State",
+      "homeTeam": "Ball State",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 13.135973149284101,
+        "projectedSpreadHome": -13.135973149284101,
+        "projectedWinner": "Ball State",
+        "homeWinProbability": 79.65186562061261,
+        "projectionDigest": "467d17f653d84aacd0c4dc2cc9e39be3ed62d7a00f3fc153618eeeff9a1f5cb7"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 13.260000000000002,
+        "impliedSpreadHome": -13.260000000000002,
+        "predictorFavorite": "Ball State",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": -0.12402685071590014,
+        "absoluteDisagreement": 0.12402685071590014,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-TENNESSEE-SOUTHCAROLINA",
+      "sourceGameId": "401856731",
+      "awayTeam": "Tennessee",
+      "homeTeam": "South Carolina",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": -0.08253109795627722,
+        "projectedSpreadHome": 0.08253109795627722,
+        "projectedWinner": "Tennessee",
+        "homeWinProbability": 49.79215039586009,
+        "projectionDigest": "ff4afb941720d8d9da6bc6fcfa62836ec76791f2b67e86e23eec0ed5ec1503c8"
+      },
+      "sagarin": {
+        "impliedHomeMargin": -1.2300000000000013,
+        "impliedSpreadHome": 1.2300000000000013,
+        "predictorFavorite": "Tennessee",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 1.147468902043724,
+        "absoluteDisagreement": 1.147468902043724,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-TEXASAM-ALABAMA",
+      "sourceGameId": "401856727",
+      "awayTeam": "Texas A&M",
+      "homeTeam": "Alabama",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 14.642956175581858,
+        "projectedSpreadHome": -14.642956175581858,
+        "projectedWinner": "Alabama",
+        "homeWinProbability": 82.23566896482421,
+        "projectionDigest": "0bc476e40aaf2ae2d71020e7489734d06bc996142a056c9f486894e5b2f6fac0"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 10.810000000000006,
+        "impliedSpreadHome": -10.810000000000006,
+        "predictorFavorite": "Alabama",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 3.8329561755818524,
+        "absoluteDisagreement": 3.8329561755818524,
+        "disagreementBucket": "2_TO_LT_5",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-KANSASSTATE-ARIZONASTATE",
+      "sourceGameId": "401856839",
+      "awayTeam": "Kansas State",
+      "homeTeam": "Arizona State",
+      "kickoff": "2026-10-24T19:45:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": -3.8564471886713534,
+        "projectedSpreadHome": 3.8564471886713534,
+        "projectedWinner": "Kansas State",
+        "homeWinProbability": 40.38281710409491,
+        "projectionDigest": "6b098a022b8588e0511a21733495e26b2b6b7831fd3967dbded871f247e740df"
+      },
+      "sagarin": {
+        "impliedHomeMargin": -1.419999999999999,
+        "impliedSpreadHome": 1.419999999999999,
+        "predictorFavorite": "Kansas State",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": -2.4364471886713543,
+        "absoluteDisagreement": 2.4364471886713543,
+        "disagreementBucket": "2_TO_LT_5",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-EASTERNMICHIGAN-OHIO",
+      "sourceGameId": "401866449",
+      "awayTeam": "Eastern Michigan",
+      "homeTeam": "Ohio",
+      "kickoff": "2026-10-24T20:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 14.556661762953869,
+        "projectedSpreadHome": -14.556661762953869,
+        "projectedWinner": "Ohio",
+        "homeWinProbability": 82.09354774143213,
+        "projectionDigest": "fdaacdefad184225aba8e52e7b0e350a369b6f96b3371c1aead652027ab19372"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 12.310000000000006,
+        "impliedSpreadHome": -12.310000000000006,
+        "predictorFavorite": "Ohio",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 2.246661762953863,
+        "absoluteDisagreement": 2.246661762953863,
+        "disagreementBucket": "2_TO_LT_5",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-ULMONROE-TROY",
+      "sourceGameId": "401871094",
+      "awayTeam": "UL Monroe",
+      "homeTeam": "Troy",
+      "kickoff": "2026-10-24T20:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 14.67825554308094,
+        "projectedSpreadHome": -14.67825554308094,
+        "projectedWinner": "Troy",
+        "homeWinProbability": 82.29359900246187,
+        "projectionDigest": "717b742735a8750cf9bedf12eba328895892ea283b01aae5f25e72d9db583d10"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 16.899999999999995,
+        "impliedSpreadHome": -16.899999999999995,
+        "predictorFavorite": "Troy",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": -2.2217444569190548,
+        "absoluteDisagreement": 2.2217444569190548,
+        "disagreementBucket": "2_TO_LT_5",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-LOUISIANA-SOUTHERNMISS",
+      "sourceGameId": "401869967",
+      "awayTeam": "Louisiana",
+      "homeTeam": "Southern Miss",
+      "kickoff": "2026-10-24T21:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": -10.607355772571964,
+        "projectedSpreadHome": 10.607355772571964,
+        "projectedWinner": "Louisiana",
+        "homeWinProbability": 25.154895077542417,
+        "projectionDigest": "e2c47b9299e80d9c1e8f0e7c91adf4f16cc84c97246bdba7ee3480db4729ed23"
+      },
+      "sagarin": {
+        "impliedHomeMargin": -11.010000000000002,
+        "impliedSpreadHome": 11.010000000000002,
+        "predictorFavorite": "Louisiana",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 0.40264422742803774,
+        "absoluteDisagreement": 0.40264422742803774,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-OLDDOMINION-LOUISIANATECH",
+      "sourceGameId": "401871093",
+      "awayTeam": "Old Dominion",
+      "homeTeam": "Louisiana Tech",
+      "kickoff": "2026-10-24T21:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 12.998703917388482,
+        "projectedSpreadHome": -12.998703917388482,
+        "projectedWinner": "Louisiana Tech",
+        "homeWinProbability": 79.40586287200105,
+        "projectionDigest": "db419e8e6fc0e2721f3cf46f260d5e250c872095884349baa3ddcb8121e59531"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 14.05,
+        "impliedSpreadHome": -14.05,
+        "predictorFavorite": "Louisiana Tech",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": -1.0512960826115183,
+        "absoluteDisagreement": 1.0512960826115183,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-SANJOSSTATE-NEVADA",
+      "sourceGameId": "401864528",
+      "awayTeam": "San Jos\u00e9 State",
+      "homeTeam": "Nevada",
+      "kickoff": "2026-10-24T21:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 8.276379274735923,
+        "projectedSpreadHome": -8.276379274735923,
+        "projectedWinner": "Nevada",
+        "homeWinProbability": 69.93294839224116,
+        "projectionDigest": "9fac7b02504d92673d051574404f79c46810dbf92cb01d0effabd6f8809d258a"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 5.62,
+        "impliedSpreadHome": -5.62,
+        "predictorFavorite": "Nevada",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 2.656379274735923,
+        "absoluteDisagreement": 2.656379274735923,
+        "disagreementBucket": "2_TO_LT_5",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-BOISESTATE-WASHINGTONSTATE",
+      "sourceGameId": "401860907",
+      "awayTeam": "Boise State",
+      "homeTeam": "Washington State",
+      "kickoff": "2026-10-24T22:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": -11.837399668543313,
+        "projectedSpreadHome": 11.837399668543313,
+        "projectedWinner": "Boise State",
+        "homeWinProbability": 22.74491349135514,
+        "projectionDigest": "17b3526936202ab8c1b1ecc096e5483afe8aa46a334d121c7a2050091f491cb4"
+      },
+      "sagarin": {
+        "impliedHomeMargin": -10.359999999999996,
+        "impliedSpreadHome": 10.359999999999996,
+        "predictorFavorite": "Boise State",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": -1.4773996685433168,
+        "absoluteDisagreement": 1.4773996685433168,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-SANDIEGOSTATE-COLORADOSTATE",
+      "sourceGameId": "401860905",
+      "awayTeam": "San Diego State",
+      "homeTeam": "Colorado State",
+      "kickoff": "2026-10-24T22:30:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 2.228963992270252,
+        "projectedSpreadHome": -2.228963992270252,
+        "projectedWinner": "Colorado State",
+        "homeWinProbability": 55.59506782002761,
+        "projectionDigest": "19226231c83683368377a077312cce6f77a8ea14e8667b9db672f9f3ded83ba8"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 0.2600000000000007,
+        "impliedSpreadHome": -0.2600000000000007,
+        "predictorFavorite": "Colorado State",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 1.9689639922702513,
+        "absoluteDisagreement": 1.9689639922702513,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-COLORADO-OKLAHOMASTATE",
+      "sourceGameId": "401856836",
+      "awayTeam": "Colorado",
+      "homeTeam": "Oklahoma State",
+      "kickoff": "2026-10-24T23:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 13.65863536207673,
+        "projectedSpreadHome": -13.65863536207673,
+        "projectedWinner": "Oklahoma State",
+        "homeWinProbability": 80.5723701189769,
+        "projectionDigest": "eb47553e0448831c0b15ab8af29eb95ec06c83ad0d41ca498aeacc22e272426c"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 11.690000000000001,
+        "impliedSpreadHome": -11.690000000000001,
+        "predictorFavorite": "Oklahoma State",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 1.9686353620767285,
+        "absoluteDisagreement": 1.9686353620767285,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-GEORGIASTATE-ARKANSASSTATE",
+      "sourceGameId": "401869935",
+      "awayTeam": "Georgia State",
+      "homeTeam": "Arkansas State",
+      "kickoff": "2026-10-24T23:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": -0.5230743405623173,
+        "projectedSpreadHome": 0.5230743405623173,
+        "projectedWinner": "Georgia State",
+        "homeWinProbability": 48.68290214629812,
+        "projectionDigest": "6b8ad3544d1382e614f9272b6b0d4036cbba4861fae1cec8de76667f3eeea30f"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 1.5599999999999978,
+        "impliedSpreadHome": -1.5599999999999978,
+        "predictorFavorite": "Arkansas State",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": -2.083074340562315,
+        "absoluteDisagreement": 2.083074340562315,
+        "disagreementBucket": "2_TO_LT_5",
+        "directionalWinnerAgreement": false
+      }
+    },
+    {
+      "gameId": "2026-10-24-VIRGINIATECH-CLEMSON",
+      "sourceGameId": "401858276",
+      "awayTeam": "Virginia Tech",
+      "homeTeam": "Clemson",
+      "kickoff": "2026-10-24T23:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 1.9929995002965697,
+        "projectedSpreadHome": -1.9929995002965697,
+        "projectedWinner": "Clemson",
+        "homeWinProbability": 55.00606149288204,
+        "projectionDigest": "6d34b2fae6bb25d048cb029f911be56b3d982e1e629c7fb8c0df8c280d73219d"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 4.519999999999999,
+        "impliedSpreadHome": -4.519999999999999,
+        "predictorFavorite": "Clemson",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": -2.527000499703429,
+        "absoluteDisagreement": 2.527000499703429,
+        "disagreementBucket": "2_TO_LT_5",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-IOWASTATE-ARIZONA",
+      "sourceGameId": "401856838",
+      "awayTeam": "Iowa State",
+      "homeTeam": "Arizona",
+      "kickoff": "2026-10-24T23:30:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 9.528954300992162,
+        "projectedSpreadHome": -9.528954300992162,
+        "projectedWinner": "Arizona",
+        "homeWinProbability": 72.6261752505873,
+        "projectionDigest": "8919d0dcc7d046d19a690fcb556e1686442d8a20d3d9ba70878d472b454fd3cc"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 8.700000000000006,
+        "impliedSpreadHome": -8.700000000000006,
+        "predictorFavorite": "Arizona",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 0.8289543009921552,
+        "absoluteDisagreement": 0.8289543009921552,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-OLEMISS-TEXAS",
+      "sourceGameId": "401856732",
+      "awayTeam": "Ole Miss",
+      "homeTeam": "Texas",
+      "kickoff": "2026-10-24T23:30:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 2.3232484316823943,
+        "projectedSpreadHome": -2.3232484316823943,
+        "projectedWinner": "Texas",
+        "homeWinProbability": 55.83007966805449,
+        "projectionDigest": "ad6572b61f29fb48e2796adc8dc64c2e8260d68c705f7d81a62b7f187f452f71"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 6.390000000000003,
+        "impliedSpreadHome": -6.390000000000003,
+        "predictorFavorite": "Texas",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": -4.066751568317609,
+        "absoluteDisagreement": 4.066751568317609,
+        "disagreementBucket": "2_TO_LT_5",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-SYRACUSE-NORTHCAROLINA",
+      "sourceGameId": "401858275",
+      "awayTeam": "Syracuse",
+      "homeTeam": "North Carolina",
+      "kickoff": "2026-10-24T23:30:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 10.357131731350094,
+        "projectedSpreadHome": -10.357131731350094,
+        "projectedWinner": "North Carolina",
+        "homeWinProbability": 74.3388426924573,
+        "projectionDigest": "824ccd921e6913a91dee810ed0c52708db8951d8c2b233f93e5cc74b8a5e104f"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 8.750000000000004,
+        "impliedSpreadHome": -8.750000000000004,
+        "predictorFavorite": "North Carolina",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 1.6071317313500906,
+        "absoluteDisagreement": 1.6071317313500906,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-USC-WISCONSIN",
+      "sourceGameId": "401858500",
+      "awayTeam": "USC",
+      "homeTeam": "Wisconsin",
+      "kickoff": "2026-10-24T23:30:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 5.832789576936264,
+        "projectedSpreadHome": -5.832789576936264,
+        "projectedWinner": "Wisconsin",
+        "homeWinProbability": 64.36430027868262,
+        "projectionDigest": "3521b6da0b466cdb4fcd769aef3a2e076940c72ae3a15000fdec76bd2b8b02f2"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 0.9400000000000004,
+        "impliedSpreadHome": -0.9400000000000004,
+        "predictorFavorite": "Wisconsin",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 4.892789576936264,
+        "absoluteDisagreement": 4.892789576936264,
+        "disagreementBucket": "2_TO_LT_5",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-UTAHSTATE-TEXASSTATE",
+      "sourceGameId": "401860906",
+      "awayTeam": "Utah State",
+      "homeTeam": "Texas State",
+      "kickoff": "2026-10-24T23:30:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 7.908924829465008,
+        "projectedSpreadHome": -7.908924829465008,
+        "projectedWinner": "Texas State",
+        "homeWinProbability": 69.12076151981363,
+        "projectionDigest": "9291d1b7f9363a56c73958df8a53407925a3c4f53cbcde7d328dd109eb83d9b2"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 14.280000000000005,
+        "impliedSpreadHome": -14.280000000000005,
+        "predictorFavorite": "Texas State",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": -6.371075170534997,
+        "absoluteDisagreement": 6.371075170534997,
+        "disagreementBucket": "5_TO_LT_10",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-24-VANDERBILT-KENTUCKY",
+      "sourceGameId": "401856729",
+      "awayTeam": "Vanderbilt",
+      "homeTeam": "Kentucky",
+      "kickoff": "2026-10-24T23:30:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 18.03609417986894,
+        "projectedSpreadHome": -18.03609417986894,
+        "projectedWinner": "Kentucky",
+        "homeWinProbability": 87.25621374545102,
+        "projectionDigest": "587838e10404f4a2af34ccaa211a61b92b3dcb4c3be97ac3d3090ded1bc4375a"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 14.349999999999998,
+        "impliedSpreadHome": -14.349999999999998,
+        "predictorFavorite": "Kentucky",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 3.6860941798689417,
+        "absoluteDisagreement": 3.6860941798689417,
+        "disagreementBucket": "2_TO_LT_5",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-25-UTSA-TULANE",
+      "sourceGameId": "401862811",
+      "awayTeam": "UTSA",
+      "homeTeam": "Tulane",
+      "kickoff": "2026-10-25T00:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 4.896902177578603,
+        "projectedSpreadHome": -4.896902177578603,
+        "projectedWinner": "Tulane",
+        "homeWinProbability": 62.138969617866756,
+        "projectionDigest": "a63b1830e30a0375df153b4fa621878d02d9096fcfcd99559de0b5b0e2429ba4"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 3.109999999999988,
+        "impliedSpreadHome": -3.109999999999988,
+        "predictorFavorite": "Tulane",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 1.7869021775786154,
+        "absoluteDisagreement": 1.7869021775786154,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-25-NORTHDAKOTASTATE-NEWMEXICO",
+      "sourceGameId": "401864527",
+      "awayTeam": "North Dakota State",
+      "homeTeam": "New Mexico",
+      "kickoff": "2026-10-25T02:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 7.238274145831127,
+        "projectedSpreadHome": -7.238274145831127,
+        "projectedWinner": "New Mexico",
+        "homeWinProbability": 67.61426598904106,
+        "projectionDigest": "b920b10e37670fe796ecbc663efdc522b5ee1d11e7955a550f98eb2aae5d26e9"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 9.759999999999994,
+        "impliedSpreadHome": -9.759999999999994,
+        "predictorFavorite": "New Mexico",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": -2.521725854168867,
+        "absoluteDisagreement": 2.521725854168867,
+        "disagreementBucket": "2_TO_LT_5",
+        "directionalWinnerAgreement": true
+      }
+    },
+    {
+      "gameId": "2026-10-25-HOUSTON-UTAH",
+      "sourceGameId": "401856837",
+      "awayTeam": "Houston",
+      "homeTeam": "Utah",
+      "kickoff": "2026-10-25T02:15:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 5.2910477645622365,
+        "projectedSpreadHome": -5.2910477645622365,
+        "projectedWinner": "Utah",
+        "homeWinProbability": 63.0815644910804,
+        "projectionDigest": "15b827902593d6d6604ce90eef0a4fba9aa97974c10a64986f0af10f93bca77f"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 4.9500000000000055,
+        "impliedSpreadHome": -4.9500000000000055,
+        "predictorFavorite": "Utah",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 0.34104776456223096,
+        "absoluteDisagreement": 0.34104776456223096,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      }
+    }
+  ],
+  "policy": "Descriptive benchmark comparison only. Disagreement is a research difference, not a recommendation or manual adjustment. Sagarin cannot alter the frozen foundation or canonical projection without separate leakage-safe promotion evidence and explicit review."
+}
