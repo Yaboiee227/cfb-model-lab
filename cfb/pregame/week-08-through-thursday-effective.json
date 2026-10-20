@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "league": "cfb",
   "season": 2026,
   "week": 8,
@@ -7,31 +7,31 @@
   "status": "OPEN_EFFECTIVE_THROUGH_THURSDAY",
   "canonicalInfluence": false,
   "canonicalPromotionAuthorized": false,
-  "observedAt": "2026-10-20T15:05:55Z",
-  "dateWindowET": ["2026-10-20", "2026-10-22"],
+  "observedAt": "2026-10-20T19:31:14Z",
+  "dateWindowET": [
+    "2026-10-20",
+    "2026-10-22"
+  ],
   "activeScope": "cfb/pregame/week-08-active-through-thursday.json",
-  "sourceSchedule": "cfb/pregame/week-08-schedule-through-thursday.json",
+  "sourceSchedule": "cfb/pregame/week-08-schedule.json",
   "frozenFoundation": "cfb/research-locks/week-08-foundation-full.json",
   "sourceRegistry": "MODEL_SOURCES.md",
-  "policy": "Pregame-only integrated working state for the active Tuesday-through-Thursday window. The frozen Week 8 foundation is immutable, market-independent and research-only. Markets, injuries, weather, SP+, Sagarin, RefMetrics, trends and other external signals remain context/benchmark/challenger inputs unless separately validated and explicitly promoted. Unknown stays unknown. No manual point adjustment is invented.",
   "sourceStates": [
     "cfb/pregame/week-08-tuesday-effective.json",
     "cfb/pregame/week-08-wednesday-effective.json",
     "cfb/pregame/week-08-thursday-effective.json"
   ],
-  "currentMarketObservation": {
-    "observedAt": "2026-10-20T15:05:55Z",
-    "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?itm_content=NCAA+Football&tb_edate=n30days&tb_eg=NCAA+Football&tb_page=1",
-    "sourceRole": "APPROVED_BOOK_CONTEXT_NOT_PUBLICATION_LOCK",
-    "note": "DraftKings page states values may differ by jurisdiction. These observations are timestamped research/benchmark context only; a separate immutable final-window publication market lock is still required. Betting split percentages are excluded."
-  },
+  "policy": "Pregame-only integrated working state. Frozen research projections remain immutable and non-canonical. External markets, personnel, weather and benchmarks remain context/challenger evidence unless separately validated and explicitly promoted. Unknown stays unknown.",
   "games": [
     {
       "gameId": "2026-10-20-MIDDLETENNESSEE-FLORIDAINTERNATIONAL",
       "sourceGameId": "401871055",
+      "gameDateET": "2026-10-20",
       "awayTeam": "Middle Tennessee",
       "homeTeam": "Florida International",
       "kickoff": "2026-10-20T23:00:00Z",
+      "contextSource": "cfb/pregame/week-08-tuesday-effective.json",
+      "contextObservedAt": "2026-10-20T19:31:14Z",
       "frozenFoundationReference": {
         "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
         "canonicalInfluence": false,
@@ -47,56 +47,232 @@
         "source": "cfb/research-locks/week-08-foundation-full.json"
       },
       "personnel": {
-        "status": "CURRENT_THIRD_PARTY_CHECK_NO_NEW_OFFICIAL_MATERIAL_CHANGE",
-        "officialStateSource": "cfb/pregame/week-08-tuesday-effective.json",
-        "away": {"injuryContext": "No injuries listed by Covers at current check."},
-        "home": {"injuryContext": ["A. Carrie RB OUT", "K. Schaeffer TE QUESTIONABLE", "A. Passley TE QUESTIONABLE", "N. Sidan K QUESTIONABLE"]},
-        "currentThirdPartySource": "https://www.covers.com/sport/football/ncaaf/matchup/378460",
-        "currentThirdPartyCheckedAt": "2026-10-20T15:05:55Z",
-        "canonicalInfluence": false
+        "status": "AFTERNOON_REFRESH_NO_NEW_OFFICIAL_MATERIAL_CHANGE",
+        "away": {
+          "reportedInjuries": [],
+          "note": "No current injuries listed by Covers at capture time.",
+          "thirdPartyInjuryState": "NO_INJURIES_REPORTED"
+        },
+        "home": {
+          "reportedInjuries": [
+            {
+              "player": "Amari Carrie",
+              "position": "RB",
+              "status": "OUT",
+              "detail": "Undisclosed"
+            },
+            {
+              "player": "K. Schaeffer",
+              "position": "TE",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed"
+            },
+            {
+              "player": "A. Passley",
+              "position": "TE",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed"
+            },
+            {
+              "player": "N. Sidan",
+              "position": "K",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed"
+            }
+          ],
+          "thirdPartyInjuryState": [
+            {
+              "player": "Amari Carrie",
+              "position": "RB",
+              "status": "OUT",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            },
+            {
+              "player": "K. Schaeffer",
+              "position": "TE",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            },
+            {
+              "player": "A. Passley",
+              "position": "TE",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            },
+            {
+              "player": "N. Sidan",
+              "position": "K",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            }
+          ]
+        },
+        "sources": [
+          "https://fiusports.com/news/2026/10/19/football-preps-for-middle-tennessee-hosts-blue-raiders-tuesday-night-in-final-weekday-cusa-game.aspx",
+          "https://goblueraiders.com/news/2026/10/19/football-blue-raiders-travel-to-fiu-for-key-cusa-mid-week-game",
+          "https://www.covers.com/sport/football/ncaaf/matchup/378460"
+        ],
+        "canonicalInfluence": "No new authoritative material update found. Preserve established validated personnel logic only; no manual point adjustment.",
+        "lastOfficialCheckAt": "2026-10-20T11:11:19Z",
+        "refreshStatus": "NO_NEW_AUTHORITATIVE_MATERIAL_UPDATE_FOUND_MORNING_CHECK",
+        "lastCheckedAt": "2026-10-20T19:31:14Z",
+        "source": "https://www.covers.com/sport/football/ncaaf/matchup/378460"
       },
       "weather": {
         "status": "NWS_CURRENT_MATERIAL_WIND_FINAL_RECHECK_REQUIRED",
-        "sourceState": "cfb/pregame/week-08-tuesday-effective.json",
-        "lastAuthoritativeObservationAt": "2026-10-20T11:30:42Z",
-        "note": "Existing NWS state flags material wind/gust uncertainty. Preserve it and perform the final-window stadium-level recheck; no unvalidated manual adjustment."
+        "temperatureFRange": [
+          78,
+          80
+        ],
+        "precipProbabilityPctRange": [
+          0,
+          2
+        ],
+        "windMphRange": [
+          9,
+          15
+        ],
+        "windDirection": "NE/NNE",
+        "note": "Action Network and Blue Chip/WeatherAPI agree on low precipitation but differ on wind magnitude. Recheck an authoritative stadium-level forecast in the one-hour window.",
+        "sources": [
+          "https://www.actionnetwork.com/ncaaf/weather",
+          "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-middle-tennessee-florida-international/"
+        ],
+        "observedAt": "2026-10-20T19:31:14Z",
+        "source": "National Weather Service point forecast near Miami International Airport / FIU",
+        "sourceLastUpdate": "2026-10-20T04:06:00-04:00",
+        "sourceUrl": "https://forecast.weather.gov/MapClick.php?FcstType=digital&lat=25.783&lg=english&lon=-80.3261&unit=0",
+        "kickoffWindow": {
+          "approximately7pmET": {
+            "temperatureF": 79,
+            "windDirection": "NE",
+            "windMph": 14,
+            "gustMph": 21,
+            "precipProbabilityPct": 1
+          },
+          "approximately8pmET": {
+            "temperatureF": 78,
+            "windDirection": "NE",
+            "windMph": 11,
+            "gustMph": 18,
+            "precipProbabilityPct": 4
+          }
+        },
+        "materiality": "Wind/gusts remain the primary weather uncertainty. Final stadium-level check still required in the one-hour window. No unvalidated manual adjustment.",
+        "kickoffApprox": {
+          "temperatureF": 79,
+          "windDirection": "NE/N",
+          "windMph": 14,
+          "gustMph": 21,
+          "precipProbabilityPct": 13
+        }
+      },
+      "travelRest": {
+        "awayMiles": 781,
+        "awayBodyClockShiftHours": 1,
+        "awayRestDays": 7,
+        "homeRestDays": 6,
+        "status": "CONTEXT_ONLY",
+        "source": "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-middle-tennessee-florida-international/"
       },
       "market": {
-        "status": "CURRENT_APPROVED_BOOK_CONTEXT_NOT_LOCKED",
-        "book": "DraftKings",
-        "observedAt": "2026-10-20T15:05:55Z",
-        "spreadHome": -10.0,
-        "spreadHomePrice": -110,
-        "spreadAwayPrice": -110,
-        "total": 45.5,
-        "overPrice": -105,
-        "underPrice": -115,
-        "moneylineHome": -380,
-        "moneylineAway": 300,
-        "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?itm_content=NCAA+Football&tb_edate=n30days&tb_eg=NCAA+Football&tb_page=1"
+        "status": "AFTERNOON_CURRENT_NOT_LOCKED",
+        "observations": [
+          {
+            "book": "DraftKings",
+            "observedAt": "2026-10-20T19:31:14Z",
+            "spreadHome": -10.0,
+            "spreadHomePrice": -110,
+            "spreadAwayPrice": -110,
+            "total": 45.5,
+            "overPrice": -105,
+            "underPrice": -115,
+            "moneylineHome": -380,
+            "moneylineAway": 300,
+            "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?itm_content=NCAA+Football&tb_edate=n30days&tb_eg=NCAA+Football&tb_page=1"
+          }
+        ],
+        "note": "Afternoon benchmark context only. DraftKings states displayed values can differ by jurisdiction. Betting split percentages are excluded. Final-window immutable publication lock remains pending."
+      },
+      "benchmarks": {
+        "sagarin": {
+          "status": "CURRENT_FOR_WEEK_8_OPEN",
+          "ratingsThrough": "2026-10-17",
+          "impliedSpreadHome": -12.35,
+          "source": "https://sagarin.com/sports/cfsend.htm"
+        },
+        "spPlus": {
+          "status": "PENDING_CURRENT_OFFICIAL_CAPTURE",
+          "source": "https://www.espn.com/college-football/story/_/id/49868647/2026-college-football-sp+-rankings-all-138-fbs-teams",
+          "note": "Official ESPN page currently blocks automated retrieval; do not substitute mirrors."
+        },
+        "refMetrics": {
+          "status": "NOT_YET_POSTED",
+          "source": "https://www.refmetrics.com/ncaa-football/todays-games",
+          "canonicalInfluence": false,
+          "lastCheckedAt": "2026-10-20T19:31:14Z",
+          "note": "RefMetrics Week 8 board states that officials are not currently available for upcoming NCAA Football games. Team betting-trend fields are research-only and are not model inputs."
+        }
+      },
+      "officialContext": {
+        "status": "CURRENT_OFFICIAL_PREVIEW_CAPTURED",
+        "observedAt": "2026-10-20T03:15:00Z",
+        "facts": [
+          "FIU and Middle Tennessee are both 3-3 overall and 1-1 in Conference USA.",
+          "FIU is undefeated at home entering the game; Middle Tennessee is 0-3 on the road.",
+          "FIU ranks first in Conference USA in time of possession at 33:30 per game.",
+          "Middle Tennessee QB Roman Gagliano has 1,204 passing yards and 11 passing touchdowns through six games.",
+          "Middle Tennessee's offense has converted 66.7% of fourth downs, second-best in Conference USA."
+        ],
+        "sources": [
+          "https://fiusports.com/news/2026/10/19/football-preps-for-middle-tennessee-hosts-blue-raiders-tuesday-night-in-final-weekday-cusa-game.aspx",
+          "https://goblueraiders.com/news/2026/10/19/football-blue-raiders-travel-to-fiu-for-key-cusa-mid-week-game"
+        ],
+        "canonicalInfluence": "Context only unless an underlying metric is already authorized by the established model framework."
+      },
+      "audit": {
+        "priority": "HIGH_TUESDAY",
+        "materialOpenItems": [
+          "reproducible CB engine",
+          "final QB/personnel confirmation",
+          "one-hour weather refresh",
+          "referee/crew assignment",
+          "publication-time market lock",
+          "current official SP+ capture"
+        ]
       },
       "researchMarketComparison": {
         "status": "BENCHMARK_ONLY_NOT_CANONICAL_EDGE",
-        "spreadSide": "Florida International",
-        "foundationSpreadForSide": -13.977411077112537,
-        "marketSpreadForSide": -10.0,
-        "foundationAdvantagePoints": 3.977411077112537,
-        "totalDirection": "UNDER",
-        "foundationVsMarketTotalPoints": 2.778377650427544,
+        "marketObservedAt": "2026-10-20T19:31:14Z",
+        "book": "DraftKings",
+        "spread": {
+          "side": "FIU",
+          "foundationSpreadHome": -13.977411077112537,
+          "marketSpreadHome": -10.0,
+          "differencePoints": 3.977411077112537
+        },
+        "total": {
+          "direction": "UNDER",
+          "foundationTotal": 42.721622349572456,
+          "marketTotal": 45.5,
+          "differencePoints": 2.7783776504275437
+        },
         "canonicalInfluence": false
-      },
-      "benchmarks": {
-        "sagarin": {"status": "CURRENT_FOR_WEEK_8_OPEN", "canonicalInfluence": false},
-        "spPlus": {"status": "PENDING_CURRENT_OFFICIAL_CAPTURE", "canonicalInfluence": false},
-        "refMetrics": {"status": "NOT_YET_POSTED", "canonicalInfluence": false}
       }
     },
     {
       "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
       "sourceGameId": "401871069",
+      "gameDateET": "2026-10-20",
       "awayTeam": "Missouri State",
       "homeTeam": "Delaware",
       "kickoff": "2026-10-20T23:00:00Z",
+      "contextSource": "cfb/pregame/week-08-tuesday-effective.json",
+      "contextObservedAt": "2026-10-20T19:31:14Z",
       "frozenFoundationReference": {
         "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
         "canonicalInfluence": false,
@@ -113,55 +289,248 @@
       },
       "personnel": {
         "status": "MATERIAL_QB_STATUS_OPEN_SOURCE_CONFLICT",
-        "officialStateSource": "cfb/pregame/week-08-tuesday-effective.json",
-        "away": {"mostRecentStartingQB": "Henry Belin IV", "startingQB": "UNRESOLVED_TUESDAY_STARTER", "injuryContext": ["J. Rexroat TE QUESTIONABLE", "J. Joyner RB QUESTIONABLE"]},
-        "home": {"mostRecentStartingQB": "Tyler Bell", "startingQB": "UNRESOLVED_TUESDAY_STARTER", "injuryContext": ["N. Minicucci QB OUT - third-party current listing", "T. Salazer WR OUT", "B. Rehmann WR QUESTIONABLE", "G. Spiller RB OUT"]},
-        "currentThirdPartySource": "https://www.covers.com/sport/football/ncaaf/matchup/379250",
-        "currentThirdPartyCheckedAt": "2026-10-20T15:05:55Z",
-        "note": "Do not infer the Tuesday starter from the third-party Minicucci listing. Tyler Bell remains the most recent Delaware starter unless authoritative team information confirms otherwise.",
-        "canonicalInfluence": false
+        "away": {
+          "reportedInjuries": [
+            {
+              "player": "Josh Joyner",
+              "position": "RB",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party_prior_capture"
+            },
+            {
+              "player": "James Rexroat",
+              "position": "TE",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party_prior_capture"
+            }
+          ],
+          "lastKnownStartingQB": "Henry Belin IV",
+          "mostRecentStartingQB": "Henry Belin IV",
+          "startingQB": "UNRESOLVED_TUESDAY_STARTER",
+          "officialContext": "Henry Belin IV made his first Missouri State start in the Oct. 14 win over Kennesaw State and completed 28-of-39 passes for 300 yards and two touchdowns. Missouri State's Oct. 16 Delaware preview highlights that start but does not explicitly confirm the Oct. 20 starter.",
+          "thirdPartyInjuries": [
+            {
+              "player": "James Rexroat",
+              "position": "TE",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            },
+            {
+              "player": "Josh Joyner",
+              "position": "RB",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            }
+          ]
+        },
+        "home": {
+          "reportedInjuries": [
+            {
+              "player": "Nick Minicucci",
+              "position": "QB",
+              "status": "MISSED_PREVIOUS_TWO_GAMES",
+              "detail": "Injury; official Oct. 17 Delaware preview does not confirm his Oct. 20 availability"
+            },
+            {
+              "player": "T. Salazer",
+              "position": "WR",
+              "status": "OUT",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party_prior_capture"
+            },
+            {
+              "player": "B. Rehmann",
+              "position": "WR",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party_prior_capture"
+            },
+            {
+              "player": "G. Spiller",
+              "position": "RB",
+              "status": "OUT",
+              "detail": "Season/undisclosed",
+              "sourceTier": "third_party_prior_capture"
+            }
+          ],
+          "startingQB": "UNRESOLVED_TUESDAY_STARTER",
+          "mostRecentStartingQB": "Tyler Bell",
+          "officialContext": "Tyler Bell made his first career start at Middle Tennessee, completing 22-of-36 passes for a Delaware freshman-record 306 yards and two passing touchdowns; he also had a receiving touchdown. Bell was named Conference USA Freshman of the Week on Oct. 19. Nick Minicucci had missed the previous two games due to injury as of Delaware's Oct. 17 preview.",
+          "thirdPartyQBStatus": {
+            "player": "Nick Minicucci",
+            "status": "OUT",
+            "detail": "Leg",
+            "sourceTier": "third_party"
+          },
+          "sourceConflict": "Covers lists Nick Minicucci OUT with a leg injury, while no newer Delaware official starter confirmation was captured. Tyler Bell remains the most recent starter, not a confirmed Tuesday starter.",
+          "thirdPartyInjuries": [
+            {
+              "player": "T. Salazer",
+              "position": "WR",
+              "status": "OUT",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            },
+            {
+              "player": "B. Rehmann",
+              "position": "WR",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            },
+            {
+              "player": "G. Spiller",
+              "position": "RB",
+              "status": "OUT",
+              "detail": "Undisclosed / season",
+              "sourceTier": "third_party"
+            }
+          ]
+        },
+        "sources": [
+          "https://missouristatebears.com/sports/football/",
+          "https://missouristatebears.com/news/2026/10/16/football-bears-square-off-with-delaware-tuesday-on-espnu",
+          "https://www.covers.com/sport/football/ncaaf/matchup/379250"
+        ],
+        "canonicalInfluence": "Do not infer either starter and do not invent a QB point adjustment.",
+        "lastOfficialCheckAt": "2026-10-20T11:11:19Z",
+        "refreshStatus": "NO_NEW_OFFICIAL_TUESDAY_STARTER_CONFIRMATION_FOUND_MORNING_CHECK",
+        "lastCheckedAt": "2026-10-20T19:31:14Z",
+        "note": "Missouri State's official football page still shows the Oct. 16 Delaware preview as its latest game-specific football item; no authoritative Tuesday starter change was captured in this check."
       },
       "weather": {
         "status": "NWS_LOW_TO_MODERATE_WIND_FINAL_RECHECK_REQUIRED",
-        "sourceState": "cfb/pregame/week-08-tuesday-effective.json",
-        "lastAuthoritativeObservationAt": "2026-10-20T11:30:42Z"
+        "temperatureFRange": [
+          56,
+          60
+        ],
+        "precipProbabilityPctRange": [
+          0,
+          4
+        ],
+        "windMphRange": [
+          6,
+          9
+        ],
+        "gustMph": 17,
+        "windDirection": "NNE",
+        "sources": [
+          "https://www.actionnetwork.com/ncaaf/weather",
+          "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-missouri-state-delaware/"
+        ],
+        "observedAt": "2026-10-20T19:31:14Z",
+        "source": "National Weather Service point forecast for Newark, Delaware",
+        "sourceLastUpdate": "2026-10-20T11:48:00-04:00",
+        "sourceUrl": "https://forecast.weather.gov/MapClick.php?FcstType=digital&FcstType=text&lat=39.6776&lg=english&lon=-75.7575&menu=1",
+        "forecast": "This afternoon sunny near 70 F with north wind 10-15 mph; tonight mostly clear with north wind 5-10 mph and a low near 43 F.",
+        "materiality": "No precipitation concern. Wind remains modest enough for final-window confirmation rather than an unvalidated adjustment."
+      },
+      "travelRest": {
+        "awayMiles": 965,
+        "awayBodyClockShiftHours": 1,
+        "awayRestDays": 6,
+        "homeRestDays": 7,
+        "status": "CONTEXT_ONLY",
+        "source": "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-missouri-state-delaware/"
       },
       "market": {
-        "status": "CURRENT_APPROVED_BOOK_CONTEXT_NOT_LOCKED",
-        "book": "DraftKings",
-        "observedAt": "2026-10-20T15:05:55Z",
-        "spreadHome": -2.5,
-        "spreadHomePrice": -122,
-        "spreadAwayPrice": 102,
-        "total": 52.5,
-        "overPrice": -110,
-        "underPrice": -110,
-        "moneylineHome": -148,
-        "moneylineAway": 124,
-        "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?itm_content=NCAA+Football&tb_edate=n30days&tb_eg=NCAA+Football&tb_page=1"
+        "status": "AFTERNOON_CURRENT_NOT_LOCKED",
+        "observations": [
+          {
+            "book": "DraftKings",
+            "observedAt": "2026-10-20T19:31:14Z",
+            "spreadHome": -3.0,
+            "spreadHomePrice": -108,
+            "spreadAwayPrice": -112,
+            "total": 52.5,
+            "overPrice": -110,
+            "underPrice": -110,
+            "moneylineHome": -155,
+            "moneylineAway": 130,
+            "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?itm_content=NCAA+Football&tb_edate=n30days&tb_eg=NCAA+Football&tb_page=1"
+          }
+        ],
+        "note": "Afternoon benchmark context only. Final-window immutable publication lock remains pending. Betting split percentages are excluded."
+      },
+      "benchmarks": {
+        "sagarin": {
+          "status": "CURRENT_FOR_WEEK_8_OPEN",
+          "ratingsThrough": "2026-10-17",
+          "impliedSpreadHome": -6.06,
+          "source": "https://sagarin.com/sports/cfsend.htm"
+        },
+        "spPlus": {
+          "status": "PENDING_CURRENT_OFFICIAL_CAPTURE",
+          "source": "https://www.espn.com/college-football/story/_/id/49868647/2026-college-football-sp+-rankings-all-138-fbs-teams"
+        },
+        "refMetrics": {
+          "status": "NOT_YET_POSTED",
+          "source": "https://www.refmetrics.com/ncaa-football/todays-games",
+          "canonicalInfluence": false,
+          "lastCheckedAt": "2026-10-20T19:31:14Z",
+          "note": "RefMetrics Week 8 board states that officials are not currently available for upcoming NCAA Football games. Team betting-trend fields are research-only and are not model inputs."
+        }
+      },
+      "officialContext": {
+        "status": "CURRENT_OFFICIAL_PREVIEW_CAPTURED",
+        "observedAt": "2026-10-20T03:15:00Z",
+        "facts": [
+          "Missouri State is 2-4 overall and 1-1 in Conference USA; Delaware is 2-4 and 0-2.",
+          "Missouri State WR Isaiah Myers leads Conference USA with 554 receiving yards and five receiving touchdowns and had 135 yards with two touchdowns against Kennesaw State.",
+          "Delaware QB Tyler Bell threw for 306 yards in his first career start and was named Conference USA Freshman of the Week.",
+          "Nick Minicucci had missed Delaware's previous two games due to injury as of the Oct. 17 official preview."
+        ],
+        "sources": [
+          "https://bluehens.com/news/2026/10/17/football-plays-host-to-missouri-state-on-tuesday-for-senior-day",
+          "https://missouristatebears.com/news/2026/10/16/football-bears-square-off-with-delaware-tuesday-on-espnu"
+        ],
+        "canonicalInfluence": false
+      },
+      "audit": {
+        "priority": "CRITICAL_TUESDAY_QB",
+        "materialOpenItems": [
+          "reproducible canonical CB engine",
+          "Delaware Tuesday starting-QB confirmation",
+          "Missouri State Tuesday starting-QB confirmation",
+          "Missouri State questionable RB/TE status",
+          "one-hour weather refresh",
+          "referee/crew assignment",
+          "publication-time market lock",
+          "current official SP+ capture"
+        ]
       },
       "researchMarketComparison": {
         "status": "BENCHMARK_ONLY_NOT_CANONICAL_EDGE",
-        "spreadSide": "Delaware",
-        "foundationSpreadForSide": -7.01075758611438,
-        "marketSpreadForSide": -2.5,
-        "foundationAdvantagePoints": 4.51075758611438,
-        "totalDirection": "UNDER",
-        "foundationVsMarketTotalPoints": 0.3954664341195884,
+        "marketObservedAt": "2026-10-20T19:31:14Z",
+        "book": "DraftKings",
+        "spread": {
+          "side": "Delaware",
+          "foundationSpreadHome": -7.01075758611438,
+          "marketSpreadHome": -3.0,
+          "differencePoints": 4.01075758611438
+        },
+        "total": {
+          "direction": "UNDER",
+          "foundationTotal": 52.10453356588041,
+          "marketTotal": 52.5,
+          "differencePoints": 0.3954664341195908
+        },
         "canonicalInfluence": false
-      },
-      "benchmarks": {
-        "sagarin": {"status": "CURRENT_FOR_WEEK_8_OPEN", "canonicalInfluence": false},
-        "spPlus": {"status": "PENDING_CURRENT_OFFICIAL_CAPTURE", "canonicalInfluence": false},
-        "refMetrics": {"status": "NOT_YET_POSTED", "canonicalInfluence": false}
       }
     },
     {
       "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
       "sourceGameId": "401871092",
+      "gameDateET": "2026-10-20",
       "awayTeam": "South Alabama",
       "homeTeam": "Marshall",
       "kickoff": "2026-10-20T23:30:00Z",
+      "contextSource": "cfb/pregame/week-08-tuesday-effective.json",
+      "contextObservedAt": "2026-10-20T19:31:14Z",
       "frozenFoundationReference": {
         "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
         "canonicalInfluence": false,
@@ -177,56 +546,194 @@
         "source": "cfb/research-locks/week-08-foundation-full.json"
       },
       "personnel": {
-        "status": "PARTIAL_THIRD_PARTY_CONTEXT_FINAL_RECHECK_REQUIRED",
-        "officialStateSource": "cfb/pregame/week-08-tuesday-effective.json",
-        "away": {"injuryContext": ["D. White WR QUESTIONABLE - prior third-party context with date-quality warning"]},
-        "home": {"injuryContext": "No injuries reported by Covers at current check."},
-        "currentThirdPartySource": "https://www.covers.com/sport/football/ncaaf/injuries",
-        "currentThirdPartyCheckedAt": "2026-10-20T15:05:55Z",
-        "canonicalInfluence": false
+        "status": "AFTERNOON_REFRESH_PARTIAL_THIRD_PARTY_CONTEXT_FINAL_RECHECK_REQUIRED",
+        "away": {
+          "reportedInjuries": [],
+          "note": "No sufficiently complete authoritative injury list captured yet; official South Alabama game notes are available and should be checked again pregame.",
+          "thirdPartyInjuries": [
+            {
+              "player": "D. White",
+              "position": "WR",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party",
+              "dataQuality": "Covers note contains a game-date inconsistency; status is contextual only."
+            },
+            {
+              "player": "K. Marion",
+              "position": "WR",
+              "status": "OUT",
+              "detail": "Undisclosed / reported remainder of season",
+              "sourceTier": "third_party"
+            },
+            {
+              "player": "B. Barnes",
+              "position": "WR",
+              "status": "OUT",
+              "detail": "Undisclosed / reported remainder of season",
+              "sourceTier": "third_party"
+            },
+            {
+              "player": "M. Lynch",
+              "position": "TE",
+              "status": "OUT",
+              "detail": "Undisclosed / reported remainder of season",
+              "sourceTier": "third_party"
+            }
+          ]
+        },
+        "home": {
+          "reportedInjuries": [],
+          "note": "No sufficiently complete authoritative injury list captured yet; refresh required.",
+          "thirdPartyInjuryState": "NO_INJURIES_REPORTED"
+        },
+        "sources": [
+          "https://usajaguars.com/news/2026/10/17/football-jags-head-to-marshall-for-tuesday-night-game.aspx",
+          "https://www.covers.com/sport/football/ncaaf/matchup/378461",
+          "https://www.covers.com/sport/football/ncaaf/injuries"
+        ],
+        "context": [
+          "South Alabama offensive line named to the Joe Moore Midseason Honor Roll on Oct. 14."
+        ],
+        "canonicalInfluence": "Newly observed third-party season-long absence listings are contextual only and are not assigned manual points.",
+        "lastOfficialCheckAt": "2026-10-20T11:11:19Z",
+        "refreshStatus": "NO_NEW_AUTHORITATIVE_MATERIAL_UPDATE_FOUND_MORNING_CHECK",
+        "lastCheckedAt": "2026-10-20T19:31:14Z"
       },
       "weather": {
         "status": "NWS_LOW_IMPACT_FINAL_RECHECK_REQUIRED",
-        "sourceState": "cfb/pregame/week-08-tuesday-effective.json",
-        "lastAuthoritativeObservationAt": "2026-10-20T11:30:42Z"
+        "temperatureFRange": [
+          54,
+          59
+        ],
+        "precipProbabilityPctRange": [
+          0,
+          4
+        ],
+        "windMphRange": [
+          3,
+          4
+        ],
+        "windDirection": "NE",
+        "sources": [
+          "https://www.actionnetwork.com/ncaaf-game/south-alabama-jaguars-marshall-thundering-herd/289598",
+          "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-south-alabama-marshall/"
+        ],
+        "observedAt": "2026-10-20T19:31:14Z",
+        "source": "National Weather Service point forecast for Huntington, West Virginia",
+        "sourceLastUpdate": "2026-10-20T07:48:00-04:00",
+        "sourceUrl": "https://forecast.weather.gov/MapClick.php?lat=38.4134&lon=-82.4277",
+        "forecast": "Sunny near 70 F with calm wind becoming northeast around 5 mph; tonight mostly clear near 43 F with calm wind.",
+        "materiality": "Low-impact weather profile. Final stadium-level recheck still required before freeze; no automatic adjustment."
+      },
+      "travelRest": {
+        "awayMiles": 626,
+        "awayBodyClockShiftHours": 1,
+        "awayRestDays": 12,
+        "homeRestDays": 10,
+        "status": "CONTEXT_ONLY",
+        "source": "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-south-alabama-marshall/"
       },
       "market": {
-        "status": "CURRENT_APPROVED_BOOK_CONTEXT_NOT_LOCKED",
-        "book": "DraftKings",
-        "observedAt": "2026-10-20T15:05:55Z",
-        "spreadAway": -3.0,
-        "spreadAwayPrice": -112,
-        "spreadHome": 3.0,
-        "spreadHomePrice": -108,
-        "total": 65.5,
-        "overPrice": -108,
-        "underPrice": -112,
-        "moneylineAway": -162,
-        "moneylineHome": 136,
-        "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?itm_content=NCAA+Football&tb_edate=n30days&tb_eg=NCAA+Football&tb_page=1"
+        "status": "AFTERNOON_CURRENT_NOT_LOCKED",
+        "observations": [
+          {
+            "book": "DraftKings",
+            "observedAt": "2026-10-20T19:31:14Z",
+            "spreadAway": -3.0,
+            "spreadAwayPrice": -112,
+            "spreadHome": 3.0,
+            "spreadHomePrice": -108,
+            "total": 65.5,
+            "overPrice": -108,
+            "underPrice": -112,
+            "moneylineAway": -162,
+            "moneylineHome": 136,
+            "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?itm_content=NCAA+Football&tb_edate=n30days&tb_eg=NCAA+Football&tb_page=1"
+          }
+        ],
+        "note": "Afternoon benchmark context only. Final-window immutable publication lock remains pending. Betting split percentages are excluded."
+      },
+      "benchmarks": {
+        "sagarin": {
+          "status": "CURRENT_FOR_WEEK_8_OPEN",
+          "ratingsThrough": "2026-10-17",
+          "impliedSpreadHome": 5.14,
+          "source": "https://sagarin.com/sports/cfsend.htm"
+        },
+        "spPlus": {
+          "status": "PENDING_CURRENT_OFFICIAL_CAPTURE",
+          "source": "https://www.espn.com/college-football/story/_/id/49868647/2026-college-football-sp+-rankings-all-138-fbs-teams"
+        },
+        "refMetrics": {
+          "status": "NOT_YET_POSTED",
+          "source": "https://www.refmetrics.com/ncaa-football/todays-games",
+          "canonicalInfluence": false,
+          "lastCheckedAt": "2026-10-20T19:31:14Z",
+          "note": "RefMetrics Week 8 board states that officials are not currently available for upcoming NCAA Football games. Team betting-trend fields are research-only and are not model inputs."
+        }
+      },
+      "officialContext": {
+        "status": "CURRENT_OFFICIAL_PREVIEW_CAPTURED",
+        "observedAt": "2026-10-20T03:15:00Z",
+        "facts": [
+          "South Alabama enters 4-2 overall and 2-0 in the Sun Belt; Marshall enters 3-3 and 0-2.",
+          "South Alabama's offensive line was named to the Joe Moore Midseason Honor Roll, the only Sun Belt unit on the 25-team list.",
+          "South Alabama scored 52 and 56 points in its previous two games.",
+          "Marshall is returning home after its Oct. 10 conference game and hosts South Alabama in the Tuesday-night ESPN2 window."
+        ],
+        "sources": [
+          "https://usajaguars.com/news/2026/10/17/football-jags-head-to-marshall-for-tuesday-night-game.aspx",
+          "https://herdzone.com/news/2026/3/13/marshall-athletics-announces-2026-football-schedule"
+        ],
+        "canonicalInfluence": "The offensive-line recognition and scoring streak are context/research observations only unless represented through already-authorized model features."
+      },
+      "turnoverContext": {
+        "status": "RESEARCH_CONTEXT",
+        "homeRecentTurnovers": 6,
+        "homeSeasonTurnoverMargin": -9,
+        "note": "Do not extrapolate recent turnover results directly; evaluate regression/ball-security features only through established model logic.",
+        "source": "https://www.marshall.edu/wmul/2026/10/19/marshall-gets-set-for-a-tuesday-night-primetime-showdown/"
+      },
+      "audit": {
+        "priority": "HIGH_TUESDAY",
+        "materialOpenItems": [
+          "reproducible CB engine",
+          "complete injury/personnel confirmation",
+          "one-hour weather refresh",
+          "referee/crew assignment",
+          "publication-time market lock",
+          "current official SP+ capture"
+        ]
       },
       "researchMarketComparison": {
         "status": "BENCHMARK_ONLY_NOT_CANONICAL_EDGE",
-        "spreadSide": "South Alabama",
-        "foundationSpreadForSide": -4.1049020761834925,
-        "marketSpreadForSide": -3.0,
-        "foundationAdvantagePoints": 1.1049020761834925,
-        "totalDirection": "OVER",
-        "foundationVsMarketTotalPoints": 4.04276300486376,
+        "marketObservedAt": "2026-10-20T19:31:14Z",
+        "book": "DraftKings",
+        "spread": {
+          "side": "South Alabama",
+          "foundationSpreadHome": 4.1049020761834925,
+          "marketSpreadHome": 3.0,
+          "differencePoints": 1.1049020761834925
+        },
+        "total": {
+          "direction": "OVER",
+          "foundationTotal": 69.54276300486376,
+          "marketTotal": 65.5,
+          "differencePoints": 4.042763004863758
+        },
         "canonicalInfluence": false
-      },
-      "benchmarks": {
-        "sagarin": {"status": "CURRENT_FOR_WEEK_8_OPEN", "canonicalInfluence": false},
-        "spPlus": {"status": "PENDING_CURRENT_OFFICIAL_CAPTURE", "canonicalInfluence": false},
-        "refMetrics": {"status": "NOT_YET_POSTED", "canonicalInfluence": false}
       }
     },
     {
       "gameId": "2026-10-21-NEWMEXICOSTATE-SAMHOUSTON",
       "sourceGameId": "401871070",
+      "gameDateET": "2026-10-21",
       "awayTeam": "New Mexico State",
       "homeTeam": "Sam Houston",
       "kickoff": "2026-10-22T00:00:00Z",
+      "contextSource": "cfb/pregame/week-08-wednesday-effective.json",
+      "contextObservedAt": "2026-10-20T12:08:00Z",
       "frozenFoundationReference": {
         "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
         "canonicalInfluence": false,
@@ -243,55 +750,187 @@
       },
       "personnel": {
         "status": "OFFICIAL_BASELINE_CAPTURED_NO_NEW_MATERIAL_QB_CHANGE_FOUND",
-        "officialStateSource": "cfb/pregame/week-08-wednesday-effective.json",
-        "away": {"mostRecentStartingQB": "Adam Damante", "startingQB": "NOT_EXPLICITLY_CONFIRMED_FOR_WEDNESDAY", "injuryContext": ["I. Uvaydov K QUESTIONABLE", "R. Burton RB QUESTIONABLE", "R. Lotten TE QUESTIONABLE"]},
-        "home": {"mostRecentStartingQB": "Landyn Locke", "startingQB": "Landyn Locke", "injuryContext": ["M. Whisner TE QUESTIONABLE", "B. Kuhl TE OUT"]},
-        "currentThirdPartySource": "https://www.covers.com/sport/football/ncaaf/matchup/378124",
-        "currentThirdPartyCheckedAt": "2026-10-20T15:05:55Z",
-        "canonicalInfluence": false
+        "away": {
+          "mostRecentStartingQB": "Adam Damante",
+          "startingQB": "NOT_EXPLICITLY_CONFIRMED_FOR_WEDNESDAY",
+          "officialContext": "Adam Damante handled the majority of the quarterback work and led NM State with 104 passing yards in the Oct. 7 game at FIU. NM State's Oct. 18 official Sam Houston preview does not announce a quarterback change or a different Wednesday starter.",
+          "thirdPartyInjuries": [
+            {
+              "player": "I. Uvaydov",
+              "position": "K",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            },
+            {
+              "player": "R. Burton",
+              "position": "RB",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            },
+            {
+              "player": "R. Lotten",
+              "position": "TE",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            }
+          ]
+        },
+        "home": {
+          "mostRecentStartingQB": "Landyn Locke",
+          "startingQB": "Landyn Locke",
+          "officialContext": "Landyn Locke started the Oct. 14 loss to WKU, and Sam Houston's official Oct. 21 game center still lists Locke as the team passing leader. No newer official material was found announcing a quarterback change.",
+          "thirdPartyInjuries": [
+            {
+              "player": "M. Whisner",
+              "position": "TE",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            },
+            {
+              "player": "B. Kuhl",
+              "position": "TE",
+              "status": "OUT",
+              "detail": "Reported season-long absence / undisclosed",
+              "sourceTier": "third_party"
+            }
+          ]
+        },
+        "sources": [
+          "https://nmstatesports.com/news/2026/10/18/football-aggies-continue-conference-usa-play-at-sam-houston-on-wednesday.aspx",
+          "https://nmstatesports.com/sports/football/stats/2026/fiu/boxscore/19277",
+          "https://gobearkats.com/game-center/15542",
+          "https://gobearkats.com/news/2026/10/14/football-wku-hands-bearkats-16-3-setback",
+          "https://www.covers.com/sport/football/ncaaf/matchup/378124"
+        ],
+        "lastOfficialCheckAt": "2026-10-20T12:08:00Z",
+        "canonicalInfluence": "No manual QB or injury points. Only a future authoritative material update may enter an already validated personnel rule; the frozen Week 8 research foundation remains immutable."
       },
       "weather": {
-        "status": "NWS_LOW_IMPACT_BASELINE_CAPTURED_FINAL_RECHECK_REQUIRED",
-        "sourceState": "cfb/pregame/week-08-wednesday-effective.json",
-        "lastAuthoritativeObservationAt": "2026-10-20T12:08:00Z"
+        "status": "NWS_LOW_IMPACT_BASELINE_CAPTURED",
+        "observedAt": "2026-10-20T12:08:00Z",
+        "source": "National Weather Service Houston/Galveston zone forecast for Walker County / Huntsville, Texas",
+        "sourceLastUpdate": "2026-10-20T04:28:00-05:00",
+        "sourceUrl": "https://forecast.weather.gov/product.php?format=CI&glossary=1&issuedby=HGX&product=ZFP&site=DTX&version=1",
+        "forecast": {
+          "wednesdayDay": "Sunny, highs in the lower 80s, northeast wind around 5 mph.",
+          "wednesdayNight": "Clear, lows in the mid 50s, northeast wind around 5 mph in the evening becoming light and variable.",
+          "precipitationSignal": "No meaningful precipitation signal in the current NWS Walker County forecast."
+        },
+        "thirdPartyCrossCheck": {
+          "source": "https://www.covers.com/sport/ncaaf/weather",
+          "stadiumTemperatureF": 72.1,
+          "windDirection": "ENE",
+          "windMph": 3.7,
+          "condition": "Clear",
+          "precipProbabilityPct": 0
+        },
+        "materiality": "Current weather profile is low impact. Preserve as context and perform the standard final-window stadium-level recheck; do not apply an unvalidated manual points adjustment."
+      },
+      "travelRest": {
+        "status": "CONTEXT_ONLY",
+        "awayTripMilesReportedByTeam": 1336,
+        "awayBodyClockShiftHours": 1,
+        "awayDaysWithoutGame": 13,
+        "homeRestDays": 7,
+        "source": "https://nmstatesports.com/news/2026/10/18/football-aggies-continue-conference-usa-play-at-sam-houston-on-wednesday.aspx",
+        "note": "NM State's official preview says this is its shortest road trip of 2026 and that the Aggies had 13 full days without a game after the FIU matchup."
       },
       "market": {
-        "status": "CURRENT_APPROVED_BOOK_CONTEXT_NOT_LOCKED",
-        "book": "DraftKings",
-        "observedAt": "2026-10-20T15:05:55Z",
-        "spreadAway": -3.0,
-        "spreadAwayPrice": -108,
-        "spreadHome": 3.0,
-        "spreadHomePrice": -112,
-        "total": 44.5,
-        "overPrice": -112,
-        "underPrice": -108,
-        "moneylineAway": -148,
-        "moneylineHome": 124,
-        "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?itm_content=NCAA+Football&tb_edate=n30days&tb_eg=NCAA+Football&tb_page=1"
+        "status": "EARLY_PUBLIC_CONTEXT_NOT_LOCKED",
+        "observedAt": "2026-10-20T12:08:00Z",
+        "observations": [
+          {
+            "source": "https://www.covers.com/sports/ncaaf/matchups",
+            "marketType": "public_board_context",
+            "spreadHome": 2.5,
+            "total": 45.0,
+            "interpretation": "Public board showed New Mexico State -2.5 at Sam Houston with a 45.0 total at observation time. This is not the immutable publication-time book lock."
+          }
+        ],
+        "note": "Final-window FanDuel and DraftKings observations will be captured independently by the immutable market-lock workflow. Consensus/percentage fields are research-only and are not model inputs."
+      },
+      "benchmarks": {
+        "sagarin": {
+          "status": "CURRENT_FOR_WEEK_8_OPEN",
+          "ratingsThrough": "2026-10-17",
+          "impliedSpreadHome": -0.4500000000000055,
+          "predictorFavorite": "Sam Houston",
+          "source": "cfb/benchmarks/week-08-sagarin-full.json",
+          "canonicalInfluence": false
+        },
+        "spPlus": {
+          "status": "PENDING_CURRENT_OFFICIAL_CAPTURE",
+          "source": "https://www.espn.com/college-football/story/_/id/49868647/2026-college-football-sp+-rankings-all-138-fbs-teams",
+          "note": "Official-only policy remains in force; do not substitute mirrors."
+        },
+        "refMetrics": {
+          "status": "NOT_YET_POSTED",
+          "source": "https://www.refmetrics.com/ncaa-football/todays-games",
+          "canonicalInfluence": false,
+          "lastCheckedAt": "2026-10-20T12:08:00Z",
+          "note": "RefMetrics states that officials are not currently available for upcoming NCAA Football games. Do not infer a crew."
+        }
+      },
+      "officialContext": {
+        "status": "CURRENT_OFFICIAL_PREVIEW_CAPTURED",
+        "observedAt": "2026-10-20T12:08:00Z",
+        "facts": [
+          "NM State enters 2-4 overall and 1-1 in Conference USA; Sam Houston enters 1-5 overall and 0-2 in Conference USA.",
+          "NM State had 13 full days without a game after playing three games in 12 days.",
+          "James Jones leads NM State with 599 rushing yards through his first five games with the Aggies and is averaging 99.8 rushing yards per game.",
+          "NM State has 15 sacks through six games; the official Aggie preview notes Sam Houston has allowed 17 sacks.",
+          "Sam Houston's official game center lists Landyn Locke as its passing leader with 1,418 yards.",
+          "Sam Houston was held to 177 total yards and 112 passing yards in the Oct. 14 loss to WKU."
+        ],
+        "sources": [
+          "https://nmstatesports.com/news/2026/10/18/football-aggies-continue-conference-usa-play-at-sam-houston-on-wednesday.aspx",
+          "https://gobearkats.com/game-center/15542",
+          "https://gobearkats.com/news/2026/10/14/football-wku-hands-bearkats-16-3-setback"
+        ],
+        "canonicalInfluence": "Context only. It cannot alter the frozen Week 8 foundation unless a separately validated rule already authorizes that exact input."
+      },
+      "audit": {
+        "priority": "NEXT_48H",
+        "materialOpenItems": [
+          "final official QB/personnel recheck",
+          "final stadium-level weather recheck",
+          "referee/crew assignment if posted",
+          "immutable FanDuel/DraftKings final-window market lock",
+          "current official SP+ capture if defensibly available"
+        ]
       },
       "researchMarketComparison": {
         "status": "BENCHMARK_ONLY_NOT_CANONICAL_EDGE",
-        "spreadSide": "Sam Houston",
-        "foundationSpreadForSide": 0.3864906855700596,
-        "marketSpreadForSide": 3.0,
-        "foundationAdvantagePoints": 2.6135093144299404,
-        "totalDirection": "UNDER",
-        "foundationVsMarketTotalPoints": 2.240528407827114,
+        "marketObservedAt": null,
+        "book": null,
+        "spread": {
+          "side": "Sam Houston",
+          "foundationSpreadHome": 0.3864906855700596,
+          "marketSpreadHome": 2.5,
+          "differencePoints": 2.1135093144299404
+        },
+        "total": {
+          "direction": "UNDER",
+          "foundationTotal": 42.259471592172886,
+          "marketTotal": 45.0,
+          "differencePoints": 2.7405284078271137
+        },
         "canonicalInfluence": false
-      },
-      "benchmarks": {
-        "sagarin": {"status": "CURRENT_FOR_WEEK_8_OPEN", "canonicalInfluence": false},
-        "spPlus": {"status": "PENDING_CURRENT_OFFICIAL_CAPTURE", "canonicalInfluence": false},
-        "refMetrics": {"status": "NOT_YET_POSTED", "canonicalInfluence": false}
       }
     },
     {
       "gameId": "2026-10-22-JAMESMADISON-APPSTATE",
       "sourceGameId": "401869845",
+      "gameDateET": "2026-10-22",
       "awayTeam": "James Madison",
       "homeTeam": "App State",
       "kickoff": "2026-10-22T23:00:00Z",
+      "contextSource": "cfb/pregame/week-08-thursday-effective.json",
+      "contextObservedAt": "2026-10-20T12:18:00Z",
       "frozenFoundationReference": {
         "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
         "canonicalInfluence": false,
@@ -308,56 +947,104 @@
       },
       "personnel": {
         "status": "MATERIAL_QB_STATUS_OPEN_OFFICIAL_APP_STATE_ROTATION_AFTER_INJURY",
-        "officialStateSource": "cfb/pregame/week-08-thursday-effective.json",
-        "away": {"quarterbackUsage": "ESTABLISHED_TWO_QB_USAGE", "injuryContext": ["Z. Collins WR QUESTIONABLE - shoulder"]},
-        "home": {"mostRecentStartingQB": "Malachi Singleton", "materialStatus": "THURSDAY_QB_USAGE_UNRESOLVED", "injuryContext": ["D. Galloway TE QUESTIONABLE", "M. Singleton QB listed OUT by third party but conflicts with official Oct. 16 start"]},
-        "currentThirdPartySource": "https://www.covers.com/sport/football/ncaaf/matchup/378464",
-        "currentThirdPartyCheckedAt": "2026-10-20T15:05:55Z",
-        "note": "The third-party Singleton OUT listing remains conflicted/stale relative to App State's official Oct. 16 usage. Do not override official chronology or infer Thursday usage.",
-        "canonicalInfluence": false
+        "away": {
+          "quarterbackUsage": "ESTABLISHED_TWO_QB_USAGE",
+          "officialContext": "James Madison's Oct. 17 win over Georgia State featured both Camden Coleman and JC Evans, who combined for three passing and two rushing touchdowns. No new official material found in this capture announced a change to that established usage.",
+          "thirdPartyInjuries": [
+            {
+              "player": "Z. Collins",
+              "position": "WR",
+              "status": "QUESTIONABLE",
+              "detail": "Shoulder",
+              "sourceTier": "third_party"
+            }
+          ]
+        },
+        "home": {
+          "mostRecentStartingQB": "Malachi Singleton",
+          "materialStatus": "THURSDAY_QB_USAGE_UNRESOLVED",
+          "officialContext": "Malachi Singleton was a game-time decision due to injury before the Oct. 16 Coastal Carolina game, started and went 12-of-14 for 151 yards. Henry Hasselbeck rotated in during the first half, played the entire second half, completed 9-of-12 for 112 yards and a touchdown and rushed 21 times for 125 yards. The Thursday starter/rotation is not yet explicitly confirmed in the official material captured here.",
+          "thirdPartyQBStatus": {
+            "player": "Malachi Singleton",
+            "status": "CONFLICT_WITH_OFFICIAL_LAST_GAME_USAGE",
+            "detail": "A third-party listing marks him out with an ankle issue even though App State's official Oct. 16 recap confirms he started that game. Treat the third-party status as stale/conflicted until an authoritative update is published."
+          },
+          "thirdPartyInjuries": [
+            {
+              "player": "D. Galloway",
+              "position": "TE",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            }
+          ]
+        },
+        "sources": [
+          "https://jmusports.com/news/2026/10/17/football-dukes-dominate-in-georgia-state-win",
+          "https://appstatesports.com/news/2026/10/17/football-mountaineers-show-mettle-with-comeback-win-at-coastal.aspx",
+          "https://www.covers.com/sport/football/ncaaf/matchup/378464"
+        ],
+        "lastOfficialCheckAt": "2026-10-20T12:18:00Z",
+        "canonicalInfluence": "No inferred starter and no manual QB point adjustment. Preserve the frozen foundation; recheck App State's official Thursday QB status before kickoff."
       },
       "weather": {
         "status": "NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED",
-        "sourceState": "cfb/pregame/week-08-thursday-effective.json",
-        "lastAuthoritativeObservationAt": "2026-10-20T12:18:00Z"
+        "observedAt": "2026-10-20T12:18:00Z",
+        "source": "National Weather Service point forecast for Boone, North Carolina",
+        "sourceLastUpdate": "2026-10-20T02:30:00-04:00",
+        "sourceUrl": "https://forecast.weather.gov/MapClick.php?lat=36.19856&lon=-81.65171",
+        "forecast": {
+          "thursday": "Sunny, high near 67 F.",
+          "thursdayNight": "Clear, low around 39 F."
+        },
+        "materiality": "Current profile is low-impact but mountain conditions can change; perform the standard stadium-level final-window recheck. No unvalidated manual points adjustment."
       },
       "market": {
-        "status": "CURRENT_APPROVED_BOOK_CONTEXT_NOT_LOCKED",
-        "book": "DraftKings",
-        "observedAt": "2026-10-20T15:05:55Z",
-        "spreadAway": -10.5,
-        "spreadAwayPrice": -110,
-        "spreadHome": 10.5,
-        "spreadHomePrice": -110,
-        "total": 56.5,
-        "overPrice": -110,
-        "underPrice": -110,
-        "moneylineAway": -425,
-        "moneylineHome": 330,
-        "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?itm_content=NCAA+Football&tb_edate=n30days&tb_eg=NCAA+Football&tb_page=1"
-      },
-      "researchMarketComparison": {
-        "status": "BENCHMARK_ONLY_NOT_CANONICAL_EDGE",
-        "spreadSide": "App State",
-        "foundationSpreadForSide": 10.44393434017666,
-        "marketSpreadForSide": 10.5,
-        "foundationAdvantagePoints": 0.056065659823340886,
-        "totalDirection": "UNDER",
-        "foundationVsMarketTotalPoints": 2.957702937518704,
-        "canonicalInfluence": false
+        "status": "APPROVED_BOOK_FINAL_WINDOW_LOCK_PENDING",
+        "note": "No stale/secondary line is promoted to the publication benchmark. FanDuel and DraftKings will be captured independently by the immutable final-window market-lock workflow."
       },
       "benchmarks": {
-        "sagarin": {"status": "CURRENT_FOR_WEEK_8_OPEN", "canonicalInfluence": false},
-        "spPlus": {"status": "PENDING_CURRENT_OFFICIAL_CAPTURE", "canonicalInfluence": false},
-        "refMetrics": {"status": "NOT_YET_POSTED", "canonicalInfluence": false}
+        "sagarin": {
+          "status": "CURRENT_FOR_WEEK_8_OPEN",
+          "ratingsThrough": "2026-10-17",
+          "impliedSpreadHome": 11.309999999999992,
+          "predictorFavorite": "James Madison",
+          "source": "cfb/benchmarks/week-08-sagarin-full.json",
+          "canonicalInfluence": false
+        },
+        "spPlus": {
+          "status": "PENDING_CURRENT_OFFICIAL_CAPTURE",
+          "source": "https://www.espn.com/college-football/story/_/id/49868647/2026-college-football-sp+-rankings-all-138-fbs-teams",
+          "note": "Official-only policy remains in force; do not substitute mirrors."
+        },
+        "refMetrics": {
+          "status": "NOT_YET_POSTED",
+          "source": "https://www.refmetrics.com/",
+          "canonicalInfluence": false,
+          "lastCheckedAt": "2026-10-20T12:18:00Z",
+          "note": "RefMetrics lists the Week 8 matchup but states it does not currently have officials for upcoming NCAA Football games. Missing official means unavailable there, not that no crew exists."
+        }
+      },
+      "audit": {
+        "priority": "NEXT_72H",
+        "materialOpenItems": [
+          "App State official QB starter/rotation confirmation",
+          "final stadium-level weather recheck",
+          "referee/crew assignment if posted",
+          "immutable FanDuel/DraftKings final-window market lock",
+          "current official SP+ capture if defensibly available"
+        ]
       }
     },
     {
       "gameId": "2026-10-22-LIBERTY-KENNESAWSTATE",
       "sourceGameId": "401871056",
+      "gameDateET": "2026-10-22",
       "awayTeam": "Liberty",
       "homeTeam": "Kennesaw State",
       "kickoff": "2026-10-22T23:00:00Z",
+      "contextSource": "cfb/pregame/week-08-thursday-effective.json",
+      "contextObservedAt": "2026-10-20T12:18:00Z",
       "frozenFoundationReference": {
         "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
         "canonicalInfluence": false,
@@ -374,55 +1061,129 @@
       },
       "personnel": {
         "status": "OFFICIAL_BASELINE_CAPTURED_STABLE_QB_STATE",
-        "officialStateSource": "cfb/pregame/week-08-thursday-effective.json",
-        "away": {"startingQB": "Deshawn Purdie", "packageQB": "Ethan Vasko", "injuryContext": ["B. Burklow TE QUESTIONABLE", "C. Wood RB QUESTIONABLE", "C. Ryan TE QUESTIONABLE", "J. Marshall RB OUT"]},
-        "home": {"startingQB": "Rickie Collins", "injuryContext": ["G. Bullock Jr. TE QUESTIONABLE", "Z. Booker WR QUESTIONABLE"]},
-        "currentThirdPartySource": "https://www.covers.com/sport/football/ncaaf/matchup/379090",
-        "currentThirdPartyCheckedAt": "2026-10-20T15:05:55Z",
-        "canonicalInfluence": false
+        "away": {
+          "startingQB": "Deshawn Purdie",
+          "packageQB": "Ethan Vasko",
+          "officialContext": "Liberty's official Oct. 8 Sam Houston recap identifies Deshawn Purdie as the starting quarterback (10-of-14, 114 yards, one touchdown). Ethan Vasko handled a limited package and scored twice on three touches. Liberty's Oct. 19 Kennesaw State press conference did not announce a quarterback change.",
+          "thirdPartyInjuries": [
+            {
+              "player": "B. Burklow",
+              "position": "TE",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            },
+            {
+              "player": "C. Wood",
+              "position": "RB",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            },
+            {
+              "player": "C. Ryan",
+              "position": "TE",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            },
+            {
+              "player": "J. Marshall",
+              "position": "RB",
+              "status": "OUT",
+              "detail": "Leg / reported season absence",
+              "sourceTier": "third_party"
+            }
+          ]
+        },
+        "home": {
+          "startingQB": "Rickie Collins",
+          "officialContext": "Kennesaw State's official Oct. 14 Missouri State recap says Rickie Collins produced 285 yards of offense and two scores; the official cumulative statistics list him at 129-of-184 for 1,302 passing yards through six games. The Oct. 19 Liberty preview does not announce a quarterback change.",
+          "thirdPartyInjuries": [
+            {
+              "player": "G. Bullock Jr.",
+              "position": "TE",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            },
+            {
+              "player": "Z. Booker",
+              "position": "WR",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            }
+          ]
+        },
+        "sources": [
+          "https://libertyflames.com/news/2026/10/19/football-press-conference-kennesaw-state",
+          "https://libertyflames.com/news/2026/10/9/football-flames-run-their-win-streak-to-five-with-35-3-thursday-night-win",
+          "https://ksuowls.com/news/2026/10/19/football-owls-return-home-to-host-longtime-foe-liberty-on-thursday.aspx",
+          "https://ksuowls.com/news/2026/10/15/football-drops-another-heartbreaker-24-21-to-missouri-state.aspx",
+          "https://www.covers.com/sport/football/ncaaf/matchup/379090"
+        ],
+        "lastOfficialCheckAt": "2026-10-20T12:18:00Z",
+        "canonicalInfluence": "Context only. No manual injury/QB points and no change to the frozen foundation."
       },
       "weather": {
         "status": "NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED",
-        "sourceState": "cfb/pregame/week-08-thursday-effective.json",
-        "lastAuthoritativeObservationAt": "2026-10-20T12:18:00Z"
+        "observedAt": "2026-10-20T12:18:00Z",
+        "source": "National Weather Service Peachtree City point forecast for Kennesaw, Georgia",
+        "sourceLastUpdate": "2026-10-20T02:26:00-04:00",
+        "sourceUrl": "https://forecast.weather.gov/MapClick.php?CityName=Kennesaw&site=FFC&state=GA&textField1=34.0237&textField2=-84.6163",
+        "forecast": {
+          "thursday": "Sunny, high near 76 F.",
+          "thursdayNight": "Clear, low around 48 F."
+        },
+        "materiality": "Current profile is low impact; perform the standard final-window recheck. No unvalidated manual points adjustment."
       },
       "market": {
-        "status": "CURRENT_APPROVED_BOOK_CONTEXT_NOT_LOCKED",
-        "book": "DraftKings",
-        "observedAt": "2026-10-20T15:05:55Z",
-        "spreadAway": -10.0,
-        "spreadAwayPrice": -110,
-        "spreadHome": 10.0,
-        "spreadHomePrice": -110,
-        "total": 49.5,
-        "overPrice": -105,
-        "underPrice": -115,
-        "moneylineAway": -425,
-        "moneylineHome": 330,
-        "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?itm_content=NCAA+Football&tb_edate=n30days&tb_eg=NCAA+Football&tb_page=1"
-      },
-      "researchMarketComparison": {
-        "status": "BENCHMARK_ONLY_NOT_CANONICAL_EDGE",
-        "spreadSide": "Liberty",
-        "foundationSpreadForSide": -10.800803408442647,
-        "marketSpreadForSide": -10.0,
-        "foundationAdvantagePoints": 0.8008034084426474,
-        "totalDirection": "UNDER",
-        "foundationVsMarketTotalPoints": 4.534026686539429,
-        "canonicalInfluence": false
+        "status": "APPROVED_BOOK_FINAL_WINDOW_LOCK_PENDING",
+        "note": "Final-window FanDuel and DraftKings observations will be captured independently. Secondary board data is not promoted to a publication benchmark."
       },
       "benchmarks": {
-        "sagarin": {"status": "CURRENT_FOR_WEEK_8_OPEN", "canonicalInfluence": false},
-        "spPlus": {"status": "PENDING_CURRENT_OFFICIAL_CAPTURE", "canonicalInfluence": false},
-        "refMetrics": {"status": "NOT_YET_POSTED", "canonicalInfluence": false}
+        "sagarin": {
+          "status": "CURRENT_FOR_WEEK_8_OPEN",
+          "ratingsThrough": "2026-10-17",
+          "impliedSpreadHome": 5.429999999999997,
+          "predictorFavorite": "Liberty",
+          "source": "cfb/benchmarks/week-08-sagarin-full.json",
+          "canonicalInfluence": false
+        },
+        "spPlus": {
+          "status": "PENDING_CURRENT_OFFICIAL_CAPTURE",
+          "source": "https://www.espn.com/college-football/story/_/id/49868647/2026-college-football-sp+-rankings-all-138-fbs-teams",
+          "note": "Official-only policy remains in force; do not substitute mirrors."
+        },
+        "refMetrics": {
+          "status": "NOT_YET_POSTED",
+          "source": "https://www.refmetrics.com/",
+          "canonicalInfluence": false,
+          "lastCheckedAt": "2026-10-20T12:18:00Z",
+          "note": "Week 8 matchup is listed, but RefMetrics says upcoming NCAA Football officials are not currently available."
+        }
+      },
+      "audit": {
+        "priority": "NEXT_72H",
+        "materialOpenItems": [
+          "final official personnel recheck",
+          "final stadium-level weather recheck",
+          "referee/crew assignment if posted",
+          "immutable FanDuel/DraftKings final-window market lock",
+          "current official SP+ capture if defensibly available"
+        ]
       }
     },
     {
       "gameId": "2026-10-22-EASTCAROLINA-MEMPHIS",
       "sourceGameId": "401862807",
+      "gameDateET": "2026-10-22",
       "awayTeam": "East Carolina",
       "homeTeam": "Memphis",
       "kickoff": "2026-10-22T23:30:00Z",
+      "contextSource": "cfb/pregame/week-08-thursday-effective.json",
+      "contextObservedAt": "2026-10-20T12:18:00Z",
       "frozenFoundationReference": {
         "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
         "canonicalInfluence": false,
@@ -439,53 +1200,85 @@
       },
       "personnel": {
         "status": "OFFICIAL_BASELINE_CAPTURED_STABLE_QB_STATE",
-        "officialStateSource": "cfb/pregame/week-08-thursday-effective.json",
-        "away": {"mostRecentStartingQB": "Emory Williams", "injuryContext": "No injuries listed by Covers at current check."},
-        "home": {"mostRecentStartingQB": "Marcus Stokes", "injuryContext": ["B. Kluse WR QUESTIONABLE"]},
-        "currentThirdPartySource": "https://www.covers.com/sport/football/ncaaf/matchup/378463",
-        "currentThirdPartyCheckedAt": "2026-10-20T15:05:55Z",
-        "canonicalInfluence": false
+        "away": {
+          "mostRecentStartingQB": "Emory Williams",
+          "officialContext": "East Carolina's official Oct. 15 UAB recap identifies Emory Williams throwing the Pirates' opening-drive touchdown and operating the offense before the overtime interception sequence. No newer official material captured here announces a quarterback change.",
+          "thirdPartyInjuries": []
+        },
+        "home": {
+          "mostRecentStartingQB": "Marcus Stokes",
+          "officialContext": "Memphis' official Oct. 16 Tulane recap says Marcus Stokes completed 20-of-37 for 306 yards and two touchdowns. Current official Memphis material still lists East Carolina as the next game and does not announce a quarterback change.",
+          "thirdPartyInjuries": [
+            {
+              "player": "B. Kluse",
+              "position": "WR",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            }
+          ]
+        },
+        "sources": [
+          "https://ecupirates.com/news/2026/10/15/football-ecu-falls-at-uab-in-overtime-30-17",
+          "https://gotigersgo.com/news/2026/10/17/football-memphis-falls-31-17-on-the-road-against-tulane",
+          "https://gotigersgo.com/news/2026/10/15/football-espn-sportscenter-on-campus-coming-to-tiger-lane-ahead-of-memphis-east-carolina",
+          "https://www.covers.com/sport/football/ncaaf/matchup/378463"
+        ],
+        "lastOfficialCheckAt": "2026-10-20T12:18:00Z",
+        "canonicalInfluence": "Context only. No manual injury/QB points and no change to the frozen foundation."
       },
       "weather": {
         "status": "NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED",
-        "sourceState": "cfb/pregame/week-08-thursday-effective.json",
-        "lastAuthoritativeObservationAt": "2026-10-20T12:18:00Z"
+        "observedAt": "2026-10-20T12:18:00Z",
+        "source": "National Weather Service Memphis point forecast near Simmons Bank Liberty Stadium",
+        "sourceLastUpdate": "2026-10-20T03:05:00-05:00",
+        "sourceUrl": "https://forecast.weather.gov/MapClick.php?map.x=154&map.y=140&site=meg&zmx=1&zmy=1",
+        "forecast": {
+          "thursday": "Sunny, high near 77 F, calm wind becoming north-northeast around 5 mph in the afternoon.",
+          "thursdayNight": "Clear, low around 55 F, east-northeast wind around 5 mph."
+        },
+        "materiality": "Current profile is low impact; perform the standard final-window stadium-level recheck. No unvalidated manual points adjustment."
       },
       "market": {
-        "status": "CURRENT_APPROVED_BOOK_CONTEXT_NOT_LOCKED",
-        "book": "DraftKings",
-        "observedAt": "2026-10-20T15:05:55Z",
-        "spreadHome": -10.5,
-        "spreadHomePrice": -102,
-        "spreadAway": 10.5,
-        "spreadAwayPrice": -118,
-        "total": 54.5,
-        "overPrice": -112,
-        "underPrice": -108,
-        "moneylineHome": -410,
-        "moneylineAway": 320,
-        "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?itm_content=NCAA+Football&tb_edate=n30days&tb_eg=NCAA+Football&tb_page=1"
-      },
-      "researchMarketComparison": {
-        "status": "BENCHMARK_ONLY_NOT_CANONICAL_EDGE",
-        "spreadSide": "Memphis",
-        "foundationSpreadForSide": -16.28122286797865,
-        "marketSpreadForSide": -10.5,
-        "foundationAdvantagePoints": 5.78122286797865,
-        "totalDirection": "UNDER",
-        "foundationVsMarketTotalPoints": 1.24363224186673,
-        "canonicalInfluence": false
+        "status": "APPROVED_BOOK_FINAL_WINDOW_LOCK_PENDING",
+        "note": "Final-window FanDuel and DraftKings observations will be captured independently. Secondary board data is not promoted to a publication benchmark."
       },
       "benchmarks": {
-        "sagarin": {"status": "CURRENT_FOR_WEEK_8_OPEN", "canonicalInfluence": false},
-        "spPlus": {"status": "PENDING_CURRENT_OFFICIAL_CAPTURE", "canonicalInfluence": false},
-        "refMetrics": {"status": "NOT_YET_POSTED", "canonicalInfluence": false}
+        "sagarin": {
+          "status": "CURRENT_FOR_WEEK_8_OPEN",
+          "ratingsThrough": "2026-10-17",
+          "impliedSpreadHome": -13.759999999999994,
+          "predictorFavorite": "Memphis",
+          "source": "cfb/benchmarks/week-08-sagarin-full.json",
+          "canonicalInfluence": false
+        },
+        "spPlus": {
+          "status": "PENDING_CURRENT_OFFICIAL_CAPTURE",
+          "source": "https://www.espn.com/college-football/story/_/id/49868647/2026-college-football-sp+-rankings-all-138-fbs-teams",
+          "note": "Official-only policy remains in force; do not substitute mirrors."
+        },
+        "refMetrics": {
+          "status": "NOT_YET_POSTED",
+          "source": "https://www.refmetrics.com/",
+          "canonicalInfluence": false,
+          "lastCheckedAt": "2026-10-20T12:18:00Z",
+          "note": "Week 8 matchup is listed, but RefMetrics says upcoming NCAA Football officials are not currently available."
+        }
+      },
+      "audit": {
+        "priority": "NEXT_72H",
+        "materialOpenItems": [
+          "final official personnel recheck",
+          "final stadium-level weather recheck",
+          "referee/crew assignment if posted",
+          "immutable FanDuel/DraftKings final-window market lock",
+          "current official SP+ capture if defensibly available"
+        ]
       }
     }
   ],
   "pauseBoundary": {
     "beforeGameDateET": "2026-10-23",
-    "fridayProcessingAuthorized": false,
-    "instruction": "Stop after Thursday. Friday/Saturday remain outside this active effective state until explicitly resumed."
+    "instruction": "Do not ingest, refresh, audit for publication, freeze, recommend or grade Friday/Saturday Week 8 games until this scope is explicitly resumed. Preserve the full-week schedule and foundation unchanged for later continuation."
   }
 }
