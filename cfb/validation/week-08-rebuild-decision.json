@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "role": "REBUILD_DECISION_REGISTRY",
+  "status": "LEAD_SHADOW_IDENTIFIED",
+  "canonicalInfluence": false,
+  "canonicalPromotionAuthorized": false,
+  "leadShadowCandidate": "cfb-rebuild-alpha-shadow-v8h",
+  "leadCandidateReason": "Simple market-independent rebuild is the current lead shadow because it passed source/coverage/HFA safety gates, while the richer box-score bundle failed both the initial comparison gate and the three-fold season-reset walk-forward promotion gate.",
+  "evidence": {
+    "establishedWeek7CanonicalReference": {
+      "games": 53,
+      "marginMae": 11.335250909905998,
+      "totalMae": 12.911974822454155,
+      "suAccuracyPct": 64.15094339622641,
+      "descriptiveOnly": true
+    },
+    "simpleRebuild": {
+      "modelId": "cfb-rebuild-alpha-shadow-v8h",
+      "rawTrainingGames": 510,
+      "eligibleTrainingGames": 388,
+      "structuralHomeMarginAdvantage": 4.249132328925835,
+      "homeFieldSanityPass": true,
+      "homeFieldProvenancePass": true,
+      "oneUnseenFoldMarginMae": 11.496550551061226,
+      "oneUnseenFoldTotalMae": 13.283776035596288
+    },
+    "richRebuild": {
+      "modelId": "cfb-boxscore-efficiency-challenger-v1",
+      "initialComparisonGatePass": false,
+      "multiSeasonFolds": 3,
+      "multiSeasonGames": 173,
+      "simpleMarginMae": 13.070322817582262,
+      "richMarginMae": 12.747413024930605,
+      "richMinusSimpleMarginMae": -0.3229097926516573,
+      "simpleTotalMae": 13.409013926679071,
+      "richTotalMae": 13.2701953722638,
+      "richMinusSimpleTotalMae": -0.13881855441527158,
+      "evidenceStatus": "RICH_REJECTED",
+      "promotionGatePass": false
+    }
+  },
+  "week8Policy": {
+    "useLeadShadowAsCanonical": false,
+    "publishLeadShadowAsEstablished09J": false,
+    "allowMarketOrExternalBenchmarkInfluence": false,
+    "allowUnvalidatedManualAdjustments": false,
+    "nextResearchStep": "Test isolated feature families against the lead shadow using the same season-reset, leakage-safe multi-week walk-forward framework.",
+    "promotionRequirement": "A future candidate must beat the lead shadow by the predefined out-of-sample gate, then survive prospective frozen-week evidence and explicit promotion review."
+  },
+  "sources": {
+    "simpleShadow": "cfb/shadow/week-08-tuesday.json",
+    "richShadow": "cfb/shadow/week-08-tuesday-rich.json",
+    "currentSeasonWalkForward": "cfb/validation/week-08-rebuild-walkforward.json",
+    "multiSeasonWalkForward": "cfb/validation/week-08-multiseason-walkforward.json",
+    "week7Reference": "cfb/validation/week-07-canonical-reference.json"
+  }
+}
