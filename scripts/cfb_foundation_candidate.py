@@ -7,6 +7,8 @@ never reads market, SP+, Sagarin, RefMetrics, or target-game results.
 
 This remains a prospective FOUNDATION SHADOW. It is not the unrecoverable 0.9J
 model and it is not canonical until an explicit promotion decision is made.
+Stable source game IDs are preserved when supplied by the schedule state so
+postgame research grading can match finals without name guessing.
 """
 from __future__ import annotations
 
@@ -23,6 +25,14 @@ engine.extract_team_ids = extract_grouped_team_ids
 
 def normal_cdf(x: float) -> float:
     return 0.5 * (1.0 + math.erf(x / math.sqrt(2.0)))
+
+
+def identity_fields(game):
+    out={}
+    for key in ('sourceGameId','gameDateET','neutralSite'):
+        if key in game and game.get(key) is not None:
+            out[key]=game[key]
+    return out
 
 
 def build(state_path: Path, validation_path: Path, as_of, start):
@@ -49,12 +59,14 @@ def build(state_path: Path, validation_path: Path, as_of, start):
     for g in state.get('games',[]):
         away=engine.canonical_school(g['awayTeam'])
         home=engine.canonical_school(g['homeTeam'])
+        identity=identity_fields(g)
         try:
-            pr=engine.predict(model,away,home,False)
+            pr=engine.predict(model,away,home,bool(g.get('neutralSite',False)))
             margin=float(pr['projectedMarginHome'])
             hwp=100.0*normal_cdf(margin/max(sigma,1e-9))
             rows.append({
-                'gameId':g['gameId'],'awayTeam':g['awayTeam'],'homeTeam':g['homeTeam'],'kickoff':g['kickoff'],
+                'gameId':g['gameId'],**identity,
+                'awayTeam':g['awayTeam'],'homeTeam':g['homeTeam'],'kickoff':g['kickoff'],
                 'status':'FOUNDATION_SHADOW_READY',
                 **pr,
                 'homeWinProbability':hwp,
@@ -62,12 +74,13 @@ def build(state_path: Path, validation_path: Path, as_of, start):
             })
         except Exception as exc:
             rows.append({
-                'gameId':g['gameId'],'awayTeam':g['awayTeam'],'homeTeam':g['homeTeam'],'kickoff':g['kickoff'],
+                'gameId':g['gameId'],**identity,
+                'awayTeam':g['awayTeam'],'homeTeam':g['homeTeam'],'kickoff':g['kickoff'],
                 'status':'FOUNDATION_SHADOW_REVIEW','error':str(exc)
             })
 
     return {
-        'schemaVersion':1,'league':'cfb','season':state.get('season'),'week':state.get('week'),
+        'schemaVersion':2,'league':'cfb','season':state.get('season'),'week':state.get('week'),
         'modelId':'cfb-rebuild-foundation-v1-shadow',
         'role':'VALIDATED_FOUNDATION_PROSPECTIVE_SHADOW','canonicalInfluence':False,'canonicalPromotionAuthorized':False,
         'asOf':engine.iso(as_of),'trainingWindowStart':engine.iso(start),
@@ -105,7 +118,7 @@ def main():
         'modelId':out['modelId'],'lockedParameters':out['lockedParameters'],
         'holdout2025':out['parameterSelection']['holdout2025'],
         'confirmation2026':out['parameterSelection']['confirmation2026PreWeek8'],
-        'games':[{k:g.get(k) for k in ('gameId','projectedSpreadHome','projectedTotal','homeWinProbability','status')} for g in out['games']]
+        'games':[{k:g.get(k) for k in ('gameId','sourceGameId','projectedSpreadHome','projectedTotal','homeWinProbability','status')} for g in out['games']]
     },indent=2))
 
 
