@@ -6,14 +6,14 @@
   "role": "FULL_WEEK_RESEARCH_PREGAME_COVERAGE_AUDIT",
   "canonicalInfluence": false,
   "canonicalPromotionAuthorized": false,
-  "auditedAt": "2026-10-20T12:03:18.294227Z",
+  "auditedAt": "2026-10-20T12:15:06.604392Z",
   "summary": {
     "games": 56,
     "foundationLocked": 56,
     "sagarinCurrent": 56,
-    "personnelCaptured": 3,
-    "weatherCaptured": 3,
-    "refereeCapturedOrExplicitlyChecked": 3,
+    "personnelCaptured": 4,
+    "weatherCaptured": 4,
+    "refereeCapturedOrExplicitlyChecked": 4,
     "gamesWithMarketLock": 0,
     "critical": 3,
     "high": 4
@@ -73,11 +73,10 @@
       "priority": "NEXT_48H",
       "urgency": "HIGH",
       "gaps": [
-        "personnel context not yet captured",
-        "weather context not yet captured"
+        "personnel requires follow-up: OFFICIAL_BASELINE_CAPTURED_NO_NEW_MATERIAL_QB_CHANGE_FOUND"
       ],
       "warnings": [
-        "referee assignment status: NOT_CAPTURED; do not guess",
+        "referee assignment status: NOT_YET_POSTED; do not guess",
         "immutable final-window market lock pending"
       ]
     },
@@ -1041,11 +1040,11 @@
         "spPlus": "PENDING_OFFICIAL_CAPTURE"
       },
       "context": {
-        "personnel": "NOT_CAPTURED",
-        "weather": "NOT_CAPTURED",
-        "referee": "NOT_CAPTURED",
-        "marketContext": "NOT_CAPTURED",
-        "contextSource": null
+        "personnel": "OFFICIAL_BASELINE_CAPTURED_NO_NEW_MATERIAL_QB_CHANGE_FOUND",
+        "weather": "NWS_LOW_IMPACT_BASELINE_CAPTURED",
+        "referee": "NOT_YET_POSTED",
+        "marketContext": "EARLY_PUBLIC_CONTEXT_NOT_LOCKED",
+        "contextSource": "cfb/pregame/week-08-wednesday-effective.json"
       },
       "marketLock": {
         "status": "PENDING",
@@ -1053,11 +1052,10 @@
         "bookCount": 0
       },
       "gaps": [
-        "personnel context not yet captured",
-        "weather context not yet captured"
+        "personnel requires follow-up: OFFICIAL_BASELINE_CAPTURED_NO_NEW_MATERIAL_QB_CHANGE_FOUND"
       ],
       "warnings": [
-        "referee assignment status: NOT_CAPTURED; do not guess",
+        "referee assignment status: NOT_YET_POSTED; do not guess",
         "immutable final-window market lock pending"
       ]
     },
