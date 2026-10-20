@@ -31,7 +31,7 @@ jobs:
             --output cfb/shadow/week-08-tuesday.json \
             --as-of '2026-10-20T00:00:00-04:00' \
             --start '2026-08-20T00:00:00-04:00'
-      - name: Assert shadow-only safety labels
+      - name: Assert shadow-only safety labels and fit sanity
         run: |
           python - <<'PY'
           import json
@@ -42,8 +42,9 @@ jobs:
           assert d['source']['marketDataUsed'] is False
           assert d['source']['externalRatingsUsed'] is False
           assert d['source']['postKickoffDataUsed'] is False
-          assert all(g['status'] in {'SHADOW_READY','SHADOW_REVIEW'} for g in d['games'])
-          print('shadow safety assertions passed')
+          assert d['fit']['homeFieldSanityPass'] is True, d['fit']
+          assert all(g['status']=='SHADOW_READY' for g in d['games']), d['games']
+          print('shadow safety and fit-sanity assertions passed')
           PY
       - name: Commit shadow output
         run: |
