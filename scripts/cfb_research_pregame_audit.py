@@ -63,8 +63,32 @@ def unique_match(game: dict[str, Any], rows: list[dict[str, Any]], aliases: dict
     return hits[0] if hits else None
 
 
-def context_status(game: dict[str, Any], context: dict[str, Any] | None, aliases: dict[str, str]) -> dict[str, Any]:
+def _context_docs(context: Any) -> list[tuple[str, dict[str, Any]]]:
     if not context:
+        return []
+    if isinstance(context, dict):
+        return [(str(context.get("_contextSource") or "inline-context"), context)]
+    docs: list[tuple[str, dict[str, Any]]] = []
+    for item in context:
+        if isinstance(item, tuple) and len(item) == 2 and isinstance(item[1], dict):
+            docs.append((str(item[0]), item[1]))
+        elif isinstance(item, dict):
+            docs.append((str(item.get("_contextSource") or "inline-context"), item))
+        else:
+            raise ValueError("context entries must be documents or (source, document) pairs")
+    return docs
+
+
+def context_status(game: dict[str, Any], context: Any, aliases: dict[str, str]) -> dict[str, Any]:
+    matches: list[tuple[str, dict[str, Any]]] = []
+    for source, doc in _context_docs(context):
+        match = unique_match(game, doc.get("games") or [], aliases, f"pregame context in {source}")
+        if match:
+            matches.append((source, match))
+    if len(matches) > 1:
+        sources = ", ".join(source for source, _ in matches)
+        raise ValueError(f"ambiguous pregame context across files for {game.get('gameId')}: {sources}")
+    if not matches:
         return {
             "personnel": "NOT_CAPTURED",
             "weather": "NOT_CAPTURED",
@@ -72,15 +96,7 @@ def context_status(game: dict[str, Any], context: dict[str, Any] | None, aliases
             "marketContext": "NOT_CAPTURED",
             "contextSource": None,
         }
-    match = unique_match(game, context.get("games") or [], aliases, "pregame context")
-    if not match:
-        return {
-            "personnel": "NOT_CAPTURED",
-            "weather": "NOT_CAPTURED",
-            "referee": "NOT_CAPTURED",
-            "marketContext": "NOT_CAPTURED",
-            "contextSource": None,
-        }
+    source, match = matches[0]
     personnel = match.get("personnel") or {}
     weather = match.get("weather") or {}
     market = match.get("market") or {}
@@ -90,7 +106,7 @@ def context_status(game: dict[str, Any], context: dict[str, Any] | None, aliases
         "weather": str(weather.get("status") or "UNKNOWN").upper(),
         "referee": str(refs.get("status") or "UNKNOWN").upper(),
         "marketContext": str(market.get("status") or "UNKNOWN").upper(),
-        "contextSource": "cfb/pregame/week-08-tuesday-effective.json",
+        "contextSource": source,
     }
 
 
@@ -123,7 +139,7 @@ def build_audit(
     sagarin: dict[str, Any],
     aliases: dict[str, str],
     as_of: datetime,
-    context: dict[str, Any] | None = None,
+    context: Any = None,
     market_lock: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     verify_research_lock(foundation)
@@ -177,8 +193,6 @@ def build_audit(
                 warnings.append("immutable final-window market lock pending")
 
         if priority == "LATER_WEEK" and ctx["personnel"] == "NOT_CAPTURED":
-            # Context capture is intentionally staged; future games are not called
-            # urgent merely because we have not yet collected their late-week facts.
             urgency = "PLANNED"
         elif priority in {"FINAL_WINDOW", "TODAY"} and gaps:
             urgency = "CRITICAL"
@@ -277,7 +291,7 @@ def main() -> None:
     ap.add_argument("--schedule", default="cfb/pregame/week-08-schedule.json")
     ap.add_argument("--foundation", default="cfb/research-locks/week-08-foundation-full.json")
     ap.add_argument("--sagarin", default="cfb/benchmarks/week-08-sagarin-full.json")
-    ap.add_argument("--context", default="cfb/pregame/week-08-tuesday-effective.json")
+    ap.add_argument("--context", dest="contexts", action="append", help="Repeat for each day-specific pregame context file")
     ap.add_argument("--market-lock", default="cfb/research-market-locks/week-08-foundation-market.json")
     ap.add_argument("--output", default="cfb/pregame/week-08-research-coverage.json")
     ap.add_argument("--as-of")
@@ -288,12 +302,19 @@ def main() -> None:
     schedule = json.loads(Path(args.schedule).read_text(encoding="utf-8"))
     foundation = json.loads(Path(args.foundation).read_text(encoding="utf-8"))
     sagarin = json.loads(Path(args.sagarin).read_text(encoding="utf-8"))
-    context_path = Path(args.context)
-    context = json.loads(context_path.read_text(encoding="utf-8")) if context_path.exists() else None
+    context_names = args.contexts or [
+        "cfb/pregame/week-08-tuesday-effective.json",
+        "cfb/pregame/week-08-wednesday-effective.json",
+    ]
+    contexts: list[tuple[str, dict[str, Any]]] = []
+    for name in context_names:
+        context_path = Path(name)
+        if context_path.exists():
+            contexts.append((str(context_path), json.loads(context_path.read_text(encoding="utf-8"))))
     market_path = Path(args.market_lock)
     market_lock = json.loads(market_path.read_text(encoding="utf-8")) if market_path.exists() else None
     as_of = parse_dt(args.as_of) if args.as_of else datetime.now(timezone.utc)
-    out = build_audit(schedule, foundation, sagarin, load_aliases(root), as_of, context, market_lock)
+    out = build_audit(schedule, foundation, sagarin, load_aliases(root), as_of, contexts, market_lock)
 
     output = Path(args.output)
     existing = json.loads(output.read_text(encoding="utf-8")) if output.exists() else None
