@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "role": "TIMESTAMPED_ACTIVE_SCOPE_MARKET_CONTEXT_REFRESH",
+  "canonicalInfluence": false,
+  "canonicalPromotionAuthorized": false,
+  "observedAt": "2026-10-20T20:46:56.001Z",
+  "source": "data/markets-sportsbooks.json",
+  "provider": "The Odds API",
+  "refreshPolicy": {
+    "phase": "pregame-3h",
+    "coreIntervalMinutes": 45,
+    "moneylineIntervalMinutes": 90,
+    "lastCoreRefresh": "2026-10-20T20:46:56.001Z",
+    "lastMoneylineRefresh": "2026-10-20T19:57:03.150Z"
+  },
+  "scope": {
+    "activeGames": 7,
+    "tuesdayGames": 3,
+    "fridaySaturdayPaused": true
+  },
+  "games": [
+    {
+      "gameId": "2026-10-20-MIDDLETENNESSEE-FIU",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "observations": [
+        {
+          "book": "FanDuel",
+          "coreObservedAt": "2026-10-20T20:46:38Z",
+          "moneylineObservedAt": "2026-10-20T19:57:03.150Z",
+          "spreadHome": -10.5,
+          "spreadHomePrice": -102,
+          "spreadAway": 10.5,
+          "spreadAwayPrice": -120,
+          "total": 45.5,
+          "overPrice": -110,
+          "underPrice": -110,
+          "moneylineHome": -400,
+          "moneylineAway": 310
+        },
+        {
+          "book": "DraftKings",
+          "coreObservedAt": "2026-10-20T20:44:37Z",
+          "moneylineObservedAt": "2026-10-20T19:57:03.150Z",
+          "spreadHome": -10.0,
+          "spreadHomePrice": -112,
+          "spreadAway": 10.0,
+          "spreadAwayPrice": -108,
+          "total": 45.5,
+          "overPrice": -112,
+          "underPrice": -108,
+          "moneylineHome": -410,
+          "moneylineAway": 320
+        }
+      ],
+      "movementSince1557ET": {
+        "FanDuel": {"spreadPoints": 0.0, "totalPoints": -1.0},
+        "DraftKings": {"spreadPoints": 0.0, "totalPoints": -1.0}
+      }
+    },
+    {
+      "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "observations": [
+        {
+          "book": "FanDuel",
+          "coreObservedAt": "2026-10-20T20:46:38Z",
+          "moneylineObservedAt": "2026-10-20T19:57:03.150Z",
+          "spreadHome": -2.5,
+          "spreadHomePrice": -118,
+          "spreadAway": 2.5,
+          "spreadAwayPrice": -104,
+          "total": 53.5,
+          "overPrice": -110,
+          "underPrice": -110,
+          "moneylineHome": -140,
+          "moneylineAway": 116
+        },
+        {
+          "book": "DraftKings",
+          "coreObservedAt": "2026-10-20T20:44:37Z",
+          "moneylineObservedAt": "2026-10-20T19:57:03.150Z",
+          "spreadHome": -3.0,
+          "spreadHomePrice": -102,
+          "spreadAway": 3.0,
+          "spreadAwayPrice": -118,
+          "total": 53.5,
+          "overPrice": -110,
+          "underPrice": -110,
+          "moneylineHome": -142,
+          "moneylineAway": 120
+        }
+      ],
+      "movementSince1557ET": {
+        "FanDuel": {"spreadPoints": 0.0, "totalPoints": 0.0},
+        "DraftKings": {"spreadPoints": 0.0, "totalPoints": 0.0, "homeSpreadPrice": "+3 cents cheaper from -105 to -102"}
+      }
+    },
+    {
+      "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
+      "kickoff": "2026-10-20T23:30:00Z",
+      "observations": [
+        {
+          "book": "FanDuel",
+          "coreObservedAt": "2026-10-20T20:46:38Z",
+          "moneylineObservedAt": "2026-10-20T19:57:03.150Z",
+          "spreadHome": 2.5,
+          "spreadHomePrice": -115,
+          "spreadAway": -2.5,
+          "spreadAwayPrice": -105,
+          "total": 65.5,
+          "overPrice": -110,
+          "underPrice": -110,
+          "moneylineHome": 110,
+          "moneylineAway": -132
+        },
+        {
+          "book": "DraftKings",
+          "coreObservedAt": "2026-10-20T20:44:37Z",
+          "moneylineObservedAt": "2026-10-20T19:57:03.150Z",
+          "spreadHome": 2.5,
+          "spreadHomePrice": -110,
+          "spreadAway": -2.5,
+          "spreadAwayPrice": -110,
+          "total": 65.5,
+          "overPrice": -115,
+          "underPrice": -105,
+          "moneylineHome": 114,
+          "moneylineAway": -135
+        }
+      ],
+      "movementSince1557ET": {
+        "FanDuel": {"spreadPoints": 0.0, "totalPoints": -1.0},
+        "DraftKings": {"spreadPoints": 0.0, "totalPoints": 0.0}
+      }
+    }
+  ],
+  "marketLockStateAtCapture": {
+    "lockWindowMinutes": 30,
+    "gamesWithMarketLock": 0,
+    "bookObservationsLocked": 0,
+    "pendingGames": 7,
+    "pausedGames": 49,
+    "status": "CORRECTLY_WAITING_OUTSIDE_LOCK_WINDOW"
+  },
+  "policy": "This file preserves a timestamped tracked-market context observation only. It cannot alter or promote the canonical model, and it is not the immutable publication-time market lock. Final eligible FanDuel/DraftKings observations must be locked separately inside the configured 30-minute window against the prospective frozen research foundation."
+}
