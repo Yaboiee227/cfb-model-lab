@@ -1,0 +1,2990 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "role": "FULL_WEEK_RESEARCH_PREGAME_COVERAGE_AUDIT",
+  "canonicalInfluence": false,
+  "canonicalPromotionAuthorized": false,
+  "auditedAt": "2026-10-20T12:03:18.294227Z",
+  "summary": {
+    "games": 56,
+    "foundationLocked": 56,
+    "sagarinCurrent": 56,
+    "personnelCaptured": 3,
+    "weatherCaptured": 3,
+    "refereeCapturedOrExplicitlyChecked": 3,
+    "gamesWithMarketLock": 0,
+    "critical": 3,
+    "high": 4
+  },
+  "workQueue": [
+    {
+      "gameId": "2026-10-20-MIDDLETENNESSEE-FLORIDAINTERNATIONAL",
+      "awayTeam": "Middle Tennessee",
+      "homeTeam": "Florida International",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "priority": "TODAY",
+      "urgency": "CRITICAL",
+      "gaps": [
+        "weather final review pending: NWS_CURRENT_MATERIAL_WIND_FINAL_RECHECK_REQUIRED"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_YET_POSTED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
+      "awayTeam": "Missouri State",
+      "homeTeam": "Delaware",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "priority": "TODAY",
+      "urgency": "CRITICAL",
+      "gaps": [
+        "personnel requires follow-up: MATERIAL_QB_STATUS_OPEN_SOURCE_CONFLICT",
+        "weather final review pending: NWS_LOW_TO_MODERATE_WIND_FINAL_RECHECK_REQUIRED"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_YET_POSTED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
+      "awayTeam": "South Alabama",
+      "homeTeam": "Marshall",
+      "kickoff": "2026-10-20T23:30:00Z",
+      "priority": "TODAY",
+      "urgency": "CRITICAL",
+      "gaps": [
+        "weather final review pending: NWS_LOW_IMPACT_FINAL_RECHECK_REQUIRED"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_YET_POSTED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-21-NEWMEXICOSTATE-SAMHOUSTON",
+      "awayTeam": "New Mexico State",
+      "homeTeam": "Sam Houston",
+      "kickoff": "2026-10-22T00:00:00Z",
+      "priority": "NEXT_48H",
+      "urgency": "HIGH",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-22-JAMESMADISON-APPSTATE",
+      "awayTeam": "James Madison",
+      "homeTeam": "App State",
+      "kickoff": "2026-10-22T23:00:00Z",
+      "priority": "NEXT_72H",
+      "urgency": "HIGH",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-22-LIBERTY-KENNESAWSTATE",
+      "awayTeam": "Liberty",
+      "homeTeam": "Kennesaw State",
+      "kickoff": "2026-10-22T23:00:00Z",
+      "priority": "NEXT_72H",
+      "urgency": "HIGH",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-22-EASTCAROLINA-MEMPHIS",
+      "awayTeam": "East Carolina",
+      "homeTeam": "Memphis",
+      "kickoff": "2026-10-22T23:30:00Z",
+      "priority": "NEXT_72H",
+      "urgency": "HIGH",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-23-DUKE-VIRGINIA",
+      "awayTeam": "Duke",
+      "homeTeam": "Virginia",
+      "kickoff": "2026-10-23T23:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-23-MASSACHUSETTS-UCONN",
+      "awayTeam": "Massachusetts",
+      "homeTeam": "UConn",
+      "kickoff": "2026-10-23T23:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-23-ARMY-TULSA",
+      "awayTeam": "Army",
+      "homeTeam": "Tulsa",
+      "kickoff": "2026-10-24T00:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-23-AIRFORCE-WYOMING",
+      "awayTeam": "Air Force",
+      "homeTeam": "Wyoming",
+      "kickoff": "2026-10-24T01:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-23-NCSTATE-STANFORD",
+      "awayTeam": "NC State",
+      "homeTeam": "Stanford",
+      "kickoff": "2026-10-24T02:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-CALIFORNIA-SMU",
+      "awayTeam": "California",
+      "homeTeam": "SMU",
+      "kickoff": "2026-10-24T16:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-INDIANA-MICHIGAN",
+      "awayTeam": "Indiana",
+      "homeTeam": "Michigan",
+      "kickoff": "2026-10-24T16:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-LSU-AUBURN",
+      "awayTeam": "LSU",
+      "homeTeam": "Auburn",
+      "kickoff": "2026-10-24T16:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-PITTSBURGH-MIAMI",
+      "awayTeam": "Pittsburgh",
+      "homeTeam": "Miami",
+      "kickoff": "2026-10-24T16:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-RICE-FLORIDAATLANTIC",
+      "awayTeam": "Rice",
+      "homeTeam": "Florida Atlantic",
+      "kickoff": "2026-10-24T16:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-RUTGERS-NORTHWESTERN",
+      "awayTeam": "Rutgers",
+      "homeTeam": "Northwestern",
+      "kickoff": "2026-10-24T16:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-TEXASTECH-CINCINNATI",
+      "awayTeam": "Texas Tech",
+      "homeTeam": "Cincinnati",
+      "kickoff": "2026-10-24T16:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-WESTERNMICHIGAN-TOLEDO",
+      "awayTeam": "Western Michigan",
+      "homeTeam": "Toledo",
+      "kickoff": "2026-10-24T16:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-WESTVIRGINIA-TCU",
+      "awayTeam": "West Virginia",
+      "homeTeam": "TCU",
+      "kickoff": "2026-10-24T16:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-AKRON-KENTSTATE",
+      "awayTeam": "Akron",
+      "homeTeam": "Kent State",
+      "kickoff": "2026-10-24T17:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-BAYLOR-KANSAS",
+      "awayTeam": "Baylor",
+      "homeTeam": "Kansas",
+      "kickoff": "2026-10-24T17:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-MIAMIOH-CENTRALMICHIGAN",
+      "awayTeam": "Miami (OH)",
+      "homeTeam": "Central Michigan",
+      "kickoff": "2026-10-24T17:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-OREGON-ILLINOIS",
+      "awayTeam": "Oregon",
+      "homeTeam": "Illinois",
+      "kickoff": "2026-10-24T19:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-BOSTONCOLLEGE-GEORGIATECH",
+      "awayTeam": "Boston College",
+      "homeTeam": "Georgia Tech",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-BOWLINGGREEN-BUFFALO",
+      "awayTeam": "Bowling Green",
+      "homeTeam": "Buffalo",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-BYU-UCF",
+      "awayTeam": "BYU",
+      "homeTeam": "UCF",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-HAWAII-NORTHERNILLINOIS",
+      "awayTeam": "Hawai'i",
+      "homeTeam": "Northern Illinois",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-IOWA-MINNESOTA",
+      "awayTeam": "Iowa",
+      "homeTeam": "Minnesota",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-MICHIGANSTATE-UCLA",
+      "awayTeam": "Michigan State",
+      "homeTeam": "UCLA",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-NORTHTEXAS-NAVY",
+      "awayTeam": "North Texas",
+      "homeTeam": "Navy",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-OKLAHOMA-MISSISSIPPISTATE",
+      "awayTeam": "Oklahoma",
+      "homeTeam": "Mississippi State",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-SACRAMENTOSTATE-BALLSTATE",
+      "awayTeam": "Sacramento State",
+      "homeTeam": "Ball State",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-TENNESSEE-SOUTHCAROLINA",
+      "awayTeam": "Tennessee",
+      "homeTeam": "South Carolina",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-TEXASAM-ALABAMA",
+      "awayTeam": "Texas A&M",
+      "homeTeam": "Alabama",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-KANSASSTATE-ARIZONASTATE",
+      "awayTeam": "Kansas State",
+      "homeTeam": "Arizona State",
+      "kickoff": "2026-10-24T19:45:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-EASTERNMICHIGAN-OHIO",
+      "awayTeam": "Eastern Michigan",
+      "homeTeam": "Ohio",
+      "kickoff": "2026-10-24T20:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-ULMONROE-TROY",
+      "awayTeam": "UL Monroe",
+      "homeTeam": "Troy",
+      "kickoff": "2026-10-24T20:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-LOUISIANA-SOUTHERNMISS",
+      "awayTeam": "Louisiana",
+      "homeTeam": "Southern Miss",
+      "kickoff": "2026-10-24T21:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-OLDDOMINION-LOUISIANATECH",
+      "awayTeam": "Old Dominion",
+      "homeTeam": "Louisiana Tech",
+      "kickoff": "2026-10-24T21:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-SANJOSSTATE-NEVADA",
+      "awayTeam": "San José State",
+      "homeTeam": "Nevada",
+      "kickoff": "2026-10-24T21:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-BOISESTATE-WASHINGTONSTATE",
+      "awayTeam": "Boise State",
+      "homeTeam": "Washington State",
+      "kickoff": "2026-10-24T22:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-SANDIEGOSTATE-COLORADOSTATE",
+      "awayTeam": "San Diego State",
+      "homeTeam": "Colorado State",
+      "kickoff": "2026-10-24T22:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-COLORADO-OKLAHOMASTATE",
+      "awayTeam": "Colorado",
+      "homeTeam": "Oklahoma State",
+      "kickoff": "2026-10-24T23:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-GEORGIASTATE-ARKANSASSTATE",
+      "awayTeam": "Georgia State",
+      "homeTeam": "Arkansas State",
+      "kickoff": "2026-10-24T23:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-VIRGINIATECH-CLEMSON",
+      "awayTeam": "Virginia Tech",
+      "homeTeam": "Clemson",
+      "kickoff": "2026-10-24T23:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-IOWASTATE-ARIZONA",
+      "awayTeam": "Iowa State",
+      "homeTeam": "Arizona",
+      "kickoff": "2026-10-24T23:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-OLEMISS-TEXAS",
+      "awayTeam": "Ole Miss",
+      "homeTeam": "Texas",
+      "kickoff": "2026-10-24T23:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-SYRACUSE-NORTHCAROLINA",
+      "awayTeam": "Syracuse",
+      "homeTeam": "North Carolina",
+      "kickoff": "2026-10-24T23:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-USC-WISCONSIN",
+      "awayTeam": "USC",
+      "homeTeam": "Wisconsin",
+      "kickoff": "2026-10-24T23:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-UTAHSTATE-TEXASSTATE",
+      "awayTeam": "Utah State",
+      "homeTeam": "Texas State",
+      "kickoff": "2026-10-24T23:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-VANDERBILT-KENTUCKY",
+      "awayTeam": "Vanderbilt",
+      "homeTeam": "Kentucky",
+      "kickoff": "2026-10-24T23:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-UTSA-TULANE",
+      "awayTeam": "UTSA",
+      "homeTeam": "Tulane",
+      "kickoff": "2026-10-25T00:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-NORTHDAKOTASTATE-NEWMEXICO",
+      "awayTeam": "North Dakota State",
+      "homeTeam": "New Mexico",
+      "kickoff": "2026-10-25T02:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-HOUSTON-UTAH",
+      "awayTeam": "Houston",
+      "homeTeam": "Utah",
+      "kickoff": "2026-10-25T02:15:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    }
+  ],
+  "games": [
+    {
+      "gameId": "2026-10-20-MIDDLETENNESSEE-FLORIDAINTERNATIONAL",
+      "sourceGameId": "401871055",
+      "awayTeam": "Middle Tennessee",
+      "homeTeam": "Florida International",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "priority": "TODAY",
+      "urgency": "CRITICAL",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "d837003b6ba482064b0d61e2f4d5d519d1110c204aabdca37ab58edaf15a4570"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "MORNING_REFRESH_NO_NEW_OFFICIAL_MATERIAL_CHANGE",
+        "weather": "NWS_CURRENT_MATERIAL_WIND_FINAL_RECHECK_REQUIRED",
+        "referee": "NOT_YET_POSTED",
+        "marketContext": "MORNING_CURRENT_NOT_LOCKED",
+        "contextSource": "cfb/pregame/week-08-tuesday-effective.json"
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "weather final review pending: NWS_CURRENT_MATERIAL_WIND_FINAL_RECHECK_REQUIRED"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_YET_POSTED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
+      "sourceGameId": "401871069",
+      "awayTeam": "Missouri State",
+      "homeTeam": "Delaware",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "priority": "TODAY",
+      "urgency": "CRITICAL",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "c2f169318d0835551d45c972f4dbf953b36a585e1579988b846e2aae084321c8"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "MATERIAL_QB_STATUS_OPEN_SOURCE_CONFLICT",
+        "weather": "NWS_LOW_TO_MODERATE_WIND_FINAL_RECHECK_REQUIRED",
+        "referee": "NOT_YET_POSTED",
+        "marketContext": "MORNING_CURRENT_NOT_LOCKED",
+        "contextSource": "cfb/pregame/week-08-tuesday-effective.json"
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel requires follow-up: MATERIAL_QB_STATUS_OPEN_SOURCE_CONFLICT",
+        "weather final review pending: NWS_LOW_TO_MODERATE_WIND_FINAL_RECHECK_REQUIRED"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_YET_POSTED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
+      "sourceGameId": "401871092",
+      "awayTeam": "South Alabama",
+      "homeTeam": "Marshall",
+      "kickoff": "2026-10-20T23:30:00Z",
+      "priority": "TODAY",
+      "urgency": "CRITICAL",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "1f3d9455b39a045403e0b5e7616dec22366f2c4669bb1f4903907ab43704b4b2"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "MORNING_REFRESH_PARTIAL_THIRD_PARTY_CONTEXT_FINAL_RECHECK_REQUIRED",
+        "weather": "NWS_LOW_IMPACT_FINAL_RECHECK_REQUIRED",
+        "referee": "NOT_YET_POSTED",
+        "marketContext": "MORNING_CURRENT_NOT_LOCKED",
+        "contextSource": "cfb/pregame/week-08-tuesday-effective.json"
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "weather final review pending: NWS_LOW_IMPACT_FINAL_RECHECK_REQUIRED"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_YET_POSTED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-21-NEWMEXICOSTATE-SAMHOUSTON",
+      "sourceGameId": "401871070",
+      "awayTeam": "New Mexico State",
+      "homeTeam": "Sam Houston",
+      "kickoff": "2026-10-22T00:00:00Z",
+      "priority": "NEXT_48H",
+      "urgency": "HIGH",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "76573e65de4174437af8f8b604ec6730d1b183804089c333a6186c8b182c26da"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-22-JAMESMADISON-APPSTATE",
+      "sourceGameId": "401869845",
+      "awayTeam": "James Madison",
+      "homeTeam": "App State",
+      "kickoff": "2026-10-22T23:00:00Z",
+      "priority": "NEXT_72H",
+      "urgency": "HIGH",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "50147bbb9df5dbcabf7857833e94a663d537996bceaf0da92379c547913d8875"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-22-LIBERTY-KENNESAWSTATE",
+      "sourceGameId": "401871056",
+      "awayTeam": "Liberty",
+      "homeTeam": "Kennesaw State",
+      "kickoff": "2026-10-22T23:00:00Z",
+      "priority": "NEXT_72H",
+      "urgency": "HIGH",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "f2dce35bbd39b50c1457eb063ae30cbbba26a98d6b38f7de39a2dcbc470977a7"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-22-EASTCAROLINA-MEMPHIS",
+      "sourceGameId": "401862807",
+      "awayTeam": "East Carolina",
+      "homeTeam": "Memphis",
+      "kickoff": "2026-10-22T23:30:00Z",
+      "priority": "NEXT_72H",
+      "urgency": "HIGH",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "4e630ce63c2afc4ea179d3455e85efc5280b3838e8bfd6ac5feab7e23ff66409"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-23-DUKE-VIRGINIA",
+      "sourceGameId": "401858271",
+      "awayTeam": "Duke",
+      "homeTeam": "Virginia",
+      "kickoff": "2026-10-23T23:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "ac8c27876df7b09dfcab509a5258b3e96fc1fae76aaf4a9ed50a925020a118be"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-23-MASSACHUSETTS-UCONN",
+      "sourceGameId": "401861965",
+      "awayTeam": "Massachusetts",
+      "homeTeam": "UConn",
+      "kickoff": "2026-10-23T23:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "e28b611abc7981dc14eab506b169856f8f7b94fbec5e9936fb378e9e7d9d1838"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-23-ARMY-TULSA",
+      "sourceGameId": "401862808",
+      "awayTeam": "Army",
+      "homeTeam": "Tulsa",
+      "kickoff": "2026-10-24T00:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "069fb25d7a8b71a2564fcff9e206994a79617b0d2721c695fe1773949e6a8f2e"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-23-AIRFORCE-WYOMING",
+      "sourceGameId": "401864525",
+      "awayTeam": "Air Force",
+      "homeTeam": "Wyoming",
+      "kickoff": "2026-10-24T01:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "0f5d93d1b02d155e5a2bbc9f582826318cf4bdac375d8f66689b6727258e7ff9"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-23-NCSTATE-STANFORD",
+      "sourceGameId": "401858272",
+      "awayTeam": "NC State",
+      "homeTeam": "Stanford",
+      "kickoff": "2026-10-24T02:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "eb80be12b6c2c447ae176b44dcfee1fd23b9c0649df683275c5ab147a5fb9991"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-CALIFORNIA-SMU",
+      "sourceGameId": "401858270",
+      "awayTeam": "California",
+      "homeTeam": "SMU",
+      "kickoff": "2026-10-24T16:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "dcce36ec5b06381478354641845ef94a4fb7572cd33a5916d621718221091d02"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-INDIANA-MICHIGAN",
+      "sourceGameId": "401858496",
+      "awayTeam": "Indiana",
+      "homeTeam": "Michigan",
+      "kickoff": "2026-10-24T16:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "b51652e6006c7f9e280eee8e900de233c6c935a6a9f189755cfa1a9db3989ef8"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-LSU-AUBURN",
+      "sourceGameId": "401856728",
+      "awayTeam": "LSU",
+      "homeTeam": "Auburn",
+      "kickoff": "2026-10-24T16:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "4bd3f0e23dfe88ed74cf8b3f6e5c469f830fe7cab8869fe277a57661136010b1"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-PITTSBURGH-MIAMI",
+      "sourceGameId": "401858274",
+      "awayTeam": "Pittsburgh",
+      "homeTeam": "Miami",
+      "kickoff": "2026-10-24T16:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "278795334741951ad1c9741288de44cf35c7c95ad8d0bdfd57e62b1eb4dba63d"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-RICE-FLORIDAATLANTIC",
+      "sourceGameId": "401862809",
+      "awayTeam": "Rice",
+      "homeTeam": "Florida Atlantic",
+      "kickoff": "2026-10-24T16:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "15450779f24ba0cd139d3473762d99d0fc92b4fbc2d3ca0ba2483361f272dff4"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-RUTGERS-NORTHWESTERN",
+      "sourceGameId": "401858498",
+      "awayTeam": "Rutgers",
+      "homeTeam": "Northwestern",
+      "kickoff": "2026-10-24T16:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "32a860a673d1c91476c31cafc1bc90eb73df717bc525bce4eb6f7642f840a7f4"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-TEXASTECH-CINCINNATI",
+      "sourceGameId": "401856840",
+      "awayTeam": "Texas Tech",
+      "homeTeam": "Cincinnati",
+      "kickoff": "2026-10-24T16:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "833c07f4f79449a0ab165d492a5e8446d106baaf87a5cc0c44b05bede8757912"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-WESTVIRGINIA-TCU",
+      "sourceGameId": "401856841",
+      "awayTeam": "West Virginia",
+      "homeTeam": "TCU",
+      "kickoff": "2026-10-24T16:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "a61fc8f9a4ba78e7da5358b38483d94e515dc46ddca424140cefb048a24f01fc"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-WESTERNMICHIGAN-TOLEDO",
+      "sourceGameId": "401866450",
+      "awayTeam": "Western Michigan",
+      "homeTeam": "Toledo",
+      "kickoff": "2026-10-24T16:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "e4d92c94803138eabefad01295256c6535fcb9b4d878a0f085dd91c250d4b740"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-AKRON-KENTSTATE",
+      "sourceGameId": "401866446",
+      "awayTeam": "Akron",
+      "homeTeam": "Kent State",
+      "kickoff": "2026-10-24T17:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "0674abc73c3d06f0dd691260f76fed568a5aad1aa4ae074e5d5b24cdb83e008c"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-BAYLOR-KANSAS",
+      "sourceGameId": "401856834",
+      "awayTeam": "Baylor",
+      "homeTeam": "Kansas",
+      "kickoff": "2026-10-24T17:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "03f9e70fab2e4da61d4412460ea77a5b0b0e087adc6f1843eac96ac86b396ae3"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-MIAMIOH-CENTRALMICHIGAN",
+      "sourceGameId": "401866476",
+      "awayTeam": "Miami (OH)",
+      "homeTeam": "Central Michigan",
+      "kickoff": "2026-10-24T17:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "9b14ab8bb28ca7f18322c4791e426f921efba9f539189b9a15238d3b2adf4588"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-OREGON-ILLINOIS",
+      "sourceGameId": "401858495",
+      "awayTeam": "Oregon",
+      "homeTeam": "Illinois",
+      "kickoff": "2026-10-24T19:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "611fe222699256ba13676866f8ebf92bad5f4caf8c18aac3c8fd70f377d579d7"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-BYU-UCF",
+      "sourceGameId": "401856835",
+      "awayTeam": "BYU",
+      "homeTeam": "UCF",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "876abdaa9c4638018b01f9c128ed3ee1547ba78f213702f0cf5f6dcc564efc42"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-BOSTONCOLLEGE-GEORGIATECH",
+      "sourceGameId": "401858273",
+      "awayTeam": "Boston College",
+      "homeTeam": "Georgia Tech",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "e7eff4f75aea074f20a636cd56f00608551057f9dd6919b1cef2bbeb797ef7f4"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-BOWLINGGREEN-BUFFALO",
+      "sourceGameId": "401866448",
+      "awayTeam": "Bowling Green",
+      "homeTeam": "Buffalo",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "893df08229a2a0e0eabcc5427756adc8f3393446f039fcc45dd37e5d2dccca64"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-HAWAII-NORTHERNILLINOIS",
+      "sourceGameId": "401864526",
+      "awayTeam": "Hawai'i",
+      "homeTeam": "Northern Illinois",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "8bdfc3c88a77cc51b0d9e7ec3fe9c544ff2b839d2b6b35f32738160b14e58344"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-IOWA-MINNESOTA",
+      "sourceGameId": "401858497",
+      "awayTeam": "Iowa",
+      "homeTeam": "Minnesota",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "fa565396a5f0d6e40af0721dadd59f1fcb84dad37c53cf133e48d27f08e124d6"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-MICHIGANSTATE-UCLA",
+      "sourceGameId": "401858499",
+      "awayTeam": "Michigan State",
+      "homeTeam": "UCLA",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "f380117808f067db8f3494e201878f6f1ef5cf775f2ef019e8420713fe2eeffb"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-NORTHTEXAS-NAVY",
+      "sourceGameId": "401862810",
+      "awayTeam": "North Texas",
+      "homeTeam": "Navy",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "50b840afc38208d17930e21768804292ace06c0c2771207639aa0a84f374e0aa"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-OKLAHOMA-MISSISSIPPISTATE",
+      "sourceGameId": "401856730",
+      "awayTeam": "Oklahoma",
+      "homeTeam": "Mississippi State",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "ebfe6cc5b912bc6578fd82e381c720013b5a273bd399f1435caacdb0906208d7"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-SACRAMENTOSTATE-BALLSTATE",
+      "sourceGameId": "401866447",
+      "awayTeam": "Sacramento State",
+      "homeTeam": "Ball State",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "467d17f653d84aacd0c4dc2cc9e39be3ed62d7a00f3fc153618eeeff9a1f5cb7"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-TENNESSEE-SOUTHCAROLINA",
+      "sourceGameId": "401856731",
+      "awayTeam": "Tennessee",
+      "homeTeam": "South Carolina",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "ff4afb941720d8d9da6bc6fcfa62836ec76791f2b67e86e23eec0ed5ec1503c8"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-TEXASAM-ALABAMA",
+      "sourceGameId": "401856727",
+      "awayTeam": "Texas A&M",
+      "homeTeam": "Alabama",
+      "kickoff": "2026-10-24T19:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "0bc476e40aaf2ae2d71020e7489734d06bc996142a056c9f486894e5b2f6fac0"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-KANSASSTATE-ARIZONASTATE",
+      "sourceGameId": "401856839",
+      "awayTeam": "Kansas State",
+      "homeTeam": "Arizona State",
+      "kickoff": "2026-10-24T19:45:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "6b098a022b8588e0511a21733495e26b2b6b7831fd3967dbded871f247e740df"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-EASTERNMICHIGAN-OHIO",
+      "sourceGameId": "401866449",
+      "awayTeam": "Eastern Michigan",
+      "homeTeam": "Ohio",
+      "kickoff": "2026-10-24T20:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "fdaacdefad184225aba8e52e7b0e350a369b6f96b3371c1aead652027ab19372"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-ULMONROE-TROY",
+      "sourceGameId": "401871094",
+      "awayTeam": "UL Monroe",
+      "homeTeam": "Troy",
+      "kickoff": "2026-10-24T20:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "717b742735a8750cf9bedf12eba328895892ea283b01aae5f25e72d9db583d10"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-LOUISIANA-SOUTHERNMISS",
+      "sourceGameId": "401869967",
+      "awayTeam": "Louisiana",
+      "homeTeam": "Southern Miss",
+      "kickoff": "2026-10-24T21:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "e2c47b9299e80d9c1e8f0e7c91adf4f16cc84c97246bdba7ee3480db4729ed23"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-OLDDOMINION-LOUISIANATECH",
+      "sourceGameId": "401871093",
+      "awayTeam": "Old Dominion",
+      "homeTeam": "Louisiana Tech",
+      "kickoff": "2026-10-24T21:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "db419e8e6fc0e2721f3cf46f260d5e250c872095884349baa3ddcb8121e59531"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-SANJOSSTATE-NEVADA",
+      "sourceGameId": "401864528",
+      "awayTeam": "San José State",
+      "homeTeam": "Nevada",
+      "kickoff": "2026-10-24T21:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "9fac7b02504d92673d051574404f79c46810dbf92cb01d0effabd6f8809d258a"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-BOISESTATE-WASHINGTONSTATE",
+      "sourceGameId": "401860907",
+      "awayTeam": "Boise State",
+      "homeTeam": "Washington State",
+      "kickoff": "2026-10-24T22:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "17b3526936202ab8c1b1ecc096e5483afe8aa46a334d121c7a2050091f491cb4"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-SANDIEGOSTATE-COLORADOSTATE",
+      "sourceGameId": "401860905",
+      "awayTeam": "San Diego State",
+      "homeTeam": "Colorado State",
+      "kickoff": "2026-10-24T22:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "19226231c83683368377a077312cce6f77a8ea14e8667b9db672f9f3ded83ba8"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-COLORADO-OKLAHOMASTATE",
+      "sourceGameId": "401856836",
+      "awayTeam": "Colorado",
+      "homeTeam": "Oklahoma State",
+      "kickoff": "2026-10-24T23:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "eb47553e0448831c0b15ab8af29eb95ec06c83ad0d41ca498aeacc22e272426c"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-GEORGIASTATE-ARKANSASSTATE",
+      "sourceGameId": "401869935",
+      "awayTeam": "Georgia State",
+      "homeTeam": "Arkansas State",
+      "kickoff": "2026-10-24T23:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "6b8ad3544d1382e614f9272b6b0d4036cbba4861fae1cec8de76667f3eeea30f"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-VIRGINIATECH-CLEMSON",
+      "sourceGameId": "401858276",
+      "awayTeam": "Virginia Tech",
+      "homeTeam": "Clemson",
+      "kickoff": "2026-10-24T23:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "6d34b2fae6bb25d048cb029f911be56b3d982e1e629c7fb8c0df8c280d73219d"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-IOWASTATE-ARIZONA",
+      "sourceGameId": "401856838",
+      "awayTeam": "Iowa State",
+      "homeTeam": "Arizona",
+      "kickoff": "2026-10-24T23:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "8919d0dcc7d046d19a690fcb556e1686442d8a20d3d9ba70878d472b454fd3cc"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-OLEMISS-TEXAS",
+      "sourceGameId": "401856732",
+      "awayTeam": "Ole Miss",
+      "homeTeam": "Texas",
+      "kickoff": "2026-10-24T23:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "ad6572b61f29fb48e2796adc8dc64c2e8260d68c705f7d81a62b7f187f452f71"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-SYRACUSE-NORTHCAROLINA",
+      "sourceGameId": "401858275",
+      "awayTeam": "Syracuse",
+      "homeTeam": "North Carolina",
+      "kickoff": "2026-10-24T23:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "824ccd921e6913a91dee810ed0c52708db8951d8c2b233f93e5cc74b8a5e104f"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-USC-WISCONSIN",
+      "sourceGameId": "401858500",
+      "awayTeam": "USC",
+      "homeTeam": "Wisconsin",
+      "kickoff": "2026-10-24T23:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "3521b6da0b466cdb4fcd769aef3a2e076940c72ae3a15000fdec76bd2b8b02f2"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-UTAHSTATE-TEXASSTATE",
+      "sourceGameId": "401860906",
+      "awayTeam": "Utah State",
+      "homeTeam": "Texas State",
+      "kickoff": "2026-10-24T23:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "9291d1b7f9363a56c73958df8a53407925a3c4f53cbcde7d328dd109eb83d9b2"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-VANDERBILT-KENTUCKY",
+      "sourceGameId": "401856729",
+      "awayTeam": "Vanderbilt",
+      "homeTeam": "Kentucky",
+      "kickoff": "2026-10-24T23:30:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "587838e10404f4a2af34ccaa211a61b92b3dcb4c3be97ac3d3090ded1bc4375a"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-UTSA-TULANE",
+      "sourceGameId": "401862811",
+      "awayTeam": "UTSA",
+      "homeTeam": "Tulane",
+      "kickoff": "2026-10-25T00:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "a63b1830e30a0375df153b4fa621878d02d9096fcfcd99559de0b5b0e2429ba4"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-NORTHDAKOTASTATE-NEWMEXICO",
+      "sourceGameId": "401864527",
+      "awayTeam": "North Dakota State",
+      "homeTeam": "New Mexico",
+      "kickoff": "2026-10-25T02:00:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "b920b10e37670fe796ecbc663efdc522b5ee1d11e7955a550f98eb2aae5d26e9"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-24-HOUSTON-UTAH",
+      "sourceGameId": "401856837",
+      "awayTeam": "Houston",
+      "homeTeam": "Utah",
+      "kickoff": "2026-10-25T02:15:00Z",
+      "priority": "LATER_WEEK",
+      "urgency": "PLANNED",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "15b827902593d6d6604ce90eef0a4fba9aa97974c10a64986f0af10f93bca77f"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "NOT_CAPTURED",
+        "weather": "NOT_CAPTURED",
+        "referee": "NOT_CAPTURED",
+        "marketContext": "NOT_CAPTURED",
+        "contextSource": null
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel context not yet captured",
+        "weather context not yet captured"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_CAPTURED; do not guess",
+        "immutable final-window market lock pending"
+      ]
+    }
+  ],
+  "policy": "Operational research audit only. Context gaps prioritize source collection but cannot rewrite the immutable foundation. Official benchmarks and locked markets remain comparison layers only; unknown facts stay unknown."
+}
