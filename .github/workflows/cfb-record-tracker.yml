@@ -1,5 +1,14 @@
 name: CFB automated record tracker
 on:
+  push:
+    paths:
+      - 'scripts/record_tracker*.py'
+      - 'scripts/projection_locking.py'
+      - 'scripts/lock_projections_v2.py'
+      - 'scripts/validate_benchmarks.py'
+      - 'tests/**'
+      - 'cfb/benchmarks/**'
+      - '.github/workflows/cfb-record-tracker.yml'
   workflow_dispatch:
     inputs:
       week:
@@ -39,18 +48,21 @@ jobs:
         id: data
         run: |
           if compgen -G 'cfb/projections/week-*.json' > /dev/null; then echo 'ready=true' >> "$GITHUB_OUTPUT"; else echo 'ready=false' >> "$GITHUB_OUTPUT"; fi
+      - name: Integrity-only push check
+        if: github.event_name == 'push'
+        run: echo 'Push event runs tests and benchmark validation only; no grading or publishing mutation.'
       - name: No-op until first locked weekly JSON exists
-        if: steps.data.outputs.ready != 'true'
+        if: github.event_name != 'push' && steps.data.outputs.ready != 'true'
         run: echo 'No CFB week-XX.json projection file yet; preserving the current published record.'
       - name: Grade CFB
-        if: steps.data.outputs.ready == 'true'
+        if: github.event_name != 'push' && steps.data.outputs.ready == 'true'
         env:
           WEEK: ${{ github.event.inputs.week || 'latest' }}
           DRY: ${{ github.event.inputs.dry_run || 'false' }}
         run: |
           if [ "$DRY" = "true" ]; then python scripts/record_tracker_v2.py --league cfb --week "$WEEK" --dry-run; else python scripts/record_tracker_v2.py --league cfb --week "$WEEK"; fi
       - name: Commit updated record files
-        if: ${{ success() && steps.data.outputs.ready == 'true' && github.event.inputs.dry_run != 'true' }}
+        if: ${{ success() && github.event_name != 'push' && steps.data.outputs.ready == 'true' && github.event.inputs.dry_run != 'true' }}
         run: |
           git config user.name "cb-model-record-bot"
           git config user.email "actions@users.noreply.github.com"
@@ -61,7 +73,7 @@ jobs:
             git push
           fi
       - name: Deploy refreshed Pages data
-        if: ${{ success() && steps.data.outputs.ready == 'true' && github.event.inputs.dry_run != 'true' }}
+        if: ${{ success() && github.event_name != 'push' && steps.data.outputs.ready == 'true' && github.event.inputs.dry_run != 'true' }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run deploy-pages.yml --ref main
@@ -71,6 +83,6 @@ jobs:
         with:
           script: |
             const title = `CFB record tracker failed: ${new Date().toISOString().slice(0,10)}`;
-            const body = `The automated CFB grading workflow failed and did not publish a new record.\n\nRun: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}\n\nThe previous published record remains the source of truth.`;
+            const body = `The automated CFB grading/integrity workflow failed.\n\nRun: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}\n\nThe previous published record remains the source of truth.`;
             const existing = await github.rest.issues.listForRepo({owner:context.repo.owner,repo:context.repo.repo,state:'open',labels:'record-tracker'}).catch(()=>({data:[]}));
             if (!existing.data.some(i=>i.title===title)) await github.rest.issues.create({owner:context.repo.owner,repo:context.repo.repo,title,body,labels:['record-tracker']}).catch(async()=>github.rest.issues.create({owner:context.repo.owner,repo:context.repo.repo,title,body}));
