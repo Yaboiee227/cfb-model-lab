@@ -140,6 +140,17 @@ class TestCfbMarketResearchLock(unittest.TestCase):
         self.assertEqual(out["games"][0]["status"], "MISSED")
         self.assertEqual(out["counts"]["bookObservationsLocked"], 0)
 
+    def test_paused_scope_never_locks_or_marks_game_missed(self):
+        out = merge_market_lock(
+            self._foundation(), self._markets(), None, self._aliases(),
+            datetime(2026, 10, 20, 23, 1, tzinfo=timezone.utc),
+            active_game_ids=set(),
+        )
+        self.assertEqual(out["games"][0]["status"], "PAUSED_OUT_OF_SCOPE")
+        self.assertEqual(out["counts"]["bookObservationsLocked"], 0)
+        self.assertEqual(out["counts"]["missedGames"], 0)
+        self.assertEqual(out["counts"]["pausedGames"], 1)
+
     def test_unchanged_durable_state_preserves_updated_at(self):
         foundation = self._foundation()
         first = merge_market_lock(
