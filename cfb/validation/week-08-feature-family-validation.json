@@ -1,0 +1,587 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "role": "ISOLATED_FEATURE_FAMILY_RESEARCH",
+  "canonicalInfluence": false,
+  "asOf": "2026-10-20T04:00:00Z",
+  "policy": {
+    "seasonReset": true,
+    "marketDataUsed": false,
+    "externalRatingsUsed": false,
+    "sameWeekLeakagePrevented": true,
+    "familyIsolation": true
+  },
+  "hfa": {
+    "2025": 3.4917340983843776,
+    "2025DerivedFrom": [
+      2022,
+      2023,
+      2024
+    ],
+    "2025SeasonEstimates": [
+      {
+        "season": 2022,
+        "rawGames": 927,
+        "eligibleGames": 763,
+        "homeMarginAdvantage": 3.0167896313462124
+      },
+      {
+        "season": 2023,
+        "rawGames": 923,
+        "eligibleGames": 763,
+        "homeMarginAdvantage": 3.4917340983843776
+      },
+      {
+        "season": 2024,
+        "rawGames": 917,
+        "eligibleGames": 765,
+        "homeMarginAdvantage": 4.249132328925835
+      }
+    ],
+    "2026": 4.249132328925835
+  },
+  "dataQuality": {
+    "season2025": {
+      "season": 2025,
+      "games": 912,
+      "boxscoreGames": 912,
+      "boxscoreCoverage": 1.0,
+      "boxscoreFailures": [],
+      "causalRows": 601,
+      "structuralHomeMarginAdvantage": 3.4917340983843776
+    },
+    "season2026": {
+      "season": 2026,
+      "games": 510,
+      "boxscoreGames": 510,
+      "boxscoreCoverage": 1.0,
+      "boxscoreFailures": [],
+      "causalRows": 227,
+      "structuralHomeMarginAdvantage": 4.249132328925835
+    }
+  },
+  "validation": {
+    "foldCount": 3,
+    "games": 173,
+    "simpleBaseline": {
+      "margin": {
+        "games": 173,
+        "mae": 13.070322817582259,
+        "rmse": 16.820458616146304,
+        "bias": 0.18608232931704033
+      },
+      "total": {
+        "games": 173,
+        "mae": 13.409013926679071,
+        "rmse": 16.60363641247509,
+        "bias": 0.8653185470364331
+      },
+      "folds": [
+        {
+          "testWeekStart": "2026-09-28T00:00:00Z",
+          "margin": {
+            "games": 56,
+            "mae": 14.934431911828758,
+            "rmse": 19.841694927826147,
+            "bias": 0.4288702290964369
+          },
+          "total": {
+            "games": 56,
+            "mae": 13.736507868057197,
+            "rmse": 16.44519569967382,
+            "bias": 0.19739717457868305
+          }
+        },
+        {
+          "testWeekStart": "2026-10-05T00:00:00Z",
+          "margin": {
+            "games": 58,
+            "mae": 12.87139961839153,
+            "rmse": 15.740665264718324,
+            "bias": -0.6466904491964295
+          },
+          "total": {
+            "games": 58,
+            "mae": 13.220210044898197,
+            "rmse": 17.03235991516837,
+            "bias": 1.4688177055914873
+          }
+        },
+        {
+          "testWeekStart": "2026-10-12T00:00:00Z",
+          "margin": {
+            "games": 59,
+            "mae": 11.496550551061226,
+            "rmse": 14.572518095655052,
+            "bias": 0.7742975626413625
+          },
+          "total": {
+            "games": 59,
+            "mae": 13.283776035596288,
+            "rmse": 16.324051117591324,
+            "bias": 0.9060074565523805
+          }
+        }
+      ]
+    },
+    "families": {
+      "efficiency": {
+        "features": [
+          "yppMatchupDiff",
+          "passYpaMatchupDiff",
+          "rushYpaMatchupDiff"
+        ],
+        "margin": {
+          "games": 173,
+          "mae": 12.431633786379106,
+          "rmse": 16.18199223340811,
+          "bias": -0.06267074048306917
+        },
+        "total": {
+          "games": 173,
+          "mae": 13.40925836947384,
+          "rmse": 16.611390065674094,
+          "bias": 0.37131078213658214
+        },
+        "marginMaeDeltaVsSimple": -0.6386890312031532,
+        "totalMaeDeltaVsSimple": 0.0002444427947683181,
+        "marginFoldDeltas": [
+          -1.4449518833149337,
+          -1.0294363061882912,
+          0.5107018445154399
+        ],
+        "totalFoldDeltas": [
+          -0.02385350304704481,
+          -0.011022170141181675,
+          0.03419272275115226
+        ],
+        "marginImprovedFolds": 2,
+        "totalImprovedFolds": 2,
+        "folds": [
+          {
+            "testWeekStart": "2026-09-28T00:00:00Z",
+            "selectedMarginAlpha": 10.0,
+            "selectedTotalAlpha": 0.1,
+            "margin": {
+              "games": 56,
+              "mae": 13.489480028513825,
+              "rmse": 18.887563113531698,
+              "bias": 0.10678277756011655
+            },
+            "total": {
+              "games": 56,
+              "mae": 13.712654365010152,
+              "rmse": 16.452639467540415,
+              "bias": -0.348430456036723
+            }
+          },
+          {
+            "testWeekStart": "2026-10-05T00:00:00Z",
+            "selectedMarginAlpha": 0.1,
+            "selectedTotalAlpha": 0.1,
+            "margin": {
+              "games": 58,
+              "mae": 11.841963312203239,
+              "rmse": 14.915263339986023,
+              "bias": -0.26649221640629883
+            },
+            "total": {
+              "games": 58,
+              "mae": 13.209187874757015,
+              "rmse": 17.02980737324595,
+              "bias": 0.9455546569757238
+            }
+          },
+          {
+            "testWeekStart": "2026-10-12T00:00:00Z",
+            "selectedMarginAlpha": 0.1,
+            "selectedTotalAlpha": 100.0,
+            "margin": {
+              "games": 59,
+              "mae": 12.007252395576666,
+              "rmse": 14.50939031848013,
+              "bias": -0.023141103311392238
+            },
+            "total": {
+              "games": 59,
+              "mae": 13.31796875834744,
+              "rmse": 16.342669225861446,
+              "bias": 0.48994408039141074
+            }
+          }
+        ],
+        "marginChallengerEligible": true,
+        "totalChallengerEligible": false
+      },
+      "drive_control": {
+        "features": [
+          "thirdDownMatchupDiff",
+          "turnoverControlDiff",
+          "firstDownRateMatchupDiff"
+        ],
+        "margin": {
+          "games": 173,
+          "mae": 12.566642483449359,
+          "rmse": 16.129995699982985,
+          "bias": 0.03442493427601693
+        },
+        "total": {
+          "games": 173,
+          "mae": 13.391250844251061,
+          "rmse": 16.607355213672207,
+          "bias": 0.41398652731295127
+        },
+        "marginMaeDeltaVsSimple": -0.5036803341329001,
+        "totalMaeDeltaVsSimple": -0.017763082428009724,
+        "marginFoldDeltas": [
+          -1.043493894112375,
+          -1.0845385613570038,
+          0.5796982512543511
+        ],
+        "totalFoldDeltas": [
+          0.024490595316853714,
+          0.0034102849531016943,
+          -0.07868276483168124
+        ],
+        "marginImprovedFolds": 2,
+        "totalImprovedFolds": 1,
+        "folds": [
+          {
+            "testWeekStart": "2026-09-28T00:00:00Z",
+            "selectedMarginAlpha": 0.1,
+            "selectedTotalAlpha": 0.1,
+            "margin": {
+              "games": 56,
+              "mae": 13.890938017716383,
+              "rmse": 18.958506055941797,
+              "bias": 0.3852391945954811
+            },
+            "total": {
+              "games": 56,
+              "mae": 13.760998463374051,
+              "rmse": 16.481143638106804,
+              "bias": -0.2881537151707588
+            }
+          },
+          {
+            "testWeekStart": "2026-10-05T00:00:00Z",
+            "selectedMarginAlpha": 0.1,
+            "selectedTotalAlpha": 0.1,
+            "margin": {
+              "games": 58,
+              "mae": 11.786861057034526,
+              "rmse": 14.521098014875177,
+              "bias": -0.6007487547938033
+            },
+            "total": {
+              "games": 58,
+              "mae": 13.223620329851299,
+              "rmse": 17.089377740656037,
+              "bias": 1.0854531074127198
+            }
+          },
+          {
+            "testWeekStart": "2026-10-12T00:00:00Z",
+            "selectedMarginAlpha": 0.1,
+            "selectedTotalAlpha": 100.0,
+            "margin": {
+              "games": 59,
+              "mae": 12.076248802315577,
+              "rmse": 14.64423859548876,
+              "bias": 0.3258567205160097
+            },
+            "total": {
+              "games": 59,
+              "mae": 13.205093270764607,
+              "rmse": 16.241944641776172,
+              "bias": 0.42033893296212405
+            }
+          }
+        ],
+        "marginChallengerEligible": true,
+        "totalChallengerEligible": false
+      },
+      "discipline": {
+        "features": [
+          "penaltyDisciplineDiff"
+        ],
+        "margin": {
+          "games": 173,
+          "mae": 12.565991135103893,
+          "rmse": 16.245678486677527,
+          "bias": 0.6622497940904507
+        },
+        "total": {
+          "games": 173,
+          "mae": 13.37198611817135,
+          "rmse": 16.607989210180957,
+          "bias": 0.37523475150413654
+        },
+        "marginMaeDeltaVsSimple": -0.5043316824783659,
+        "totalMaeDeltaVsSimple": -0.03702780850772136,
+        "marginFoldDeltas": [
+          -1.5339715737356237,
+          -0.7069930921971856,
+          0.6721801086080266
+        ],
+        "totalFoldDeltas": [
+          -0.07109883449174603,
+          -0.03705671811962752,
+          -0.004660787955252488
+        ],
+        "marginImprovedFolds": 2,
+        "totalImprovedFolds": 3,
+        "folds": [
+          {
+            "testWeekStart": "2026-09-28T00:00:00Z",
+            "selectedMarginAlpha": 0.1,
+            "selectedTotalAlpha": 0.1,
+            "margin": {
+              "games": 56,
+              "mae": 13.400460338093135,
+              "rmse": 18.768375034722336,
+              "bias": 1.0896566160261487
+            },
+            "total": {
+              "games": 56,
+              "mae": 13.665409033565451,
+              "rmse": 16.402905328847332,
+              "bias": -0.32569911485990566
+            }
+          },
+          {
+            "testWeekStart": "2026-10-05T00:00:00Z",
+            "selectedMarginAlpha": 0.1,
+            "selectedTotalAlpha": 0.1,
+            "margin": {
+              "games": 58,
+              "mae": 12.164406526194345,
+              "rmse": 14.834966355633059,
+              "bias": 0.3966088754064398
+            },
+            "total": {
+              "games": 58,
+              "mae": 13.18315332677857,
+              "rmse": 17.041842877236633,
+              "bias": 0.9720994201808253
+            }
+          },
+          {
+            "testWeekStart": "2026-10-12T00:00:00Z",
+            "selectedMarginAlpha": 10.0,
+            "selectedTotalAlpha": 100.0,
+            "margin": {
+              "games": 59,
+              "mae": 12.168730659669253,
+              "rmse": 14.93942026222891,
+              "bias": 0.517714052654409
+            },
+            "total": {
+              "games": 59,
+              "mae": 13.279115247641036,
+              "rmse": 16.36763299785181,
+              "bias": 0.45377959443868493
+            }
+          }
+        ],
+        "marginChallengerEligible": true,
+        "totalChallengerEligible": false
+      },
+      "tempo_possession": {
+        "features": [
+          "combinedPlayVolume",
+          "possessionMatchupDiff"
+        ],
+        "margin": {
+          "games": 173,
+          "mae": 12.64713454630977,
+          "rmse": 16.351732327786788,
+          "bias": 0.8476145857239833
+        },
+        "total": {
+          "games": 173,
+          "mae": 13.16105405692213,
+          "rmse": 16.4523566432258,
+          "bias": -0.6300269998791481
+        },
+        "marginMaeDeltaVsSimple": -0.4231882712724886,
+        "totalMaeDeltaVsSimple": -0.24795986975694184,
+        "marginFoldDeltas": [
+          -1.6122870439433736,
+          -0.6837214152896749,
+          0.961565179957427
+        ],
+        "totalFoldDeltas": [
+          -0.2753835895397714,
+          -0.28775167075474783,
+          -0.18281321271099316
+        ],
+        "marginImprovedFolds": 2,
+        "totalImprovedFolds": 3,
+        "folds": [
+          {
+            "testWeekStart": "2026-09-28T00:00:00Z",
+            "selectedMarginAlpha": 10.0,
+            "selectedTotalAlpha": 0.1,
+            "margin": {
+              "games": 56,
+              "mae": 13.322144867885385,
+              "rmse": 18.713716449237026,
+              "bias": 1.2704707717230816
+            },
+            "total": {
+              "games": 56,
+              "mae": 13.461124278517426,
+              "rmse": 16.247442126618346,
+              "bias": -1.7431101937657087
+            }
+          },
+          {
+            "testWeekStart": "2026-10-05T00:00:00Z",
+            "selectedMarginAlpha": 0.1,
+            "selectedTotalAlpha": 0.1,
+            "margin": {
+              "games": 58,
+              "mae": 12.187678203101855,
+              "rmse": 14.841030621059817,
+              "bias": 0.594382717596273
+            },
+            "total": {
+              "games": 58,
+              "mae": 12.93245837414345,
+              "rmse": 16.89532702649506,
+              "bias": -0.18806994181794373
+            }
+          },
+          {
+            "testWeekStart": "2026-10-12T00:00:00Z",
+            "selectedMarginAlpha": 0.1,
+            "selectedTotalAlpha": 100.0,
+            "margin": {
+              "games": 59,
+              "mae": 12.458115731018653,
+              "rmse": 15.332670165362538,
+              "bias": 0.6951993642910631
+            },
+            "total": {
+              "games": 59,
+              "mae": 13.100962822885295,
+              "rmse": 16.20241735518484,
+              "bias": -0.0080075169961396
+            }
+          }
+        ],
+        "marginChallengerEligible": false,
+        "totalChallengerEligible": false
+      },
+      "recent_rest": {
+        "features": [
+          "recentMarginDiff",
+          "restDaysDiff"
+        ],
+        "margin": {
+          "games": 173,
+          "mae": 12.660176190771969,
+          "rmse": 16.350828097813825,
+          "bias": 0.4802896871861913
+        },
+        "total": {
+          "games": 173,
+          "mae": 13.421933817868535,
+          "rmse": 16.608090409647396,
+          "bias": 0.3908335016135911
+        },
+        "marginMaeDeltaVsSimple": -0.41014662681029,
+        "totalMaeDeltaVsSimple": 0.012919891189463684,
+        "marginFoldDeltas": [
+          -1.1517773863937126,
+          -0.7316964609636329,
+          0.6098739311145351
+        ],
+        "totalFoldDeltas": [
+          0.06333596266494546,
+          -0.03224583018659111,
+          0.009467549446817713
+        ],
+        "marginImprovedFolds": 2,
+        "totalImprovedFolds": 1,
+        "folds": [
+          {
+            "testWeekStart": "2026-09-28T00:00:00Z",
+            "selectedMarginAlpha": 100.0,
+            "selectedTotalAlpha": 0.1,
+            "margin": {
+              "games": 56,
+              "mae": 13.782654525435046,
+              "rmse": 19.102883655449023,
+              "bias": 0.6237670368118566
+            },
+            "total": {
+              "games": 56,
+              "mae": 13.799843830722143,
+              "rmse": 16.490146029396165,
+              "bias": -0.31324417050875614
+            }
+          },
+          {
+            "testWeekStart": "2026-10-05T00:00:00Z",
+            "selectedMarginAlpha": 0.1,
+            "selectedTotalAlpha": 0.1,
+            "margin": {
+              "games": 58,
+              "mae": 12.139703157427897,
+              "rmse": 14.776362853323459,
+              "bias": 0.32296541963294884
+            },
+            "total": {
+              "games": 58,
+              "mae": 13.187964214711606,
+              "rmse": 17.01307028173498,
+              "bias": 0.9605932986658213
+            }
+          },
+          {
+            "testWeekStart": "2026-10-12T00:00:00Z",
+            "selectedMarginAlpha": 10.0,
+            "selectedTotalAlpha": 100.0,
+            "margin": {
+              "games": 59,
+              "mae": 12.106424482175761,
+              "rmse": 14.9304466070858,
+              "bias": 0.4987655505599333
+            },
+            "total": {
+              "games": 59,
+              "mae": 13.293243585043106,
+              "rmse": 16.314067755276135,
+              "bias": 0.49900776279701703
+            }
+          }
+        ],
+        "marginChallengerEligible": false,
+        "totalChallengerEligible": false
+      }
+    },
+    "challengerEligibleFamilies": [
+      {
+        "family": "efficiency",
+        "margin": true,
+        "total": false
+      },
+      {
+        "family": "drive_control",
+        "margin": true,
+        "total": false
+      },
+      {
+        "family": "discipline",
+        "margin": true,
+        "total": false
+      }
+    ],
+    "gateRule": "Per target: improve aggregate MAE by >=0.50, improve at least 2 unseen folds, and no unseen fold may degrade by >0.75. Eligibility means isolated shadow research only, never canonical promotion."
+  },
+  "warning": "Research only. Any eligible family must still be prospectively shadowed on frozen Week 8+ games before explicit canonical promotion review."
+}
