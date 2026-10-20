@@ -1,0 +1,78 @@
+name: CFB benchmark postgame evaluation
+on:
+  push:
+    paths:
+      - 'scripts/cfb_benchmark_postgame.py'
+      - 'tests/test_cfb_benchmark_postgame.py'
+      - 'cfb/research-locks/week-08-foundation-full.json'
+      - 'cfb/validation/week-08-foundation-vs-sagarin.json'
+      - '.github/workflows/cfb-benchmark-postgame.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '23 7 * * 3'
+    - cron: '33 15 * * 0'
+permissions:
+  contents: write
+concurrency:
+  group: cfb-benchmark-postgame
+  cancel-in-progress: false
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Test postgame benchmark evaluator
+        run: python -m unittest tests.test_cfb_benchmark_postgame -v
+      - name: Verify frozen pregame comparison integrity
+        run: |
+          python - <<'PY'
+          import json,sys
+          sys.path.insert(0,'scripts')
+          from cfb_benchmark_postgame import verify_pregame_comparison
+          lock=json.load(open('cfb/research-locks/week-08-foundation-full.json'))
+          comparison=json.load(open('cfb/validation/week-08-foundation-vs-sagarin.json'))
+          verify_pregame_comparison(lock,comparison)
+          assert comparison['coverage']['comparedGames']==56
+          assert comparison['coverage']['ratio']==1.0
+          print('frozen CB/Sagarin pregame comparison verified')
+          PY
+      - name: Push event is integrity-only
+        if: github.event_name == 'push'
+        run: echo 'Push event verifies evaluator and frozen pregame evidence only; final-score grading runs on schedule or manual dispatch.'
+      - name: Grade both frozen margins against same finals
+        if: github.event_name != 'push'
+        run: |
+          python scripts/cfb_benchmark_postgame.py \
+            --foundation-lock cfb/research-locks/week-08-foundation-full.json \
+            --comparison cfb/validation/week-08-foundation-vs-sagarin.json \
+            --output cfb/validation/week-08-foundation-vs-sagarin-results.json
+      - name: Assert research-only separation
+        if: github.event_name != 'push'
+        run: |
+          python - <<'PY'
+          import json
+          p='cfb/validation/week-08-foundation-vs-sagarin-results.json'
+          d=json.load(open(p))
+          assert d['role']=='POSTGAME_FROZEN_MODEL_VS_OFFICIAL_BENCHMARK_EVALUATION'
+          assert d['canonicalInfluence'] is False
+          assert d['canonicalPromotionAuthorized'] is False
+          assert d['canonicalRecordMerged'] is False
+          assert d['foundation']['lockDigest']=='72d0aa99176904f681264e69f57260152607914f712a1686d2cdaaf89af3115b'
+          print(json.dumps({'status':d['status'],'counts':d['counts'],'aggregate':d['aggregate']},indent=2))
+          PY
+      - name: Commit postgame benchmark evidence
+        if: github.event_name != 'push'
+        run: |
+          git config user.name "cb-model-validation-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git pull --rebase origin main
+          git add cfb/validation/week-08-foundation-vs-sagarin-results.json
+          if git diff --cached --quiet; then
+            echo 'No postgame benchmark changes.'
+            exit 0
+          fi
+          git commit -m 'Grade frozen Week 8 CB vs Sagarin benchmark'
+          git push
