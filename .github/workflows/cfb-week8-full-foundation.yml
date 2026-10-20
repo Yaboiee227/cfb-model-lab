@@ -1,0 +1,74 @@
+name: CFB Week 8 full foundation baseline
+on:
+  push:
+    paths:
+      - 'scripts/cfb_week8_schedule.py'
+      - 'tests/test_cfb_week8_schedule.py'
+      - 'scripts/cfb_foundation_candidate.py'
+      - 'cfb/validation/week-08-simple-foundation-validation.json'
+      - '.github/workflows/cfb-week8-full-foundation.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: cfb-week8-full-foundation
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check numpy
+      - name: Test Week 8 schedule helpers
+        run: python -m unittest tests.test_cfb_week8_schedule -v
+      - name: Discover Oct. 20-24 FBS slate
+        run: |
+          python scripts/cfb_week8_schedule.py \
+            --start '2026-10-20T00:00:00-04:00' \
+            --end '2026-10-25T00:00:00-04:00' \
+            --output cfb/pregame/week-08-schedule.json
+      - name: Build validated foundation baseline for full slate
+        run: |
+          python scripts/cfb_foundation_candidate.py \
+            --state cfb/pregame/week-08-schedule.json \
+            --validation cfb/validation/week-08-simple-foundation-validation.json \
+            --as-of '2026-10-20T00:00:00-04:00' \
+            --start '2026-08-20T00:00:00-04:00' \
+            --output cfb/shadow/week-08-foundation-full.json
+      - name: Assert schedule and foundation coverage
+        run: |
+          python - <<'PY'
+          import json
+          s=json.load(open('cfb/pregame/week-08-schedule.json'))
+          d=json.load(open('cfb/shadow/week-08-foundation-full.json'))
+          assert 50 <= s['gameCount'] <= 65, s['gameCount']
+          assert d['modelId']=='cfb-rebuild-foundation-v1-shadow'
+          assert d['role']=='VALIDATED_FOUNDATION_PROSPECTIVE_SHADOW'
+          assert d['canonicalInfluence'] is False
+          assert d['canonicalPromotionAuthorized'] is False
+          assert d['lockedParameters']=={'alpha':2.5,'halfLifeDays':56,'minTeamAppearances':4}
+          assert len(d['games'])==s['gameCount']
+          review=[g for g in d['games'] if g['status']!='FOUNDATION_SHADOW_READY']
+          assert not review, review[:10]
+          print(json.dumps({
+              'scheduleGames':s['gameCount'],
+              'foundationReady':len(d['games']),
+              'firstFive':[{k:g.get(k) for k in ('gameId','awayTeam','homeTeam','kickoff','projectedSpreadHome','projectedTotal')} for g in d['games'][:5]],
+          },indent=2))
+          PY
+      - name: Commit full Week 8 baseline
+        run: |
+          git config user.name "cb-model-shadow-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add cfb/pregame/week-08-schedule.json cfb/shadow/week-08-foundation-full.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Build full Week 8 validated foundation baseline'
+          for attempt in 1 2 3; do
+            if git push; then exit 0; fi
+            git pull --rebase origin main
+          done
+          git push
