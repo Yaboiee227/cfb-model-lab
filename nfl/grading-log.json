@@ -1,1 +1,20 @@
-{"runs":[]}
+{
+  "runs": [
+    {
+      "league": "nfl",
+      "season": 2026,
+      "week": 6,
+      "gradedAt": "2026-10-20T12:42:40Z",
+      "status": "COMPLETE",
+      "games": 13,
+      "ats": {"wins": 3, "losses": 10, "pushes": 0},
+      "totals": {"wins": 6, "losses": 6, "pushes": 1},
+      "straightUp": {"wins": 7, "losses": 6, "pushes": 0},
+      "projectionSource": "nfl_data/site/projections.csv",
+      "resultSource": "NFL final schedule results",
+      "marketSource": "Action Network public benchmark saved pregame",
+      "marketObservedAt": "2026-10-18T11:55:09Z",
+      "note": "Only the 13 projections preserved in the published Week 6 artifact were graded. Seattle-Denver was not added retroactively."
+    }
+  ]
+}
