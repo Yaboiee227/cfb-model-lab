@@ -39,6 +39,20 @@ Use the current official Sagarin output and its published home-field value when 
 
 Use only values actually available before kickoff for prospective comparisons. A stale Sagarin update may be retained as a timestamped benchmark but must not be presented as current.
 
+## Approved officiating/context source
+
+### RefMetrics
+- Publisher: RefMetrics
+- NCAA football source: https://www.refmetrics.com/ncaa-football/
+- NFL source: https://www.refmetrics.com/nfl/
+- Status: APPROVED CONTEXT / CHALLENGER SOURCE
+- Canonical influence: NO until validated
+- Uses: referee/crew assignment capture, penalty-rate context, penalty-yard context, penalty-type tendencies, home/away officiating splits, sample-size-aware challenger research, uncertainty research.
+
+RefMetrics data may be captured prospectively when available before kickoff. Missing or late assignments must remain explicitly missing; never infer a referee or reconstruct a pregame assignment after the game. Raw historical ATS/Over trends are research context only and must not directly alter a projection.
+
+Candidate officiating features must be tested for incremental predictive value after accounting for team quality, opponent, pace, personnel, weather and other existing model information. Small samples should be shrunk toward league/conference averages before any challenger test.
+
 ## Benchmark evaluation plan
 
 For each weekly frozen projection, preserve the external benchmark values available at observation time where practical:
@@ -49,21 +63,24 @@ For each weekly frozen projection, preserve the external benchmark values availa
 - official SP+ value or implied margin where available (CFB)
 - official Sagarin Predictor/implied margin where available
 - Sagarin schedule-strength context where useful
+- RefMetrics assignment/context when available before kickoff
 - saved publication-time market spread / total / moneyline
 - observation timestamps and source URLs
 - final score after the game
 
-Evaluate external benchmarks prospectively using the same games and timing rules as the canonical model, including:
+Evaluate external benchmarks and contextual challengers prospectively using the same games and timing rules as the canonical model, including:
 
 - margin MAE / RMSE
+- total MAE / RMSE where applicable
 - straight-up accuracy
 - ATS directional performance against the locked publication-time market number
 - calibration where a probability is available and defensible
 - performance by conference/division, favorite/underdog, home/away, and disagreement bucket
 - whether agreement/disagreement with CB has incremental predictive value
+- whether officiating context improves margin, total or uncertainty estimates out of sample
 
-No external benchmark can change an already frozen projection or its official grade.
+No external benchmark or contextual source can change an already frozen projection or its official grade.
 
 ## Machine-readable registry
 
-See `data/approved-external-benchmarks.json` for the approved source URLs and allowed/prohibited uses used by future automation.
+See `data/approved-external-benchmarks.json` for the approved benchmark source URLs and allowed/prohibited uses used by future automation. Context/challenger sources such as RefMetrics are governed here until a dedicated context-source registry is added.
