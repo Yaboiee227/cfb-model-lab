@@ -896,18 +896,49 @@
         "note": "NM State's official preview says this is its shortest road trip of 2026 and that the Aggies had 13 full days without a game after the FIU matchup."
       },
       "market": {
-        "status": "EARLY_PUBLIC_CONTEXT_NOT_LOCKED",
-        "observedAt": "2026-10-20T12:08:00Z",
+        "status": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
+        "observedAt": "2026-10-20T19:57:03.150Z",
         "observations": [
           {
             "source": "https://www.covers.com/sports/ncaaf/matchups",
             "marketType": "public_board_context",
             "spreadHome": 2.5,
-            "total": 45.0,
+            "total": 45,
             "interpretation": "Public board showed New Mexico State -2.5 at Sam Houston with a 45.0 total at observation time. This is not the immutable publication-time book lock."
+          },
+          {
+            "book": "FanDuel",
+            "observedAt": "2026-10-20T19:56:42Z",
+            "spreadHome": 2.5,
+            "spreadHomePrice": -110,
+            "spreadAway": -2.5,
+            "spreadAwayPrice": -110,
+            "total": 44.5,
+            "overPrice": -110,
+            "underPrice": -110,
+            "moneylineHome": 112,
+            "moneylineAway": -134,
+            "source": "The Odds API",
+            "sourceSnapshot": "data/markets-sportsbooks.json"
+          },
+          {
+            "book": "DraftKings",
+            "observedAt": "2026-10-20T19:56:19Z",
+            "spreadHome": 2.5,
+            "spreadHomePrice": -105,
+            "spreadAway": -2.5,
+            "spreadAwayPrice": -115,
+            "total": 44.5,
+            "overPrice": -115,
+            "underPrice": -105,
+            "moneylineHome": 120,
+            "moneylineAway": -142,
+            "source": "The Odds API",
+            "sourceSnapshot": "data/markets-sportsbooks.json"
           }
         ],
-        "note": "Final-window FanDuel and DraftKings observations will be captured independently by the immutable market-lock workflow. Consensus/percentage fields are research-only and are not model inputs."
+        "note": "Final-window FanDuel and DraftKings observations will be captured independently by the immutable market-lock workflow. Consensus/percentage fields are research-only and are not model inputs. Current FanDuel and DraftKings quotes are context only. Publication-time market locks remain pending and are stored separately against the immutable foundation; quotes do not change the canonical projection.",
+        "provider": "The Odds API"
       },
       "benchmarks": {
         "sagarin": {
@@ -961,8 +992,8 @@
       },
       "researchMarketComparison": {
         "status": "BENCHMARK_ONLY_NOT_CANONICAL_EDGE",
-        "marketObservedAt": null,
-        "book": null,
+        "marketObservedAt": "2026-10-20T19:56:42Z",
+        "book": "FanDuel",
         "spread": {
           "side": "Sam Houston",
           "foundationSpreadHome": 0.3864906855700596,
@@ -972,8 +1003,8 @@
         "total": {
           "direction": "UNDER",
           "foundationTotal": 42.259471592172886,
-          "marketTotal": 45.0,
-          "differencePoints": 2.7405284078271137
+          "marketTotal": 44.5,
+          "differencePoints": 2.2405284078271137
         },
         "canonicalInfluence": false
       }
