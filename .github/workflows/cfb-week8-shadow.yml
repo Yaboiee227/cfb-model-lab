@@ -1,0 +1,57 @@
+name: CFB Week 8 shadow build
+on:
+  push:
+    paths:
+      - 'scripts/cfb_shadow_engine.py'
+      - 'tests/test_cfb_shadow_engine.py'
+      - 'cfb/pregame/week-08-tuesday-open.json'
+      - '.github/workflows/cfb-week8-shadow.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: cfb-week8-shadow
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check numpy
+      - name: Test shadow engine
+        run: python -m unittest tests.test_cfb_shadow_engine -v
+      - name: Build pre-Week-8 Tuesday shadow projections
+        run: |
+          python scripts/cfb_shadow_engine.py \
+            --input cfb/pregame/week-08-tuesday-open.json \
+            --output cfb/shadow/week-08-tuesday.json \
+            --as-of '2026-10-20T00:00:00-04:00' \
+            --start '2026-08-20T00:00:00-04:00'
+      - name: Assert shadow-only safety labels
+        run: |
+          python - <<'PY'
+          import json
+          p='cfb/shadow/week-08-tuesday.json'
+          d=json.load(open(p))
+          assert d['role']=='SHADOW_CHALLENGER_ONLY'
+          assert d['canonicalInfluence'] is False
+          assert d['source']['marketDataUsed'] is False
+          assert d['source']['externalRatingsUsed'] is False
+          assert d['source']['postKickoffDataUsed'] is False
+          assert all(g['status'] in {'SHADOW_READY','SHADOW_REVIEW'} for g in d['games'])
+          print('shadow safety assertions passed')
+          PY
+      - name: Commit shadow output
+        run: |
+          git config user.name "cb-model-shadow-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git pull --rebase origin main
+          git add cfb/shadow/week-08-tuesday.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Build Week 8 Tuesday shadow projections'
+            git push
+          fi
