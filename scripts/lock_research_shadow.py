@@ -4,7 +4,8 @@
 The output is immutable by policy: if it already exists, the script verifies the
 stored digest and source payload rather than rewriting history. No market data is
 added here; this lock exists solely to preserve the exact research projection
-that was available before kickoff.
+that was available before kickoff. Stable source IDs/date metadata are preserved
+when present so later grading can avoid team-name guessing.
 """
 from __future__ import annotations
 
@@ -47,12 +48,14 @@ def build_lock(source:dict[str,Any],locked_at:datetime)->dict[str,Any]:
         if missing:
             raise ValueError(f"{g['gameId']} missing projection fields: {missing}")
         payload={
-            'gameId':g['gameId'],'awayTeam':g['awayTeam'],'homeTeam':g['homeTeam'],'kickoff':g['kickoff'],
+            'gameId':g['gameId'],
+            **{k:g[k] for k in ('sourceGameId','gameDateET','neutralSite') if k in g and g.get(k) is not None},
+            'awayTeam':g['awayTeam'],'homeTeam':g['homeTeam'],'kickoff':g['kickoff'],
             **{k:g[k] for k in required},
         }
         games.append({**payload,'projectionDigest':digest(payload)})
     body={
-        'schemaVersion':1,'league':source.get('league'),'season':source.get('season'),'week':source.get('week'),
+        'schemaVersion':2,'league':source.get('league'),'season':source.get('season'),'week':source.get('week'),
         'role':'IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK','canonicalInfluence':False,'canonicalPromotionAuthorized':False,
         'modelId':source.get('modelId'),'sourceAsOf':source.get('asOf'),'lockedAt':iso(locked_at),
         'lockedParameters':source.get('lockedParameters'),'structuralHomeMarginAdvantage':source.get('structuralHomeMarginAdvantage'),
