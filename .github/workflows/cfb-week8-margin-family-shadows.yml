@@ -1,0 +1,66 @@
+name: CFB Week 8 margin-family shadows
+on:
+  push:
+    paths:
+      - 'scripts/cfb_week8_margin_family_shadows.py'
+      - 'tests/test_cfb_week8_margin_family_shadows.py'
+      - 'cfb/validation/week-08-feature-family-validation.json'
+      - 'cfb/shadow/week-08-tuesday.json'
+      - 'cfb/pregame/week-08-tuesday-effective.json'
+      - '.github/workflows/cfb-week8-margin-family-shadows.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: cfb-week8-margin-family-shadows
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check numpy
+      - name: Test family-shadow helpers
+        run: python -m unittest tests.test_cfb_week8_margin_family_shadows -v
+      - name: Build prospective family shadows
+        run: |
+          python scripts/cfb_week8_margin_family_shadows.py \
+            --state cfb/pregame/week-08-tuesday-effective.json \
+            --simple cfb/shadow/week-08-tuesday.json \
+            --validation cfb/validation/week-08-feature-family-validation.json \
+            --as-of '2026-10-20T00:00:00-04:00' \
+            --output cfb/shadow/week-08-tuesday-margin-families.json
+      - name: Assert prospective shadow policy
+        run: |
+          python - <<'PY'
+          import json
+          p='cfb/shadow/week-08-tuesday-margin-families.json'
+          d=json.load(open(p))
+          assert d['role']=='PROSPECTIVE_ISOLATED_MARGIN_FAMILY_SHADOWS'
+          assert d['canonicalInfluence'] is False
+          assert set(d['eligibleFamilies'])=={'efficiency','drive_control','discipline'}
+          assert d['trainingPolicy']['priorSeasonTeamStateCarryover'] is False
+          assert d['trainingPolicy']['marketDataUsed'] is False
+          assert d['trainingPolicy']['externalRatingsUsed'] is False
+          assert d['trainingPolicy']['sameWeekResultLeakage'] is False
+          assert len(d['games'])==3
+          assert all(g['status']=='PROSPECTIVE_MARGIN_FAMILY_SHADOWS_READY' for g in d['games'])
+          assert all(len(g['familyShadows'])==3 for g in d['games'])
+          print(json.dumps({'families':d['eligibleFamilies'],'games':[{ 'gameId':g['gameId'],'shadows':[{'family':s['family'],'spread':s['projectedSpreadHome']} for s in g['familyShadows']]} for g in d['games']]},indent=2))
+          PY
+      - name: Commit family shadows
+        run: |
+          git config user.name "cb-model-shadow-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add cfb/shadow/week-08-tuesday-margin-families.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Build Week 8 isolated margin-family shadows'
+          for attempt in 1 2 3; do
+            if git push; then exit 0; fi
+            git pull --rebase origin main
+          done
+          git push
