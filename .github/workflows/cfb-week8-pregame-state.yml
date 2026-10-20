@@ -3,11 +3,18 @@ on:
   push:
     paths:
       - 'cfb/pregame/week-08-tuesday-open.json'
+      - 'cfb/pregame/week-08-wednesday-effective.json'
+      - 'cfb/pregame/week-08-thursday-effective.json'
+      - 'cfb/pregame/week-08-active-through-thursday.json'
+      - 'cfb/research-locks/week-08-foundation-full.json'
       - 'cfb/pregame-refresh/week-08-tuesday-*.json'
       - 'scripts/merge_pregame_refresh.py'
       - 'scripts/validate_pregame_state.py'
+      - 'scripts/cfb_active_window_state.py'
+      - 'scripts/cfb_research_pregame_audit.py'
       - 'tests/test_merge_pregame_refresh.py'
       - 'tests/test_validate_pregame_state.py'
+      - 'data/team-aliases.json'
       - '.github/workflows/cfb-week8-pregame-state.yml'
   workflow_dispatch:
 permissions:
@@ -56,15 +63,42 @@ jobs:
               assert p['home'].get('sourceConflict'), p['home']
           print('unresolved QB state and source-conflict handling verified')
           PY
-      - name: Run non-mutating readiness audit
+      - name: Run non-mutating Tuesday readiness audit
         run: python scripts/validate_pregame_state.py cfb/pregame/week-08-tuesday-effective.json --output cfb/pregame/week-08-tuesday-readiness.json
-      - name: Commit effective state and readiness report
+      - name: Build unified active window through Thursday
+        run: |
+          python scripts/cfb_active_window_state.py \
+            --scope cfb/pregame/week-08-active-through-thursday.json \
+            --foundation cfb/research-locks/week-08-foundation-full.json \
+            --context cfb/pregame/week-08-tuesday-effective.json \
+            --context cfb/pregame/week-08-wednesday-effective.json \
+            --context cfb/pregame/week-08-thursday-effective.json \
+            --output cfb/pregame/week-08-through-thursday-effective.json
+      - name: Assert active window integrity
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('cfb/pregame/week-08-through-thursday-effective.json'))
+          assert d['role']=='ACTIVE_WINDOW_INTEGRATED_EFFECTIVE_STATE'
+          assert d['canonicalInfluence'] is False
+          assert d['canonicalPromotionAuthorized'] is False
+          assert len(d['games'])==7
+          assert d['pauseBoundary']['beforeGameDateET']=='2026-10-23'
+          assert all(g['gameDateET'] <= '2026-10-22' for g in d['games'])
+          assert all(g['frozenFoundationReference']['canonicalInfluence'] is False for g in d['games'])
+          assert all(g['frozenFoundationReference']['projectionDigest'] for g in d['games'])
+          print(json.dumps({'observedAt':d['observedAt'],'games':len(d['games']),'pauseBoundary':d['pauseBoundary']},indent=2))
+          PY
+      - name: Commit effective states and readiness report
         run: |
           git config user.name "cb-model-pregame-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add cfb/pregame/week-08-tuesday-effective.json cfb/pregame/week-08-tuesday-readiness.json
+          git add \
+            cfb/pregame/week-08-tuesday-effective.json \
+            cfb/pregame/week-08-tuesday-readiness.json \
+            cfb/pregame/week-08-through-thursday-effective.json
           if ! git diff --cached --quiet; then
-            git commit -m 'Refresh Week 8 Tuesday effective pregame state'
+            git commit -m 'Refresh Week 8 active pregame state through Thursday'
             for attempt in 1 2 3; do
               if git push; then exit 0; fi
               git pull --rebase origin main
