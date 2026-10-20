@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "status": "OPEN",
+  "dateWindow": ["2026-10-20"],
+  "policy": "Pregame-only working state. Canonical CB projections remain independent of unvalidated benchmarks/context. Unknown stays unknown. This file may be refreshed until each game's projection/market freeze.",
+  "games": [
+    {
+      "gameId": "2026-10-20-MIDDLETENNESSEE-FIU",
+      "awayTeam": "Middle Tennessee",
+      "homeTeam": "FIU",
+      "conference": "Conference USA",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "venue": {"name": "Pitbull Stadium", "city": "Miami", "state": "FL", "surface": "Artificial Turf"},
+      "records": {"away": "3-3", "home": "3-3"},
+      "canonicalProjection": {"status": "PENDING_REPRODUCIBLE_ENGINE", "projectedSpreadHome": null, "projectedTotal": null, "projectedWinner": null, "homeWinProbability": null},
+      "personnel": {
+        "status": "REFRESH_REQUIRED",
+        "away": {"reportedInjuries": [], "note": "No current injuries listed by Covers at capture time."},
+        "home": {"reportedInjuries": [
+          {"player": "Amari Carrie", "position": "RB", "status": "OUT", "detail": "Undisclosed"},
+          {"player": "K. Schaeffer", "position": "TE", "status": "QUESTIONABLE", "detail": "Undisclosed"},
+          {"player": "A. Passley", "position": "TE", "status": "QUESTIONABLE", "detail": "Undisclosed"},
+          {"player": "N. Sidan", "position": "K", "status": "QUESTIONABLE", "detail": "Undisclosed"}
+        ]},
+        "sources": ["https://www.covers.com/sport/football/ncaaf/matchup/378460"],
+        "canonicalInfluence": "Only already-authorized personnel logic may affect the still-open CB projection; one-hour refresh required."
+      },
+      "weather": {
+        "status": "CURRENT_CONTEXT_SOURCE_DISAGREEMENT",
+        "temperatureFRange": [78, 80],
+        "precipProbabilityPctRange": [0, 2],
+        "windMphRange": [9, 15],
+        "windDirection": "NE/NNE",
+        "note": "Action Network and Blue Chip/WeatherAPI agree on low precipitation but differ on wind magnitude. Recheck an authoritative stadium-level forecast in the one-hour window.",
+        "sources": ["https://www.actionnetwork.com/ncaaf/weather", "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-middle-tennessee-florida-international/"]
+      },
+      "travelRest": {"awayMiles": 781, "awayBodyClockShiftHours": 1, "awayRestDays": 7, "homeRestDays": 6, "status": "CONTEXT_ONLY", "source": "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-middle-tennessee-florida-international/"},
+      "market": {
+        "status": "OPEN_NOT_LOCKED",
+        "observations": [
+          {"book": "FanDuel", "observedAt": "2026-10-19T22:00:00Z", "spreadHome": -9.5, "total": 45.5, "moneylineAway": 300, "moneylineHome": -385, "source": "https://agentbets.ai/odds/fanduel/ncaaf/"},
+          {"book": "BetMGM", "observedAt": "2026-10-19T21:00:00Z", "spreadHome": -10.0, "total": 45.5, "moneylineAway": 310, "moneylineHome": -375, "source": "https://agentbets.ai/odds/betmgm/ncaaf/"}
+        ],
+        "note": "Context only until publication-time market is explicitly saved and locked."
+      },
+      "benchmarks": {
+        "sagarin": {"status": "CURRENT_FOR_WEEK_8_OPEN", "ratingsThrough": "2026-10-17", "impliedSpreadHome": -12.35, "source": "https://sagarin.com/sports/cfsend.htm"},
+        "spPlus": {"status": "PENDING_CURRENT_OFFICIAL_CAPTURE", "source": "https://www.espn.com/college-football/story/_/id/49868647/2026-college-football-sp+-rankings-all-138-fbs-teams", "note": "Official ESPN page currently blocks automated retrieval; do not substitute mirrors."},
+        "refMetrics": {"status": "NOT_YET_POSTED", "source": "https://www.refmetrics.com/ncaa-football/todays-games", "canonicalInfluence": false}
+      },
+      "audit": {"priority": "HIGH_TUESDAY", "materialOpenItems": ["reproducible CB engine", "final QB/personnel confirmation", "one-hour weather refresh", "referee/crew assignment", "publication-time market lock", "current official SP+ capture"]}
+    },
+    {
+      "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
+      "awayTeam": "Missouri State",
+      "homeTeam": "Delaware",
+      "conference": "Conference USA",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "venue": {"name": "Delaware Stadium", "city": "Newark", "state": "DE", "surface": "Artificial Turf"},
+      "records": {"away": "2-4", "home": "2-4"},
+      "canonicalProjection": {"status": "PENDING_REPRODUCIBLE_ENGINE", "projectedSpreadHome": null, "projectedTotal": null, "projectedWinner": null, "homeWinProbability": null},
+      "personnel": {
+        "status": "MATERIAL_QB_ISSUE_OPEN",
+        "away": {"reportedInjuries": [
+          {"player": "Josh Joyner", "position": "RB", "status": "QUESTIONABLE", "detail": "Undisclosed"},
+          {"player": "James Rexroat", "position": "TE", "status": "QUESTIONABLE", "detail": "Undisclosed"}
+        ], "lastKnownStartingQB": "Henry Belin IV"},
+        "home": {"reportedInjuries": [
+          {"player": "Nick Minicucci", "position": "QB", "status": "OUT", "detail": "Leg"},
+          {"player": "T. Salazer", "position": "WR", "status": "OUT", "detail": "Undisclosed"},
+          {"player": "B. Rehmann", "position": "WR", "status": "QUESTIONABLE", "detail": "Undisclosed"},
+          {"player": "G. Spiller", "position": "RB", "status": "OUT", "detail": "Season/undisclosed"}
+        ], "startingQB": "UNRESOLVED_AFTER_MINICUCCI_OUT"},
+        "sources": ["https://www.covers.com/sport/football/ncaaf/matchup/379250", "https://www.covers.com/sport/football/ncaaf/teams/main/missouri-state-bears/injuries"],
+        "canonicalInfluence": "Starting-QB replacement is a material reliability event; no arbitrary point value may be invented. Confirm replacement and use only established personnel logic before freeze."
+      },
+      "weather": {
+        "status": "LOW_IMPACT_CURRENT_CONTEXT",
+        "temperatureFRange": [56, 60],
+        "precipProbabilityPctRange": [0, 4],
+        "windMphRange": [6, 9],
+        "gustMph": 17,
+        "windDirection": "NNE",
+        "sources": ["https://www.actionnetwork.com/ncaaf/weather", "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-missouri-state-delaware/"]
+      },
+      "travelRest": {"awayMiles": 965, "awayBodyClockShiftHours": 1, "awayRestDays": 6, "homeRestDays": 7, "status": "CONTEXT_ONLY", "source": "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-missouri-state-delaware/"},
+      "market": {
+        "status": "OPEN_NOT_LOCKED",
+        "observations": [
+          {"book": "FanDuel", "observedAt": "2026-10-19T22:00:00Z", "spreadHome": -2.5, "total": 52.5, "moneylineAway": 126, "moneylineHome": -152, "source": "https://agentbets.ai/odds/fanduel/ncaaf/"},
+          {"book": "BetMGM", "observedAt": "2026-10-19T21:00:00Z", "spreadHome": -3.0, "total": 53.5, "moneylineAway": 130, "moneylineHome": -160, "source": "https://agentbets.ai/odds/betmgm/ncaaf/"}
+        ],
+        "note": "Material market/model benchmark disagreement is possible; do not let current market set the canonical projection."
+      },
+      "benchmarks": {
+        "sagarin": {"status": "CURRENT_FOR_WEEK_8_OPEN", "ratingsThrough": "2026-10-17", "impliedSpreadHome": -6.06, "source": "https://sagarin.com/sports/cfsend.htm"},
+        "spPlus": {"status": "PENDING_CURRENT_OFFICIAL_CAPTURE", "source": "https://www.espn.com/college-football/story/_/id/49868647/2026-college-football-sp+-rankings-all-138-fbs-teams"},
+        "refMetrics": {"status": "NOT_YET_POSTED", "source": "https://www.refmetrics.com/ncaa-football/todays-games", "canonicalInfluence": false}
+      },
+      "audit": {"priority": "CRITICAL_TUESDAY_QB", "materialOpenItems": ["reproducible CB engine", "Delaware replacement QB confirmation", "Missouri State questionable RB/TE status", "one-hour weather refresh", "referee/crew assignment", "publication-time market lock", "current official SP+ capture"]}
+    },
+    {
+      "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
+      "awayTeam": "South Alabama",
+      "homeTeam": "Marshall",
+      "conference": "Sun Belt",
+      "kickoff": "2026-10-20T23:30:00Z",
+      "venue": {"name": "Joan C. Edwards Stadium", "city": "Huntington", "state": "WV", "surface": "Artificial Turf"},
+      "records": {"away": "4-2", "home": "3-3"},
+      "canonicalProjection": {"status": "PENDING_REPRODUCIBLE_ENGINE", "projectedSpreadHome": null, "projectedTotal": null, "projectedWinner": null, "homeWinProbability": null},
+      "personnel": {
+        "status": "REFRESH_REQUIRED",
+        "away": {"reportedInjuries": [], "note": "No sufficiently complete authoritative injury list captured yet; official South Alabama game notes are available and should be checked again pregame."},
+        "home": {"reportedInjuries": [], "note": "No sufficiently complete authoritative injury list captured yet; refresh required."},
+        "sources": ["https://usajaguars.com/news/2026/10/17/football-jags-head-to-marshall-for-tuesday-night-game.aspx"],
+        "context": ["South Alabama offensive line named to the Joe Moore Midseason Honor Roll on Oct. 14."],
+        "canonicalInfluence": "Do not infer health from missing public injury data. Unknown remains unknown."
+      },
+      "weather": {
+        "status": "LOW_IMPACT_CURRENT_CONTEXT",
+        "temperatureFRange": [54, 59],
+        "precipProbabilityPctRange": [0, 4],
+        "windMphRange": [3, 4],
+        "windDirection": "NE",
+        "sources": ["https://www.actionnetwork.com/ncaaf-game/south-alabama-jaguars-marshall-thundering-herd/289598", "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-south-alabama-marshall/"]
+      },
+      "travelRest": {"awayMiles": 626, "awayBodyClockShiftHours": 1, "awayRestDays": 12, "homeRestDays": 10, "status": "CONTEXT_ONLY", "source": "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-south-alabama-marshall/"},
+      "market": {
+        "status": "OPEN_NOT_LOCKED",
+        "observations": [
+          {"book": "FanDuel", "observedAt": "2026-10-19T22:00:00Z", "spreadHome": 3.5, "total": 64.5, "moneylineAway": -152, "moneylineHome": 126, "source": "https://agentbets.ai/odds/fanduel/ncaaf/"},
+          {"book": "BetMGM", "observedAt": "2026-10-19T21:00:00Z", "spreadHome": 3.0, "total": 63.5, "moneylineAway": -152, "moneylineHome": 125, "source": "https://www.betmgm.com/en/sports/events/south-alabama-marshall-6%3A47294"}
+        ],
+        "note": "Open market only. Save a separate publication-time line immediately before game lock."
+      },
+      "benchmarks": {
+        "sagarin": {"status": "CURRENT_FOR_WEEK_8_OPEN", "ratingsThrough": "2026-10-17", "impliedSpreadHome": 5.14, "source": "https://sagarin.com/sports/cfsend.htm"},
+        "spPlus": {"status": "PENDING_CURRENT_OFFICIAL_CAPTURE", "source": "https://www.espn.com/college-football/story/_/id/49868647/2026-college-football-sp+-rankings-all-138-fbs-teams"},
+        "refMetrics": {"status": "NOT_YET_POSTED", "source": "https://www.refmetrics.com/ncaa-football/todays-games", "canonicalInfluence": false}
+      },
+      "turnoverContext": {"status": "RESEARCH_CONTEXT", "homeRecentTurnovers": 6, "homeSeasonTurnoverMargin": -9, "note": "Do not extrapolate recent turnover results directly; evaluate regression/ball-security features only through established model logic.", "source": "https://www.marshall.edu/wmul/2026/10/19/marshall-gets-set-for-a-tuesday-night-primetime-showdown/"},
+      "audit": {"priority": "HIGH_TUESDAY", "materialOpenItems": ["reproducible CB engine", "complete injury/personnel confirmation", "one-hour weather refresh", "referee/crew assignment", "publication-time market lock", "current official SP+ capture"]}
+    }
+  ]
+}
