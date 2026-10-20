@@ -1,0 +1,66 @@
+name: CFB Week 8 pregame effective state
+on:
+  push:
+    paths:
+      - 'cfb/pregame/week-08-tuesday-open.json'
+      - 'cfb/pregame-refresh/week-08-tuesday-*.json'
+      - 'scripts/merge_pregame_refresh.py'
+      - 'scripts/validate_pregame_state.py'
+      - 'tests/test_merge_pregame_refresh.py'
+      - 'tests/test_validate_pregame_state.py'
+      - '.github/workflows/cfb-week8-pregame-state.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: cfb-week8-pregame-effective
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Test pregame merge and readiness rules
+        run: |
+          python -m unittest tests.test_merge_pregame_refresh -v
+          python -m unittest tests.test_validate_pregame_state -v
+      - name: Build effective Tuesday state
+        run: |
+          overlays=()
+          while IFS= read -r f; do overlays+=(--overlay "$f"); done < <(find cfb/pregame-refresh -maxdepth 1 -type f -name 'week-08-tuesday-*.json' | sort)
+          test ${#overlays[@]} -gt 0
+          python scripts/merge_pregame_refresh.py \
+            --base cfb/pregame/week-08-tuesday-open.json \
+            "${overlays[@]}" \
+            --output cfb/pregame/week-08-tuesday-effective.json
+      - name: Verify official QB corrections are effective
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('cfb/pregame/week-08-tuesday-effective.json'))
+          g=next(x for x in d['games'] if x['gameId']=='2026-10-20-MISSOURISTATE-DELAWARE')
+          p=g['personnel']
+          assert p['status']=='MATERIAL_QB_STATUS_OPEN', p
+          assert p['home']['startingQB']=='UNRESOLVED_TUESDAY_STARTER', p['home']
+          assert p['home']['mostRecentStartingQB']=='Tyler Bell', p['home']
+          assert p['away']['startingQB']=='UNRESOLVED_TUESDAY_STARTER', p['away']
+          assert p['away']['mostRecentStartingQB']=='Henry Belin IV', p['away']
+          minicucci=next(x for x in p['home']['reportedInjuries'] if x['player']=='Nick Minicucci')
+          assert minicucci['status']=='MISSED_PREVIOUS_TWO_GAMES', minicucci
+          print('official QB corrections effective')
+          PY
+      - name: Run non-mutating readiness audit
+        run: python scripts/validate_pregame_state.py cfb/pregame/week-08-tuesday-effective.json --output cfb/pregame/week-08-tuesday-readiness.json
+      - name: Commit effective state and readiness report
+        run: |
+          git config user.name "cb-model-pregame-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add cfb/pregame/week-08-tuesday-effective.json cfb/pregame/week-08-tuesday-readiness.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Refresh Week 8 Tuesday effective pregame state'
+            git pull --rebase origin main
+            git push
+          fi
