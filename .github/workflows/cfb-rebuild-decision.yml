@@ -4,10 +4,11 @@ on:
     paths:
       - 'scripts/cfb_rebuild_decision.py'
       - 'tests/test_cfb_rebuild_decision.py'
-      - 'cfb/shadow/week-08-tuesday.json'
+      - 'cfb/shadow/week-08-tuesday-foundation.json'
       - 'cfb/shadow/week-08-tuesday-rich.json'
-      - 'cfb/validation/week-08-rebuild-walkforward.json'
+      - 'cfb/validation/week-08-simple-foundation-validation.json'
       - 'cfb/validation/week-08-multiseason-walkforward.json'
+      - 'cfb/validation/week-08-foundation-feature-family-validation.json'
       - 'cfb/validation/week-07-canonical-reference.json'
       - '.github/workflows/cfb-rebuild-decision.yml'
   workflow_dispatch:
@@ -28,19 +29,22 @@ jobs:
         run: python -m unittest tests.test_cfb_rebuild_decision -v
       - name: Build decision registry
         run: python scripts/cfb_rebuild_decision.py
-      - name: Assert no implicit promotion
+      - name: Assert validated foundation without implicit promotion
         run: |
           python - <<'PY'
           import json
           p='cfb/validation/week-08-rebuild-decision.json'
           d=json.load(open(p))
-          assert d['status']=='LEAD_SHADOW_IDENTIFIED', d
-          assert d['leadShadowCandidate']=='cfb-rebuild-alpha-shadow-v8h', d
+          assert d['status']=='VALIDATED_FOUNDATION_CANDIDATE_IDENTIFIED', d
+          assert d['leadRebuildCandidate']=='cfb-rebuild-foundation-v1-shadow', d
+          assert d['leadCandidateTier']=='VALIDATED_FOUNDATION_PROSPECTIVE_SHADOW'
           assert d['canonicalInfluence'] is False
           assert d['canonicalPromotionAuthorized'] is False
-          assert d['week8Policy']['useLeadShadowAsCanonical'] is False
-          assert d['evidence']['richRebuild']['evidenceStatus']=='RICH_REJECTED'
-          print(json.dumps({'status':d['status'],'lead':d['leadShadowCandidate'],'canonicalPromotionAuthorized':d['canonicalPromotionAuthorized']}, indent=2))
+          assert d['week8Policy']['useLeadCandidateAsCanonical'] is False
+          assert d['week8Policy']['publishLeadCandidateAsEstablished09J'] is False
+          assert d['evidence']['richBundle']['evidenceStatus']=='RICH_REJECTED'
+          assert d['evidence']['incrementalFeatureFamiliesAgainstFoundation']['eligibleFamilies']==[]
+          print(json.dumps({'status':d['status'],'lead':d['leadRebuildCandidate'],'tier':d['leadCandidateTier'],'canonicalPromotionAuthorized':d['canonicalPromotionAuthorized']}, indent=2))
           PY
       - name: Commit decision registry
         run: |
