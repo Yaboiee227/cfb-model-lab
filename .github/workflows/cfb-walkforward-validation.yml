@@ -1,0 +1,76 @@
+name: CFB rebuild walk-forward validation
+on:
+  push:
+    paths:
+      - 'scripts/cfb_walkforward_validation.py'
+      - 'tests/test_cfb_walkforward_validation.py'
+      - 'scripts/cfb_rich_challenger.py'
+      - 'scripts/cfb_shadow_engine.py'
+      - 'scripts/run_cfb_shadow_week8.py'
+      - 'cfb/shadow/week-08-tuesday.json'
+      - 'cfb/validation/week-07-canonical-reference.json'
+      - '.github/workflows/cfb-walkforward-validation.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: cfb-walkforward-validation
+  cancel-in-progress: false
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check numpy
+      - name: Test nested walk-forward logic
+        run: python -m unittest tests.test_cfb_walkforward_validation -v
+      - name: Run nested weekly walk-forward
+        run: |
+          python scripts/cfb_walkforward_validation.py \
+            --as-of '2026-10-20T00:00:00-04:00' \
+            --start '2026-08-20T00:00:00-04:00' \
+            --shadow cfb/shadow/week-08-tuesday.json \
+            --reference cfb/validation/week-07-canonical-reference.json \
+            --output cfb/validation/week-08-rebuild-walkforward.json
+      - name: Assert anti-leakage and print evidence
+        run: |
+          python - <<'PY'
+          import json
+          p='cfb/validation/week-08-rebuild-walkforward.json'
+          d=json.load(open(p))
+          assert d['role']=='REBUILD_WALKFORWARD_RESEARCH'
+          assert d['canonicalInfluence'] is False
+          assert d['source']['marketDataUsed'] is False
+          assert d['source']['externalRatingsUsed'] is False
+          assert d['source']['sameWeekLeakagePrevented'] is True
+          wf=d['walkForward']
+          assert len(wf['folds']) >= 2, wf['folds']
+          assert wf['aggregate']['games'] >= 20, wf['aggregate']
+          print(json.dumps({
+              'folds': len(wf['folds']),
+              'aggregate': wf['aggregate'],
+              'prospectiveShadowGatePass': wf['prospectiveShadowGatePass'],
+              'week7Reference': d['establishedWeek7Reference'],
+          }, indent=2))
+          PY
+      - name: Commit validation evidence
+        run: |
+          git config user.name "cb-model-validation-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add cfb/validation/week-08-rebuild-walkforward.json
+          if git diff --cached --quiet; then
+            echo 'Walk-forward evidence unchanged.'
+            exit 0
+          fi
+          git commit -m 'Refresh CFB rebuild walk-forward evidence'
+          for attempt in 1 2 3; do
+            if git push; then exit 0; fi
+            git pull --rebase origin main
+          done
+          git push
