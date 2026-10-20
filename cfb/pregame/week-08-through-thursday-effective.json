@@ -1,0 +1,491 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "role": "ACTIVE_WINDOW_INTEGRATED_EFFECTIVE_STATE",
+  "status": "OPEN_EFFECTIVE_THROUGH_THURSDAY",
+  "canonicalInfluence": false,
+  "canonicalPromotionAuthorized": false,
+  "observedAt": "2026-10-20T15:05:55Z",
+  "dateWindowET": ["2026-10-20", "2026-10-22"],
+  "activeScope": "cfb/pregame/week-08-active-through-thursday.json",
+  "sourceSchedule": "cfb/pregame/week-08-schedule-through-thursday.json",
+  "frozenFoundation": "cfb/research-locks/week-08-foundation-full.json",
+  "sourceRegistry": "MODEL_SOURCES.md",
+  "policy": "Pregame-only integrated working state for the active Tuesday-through-Thursday window. The frozen Week 8 foundation is immutable, market-independent and research-only. Markets, injuries, weather, SP+, Sagarin, RefMetrics, trends and other external signals remain context/benchmark/challenger inputs unless separately validated and explicitly promoted. Unknown stays unknown. No manual point adjustment is invented.",
+  "sourceStates": [
+    "cfb/pregame/week-08-tuesday-effective.json",
+    "cfb/pregame/week-08-wednesday-effective.json",
+    "cfb/pregame/week-08-thursday-effective.json"
+  ],
+  "currentMarketObservation": {
+    "observedAt": "2026-10-20T15:05:55Z",
+    "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?itm_content=NCAA+Football&tb_edate=n30days&tb_eg=NCAA+Football&tb_page=1",
+    "sourceRole": "APPROVED_BOOK_CONTEXT_NOT_PUBLICATION_LOCK",
+    "note": "DraftKings page states values may differ by jurisdiction. These observations are timestamped research/benchmark context only; a separate immutable final-window publication market lock is still required. Betting split percentages are excluded."
+  },
+  "games": [
+    {
+      "gameId": "2026-10-20-MIDDLETENNESSEE-FLORIDAINTERNATIONAL",
+      "sourceGameId": "401871055",
+      "awayTeam": "Middle Tennessee",
+      "homeTeam": "Florida International",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "frozenFoundationReference": {
+        "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
+        "canonicalInfluence": false,
+        "modelId": "cfb-rebuild-foundation-v1-shadow",
+        "projectedAwayPoints": 14.372105636229959,
+        "projectedHomePoints": 28.349516713342496,
+        "projectedMarginHome": 13.977411077112537,
+        "projectedSpreadHome": -13.977411077112537,
+        "projectedTotal": 42.721622349572456,
+        "homeWinProbability": 81.12113387563811,
+        "projectedWinner": "Florida International",
+        "projectionDigest": "d837003b6ba482064b0d61e2f4d5d519d1110c204aabdca37ab58edaf15a4570",
+        "source": "cfb/research-locks/week-08-foundation-full.json"
+      },
+      "personnel": {
+        "status": "CURRENT_THIRD_PARTY_CHECK_NO_NEW_OFFICIAL_MATERIAL_CHANGE",
+        "officialStateSource": "cfb/pregame/week-08-tuesday-effective.json",
+        "away": {"injuryContext": "No injuries listed by Covers at current check."},
+        "home": {"injuryContext": ["A. Carrie RB OUT", "K. Schaeffer TE QUESTIONABLE", "A. Passley TE QUESTIONABLE", "N. Sidan K QUESTIONABLE"]},
+        "currentThirdPartySource": "https://www.covers.com/sport/football/ncaaf/matchup/378460",
+        "currentThirdPartyCheckedAt": "2026-10-20T15:05:55Z",
+        "canonicalInfluence": false
+      },
+      "weather": {
+        "status": "NWS_CURRENT_MATERIAL_WIND_FINAL_RECHECK_REQUIRED",
+        "sourceState": "cfb/pregame/week-08-tuesday-effective.json",
+        "lastAuthoritativeObservationAt": "2026-10-20T11:30:42Z",
+        "note": "Existing NWS state flags material wind/gust uncertainty. Preserve it and perform the final-window stadium-level recheck; no unvalidated manual adjustment."
+      },
+      "market": {
+        "status": "CURRENT_APPROVED_BOOK_CONTEXT_NOT_LOCKED",
+        "book": "DraftKings",
+        "observedAt": "2026-10-20T15:05:55Z",
+        "spreadHome": -10.0,
+        "spreadHomePrice": -110,
+        "spreadAwayPrice": -110,
+        "total": 45.5,
+        "overPrice": -105,
+        "underPrice": -115,
+        "moneylineHome": -380,
+        "moneylineAway": 300,
+        "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?itm_content=NCAA+Football&tb_edate=n30days&tb_eg=NCAA+Football&tb_page=1"
+      },
+      "researchMarketComparison": {
+        "status": "BENCHMARK_ONLY_NOT_CANONICAL_EDGE",
+        "spreadSide": "Florida International",
+        "foundationSpreadForSide": -13.977411077112537,
+        "marketSpreadForSide": -10.0,
+        "foundationAdvantagePoints": 3.977411077112537,
+        "totalDirection": "UNDER",
+        "foundationVsMarketTotalPoints": 2.778377650427544,
+        "canonicalInfluence": false
+      },
+      "benchmarks": {
+        "sagarin": {"status": "CURRENT_FOR_WEEK_8_OPEN", "canonicalInfluence": false},
+        "spPlus": {"status": "PENDING_CURRENT_OFFICIAL_CAPTURE", "canonicalInfluence": false},
+        "refMetrics": {"status": "NOT_YET_POSTED", "canonicalInfluence": false}
+      }
+    },
+    {
+      "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
+      "sourceGameId": "401871069",
+      "awayTeam": "Missouri State",
+      "homeTeam": "Delaware",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "frozenFoundationReference": {
+        "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
+        "canonicalInfluence": false,
+        "modelId": "cfb-rebuild-foundation-v1-shadow",
+        "projectedAwayPoints": 22.546887989883015,
+        "projectedHomePoints": 29.557645575997395,
+        "projectedMarginHome": 7.01075758611438,
+        "projectedSpreadHome": -7.01075758611438,
+        "projectedTotal": 52.10453356588041,
+        "homeWinProbability": 67.09639860904643,
+        "projectedWinner": "Delaware",
+        "projectionDigest": "c2f169318d0835551d45c972f4dbf953b36a585e1579988b846e2aae084321c8",
+        "source": "cfb/research-locks/week-08-foundation-full.json"
+      },
+      "personnel": {
+        "status": "MATERIAL_QB_STATUS_OPEN_SOURCE_CONFLICT",
+        "officialStateSource": "cfb/pregame/week-08-tuesday-effective.json",
+        "away": {"mostRecentStartingQB": "Henry Belin IV", "startingQB": "UNRESOLVED_TUESDAY_STARTER", "injuryContext": ["J. Rexroat TE QUESTIONABLE", "J. Joyner RB QUESTIONABLE"]},
+        "home": {"mostRecentStartingQB": "Tyler Bell", "startingQB": "UNRESOLVED_TUESDAY_STARTER", "injuryContext": ["N. Minicucci QB OUT - third-party current listing", "T. Salazer WR OUT", "B. Rehmann WR QUESTIONABLE", "G. Spiller RB OUT"]},
+        "currentThirdPartySource": "https://www.covers.com/sport/football/ncaaf/matchup/379250",
+        "currentThirdPartyCheckedAt": "2026-10-20T15:05:55Z",
+        "note": "Do not infer the Tuesday starter from the third-party Minicucci listing. Tyler Bell remains the most recent Delaware starter unless authoritative team information confirms otherwise.",
+        "canonicalInfluence": false
+      },
+      "weather": {
+        "status": "NWS_LOW_TO_MODERATE_WIND_FINAL_RECHECK_REQUIRED",
+        "sourceState": "cfb/pregame/week-08-tuesday-effective.json",
+        "lastAuthoritativeObservationAt": "2026-10-20T11:30:42Z"
+      },
+      "market": {
+        "status": "CURRENT_APPROVED_BOOK_CONTEXT_NOT_LOCKED",
+        "book": "DraftKings",
+        "observedAt": "2026-10-20T15:05:55Z",
+        "spreadHome": -2.5,
+        "spreadHomePrice": -122,
+        "spreadAwayPrice": 102,
+        "total": 52.5,
+        "overPrice": -110,
+        "underPrice": -110,
+        "moneylineHome": -148,
+        "moneylineAway": 124,
+        "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?itm_content=NCAA+Football&tb_edate=n30days&tb_eg=NCAA+Football&tb_page=1"
+      },
+      "researchMarketComparison": {
+        "status": "BENCHMARK_ONLY_NOT_CANONICAL_EDGE",
+        "spreadSide": "Delaware",
+        "foundationSpreadForSide": -7.01075758611438,
+        "marketSpreadForSide": -2.5,
+        "foundationAdvantagePoints": 4.51075758611438,
+        "totalDirection": "UNDER",
+        "foundationVsMarketTotalPoints": 0.3954664341195884,
+        "canonicalInfluence": false
+      },
+      "benchmarks": {
+        "sagarin": {"status": "CURRENT_FOR_WEEK_8_OPEN", "canonicalInfluence": false},
+        "spPlus": {"status": "PENDING_CURRENT_OFFICIAL_CAPTURE", "canonicalInfluence": false},
+        "refMetrics": {"status": "NOT_YET_POSTED", "canonicalInfluence": false}
+      }
+    },
+    {
+      "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
+      "sourceGameId": "401871092",
+      "awayTeam": "South Alabama",
+      "homeTeam": "Marshall",
+      "kickoff": "2026-10-20T23:30:00Z",
+      "frozenFoundationReference": {
+        "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
+        "canonicalInfluence": false,
+        "modelId": "cfb-rebuild-foundation-v1-shadow",
+        "projectedAwayPoints": 36.823832540523625,
+        "projectedHomePoints": 32.71893046434013,
+        "projectedMarginHome": -4.1049020761834925,
+        "projectedSpreadHome": 4.1049020761834925,
+        "projectedTotal": 69.54276300486376,
+        "homeWinProbability": 39.77654933430052,
+        "projectedWinner": "South Alabama",
+        "projectionDigest": "1f3d9455b39a045403e0b5e7616dec22366f2c4669bb1f4903907ab43704b4b2",
+        "source": "cfb/research-locks/week-08-foundation-full.json"
+      },
+      "personnel": {
+        "status": "PARTIAL_THIRD_PARTY_CONTEXT_FINAL_RECHECK_REQUIRED",
+        "officialStateSource": "cfb/pregame/week-08-tuesday-effective.json",
+        "away": {"injuryContext": ["D. White WR QUESTIONABLE - prior third-party context with date-quality warning"]},
+        "home": {"injuryContext": "No injuries reported by Covers at current check."},
+        "currentThirdPartySource": "https://www.covers.com/sport/football/ncaaf/injuries",
+        "currentThirdPartyCheckedAt": "2026-10-20T15:05:55Z",
+        "canonicalInfluence": false
+      },
+      "weather": {
+        "status": "NWS_LOW_IMPACT_FINAL_RECHECK_REQUIRED",
+        "sourceState": "cfb/pregame/week-08-tuesday-effective.json",
+        "lastAuthoritativeObservationAt": "2026-10-20T11:30:42Z"
+      },
+      "market": {
+        "status": "CURRENT_APPROVED_BOOK_CONTEXT_NOT_LOCKED",
+        "book": "DraftKings",
+        "observedAt": "2026-10-20T15:05:55Z",
+        "spreadAway": -3.0,
+        "spreadAwayPrice": -112,
+        "spreadHome": 3.0,
+        "spreadHomePrice": -108,
+        "total": 65.5,
+        "overPrice": -108,
+        "underPrice": -112,
+        "moneylineAway": -162,
+        "moneylineHome": 136,
+        "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?itm_content=NCAA+Football&tb_edate=n30days&tb_eg=NCAA+Football&tb_page=1"
+      },
+      "researchMarketComparison": {
+        "status": "BENCHMARK_ONLY_NOT_CANONICAL_EDGE",
+        "spreadSide": "South Alabama",
+        "foundationSpreadForSide": -4.1049020761834925,
+        "marketSpreadForSide": -3.0,
+        "foundationAdvantagePoints": 1.1049020761834925,
+        "totalDirection": "OVER",
+        "foundationVsMarketTotalPoints": 4.04276300486376,
+        "canonicalInfluence": false
+      },
+      "benchmarks": {
+        "sagarin": {"status": "CURRENT_FOR_WEEK_8_OPEN", "canonicalInfluence": false},
+        "spPlus": {"status": "PENDING_CURRENT_OFFICIAL_CAPTURE", "canonicalInfluence": false},
+        "refMetrics": {"status": "NOT_YET_POSTED", "canonicalInfluence": false}
+      }
+    },
+    {
+      "gameId": "2026-10-21-NEWMEXICOSTATE-SAMHOUSTON",
+      "sourceGameId": "401871070",
+      "awayTeam": "New Mexico State",
+      "homeTeam": "Sam Houston",
+      "kickoff": "2026-10-22T00:00:00Z",
+      "frozenFoundationReference": {
+        "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
+        "canonicalInfluence": false,
+        "modelId": "cfb-rebuild-foundation-v1-shadow",
+        "projectedAwayPoints": 21.322981138871473,
+        "projectedHomePoints": 20.936490453301413,
+        "projectedMarginHome": -0.3864906855700596,
+        "projectedSpreadHome": 0.3864906855700596,
+        "projectedTotal": 42.259471592172886,
+        "homeWinProbability": 49.02673862307157,
+        "projectedWinner": "New Mexico State",
+        "projectionDigest": "76573e65de4174437af8f8b604ec6730d1b183804089c333a6186c8b182c26da",
+        "source": "cfb/research-locks/week-08-foundation-full.json"
+      },
+      "personnel": {
+        "status": "OFFICIAL_BASELINE_CAPTURED_NO_NEW_MATERIAL_QB_CHANGE_FOUND",
+        "officialStateSource": "cfb/pregame/week-08-wednesday-effective.json",
+        "away": {"mostRecentStartingQB": "Adam Damante", "startingQB": "NOT_EXPLICITLY_CONFIRMED_FOR_WEDNESDAY", "injuryContext": ["I. Uvaydov K QUESTIONABLE", "R. Burton RB QUESTIONABLE", "R. Lotten TE QUESTIONABLE"]},
+        "home": {"mostRecentStartingQB": "Landyn Locke", "startingQB": "Landyn Locke", "injuryContext": ["M. Whisner TE QUESTIONABLE", "B. Kuhl TE OUT"]},
+        "currentThirdPartySource": "https://www.covers.com/sport/football/ncaaf/matchup/378124",
+        "currentThirdPartyCheckedAt": "2026-10-20T15:05:55Z",
+        "canonicalInfluence": false
+      },
+      "weather": {
+        "status": "NWS_LOW_IMPACT_BASELINE_CAPTURED_FINAL_RECHECK_REQUIRED",
+        "sourceState": "cfb/pregame/week-08-wednesday-effective.json",
+        "lastAuthoritativeObservationAt": "2026-10-20T12:08:00Z"
+      },
+      "market": {
+        "status": "CURRENT_APPROVED_BOOK_CONTEXT_NOT_LOCKED",
+        "book": "DraftKings",
+        "observedAt": "2026-10-20T15:05:55Z",
+        "spreadAway": -3.0,
+        "spreadAwayPrice": -108,
+        "spreadHome": 3.0,
+        "spreadHomePrice": -112,
+        "total": 44.5,
+        "overPrice": -112,
+        "underPrice": -108,
+        "moneylineAway": -148,
+        "moneylineHome": 124,
+        "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?itm_content=NCAA+Football&tb_edate=n30days&tb_eg=NCAA+Football&tb_page=1"
+      },
+      "researchMarketComparison": {
+        "status": "BENCHMARK_ONLY_NOT_CANONICAL_EDGE",
+        "spreadSide": "Sam Houston",
+        "foundationSpreadForSide": 0.3864906855700596,
+        "marketSpreadForSide": 3.0,
+        "foundationAdvantagePoints": 2.6135093144299404,
+        "totalDirection": "UNDER",
+        "foundationVsMarketTotalPoints": 2.240528407827114,
+        "canonicalInfluence": false
+      },
+      "benchmarks": {
+        "sagarin": {"status": "CURRENT_FOR_WEEK_8_OPEN", "canonicalInfluence": false},
+        "spPlus": {"status": "PENDING_CURRENT_OFFICIAL_CAPTURE", "canonicalInfluence": false},
+        "refMetrics": {"status": "NOT_YET_POSTED", "canonicalInfluence": false}
+      }
+    },
+    {
+      "gameId": "2026-10-22-JAMESMADISON-APPSTATE",
+      "sourceGameId": "401869845",
+      "awayTeam": "James Madison",
+      "homeTeam": "App State",
+      "kickoff": "2026-10-22T23:00:00Z",
+      "frozenFoundationReference": {
+        "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
+        "canonicalInfluence": false,
+        "modelId": "cfb-rebuild-foundation-v1-shadow",
+        "projectedAwayPoints": 31.99311570132898,
+        "projectedHomePoints": 21.549181361152318,
+        "projectedMarginHome": -10.44393434017666,
+        "projectedSpreadHome": 10.44393434017666,
+        "projectedTotal": 53.542297062481296,
+        "homeWinProbability": 25.48493612139827,
+        "projectedWinner": "James Madison",
+        "projectionDigest": "50147bbb9df5dbcabf7857833e94a663d537996bceaf0da92379c547913d8875",
+        "source": "cfb/research-locks/week-08-foundation-full.json"
+      },
+      "personnel": {
+        "status": "MATERIAL_QB_STATUS_OPEN_OFFICIAL_APP_STATE_ROTATION_AFTER_INJURY",
+        "officialStateSource": "cfb/pregame/week-08-thursday-effective.json",
+        "away": {"quarterbackUsage": "ESTABLISHED_TWO_QB_USAGE", "injuryContext": ["Z. Collins WR QUESTIONABLE - shoulder"]},
+        "home": {"mostRecentStartingQB": "Malachi Singleton", "materialStatus": "THURSDAY_QB_USAGE_UNRESOLVED", "injuryContext": ["D. Galloway TE QUESTIONABLE", "M. Singleton QB listed OUT by third party but conflicts with official Oct. 16 start"]},
+        "currentThirdPartySource": "https://www.covers.com/sport/football/ncaaf/matchup/378464",
+        "currentThirdPartyCheckedAt": "2026-10-20T15:05:55Z",
+        "note": "The third-party Singleton OUT listing remains conflicted/stale relative to App State's official Oct. 16 usage. Do not override official chronology or infer Thursday usage.",
+        "canonicalInfluence": false
+      },
+      "weather": {
+        "status": "NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED",
+        "sourceState": "cfb/pregame/week-08-thursday-effective.json",
+        "lastAuthoritativeObservationAt": "2026-10-20T12:18:00Z"
+      },
+      "market": {
+        "status": "CURRENT_APPROVED_BOOK_CONTEXT_NOT_LOCKED",
+        "book": "DraftKings",
+        "observedAt": "2026-10-20T15:05:55Z",
+        "spreadAway": -10.5,
+        "spreadAwayPrice": -110,
+        "spreadHome": 10.5,
+        "spreadHomePrice": -110,
+        "total": 56.5,
+        "overPrice": -110,
+        "underPrice": -110,
+        "moneylineAway": -425,
+        "moneylineHome": 330,
+        "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?itm_content=NCAA+Football&tb_edate=n30days&tb_eg=NCAA+Football&tb_page=1"
+      },
+      "researchMarketComparison": {
+        "status": "BENCHMARK_ONLY_NOT_CANONICAL_EDGE",
+        "spreadSide": "App State",
+        "foundationSpreadForSide": 10.44393434017666,
+        "marketSpreadForSide": 10.5,
+        "foundationAdvantagePoints": 0.056065659823340886,
+        "totalDirection": "UNDER",
+        "foundationVsMarketTotalPoints": 2.957702937518704,
+        "canonicalInfluence": false
+      },
+      "benchmarks": {
+        "sagarin": {"status": "CURRENT_FOR_WEEK_8_OPEN", "canonicalInfluence": false},
+        "spPlus": {"status": "PENDING_CURRENT_OFFICIAL_CAPTURE", "canonicalInfluence": false},
+        "refMetrics": {"status": "NOT_YET_POSTED", "canonicalInfluence": false}
+      }
+    },
+    {
+      "gameId": "2026-10-22-LIBERTY-KENNESAWSTATE",
+      "sourceGameId": "401871056",
+      "awayTeam": "Liberty",
+      "homeTeam": "Kennesaw State",
+      "kickoff": "2026-10-22T23:00:00Z",
+      "frozenFoundationReference": {
+        "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
+        "canonicalInfluence": false,
+        "modelId": "cfb-rebuild-foundation-v1-shadow",
+        "projectedAwayPoints": 27.88338836095161,
+        "projectedHomePoints": 17.082584952508963,
+        "projectedMarginHome": -10.800803408442647,
+        "projectedSpreadHome": 10.800803408442647,
+        "projectedTotal": 44.96597331346057,
+        "homeWinProbability": 24.76715217474573,
+        "projectedWinner": "Liberty",
+        "projectionDigest": "f2dce35bbd39b50c1457eb063ae30cbbba26a98d6b38f7de39a2dcbc470977a7",
+        "source": "cfb/research-locks/week-08-foundation-full.json"
+      },
+      "personnel": {
+        "status": "OFFICIAL_BASELINE_CAPTURED_STABLE_QB_STATE",
+        "officialStateSource": "cfb/pregame/week-08-thursday-effective.json",
+        "away": {"startingQB": "Deshawn Purdie", "packageQB": "Ethan Vasko", "injuryContext": ["B. Burklow TE QUESTIONABLE", "C. Wood RB QUESTIONABLE", "C. Ryan TE QUESTIONABLE", "J. Marshall RB OUT"]},
+        "home": {"startingQB": "Rickie Collins", "injuryContext": ["G. Bullock Jr. TE QUESTIONABLE", "Z. Booker WR QUESTIONABLE"]},
+        "currentThirdPartySource": "https://www.covers.com/sport/football/ncaaf/matchup/379090",
+        "currentThirdPartyCheckedAt": "2026-10-20T15:05:55Z",
+        "canonicalInfluence": false
+      },
+      "weather": {
+        "status": "NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED",
+        "sourceState": "cfb/pregame/week-08-thursday-effective.json",
+        "lastAuthoritativeObservationAt": "2026-10-20T12:18:00Z"
+      },
+      "market": {
+        "status": "CURRENT_APPROVED_BOOK_CONTEXT_NOT_LOCKED",
+        "book": "DraftKings",
+        "observedAt": "2026-10-20T15:05:55Z",
+        "spreadAway": -10.0,
+        "spreadAwayPrice": -110,
+        "spreadHome": 10.0,
+        "spreadHomePrice": -110,
+        "total": 49.5,
+        "overPrice": -105,
+        "underPrice": -115,
+        "moneylineAway": -425,
+        "moneylineHome": 330,
+        "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?itm_content=NCAA+Football&tb_edate=n30days&tb_eg=NCAA+Football&tb_page=1"
+      },
+      "researchMarketComparison": {
+        "status": "BENCHMARK_ONLY_NOT_CANONICAL_EDGE",
+        "spreadSide": "Liberty",
+        "foundationSpreadForSide": -10.800803408442647,
+        "marketSpreadForSide": -10.0,
+        "foundationAdvantagePoints": 0.8008034084426474,
+        "totalDirection": "UNDER",
+        "foundationVsMarketTotalPoints": 4.534026686539429,
+        "canonicalInfluence": false
+      },
+      "benchmarks": {
+        "sagarin": {"status": "CURRENT_FOR_WEEK_8_OPEN", "canonicalInfluence": false},
+        "spPlus": {"status": "PENDING_CURRENT_OFFICIAL_CAPTURE", "canonicalInfluence": false},
+        "refMetrics": {"status": "NOT_YET_POSTED", "canonicalInfluence": false}
+      }
+    },
+    {
+      "gameId": "2026-10-22-EASTCAROLINA-MEMPHIS",
+      "sourceGameId": "401862807",
+      "awayTeam": "East Carolina",
+      "homeTeam": "Memphis",
+      "kickoff": "2026-10-22T23:30:00Z",
+      "frozenFoundationReference": {
+        "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
+        "canonicalInfluence": false,
+        "modelId": "cfb-rebuild-foundation-v1-shadow",
+        "projectedAwayPoints": 18.487572445077312,
+        "projectedHomePoints": 34.76879531305596,
+        "projectedMarginHome": 16.28122286797865,
+        "projectedSpreadHome": -16.28122286797865,
+        "projectedTotal": 53.25636775813327,
+        "homeWinProbability": 84.79790917211139,
+        "projectedWinner": "Memphis",
+        "projectionDigest": "4e630ce63c2afc4ea179d3455e85efc5280b3838e8bfd6ac5feab7e23ff66409",
+        "source": "cfb/research-locks/week-08-foundation-full.json"
+      },
+      "personnel": {
+        "status": "OFFICIAL_BASELINE_CAPTURED_STABLE_QB_STATE",
+        "officialStateSource": "cfb/pregame/week-08-thursday-effective.json",
+        "away": {"mostRecentStartingQB": "Emory Williams", "injuryContext": "No injuries listed by Covers at current check."},
+        "home": {"mostRecentStartingQB": "Marcus Stokes", "injuryContext": ["B. Kluse WR QUESTIONABLE"]},
+        "currentThirdPartySource": "https://www.covers.com/sport/football/ncaaf/matchup/378463",
+        "currentThirdPartyCheckedAt": "2026-10-20T15:05:55Z",
+        "canonicalInfluence": false
+      },
+      "weather": {
+        "status": "NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED",
+        "sourceState": "cfb/pregame/week-08-thursday-effective.json",
+        "lastAuthoritativeObservationAt": "2026-10-20T12:18:00Z"
+      },
+      "market": {
+        "status": "CURRENT_APPROVED_BOOK_CONTEXT_NOT_LOCKED",
+        "book": "DraftKings",
+        "observedAt": "2026-10-20T15:05:55Z",
+        "spreadHome": -10.5,
+        "spreadHomePrice": -102,
+        "spreadAway": 10.5,
+        "spreadAwayPrice": -118,
+        "total": 54.5,
+        "overPrice": -112,
+        "underPrice": -108,
+        "moneylineHome": -410,
+        "moneylineAway": 320,
+        "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?itm_content=NCAA+Football&tb_edate=n30days&tb_eg=NCAA+Football&tb_page=1"
+      },
+      "researchMarketComparison": {
+        "status": "BENCHMARK_ONLY_NOT_CANONICAL_EDGE",
+        "spreadSide": "Memphis",
+        "foundationSpreadForSide": -16.28122286797865,
+        "marketSpreadForSide": -10.5,
+        "foundationAdvantagePoints": 5.78122286797865,
+        "totalDirection": "UNDER",
+        "foundationVsMarketTotalPoints": 1.24363224186673,
+        "canonicalInfluence": false
+      },
+      "benchmarks": {
+        "sagarin": {"status": "CURRENT_FOR_WEEK_8_OPEN", "canonicalInfluence": false},
+        "spPlus": {"status": "PENDING_CURRENT_OFFICIAL_CAPTURE", "canonicalInfluence": false},
+        "refMetrics": {"status": "NOT_YET_POSTED", "canonicalInfluence": false}
+      }
+    }
+  ],
+  "pauseBoundary": {
+    "beforeGameDateET": "2026-10-23",
+    "fridayProcessingAuthorized": false,
+    "instruction": "Stop after Thursday. Friday/Saturday remain outside this active effective state until explicitly resumed."
+  }
+}
