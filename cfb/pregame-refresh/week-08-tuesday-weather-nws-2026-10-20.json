@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "observedAt": "2026-10-20T03:25:00Z",
+  "role": "OFFICIAL_WEATHER_REFRESH_OVERLAY",
+  "policy": "NWS is the primary weather source. Weather can influence the still-open canonical state only through already-authorized weather logic; this overlay does not create a new discretionary point adjustment.",
+  "games": [
+    {
+      "gameId": "2026-10-20-MIDDLETENNESSEE-FIU",
+      "patch": {
+        "weather": {
+          "status": "NWS_PRIMARY_CURRENT_FINAL_RECHECK_REQUIRED",
+          "observedAt": "2026-10-20T03:25:00Z",
+          "source": "National Weather Service point forecast near FIU / Miami International Airport",
+          "sourceLastUpdate": "2026-10-19T16:17:00-04:00",
+          "sourceUrl": "https://forecast.weather.gov/MapClick.php?FcstType=digital&lat=25.783&lg=english&lon=-80.3261&unit=0",
+          "kickoffWindow": {
+            "approximately7pmET": {
+              "temperatureF": 79,
+              "windDirection": "NE",
+              "windMph": 14,
+              "gustMph": 21,
+              "precipProbabilityPct": 1
+            },
+            "approximately8pmET": {
+              "temperatureF": 78,
+              "windDirection": "NE",
+              "windMph": 11,
+              "gustMph": 18,
+              "precipProbabilityPct": 4
+            }
+          },
+          "materiality": "Wind/gusts are material enough to recheck in the final pregame window, especially for passing/kicking/total uncertainty. Do not apply an unvalidated manual point adjustment."
+        }
+      }
+    },
+    {
+      "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
+      "patch": {
+        "weather": {
+          "status": "NWS_PRIMARY_CURRENT_FINAL_RECHECK_REQUIRED",
+          "observedAt": "2026-10-20T03:25:00Z",
+          "source": "National Weather Service Philadelphia point forecast near Newark, Delaware",
+          "sourceLastUpdate": "2026-10-19T06:22:00-04:00",
+          "sourceUrl": "https://forecast.weather.gov/MapClick.php?FcstType=text&TextType=2&lat=39.7014&lg=english&lon=-75.7314&unit=0",
+          "forecast": "Tuesday mostly sunny, high near 68 with north wind 10-15 mph; Tuesday night mostly clear, low around 44 with north wind 5-10 mph.",
+          "materiality": "No major precipitation signal. Temperature and wind should be refreshed close to kickoff; current forecast is not an automatic projection adjustment."
+        }
+      }
+    },
+    {
+      "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
+      "patch": {
+        "weather": {
+          "status": "NWS_PRIMARY_CAPTURED_SOURCE_UPDATE_OLDER_FINAL_RECHECK_REQUIRED",
+          "observedAt": "2026-10-20T03:25:00Z",
+          "source": "National Weather Service Charleston WV point forecast for Huntington",
+          "sourceLastUpdate": "2026-10-18T14:34:00-04:00",
+          "sourceUrl": "https://forecast.weather.gov/MapClick.php?FcstType=text&TextType=2&lat=38.4121&lg=english&lon=-82.4405&unit=0",
+          "forecast": "Tuesday sunny, high near 66 with calm wind becoming north around 5 mph; Tuesday night clear with a low around 42.",
+          "materiality": "Current signal is low-impact weather, but the source update is older than preferred and must be refreshed before final freeze."
+        }
+      }
+    }
+  ]
+}
