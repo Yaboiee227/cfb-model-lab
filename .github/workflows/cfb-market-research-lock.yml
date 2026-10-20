@@ -1,0 +1,72 @@
+name: CFB pregame market research lock
+on:
+  push:
+    paths:
+      - 'scripts/cfb_market_research_lock.py'
+      - 'tests/test_cfb_market_research_lock.py'
+      - 'cfb/research-locks/week-08-foundation-full.json'
+      - '.github/workflows/cfb-market-research-lock.yml'
+  workflow_dispatch:
+  workflow_run:
+    workflows: ['Refresh sportsbook markets']
+    types: [completed]
+permissions:
+  contents: write
+concurrency:
+  group: cfb-market-research-lock
+  cancel-in-progress: false
+jobs:
+  lock:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Sync latest completed market snapshot
+        run: git pull --rebase origin main
+      - name: Test immutable per-book market locking
+        run: python -m unittest tests.test_cfb_market_research_lock -v
+      - name: Push event is integrity-only
+        if: github.event_name == 'push'
+        run: echo 'Push event verifies market-lock code only; live locking follows completed sportsbook refreshes or manual dispatch.'
+      - name: Capture eligible pregame book observations
+        if: github.event_name != 'push'
+        run: |
+          python scripts/cfb_market_research_lock.py \
+            --foundation-lock cfb/research-locks/week-08-foundation-full.json \
+            --markets data/markets-sportsbooks.json \
+            --output cfb/research-market-locks/week-08-foundation-market.json \
+            --lock-window-minutes 30 \
+            --max-observation-age-minutes 35
+      - name: Assert research-only immutable observations
+        if: github.event_name != 'push'
+        run: |
+          python - <<'PY'
+          import json,sys
+          sys.path.insert(0,'scripts')
+          from cfb_market_research_lock import verify_existing
+          foundation=json.load(open('cfb/research-locks/week-08-foundation-full.json'))
+          d=json.load(open('cfb/research-market-locks/week-08-foundation-market.json'))
+          verify_existing(d,foundation)
+          assert d['role']=='IMMUTABLE_PREGAME_MARKET_RESEARCH_LOCK'
+          assert d['canonicalInfluence'] is False
+          assert d['canonicalRecordMerged'] is False
+          assert d['foundationLockDigest']==foundation['lockDigest']
+          assert d['booksTracked']==['fanduel','draftkings']
+          print(json.dumps({'updatedAt':d['updatedAt'],'counts':d['counts']},indent=2))
+          PY
+      - name: Commit changed market research locks
+        if: github.event_name != 'push'
+        run: |
+          git config user.name "cb-model-market-lock-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add cfb/research-market-locks/week-08-foundation-market.json
+          if git diff --cached --quiet; then
+            echo 'No durable market-lock changes.'
+            exit 0
+          fi
+          git commit -m 'Update immutable Week 8 pregame market research locks'
+          git pull --rebase origin main
+          git push
