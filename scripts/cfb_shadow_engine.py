@@ -5,15 +5,19 @@ This is NOT the unrecoverable 0.9J canonical generator. It is a transparent,
 market-independent bridge/challenger used while a fully reproducible canonical
 engine is rebuilt and validated.
 
-Shadow v4:
+Shadow v5:
   projected margin = frozen structural HFA + strength(home) - strength(away)
   projected total  = scoring baseline + scoring_env(home) + scoring_env(away)
 
 The structural home-field parameter is estimated only from the pre-Week-8
 training window used in temporal validation, then frozen while team strengths
 and scoring-environment effects are refreshed using all games completed before
-`--as-of`. This prevents the most recent schedule composition from masquerading
-as a sudden change in home-field advantage.
+`--as-of`.
+
+ESPN team identity uses normalized school/location names rather than volatile
+abbreviations. This prevents teams such as Middle Tennessee, FIU, South Alabama
+and Marshall from disappearing because different feeds abbreviate them
+inconsistently.
 
 No sportsbook, SP+, Sagarin, RefMetrics, post-kickoff or future-game information
 enters the fit.
@@ -39,20 +43,39 @@ ESPN_SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/football/colleg
 HFA_SANITY_RANGE = (0.0, 5.5)
 DEFAULT_MIN_TEAM_APPEARANCES = 3
 
+# Canonical school-name aliases. Keys and values are normalized by `norm`.
 TEAM_ALIASES = {
-    "middletennessee": "MTSU",
-    "middletennesseestate": "MTSU",
-    "fiu": "FIU",
-    "floridainternational": "FIU",
-    "missouristate": "MOST",
-    "delaware": "DEL",
-    "southalabama": "USA",
-    "marshall": "MRSH",
+    "middletennesseestate": "middletennessee",
+    "middletennessee": "middletennessee",
+    "fiu": "floridainternational",
+    "floridainternational": "floridainternational",
+    "missouristate": "missouristate",
+    "delaware": "delaware",
+    "southalabama": "southalabama",
+    "marshall": "marshall",
 }
 
 
 def norm(value: str) -> str:
     return re.sub(r"[^a-z0-9]", "", str(value).lower())
+
+
+def canonical_school(value: str) -> str:
+    key = norm(value)
+    return TEAM_ALIASES.get(key, key)
+
+
+def team_key(team: dict[str, Any]) -> str:
+    """Return a stable normalized school identity from an ESPN team object."""
+    for field in ("location", "shortDisplayName", "displayName", "name"):
+        value = team.get(field)
+        if value:
+            key = canonical_school(str(value))
+            if key:
+                return key
+    # ESPN numeric ID is stable and useful diagnostically, but mixing numeric IDs
+    # with name-based matchup keys would be unsafe. Fail closed instead.
+    raise ValueError(f"ESPN team object has no usable school name: id={team.get('id')}")
 
 
 def parse_dt(value: str) -> datetime:
@@ -108,11 +131,11 @@ def fetch_completed_games(start: datetime, end: datetime) -> list[Game]:
             h, a = sides["home"], sides["away"]
             try:
                 hs, aas = float(h["score"]), float(a["score"])
+                home_code = team_key(h.get("team") or {})
+                away_code = team_key(a.get("team") or {})
             except (KeyError, TypeError, ValueError):
                 continue
-            home_code = str((h.get("team") or {}).get("abbreviation") or "").upper().strip()
-            away_code = str((a.get("team") or {}).get("abbreviation") or "").upper().strip()
-            if not home_code or not away_code:
+            if not home_code or not away_code or home_code == away_code:
                 continue
             gid = str(event.get("id") or comp.get("id"))
             games[gid] = Game(gid, kickoff, home_code, away_code, hs, aas, bool(comp.get("neutralSite", False)))
@@ -120,11 +143,16 @@ def fetch_completed_games(start: datetime, end: datetime) -> list[Game]:
     return sorted(games.values(), key=lambda g: (g.kickoff, g.game_id))
 
 
-def filter_core_games(games: list[Game], min_team_appearances: int = DEFAULT_MIN_TEAM_APPEARANCES) -> list[Game]:
+def appearance_counts(games: list[Game]) -> Counter[str]:
     counts: Counter[str] = Counter()
     for g in games:
         counts[g.home] += 1
         counts[g.away] += 1
+    return counts
+
+
+def filter_core_games(games: list[Game], min_team_appearances: int = DEFAULT_MIN_TEAM_APPEARANCES) -> list[Game]:
+    counts = appearance_counts(games)
     return [g for g in games if counts[g.home] >= min_team_appearances and counts[g.away] >= min_team_appearances]
 
 
@@ -163,7 +191,6 @@ def fit_model(
     n = len(teams)
     weights = np.asarray([recency_weight(g.kickoff, as_of, half_life_days) for g in core], dtype=float)
 
-    # Margin model. When HFA is not fixed, learn it together with team strength.
     if fixed_hfa is None:
         X_margin = np.zeros((len(core), 1 + n))
         y_margin = np.zeros(len(core))
@@ -186,7 +213,6 @@ def fit_model(
         strength = _ridge_solve(X_margin, y_margin, weights, np.full(n, float(alpha)))
         hfa = float(fixed_hfa)
 
-    # Total model: baseline plus each team's scoring-environment tendency.
     X_total = np.zeros((len(core), 1 + n))
     y_total = np.zeros(len(core))
     for r, g in enumerate(core):
@@ -286,7 +312,6 @@ def tune(games: list[Game], as_of: datetime):
                 except ValueError:
                     continue
                 train_hfa = float(train_model["homeMarginAdvantage"])
-                # Validate using the structural HFA learned strictly from train.
                 validation_model = fit_model(train, split, alpha, half_life, min_apps, fixed_hfa=train_hfa)
                 ev = evaluate(validation_model, valid)
                 if int(ev["games"] or 0) < 15:
@@ -313,7 +338,7 @@ def tune(games: list[Game], as_of: datetime):
 
 
 def matchup_code(name: str) -> str:
-    return TEAM_ALIASES.get(norm(name), str(name).upper())
+    return canonical_school(name)
 
 
 def normal_cdf(x: float) -> float:
@@ -325,9 +350,6 @@ def run(input_path: Path, output_path: Path, as_of: datetime, start: datetime):
     raw_training = fetch_completed_games(start, as_of)
     alpha, half_life, min_apps, structural_hfa, tuning = tune(raw_training, as_of)
 
-    # If a valid temporal selection exists, freeze HFA from that earlier window.
-    # Fallback mode intentionally fails the sanity/promotion gate rather than
-    # silently inventing a structural parameter.
     if structural_hfa is None:
         provisional = fit_model(raw_training, as_of, alpha, half_life, min_apps)
         structural_hfa = float(provisional["homeMarginAdvantage"])
@@ -352,11 +374,21 @@ def run(input_path: Path, output_path: Path, as_of: datetime, start: datetime):
 
     hfa_sane = HFA_SANITY_RANGE[0] <= float(structural_hfa) <= HFA_SANITY_RANGE[1]
     hfa_validated = hfa_source == "PRE_WEEK8_TRAINING_WINDOW_FROZEN"
+    raw_counts = appearance_counts(raw_training)
+    eligible_counts = appearance_counts(filter_core_games(raw_training, min_apps))
 
     rows = []
+    coverage: dict[str, Any] = {}
     for game in state.get("games", []):
         away_code = matchup_code(game["awayTeam"])
         home_code = matchup_code(game["homeTeam"])
+        for display, code in ((game["awayTeam"], away_code), (game["homeTeam"], home_code)):
+            coverage[code] = {
+                "displayName": display,
+                "rawAppearances": int(raw_counts.get(code, 0)),
+                "eligibleAppearances": int(eligible_counts.get(code, 0)),
+                "inEligibleModel": code in model["idx"],
+            }
         try:
             pr = predict(model, away_code, home_code, neutral=False)
             z = pr["projectedMarginHome"] / max(float(sigma), 1e-6)
@@ -382,17 +414,19 @@ def run(input_path: Path, output_path: Path, as_of: datetime, start: datetime):
         })
 
     out = {
-        "schemaVersion": 4,
+        "schemaVersion": 5,
         "league": "cfb",
         "season": state.get("season"),
         "week": state.get("week"),
-        "modelId": "cfb-rebuild-alpha-shadow-v4",
+        "modelId": "cfb-rebuild-alpha-shadow-v5",
         "role": "SHADOW_CHALLENGER_ONLY",
         "canonicalInfluence": False,
         "asOf": iso(as_of),
         "trainingWindowStart": iso(start),
         "rawTrainingGames": len(raw_training),
         "eligibleTrainingGames": model["eligibleTrainingGames"],
+        "teamIdentity": "normalized ESPN team.location/name with explicit aliases",
+        "targetCoverage": coverage,
         "source": {
             "provider": "ESPN public college-football scoreboard",
             "marketDataUsed": False,
@@ -438,6 +472,7 @@ def main():
             "structuralHomeMarginAdvantage": out["fit"]["structuralHomeMarginAdvantage"],
             "homeFieldSanityPass": out["fit"]["homeFieldSanityPass"],
             "homeFieldProvenancePass": out["fit"]["homeFieldProvenancePass"],
+            "targetCoverage": out["targetCoverage"],
             "games": len(out["games"]),
         }, indent=2))
     except Exception as exc:
