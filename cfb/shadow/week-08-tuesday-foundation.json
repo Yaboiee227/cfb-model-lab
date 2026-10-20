@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "modelId": "cfb-rebuild-foundation-v1-shadow",
+  "role": "VALIDATED_FOUNDATION_PROSPECTIVE_SHADOW",
+  "canonicalInfluence": false,
+  "canonicalPromotionAuthorized": false,
+  "asOf": "2026-10-20T04:00:00Z",
+  "trainingWindowStart": "2026-08-20T04:00:00Z",
+  "trainingGames": 510,
+  "eligibleTrainingGames": 388,
+  "lockedParameters": {
+    "alpha": 2.5,
+    "halfLifeDays": 56,
+    "minTeamAppearances": 4
+  },
+  "structuralHomeMarginAdvantage": 4.249132328925835,
+  "parameterSelection": {
+    "developmentSeason": 2024,
+    "holdoutSeason": 2025,
+    "confirmationSeason": 2026,
+    "hyperparametersRetunedForWeek8": false,
+    "validationSource": "cfb/validation/week-08-simple-foundation-validation.json",
+    "holdout2025": {
+      "games": 534,
+      "potentialGames": 595,
+      "coverage": 0.8974789915966387,
+      "marginMae": 12.587521140809809,
+      "marginRmse": 15.824054276870637,
+      "marginBias": 0.14560203773549604,
+      "totalMae": 12.722343783161577,
+      "totalRmse": 15.764409145936714,
+      "totalBias": 0.31697954312479815,
+      "suAccuracyPct": 74.15730337078652
+    },
+    "confirmation2026PreWeek8": {
+      "games": 165,
+      "potentialGames": 179,
+      "coverage": 0.9217877094972067,
+      "marginMae": 12.499963600138242,
+      "marginRmse": 15.84077852991038,
+      "marginBias": 0.4666160229241316,
+      "totalMae": 13.432275467462874,
+      "totalRmse": 16.64331741726829,
+      "totalBias": 1.058835082630664,
+      "suAccuracyPct": 64.84848484848484
+    }
+  },
+  "uncertainty": {
+    "marginSigma": 15.84077852991038,
+    "source": "2026 pre-Week8 confirmation margin RMSE"
+  },
+  "source": {
+    "provider": "ESPN public FBS teams + team schedules",
+    "marketDataUsed": false,
+    "externalRatingsUsed": false,
+    "postKickoffDataUsed": false
+  },
+  "games": [
+    {
+      "gameId": "2026-10-20-MIDDLETENNESSEE-FIU",
+      "awayTeam": "Middle Tennessee",
+      "homeTeam": "FIU",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "status": "FOUNDATION_SHADOW_READY",
+      "projectedAwayPoints": 14.372105636229977,
+      "projectedHomePoints": 28.349516713342517,
+      "projectedMarginHome": 13.97741107711254,
+      "projectedSpreadHome": -13.97741107711254,
+      "projectedTotal": 42.72162234957249,
+      "homeWinProbability": 81.12113387563812,
+      "projectedWinner": "FIU"
+    },
+    {
+      "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
+      "awayTeam": "Missouri State",
+      "homeTeam": "Delaware",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "status": "FOUNDATION_SHADOW_READY",
+      "projectedAwayPoints": 22.546887989883032,
+      "projectedHomePoints": 29.557645575997405,
+      "projectedMarginHome": 7.010757586114373,
+      "projectedSpreadHome": -7.010757586114373,
+      "projectedTotal": 52.10453356588044,
+      "homeWinProbability": 67.09639860904642,
+      "projectedWinner": "Delaware"
+    },
+    {
+      "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
+      "awayTeam": "South Alabama",
+      "homeTeam": "Marshall",
+      "kickoff": "2026-10-20T23:30:00Z",
+      "status": "FOUNDATION_SHADOW_READY",
+      "projectedAwayPoints": 36.82383254052364,
+      "projectedHomePoints": 32.71893046434015,
+      "projectedMarginHome": -4.1049020761834925,
+      "projectedSpreadHome": 4.1049020761834925,
+      "projectedTotal": 69.54276300486379,
+      "homeWinProbability": 39.77654933430052,
+      "projectedWinner": "South Alabama"
+    }
+  ],
+  "warning": "Validated foundation prospective shadow only. This is not 0.9J and does not become canonical without explicit promotion review."
+}
