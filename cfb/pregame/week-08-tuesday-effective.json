@@ -69,7 +69,9 @@
         "sources": [
           "https://www.covers.com/sport/football/ncaaf/matchup/378460"
         ],
-        "canonicalInfluence": "Only already-authorized personnel logic may affect the still-open CB projection; one-hour refresh required."
+        "canonicalInfluence": "No new manual adjustment. Continue final personnel check before freeze.",
+        "lastOfficialCheckAt": "2026-10-20T11:11:19Z",
+        "refreshStatus": "NO_NEW_AUTHORITATIVE_MATERIAL_UPDATE_FOUND_MORNING_CHECK"
       },
       "weather": {
         "status": "NWS_PRIMARY_CURRENT_FINAL_RECHECK_REQUIRED",
@@ -160,7 +162,9 @@
         "refMetrics": {
           "status": "NOT_YET_POSTED",
           "source": "https://www.refmetrics.com/ncaa-football/todays-games",
-          "canonicalInfluence": false
+          "canonicalInfluence": false,
+          "lastCheckedAt": "2026-10-20T11:11:19Z",
+          "note": "RefMetrics Week 8 board states that officials are not currently available for upcoming NCAA Football games. Team betting-trend fields are research-only and are not model inputs."
         }
       },
       "audit": {
@@ -273,11 +277,12 @@
           "officialContext": "Tyler Bell made his first career start at Middle Tennessee, completing 22-of-36 passes for a Delaware freshman-record 306 yards and two passing touchdowns; he also had a receiving touchdown. Bell was named Conference USA Freshman of the Week on Oct. 19. Nick Minicucci had missed the previous two games due to injury as of Delaware's Oct. 17 preview."
         },
         "sources": [
-          "https://bluehens.com/news/2026/10/17/football-plays-host-to-missouri-state-on-tuesday-for-senior-day",
-          "https://bluehens.com/news/2026/10/19/footballs-bell-named-cusa-freshman-of-the-week",
-          "https://missouristatebears.com/news/2026/10/16/football-bears-square-off-with-delaware-tuesday-on-espnu"
+          "https://missouristatebears.com/sports/football/",
+          "https://bluehens.com/sports/football"
         ],
-        "canonicalInfluence": "Both Tuesday starting-QB states require confirmation. Do not invent an additive QB point value. Apply only established personnel/reliability logic before freeze."
+        "canonicalInfluence": "Both starters remain unresolved. Do not infer a starter or invent a QB point adjustment; recheck official/team sources before freeze.",
+        "lastOfficialCheckAt": "2026-10-20T11:11:19Z",
+        "refreshStatus": "NO_NEW_OFFICIAL_TUESDAY_STARTER_CONFIRMATION_FOUND_MORNING_CHECK"
       },
       "weather": {
         "status": "NWS_PRIMARY_CURRENT_FINAL_RECHECK_REQUIRED",
@@ -352,7 +357,9 @@
         "refMetrics": {
           "status": "NOT_YET_POSTED",
           "source": "https://www.refmetrics.com/ncaa-football/todays-games",
-          "canonicalInfluence": false
+          "canonicalInfluence": false,
+          "lastCheckedAt": "2026-10-20T11:11:19Z",
+          "note": "RefMetrics Week 8 board states that officials are not currently available for upcoming NCAA Football games. Team betting-trend fields are research-only and are not model inputs."
         }
       },
       "audit": {
@@ -418,12 +425,14 @@
           "note": "No sufficiently complete authoritative injury list captured yet; refresh required."
         },
         "sources": [
-          "https://usajaguars.com/news/2026/10/17/football-jags-head-to-marshall-for-tuesday-night-game.aspx"
+          "https://usajaguars.com/sports/2022/6/14/media-central"
         ],
         "context": [
           "South Alabama offensive line named to the Joe Moore Midseason Honor Roll on Oct. 14."
         ],
-        "canonicalInfluence": "Do not infer health from missing public injury data. Unknown remains unknown."
+        "canonicalInfluence": "No new manual adjustment. Continue final personnel check before freeze.",
+        "lastOfficialCheckAt": "2026-10-20T11:11:19Z",
+        "refreshStatus": "NO_NEW_AUTHORITATIVE_MATERIAL_UPDATE_FOUND_MORNING_CHECK"
       },
       "weather": {
         "status": "NWS_PRIMARY_CAPTURED_SOURCE_UPDATE_OLDER_FINAL_RECHECK_REQUIRED",
@@ -497,7 +506,9 @@
         "refMetrics": {
           "status": "NOT_YET_POSTED",
           "source": "https://www.refmetrics.com/ncaa-football/todays-games",
-          "canonicalInfluence": false
+          "canonicalInfluence": false,
+          "lastCheckedAt": "2026-10-20T11:11:19Z",
+          "note": "RefMetrics Week 8 board states that officials are not currently available for upcoming NCAA Football games. Team betting-trend fields are research-only and are not model inputs."
         }
       },
       "turnoverContext": {
@@ -537,7 +548,7 @@
   ],
   "effectiveState": {
     "baseStatus": "OPEN",
-    "overlayCount": 2,
+    "overlayCount": 3,
     "appliedOverlays": [
       {
         "observedAt": "2026-10-20T03:15:00Z",
@@ -547,6 +558,11 @@
       {
         "observedAt": "2026-10-20T03:25:00Z",
         "role": "OFFICIAL_WEATHER_REFRESH_OVERLAY",
+        "gameCount": 3
+      },
+      {
+        "observedAt": "2026-10-20T11:11:19Z",
+        "role": "MORNING_PREGAME_STATUS_REFRESH_OVERLAY",
         "gameCount": 3
       }
     ],
