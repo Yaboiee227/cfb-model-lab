@@ -70,6 +70,23 @@ class TestCfbResearchPregameAudit(unittest.TestCase):
             ]
         }
 
+    def _second_context(self):
+        return {
+            "games": [
+                {
+                    "gameId": "another-id",
+                    "sourceGameId": "2",
+                    "awayTeam": "Away B",
+                    "homeTeam": "Home B",
+                    "kickoff": "2026-10-22T00:00:00Z",
+                    "personnel": {"status": "OFFICIAL_BASELINE_CAPTURED"},
+                    "weather": {"status": "NWS_LOW_IMPACT_BASELINE_CAPTURED"},
+                    "market": {"status": "EARLY_PUBLIC_CONTEXT_NOT_LOCKED"},
+                    "benchmarks": {"refMetrics": {"status": "NOT_YET_POSTED"}},
+                }
+            ]
+        }
+
     def test_priority_windows(self):
         as_of = datetime(2026, 10, 20, 21, 30, tzinfo=timezone.utc)
         self.assertEqual(priority_for(datetime(2026, 10, 20, 23, 0, tzinfo=timezone.utc), as_of), "FINAL_WINDOW")
@@ -105,6 +122,29 @@ class TestCfbResearchPregameAudit(unittest.TestCase):
 
         self.assertEqual(out["workQueue"][0]["gameId"], "g1")
 
+    def test_multiple_day_contexts_are_merged_without_rewriting_foundation(self):
+        contexts = [("day-one.json", self._context()), ("day-two.json", self._second_context())]
+        out = build_audit(
+            self._schedule(), self._foundation(), self._sagarin(), {},
+            datetime(2026, 10, 20, 12, 30, tzinfo=timezone.utc), contexts, None,
+        )
+        self.assertEqual(out["summary"]["personnelCaptured"], 2)
+        self.assertEqual(out["summary"]["weatherCaptured"], 2)
+        self.assertEqual(out["summary"]["refereeCapturedOrExplicitlyChecked"], 2)
+        g2 = out["games"][1]
+        self.assertEqual(g2["context"]["contextSource"], "day-two.json")
+        self.assertEqual(g2["urgency"], "MONITOR")
+        self.assertEqual(g2["gaps"], [])
+        self.assertEqual(g2["foundation"]["status"], "LOCKED")
+
+    def test_duplicate_context_across_files_fails_closed(self):
+        contexts = [("a.json", self._context()), ("b.json", copy.deepcopy(self._context()))]
+        with self.assertRaisesRegex(ValueError, "ambiguous pregame context across files"):
+            build_audit(
+                self._schedule(), self._foundation(), self._sagarin(), {},
+                datetime(2026, 10, 20, 12, 30, tzinfo=timezone.utc), contexts, None,
+            )
+
     def test_market_lock_is_reflected(self):
         foundation = self._foundation()
         market_lock = {
@@ -128,7 +168,6 @@ class TestCfbResearchPregameAudit(unittest.TestCase):
     def test_missing_foundation_or_sagarin_fails_closed(self):
         foundation = self._foundation()
         foundation["games"] = foundation["games"][:-1]
-        # Rebuilding a lock digest is intentionally not done; verify should fail first.
         with self.assertRaises(ValueError):
             build_audit(self._schedule(), foundation, self._sagarin(), {}, datetime.now(timezone.utc))
 
