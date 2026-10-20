@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "createdAt": "2026-10-19T22:11:00-04:00",
+  "policy": "External benchmarks are research evidence only and cannot alter the canonical CB projection without explicit promotion testing.",
+  "sources": {
+    "sagarin": {
+      "publisher": "Jeff Sagarin",
+      "officialUrl": "https://sagarin.com/sports/cfsend.htm",
+      "status": "CURRENT_FOR_WEEK_8_OPEN",
+      "ratingsThrough": "2026-10-17",
+      "sourceWeek": 7,
+      "overallHomeAdvantage": 3.82,
+      "predictorHomeAdvantage": 3.80,
+      "observedAt": "2026-10-19T22:11:00-04:00"
+    },
+    "spPlus": {
+      "publisher": "ESPN / Bill Connelly",
+      "officialUrl": "https://www.espn.com/college-football/story/_/id/49868647/2026-college-football-sp+-rankings-all-138-fbs-teams",
+      "status": "PENDING_CURRENT_OFFICIAL_CAPTURE",
+      "observedAt": "2026-10-19T22:11:00-04:00",
+      "note": "Do not substitute mirrors or preseason SP+ values for the current official weekly snapshot."
+    }
+  },
+  "games": [
+    {
+      "gameId": "2026-10-20-MIDDLETENNESSEE-FIU",
+      "awayTeam": "Middle Tennessee",
+      "homeTeam": "FIU",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "sagarin": {
+        "status": "CURRENT",
+        "predictorFavorite": "FIU",
+        "predictorMargin": 12.35,
+        "impliedSpreadHome": -12.35,
+        "ratingMargin": 11.28,
+        "projectedHomeScore": 23.29,
+        "projectedAwayScore": 10.08,
+        "projectedTotal": 33.37,
+        "projectedHomeMargin": 13.20,
+        "observedAt": "2026-10-19T22:11:00-04:00",
+        "ratingsThrough": "2026-10-17"
+      },
+      "spPlus": {"status": "PENDING_CURRENT_OFFICIAL_CAPTURE"}
+    },
+    {
+      "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
+      "awayTeam": "Missouri State",
+      "homeTeam": "Delaware",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "sagarin": {
+        "status": "CURRENT",
+        "predictorFavorite": "Delaware",
+        "predictorMargin": 6.06,
+        "impliedSpreadHome": -6.06,
+        "ratingMargin": 6.55,
+        "projectedHomeScore": 31.80,
+        "projectedAwayScore": 25.21,
+        "projectedTotal": 57.00,
+        "projectedHomeMargin": 6.59,
+        "observedAt": "2026-10-19T22:11:00-04:00",
+        "ratingsThrough": "2026-10-17"
+      },
+      "spPlus": {"status": "PENDING_CURRENT_OFFICIAL_CAPTURE"}
+    },
+    {
+      "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
+      "awayTeam": "South Alabama",
+      "homeTeam": "Marshall",
+      "kickoff": "2026-10-20T23:30:00Z",
+      "sagarin": {
+        "status": "CURRENT",
+        "predictorFavorite": "South Alabama",
+        "predictorMargin": 5.14,
+        "impliedSpreadHome": 5.14,
+        "ratingMargin": 5.35,
+        "projectedHomeScore": 42.12,
+        "projectedAwayScore": 31.83,
+        "projectedTotal": 73.95,
+        "projectedHomeMargin": -10.29,
+        "observedAt": "2026-10-19T22:11:00-04:00",
+        "ratingsThrough": "2026-10-17"
+      },
+      "spPlus": {"status": "PENDING_CURRENT_OFFICIAL_CAPTURE"}
+    }
+  ]
+}
