@@ -1,14 +1,15 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "league": "cfb",
   "season": 2026,
   "week": 8,
   "role": "REBUILD_DECISION_REGISTRY",
-  "status": "LEAD_SHADOW_IDENTIFIED",
+  "status": "VALIDATED_FOUNDATION_CANDIDATE_IDENTIFIED",
   "canonicalInfluence": false,
   "canonicalPromotionAuthorized": false,
-  "leadShadowCandidate": "cfb-rebuild-alpha-shadow-v8h",
-  "leadCandidateReason": "Simple market-independent rebuild is the current lead shadow because it passed source/coverage/HFA safety gates, while the richer box-score bundle failed both the initial comparison gate and the three-fold season-reset walk-forward promotion gate.",
+  "leadRebuildCandidate": "cfb-rebuild-foundation-v1-shadow",
+  "leadCandidateTier": "VALIDATED_FOUNDATION_PROSPECTIVE_SHADOW",
+  "leadCandidateReason": "The foundation parameters were selected using 2024 walk-forward development, then evaluated unchanged on an untouched 2025 holdout and pre-Week8 2026 confirmation set. The full rich bundle is rejected, and no advanced feature family currently has sufficient incremental evidence over this stronger foundation.",
   "evidence": {
     "establishedWeek7CanonicalReference": {
       "games": 53,
@@ -17,44 +18,111 @@
       "suAccuracyPct": 64.15094339622641,
       "descriptiveOnly": true
     },
-    "simpleRebuild": {
-      "modelId": "cfb-rebuild-alpha-shadow-v8h",
-      "rawTrainingGames": 510,
-      "eligibleTrainingGames": 388,
+    "validatedFoundation": {
+      "modelId": "cfb-rebuild-foundation-v1-shadow",
+      "params": {
+        "alpha": 2.5,
+        "halfLifeDays": 56,
+        "minTeamAppearances": 4
+      },
+      "development2024": {
+        "games": 531,
+        "potentialGames": 601,
+        "coverage": 0.8835274542429284,
+        "marginMae": 12.487263152726024,
+        "marginRmse": 15.780418699064935,
+        "marginBias": -0.5208112748385311,
+        "totalMae": 13.26157950503463,
+        "totalRmse": 16.76178331381742,
+        "totalBias": -0.25809928158483403,
+        "suAccuracyPct": 70.24482109227871
+      },
+      "holdout2025": {
+        "games": 534,
+        "potentialGames": 595,
+        "coverage": 0.8974789915966387,
+        "marginMae": 12.587521140809809,
+        "marginRmse": 15.824054276870637,
+        "marginBias": 0.14560203773549604,
+        "totalMae": 12.722343783161577,
+        "totalRmse": 15.764409145936714,
+        "totalBias": 0.31697954312479815,
+        "suAccuracyPct": 74.15730337078652
+      },
+      "confirmation2026PreWeek8": {
+        "games": 165,
+        "potentialGames": 179,
+        "coverage": 0.9217877094972067,
+        "marginMae": 12.499963600138242,
+        "marginRmse": 15.84077852991038,
+        "marginBias": 0.4666160229241316,
+        "totalMae": 13.432275467462874,
+        "totalRmse": 16.64331741726829,
+        "totalBias": 1.058835082630664,
+        "suAccuracyPct": 64.84848484848484
+      },
       "structuralHomeMarginAdvantage": 4.249132328925835,
-      "homeFieldSanityPass": true,
-      "homeFieldProvenancePass": true,
-      "oneUnseenFoldMarginMae": 11.496550551061226,
-      "oneUnseenFoldTotalMae": 13.283776035596288
+      "week8ProjectionCount": 3,
+      "ready": true
     },
-    "richRebuild": {
+    "richBundle": {
       "modelId": "cfb-boxscore-efficiency-challenger-v1",
       "initialComparisonGatePass": false,
       "multiSeasonFolds": 3,
       "multiSeasonGames": 173,
-      "simpleMarginMae": 13.070322817582262,
-      "richMarginMae": 12.747413024930605,
       "richMinusSimpleMarginMae": -0.3229097926516573,
-      "simpleTotalMae": 13.409013926679071,
-      "richTotalMae": 13.2701953722638,
       "richMinusSimpleTotalMae": -0.13881855441527158,
       "evidenceStatus": "RICH_REJECTED",
-      "promotionGatePass": false
+      "rejected": true
+    },
+    "incrementalFeatureFamiliesAgainstFoundation": {
+      "sourceAvailable": true,
+      "folds": 2,
+      "minimumRequiredFolds": 3,
+      "games": 117,
+      "evidenceStatus": "INSUFFICIENT_FOLDS",
+      "eligibleFamilies": [],
+      "notPromoted": true,
+      "familyDeltas": {
+        "efficiency": {
+          "marginMaeDeltaVsFoundation": -0.06475362368691329,
+          "totalMaeDeltaVsFoundation": -0.2222102914259434
+        },
+        "drive_control": {
+          "marginMaeDeltaVsFoundation": -0.1678511919163448,
+          "totalMaeDeltaVsFoundation": -0.24921199908154534
+        },
+        "discipline": {
+          "marginMaeDeltaVsFoundation": 0.10316793637495714,
+          "totalMaeDeltaVsFoundation": -0.256693242678784
+        },
+        "tempo_possession": {
+          "marginMaeDeltaVsFoundation": 0.24101260142968428,
+          "totalMaeDeltaVsFoundation": -0.5394723437857163
+        },
+        "recent_rest": {
+          "marginMaeDeltaVsFoundation": -0.06782167179481924,
+          "totalMaeDeltaVsFoundation": -0.22342193640929686
+        }
+      }
     }
   },
   "week8Policy": {
-    "useLeadShadowAsCanonical": false,
-    "publishLeadShadowAsEstablished09J": false,
+    "useLeadCandidateAsCanonical": false,
+    "publishLeadCandidateAsEstablished09J": false,
     "allowMarketOrExternalBenchmarkInfluence": false,
     "allowUnvalidatedManualAdjustments": false,
-    "nextResearchStep": "Test isolated feature families against the lead shadow using the same season-reset, leakage-safe multi-week walk-forward framework.",
-    "promotionRequirement": "A future candidate must beat the lead shadow by the predefined out-of-sample gate, then survive prospective frozen-week evidence and explicit promotion review."
+    "supersedeOldTemporaryShadowForResearchPriority": true,
+    "supersedeEarlierFamilyEligibilityAgainstWeakerBase": true,
+    "nextStep": "Freeze the validated foundation prospectively for Week 8 research, continue late factual QB/personnel/weather/referee/market capture, and require explicit promotion review before any canonical replacement.",
+    "promotionRequirement": "Prospective frozen-week evidence plus explicit review remains required. Historical/holdout success alone does not silently change canonical status."
   },
   "sources": {
-    "simpleShadow": "cfb/shadow/week-08-tuesday.json",
+    "foundationShadow": "cfb/shadow/week-08-tuesday-foundation.json",
+    "foundationValidation": "cfb/validation/week-08-simple-foundation-validation.json",
     "richShadow": "cfb/shadow/week-08-tuesday-rich.json",
-    "currentSeasonWalkForward": "cfb/validation/week-08-rebuild-walkforward.json",
     "multiSeasonWalkForward": "cfb/validation/week-08-multiseason-walkforward.json",
+    "incrementalFeatureValidation": "cfb/validation/week-08-foundation-feature-family-validation.json",
     "week7Reference": "cfb/validation/week-07-canonical-reference.json"
   }
 }
