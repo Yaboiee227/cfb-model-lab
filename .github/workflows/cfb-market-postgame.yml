@@ -1,0 +1,75 @@
+name: CFB locked market postgame evaluation
+on:
+  push:
+    paths:
+      - 'scripts/cfb_market_postgame.py'
+      - 'tests/test_cfb_market_postgame.py'
+      - 'scripts/cfb_market_research_lock.py'
+      - '.github/workflows/cfb-market-postgame.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '29 7 * * 3'
+    - cron: '39 15 * * 0'
+permissions:
+  contents: write
+concurrency:
+  group: cfb-market-postgame
+  cancel-in-progress: false
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Test locked-market postgame evaluator
+        run: python -m unittest tests.test_cfb_market_postgame -v
+      - name: Check market-lock availability
+        id: market
+        run: |
+          if [ -f cfb/research-market-locks/week-08-foundation-market.json ]; then
+            echo 'exists=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'exists=false' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Push event is integrity-only
+        if: github.event_name == 'push'
+        run: echo 'Push event verifies evaluator only; final-score grading runs on schedule or manual dispatch.'
+      - name: Grade foundation against each locked book
+        if: github.event_name != 'push' && steps.market.outputs.exists == 'true'
+        run: |
+          python scripts/cfb_market_postgame.py \
+            --foundation-lock cfb/research-locks/week-08-foundation-full.json \
+            --market-lock cfb/research-market-locks/week-08-foundation-market.json \
+            --output cfb/validation/week-08-foundation-vs-markets-results.json
+      - name: Assert research-only market grading
+        if: github.event_name != 'push' && steps.market.outputs.exists == 'true'
+        run: |
+          python - <<'PY'
+          import json
+          p='cfb/validation/week-08-foundation-vs-markets-results.json'
+          d=json.load(open(p))
+          assert d['role']=='POSTGAME_FROZEN_MODEL_VS_LOCKED_MARKET_RESEARCH_EVALUATION'
+          assert d['canonicalInfluence'] is False
+          assert d['canonicalRecordMerged'] is False
+          assert d['foundationLockDigest']=='72d0aa99176904f681264e69f57260152607914f712a1686d2cdaaf89af3115b'
+          assert set(d['books'])=={'fanduel','draftkings'}
+          print(json.dumps({'status':d['status'],'counts':d['counts'],'books':d['books']},indent=2))
+          PY
+      - name: No market lock yet
+        if: github.event_name != 'push' && steps.market.outputs.exists != 'true'
+        run: echo 'No immutable Week 8 market observations have been captured yet; nothing to grade.'
+      - name: Commit market research evaluation
+        if: github.event_name != 'push' && steps.market.outputs.exists == 'true'
+        run: |
+          git config user.name "cb-model-validation-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git pull --rebase origin main
+          git add cfb/validation/week-08-foundation-vs-markets-results.json
+          if git diff --cached --quiet; then
+            echo 'No locked-market evaluation changes.'
+            exit 0
+          fi
+          git commit -m 'Grade frozen Week 8 foundation vs locked markets'
+          git push
