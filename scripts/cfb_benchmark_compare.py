@@ -236,7 +236,7 @@ def build_comparison(
             for r in rows_sorted[:10]
         ],
         "games": rows,
-        "policy": "Descriptive benchmark comparison only. Disagreement is not an edge, recommendation, or manual adjustment. Sagarin cannot alter the frozen foundation or canonical projection without separate leakage-safe promotion evidence and explicit review.",
+        "policy": "Descriptive benchmark comparison only. Disagreement is a research difference, not a recommendation or manual adjustment. Sagarin cannot alter the frozen foundation or canonical projection without separate leakage-safe promotion evidence and explicit review.",
     }
 
 
