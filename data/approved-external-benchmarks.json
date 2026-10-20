@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-19",
+  "policy": "Approved external benchmarks are stored for independent comparison and validation. They do not alter canonical CFB or NFL projections unless a future leakage-safe, out-of-sample and prospective promotion review explicitly approves them.",
+  "sources": [
+    {
+      "id": "espn-sp-plus-cfb",
+      "league": "cfb",
+      "name": "SP+",
+      "publisher": "ESPN / Bill Connelly",
+      "officialUrl": "https://www.espn.com/college-football/story/_/id/49868647/2026-college-football-sp+-rankings-all-138-fbs-teams",
+      "role": "external_benchmark",
+      "approved": true,
+      "canonicalInfluence": false,
+      "allowedUses": [
+        "weekly benchmark snapshot",
+        "model-vs-benchmark comparison",
+        "out-of-sample error comparison",
+        "agreement/disagreement analysis",
+        "challenger research"
+      ],
+      "prohibitedUses": [
+        "silent coefficient changes",
+        "post-result reconstruction of pregame values",
+        "automatic release or wager decisions"
+      ]
+    },
+    {
+      "id": "sagarin-cfb",
+      "league": "cfb",
+      "name": "Jeff Sagarin College Football Ratings",
+      "publisher": "Jeff Sagarin",
+      "officialUrl": "https://sagarin.com/sports/cfsend.htm",
+      "role": "external_benchmark",
+      "approved": true,
+      "canonicalInfluence": false,
+      "allowedUses": [
+        "weekly benchmark snapshot",
+        "Predictor comparison",
+        "schedule-strength comparison",
+        "model-vs-benchmark comparison",
+        "out-of-sample error comparison",
+        "challenger research"
+      ],
+      "prohibitedUses": [
+        "silent coefficient changes",
+        "post-result reconstruction of pregame values",
+        "automatic release or wager decisions"
+      ]
+    },
+    {
+      "id": "sagarin-nfl",
+      "league": "nfl",
+      "name": "Jeff Sagarin NFL Ratings",
+      "publisher": "Jeff Sagarin",
+      "officialUrl": "https://sagarin.com/sports/nflsend.htm",
+      "role": "external_benchmark",
+      "approved": true,
+      "canonicalInfluence": false,
+      "allowedUses": [
+        "weekly benchmark snapshot",
+        "Predictor comparison",
+        "schedule-strength comparison",
+        "model-vs-benchmark comparison",
+        "out-of-sample error comparison",
+        "challenger research"
+      ],
+      "prohibitedUses": [
+        "silent coefficient changes",
+        "post-result reconstruction of pregame values",
+        "automatic release or wager decisions"
+      ]
+    }
+  ]
+}
