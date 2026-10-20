@@ -1,0 +1,1161 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "role": "SIMPLE_REBUILD_FOUNDATION_VALIDATION",
+  "canonicalInfluence": false,
+  "canonicalPromotionAuthorized": false,
+  "asOf": "2026-10-20T04:00:00Z",
+  "policy": {
+    "developmentSeason": 2024,
+    "holdoutSeason": 2025,
+    "confirmationSeason": 2026,
+    "hyperparametersLockedAfter2024": true,
+    "teamStateResetEverySeason": true,
+    "structuralHfaAlwaysPriorSeasonsOnly": true,
+    "marketDataUsed": false,
+    "externalRatingsUsed": false,
+    "postTargetWeekDataUsed": false
+  },
+  "structuralHfaResearch": {
+    "rawSeasonEstimates": [
+      {
+        "season": 2021,
+        "rawGames": 934,
+        "eligibleGames": 758,
+        "homeMarginAdvantage": 2.8579210855448784
+      },
+      {
+        "season": 2022,
+        "rawGames": 927,
+        "eligibleGames": 763,
+        "homeMarginAdvantage": 3.0167896313462124
+      },
+      {
+        "season": 2023,
+        "rawGames": 923,
+        "eligibleGames": 763,
+        "homeMarginAdvantage": 3.4917340983843785
+      },
+      {
+        "season": 2024,
+        "rawGames": 917,
+        "eligibleGames": 765,
+        "homeMarginAdvantage": 4.249132328925835
+      },
+      {
+        "season": 2025,
+        "rawGames": 912,
+        "eligibleGames": 763,
+        "homeMarginAdvantage": 4.297258218865318
+      }
+    ],
+    "for2024": {
+      "value": 3.0167896313462124,
+      "sourceSeasons": [
+        2021,
+        2022,
+        2023
+      ]
+    },
+    "for2025": {
+      "value": 3.4917340983843785,
+      "sourceSeasons": [
+        2022,
+        2023,
+        2024
+      ]
+    },
+    "for2026": {
+      "value": 4.249132328925835,
+      "sourceSeasons": [
+        2023,
+        2024,
+        2025
+      ]
+    }
+  },
+  "developmentSelection": {
+    "candidateCount": 48,
+    "selected": {
+      "objective": 12.874421328880327,
+      "params": {
+        "alpha": 2.5,
+        "halfLifeDays": 56,
+        "minTeamAppearances": 4
+      },
+      "metrics": {
+        "games": 531,
+        "potentialGames": 601,
+        "coverage": 0.8835274542429284,
+        "marginMae": 12.487263152726024,
+        "marginRmse": 15.780418699064935,
+        "marginBias": -0.5208112748385311,
+        "totalMae": 13.26157950503463,
+        "totalRmse": 16.76178331381742,
+        "totalBias": -0.25809928158483403,
+        "suAccuracyPct": 70.24482109227871
+      }
+    },
+    "top10": [
+      {
+        "objective": 12.874421328880327,
+        "params": {
+          "alpha": 2.5,
+          "halfLifeDays": 56,
+          "minTeamAppearances": 4
+        },
+        "metrics": {
+          "games": 531,
+          "potentialGames": 601,
+          "coverage": 0.8835274542429284,
+          "marginMae": 12.487263152726024,
+          "marginRmse": 15.780418699064935,
+          "marginBias": -0.5208112748385311,
+          "totalMae": 13.26157950503463,
+          "totalRmse": 16.76178331381742,
+          "totalBias": -0.25809928158483403,
+          "suAccuracyPct": 70.24482109227871
+        }
+      },
+      {
+        "objective": 12.874811652556446,
+        "params": {
+          "alpha": 2.5,
+          "halfLifeDays": 35,
+          "minTeamAppearances": 4
+        },
+        "metrics": {
+          "games": 531,
+          "potentialGames": 601,
+          "coverage": 0.8835274542429284,
+          "marginMae": 12.51463538981865,
+          "marginRmse": 15.861449301154533,
+          "marginBias": -0.5928453998940141,
+          "totalMae": 13.234987915294239,
+          "totalRmse": 16.68774883352299,
+          "totalBias": -0.1920308031878601,
+          "suAccuracyPct": 70.4331450094162
+        }
+      },
+      {
+        "objective": 12.884214740454837,
+        "params": {
+          "alpha": 5.0,
+          "halfLifeDays": 56,
+          "minTeamAppearances": 4
+        },
+        "metrics": {
+          "games": 531,
+          "potentialGames": 601,
+          "coverage": 0.8835274542429284,
+          "marginMae": 12.68228074729489,
+          "marginRmse": 16.136284352614922,
+          "marginBias": -0.7229732394757046,
+          "totalMae": 13.086148733614786,
+          "totalRmse": 16.468677705068856,
+          "totalBias": -0.27449015164635654,
+          "suAccuracyPct": 70.05649717514125
+        }
+      },
+      {
+        "objective": 12.886567749807874,
+        "params": {
+          "alpha": 5.0,
+          "halfLifeDays": null,
+          "minTeamAppearances": 4
+        },
+        "metrics": {
+          "games": 531,
+          "potentialGames": 601,
+          "coverage": 0.8835274542429284,
+          "marginMae": 12.619724208823195,
+          "marginRmse": 15.952896241571734,
+          "marginBias": -0.5994212887819108,
+          "totalMae": 13.153411290792555,
+          "totalRmse": 16.607416801074258,
+          "totalBias": -0.41406314138144573,
+          "suAccuracyPct": 70.24482109227871
+        }
+      },
+      {
+        "objective": 12.930346292031501,
+        "params": {
+          "alpha": 5.0,
+          "halfLifeDays": 35,
+          "minTeamAppearances": 4
+        },
+        "metrics": {
+          "games": 531,
+          "potentialGames": 601,
+          "coverage": 0.8835274542429284,
+          "marginMae": 12.77540831725917,
+          "marginRmse": 16.294284910026477,
+          "marginBias": -0.7836155910723689,
+          "totalMae": 13.08528426680383,
+          "totalRmse": 16.437380092829237,
+          "totalBias": -0.2055228330658004,
+          "suAccuracyPct": 70.24482109227871
+        }
+      },
+      {
+        "objective": 12.9358272092993,
+        "params": {
+          "alpha": 2.5,
+          "halfLifeDays": 21,
+          "minTeamAppearances": 4
+        },
+        "metrics": {
+          "games": 531,
+          "potentialGames": 601,
+          "coverage": 0.8835274542429284,
+          "marginMae": 12.632464673782142,
+          "marginRmse": 16.076413715644286,
+          "marginBias": -0.6979620248173987,
+          "totalMae": 13.239189744816457,
+          "totalRmse": 16.625985098698564,
+          "totalBias": -0.09968070139707833,
+          "suAccuracyPct": 70.62146892655367
+        }
+      },
+      {
+        "objective": 12.997857207808888,
+        "params": {
+          "alpha": 2.5,
+          "halfLifeDays": 56,
+          "minTeamAppearances": 3
+        },
+        "metrics": {
+          "games": 594,
+          "potentialGames": 669,
+          "coverage": 0.8878923766816144,
+          "marginMae": 12.744889451822692,
+          "marginRmse": 16.157016121737076,
+          "marginBias": -0.6084793940653127,
+          "totalMae": 13.250824963795086,
+          "totalRmse": 16.827721221382518,
+          "totalBias": -0.46288484915955536,
+          "suAccuracyPct": 70.03367003367003
+        }
+      },
+      {
+        "objective": 13.000547800595264,
+        "params": {
+          "alpha": 2.5,
+          "halfLifeDays": 35,
+          "minTeamAppearances": 3
+        },
+        "metrics": {
+          "games": 594,
+          "potentialGames": 669,
+          "coverage": 0.8878923766816144,
+          "marginMae": 12.775077698384393,
+          "marginRmse": 16.233652695884835,
+          "marginBias": -0.682131763464498,
+          "totalMae": 13.226017902806136,
+          "totalRmse": 16.761988480793015,
+          "totalBias": -0.38908169960054506,
+          "suAccuracyPct": 70.03367003367003
+        }
+      },
+      {
+        "objective": 13.00240005239876,
+        "params": {
+          "alpha": 2.5,
+          "halfLifeDays": null,
+          "minTeamAppearances": 4
+        },
+        "metrics": {
+          "games": 531,
+          "potentialGames": 601,
+          "coverage": 0.8835274542429284,
+          "marginMae": 12.562572462454538,
+          "marginRmse": 15.76628029284827,
+          "marginBias": -0.39006363599706356,
+          "totalMae": 13.442227642342983,
+          "totalRmse": 16.978610429343096,
+          "totalBias": -0.3983149442871262,
+          "suAccuracyPct": 70.4331450094162
+        }
+      },
+      {
+        "objective": 13.009339216761559,
+        "params": {
+          "alpha": 5.0,
+          "halfLifeDays": null,
+          "minTeamAppearances": 3
+        },
+        "metrics": {
+          "games": 594,
+          "potentialGames": 669,
+          "coverage": 0.8878923766816144,
+          "marginMae": 12.903688672672248,
+          "marginRmse": 16.32239562220353,
+          "marginBias": -0.6874736368307278,
+          "totalMae": 13.11498976085087,
+          "totalRmse": 16.654981591715067,
+          "totalBias": -0.6148619996458049,
+          "suAccuracyPct": 70.03367003367003
+        }
+      }
+    ]
+  },
+  "lockedDevelopmentCandidate": {
+    "params": {
+      "alpha": 2.5,
+      "halfLifeDays": 56,
+      "minTeamAppearances": 4
+    },
+    "development2024": {
+      "season": 2024,
+      "structuralHomeMarginAdvantage": 3.0167896313462124,
+      "params": {
+        "alpha": 2.5,
+        "halfLifeDays": 56,
+        "minTeamAppearances": 4
+      },
+      "folds": [
+        {
+          "weekStart": "2024-09-23T00:00:00Z",
+          "games": 24,
+          "potentialGames": 59,
+          "coverage": 0.4067796610169492,
+          "marginMae": 12.05635066808773,
+          "marginRmse": 16.03837987159694,
+          "marginBias": -4.48413412125302,
+          "totalMae": 12.696918937063659,
+          "totalRmse": 15.424190767936587,
+          "totalBias": -1.9036569337197005,
+          "suAccuracyPct": 75.0
+        },
+        {
+          "weekStart": "2024-09-30T00:00:00Z",
+          "games": 49,
+          "potentialGames": 51,
+          "coverage": 0.9607843137254902,
+          "marginMae": 12.198848984849036,
+          "marginRmse": 15.821307870662565,
+          "marginBias": 1.2246537879561141,
+          "totalMae": 14.789528053810157,
+          "totalRmse": 17.744808777267973,
+          "totalBias": -2.440184912834568,
+          "suAccuracyPct": 71.42857142857143
+        },
+        {
+          "weekStart": "2024-10-07T00:00:00Z",
+          "games": 52,
+          "potentialGames": 56,
+          "coverage": 0.9285714285714286,
+          "marginMae": 11.398966421373226,
+          "marginRmse": 15.444426343337598,
+          "marginBias": 2.756164911865985,
+          "totalMae": 12.824371354678384,
+          "totalRmse": 16.45973851904716,
+          "totalBias": 0.28682784150829765,
+          "suAccuracyPct": 71.15384615384616
+        },
+        {
+          "weekStart": "2024-10-14T00:00:00Z",
+          "games": 59,
+          "potentialGames": 63,
+          "coverage": 0.9365079365079365,
+          "marginMae": 12.536674828173082,
+          "marginRmse": 15.451779424976706,
+          "marginBias": 1.9177419780982994,
+          "totalMae": 15.987024756257629,
+          "totalRmse": 19.163132752804945,
+          "totalBias": 1.1035648053774572,
+          "suAccuracyPct": 67.79661016949153
+        },
+        {
+          "weekStart": "2024-10-21T00:00:00Z",
+          "games": 56,
+          "potentialGames": 61,
+          "coverage": 0.9180327868852459,
+          "marginMae": 12.37737556994623,
+          "marginRmse": 15.691088782159753,
+          "marginBias": -3.109906080554865,
+          "totalMae": 10.486622803521277,
+          "totalRmse": 15.3058482234163,
+          "totalBias": -0.014292219790795027,
+          "suAccuracyPct": 71.42857142857143
+        },
+        {
+          "weekStart": "2024-10-28T00:00:00Z",
+          "games": 48,
+          "potentialGames": 52,
+          "coverage": 0.9230769230769231,
+          "marginMae": 13.94272966499471,
+          "marginRmse": 16.343560708141915,
+          "marginBias": 0.3233027626501059,
+          "totalMae": 13.096664356187306,
+          "totalRmse": 16.534966735440175,
+          "totalBias": -2.438354979040748,
+          "suAccuracyPct": 60.416666666666664
+        },
+        {
+          "weekStart": "2024-11-04T00:00:00Z",
+          "games": 50,
+          "potentialGames": 53,
+          "coverage": 0.9433962264150944,
+          "marginMae": 11.587364183915208,
+          "marginRmse": 13.920743303609767,
+          "marginBias": 0.08414678694481523,
+          "totalMae": 13.44456004524492,
+          "totalRmse": 16.98066792759216,
+          "totalBias": 1.6825540603486224,
+          "suAccuracyPct": 78.0
+        },
+        {
+          "weekStart": "2024-11-11T00:00:00Z",
+          "games": 54,
+          "potentialGames": 58,
+          "coverage": 0.9310344827586207,
+          "marginMae": 12.90057337087126,
+          "marginRmse": 16.496791773979133,
+          "marginBias": -3.0949501091542455,
+          "totalMae": 12.745622641985634,
+          "totalRmse": 15.622116263035652,
+          "totalBias": 1.2758344148942184,
+          "suAccuracyPct": 70.37037037037037
+        },
+        {
+          "weekStart": "2024-11-18T00:00:00Z",
+          "games": 62,
+          "potentialGames": 69,
+          "coverage": 0.8985507246376812,
+          "marginMae": 12.919480222475947,
+          "marginRmse": 15.638363586179903,
+          "marginBias": -4.164467889069812,
+          "totalMae": 13.648059003539526,
+          "totalRmse": 17.610205004270377,
+          "totalBias": -1.4836501904325605,
+          "suAccuracyPct": 64.51612903225806
+        },
+        {
+          "weekStart": "2024-11-25T00:00:00Z",
+          "games": 67,
+          "potentialGames": 67,
+          "coverage": 1.0,
+          "marginMae": 11.437610227069197,
+          "marginRmse": 15.334349405236903,
+          "marginBias": 1.3037885308641368,
+          "totalMae": 12.695500769793098,
+          "totalRmse": 15.533601349526226,
+          "totalBias": -0.11883897734914123,
+          "suAccuracyPct": 77.61194029850746
+        },
+        {
+          "weekStart": "2024-12-02T00:00:00Z",
+          "games": 9,
+          "potentialGames": 10,
+          "coverage": 0.9,
+          "marginMae": 20.30851555472502,
+          "marginRmse": 23.26807893543132,
+          "marginBias": -1.7500807479397662,
+          "totalMae": 14.298101101853339,
+          "totalRmse": 18.446898776787684,
+          "totalBias": 1.3785995846538641,
+          "suAccuracyPct": 55.55555555555556
+        },
+        {
+          "weekStart": "2024-12-09T00:00:00Z",
+          "games": 1,
+          "potentialGames": 2,
+          "coverage": 0.5,
+          "marginMae": 22.743122972976963,
+          "marginRmse": 22.743122972976963,
+          "marginBias": 22.743122972976963,
+          "totalMae": 0.5405062487662207,
+          "totalRmse": 0.5405062487662207,
+          "totalBias": 0.5405062487662207,
+          "suAccuracyPct": 0.0
+        }
+      ],
+      "aggregate": {
+        "games": 531,
+        "potentialGames": 601,
+        "coverage": 0.8835274542429284,
+        "marginMae": 12.487263152726024,
+        "marginRmse": 15.780418699064935,
+        "marginBias": -0.5208112748385311,
+        "totalMae": 13.26157950503463,
+        "totalRmse": 16.76178331381742,
+        "totalBias": -0.25809928158483403,
+        "suAccuracyPct": 70.24482109227871
+      }
+    },
+    "holdout2025": {
+      "season": 2025,
+      "structuralHomeMarginAdvantage": 3.4917340983843785,
+      "params": {
+        "alpha": 2.5,
+        "halfLifeDays": 56,
+        "minTeamAppearances": 4
+      },
+      "folds": [
+        {
+          "weekStart": "2025-09-22T00:00:00Z",
+          "games": 18,
+          "potentialGames": 55,
+          "coverage": 0.32727272727272727,
+          "marginMae": 12.774319399302513,
+          "marginRmse": 16.685732932110554,
+          "marginBias": 1.8920163514349175,
+          "totalMae": 14.935340655242006,
+          "totalRmse": 19.41020308071842,
+          "totalBias": -0.22971472385656236,
+          "suAccuracyPct": 61.111111111111114
+        },
+        {
+          "weekStart": "2025-09-29T00:00:00Z",
+          "games": 50,
+          "potentialGames": 52,
+          "coverage": 0.9615384615384616,
+          "marginMae": 12.395297330485507,
+          "marginRmse": 14.695771417670347,
+          "marginBias": -2.6381204357745003,
+          "totalMae": 10.66938753399115,
+          "totalRmse": 13.98651880615899,
+          "totalBias": 0.3678207564585938,
+          "suAccuracyPct": 74.0
+        },
+        {
+          "weekStart": "2025-10-06T00:00:00Z",
+          "games": 56,
+          "potentialGames": 58,
+          "coverage": 0.9655172413793104,
+          "marginMae": 14.247310791203471,
+          "marginRmse": 18.02474472397183,
+          "marginBias": -1.83985074055052,
+          "totalMae": 11.431947307213877,
+          "totalRmse": 14.354684594686136,
+          "totalBias": -0.5560165399406755,
+          "suAccuracyPct": 71.42857142857143
+        },
+        {
+          "weekStart": "2025-10-13T00:00:00Z",
+          "games": 59,
+          "potentialGames": 62,
+          "coverage": 0.9516129032258065,
+          "marginMae": 12.252313066151656,
+          "marginRmse": 15.673678431354098,
+          "marginBias": 0.617545371714472,
+          "totalMae": 12.742000584468492,
+          "totalRmse": 16.4244760649461,
+          "totalBias": 0.09317560194688128,
+          "suAccuracyPct": 74.57627118644068
+        },
+        {
+          "weekStart": "2025-10-20T00:00:00Z",
+          "games": 53,
+          "potentialGames": 55,
+          "coverage": 0.9636363636363636,
+          "marginMae": 11.075015300985024,
+          "marginRmse": 13.59008296924991,
+          "marginBias": -0.8605150459362557,
+          "totalMae": 13.869663608141588,
+          "totalRmse": 16.71643146295857,
+          "totalBias": -1.6307232438298527,
+          "suAccuracyPct": 77.35849056603773
+        },
+        {
+          "weekStart": "2025-10-27T00:00:00Z",
+          "games": 52,
+          "potentialGames": 54,
+          "coverage": 0.9629629629629629,
+          "marginMae": 13.148931088898268,
+          "marginRmse": 16.893517098568424,
+          "marginBias": 2.755575779674356,
+          "totalMae": 12.727047914972049,
+          "totalRmse": 16.370928053260283,
+          "totalBias": 0.3876646916211686,
+          "suAccuracyPct": 67.3076923076923
+        },
+        {
+          "weekStart": "2025-11-03T00:00:00Z",
+          "games": 51,
+          "potentialGames": 54,
+          "coverage": 0.9444444444444444,
+          "marginMae": 11.533457557847736,
+          "marginRmse": 15.17243935250737,
+          "marginBias": -0.5027207823233529,
+          "totalMae": 11.581284096547504,
+          "totalRmse": 14.623512290625408,
+          "totalBias": 2.3690441969975393,
+          "suAccuracyPct": 72.54901960784314
+        },
+        {
+          "weekStart": "2025-11-10T00:00:00Z",
+          "games": 58,
+          "potentialGames": 61,
+          "coverage": 0.9508196721311475,
+          "marginMae": 12.562858997829537,
+          "marginRmse": 15.943227165504924,
+          "marginBias": -2.3160618638810044,
+          "totalMae": 12.875406711680174,
+          "totalRmse": 14.894607237888339,
+          "totalBias": 2.067059553091713,
+          "suAccuracyPct": 81.03448275862068
+        },
+        {
+          "weekStart": "2025-11-17T00:00:00Z",
+          "games": 60,
+          "potentialGames": 66,
+          "coverage": 0.9090909090909091,
+          "marginMae": 12.750328155899675,
+          "marginRmse": 15.696018628661722,
+          "marginBias": -0.1646151283486343,
+          "totalMae": 14.368037072567368,
+          "totalRmse": 17.372854025026204,
+          "totalBias": -1.4840924766508778,
+          "suAccuracyPct": 76.66666666666667
+        },
+        {
+          "weekStart": "2025-11-24T00:00:00Z",
+          "games": 67,
+          "potentialGames": 67,
+          "coverage": 1.0,
+          "marginMae": 13.421770504618618,
+          "marginRmse": 16.307765014599262,
+          "marginBias": 4.980922441477809,
+          "totalMae": 13.07727275275219,
+          "totalRmse": 15.40286553993141,
+          "totalBias": -0.4720398632597776,
+          "suAccuracyPct": 74.6268656716418
+        },
+        {
+          "weekStart": "2025-12-01T00:00:00Z",
+          "games": 9,
+          "potentialGames": 10,
+          "coverage": 0.9,
+          "marginMae": 10.948576127453489,
+          "marginRmse": 12.923397321775765,
+          "marginBias": -2.2521584322473887,
+          "totalMae": 12.657874398443559,
+          "totalRmse": 14.896651112034593,
+          "totalBias": 12.657874398443559,
+          "suAccuracyPct": 77.77777777777777
+        },
+        {
+          "weekStart": "2025-12-08T00:00:00Z",
+          "games": 1,
+          "potentialGames": 1,
+          "coverage": 1.0,
+          "marginMae": 0.9099150606023372,
+          "marginRmse": 0.9099150606023372,
+          "marginBias": 0.9099150606023372,
+          "totalMae": 12.9608786408958,
+          "totalRmse": 12.9608786408958,
+          "totalBias": 12.9608786408958,
+          "suAccuracyPct": 100.0
+        }
+      ],
+      "aggregate": {
+        "games": 534,
+        "potentialGames": 595,
+        "coverage": 0.8974789915966387,
+        "marginMae": 12.587521140809809,
+        "marginRmse": 15.824054276870637,
+        "marginBias": 0.14560203773549604,
+        "totalMae": 12.722343783161577,
+        "totalRmse": 15.764409145936714,
+        "totalBias": 0.31697954312479815,
+        "suAccuracyPct": 74.15730337078652
+      }
+    },
+    "confirmation2026PreWeek8": {
+      "season": 2026,
+      "structuralHomeMarginAdvantage": 4.249132328925835,
+      "params": {
+        "alpha": 2.5,
+        "halfLifeDays": 56,
+        "minTeamAppearances": 4
+      },
+      "folds": [
+        {
+          "weekStart": "2026-09-28T00:00:00Z",
+          "games": 48,
+          "potentialGames": 59,
+          "coverage": 0.8135593220338984,
+          "marginMae": 13.509878266416253,
+          "marginRmse": 18.11885001828967,
+          "marginBias": 1.2170148029680241,
+          "totalMae": 12.999780287546523,
+          "totalRmse": 15.45773519950014,
+          "totalBias": 1.1483652976901462,
+          "suAccuracyPct": 72.91666666666667
+        },
+        {
+          "weekStart": "2026-10-05T00:00:00Z",
+          "games": 58,
+          "potentialGames": 58,
+          "coverage": 1.0,
+          "marginMae": 12.139996070526484,
+          "marginRmse": 14.81145667912151,
+          "marginBias": -0.05441267476173511,
+          "totalMae": 14.140444478763042,
+          "totalRmse": 17.90616773382128,
+          "totalBias": 1.3090457421107844,
+          "suAccuracyPct": 60.3448275862069
+        },
+        {
+          "weekStart": "2026-10-12T00:00:00Z",
+          "games": 59,
+          "potentialGames": 62,
+          "coverage": 0.9516129032258065,
+          "marginMae": 12.032204493971081,
+          "marginRmse": 14.798904187975397,
+          "marginBias": 0.3683198029863931,
+          "totalMae": 13.08796980611669,
+          "totalRmse": 16.281016193242312,
+          "totalBias": 0.7400271407204585,
+          "suAccuracyPct": 62.71186440677966
+        }
+      ],
+      "aggregate": {
+        "games": 165,
+        "potentialGames": 179,
+        "coverage": 0.9217877094972067,
+        "marginMae": 12.499963600138242,
+        "marginRmse": 15.84077852991038,
+        "marginBias": 0.4666160229241316,
+        "totalMae": 13.432275467462874,
+        "totalRmse": 16.64331741726829,
+        "totalBias": 1.058835082630664,
+        "suAccuracyPct": 64.84848484848484
+      }
+    },
+    "status": "FOUNDATION_CANDIDATE_READY"
+  },
+  "currentLeadShadowSettings": {
+    "params": {
+      "alpha": 5.0,
+      "halfLifeDays": 21,
+      "minTeamAppearances": 4
+    },
+    "development2024": {
+      "season": 2024,
+      "structuralHomeMarginAdvantage": 3.0167896313462124,
+      "params": {
+        "alpha": 5.0,
+        "halfLifeDays": 21,
+        "minTeamAppearances": 4
+      },
+      "folds": [
+        {
+          "weekStart": "2024-09-23T00:00:00Z",
+          "games": 24,
+          "potentialGames": 59,
+          "coverage": 0.4067796610169492,
+          "marginMae": 11.971450673357865,
+          "marginRmse": 16.13250226730008,
+          "marginBias": -5.437166944623062,
+          "totalMae": 12.436820674015143,
+          "totalRmse": 15.444263601915358,
+          "totalBias": -2.1458917150007464,
+          "suAccuracyPct": 75.0
+        },
+        {
+          "weekStart": "2024-09-30T00:00:00Z",
+          "games": 49,
+          "potentialGames": 51,
+          "coverage": 0.9607843137254902,
+          "marginMae": 12.755187478507303,
+          "marginRmse": 16.75682308879992,
+          "marginBias": 1.7186422892541262,
+          "totalMae": 14.350007202527053,
+          "totalRmse": 17.526445487571667,
+          "totalBias": -1.9985719774980588,
+          "suAccuracyPct": 71.42857142857143
+        },
+        {
+          "weekStart": "2024-10-07T00:00:00Z",
+          "games": 52,
+          "potentialGames": 56,
+          "coverage": 0.9285714285714286,
+          "marginMae": 12.048308405777677,
+          "marginRmse": 16.040633860691795,
+          "marginBias": 2.40048427157962,
+          "totalMae": 12.309743483699162,
+          "totalRmse": 15.827527157613897,
+          "totalBias": 0.5204211122649068,
+          "suAccuracyPct": 67.3076923076923
+        },
+        {
+          "weekStart": "2024-10-14T00:00:00Z",
+          "games": 59,
+          "potentialGames": 63,
+          "coverage": 0.9365079365079365,
+          "marginMae": 12.428644574830493,
+          "marginRmse": 15.48520333265036,
+          "marginBias": 1.4346154308436276,
+          "totalMae": 15.713150333494008,
+          "totalRmse": 18.92558624565095,
+          "totalBias": 1.412901019475745,
+          "suAccuracyPct": 66.10169491525424
+        },
+        {
+          "weekStart": "2024-10-21T00:00:00Z",
+          "games": 56,
+          "potentialGames": 61,
+          "coverage": 0.9180327868852459,
+          "marginMae": 12.08215124477073,
+          "marginRmse": 16.016617548857138,
+          "marginBias": -3.6437562252794673,
+          "totalMae": 11.056387495923612,
+          "totalRmse": 15.05984762907021,
+          "totalBias": 0.06679512546754436,
+          "suAccuracyPct": 75.0
+        },
+        {
+          "weekStart": "2024-10-28T00:00:00Z",
+          "games": 48,
+          "potentialGames": 52,
+          "coverage": 0.9230769230769231,
+          "marginMae": 14.140108656798601,
+          "marginRmse": 17.008240978567557,
+          "marginBias": 0.1993796135405502,
+          "totalMae": 13.58162824861372,
+          "totalRmse": 17.00319341071452,
+          "totalBias": -2.1753792950629802,
+          "suAccuracyPct": 58.333333333333336
+        },
+        {
+          "weekStart": "2024-11-04T00:00:00Z",
+          "games": 50,
+          "potentialGames": 53,
+          "coverage": 0.9433962264150944,
+          "marginMae": 13.557276676361987,
+          "marginRmse": 16.40371902498757,
+          "marginBias": 0.04414580466171124,
+          "totalMae": 12.620963339038463,
+          "totalRmse": 15.543904959996203,
+          "totalBias": 1.45559987864932,
+          "suAccuracyPct": 74.0
+        },
+        {
+          "weekStart": "2024-11-11T00:00:00Z",
+          "games": 54,
+          "potentialGames": 58,
+          "coverage": 0.9310344827586207,
+          "marginMae": 13.464185243577846,
+          "marginRmse": 17.200328568697067,
+          "marginBias": -3.4590386302092977,
+          "totalMae": 13.18449036111988,
+          "totalRmse": 15.870288595250322,
+          "totalBias": 1.3985985430896575,
+          "suAccuracyPct": 74.07407407407408
+        },
+        {
+          "weekStart": "2024-11-18T00:00:00Z",
+          "games": 62,
+          "potentialGames": 69,
+          "coverage": 0.8985507246376812,
+          "marginMae": 13.391729102899298,
+          "marginRmse": 16.50520001808007,
+          "marginBias": -4.0473157500927766,
+          "totalMae": 12.850467442650263,
+          "totalRmse": 16.927982006614613,
+          "totalBias": -1.368391363468616,
+          "suAccuracyPct": 70.96774193548387
+        },
+        {
+          "weekStart": "2024-11-25T00:00:00Z",
+          "games": 67,
+          "potentialGames": 67,
+          "coverage": 1.0,
+          "marginMae": 12.31956503852198,
+          "marginRmse": 16.823573375361267,
+          "marginBias": 0.08517465083964461,
+          "totalMae": 12.53356405808548,
+          "totalRmse": 15.265640553612604,
+          "totalBias": 0.1392911145704997,
+          "suAccuracyPct": 73.13432835820896
+        },
+        {
+          "weekStart": "2024-12-02T00:00:00Z",
+          "games": 9,
+          "potentialGames": 10,
+          "coverage": 0.9,
+          "marginMae": 19.991906175749516,
+          "marginRmse": 22.931176109340555,
+          "marginBias": -2.1341548751583272,
+          "totalMae": 15.087987673288666,
+          "totalRmse": 17.742697246028317,
+          "totalBias": 0.7274144013844948,
+          "suAccuracyPct": 44.44444444444444
+        },
+        {
+          "weekStart": "2024-12-09T00:00:00Z",
+          "games": 1,
+          "potentialGames": 2,
+          "coverage": 0.5,
+          "marginMae": 20.626028567581727,
+          "marginRmse": 20.626028567581727,
+          "marginBias": 20.626028567581727,
+          "totalMae": 4.371920745735913,
+          "totalRmse": 4.371920745735913,
+          "totalBias": 4.371920745735913,
+          "suAccuracyPct": 0.0
+        }
+      ],
+      "aggregate": {
+        "games": 531,
+        "potentialGames": 601,
+        "coverage": 0.8835274542429284,
+        "marginMae": 12.972933781427002,
+        "marginRmse": 16.594474973983957,
+        "marginBias": -0.8656877686023473,
+        "totalMae": 13.106487128488977,
+        "totalRmse": 16.43495296572056,
+        "totalBias": -0.10540648483756332,
+        "suAccuracyPct": 69.86817325800376
+      }
+    },
+    "holdout2025": {
+      "season": 2025,
+      "structuralHomeMarginAdvantage": 3.4917340983843785,
+      "params": {
+        "alpha": 5.0,
+        "halfLifeDays": 21,
+        "minTeamAppearances": 4
+      },
+      "folds": [
+        {
+          "weekStart": "2025-09-22T00:00:00Z",
+          "games": 18,
+          "potentialGames": 55,
+          "coverage": 0.32727272727272727,
+          "marginMae": 12.154937456719829,
+          "marginRmse": 16.82386911067624,
+          "marginBias": 1.7293335207640999,
+          "totalMae": 14.624058298090555,
+          "totalRmse": 18.764909986045005,
+          "totalBias": -0.660403297848523,
+          "suAccuracyPct": 55.55555555555556
+        },
+        {
+          "weekStart": "2025-09-29T00:00:00Z",
+          "games": 50,
+          "potentialGames": 52,
+          "coverage": 0.9615384615384616,
+          "marginMae": 13.294193653978597,
+          "marginRmse": 16.284407898220266,
+          "marginBias": -3.53236561037733,
+          "totalMae": 9.84403148277234,
+          "totalRmse": 13.028773911585075,
+          "totalBias": 0.9620223014305134,
+          "suAccuracyPct": 66.0
+        },
+        {
+          "weekStart": "2025-10-06T00:00:00Z",
+          "games": 56,
+          "potentialGames": 58,
+          "coverage": 0.9655172413793104,
+          "marginMae": 14.370765212632678,
+          "marginRmse": 17.9955518451203,
+          "marginBias": -1.7733341790487358,
+          "totalMae": 11.737148105632878,
+          "totalRmse": 15.15914805652271,
+          "totalBias": -0.3457993729344852,
+          "suAccuracyPct": 66.07142857142857
+        },
+        {
+          "weekStart": "2025-10-13T00:00:00Z",
+          "games": 59,
+          "potentialGames": 62,
+          "coverage": 0.9516129032258065,
+          "marginMae": 12.415452236850795,
+          "marginRmse": 16.160589460010858,
+          "marginBias": 0.6880088041125376,
+          "totalMae": 13.08089938418283,
+          "totalRmse": 16.230394367915853,
+          "totalBias": -0.019969677513758825,
+          "suAccuracyPct": 74.57627118644068
+        },
+        {
+          "weekStart": "2025-10-20T00:00:00Z",
+          "games": 53,
+          "potentialGames": 55,
+          "coverage": 0.9636363636363636,
+          "marginMae": 11.953326583616427,
+          "marginRmse": 15.200941186308828,
+          "marginBias": -1.3080556960131404,
+          "totalMae": 13.62185845909233,
+          "totalRmse": 16.597865942983855,
+          "totalBias": -1.3333396272913944,
+          "suAccuracyPct": 73.58490566037736
+        },
+        {
+          "weekStart": "2025-10-27T00:00:00Z",
+          "games": 52,
+          "potentialGames": 54,
+          "coverage": 0.9629629629629629,
+          "marginMae": 14.092604588522196,
+          "marginRmse": 17.649146338440733,
+          "marginBias": 3.004045790530657,
+          "totalMae": 12.745741384060226,
+          "totalRmse": 16.240218063696197,
+          "totalBias": 0.5796838451952995,
+          "suAccuracyPct": 63.46153846153846
+        },
+        {
+          "weekStart": "2025-11-03T00:00:00Z",
+          "games": 51,
+          "potentialGames": 54,
+          "coverage": 0.9444444444444444,
+          "marginMae": 12.233764755056432,
+          "marginRmse": 15.850937371321278,
+          "marginBias": -0.501571610076525,
+          "totalMae": 11.324397731726286,
+          "totalRmse": 14.320009403053794,
+          "totalBias": 2.6234604819642167,
+          "suAccuracyPct": 60.78431372549019
+        },
+        {
+          "weekStart": "2025-11-10T00:00:00Z",
+          "games": 58,
+          "potentialGames": 61,
+          "coverage": 0.9508196721311475,
+          "marginMae": 13.951452492092217,
+          "marginRmse": 17.660654196324128,
+          "marginBias": -2.6192840534893516,
+          "totalMae": 12.069585740480724,
+          "totalRmse": 14.53204698030859,
+          "totalBias": 1.8385857512526504,
+          "suAccuracyPct": 79.3103448275862
+        },
+        {
+          "weekStart": "2025-11-17T00:00:00Z",
+          "games": 60,
+          "potentialGames": 66,
+          "coverage": 0.9090909090909091,
+          "marginMae": 14.6501894187062,
+          "marginRmse": 17.601597525977525,
+          "marginBias": -1.1805940232515602,
+          "totalMae": 13.658999963104316,
+          "totalRmse": 16.923031438776615,
+          "totalBias": -1.5744681410111292,
+          "suAccuracyPct": 71.66666666666667
+        },
+        {
+          "weekStart": "2025-11-24T00:00:00Z",
+          "games": 67,
+          "potentialGames": 67,
+          "coverage": 1.0,
+          "marginMae": 14.998110678007938,
+          "marginRmse": 18.497178958064147,
+          "marginBias": 5.71551011678261,
+          "totalMae": 13.127191803011515,
+          "totalRmse": 15.348117562554442,
+          "totalBias": -0.5239050077228312,
+          "suAccuracyPct": 65.67164179104478
+        },
+        {
+          "weekStart": "2025-12-01T00:00:00Z",
+          "games": 9,
+          "potentialGames": 10,
+          "coverage": 0.9,
+          "marginMae": 10.780451789877128,
+          "marginRmse": 12.614196624045766,
+          "marginBias": -3.0393298735226923,
+          "totalMae": 12.558838388077445,
+          "totalRmse": 14.964853162028298,
+          "totalBias": 11.857073515328679,
+          "suAccuracyPct": 66.66666666666667
+        },
+        {
+          "weekStart": "2025-12-08T00:00:00Z",
+          "games": 1,
+          "potentialGames": 1,
+          "coverage": 1.0,
+          "marginMae": 0.6995230938901571,
+          "marginRmse": 0.6995230938901571,
+          "marginBias": -0.6995230938901571,
+          "totalMae": 17.038722541226534,
+          "totalRmse": 17.038722541226534,
+          "totalBias": 17.038722541226534,
+          "suAccuracyPct": 100.0
+        }
+      ],
+      "aggregate": {
+        "games": 534,
+        "potentialGames": 595,
+        "coverage": 0.8974789915966387,
+        "marginMae": 13.486572013365643,
+        "marginRmse": 16.992569490957987,
+        "marginBias": -0.020167837552139956,
+        "totalMae": 12.501751695275987,
+        "totalRmse": 15.574567912646677,
+        "totalBias": 0.3928175241764737,
+        "suAccuracyPct": 68.72659176029963
+      }
+    },
+    "confirmation2026PreWeek8": {
+      "season": 2026,
+      "structuralHomeMarginAdvantage": 4.249132328925835,
+      "params": {
+        "alpha": 5.0,
+        "halfLifeDays": 21,
+        "minTeamAppearances": 4
+      },
+      "folds": [
+        {
+          "weekStart": "2026-09-28T00:00:00Z",
+          "games": 48,
+          "potentialGames": 59,
+          "coverage": 0.8135593220338984,
+          "marginMae": 14.880708192899682,
+          "marginRmse": 19.29262836366513,
+          "marginBias": 0.8246753499748379,
+          "totalMae": 13.0764709946465,
+          "totalRmse": 15.58843629665828,
+          "totalBias": 0.6019233357767292,
+          "suAccuracyPct": 72.91666666666667
+        },
+        {
+          "weekStart": "2026-10-05T00:00:00Z",
+          "games": 58,
+          "potentialGames": 58,
+          "coverage": 1.0,
+          "marginMae": 12.913676102894637,
+          "marginRmse": 15.794036644390815,
+          "marginBias": -0.6740842677660134,
+          "totalMae": 13.206897969653573,
+          "totalRmse": 17.019742904569153,
+          "totalBias": 1.3993820222151934,
+          "suAccuracyPct": 62.06896551724138
+        },
+        {
+          "weekStart": "2026-10-12T00:00:00Z",
+          "games": 59,
+          "potentialGames": 62,
+          "coverage": 0.9516129032258065,
+          "marginMae": 11.57045566819088,
+          "marginRmse": 14.620149201674783,
+          "marginBias": 0.8470986228420996,
+          "totalMae": 13.26484355361363,
+          "totalRmse": 16.29726667854827,
+          "totalBias": 0.8333178856515789,
+          "suAccuracyPct": 61.016949152542374
+        }
+      ],
+      "aggregate": {
+        "games": 165,
+        "potentialGames": 179,
+        "coverage": 0.9217877094972067,
+        "marginMae": 13.005600555456578,
+        "marginRmse": 16.504404162095344,
+        "marginBias": 0.30585665464271106,
+        "totalMae": 13.189675513006929,
+        "totalRmse": 16.35503395805241,
+        "totalBias": 0.9649832282376205,
+        "suAccuracyPct": 64.84848484848484
+      }
+    },
+    "note": "Current lead settings were originally selected using 2026 pre-Week8 research, so 2024/2025 results are robustness context rather than clean parameter-selection holdouts."
+  },
+  "warning": "Foundation validation only. Even a strong 2025/2026 result does not authorize replacing the frozen established CB model without explicit promotion review and prospective Week 8 evidence."
+}
