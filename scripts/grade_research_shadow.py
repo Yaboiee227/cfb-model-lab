@@ -22,6 +22,20 @@ def rmse(values: list[float]) -> float | None:
     return math.sqrt(sum(x * x for x in values) / len(values)) if values else None
 
 
+def stable_payload(result: dict[str, Any]) -> dict[str, Any]:
+    return {k: v for k, v in result.items() if k != "gradedAt"}
+
+
+def preserve_graded_at_if_unchanged(new: dict[str, Any], existing: dict[str, Any] | None) -> dict[str, Any]:
+    if not existing:
+        return new
+    if existing.get("sourceLockDigest") != new.get("sourceLockDigest"):
+        raise ValueError("research result source lock digest changed")
+    if stable_payload(existing) == stable_payload(new):
+        new["gradedAt"] = existing.get("gradedAt", new["gradedAt"])
+    return new
+
+
 def grade(lock: dict[str, Any], scores: list[dict[str, Any]], aliases: dict[str, str]) -> dict[str, Any]:
     verify(lock)
     rows: list[dict[str, Any]] = []
@@ -72,7 +86,6 @@ def grade(lock: dict[str, Any], scores: list[dict[str, Any]], aliases: dict[str,
 
         if home_score == away_score:
             su_result = "TIE"
-            actual_home = None
         else:
             actual_winner = game["homeTeam"] if home_score > away_score else game["awayTeam"]
             su_result = "WIN" if game["projectedWinner"] == actual_winner else "LOSS"
@@ -176,7 +189,10 @@ def main() -> None:
     else:
         scores = fetch_scores_for_projection(str(lock.get("league")), lock)
     out = grade(lock, scores, load_aliases(root))
-    atomic_json(Path(args.output), out)
+    output_path = Path(args.output)
+    existing = json.loads(output_path.read_text(encoding="utf-8")) if output_path.exists() else None
+    out = preserve_graded_at_if_unchanged(out, existing)
+    atomic_json(output_path, out)
     print(
         json.dumps(
             {
