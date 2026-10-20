@@ -1,10 +1,11 @@
+import copy
 import sys
 import unittest
 from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parents[1] / "scripts"))
-from grade_research_shadow import grade
+from grade_research_shadow import grade, preserve_graded_at_if_unchanged
 from lock_research_shadow import build_lock
 
 
@@ -52,9 +53,8 @@ class TestGradeResearchShadow(unittest.TestCase):
         }
         return build_lock(source, datetime(2026, 10, 20, 12, 0, tzinfo=timezone.utc))
 
-    def test_grades_final_and_preserves_pending_without_canonical_merge(self):
-        lock = self._lock()
-        scores = [
+    def _scores(self):
+        return [
             {
                 "awayTeam": "Away A",
                 "homeTeam": "Home A",
@@ -74,7 +74,10 @@ class TestGradeResearchShadow(unittest.TestCase):
                 "source": "ESPN",
             },
         ]
-        out = grade(lock, scores, {})
+
+    def test_grades_final_and_preserves_pending_without_canonical_merge(self):
+        lock = self._lock()
+        out = grade(lock, self._scores(), {})
         self.assertEqual(out["status"], "IN_PROGRESS")
         self.assertFalse(out["canonicalInfluence"])
         self.assertFalse(out["canonicalRecordMerged"])
@@ -86,6 +89,24 @@ class TestGradeResearchShadow(unittest.TestCase):
         self.assertEqual(out["metrics"]["straightUp"]["wins"], 1)
         self.assertAlmostEqual(out["metrics"]["winProbability"]["brierScore"], 0.0625)
         self.assertEqual(out["games"][0]["projectionDigest"], lock["games"][0]["projectionDigest"])
+
+    def test_unchanged_result_preserves_graded_at(self):
+        lock = self._lock()
+        existing = grade(lock, self._scores(), {})
+        existing["gradedAt"] = "2026-10-21T04:00:00Z"
+        new = grade(lock, self._scores(), {})
+        out = preserve_graded_at_if_unchanged(new, copy.deepcopy(existing))
+        self.assertEqual(out["gradedAt"], "2026-10-21T04:00:00Z")
+
+    def test_changed_result_refreshes_graded_at(self):
+        lock = self._lock()
+        existing = grade(lock, self._scores(), {})
+        existing["gradedAt"] = "2026-10-21T04:00:00Z"
+        changed_scores = self._scores()
+        changed_scores[0]["homeScore"] = 32
+        new = grade(lock, changed_scores, {})
+        out = preserve_graded_at_if_unchanged(new, existing)
+        self.assertNotEqual(out["gradedAt"], "2026-10-21T04:00:00Z")
 
     def test_rejects_tampered_lock(self):
         lock = self._lock()
