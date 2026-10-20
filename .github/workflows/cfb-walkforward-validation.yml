@@ -38,7 +38,7 @@ jobs:
             --shadow cfb/shadow/week-08-tuesday.json \
             --reference cfb/validation/week-07-canonical-reference.json \
             --output cfb/validation/week-08-rebuild-walkforward.json
-      - name: Assert anti-leakage and print evidence
+      - name: Assert anti-leakage and preserve evidence
         run: |
           python - <<'PY'
           import json
@@ -50,10 +50,25 @@ jobs:
           assert d['source']['externalRatingsUsed'] is False
           assert d['source']['sameWeekLeakagePrevented'] is True
           wf=d['walkForward']
-          assert len(wf['folds']) >= 2, wf['folds']
+          assert len(wf['folds']) >= 1, wf['folds']
           assert wf['aggregate']['games'] >= 20, wf['aggregate']
+          # Fewer than two folds means evidence is insufficient for the gate,
+          # not that the pipeline is broken. Preserve the negative/partial result.
+          evidence_status = (
+              'INSUFFICIENT_FOLDS'
+              if len(wf['folds']) < 2
+              else ('RICH_SHADOW_ELIGIBLE' if wf['prospectiveShadowGatePass'] else 'RICH_REJECTED')
+          )
+          if len(wf['folds']) < 2:
+              assert wf['prospectiveShadowGatePass'] is False
+          d['walkForward']['evidenceStatus'] = evidence_status
+          d['walkForward']['minimumRequiredFolds'] = 2
+          with open(p,'w') as f:
+              json.dump(d,f,indent=2)
+              f.write('\n')
           print(json.dumps({
               'folds': len(wf['folds']),
+              'evidenceStatus': evidence_status,
               'aggregate': wf['aggregate'],
               'prospectiveShadowGatePass': wf['prospectiveShadowGatePass'],
               'week7Reference': d['establishedWeek7Reference'],
