@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "league": "cfb",
   "season": 2026,
   "week": 8,
@@ -8,6 +8,7 @@
   "canonicalInfluence": false,
   "shadowModel": "cfb-rebuild-alpha-shadow-v8h",
   "shadowAsOf": "2026-10-20T04:00:00Z",
+  "officialContextRefreshAt": "2026-10-20T03:15:00Z",
   "policy": "Differences are descriptive diagnostics only. Do not blend shadow, Sagarin, sportsbook or other external numbers into the canonical CB projection without validated promotion.",
   "conventions": {
     "homeMargin": "positive = home team favored by the model/benchmark",
@@ -88,7 +89,16 @@
         }
       ],
       "researchFlag": "PERSONNEL_BLOCKED_DISAGREEMENT",
-      "note": "Shadow and Sagarin are more favorable to Delaware than the observed market, but Delaware starting QB Nick Minicucci is out and the replacement-QB state remains unresolved. Do not interpret the numerical disagreement until personnel is refreshed."
+      "officialQbContext": {
+        "delaware": "Nick Minicucci had missed the previous two games due to injury as of Delaware's Oct. 17 official preview; that preview did not confirm him out for Oct. 20. Tyler Bell started the previous game, threw for a freshman-record 306 yards and two passing touchdowns, and was named CUSA Freshman of the Week on Oct. 19.",
+        "missouriState": "Henry Belin IV made his first Missouri State start in the Oct. 14 win over Kennesaw State, throwing for 300 yards and two touchdowns. Missouri State's Oct. 16 Delaware preview did not explicitly confirm the Oct. 20 starter.",
+        "sources": [
+          "https://bluehens.com/news/2026/10/17/football-plays-host-to-missouri-state-on-tuesday-for-senior-day",
+          "https://bluehens.com/news/2026/10/19/footballs-bell-named-cusa-freshman-of-the-week",
+          "https://missouristatebears.com/news/2026/10/16/football-bears-square-off-with-delaware-tuesday-on-espnu"
+        ]
+      },
+      "note": "Shadow and Sagarin are more favorable to Delaware than the observed market, but both Tuesday starting-QB states still require confirmation. Do not interpret the numerical disagreement as a personnel-adjusted signal until the final QB refresh is complete."
     },
     {
       "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
