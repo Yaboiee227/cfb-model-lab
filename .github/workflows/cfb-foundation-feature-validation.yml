@@ -1,0 +1,69 @@
+name: CFB foundation feature-family validation
+on:
+  push:
+    paths:
+      - 'scripts/cfb_foundation_feature_validation.py'
+      - 'tests/test_cfb_foundation_feature_validation.py'
+      - 'scripts/cfb_feature_family_validation.py'
+      - 'scripts/cfb_rich_challenger.py'
+      - 'cfb/validation/week-08-simple-foundation-validation.json'
+      - '.github/workflows/cfb-foundation-feature-validation.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: cfb-foundation-feature-validation
+  cancel-in-progress: false
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check numpy
+      - name: Test foundation feature wrapper
+        run: python -m unittest tests.test_cfb_foundation_feature_validation -v
+      - name: Re-test isolated families against validated foundation
+        run: |
+          python scripts/cfb_foundation_feature_validation.py \
+            --foundation-validation cfb/validation/week-08-simple-foundation-validation.json \
+            --as-of '2026-10-20T00:00:00-04:00' \
+            --output cfb/validation/week-08-foundation-feature-family-validation.json
+      - name: Assert incremental-only research policy
+        run: |
+          python - <<'PY'
+          import json
+          p='cfb/validation/week-08-foundation-feature-family-validation.json'
+          d=json.load(open(p))
+          assert d['role']=='FOUNDATION_INCREMENTAL_FEATURE_FAMILY_RESEARCH'
+          assert d['canonicalInfluence'] is False
+          assert d['foundation']['params']=={'alpha':2.5,'halfLifeDays':56,'minTeamAppearances':4}
+          assert d['policy']['foundationParamsRetunedForThisStudy'] is False
+          assert d['policy']['marketDataUsed'] is False
+          assert d['policy']['externalRatingsUsed'] is False
+          assert d['policy']['sameWeekLeakagePrevented'] is True
+          v=d['validation']
+          assert v['foldCount'] >= 3
+          assert v['games'] >= 100
+          print(json.dumps({
+              'foundationParams':d['foundation']['params'],
+              'folds':v['foldCount'],'games':v['games'],
+              'eligible':v['challengerEligibleFamilies'],
+              'families':{k:{'marginDelta':r['marginMaeDeltaVsSimple'],'totalDelta':r['totalMaeDeltaVsSimple'],'marginEligible':r['marginChallengerEligible'],'totalEligible':r['totalChallengerEligible']} for k,r in v['families'].items()}
+          },indent=2))
+          PY
+      - name: Commit incremental feature evidence
+        run: |
+          git config user.name "cb-model-validation-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add cfb/validation/week-08-foundation-feature-family-validation.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Refresh foundation incremental feature evidence'
+          for attempt in 1 2 3; do
+            if git push; then exit 0; fi
+            git pull --rebase origin main
+          done
+          git push
