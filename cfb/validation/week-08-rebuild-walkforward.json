@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "asOf": "2026-10-20T04:00:00Z",
+  "role": "REBUILD_WALKFORWARD_RESEARCH",
+  "canonicalInfluence": false,
+  "source": {
+    "schedule": "ESPN public FBS team schedules",
+    "boxscores": "ESPN public college-football summary endpoint",
+    "marketDataUsed": false,
+    "externalRatingsUsed": false,
+    "sameWeekLeakagePrevented": true,
+    "boxscoreCoverage": 1.0,
+    "boxscoreFailures": [],
+    "causalRows": 227
+  },
+  "structuralHomeMarginAdvantage": 4.249132328925835,
+  "walkForward": {
+    "folds": [
+      {
+        "testWeekStart": "2026-10-12T00:00:00Z",
+        "previousWeekInnerValidation": "2026-10-05T00:00:00Z",
+        "trainRows": 168,
+        "testRows": 59,
+        "selectedMargin": {
+          "bundle": "full_efficiency",
+          "alpha": 100.0
+        },
+        "selectedTotal": {
+          "bundle": "core_efficiency",
+          "alpha": 100.0
+        },
+        "simpleMargin": {
+          "games": 59,
+          "mae": 11.496550551061226,
+          "rmse": 14.572518095655052,
+          "bias": 0.7742975626413625
+        },
+        "richMargin": {
+          "games": 59,
+          "mae": 12.37647582930712,
+          "rmse": 15.04541580289624,
+          "bias": -0.6591711651696835
+        },
+        "simpleTotal": {
+          "games": 59,
+          "mae": 13.283776035596288,
+          "rmse": 16.324051117591324,
+          "bias": 0.9060074565523805
+        },
+        "richTotal": {
+          "games": 59,
+          "mae": 13.628659199428395,
+          "rmse": 16.632752220924065,
+          "bias": 0.6876574800159687
+        }
+      }
+    ],
+    "aggregate": {
+      "games": 59,
+      "simpleMargin": {
+        "games": 59,
+        "mae": 11.496550551061226,
+        "rmse": 14.572518095655052,
+        "bias": 0.7742975626413625
+      },
+      "richMargin": {
+        "games": 59,
+        "mae": 12.37647582930712,
+        "rmse": 15.04541580289624,
+        "bias": -0.6591711651696835
+      },
+      "simpleTotal": {
+        "games": 59,
+        "mae": 13.283776035596288,
+        "rmse": 16.324051117591324,
+        "bias": 0.9060074565523805
+      },
+      "richTotal": {
+        "games": 59,
+        "mae": 13.628659199428395,
+        "rmse": 16.632752220924065,
+        "bias": 0.6876574800159687
+      },
+      "richMinusSimpleMarginMae": 0.879925278245894,
+      "richMinusSimpleTotalMae": 0.3448831638321064
+    },
+    "prospectiveShadowGatePass": false,
+    "gateRule": "Across >=2 unseen weekly folds, rich challenger must improve at least one MAE by >=0.50 while degrading neither margin nor total MAE by >0.25. Passing only authorizes continued prospective shadowing, never canonical promotion.",
+    "evidenceStatus": "INSUFFICIENT_FOLDS",
+    "minimumRequiredFolds": 2
+  },
+  "establishedWeek7Reference": {
+    "week": 7,
+    "games": 53,
+    "marginMae": 11.335250909905998,
+    "totalMae": 12.911974822454155,
+    "suAccuracyPct": 64.15094339622641,
+    "policy": "Context only. Do not fit to Week 7 outcomes and then claim Week 7 as out-of-sample validation."
+  },
+  "warning": "Research validation only. No result in this file authorizes changing Week 8 canonical projections without explicit promotion review and prospective frozen-week evidence."
+}
