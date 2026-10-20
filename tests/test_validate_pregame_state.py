@@ -67,6 +67,27 @@ class TestPregameAudit(unittest.TestCase):
         self.assertFalse(out["readyToFreeze"])
         self.assertTrue(any("shadow/challenger" in b for b in out["blockers"]))
 
+    def test_pending_weather_recheck_blocks_even_with_refresh_timestamp(self):
+        g = self.base_game()
+        g["weather"]["status"] = "NWS_CURRENT_MATERIAL_WIND_FINAL_RECHECK_REQUIRED"
+        out = audit_game(g, datetime(2026, 10, 20, 22, 5, tzinfo=UTC))
+        self.assertFalse(out["readyToFreeze"])
+        self.assertTrue(any("weather" in b for b in out["blockers"]))
+
+    def test_pending_weather_recheck_is_warning_before_final_window(self):
+        g = self.base_game()
+        g["weather"]["status"] = "NWS_LOW_IMPACT_FINAL_RECHECK_REQUIRED"
+        out = audit_game(g, datetime(2026, 10, 20, 20, 5, tzinfo=UTC))
+        self.assertTrue(any("weather" in w for w in out["warnings"]))
+        self.assertFalse(any("weather" in b for b in out["blockers"]))
+
+    def test_pending_personnel_recheck_blocks_even_with_refresh_timestamp(self):
+        g = self.base_game()
+        g["personnel"]["status"] = "OFFICIAL_BASELINE_CAPTURED_FINAL_RECHECK_REQUIRED"
+        out = audit_game(g, datetime(2026, 10, 20, 22, 5, tzinfo=UTC))
+        self.assertFalse(out["readyToFreeze"])
+        self.assertTrue(any("personnel" in b for b in out["blockers"]))
+
     def test_missing_one_hour_refresh_blocks_inside_window(self):
         g = self.base_game()
         g["audit"].pop("oneHourRefreshAt")
@@ -77,3 +98,4 @@ class TestPregameAudit(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

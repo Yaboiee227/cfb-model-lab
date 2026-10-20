@@ -7,7 +7,7 @@
   "status": "OPEN_EFFECTIVE_THROUGH_THURSDAY",
   "canonicalInfluence": false,
   "canonicalPromotionAuthorized": false,
-  "observedAt": "2026-10-20T19:57:03.150Z",
+  "observedAt": "2026-10-20T20:18:33.694819Z",
   "dateWindowET": [
     "2026-10-20",
     "2026-10-22"
@@ -31,7 +31,7 @@
       "homeTeam": "Florida International",
       "kickoff": "2026-10-20T23:00:00Z",
       "contextSource": "cfb/pregame/week-08-tuesday-effective.json",
-      "contextObservedAt": "2026-10-20T19:57:03.150Z",
+      "contextObservedAt": "2026-10-20T20:18:33.694819Z",
       "frozenFoundationReference": {
         "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
         "canonicalInfluence": false,
@@ -47,11 +47,14 @@
         "source": "cfb/research-locks/week-08-foundation-full.json"
       },
       "personnel": {
-        "status": "AFTERNOON_REFRESH_NO_NEW_OFFICIAL_MATERIAL_CHANGE",
+        "status": "OFFICIAL_BASELINE_CAPTURED_FINAL_RECHECK_REQUIRED",
         "away": {
           "reportedInjuries": [],
           "note": "No current injuries listed by Covers at capture time.",
-          "thirdPartyInjuryState": "NO_INJURIES_REPORTED"
+          "thirdPartyInjuryState": "NO_INJURIES_REPORTED",
+          "mostRecentStartingQB": "Roman Gagliano",
+          "qbEvidenceStatus": "RECENT_STARTER_NOT_FINAL_GAME_DAY_CONFIRMATION",
+          "officialContext": "MTSU's Oct. 19 preview identifies Gagliano's nine consecutive starts and 291 passing yards against Delaware. No change is announced in that preview."
         },
         "home": {
           "reportedInjuries": [
@@ -109,75 +112,178 @@
               "detail": "Undisclosed",
               "sourceTier": "third_party"
             }
-          ]
+          ],
+          "mostRecentStartingQB": "JJ Kohl",
+          "qbEvidenceStatus": "RECENT_PRIMARY_QB_NOT_FINAL_GAME_DAY_CONFIRMATION",
+          "officialContext": "FIU's Oct. 14 recap identifies JJ Kohl as its primary passer against Jax State on Oct. 13 (278 yards, two passing touchdowns).",
+          "injuryIdentityReview": "Retain the prior third-party Amari Carrie listing as unverified. FIU's official recap lists Anthony Carrie; do not merge distinct player names without identity confirmation."
         },
         "sources": [
           "https://fiusports.com/news/2026/10/19/football-preps-for-middle-tennessee-hosts-blue-raiders-tuesday-night-in-final-weekday-cusa-game.aspx",
           "https://goblueraiders.com/news/2026/10/19/football-blue-raiders-travel-to-fiu-for-key-cusa-mid-week-game",
-          "https://www.covers.com/sport/football/ncaaf/matchup/378460"
+          "https://www.covers.com/sport/football/ncaaf/matchup/378460",
+          "https://fiusports.com/news/2026/10/14/football-falls-late-to-jax-state-on-tuesday-night-in-weekday-cusa-play.aspx"
         ],
-        "canonicalInfluence": "No new authoritative material update found. Preserve established validated personnel logic only; no manual point adjustment.",
-        "lastOfficialCheckAt": "2026-10-20T11:11:19Z",
-        "refreshStatus": "NO_NEW_AUTHORITATIVE_MATERIAL_UPDATE_FOUND_MORNING_CHECK",
-        "lastCheckedAt": "2026-10-20T19:31:14Z",
+        "canonicalInfluence": "Context only; no manual adjustment and no change to frozen projections.",
+        "lastOfficialCheckAt": "2026-10-20T20:10:27Z",
+        "refreshStatus": "OFFICIAL_SOURCES_RECHECKED_FINAL_WINDOW_PENDING",
+        "lastCheckedAt": "2026-10-20T20:10:27Z",
         "source": "https://www.covers.com/sport/football/ncaaf/matchup/378460"
       },
       "weather": {
-        "status": "NWS_CURRENT_MATERIAL_WIND_FINAL_RECHECK_REQUIRED",
+        "status": "NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED",
         "temperatureFRange": [
-          78,
-          80
+          76,
+          79
         ],
         "precipProbabilityPctRange": [
-          0,
-          2
+          1,
+          6
         ],
         "windMphRange": [
-          9,
-          15
+          12,
+          14
         ],
-        "windDirection": "NE/NNE",
-        "note": "Action Network and Blue Chip/WeatherAPI agree on low precipitation but differ on wind magnitude. Recheck an authoritative stadium-level forecast in the one-hour window.",
+        "windDirection": null,
+        "note": "Latest direct API capture supersedes earlier cached tabular ranges. Different source snapshots are retained separately. Gusts are not supplied by this endpoint; null is not zero. Final-hour stadium-level recheck remains pending.",
         "sources": [
           "https://www.actionnetwork.com/ncaaf/weather",
           "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-middle-tennessee-florida-international/"
         ],
-        "observedAt": "2026-10-20T19:31:14Z",
-        "source": "National Weather Service point forecast near Miami International Airport / FIU",
-        "sourceLastUpdate": "2026-10-20T04:06:00-04:00",
-        "sourceUrl": "https://forecast.weather.gov/MapClick.php?FcstType=digital&lat=25.783&lg=english&lon=-80.3261&unit=0",
-        "kickoffWindow": {
-          "approximately7pmET": {
-            "temperatureF": 79,
+        "observedAt": "2026-10-20T20:18:33.651696Z",
+        "source": "National Weather Service hourly API",
+        "sourceLastUpdate": "2026-10-20T20:02:22+00:00",
+        "sourceUrl": "https://api.weather.gov/gridpoints/MFL/104,50/forecast/hourly",
+        "kickoffWindow": null,
+        "materiality": "Context only; no unvalidated weather adjustment. Recheck wind/gusts and precipitation before kickoff.",
+        "kickoffApprox": null,
+        "lastCheckedAt": "2026-10-20T20:18:33.651696Z",
+        "spatialScope": "Nearby NWS forecast grid, not an on-field observation",
+        "gustMphRange": null,
+        "sourceGeneratedAt": "2026-10-20T20:18:33+00:00",
+        "sourceSnapshot": "cfb/pregame-refresh/week-08-nws-tuesday-wednesday-2026-10-20.json",
+        "gustMph": null,
+        "hourly": [
+          {
+            "number": 4,
+            "name": "",
+            "startTime": "2026-10-20T19:00:00-04:00",
+            "endTime": "2026-10-20T20:00:00-04:00",
+            "isDaytime": false,
+            "temperature": 79,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 1
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 20.555555555555557
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 72
+            },
+            "windSpeed": "14 mph",
             "windDirection": "NE",
-            "windMph": 14,
-            "gustMph": 21,
-            "precipProbabilityPct": 1
+            "icon": "https://api.weather.gov/icons/land/night/few?size=small",
+            "shortForecast": "Mostly Clear",
+            "detailedForecast": ""
           },
-          "approximately8pmET": {
-            "temperatureF": 78,
-            "windDirection": "NE",
-            "windMph": 11,
-            "gustMph": 18,
-            "precipProbabilityPct": 4
+          {
+            "number": 5,
+            "name": "",
+            "startTime": "2026-10-20T20:00:00-04:00",
+            "endTime": "2026-10-20T21:00:00-04:00",
+            "isDaytime": false,
+            "temperature": 77,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 2
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 20
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 74
+            },
+            "windSpeed": "12 mph",
+            "windDirection": "N",
+            "icon": "https://api.weather.gov/icons/land/night/few?size=small",
+            "shortForecast": "Mostly Clear",
+            "detailedForecast": ""
+          },
+          {
+            "number": 6,
+            "name": "",
+            "startTime": "2026-10-20T21:00:00-04:00",
+            "endTime": "2026-10-20T22:00:00-04:00",
+            "isDaytime": false,
+            "temperature": 76,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 5
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 20.555555555555557
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 79
+            },
+            "windSpeed": "12 mph",
+            "windDirection": "N",
+            "icon": "https://api.weather.gov/icons/land/night/few?size=small",
+            "shortForecast": "Mostly Clear",
+            "detailedForecast": ""
+          },
+          {
+            "number": 7,
+            "name": "",
+            "startTime": "2026-10-20T22:00:00-04:00",
+            "endTime": "2026-10-20T23:00:00-04:00",
+            "isDaytime": false,
+            "temperature": 76,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 6
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 20
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 76
+            },
+            "windSpeed": "12 mph",
+            "windDirection": "N",
+            "icon": "https://api.weather.gov/icons/land/night/few?size=small",
+            "shortForecast": "Mostly Clear",
+            "detailedForecast": ""
           }
-        },
-        "materiality": "Wind/gusts remain the primary weather uncertainty. Final stadium-level check still required in the one-hour window. No unvalidated manual adjustment.",
-        "kickoffApprox": {
-          "temperatureF": 79,
-          "windDirection": "NE/N",
-          "windMph": 14,
-          "gustMph": 21,
-          "precipProbabilityPct": 13
-        }
+        ],
+        "forecast": "Official hourly forecast covers kickoff through +4 hours. See hourly periods for exact time and wind direction."
       },
       "travelRest": {
         "awayMiles": 781,
         "awayBodyClockShiftHours": 1,
         "awayRestDays": 7,
-        "homeRestDays": 6,
+        "homeRestDays": 7,
         "status": "CONTEXT_ONLY",
-        "source": "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-middle-tennessee-florida-international/"
+        "source": "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-middle-tennessee-florida-international/",
+        "restVerificationSource": "https://fiusports.com/news/2026/10/14/football-falls-late-to-jax-state-on-tuesday-night-in-weekday-cusa-play.aspx",
+        "note": "Both teams last played Oct. 13. FIU's recap was published Oct. 14; publication date is not game date. Prior home rest value of six is corrected to seven."
       },
       "market": {
         "status": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
@@ -227,14 +333,18 @@
         "spPlus": {
           "status": "PENDING_CURRENT_OFFICIAL_CAPTURE",
           "source": "https://www.espn.com/college-football/story/_/id/49868647/2026-college-football-sp+-rankings-all-138-fbs-teams",
-          "note": "Official ESPN page currently blocks automated retrieval; do not substitute mirrors."
+          "note": "Official ESPN page returned verification rather than ratings; no unofficial replacement or inferred rating.",
+          "lastCheckedAt": "2026-10-20T20:10:27Z",
+          "retrievalStatus": "BLOCKED_ROBOT_VERIFICATION"
         },
         "refMetrics": {
-          "status": "NOT_YET_POSTED",
+          "status": "UNAVAILABLE_STALE_RETRIEVAL",
           "source": "https://www.refmetrics.com/ncaa-football/todays-games",
           "canonicalInfluence": false,
-          "lastCheckedAt": "2026-10-20T19:31:14Z",
-          "note": "RefMetrics Week 8 board states that officials are not currently available for upcoming NCAA Football games. Team betting-trend fields are research-only and are not model inputs."
+          "lastCheckedAt": "2026-10-20T20:10:27Z",
+          "note": "This retrieval returned a Week 7 board and a notice that upcoming officials are unavailable. It cannot verify a Week 8 crew. Prior checks are retained in earlier captures; no assignment is inferred.",
+          "retrievedBoardWeek": 7,
+          "retrievedBoardUpdated": "2026-10-17T13:05:00-07:00"
         }
       },
       "officialContext": {
@@ -251,7 +361,14 @@
           "https://fiusports.com/news/2026/10/19/football-preps-for-middle-tennessee-hosts-blue-raiders-tuesday-night-in-final-weekday-cusa-game.aspx",
           "https://goblueraiders.com/news/2026/10/19/football-blue-raiders-travel-to-fiu-for-key-cusa-mid-week-game"
         ],
-        "canonicalInfluence": "Context only unless an underlying metric is already authorized by the established model framework."
+        "canonicalInfluence": "Context only unless an underlying metric is already authorized by the established model framework.",
+        "lastCheckedAt": "2026-10-20T20:10:27Z",
+        "kickoffVerification": {
+          "officialAdvertisedKickoff": "2026-10-20T23:02:00Z",
+          "source": "https://fiusports.com/news/2026/10/19/football-preps-for-middle-tennessee-hosts-blue-raiders-tuesday-night-in-final-weekday-cusa-game.aspx",
+          "frozenKickoffPreserved": "2026-10-20T23:00:00Z",
+          "note": "Both official previews specify 7:02 PM ET. Preserve the immutable 7:00 PM identity and its earlier, conservative market-lock cutoff; do not shift a frozen timestamp."
+        }
       },
       "audit": {
         "priority": "HIGH_TUESDAY",
@@ -291,7 +408,7 @@
       "homeTeam": "Delaware",
       "kickoff": "2026-10-20T23:00:00Z",
       "contextSource": "cfb/pregame/week-08-tuesday-effective.json",
-      "contextObservedAt": "2026-10-20T19:57:03.150Z",
+      "contextObservedAt": "2026-10-20T20:18:33.694819Z",
       "frozenFoundationReference": {
         "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
         "canonicalInfluence": false,
@@ -344,7 +461,8 @@
               "detail": "Undisclosed",
               "sourceTier": "third_party"
             }
-          ]
+          ],
+          "sourceConflict": "Missouri State's own Oct. 16 preview documents Henry Belin IV's most recent start; Delaware's opponent overview names Skyler Locklear. Neither text confirms Tuesday's starter. Prefer direct team evidence for the most recent start, while keeping the current starter unresolved."
         },
         "home": {
           "reportedInjuries": [
@@ -413,40 +531,159 @@
         "sources": [
           "https://missouristatebears.com/sports/football/",
           "https://missouristatebears.com/news/2026/10/16/football-bears-square-off-with-delaware-tuesday-on-espnu",
-          "https://www.covers.com/sport/football/ncaaf/matchup/379250"
+          "https://www.covers.com/sport/football/ncaaf/matchup/379250",
+          "https://bluehens.com/news/2026/10/17/football-plays-host-to-missouri-state-on-tuesday-for-senior-day"
         ],
-        "canonicalInfluence": "Do not infer either starter and do not invent a QB point adjustment.",
-        "lastOfficialCheckAt": "2026-10-20T11:11:19Z",
-        "refreshStatus": "NO_NEW_OFFICIAL_TUESDAY_STARTER_CONFIRMATION_FOUND_MORNING_CHECK",
-        "lastCheckedAt": "2026-10-20T19:31:14Z",
-        "note": "Missouri State's official football page still shows the Oct. 16 Delaware preview as its latest game-specific football item; no authoritative Tuesday starter change was captured in this check."
+        "canonicalInfluence": "Context only; no manual adjustment and no change to frozen projections.",
+        "lastOfficialCheckAt": "2026-10-20T20:10:27Z",
+        "refreshStatus": "OFFICIAL_SOURCES_RECHECKED_FINAL_WINDOW_PENDING",
+        "lastCheckedAt": "2026-10-20T20:10:27Z",
+        "note": "Official Missouri State and Delaware previews rechecked. Neither resolves Tuesday's starter in the retrieved text; linked game-note PDFs could not be extracted."
       },
       "weather": {
-        "status": "NWS_LOW_TO_MODERATE_WIND_FINAL_RECHECK_REQUIRED",
+        "status": "NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED",
         "temperatureFRange": [
-          56,
-          60
+          52,
+          58
         ],
         "precipProbabilityPctRange": [
           0,
-          4
+          0
         ],
         "windMphRange": [
-          6,
-          9
+          5,
+          10
         ],
-        "gustMph": 17,
-        "windDirection": "NNE",
+        "gustMph": null,
+        "windDirection": null,
         "sources": [
           "https://www.actionnetwork.com/ncaaf/weather",
           "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-missouri-state-delaware/"
         ],
-        "observedAt": "2026-10-20T19:31:14Z",
-        "source": "National Weather Service point forecast for Newark, Delaware",
-        "sourceLastUpdate": "2026-10-20T11:48:00-04:00",
-        "sourceUrl": "https://forecast.weather.gov/MapClick.php?FcstType=digital&FcstType=text&lat=39.6776&lg=english&lon=-75.7575&menu=1",
-        "forecast": "This afternoon sunny near 70 F with north wind 10-15 mph; tonight mostly clear with north wind 5-10 mph and a low near 43 F.",
-        "materiality": "No precipitation concern. Wind remains modest enough for final-window confirmation rather than an unvalidated adjustment."
+        "observedAt": "2026-10-20T20:18:33.546972Z",
+        "source": "National Weather Service hourly API",
+        "sourceLastUpdate": "2026-10-20T19:09:06+00:00",
+        "sourceUrl": "https://api.weather.gov/gridpoints/PHI/31,63/forecast/hourly",
+        "forecast": "Official hourly forecast covers kickoff through +4 hours. See hourly periods for exact time and wind direction.",
+        "materiality": "Context only; no unvalidated weather adjustment. Recheck wind/gusts and precipitation before kickoff.",
+        "lastCheckedAt": "2026-10-20T20:18:33.546972Z",
+        "spatialScope": "Nearby NWS forecast grid, not an on-field observation",
+        "note": "Latest direct API capture supersedes earlier cached tabular ranges. Different source snapshots are retained separately. Gusts are not supplied by this endpoint; null is not zero. Final-hour stadium-level recheck remains pending.",
+        "kickoffWindow": null,
+        "sourceGeneratedAt": "2026-10-20T20:03:41+00:00",
+        "sourceSnapshot": "cfb/pregame-refresh/week-08-nws-tuesday-wednesday-2026-10-20.json",
+        "gustMphRange": null,
+        "kickoffApprox": null,
+        "hourly": [
+          {
+            "number": 4,
+            "name": "",
+            "startTime": "2026-10-20T19:00:00-04:00",
+            "endTime": "2026-10-20T20:00:00-04:00",
+            "isDaytime": false,
+            "temperature": 58,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 6.111111111111111
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 57
+            },
+            "windSpeed": "5 mph",
+            "windDirection": "N",
+            "icon": "https://api.weather.gov/icons/land/night/skc?size=small",
+            "shortForecast": "Clear",
+            "detailedForecast": ""
+          },
+          {
+            "number": 5,
+            "name": "",
+            "startTime": "2026-10-20T20:00:00-04:00",
+            "endTime": "2026-10-20T21:00:00-04:00",
+            "isDaytime": false,
+            "temperature": 56,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 5.555555555555555
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 59
+            },
+            "windSpeed": "5 mph",
+            "windDirection": "N",
+            "icon": "https://api.weather.gov/icons/land/night/skc?size=small",
+            "shortForecast": "Clear",
+            "detailedForecast": ""
+          },
+          {
+            "number": 6,
+            "name": "",
+            "startTime": "2026-10-20T21:00:00-04:00",
+            "endTime": "2026-10-20T22:00:00-04:00",
+            "isDaytime": false,
+            "temperature": 54,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 5.555555555555555
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 64
+            },
+            "windSpeed": "5 mph",
+            "windDirection": "N",
+            "icon": "https://api.weather.gov/icons/land/night/skc?size=small",
+            "shortForecast": "Clear",
+            "detailedForecast": ""
+          },
+          {
+            "number": 7,
+            "name": "",
+            "startTime": "2026-10-20T22:00:00-04:00",
+            "endTime": "2026-10-20T23:00:00-04:00",
+            "isDaytime": false,
+            "temperature": 52,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 5
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 66
+            },
+            "windSpeed": "10 mph",
+            "windDirection": "N",
+            "icon": "https://api.weather.gov/icons/land/night/skc?size=small",
+            "shortForecast": "Clear",
+            "detailedForecast": ""
+          }
+        ]
       },
       "travelRest": {
         "awayMiles": 965,
@@ -503,14 +740,19 @@
         },
         "spPlus": {
           "status": "PENDING_CURRENT_OFFICIAL_CAPTURE",
-          "source": "https://www.espn.com/college-football/story/_/id/49868647/2026-college-football-sp+-rankings-all-138-fbs-teams"
+          "source": "https://www.espn.com/college-football/story/_/id/49868647/2026-college-football-sp+-rankings-all-138-fbs-teams",
+          "lastCheckedAt": "2026-10-20T20:10:27Z",
+          "retrievalStatus": "BLOCKED_ROBOT_VERIFICATION",
+          "note": "Official ESPN page returned verification rather than ratings; no unofficial replacement or inferred rating."
         },
         "refMetrics": {
-          "status": "NOT_YET_POSTED",
+          "status": "UNAVAILABLE_STALE_RETRIEVAL",
           "source": "https://www.refmetrics.com/ncaa-football/todays-games",
           "canonicalInfluence": false,
-          "lastCheckedAt": "2026-10-20T19:31:14Z",
-          "note": "RefMetrics Week 8 board states that officials are not currently available for upcoming NCAA Football games. Team betting-trend fields are research-only and are not model inputs."
+          "lastCheckedAt": "2026-10-20T20:10:27Z",
+          "note": "This retrieval returned a Week 7 board and a notice that upcoming officials are unavailable. It cannot verify a Week 8 crew. Prior checks are retained in earlier captures; no assignment is inferred.",
+          "retrievedBoardWeek": 7,
+          "retrievedBoardUpdated": "2026-10-17T13:05:00-07:00"
         }
       },
       "officialContext": {
@@ -568,7 +810,7 @@
       "homeTeam": "Marshall",
       "kickoff": "2026-10-20T23:30:00Z",
       "contextSource": "cfb/pregame/week-08-tuesday-effective.json",
-      "contextObservedAt": "2026-10-20T19:57:03.150Z",
+      "contextObservedAt": "2026-10-20T20:18:33.694819Z",
       "frozenFoundationReference": {
         "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
         "canonicalInfluence": false,
@@ -584,7 +826,7 @@
         "source": "cfb/research-locks/week-08-foundation-full.json"
       },
       "personnel": {
-        "status": "AFTERNOON_REFRESH_PARTIAL_THIRD_PARTY_CONTEXT_FINAL_RECHECK_REQUIRED",
+        "status": "MATERIAL_QB_STATUS_OPEN_OFFICIAL_ROTATION",
         "away": {
           "reportedInjuries": [],
           "note": "No sufficiently complete authoritative injury list captured yet; official South Alabama game notes are available and should be checked again pregame.",
@@ -618,51 +860,318 @@
               "detail": "Undisclosed / reported remainder of season",
               "sourceTier": "third_party"
             }
-          ]
+          ],
+          "mostRecentStartingQB": "Jared Hollins",
+          "startingQB": "Jared Hollins",
+          "qbEvidenceStatus": "RECENT_STARTER_BASELINE_NOT_FINAL_CONFIRMATION",
+          "officialContext": "South Alabama's Oct. 8 recap documents Jared Hollins operating the offense. The Oct. 17 Marshall preview announces no QB change.",
+          "officialAvailability": [
+            {
+              "name": "Hunter, Everett",
+              "position": "TE",
+              "status": "Available"
+            },
+            {
+              "name": "Johnson, Stephen",
+              "position": "DL",
+              "status": "Game Time Decision"
+            },
+            {
+              "name": "Moore, DJ",
+              "position": "DB",
+              "status": "Available"
+            },
+            {
+              "name": "Waller, Manny",
+              "position": "DL",
+              "status": "Game Time Decision"
+            },
+            {
+              "name": "White, Dominic",
+              "position": "WR",
+              "status": "Game Time Decision"
+            },
+            {
+              "name": "Johnson, Tirrell",
+              "position": "OLB",
+              "status": "Out"
+            },
+            {
+              "name": "Korchagin, Artem",
+              "position": "OL",
+              "status": "Out"
+            },
+            {
+              "name": "Mosley, Demetress ",
+              "position": "ILB",
+              "status": "Out"
+            },
+            {
+              "name": "Dozier, Caleb",
+              "position": "ILB",
+              "status": "Out for Season"
+            },
+            {
+              "name": "Barnes, Brian ",
+              "position": "WR",
+              "status": "Out for Season"
+            },
+            {
+              "name": "Chiedo, Dylan",
+              "position": "OLB",
+              "status": "Out for Season"
+            },
+            {
+              "name": "Lynch, Maddox",
+              "position": "TE",
+              "status": "Out for Season"
+            },
+            {
+              "name": "Marion, Khatori",
+              "position": "WR",
+              "status": "Out for Season"
+            }
+          ],
+          "availabilitySource": "https://sbcautostorage.blob.core.windows.net/availability-reports/sunbelt-football/prod/report.json",
+          "availabilityPublishedAt": "2026-10-20T14:50:44.6188600Z"
         },
         "home": {
           "reportedInjuries": [],
-          "note": "No sufficiently complete authoritative injury list captured yet; refresh required.",
-          "thirdPartyInjuryState": "NO_INJURIES_REPORTED"
+          "note": "Material quarterback role uncertainty requires final confirmation; no points assigned.",
+          "thirdPartyInjuryState": "NO_INJURIES_REPORTED",
+          "startingQB": "UNRESOLVED_TUESDAY_STARTER",
+          "qbCandidates": [
+            "Carlos Del Rio-Wilson",
+            "Zion Turner",
+            "Khalil Wilkins"
+          ],
+          "officialContext": "Marshall's Oct. 10 recap records Del Rio-Wilson, Turner and Wilkins at quarterback. Turner threw for 219 yards and two TDs in the rally. The Oct. 16 South Alabama preview does not name Tuesday's starter. Prior no-injuries-listed status does not resolve the QB rotation.",
+          "officialAvailability": [
+            {
+              "name": "Xavier Bausley",
+              "position": "OL",
+              "status": "Out for Season"
+            },
+            {
+              "name": "Louikenzy Jules",
+              "position": "DB",
+              "status": "Out for Season"
+            },
+            {
+              "name": "Chason Clark",
+              "position": "ILB",
+              "status": "Out"
+            },
+            {
+              "name": "Jo'Shon Barbie",
+              "position": "RB",
+              "status": "Out"
+            },
+            {
+              "name": "Mikailin Warren",
+              "position": "DL",
+              "status": "Out"
+            }
+          ],
+          "availabilitySource": "https://sbcautostorage.blob.core.windows.net/availability-reports/sunbelt-football/prod/report.json",
+          "availabilityPublishedAt": "2026-10-20T14:50:44.6188600Z"
         },
         "sources": [
           "https://usajaguars.com/news/2026/10/17/football-jags-head-to-marshall-for-tuesday-night-game.aspx",
           "https://www.covers.com/sport/football/ncaaf/matchup/378461",
-          "https://www.covers.com/sport/football/ncaaf/injuries"
+          "https://www.covers.com/sport/football/ncaaf/injuries",
+          "https://usajaguars.com/news/2026/10/8/football-keenan-phillips-powers-south-alabama-past-arkansas-state-in-road-win.aspx",
+          "https://herdzone.com/news/2026/10/10/marshall-football-falls-to-coastal-carolina-27-21",
+          "https://herdzone.com/news/2026/10/16/marshall-football-hosts-south-alabama-at-7-30-pm-on-tuesday"
         ],
         "context": [
           "South Alabama offensive line named to the Joe Moore Midseason Honor Roll on Oct. 14."
         ],
-        "canonicalInfluence": "Newly observed third-party season-long absence listings are contextual only and are not assigned manual points.",
-        "lastOfficialCheckAt": "2026-10-20T11:11:19Z",
-        "refreshStatus": "NO_NEW_AUTHORITATIVE_MATERIAL_UPDATE_FOUND_MORNING_CHECK",
-        "lastCheckedAt": "2026-10-20T19:31:14Z"
+        "canonicalInfluence": "Context only; no manual adjustment and no change to frozen projections.",
+        "lastOfficialCheckAt": "2026-10-20T20:14:43.680757Z",
+        "refreshStatus": "OFFICIAL_SOURCES_RECHECKED_FINAL_WINDOW_PENDING",
+        "lastCheckedAt": "2026-10-20T20:14:43.680757Z",
+        "officialAvailability": {
+          "source": "https://sbcautostorage.blob.core.windows.net/availability-reports/sunbelt-football/prod/report.json",
+          "sourcePage": "https://sunbeltsports.org/news/2025/8/11/football-availability-report-new.aspx",
+          "sourcePublishedAt": "2026-10-20T14:50:44.6188600Z",
+          "retrievedAt": "2026-10-20T20:14:43.680757Z",
+          "reportType": "Game Day Report",
+          "sourceSnapshot": "cfb/pregame-refresh/week-08-sunbelt-tuesday-availability-2026-10-20.json"
+        },
+        "availabilityNote": "Official Sun Belt game-day report captured. Three South Alabama game-time decisions remain open. Absence from this list does not confirm a QB starter or clear injury-impact/depth QA. No manual points adjustment."
       },
       "weather": {
-        "status": "NWS_LOW_IMPACT_FINAL_RECHECK_REQUIRED",
+        "status": "NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED",
         "temperatureFRange": [
-          54,
-          59
+          48,
+          61
         ],
         "precipProbabilityPctRange": [
           0,
-          4
+          0
         ],
         "windMphRange": [
-          3,
-          4
+          1,
+          2
         ],
-        "windDirection": "NE",
+        "windDirection": null,
         "sources": [
           "https://www.actionnetwork.com/ncaaf-game/south-alabama-jaguars-marshall-thundering-herd/289598",
           "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-south-alabama-marshall/"
         ],
-        "observedAt": "2026-10-20T19:31:14Z",
-        "source": "National Weather Service point forecast for Huntington, West Virginia",
-        "sourceLastUpdate": "2026-10-20T07:48:00-04:00",
-        "sourceUrl": "https://forecast.weather.gov/MapClick.php?lat=38.4134&lon=-82.4277",
-        "forecast": "Sunny near 70 F with calm wind becoming northeast around 5 mph; tonight mostly clear near 43 F with calm wind.",
-        "materiality": "Low-impact weather profile. Final stadium-level recheck still required before freeze; no automatic adjustment."
+        "observedAt": "2026-10-20T20:18:33.694819Z",
+        "source": "National Weather Service hourly API",
+        "sourceLastUpdate": "2026-10-20T20:03:44+00:00",
+        "sourceUrl": "https://api.weather.gov/gridpoints/RLX/35,67/forecast/hourly",
+        "forecast": "Official hourly forecast covers kickoff through +4 hours. See hourly periods for exact time and wind direction.",
+        "materiality": "Context only; no unvalidated weather adjustment. Recheck wind/gusts and precipitation before kickoff.",
+        "lastCheckedAt": "2026-10-20T20:18:33.694819Z",
+        "spatialScope": "Nearby NWS forecast grid, not an on-field observation",
+        "gustMph": null,
+        "note": "Latest direct API capture supersedes earlier cached tabular ranges. Different source snapshots are retained separately. Gusts are not supplied by this endpoint; null is not zero. Final-hour stadium-level recheck remains pending.",
+        "sourceGeneratedAt": "2026-10-20T20:18:33+00:00",
+        "sourceSnapshot": "cfb/pregame-refresh/week-08-nws-tuesday-wednesday-2026-10-20.json",
+        "gustMphRange": null,
+        "kickoffApprox": null,
+        "kickoffWindow": null,
+        "hourly": [
+          {
+            "number": 4,
+            "name": "",
+            "startTime": "2026-10-20T19:00:00-04:00",
+            "endTime": "2026-10-20T20:00:00-04:00",
+            "isDaytime": false,
+            "temperature": 61,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 4.444444444444445
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 47
+            },
+            "windSpeed": "2 mph",
+            "windDirection": "NE",
+            "icon": "https://api.weather.gov/icons/land/night/few?size=small",
+            "shortForecast": "Mostly Clear",
+            "detailedForecast": ""
+          },
+          {
+            "number": 5,
+            "name": "",
+            "startTime": "2026-10-20T20:00:00-04:00",
+            "endTime": "2026-10-20T21:00:00-04:00",
+            "isDaytime": false,
+            "temperature": 54,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 5
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 62
+            },
+            "windSpeed": "2 mph",
+            "windDirection": "NE",
+            "icon": "https://api.weather.gov/icons/land/night/few?size=small",
+            "shortForecast": "Mostly Clear",
+            "detailedForecast": ""
+          },
+          {
+            "number": 6,
+            "name": "",
+            "startTime": "2026-10-20T21:00:00-04:00",
+            "endTime": "2026-10-20T22:00:00-04:00",
+            "isDaytime": false,
+            "temperature": 51,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 5.555555555555555
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 70
+            },
+            "windSpeed": "1 mph",
+            "windDirection": "NE",
+            "icon": "https://api.weather.gov/icons/land/night/few?size=small",
+            "shortForecast": "Mostly Clear",
+            "detailedForecast": ""
+          },
+          {
+            "number": 7,
+            "name": "",
+            "startTime": "2026-10-20T22:00:00-04:00",
+            "endTime": "2026-10-20T23:00:00-04:00",
+            "isDaytime": false,
+            "temperature": 49,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 5.555555555555555
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 77
+            },
+            "windSpeed": "1 mph",
+            "windDirection": "NE",
+            "icon": "https://api.weather.gov/icons/land/night/few?size=small",
+            "shortForecast": "Mostly Clear",
+            "detailedForecast": ""
+          },
+          {
+            "number": 8,
+            "name": "",
+            "startTime": "2026-10-20T23:00:00-04:00",
+            "endTime": "2026-10-21T00:00:00-04:00",
+            "isDaytime": false,
+            "temperature": 48,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 6.111111111111111
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 82
+            },
+            "windSpeed": "1 mph",
+            "windDirection": "NE",
+            "icon": "https://api.weather.gov/icons/land/night/skc?size=small",
+            "shortForecast": "Clear",
+            "detailedForecast": ""
+          }
+        ]
       },
       "travelRest": {
         "awayMiles": 626,
@@ -719,14 +1228,19 @@
         },
         "spPlus": {
           "status": "PENDING_CURRENT_OFFICIAL_CAPTURE",
-          "source": "https://www.espn.com/college-football/story/_/id/49868647/2026-college-football-sp+-rankings-all-138-fbs-teams"
+          "source": "https://www.espn.com/college-football/story/_/id/49868647/2026-college-football-sp+-rankings-all-138-fbs-teams",
+          "lastCheckedAt": "2026-10-20T20:10:27Z",
+          "retrievalStatus": "BLOCKED_ROBOT_VERIFICATION",
+          "note": "Official ESPN page returned verification rather than ratings; no unofficial replacement or inferred rating."
         },
         "refMetrics": {
-          "status": "NOT_YET_POSTED",
+          "status": "UNAVAILABLE_STALE_RETRIEVAL",
           "source": "https://www.refmetrics.com/ncaa-football/todays-games",
           "canonicalInfluence": false,
-          "lastCheckedAt": "2026-10-20T19:31:14Z",
-          "note": "RefMetrics Week 8 board states that officials are not currently available for upcoming NCAA Football games. Team betting-trend fields are research-only and are not model inputs."
+          "lastCheckedAt": "2026-10-20T20:10:27Z",
+          "note": "This retrieval returned a Week 7 board and a notice that upcoming officials are unavailable. It cannot verify a Week 8 crew. Prior checks are retained in earlier captures; no assignment is inferred.",
+          "retrievedBoardWeek": 7,
+          "retrievedBoardUpdated": "2026-10-17T13:05:00-07:00"
         }
       },
       "officialContext": {
@@ -754,12 +1268,11 @@
       "audit": {
         "priority": "HIGH_TUESDAY",
         "materialOpenItems": [
-          "reproducible CB engine",
-          "complete injury/personnel confirmation",
-          "one-hour weather refresh",
-          "referee/crew assignment",
-          "publication-time market lock",
-          "current official SP+ capture"
+          "reproducible authorized canonical projection",
+          "Marshall starting QB/rotation confirmation",
+          "final personnel and one-hour weather refresh",
+          "publication-window market locks",
+          "official SP+ and referee assignment if available"
         ]
       },
       "researchMarketComparison": {
@@ -789,7 +1302,7 @@
       "homeTeam": "Sam Houston",
       "kickoff": "2026-10-22T00:00:00Z",
       "contextSource": "cfb/pregame/week-08-wednesday-effective.json",
-      "contextObservedAt": "2026-10-20T19:57:03.150Z",
+      "contextObservedAt": "2026-10-20T20:18:33.694819Z",
       "frozenFoundationReference": {
         "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
         "canonicalInfluence": false,
@@ -805,7 +1318,7 @@
         "source": "cfb/research-locks/week-08-foundation-full.json"
       },
       "personnel": {
-        "status": "OFFICIAL_BASELINE_CAPTURED_NO_NEW_MATERIAL_QB_CHANGE_FOUND",
+        "status": "OFFICIAL_BASELINE_CAPTURED_FINAL_RECHECK_REQUIRED",
         "away": {
           "mostRecentStartingQB": "Adam Damante",
           "startingQB": "NOT_EXPLICITLY_CONFIRMED_FOR_WEDNESDAY",
@@ -836,8 +1349,8 @@
         },
         "home": {
           "mostRecentStartingQB": "Landyn Locke",
-          "startingQB": "Landyn Locke",
-          "officialContext": "Landyn Locke started the Oct. 14 loss to WKU, and Sam Houston's official Oct. 21 game center still lists Locke as the team passing leader. No newer official material was found announcing a quarterback change.",
+          "startingQB": "NOT_EXPLICITLY_CONFIRMED_FOR_WEDNESDAY",
+          "officialContext": "Sam Houston's Oct. 20 preview discusses Landyn Locke as the current offensive baseline; it is not a final game-day starter announcement. It reports true freshmen Myles Joseph and Tr'e Williams starting together on the offensive line in the previous two games.",
           "thirdPartyInjuries": [
             {
               "player": "M. Whisner",
@@ -853,38 +1366,162 @@
               "detail": "Reported season-long absence / undisclosed",
               "sourceTier": "third_party"
             }
-          ]
+          ],
+          "qbEvidenceStatus": "RECENT_STARTER_AND_CURRENT_PREVIEW_BASELINE"
         },
         "sources": [
           "https://nmstatesports.com/news/2026/10/18/football-aggies-continue-conference-usa-play-at-sam-houston-on-wednesday.aspx",
           "https://nmstatesports.com/sports/football/stats/2026/fiu/boxscore/19277",
           "https://gobearkats.com/game-center/15542",
           "https://gobearkats.com/news/2026/10/14/football-wku-hands-bearkats-16-3-setback",
-          "https://www.covers.com/sport/football/ncaaf/matchup/378124"
+          "https://www.covers.com/sport/football/ncaaf/matchup/378124",
+          "https://gobearkats.com/news/2026/10/20/football-game-7-preview-vs-nm-state"
         ],
-        "lastOfficialCheckAt": "2026-10-20T12:08:00Z",
-        "canonicalInfluence": "No manual QB or injury points. Only a future authoritative material update may enter an already validated personnel rule; the frozen Week 8 research foundation remains immutable."
+        "lastOfficialCheckAt": "2026-10-20T20:10:27Z",
+        "canonicalInfluence": "Context only; no manual adjustment and no change to frozen projections.",
+        "lastCheckedAt": "2026-10-20T20:10:27Z",
+        "refreshStatus": "OFFICIAL_SOURCES_RECHECKED_FINAL_WINDOW_PENDING"
       },
       "weather": {
-        "status": "NWS_LOW_IMPACT_BASELINE_CAPTURED",
-        "observedAt": "2026-10-20T12:08:00Z",
-        "source": "National Weather Service Houston/Galveston zone forecast for Walker County / Huntsville, Texas",
-        "sourceLastUpdate": "2026-10-20T04:28:00-05:00",
-        "sourceUrl": "https://forecast.weather.gov/product.php?format=CI&glossary=1&issuedby=HGX&product=ZFP&site=DTX&version=1",
-        "forecast": {
-          "wednesdayDay": "Sunny, highs in the lower 80s, northeast wind around 5 mph.",
-          "wednesdayNight": "Clear, lows in the mid 50s, northeast wind around 5 mph in the evening becoming light and variable.",
-          "precipitationSignal": "No meaningful precipitation signal in the current NWS Walker County forecast."
-        },
-        "thirdPartyCrossCheck": {
-          "source": "https://www.covers.com/sport/ncaaf/weather",
-          "stadiumTemperatureF": 72.1,
-          "windDirection": "ENE",
-          "windMph": 3.7,
-          "condition": "Clear",
-          "precipProbabilityPct": 0
-        },
-        "materiality": "Current weather profile is low impact. Preserve as context and perform the standard final-window stadium-level recheck; do not apply an unvalidated manual points adjustment."
+        "status": "NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED",
+        "observedAt": "2026-10-20T20:18:33.511002Z",
+        "lastCheckedAt": "2026-10-20T20:18:33.511002Z",
+        "source": "National Weather Service hourly API",
+        "sourceUrl": "https://api.weather.gov/gridpoints/HGX/56,137/forecast/hourly",
+        "sourceLastUpdate": "2026-10-20T18:21:46+00:00",
+        "sourceGeneratedAt": "2026-10-20T20:00:34+00:00",
+        "sourceSnapshot": "cfb/pregame-refresh/week-08-nws-tuesday-wednesday-2026-10-20.json",
+        "spatialScope": "Nearby NWS forecast grid, not an on-field observation",
+        "temperatureFRange": [
+          63,
+          73
+        ],
+        "windMphRange": [
+          0,
+          5
+        ],
+        "precipProbabilityPctRange": [
+          0,
+          0
+        ],
+        "gustMph": null,
+        "gustMphRange": null,
+        "windDirection": null,
+        "kickoffApprox": null,
+        "kickoffWindow": null,
+        "hourly": [
+          {
+            "number": 29,
+            "name": "",
+            "startTime": "2026-10-21T19:00:00-05:00",
+            "endTime": "2026-10-21T20:00:00-05:00",
+            "isDaytime": false,
+            "temperature": 73,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 10.555555555555555
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 46
+            },
+            "windSpeed": "5 mph",
+            "windDirection": "NE",
+            "icon": "https://api.weather.gov/icons/land/night/few?size=small",
+            "shortForecast": "Mostly Clear",
+            "detailedForecast": ""
+          },
+          {
+            "number": 30,
+            "name": "",
+            "startTime": "2026-10-21T20:00:00-05:00",
+            "endTime": "2026-10-21T21:00:00-05:00",
+            "isDaytime": false,
+            "temperature": 67,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 10.555555555555555
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 56
+            },
+            "windSpeed": "0 mph",
+            "windDirection": "",
+            "icon": "https://api.weather.gov/icons/land/night/skc?size=small",
+            "shortForecast": "Clear",
+            "detailedForecast": ""
+          },
+          {
+            "number": 31,
+            "name": "",
+            "startTime": "2026-10-21T21:00:00-05:00",
+            "endTime": "2026-10-21T22:00:00-05:00",
+            "isDaytime": false,
+            "temperature": 65,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 10.555555555555555
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 60
+            },
+            "windSpeed": "0 mph",
+            "windDirection": "",
+            "icon": "https://api.weather.gov/icons/land/night/skc?size=small",
+            "shortForecast": "Clear",
+            "detailedForecast": ""
+          },
+          {
+            "number": 32,
+            "name": "",
+            "startTime": "2026-10-21T22:00:00-05:00",
+            "endTime": "2026-10-21T23:00:00-05:00",
+            "isDaytime": false,
+            "temperature": 63,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 10.555555555555555
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 65
+            },
+            "windSpeed": "0 mph",
+            "windDirection": "",
+            "icon": "https://api.weather.gov/icons/land/night/few?size=small",
+            "shortForecast": "Mostly Clear",
+            "detailedForecast": ""
+          }
+        ],
+        "forecast": "Official hourly forecast covers kickoff through +4 hours. See hourly periods for exact time and wind direction.",
+        "note": "Latest direct API capture supersedes earlier cached tabular ranges. Different source snapshots are retained separately. Gusts are not supplied by this endpoint; null is not zero. Final-hour stadium-level recheck remains pending.",
+        "materiality": "Context only; no unvalidated weather adjustment. Recheck wind/gusts and precipitation before kickoff."
       },
       "travelRest": {
         "status": "CONTEXT_ONLY",
@@ -899,13 +1536,6 @@
         "status": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
         "observedAt": "2026-10-20T19:57:03.150Z",
         "observations": [
-          {
-            "source": "https://www.covers.com/sports/ncaaf/matchups",
-            "marketType": "public_board_context",
-            "spreadHome": 2.5,
-            "total": 45,
-            "interpretation": "Public board showed New Mexico State -2.5 at Sam Houston with a 45.0 total at observation time. This is not the immutable publication-time book lock."
-          },
           {
             "book": "FanDuel",
             "observedAt": "2026-10-20T19:56:42Z",
@@ -938,7 +1568,19 @@
           }
         ],
         "note": "Final-window FanDuel and DraftKings observations will be captured independently by the immutable market-lock workflow. Consensus/percentage fields are research-only and are not model inputs. Current FanDuel and DraftKings quotes are context only. Publication-time market locks remain pending and are stored separately against the immutable foundation; quotes do not change the canonical projection.",
-        "provider": "The Odds API"
+        "provider": "The Odds API",
+        "historicalObservations": [
+          {
+            "source": "https://www.covers.com/sports/ncaaf/matchups",
+            "marketType": "public_board_context",
+            "spreadHome": 2.5,
+            "total": 45,
+            "interpretation": "Public board showed New Mexico State -2.5 at Sam Houston with a 45.0 total at observation time. This is not the immutable publication-time book lock.",
+            "observedAt": null,
+            "excludedFromPublication": true,
+            "provenanceStatus": "ORIGINAL_OBSERVATION_TIME_NOT_RECORDED"
+          }
+        ]
       },
       "benchmarks": {
         "sagarin": {
@@ -952,14 +1594,18 @@
         "spPlus": {
           "status": "PENDING_CURRENT_OFFICIAL_CAPTURE",
           "source": "https://www.espn.com/college-football/story/_/id/49868647/2026-college-football-sp+-rankings-all-138-fbs-teams",
-          "note": "Official-only policy remains in force; do not substitute mirrors."
+          "note": "Official ESPN page returned verification rather than ratings; no unofficial replacement or inferred rating.",
+          "lastCheckedAt": "2026-10-20T20:10:27Z",
+          "retrievalStatus": "BLOCKED_ROBOT_VERIFICATION"
         },
         "refMetrics": {
-          "status": "NOT_YET_POSTED",
+          "status": "UNAVAILABLE_STALE_RETRIEVAL",
           "source": "https://www.refmetrics.com/ncaa-football/todays-games",
           "canonicalInfluence": false,
-          "lastCheckedAt": "2026-10-20T12:08:00Z",
-          "note": "RefMetrics states that officials are not currently available for upcoming NCAA Football games. Do not infer a crew."
+          "lastCheckedAt": "2026-10-20T20:10:27Z",
+          "note": "This retrieval returned a Week 7 board and a notice that upcoming officials are unavailable. It cannot verify a Week 8 crew. Prior checks are retained in earlier captures; no assignment is inferred.",
+          "retrievedBoardWeek": 7,
+          "retrievedBoardUpdated": "2026-10-17T13:05:00-07:00"
         }
       },
       "officialContext": {
@@ -971,14 +1617,17 @@
           "James Jones leads NM State with 599 rushing yards through his first five games with the Aggies and is averaging 99.8 rushing yards per game.",
           "NM State has 15 sacks through six games; the official Aggie preview notes Sam Houston has allowed 17 sacks.",
           "Sam Houston's official game center lists Landyn Locke as its passing leader with 1,418 yards.",
-          "Sam Houston was held to 177 total yards and 112 passing yards in the Oct. 14 loss to WKU."
+          "Sam Houston was held to 177 total yards and 112 passing yards in the Oct. 14 loss to WKU.",
+          "Sam Houston's Oct. 20 preview reports 137.8 passing yards allowed per game, 338.2 total yards allowed per game and two true freshmen starting together on the offensive line in the last two games. These are descriptive, unadjusted context; no manual model change."
         ],
         "sources": [
           "https://nmstatesports.com/news/2026/10/18/football-aggies-continue-conference-usa-play-at-sam-houston-on-wednesday.aspx",
           "https://gobearkats.com/game-center/15542",
-          "https://gobearkats.com/news/2026/10/14/football-wku-hands-bearkats-16-3-setback"
+          "https://gobearkats.com/news/2026/10/14/football-wku-hands-bearkats-16-3-setback",
+          "https://gobearkats.com/news/2026/10/20/football-game-7-preview-vs-nm-state"
         ],
-        "canonicalInfluence": "Context only. It cannot alter the frozen Week 8 foundation unless a separately validated rule already authorizes that exact input."
+        "canonicalInfluence": "Context only. It cannot alter the frozen Week 8 foundation unless a separately validated rule already authorizes that exact input.",
+        "lastCheckedAt": "2026-10-20T20:10:27Z"
       },
       "audit": {
         "priority": "NEXT_48H",
@@ -1017,7 +1666,7 @@
       "homeTeam": "App State",
       "kickoff": "2026-10-22T23:00:00Z",
       "contextSource": "cfb/pregame/week-08-thursday-effective.json",
-      "contextObservedAt": "2026-10-20T19:57:03.150Z",
+      "contextObservedAt": "2026-10-20T12:18:00Z",
       "frozenFoundationReference": {
         "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
         "canonicalInfluence": false,
@@ -1155,6 +1804,24 @@
           "immutable FanDuel/DraftKings final-window market lock",
           "current official SP+ capture if defensibly available"
         ]
+      },
+      "researchMarketComparison": {
+        "status": "BENCHMARK_ONLY_NOT_CANONICAL_EDGE",
+        "marketObservedAt": "2026-10-20T19:56:42Z",
+        "book": "FanDuel",
+        "spread": {
+          "side": "App State",
+          "foundationSpreadHome": 10.44393434017666,
+          "marketSpreadHome": 10.5,
+          "differencePoints": 0.05606565982333933
+        },
+        "total": {
+          "direction": "UNDER",
+          "foundationTotal": 53.542297062481296,
+          "marketTotal": 55.5,
+          "differencePoints": 1.9577029375187038
+        },
+        "canonicalInfluence": false
       }
     },
     {
@@ -1165,7 +1832,7 @@
       "homeTeam": "Kennesaw State",
       "kickoff": "2026-10-22T23:00:00Z",
       "contextSource": "cfb/pregame/week-08-thursday-effective.json",
-      "contextObservedAt": "2026-10-20T19:57:03.150Z",
+      "contextObservedAt": "2026-10-20T12:18:00Z",
       "frozenFoundationReference": {
         "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
         "canonicalInfluence": false,
@@ -1328,6 +1995,24 @@
           "immutable FanDuel/DraftKings final-window market lock",
           "current official SP+ capture if defensibly available"
         ]
+      },
+      "researchMarketComparison": {
+        "status": "BENCHMARK_ONLY_NOT_CANONICAL_EDGE",
+        "marketObservedAt": "2026-10-20T19:56:42Z",
+        "book": "FanDuel",
+        "spread": {
+          "side": "Liberty",
+          "foundationSpreadHome": 10.800803408442647,
+          "marketSpreadHome": 10.5,
+          "differencePoints": 0.30080340844264697
+        },
+        "total": {
+          "direction": "UNDER",
+          "foundationTotal": 44.96597331346057,
+          "marketTotal": 50.5,
+          "differencePoints": 5.534026686539427
+        },
+        "canonicalInfluence": false
       }
     },
     {
@@ -1338,7 +2023,7 @@
       "homeTeam": "Memphis",
       "kickoff": "2026-10-22T23:30:00Z",
       "contextSource": "cfb/pregame/week-08-thursday-effective.json",
-      "contextObservedAt": "2026-10-20T19:57:03.150Z",
+      "contextObservedAt": "2026-10-20T12:18:00Z",
       "frozenFoundationReference": {
         "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
         "canonicalInfluence": false,
@@ -1463,6 +2148,24 @@
           "immutable FanDuel/DraftKings final-window market lock",
           "current official SP+ capture if defensibly available"
         ]
+      },
+      "researchMarketComparison": {
+        "status": "BENCHMARK_ONLY_NOT_CANONICAL_EDGE",
+        "marketObservedAt": "2026-10-20T19:56:42Z",
+        "book": "FanDuel",
+        "spread": {
+          "side": "Memphis",
+          "foundationSpreadHome": -16.28122286797865,
+          "marketSpreadHome": -10.5,
+          "differencePoints": 5.781222867978649
+        },
+        "total": {
+          "direction": "UNDER",
+          "foundationTotal": 53.25636775813327,
+          "marketTotal": 54.5,
+          "differencePoints": 1.2436322418667274
+        },
+        "canonicalInfluence": false
       }
     }
   ],

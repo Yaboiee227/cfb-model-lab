@@ -1,0 +1,280 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "observedAt": "2026-10-20T20:10:27Z",
+  "role": "TIMESTAMPED_TUESDAY_OFFICIAL_AND_WEATHER_RECHECK",
+  "canonicalInfluence": false,
+  "canonicalPromotionAuthorized": false,
+  "policy": "Only Tuesday game context. Source publication times and quote times remain distinct from this retrieval time. This is not the final one-hour refresh.",
+  "games": [
+    {
+      "gameId": "2026-10-20-MIDDLETENNESSEE-FIU",
+      "patch": {
+        "personnel": {
+          "lastOfficialCheckAt": "2026-10-20T20:10:27Z",
+          "lastCheckedAt": "2026-10-20T20:10:27Z",
+          "refreshStatus": "OFFICIAL_SOURCES_RECHECKED_FINAL_WINDOW_PENDING",
+          "canonicalInfluence": "Context only; no manual adjustment and no change to frozen projections.",
+          "status": "OFFICIAL_BASELINE_CAPTURED_FINAL_RECHECK_REQUIRED",
+          "away": {
+            "mostRecentStartingQB": "Roman Gagliano",
+            "qbEvidenceStatus": "RECENT_STARTER_NOT_FINAL_GAME_DAY_CONFIRMATION",
+            "officialContext": "MTSU's Oct. 19 preview identifies Gagliano's nine consecutive starts and 291 passing yards against Delaware. No change is announced in that preview."
+          },
+          "home": {
+            "mostRecentStartingQB": "JJ Kohl",
+            "qbEvidenceStatus": "RECENT_PRIMARY_QB_NOT_FINAL_GAME_DAY_CONFIRMATION",
+            "officialContext": "FIU's Oct. 14 recap identifies JJ Kohl as its primary passer against Jax State on Oct. 13 (278 yards, two passing touchdowns).",
+            "injuryIdentityReview": "Retain the prior third-party Amari Carrie listing as unverified. FIU's official recap lists Anthony Carrie; do not merge distinct player names without identity confirmation."
+          },
+          "sources": [
+            "https://fiusports.com/news/2026/10/19/football-preps-for-middle-tennessee-hosts-blue-raiders-tuesday-night-in-final-weekday-cusa-game.aspx",
+            "https://goblueraiders.com/news/2026/10/19/football-blue-raiders-travel-to-fiu-for-key-cusa-mid-week-game",
+            "https://www.covers.com/sport/football/ncaaf/matchup/378460",
+            "https://fiusports.com/news/2026/10/14/football-falls-late-to-jax-state-on-tuesday-night-in-weekday-cusa-play.aspx"
+          ]
+        },
+        "weather": {
+          "observedAt": "2026-10-20T20:10:27Z",
+          "lastCheckedAt": "2026-10-20T20:10:27Z",
+          "spatialScope": "Nearby Miami airport grid; exact stadium retrieval unavailable in this pass",
+          "temperatureFRange": [
+            76,
+            79
+          ],
+          "precipProbabilityPctRange": [
+            7,
+            13
+          ],
+          "windMphRange": [
+            11,
+            14
+          ],
+          "gustMphRange": [
+            18,
+            21
+          ],
+          "windDirection": "NE/N",
+          "note": "This retrieved tabular snapshot gives 7\u201310 PM ET values. Earlier and later API/tabular snapshots can differ; retain their timestamps and do not blend them into a single observation.",
+          "kickoffApprox": {
+            "temperatureF": 79,
+            "windDirection": "NE",
+            "windMph": 14,
+            "gustMph": 21,
+            "precipProbabilityPct": 13
+          },
+          "kickoffWindow": {
+            "approximately7pmET": {
+              "temperatureF": 79,
+              "windDirection": "NE",
+              "windMph": 14,
+              "gustMph": 21,
+              "precipProbabilityPct": 13
+            },
+            "approximately8pmET": {
+              "temperatureF": 78,
+              "windDirection": "N",
+              "windMph": 11,
+              "gustMph": 18,
+              "precipProbabilityPct": 10
+            }
+          },
+          "materiality": "Gusts are the main weather watch. The source issue time is still 4:06 AM ET, not this recheck time. Exact stadium/final-hour recheck remains open."
+        },
+        "travelRest": {
+          "homeRestDays": 7,
+          "awayRestDays": 7,
+          "restVerificationSource": "https://fiusports.com/news/2026/10/14/football-falls-late-to-jax-state-on-tuesday-night-in-weekday-cusa-play.aspx",
+          "note": "Both teams last played Oct. 13. FIU's recap was published Oct. 14; publication date is not game date. Prior home rest value of six is corrected to seven."
+        },
+        "officialContext": {
+          "lastCheckedAt": "2026-10-20T20:10:27Z",
+          "kickoffVerification": {
+            "officialAdvertisedKickoff": "2026-10-20T23:02:00Z",
+            "source": "https://fiusports.com/news/2026/10/19/football-preps-for-middle-tennessee-hosts-blue-raiders-tuesday-night-in-final-weekday-cusa-game.aspx",
+            "frozenKickoffPreserved": "2026-10-20T23:00:00Z",
+            "note": "Both official previews specify 7:02 PM ET. Preserve the immutable 7:00 PM identity and its earlier, conservative market-lock cutoff; do not shift a frozen timestamp."
+          }
+        },
+        "benchmarks": {
+          "spPlus": {
+            "lastCheckedAt": "2026-10-20T20:10:27Z",
+            "status": "PENDING_CURRENT_OFFICIAL_CAPTURE",
+            "retrievalStatus": "BLOCKED_ROBOT_VERIFICATION",
+            "note": "Official ESPN page returned verification rather than ratings; no unofficial replacement or inferred rating."
+          },
+          "refMetrics": {
+            "status": "UNAVAILABLE_STALE_RETRIEVAL",
+            "lastCheckedAt": "2026-10-20T20:10:27Z",
+            "source": "https://www.refmetrics.com/ncaa-football/todays-games",
+            "retrievedBoardWeek": 7,
+            "retrievedBoardUpdated": "2026-10-17T13:05:00-07:00",
+            "note": "This retrieval returned a Week 7 board and a notice that upcoming officials are unavailable. It cannot verify a Week 8 crew. Prior checks are retained in earlier captures; no assignment is inferred."
+          }
+        }
+      }
+    },
+    {
+      "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
+      "patch": {
+        "personnel": {
+          "lastOfficialCheckAt": "2026-10-20T20:10:27Z",
+          "lastCheckedAt": "2026-10-20T20:10:27Z",
+          "refreshStatus": "OFFICIAL_SOURCES_RECHECKED_FINAL_WINDOW_PENDING",
+          "canonicalInfluence": "Context only; no manual adjustment and no change to frozen projections.",
+          "sources": [
+            "https://missouristatebears.com/sports/football/",
+            "https://missouristatebears.com/news/2026/10/16/football-bears-square-off-with-delaware-tuesday-on-espnu",
+            "https://www.covers.com/sport/football/ncaaf/matchup/379250",
+            "https://bluehens.com/news/2026/10/17/football-plays-host-to-missouri-state-on-tuesday-for-senior-day"
+          ],
+          "away": {
+            "sourceConflict": "Missouri State's own Oct. 16 preview documents Henry Belin IV's most recent start; Delaware's opponent overview names Skyler Locklear. Neither text confirms Tuesday's starter. Prefer direct team evidence for the most recent start, while keeping the current starter unresolved."
+          },
+          "note": "Official Missouri State and Delaware previews rechecked. Neither resolves Tuesday's starter in the retrieved text; linked game-note PDFs could not be extracted."
+        },
+        "weather": {
+          "observedAt": "2026-10-20T20:10:27Z",
+          "lastCheckedAt": "2026-10-20T20:10:27Z",
+          "source": "National Weather Service hourly point forecast for Newark, Delaware",
+          "sourceUrl": "https://forecast.weather.gov/MapClick.php?FcstType=digital&lat=39.6619&lg=english&lon=-75.7492&unit=0",
+          "spatialScope": "Newark forecast grid near Delaware Stadium",
+          "temperatureFRange": [
+            56,
+            58
+          ],
+          "windMphRange": [
+            7,
+            7
+          ],
+          "windDirection": "N",
+          "precipProbabilityPctRange": [
+            0,
+            0
+          ],
+          "gustMph": null,
+          "forecast": "7 PM ET: 58 F, north wind 7 mph, precipitation potential 0%. 8 PM: 56 F, north wind 7 mph, precipitation potential 0%. Gust values are blank, not verified zero.",
+          "note": "Hourly values replace older secondary-source ranges. Final-hour recheck remains pending.",
+          "kickoffWindow": {
+            "approximately7pmET": {
+              "temperatureF": 58,
+              "windDirection": "N",
+              "windMph": 7,
+              "gustMph": null,
+              "precipProbabilityPct": 0
+            },
+            "approximately8pmET": {
+              "temperatureF": 56,
+              "windDirection": "N",
+              "windMph": 7,
+              "gustMph": null,
+              "precipProbabilityPct": 0
+            }
+          }
+        },
+        "benchmarks": {
+          "spPlus": {
+            "lastCheckedAt": "2026-10-20T20:10:27Z",
+            "status": "PENDING_CURRENT_OFFICIAL_CAPTURE",
+            "retrievalStatus": "BLOCKED_ROBOT_VERIFICATION",
+            "note": "Official ESPN page returned verification rather than ratings; no unofficial replacement or inferred rating."
+          },
+          "refMetrics": {
+            "status": "UNAVAILABLE_STALE_RETRIEVAL",
+            "lastCheckedAt": "2026-10-20T20:10:27Z",
+            "source": "https://www.refmetrics.com/ncaa-football/todays-games",
+            "retrievedBoardWeek": 7,
+            "retrievedBoardUpdated": "2026-10-17T13:05:00-07:00",
+            "note": "This retrieval returned a Week 7 board and a notice that upcoming officials are unavailable. It cannot verify a Week 8 crew. Prior checks are retained in earlier captures; no assignment is inferred."
+          }
+        }
+      }
+    },
+    {
+      "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
+      "patch": {
+        "personnel": {
+          "lastOfficialCheckAt": "2026-10-20T20:10:27Z",
+          "lastCheckedAt": "2026-10-20T20:10:27Z",
+          "refreshStatus": "OFFICIAL_SOURCES_RECHECKED_FINAL_WINDOW_PENDING",
+          "canonicalInfluence": "Context only; no manual adjustment and no change to frozen projections.",
+          "status": "MATERIAL_QB_STATUS_OPEN_OFFICIAL_ROTATION",
+          "away": {
+            "mostRecentStartingQB": "Jared Hollins",
+            "startingQB": "Jared Hollins",
+            "qbEvidenceStatus": "RECENT_STARTER_BASELINE_NOT_FINAL_CONFIRMATION",
+            "officialContext": "South Alabama's Oct. 8 recap documents Jared Hollins operating the offense. The Oct. 17 Marshall preview announces no QB change."
+          },
+          "home": {
+            "startingQB": "UNRESOLVED_TUESDAY_STARTER",
+            "qbCandidates": [
+              "Carlos Del Rio-Wilson",
+              "Zion Turner",
+              "Khalil Wilkins"
+            ],
+            "officialContext": "Marshall's Oct. 10 recap records Del Rio-Wilson, Turner and Wilkins at quarterback. Turner threw for 219 yards and two TDs in the rally. The Oct. 16 South Alabama preview does not name Tuesday's starter. Prior no-injuries-listed status does not resolve the QB rotation.",
+            "note": "Material quarterback role uncertainty requires final confirmation; no points assigned."
+          },
+          "sources": [
+            "https://usajaguars.com/news/2026/10/17/football-jags-head-to-marshall-for-tuesday-night-game.aspx",
+            "https://www.covers.com/sport/football/ncaaf/matchup/378461",
+            "https://www.covers.com/sport/football/ncaaf/injuries",
+            "https://usajaguars.com/news/2026/10/8/football-keenan-phillips-powers-south-alabama-past-arkansas-state-in-road-win.aspx",
+            "https://herdzone.com/news/2026/10/10/marshall-football-falls-to-coastal-carolina-27-21",
+            "https://herdzone.com/news/2026/10/16/marshall-football-hosts-south-alabama-at-7-30-pm-on-tuesday"
+          ]
+        },
+        "weather": {
+          "observedAt": "2026-10-20T20:10:27Z",
+          "lastCheckedAt": "2026-10-20T20:10:27Z",
+          "source": "National Weather Service hourly forecast, 2 miles ESE Huntington",
+          "sourceUrl": "https://forecast.weather.gov/MapClick.php?FcstType=digital&lat=38.405&lg=english&lon=-82.4056",
+          "spatialScope": "Nearby Huntington grid; not an on-field measurement",
+          "temperatureFRange": [
+            55,
+            60
+          ],
+          "windMphRange": [
+            2,
+            2
+          ],
+          "windDirection": "NE",
+          "precipProbabilityPctRange": [
+            0,
+            0
+          ],
+          "gustMph": null,
+          "forecast": "7 PM ET: 60 F, northeast 2 mph, 0% precipitation potential. 8 PM: 55 F, northeast 2 mph, 0%. These bracket the 7:30 kickoff; no interpolated measurement is claimed.",
+          "note": "Final one-hour recheck remains open; gust cells are blank, not verified zero."
+        },
+        "benchmarks": {
+          "spPlus": {
+            "lastCheckedAt": "2026-10-20T20:10:27Z",
+            "status": "PENDING_CURRENT_OFFICIAL_CAPTURE",
+            "retrievalStatus": "BLOCKED_ROBOT_VERIFICATION",
+            "note": "Official ESPN page returned verification rather than ratings; no unofficial replacement or inferred rating."
+          },
+          "refMetrics": {
+            "status": "UNAVAILABLE_STALE_RETRIEVAL",
+            "lastCheckedAt": "2026-10-20T20:10:27Z",
+            "source": "https://www.refmetrics.com/ncaa-football/todays-games",
+            "retrievedBoardWeek": 7,
+            "retrievedBoardUpdated": "2026-10-17T13:05:00-07:00",
+            "note": "This retrieval returned a Week 7 board and a notice that upcoming officials are unavailable. It cannot verify a Week 8 crew. Prior checks are retained in earlier captures; no assignment is inferred."
+          }
+        },
+        "audit": {
+          "materialOpenItems": [
+            "reproducible authorized canonical projection",
+            "Marshall starting QB/rotation confirmation",
+            "final personnel and one-hour weather refresh",
+            "publication-window market locks",
+            "official SP+ and referee assignment if available"
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -98,16 +98,16 @@ def audit_game(game: dict[str, Any], as_of: datetime) -> dict[str, Any]:
             blockers.append("material home starting-QB state unresolved")
         if away_qb.startswith("UNRESOLVED"):
             blockers.append("material away starting-QB state unresolved")
-    if 0 < minutes_to_kick <= 90 and personnel_status in {"REFRESH_REQUIRED", "UNKNOWN", "PARTIAL"}:
+    if 0 < minutes_to_kick <= 90 and (personnel_status in {"REFRESH_REQUIRED", "UNKNOWN", "PARTIAL"} or "FINAL_RECHECK_REQUIRED" in personnel_status):
         blockers.append("personnel state still requires refresh inside final 90-minute window")
-    elif personnel_status in {"REFRESH_REQUIRED", "UNKNOWN", "PARTIAL"}:
+    elif (personnel_status in {"REFRESH_REQUIRED", "UNKNOWN", "PARTIAL"} or "FINAL_RECHECK_REQUIRED" in personnel_status):
         warnings.append("personnel refresh still required before final audit")
 
     weather = game.get("weather") or {}
     weather_status = _upper(weather.get("status"))
-    if 0 < minutes_to_kick <= 90 and any(x in weather_status for x in ("REFRESH", "STALE", "UNKNOWN")):
+    if 0 < minutes_to_kick <= 90 and any(x in weather_status for x in ("REFRESH", "FINAL_RECHECK_REQUIRED", "STALE", "UNKNOWN")):
         blockers.append("material weather state is not current inside final 90-minute window")
-    elif any(x in weather_status for x in ("DISAGREEMENT", "REFRESH", "STALE", "UNKNOWN")):
+    elif any(x in weather_status for x in ("DISAGREEMENT", "REFRESH", "FINAL_RECHECK_REQUIRED", "STALE", "UNKNOWN")):
         warnings.append(f"weather context needs review: {weather_status or 'UNKNOWN'}")
 
     benchmarks = game.get("benchmarks") or {}
@@ -123,7 +123,7 @@ def audit_game(game: dict[str, Any], as_of: datetime) -> dict[str, Any]:
         warnings.append("official SP+ not currently captured; benchmark gap only, not a canonical freeze blocker")
     if sag_status and not any(x in sag_status for x in ("CURRENT", "LOCKED")):
         warnings.append(f"Sagarin freshness requires review: {sag_status}")
-    if any(x in ref_status for x in ("NOT_YET_POSTED", "UNAVAILABLE", "PARTIAL", "UNKNOWN")):
+    if any(x in ref_status for x in ("NOT_YET_POSTED", "UNAVAILABLE", "PARTIAL", "UNKNOWN", "STALE")):
         warnings.append("RefMetrics crew assignment not fully available; record status, do not guess, and do not block canonical freeze by itself")
 
     audit = game.get("audit") or {}
@@ -200,3 +200,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

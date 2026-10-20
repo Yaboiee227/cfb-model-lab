@@ -8,6 +8,7 @@ on:
       - 'cfb/pregame/week-08-active-through-thursday.json'
       - 'cfb/research-locks/week-08-foundation-full.json'
       - 'cfb/pregame-refresh/week-08-tuesday-*.json'
+      - 'scripts/build_week8_pregame.py'
       - 'scripts/merge_pregame_refresh.py'
       - 'scripts/validate_pregame_state.py'
       - 'scripts/cfb_active_window_state.py'
@@ -30,50 +31,14 @@ jobs:
         with: { fetch-depth: 0 }
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
+      - name: Sync latest source state
+        run: git pull --ff-only origin main
       - name: Test pregame merge and readiness rules
         run: |
           python -m unittest tests.test_merge_pregame_refresh -v
           python -m unittest tests.test_validate_pregame_state -v
-      - name: Build effective Tuesday state
-        run: |
-          overlays=()
-          while IFS= read -r f; do overlays+=(--overlay "$f"); done < <(find cfb/pregame-refresh -maxdepth 1 -type f -name 'week-08-tuesday-*.json' | sort)
-          test ${#overlays[@]} -gt 0
-          python scripts/merge_pregame_refresh.py \
-            --base cfb/pregame/week-08-tuesday-open.json \
-            "${overlays[@]}" \
-            --output cfb/pregame/week-08-tuesday-effective.json
-      - name: Verify unresolved QB state and source-conflict handling
-        run: |
-          python - <<'PY'
-          import json
-          d=json.load(open('cfb/pregame/week-08-tuesday-effective.json'))
-          g=next(x for x in d['games'] if x['gameId']=='2026-10-20-MISSOURISTATE-DELAWARE')
-          p=g['personnel']
-          assert p['status'] in {'MATERIAL_QB_STATUS_OPEN','MATERIAL_QB_STATUS_OPEN_SOURCE_CONFLICT'}, p
-          assert p['home']['startingQB']=='UNRESOLVED_TUESDAY_STARTER', p['home']
-          assert p['home']['mostRecentStartingQB']=='Tyler Bell', p['home']
-          assert p['away']['startingQB']=='UNRESOLVED_TUESDAY_STARTER', p['away']
-          assert p['away']['mostRecentStartingQB']=='Henry Belin IV', p['away']
-          minicucci=next(x for x in p['home']['reportedInjuries'] if x['player']=='Nick Minicucci')
-          assert minicucci['status']=='MISSED_PREVIOUS_TWO_GAMES', minicucci
-          third_party=p['home'].get('thirdPartyQBStatus')
-          if p['status']=='MATERIAL_QB_STATUS_OPEN_SOURCE_CONFLICT':
-              assert third_party and third_party.get('player')=='Nick Minicucci', p['home']
-              assert p['home'].get('sourceConflict'), p['home']
-          print('unresolved QB state and source-conflict handling verified')
-          PY
-      - name: Run non-mutating Tuesday readiness audit
-        run: python scripts/validate_pregame_state.py cfb/pregame/week-08-tuesday-effective.json --output cfb/pregame/week-08-tuesday-readiness.json
-      - name: Build unified active window through Thursday
-        run: |
-          python scripts/cfb_active_window_state.py \
-            --scope cfb/pregame/week-08-active-through-thursday.json \
-            --foundation cfb/research-locks/week-08-foundation-full.json \
-            --context cfb/pregame/week-08-tuesday-effective.json \
-            --context cfb/pregame/week-08-wednesday-effective.json \
-            --context cfb/pregame/week-08-thursday-effective.json \
-            --output cfb/pregame/week-08-through-thursday-effective.json
+      - name: Build effective states and Tuesday-Wednesday readiness
+        run: python scripts/build_week8_pregame.py
       - name: Assert active window integrity
         run: |
           python - <<'PY'
@@ -87,21 +52,30 @@ jobs:
           assert all(g['gameDateET'] <= '2026-10-22' for g in d['games'])
           assert all(g['frozenFoundationReference']['canonicalInfluence'] is False for g in d['games'])
           assert all(g['frozenFoundationReference']['projectionDigest'] for g in d['games'])
-          print(json.dumps({'observedAt':d['observedAt'],'games':len(d['games']),'pauseBoundary':d['pauseBoundary']},indent=2))
+          # Source-backed QB confirmations may resolve an open issue. Do not
+          # hard-code today's unresolved starters as permanent assertions.
+          for g in d['games']:
+              assert g.get('personnel', {}).get('sources'), g['gameId']
+          print('Frozen identities, source provenance and Thursday pause verified.')
           PY
-      - name: Commit effective states and readiness report
+      - name: Commit derived states with concurrent-source retry
         run: |
           git config user.name "cb-model-pregame-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add \
-            cfb/pregame/week-08-tuesday-effective.json \
-            cfb/pregame/week-08-tuesday-readiness.json \
-            cfb/pregame/week-08-through-thursday-effective.json
-          if ! git diff --cached --quiet; then
-            git commit -m 'Refresh Week 8 active pregame state through Thursday'
-            for attempt in 1 2 3; do
-              if git push; then exit 0; fi
-              git pull --rebase origin main
-            done
-            git push
-          fi
+          for attempt in 1 2 3; do
+            git add cfb/pregame/week-08-tuesday-effective.json \
+              cfb/pregame/week-08-tuesday-readiness.json \
+              cfb/pregame/week-08-wednesday-readiness.json \
+              cfb/pregame/week-08-through-thursday-effective.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m 'Refresh Week 8 active pregame state and Tue-Wed readiness'
+            if git push origin HEAD:main; then exit 0; fi
+            # This disposable Actions checkout contains only derived bot output.
+            # Rebuild from new upstream sources instead of rebasing stale JSON.
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/build_week8_pregame.py
+          done
+          echo 'Could not publish derived state after three attempts.' >&2
+          exit 1
+

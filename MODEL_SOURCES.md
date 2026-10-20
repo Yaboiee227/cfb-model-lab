@@ -440,3 +440,11 @@ No external source, benchmark, context item, or late-arriving data can change an
 ## Existing machine-readable benchmark registry
 
 `data/approved-external-benchmarks.json` contains the currently approved external benchmark subset and allowed/prohibited uses. This Markdown file is the broader source-of-truth registry for all vetted source layers until a complete machine-readable source registry is added.
+
+
+## Week 8 Tuesday–Wednesday official-source recheck (2026-10-20)
+
+- **Sun Belt official availability:** public report JSON at `https://sbcautostorage.blob.core.windows.net/availability-reports/sunbelt-football/prod/report.json`, linked from the official conference availability page. Preserve exact status, player name, game identity, report type, `updatedAtUTC` and actual retrieval time. Absence from a report is not health or starting-role confirmation. Availability capture is separate from baseline absorption and impact QA.
+- **NWS direct hourly API:** resolve the appropriate nearby grid, preserve `properties.updateTime`, `generatedAt` and actual retrieval time, and require contiguous numeric forecast coverage from kickoff through +4h. Keep source grids explicit. Hourly API omission of gusts means unavailable, never zero. Do not blend cached MapClick tables and newer API snapshots into a single observation. Final-hour refresh remains required.
+- **Official team previews/recaps:** source the most recent start from the team's own recap/preview. A leading-passer statistic or opponent overview does not establish the next starter. Resolve conflicting summaries with primary team evidence and retain upcoming starter uncertainty.
+- **Unretrievable benchmarks:** ESPN verification walls and stale RefMetrics boards remain labeled gaps. They never justify guessed ratings, crew assignments, or new canonical adjustments.

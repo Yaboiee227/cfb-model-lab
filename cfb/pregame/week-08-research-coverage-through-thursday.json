@@ -6,7 +6,7 @@
   "role": "ACTIVE_WINDOW_RESEARCH_PREGAME_COVERAGE_AUDIT",
   "canonicalInfluence": false,
   "canonicalPromotionAuthorized": false,
-  "auditedAt": "2026-10-20T20:01:25.545183Z",
+  "auditedAt": "2026-10-20T20:18:33.694819Z",
   "summary": {
     "games": 7,
     "foundationLocked": 7,
@@ -27,10 +27,11 @@
       "priority": "TODAY",
       "urgency": "CRITICAL",
       "gaps": [
-        "weather final review pending: NWS_CURRENT_MATERIAL_WIND_FINAL_RECHECK_REQUIRED"
+        "personnel requires follow-up: OFFICIAL_BASELINE_CAPTURED_FINAL_RECHECK_REQUIRED",
+        "weather final review pending: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED"
       ],
       "warnings": [
-        "referee assignment status: NOT_YET_POSTED; do not guess",
+        "referee assignment status: UNAVAILABLE_STALE_RETRIEVAL; do not guess",
         "immutable final-window market lock pending"
       ]
     },
@@ -43,10 +44,10 @@
       "urgency": "CRITICAL",
       "gaps": [
         "personnel requires follow-up: MATERIAL_QB_STATUS_OPEN_SOURCE_CONFLICT",
-        "weather final review pending: NWS_LOW_TO_MODERATE_WIND_FINAL_RECHECK_REQUIRED"
+        "weather final review pending: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED"
       ],
       "warnings": [
-        "referee assignment status: NOT_YET_POSTED; do not guess",
+        "referee assignment status: UNAVAILABLE_STALE_RETRIEVAL; do not guess",
         "immutable final-window market lock pending"
       ]
     },
@@ -58,10 +59,11 @@
       "priority": "TODAY",
       "urgency": "CRITICAL",
       "gaps": [
-        "weather final review pending: NWS_LOW_IMPACT_FINAL_RECHECK_REQUIRED"
+        "personnel requires follow-up: MATERIAL_QB_STATUS_OPEN_OFFICIAL_ROTATION",
+        "weather final review pending: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED"
       ],
       "warnings": [
-        "referee assignment status: NOT_YET_POSTED; do not guess",
+        "referee assignment status: UNAVAILABLE_STALE_RETRIEVAL; do not guess",
         "immutable final-window market lock pending"
       ]
     },
@@ -73,10 +75,11 @@
       "priority": "NEXT_48H",
       "urgency": "HIGH",
       "gaps": [
-        "personnel requires follow-up: OFFICIAL_BASELINE_CAPTURED_NO_NEW_MATERIAL_QB_CHANGE_FOUND"
+        "personnel requires follow-up: OFFICIAL_BASELINE_CAPTURED_FINAL_RECHECK_REQUIRED",
+        "weather final review pending: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED"
       ],
       "warnings": [
-        "referee assignment status: NOT_YET_POSTED; do not guess",
+        "referee assignment status: UNAVAILABLE_STALE_RETRIEVAL; do not guess",
         "immutable final-window market lock pending"
       ]
     },
@@ -145,9 +148,9 @@
         "spPlus": "PENDING_OFFICIAL_CAPTURE"
       },
       "context": {
-        "personnel": "AFTERNOON_REFRESH_NO_NEW_OFFICIAL_MATERIAL_CHANGE",
-        "weather": "NWS_CURRENT_MATERIAL_WIND_FINAL_RECHECK_REQUIRED",
-        "referee": "NOT_YET_POSTED",
+        "personnel": "OFFICIAL_BASELINE_CAPTURED_FINAL_RECHECK_REQUIRED",
+        "weather": "NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED",
+        "referee": "UNAVAILABLE_STALE_RETRIEVAL",
         "marketContext": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
         "contextSource": "cfb/pregame/week-08-through-thursday-effective.json"
       },
@@ -157,10 +160,11 @@
         "bookCount": 0
       },
       "gaps": [
-        "weather final review pending: NWS_CURRENT_MATERIAL_WIND_FINAL_RECHECK_REQUIRED"
+        "personnel requires follow-up: OFFICIAL_BASELINE_CAPTURED_FINAL_RECHECK_REQUIRED",
+        "weather final review pending: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED"
       ],
       "warnings": [
-        "referee assignment status: NOT_YET_POSTED; do not guess",
+        "referee assignment status: UNAVAILABLE_STALE_RETRIEVAL; do not guess",
         "immutable final-window market lock pending"
       ]
     },
@@ -182,8 +186,8 @@
       },
       "context": {
         "personnel": "MATERIAL_QB_STATUS_OPEN_SOURCE_CONFLICT",
-        "weather": "NWS_LOW_TO_MODERATE_WIND_FINAL_RECHECK_REQUIRED",
-        "referee": "NOT_YET_POSTED",
+        "weather": "NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED",
+        "referee": "UNAVAILABLE_STALE_RETRIEVAL",
         "marketContext": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
         "contextSource": "cfb/pregame/week-08-through-thursday-effective.json"
       },
@@ -194,10 +198,10 @@
       },
       "gaps": [
         "personnel requires follow-up: MATERIAL_QB_STATUS_OPEN_SOURCE_CONFLICT",
-        "weather final review pending: NWS_LOW_TO_MODERATE_WIND_FINAL_RECHECK_REQUIRED"
+        "weather final review pending: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED"
       ],
       "warnings": [
-        "referee assignment status: NOT_YET_POSTED; do not guess",
+        "referee assignment status: UNAVAILABLE_STALE_RETRIEVAL; do not guess",
         "immutable final-window market lock pending"
       ]
     },
@@ -218,9 +222,9 @@
         "spPlus": "PENDING_OFFICIAL_CAPTURE"
       },
       "context": {
-        "personnel": "AFTERNOON_REFRESH_PARTIAL_THIRD_PARTY_CONTEXT_FINAL_RECHECK_REQUIRED",
-        "weather": "NWS_LOW_IMPACT_FINAL_RECHECK_REQUIRED",
-        "referee": "NOT_YET_POSTED",
+        "personnel": "MATERIAL_QB_STATUS_OPEN_OFFICIAL_ROTATION",
+        "weather": "NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED",
+        "referee": "UNAVAILABLE_STALE_RETRIEVAL",
         "marketContext": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
         "contextSource": "cfb/pregame/week-08-through-thursday-effective.json"
       },
@@ -230,10 +234,11 @@
         "bookCount": 0
       },
       "gaps": [
-        "weather final review pending: NWS_LOW_IMPACT_FINAL_RECHECK_REQUIRED"
+        "personnel requires follow-up: MATERIAL_QB_STATUS_OPEN_OFFICIAL_ROTATION",
+        "weather final review pending: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED"
       ],
       "warnings": [
-        "referee assignment status: NOT_YET_POSTED; do not guess",
+        "referee assignment status: UNAVAILABLE_STALE_RETRIEVAL; do not guess",
         "immutable final-window market lock pending"
       ]
     },
@@ -254,9 +259,9 @@
         "spPlus": "PENDING_OFFICIAL_CAPTURE"
       },
       "context": {
-        "personnel": "OFFICIAL_BASELINE_CAPTURED_NO_NEW_MATERIAL_QB_CHANGE_FOUND",
-        "weather": "NWS_LOW_IMPACT_BASELINE_CAPTURED",
-        "referee": "NOT_YET_POSTED",
+        "personnel": "OFFICIAL_BASELINE_CAPTURED_FINAL_RECHECK_REQUIRED",
+        "weather": "NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED",
+        "referee": "UNAVAILABLE_STALE_RETRIEVAL",
         "marketContext": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
         "contextSource": "cfb/pregame/week-08-through-thursday-effective.json"
       },
@@ -266,10 +271,11 @@
         "bookCount": 0
       },
       "gaps": [
-        "personnel requires follow-up: OFFICIAL_BASELINE_CAPTURED_NO_NEW_MATERIAL_QB_CHANGE_FOUND"
+        "personnel requires follow-up: OFFICIAL_BASELINE_CAPTURED_FINAL_RECHECK_REQUIRED",
+        "weather final review pending: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED"
       ],
       "warnings": [
-        "referee assignment status: NOT_YET_POSTED; do not guess",
+        "referee assignment status: UNAVAILABLE_STALE_RETRIEVAL; do not guess",
         "immutable final-window market lock pending"
       ]
     },
@@ -383,7 +389,7 @@
       ]
     }
   ],
-  "policy": "Operational research audit only. Context gaps prioritize source collection but cannot rewrite the immutable foundation. Official benchmarks and locked markets remain comparison layers only; unknown facts stay unknown. Active operational scope is Tuesday through Thursday only; Friday and Saturday are paused until explicit resumption.",
+  "policy": "Operational research audit only. Context gaps prioritize source collection but cannot rewrite the immutable foundation. Official benchmarks and locked markets remain comparison layers only; unknown facts stay unknown.",
   "activeScope": "cfb/pregame/week-08-active-through-thursday.json",
   "effectiveState": "cfb/pregame/week-08-through-thursday-effective.json",
   "pauseBeforeGameDateET": "2026-10-23"

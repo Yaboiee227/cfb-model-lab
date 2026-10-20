@@ -1,4 +1,4 @@
-# Week 8 CFB Production Runbook — October 20–24, 2026
+# Week 8 CFB Production Runbook — October 20–22, 2026
 
 ## Objective
 
@@ -8,7 +8,7 @@ Operate Week 8 as a rolling, pregame-only production cycle. Maximize legitimate 
 
 Collect broadly. Promote narrowly. Freeze independently.
 
-The canonical CB projection is generated from the established model framework. SP+, Sagarin, RefMetrics, market data and other external/context sources are preserved for comparison, audit and challenger research unless a feature has already earned canonical status through leakage-safe validation.
+The canonical CB projection must be generated from a reproducible, authorized established model. Week 8 currently has no such production projection and remains HOLD; see `cfb/projections/week-08-status.json`. SP+, Sagarin, RefMetrics, market data and other external/context sources are preserved for comparison, audit and challenger research unless a feature has already earned canonical status through leakage-safe validation.
 
 ## Active integration boundary — October 20, 2026
 
@@ -179,3 +179,24 @@ Agent/LLM tooling may assist steps 1–6 but cannot execute step 7 on its own.
 4. After the Thursday slate is frozen/processed, **STOP**. Do not begin Friday ingestion until explicit resumption.
 
 The goal is not maximum feature count in the final equation. The goal is maximum defensible information capture plus the most accurate validated canonical prediction possible.
+
+
+## Tuesday–Wednesday afternoon handoff — October 20, 4:18 PM ET
+
+The four-game priority source pass is captured; final-hour checks and publication locks are not yet complete. No game has been graded in this pass. No frozen foundation, timestamp, coefficient or validation decision was changed.
+
+| Game | Latest useful evidence | Remaining material work | T−30 window opens (ET) |
+| --- | --- | --- | --- |
+| MTSU at FIU | Official recent QB baselines; both teams last played Oct. 13; current NWS hourly API | Final availability/depth; FIU third-party player-name mismatch; final wind/gust check | Tue 6:30 PM |
+| Missouri State at Delaware | Direct team previews; latest NWS hourly API | Both Tuesday starters unresolved; reconcile conflicting Missouri QB summaries | Tue 6:30 PM |
+| South Alabama at Marshall | Official Sun Belt game-day report; Marshall recent three-QB rotation; NWS hourly API | Marshall starter/rotation; South Alabama's three game-time decisions; final refresh | Tue 7:00 PM |
+| NM State at Sam Houston | Oct. 20 Sam Houston preview; recent QB and freshman OL context; NWS hourly API | Wednesday final personnel/roles, weather and fresh market checks | Wed 7:30 PM |
+
+- Source captures: `cfb/pregame-refresh/week-08-sunbelt-tuesday-availability-2026-10-20.json` and `week-08-nws-tuesday-wednesday-2026-10-20.json`. Preserve report issue time separately from actual retrieval time.
+- The NWS capture covers kickoff through +4h. Nearby forecast grids are not on-field measurements; API gusts are unavailable, not zero. It supersedes older cached table summaries without deleting those snapshots.
+- FIU officially advertises 7:02 PM ET. Preserve the frozen 7:00 PM kickoff identity and conservative lock cutoff.
+- Official SP+ remains blocked by source verification; RefMetrics retrieval is stale Week 7. These are explicit benchmark gaps, not inferred values.
+- `scripts/build_week8_pregame.py` rebuilds Tuesday effective state, unified active state and both Tuesday/Wednesday readiness audits. Source overlays and immutable locks are inputs, never generated replacements.
+- Public status: `week-8.html`; it reads saved game states and lock files on load. Research Hub now distinguishes current Week 8 preparation from historical Week 7 grades.
+- Existing scheduled CFB refresh prompts now carry the Tuesday–Thursday boundary; NFL instructions are unchanged. Hourly polling is best effort and cannot guarantee an exact minute. The existing GitHub market-lock workflow remains responsible for configured T−30 captures; inspect actual lock records rather than assuming a scheduled run succeeded.
+- Canonical HOLD remains the overriding release gate. Research locks may be captured and graded independently without promoting their projections.

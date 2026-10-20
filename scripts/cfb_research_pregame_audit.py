@@ -178,13 +178,13 @@ def build_audit(
         referee = ctx["referee"]
         if personnel == "NOT_CAPTURED":
             gaps.append("personnel context not yet captured")
-        elif any(x in personnel for x in ("UNRESOLVED", "MATERIAL_QB", "REFRESH_REQUIRED", "SOURCE_CONFLICT")):
+        elif any(x in personnel for x in ("UNRESOLVED", "MATERIAL_QB", "REFRESH_REQUIRED", "FINAL_RECHECK_REQUIRED", "SOURCE_CONFLICT")):
             gaps.append(f"personnel requires follow-up: {personnel}")
         if weather == "NOT_CAPTURED":
             gaps.append("weather context not yet captured")
         elif any(x in weather for x in ("FINAL_RECHECK_REQUIRED", "REFRESH_REQUIRED", "STALE", "UNKNOWN")):
             gaps.append(f"weather final review pending: {weather}")
-        if referee in {"NOT_CAPTURED", "NOT_YET_POSTED", "UNKNOWN"}:
+        if any(x in referee for x in ("NOT_CAPTURED", "NOT_YET_POSTED", "UNKNOWN", "UNAVAILABLE", "STALE")):
             warnings.append(f"referee assignment status: {referee}; do not guess")
         if market["status"] != "LOCKED":
             if priority in {"FINAL_WINDOW", "STARTED_OR_PAST"}:
@@ -325,3 +325,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
