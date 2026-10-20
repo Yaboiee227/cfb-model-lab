@@ -30,8 +30,6 @@ def game(game_id, kickoff):
         "marketMoneylineAway": 125,
         "marketSource": "test",
         "marketObservedAt": "2026-10-20T18:00:00Z",
-        "benchmarkSnapshot": {"sagarin": {"status": "CURRENT", "impliedSpreadHome": -4.1}},
-        "contextSnapshot": {"weather": {"status": "PASS"}},
     }
 
 
@@ -50,12 +48,18 @@ class TestPerGameLocking(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "LOCK VIOLATION"):
             validate_game_lock(g)
 
-    def test_locked_game_rejects_benchmark_mutation(self):
+    def test_locked_game_rejects_publication_market_mutation(self):
         g = game("g1", "2026-10-20T23:00:00Z")
         lock_game(g, "2026-10-20T22:30:00Z")
-        g["benchmarkSnapshot"]["sagarin"]["impliedSpreadHome"] = -8.0
+        g["marketSpreadHome"] = -4.0
         with self.assertRaisesRegex(ValueError, "LOCK VIOLATION"):
             validate_game_lock(g)
+
+    def test_external_context_is_outside_projection_lock_scope(self):
+        g = game("g1", "2026-10-20T23:00:00Z")
+        lock_game(g, "2026-10-20T22:30:00Z")
+        g["contextSnapshot"] = {"weather": {"status": "UPDATED"}}
+        validate_game_lock(g)
 
     def test_early_game_locks_while_later_game_remains_open(self):
         payload = {
