@@ -29,8 +29,12 @@ jobs:
         with: { fetch-depth: 0 }
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
-      - name: Test grading rules
+      - name: Test grading and lock rules
         run: python -m unittest discover -s tests -v
+      - name: Validate latest CFB benchmark snapshot
+        run: |
+          latest=$(ls cfb/benchmarks/week-*.json 2>/dev/null | sort | tail -n 1 || true)
+          if [ -n "$latest" ]; then python scripts/validate_benchmarks.py "$latest"; else echo 'No CFB benchmark snapshot yet.'; fi
       - name: Detect locked weekly files
         id: data
         run: |
@@ -44,12 +48,13 @@ jobs:
           WEEK: ${{ github.event.inputs.week || 'latest' }}
           DRY: ${{ github.event.inputs.dry_run || 'false' }}
         run: |
-          if [ "$DRY" = "true" ]; then python scripts/record_tracker.py --league cfb --week "$WEEK" --dry-run; else python scripts/record_tracker.py --league cfb --week "$WEEK"; fi
+          if [ "$DRY" = "true" ]; then python scripts/record_tracker_v2.py --league cfb --week "$WEEK" --dry-run; else python scripts/record_tracker_v2.py --league cfb --week "$WEEK"; fi
       - name: Commit updated record files
         if: ${{ success() && steps.data.outputs.ready == 'true' && github.event.inputs.dry_run != 'true' }}
         run: |
           git config user.name "cb-model-record-bot"
           git config user.email "actions@users.noreply.github.com"
+          git pull --rebase origin main
           git add cfb/results cfb/record-summary.json cfb/grading-log.json
           if ! git diff --cached --quiet; then
             git commit -m "Auto-grade CFB projection record"
