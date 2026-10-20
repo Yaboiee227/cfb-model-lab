@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 2,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "role": "ACTIVE_WINDOW_SCHEDULE_STATE",
+  "canonicalInfluence": false,
+  "dateWindowET": [
+    "2026-10-20",
+    "2026-10-22"
+  ],
+  "gameIdDateConvention": "America/New_York game date",
+  "observedAt": "2026-10-20T11:37:06.187327Z",
+  "scopeActivatedAt": "2026-10-20T15:05:55Z",
+  "source": "Filtered without reconstruction from cfb/pregame/week-08-schedule.json",
+  "sourceScope": "cfb/pregame/week-08-active-through-thursday.json",
+  "gameCount": 7,
+  "games": [
+    {
+      "gameId": "2026-10-20-MIDDLETENNESSEE-FLORIDAINTERNATIONAL",
+      "sourceGameId": "401871055",
+      "gameDateET": "2026-10-20",
+      "awayTeam": "Middle Tennessee",
+      "homeTeam": "Florida International",
+      "awayTeamId": "2393",
+      "homeTeamId": "2229",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "neutralSite": false,
+      "venue": {"name": "Pitbull Stadium", "city": "Miami", "state": "FL"},
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
+      "sourceGameId": "401871069",
+      "gameDateET": "2026-10-20",
+      "awayTeam": "Missouri State",
+      "homeTeam": "Delaware",
+      "awayTeamId": "2623",
+      "homeTeamId": "48",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "neutralSite": false,
+      "venue": {"name": "Delaware Stadium", "city": "Newark", "state": "DE"},
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
+      "sourceGameId": "401871092",
+      "gameDateET": "2026-10-20",
+      "awayTeam": "South Alabama",
+      "homeTeam": "Marshall",
+      "awayTeamId": "6",
+      "homeTeamId": "276",
+      "kickoff": "2026-10-20T23:30:00Z",
+      "neutralSite": false,
+      "venue": {"name": "Joan C. Edwards Stadium", "city": "Huntington", "state": "WV"},
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-10-21-NEWMEXICOSTATE-SAMHOUSTON",
+      "sourceGameId": "401871070",
+      "gameDateET": "2026-10-21",
+      "awayTeam": "New Mexico State",
+      "homeTeam": "Sam Houston",
+      "awayTeamId": "166",
+      "homeTeamId": "2534",
+      "kickoff": "2026-10-22T00:00:00Z",
+      "neutralSite": false,
+      "venue": {"name": "Elliott T. Bowers Stadium", "city": "Huntsville", "state": "TX"},
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-10-22-JAMESMADISON-APPSTATE",
+      "sourceGameId": "401869845",
+      "gameDateET": "2026-10-22",
+      "awayTeam": "James Madison",
+      "homeTeam": "App State",
+      "awayTeamId": "256",
+      "homeTeamId": "2026",
+      "kickoff": "2026-10-22T23:00:00Z",
+      "neutralSite": false,
+      "venue": {"name": "Kidd Brewer Stadium", "city": "Boone", "state": "NC"},
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-10-22-LIBERTY-KENNESAWSTATE",
+      "sourceGameId": "401871056",
+      "gameDateET": "2026-10-22",
+      "awayTeam": "Liberty",
+      "homeTeam": "Kennesaw State",
+      "awayTeamId": "2335",
+      "homeTeamId": "338",
+      "kickoff": "2026-10-22T23:00:00Z",
+      "neutralSite": false,
+      "venue": {"name": "Walens Family Field at Fifth Third Stadium", "city": "Kennesaw", "state": "GA"},
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-10-22-EASTCAROLINA-MEMPHIS",
+      "sourceGameId": "401862807",
+      "gameDateET": "2026-10-22",
+      "awayTeam": "East Carolina",
+      "homeTeam": "Memphis",
+      "awayTeamId": "151",
+      "homeTeamId": "235",
+      "kickoff": "2026-10-22T23:30:00Z",
+      "neutralSite": false,
+      "venue": {"name": "Simmons Bank Liberty Stadium", "city": "Memphis", "state": "TN"},
+      "status": "STATUS_SCHEDULED"
+    }
+  ]
+}
