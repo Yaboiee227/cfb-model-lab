@@ -4,6 +4,10 @@
 Each book is locked independently inside a final pre-kickoff window. Existing
 book observations are immutable. This is research benchmarking only and never
 creates or changes a canonical projection/performance record.
+
+An optional active scope can pause games without deleting them from the full-week
+immutable lock registry. Paused games cannot receive new market observations and
+are never marked MISSED merely because the user intentionally deferred them.
 """
 from __future__ import annotations
 
@@ -136,6 +140,7 @@ def merge_market_lock(
     now: datetime,
     lock_window_minutes: float = 30.0,
     max_observation_age_minutes: float = 35.0,
+    active_game_ids: set[str] | None = None,
 ) -> dict[str, Any]:
     verify_research_lock(foundation_lock)
     if existing:
@@ -151,8 +156,9 @@ def merge_market_lock(
         kickoff = parse_dt(game["kickoff"])
         prior = prior_games.get(game["gameId"], {})
         books = dict(prior.get("books") or {})
+        active = active_game_ids is None or game["gameId"] in active_game_ids
         seconds_to_kickoff = (kickoff - now).total_seconds()
-        in_window = 0 < seconds_to_kickoff <= lock_window_minutes * 60
+        in_window = active and 0 < seconds_to_kickoff <= lock_window_minutes * 60
         market = match_market_game(game, market_games, aliases) if in_window else None
 
         if in_window and market is not None:
@@ -167,6 +173,13 @@ def merge_market_lock(
                     books[book_name] = observation
                     newly_locked += 1
 
+        if books:
+            status = "LOCKED"
+        elif not active:
+            status = "PAUSED_OUT_OF_SCOPE"
+        else:
+            status = "MISSED" if now >= kickoff else "PENDING"
+
         rows.append(
             {
                 "gameId": game["gameId"],
@@ -176,14 +189,16 @@ def merge_market_lock(
                 "kickoff": game["kickoff"],
                 "projectionDigest": game["projectionDigest"],
                 "books": books,
-                "status": "LOCKED" if books else ("MISSED" if now >= kickoff else "PENDING"),
+                "status": status,
             }
         )
 
     locked_games = sum(bool(r["books"]) for r in rows)
     locked_book_observations = sum(len(r["books"]) for r in rows)
+    active_count = sum(r["status"] != "PAUSED_OUT_OF_SCOPE" or bool(r["books"]) for r in rows) if active_game_ids is not None else len(rows)
+    paused_count = sum(r["status"] == "PAUSED_OUT_OF_SCOPE" for r in rows)
     return {
-        "schemaVersion": 1,
+        "schemaVersion": 2,
         "league": foundation_lock.get("league"),
         "season": foundation_lock.get("season"),
         "week": foundation_lock.get("week"),
@@ -196,9 +211,12 @@ def merge_market_lock(
         "booksTracked": list(BOOKS),
         "lockWindowMinutes": lock_window_minutes,
         "maxObservationAgeMinutes": max_observation_age_minutes,
+        "scopeRestricted": active_game_ids is not None,
         "updatedAt": iso(now),
         "counts": {
             "foundationGames": len(rows),
+            "activeScopeGames": active_count,
+            "pausedGames": paused_count,
             "gamesWithMarketLock": locked_games,
             "bookObservationsLocked": locked_book_observations,
             "newBookObservationsThisRun": newly_locked,
@@ -206,7 +224,7 @@ def merge_market_lock(
             "missedGames": sum(r["status"] == "MISSED" for r in rows),
         },
         "games": rows,
-        "policy": "Research-only per-book publication-window capture. FanDuel and DraftKings are preserved independently; no consensus or canonical benchmark is inferred. Existing book observations are immutable and post-kickoff reconstruction is prohibited.",
+        "policy": "Research-only per-book publication-window capture. FanDuel and DraftKings are preserved independently; no consensus or canonical benchmark is inferred. Existing book observations are immutable and post-kickoff reconstruction is prohibited. When an active scope is supplied, out-of-scope games remain paused and cannot receive new locks until explicitly resumed.",
     }
 
 
@@ -224,11 +242,23 @@ def preserve_updated_at_if_unchanged(new: dict[str, Any], existing: dict[str, An
     return new
 
 
+def active_ids_from_scope(scope: dict[str, Any]) -> set[str]:
+    ids = {str(g.get("gameId") or "") for g in scope.get("games") or []}
+    ids.discard("")
+    expected = int(scope.get("includedGameCount") or len(ids))
+    if len(ids) != expected:
+        raise ValueError(f"active scope game count mismatch: {len(ids)}/{expected}")
+    if scope.get("canonicalInfluence") is not False or scope.get("canonicalPromotionAuthorized") is not False:
+        raise ValueError("active scope must remain non-canonical")
+    return ids
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--foundation-lock", default="cfb/research-locks/week-08-foundation-full.json")
     ap.add_argument("--markets", default="data/markets-sportsbooks.json")
     ap.add_argument("--output", default="cfb/research-market-locks/week-08-foundation-market.json")
+    ap.add_argument("--scope", help="Optional active processing scope. Out-of-scope games are preserved but paused.")
     ap.add_argument("--lock-window-minutes", type=float, default=30.0)
     ap.add_argument("--max-observation-age-minutes", type=float, default=35.0)
     ap.add_argument("--now", help="UTC/offset timestamp; tests/replay only. Defaults to current time.")
@@ -241,6 +271,10 @@ def main() -> None:
     output = Path(args.output)
     existing = json.loads(output.read_text(encoding="utf-8")) if output.exists() else None
     now = parse_dt(args.now) if args.now else datetime.now(timezone.utc)
+    active_game_ids = None
+    if args.scope:
+        scope = json.loads(Path(args.scope).read_text(encoding="utf-8"))
+        active_game_ids = active_ids_from_scope(scope)
     out = merge_market_lock(
         foundation,
         markets,
@@ -249,6 +283,7 @@ def main() -> None:
         now,
         args.lock_window_minutes,
         args.max_observation_age_minutes,
+        active_game_ids,
     )
     out = preserve_updated_at_if_unchanged(out, existing)
     atomic_json(output, out)
