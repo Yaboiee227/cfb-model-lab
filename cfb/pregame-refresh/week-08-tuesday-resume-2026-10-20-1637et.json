@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "observedAt": "2026-10-20T20:37:00Z",
+  "role": "TIMESTAMPED_TUESDAY_RESUME_SOURCE_CHECK",
+  "canonicalInfluence": false,
+  "canonicalPromotionAuthorized": false,
+  "activeScope": "cfb/pregame/week-08-active-through-thursday.json",
+  "foundationLock": "cfb/research-locks/week-08-foundation-full.json",
+  "policy": "Pregame-only source check. Preserve frozen projections and prior captures. Official team evidence has priority for personnel chronology. Public sportsbook pages are benchmark/context only and are not publication-time locks. Unknown stays unknown; no manual point adjustment is invented.",
+  "deploymentVerification": {
+    "status": "PASS",
+    "evidence": "GitHub Pages build/deployment for head aee68440bf72c6cf1a8bbd7c411c1ddd115cb74c completed successfully at 2026-10-20T20:24:16Z.",
+    "headCommit": "aee68440bf72c6cf1a8bbd7c411c1ddd115cb74c"
+  },
+  "marketLockVerification": {
+    "status": "PASS_PENDING_WINDOW",
+    "lockWindowMinutes": 30,
+    "activeScopeGames": 7,
+    "pausedGames": 49,
+    "gamesWithMarketLockAtPriorCheck": 0,
+    "note": "At 16:37 ET the Tuesday games remain outside the immutable 30-minute lock window. The scheduled sportsbook refresh remains the authoritative tracked FanDuel/DraftKings feed for eventual lock capture."
+  },
+  "games": [
+    {
+      "gameId": "2026-10-20-MIDDLETENNESSEE-FIU",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "personnelCheck": {
+        "status": "NO_NEW_OFFICIAL_QB_CHANGE_FOUND",
+        "mostRecentStartingQB": "Roman Gagliano",
+        "homeMostRecentPrimaryQB": "JJ Kohl",
+        "sourcesChecked": [
+          "https://goblueraiders.com/sports/football",
+          "https://fiusports.com/sports/football/schedule"
+        ],
+        "note": "MTSU's official site still promotes the Oct. 19 FIU preview and Gagliano's current run; no same-day official starter change was surfaced. FIU's official schedule/game page likewise surfaced no new QB availability announcement. Final game-day confirmation remains pending."
+      },
+      "publicMarketContext": {
+        "status": "BENCHMARK_ONLY_NOT_LOCKED",
+        "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?tb_edate=n7days&tb_eg=87637&tb_emt=0",
+        "observedAt": "2026-10-20T20:37:00Z",
+        "spreadHome": -10.0,
+        "total": 45.5,
+        "moneylineHome": -380,
+        "moneylineAway": 300,
+        "note": "Public DraftKings network page may differ by jurisdiction. Retain separately from The Odds API tracked snapshot and from the immutable publication lock."
+      }
+    },
+    {
+      "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "personnelCheck": {
+        "status": "STARTERS_STILL_UNRESOLVED",
+        "awayMostRecentStartingQB": "Henry Belin IV",
+        "homeMostRecentStartingQB": "Tyler Bell",
+        "sourcesChecked": [
+          "https://missouristatebears.com/sports/football/",
+          "https://missouristatebears.com/news/2026/10/19/lloyd-obeid-earn-cusa-football-weekly-honors",
+          "https://bluehens.com/",
+          "https://bluehens.com/sports/football/schedule?path=football"
+        ],
+        "note": "Missouri State's current official site still points to its Oct. 16 Delaware preview; no newer official starter declaration was surfaced. Delaware's current official site promotes tonight's game but no newer starter declaration was surfaced. Tyler Bell remains the most recent Delaware starter and Oct. 19 CUSA Freshman of the Week; Henry Belin IV remains Missouri State's most recent starter. Do not convert either into a confirmed Tuesday starter without direct evidence."
+      },
+      "publicMarketContext": {
+        "status": "BENCHMARK_ONLY_NOT_LOCKED",
+        "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?tb_edate=n7days&tb_eg=87637&tb_emt=0",
+        "observedAt": "2026-10-20T20:37:00Z",
+        "spreadHome": -2.5,
+        "total": 52.5,
+        "moneylineHome": -142,
+        "moneylineAway": 120,
+        "note": "Public DraftKings network page may differ by jurisdiction. Preserve independently from tracked book API snapshots."
+      }
+    },
+    {
+      "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
+      "kickoff": "2026-10-20T23:30:00Z",
+      "personnelCheck": {
+        "status": "MARSHALL_QB_ROTATION_STILL_UNRESOLVED",
+        "awayMostRecentStartingQB": "Jared Hollins",
+        "homeQbCandidates": [
+          "Carlos Del Rio-Wilson",
+          "Zion Turner",
+          "Khalil Wilkins"
+        ],
+        "sourcesChecked": [
+          "https://usajaguars.com/sports/football/schedule/2026",
+          "https://herdzone.com/sports/football"
+        ],
+        "note": "South Alabama's official schedule/game page surfaced no new QB change. Marshall's official football page surfaced tonight's game but no same-day starter declaration. Preserve the previously documented three-QB rotation as unresolved rather than guessing a starter."
+      },
+      "publicMarketContext": {
+        "status": "BENCHMARK_ONLY_NOT_LOCKED",
+        "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?itm_content=NCAA+Football&tb_edate=n30days&tb_eg=NCAA+Football&tb_emt=0",
+        "observedAt": "2026-10-20T20:37:00Z",
+        "spreadAway": -2.5,
+        "total": 66.5,
+        "moneylineAway": -142,
+        "moneylineHome": 120,
+        "note": "Public DraftKings network page may differ by jurisdiction. Preserve independently from tracked book API snapshots."
+      }
+    }
+  ],
+  "currentBlockers": {
+    "canonicalReleaseGate": "HOLD",
+    "canonicalWeek8ProjectionFile": "NOT_PUBLISHED",
+    "immutablePublicationMarketLocks": "PENDING_FINAL_WINDOW",
+    "missouriStateDelawareStartingQbs": "UNRESOLVED",
+    "marshallStartingQbOrRotation": "UNRESOLVED",
+    "finalPersonnelWeatherReview": "PENDING_FINAL_WINDOW"
+  },
+  "nextAuthorizedActions": [
+    "Allow the scheduled tracked sportsbook feed to refresh in the pregame-3h phase and preserve its timestamped snapshots.",
+    "Recheck official team/availability sources in the final hour for the unresolved Missouri State-Delaware starters and Marshall QB rotation.",
+    "Capture final-hour NWS conditions without manual point adjustments.",
+    "Within 30 minutes of kickoff, lock eligible FanDuel/DraftKings observations against the immutable frozen foundation.",
+    "Keep canonical/public projection release on HOLD unless an already-authorized reproducible canonical engine produces a complete Week 8 projection.",
+    "Do not process Friday or Saturday."
+  ]
+}
