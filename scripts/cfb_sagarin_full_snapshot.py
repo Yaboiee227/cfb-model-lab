@@ -2,6 +2,10 @@
 """Capture official Sagarin Predictor ratings and map them to a CFB weekly slate.
 
 Research benchmark only. The output must never modify a canonical projection.
+Sagarin currently presents a self-signed TLS certificate to GitHub-hosted runners.
+A narrowly scoped certificate-verification fallback is allowed only for the exact
+approved Sagarin URL, and any such capture must pass an independent known-game
+crosscheck before it may be saved as a benchmark snapshot.
 """
 from __future__ import annotations
 
@@ -9,6 +13,8 @@ import argparse
 import html as html_lib
 import json
 import re
+import ssl
+import urllib.error
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
@@ -27,10 +33,11 @@ HFA_RE = re.compile(
     r"HOME\s+ADVANTAGE=\[\s*-?\d+(?:\.\d+)?\]\s+\[\s*(?P<predictor>-?\d+(?:\.\d+)?)\]",
     re.IGNORECASE,
 )
-THROUGH_RE = re.compile(r"through games of\s+(?P<through>.+?)\s+-\s+Week\s+(?P<week>\d+)", re.IGNORECASE)
+THROUGH_RE = re.compile(
+    r"through (?:games|results) of\s+(?P<through>.+?)\s+-\s+Week\s+(?P<week>\d+)",
+    re.IGNORECASE,
+)
 
-# Sagarin display names that differ materially from common ESPN names. The normal
-# team-alias registry is still applied after this source-specific normalization.
 SOURCE_NAME_MAP = {
     "Fla. International": "Florida International",
     "Appalachian State": "App State",
@@ -47,15 +54,44 @@ SOURCE_NAME_MAP = {
 }
 
 
-def fetch_text(url: str = OFFICIAL_URL) -> str:
-    req = urllib.request.Request(url, headers={"User-Agent": "CBModelBenchmark/1.0"})
-    with urllib.request.urlopen(req, timeout=30) as response:
-        raw = response.read().decode("utf-8", errors="replace")
-    # The source is preformatted HTML. Converting tags to line breaks/spaces makes
-    # parsing stable whether the server returns PRE text or lightly marked-up HTML.
+def _clean_html(raw: str) -> str:
     raw = re.sub(r"(?i)<br\s*/?>", "\n", raw)
     raw = re.sub(r"<[^>]+>", "", raw)
     return html_lib.unescape(raw).replace("\r", "")
+
+
+def _request(url: str, context: ssl.SSLContext | None = None) -> str:
+    req = urllib.request.Request(url, headers={"User-Agent": "CBModelBenchmark/1.0"})
+    kwargs: dict[str, Any] = {"timeout": 30}
+    if context is not None:
+        kwargs["context"] = context
+    with urllib.request.urlopen(req, **kwargs) as response:
+        return response.read().decode("utf-8", errors="replace")
+
+
+def fetch_text(url: str = OFFICIAL_URL) -> tuple[str, dict[str, Any]]:
+    if url != OFFICIAL_URL:
+        raise ValueError("Live Sagarin fetch is restricted to the approved official URL")
+    try:
+        raw = _request(url)
+        transport = {
+            "tlsVerified": True,
+            "certificateWorkaroundUsed": False,
+            "warning": None,
+        }
+    except urllib.error.URLError as exc:
+        reason = getattr(exc, "reason", None)
+        if not isinstance(reason, ssl.SSLCertVerificationError):
+            raise
+        # Narrow exception: exact approved host only. The caller must independently
+        # crosscheck known pregame values before accepting output from this path.
+        raw = _request(url, ssl._create_unverified_context())
+        transport = {
+            "tlsVerified": False,
+            "certificateWorkaroundUsed": True,
+            "warning": "Official Sagarin host presented a certificate that the GitHub runner could not verify; exact-host fallback used and independent known-game crosscheck required.",
+        }
+    return _clean_html(raw), transport
 
 
 def parse_ratings(text: str) -> tuple[dict[str, dict[str, Any]], float, dict[str, Any]]:
@@ -88,13 +124,22 @@ def parse_ratings(text: str) -> tuple[dict[str, dict[str, Any]], float, dict[str
     return ratings, predictor_hfa, source_meta
 
 
+def ratings_through_iso(label: str | None, season: int | None) -> str:
+    if not label or not season:
+        raise ValueError("Sagarin ratings-through date/season unavailable")
+    match = re.search(r"([A-Za-z]+)\s+(\d{1,2})", label)
+    if not match:
+        raise ValueError(f"Cannot normalize Sagarin ratings-through label: {label}")
+    dt = datetime.strptime(f"{int(season)} {match.group(1)} {match.group(2)}", "%Y %B %d")
+    return dt.date().isoformat()
+
+
 def _rating_for(team: str, ratings: dict[str, dict[str, Any]], aliases: dict[str, str]) -> dict[str, Any] | None:
     candidates = [team, canonical_team(team, aliases)]
     for candidate in candidates:
         direct = ratings.get(norm_name(candidate))
         if direct:
             return direct
-    # Reverse alias comparison lets source names resolve to the same canonical team.
     target = canonical_team(team, aliases)
     hits = []
     for row in ratings.values():
@@ -109,8 +154,10 @@ def build_snapshot(
     aliases: dict[str, str],
     observed_at: str,
     min_coverage: float = 0.90,
+    transport: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     ratings, predictor_hfa, source_meta = parse_ratings(text)
+    ratings_through = ratings_through_iso(source_meta["ratingsThrough"], schedule.get("season"))
     games = []
     unresolved = []
 
@@ -138,6 +185,8 @@ def build_snapshot(
                 margin_home += predictor_hfa
             row["sagarin"] = {
                 "status": "CURRENT",
+                "observedAt": observed_at,
+                "ratingsThrough": ratings_through,
                 "awayPredictor": away["predictor"],
                 "homePredictor": home["predictor"],
                 "predictorHomeAdvantage": 0.0 if game.get("neutralSite") else predictor_hfa,
@@ -157,6 +206,18 @@ def build_snapshot(
             f"Sagarin schedule coverage {coverage:.3f} below required {min_coverage:.3f}; unresolved={sorted(set(unresolved))}"
         )
 
+    source_block = {
+        "sourceId": "sagarin-cfb",
+        "publisher": "Jeff Sagarin",
+        "officialUrl": OFFICIAL_URL,
+        "status": "CURRENT",
+        "ratingsThrough": ratings_through,
+        "ratingsThroughLabel": source_meta["ratingsThrough"],
+        "sourceWeek": source_meta["sourceWeek"],
+        "predictorHomeAdvantage": predictor_hfa,
+        "observedAt": observed_at,
+        "transport": transport or {"tlsVerified": None, "certificateWorkaroundUsed": False, "warning": "Source text supplied from a saved capture."},
+    }
     return {
         "schemaVersion": 1,
         "league": "cfb",
@@ -165,15 +226,8 @@ def build_snapshot(
         "role": "OFFICIAL_EXTERNAL_BENCHMARK_SNAPSHOT",
         "canonicalInfluence": False,
         "observedAt": observed_at,
-        "source": {
-            "sourceId": "sagarin-cfb",
-            "publisher": "Jeff Sagarin",
-            "officialUrl": OFFICIAL_URL,
-            "status": "CURRENT",
-            "ratingsThrough": source_meta["ratingsThrough"],
-            "sourceWeek": source_meta["sourceWeek"],
-            "predictorHomeAdvantage": predictor_hfa,
-        },
+        "source": source_block,
+        "sources": {"sagarin": source_block},
         "coverage": {
             "scheduleGames": len(games),
             "resolvedGames": resolved,
@@ -185,21 +239,73 @@ def build_snapshot(
     }
 
 
+def _same_matchup(a: dict[str, Any], b: dict[str, Any], aliases: dict[str, str]) -> bool:
+    return (
+        canonical_team(a.get("awayTeam"), aliases) == canonical_team(b.get("awayTeam"), aliases)
+        and canonical_team(a.get("homeTeam"), aliases) == canonical_team(b.get("homeTeam"), aliases)
+        and str(a.get("kickoff")) == str(b.get("kickoff"))
+    )
+
+
+def verify_crosscheck(
+    snapshot: dict[str, Any],
+    reference: dict[str, Any],
+    aliases: dict[str, str],
+    tolerance: float = 0.15,
+) -> dict[str, Any]:
+    checks = []
+    for ref in reference.get("games", []):
+        old = ref.get("sagarin") or {}
+        if str(old.get("status", "")).upper() != "CURRENT" or old.get("impliedSpreadHome") is None:
+            continue
+        matches = [game for game in snapshot.get("games", []) if _same_matchup(game, ref, aliases)]
+        if len(matches) != 1:
+            raise ValueError(f"Sagarin crosscheck matchup resolution failed for {ref.get('gameId')}: {len(matches)} matches")
+        new = matches[0].get("sagarin") or {}
+        if str(new.get("status", "")).upper() != "CURRENT":
+            raise ValueError(f"Sagarin crosscheck is not CURRENT for {ref.get('gameId')}")
+        expected = float(old["impliedSpreadHome"])
+        actual = float(new["impliedSpreadHome"])
+        delta = actual - expected
+        if abs(delta) > tolerance:
+            raise ValueError(
+                f"Sagarin known-game crosscheck failed for {ref.get('gameId')}: expected {expected}, derived {actual}, delta {delta}"
+            )
+        checks.append({"referenceGameId": ref.get("gameId"), "expectedSpreadHome": expected, "derivedSpreadHome": actual, "delta": delta})
+    if len(checks) < 3:
+        raise ValueError(f"Sagarin crosscheck requires >=3 known current games; found {len(checks)}")
+    return {"status": "PASS", "games": len(checks), "tolerance": tolerance, "checks": checks}
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--schedule", default="cfb/pregame/week-08-schedule.json")
     ap.add_argument("--output", default="cfb/benchmarks/week-08-sagarin-full.json")
     ap.add_argument("--source-file", help="Optional saved official Sagarin HTML/text for deterministic replay")
+    ap.add_argument("--crosscheck", help="Existing independently captured Sagarin benchmark used to verify live-derived values")
     ap.add_argument("--min-coverage", type=float, default=0.90)
     ap.add_argument("--root", default=".")
     args = ap.parse_args()
 
+    root = Path(args.root)
+    aliases = load_aliases(root)
     schedule = json.loads(Path(args.schedule).read_text(encoding="utf-8"))
-    text = Path(args.source_file).read_text(encoding="utf-8") if args.source_file else fetch_text()
+    if args.source_file:
+        text = Path(args.source_file).read_text(encoding="utf-8")
+        transport = {"tlsVerified": None, "certificateWorkaroundUsed": False, "warning": "Source text supplied from a saved capture."}
+    else:
+        text, transport = fetch_text()
     observed_at = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
-    out = build_snapshot(schedule, text, load_aliases(Path(args.root)), observed_at, args.min_coverage)
+    out = build_snapshot(schedule, text, aliases, observed_at, args.min_coverage, transport)
+
+    if args.crosscheck:
+        reference = json.loads(Path(args.crosscheck).read_text(encoding="utf-8"))
+        out["knownGameCrosscheck"] = verify_crosscheck(out, reference, aliases)
+    elif transport.get("tlsVerified") is False:
+        raise ValueError("Unverified-TLS Sagarin capture requires --crosscheck against independently captured known games")
+
     atomic_json(Path(args.output), out)
-    print(json.dumps({"source": out["source"], "coverage": out["coverage"], "output": args.output}, indent=2))
+    print(json.dumps({"source": out["source"], "coverage": out["coverage"], "knownGameCrosscheck": out.get("knownGameCrosscheck"), "output": args.output}, indent=2))
 
 
 if __name__ == "__main__":
