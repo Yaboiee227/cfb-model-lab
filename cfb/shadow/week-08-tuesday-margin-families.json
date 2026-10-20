@@ -1,0 +1,419 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "role": "PROSPECTIVE_ISOLATED_MARGIN_FAMILY_SHADOWS",
+  "canonicalInfluence": false,
+  "asOf": "2026-10-20T04:00:00Z",
+  "eligibleFamilies": [
+    "efficiency",
+    "drive_control",
+    "discipline"
+  ],
+  "totalPolicy": "No isolated total family passed the validation gate; all family shadows retain the lead simple shadow total.",
+  "trainingPolicy": {
+    "priorSeasonTeamStateCarryover": false,
+    "coefficientHistory": "2025 causal feature rows",
+    "currentTeamState": "2026 only",
+    "alphaSelectionWeekStart": "2026-10-12T00:00:00Z",
+    "alphaSelectionUsesTargetWeek": false,
+    "marketDataUsed": false,
+    "externalRatingsUsed": false,
+    "sameWeekResultLeakage": false
+  },
+  "familyModels": {
+    "efficiency": {
+      "features": [
+        "yppMatchupDiff",
+        "passYpaMatchupDiff",
+        "rushYpaMatchupDiff"
+      ],
+      "indices": [
+        0,
+        2,
+        3,
+        4
+      ],
+      "selectedAlpha": 100.0,
+      "latestCompletedWeekValidation": {
+        "games": 59,
+        "mae": 11.887205232903447,
+        "rmse": 14.387470605348254,
+        "bias": -0.0885700837484892
+      },
+      "alphaCandidates": [
+        {
+          "alpha": 100.0,
+          "games": 59,
+          "mae": 11.887205232903447,
+          "rmse": 14.387470605348254,
+          "bias": -0.0885700837484892
+        },
+        {
+          "alpha": 10.0,
+          "games": 59,
+          "mae": 11.994742172649419,
+          "rmse": 14.494338866322733,
+          "bias": -0.03449061304821764
+        },
+        {
+          "alpha": 1.0,
+          "games": 59,
+          "mae": 12.00617134417054,
+          "rmse": 14.50805210751955,
+          "bias": -0.02423708431992064
+        },
+        {
+          "alpha": 0.1,
+          "games": 59,
+          "mae": 12.007252395576666,
+          "rmse": 14.50939031848013,
+          "bias": -0.023141103311392932
+        }
+      ]
+    },
+    "drive_control": {
+      "features": [
+        "thirdDownMatchupDiff",
+        "turnoverControlDiff",
+        "firstDownRateMatchupDiff"
+      ],
+      "indices": [
+        0,
+        5,
+        6,
+        7
+      ],
+      "selectedAlpha": 0.1,
+      "latestCompletedWeekValidation": {
+        "games": 59,
+        "mae": 12.076248802315575,
+        "rmse": 14.64423859548876,
+        "bias": 0.32585672051600784
+      },
+      "alphaCandidates": [
+        {
+          "alpha": 0.1,
+          "games": 59,
+          "mae": 12.076248802315575,
+          "rmse": 14.64423859548876,
+          "bias": 0.32585672051600784
+        },
+        {
+          "alpha": 1.0,
+          "games": 59,
+          "mae": 12.076740697954111,
+          "rmse": 14.645023546503424,
+          "bias": 0.32511753408847116
+        },
+        {
+          "alpha": 10.0,
+          "games": 59,
+          "mae": 12.08107558837431,
+          "rmse": 14.652590828669105,
+          "bias": 0.31817314276220043
+        },
+        {
+          "alpha": 100.0,
+          "games": 59,
+          "mae": 12.095202792006571,
+          "rmse": 14.702414945950737,
+          "bias": 0.27778537807118486
+        }
+      ]
+    },
+    "discipline": {
+      "features": [
+        "penaltyDisciplineDiff"
+      ],
+      "indices": [
+        0,
+        8
+      ],
+      "selectedAlpha": 100.0,
+      "latestCompletedWeekValidation": {
+        "games": 59,
+        "mae": 11.979928038768561,
+        "rmse": 14.701286336612293,
+        "bias": 0.5557581324914881
+      },
+      "alphaCandidates": [
+        {
+          "alpha": 100.0,
+          "games": 59,
+          "mae": 11.979928038768561,
+          "rmse": 14.701286336612293,
+          "bias": 0.5557581324914881
+        },
+        {
+          "alpha": 10.0,
+          "games": 59,
+          "mae": 12.168730659669253,
+          "rmse": 14.93942026222891,
+          "bias": 0.5177140526544074
+        },
+        {
+          "alpha": 1.0,
+          "games": 59,
+          "mae": 12.195750796869767,
+          "rmse": 14.971239746167749,
+          "bias": 0.5134678209964201
+        },
+        {
+          "alpha": 0.1,
+          "games": 59,
+          "mae": 12.198488104462742,
+          "rmse": 14.974517713122657,
+          "bias": 0.5130382660381885
+        }
+      ]
+    }
+  },
+  "games": [
+    {
+      "gameId": "2026-10-20-MIDDLETENNESSEE-FIU",
+      "awayTeam": "Middle Tennessee",
+      "homeTeam": "FIU",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "status": "PROSPECTIVE_MARGIN_FAMILY_SHADOWS_READY",
+      "simpleReference": {
+        "projectedMarginHome": 10.206396420706518,
+        "projectedSpreadHome": -10.206396420706518,
+        "projectedTotal": 47.67478596696295
+      },
+      "familyShadows": [
+        {
+          "family": "efficiency",
+          "features": [
+            "yppMatchupDiff",
+            "passYpaMatchupDiff",
+            "rushYpaMatchupDiff"
+          ],
+          "selectedAlpha": 100.0,
+          "latestCompletedWeekValidation": {
+            "games": 59,
+            "mae": 11.887205232903447,
+            "rmse": 14.387470605348254,
+            "bias": -0.0885700837484892
+          },
+          "projectedMarginHome": 14.593803986736845,
+          "projectedSpreadHome": -14.593803986736845,
+          "projectedTotal": 47.67478596696295,
+          "projectedAwayPoints": 16.540490990113053,
+          "projectedHomePoints": 31.134294976849898,
+          "homeWinProbability": 84.47900108966752,
+          "projectedWinner": "FIU",
+          "canonicalInfluence": false
+        },
+        {
+          "family": "drive_control",
+          "features": [
+            "thirdDownMatchupDiff",
+            "turnoverControlDiff",
+            "firstDownRateMatchupDiff"
+          ],
+          "selectedAlpha": 0.1,
+          "latestCompletedWeekValidation": {
+            "games": 59,
+            "mae": 12.076248802315575,
+            "rmse": 14.64423859548876,
+            "bias": 0.32585672051600784
+          },
+          "projectedMarginHome": 16.343476308241126,
+          "projectedSpreadHome": -16.343476308241126,
+          "projectedTotal": 47.67478596696296,
+          "projectedAwayPoints": 15.665654829360914,
+          "projectedHomePoints": 32.00913113760204,
+          "homeWinProbability": 86.77963282165592,
+          "projectedWinner": "FIU",
+          "canonicalInfluence": false
+        },
+        {
+          "family": "discipline",
+          "features": [
+            "penaltyDisciplineDiff"
+          ],
+          "selectedAlpha": 100.0,
+          "latestCompletedWeekValidation": {
+            "games": 59,
+            "mae": 11.979928038768561,
+            "rmse": 14.701286336612293,
+            "bias": 0.5557581324914881
+          },
+          "projectedMarginHome": 14.99417967949367,
+          "projectedSpreadHome": -14.99417967949367,
+          "projectedTotal": 47.67478596696295,
+          "projectedAwayPoints": 16.34030314373464,
+          "projectedHomePoints": 31.33448282322831,
+          "homeWinProbability": 84.61175035425572,
+          "projectedWinner": "FIU",
+          "canonicalInfluence": false
+        }
+      ]
+    },
+    {
+      "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
+      "awayTeam": "Missouri State",
+      "homeTeam": "Delaware",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "status": "PROSPECTIVE_MARGIN_FAMILY_SHADOWS_READY",
+      "simpleReference": {
+        "projectedMarginHome": 4.780507161916788,
+        "projectedSpreadHome": -4.780507161916788,
+        "projectedTotal": 51.631845677977296
+      },
+      "familyShadows": [
+        {
+          "family": "efficiency",
+          "features": [
+            "yppMatchupDiff",
+            "passYpaMatchupDiff",
+            "rushYpaMatchupDiff"
+          ],
+          "selectedAlpha": 100.0,
+          "latestCompletedWeekValidation": {
+            "games": 59,
+            "mae": 11.887205232903447,
+            "rmse": 14.387470605348254,
+            "bias": -0.0885700837484892
+          },
+          "projectedMarginHome": 6.112595561965847,
+          "projectedSpreadHome": -6.112595561965847,
+          "projectedTotal": 51.631845677977296,
+          "projectedAwayPoints": 22.759625058005724,
+          "projectedHomePoints": 28.87222061997157,
+          "homeWinProbability": 66.45289803894879,
+          "projectedWinner": "Delaware",
+          "canonicalInfluence": false
+        },
+        {
+          "family": "drive_control",
+          "features": [
+            "thirdDownMatchupDiff",
+            "turnoverControlDiff",
+            "firstDownRateMatchupDiff"
+          ],
+          "selectedAlpha": 0.1,
+          "latestCompletedWeekValidation": {
+            "games": 59,
+            "mae": 12.076248802315575,
+            "rmse": 14.64423859548876,
+            "bias": 0.32585672051600784
+          },
+          "projectedMarginHome": 7.9739161877493885,
+          "projectedSpreadHome": -7.9739161877493885,
+          "projectedTotal": 51.631845677977296,
+          "projectedAwayPoints": 21.828964745113954,
+          "projectedHomePoints": 29.802880932863342,
+          "homeWinProbability": 70.69542887750306,
+          "projectedWinner": "Delaware",
+          "canonicalInfluence": false
+        },
+        {
+          "family": "discipline",
+          "features": [
+            "penaltyDisciplineDiff"
+          ],
+          "selectedAlpha": 100.0,
+          "latestCompletedWeekValidation": {
+            "games": 59,
+            "mae": 11.979928038768561,
+            "rmse": 14.701286336612293,
+            "bias": 0.5557581324914881
+          },
+          "projectedMarginHome": 5.5108399198273545,
+          "projectedSpreadHome": -5.5108399198273545,
+          "projectedTotal": 51.631845677977296,
+          "projectedAwayPoints": 23.06050287907497,
+          "projectedHomePoints": 28.571342798902325,
+          "homeWinProbability": 64.61155737895183,
+          "projectedWinner": "Delaware",
+          "canonicalInfluence": false
+        }
+      ]
+    },
+    {
+      "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
+      "awayTeam": "South Alabama",
+      "homeTeam": "Marshall",
+      "kickoff": "2026-10-20T23:30:00Z",
+      "status": "PROSPECTIVE_MARGIN_FAMILY_SHADOWS_READY",
+      "simpleReference": {
+        "projectedMarginHome": -0.2536409253395391,
+        "projectedSpreadHome": 0.2536409253395391,
+        "projectedTotal": 62.00571868893647
+      },
+      "familyShadows": [
+        {
+          "family": "efficiency",
+          "features": [
+            "yppMatchupDiff",
+            "passYpaMatchupDiff",
+            "rushYpaMatchupDiff"
+          ],
+          "selectedAlpha": 100.0,
+          "latestCompletedWeekValidation": {
+            "games": 59,
+            "mae": 11.887205232903447,
+            "rmse": 14.387470605348254,
+            "bias": -0.0885700837484892
+          },
+          "projectedMarginHome": -2.2462871007590053,
+          "projectedSpreadHome": 2.2462871007590053,
+          "projectedTotal": 62.00571868893647,
+          "projectedAwayPoints": 32.12600289484774,
+          "projectedHomePoints": 29.87971579408873,
+          "homeWinProbability": 43.79660616239974,
+          "projectedWinner": "South Alabama",
+          "canonicalInfluence": false
+        },
+        {
+          "family": "drive_control",
+          "features": [
+            "thirdDownMatchupDiff",
+            "turnoverControlDiff",
+            "firstDownRateMatchupDiff"
+          ],
+          "selectedAlpha": 0.1,
+          "latestCompletedWeekValidation": {
+            "games": 59,
+            "mae": 12.076248802315575,
+            "rmse": 14.64423859548876,
+            "bias": 0.32585672051600784
+          },
+          "projectedMarginHome": 0.49731638835206127,
+          "projectedSpreadHome": -0.49731638835206127,
+          "projectedTotal": 62.00571868893647,
+          "projectedAwayPoints": 30.754201150292204,
+          "projectedHomePoints": 31.251517538644265,
+          "homeWinProbability": 51.3545422957409,
+          "projectedWinner": "Marshall",
+          "canonicalInfluence": false
+        },
+        {
+          "family": "discipline",
+          "features": [
+            "penaltyDisciplineDiff"
+          ],
+          "selectedAlpha": 100.0,
+          "latestCompletedWeekValidation": {
+            "games": 59,
+            "mae": 11.979928038768561,
+            "rmse": 14.701286336612293,
+            "bias": 0.5557581324914881
+          },
+          "projectedMarginHome": -3.349260265378202,
+          "projectedSpreadHome": 3.349260265378202,
+          "projectedTotal": 62.00571868893647,
+          "projectedAwayPoints": 32.67748947715734,
+          "projectedHomePoints": 29.328229211779135,
+          "homeWinProbability": 40.98927395311226,
+          "projectedWinner": "South Alabama",
+          "canonicalInfluence": false
+        }
+      ]
+    }
+  ],
+  "warning": "Prospective shadow only. These outputs must be frozen before kickoff and graded after results; they do not replace the canonical CB projection or the lead simple shadow."
+}
