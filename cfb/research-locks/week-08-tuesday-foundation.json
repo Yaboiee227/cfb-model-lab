@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
+  "canonicalInfluence": false,
+  "canonicalPromotionAuthorized": false,
+  "modelId": "cfb-rebuild-foundation-v1-shadow",
+  "sourceAsOf": "2026-10-20T04:00:00Z",
+  "lockedAt": "2026-10-20T11:24:15.591866Z",
+  "lockedParameters": {
+    "alpha": 2.5,
+    "halfLifeDays": 56,
+    "minTeamAppearances": 4
+  },
+  "structuralHomeMarginAdvantage": 4.249132328925835,
+  "sourcePolicy": {
+    "provider": "ESPN public FBS teams + team schedules",
+    "marketDataUsed": false,
+    "externalRatingsUsed": false,
+    "postKickoffDataUsed": false
+  },
+  "games": [
+    {
+      "gameId": "2026-10-20-MIDDLETENNESSEE-FIU",
+      "awayTeam": "Middle Tennessee",
+      "homeTeam": "FIU",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "projectedAwayPoints": 14.372105636229977,
+      "projectedHomePoints": 28.349516713342517,
+      "projectedMarginHome": 13.97741107711254,
+      "projectedSpreadHome": -13.97741107711254,
+      "projectedTotal": 42.72162234957249,
+      "homeWinProbability": 81.12113387563812,
+      "projectedWinner": "FIU",
+      "projectionDigest": "e68117ea64fbc13c4f5422993797e24c25d3713bc222742558cade93d7a5e695"
+    },
+    {
+      "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
+      "awayTeam": "Missouri State",
+      "homeTeam": "Delaware",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "projectedAwayPoints": 22.546887989883032,
+      "projectedHomePoints": 29.557645575997405,
+      "projectedMarginHome": 7.010757586114373,
+      "projectedSpreadHome": -7.010757586114373,
+      "projectedTotal": 52.10453356588044,
+      "homeWinProbability": 67.09639860904642,
+      "projectedWinner": "Delaware",
+      "projectionDigest": "eb7d34446c09ce5efad7d7c2404b78755efee0b3bf11b000fc99f4306473aa3b"
+    },
+    {
+      "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
+      "awayTeam": "South Alabama",
+      "homeTeam": "Marshall",
+      "kickoff": "2026-10-20T23:30:00Z",
+      "projectedAwayPoints": 36.82383254052364,
+      "projectedHomePoints": 32.71893046434015,
+      "projectedMarginHome": -4.1049020761834925,
+      "projectedSpreadHome": 4.1049020761834925,
+      "projectedTotal": 69.54276300486379,
+      "homeWinProbability": 39.77654933430052,
+      "projectedWinner": "South Alabama",
+      "projectionDigest": "afd005f632372613861a8c41f372515ce110f76fe0c63396a26fe4d4b2010652"
+    }
+  ],
+  "gradingPolicy": "After results, grade these exact frozen research projections separately. Never rewrite them and never merge their record into the established canonical record.",
+  "lockDigest": "25abebca1b2b03f84f1502bcafdfeb64356909d04887d76e075d45b86af6ba7b"
+}
