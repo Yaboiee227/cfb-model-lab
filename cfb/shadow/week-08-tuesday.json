@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "modelId": "cfb-rebuild-alpha-shadow-v1",
+  "role": "SHADOW_CHALLENGER_ONLY",
+  "canonicalInfluence": false,
+  "asOf": "2026-10-20T04:00:00Z",
+  "trainingWindowStart": "2026-08-20T04:00:00Z",
+  "trainingGames": 249,
+  "source": {
+    "provider": "ESPN public college-football scoreboard",
+    "marketDataUsed": false,
+    "externalRatingsUsed": false,
+    "postKickoffDataUsed": false
+  },
+  "fit": {
+    "description": "ridge-shrunk opponent-adjusted team scoring model with learned home scoring advantage",
+    "selectedAlpha": 40.0,
+    "selectedHalfLifeDays": 21,
+    "learnedHomeScoreAdvantage": 8.951376137148662,
+    "uncertaintyMarginSigma": 17.335893010121534,
+    "uncertaintySource": "temporal_holdout_margin_residual_std",
+    "tuning": {
+      "mode": "PRE_WEEK8_TEMPORAL_HOLDOUT",
+      "splitAt": "2026-10-06T04:00:00Z",
+      "trainGames": 177,
+      "validationGames": 72,
+      "objective": 14.191731400960187,
+      "selectedValidation": {
+        "games": 57,
+        "marginMae": 15.31508276480138,
+        "totalMae": 13.068380037118995,
+        "scoreMae": 9.586250812485712,
+        "marginRmse": 18.59802224636097,
+        "marginResidualStd": 17.335893010121534
+      },
+      "candidateCount": 16
+    },
+    "fullFitDiagnostics": {
+      "games": 249,
+      "marginMae": 19.162809431759445,
+      "totalMae": 12.815556666474684,
+      "scoreMae": 11.71861720214602,
+      "marginRmse": 24.315808359464146,
+      "marginResidualStd": 23.773648719927447
+    }
+  },
+  "warning": "This output is not the unrecoverable 0.9J canonical model. It is a transparent shadow bridge and must not replace canonical/frozen projections without explicit validation and promotion.",
+  "games": [
+    {
+      "gameId": "2026-10-20-MIDDLETENNESSEE-FIU",
+      "awayTeam": "Middle Tennessee",
+      "homeTeam": "FIU",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "awayModelCode": "MTSU",
+      "homeModelCode": "FIU",
+      "status": "SHADOW_READY",
+      "error": null,
+      "projectedAwayPoints": 21.718113774970156,
+      "projectedHomePoints": 31.70634800589392,
+      "projectedMarginHome": 9.988234230923762,
+      "projectedSpreadHome": -9.988234230923762,
+      "projectedTotal": 53.42446178086408,
+      "homeWinProbability": 71.77462097002197,
+      "projectedWinner": "FIU"
+    },
+    {
+      "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
+      "awayTeam": "Missouri State",
+      "homeTeam": "Delaware",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "awayModelCode": "MOST",
+      "homeModelCode": "DEL",
+      "status": "SHADOW_READY",
+      "error": null,
+      "projectedAwayPoints": 21.985560435181227,
+      "projectedHomePoints": 31.38489031340845,
+      "projectedMarginHome": 9.399329878227224,
+      "projectedSpreadHome": -9.399329878227224,
+      "projectedTotal": 53.370450748589676,
+      "homeWinProbability": 70.615583159096,
+      "projectedWinner": "Delaware"
+    },
+    {
+      "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
+      "awayTeam": "South Alabama",
+      "homeTeam": "Marshall",
+      "kickoff": "2026-10-20T23:30:00Z",
+      "awayModelCode": "USA",
+      "homeModelCode": "MRSH",
+      "status": "SHADOW_READY",
+      "error": null,
+      "projectedAwayPoints": 23.01114074812554,
+      "projectedHomePoints": 31.654202064456364,
+      "projectedMarginHome": 8.643061316330822,
+      "projectedSpreadHome": -8.643061316330822,
+      "projectedTotal": 54.665342812581905,
+      "homeWinProbability": 69.09569001265614,
+      "projectedWinner": "Marshall"
+    }
+  ]
+}
