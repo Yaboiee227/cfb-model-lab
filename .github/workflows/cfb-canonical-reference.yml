@@ -1,0 +1,74 @@
+name: CFB canonical reference profile
+on:
+  push:
+    paths:
+      - 'scripts/cfb_canonical_reference.py'
+      - 'tests/test_cfb_canonical_reference.py'
+      - 'data/results.csv'
+      - 'data/projections.csv'
+      - '.github/workflows/cfb-canonical-reference.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: cfb-canonical-reference
+  cancel-in-progress: false
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test canonical reference evaluator
+        run: python -m unittest tests.test_cfb_canonical_reference -v
+      - name: Build Week 7 canonical reference profile
+        run: |
+          python scripts/cfb_canonical_reference.py \
+            --results data/results.csv \
+            --projections data/projections.csv \
+            --season 2026 \
+            --week 7 \
+            --output cfb/validation/week-07-canonical-reference.json
+      - name: Assert reference anti-leakage policy
+        run: |
+          python - <<'PY'
+          import json
+          p='cfb/validation/week-07-canonical-reference.json'
+          d=json.load(open(p))
+          assert d['role']=='FROZEN_CANONICAL_REFERENCE_PROFILE'
+          assert d['canonicalInfluence'] is False
+          assert d['policy']['descriptiveOnly'] is True
+          assert d['overall']['games'] >= 40, d['overall']['games']
+          assert d['overall']['model']['marginGames'] >= 40
+          print(json.dumps({
+              'games': d['overall']['games'],
+              'marginMae': d['overall']['model']['marginMae'],
+              'marginRmse': d['overall']['model']['marginRmse'],
+              'totalMae': d['overall']['model']['totalMae'],
+              'totalRmse': d['overall']['model']['totalRmse'],
+              'suAccuracyPct': d['overall']['model']['suAccuracyPct'],
+              'brierScore': d['overall']['model']['brierScore'],
+              'marketMarginMae': d['overall']['marketReference']['marginMae'],
+              'marketTotalMae': d['overall']['marketReference']['totalMae'],
+          }, indent=2))
+          PY
+      - name: Commit reference profile
+        run: |
+          git config user.name "cb-model-validation-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add cfb/validation/week-07-canonical-reference.json
+          if git diff --cached --quiet; then
+            echo 'Reference profile unchanged.'
+            exit 0
+          fi
+          git commit -m 'Refresh Week 7 canonical reference profile'
+          for attempt in 1 2 3; do
+            if git push; then exit 0; fi
+            echo "Push raced with another workflow; rebasing attempt ${attempt}."
+            git pull --rebase origin main
+          done
+          git push
