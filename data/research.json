@@ -1,27 +1,27 @@
 {
-  "updated": "October 20, 2026 \u00b7 4:18 PM ET \u00b7 Tuesday\u2013Wednesday preparation",
+  "updated": "October 20, 2026 · 5:30 PM ET · Week 8 active through Thursday",
   "categories": [
     {
       "id": "validation",
-      "label": "Historical Week 7 validation audit",
+      "label": "Validation & release state",
       "short": "Validation",
-      "status": "Historical \u00b7 Week 7",
-      "summary": "Week 7 projection grading: ATS 27-24-2 (52.9%), SU 34-19 (64.2%), and totals shadow 25-23 (52.1% on 48 tracked totals). Spread and totals validation remain HOLD.",
+      "status": "Week 8 · Canonical HOLD",
+      "summary": "Week 8 is running prospectively with a frozen research-shadow foundation. No authorized canonical Week 8 spread, total, winner probability or recommendation is currently published.",
       "items": [
         {
-          "title": "Saturday slate",
-          "detail": "49 Saturday matchups had a usable model baseline and were graded: 24-23-2 ATS and 31-18 straight up. Charleston Southern-Clemson, The Citadel-Texas A&M and Elon-Stanford were excluded because the model had no baseline projection.",
-          "tag": "Projection audit"
+          "title": "Frozen evidence",
+          "detail": "Seven Tuesday-through-Thursday games have immutable prospective research projection digests. New injuries, weather, markets and benchmarks cannot rewrite those frozen shadow projections.",
+          "tag": "Prospective shadow"
         },
         {
-          "title": "Totals shadow",
-          "detail": "44 Saturday games had a saved pre-kick total and graded 21-23. Combined with the four earlier Week 7 tracked totals, the totals-shadow record is 25-23. Missing pre-kick totals remain ungraded rather than being reconstructed after the result.",
-          "tag": "Totals validation"
+          "title": "Promotion discipline",
+          "detail": "The foundation candidate remains non-canonical until it earns prospective frozen-week evidence and an explicit promotion decision. Large model/market differences do not bypass the gate.",
+          "tag": "HOLD"
         },
         {
-          "title": "Release integrity",
-          "detail": "These are projection grades against saved comparison numbers, not a wager ledger. Week 7 had no released bets, and the existing spread/totals HOLD gates are preserved after grading.",
-          "tag": "Release rule"
+          "title": "Historical context",
+          "detail": "Week 7 grading remains historical evidence only. ATS, totals and straight-up results are tracked honestly and separately from released wagers.",
+          "tag": "Audit trail"
         }
       ]
     },
@@ -29,23 +29,23 @@
       "id": "availability",
       "label": "Injuries & availability",
       "short": "Availability",
-      "status": "Final checks pending",
-      "summary": "Official team previews and the Sun Belt game-day report are captured for the Tuesday\u2013Wednesday priority slate. Availability does not automatically clear role or impact QA.",
+      "status": "Tonight final checks pending",
+      "summary": "Official team evidence and third-party injury context are captured for the active Week 8 window. Starting-role uncertainty remains visible instead of being guessed.",
       "items": [
         {
           "title": "Missouri State at Delaware",
-          "detail": "Missouri State\u2019s own preview documents Henry Belin IV\u2019s recent start; Delaware\u2019s opponent overview names Skyler Locklear. Delaware\u2019s preview reports Minicucci missed two games and Tyler Bell started most recently. Tuesday starters remain unresolved.",
+          "detail": "Henry Belin IV and Tyler Bell remain the most recent respective starters, but neither Tuesday starter is treated as confirmed without direct current evidence.",
           "tag": "QB confirmation pending"
         },
         {
           "title": "South Alabama at Marshall",
-          "detail": "Official Sun Belt game-day availability is captured. South Alabama has three game-time decisions; Marshall lists five unavailable players. Marshall\u2019s recent three-QB rotation still needs a starter/role confirmation. Missing names on an injury report do not confirm health or starting roles.",
-          "tag": "Official report captured"
+          "detail": "South Alabama's recent QB baseline is preserved. Marshall's recent multi-QB usage remains unresolved and requires a final-hour role check rather than a discretionary point adjustment.",
+          "tag": "QB usage open"
         },
         {
-          "title": "Wednesday at Sam Houston",
-          "detail": "The Oct. 20 Sam Houston preview supports Landyn Locke as the recent offensive baseline and documents two freshman OL starters in the prior two games. NM State\u2019s recent primary QB is Adam Damante. Final Wednesday starter and availability confirmation remains pending.",
-          "tag": "Official baseline"
+          "title": "Wednesday and Thursday",
+          "detail": "NM State-Sam Houston is prepared for Wednesday. Thursday baselines are preserved for James Madison-App State, Liberty-Kennesaw State and East Carolina-Memphis, with game-day rechecks still required.",
+          "tag": "Prepared ahead"
         }
       ]
     },
@@ -53,18 +53,18 @@
       "id": "weather",
       "label": "Weather & venue",
       "short": "Weather",
-      "status": "NWS hourly captured",
-      "summary": "Direct NWS hourly forecasts cover kickoff through four hours for all four Tuesday\u2013Wednesday games. Source issue times and retrieval times are preserved separately.",
+      "status": "NWS captured · final windows pending",
+      "summary": "Pregame weather is timestamped separately from projections. Tonight's final-hour stadium-level checks still must occur before the games are considered fully pregame-ready.",
       "items": [
         {
-          "title": "Latest direct capture",
-          "detail": "Forecasts were retrieved October 20 at approximately 4:18 PM ET. Nearby forecast grids are not on-field observations. The hourly API does not supply gust values; missing is not zero.",
-          "tag": "Source provenance"
+          "title": "Tuesday",
+          "detail": "NWS context is already captured for Miami, Newark and Huntington. The standard final-hour wind, precipitation and condition check remains pending by design.",
+          "tag": "Final hour"
         },
         {
-          "title": "Final refresh pending",
-          "detail": "These afternoon forecasts do not fulfill the final one-hour check. Weather remains a review item until the actual pregame window. No unvalidated weather point adjustment is applied.",
-          "tag": "Final window"
+          "title": "Wednesday and Thursday",
+          "detail": "Sam Houston has a low-impact preliminary profile. Thursday venue forecasts are also captured, but those are early baselines and will be refreshed closer to kickoff.",
+          "tag": "Early baseline"
         }
       ]
     },
@@ -72,18 +72,23 @@
       "id": "market",
       "label": "Line movement & market",
       "short": "Market",
-      "status": "Publication locks pending",
-      "summary": "Timestamped FanDuel and DraftKings observations remain separate from the frozen foundation and publication locks. See Week 8 status for saved quote timestamps.",
+      "status": "Adaptive feed active · locks pending",
+      "summary": "FanDuel and DraftKings are tracked as timestamped benchmark context. Immutable publication-market locks are separate and only occur inside the configured 30-minute window.",
       "items": [
         {
-          "title": "Tuesday lock windows",
-          "detail": "The configured 30-minute windows open at 6:30 PM ET for MTSU\u2013FIU and Missouri State\u2013Delaware, and 7:00 PM ET for South Alabama\u2013Marshall. Official FIU advertising says 7:02 PM kickoff; the frozen 7:00 PM identity and earlier conservative cutoff remain intact.",
-          "tag": "Pending windows"
+          "title": "Tonight's tracked board",
+          "detail": "The latest saved core refresh moved into the tighter pregame cadence. MTSU-FIU is around FIU -10/-10.5 with a 45.5 total; Delaware is about -2.5/-3 with 53.5; South Alabama is about -2.5 with 65.5.",
+          "tag": "Context only"
         },
         {
-          "title": "Wednesday lock window",
-          "detail": "NM State\u2013Sam Houston opens at 7:30 PM ET Wednesday. No missing pregame observation may be backfilled after kickoff. Current observations do not establish local execution availability.",
+          "title": "Lock windows",
+          "detail": "T−30 opens about 6:30 PM ET for the two 7:00 games and 7:00 PM ET for South Alabama-Marshall. Missing publication prices are never reconstructed after kickoff.",
           "tag": "Immutable evidence"
+        },
+        {
+          "title": "No market leakage",
+          "detail": "Sportsbook movement, SP+, Sagarin and other external models remain benchmark layers unless separately validated and explicitly promoted.",
+          "tag": "Separation"
         }
       ]
     },
@@ -91,18 +96,18 @@
       "id": "efficiency",
       "label": "Efficiency, SOS & rankings",
       "short": "Efficiency",
-      "status": "Canonical HOLD",
-      "summary": "No reproducible authorized Week 8 canonical projection is present. The frozen foundation is a prospective research shadow, and external benchmarks remain separate.",
+      "status": "Research shadow active",
+      "summary": "The frozen Week 8 foundation supplies prospective research projections while the production canonical gate remains HOLD.",
       "items": [
         {
-          "title": "Source boundaries",
-          "detail": "The Sagarin snapshot is preserved. Current official ESPN SP+ retrieval was blocked by verification. RefMetrics returned a stale Week 7 board, so no Week 8 assignment is inferred.",
-          "tag": "Explicit gaps"
+          "title": "Foundation scope",
+          "detail": "Opponent-adjusted team strength, scoring/drive context and related validated foundation inputs are preserved prospectively for all seven active games.",
+          "tag": "Frozen foundation"
         },
         {
-          "title": "Promotion gate",
-          "detail": "New efficiency, personnel, market, pace or other challenger features require validated evidence and explicit authorization before canonical use. A research projection cannot substitute for an authorized canonical release.",
-          "tag": "HOLD"
+          "title": "External benchmarks",
+          "detail": "Sagarin is captured as a current comparison. Official SP+ remains pending where direct retrieval is not defensibly available; unofficial substitutes are not promoted.",
+          "tag": "Benchmark only"
         }
       ]
     },
@@ -111,17 +116,17 @@
       "label": "Tempo, pace & matchup style",
       "short": "Tempo",
       "status": "Shadow research only",
-      "summary": "Pace and matchup style are research candidates. No new feature is promoted to the Week 8 canonical model.",
+      "summary": "Pace, possessions and matchup style remain central to totals development, but no new feature family is silently promoted into the canonical model.",
       "items": [
         {
-          "title": "Possession environment",
-          "detail": "Pace and drive volume influence projected scoring opportunities and are especially important for totals.",
-          "tag": "Pace"
+          "title": "Totals development",
+          "detail": "Possession environment and drive volume continue to be tested with leakage-safe historical and walk-forward methods before totals can leave HOLD.",
+          "tag": "Step 2"
         },
         {
-          "title": "Style interaction",
-          "detail": "Run/pass tendencies, explosiveness and defensive disruption help identify matchup-specific friction.",
-          "tag": "Matchup"
+          "title": "Matchup interaction",
+          "detail": "Run/pass tendencies, explosiveness and defensive disruption remain research inputs whose incremental value must be demonstrated out of sample.",
+          "tag": "Challenger"
         }
       ]
     },
@@ -129,18 +134,18 @@
       "id": "schedule",
       "label": "Travel, rest & scheduling",
       "short": "Schedule",
-      "status": "Tuesday\u2013Thursday only",
-      "summary": "Tuesday and Wednesday are the current priority. Active Week 8 work stops before Friday, October 23.",
+      "status": "Tuesday–Thursday active",
+      "summary": "Seven games are active through Thursday. Friday and Saturday are intentionally paused for this production pass.",
       "items": [
         {
-          "title": "Rest correction",
-          "detail": "MTSU and FIU both played October 13: seven calendar days before this matchup. FIU\u2019s recap publication date of October 14 is not its game date.",
-          "tag": "Verified context"
+          "title": "Active window",
+          "detail": "Three games tonight, New Mexico State-Sam Houston Wednesday, and three Thursday games are the only Week 8 games currently authorized for refresh and lock processing.",
+          "tag": "7 active"
         },
         {
-          "title": "NM State trip",
-          "detail": "NM State\u2019s official preview describes 13 full days without a game and a 1,336-mile trip. Context is retained without an unvalidated manual adjustment.",
-          "tag": "Official preview"
+          "title": "Pause boundary",
+          "detail": "Friday and Saturday schedules and frozen research data remain preserved, but no new pregame processing, recommendations or grading begin until explicit resumption.",
+          "tag": "49 paused"
         }
       ]
     },
@@ -148,18 +153,18 @@
       "id": "roster",
       "label": "Coaching, transfers & depth",
       "short": "Roster",
-      "status": "Research",
-      "summary": "Depth-chart changes, transfer impact and coaching continuity are used to interpret whether team baselines remain representative.",
+      "status": "Context / challenger",
+      "summary": "Depth, replacement quality, transfer impact and coaching continuity are collected broadly but only influence canonical projections when their feature treatment has been validated and promoted.",
       "items": [
         {
-          "title": "Depth reconciliation",
-          "detail": "Starter and replacement roles matter more than raw injury counts. Unknown roles remain conservative review items.",
-          "tag": "Depth"
+          "title": "Role over raw counts",
+          "detail": "Starter and replacement roles matter more than a simple injury count. Conflicting or stale reports remain unresolved rather than being forced into a point value.",
+          "tag": "Personnel QA"
         },
         {
-          "title": "Roster change",
-          "detail": "Transfer and coaching changes can change how quickly prior performance should be trusted, especially early in a season.",
-          "tag": "Continuity"
+          "title": "No manual points",
+          "detail": "Unvalidated injury, coaching or roster news never receives an invented discretionary spread adjustment.",
+          "tag": "Model integrity"
         }
       ]
     },
@@ -168,17 +173,17 @@
       "label": "Situational trends",
       "short": "Situational",
       "status": "Research only",
-      "summary": "Rivalry, bye, revenge and scheduling narratives are tracked as hypotheses, not standalone picks.",
+      "summary": "Trends, rivalry angles, rest narratives and other situational signals remain hypotheses until they demonstrate incremental leakage-safe predictive value.",
       "items": [
         {
-          "title": "No trend-shopping",
-          "detail": "Situational angles need prospective evidence before they can affect release status. Post-hoc patterns remain research notes.",
+          "title": "No trend shopping",
+          "detail": "Post-hoc patterns and betting trends are contextual evidence, not automatic model features or picks.",
           "tag": "Discipline"
         },
         {
-          "title": "Validation first",
-          "detail": "A large model/market difference cannot override a HOLD validation state or incomplete game-level readiness.",
-          "tag": "Release rule"
+          "title": "Prospective evidence first",
+          "detail": "A new feature must survive historical testing, walk-forward validation and prospective frozen-week evidence before explicit promotion review.",
+          "tag": "Promotion path"
         }
       ]
     }
