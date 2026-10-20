@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "role": "CANONICAL_PROJECTION_RELEASE_GATE",
+  "status": "HOLD",
+  "canonicalProjectionAvailable": false,
+  "canonicalPublicationAuthorized": false,
+  "canonicalPromotionAuthorized": false,
+  "recordedAt": "2026-10-20T19:31:14Z",
+  "activeScope": "cfb/pregame/week-08-active-through-thursday.json",
+  "reasons": [
+    "No reproducible Week 8 canonical projection is present in the production pregame state.",
+    "The production projection ledger contains no Week 8 published canonical rows.",
+    "The current validated rebuild foundation remains a prospective shadow and its decision registry explicitly forbids canonical use without prospective frozen-week evidence plus explicit promotion review.",
+    "Spread and total publication validation remain HOLD in the current production configuration."
+  ],
+  "researchFoundation": {
+    "source": "cfb/research-locks/week-08-foundation-full.json",
+    "modelId": "cfb-rebuild-foundation-v1-shadow",
+    "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
+    "canonicalInfluence": false,
+    "canonicalPromotionAuthorized": false
+  },
+  "validationDecision": {
+    "source": "cfb/validation/week-08-rebuild-decision.json",
+    "status": "VALIDATED_FOUNDATION_CANDIDATE_IDENTIFIED",
+    "leadCandidateTier": "VALIDATED_FOUNDATION_PROSPECTIVE_SHADOW",
+    "useLeadCandidateAsCanonical": false
+  },
+  "allowedWhileHeld": [
+    "Capture timestamped pregame personnel, QB, weather, referee, travel and contextual information.",
+    "Capture current sportsbook and external benchmark observations without allowing them to rewrite the frozen projection.",
+    "Lock publication-window FanDuel and DraftKings markets against the prospectively frozen research foundation for honest shadow grading.",
+    "Grade the research shadow honestly after final results and accumulate prospective promotion evidence.",
+    "Continue leakage-safe challenger and feature-family validation."
+  ],
+  "prohibitedWhileHeld": [
+    "Do not relabel the Week 8 research foundation as canonical.",
+    "Do not publish a Week 8 canonical spread, total, winner probability or recommendation without a reproducible authorized canonical projection.",
+    "Do not create manual point adjustments from unvalidated injuries, weather, markets, external ratings or trends.",
+    "Do not reconstruct missing pregame information after kickoff or after results are known."
+  ],
+  "promotionPath": [
+    "preserve frozen Week 8 evidence",
+    "grade prospectively",
+    "compare with established canonical reference and market benchmarks",
+    "complete required out-of-sample/frozen-week evidence",
+    "conduct explicit promotion review",
+    "only then replace canonical production architecture"
+  ]
+}
