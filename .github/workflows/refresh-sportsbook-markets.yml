@@ -1,6 +1,9 @@
 name: Refresh sportsbook markets
 
 on:
+  push:
+    paths:
+      - '.github/workflows/refresh-sportsbook-markets.yml'
   workflow_dispatch:
   schedule:
     - cron: '*/5 * * * *'
@@ -32,7 +35,6 @@ jobs:
           node <<'NODE'
           const fs = require('fs');
           const path = 'data/markets-sportsbooks.json';
-          const scoreboardUrl = 'https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?limit=200';
           const now = Date.now();
           const nowIso = new Date(now).toISOString();
           const manual = process.env.GITHUB_EVENT_NAME === 'workflow_dispatch';
@@ -58,11 +60,13 @@ jobs:
             return r.json();
           }
 
-          async function oddsRequest(markets) {
+          async function oddsRequest(markets, commenceTimeFrom, commenceTimeTo) {
             const params = new URLSearchParams({
               apiKey: process.env.ODDS_API_KEY,
               bookmakers: BOOKS.join(','),
               markets: markets.join(','),
+              commenceTimeFrom,
+              commenceTimeTo,
               oddsFormat: 'american',
               dateFormat: 'iso'
             });
@@ -160,21 +164,14 @@ jobs:
             return values.filter(Boolean).sort((a,b) => new Date(b).getTime() - new Date(a).getTime())[0] || nowIso;
           }
 
-          function phaseFromScoreboard(events) {
-            let live = false;
+          function phaseFromScope(scopeGames) {
             let nearestMinutes = Infinity;
-            for (const e of events) {
-              const c=e.competitions?.[0], state=c?.status?.type?.state;
-              if (state === 'in') live = true;
-              if (state === 'pre') {
-                const t=new Date(e.date || c?.date).getTime();
-                if (Number.isFinite(t)) {
-                  const diff=(t-now)/60000;
-                  if (diff >= -30 && diff < nearestMinutes) nearestMinutes=diff;
-                }
-              }
+            for (const game of scopeGames) {
+              const t = new Date(game.kickoff).getTime();
+              if (!Number.isFinite(t)) continue;
+              const diff = (t - now) / 60000;
+              if (diff >= 0 && diff < nearestMinutes) nearestMinutes = diff;
             }
-            if (live) return { name:'live', nearestMinutes, core:20, moneyline:60 };
             if (nearestMinutes <= 60) return { name:'kickoff-soon', nearestMinutes, core:20, moneyline:60 };
             if (nearestMinutes <= 180) return { name:'pregame-3h', nearestMinutes, core:45, moneyline:90 };
             if (nearestMinutes <= 360) return { name:'pregame-6h', nearestMinutes, core:90, moneyline:180 };
@@ -198,12 +195,12 @@ jobs:
           function mergeGames(old, coreData, mlData) {
             const coreMap=new Map((coreData || []).map(e => [String(e.id),e]));
             const mlMap=new Map((mlData || []).map(e => [String(e.id),e]));
-            const ids=new Set([...coreMap.keys(),...mlMap.keys()]);
+            const ids=new Set([...coreMap.keys(),...mlMap.keys(),...(old.games || []).map(g => String(g.id))]);
             const out=[];
 
             for (const id of ids) {
-              const event=coreMap.get(id) || mlMap.get(id);
-              const previous=priorGame(old,event);
+              const previous=priorGame(old,coreMap.get(id) || mlMap.get(id) || {id});
+              const event=coreMap.get(id) || mlMap.get(id) || previous;
               const books={};
 
               for (const key of BOOKS) {
@@ -239,8 +236,28 @@ jobs:
 
           (async () => {
             const old=readExisting();
-            const score=await publicJson(scoreboardUrl);
-            const phase=phaseFromScoreboard(score.events || []);
+            const scope=JSON.parse(fs.readFileSync('cfb/pregame/week-08-active-through-thursday.json','utf8'));
+            const scopeGames=scope.games || [];
+            const remainingScopeGames=scopeGames.filter(game => new Date(game.kickoff).getTime() > now);
+            if (!remainingScopeGames.length) {
+              console.log('No remaining pregame games in the active Tuesday-Thursday scope; no odds credits used.');
+              return;
+            }
+            const phase=phaseFromScope(remainingScopeGames);
+            const commenceTimeFrom=nowIso;
+            const commenceTimeTo=remainingScopeGames.map(game => game.kickoff).sort().at(-1);
+            const aliasData=JSON.parse(fs.readFileSync('data/team-aliases.json','utf8'));
+            const aliasToCanonical=new Map();
+            for (const [canonical,variants] of Object.entries(aliasData)) {
+              aliasToCanonical.set(norm(canonical),norm(canonical));
+              for (const variant of variants) aliasToCanonical.set(norm(variant),norm(canonical));
+            }
+            const canonicalTeam=value => aliasToCanonical.get(norm(value)) || norm(value);
+            const sameTeam=(a,b) => canonicalTeam(a)===canonicalTeam(b) || same(a,b);
+            const inActiveScope=event => scopeGames.some(game =>
+              Math.abs(new Date(event.commence_time).getTime()-new Date(game.kickoff).getTime()) <= 5*60*1000 &&
+              sameTeam(event.home_team,game.homeTeam) && sameTeam(event.away_team,game.awayTeam)
+            );
 
             if (phase.name === 'quiet' && !manual) {
               console.log('No live game or kickoff within six hours; no odds credits used.');
@@ -285,10 +302,11 @@ jobs:
             let usageThisRun=0;
 
             if (coreDue) {
-              coreResp=await oddsRequest(['spreads','totals']);
+              coreResp=await oddsRequest(['spreads','totals'],commenceTimeFrom,commenceTimeTo);
               latestQuota=coreResp.quota;
               usageThisRun+=coreResp.quota.lastCost ?? 2;
-              console.log(`Spread/total refresh: ${coreResp.data.length} games; quota remaining ${coreResp.quota.remaining ?? 'unknown'}.`);
+              const scopedCore=coreResp.data.filter(inActiveScope);
+              console.log(`Spread/total refresh: ${scopedCore.length} active-scope games; quota remaining ${coreResp.quota.remaining ?? 'unknown'}.`);
             }
 
             if (mlDue) {
@@ -296,14 +314,15 @@ jobs:
                 console.log('Skipping moneyline refresh to preserve the reserve floor after spread/total update.');
                 mlDue=false;
               } else {
-                mlResp=await oddsRequest(['h2h']);
+                mlResp=await oddsRequest(['h2h'],commenceTimeFrom,commenceTimeTo);
                 latestQuota=mlResp.quota;
                 usageThisRun+=mlResp.quota.lastCost ?? 1;
-                console.log(`Moneyline refresh: ${mlResp.data.length} games; quota remaining ${mlResp.quota.remaining ?? 'unknown'}.`);
+                const scopedMoneylines=mlResp.data.filter(inActiveScope);
+                console.log(`Moneyline refresh: ${scopedMoneylines.length} active-scope games; quota remaining ${mlResp.quota.remaining ?? 'unknown'}.`);
               }
             }
 
-            const games=mergeGames(old,coreResp?.data,mlResp?.data);
+            const games=mergeGames(old,coreResp?.data.filter(inActiveScope),mlResp?.data.filter(inActiveScope));
             const output={
               generatedAt:nowIso,
               lastCoreRefresh:coreResp ? nowIso : (old.lastCoreRefresh || old.generatedAt || null),
@@ -327,7 +346,7 @@ jobs:
                 manualOverride:manual
               },
               games,
-              note:'Adaptive free-tier snapshot. Spreads/totals refresh more often than moneylines; automatic calls slow as quota falls and stop at the reserve floor.'
+              note:'Adaptive free-tier snapshot. Refresh timing and bookmaker updates are restricted to the active Tuesday-Thursday scope; out-of-scope prior rows remain unchanged. Spreads/totals refresh more often than moneylines; automatic calls slow as quota falls and stop at the reserve floor.'
             };
             fs.writeFileSync(path,JSON.stringify(output,null,2)+'\n');
             console.log(`Wrote ${games.length} NCAAF games using ${usageThisRun} credit${usageThisRun === 1 ? '' : 's'} this run.`);
