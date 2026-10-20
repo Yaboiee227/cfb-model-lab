@@ -1,0 +1,76 @@
+name: CFB Week 8 rich challenger
+on:
+  push:
+    paths:
+      - 'scripts/cfb_rich_challenger.py'
+      - 'tests/test_cfb_rich_challenger.py'
+      - 'cfb/pregame/week-08-tuesday-effective.json'
+      - 'cfb/shadow/week-08-tuesday.json'
+      - '.github/workflows/cfb-week8-rich-challenger.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: cfb-week8-rich-challenger
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check numpy
+      - name: Test rich challenger utilities
+        run: python -m unittest tests.test_cfb_rich_challenger -v
+      - name: Build leakage-safe rich Tuesday challenger
+        run: |
+          python scripts/cfb_rich_challenger.py \
+            --state cfb/pregame/week-08-tuesday-effective.json \
+            --shadow cfb/shadow/week-08-tuesday.json \
+            --output cfb/shadow/week-08-tuesday-rich.json \
+            --as-of '2026-10-20T00:00:00-04:00' \
+            --start '2026-08-20T00:00:00-04:00'
+      - name: Assert research-only and leakage-safety invariants
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('cfb/shadow/week-08-tuesday-rich.json'))
+          assert d['role']=='SHADOW_CHALLENGER_ONLY'
+          assert d['canonicalInfluence'] is False
+          s=d['source']
+          assert s['marketDataUsed'] is False
+          assert s['externalRatingsUsed'] is False
+          assert s['postKickoffTargetDataUsed'] is False
+          assert s['sameWeekResultLeakage'] is False
+          q=d['dataQuality']
+          assert q['boxscoreCoverage'] >= 0.90, q
+          assert q['trainRows'] >= 100, q
+          assert q['validationRows'] >= 50, q
+          assert len(d['games']) == 3
+          assert all(g.get('projectedSpreadHome') is not None for g in d['games']), d['games']
+          print('rich challenger integrity assertions passed')
+          print('comparison gate:', d['validation']['comparisonGatePass'])
+          PY
+      - name: Show rich challenger summary
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('cfb/shadow/week-08-tuesday-rich.json'))
+          print(json.dumps(d['validation'], indent=2))
+          for g in d['games']:
+              print(f"{g['awayTeam']} @ {g['homeTeam']}: {g['projectedAwayPoints']:.1f}-{g['projectedHomePoints']:.1f} | home spread {g['projectedSpreadHome']:+.2f} | total {g['projectedTotal']:.2f} | HWP {g['homeWinProbability']:.1f}% | {g['status']}")
+          PY
+      - name: Commit challenger output
+        run: |
+          git config user.name "cb-model-rich-shadow-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add cfb/shadow/week-08-tuesday-rich.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Build Week 8 Tuesday rich challenger'
+            git pull --rebase origin main
+            git push
+          fi
