@@ -5,7 +5,7 @@ This is NOT the unrecoverable 0.9J canonical generator. It is a transparent,
 market-independent bridge/challenger used while a fully reproducible canonical
 engine is rebuilt and validated.
 
-Shadow v6:
+Shadow v7:
   projected margin = frozen structural HFA + strength(home) - strength(away)
   projected total  = scoring baseline + scoring_env(home) + scoring_env(away)
 
@@ -15,9 +15,10 @@ and scoring-environment effects are refreshed using all games completed before
 `--as-of`.
 
 ESPN team identity uses normalized school/location names rather than volatile
-abbreviations. Historical ingestion is season/week based rather than day based,
-then strictly filtered by actual kickoff timestamp. This is more complete while
-preserving the pregame cutoff.
+abbreviations. Historical ingestion aggregates each FBS team's regular-season
+schedule, deduplicates games by ESPN event ID, and then strictly filters by the
+actual kickoff timestamp. Coverage gates fail closed when the source is too
+incomplete to support a responsible fit.
 
 No sportsbook, SP+, Sagarin, RefMetrics, post-kickoff or future-game information
 enters the fit.
@@ -30,6 +31,7 @@ import math
 import re
 import sys
 from collections import Counter
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -39,9 +41,12 @@ from urllib.request import Request, urlopen
 
 import numpy as np
 
-ESPN_SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard"
+ESPN_BASE = "https://site.api.espn.com/apis/site/v2/sports/football/college-football"
+ESPN_TEAMS = f"{ESPN_BASE}/teams"
 HFA_SANITY_RANGE = (0.0, 5.5)
 DEFAULT_MIN_TEAM_APPEARANCES = 3
+MIN_EXPECTED_FBS_TEAMS = 120
+MIN_EXPECTED_TRAINING_GAMES = 300
 
 TEAM_ALIASES = {
     "middletennesseestate": "middletennessee",
@@ -102,7 +107,29 @@ def fetch_json(url: str, timeout: int = 30) -> dict[str, Any]:
         return json.loads(resp.read().decode("utf-8"))
 
 
-def _ingest_scoreboard_doc(doc: dict[str, Any], games: dict[str, Game], start: datetime, end: datetime) -> None:
+def extract_team_ids(doc: dict[str, Any]) -> list[str]:
+    ids: set[str] = set()
+    for sport in doc.get("sports", []):
+        for league in sport.get("leagues", []):
+            for entry in league.get("teams", []):
+                team = entry.get("team") or entry
+                if team.get("id") is not None:
+                    ids.add(str(team["id"]))
+    # Some site responses expose teams directly.
+    for entry in doc.get("teams", []):
+        team = entry.get("team") or entry
+        if team.get("id") is not None:
+            ids.add(str(team["id"]))
+    return sorted(ids, key=lambda x: (len(x), x))
+
+
+def _score_value(value: Any) -> float:
+    if isinstance(value, dict):
+        value = value.get("value", value.get("displayValue"))
+    return float(value)
+
+
+def _ingest_events(doc: dict[str, Any], games: dict[str, Game], start: datetime, end: datetime) -> None:
     for event in doc.get("events", []):
         comps = event.get("competitions") or []
         if not comps:
@@ -124,43 +151,57 @@ def _ingest_scoreboard_doc(doc: dict[str, Any], games: dict[str, Game], start: d
             continue
         h, a = sides["home"], sides["away"]
         try:
-            hs, aas = float(h["score"]), float(a["score"])
+            hs, aas = _score_value(h["score"]), _score_value(a["score"])
             home_code = team_key(h.get("team") or {})
             away_code = team_key(a.get("team") or {})
         except (KeyError, TypeError, ValueError):
             continue
         if not home_code or not away_code or home_code == away_code:
             continue
-        gid = str(event.get("id") or comp.get("id"))
+        gid = str(event.get("id") or comp.get("id") or "")
+        if not gid:
+            continue
         games[gid] = Game(gid, kickoff, home_code, away_code, hs, aas, bool(comp.get("neutralSite", False)))
 
 
 def fetch_completed_games(start: datetime, end: datetime) -> list[Game]:
-    """Fetch regular-season games week-by-week, then apply the hard as-of cutoff.
+    """Aggregate regular-season schedules for all ESPN-listed FBS teams.
 
-    ESPN's date-specific scoreboard history can be incomplete for older dates.
-    Season/week retrieval is used for coverage; event timestamps remain the
-    authority for leakage prevention.
+    Team schedules are substantially more complete historically than the site's
+    date/scoreboard feed. All duplicated event IDs are collapsed and only final
+    games with kickoff < `end` survive.
     """
+    team_doc = fetch_json(f"{ESPN_TEAMS}?{urlencode({'limit': 500, 'groups': 80})}")
+    team_ids = extract_team_ids(team_doc)
+    if len(team_ids) < MIN_EXPECTED_FBS_TEAMS:
+        raise ValueError(f"ESPN FBS team discovery incomplete: {len(team_ids)} teams < {MIN_EXPECTED_FBS_TEAMS}")
+
     games: dict[str, Game] = {}
-    seasons = range(start.year, end.year + 1)
-    for season in seasons:
-        for week in range(0, 21):
-            params = urlencode({
-                "dates": str(season),
-                "seasontype": 2,
-                "week": week,
-                "groups": "80",
-                "limit": 1000,
-            })
+    failures: list[str] = []
+
+    def load_schedule(team_id: str, season: int) -> tuple[str, int, dict[str, Any]]:
+        params = urlencode({"season": season, "seasontype": 2})
+        return team_id, season, fetch_json(f"{ESPN_TEAMS}/{team_id}/schedule?{params}")
+
+    futures = []
+    with ThreadPoolExecutor(max_workers=12) as pool:
+        for season in range(start.year, end.year + 1):
+            for team_id in team_ids:
+                futures.append(pool.submit(load_schedule, team_id, season))
+        for future in as_completed(futures):
             try:
-                doc = fetch_json(f"{ESPN_SCOREBOARD}?{params}")
-            except Exception:
-                if week == 0:
-                    continue
-                raise
-            _ingest_scoreboard_doc(doc, games, start, end)
-    return sorted(games.values(), key=lambda g: (g.kickoff, g.game_id))
+                team_id, season, doc = future.result()
+                _ingest_events(doc, games, start, end)
+            except Exception as exc:
+                failures.append(str(exc))
+
+    ordered = sorted(games.values(), key=lambda g: (g.kickoff, g.game_id))
+    if len(ordered) < MIN_EXPECTED_TRAINING_GAMES:
+        raise ValueError(
+            f"ESPN schedule aggregation incomplete: {len(ordered)} pre-cutoff finals < "
+            f"{MIN_EXPECTED_TRAINING_GAMES}; schedule failures={len(failures)}"
+        )
+    return ordered
 
 
 def appearance_counts(games: list[Game]) -> Counter[str]:
@@ -434,11 +475,11 @@ def run(input_path: Path, output_path: Path, as_of: datetime, start: datetime):
         })
 
     out = {
-        "schemaVersion": 6,
+        "schemaVersion": 7,
         "league": "cfb",
         "season": state.get("season"),
         "week": state.get("week"),
-        "modelId": "cfb-rebuild-alpha-shadow-v6",
+        "modelId": "cfb-rebuild-alpha-shadow-v7",
         "role": "SHADOW_CHALLENGER_ONLY",
         "canonicalInfluence": False,
         "asOf": iso(as_of),
@@ -446,10 +487,10 @@ def run(input_path: Path, output_path: Path, as_of: datetime, start: datetime):
         "rawTrainingGames": len(raw_training),
         "eligibleTrainingGames": model["eligibleTrainingGames"],
         "teamIdentity": "normalized ESPN team.location/name with explicit aliases",
-        "ingestionMode": "ESPN regular season week-by-week; hard kickoff timestamp cutoff",
+        "ingestionMode": "aggregate FBS team regular-season schedules; dedupe event IDs; hard kickoff cutoff",
         "targetCoverage": coverage,
         "source": {
-            "provider": "ESPN public college-football scoreboard",
+            "provider": "ESPN public college-football team schedules",
             "marketDataUsed": False,
             "externalRatingsUsed": False,
             "postKickoffDataUsed": False,
