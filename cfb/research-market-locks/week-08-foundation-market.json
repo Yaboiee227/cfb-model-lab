@@ -16,15 +16,15 @@
   "lockWindowMinutes": 30.0,
   "maxObservationAgeMinutes": 35.0,
   "scopeRestricted": true,
-  "updatedAt": "2026-10-20T19:57:17.634515Z",
+  "updatedAt": "2026-10-20T22:46:34.873750Z",
   "counts": {
     "foundationGames": 56,
     "activeScopeGames": 7,
     "pausedGames": 49,
-    "gamesWithMarketLock": 0,
-    "bookObservationsLocked": 0,
-    "newBookObservationsThisRun": 0,
-    "pendingGames": 7,
+    "gamesWithMarketLock": 2,
+    "bookObservationsLocked": 4,
+    "newBookObservationsThisRun": 4,
+    "pendingGames": 5,
     "missedGames": 0
   },
   "games": [
@@ -35,8 +35,35 @@
       "homeTeam": "Florida International",
       "kickoff": "2026-10-20T23:00:00Z",
       "projectionDigest": "d837003b6ba482064b0d61e2f4d5d519d1110c204aabdca37ab58edaf15a4570",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-20T22:46:21Z",
+          "lockedAt": "2026-10-20T22:46:34.873750Z",
+          "marketSpreadHome": -10.5,
+          "marketTotal": 46.5,
+          "marketMoneylineHome": -420,
+          "marketMoneylineAway": 320,
+          "spreadHomePrice": -104,
+          "totalOverPrice": -112,
+          "totalUnderPrice": -108,
+          "observationDigest": "a46057fff29885338a68169aba164445d9ba35f6bfc0e3e65999a84185787b27"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-20T22:46:14Z",
+          "lockedAt": "2026-10-20T22:46:34.873750Z",
+          "marketSpreadHome": -10.0,
+          "marketTotal": 46.5,
+          "marketMoneylineHome": -410,
+          "marketMoneylineAway": 320,
+          "spreadHomePrice": -115,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "30767bb1b81e5bff9462a6ee27436fb339966de64223c2640d4e0e907b42945b"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
@@ -45,8 +72,35 @@
       "homeTeam": "Delaware",
       "kickoff": "2026-10-20T23:00:00Z",
       "projectionDigest": "c2f169318d0835551d45c972f4dbf953b36a585e1579988b846e2aae084321c8",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-20T22:46:21Z",
+          "lockedAt": "2026-10-20T22:46:34.873750Z",
+          "marketSpreadHome": -3.5,
+          "marketTotal": 53.5,
+          "marketMoneylineHome": -140,
+          "marketMoneylineAway": 116,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -120,
+          "totalUnderPrice": -102,
+          "observationDigest": "301e1b1d0e53a3cb412ceaf91a9194941aaa45f700c335d9d467440e9a60380d"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-20T22:46:14Z",
+          "lockedAt": "2026-10-20T22:46:34.873750Z",
+          "marketSpreadHome": -3.5,
+          "marketTotal": 54.5,
+          "marketMoneylineHome": -148,
+          "marketMoneylineAway": 124,
+          "spreadHomePrice": 100,
+          "totalOverPrice": -108,
+          "totalUnderPrice": -112,
+          "observationDigest": "4186c788c345b9abe547ecd2c1dc35058b987a765d0acb8c675ba555e37313df"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
