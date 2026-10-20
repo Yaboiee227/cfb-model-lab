@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "role": "TIMESTAMPED_ACTIVE_SCOPE_MARKET_CONTEXT_REFRESH",
+  "canonicalInfluence": false,
+  "canonicalPromotionAuthorized": false,
+  "observedAt": "2026-10-20T19:57:03.150Z",
+  "source": "data/markets-sportsbooks.json",
+  "games": [
+    {
+      "gameId": "2026-10-20-MIDDLETENNESSEE-FIU",
+      "patch": {
+        "market": {
+          "status": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
+          "observedAt": "2026-10-20T19:57:03.150Z",
+          "provider": "The Odds API",
+          "observations": [
+            {
+              "book": "FanDuel",
+              "observedAt": "2026-10-20T19:56:42Z",
+              "spreadHome": -10.5,
+              "spreadHomePrice": -102,
+              "spreadAway": 10.5,
+              "spreadAwayPrice": -120,
+              "total": 46.5,
+              "overPrice": -108,
+              "underPrice": -112,
+              "moneylineHome": -400,
+              "moneylineAway": 310,
+              "source": "The Odds API",
+              "sourceSnapshot": "data/markets-sportsbooks.json"
+            },
+            {
+              "book": "DraftKings",
+              "observedAt": "2026-10-20T19:56:19Z",
+              "spreadHome": -10,
+              "spreadHomePrice": -112,
+              "spreadAway": 10,
+              "spreadAwayPrice": -108,
+              "total": 46.5,
+              "overPrice": -105,
+              "underPrice": -115,
+              "moneylineHome": -410,
+              "moneylineAway": 320,
+              "source": "The Odds API",
+              "sourceSnapshot": "data/markets-sportsbooks.json"
+            }
+          ],
+          "note": "Current FanDuel and DraftKings market context only. Publication-time market locks remain pending and are saved separately against the immutable foundation; quotes do not change the canonical projection."
+        }
+      }
+    },
+    {
+      "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
+      "patch": {
+        "market": {
+          "status": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
+          "observedAt": "2026-10-20T19:57:03.150Z",
+          "provider": "The Odds API",
+          "observations": [
+            {
+              "book": "FanDuel",
+              "observedAt": "2026-10-20T19:56:42Z",
+              "spreadHome": -2.5,
+              "spreadHomePrice": -118,
+              "spreadAway": 2.5,
+              "spreadAwayPrice": -104,
+              "total": 53.5,
+              "overPrice": -110,
+              "underPrice": -110,
+              "moneylineHome": -140,
+              "moneylineAway": 116,
+              "source": "The Odds API",
+              "sourceSnapshot": "data/markets-sportsbooks.json"
+            },
+            {
+              "book": "DraftKings",
+              "observedAt": "2026-10-20T19:56:19Z",
+              "spreadHome": -3,
+              "spreadHomePrice": -105,
+              "spreadAway": 3,
+              "spreadAwayPrice": -115,
+              "total": 53.5,
+              "overPrice": -110,
+              "underPrice": -110,
+              "moneylineHome": -142,
+              "moneylineAway": 120,
+              "source": "The Odds API",
+              "sourceSnapshot": "data/markets-sportsbooks.json"
+            }
+          ],
+          "note": "Current FanDuel and DraftKings market context only. Publication-time market locks remain pending and are saved separately against the immutable foundation; quotes do not change the canonical projection."
+        }
+      }
+    },
+    {
+      "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
+      "patch": {
+        "market": {
+          "status": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
+          "observedAt": "2026-10-20T19:57:03.150Z",
+          "provider": "The Odds API",
+          "observations": [
+            {
+              "book": "FanDuel",
+              "observedAt": "2026-10-20T19:56:42Z",
+              "spreadHome": 2.5,
+              "spreadHomePrice": -115,
+              "spreadAway": -2.5,
+              "spreadAwayPrice": -105,
+              "total": 66.5,
+              "overPrice": -105,
+              "underPrice": -115,
+              "moneylineHome": 110,
+              "moneylineAway": -132,
+              "source": "The Odds API",
+              "sourceSnapshot": "data/markets-sportsbooks.json"
+            },
+            {
+              "book": "DraftKings",
+              "observedAt": "2026-10-20T19:56:19Z",
+              "spreadHome": 2.5,
+              "spreadHomePrice": -110,
+              "spreadAway": -2.5,
+              "spreadAwayPrice": -110,
+              "total": 65.5,
+              "overPrice": -115,
+              "underPrice": -105,
+              "moneylineHome": 114,
+              "moneylineAway": -135,
+              "source": "The Odds API",
+              "sourceSnapshot": "data/markets-sportsbooks.json"
+            }
+          ],
+          "note": "Current FanDuel and DraftKings market context only. Publication-time market locks remain pending and are saved separately against the immutable foundation; quotes do not change the canonical projection."
+        }
+      }
+    }
+  ]
+}
