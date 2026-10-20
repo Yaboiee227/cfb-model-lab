@@ -36,21 +36,25 @@ jobs:
             --base cfb/pregame/week-08-tuesday-open.json \
             "${overlays[@]}" \
             --output cfb/pregame/week-08-tuesday-effective.json
-      - name: Verify official QB corrections are effective
+      - name: Verify unresolved QB state and source-conflict handling
         run: |
           python - <<'PY'
           import json
           d=json.load(open('cfb/pregame/week-08-tuesday-effective.json'))
           g=next(x for x in d['games'] if x['gameId']=='2026-10-20-MISSOURISTATE-DELAWARE')
           p=g['personnel']
-          assert p['status']=='MATERIAL_QB_STATUS_OPEN', p
+          assert p['status'] in {'MATERIAL_QB_STATUS_OPEN','MATERIAL_QB_STATUS_OPEN_SOURCE_CONFLICT'}, p
           assert p['home']['startingQB']=='UNRESOLVED_TUESDAY_STARTER', p['home']
           assert p['home']['mostRecentStartingQB']=='Tyler Bell', p['home']
           assert p['away']['startingQB']=='UNRESOLVED_TUESDAY_STARTER', p['away']
           assert p['away']['mostRecentStartingQB']=='Henry Belin IV', p['away']
           minicucci=next(x for x in p['home']['reportedInjuries'] if x['player']=='Nick Minicucci')
           assert minicucci['status']=='MISSED_PREVIOUS_TWO_GAMES', minicucci
-          print('official QB corrections effective')
+          third_party=p['home'].get('thirdPartyQBStatus')
+          if p['status']=='MATERIAL_QB_STATUS_OPEN_SOURCE_CONFLICT':
+              assert third_party and third_party.get('player')=='Nick Minicucci', p['home']
+              assert p['home'].get('sourceConflict'), p['home']
+          print('unresolved QB state and source-conflict handling verified')
           PY
       - name: Run non-mutating readiness audit
         run: python scripts/validate_pregame_state.py cfb/pregame/week-08-tuesday-effective.json --output cfb/pregame/week-08-tuesday-readiness.json
@@ -61,6 +65,9 @@ jobs:
           git add cfb/pregame/week-08-tuesday-effective.json cfb/pregame/week-08-tuesday-readiness.json
           if ! git diff --cached --quiet; then
             git commit -m 'Refresh Week 8 Tuesday effective pregame state'
-            git pull --rebase origin main
+            for attempt in 1 2 3; do
+              if git push; then exit 0; fi
+              git pull --rebase origin main
+            done
             git push
           fi
