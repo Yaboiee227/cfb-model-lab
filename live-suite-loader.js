@@ -15,6 +15,18 @@
     if (el && el.textContent !== value) el.textContent=value;
   }
 
+  function syncCfbWeek8Status(){
+    if(league()!=='cfb')return;
+    const banner=document.querySelector('main > .section-shell > .hold-note');
+    if(banner) banner.innerHTML='<strong>Week 8 · Active through Thursday · Canonical HOLD</strong> — 3 games tonight, 1 Wednesday and 3 Thursday are in the active pregame scope. Friday/Saturday are paused. <a href="week-8.html">Open live Week 8 readiness →</a>';
+    setText('.hero-kicker-row .eyebrow','FBS MODEL • WEEK 8 COMMAND CENTER');
+    setText('.hero-kicker-row .research-chip','Week 8 · Research shadow');
+    const projectionTitle=document.getElementById('projectionsTitle');
+    if(projectionTitle) projectionTitle.textContent='Week 8 research projection board';
+    const projectionIntro=document.querySelector('#projections .section-heading p:not(.eyebrow)');
+    if(projectionIntro) projectionIntro.textContent='Seven active Tuesday-through-Thursday games are shown from the prospectively frozen Week 8 research-shadow foundation with current market comparison and readiness context. These are not authorized canonical releases.';
+  }
+
   function legacyResultCounts(key){
     let rows=[];
     try { rows=(typeof STATE!=='undefined' && Array.isArray(STATE.results)) ? STATE.results : []; } catch(_){ rows=[]; }
@@ -45,6 +57,7 @@
   }
 
   function syncSharedCopy(){
+    syncCfbWeek8Status();
     setText('#recordTitle','Projection performance');
     const recordIntro=document.querySelector('#record .section-heading p:not(.eyebrow)');
     if(recordIntro) recordIntro.textContent='Tracks model projection positions against the market spread and total saved when the projection was published. ATS, Totals and Straight Up are graded separately. This is not a wager ledger.';
