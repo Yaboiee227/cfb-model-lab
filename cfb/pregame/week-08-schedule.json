@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "league": "cfb",
   "season": 2026,
   "week": 8,
@@ -9,13 +9,15 @@
     "2026-10-20",
     "2026-10-24"
   ],
-  "observedAt": "2026-10-20T11:33:58.736541Z",
+  "gameIdDateConvention": "America/New_York game date",
+  "observedAt": "2026-10-20T11:35:38.794088Z",
   "source": "ESPN public FBS grouped team universe + 2026 regular-season team schedules",
   "gameCount": 56,
   "games": [
     {
       "gameId": "2026-10-20-MIDDLETENNESSEE-FLORIDAINTERNATIONAL",
       "sourceGameId": "401871055",
+      "gameDateET": "2026-10-20",
       "awayTeam": "Middle Tennessee",
       "homeTeam": "Florida International",
       "awayTeamId": "2393",
@@ -32,6 +34,7 @@
     {
       "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
       "sourceGameId": "401871069",
+      "gameDateET": "2026-10-20",
       "awayTeam": "Missouri State",
       "homeTeam": "Delaware",
       "awayTeamId": "2623",
@@ -48,6 +51,7 @@
     {
       "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
       "sourceGameId": "401871092",
+      "gameDateET": "2026-10-20",
       "awayTeam": "South Alabama",
       "homeTeam": "Marshall",
       "awayTeamId": "6",
@@ -62,8 +66,9 @@
       "status": "STATUS_SCHEDULED"
     },
     {
-      "gameId": "2026-10-22-NEWMEXICOSTATE-SAMHOUSTON",
+      "gameId": "2026-10-21-NEWMEXICOSTATE-SAMHOUSTON",
       "sourceGameId": "401871070",
+      "gameDateET": "2026-10-21",
       "awayTeam": "New Mexico State",
       "homeTeam": "Sam Houston",
       "awayTeamId": "166",
@@ -80,6 +85,7 @@
     {
       "gameId": "2026-10-22-JAMESMADISON-APPSTATE",
       "sourceGameId": "401869845",
+      "gameDateET": "2026-10-22",
       "awayTeam": "James Madison",
       "homeTeam": "App State",
       "awayTeamId": "256",
@@ -96,6 +102,7 @@
     {
       "gameId": "2026-10-22-LIBERTY-KENNESAWSTATE",
       "sourceGameId": "401871056",
+      "gameDateET": "2026-10-22",
       "awayTeam": "Liberty",
       "homeTeam": "Kennesaw State",
       "awayTeamId": "2335",
@@ -112,6 +119,7 @@
     {
       "gameId": "2026-10-22-EASTCAROLINA-MEMPHIS",
       "sourceGameId": "401862807",
+      "gameDateET": "2026-10-22",
       "awayTeam": "East Carolina",
       "homeTeam": "Memphis",
       "awayTeamId": "151",
@@ -128,6 +136,7 @@
     {
       "gameId": "2026-10-23-DUKE-VIRGINIA",
       "sourceGameId": "401858271",
+      "gameDateET": "2026-10-23",
       "awayTeam": "Duke",
       "homeTeam": "Virginia",
       "awayTeamId": "150",
@@ -144,6 +153,7 @@
     {
       "gameId": "2026-10-23-MASSACHUSETTS-UCONN",
       "sourceGameId": "401861965",
+      "gameDateET": "2026-10-23",
       "awayTeam": "Massachusetts",
       "homeTeam": "UConn",
       "awayTeamId": "113",
@@ -158,8 +168,9 @@
       "status": "STATUS_SCHEDULED"
     },
     {
-      "gameId": "2026-10-24-ARMY-TULSA",
+      "gameId": "2026-10-23-ARMY-TULSA",
       "sourceGameId": "401862808",
+      "gameDateET": "2026-10-23",
       "awayTeam": "Army",
       "homeTeam": "Tulsa",
       "awayTeamId": "349",
@@ -174,8 +185,9 @@
       "status": "STATUS_SCHEDULED"
     },
     {
-      "gameId": "2026-10-24-AIRFORCE-WYOMING",
+      "gameId": "2026-10-23-AIRFORCE-WYOMING",
       "sourceGameId": "401864525",
+      "gameDateET": "2026-10-23",
       "awayTeam": "Air Force",
       "homeTeam": "Wyoming",
       "awayTeamId": "2005",
@@ -190,8 +202,9 @@
       "status": "STATUS_SCHEDULED"
     },
     {
-      "gameId": "2026-10-24-NCSTATE-STANFORD",
+      "gameId": "2026-10-23-NCSTATE-STANFORD",
       "sourceGameId": "401858272",
+      "gameDateET": "2026-10-23",
       "awayTeam": "NC State",
       "homeTeam": "Stanford",
       "awayTeamId": "152",
@@ -208,6 +221,7 @@
     {
       "gameId": "2026-10-24-CALIFORNIA-SMU",
       "sourceGameId": "401858270",
+      "gameDateET": "2026-10-24",
       "awayTeam": "California",
       "homeTeam": "SMU",
       "awayTeamId": "25",
@@ -224,6 +238,7 @@
     {
       "gameId": "2026-10-24-INDIANA-MICHIGAN",
       "sourceGameId": "401858496",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Indiana",
       "homeTeam": "Michigan",
       "awayTeamId": "84",
@@ -240,6 +255,7 @@
     {
       "gameId": "2026-10-24-LSU-AUBURN",
       "sourceGameId": "401856728",
+      "gameDateET": "2026-10-24",
       "awayTeam": "LSU",
       "homeTeam": "Auburn",
       "awayTeamId": "99",
@@ -256,6 +272,7 @@
     {
       "gameId": "2026-10-24-PITTSBURGH-MIAMI",
       "sourceGameId": "401858274",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Pittsburgh",
       "homeTeam": "Miami",
       "awayTeamId": "221",
@@ -272,6 +289,7 @@
     {
       "gameId": "2026-10-24-RICE-FLORIDAATLANTIC",
       "sourceGameId": "401862809",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Rice",
       "homeTeam": "Florida Atlantic",
       "awayTeamId": "242",
@@ -288,6 +306,7 @@
     {
       "gameId": "2026-10-24-RUTGERS-NORTHWESTERN",
       "sourceGameId": "401858498",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Rutgers",
       "homeTeam": "Northwestern",
       "awayTeamId": "164",
@@ -304,6 +323,7 @@
     {
       "gameId": "2026-10-24-TEXASTECH-CINCINNATI",
       "sourceGameId": "401856840",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Texas Tech",
       "homeTeam": "Cincinnati",
       "awayTeamId": "2641",
@@ -320,6 +340,7 @@
     {
       "gameId": "2026-10-24-WESTVIRGINIA-TCU",
       "sourceGameId": "401856841",
+      "gameDateET": "2026-10-24",
       "awayTeam": "West Virginia",
       "homeTeam": "TCU",
       "awayTeamId": "277",
@@ -336,6 +357,7 @@
     {
       "gameId": "2026-10-24-WESTERNMICHIGAN-TOLEDO",
       "sourceGameId": "401866450",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Western Michigan",
       "homeTeam": "Toledo",
       "awayTeamId": "2711",
@@ -352,6 +374,7 @@
     {
       "gameId": "2026-10-24-AKRON-KENTSTATE",
       "sourceGameId": "401866446",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Akron",
       "homeTeam": "Kent State",
       "awayTeamId": "2006",
@@ -368,6 +391,7 @@
     {
       "gameId": "2026-10-24-BAYLOR-KANSAS",
       "sourceGameId": "401856834",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Baylor",
       "homeTeam": "Kansas",
       "awayTeamId": "239",
@@ -384,6 +408,7 @@
     {
       "gameId": "2026-10-24-MIAMIOH-CENTRALMICHIGAN",
       "sourceGameId": "401866476",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Miami (OH)",
       "homeTeam": "Central Michigan",
       "awayTeamId": "193",
@@ -400,6 +425,7 @@
     {
       "gameId": "2026-10-24-OREGON-ILLINOIS",
       "sourceGameId": "401858495",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Oregon",
       "homeTeam": "Illinois",
       "awayTeamId": "2483",
@@ -416,6 +442,7 @@
     {
       "gameId": "2026-10-24-BYU-UCF",
       "sourceGameId": "401856835",
+      "gameDateET": "2026-10-24",
       "awayTeam": "BYU",
       "homeTeam": "UCF",
       "awayTeamId": "252",
@@ -432,6 +459,7 @@
     {
       "gameId": "2026-10-24-BOSTONCOLLEGE-GEORGIATECH",
       "sourceGameId": "401858273",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Boston College",
       "homeTeam": "Georgia Tech",
       "awayTeamId": "103",
@@ -448,6 +476,7 @@
     {
       "gameId": "2026-10-24-BOWLINGGREEN-BUFFALO",
       "sourceGameId": "401866448",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Bowling Green",
       "homeTeam": "Buffalo",
       "awayTeamId": "189",
@@ -464,6 +493,7 @@
     {
       "gameId": "2026-10-24-HAWAII-NORTHERNILLINOIS",
       "sourceGameId": "401864526",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Hawai'i",
       "homeTeam": "Northern Illinois",
       "awayTeamId": "62",
@@ -480,6 +510,7 @@
     {
       "gameId": "2026-10-24-IOWA-MINNESOTA",
       "sourceGameId": "401858497",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Iowa",
       "homeTeam": "Minnesota",
       "awayTeamId": "2294",
@@ -496,6 +527,7 @@
     {
       "gameId": "2026-10-24-MICHIGANSTATE-UCLA",
       "sourceGameId": "401858499",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Michigan State",
       "homeTeam": "UCLA",
       "awayTeamId": "127",
@@ -512,6 +544,7 @@
     {
       "gameId": "2026-10-24-NORTHTEXAS-NAVY",
       "sourceGameId": "401862810",
+      "gameDateET": "2026-10-24",
       "awayTeam": "North Texas",
       "homeTeam": "Navy",
       "awayTeamId": "249",
@@ -528,6 +561,7 @@
     {
       "gameId": "2026-10-24-OKLAHOMA-MISSISSIPPISTATE",
       "sourceGameId": "401856730",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Oklahoma",
       "homeTeam": "Mississippi State",
       "awayTeamId": "201",
@@ -544,6 +578,7 @@
     {
       "gameId": "2026-10-24-SACRAMENTOSTATE-BALLSTATE",
       "sourceGameId": "401866447",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Sacramento State",
       "homeTeam": "Ball State",
       "awayTeamId": "16",
@@ -560,6 +595,7 @@
     {
       "gameId": "2026-10-24-TENNESSEE-SOUTHCAROLINA",
       "sourceGameId": "401856731",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Tennessee",
       "homeTeam": "South Carolina",
       "awayTeamId": "2633",
@@ -576,6 +612,7 @@
     {
       "gameId": "2026-10-24-TEXASAM-ALABAMA",
       "sourceGameId": "401856727",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Texas A&M",
       "homeTeam": "Alabama",
       "awayTeamId": "245",
@@ -592,6 +629,7 @@
     {
       "gameId": "2026-10-24-KANSASSTATE-ARIZONASTATE",
       "sourceGameId": "401856839",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Kansas State",
       "homeTeam": "Arizona State",
       "awayTeamId": "2306",
@@ -608,6 +646,7 @@
     {
       "gameId": "2026-10-24-EASTERNMICHIGAN-OHIO",
       "sourceGameId": "401866449",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Eastern Michigan",
       "homeTeam": "Ohio",
       "awayTeamId": "2199",
@@ -624,6 +663,7 @@
     {
       "gameId": "2026-10-24-ULMONROE-TROY",
       "sourceGameId": "401871094",
+      "gameDateET": "2026-10-24",
       "awayTeam": "UL Monroe",
       "homeTeam": "Troy",
       "awayTeamId": "2433",
@@ -640,6 +680,7 @@
     {
       "gameId": "2026-10-24-LOUISIANA-SOUTHERNMISS",
       "sourceGameId": "401869967",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Louisiana",
       "homeTeam": "Southern Miss",
       "awayTeamId": "309",
@@ -656,6 +697,7 @@
     {
       "gameId": "2026-10-24-OLDDOMINION-LOUISIANATECH",
       "sourceGameId": "401871093",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Old Dominion",
       "homeTeam": "Louisiana Tech",
       "awayTeamId": "295",
@@ -672,6 +714,7 @@
     {
       "gameId": "2026-10-24-SANJOSSTATE-NEVADA",
       "sourceGameId": "401864528",
+      "gameDateET": "2026-10-24",
       "awayTeam": "San Jos\u00e9 State",
       "homeTeam": "Nevada",
       "awayTeamId": "23",
@@ -688,6 +731,7 @@
     {
       "gameId": "2026-10-24-BOISESTATE-WASHINGTONSTATE",
       "sourceGameId": "401860907",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Boise State",
       "homeTeam": "Washington State",
       "awayTeamId": "68",
@@ -704,6 +748,7 @@
     {
       "gameId": "2026-10-24-SANDIEGOSTATE-COLORADOSTATE",
       "sourceGameId": "401860905",
+      "gameDateET": "2026-10-24",
       "awayTeam": "San Diego State",
       "homeTeam": "Colorado State",
       "awayTeamId": "21",
@@ -720,6 +765,7 @@
     {
       "gameId": "2026-10-24-COLORADO-OKLAHOMASTATE",
       "sourceGameId": "401856836",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Colorado",
       "homeTeam": "Oklahoma State",
       "awayTeamId": "38",
@@ -736,6 +782,7 @@
     {
       "gameId": "2026-10-24-GEORGIASTATE-ARKANSASSTATE",
       "sourceGameId": "401869935",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Georgia State",
       "homeTeam": "Arkansas State",
       "awayTeamId": "2247",
@@ -752,6 +799,7 @@
     {
       "gameId": "2026-10-24-VIRGINIATECH-CLEMSON",
       "sourceGameId": "401858276",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Virginia Tech",
       "homeTeam": "Clemson",
       "awayTeamId": "259",
@@ -768,6 +816,7 @@
     {
       "gameId": "2026-10-24-IOWASTATE-ARIZONA",
       "sourceGameId": "401856838",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Iowa State",
       "homeTeam": "Arizona",
       "awayTeamId": "66",
@@ -784,6 +833,7 @@
     {
       "gameId": "2026-10-24-OLEMISS-TEXAS",
       "sourceGameId": "401856732",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Ole Miss",
       "homeTeam": "Texas",
       "awayTeamId": "145",
@@ -800,6 +850,7 @@
     {
       "gameId": "2026-10-24-SYRACUSE-NORTHCAROLINA",
       "sourceGameId": "401858275",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Syracuse",
       "homeTeam": "North Carolina",
       "awayTeamId": "183",
@@ -816,6 +867,7 @@
     {
       "gameId": "2026-10-24-USC-WISCONSIN",
       "sourceGameId": "401858500",
+      "gameDateET": "2026-10-24",
       "awayTeam": "USC",
       "homeTeam": "Wisconsin",
       "awayTeamId": "30",
@@ -832,6 +884,7 @@
     {
       "gameId": "2026-10-24-UTAHSTATE-TEXASSTATE",
       "sourceGameId": "401860906",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Utah State",
       "homeTeam": "Texas State",
       "awayTeamId": "328",
@@ -848,6 +901,7 @@
     {
       "gameId": "2026-10-24-VANDERBILT-KENTUCKY",
       "sourceGameId": "401856729",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Vanderbilt",
       "homeTeam": "Kentucky",
       "awayTeamId": "238",
@@ -862,8 +916,9 @@
       "status": "STATUS_SCHEDULED"
     },
     {
-      "gameId": "2026-10-25-UTSA-TULANE",
+      "gameId": "2026-10-24-UTSA-TULANE",
       "sourceGameId": "401862811",
+      "gameDateET": "2026-10-24",
       "awayTeam": "UTSA",
       "homeTeam": "Tulane",
       "awayTeamId": "2636",
@@ -878,8 +933,9 @@
       "status": "STATUS_SCHEDULED"
     },
     {
-      "gameId": "2026-10-25-NORTHDAKOTASTATE-NEWMEXICO",
+      "gameId": "2026-10-24-NORTHDAKOTASTATE-NEWMEXICO",
       "sourceGameId": "401864527",
+      "gameDateET": "2026-10-24",
       "awayTeam": "North Dakota State",
       "homeTeam": "New Mexico",
       "awayTeamId": "2449",
@@ -894,8 +950,9 @@
       "status": "STATUS_SCHEDULED"
     },
     {
-      "gameId": "2026-10-25-HOUSTON-UTAH",
+      "gameId": "2026-10-24-HOUSTON-UTAH",
       "sourceGameId": "401856837",
+      "gameDateET": "2026-10-24",
       "awayTeam": "Houston",
       "homeTeam": "Utah",
       "awayTeamId": "248",
