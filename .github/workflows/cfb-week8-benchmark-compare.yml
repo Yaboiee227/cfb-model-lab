@@ -1,0 +1,68 @@
+name: CFB Week 8 foundation vs Sagarin comparison
+on:
+  push:
+    paths:
+      - 'scripts/cfb_benchmark_compare.py'
+      - 'tests/test_cfb_benchmark_compare.py'
+      - 'cfb/research-locks/week-08-foundation-full.json'
+      - 'cfb/benchmarks/week-08-sagarin-full.json'
+      - 'data/team-aliases.json'
+      - '.github/workflows/cfb-week8-benchmark-compare.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: cfb-week8-benchmark-compare
+  cancel-in-progress: false
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Test frozen model vs benchmark comparator
+        run: python -m unittest tests.test_cfb_benchmark_compare -v
+      - name: Build full Week 8 comparison
+        run: |
+          python scripts/cfb_benchmark_compare.py \
+            --foundation-lock cfb/research-locks/week-08-foundation-full.json \
+            --benchmark cfb/benchmarks/week-08-sagarin-full.json \
+            --output cfb/validation/week-08-foundation-vs-sagarin.json
+      - name: Assert descriptive-only full coverage
+        run: |
+          python - <<'PY'
+          import json
+          p='cfb/validation/week-08-foundation-vs-sagarin.json'
+          d=json.load(open(p))
+          assert d['role']=='FROZEN_MODEL_VS_OFFICIAL_BENCHMARK_COMPARISON'
+          assert d['canonicalInfluence'] is False
+          assert d['canonicalPromotionAuthorized'] is False
+          assert d['foundation']['modelId']=='cfb-rebuild-foundation-v1-shadow'
+          assert d['benchmark']['sourceId']=='sagarin-cfb'
+          assert d['coverage']['foundationGames']==56, d['coverage']
+          assert d['coverage']['comparedGames']==56, d['coverage']
+          assert d['coverage']['ratio']==1.0, d['coverage']
+          assert d['coverage']['reviewGames']==[], d['coverage']
+          assert sum(d['aggregate']['disagreementBuckets'].values())==56
+          assert d['aggregate']['directionalWinnerAgreement']['graded']==56
+          assert 'edge' not in d['policy'].lower()
+          print(json.dumps({
+              'coverage':d['coverage'],
+              'aggregate':d['aggregate'],
+              'largestDisagreements':d['largestDisagreements'][:5],
+          },indent=2))
+          PY
+      - name: Commit descriptive comparison evidence
+        run: |
+          git config user.name "cb-model-validation-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add cfb/validation/week-08-foundation-vs-sagarin.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Compare frozen Week 8 foundation with official Sagarin'
+          for attempt in 1 2 3; do
+            if git push; then exit 0; fi
+            git pull --rebase origin main
+          done
+          git push
