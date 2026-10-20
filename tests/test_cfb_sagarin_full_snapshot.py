@@ -3,7 +3,7 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parents[1] / "scripts"))
-from cfb_sagarin_full_snapshot import build_snapshot, parse_ratings
+from cfb_sagarin_full_snapshot import build_snapshot, parse_ratings, verify_crosscheck
 
 
 def sagarin_text() -> str:
@@ -15,8 +15,6 @@ def sagarin_text() -> str:
         ("South Alabama", 80.0, 82.0),
         ("Marshall", 77.0, 78.0),
     ]
-    # parse_ratings intentionally rejects suspiciously short captures. Add enough
-    # unique synthetic teams to exercise that production safety gate.
     for i in range(1, 116):
         teams.append((f"Synthetic Team {i}", 50.0 + i / 100.0, 49.0 + i / 100.0))
     lines = [
@@ -28,6 +26,39 @@ def sagarin_text() -> str:
             f" {rank:3d} {name} A = {rating:.2f} some columns | 6 1 | {predictor:.2f} {rank:3d} |"
         )
     return "\n".join(lines)
+
+
+def three_game_schedule():
+    return {
+        "season": 2026,
+        "week": 8,
+        "games": [
+            {
+                "gameId": "full-fi",
+                "sourceGameId": "1",
+                "awayTeam": "Middle Tennessee",
+                "homeTeam": "Florida International",
+                "kickoff": "2026-10-20T23:00:00Z",
+                "neutralSite": False,
+            },
+            {
+                "gameId": "full-de",
+                "sourceGameId": "2",
+                "awayTeam": "Missouri State",
+                "homeTeam": "Delaware",
+                "kickoff": "2026-10-20T23:00:00Z",
+                "neutralSite": False,
+            },
+            {
+                "gameId": "full-ma",
+                "sourceGameId": "3",
+                "awayTeam": "South Alabama",
+                "homeTeam": "Marshall",
+                "kickoff": "2026-10-20T23:30:00Z",
+                "neutralSite": False,
+            },
+        ],
+    }
 
 
 class TestCfbSagarinFullSnapshot(unittest.TestCase):
@@ -45,17 +76,10 @@ class TestCfbSagarinFullSnapshot(unittest.TestCase):
             "season": 2026,
             "week": 8,
             "games": [
+                three_game_schedule()["games"][0],
                 {
-                    "gameId": "g1",
-                    "sourceGameId": "1",
-                    "awayTeam": "Middle Tennessee",
-                    "homeTeam": "Florida International",
-                    "kickoff": "2026-10-20T23:00:00Z",
-                    "neutralSite": False,
-                },
-                {
-                    "gameId": "g2",
-                    "sourceGameId": "2",
+                    "gameId": "neutral",
+                    "sourceGameId": "4",
                     "awayTeam": "South Alabama",
                     "homeTeam": "Marshall",
                     "kickoff": "2026-10-20T23:30:00Z",
@@ -63,39 +87,93 @@ class TestCfbSagarinFullSnapshot(unittest.TestCase):
                 },
             ],
         }
-        out = build_snapshot(schedule, sagarin_text(), {}, "2026-10-20T12:00:00Z", min_coverage=1.0)
+        out = build_snapshot(
+            schedule,
+            sagarin_text(),
+            {},
+            "2026-10-20T12:00:00Z",
+            min_coverage=1.0,
+            transport={"tlsVerified": False, "certificateWorkaroundUsed": True, "warning": "test"},
+        )
         self.assertEqual(out["role"], "OFFICIAL_EXTERNAL_BENCHMARK_SNAPSHOT")
         self.assertFalse(out["canonicalInfluence"])
         self.assertEqual(out["source"]["sourceId"], "sagarin-cfb")
+        self.assertEqual(out["source"]["ratingsThrough"], "2026-10-17")
+        self.assertEqual(out["source"]["ratingsThroughLabel"], "October 17 Saturday")
+        self.assertFalse(out["source"]["transport"]["tlsVerified"])
         self.assertEqual(out["coverage"]["ratio"], 1.0)
 
         home = out["games"][0]["sagarin"]
-        # FIU predictor 78 - MTSU 70 + 3.80 HFA = +11.80 home margin.
+        self.assertEqual(home["observedAt"], "2026-10-20T12:00:00Z")
+        self.assertEqual(home["ratingsThrough"], "2026-10-17")
         self.assertAlmostEqual(home["impliedHomeMargin"], 11.8)
         self.assertAlmostEqual(home["impliedSpreadHome"], -11.8)
         self.assertEqual(home["predictorFavorite"], "Florida International")
         self.assertEqual(home["homeSourceName"], "Fla. International")
 
         neutral = out["games"][1]["sagarin"]
-        # Neutral site gets no HFA: Marshall 78 - South Alabama 82 = -4.
         self.assertAlmostEqual(neutral["predictorHomeAdvantage"], 0.0)
         self.assertAlmostEqual(neutral["impliedHomeMargin"], -4.0)
         self.assertEqual(neutral["predictorFavorite"], "South Alabama")
+
+    def test_known_game_crosscheck_accepts_aliases_and_rejects_mismatch(self):
+        aliases = {
+            "fiu": "FIU",
+            "floridainternational": "FIU",
+            "middletennessee": "Middle Tennessee",
+            "missouristate": "Missouri State",
+            "delaware": "Delaware",
+            "southalabama": "South Alabama",
+            "marshall": "Marshall",
+        }
+        snapshot = build_snapshot(
+            three_game_schedule(),
+            sagarin_text(),
+            aliases,
+            "2026-10-20T12:00:00Z",
+            min_coverage=1.0,
+        )
+        reference = {
+            "games": [
+                {
+                    "gameId": "old-fi",
+                    "awayTeam": "Middle Tennessee",
+                    "homeTeam": "FIU",
+                    "kickoff": "2026-10-20T23:00:00Z",
+                    "sagarin": {"status": "CURRENT", "impliedSpreadHome": -11.8},
+                },
+                {
+                    "gameId": "old-de",
+                    "awayTeam": "Missouri State",
+                    "homeTeam": "Delaware",
+                    "kickoff": "2026-10-20T23:00:00Z",
+                    "sagarin": {"status": "CURRENT", "impliedSpreadHome": -6.8},
+                },
+                {
+                    "gameId": "old-ma",
+                    "awayTeam": "South Alabama",
+                    "homeTeam": "Marshall",
+                    "kickoff": "2026-10-20T23:30:00Z",
+                    "sagarin": {"status": "CURRENT", "impliedSpreadHome": 0.2},
+                },
+            ]
+        }
+        check = verify_crosscheck(snapshot, reference, aliases)
+        self.assertEqual(check["status"], "PASS")
+        self.assertEqual(check["games"], 3)
+
+        reference["games"][0]["sagarin"]["impliedSpreadHome"] = -9.0
+        with self.assertRaisesRegex(ValueError, "crosscheck failed"):
+            verify_crosscheck(snapshot, reference, aliases)
 
     def test_fails_closed_below_schedule_coverage_gate(self):
         schedule = {
             "season": 2026,
             "week": 8,
             "games": [
+                three_game_schedule()["games"][0],
                 {
-                    "gameId": "g1",
-                    "awayTeam": "Middle Tennessee",
-                    "homeTeam": "Florida International",
-                    "kickoff": "2026-10-20T23:00:00Z",
-                    "neutralSite": False,
-                },
-                {
-                    "gameId": "g2",
+                    "gameId": "unknown",
                     "awayTeam": "Unknown State",
                     "homeTeam": "Delaware",
                     "kickoff": "2026-10-20T23:00:00Z",
