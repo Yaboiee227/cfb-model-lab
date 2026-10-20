@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "role": "ACTIVE_PREGAME_PROCESSING_SCOPE",
+  "status": "ACTIVE_THROUGH_THURSDAY_PAUSE_BEFORE_FRIDAY",
+  "canonicalInfluence": false,
+  "canonicalPromotionAuthorized": false,
+  "activatedAt": "2026-10-20T15:05:55Z",
+  "timezone": "America/New_York",
+  "sourceSchedule": "cfb/pregame/week-08-schedule.json",
+  "frozenFoundation": "cfb/research-locks/week-08-foundation-full.json",
+  "sourceRegistry": "MODEL_SOURCES.md",
+  "dateWindowET": [
+    "2026-10-20",
+    "2026-10-22"
+  ],
+  "includedGameCount": 7,
+  "processingRules": {
+    "collectBroadlyPromoteNarrowly": true,
+    "pregameOnly": true,
+    "preserveSourceTimestamps": true,
+    "preserveFrozenProjectionDigests": true,
+    "externalBenchmarksAreNonCanonical": true,
+    "marketsCannotRewriteFoundation": true,
+    "unknownStaysUnknown": true,
+    "fridayProcessingAuthorized": false,
+    "saturdayProcessingAuthorized": false,
+    "resumeRequiresExplicitUserDirection": true
+  },
+  "layerPolicy": {
+    "canonical": "Only previously validated/promoted production features may influence the canonical CFB model.",
+    "researchFoundation": "The Week 8 frozen foundation remains immutable, market-independent and research-only until explicitly promoted.",
+    "challenger": "New feature families, agent-assisted research and model variants remain challenger/shadow inputs pending leakage-safe validation.",
+    "benchmark": "SP+, Sagarin, RefMetrics, sportsbook markets and prediction markets remain comparison layers unless separately promoted.",
+    "context": "Personnel, weather, travel, coaching/news and trend observations require timestamped provenance and do not receive invented manual point adjustments."
+  },
+  "games": [
+    {
+      "gameId": "2026-10-20-MIDDLETENNESSEE-FLORIDAINTERNATIONAL",
+      "sourceGameId": "401871055",
+      "gameDateET": "2026-10-20",
+      "awayTeam": "Middle Tennessee",
+      "homeTeam": "Florida International",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "foundationDigest": "d837003b6ba482064b0d61e2f4d5d519d1110c204aabdca37ab58edaf15a4570"
+    },
+    {
+      "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
+      "sourceGameId": "401871069",
+      "gameDateET": "2026-10-20",
+      "awayTeam": "Missouri State",
+      "homeTeam": "Delaware",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "foundationDigest": "c2f169318d0835551d45c972f4dbf953b36a585e1579988b846e2aae084321c8"
+    },
+    {
+      "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
+      "sourceGameId": "401871092",
+      "gameDateET": "2026-10-20",
+      "awayTeam": "South Alabama",
+      "homeTeam": "Marshall",
+      "kickoff": "2026-10-20T23:30:00Z",
+      "foundationDigest": "1f3d9455b39a045403e0b5e7616dec22366f2c4669bb1f4903907ab43704b4b2"
+    },
+    {
+      "gameId": "2026-10-21-NEWMEXICOSTATE-SAMHOUSTON",
+      "sourceGameId": "401871070",
+      "gameDateET": "2026-10-21",
+      "awayTeam": "New Mexico State",
+      "homeTeam": "Sam Houston",
+      "kickoff": "2026-10-22T00:00:00Z",
+      "foundationDigest": "76573e65de4174437af8f8b604ec6730d1b183804089c333a6186c8b182c26da"
+    },
+    {
+      "gameId": "2026-10-22-JAMESMADISON-APPSTATE",
+      "sourceGameId": "401869845",
+      "gameDateET": "2026-10-22",
+      "awayTeam": "James Madison",
+      "homeTeam": "App State",
+      "kickoff": "2026-10-22T23:00:00Z",
+      "foundationDigest": "50147bbb9df5dbcabf7857833e94a663d537996bceaf0da92379c547913d8875"
+    },
+    {
+      "gameId": "2026-10-22-LIBERTY-KENNESAWSTATE",
+      "sourceGameId": "401871056",
+      "gameDateET": "2026-10-22",
+      "awayTeam": "Liberty",
+      "homeTeam": "Kennesaw State",
+      "kickoff": "2026-10-22T23:00:00Z",
+      "foundationDigest": "f2dce35bbd39b50c1457eb063ae30cbbba26a98d6b38f7de39a2dcbc470977a7"
+    },
+    {
+      "gameId": "2026-10-22-EASTCAROLINA-MEMPHIS",
+      "sourceGameId": "401862807",
+      "gameDateET": "2026-10-22",
+      "awayTeam": "East Carolina",
+      "homeTeam": "Memphis",
+      "kickoff": "2026-10-22T23:30:00Z",
+      "foundationDigest": "4e630ce63c2afc4ea179d3455e85efc5280b3838e8bfd6ac5feab7e23ff66409"
+    }
+  ],
+  "pauseBoundary": {
+    "beforeGameDateET": "2026-10-23",
+    "instruction": "Do not ingest, refresh, audit for publication, freeze, recommend or grade Friday/Saturday Week 8 games until this scope is explicitly resumed. Preserve the full-week schedule and foundation unchanged for later continuation."
+  }
+}
