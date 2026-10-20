@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "updatedAt": "2026-10-19",
-  "policy": "Approved external benchmarks are stored for independent comparison and validation. They do not alter canonical CFB or NFL projections unless a future leakage-safe, out-of-sample and prospective promotion review explicitly approves them.",
+  "policy": "Approved external benchmarks and context sources are stored for independent comparison, validation and pregame audit. They do not alter canonical CFB or NFL projections unless a future leakage-safe, out-of-sample and prospective promotion review explicitly approves them.",
   "sources": [
     {
       "id": "espn-sp-plus-cfb",
@@ -12,18 +12,8 @@
       "role": "external_benchmark",
       "approved": true,
       "canonicalInfluence": false,
-      "allowedUses": [
-        "weekly benchmark snapshot",
-        "model-vs-benchmark comparison",
-        "out-of-sample error comparison",
-        "agreement/disagreement analysis",
-        "challenger research"
-      ],
-      "prohibitedUses": [
-        "silent coefficient changes",
-        "post-result reconstruction of pregame values",
-        "automatic release or wager decisions"
-      ]
+      "allowedUses": ["weekly benchmark snapshot","model-vs-benchmark comparison","out-of-sample error comparison","agreement/disagreement analysis","challenger research"],
+      "prohibitedUses": ["silent coefficient changes","post-result reconstruction of pregame values","automatic release or wager decisions"]
     },
     {
       "id": "sagarin-cfb",
@@ -34,19 +24,8 @@
       "role": "external_benchmark",
       "approved": true,
       "canonicalInfluence": false,
-      "allowedUses": [
-        "weekly benchmark snapshot",
-        "Predictor comparison",
-        "schedule-strength comparison",
-        "model-vs-benchmark comparison",
-        "out-of-sample error comparison",
-        "challenger research"
-      ],
-      "prohibitedUses": [
-        "silent coefficient changes",
-        "post-result reconstruction of pregame values",
-        "automatic release or wager decisions"
-      ]
+      "allowedUses": ["weekly benchmark snapshot","Predictor comparison","schedule-strength comparison","model-vs-benchmark comparison","out-of-sample error comparison","challenger research"],
+      "prohibitedUses": ["silent coefficient changes","post-result reconstruction of pregame values","automatic release or wager decisions"]
     },
     {
       "id": "sagarin-nfl",
@@ -57,19 +36,20 @@
       "role": "external_benchmark",
       "approved": true,
       "canonicalInfluence": false,
-      "allowedUses": [
-        "weekly benchmark snapshot",
-        "Predictor comparison",
-        "schedule-strength comparison",
-        "model-vs-benchmark comparison",
-        "out-of-sample error comparison",
-        "challenger research"
-      ],
-      "prohibitedUses": [
-        "silent coefficient changes",
-        "post-result reconstruction of pregame values",
-        "automatic release or wager decisions"
-      ]
+      "allowedUses": ["weekly benchmark snapshot","Predictor comparison","schedule-strength comparison","model-vs-benchmark comparison","out-of-sample error comparison","challenger research"],
+      "prohibitedUses": ["silent coefficient changes","post-result reconstruction of pregame values","automatic release or wager decisions"]
+    },
+    {
+      "id": "refmetrics-football",
+      "league": "cfb+nfl",
+      "name": "RefMetrics Football Officiating Data",
+      "publisher": "RefMetrics",
+      "officialUrl": "https://www.refmetrics.com/",
+      "role": "pregame_context_and_challenger",
+      "approved": true,
+      "canonicalInfluence": false,
+      "allowedUses": ["pregame referee and crew assignment capture","penalty frequency and penalty-type context","home-away officiating split research","totals and uncertainty challenger research","prospective officiating feature validation"],
+      "prohibitedUses": ["automatic point adjustments","raw ATS or over-under trend promotion","guessing missing crew assignments","post-result reconstruction of pregame assignments","automatic release or wager decisions"]
     }
   ]
 }
