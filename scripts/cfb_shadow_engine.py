@@ -5,7 +5,7 @@ This is NOT the unrecoverable 0.9J canonical generator. It is a transparent,
 market-independent bridge/challenger used while a fully reproducible canonical
 engine is rebuilt and validated.
 
-Shadow v7:
+Shadow v8:
   projected margin = frozen structural HFA + strength(home) - strength(away)
   projected total  = scoring baseline + scoring_env(home) + scoring_env(away)
 
@@ -15,10 +15,10 @@ and scoring-environment effects are refreshed using all games completed before
 `--as-of`.
 
 ESPN team identity uses normalized school/location names rather than volatile
-abbreviations. Historical ingestion aggregates each FBS team's regular-season
-schedule, deduplicates games by ESPN event ID, and then strictly filters by the
-actual kickoff timestamp. Coverage gates fail closed when the source is too
-incomplete to support a responsible fit.
+abbreviations. FBS team discovery uses ESPN's conference-filtered web teams
+endpoint because the ordinary site `/teams?groups=80` endpoint does not reliably
+honor the FBS filter. Individual schedules still come from the site API, are
+deduplicated by event ID, and are strictly filtered by kickoff timestamp.
 
 No sportsbook, SP+, Sagarin, RefMetrics, post-kickoff or future-game information
 enters the fit.
@@ -41,8 +41,9 @@ from urllib.request import Request, urlopen
 
 import numpy as np
 
-ESPN_BASE = "https://site.api.espn.com/apis/site/v2/sports/football/college-football"
-ESPN_TEAMS = f"{ESPN_BASE}/teams"
+ESPN_SITE_BASE = "https://site.api.espn.com/apis/site/v2/sports/football/college-football"
+ESPN_SITE_TEAMS = f"{ESPN_SITE_BASE}/teams"
+ESPN_FBS_TEAMS = "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/teams"
 HFA_SANITY_RANGE = (0.0, 5.5)
 DEFAULT_MIN_TEAM_APPEARANCES = 3
 MIN_EXPECTED_FBS_TEAMS = 120
@@ -115,7 +116,6 @@ def extract_team_ids(doc: dict[str, Any]) -> list[str]:
                 team = entry.get("team") or entry
                 if team.get("id") is not None:
                     ids.add(str(team["id"]))
-    # Some site responses expose teams directly.
     for entry in doc.get("teams", []):
         team = entry.get("team") or entry
         if team.get("id") is not None:
@@ -165,23 +165,20 @@ def _ingest_events(doc: dict[str, Any], games: dict[str, Game], start: datetime,
 
 
 def fetch_completed_games(start: datetime, end: datetime) -> list[Game]:
-    """Aggregate regular-season schedules for all ESPN-listed FBS teams.
-
-    Team schedules are substantially more complete historically than the site's
-    date/scoreboard feed. All duplicated event IDs are collapsed and only final
-    games with kickoff < `end` survive.
-    """
-    team_doc = fetch_json(f"{ESPN_TEAMS}?{urlencode({'limit': 500, 'groups': 80})}")
+    team_params = urlencode({"groups": 80, "groupType": "conference", "enable": "groups"})
+    team_doc = fetch_json(f"{ESPN_FBS_TEAMS}?{team_params}")
     team_ids = extract_team_ids(team_doc)
     if len(team_ids) < MIN_EXPECTED_FBS_TEAMS:
         raise ValueError(f"ESPN FBS team discovery incomplete: {len(team_ids)} teams < {MIN_EXPECTED_FBS_TEAMS}")
+    if len(team_ids) > 180:
+        raise ValueError(f"ESPN FBS team discovery implausibly broad: {len(team_ids)} teams > 180")
 
     games: dict[str, Game] = {}
     failures: list[str] = []
 
     def load_schedule(team_id: str, season: int) -> tuple[str, int, dict[str, Any]]:
         params = urlencode({"season": season, "seasontype": 2})
-        return team_id, season, fetch_json(f"{ESPN_TEAMS}/{team_id}/schedule?{params}")
+        return team_id, season, fetch_json(f"{ESPN_SITE_TEAMS}/{team_id}/schedule?{params}")
 
     futures = []
     with ThreadPoolExecutor(max_workers=12) as pool:
@@ -190,7 +187,7 @@ def fetch_completed_games(start: datetime, end: datetime) -> list[Game]:
                 futures.append(pool.submit(load_schedule, team_id, season))
         for future in as_completed(futures):
             try:
-                team_id, season, doc = future.result()
+                _team_id, _season, doc = future.result()
                 _ingest_events(doc, games, start, end)
             except Exception as exc:
                 failures.append(str(exc))
@@ -198,8 +195,8 @@ def fetch_completed_games(start: datetime, end: datetime) -> list[Game]:
     ordered = sorted(games.values(), key=lambda g: (g.kickoff, g.game_id))
     if len(ordered) < MIN_EXPECTED_TRAINING_GAMES:
         raise ValueError(
-            f"ESPN schedule aggregation incomplete: {len(ordered)} pre-cutoff finals < "
-            f"{MIN_EXPECTED_TRAINING_GAMES}; schedule failures={len(failures)}"
+            f"ESPN FBS schedule aggregation incomplete: {len(ordered)} pre-cutoff finals < "
+            f"{MIN_EXPECTED_TRAINING_GAMES}; discoveredTeams={len(team_ids)} scheduleFailures={len(failures)}"
         )
     return ordered
 
@@ -475,11 +472,11 @@ def run(input_path: Path, output_path: Path, as_of: datetime, start: datetime):
         })
 
     out = {
-        "schemaVersion": 7,
+        "schemaVersion": 8,
         "league": "cfb",
         "season": state.get("season"),
         "week": state.get("week"),
-        "modelId": "cfb-rebuild-alpha-shadow-v7",
+        "modelId": "cfb-rebuild-alpha-shadow-v8",
         "role": "SHADOW_CHALLENGER_ONLY",
         "canonicalInfluence": False,
         "asOf": iso(as_of),
@@ -487,10 +484,10 @@ def run(input_path: Path, output_path: Path, as_of: datetime, start: datetime):
         "rawTrainingGames": len(raw_training),
         "eligibleTrainingGames": model["eligibleTrainingGames"],
         "teamIdentity": "normalized ESPN team.location/name with explicit aliases",
-        "ingestionMode": "aggregate FBS team regular-season schedules; dedupe event IDs; hard kickoff cutoff",
+        "ingestionMode": "ESPN FBS-only team discovery + team regular-season schedules; dedupe event IDs; hard kickoff cutoff",
         "targetCoverage": coverage,
         "source": {
-            "provider": "ESPN public college-football team schedules",
+            "provider": "ESPN public FBS teams + college-football team schedules",
             "marketDataUsed": False,
             "externalRatingsUsed": False,
             "postKickoffDataUsed": False,
