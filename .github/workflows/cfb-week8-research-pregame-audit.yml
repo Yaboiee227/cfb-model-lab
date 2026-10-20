@@ -7,6 +7,7 @@ on:
       - 'cfb/pregame/week-08-schedule.json'
       - 'cfb/pregame/week-08-tuesday-effective.json'
       - 'cfb/pregame/week-08-wednesday-effective.json'
+      - 'cfb/pregame/week-08-thursday-effective.json'
       - 'cfb/research-locks/week-08-foundation-full.json'
       - 'cfb/benchmarks/week-08-sagarin-full.json'
       - 'cfb/research-market-locks/week-08-foundation-market.json'
@@ -40,6 +41,7 @@ jobs:
             --sagarin cfb/benchmarks/week-08-sagarin-full.json \
             --context cfb/pregame/week-08-tuesday-effective.json \
             --context cfb/pregame/week-08-wednesday-effective.json \
+            --context cfb/pregame/week-08-thursday-effective.json \
             --market-lock cfb/research-market-locks/week-08-foundation-market.json \
             --output cfb/pregame/week-08-research-coverage.json
       - name: Assert frozen research coverage and policy boundary
@@ -54,16 +56,23 @@ jobs:
           assert d['summary']['games']==56, d['summary']
           assert d['summary']['foundationLocked']==56, d['summary']
           assert d['summary']['sagarinCurrent']==56, d['summary']
-          assert d['summary']['personnelCaptured'] >= 4, d['summary']
-          assert d['summary']['weatherCaptured'] >= 4, d['summary']
-          assert d['summary']['refereeCapturedOrExplicitlyChecked'] >= 4, d['summary']
+          assert d['summary']['personnelCaptured'] >= 7, d['summary']
+          assert d['summary']['weatherCaptured'] >= 7, d['summary']
+          assert d['summary']['refereeCapturedOrExplicitlyChecked'] >= 7, d['summary']
           assert all(g['foundation']['status']=='LOCKED' for g in d['games'])
           assert all(g['benchmarks']['spPlus']=='PENDING_OFFICIAL_CAPTURE' for g in d['games'])
-          wed=next(g for g in d['games'] if g.get('sourceGameId')=='401871070')
-          assert wed['context']['contextSource']=='cfb/pregame/week-08-wednesday-effective.json', wed['context']
-          assert wed['context']['personnel']!='NOT_CAPTURED', wed['context']
-          assert wed['context']['weather']!='NOT_CAPTURED', wed['context']
-          print(json.dumps({'summary':d['summary'],'wednesday':wed,'next':d['workQueue'][:10]},indent=2))
+          expected={
+              '401871070':'cfb/pregame/week-08-wednesday-effective.json',
+              '401869845':'cfb/pregame/week-08-thursday-effective.json',
+              '401871056':'cfb/pregame/week-08-thursday-effective.json',
+              '401862807':'cfb/pregame/week-08-thursday-effective.json',
+          }
+          for source_id, source_path in expected.items():
+              game=next(g for g in d['games'] if g.get('sourceGameId')==source_id)
+              assert game['context']['contextSource']==source_path, game['context']
+              assert game['context']['personnel']!='NOT_CAPTURED', game['context']
+              assert game['context']['weather']!='NOT_CAPTURED', game['context']
+          print(json.dumps({'summary':d['summary'],'next':d['workQueue'][:10]},indent=2))
           PY
       - name: Commit changed operational audit
         run: |
