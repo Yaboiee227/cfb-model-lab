@@ -1,0 +1,430 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "modelId": "cfb-boxscore-efficiency-challenger-v1",
+  "role": "SHADOW_CHALLENGER_ONLY",
+  "canonicalInfluence": false,
+  "asOf": "2026-10-20T04:00:00Z",
+  "source": {
+    "schedule": "ESPN public FBS team schedules",
+    "boxscores": "ESPN public college-football summary endpoint",
+    "marketDataUsed": false,
+    "externalRatingsUsed": false,
+    "postKickoffTargetDataUsed": false,
+    "sameWeekResultLeakage": false
+  },
+  "dataQuality": {
+    "trainingGames": 510,
+    "boxscoreGames": 510,
+    "boxscoreCoverage": 1.0,
+    "boxscoreFailures": [],
+    "causalRows": 227,
+    "trainRows": 110,
+    "validationRows": 117
+  },
+  "features": [
+    "scoreBaseMargin",
+    "scoreBaseTotal",
+    "yppMatchupDiff",
+    "passYpaMatchupDiff",
+    "rushYpaMatchupDiff",
+    "thirdDownMatchupDiff",
+    "turnoverControlDiff",
+    "firstDownRateMatchupDiff",
+    "penaltyDisciplineDiff",
+    "combinedPlayVolume",
+    "possessionMatchupDiff",
+    "recentMarginDiff",
+    "restDaysDiff"
+  ],
+  "validation": {
+    "splitAt": "2026-10-06T04:00:00Z",
+    "marginSelected": {
+      "bundle": "core_efficiency",
+      "alpha": 100.0,
+      "games": 117,
+      "mae": 12.170550824414152,
+      "rmse": 15.048319136723773,
+      "residualStd": 15.034180107276022
+    },
+    "totalSelected": {
+      "bundle": "core_efficiency",
+      "alpha": 100.0,
+      "games": 117,
+      "mae": 13.09626539603955,
+      "rmse": 16.60252260035343,
+      "residualStd": 16.663022932841493
+    },
+    "simpleShadowReference": {
+      "marginMae": 12.424019218520508,
+      "totalMae": 13.3767373990457
+    },
+    "comparisonGatePass": false,
+    "rule": "Rich challenger must improve at least one MAE by >=0.50 while degrading neither margin nor total MAE by more than 0.25 versus the simple shadow reference. Passing this gate does not promote it to canonical; prospective evidence is still required."
+  },
+  "selectedModels": {
+    "margin": {
+      "indices": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "mean": [
+        4.222684278281822,
+        -0.011844413613808492,
+        0.0037996636512620733,
+        -0.028007453122683452,
+        0.0005973970238105593,
+        -0.0003715303962432603
+      ],
+      "scale": [
+        5.511128149313227,
+        0.4835474140453695,
+        0.7636724857616376,
+        0.53979396407086,
+        0.047030012765170395,
+        0.0059945437838846765
+      ],
+      "beta": [
+        3.4096916299559474,
+        4.3234183492593905,
+        2.00595734711223,
+        1.697541305067154,
+        1.522420564675233,
+        1.644284460146186,
+        -0.6812800372839647
+      ],
+      "alpha": 100.0
+    },
+    "total": {
+      "indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        9
+      ],
+      "mean": [
+        52.56772840176361,
+        -0.011844413613808492,
+        0.0037996636512620733,
+        -0.028007453122683452,
+        0.0005973970238105593,
+        -0.0003715303962432603,
+        130.30784755728504
+      ],
+      "scale": [
+        4.050870026947019,
+        0.4835474140453695,
+        0.7636724857616376,
+        0.53979396407086,
+        0.047030012765170395,
+        0.0059945437838846765,
+        2.806937303955024
+      ],
+      "beta": [
+        51.40088105726876,
+        2.1618675201750857,
+        0.24551536742397242,
+        -0.20525202831022046,
+        1.5844861711560672,
+        -0.28397644668583677,
+        0.30946127329694245,
+        1.823055043383494
+      ],
+      "alpha": 100.0
+    }
+  },
+  "candidateResults": {
+    "margin": [
+      {
+        "bundle": "core_efficiency",
+        "alpha": 100.0,
+        "games": 117,
+        "mae": 12.170550824414152,
+        "rmse": 15.048319136723773,
+        "residualStd": 15.034180107276022
+      },
+      {
+        "bundle": "full_efficiency",
+        "alpha": 100.0,
+        "games": 117,
+        "mae": 12.234699943539729,
+        "rmse": 15.333295450912743,
+        "residualStd": 15.347776559832678
+      },
+      {
+        "bundle": "scoring",
+        "alpha": 100.0,
+        "games": 117,
+        "mae": 12.273608319735045,
+        "rmse": 15.057869546839285,
+        "residualStd": 15.045278523377345
+      },
+      {
+        "bundle": "core_efficiency",
+        "alpha": 10.0,
+        "games": 117,
+        "mae": 12.357532463666866,
+        "rmse": 15.198272187368552,
+        "residualStd": 15.16587238628182
+      },
+      {
+        "bundle": "scoring",
+        "alpha": 10.0,
+        "games": 117,
+        "mae": 12.53275514483872,
+        "rmse": 15.11294048751989,
+        "residualStd": 15.107218173541822
+      },
+      {
+        "bundle": "core_efficiency",
+        "alpha": 1.0,
+        "games": 117,
+        "mae": 12.568902484866644,
+        "rmse": 15.390615859134304,
+        "residualStd": 15.339569977414591
+      },
+      {
+        "bundle": "core_efficiency",
+        "alpha": 0.1,
+        "games": 117,
+        "mae": 12.62097938841137,
+        "rmse": 15.46578082572369,
+        "residualStd": 15.410371527976709
+      },
+      {
+        "bundle": "scoring",
+        "alpha": 1.0,
+        "games": 117,
+        "mae": 12.683757268740134,
+        "rmse": 15.30909982377493,
+        "residualStd": 15.306286615818186
+      },
+      {
+        "bundle": "scoring",
+        "alpha": 0.1,
+        "games": 117,
+        "mae": 12.703032788165379,
+        "rmse": 15.333873027394828,
+        "residualStd": 15.331402891311454
+      },
+      {
+        "bundle": "full_efficiency",
+        "alpha": 10.0,
+        "games": 117,
+        "mae": 12.946708367661444,
+        "rmse": 16.22512915312212,
+        "residualStd": 16.227427553763878
+      },
+      {
+        "bundle": "full_efficiency",
+        "alpha": 1.0,
+        "games": 117,
+        "mae": 13.34847536644495,
+        "rmse": 16.749888374878076,
+        "residualStd": 16.72497648682589
+      },
+      {
+        "bundle": "full_efficiency",
+        "alpha": 0.1,
+        "games": 117,
+        "mae": 13.42289001954055,
+        "rmse": 16.88315276496155,
+        "residualStd": 16.849703069768395
+      }
+    ],
+    "total": [
+      {
+        "bundle": "core_efficiency",
+        "alpha": 100.0,
+        "games": 117,
+        "mae": 13.09626539603955,
+        "rmse": 16.60252260035343,
+        "residualStd": 16.663022932841493
+      },
+      {
+        "bundle": "scoring",
+        "alpha": 100.0,
+        "games": 117,
+        "mae": 13.15946736538515,
+        "rmse": 16.628408006019846,
+        "residualStd": 16.695412024529464
+      },
+      {
+        "bundle": "scoring",
+        "alpha": 10.0,
+        "games": 117,
+        "mae": 13.199553111127125,
+        "rmse": 16.65155147708712,
+        "residualStd": 16.723168443621045
+      },
+      {
+        "bundle": "scoring",
+        "alpha": 1.0,
+        "games": 117,
+        "mae": 13.227955105332414,
+        "rmse": 16.681475317997478,
+        "residualStd": 16.753006943575965
+      },
+      {
+        "bundle": "scoring",
+        "alpha": 0.1,
+        "games": 117,
+        "mae": 13.2310506905319,
+        "rmse": 16.685224342679064,
+        "residualStd": 16.756728340005782
+      },
+      {
+        "bundle": "full_efficiency",
+        "alpha": 100.0,
+        "games": 117,
+        "mae": 13.255117748976847,
+        "rmse": 16.859030850505647,
+        "residualStd": 16.923142349368092
+      },
+      {
+        "bundle": "core_efficiency",
+        "alpha": 10.0,
+        "games": 117,
+        "mae": 13.355998433858067,
+        "rmse": 16.95582567054087,
+        "residualStd": 17.027875893759713
+      },
+      {
+        "bundle": "core_efficiency",
+        "alpha": 1.0,
+        "games": 117,
+        "mae": 13.45278568647401,
+        "rmse": 17.08842850185206,
+        "residualStd": 17.16189551462165
+      },
+      {
+        "bundle": "core_efficiency",
+        "alpha": 0.1,
+        "games": 117,
+        "mae": 13.46288628983455,
+        "rmse": 17.10391359004809,
+        "residualStd": 17.17747423267079
+      },
+      {
+        "bundle": "full_efficiency",
+        "alpha": 10.0,
+        "games": 117,
+        "mae": 13.766172788247705,
+        "rmse": 17.482302534528607,
+        "residualStd": 17.55687770760233
+      },
+      {
+        "bundle": "full_efficiency",
+        "alpha": 1.0,
+        "games": 117,
+        "mae": 13.964526684150254,
+        "rmse": 17.757700539478872,
+        "residualStd": 17.83407084842141
+      },
+      {
+        "bundle": "full_efficiency",
+        "alpha": 0.1,
+        "games": 117,
+        "mae": 13.998619980578933,
+        "rmse": 17.796810508884985,
+        "residualStd": 17.87335514041862
+      }
+    ]
+  },
+  "games": [
+    {
+      "gameId": "2026-10-20-MIDDLETENNESSEE-FIU",
+      "awayTeam": "Middle Tennessee",
+      "homeTeam": "FIU",
+      "status": "RICH_RESEARCH_ONLY",
+      "projectedAwayPoints": 14.190848356364528,
+      "projectedHomePoints": 31.643963628662704,
+      "projectedMarginHome": 17.453115272298177,
+      "projectedSpreadHome": -17.453115272298177,
+      "projectedTotal": 45.83481198502723,
+      "homeWinProbability": 87.71578442715398,
+      "projectedWinner": "FIU",
+      "features": {
+        "scoreBaseMargin": 10.47616112829921,
+        "scoreBaseTotal": 47.58170992416076,
+        "yppMatchupDiff": 0.512010924732885,
+        "passYpaMatchupDiff": 1.126828479430439,
+        "rushYpaMatchupDiff": 0.06500452386516198,
+        "thirdDownMatchupDiff": 0.11501757299048365,
+        "turnoverControlDiff": -0.0021787384280851987,
+        "firstDownRateMatchupDiff": 0.01787082273736984,
+        "penaltyDisciplineDiff": -0.007701229698598655,
+        "combinedPlayVolume": 126.67708693968557,
+        "possessionMatchupDiff": 0.07146297517274008,
+        "recentMarginDiff": 31.666666666666668,
+        "restDaysDiff": -0.04166666666666696
+      }
+    },
+    {
+      "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
+      "awayTeam": "Missouri State",
+      "homeTeam": "Delaware",
+      "status": "RICH_RESEARCH_ONLY",
+      "projectedAwayPoints": 24.184128646330453,
+      "projectedHomePoints": 29.762452744249867,
+      "projectedMarginHome": 5.578324097919413,
+      "projectedSpreadHome": -5.578324097919413,
+      "projectedTotal": 53.94658139058032,
+      "homeWinProbability": 64.46971686025354,
+      "projectedWinner": "Delaware",
+      "features": {
+        "scoreBaseMargin": 4.592322317024504,
+        "scoreBaseTotal": 51.662079285113684,
+        "yppMatchupDiff": 0.22944322809617468,
+        "passYpaMatchupDiff": 0.08423010935176922,
+        "rushYpaMatchupDiff": 0.15404367319073442,
+        "thirdDownMatchupDiff": 0.013892214064964936,
+        "turnoverControlDiff": 0.002086580113422873,
+        "firstDownRateMatchupDiff": 0.015716525770407996,
+        "penaltyDisciplineDiff": -0.09273382567770216,
+        "combinedPlayVolume": 133.92169496218986,
+        "possessionMatchupDiff": 0.012991077880738278,
+        "recentMarginDiff": -9.999999999999998,
+        "restDaysDiff": 1.020833333333333
+      }
+    },
+    {
+      "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
+      "awayTeam": "South Alabama",
+      "homeTeam": "Marshall",
+      "status": "RICH_RESEARCH_ONLY",
+      "projectedAwayPoints": 28.950214624673222,
+      "projectedHomePoints": 27.782090151893414,
+      "projectedMarginHome": -1.1681244727798088,
+      "projectedSpreadHome": 1.1681244727798088,
+      "projectedTotal": 56.732304776566636,
+      "homeWinProbability": 46.90341756877173,
+      "projectedWinner": "South Alabama",
+      "features": {
+        "scoreBaseMargin": -0.36109022018906956,
+        "scoreBaseTotal": 62.33220150867953,
+        "yppMatchupDiff": -0.035220968193210744,
+        "passYpaMatchupDiff": -0.5578117506608473,
+        "rushYpaMatchupDiff": -0.2903029385554907,
+        "thirdDownMatchupDiff": -0.019079644981224442,
+        "turnoverControlDiff": -0.016132151513236416,
+        "firstDownRateMatchupDiff": 0.003067498222198095,
+        "penaltyDisciplineDiff": 0.00691795707070153,
+        "combinedPlayVolume": 132.53421645007194,
+        "possessionMatchupDiff": -0.04315905027073175,
+        "recentMarginDiff": -11.0,
+        "restDaysDiff": -1.979166666666666
+      }
+    }
+  ],
+  "warning": "Research challenger only. Even a validation-gate pass does not authorize canonical use during Week 8 without explicit promotion and prospective evidence."
+}
