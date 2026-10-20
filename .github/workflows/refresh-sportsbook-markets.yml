@@ -247,7 +247,7 @@ jobs:
               return;
             }
             const phase=phaseFromScope(remainingScopeGames);
-            const commenceTimeFrom=nowIso.replace(/\\.\\d{3}Z$/,'Z');
+            const commenceTimeFrom=nowIso.replace(/\.\d{3}Z$/,'Z');
             const commenceTimeTo=remainingScopeGames.map(game => game.kickoff).sort().at(-1);
             const aliasData=JSON.parse(fs.readFileSync('data/team-aliases.json','utf8'));
             const aliasToCanonical=new Map();
