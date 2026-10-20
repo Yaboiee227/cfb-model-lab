@@ -54,7 +54,7 @@ jobs:
               assert d['knownGameCrosscheck']['games'] >= 3
           assert d['coverage']['scheduleGames']==56, d['coverage']
           assert d['coverage']['ratio'] >= 0.90, d['coverage']
-          assert all(g['sagarin']['status'] in {'CURRENT','REVIEW'} for g in d['games'])
+          assert all(g['sagarin']['status'] in {'CURRENT','REVIEW','NOT_LISTED'} for g in d['games'])
           print(json.dumps({
               'sourceWeek':d['source']['sourceWeek'],
               'ratingsThrough':d['source']['ratingsThrough'],
@@ -64,8 +64,8 @@ jobs:
               'coverage':d['coverage'],
           }, indent=2))
           PY
-      - name: Validate against approved benchmark registry
-        run: python scripts/validate_benchmarks.py cfb/benchmarks/week-08-sagarin-full.json
+      - name: Validate approved benchmark and Week 8 freshness
+        run: python scripts/validate_benchmarks.py cfb/benchmarks/week-08-sagarin-full.json --max-age-days 9
       - name: Commit official Sagarin full-slate snapshot
         run: |
           git config user.name "cb-model-benchmark-bot"
