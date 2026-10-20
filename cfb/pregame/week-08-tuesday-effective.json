@@ -72,7 +72,7 @@
         "canonicalInfluence": "Only already-authorized personnel logic may affect the still-open CB projection; one-hour refresh required."
       },
       "weather": {
-        "status": "CURRENT_CONTEXT_SOURCE_DISAGREEMENT",
+        "status": "NWS_PRIMARY_CURRENT_FINAL_RECHECK_REQUIRED",
         "temperatureFRange": [
           78,
           80
@@ -90,7 +90,28 @@
         "sources": [
           "https://www.actionnetwork.com/ncaaf/weather",
           "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-middle-tennessee-florida-international/"
-        ]
+        ],
+        "observedAt": "2026-10-20T03:25:00Z",
+        "source": "National Weather Service point forecast near FIU / Miami International Airport",
+        "sourceLastUpdate": "2026-10-19T16:17:00-04:00",
+        "sourceUrl": "https://forecast.weather.gov/MapClick.php?FcstType=digital&lat=25.783&lg=english&lon=-80.3261&unit=0",
+        "kickoffWindow": {
+          "approximately7pmET": {
+            "temperatureF": 79,
+            "windDirection": "NE",
+            "windMph": 14,
+            "gustMph": 21,
+            "precipProbabilityPct": 1
+          },
+          "approximately8pmET": {
+            "temperatureF": 78,
+            "windDirection": "NE",
+            "windMph": 11,
+            "gustMph": 18,
+            "precipProbabilityPct": 4
+          }
+        },
+        "materiality": "Wind/gusts are material enough to recheck in the final pregame window, especially for passing/kicking/total uncertainty. Do not apply an unvalidated manual point adjustment."
       },
       "travelRest": {
         "awayMiles": 781,
@@ -259,7 +280,7 @@
         "canonicalInfluence": "Both Tuesday starting-QB states require confirmation. Do not invent an additive QB point value. Apply only established personnel/reliability logic before freeze."
       },
       "weather": {
-        "status": "LOW_IMPACT_CURRENT_CONTEXT",
+        "status": "NWS_PRIMARY_CURRENT_FINAL_RECHECK_REQUIRED",
         "temperatureFRange": [
           56,
           60
@@ -277,7 +298,13 @@
         "sources": [
           "https://www.actionnetwork.com/ncaaf/weather",
           "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-missouri-state-delaware/"
-        ]
+        ],
+        "observedAt": "2026-10-20T03:25:00Z",
+        "source": "National Weather Service Philadelphia point forecast near Newark, Delaware",
+        "sourceLastUpdate": "2026-10-19T06:22:00-04:00",
+        "sourceUrl": "https://forecast.weather.gov/MapClick.php?FcstType=text&TextType=2&lat=39.7014&lg=english&lon=-75.7314&unit=0",
+        "forecast": "Tuesday mostly sunny, high near 68 with north wind 10-15 mph; Tuesday night mostly clear, low around 44 with north wind 5-10 mph.",
+        "materiality": "No major precipitation signal. Temperature and wind should be refreshed close to kickoff; current forecast is not an automatic projection adjustment."
       },
       "travelRest": {
         "awayMiles": 965,
@@ -399,7 +426,7 @@
         "canonicalInfluence": "Do not infer health from missing public injury data. Unknown remains unknown."
       },
       "weather": {
-        "status": "LOW_IMPACT_CURRENT_CONTEXT",
+        "status": "NWS_PRIMARY_CAPTURED_SOURCE_UPDATE_OLDER_FINAL_RECHECK_REQUIRED",
         "temperatureFRange": [
           54,
           59
@@ -416,7 +443,13 @@
         "sources": [
           "https://www.actionnetwork.com/ncaaf-game/south-alabama-jaguars-marshall-thundering-herd/289598",
           "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-south-alabama-marshall/"
-        ]
+        ],
+        "observedAt": "2026-10-20T03:25:00Z",
+        "source": "National Weather Service Charleston WV point forecast for Huntington",
+        "sourceLastUpdate": "2026-10-18T14:34:00-04:00",
+        "sourceUrl": "https://forecast.weather.gov/MapClick.php?FcstType=text&TextType=2&lat=38.4121&lg=english&lon=-82.4405&unit=0",
+        "forecast": "Tuesday sunny, high near 66 with calm wind becoming north around 5 mph; Tuesday night clear with a low around 42.",
+        "materiality": "Current signal is low-impact weather, but the source update is older than preferred and must be refreshed before final freeze."
       },
       "travelRest": {
         "awayMiles": 626,
@@ -504,11 +537,16 @@
   ],
   "effectiveState": {
     "baseStatus": "OPEN",
-    "overlayCount": 1,
+    "overlayCount": 2,
     "appliedOverlays": [
       {
         "observedAt": "2026-10-20T03:15:00Z",
         "role": "OFFICIAL_SOURCE_REFRESH_OVERLAY",
+        "gameCount": 3
+      },
+      {
+        "observedAt": "2026-10-20T03:25:00Z",
+        "role": "OFFICIAL_WEATHER_REFRESH_OVERLAY",
         "gameCount": 3
       }
     ],
