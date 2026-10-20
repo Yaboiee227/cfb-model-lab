@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "status": "OPEN_EFFECTIVE",
+  "dateWindow": [
+    "2026-10-21"
+  ],
+  "policy": "Pregame-only research context around an already frozen market-independent foundation. Context, benchmarks and public markets cannot rewrite the frozen projection. Unknown stays unknown and third-party injury/market data remain contextual until independently verified.",
+  "observedAt": "2026-10-20T12:08:00Z",
+  "games": [
+    {
+      "gameId": "2026-10-21-NEWMEXICOSTATE-SAMHOUSTON",
+      "sourceGameId": "401871070",
+      "awayTeam": "New Mexico State",
+      "homeTeam": "Sam Houston",
+      "conference": "Conference USA",
+      "kickoff": "2026-10-22T00:00:00Z",
+      "venue": {
+        "name": "Elliott T. Bowers Stadium",
+        "city": "Huntsville",
+        "state": "TX"
+      },
+      "records": {
+        "away": "2-4",
+        "home": "1-5",
+        "awayConference": "1-1",
+        "homeConference": "0-2"
+      },
+      "frozenFoundationReference": {
+        "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
+        "canonicalInfluence": false,
+        "modelId": "cfb-rebuild-foundation-v1-shadow",
+        "projectedAwayPoints": 21.322981138871473,
+        "projectedHomePoints": 20.936490453301413,
+        "projectedMarginHome": -0.3864906855700596,
+        "projectedSpreadHome": 0.3864906855700596,
+        "projectedTotal": 42.259471592172886,
+        "homeWinProbability": 49.02673862307157,
+        "projectedWinner": "New Mexico State",
+        "projectionDigest": "76573e65de4174437af8f8b604ec6730d1b183804089c333a6186c8b182c26da",
+        "source": "cfb/research-locks/week-08-foundation-full.json"
+      },
+      "personnel": {
+        "status": "OFFICIAL_BASELINE_CAPTURED_NO_NEW_MATERIAL_QB_CHANGE_FOUND",
+        "away": {
+          "mostRecentStartingQB": "Adam Damante",
+          "startingQB": "NOT_EXPLICITLY_CONFIRMED_FOR_WEDNESDAY",
+          "officialContext": "Adam Damante handled the majority of the quarterback work and led NM State with 104 passing yards in the Oct. 7 game at FIU. NM State's Oct. 18 official Sam Houston preview does not announce a quarterback change or a different Wednesday starter.",
+          "thirdPartyInjuries": [
+            {
+              "player": "I. Uvaydov",
+              "position": "K",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            },
+            {
+              "player": "R. Burton",
+              "position": "RB",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            },
+            {
+              "player": "R. Lotten",
+              "position": "TE",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            }
+          ]
+        },
+        "home": {
+          "mostRecentStartingQB": "Landyn Locke",
+          "startingQB": "Landyn Locke",
+          "officialContext": "Landyn Locke started the Oct. 14 loss to WKU, and Sam Houston's official Oct. 21 game center still lists Locke as the team passing leader. No newer official material was found announcing a quarterback change.",
+          "thirdPartyInjuries": [
+            {
+              "player": "M. Whisner",
+              "position": "TE",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            },
+            {
+              "player": "B. Kuhl",
+              "position": "TE",
+              "status": "OUT",
+              "detail": "Reported season-long absence / undisclosed",
+              "sourceTier": "third_party"
+            }
+          ]
+        },
+        "sources": [
+          "https://nmstatesports.com/news/2026/10/18/football-aggies-continue-conference-usa-play-at-sam-houston-on-wednesday.aspx",
+          "https://nmstatesports.com/sports/football/stats/2026/fiu/boxscore/19277",
+          "https://gobearkats.com/game-center/15542",
+          "https://gobearkats.com/news/2026/10/14/football-wku-hands-bearkats-16-3-setback",
+          "https://www.covers.com/sport/football/ncaaf/matchup/378124"
+        ],
+        "lastOfficialCheckAt": "2026-10-20T12:08:00Z",
+        "canonicalInfluence": "No manual QB or injury points. Only a future authoritative material update may enter an already validated personnel rule; the frozen Week 8 research foundation remains immutable."
+      },
+      "weather": {
+        "status": "NWS_LOW_IMPACT_BASELINE_CAPTURED",
+        "observedAt": "2026-10-20T12:08:00Z",
+        "source": "National Weather Service Houston/Galveston zone forecast for Walker County / Huntsville, Texas",
+        "sourceLastUpdate": "2026-10-20T04:28:00-05:00",
+        "sourceUrl": "https://forecast.weather.gov/product.php?format=CI&glossary=1&issuedby=HGX&product=ZFP&site=DTX&version=1",
+        "forecast": {
+          "wednesdayDay": "Sunny, highs in the lower 80s, northeast wind around 5 mph.",
+          "wednesdayNight": "Clear, lows in the mid 50s, northeast wind around 5 mph in the evening becoming light and variable.",
+          "precipitationSignal": "No meaningful precipitation signal in the current NWS Walker County forecast."
+        },
+        "thirdPartyCrossCheck": {
+          "source": "https://www.covers.com/sport/ncaaf/weather",
+          "stadiumTemperatureF": 72.1,
+          "windDirection": "ENE",
+          "windMph": 3.7,
+          "condition": "Clear",
+          "precipProbabilityPct": 0
+        },
+        "materiality": "Current weather profile is low impact. Preserve as context and perform the standard final-window stadium-level recheck; do not apply an unvalidated manual points adjustment."
+      },
+      "travelRest": {
+        "status": "CONTEXT_ONLY",
+        "awayTripMilesReportedByTeam": 1336,
+        "awayBodyClockShiftHours": 1,
+        "awayDaysWithoutGame": 13,
+        "homeRestDays": 7,
+        "source": "https://nmstatesports.com/news/2026/10/18/football-aggies-continue-conference-usa-play-at-sam-houston-on-wednesday.aspx",
+        "note": "NM State's official preview says this is its shortest road trip of 2026 and that the Aggies had 13 full days without a game after the FIU matchup."
+      },
+      "market": {
+        "status": "EARLY_PUBLIC_CONTEXT_NOT_LOCKED",
+        "observedAt": "2026-10-20T12:08:00Z",
+        "observations": [
+          {
+            "source": "https://www.covers.com/sports/ncaaf/matchups",
+            "marketType": "public_board_context",
+            "spreadHome": 2.5,
+            "total": 45.0,
+            "interpretation": "Public board showed New Mexico State -2.5 at Sam Houston with a 45.0 total at observation time. This is not the immutable publication-time book lock."
+          }
+        ],
+        "note": "Final-window FanDuel and DraftKings observations will be captured independently by the immutable market-lock workflow. Consensus/percentage fields are research-only and are not model inputs."
+      },
+      "benchmarks": {
+        "sagarin": {
+          "status": "CURRENT_FOR_WEEK_8_OPEN",
+          "ratingsThrough": "2026-10-17",
+          "impliedSpreadHome": -0.4500000000000055,
+          "predictorFavorite": "Sam Houston",
+          "source": "cfb/benchmarks/week-08-sagarin-full.json",
+          "canonicalInfluence": false
+        },
+        "spPlus": {
+          "status": "PENDING_CURRENT_OFFICIAL_CAPTURE",
+          "source": "https://www.espn.com/college-football/story/_/id/49868647/2026-college-football-sp+-rankings-all-138-fbs-teams",
+          "note": "Official-only policy remains in force; do not substitute mirrors."
+        },
+        "refMetrics": {
+          "status": "NOT_YET_POSTED",
+          "source": "https://www.refmetrics.com/ncaa-football/todays-games",
+          "canonicalInfluence": false,
+          "lastCheckedAt": "2026-10-20T12:08:00Z",
+          "note": "RefMetrics states that officials are not currently available for upcoming NCAA Football games. Do not infer a crew."
+        }
+      },
+      "officialContext": {
+        "status": "CURRENT_OFFICIAL_PREVIEW_CAPTURED",
+        "observedAt": "2026-10-20T12:08:00Z",
+        "facts": [
+          "NM State enters 2-4 overall and 1-1 in Conference USA; Sam Houston enters 1-5 overall and 0-2 in Conference USA.",
+          "NM State had 13 full days without a game after playing three games in 12 days.",
+          "James Jones leads NM State with 599 rushing yards through his first five games with the Aggies and is averaging 99.8 rushing yards per game.",
+          "NM State has 15 sacks through six games; the official Aggie preview notes Sam Houston has allowed 17 sacks.",
+          "Sam Houston's official game center lists Landyn Locke as its passing leader with 1,418 yards.",
+          "Sam Houston was held to 177 total yards and 112 passing yards in the Oct. 14 loss to WKU."
+        ],
+        "sources": [
+          "https://nmstatesports.com/news/2026/10/18/football-aggies-continue-conference-usa-play-at-sam-houston-on-wednesday.aspx",
+          "https://gobearkats.com/game-center/15542",
+          "https://gobearkats.com/news/2026/10/14/football-wku-hands-bearkats-16-3-setback"
+        ],
+        "canonicalInfluence": "Context only. It cannot alter the frozen Week 8 foundation unless a separately validated rule already authorizes that exact input."
+      },
+      "audit": {
+        "priority": "NEXT_48H",
+        "materialOpenItems": [
+          "final official QB/personnel recheck",
+          "final stadium-level weather recheck",
+          "referee/crew assignment if posted",
+          "immutable FanDuel/DraftKings final-window market lock",
+          "current official SP+ capture if defensibly available"
+        ]
+      }
+    }
+  ]
+}
