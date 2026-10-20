@@ -7,7 +7,7 @@
   "status": "OPEN_EFFECTIVE_THROUGH_THURSDAY",
   "canonicalInfluence": false,
   "canonicalPromotionAuthorized": false,
-  "observedAt": "2026-10-20T19:57:03.150000Z",
+  "observedAt": "2026-10-20T19:57:03.150Z",
   "dateWindowET": [
     "2026-10-20",
     "2026-10-22"
@@ -789,7 +789,7 @@
       "homeTeam": "Sam Houston",
       "kickoff": "2026-10-22T00:00:00Z",
       "contextSource": "cfb/pregame/week-08-wednesday-effective.json",
-      "contextObservedAt": "2026-10-20T12:08:00Z",
+      "contextObservedAt": "2026-10-20T19:57:03.150Z",
       "frozenFoundationReference": {
         "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
         "canonicalInfluence": false,
@@ -1017,7 +1017,7 @@
       "homeTeam": "App State",
       "kickoff": "2026-10-22T23:00:00Z",
       "contextSource": "cfb/pregame/week-08-thursday-effective.json",
-      "contextObservedAt": "2026-10-20T12:18:00Z",
+      "contextObservedAt": "2026-10-20T19:57:03.150Z",
       "frozenFoundationReference": {
         "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
         "canonicalInfluence": false,
@@ -1087,8 +1087,42 @@
         "materiality": "Current profile is low-impact but mountain conditions can change; perform the standard stadium-level final-window recheck. No unvalidated manual points adjustment."
       },
       "market": {
-        "status": "APPROVED_BOOK_FINAL_WINDOW_LOCK_PENDING",
-        "note": "No stale/secondary line is promoted to the publication benchmark. FanDuel and DraftKings will be captured independently by the immutable final-window market-lock workflow."
+        "status": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
+        "note": "No stale/secondary line is promoted to the publication benchmark. FanDuel and DraftKings will be captured independently by the immutable final-window market-lock workflow. Current FanDuel and DraftKings quotes are context only. Publication-time market locks remain pending and are stored separately against the immutable foundation; quotes do not change the canonical projection.",
+        "observedAt": "2026-10-20T19:57:03.150Z",
+        "provider": "The Odds API",
+        "observations": [
+          {
+            "book": "FanDuel",
+            "observedAt": "2026-10-20T19:56:42Z",
+            "spreadHome": 10.5,
+            "spreadHomePrice": -110,
+            "spreadAway": -10.5,
+            "spreadAwayPrice": -110,
+            "total": 55.5,
+            "overPrice": -115,
+            "underPrice": -105,
+            "moneylineHome": 320,
+            "moneylineAway": -420,
+            "source": "The Odds API",
+            "sourceSnapshot": "data/markets-sportsbooks.json"
+          },
+          {
+            "book": "DraftKings",
+            "observedAt": "2026-10-20T19:56:19Z",
+            "spreadHome": 10.5,
+            "spreadHomePrice": -110,
+            "spreadAway": -10.5,
+            "spreadAwayPrice": -110,
+            "total": 56.5,
+            "overPrice": -110,
+            "underPrice": -110,
+            "moneylineHome": 330,
+            "moneylineAway": -425,
+            "source": "The Odds API",
+            "sourceSnapshot": "data/markets-sportsbooks.json"
+          }
+        ]
       },
       "benchmarks": {
         "sagarin": {
@@ -1131,7 +1165,7 @@
       "homeTeam": "Kennesaw State",
       "kickoff": "2026-10-22T23:00:00Z",
       "contextSource": "cfb/pregame/week-08-thursday-effective.json",
-      "contextObservedAt": "2026-10-20T12:18:00Z",
+      "contextObservedAt": "2026-10-20T19:57:03.150Z",
       "frozenFoundationReference": {
         "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
         "canonicalInfluence": false,
@@ -1226,8 +1260,42 @@
         "materiality": "Current profile is low impact; perform the standard final-window recheck. No unvalidated manual points adjustment."
       },
       "market": {
-        "status": "APPROVED_BOOK_FINAL_WINDOW_LOCK_PENDING",
-        "note": "Final-window FanDuel and DraftKings observations will be captured independently. Secondary board data is not promoted to a publication benchmark."
+        "status": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
+        "note": "Final-window FanDuel and DraftKings observations will be captured independently. Secondary board data is not promoted to a publication benchmark. Current FanDuel and DraftKings quotes are context only. Publication-time market locks remain pending and are stored separately against the immutable foundation; quotes do not change the canonical projection.",
+        "observedAt": "2026-10-20T19:57:03.150Z",
+        "provider": "The Odds API",
+        "observations": [
+          {
+            "book": "FanDuel",
+            "observedAt": "2026-10-20T19:56:42Z",
+            "spreadHome": 10.5,
+            "spreadHomePrice": -118,
+            "spreadAway": -10.5,
+            "spreadAwayPrice": -104,
+            "total": 50.5,
+            "overPrice": -108,
+            "underPrice": -112,
+            "moneylineHome": 310,
+            "moneylineAway": -400,
+            "source": "The Odds API",
+            "sourceSnapshot": "data/markets-sportsbooks.json"
+          },
+          {
+            "book": "DraftKings",
+            "observedAt": "2026-10-20T19:56:19Z",
+            "spreadHome": 10,
+            "spreadHomePrice": -110,
+            "spreadAway": -10,
+            "spreadAwayPrice": -110,
+            "total": 50.5,
+            "overPrice": -108,
+            "underPrice": -112,
+            "moneylineHome": 310,
+            "moneylineAway": -395,
+            "source": "The Odds API",
+            "sourceSnapshot": "data/markets-sportsbooks.json"
+          }
+        ]
       },
       "benchmarks": {
         "sagarin": {
@@ -1270,7 +1338,7 @@
       "homeTeam": "Memphis",
       "kickoff": "2026-10-22T23:30:00Z",
       "contextSource": "cfb/pregame/week-08-thursday-effective.json",
-      "contextObservedAt": "2026-10-20T12:18:00Z",
+      "contextObservedAt": "2026-10-20T19:57:03.150Z",
       "frozenFoundationReference": {
         "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
         "canonicalInfluence": false,
@@ -1327,8 +1395,42 @@
         "materiality": "Current profile is low impact; perform the standard final-window stadium-level recheck. No unvalidated manual points adjustment."
       },
       "market": {
-        "status": "APPROVED_BOOK_FINAL_WINDOW_LOCK_PENDING",
-        "note": "Final-window FanDuel and DraftKings observations will be captured independently. Secondary board data is not promoted to a publication benchmark."
+        "status": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
+        "note": "Final-window FanDuel and DraftKings observations will be captured independently. Secondary board data is not promoted to a publication benchmark. Current FanDuel and DraftKings quotes are context only. Publication-time market locks remain pending and are stored separately against the immutable foundation; quotes do not change the canonical projection.",
+        "observedAt": "2026-10-20T19:57:03.150Z",
+        "provider": "The Odds API",
+        "observations": [
+          {
+            "book": "FanDuel",
+            "observedAt": "2026-10-20T19:56:42Z",
+            "spreadHome": -10.5,
+            "spreadHomePrice": -102,
+            "spreadAway": 10.5,
+            "spreadAwayPrice": -120,
+            "total": 54.5,
+            "overPrice": -115,
+            "underPrice": -105,
+            "moneylineHome": -410,
+            "moneylineAway": 315,
+            "source": "The Odds API",
+            "sourceSnapshot": "data/markets-sportsbooks.json"
+          },
+          {
+            "book": "DraftKings",
+            "observedAt": "2026-10-20T19:56:19Z",
+            "spreadHome": -10,
+            "spreadHomePrice": -108,
+            "spreadAway": 10,
+            "spreadAwayPrice": -112,
+            "total": 54.5,
+            "overPrice": -112,
+            "underPrice": -108,
+            "moneylineHome": -410,
+            "moneylineAway": 320,
+            "source": "The Odds API",
+            "sourceSnapshot": "data/markets-sportsbooks.json"
+          }
+        ]
       },
       "benchmarks": {
         "sagarin": {
