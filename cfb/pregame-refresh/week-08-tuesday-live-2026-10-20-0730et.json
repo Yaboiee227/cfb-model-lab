@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "observedAt": "2026-10-20T11:30:42Z",
+  "role": "LIVE_PREGAME_STATUS_REFRESH_OVERLAY",
+  "policy": "Pregame factual/context refresh only. This overlay does not alter the immutable foundation research lock or authorize canonical promotion. Market prices are context until a separate publication-time market lock. RefMetrics betting-trend percentages are excluded from model input.",
+  "games": [
+    {
+      "gameId": "2026-10-20-MIDDLETENNESSEE-FIU",
+      "patch": {
+        "personnel": {
+          "lastCheckedAt": "2026-10-20T11:30:42Z",
+          "status": "MORNING_REFRESH_NO_NEW_OFFICIAL_MATERIAL_CHANGE",
+          "away": {
+            "thirdPartyInjuryState": "NO_INJURIES_REPORTED"
+          },
+          "home": {
+            "thirdPartyInjuryState": [
+              {"player": "Amari Carrie", "position": "RB", "status": "OUT", "detail": "Undisclosed"},
+              {"player": "K. Schaeffer", "position": "TE", "status": "QUESTIONABLE", "detail": "Undisclosed"},
+              {"player": "A. Passley", "position": "TE", "status": "QUESTIONABLE", "detail": "Undisclosed"},
+              {"player": "N. Sidan", "position": "K", "status": "QUESTIONABLE", "detail": "Undisclosed"}
+            ]
+          },
+          "source": "https://www.covers.com/sport/football/ncaaf/matchup/378460",
+          "canonicalInfluence": "Only established personnel logic may be used if an authoritative material update is confirmed before the canonical freeze. No manual point adjustment."
+        },
+        "weather": {
+          "status": "NWS_CURRENT_MATERIAL_WIND_FINAL_RECHECK_REQUIRED",
+          "observedAt": "2026-10-20T11:30:42Z",
+          "source": "National Weather Service point forecast near Miami International Airport / FIU",
+          "sourceLastUpdate": "2026-10-20T04:06:00-04:00",
+          "sourceUrl": "https://forecast.weather.gov/MapClick.php?FcstType=digital&lat=25.7952&lg=english&lon=-80.3254",
+          "kickoffApprox": {
+            "temperatureF": 79,
+            "windDirection": "NE",
+            "windMph": 13,
+            "gustMph": 21,
+            "precipProbabilityPct": 13
+          },
+          "materiality": "Wind/gusts are material enough for a final pre-kickoff recheck, especially for passing, kicking and total uncertainty. No unvalidated manual point adjustment."
+        },
+        "market": {
+          "status": "MORNING_CURRENT_NOT_LOCKED",
+          "observations": [
+            {
+              "book": "DraftKings",
+              "observedAt": "2026-10-20T11:30:42Z",
+              "spreadHome": -10.0,
+              "spreadHomePrice": -110,
+              "spreadAwayPrice": -110,
+              "total": 45.5,
+              "overPrice": -105,
+              "underPrice": -115,
+              "moneylineHome": -380,
+              "moneylineAway": 300,
+              "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/"
+            }
+          ],
+          "note": "Morning context only. Capture and lock a separate publication-time market immediately before the production freeze. Betting split percentages are not model inputs."
+        },
+        "benchmarks": {
+          "refMetrics": {
+            "status": "NOT_YET_POSTED",
+            "lastCheckedAt": "2026-10-20T11:30:42Z",
+            "source": "https://www.refmetrics.com/ncaa-football/todays-games",
+            "canonicalInfluence": false
+          }
+        }
+      }
+    },
+    {
+      "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
+      "patch": {
+        "personnel": {
+          "lastCheckedAt": "2026-10-20T11:30:42Z",
+          "status": "MATERIAL_QB_STATUS_OPEN_SOURCE_CONFLICT",
+          "away": {
+            "mostRecentStartingQB": "Henry Belin IV",
+            "startingQB": "UNRESOLVED_TUESDAY_STARTER",
+            "thirdPartyInjuries": [
+              {"player": "James Rexroat", "position": "TE", "status": "QUESTIONABLE", "detail": "Undisclosed"},
+              {"player": "Josh Joyner", "position": "RB", "status": "QUESTIONABLE", "detail": "Undisclosed"}
+            ]
+          },
+          "home": {
+            "mostRecentStartingQB": "Tyler Bell",
+            "startingQB": "UNRESOLVED_TUESDAY_STARTER",
+            "thirdPartyQBStatus": {"player": "Nick Minicucci", "status": "OUT", "detail": "Leg"},
+            "sourceConflict": "Covers currently lists Minicucci OUT, while Delaware's official football site has not provided a new Tuesday starter confirmation. Preserve Tyler Bell as the most recent starter, not a confirmed starter."
+          },
+          "sources": [
+            "https://bluehens.com/sports/football",
+            "https://missouristatebears.com/sports/football/",
+            "https://www.covers.com/sport/football/ncaaf/matchup/379250"
+          ],
+          "canonicalInfluence": "Both Tuesday starters remain unresolved. Do not infer a starter and do not invent a QB point adjustment."
+        },
+        "weather": {
+          "status": "NWS_LOW_TO_MODERATE_WIND_FINAL_RECHECK_REQUIRED",
+          "observedAt": "2026-10-20T11:30:42Z",
+          "source": "National Weather Service point forecast for Newark, Delaware",
+          "sourceLastUpdate": "2026-10-19T16:08:00-04:00",
+          "sourceUrl": "https://forecast.weather.gov/MapClick.php?FcstType=digital&FcstType=text&lat=39.6776&lg=english&lon=-75.7575&menu=1",
+          "forecast": "Tuesday sunny near 69F with north wind around 10 mph and gusts up to 20 mph; Tuesday night mostly clear with north wind 5-10 mph.",
+          "materiality": "No precipitation concern. Recheck wind and temperature closer to kickoff; no automatic projection adjustment."
+        },
+        "market": {
+          "status": "MORNING_CURRENT_NOT_LOCKED",
+          "observations": [
+            {
+              "book": "DraftKings",
+              "observedAt": "2026-10-20T11:30:42Z",
+              "spreadHome": -3.0,
+              "spreadHomePrice": -108,
+              "spreadAwayPrice": -112,
+              "total": 52.5,
+              "overPrice": -110,
+              "underPrice": -110,
+              "moneylineHome": -155,
+              "moneylineAway": 130,
+              "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/"
+            }
+          ],
+          "note": "Morning context only. Capture and lock a separate publication-time market immediately before the production freeze. Betting split percentages are not model inputs."
+        },
+        "benchmarks": {
+          "refMetrics": {
+            "status": "NOT_YET_POSTED",
+            "lastCheckedAt": "2026-10-20T11:30:42Z",
+            "source": "https://www.refmetrics.com/ncaa-football/todays-games",
+            "canonicalInfluence": false
+          }
+        }
+      }
+    },
+    {
+      "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
+      "patch": {
+        "personnel": {
+          "lastCheckedAt": "2026-10-20T11:30:42Z",
+          "status": "MORNING_REFRESH_PARTIAL_THIRD_PARTY_CONTEXT_FINAL_RECHECK_REQUIRED",
+          "away": {
+            "thirdPartyInjuries": [
+              {"player": "D. White", "position": "WR", "status": "QUESTIONABLE", "detail": "Undisclosed", "dataQuality": "Covers note contains a date inconsistency; treat as unconfirmed context only."}
+            ]
+          },
+          "home": {
+            "thirdPartyInjuryState": "NO_INJURIES_REPORTED"
+          },
+          "sources": [
+            "https://www.covers.com/sport/football/ncaaf/injuries",
+            "https://www.covers.com/sport/football/ncaaf/teams/main/marshall-thundering-herd/injuries"
+          ],
+          "canonicalInfluence": "Unknown/unconfirmed remains context only. No manual adjustment."
+        },
+        "weather": {
+          "status": "NWS_LOW_IMPACT_FINAL_RECHECK_REQUIRED",
+          "observedAt": "2026-10-20T11:30:42Z",
+          "source": "National Weather Service Charleston WV / Huntington-Cabell forecast",
+          "sourceUrl": "https://forecast.weather.gov/product.php?format=TXT&glossary=0&issuedby=RLX&product=PFM",
+          "forecast": "Tuesday generally sunny in the mid-to-upper 60s with light north wind and essentially no precipitation signal; Tuesday night mostly clear with light/calm wind.",
+          "materiality": "Current weather signal is low impact. Recheck the stadium-area point forecast before kickoff."
+        },
+        "market": {
+          "status": "MORNING_CURRENT_NOT_LOCKED",
+          "observations": [
+            {
+              "book": "DraftKings",
+              "observedAt": "2026-10-20T11:30:42Z",
+              "spreadHome": 3.0,
+              "spreadAwayPrice": -112,
+              "spreadHomePrice": -108,
+              "total": 65.5,
+              "overPrice": -108,
+              "underPrice": -112,
+              "moneylineAway": -162,
+              "moneylineHome": 136,
+              "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/"
+            }
+          ],
+          "note": "Morning context only. Capture and lock a separate publication-time market immediately before the production freeze. Betting split percentages are not model inputs."
+        },
+        "benchmarks": {
+          "refMetrics": {
+            "status": "NOT_YET_POSTED",
+            "lastCheckedAt": "2026-10-20T11:30:42Z",
+            "source": "https://www.refmetrics.com/ncaa-football/todays-games",
+            "canonicalInfluence": false
+          }
+        }
+      }
+    }
+  ]
+}
