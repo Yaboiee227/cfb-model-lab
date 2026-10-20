@@ -5,15 +5,15 @@ This is NOT the unrecoverable 0.9J canonical generator. It is a transparent,
 market-independent bridge/challenger used while a fully reproducible canonical
 engine is rebuilt and validated.
 
-Shadow v3 intentionally uses a lower-variance structure than the prior bridge:
-
-  projected margin = learned HFA + strength(home) - strength(away)
+Shadow v4:
+  projected margin = frozen structural HFA + strength(home) - strength(away)
   projected total  = scoring baseline + scoring_env(home) + scoring_env(away)
 
-Both team-effect families are ridge-shrunk toward zero and recency weighted.
-Sparse opponents are excluded using only the games visible inside each temporal
-training window. Hyperparameters are selected on a strict pre-Week-8 temporal
-holdout, then refit using only games completed before `--as-of`.
+The structural home-field parameter is estimated only from the pre-Week-8
+training window used in temporal validation, then frozen while team strengths
+and scoring-environment effects are refreshed using all games completed before
+`--as-of`. This prevents the most recent schedule composition from masquerading
+as a sudden change in home-field advantage.
 
 No sportsbook, SP+, Sagarin, RefMetrics, post-kickoff or future-game information
 enters the fit.
@@ -144,8 +144,7 @@ def _ridge_solve(X: np.ndarray, y: np.ndarray, weights: np.ndarray, penalty_diag
     W = np.sqrt(weights)
     Xw = X * W[:, None]
     yw = y * W
-    penalty = np.diag(penalty_diag)
-    return np.linalg.solve(Xw.T @ Xw + penalty, Xw.T @ yw)
+    return np.linalg.solve(Xw.T @ Xw + np.diag(penalty_diag), Xw.T @ yw)
 
 
 def fit_model(
@@ -154,6 +153,7 @@ def fit_model(
     alpha: float,
     half_life_days: int | None,
     min_team_appearances: int = DEFAULT_MIN_TEAM_APPEARANCES,
+    fixed_hfa: float | None = None,
 ):
     core = filter_core_games(games, min_team_appearances)
     if len(core) < 20:
@@ -161,48 +161,50 @@ def fit_model(
 
     teams, idx = team_index(core)
     n = len(teams)
-    margin_rows, margin_y, total_rows, total_y, weights = [], [], [], [], []
+    weights = np.asarray([recency_weight(g.kickoff, as_of, half_life_days) for g in core], dtype=float)
 
-    for g in core:
-        w = recency_weight(g.kickoff, as_of, half_life_days)
+    # Margin model. When HFA is not fixed, learn it together with team strength.
+    if fixed_hfa is None:
+        X_margin = np.zeros((len(core), 1 + n))
+        y_margin = np.zeros(len(core))
+        for r, g in enumerate(core):
+            X_margin[r, 0] = 0.0 if g.neutral else 1.0
+            X_margin[r, 1 + idx[g.home]] = 1.0
+            X_margin[r, 1 + idx[g.away]] = -1.0
+            y_margin[r] = g.home_score - g.away_score
+        margin_penalty = np.full(1 + n, float(alpha))
+        beta_margin = _ridge_solve(X_margin, y_margin, weights, margin_penalty)
+        hfa = float(beta_margin[0])
+        strength = beta_margin[1:]
+    else:
+        X_margin = np.zeros((len(core), n))
+        y_margin = np.zeros(len(core))
+        for r, g in enumerate(core):
+            X_margin[r, idx[g.home]] = 1.0
+            X_margin[r, idx[g.away]] = -1.0
+            y_margin[r] = (g.home_score - g.away_score) - (0.0 if g.neutral else float(fixed_hfa))
+        strength = _ridge_solve(X_margin, y_margin, weights, np.full(n, float(alpha)))
+        hfa = float(fixed_hfa)
 
-        # Margin model: HFA + strength(home) - strength(away).
-        xm = np.zeros(1 + n)
-        xm[0] = 0.0 if g.neutral else 1.0
-        xm[1 + idx[g.home]] = 1.0
-        xm[1 + idx[g.away]] = -1.0
-        margin_rows.append(xm)
-        margin_y.append(g.home_score - g.away_score)
-
-        # Total model: baseline + scoring-environment tendency from both teams.
-        xt = np.zeros(1 + n)
-        xt[0] = 1.0
-        xt[1 + idx[g.home]] = 1.0
-        xt[1 + idx[g.away]] = 1.0
-        total_rows.append(xt)
-        total_y.append(g.home_score + g.away_score)
-        weights.append(w)
-
-    X_margin = np.vstack(margin_rows)
-    y_margin = np.asarray(margin_y, dtype=float)
-    X_total = np.vstack(total_rows)
-    y_total = np.asarray(total_y, dtype=float)
-    w = np.asarray(weights, dtype=float)
-
-    # Team effects are shrunk. HFA is also regularized so it cannot freely absorb
-    # schedule imbalance. The total intercept is left unpenalized.
-    margin_penalty = np.full(1 + n, float(alpha))
+    # Total model: baseline plus each team's scoring-environment tendency.
+    X_total = np.zeros((len(core), 1 + n))
+    y_total = np.zeros(len(core))
+    for r, g in enumerate(core):
+        X_total[r, 0] = 1.0
+        X_total[r, 1 + idx[g.home]] = 1.0
+        X_total[r, 1 + idx[g.away]] = 1.0
+        y_total[r] = g.home_score + g.away_score
     total_penalty = np.full(1 + n, float(alpha))
     total_penalty[0] = 0.0
-
-    beta_margin = _ridge_solve(X_margin, y_margin, w, margin_penalty)
-    beta_total = _ridge_solve(X_total, y_total, w, total_penalty)
+    beta_total = _ridge_solve(X_total, y_total, weights, total_penalty)
 
     return {
         "teams": teams,
         "idx": idx,
-        "betaMargin": beta_margin,
+        "strength": strength,
         "betaTotal": beta_total,
+        "homeMarginAdvantage": hfa,
+        "homeFieldMode": "FIXED_STRUCTURAL" if fixed_hfa is not None else "LEARNED_IN_WINDOW",
         "alpha": alpha,
         "halfLifeDays": half_life_days,
         "minTeamAppearances": min_team_appearances,
@@ -217,16 +219,15 @@ def predict(model, away: str, home: str, neutral: bool = False) -> dict[str, flo
         missing = [t for t in (away, home) if t not in idx]
         raise ValueError("Team(s) absent from eligible training data: " + ", ".join(missing))
 
-    bm = model["betaMargin"]
+    strength = model["strength"]
     bt = model["betaTotal"]
-    margin = (0.0 if neutral else bm[0]) + bm[1 + idx[home]] - bm[1 + idx[away]]
+    margin = (0.0 if neutral else model["homeMarginAdvantage"]) + strength[idx[home]] - strength[idx[away]]
     total = bt[0] + bt[1 + idx[home]] + bt[1 + idx[away]]
     total = max(0.0, float(total))
     margin = float(margin)
 
     home_pts = max(0.0, (total + margin) / 2.0)
     away_pts = max(0.0, (total - margin) / 2.0)
-    # If clipping ever occurs, recompute total/margin from the displayed scores.
     total = home_pts + away_pts
     margin = home_pts - away_pts
 
@@ -251,14 +252,7 @@ def evaluate(model, games: list[Game]) -> dict[str, float | int | None]:
         total_errors.append(pr["projectedTotal"] - actual_total)
         score_errors.extend([pr["projectedHomePoints"] - g.home_score, pr["projectedAwayPoints"] - g.away_score])
     if not margin_errors:
-        return {
-            "games": 0,
-            "marginMae": None,
-            "totalMae": None,
-            "scoreMae": None,
-            "marginRmse": None,
-            "marginResidualStd": None,
-        }
+        return {"games": 0, "marginMae": None, "totalMae": None, "scoreMae": None, "marginRmse": None, "marginResidualStd": None}
     arr_m = np.asarray(margin_errors)
     arr_t = np.asarray(total_errors)
     arr_s = np.asarray(score_errors)
@@ -277,7 +271,7 @@ def tune(games: list[Game], as_of: datetime):
     train = [g for g in games if g.kickoff < split]
     valid = [g for g in games if split <= g.kickoff < as_of]
     if len(train) < 100 or len(valid) < 20:
-        return 20.0, 35, DEFAULT_MIN_TEAM_APPEARANCES, {
+        return 20.0, 35, DEFAULT_MIN_TEAM_APPEARANCES, None, {
             "mode": "FALLBACK_INSUFFICIENT_TEMPORAL_HOLDOUT",
             "trainGames": len(train),
             "validationGames": len(valid),
@@ -288,21 +282,24 @@ def tune(games: list[Game], as_of: datetime):
         for alpha in (2.5, 5.0, 10.0, 20.0, 40.0, 80.0):
             for half_life in (21, 35, 56, None):
                 try:
-                    model = fit_model(train, split, alpha, half_life, min_apps)
+                    train_model = fit_model(train, split, alpha, half_life, min_apps)
                 except ValueError:
                     continue
-                ev = evaluate(model, valid)
+                train_hfa = float(train_model["homeMarginAdvantage"])
+                # Validate using the structural HFA learned strictly from train.
+                validation_model = fit_model(train, split, alpha, half_life, min_apps, fixed_hfa=train_hfa)
+                ev = evaluate(validation_model, valid)
                 if int(ev["games"] or 0) < 15:
                     continue
                 objective = (float(ev["marginMae"]) + float(ev["totalMae"])) / 2.0
-                candidates.append((objective, alpha, half_life, min_apps, ev, model["eligibleTrainingGames"], float(model["betaMargin"][0])))
+                candidates.append((objective, alpha, half_life, min_apps, train_hfa, ev, train_model["eligibleTrainingGames"]))
 
     if not candidates:
-        return 20.0, 35, DEFAULT_MIN_TEAM_APPEARANCES, {"mode": "FALLBACK_NO_VALID_CANDIDATES"}
+        return 20.0, 35, DEFAULT_MIN_TEAM_APPEARANCES, None, {"mode": "FALLBACK_NO_VALID_CANDIDATES"}
 
     candidates.sort(key=lambda x: (x[0], x[1], x[3], 999 if x[2] is None else x[2]))
-    objective, alpha, half_life, min_apps, ev, eligible, train_hfa = candidates[0]
-    return alpha, half_life, min_apps, {
+    objective, alpha, half_life, min_apps, train_hfa, ev, eligible = candidates[0]
+    return alpha, half_life, min_apps, train_hfa, {
         "mode": "PRE_WEEK8_TEMPORAL_HOLDOUT",
         "splitAt": iso(split),
         "rawTrainGames": len(train),
@@ -310,14 +307,13 @@ def tune(games: list[Game], as_of: datetime):
         "validationGames": len(valid),
         "objective": objective,
         "selectedValidation": ev,
-        "selectedTrainHomeMarginAdvantage": train_hfa,
+        "selectedStructuralHomeMarginAdvantage": train_hfa,
         "candidateCount": len(candidates),
     }
 
 
 def matchup_code(name: str) -> str:
-    n = norm(name)
-    return TEAM_ALIASES.get(n, str(name).upper())
+    return TEAM_ALIASES.get(norm(name), str(name).upper())
 
 
 def normal_cdf(x: float) -> float:
@@ -327,14 +323,25 @@ def normal_cdf(x: float) -> float:
 def run(input_path: Path, output_path: Path, as_of: datetime, start: datetime):
     state = json.loads(input_path.read_text(encoding="utf-8"))
     raw_training = fetch_completed_games(start, as_of)
-    alpha, half_life, min_apps, tuning = tune(raw_training, as_of)
-    model = fit_model(raw_training, as_of, alpha, half_life, min_apps)
+    alpha, half_life, min_apps, structural_hfa, tuning = tune(raw_training, as_of)
+
+    # If a valid temporal selection exists, freeze HFA from that earlier window.
+    # Fallback mode intentionally fails the sanity/promotion gate rather than
+    # silently inventing a structural parameter.
+    if structural_hfa is None:
+        provisional = fit_model(raw_training, as_of, alpha, half_life, min_apps)
+        structural_hfa = float(provisional["homeMarginAdvantage"])
+        hfa_source = "FULL_SAMPLE_FALLBACK_PROVISIONAL"
+    else:
+        hfa_source = "PRE_WEEK8_TRAINING_WINDOW_FROZEN"
+
+    model = fit_model(raw_training, as_of, alpha, half_life, min_apps, fixed_hfa=structural_hfa)
 
     split = as_of - timedelta(days=14)
     earlier = [g for g in raw_training if g.kickoff < split]
     recent = [g for g in raw_training if g.kickoff >= split]
     if len(earlier) >= 100 and len(recent) >= 20:
-        holdout_model = fit_model(earlier, split, alpha, half_life, min_apps)
+        holdout_model = fit_model(earlier, split, alpha, half_life, min_apps, fixed_hfa=structural_hfa)
         holdout_eval = evaluate(holdout_model, recent)
         sigma = holdout_eval.get("marginResidualStd") or 15.0
         sigma_source = "temporal_holdout_margin_residual_std"
@@ -343,8 +350,8 @@ def run(input_path: Path, output_path: Path, as_of: datetime, start: datetime):
         sigma = full_eval.get("marginResidualStd") or 15.0
         sigma_source = "in_sample_margin_residual_std_provisional"
 
-    learned_hfa = float(model["betaMargin"][0])
-    hfa_sane = HFA_SANITY_RANGE[0] <= learned_hfa <= HFA_SANITY_RANGE[1]
+    hfa_sane = HFA_SANITY_RANGE[0] <= float(structural_hfa) <= HFA_SANITY_RANGE[1]
+    hfa_validated = hfa_source == "PRE_WEEK8_TRAINING_WINDOW_FROZEN"
 
     rows = []
     for game in state.get("games", []):
@@ -355,18 +362,11 @@ def run(input_path: Path, output_path: Path, as_of: datetime, start: datetime):
             z = pr["projectedMarginHome"] / max(float(sigma), 1e-6)
             pr["homeWinProbability"] = 100.0 * normal_cdf(z)
             pr["projectedWinner"] = game["homeTeam"] if pr["projectedMarginHome"] > 0 else game["awayTeam"]
-            status = "SHADOW_READY" if hfa_sane else "SHADOW_REVIEW"
-            error = None if hfa_sane else f"learned home-field margin {learned_hfa:.2f} failed sanity range {HFA_SANITY_RANGE}"
+            ready = hfa_sane and hfa_validated
+            status = "SHADOW_READY" if ready else "SHADOW_REVIEW"
+            error = None if ready else "structural home-field parameter failed provenance/sanity gate"
         except Exception as exc:
-            pr = {
-                "projectedAwayPoints": None,
-                "projectedHomePoints": None,
-                "projectedMarginHome": None,
-                "projectedSpreadHome": None,
-                "projectedTotal": None,
-                "homeWinProbability": None,
-                "projectedWinner": None,
-            }
+            pr = {"projectedAwayPoints": None, "projectedHomePoints": None, "projectedMarginHome": None, "projectedSpreadHome": None, "projectedTotal": None, "homeWinProbability": None, "projectedWinner": None}
             status = "SHADOW_REVIEW"
             error = str(exc)
         rows.append({
@@ -382,11 +382,11 @@ def run(input_path: Path, output_path: Path, as_of: datetime, start: datetime):
         })
 
     out = {
-        "schemaVersion": 3,
+        "schemaVersion": 4,
         "league": "cfb",
         "season": state.get("season"),
         "week": state.get("week"),
-        "modelId": "cfb-rebuild-alpha-shadow-v3",
+        "modelId": "cfb-rebuild-alpha-shadow-v4",
         "role": "SHADOW_CHALLENGER_ONLY",
         "canonicalInfluence": False,
         "asOf": iso(as_of),
@@ -400,13 +400,15 @@ def run(input_path: Path, output_path: Path, as_of: datetime, start: datetime):
             "postKickoffDataUsed": False,
         },
         "fit": {
-            "description": "separate ridge-shrunk opponent-adjusted margin and scoring-environment models with sparse-opponent filtering",
+            "description": "separate ridge-shrunk margin and scoring-environment models with structural HFA frozen from pre-Week-8 training",
             "selectedAlpha": alpha,
             "selectedHalfLifeDays": half_life,
             "minTeamAppearances": min_apps,
-            "learnedHomeMarginAdvantage": learned_hfa,
+            "structuralHomeMarginAdvantage": float(structural_hfa),
+            "homeFieldSource": hfa_source,
             "homeFieldSanityRange": list(HFA_SANITY_RANGE),
             "homeFieldSanityPass": hfa_sane,
+            "homeFieldProvenancePass": hfa_validated,
             "uncertaintyMarginSigma": float(sigma),
             "uncertaintySource": sigma_source,
             "tuning": tuning,
@@ -433,7 +435,9 @@ def main():
             "modelId": out["modelId"],
             "rawTrainingGames": out["rawTrainingGames"],
             "eligibleTrainingGames": out["eligibleTrainingGames"],
+            "structuralHomeMarginAdvantage": out["fit"]["structuralHomeMarginAdvantage"],
             "homeFieldSanityPass": out["fit"]["homeFieldSanityPass"],
+            "homeFieldProvenancePass": out["fit"]["homeFieldProvenancePass"],
             "games": len(out["games"]),
         }, indent=2))
     except Exception as exc:
