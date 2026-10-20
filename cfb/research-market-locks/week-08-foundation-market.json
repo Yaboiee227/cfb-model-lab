@@ -16,15 +16,15 @@
   "lockWindowMinutes": 30.0,
   "maxObservationAgeMinutes": 35.0,
   "scopeRestricted": true,
-  "updatedAt": "2026-10-20T22:46:34.873750Z",
+  "updatedAt": "2026-10-20T23:10:29.366779Z",
   "counts": {
     "foundationGames": 56,
     "activeScopeGames": 7,
     "pausedGames": 49,
-    "gamesWithMarketLock": 2,
-    "bookObservationsLocked": 4,
-    "newBookObservationsThisRun": 4,
-    "pendingGames": 5,
+    "gamesWithMarketLock": 3,
+    "bookObservationsLocked": 6,
+    "newBookObservationsThisRun": 2,
+    "pendingGames": 4,
     "missedGames": 0
   },
   "games": [
@@ -109,8 +109,35 @@
       "homeTeam": "Marshall",
       "kickoff": "2026-10-20T23:30:00Z",
       "projectionDigest": "1f3d9455b39a045403e0b5e7616dec22366f2c4669bb1f4903907ab43704b4b2",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-20T23:10:07Z",
+          "lockedAt": "2026-10-20T23:10:29.366779Z",
+          "marketSpreadHome": 2.5,
+          "marketTotal": 65.5,
+          "marketMoneylineHome": 106,
+          "marketMoneylineAway": -128,
+          "spreadHomePrice": -115,
+          "totalOverPrice": -118,
+          "totalUnderPrice": -104,
+          "observationDigest": "1f1ac9a72c4a0799a4d6492b58d86832a50d68c0b3ed0a884ab0b04777b3b433"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-20T23:09:41Z",
+          "lockedAt": "2026-10-20T23:10:29.366779Z",
+          "marketSpreadHome": 1.5,
+          "marketTotal": 66.5,
+          "marketMoneylineHome": 105,
+          "marketMoneylineAway": -125,
+          "spreadHomePrice": -105,
+          "totalOverPrice": -108,
+          "totalUnderPrice": -112,
+          "observationDigest": "40d8a72ff64f92a94ea96d8e4bc3d185684c3a61e94d869c63c91b0e899bab38"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-22-NEWMEXICOSTATE-SAMHOUSTON",
