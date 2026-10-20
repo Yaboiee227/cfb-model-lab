@@ -1,0 +1,57 @@
+name: CFB Week 8 foundation research lock
+on:
+  push:
+    paths:
+      - 'scripts/lock_research_shadow.py'
+      - 'tests/test_lock_research_shadow.py'
+      - 'cfb/shadow/week-08-tuesday-foundation.json'
+      - '.github/workflows/cfb-week8-foundation-research-lock.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: cfb-week8-foundation-research-lock
+  cancel-in-progress: false
+jobs:
+  lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Test immutable research lock
+        run: python -m unittest tests.test_lock_research_shadow -v
+      - name: Freeze foundation shadow before kickoff
+        run: |
+          python scripts/lock_research_shadow.py \
+            cfb/shadow/week-08-tuesday-foundation.json \
+            cfb/research-locks/week-08-tuesday-foundation.json
+      - name: Verify lock policy
+        run: |
+          python - <<'PY'
+          import json,sys
+          sys.path.insert(0,'scripts')
+          from lock_research_shadow import verify
+          p='cfb/research-locks/week-08-tuesday-foundation.json'
+          d=json.load(open(p))
+          verify(d)
+          assert d['role']=='IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK'
+          assert d['canonicalInfluence'] is False
+          assert d['canonicalPromotionAuthorized'] is False
+          assert d['modelId']=='cfb-rebuild-foundation-v1-shadow'
+          assert len(d['games'])==3
+          print(json.dumps({'modelId':d['modelId'],'lockedAt':d['lockedAt'],'games':len(d['games']),'lockDigest':d['lockDigest']},indent=2))
+          PY
+      - name: Commit immutable research lock
+        run: |
+          git config user.name "cb-model-shadow-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add cfb/research-locks/week-08-tuesday-foundation.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Freeze Week 8 Tuesday foundation research shadow'
+          for attempt in 1 2 3; do
+            if git push; then exit 0; fi
+            git pull --rebase origin main
+          done
+          git push
