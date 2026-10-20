@@ -23,6 +23,7 @@ from cfb_multiseason_walkforward import build_season_rows, estimate_prior_only_h
 from run_cfb_shadow_week8 import extract_grouped_team_ids
 
 engine.extract_team_ids = extract_grouped_team_ids
+MIN_REQUIRED_FOLDS = 3
 
 
 def configured_snapshot_factory(params: dict[str, Any]):
@@ -43,6 +44,22 @@ def configured_snapshot_factory(params: dict[str, Any]):
         ratings = {metric: rich.metric_pair_fit(history, boxes, metric, alpha=10.0) for metric in rich.BOX_METRICS}
         return {"score": score, "metrics": ratings}
     return configured_snapshot
+
+
+def enforce_fold_evidence_policy(ev: dict[str, Any]) -> dict[str, Any]:
+    """Never grant family eligibility with fewer than the required unseen folds."""
+    ev["minimumRequiredFolds"] = MIN_REQUIRED_FOLDS
+    if int(ev.get("foldCount") or 0) < MIN_REQUIRED_FOLDS:
+        for row in (ev.get("families") or {}).values():
+            row["marginChallengerEligible"] = False
+            row["totalChallengerEligible"] = False
+        ev["challengerEligibleFamilies"] = []
+        ev["evidenceStatus"] = "INSUFFICIENT_FOLDS"
+    elif ev.get("challengerEligibleFamilies"):
+        ev["evidenceStatus"] = "INCREMENTAL_FAMILY_ELIGIBLE"
+    else:
+        ev["evidenceStatus"] = "NO_INCREMENTAL_FAMILY_ELIGIBLE"
+    return ev
 
 
 def main():
@@ -69,7 +86,7 @@ def main():
     finally:
         rich.build_snapshot=original_snapshot
 
-    ev=ff.evaluate(rows25,rows26)
+    ev=enforce_fold_evidence_policy(ff.evaluate(rows25,rows26))
     out={
         'schemaVersion':1,'league':'cfb','season':2026,'week':8,
         'role':'FOUNDATION_INCREMENTAL_FEATURE_FAMILY_RESEARCH','canonicalInfluence':False,
@@ -85,6 +102,7 @@ def main():
             'seasonReset':True,'marketDataUsed':False,'externalRatingsUsed':False,
             'sameWeekLeakagePrevented':True,'familyIsolation':True,
             'foundationParamsRetunedForThisStudy':False,
+            'minimumUnseenFoldsForEligibility':MIN_REQUIRED_FOLDS,
         },
         'hfa':{
             '2025':hfa25,'2025DerivedFrom':[2022,2023,2024],'2025SeasonEstimates':hfa25src,
@@ -92,12 +110,12 @@ def main():
         },
         'dataQuality':{'season2025':meta25,'season2026':meta26},
         'validation':ev,
-        'warning':'Incremental research against the validated foundation only. Eligibility allows prospective isolated shadowing, not canonical influence or family stacking.'
+        'warning':'Incremental research against the validated foundation only. Fewer than three unseen folds cannot grant eligibility. Any future eligibility allows prospective isolated shadowing only, not canonical influence or family stacking.'
     }
     p=Path(args.output);p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(out,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({
-        'foundationParams':params,'folds':ev['foldCount'],'games':ev['games'],
-        'eligible':ev['challengerEligibleFamilies'],
+        'foundationParams':params,'folds':ev['foldCount'],'minimumRequiredFolds':MIN_REQUIRED_FOLDS,'games':ev['games'],
+        'evidenceStatus':ev['evidenceStatus'],'eligible':ev['challengerEligibleFamilies'],
         'ranking':{k:{'marginDelta':v['marginMaeDeltaVsSimple'],'totalDelta':v['totalMaeDeltaVsSimple'],'marginEligible':v['marginChallengerEligible'],'totalEligible':v['totalChallengerEligible']} for k,v in ev['families'].items()}
     },indent=2))
 
