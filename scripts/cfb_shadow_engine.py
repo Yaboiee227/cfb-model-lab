@@ -7,12 +7,16 @@ we rebuild and validate a fully reproducible canonical engine.
 
 Model:
   team score = intercept + offense(team) + defense_allowance(opponent)
-               + learned_home_score_advantage (home, non-neutral only)
+               +/- 0.5 * learned_home_margin_advantage
 
-Team effects are ridge-shrunk toward zero. Hyperparameters are chosen on a
-strict temporal holdout that ends before `--as-of`, then the model is refit on
-all games completed before `--as-of`. No sportsbook, SP+, Sagarin, RefMetrics,
-post-kickoff or future-game information enters the fit.
+The symmetric home-field term changes margin without mechanically inflating the
+projected total. Sparse opponents are excluded from the fit to reduce early-
+season FBS/FCS schedule bias. Team effects are ridge-shrunk toward zero.
+Hyperparameters are chosen on a strict temporal holdout ending before `--as-of`,
+then the model is refit on all eligible games completed before `--as-of`.
+
+No sportsbook, SP+, Sagarin, RefMetrics, post-kickoff or future-game information
+enters the fit.
 """
 from __future__ import annotations
 
@@ -21,6 +25,7 @@ import json
 import math
 import re
 import sys
+from collections import Counter
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -31,6 +36,8 @@ from urllib.request import Request, urlopen
 import numpy as np
 
 ESPN_SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard"
+DEFAULT_MIN_TEAM_APPEARANCES = 3
+HFA_SANITY_RANGE = (0.0, 5.5)
 
 TEAM_ALIASES = {
     "middletennessee": "MTSU",
@@ -87,8 +94,8 @@ def fetch_completed_games(start: datetime, end: datetime) -> list[Game]:
             if not comps:
                 continue
             comp = comps[0]
-            status = (((comp.get("status") or {}).get("type") or {}).get("completed"))
-            if not status:
+            completed = (((comp.get("status") or {}).get("type") or {}).get("completed"))
+            if not completed:
                 continue
             kickoff = parse_dt(comp.get("date") or event.get("date"))
             if kickoff >= end:
@@ -113,6 +120,19 @@ def fetch_completed_games(start: datetime, end: datetime) -> list[Game]:
     return sorted(games.values(), key=lambda g: (g.kickoff, g.game_id))
 
 
+def filter_core_games(games: list[Game], min_team_appearances: int = DEFAULT_MIN_TEAM_APPEARANCES) -> list[Game]:
+    """Drop sparse opponents using only the games supplied to this function.
+
+    This is deliberately recomputed inside each temporal training window, so the
+    holdout/future schedule cannot leak team membership into the fit.
+    """
+    counts: Counter[str] = Counter()
+    for g in games:
+        counts[g.home] += 1
+        counts[g.away] += 1
+    return [g for g in games if counts[g.home] >= min_team_appearances and counts[g.away] >= min_team_appearances]
+
+
 def team_index(games: list[Game]) -> tuple[list[str], dict[str, int]]:
     teams = sorted({g.home for g in games} | {g.away for g in games})
     return teams, {team: i for i, team in enumerate(teams)}
@@ -125,26 +145,35 @@ def recency_weight(game_dt: datetime, as_of: datetime, half_life_days: int | Non
     return 0.5 ** (age_days / half_life_days)
 
 
-def fit_model(games: list[Game], as_of: datetime, alpha: float, half_life_days: int | None):
-    if len(games) < 20:
-        raise ValueError("Not enough completed games to fit shadow model")
-    teams, idx = team_index(games)
+def fit_model(
+    games: list[Game],
+    as_of: datetime,
+    alpha: float,
+    half_life_days: int | None,
+    min_team_appearances: int = DEFAULT_MIN_TEAM_APPEARANCES,
+):
+    core = filter_core_games(games, min_team_appearances)
+    if len(core) < 20:
+        raise ValueError("Not enough eligible completed games to fit shadow model")
+    teams, idx = team_index(core)
     n = len(teams)
-    p = 2 + 2 * n  # intercept, home-score advantage, offense[n], defense-allowance[n]
+    p = 2 + 2 * n  # intercept, home-margin advantage, offense[n], defense-allowance[n]
     rows, y, weights = [], [], []
 
-    for g in games:
+    for g in core:
         w = recency_weight(g.kickoff, as_of, half_life_days)
-        # Home scoring row.
+        hfa_half = 0.0 if g.neutral else 0.5
+
         xh = np.zeros(p)
         xh[0] = 1.0
-        xh[1] = 0.0 if g.neutral else 1.0
+        xh[1] = hfa_half
         xh[2 + idx[g.home]] = 1.0
         xh[2 + n + idx[g.away]] = 1.0
         rows.append(xh); y.append(g.home_score); weights.append(w)
-        # Away scoring row.
+
         xa = np.zeros(p)
         xa[0] = 1.0
+        xa[1] = -hfa_half
         xa[2 + idx[g.away]] = 1.0
         xa[2 + n + idx[g.home]] = 1.0
         rows.append(xa); y.append(g.away_score); weights.append(w)
@@ -156,21 +185,33 @@ def fit_model(games: list[Game], as_of: datetime, alpha: float, half_life_days: 
     Yw = Y * W
 
     penalty = np.eye(p) * float(alpha)
-    penalty[0, 0] = 0.0   # do not shrink intercept
-    penalty[1, 1] = 0.25 * float(alpha)  # lightly regularize learned HFA
+    penalty[0, 0] = 0.0
+    # HFA is learned, but regularized as strongly as other coefficients instead
+    # of being allowed to absorb sparse-opponent mismatch.
     beta = np.linalg.solve(Xw.T @ Xw + penalty, Xw.T @ Yw)
-    return {"teams": teams, "idx": idx, "beta": beta, "alpha": alpha, "halfLifeDays": half_life_days}
+    return {
+        "teams": teams,
+        "idx": idx,
+        "beta": beta,
+        "alpha": alpha,
+        "halfLifeDays": half_life_days,
+        "minTeamAppearances": min_team_appearances,
+        "eligibleTrainingGames": len(core),
+        "rawTrainingGames": len(games),
+    }
 
 
 def predict(model, away: str, home: str, neutral: bool = False) -> dict[str, float]:
     idx, beta, teams = model["idx"], model["beta"], model["teams"]
     if away not in idx or home not in idx:
         missing = [t for t in (away, home) if t not in idx]
-        raise ValueError("Team(s) absent from training data: " + ", ".join(missing))
+        raise ValueError("Team(s) absent from eligible training data: " + ", ".join(missing))
     n = len(teams)
-    home_pts = beta[0] + (0.0 if neutral else beta[1]) + beta[2 + idx[home]] + beta[2 + n + idx[away]]
-    away_pts = beta[0] + beta[2 + idx[away]] + beta[2 + n + idx[home]]
-    home_pts = max(0.0, float(home_pts)); away_pts = max(0.0, float(away_pts))
+    hfa_half = 0.0 if neutral else 0.5
+    home_pts = beta[0] + hfa_half * beta[1] + beta[2 + idx[home]] + beta[2 + n + idx[away]]
+    away_pts = beta[0] - hfa_half * beta[1] + beta[2 + idx[away]] + beta[2 + n + idx[home]]
+    home_pts = max(0.0, float(home_pts))
+    away_pts = max(0.0, float(away_pts))
     return {
         "projectedAwayPoints": away_pts,
         "projectedHomePoints": home_pts,
@@ -192,8 +233,10 @@ def evaluate(model, games: list[Game]) -> dict[str, float | int | None]:
         total_errors.append(pr["projectedTotal"] - actual_total)
         score_errors.extend([pr["projectedHomePoints"] - g.home_score, pr["projectedAwayPoints"] - g.away_score])
     if not margin_errors:
-        return {"games": 0, "marginMae": None, "totalMae": None, "scoreMae": None, "marginRmse": None}
-    arr_m = np.asarray(margin_errors); arr_t = np.asarray(total_errors); arr_s = np.asarray(score_errors)
+        return {"games": 0, "marginMae": None, "totalMae": None, "scoreMae": None, "marginRmse": None, "marginResidualStd": None}
+    arr_m = np.asarray(margin_errors)
+    arr_t = np.asarray(total_errors)
+    arr_s = np.asarray(score_errors)
     return {
         "games": len(margin_errors),
         "marginMae": float(np.mean(np.abs(arr_m))),
@@ -209,26 +252,33 @@ def tune(games: list[Game], as_of: datetime):
     train = [g for g in games if g.kickoff < split]
     valid = [g for g in games if split <= g.kickoff < as_of]
     if len(train) < 100 or len(valid) < 20:
-        # Fail-safe fixed conservative settings, explicitly surfaced in metadata.
-        return 20.0, 35, {"mode": "FALLBACK_INSUFFICIENT_TEMPORAL_HOLDOUT", "trainGames": len(train), "validationGames": len(valid)}
+        return 20.0, 35, {
+            "mode": "FALLBACK_INSUFFICIENT_TEMPORAL_HOLDOUT",
+            "trainGames": len(train),
+            "validationGames": len(valid),
+        }
 
     candidates = []
-    for alpha in (5.0, 10.0, 20.0, 40.0):
+    for alpha in (5.0, 10.0, 20.0, 40.0, 80.0):
         for half_life in (21, 35, 56, None):
-            model = fit_model(train, split, alpha, half_life)
+            try:
+                model = fit_model(train, split, alpha, half_life)
+            except ValueError:
+                continue
             ev = evaluate(model, valid)
             if not ev["games"]:
                 continue
             objective = (float(ev["marginMae"]) + float(ev["totalMae"])) / 2.0
-            candidates.append((objective, alpha, half_life, ev))
+            candidates.append((objective, alpha, half_life, ev, model["eligibleTrainingGames"]))
     if not candidates:
         return 20.0, 35, {"mode": "FALLBACK_NO_VALID_CANDIDATES"}
     candidates.sort(key=lambda x: (x[0], x[1], 999 if x[2] is None else x[2]))
-    objective, alpha, half_life, ev = candidates[0]
+    objective, alpha, half_life, ev, eligible = candidates[0]
     return alpha, half_life, {
         "mode": "PRE_WEEK8_TEMPORAL_HOLDOUT",
         "splitAt": iso(split),
-        "trainGames": len(train),
+        "rawTrainGames": len(train),
+        "eligibleTrainGames": eligible,
         "validationGames": len(valid),
         "objective": objective,
         "selectedValidation": ev,
@@ -247,24 +297,25 @@ def normal_cdf(x: float) -> float:
 
 def run(input_path: Path, output_path: Path, as_of: datetime, start: datetime):
     state = json.loads(input_path.read_text(encoding="utf-8"))
-    training = fetch_completed_games(start, as_of)
-    alpha, half_life, tuning = tune(training, as_of)
-    model = fit_model(training, as_of, alpha, half_life)
+    raw_training = fetch_completed_games(start, as_of)
+    alpha, half_life, tuning = tune(raw_training, as_of)
+    model = fit_model(raw_training, as_of, alpha, half_life)
 
-    # Estimate uncertainty from the same temporal holdout when available; otherwise use
-    # full-fit residual dispersion and label it provisional.
     split = as_of - timedelta(days=14)
-    earlier = [g for g in training if g.kickoff < split]
-    recent = [g for g in training if g.kickoff >= split]
+    earlier = [g for g in raw_training if g.kickoff < split]
+    recent = [g for g in raw_training if g.kickoff >= split]
     if len(earlier) >= 100 and len(recent) >= 20:
         holdout_model = fit_model(earlier, split, alpha, half_life)
         holdout_eval = evaluate(holdout_model, recent)
         sigma = holdout_eval.get("marginResidualStd") or 15.0
         sigma_source = "temporal_holdout_margin_residual_std"
     else:
-        full_eval = evaluate(model, training)
+        full_eval = evaluate(model, filter_core_games(raw_training))
         sigma = full_eval.get("marginResidualStd") or 15.0
         sigma_source = "in_sample_margin_residual_std_provisional"
+
+    learned_hfa = float(model["beta"][1])
+    hfa_sane = HFA_SANITY_RANGE[0] <= learned_hfa <= HFA_SANITY_RANGE[1]
 
     rows = []
     for game in state.get("games", []):
@@ -275,10 +326,18 @@ def run(input_path: Path, output_path: Path, as_of: datetime, start: datetime):
             z = pr["projectedMarginHome"] / max(float(sigma), 1e-6)
             pr["homeWinProbability"] = 100.0 * normal_cdf(z)
             pr["projectedWinner"] = game["homeTeam"] if pr["projectedMarginHome"] > 0 else game["awayTeam"]
-            status = "SHADOW_READY"
-            error = None
+            status = "SHADOW_READY" if hfa_sane else "SHADOW_REVIEW"
+            error = None if hfa_sane else f"learned home-field margin {learned_hfa:.2f} failed sanity range {HFA_SANITY_RANGE}"
         except Exception as exc:
-            pr = {"projectedAwayPoints": None, "projectedHomePoints": None, "projectedMarginHome": None, "projectedSpreadHome": None, "projectedTotal": None, "homeWinProbability": None, "projectedWinner": None}
+            pr = {
+                "projectedAwayPoints": None,
+                "projectedHomePoints": None,
+                "projectedMarginHome": None,
+                "projectedSpreadHome": None,
+                "projectedTotal": None,
+                "homeWinProbability": None,
+                "projectedWinner": None,
+            }
             status = "SHADOW_REVIEW"
             error = str(exc)
         rows.append({
@@ -294,16 +353,17 @@ def run(input_path: Path, output_path: Path, as_of: datetime, start: datetime):
         })
 
     out = {
-        "schemaVersion": 1,
+        "schemaVersion": 2,
         "league": "cfb",
         "season": state.get("season"),
         "week": state.get("week"),
-        "modelId": "cfb-rebuild-alpha-shadow-v1",
+        "modelId": "cfb-rebuild-alpha-shadow-v2",
         "role": "SHADOW_CHALLENGER_ONLY",
         "canonicalInfluence": False,
         "asOf": iso(as_of),
         "trainingWindowStart": iso(start),
-        "trainingGames": len(training),
+        "rawTrainingGames": len(raw_training),
+        "eligibleTrainingGames": model["eligibleTrainingGames"],
         "source": {
             "provider": "ESPN public college-football scoreboard",
             "marketDataUsed": False,
@@ -311,14 +371,17 @@ def run(input_path: Path, output_path: Path, as_of: datetime, start: datetime):
             "postKickoffDataUsed": False,
         },
         "fit": {
-            "description": "ridge-shrunk opponent-adjusted team scoring model with learned home scoring advantage",
+            "description": "ridge-shrunk opponent-adjusted team scoring model with symmetric learned home-margin effect and sparse-opponent filtering",
             "selectedAlpha": alpha,
             "selectedHalfLifeDays": half_life,
-            "learnedHomeScoreAdvantage": float(model["beta"][1]),
+            "minTeamAppearances": model["minTeamAppearances"],
+            "learnedHomeMarginAdvantage": learned_hfa,
+            "homeFieldSanityRange": list(HFA_SANITY_RANGE),
+            "homeFieldSanityPass": hfa_sane,
             "uncertaintyMarginSigma": float(sigma),
             "uncertaintySource": sigma_source,
             "tuning": tuning,
-            "fullFitDiagnostics": evaluate(model, training),
+            "fullFitDiagnostics": evaluate(model, filter_core_games(raw_training)),
         },
         "warning": "This output is not the unrecoverable 0.9J canonical model. It is a transparent shadow bridge and must not replace canonical/frozen projections without explicit validation and promotion.",
         "games": rows,
@@ -337,7 +400,13 @@ def main():
     args = ap.parse_args()
     try:
         out = run(Path(args.input), Path(args.output), parse_dt(args.as_of), parse_dt(args.start))
-        print(json.dumps({"modelId": out["modelId"], "trainingGames": out["trainingGames"], "games": len(out["games"])}, indent=2))
+        print(json.dumps({
+            "modelId": out["modelId"],
+            "rawTrainingGames": out["rawTrainingGames"],
+            "eligibleTrainingGames": out["eligibleTrainingGames"],
+            "homeFieldSanityPass": out["fit"]["homeFieldSanityPass"],
+            "games": len(out["games"]),
+        }, indent=2))
     except Exception as exc:
         print(f"CFB_SHADOW_ENGINE_ERROR: {exc}", file=sys.stderr)
         raise
