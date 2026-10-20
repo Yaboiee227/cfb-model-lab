@@ -3,7 +3,9 @@ on:
   push:
     paths:
       - 'scripts/cfb_shadow_engine.py'
+      - 'scripts/run_cfb_shadow_week8.py'
       - 'tests/test_cfb_shadow_engine.py'
+      - 'tests/test_cfb_shadow_runner.py'
       - 'cfb/pregame/week-08-tuesday-open.json'
       - '.github/workflows/cfb-week8-shadow.yml'
   workflow_dispatch:
@@ -22,16 +24,18 @@ jobs:
         with: { python-version: '3.12' }
       - name: Install dependencies
         run: python -m pip install --disable-pip-version-check numpy
-      - name: Test shadow engine
-        run: python -m unittest tests.test_cfb_shadow_engine -v
+      - name: Test shadow engine and ESPN FBS parser
+        run: |
+          python -m unittest tests.test_cfb_shadow_engine -v
+          python -m unittest tests.test_cfb_shadow_runner -v
       - name: Build pre-Week-8 Tuesday shadow projections
         run: |
-          python scripts/cfb_shadow_engine.py \
+          python scripts/run_cfb_shadow_week8.py \
             --input cfb/pregame/week-08-tuesday-open.json \
             --output cfb/shadow/week-08-tuesday.json \
             --as-of '2026-10-20T00:00:00-04:00' \
             --start '2026-08-20T00:00:00-04:00'
-      - name: Assert shadow-only safety labels and fit sanity
+      - name: Assert shadow-only safety, source coverage and fit sanity
         run: |
           python - <<'PY'
           import json
@@ -43,8 +47,16 @@ jobs:
           assert d['source']['externalRatingsUsed'] is False
           assert d['source']['postKickoffDataUsed'] is False
           assert d['fit']['homeFieldSanityPass'] is True, d['fit']
+          assert d['fit']['homeFieldProvenancePass'] is True, d['fit']
+          assert d['rawTrainingGames'] >= 300, d['rawTrainingGames']
+          assert d['eligibleTrainingGames'] >= 250, d['eligibleTrainingGames']
+          coverage=d['targetCoverage']
+          assert len(coverage) == 6, coverage
+          for key, row in coverage.items():
+              assert row['rawAppearances'] >= 3, (key, row)
+              assert row['inEligibleModel'] is True, (key, row)
           assert all(g['status']=='SHADOW_READY' for g in d['games']), d['games']
-          print('shadow safety and fit-sanity assertions passed')
+          print('shadow safety, coverage and fit-sanity assertions passed')
           PY
       - name: Commit shadow output
         run: |
