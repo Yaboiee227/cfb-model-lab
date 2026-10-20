@@ -48,7 +48,7 @@ jobs:
           python - <<'PY'
           import json,sys
           sys.path.insert(0,'scripts')
-          from cfb_market_research_lock import verify_existing
+          from cfb_market_research_lock import active_ids_from_scope, verify_existing
           foundation=json.load(open('cfb/research-locks/week-08-foundation-full.json'))
           scope=json.load(open('cfb/pregame/week-08-active-through-thursday.json'))
           d=json.load(open('cfb/research-market-locks/week-08-foundation-market.json'))
@@ -59,7 +59,7 @@ jobs:
           assert d['foundationLockDigest']==foundation['lockDigest']
           assert d['booksTracked']==['fanduel','draftkings']
           assert d['scopeRestricted'] is True
-          active={g['gameId'] for g in scope['games']}
+          active=active_ids_from_scope(scope,foundation)
           assert len(active)==7
           for game in d['games']:
               if game['gameId'] not in active and not game['books']:
