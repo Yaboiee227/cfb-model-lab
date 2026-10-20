@@ -7,7 +7,7 @@
   "status": "OPEN_EFFECTIVE_THROUGH_THURSDAY",
   "canonicalInfluence": false,
   "canonicalPromotionAuthorized": false,
-  "observedAt": "2026-10-20T19:31:14Z",
+  "observedAt": "2026-10-20T19:57:03.150000Z",
   "dateWindowET": [
     "2026-10-20",
     "2026-10-22"
@@ -31,7 +31,7 @@
       "homeTeam": "Florida International",
       "kickoff": "2026-10-20T23:00:00Z",
       "contextSource": "cfb/pregame/week-08-tuesday-effective.json",
-      "contextObservedAt": "2026-10-20T19:31:14Z",
+      "contextObservedAt": "2026-10-20T19:57:03.150Z",
       "frozenFoundationReference": {
         "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
         "canonicalInfluence": false,
@@ -180,23 +180,42 @@
         "source": "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-middle-tennessee-florida-international/"
       },
       "market": {
-        "status": "AFTERNOON_CURRENT_NOT_LOCKED",
+        "status": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
         "observations": [
           {
+            "book": "FanDuel",
+            "observedAt": "2026-10-20T19:56:42Z",
+            "spreadHome": -10.5,
+            "spreadHomePrice": -102,
+            "spreadAway": 10.5,
+            "spreadAwayPrice": -120,
+            "total": 46.5,
+            "overPrice": -108,
+            "underPrice": -112,
+            "moneylineHome": -400,
+            "moneylineAway": 310,
+            "source": "The Odds API",
+            "sourceSnapshot": "data/markets-sportsbooks.json"
+          },
+          {
             "book": "DraftKings",
-            "observedAt": "2026-10-20T19:31:14Z",
-            "spreadHome": -10.0,
-            "spreadHomePrice": -110,
-            "spreadAwayPrice": -110,
-            "total": 45.5,
+            "observedAt": "2026-10-20T19:56:19Z",
+            "spreadHome": -10,
+            "spreadHomePrice": -112,
+            "spreadAway": 10,
+            "spreadAwayPrice": -108,
+            "total": 46.5,
             "overPrice": -105,
             "underPrice": -115,
-            "moneylineHome": -380,
-            "moneylineAway": 300,
-            "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?itm_content=NCAA+Football&tb_edate=n30days&tb_eg=NCAA+Football&tb_page=1"
+            "moneylineHome": -410,
+            "moneylineAway": 320,
+            "source": "The Odds API",
+            "sourceSnapshot": "data/markets-sportsbooks.json"
           }
         ],
-        "note": "Afternoon benchmark context only. DraftKings states displayed values can differ by jurisdiction. Betting split percentages are excluded. Final-window immutable publication lock remains pending."
+        "note": "Current FanDuel and DraftKings market context only. Publication-time market locks remain pending and are saved separately against the immutable foundation; quotes do not change the canonical projection.",
+        "observedAt": "2026-10-20T19:57:03.150Z",
+        "provider": "The Odds API"
       },
       "benchmarks": {
         "sagarin": {
@@ -247,19 +266,19 @@
       },
       "researchMarketComparison": {
         "status": "BENCHMARK_ONLY_NOT_CANONICAL_EDGE",
-        "marketObservedAt": "2026-10-20T19:31:14Z",
-        "book": "DraftKings",
+        "marketObservedAt": "2026-10-20T19:56:42Z",
+        "book": "FanDuel",
         "spread": {
           "side": "FIU",
           "foundationSpreadHome": -13.977411077112537,
-          "marketSpreadHome": -10.0,
-          "differencePoints": 3.977411077112537
+          "marketSpreadHome": -10.5,
+          "differencePoints": 3.477411077112537
         },
         "total": {
           "direction": "UNDER",
           "foundationTotal": 42.721622349572456,
-          "marketTotal": 45.5,
-          "differencePoints": 2.7783776504275437
+          "marketTotal": 46.5,
+          "differencePoints": 3.7783776504275437
         },
         "canonicalInfluence": false
       }
@@ -272,7 +291,7 @@
       "homeTeam": "Delaware",
       "kickoff": "2026-10-20T23:00:00Z",
       "contextSource": "cfb/pregame/week-08-tuesday-effective.json",
-      "contextObservedAt": "2026-10-20T19:31:14Z",
+      "contextObservedAt": "2026-10-20T19:57:03.150Z",
       "frozenFoundationReference": {
         "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
         "canonicalInfluence": false,
@@ -438,23 +457,42 @@
         "source": "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-missouri-state-delaware/"
       },
       "market": {
-        "status": "AFTERNOON_CURRENT_NOT_LOCKED",
+        "status": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
         "observations": [
           {
-            "book": "DraftKings",
-            "observedAt": "2026-10-20T19:31:14Z",
-            "spreadHome": -3.0,
-            "spreadHomePrice": -108,
-            "spreadAwayPrice": -112,
-            "total": 52.5,
+            "book": "FanDuel",
+            "observedAt": "2026-10-20T19:56:42Z",
+            "spreadHome": -2.5,
+            "spreadHomePrice": -118,
+            "spreadAway": 2.5,
+            "spreadAwayPrice": -104,
+            "total": 53.5,
             "overPrice": -110,
             "underPrice": -110,
-            "moneylineHome": -155,
-            "moneylineAway": 130,
-            "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?itm_content=NCAA+Football&tb_edate=n30days&tb_eg=NCAA+Football&tb_page=1"
+            "moneylineHome": -140,
+            "moneylineAway": 116,
+            "source": "The Odds API",
+            "sourceSnapshot": "data/markets-sportsbooks.json"
+          },
+          {
+            "book": "DraftKings",
+            "observedAt": "2026-10-20T19:56:19Z",
+            "spreadHome": -3,
+            "spreadHomePrice": -105,
+            "spreadAway": 3,
+            "spreadAwayPrice": -115,
+            "total": 53.5,
+            "overPrice": -110,
+            "underPrice": -110,
+            "moneylineHome": -142,
+            "moneylineAway": 120,
+            "source": "The Odds API",
+            "sourceSnapshot": "data/markets-sportsbooks.json"
           }
         ],
-        "note": "Afternoon benchmark context only. Final-window immutable publication lock remains pending. Betting split percentages are excluded."
+        "note": "Current FanDuel and DraftKings market context only. Publication-time market locks remain pending and are saved separately against the immutable foundation; quotes do not change the canonical projection.",
+        "observedAt": "2026-10-20T19:57:03.150Z",
+        "provider": "The Odds API"
       },
       "benchmarks": {
         "sagarin": {
@@ -505,19 +543,19 @@
       },
       "researchMarketComparison": {
         "status": "BENCHMARK_ONLY_NOT_CANONICAL_EDGE",
-        "marketObservedAt": "2026-10-20T19:31:14Z",
-        "book": "DraftKings",
+        "marketObservedAt": "2026-10-20T19:56:42Z",
+        "book": "FanDuel",
         "spread": {
           "side": "Delaware",
           "foundationSpreadHome": -7.01075758611438,
-          "marketSpreadHome": -3.0,
-          "differencePoints": 4.01075758611438
+          "marketSpreadHome": -2.5,
+          "differencePoints": 4.51075758611438
         },
         "total": {
           "direction": "UNDER",
           "foundationTotal": 52.10453356588041,
-          "marketTotal": 52.5,
-          "differencePoints": 0.3954664341195908
+          "marketTotal": 53.5,
+          "differencePoints": 1.3954664341195908
         },
         "canonicalInfluence": false
       }
@@ -530,7 +568,7 @@
       "homeTeam": "Marshall",
       "kickoff": "2026-10-20T23:30:00Z",
       "contextSource": "cfb/pregame/week-08-tuesday-effective.json",
-      "contextObservedAt": "2026-10-20T19:31:14Z",
+      "contextObservedAt": "2026-10-20T19:57:03.150Z",
       "frozenFoundationReference": {
         "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
         "canonicalInfluence": false,
@@ -635,24 +673,42 @@
         "source": "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-south-alabama-marshall/"
       },
       "market": {
-        "status": "AFTERNOON_CURRENT_NOT_LOCKED",
+        "status": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
         "observations": [
           {
+            "book": "FanDuel",
+            "observedAt": "2026-10-20T19:56:42Z",
+            "spreadHome": 2.5,
+            "spreadHomePrice": -115,
+            "spreadAway": -2.5,
+            "spreadAwayPrice": -105,
+            "total": 66.5,
+            "overPrice": -105,
+            "underPrice": -115,
+            "moneylineHome": 110,
+            "moneylineAway": -132,
+            "source": "The Odds API",
+            "sourceSnapshot": "data/markets-sportsbooks.json"
+          },
+          {
             "book": "DraftKings",
-            "observedAt": "2026-10-20T19:31:14Z",
-            "spreadAway": -3.0,
-            "spreadAwayPrice": -112,
-            "spreadHome": 3.0,
-            "spreadHomePrice": -108,
+            "observedAt": "2026-10-20T19:56:19Z",
+            "spreadHome": 2.5,
+            "spreadHomePrice": -110,
+            "spreadAway": -2.5,
+            "spreadAwayPrice": -110,
             "total": 65.5,
-            "overPrice": -108,
-            "underPrice": -112,
-            "moneylineAway": -162,
-            "moneylineHome": 136,
-            "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?itm_content=NCAA+Football&tb_edate=n30days&tb_eg=NCAA+Football&tb_page=1"
+            "overPrice": -115,
+            "underPrice": -105,
+            "moneylineHome": 114,
+            "moneylineAway": -135,
+            "source": "The Odds API",
+            "sourceSnapshot": "data/markets-sportsbooks.json"
           }
         ],
-        "note": "Afternoon benchmark context only. Final-window immutable publication lock remains pending. Betting split percentages are excluded."
+        "note": "Current FanDuel and DraftKings market context only. Publication-time market locks remain pending and are saved separately against the immutable foundation; quotes do not change the canonical projection.",
+        "observedAt": "2026-10-20T19:57:03.150Z",
+        "provider": "The Odds API"
       },
       "benchmarks": {
         "sagarin": {
@@ -708,19 +764,19 @@
       },
       "researchMarketComparison": {
         "status": "BENCHMARK_ONLY_NOT_CANONICAL_EDGE",
-        "marketObservedAt": "2026-10-20T19:31:14Z",
-        "book": "DraftKings",
+        "marketObservedAt": "2026-10-20T19:56:42Z",
+        "book": "FanDuel",
         "spread": {
           "side": "South Alabama",
           "foundationSpreadHome": 4.1049020761834925,
-          "marketSpreadHome": 3.0,
-          "differencePoints": 1.1049020761834925
+          "marketSpreadHome": 2.5,
+          "differencePoints": 1.6049020761834925
         },
         "total": {
           "direction": "OVER",
           "foundationTotal": 69.54276300486376,
-          "marketTotal": 65.5,
-          "differencePoints": 4.042763004863758
+          "marketTotal": 66.5,
+          "differencePoints": 3.042763004863758
         },
         "canonicalInfluence": false
       }
