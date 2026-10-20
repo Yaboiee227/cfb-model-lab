@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "observedAt": "2026-10-20T11:11:19Z",
+  "role": "MORNING_PREGAME_STATUS_REFRESH_OVERLAY",
+  "policy": "Morning factual refresh only. No canonical projection change, no guessing, and no use of RefMetrics betting-trend percentages. Preserve unresolved states until an authoritative pregame source resolves them.",
+  "games": [
+    {
+      "gameId": "2026-10-20-MIDDLETENNESSEE-FIU",
+      "patch": {
+        "personnel": {
+          "lastOfficialCheckAt": "2026-10-20T11:11:19Z",
+          "refreshStatus": "NO_NEW_AUTHORITATIVE_MATERIAL_UPDATE_FOUND_MORNING_CHECK",
+          "canonicalInfluence": "No new manual adjustment. Continue final personnel check before freeze."
+        },
+        "benchmarks": {
+          "refMetrics": {
+            "status": "NOT_YET_POSTED",
+            "lastCheckedAt": "2026-10-20T11:11:19Z",
+            "source": "https://www.refmetrics.com/ncaa-football/todays-games",
+            "note": "RefMetrics Week 8 board states that officials are not currently available for upcoming NCAA Football games. Team betting-trend fields are research-only and are not model inputs.",
+            "canonicalInfluence": false
+          }
+        }
+      }
+    },
+    {
+      "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
+      "patch": {
+        "personnel": {
+          "status": "MATERIAL_QB_STATUS_OPEN",
+          "lastOfficialCheckAt": "2026-10-20T11:11:19Z",
+          "refreshStatus": "NO_NEW_OFFICIAL_TUESDAY_STARTER_CONFIRMATION_FOUND_MORNING_CHECK",
+          "away": {
+            "mostRecentStartingQB": "Henry Belin IV",
+            "startingQB": "UNRESOLVED_TUESDAY_STARTER"
+          },
+          "home": {
+            "mostRecentStartingQB": "Tyler Bell",
+            "startingQB": "UNRESOLVED_TUESDAY_STARTER"
+          },
+          "sources": [
+            "https://missouristatebears.com/sports/football/",
+            "https://bluehens.com/sports/football"
+          ],
+          "canonicalInfluence": "Both starters remain unresolved. Do not infer a starter or invent a QB point adjustment; recheck official/team sources before freeze."
+        },
+        "benchmarks": {
+          "refMetrics": {
+            "status": "NOT_YET_POSTED",
+            "lastCheckedAt": "2026-10-20T11:11:19Z",
+            "source": "https://www.refmetrics.com/ncaa-football/todays-games",
+            "note": "RefMetrics Week 8 board states that officials are not currently available for upcoming NCAA Football games. Team betting-trend fields are research-only and are not model inputs.",
+            "canonicalInfluence": false
+          }
+        }
+      }
+    },
+    {
+      "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
+      "patch": {
+        "personnel": {
+          "lastOfficialCheckAt": "2026-10-20T11:11:19Z",
+          "refreshStatus": "NO_NEW_AUTHORITATIVE_MATERIAL_UPDATE_FOUND_MORNING_CHECK",
+          "sources": [
+            "https://usajaguars.com/sports/2022/6/14/media-central"
+          ],
+          "canonicalInfluence": "No new manual adjustment. Continue final personnel check before freeze."
+        },
+        "benchmarks": {
+          "refMetrics": {
+            "status": "NOT_YET_POSTED",
+            "lastCheckedAt": "2026-10-20T11:11:19Z",
+            "source": "https://www.refmetrics.com/ncaa-football/todays-games",
+            "note": "RefMetrics Week 8 board states that officials are not currently available for upcoming NCAA Football games. Team betting-trend fields are research-only and are not model inputs.",
+            "canonicalInfluence": false
+          }
+        }
+      }
+    }
+  ]
+}
