@@ -45,12 +45,17 @@ jobs:
           assert d['policy']['marketDataUsed'] is False
           assert d['policy']['externalRatingsUsed'] is False
           assert d['policy']['sameWeekLeakagePrevented'] is True
+          assert d['policy']['minimumUnseenFoldsForEligibility']==3
           v=d['validation']
-          assert v['foldCount'] >= 3
+          assert v['foldCount'] >= 2
           assert v['games'] >= 100
+          if v['foldCount'] < v['minimumRequiredFolds']:
+              assert v['evidenceStatus']=='INSUFFICIENT_FOLDS'
+              assert v['challengerEligibleFamilies']==[]
           print(json.dumps({
               'foundationParams':d['foundation']['params'],
-              'folds':v['foldCount'],'games':v['games'],
+              'folds':v['foldCount'],'minimumRequiredFolds':v['minimumRequiredFolds'],'games':v['games'],
+              'evidenceStatus':v['evidenceStatus'],
               'eligible':v['challengerEligibleFamilies'],
               'families':{k:{'marginDelta':r['marginMaeDeltaVsSimple'],'totalDelta':r['totalMaeDeltaVsSimple'],'marginEligible':r['marginChallengerEligible'],'totalEligible':r['totalChallengerEligible']} for k,r in v['families'].items()}
           },indent=2))
