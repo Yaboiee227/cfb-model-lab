@@ -5,6 +5,7 @@ on:
       - 'scripts/cfb_sagarin_full_snapshot.py'
       - 'tests/test_cfb_sagarin_full_snapshot.py'
       - 'cfb/pregame/week-08-schedule.json'
+      - 'cfb/benchmarks/week-08.json'
       - 'data/team-aliases.json'
       - '.github/workflows/cfb-week8-sagarin-full.yml'
   workflow_dispatch:
@@ -21,12 +22,13 @@ jobs:
         with: { fetch-depth: 0 }
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
-      - name: Test official Sagarin parser and coverage gates
+      - name: Test official Sagarin parser, crosscheck and coverage gates
         run: python -m unittest tests.test_cfb_sagarin_full_snapshot -v
       - name: Capture official Sagarin Predictor snapshot
         run: |
           python scripts/cfb_sagarin_full_snapshot.py \
             --schedule cfb/pregame/week-08-schedule.json \
+            --crosscheck cfb/benchmarks/week-08.json \
             --output cfb/benchmarks/week-08-sagarin-full.json \
             --min-coverage 0.90
       - name: Assert official-source benchmark policy
@@ -41,9 +43,15 @@ jobs:
           assert d['source']['publisher']=='Jeff Sagarin'
           assert d['source']['officialUrl']=='https://sagarin.com/sports/cfsend.htm'
           assert d['source']['sourceWeek']==7, d['source']
-          through=str(d['source']['ratingsThrough'] or '').lower()
-          assert 'october 17' in through, d['source']
+          assert d['source']['ratingsThrough']=='2026-10-17', d['source']
+          assert 'october 17' in str(d['source']['ratingsThroughLabel']).lower(), d['source']
           assert 3.7 <= float(d['source']['predictorHomeAdvantage']) <= 3.9, d['source']
+          transport=d['source']['transport']
+          assert isinstance(transport.get('tlsVerified'), (bool, type(None)))
+          if transport.get('tlsVerified') is False:
+              assert transport.get('certificateWorkaroundUsed') is True
+              assert d['knownGameCrosscheck']['status']=='PASS'
+              assert d['knownGameCrosscheck']['games'] >= 3
           assert d['coverage']['scheduleGames']==56, d['coverage']
           assert d['coverage']['ratio'] >= 0.90, d['coverage']
           assert all(g['sagarin']['status'] in {'CURRENT','REVIEW'} for g in d['games'])
@@ -51,6 +59,8 @@ jobs:
               'sourceWeek':d['source']['sourceWeek'],
               'ratingsThrough':d['source']['ratingsThrough'],
               'predictorHomeAdvantage':d['source']['predictorHomeAdvantage'],
+              'transport':transport,
+              'knownGameCrosscheck':d.get('knownGameCrosscheck'),
               'coverage':d['coverage'],
           }, indent=2))
           PY
