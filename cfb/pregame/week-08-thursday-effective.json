@@ -97,8 +97,42 @@
         "materiality": "Current profile is low-impact but mountain conditions can change; perform the standard stadium-level final-window recheck. No unvalidated manual points adjustment."
       },
       "market": {
-        "status": "APPROVED_BOOK_FINAL_WINDOW_LOCK_PENDING",
-        "note": "No stale/secondary line is promoted to the publication benchmark. FanDuel and DraftKings will be captured independently by the immutable final-window market-lock workflow."
+        "status": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
+        "note": "No stale/secondary line is promoted to the publication benchmark. FanDuel and DraftKings will be captured independently by the immutable final-window market-lock workflow. Current FanDuel and DraftKings quotes are context only. Publication-time market locks remain pending and are stored separately against the immutable foundation; quotes do not change the canonical projection.",
+        "observedAt": "2026-10-20T19:57:03.150Z",
+        "provider": "The Odds API",
+        "observations": [
+          {
+            "book": "FanDuel",
+            "observedAt": "2026-10-20T19:56:42Z",
+            "spreadHome": 10.5,
+            "spreadHomePrice": -110,
+            "spreadAway": -10.5,
+            "spreadAwayPrice": -110,
+            "total": 55.5,
+            "overPrice": -115,
+            "underPrice": -105,
+            "moneylineHome": 320,
+            "moneylineAway": -420,
+            "source": "The Odds API",
+            "sourceSnapshot": "data/markets-sportsbooks.json"
+          },
+          {
+            "book": "DraftKings",
+            "observedAt": "2026-10-20T19:56:19Z",
+            "spreadHome": 10.5,
+            "spreadHomePrice": -110,
+            "spreadAway": -10.5,
+            "spreadAwayPrice": -110,
+            "total": 56.5,
+            "overPrice": -110,
+            "underPrice": -110,
+            "moneylineHome": 330,
+            "moneylineAway": -425,
+            "source": "The Odds API",
+            "sourceSnapshot": "data/markets-sportsbooks.json"
+          }
+        ]
       },
       "benchmarks": {
         "sagarin": {
@@ -172,18 +206,54 @@
           "packageQB": "Ethan Vasko",
           "officialContext": "Liberty's official Oct. 8 Sam Houston recap identifies Deshawn Purdie as the starting quarterback (10-of-14, 114 yards, one touchdown). Ethan Vasko handled a limited package and scored twice on three touches. Liberty's Oct. 19 Kennesaw State press conference did not announce a quarterback change.",
           "thirdPartyInjuries": [
-            {"player": "B. Burklow", "position": "TE", "status": "QUESTIONABLE", "detail": "Undisclosed", "sourceTier": "third_party"},
-            {"player": "C. Wood", "position": "RB", "status": "QUESTIONABLE", "detail": "Undisclosed", "sourceTier": "third_party"},
-            {"player": "C. Ryan", "position": "TE", "status": "QUESTIONABLE", "detail": "Undisclosed", "sourceTier": "third_party"},
-            {"player": "J. Marshall", "position": "RB", "status": "OUT", "detail": "Leg / reported season absence", "sourceTier": "third_party"}
+            {
+              "player": "B. Burklow",
+              "position": "TE",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            },
+            {
+              "player": "C. Wood",
+              "position": "RB",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            },
+            {
+              "player": "C. Ryan",
+              "position": "TE",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            },
+            {
+              "player": "J. Marshall",
+              "position": "RB",
+              "status": "OUT",
+              "detail": "Leg / reported season absence",
+              "sourceTier": "third_party"
+            }
           ]
         },
         "home": {
           "startingQB": "Rickie Collins",
           "officialContext": "Kennesaw State's official Oct. 14 Missouri State recap says Rickie Collins produced 285 yards of offense and two scores; the official cumulative statistics list him at 129-of-184 for 1,302 passing yards through six games. The Oct. 19 Liberty preview does not announce a quarterback change.",
           "thirdPartyInjuries": [
-            {"player": "G. Bullock Jr.", "position": "TE", "status": "QUESTIONABLE", "detail": "Undisclosed", "sourceTier": "third_party"},
-            {"player": "Z. Booker", "position": "WR", "status": "QUESTIONABLE", "detail": "Undisclosed", "sourceTier": "third_party"}
+            {
+              "player": "G. Bullock Jr.",
+              "position": "TE",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            },
+            {
+              "player": "Z. Booker",
+              "position": "WR",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            }
           ]
         },
         "sources": [
@@ -209,8 +279,42 @@
         "materiality": "Current profile is low impact; perform the standard final-window recheck. No unvalidated manual points adjustment."
       },
       "market": {
-        "status": "APPROVED_BOOK_FINAL_WINDOW_LOCK_PENDING",
-        "note": "Final-window FanDuel and DraftKings observations will be captured independently. Secondary board data is not promoted to a publication benchmark."
+        "status": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
+        "note": "Final-window FanDuel and DraftKings observations will be captured independently. Secondary board data is not promoted to a publication benchmark. Current FanDuel and DraftKings quotes are context only. Publication-time market locks remain pending and are stored separately against the immutable foundation; quotes do not change the canonical projection.",
+        "observedAt": "2026-10-20T19:57:03.150Z",
+        "provider": "The Odds API",
+        "observations": [
+          {
+            "book": "FanDuel",
+            "observedAt": "2026-10-20T19:56:42Z",
+            "spreadHome": 10.5,
+            "spreadHomePrice": -118,
+            "spreadAway": -10.5,
+            "spreadAwayPrice": -104,
+            "total": 50.5,
+            "overPrice": -108,
+            "underPrice": -112,
+            "moneylineHome": 310,
+            "moneylineAway": -400,
+            "source": "The Odds API",
+            "sourceSnapshot": "data/markets-sportsbooks.json"
+          },
+          {
+            "book": "DraftKings",
+            "observedAt": "2026-10-20T19:56:19Z",
+            "spreadHome": 10,
+            "spreadHomePrice": -110,
+            "spreadAway": -10,
+            "spreadAwayPrice": -110,
+            "total": 50.5,
+            "overPrice": -108,
+            "underPrice": -112,
+            "moneylineHome": 310,
+            "moneylineAway": -395,
+            "source": "The Odds API",
+            "sourceSnapshot": "data/markets-sportsbooks.json"
+          }
+        ]
       },
       "benchmarks": {
         "sagarin": {
@@ -288,7 +392,13 @@
           "mostRecentStartingQB": "Marcus Stokes",
           "officialContext": "Memphis' official Oct. 16 Tulane recap says Marcus Stokes completed 20-of-37 for 306 yards and two touchdowns. Current official Memphis material still lists East Carolina as the next game and does not announce a quarterback change.",
           "thirdPartyInjuries": [
-            {"player": "B. Kluse", "position": "WR", "status": "QUESTIONABLE", "detail": "Undisclosed", "sourceTier": "third_party"}
+            {
+              "player": "B. Kluse",
+              "position": "WR",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            }
           ]
         },
         "sources": [
@@ -313,8 +423,42 @@
         "materiality": "Current profile is low impact; perform the standard final-window stadium-level recheck. No unvalidated manual points adjustment."
       },
       "market": {
-        "status": "APPROVED_BOOK_FINAL_WINDOW_LOCK_PENDING",
-        "note": "Final-window FanDuel and DraftKings observations will be captured independently. Secondary board data is not promoted to a publication benchmark."
+        "status": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
+        "note": "Final-window FanDuel and DraftKings observations will be captured independently. Secondary board data is not promoted to a publication benchmark. Current FanDuel and DraftKings quotes are context only. Publication-time market locks remain pending and are stored separately against the immutable foundation; quotes do not change the canonical projection.",
+        "observedAt": "2026-10-20T19:57:03.150Z",
+        "provider": "The Odds API",
+        "observations": [
+          {
+            "book": "FanDuel",
+            "observedAt": "2026-10-20T19:56:42Z",
+            "spreadHome": -10.5,
+            "spreadHomePrice": -102,
+            "spreadAway": 10.5,
+            "spreadAwayPrice": -120,
+            "total": 54.5,
+            "overPrice": -115,
+            "underPrice": -105,
+            "moneylineHome": -410,
+            "moneylineAway": 315,
+            "source": "The Odds API",
+            "sourceSnapshot": "data/markets-sportsbooks.json"
+          },
+          {
+            "book": "DraftKings",
+            "observedAt": "2026-10-20T19:56:19Z",
+            "spreadHome": -10,
+            "spreadHomePrice": -108,
+            "spreadAway": 10,
+            "spreadAwayPrice": -112,
+            "total": 54.5,
+            "overPrice": -112,
+            "underPrice": -108,
+            "moneylineHome": -410,
+            "moneylineAway": 320,
+            "source": "The Odds API",
+            "sourceSnapshot": "data/markets-sportsbooks.json"
+          }
+        ]
       },
       "benchmarks": {
         "sagarin": {
