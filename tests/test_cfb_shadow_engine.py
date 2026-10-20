@@ -5,7 +5,14 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parents[1] / "scripts"))
 
-from cfb_shadow_engine import Game, fit_model, predict, recency_weight, matchup_code
+from cfb_shadow_engine import (
+    Game,
+    fit_model,
+    matchup_code,
+    predict,
+    recency_weight,
+    team_key,
+)
 
 UTC = timezone.utc
 
@@ -14,15 +21,13 @@ class TestCfbShadowEngine(unittest.TestCase):
     def synthetic_games(self):
         games = []
         base = datetime(2026, 9, 1, 16, tzinfo=UTC)
-        # A is stronger offensively than B; C provides a third opponent so the
-        # ridge fit is not a one-matchup toy.
         scores = [
-            ("A", "B", 35, 17),
-            ("B", "A", 14, 31),
-            ("A", "C", 38, 20),
-            ("C", "A", 21, 34),
-            ("B", "C", 24, 21),
-            ("C", "B", 20, 27),
+            ("a", "b", 35, 17),
+            ("b", "a", 14, 31),
+            ("a", "c", 38, 20),
+            ("c", "a", 21, 34),
+            ("b", "c", 24, 21),
+            ("c", "b", 20, 27),
         ]
         for i in range(24):
             home, away, hs, aas = scores[i % len(scores)]
@@ -33,7 +38,7 @@ class TestCfbShadowEngine(unittest.TestCase):
         games = self.synthetic_games()
         as_of = datetime(2026, 10, 1, tzinfo=UTC)
         model = fit_model(games, as_of, alpha=10.0, half_life_days=35)
-        row = predict(model, "B", "A")
+        row = predict(model, "b", "a")
         self.assertGreater(row["projectedHomePoints"], row["projectedAwayPoints"])
         self.assertAlmostEqual(row["projectedTotal"], row["projectedHomePoints"] + row["projectedAwayPoints"])
         self.assertAlmostEqual(row["projectedSpreadHome"], -row["projectedMarginHome"])
@@ -45,13 +50,29 @@ class TestCfbShadowEngine(unittest.TestCase):
         self.assertEqual(same_day, 1.0)
         self.assertLess(older, same_day)
 
-    def test_week8_aliases(self):
-        self.assertEqual(matchup_code("Middle Tennessee"), "MTSU")
-        self.assertEqual(matchup_code("FIU"), "FIU")
-        self.assertEqual(matchup_code("Missouri State"), "MOST")
-        self.assertEqual(matchup_code("Delaware"), "DEL")
-        self.assertEqual(matchup_code("South Alabama"), "USA")
-        self.assertEqual(matchup_code("Marshall"), "MRSH")
+    def test_week8_aliases_use_school_identity_not_abbreviation(self):
+        self.assertEqual(matchup_code("Middle Tennessee"), "middletennessee")
+        self.assertEqual(matchup_code("Middle Tennessee State"), "middletennessee")
+        self.assertEqual(matchup_code("FIU"), "floridainternational")
+        self.assertEqual(matchup_code("Florida International"), "floridainternational")
+        self.assertEqual(matchup_code("Missouri State"), "missouristate")
+        self.assertEqual(matchup_code("Delaware"), "delaware")
+        self.assertEqual(matchup_code("South Alabama"), "southalabama")
+        self.assertEqual(matchup_code("Marshall"), "marshall")
+
+    def test_espn_team_key_prefers_location(self):
+        self.assertEqual(
+            team_key({"id": "2229", "location": "Florida International", "abbreviation": "FIU"}),
+            "floridainternational",
+        )
+        self.assertEqual(
+            team_key({"id": "2393", "location": "Middle Tennessee", "abbreviation": "MTSU"}),
+            "middletennessee",
+        )
+        self.assertEqual(
+            team_key({"id": "6", "location": "South Alabama", "abbreviation": "USA"}),
+            "southalabama",
+        )
 
 
 if __name__ == "__main__":
