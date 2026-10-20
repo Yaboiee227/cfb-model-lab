@@ -6,7 +6,7 @@
   "role": "ACTIVE_WINDOW_RESEARCH_PREGAME_COVERAGE_AUDIT",
   "canonicalInfluence": false,
   "canonicalPromotionAuthorized": false,
-  "auditedAt": "2026-10-20T15:07:27.198095Z",
+  "auditedAt": "2026-10-20T15:11:05.103096Z",
   "summary": {
     "games": 7,
     "foundationLocked": 7,
@@ -73,7 +73,8 @@
       "priority": "NEXT_48H",
       "urgency": "HIGH",
       "gaps": [
-        "personnel requires follow-up: OFFICIAL_BASELINE_CAPTURED_NO_NEW_MATERIAL_QB_CHANGE_FOUND"
+        "personnel requires follow-up: OFFICIAL_BASELINE_CAPTURED_NO_NEW_MATERIAL_QB_CHANGE_FOUND",
+        "weather final review pending: NWS_LOW_IMPACT_BASELINE_CAPTURED_FINAL_RECHECK_REQUIRED"
       ],
       "warnings": [
         "referee assignment status: NOT_YET_POSTED; do not guess",
@@ -145,11 +146,11 @@
         "spPlus": "PENDING_OFFICIAL_CAPTURE"
       },
       "context": {
-        "personnel": "MORNING_REFRESH_NO_NEW_OFFICIAL_MATERIAL_CHANGE",
+        "personnel": "CURRENT_THIRD_PARTY_CHECK_NO_NEW_OFFICIAL_MATERIAL_CHANGE",
         "weather": "NWS_CURRENT_MATERIAL_WIND_FINAL_RECHECK_REQUIRED",
         "referee": "NOT_YET_POSTED",
-        "marketContext": "MORNING_CURRENT_NOT_LOCKED",
-        "contextSource": "cfb/pregame/week-08-tuesday-effective.json"
+        "marketContext": "CURRENT_APPROVED_BOOK_CONTEXT_NOT_LOCKED",
+        "contextSource": "cfb/pregame/week-08-through-thursday-effective.json"
       },
       "marketLock": {
         "status": "PENDING",
@@ -184,8 +185,8 @@
         "personnel": "MATERIAL_QB_STATUS_OPEN_SOURCE_CONFLICT",
         "weather": "NWS_LOW_TO_MODERATE_WIND_FINAL_RECHECK_REQUIRED",
         "referee": "NOT_YET_POSTED",
-        "marketContext": "MORNING_CURRENT_NOT_LOCKED",
-        "contextSource": "cfb/pregame/week-08-tuesday-effective.json"
+        "marketContext": "CURRENT_APPROVED_BOOK_CONTEXT_NOT_LOCKED",
+        "contextSource": "cfb/pregame/week-08-through-thursday-effective.json"
       },
       "marketLock": {
         "status": "PENDING",
@@ -218,11 +219,11 @@
         "spPlus": "PENDING_OFFICIAL_CAPTURE"
       },
       "context": {
-        "personnel": "MORNING_REFRESH_PARTIAL_THIRD_PARTY_CONTEXT_FINAL_RECHECK_REQUIRED",
+        "personnel": "PARTIAL_THIRD_PARTY_CONTEXT_FINAL_RECHECK_REQUIRED",
         "weather": "NWS_LOW_IMPACT_FINAL_RECHECK_REQUIRED",
         "referee": "NOT_YET_POSTED",
-        "marketContext": "MORNING_CURRENT_NOT_LOCKED",
-        "contextSource": "cfb/pregame/week-08-tuesday-effective.json"
+        "marketContext": "CURRENT_APPROVED_BOOK_CONTEXT_NOT_LOCKED",
+        "contextSource": "cfb/pregame/week-08-through-thursday-effective.json"
       },
       "marketLock": {
         "status": "PENDING",
@@ -255,10 +256,10 @@
       },
       "context": {
         "personnel": "OFFICIAL_BASELINE_CAPTURED_NO_NEW_MATERIAL_QB_CHANGE_FOUND",
-        "weather": "NWS_LOW_IMPACT_BASELINE_CAPTURED",
+        "weather": "NWS_LOW_IMPACT_BASELINE_CAPTURED_FINAL_RECHECK_REQUIRED",
         "referee": "NOT_YET_POSTED",
-        "marketContext": "EARLY_PUBLIC_CONTEXT_NOT_LOCKED",
-        "contextSource": "cfb/pregame/week-08-wednesday-effective.json"
+        "marketContext": "CURRENT_APPROVED_BOOK_CONTEXT_NOT_LOCKED",
+        "contextSource": "cfb/pregame/week-08-through-thursday-effective.json"
       },
       "marketLock": {
         "status": "PENDING",
@@ -266,7 +267,8 @@
         "bookCount": 0
       },
       "gaps": [
-        "personnel requires follow-up: OFFICIAL_BASELINE_CAPTURED_NO_NEW_MATERIAL_QB_CHANGE_FOUND"
+        "personnel requires follow-up: OFFICIAL_BASELINE_CAPTURED_NO_NEW_MATERIAL_QB_CHANGE_FOUND",
+        "weather final review pending: NWS_LOW_IMPACT_BASELINE_CAPTURED_FINAL_RECHECK_REQUIRED"
       ],
       "warnings": [
         "referee assignment status: NOT_YET_POSTED; do not guess",
@@ -293,8 +295,8 @@
         "personnel": "MATERIAL_QB_STATUS_OPEN_OFFICIAL_APP_STATE_ROTATION_AFTER_INJURY",
         "weather": "NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED",
         "referee": "NOT_YET_POSTED",
-        "marketContext": "APPROVED_BOOK_FINAL_WINDOW_LOCK_PENDING",
-        "contextSource": "cfb/pregame/week-08-thursday-effective.json"
+        "marketContext": "CURRENT_APPROVED_BOOK_CONTEXT_NOT_LOCKED",
+        "contextSource": "cfb/pregame/week-08-through-thursday-effective.json"
       },
       "marketLock": {
         "status": "PENDING",
@@ -330,8 +332,8 @@
         "personnel": "OFFICIAL_BASELINE_CAPTURED_STABLE_QB_STATE",
         "weather": "NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED",
         "referee": "NOT_YET_POSTED",
-        "marketContext": "APPROVED_BOOK_FINAL_WINDOW_LOCK_PENDING",
-        "contextSource": "cfb/pregame/week-08-thursday-effective.json"
+        "marketContext": "CURRENT_APPROVED_BOOK_CONTEXT_NOT_LOCKED",
+        "contextSource": "cfb/pregame/week-08-through-thursday-effective.json"
       },
       "marketLock": {
         "status": "PENDING",
@@ -366,8 +368,8 @@
         "personnel": "OFFICIAL_BASELINE_CAPTURED_STABLE_QB_STATE",
         "weather": "NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED",
         "referee": "NOT_YET_POSTED",
-        "marketContext": "APPROVED_BOOK_FINAL_WINDOW_LOCK_PENDING",
-        "contextSource": "cfb/pregame/week-08-thursday-effective.json"
+        "marketContext": "CURRENT_APPROVED_BOOK_CONTEXT_NOT_LOCKED",
+        "contextSource": "cfb/pregame/week-08-through-thursday-effective.json"
       },
       "marketLock": {
         "status": "PENDING",
@@ -385,5 +387,6 @@
   ],
   "policy": "Operational research audit only. Context gaps prioritize source collection but cannot rewrite the immutable foundation. Official benchmarks and locked markets remain comparison layers only; unknown facts stay unknown. Active operational scope is Tuesday through Thursday only; Friday and Saturday are paused until explicit resumption.",
   "activeScope": "cfb/pregame/week-08-active-through-thursday.json",
+  "effectiveState": "cfb/pregame/week-08-through-thursday-effective.json",
   "pauseBeforeGameDateET": "2026-10-23"
 }
