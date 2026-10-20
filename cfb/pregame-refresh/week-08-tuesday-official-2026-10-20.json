@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "observedAt": "2026-10-20T03:15:00Z",
+  "role": "OFFICIAL_SOURCE_REFRESH_OVERLAY",
+  "policy": "This overlay supersedes weaker or outdated factual fields in the original Tuesday open-state capture while preserving the original file as an audit artifact. It does not promote any new feature into the canonical projection.",
+  "games": [
+    {
+      "gameId": "2026-10-20-MIDDLETENNESSEE-FIU",
+      "patch": {
+        "officialContext": {
+          "status": "CURRENT_OFFICIAL_PREVIEW_CAPTURED",
+          "observedAt": "2026-10-20T03:15:00Z",
+          "facts": [
+            "FIU and Middle Tennessee are both 3-3 overall and 1-1 in Conference USA.",
+            "FIU is undefeated at home entering the game; Middle Tennessee is 0-3 on the road.",
+            "FIU ranks first in Conference USA in time of possession at 33:30 per game.",
+            "Middle Tennessee QB Roman Gagliano has 1,204 passing yards and 11 passing touchdowns through six games.",
+            "Middle Tennessee's offense has converted 66.7% of fourth downs, second-best in Conference USA."
+          ],
+          "sources": [
+            "https://fiusports.com/news/2026/10/19/football-preps-for-middle-tennessee-hosts-blue-raiders-tuesday-night-in-final-weekday-cusa-game.aspx",
+            "https://goblueraiders.com/news/2026/10/19/football-blue-raiders-travel-to-fiu-for-key-cusa-mid-week-game"
+          ],
+          "canonicalInfluence": "Context only unless an underlying metric is already authorized by the established model framework."
+        }
+      }
+    },
+    {
+      "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
+      "patch": {
+        "personnel": {
+          "status": "MATERIAL_QB_STATUS_OPEN",
+          "away": {
+            "reportedInjuries": [
+              {"player": "Josh Joyner", "position": "RB", "status": "QUESTIONABLE", "detail": "Undisclosed", "sourceTier": "third_party_prior_capture"},
+              {"player": "James Rexroat", "position": "TE", "status": "QUESTIONABLE", "detail": "Undisclosed", "sourceTier": "third_party_prior_capture"}
+            ],
+            "mostRecentStartingQB": "Henry Belin IV",
+            "startingQB": "UNRESOLVED_TUESDAY_STARTER",
+            "officialContext": "Henry Belin IV made his first Missouri State start in the Oct. 14 win over Kennesaw State and completed 28-of-39 passes for 300 yards and two touchdowns. Missouri State's Oct. 16 Delaware preview highlights that start but does not explicitly confirm the Oct. 20 starter."
+          },
+          "home": {
+            "reportedInjuries": [
+              {"player": "Nick Minicucci", "position": "QB", "status": "MISSED_PREVIOUS_TWO_GAMES", "detail": "Injury; official Oct. 17 Delaware preview does not confirm his Oct. 20 availability"},
+              {"player": "T. Salazer", "position": "WR", "status": "OUT", "detail": "Undisclosed", "sourceTier": "third_party_prior_capture"},
+              {"player": "B. Rehmann", "position": "WR", "status": "QUESTIONABLE", "detail": "Undisclosed", "sourceTier": "third_party_prior_capture"},
+              {"player": "G. Spiller", "position": "RB", "status": "OUT", "detail": "Season/undisclosed", "sourceTier": "third_party_prior_capture"}
+            ],
+            "mostRecentStartingQB": "Tyler Bell",
+            "startingQB": "UNRESOLVED_TUESDAY_STARTER",
+            "officialContext": "Tyler Bell made his first career start at Middle Tennessee, completing 22-of-36 passes for a Delaware freshman-record 306 yards and two passing touchdowns; he also had a receiving touchdown. Bell was named Conference USA Freshman of the Week on Oct. 19. Nick Minicucci had missed the previous two games due to injury as of Delaware's Oct. 17 preview."
+          },
+          "sources": [
+            "https://bluehens.com/news/2026/10/17/football-plays-host-to-missouri-state-on-tuesday-for-senior-day",
+            "https://bluehens.com/news/2026/10/19/footballs-bell-named-cusa-freshman-of-the-week",
+            "https://missouristatebears.com/news/2026/10/16/football-bears-square-off-with-delaware-tuesday-on-espnu"
+          ],
+          "canonicalInfluence": "Both Tuesday starting-QB states require confirmation. Do not invent an additive QB point value. Apply only established personnel/reliability logic before freeze."
+        },
+        "officialContext": {
+          "status": "CURRENT_OFFICIAL_PREVIEW_CAPTURED",
+          "observedAt": "2026-10-20T03:15:00Z",
+          "facts": [
+            "Missouri State is 2-4 overall and 1-1 in Conference USA; Delaware is 2-4 and 0-2.",
+            "Missouri State WR Isaiah Myers leads Conference USA with 554 receiving yards and five receiving touchdowns and had 135 yards with two touchdowns against Kennesaw State.",
+            "Delaware QB Tyler Bell threw for 306 yards in his first career start and was named Conference USA Freshman of the Week.",
+            "Nick Minicucci had missed Delaware's previous two games due to injury as of the Oct. 17 official preview."
+          ],
+          "sources": [
+            "https://bluehens.com/news/2026/10/17/football-plays-host-to-missouri-state-on-tuesday-for-senior-day",
+            "https://missouristatebears.com/news/2026/10/16/football-bears-square-off-with-delaware-tuesday-on-espnu"
+          ],
+          "canonicalInfluence": false
+        },
+        "audit": {
+          "priority": "CRITICAL_TUESDAY_QB",
+          "materialOpenItems": [
+            "reproducible canonical CB engine",
+            "Delaware Tuesday starting-QB confirmation",
+            "Missouri State Tuesday starting-QB confirmation",
+            "Missouri State questionable RB/TE status",
+            "one-hour weather refresh",
+            "referee/crew assignment",
+            "publication-time market lock",
+            "current official SP+ capture"
+          ]
+        }
+      }
+    },
+    {
+      "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
+      "patch": {
+        "officialContext": {
+          "status": "CURRENT_OFFICIAL_PREVIEW_CAPTURED",
+          "observedAt": "2026-10-20T03:15:00Z",
+          "facts": [
+            "South Alabama enters 4-2 overall and 2-0 in the Sun Belt; Marshall enters 3-3 and 0-2.",
+            "South Alabama's offensive line was named to the Joe Moore Midseason Honor Roll, the only Sun Belt unit on the 25-team list.",
+            "South Alabama scored 52 and 56 points in its previous two games.",
+            "Marshall is returning home after its Oct. 10 conference game and hosts South Alabama in the Tuesday-night ESPN2 window."
+          ],
+          "sources": [
+            "https://usajaguars.com/news/2026/10/17/football-jags-head-to-marshall-for-tuesday-night-game.aspx",
+            "https://herdzone.com/news/2026/3/13/marshall-athletics-announces-2026-football-schedule"
+          ],
+          "canonicalInfluence": "The offensive-line recognition and scoring streak are context/research observations only unless represented through already-authorized model features."
+        }
+      }
+    }
+  ]
+}
