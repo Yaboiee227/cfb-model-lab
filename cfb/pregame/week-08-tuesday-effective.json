@@ -33,7 +33,7 @@
         "homeWinProbability": null
       },
       "personnel": {
-        "status": "MORNING_REFRESH_NO_NEW_OFFICIAL_MATERIAL_CHANGE",
+        "status": "AFTERNOON_REFRESH_NO_NEW_OFFICIAL_MATERIAL_CHANGE",
         "away": {
           "reportedInjuries": [],
           "note": "No current injuries listed by Covers at capture time.",
@@ -71,35 +71,41 @@
               "player": "Amari Carrie",
               "position": "RB",
               "status": "OUT",
-              "detail": "Undisclosed"
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
             },
             {
               "player": "K. Schaeffer",
               "position": "TE",
               "status": "QUESTIONABLE",
-              "detail": "Undisclosed"
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
             },
             {
               "player": "A. Passley",
               "position": "TE",
               "status": "QUESTIONABLE",
-              "detail": "Undisclosed"
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
             },
             {
               "player": "N. Sidan",
               "position": "K",
               "status": "QUESTIONABLE",
-              "detail": "Undisclosed"
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
             }
           ]
         },
         "sources": [
+          "https://fiusports.com/news/2026/10/19/football-preps-for-middle-tennessee-hosts-blue-raiders-tuesday-night-in-final-weekday-cusa-game.aspx",
+          "https://goblueraiders.com/news/2026/10/19/football-blue-raiders-travel-to-fiu-for-key-cusa-mid-week-game",
           "https://www.covers.com/sport/football/ncaaf/matchup/378460"
         ],
-        "canonicalInfluence": "Only established personnel logic may be used if an authoritative material update is confirmed before the canonical freeze. No manual point adjustment.",
+        "canonicalInfluence": "No new authoritative material update found. Preserve established validated personnel logic only; no manual point adjustment.",
         "lastOfficialCheckAt": "2026-10-20T11:11:19Z",
         "refreshStatus": "NO_NEW_AUTHORITATIVE_MATERIAL_UPDATE_FOUND_MORNING_CHECK",
-        "lastCheckedAt": "2026-10-20T11:30:42Z",
+        "lastCheckedAt": "2026-10-20T19:31:14Z",
         "source": "https://www.covers.com/sport/football/ncaaf/matchup/378460"
       },
       "weather": {
@@ -122,10 +128,10 @@
           "https://www.actionnetwork.com/ncaaf/weather",
           "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-middle-tennessee-florida-international/"
         ],
-        "observedAt": "2026-10-20T11:30:42Z",
+        "observedAt": "2026-10-20T19:31:14Z",
         "source": "National Weather Service point forecast near Miami International Airport / FIU",
         "sourceLastUpdate": "2026-10-20T04:06:00-04:00",
-        "sourceUrl": "https://forecast.weather.gov/MapClick.php?FcstType=digital&lat=25.7952&lg=english&lon=-80.3254",
+        "sourceUrl": "https://forecast.weather.gov/MapClick.php?FcstType=digital&lat=25.783&lg=english&lon=-80.3261&unit=0",
         "kickoffWindow": {
           "approximately7pmET": {
             "temperatureF": 79,
@@ -142,11 +148,11 @@
             "precipProbabilityPct": 4
           }
         },
-        "materiality": "Wind/gusts are material enough for a final pre-kickoff recheck, especially for passing, kicking and total uncertainty. No unvalidated manual point adjustment.",
+        "materiality": "Wind/gusts remain the primary weather uncertainty. Final stadium-level check still required in the one-hour window. No unvalidated manual adjustment.",
         "kickoffApprox": {
           "temperatureF": 79,
-          "windDirection": "NE",
-          "windMph": 13,
+          "windDirection": "NE/N",
+          "windMph": 14,
           "gustMph": 21,
           "precipProbabilityPct": 13
         }
@@ -160,11 +166,11 @@
         "source": "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-middle-tennessee-florida-international/"
       },
       "market": {
-        "status": "MORNING_CURRENT_NOT_LOCKED",
+        "status": "AFTERNOON_CURRENT_NOT_LOCKED",
         "observations": [
           {
             "book": "DraftKings",
-            "observedAt": "2026-10-20T11:30:42Z",
+            "observedAt": "2026-10-20T19:31:14Z",
             "spreadHome": -10.0,
             "spreadHomePrice": -110,
             "spreadAwayPrice": -110,
@@ -173,10 +179,10 @@
             "underPrice": -115,
             "moneylineHome": -380,
             "moneylineAway": 300,
-            "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/"
+            "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?itm_content=NCAA+Football&tb_edate=n30days&tb_eg=NCAA+Football&tb_page=1"
           }
         ],
-        "note": "Morning context only. Capture and lock a separate publication-time market immediately before the production freeze. Betting split percentages are not model inputs."
+        "note": "Afternoon benchmark context only. DraftKings states displayed values can differ by jurisdiction. Betting split percentages are excluded. Final-window immutable publication lock remains pending."
       },
       "benchmarks": {
         "sagarin": {
@@ -194,7 +200,7 @@
           "status": "NOT_YET_POSTED",
           "source": "https://www.refmetrics.com/ncaa-football/todays-games",
           "canonicalInfluence": false,
-          "lastCheckedAt": "2026-10-20T11:30:42Z",
+          "lastCheckedAt": "2026-10-20T19:31:14Z",
           "note": "RefMetrics Week 8 board states that officials are not currently available for upcoming NCAA Football games. Team betting-trend fields are research-only and are not model inputs."
         }
       },
@@ -277,13 +283,15 @@
               "player": "James Rexroat",
               "position": "TE",
               "status": "QUESTIONABLE",
-              "detail": "Undisclosed"
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
             },
             {
               "player": "Josh Joyner",
               "position": "RB",
               "status": "QUESTIONABLE",
-              "detail": "Undisclosed"
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
             }
           ]
         },
@@ -323,19 +331,44 @@
           "thirdPartyQBStatus": {
             "player": "Nick Minicucci",
             "status": "OUT",
-            "detail": "Leg"
+            "detail": "Leg",
+            "sourceTier": "third_party"
           },
-          "sourceConflict": "Covers currently lists Minicucci OUT, while Delaware's official football site has not provided a new Tuesday starter confirmation. Preserve Tyler Bell as the most recent starter, not a confirmed starter."
+          "sourceConflict": "Covers lists Nick Minicucci OUT with a leg injury, while no newer Delaware official starter confirmation was captured. Tyler Bell remains the most recent starter, not a confirmed Tuesday starter.",
+          "thirdPartyInjuries": [
+            {
+              "player": "T. Salazer",
+              "position": "WR",
+              "status": "OUT",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            },
+            {
+              "player": "B. Rehmann",
+              "position": "WR",
+              "status": "QUESTIONABLE",
+              "detail": "Undisclosed",
+              "sourceTier": "third_party"
+            },
+            {
+              "player": "G. Spiller",
+              "position": "RB",
+              "status": "OUT",
+              "detail": "Undisclosed / season",
+              "sourceTier": "third_party"
+            }
+          ]
         },
         "sources": [
-          "https://bluehens.com/sports/football",
           "https://missouristatebears.com/sports/football/",
+          "https://missouristatebears.com/news/2026/10/16/football-bears-square-off-with-delaware-tuesday-on-espnu",
           "https://www.covers.com/sport/football/ncaaf/matchup/379250"
         ],
-        "canonicalInfluence": "Both Tuesday starters remain unresolved. Do not infer a starter and do not invent a QB point adjustment.",
+        "canonicalInfluence": "Do not infer either starter and do not invent a QB point adjustment.",
         "lastOfficialCheckAt": "2026-10-20T11:11:19Z",
         "refreshStatus": "NO_NEW_OFFICIAL_TUESDAY_STARTER_CONFIRMATION_FOUND_MORNING_CHECK",
-        "lastCheckedAt": "2026-10-20T11:30:42Z"
+        "lastCheckedAt": "2026-10-20T19:31:14Z",
+        "note": "Missouri State's official football page still shows the Oct. 16 Delaware preview as its latest game-specific football item; no authoritative Tuesday starter change was captured in this check."
       },
       "weather": {
         "status": "NWS_LOW_TO_MODERATE_WIND_FINAL_RECHECK_REQUIRED",
@@ -357,12 +390,12 @@
           "https://www.actionnetwork.com/ncaaf/weather",
           "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-missouri-state-delaware/"
         ],
-        "observedAt": "2026-10-20T11:30:42Z",
+        "observedAt": "2026-10-20T19:31:14Z",
         "source": "National Weather Service point forecast for Newark, Delaware",
-        "sourceLastUpdate": "2026-10-19T16:08:00-04:00",
+        "sourceLastUpdate": "2026-10-20T11:48:00-04:00",
         "sourceUrl": "https://forecast.weather.gov/MapClick.php?FcstType=digital&FcstType=text&lat=39.6776&lg=english&lon=-75.7575&menu=1",
-        "forecast": "Tuesday sunny near 69F with north wind around 10 mph and gusts up to 20 mph; Tuesday night mostly clear with north wind 5-10 mph.",
-        "materiality": "No precipitation concern. Recheck wind and temperature closer to kickoff; no automatic projection adjustment."
+        "forecast": "This afternoon sunny near 70 F with north wind 10-15 mph; tonight mostly clear with north wind 5-10 mph and a low near 43 F.",
+        "materiality": "No precipitation concern. Wind remains modest enough for final-window confirmation rather than an unvalidated adjustment."
       },
       "travelRest": {
         "awayMiles": 965,
@@ -373,11 +406,11 @@
         "source": "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-missouri-state-delaware/"
       },
       "market": {
-        "status": "MORNING_CURRENT_NOT_LOCKED",
+        "status": "AFTERNOON_CURRENT_NOT_LOCKED",
         "observations": [
           {
             "book": "DraftKings",
-            "observedAt": "2026-10-20T11:30:42Z",
+            "observedAt": "2026-10-20T19:31:14Z",
             "spreadHome": -3.0,
             "spreadHomePrice": -108,
             "spreadAwayPrice": -112,
@@ -386,10 +419,10 @@
             "underPrice": -110,
             "moneylineHome": -155,
             "moneylineAway": 130,
-            "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/"
+            "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?itm_content=NCAA+Football&tb_edate=n30days&tb_eg=NCAA+Football&tb_page=1"
           }
         ],
-        "note": "Morning context only. Capture and lock a separate publication-time market immediately before the production freeze. Betting split percentages are not model inputs."
+        "note": "Afternoon benchmark context only. Final-window immutable publication lock remains pending. Betting split percentages are excluded."
       },
       "benchmarks": {
         "sagarin": {
@@ -406,7 +439,7 @@
           "status": "NOT_YET_POSTED",
           "source": "https://www.refmetrics.com/ncaa-football/todays-games",
           "canonicalInfluence": false,
-          "lastCheckedAt": "2026-10-20T11:30:42Z",
+          "lastCheckedAt": "2026-10-20T19:31:14Z",
           "note": "RefMetrics Week 8 board states that officials are not currently available for upcoming NCAA Football games. Team betting-trend fields are research-only and are not model inputs."
         }
       },
@@ -463,7 +496,7 @@
         "homeWinProbability": null
       },
       "personnel": {
-        "status": "MORNING_REFRESH_PARTIAL_THIRD_PARTY_CONTEXT_FINAL_RECHECK_REQUIRED",
+        "status": "AFTERNOON_REFRESH_PARTIAL_THIRD_PARTY_CONTEXT_FINAL_RECHECK_REQUIRED",
         "away": {
           "reportedInjuries": [],
           "note": "No sufficiently complete authoritative injury list captured yet; official South Alabama game notes are available and should be checked again pregame.",
@@ -473,7 +506,29 @@
               "position": "WR",
               "status": "QUESTIONABLE",
               "detail": "Undisclosed",
-              "dataQuality": "Covers note contains a date inconsistency; treat as unconfirmed context only."
+              "sourceTier": "third_party",
+              "dataQuality": "Covers note contains a game-date inconsistency; status is contextual only."
+            },
+            {
+              "player": "K. Marion",
+              "position": "WR",
+              "status": "OUT",
+              "detail": "Undisclosed / reported remainder of season",
+              "sourceTier": "third_party"
+            },
+            {
+              "player": "B. Barnes",
+              "position": "WR",
+              "status": "OUT",
+              "detail": "Undisclosed / reported remainder of season",
+              "sourceTier": "third_party"
+            },
+            {
+              "player": "M. Lynch",
+              "position": "TE",
+              "status": "OUT",
+              "detail": "Undisclosed / reported remainder of season",
+              "sourceTier": "third_party"
             }
           ]
         },
@@ -483,16 +538,17 @@
           "thirdPartyInjuryState": "NO_INJURIES_REPORTED"
         },
         "sources": [
-          "https://www.covers.com/sport/football/ncaaf/injuries",
-          "https://www.covers.com/sport/football/ncaaf/teams/main/marshall-thundering-herd/injuries"
+          "https://usajaguars.com/news/2026/10/17/football-jags-head-to-marshall-for-tuesday-night-game.aspx",
+          "https://www.covers.com/sport/football/ncaaf/matchup/378461",
+          "https://www.covers.com/sport/football/ncaaf/injuries"
         ],
         "context": [
           "South Alabama offensive line named to the Joe Moore Midseason Honor Roll on Oct. 14."
         ],
-        "canonicalInfluence": "Unknown/unconfirmed remains context only. No manual adjustment.",
+        "canonicalInfluence": "Newly observed third-party season-long absence listings are contextual only and are not assigned manual points.",
         "lastOfficialCheckAt": "2026-10-20T11:11:19Z",
         "refreshStatus": "NO_NEW_AUTHORITATIVE_MATERIAL_UPDATE_FOUND_MORNING_CHECK",
-        "lastCheckedAt": "2026-10-20T11:30:42Z"
+        "lastCheckedAt": "2026-10-20T19:31:14Z"
       },
       "weather": {
         "status": "NWS_LOW_IMPACT_FINAL_RECHECK_REQUIRED",
@@ -513,12 +569,12 @@
           "https://www.actionnetwork.com/ncaaf-game/south-alabama-jaguars-marshall-thundering-herd/289598",
           "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-south-alabama-marshall/"
         ],
-        "observedAt": "2026-10-20T11:30:42Z",
-        "source": "National Weather Service Charleston WV / Huntington-Cabell forecast",
-        "sourceLastUpdate": "2026-10-18T14:34:00-04:00",
-        "sourceUrl": "https://forecast.weather.gov/product.php?format=TXT&glossary=0&issuedby=RLX&product=PFM",
-        "forecast": "Tuesday generally sunny in the mid-to-upper 60s with light north wind and essentially no precipitation signal; Tuesday night mostly clear with light/calm wind.",
-        "materiality": "Current weather signal is low impact. Recheck the stadium-area point forecast before kickoff."
+        "observedAt": "2026-10-20T19:31:14Z",
+        "source": "National Weather Service point forecast for Huntington, West Virginia",
+        "sourceLastUpdate": "2026-10-20T07:48:00-04:00",
+        "sourceUrl": "https://forecast.weather.gov/MapClick.php?lat=38.4134&lon=-82.4277",
+        "forecast": "Sunny near 70 F with calm wind becoming northeast around 5 mph; tonight mostly clear near 43 F with calm wind.",
+        "materiality": "Low-impact weather profile. Final stadium-level recheck still required before freeze; no automatic adjustment."
       },
       "travelRest": {
         "awayMiles": 626,
@@ -529,23 +585,24 @@
         "source": "https://bluechipanalytics.com/college-football/games/2026/week8/2026-10-20-south-alabama-marshall/"
       },
       "market": {
-        "status": "MORNING_CURRENT_NOT_LOCKED",
+        "status": "AFTERNOON_CURRENT_NOT_LOCKED",
         "observations": [
           {
             "book": "DraftKings",
-            "observedAt": "2026-10-20T11:30:42Z",
-            "spreadHome": 3.0,
+            "observedAt": "2026-10-20T19:31:14Z",
+            "spreadAway": -3.0,
             "spreadAwayPrice": -112,
+            "spreadHome": 3.0,
             "spreadHomePrice": -108,
             "total": 65.5,
             "overPrice": -108,
             "underPrice": -112,
             "moneylineAway": -162,
             "moneylineHome": 136,
-            "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/"
+            "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?itm_content=NCAA+Football&tb_edate=n30days&tb_eg=NCAA+Football&tb_page=1"
           }
         ],
-        "note": "Morning context only. Capture and lock a separate publication-time market immediately before the production freeze. Betting split percentages are not model inputs."
+        "note": "Afternoon benchmark context only. Final-window immutable publication lock remains pending. Betting split percentages are excluded."
       },
       "benchmarks": {
         "sagarin": {
@@ -562,7 +619,7 @@
           "status": "NOT_YET_POSTED",
           "source": "https://www.refmetrics.com/ncaa-football/todays-games",
           "canonicalInfluence": false,
-          "lastCheckedAt": "2026-10-20T11:30:42Z",
+          "lastCheckedAt": "2026-10-20T19:31:14Z",
           "note": "RefMetrics Week 8 board states that officials are not currently available for upcoming NCAA Football games. Team betting-trend fields are research-only and are not model inputs."
         }
       },
@@ -603,7 +660,7 @@
   ],
   "effectiveState": {
     "baseStatus": "OPEN",
-    "overlayCount": 4,
+    "overlayCount": 5,
     "appliedOverlays": [
       {
         "observedAt": "2026-10-20T03:15:00Z",
@@ -623,6 +680,11 @@
       {
         "observedAt": "2026-10-20T11:30:42Z",
         "role": "LIVE_PREGAME_STATUS_REFRESH_OVERLAY",
+        "gameCount": 3
+      },
+      {
+        "observedAt": "2026-10-20T19:31:14Z",
+        "role": "AFTERNOON_PREGAME_STATUS_REFRESH_OVERLAY",
         "gameCount": 3
       }
     ],
