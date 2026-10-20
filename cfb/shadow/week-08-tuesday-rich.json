@@ -45,17 +45,17 @@
       "bundle": "core_efficiency",
       "alpha": 100.0,
       "games": 117,
-      "mae": 12.170550824414152,
-      "rmse": 15.048319136723773,
-      "residualStd": 15.034180107276022
+      "mae": 12.152701439817939,
+      "rmse": 15.03917001058229,
+      "residualStd": 15.026662650999146
     },
     "totalSelected": {
       "bundle": "core_efficiency",
       "alpha": 100.0,
       "games": 117,
-      "mae": 13.09626539603955,
-      "rmse": 16.60252260035343,
-      "residualStd": 16.663022932841493
+      "mae": 13.100028699077333,
+      "rmse": 16.60736517052542,
+      "residualStd": 16.668025502758113
     },
     "simpleShadowReference": {
       "marginMae": 12.424019218520508,
@@ -77,7 +77,7 @@
       "mean": [
         4.222684278281822,
         -0.011844413613808492,
-        0.0037996636512620733,
+        0.007168958761532138,
         -0.028007453122683452,
         0.0005973970238105593,
         -0.0003715303962432603
@@ -85,19 +85,19 @@
       "scale": [
         5.511128149313227,
         0.4835474140453695,
-        0.7636724857616376,
+        0.7601583870666495,
         0.53979396407086,
         0.047030012765170395,
         0.0059945437838846765
       ],
       "beta": [
         3.4096916299559474,
-        4.3234183492593905,
-        2.00595734711223,
-        1.697541305067154,
-        1.522420564675233,
-        1.644284460146186,
-        -0.6812800372839647
+        4.31029768907367,
+        1.9826731061711862,
+        1.7422961492707545,
+        1.5234744142037722,
+        1.635954267703206,
+        -0.6773711842845703
       ],
       "alpha": 100.0
     },
@@ -114,7 +114,7 @@
       "mean": [
         52.56772840176361,
         -0.011844413613808492,
-        0.0037996636512620733,
+        0.007168958761532138,
         -0.028007453122683452,
         0.0005973970238105593,
         -0.0003715303962432603,
@@ -123,7 +123,7 @@
       "scale": [
         4.050870026947019,
         0.4835474140453695,
-        0.7636724857616376,
+        0.7601583870666495,
         0.53979396407086,
         0.047030012765170395,
         0.0059945437838846765,
@@ -131,13 +131,13 @@
       ],
       "beta": [
         51.40088105726876,
-        2.1618675201750857,
-        0.24551536742397242,
-        -0.20525202831022046,
-        1.5844861711560672,
-        -0.28397644668583677,
-        0.30946127329694245,
-        1.823055043383494
+        2.1564044856945137,
+        0.19001207260231925,
+        -0.10886198183022937,
+        1.5909030222048655,
+        -0.2891631754423698,
+        0.3031102048277828,
+        1.8220405305784626
       ],
       "alpha": 100.0
     }
@@ -148,17 +148,17 @@
         "bundle": "core_efficiency",
         "alpha": 100.0,
         "games": 117,
-        "mae": 12.170550824414152,
-        "rmse": 15.048319136723773,
-        "residualStd": 15.034180107276022
+        "mae": 12.152701439817939,
+        "rmse": 15.03917001058229,
+        "residualStd": 15.026662650999146
       },
       {
         "bundle": "full_efficiency",
         "alpha": 100.0,
         "games": 117,
-        "mae": 12.234699943539729,
-        "rmse": 15.333295450912743,
-        "residualStd": 15.347776559832678
+        "mae": 12.22200994280383,
+        "rmse": 15.328677638455476,
+        "residualStd": 15.344162892982503
       },
       {
         "bundle": "scoring",
@@ -172,9 +172,17 @@
         "bundle": "core_efficiency",
         "alpha": 10.0,
         "games": 117,
-        "mae": 12.357532463666866,
-        "rmse": 15.198272187368552,
-        "residualStd": 15.16587238628182
+        "mae": 12.333356516194433,
+        "rmse": 15.18885056476659,
+        "residualStd": 15.159093332384222
+      },
+      {
+        "bundle": "core_efficiency",
+        "alpha": 1.0,
+        "games": 117,
+        "mae": 12.527719718448354,
+        "rmse": 15.37394251303397,
+        "residualStd": 15.327770512800187
       },
       {
         "bundle": "scoring",
@@ -186,19 +194,11 @@
       },
       {
         "bundle": "core_efficiency",
-        "alpha": 1.0,
-        "games": 117,
-        "mae": 12.568902484866644,
-        "rmse": 15.390615859134304,
-        "residualStd": 15.339569977414591
-      },
-      {
-        "bundle": "core_efficiency",
         "alpha": 0.1,
         "games": 117,
-        "mae": 12.62097938841137,
-        "rmse": 15.46578082572369,
-        "residualStd": 15.410371527976709
+        "mae": 12.573850097877193,
+        "rmse": 15.445875063368586,
+        "residualStd": 15.396123093751228
       },
       {
         "bundle": "scoring",
@@ -220,25 +220,25 @@
         "bundle": "full_efficiency",
         "alpha": 10.0,
         "games": 117,
-        "mae": 12.946708367661444,
-        "rmse": 16.22512915312212,
-        "residualStd": 16.227427553763878
+        "mae": 12.946521709937148,
+        "rmse": 16.22220835293713,
+        "residualStd": 16.22624612950039
       },
       {
         "bundle": "full_efficiency",
         "alpha": 1.0,
         "games": 117,
-        "mae": 13.34847536644495,
-        "rmse": 16.749888374878076,
-        "residualStd": 16.72497648682589
+        "mae": 13.348064210964452,
+        "rmse": 16.741788824659544,
+        "residualStd": 16.721340578173
       },
       {
         "bundle": "full_efficiency",
         "alpha": 0.1,
         "games": 117,
-        "mae": 13.42289001954055,
-        "rmse": 16.88315276496155,
-        "residualStd": 16.849703069768395
+        "mae": 13.422387363416279,
+        "rmse": 16.87143374808281,
+        "residualStd": 16.843640835900747
       }
     ],
     "total": [
@@ -246,9 +246,9 @@
         "bundle": "core_efficiency",
         "alpha": 100.0,
         "games": 117,
-        "mae": 13.09626539603955,
-        "rmse": 16.60252260035343,
-        "residualStd": 16.663022932841493
+        "mae": 13.100028699077333,
+        "rmse": 16.60736517052542,
+        "residualStd": 16.668025502758113
       },
       {
         "bundle": "scoring",
@@ -286,57 +286,57 @@
         "bundle": "full_efficiency",
         "alpha": 100.0,
         "games": 117,
-        "mae": 13.255117748976847,
-        "rmse": 16.859030850505647,
-        "residualStd": 16.923142349368092
+        "mae": 13.260746346183627,
+        "rmse": 16.86596795973205,
+        "residualStd": 16.930289357732736
       },
       {
         "bundle": "core_efficiency",
         "alpha": 10.0,
         "games": 117,
-        "mae": 13.355998433858067,
-        "rmse": 16.95582567054087,
-        "residualStd": 17.027875893759713
+        "mae": 13.363415441056036,
+        "rmse": 16.966806725748185,
+        "residualStd": 17.03897887467382
       },
       {
         "bundle": "core_efficiency",
         "alpha": 1.0,
         "games": 117,
-        "mae": 13.45278568647401,
-        "rmse": 17.08842850185206,
-        "residualStd": 17.16189551462165
+        "mae": 13.456521982188548,
+        "rmse": 17.0941067155546,
+        "residualStd": 17.167605001424885
       },
       {
         "bundle": "core_efficiency",
         "alpha": 0.1,
         "games": 117,
-        "mae": 13.46288628983455,
-        "rmse": 17.10391359004809,
-        "residualStd": 17.17747423267079
+        "mae": 13.465009957257005,
+        "rmse": 17.107157516018432,
+        "residualStd": 17.180733595650153
       },
       {
         "bundle": "full_efficiency",
         "alpha": 10.0,
         "games": 117,
-        "mae": 13.766172788247705,
-        "rmse": 17.482302534528607,
-        "residualStd": 17.55687770760233
+        "mae": 13.784018739292149,
+        "rmse": 17.50490326543073,
+        "residualStd": 17.579717627131643
       },
       {
         "bundle": "full_efficiency",
         "alpha": 1.0,
         "games": 117,
-        "mae": 13.964526684150254,
-        "rmse": 17.757700539478872,
-        "residualStd": 17.83407084842141
+        "mae": 13.984156204316589,
+        "rmse": 17.7821301823044,
+        "residualStd": 17.85861243935014
       },
       {
         "bundle": "full_efficiency",
         "alpha": 0.1,
         "games": 117,
-        "mae": 13.998619980578933,
-        "rmse": 17.796810508884985,
-        "residualStd": 17.87335514041862
+        "mae": 14.017405323473707,
+        "rmse": 17.820193289974306,
+        "residualStd": 17.89682176690202
       }
     ]
   },
@@ -346,18 +346,18 @@
       "awayTeam": "Middle Tennessee",
       "homeTeam": "FIU",
       "status": "RICH_RESEARCH_ONLY",
-      "projectedAwayPoints": 14.190848356364528,
-      "projectedHomePoints": 31.643963628662704,
-      "projectedMarginHome": 17.453115272298177,
-      "projectedSpreadHome": -17.453115272298177,
-      "projectedTotal": 45.83481198502723,
-      "homeWinProbability": 87.71578442715398,
+      "projectedAwayPoints": 14.228214396192218,
+      "projectedHomePoints": 31.686601155970774,
+      "projectedMarginHome": 17.458386759778556,
+      "projectedSpreadHome": -17.458386759778556,
+      "projectedTotal": 45.91481555216299,
+      "homeWinProbability": 87.73471869356861,
       "projectedWinner": "FIU",
       "features": {
         "scoreBaseMargin": 10.47616112829921,
         "scoreBaseTotal": 47.58170992416076,
         "yppMatchupDiff": 0.512010924732885,
-        "passYpaMatchupDiff": 1.126828479430439,
+        "passYpaMatchupDiff": 1.1253936628736785,
         "rushYpaMatchupDiff": 0.06500452386516198,
         "thirdDownMatchupDiff": 0.11501757299048365,
         "turnoverControlDiff": -0.0021787384280851987,
@@ -374,18 +374,18 @@
       "awayTeam": "Missouri State",
       "homeTeam": "Delaware",
       "status": "RICH_RESEARCH_ONLY",
-      "projectedAwayPoints": 24.184128646330453,
-      "projectedHomePoints": 29.762452744249867,
-      "projectedMarginHome": 5.578324097919413,
-      "projectedSpreadHome": -5.578324097919413,
-      "projectedTotal": 53.94658139058032,
-      "homeWinProbability": 64.46971686025354,
+      "projectedAwayPoints": 24.18199869761267,
+      "projectedHomePoints": 29.7454646795912,
+      "projectedMarginHome": 5.563465981978531,
+      "projectedSpreadHome": -5.563465981978531,
+      "projectedTotal": 53.92746337720387,
+      "homeWinProbability": 64.43980236523576,
       "projectedWinner": "Delaware",
       "features": {
         "scoreBaseMargin": 4.592322317024504,
         "scoreBaseTotal": 51.662079285113684,
         "yppMatchupDiff": 0.22944322809617468,
-        "passYpaMatchupDiff": 0.08423010935176922,
+        "passYpaMatchupDiff": 0.08431639502629551,
         "rushYpaMatchupDiff": 0.15404367319073442,
         "thirdDownMatchupDiff": 0.013892214064964936,
         "turnoverControlDiff": 0.002086580113422873,
@@ -402,18 +402,18 @@
       "awayTeam": "South Alabama",
       "homeTeam": "Marshall",
       "status": "RICH_RESEARCH_ONLY",
-      "projectedAwayPoints": 28.950214624673222,
-      "projectedHomePoints": 27.782090151893414,
-      "projectedMarginHome": -1.1681244727798088,
-      "projectedSpreadHome": 1.1681244727798088,
-      "projectedTotal": 56.732304776566636,
-      "homeWinProbability": 46.90341756877173,
+      "projectedAwayPoints": 28.938362775926823,
+      "projectedHomePoints": 27.728371342310897,
+      "projectedMarginHome": -1.2099914336159259,
+      "projectedSpreadHome": 1.2099914336159259,
+      "projectedTotal": 56.66673411823772,
+      "homeWinProbability": 46.79106659773674,
       "projectedWinner": "South Alabama",
       "features": {
         "scoreBaseMargin": -0.36109022018906956,
         "scoreBaseTotal": 62.33220150867953,
         "yppMatchupDiff": -0.035220968193210744,
-        "passYpaMatchupDiff": -0.5578117506608473,
+        "passYpaMatchupDiff": -0.5578304381571035,
         "rushYpaMatchupDiff": -0.2903029385554907,
         "thirdDownMatchupDiff": -0.019079644981224442,
         "turnoverControlDiff": -0.016132151513236416,
