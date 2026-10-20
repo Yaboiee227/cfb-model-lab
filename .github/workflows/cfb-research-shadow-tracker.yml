@@ -1,0 +1,88 @@
+name: CFB research shadow tracker
+on:
+  push:
+    paths:
+      - 'scripts/grade_research_shadow.py'
+      - 'scripts/lock_research_shadow.py'
+      - 'tests/test_grade_research_shadow.py'
+      - 'tests/test_lock_research_shadow.py'
+      - 'cfb/research-locks/**'
+      - '.github/workflows/cfb-research-shadow-tracker.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '17 7 * * 3'
+    - cron: '27 15 * * 0'
+permissions:
+  contents: write
+concurrency:
+  group: cfb-research-shadow-tracker
+  cancel-in-progress: false
+jobs:
+  grade:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Test immutable research locking and grading
+        run: |
+          python -m unittest tests.test_lock_research_shadow -v
+          python -m unittest tests.test_grade_research_shadow -v
+      - name: Verify all research locks
+        run: |
+          python - <<'PY'
+          import glob,json,sys
+          sys.path.insert(0,'scripts')
+          from lock_research_shadow import verify
+          files=glob.glob('cfb/research-locks/*.json')
+          for path in files:
+              d=json.load(open(path))
+              verify(d)
+              assert d['canonicalInfluence'] is False
+              assert d['canonicalPromotionAuthorized'] is False
+          print(f'verified {len(files)} research locks')
+          PY
+      - name: Push event is integrity-only
+        if: github.event_name == 'push'
+        run: echo 'Push event verifies code and immutable locks only; live grading runs on schedule or manual dispatch.'
+      - name: Grade prospective research shadows
+        if: github.event_name != 'push'
+        run: |
+          shopt -s nullglob
+          locks=(cfb/research-locks/*.json)
+          if [ ${#locks[@]} -eq 0 ]; then
+            echo 'No prospective research locks found.'
+            exit 0
+          fi
+          mkdir -p cfb/research-results
+          for lock in "${locks[@]}"; do
+            name=$(basename "$lock")
+            echo "=== Research grade: $name ==="
+            python scripts/grade_research_shadow.py "$lock" --output "cfb/research-results/$name"
+          done
+      - name: Assert research/canonical separation
+        if: github.event_name != 'push'
+        run: |
+          python - <<'PY'
+          import glob,json
+          for path in glob.glob('cfb/research-results/*.json'):
+              d=json.load(open(path))
+              assert d['role']=='PROSPECTIVE_RESEARCH_SHADOW_RESULTS', (path,d.get('role'))
+              assert d['canonicalInfluence'] is False, path
+              assert d['canonicalRecordMerged'] is False, path
+          print('research results remain separate from canonical record')
+          PY
+      - name: Commit research results
+        if: github.event_name != 'push'
+        run: |
+          git config user.name "cb-model-shadow-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git pull --rebase origin main
+          git add cfb/research-results
+          if git diff --cached --quiet; then
+            echo 'No research result changes.'
+            exit 0
+          fi
+          git commit -m 'Grade prospective CFB research shadows'
+          git push
