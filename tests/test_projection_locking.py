@@ -1,9 +1,17 @@
-from copy import deepcopy
+import sys
+import unittest
 from datetime import datetime, timezone
+from pathlib import Path
 
-import pytest
+sys.path.insert(0, str(Path(__file__).parents[1] / "scripts"))
 
-from scripts.projection_locking import game_digest, lock_game, lock_games_before, validate_game_lock, validate_week_locks
+from projection_locking import (
+    game_digest,
+    lock_game,
+    lock_games_before,
+    validate_game_lock,
+    validate_week_locks,
+)
 
 
 def game(game_id, kickoff):
@@ -27,58 +35,58 @@ def game(game_id, kickoff):
     }
 
 
-def test_lock_game_and_validate():
-    g = game("g1", "2026-10-20T23:00:00Z")
-    lock_game(g, "2026-10-20T22:30:00Z")
-    assert g["locked"] is True
-    assert g["lockDigest"] == game_digest(g)
-    validate_game_lock(g)
-
-
-def test_locked_game_rejects_projection_mutation():
-    g = game("g1", "2026-10-20T23:00:00Z")
-    lock_game(g, "2026-10-20T22:30:00Z")
-    g["projectedSpreadHome"] = -7.0
-    with pytest.raises(ValueError, match="LOCK VIOLATION"):
+class TestPerGameLocking(unittest.TestCase):
+    def test_lock_game_and_validate(self):
+        g = game("g1", "2026-10-20T23:00:00Z")
+        lock_game(g, "2026-10-20T22:30:00Z")
+        self.assertTrue(g["locked"])
+        self.assertEqual(g["lockDigest"], game_digest(g))
         validate_game_lock(g)
 
+    def test_locked_game_rejects_projection_mutation(self):
+        g = game("g1", "2026-10-20T23:00:00Z")
+        lock_game(g, "2026-10-20T22:30:00Z")
+        g["projectedSpreadHome"] = -7.0
+        with self.assertRaisesRegex(ValueError, "LOCK VIOLATION"):
+            validate_game_lock(g)
 
-def test_locked_game_rejects_benchmark_mutation():
-    g = game("g1", "2026-10-20T23:00:00Z")
-    lock_game(g, "2026-10-20T22:30:00Z")
-    g["benchmarkSnapshot"]["sagarin"]["impliedSpreadHome"] = -8.0
-    with pytest.raises(ValueError, match="LOCK VIOLATION"):
-        validate_game_lock(g)
+    def test_locked_game_rejects_benchmark_mutation(self):
+        g = game("g1", "2026-10-20T23:00:00Z")
+        lock_game(g, "2026-10-20T22:30:00Z")
+        g["benchmarkSnapshot"]["sagarin"]["impliedSpreadHome"] = -8.0
+        with self.assertRaisesRegex(ValueError, "LOCK VIOLATION"):
+            validate_game_lock(g)
+
+    def test_early_game_locks_while_later_game_remains_open(self):
+        payload = {
+            "games": [
+                game("early", "2026-10-20T23:00:00Z"),
+                game("late", "2026-10-21T01:00:00Z"),
+            ]
+        }
+        cutoff = datetime(2026, 10, 20, 23, 30, tzinfo=timezone.utc)
+        locked = lock_games_before(payload, cutoff, "2026-10-20T22:00:00Z")
+        self.assertEqual(locked, ["early"])
+        self.assertTrue(payload["games"][0]["locked"])
+        self.assertIsNot(payload["games"][1].get("locked"), True)
+        validate_week_locks(payload, require_all=False)
+
+    def test_grading_requires_all_games_locked_in_v2_snapshot(self):
+        payload = {
+            "games": [
+                game("early", "2026-10-20T23:00:00Z"),
+                game("late", "2026-10-21T01:00:00Z"),
+            ]
+        }
+        lock_game(payload["games"][0], "2026-10-20T22:00:00Z")
+        with self.assertRaisesRegex(ValueError, "Unlocked projection games"):
+            validate_week_locks(payload, require_all=True)
+
+    def test_cannot_lock_after_kickoff(self):
+        g = game("g1", "2026-10-20T23:00:00Z")
+        with self.assertRaisesRegex(ValueError, "after kickoff"):
+            lock_game(g, "2026-10-20T23:00:01Z")
 
 
-def test_early_game_locks_while_later_game_remains_open():
-    payload = {
-        "games": [
-            game("early", "2026-10-20T23:00:00Z"),
-            game("late", "2026-10-21T01:00:00Z"),
-        ]
-    }
-    cutoff = datetime(2026, 10, 20, 23, 30, tzinfo=timezone.utc)
-    locked = lock_games_before(payload, cutoff, "2026-10-20T22:00:00Z")
-    assert locked == ["early"]
-    assert payload["games"][0]["locked"] is True
-    assert payload["games"][1].get("locked") is not True
-    validate_week_locks(payload, require_all=False)
-
-
-def test_grading_requires_all_games_locked_in_v2_snapshot():
-    payload = {
-        "games": [
-            game("early", "2026-10-20T23:00:00Z"),
-            game("late", "2026-10-21T01:00:00Z"),
-        ]
-    }
-    lock_game(payload["games"][0], "2026-10-20T22:00:00Z")
-    with pytest.raises(ValueError, match="Unlocked projection games"):
-        validate_week_locks(payload, require_all=True)
-
-
-def test_cannot_lock_after_kickoff():
-    g = game("g1", "2026-10-20T23:00:00Z")
-    with pytest.raises(ValueError, match="after kickoff"):
-        lock_game(g, "2026-10-20T23:00:01Z")
+if __name__ == "__main__":
+    unittest.main()
