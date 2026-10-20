@@ -13,6 +13,10 @@ Total validation: HOLD
 - `app.js` — search, filters, sorting, game-card rendering
 - `data.js` — embedded frozen snapshot for direct/static hosting
 - `data.json` — same snapshot in JSON for future automated refreshes
+- `MODEL_SOURCES.md` — vetted CFB/NFL source and resource registry, source roles, governance, and promotion restrictions
+
+## Sources & provenance
+`MODEL_SOURCES.md` is the project source-of-truth registry for vetted external data, market, benchmark, challenger, contextual, news, weather, personnel, and research resources. A source appearing in the registry does not automatically make its metrics canonical model inputs. Canonical promotion still requires leakage-safe historical testing, walk-forward/out-of-sample validation, prospective frozen-week evidence, and explicit promotion.
 
 ## Deployment
 Upload the folder to any static host (Replit, Render Static Site, Cloudflare Pages, Netlify, GitHub Pages, etc.).
