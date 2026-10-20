@@ -5,7 +5,7 @@ This is NOT the unrecoverable 0.9J canonical generator. It is a transparent,
 market-independent bridge/challenger used while a fully reproducible canonical
 engine is rebuilt and validated.
 
-Shadow v5:
+Shadow v6:
   projected margin = frozen structural HFA + strength(home) - strength(away)
   projected total  = scoring baseline + scoring_env(home) + scoring_env(away)
 
@@ -15,9 +15,9 @@ and scoring-environment effects are refreshed using all games completed before
 `--as-of`.
 
 ESPN team identity uses normalized school/location names rather than volatile
-abbreviations. This prevents teams such as Middle Tennessee, FIU, South Alabama
-and Marshall from disappearing because different feeds abbreviate them
-inconsistently.
+abbreviations. Historical ingestion is season/week based rather than day based,
+then strictly filtered by actual kickoff timestamp. This is more complete while
+preserving the pregame cutoff.
 
 No sportsbook, SP+, Sagarin, RefMetrics, post-kickoff or future-game information
 enters the fit.
@@ -43,7 +43,6 @@ ESPN_SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/football/colleg
 HFA_SANITY_RANGE = (0.0, 5.5)
 DEFAULT_MIN_TEAM_APPEARANCES = 3
 
-# Canonical school-name aliases. Keys and values are normalized by `norm`.
 TEAM_ALIASES = {
     "middletennesseestate": "middletennessee",
     "middletennessee": "middletennessee",
@@ -66,15 +65,12 @@ def canonical_school(value: str) -> str:
 
 
 def team_key(team: dict[str, Any]) -> str:
-    """Return a stable normalized school identity from an ESPN team object."""
     for field in ("location", "shortDisplayName", "displayName", "name"):
         value = team.get(field)
         if value:
             key = canonical_school(str(value))
             if key:
                 return key
-    # ESPN numeric ID is stable and useful diagnostically, but mixing numeric IDs
-    # with name-based matchup keys would be unsafe. Fail closed instead.
     raise ValueError(f"ESPN team object has no usable school name: id={team.get('id')}")
 
 
@@ -106,40 +102,64 @@ def fetch_json(url: str, timeout: int = 30) -> dict[str, Any]:
         return json.loads(resp.read().decode("utf-8"))
 
 
-def fetch_completed_games(start: datetime, end: datetime) -> list[Game]:
-    games: dict[str, Game] = {}
-    day = start.date()
-    while day <= end.date():
-        params = urlencode({"dates": day.strftime("%Y%m%d"), "groups": "80", "limit": 1000})
-        doc = fetch_json(f"{ESPN_SCOREBOARD}?{params}")
-        for event in doc.get("events", []):
-            comps = event.get("competitions") or []
-            if not comps:
-                continue
-            comp = comps[0]
-            completed = (((comp.get("status") or {}).get("type") or {}).get("completed"))
-            if not completed:
-                continue
+def _ingest_scoreboard_doc(doc: dict[str, Any], games: dict[str, Game], start: datetime, end: datetime) -> None:
+    for event in doc.get("events", []):
+        comps = event.get("competitions") or []
+        if not comps:
+            continue
+        comp = comps[0]
+        completed = (((comp.get("status") or {}).get("type") or {}).get("completed"))
+        if not completed:
+            continue
+        try:
             kickoff = parse_dt(comp.get("date") or event.get("date"))
-            if kickoff >= end:
-                continue
-            sides: dict[str, dict[str, Any]] = {}
-            for c in comp.get("competitors", []):
-                sides[c.get("homeAway")] = c
-            if "home" not in sides or "away" not in sides:
-                continue
-            h, a = sides["home"], sides["away"]
+        except Exception:
+            continue
+        if kickoff < start or kickoff >= end:
+            continue
+        sides: dict[str, dict[str, Any]] = {}
+        for c in comp.get("competitors", []):
+            sides[c.get("homeAway")] = c
+        if "home" not in sides or "away" not in sides:
+            continue
+        h, a = sides["home"], sides["away"]
+        try:
+            hs, aas = float(h["score"]), float(a["score"])
+            home_code = team_key(h.get("team") or {})
+            away_code = team_key(a.get("team") or {})
+        except (KeyError, TypeError, ValueError):
+            continue
+        if not home_code or not away_code or home_code == away_code:
+            continue
+        gid = str(event.get("id") or comp.get("id"))
+        games[gid] = Game(gid, kickoff, home_code, away_code, hs, aas, bool(comp.get("neutralSite", False)))
+
+
+def fetch_completed_games(start: datetime, end: datetime) -> list[Game]:
+    """Fetch regular-season games week-by-week, then apply the hard as-of cutoff.
+
+    ESPN's date-specific scoreboard history can be incomplete for older dates.
+    Season/week retrieval is used for coverage; event timestamps remain the
+    authority for leakage prevention.
+    """
+    games: dict[str, Game] = {}
+    seasons = range(start.year, end.year + 1)
+    for season in seasons:
+        for week in range(0, 21):
+            params = urlencode({
+                "dates": str(season),
+                "seasontype": 2,
+                "week": week,
+                "groups": "80",
+                "limit": 1000,
+            })
             try:
-                hs, aas = float(h["score"]), float(a["score"])
-                home_code = team_key(h.get("team") or {})
-                away_code = team_key(a.get("team") or {})
-            except (KeyError, TypeError, ValueError):
-                continue
-            if not home_code or not away_code or home_code == away_code:
-                continue
-            gid = str(event.get("id") or comp.get("id"))
-            games[gid] = Game(gid, kickoff, home_code, away_code, hs, aas, bool(comp.get("neutralSite", False)))
-        day += timedelta(days=1)
+                doc = fetch_json(f"{ESPN_SCOREBOARD}?{params}")
+            except Exception:
+                if week == 0:
+                    continue
+                raise
+            _ingest_scoreboard_doc(doc, games, start, end)
     return sorted(games.values(), key=lambda g: (g.kickoff, g.game_id))
 
 
@@ -414,11 +434,11 @@ def run(input_path: Path, output_path: Path, as_of: datetime, start: datetime):
         })
 
     out = {
-        "schemaVersion": 5,
+        "schemaVersion": 6,
         "league": "cfb",
         "season": state.get("season"),
         "week": state.get("week"),
-        "modelId": "cfb-rebuild-alpha-shadow-v5",
+        "modelId": "cfb-rebuild-alpha-shadow-v6",
         "role": "SHADOW_CHALLENGER_ONLY",
         "canonicalInfluence": False,
         "asOf": iso(as_of),
@@ -426,6 +446,7 @@ def run(input_path: Path, output_path: Path, as_of: datetime, start: datetime):
         "rawTrainingGames": len(raw_training),
         "eligibleTrainingGames": model["eligibleTrainingGames"],
         "teamIdentity": "normalized ESPN team.location/name with explicit aliases",
+        "ingestionMode": "ESPN regular season week-by-week; hard kickoff timestamp cutoff",
         "targetCoverage": coverage,
         "source": {
             "provider": "ESPN public college-football scoreboard",
