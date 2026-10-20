@@ -1,0 +1,70 @@
+name: CFB Week 8 official Sagarin full snapshot
+on:
+  push:
+    paths:
+      - 'scripts/cfb_sagarin_full_snapshot.py'
+      - 'tests/test_cfb_sagarin_full_snapshot.py'
+      - 'cfb/pregame/week-08-schedule.json'
+      - 'data/team-aliases.json'
+      - '.github/workflows/cfb-week8-sagarin-full.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: cfb-week8-sagarin-full
+  cancel-in-progress: false
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Test official Sagarin parser and coverage gates
+        run: python -m unittest tests.test_cfb_sagarin_full_snapshot -v
+      - name: Capture official Sagarin Predictor snapshot
+        run: |
+          python scripts/cfb_sagarin_full_snapshot.py \
+            --schedule cfb/pregame/week-08-schedule.json \
+            --output cfb/benchmarks/week-08-sagarin-full.json \
+            --min-coverage 0.90
+      - name: Assert official-source benchmark policy
+        run: |
+          python - <<'PY'
+          import json
+          p='cfb/benchmarks/week-08-sagarin-full.json'
+          d=json.load(open(p))
+          assert d['role']=='OFFICIAL_EXTERNAL_BENCHMARK_SNAPSHOT', d.get('role')
+          assert d['canonicalInfluence'] is False
+          assert d['source']['sourceId']=='sagarin-cfb'
+          assert d['source']['publisher']=='Jeff Sagarin'
+          assert d['source']['officialUrl']=='https://sagarin.com/sports/cfsend.htm'
+          assert d['source']['sourceWeek']==7, d['source']
+          through=str(d['source']['ratingsThrough'] or '').lower()
+          assert 'october 17' in through, d['source']
+          assert 3.7 <= float(d['source']['predictorHomeAdvantage']) <= 3.9, d['source']
+          assert d['coverage']['scheduleGames']==56, d['coverage']
+          assert d['coverage']['ratio'] >= 0.90, d['coverage']
+          assert all(g['sagarin']['status'] in {'CURRENT','REVIEW'} for g in d['games'])
+          print(json.dumps({
+              'sourceWeek':d['source']['sourceWeek'],
+              'ratingsThrough':d['source']['ratingsThrough'],
+              'predictorHomeAdvantage':d['source']['predictorHomeAdvantage'],
+              'coverage':d['coverage'],
+          }, indent=2))
+          PY
+      - name: Validate against approved benchmark registry
+        run: python scripts/validate_benchmarks.py cfb/benchmarks/week-08-sagarin-full.json
+      - name: Commit official Sagarin full-slate snapshot
+        run: |
+          git config user.name "cb-model-benchmark-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add cfb/benchmarks/week-08-sagarin-full.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Capture official Week 8 Sagarin full-slate benchmark'
+          for attempt in 1 2 3; do
+            if git push; then exit 0; fi
+            git pull --rebase origin main
+          done
+          git push
