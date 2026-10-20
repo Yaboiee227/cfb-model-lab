@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "asOf": "2026-10-20T04:00:00Z",
+  "role": "MULTISEASON_SEASON_RESET_WALKFORWARD_RESEARCH",
+  "canonicalInfluence": false,
+  "policy": {
+    "priorSeasonTeamStateCarryover": false,
+    "priorSeasonUsedFor": "feature-to-outcome coefficient learning only",
+    "currentSeasonTeamState": "2026 only, reset at season start",
+    "marketDataUsed": false,
+    "externalRatingsUsed": false,
+    "sameWeekLeakagePrevented": true
+  },
+  "hfa": {
+    "for2025FeatureRows": 3.4917340983843785,
+    "for2025DerivedOnlyFrom": [
+      2022,
+      2023,
+      2024
+    ],
+    "for2025SeasonEstimates": [
+      {
+        "season": 2022,
+        "rawGames": 927,
+        "eligibleGames": 763,
+        "homeMarginAdvantage": 3.0167896313462124
+      },
+      {
+        "season": 2023,
+        "rawGames": 923,
+        "eligibleGames": 763,
+        "homeMarginAdvantage": 3.4917340983843785
+      },
+      {
+        "season": 2024,
+        "rawGames": 917,
+        "eligibleGames": 765,
+        "homeMarginAdvantage": 4.249132328925835
+      }
+    ],
+    "for2026FeatureRows": 4.249132328925835,
+    "for2026Source": "audited Week 8 shadow structural HFA derived from 2023-2025"
+  },
+  "dataQuality": {
+    "season2025": {
+      "season": 2025,
+      "games": 912,
+      "boxscoreGames": 912,
+      "boxscoreCoverage": 1.0,
+      "boxscoreFailures": [],
+      "causalRows": 601,
+      "structuralHomeMarginAdvantage": 3.4917340983843785
+    },
+    "season2026": {
+      "season": 2026,
+      "games": 510,
+      "boxscoreGames": 510,
+      "boxscoreCoverage": 1.0,
+      "boxscoreFailures": [],
+      "causalRows": 227,
+      "structuralHomeMarginAdvantage": 4.249132328925835
+    }
+  },
+  "walkForward2026": {
+    "folds": [
+      {
+        "testWeekStart": "2026-09-28T00:00:00Z",
+        "previousWeekInnerValidation": "2026-09-21T00:00:00Z",
+        "priorSeasonRows": 601,
+        "earlierCurrentSeasonRows": 54,
+        "trainingRows": 655,
+        "innerValidationRows": 54,
+        "testRows": 56,
+        "selectedMargin": {
+          "bundle": "full_efficiency",
+          "alpha": 0.1
+        },
+        "selectedTotal": {
+          "bundle": "scoring",
+          "alpha": 0.1
+        },
+        "simpleMargin": {
+          "games": 56,
+          "mae": 14.934431911828758,
+          "rmse": 19.841694927826147,
+          "bias": 0.4288702290964374
+        },
+        "richMargin": {
+          "games": 56,
+          "mae": 14.036178163370474,
+          "rmse": 19.245032293145947,
+          "bias": 0.13964357240256398
+        },
+        "simpleTotal": {
+          "games": 56,
+          "mae": 13.736507868057197,
+          "rmse": 16.44519569967382,
+          "bias": 0.19739717457867542
+        },
+        "richTotal": {
+          "games": 56,
+          "mae": 13.710657549208724,
+          "rmse": 16.442962638326343,
+          "bias": -0.30771165108102644
+        }
+      },
+      {
+        "testWeekStart": "2026-10-05T00:00:00Z",
+        "previousWeekInnerValidation": "2026-09-28T00:00:00Z",
+        "priorSeasonRows": 601,
+        "earlierCurrentSeasonRows": 110,
+        "trainingRows": 711,
+        "innerValidationRows": 56,
+        "testRows": 58,
+        "selectedMargin": {
+          "bundle": "scoring",
+          "alpha": 0.1
+        },
+        "selectedTotal": {
+          "bundle": "core_efficiency",
+          "alpha": 0.1
+        },
+        "simpleMargin": {
+          "games": 58,
+          "mae": 12.87139961839153,
+          "rmse": 15.740665264718324,
+          "bias": -0.6466904491964294
+        },
+        "richMargin": {
+          "games": 58,
+          "mae": 12.175384263565675,
+          "rmse": 14.816527046931862,
+          "bias": 0.39980285451456105
+        },
+        "simpleTotal": {
+          "games": 58,
+          "mae": 13.220210044898197,
+          "rmse": 17.032359915168374,
+          "bias": 1.4688177055914813
+        },
+        "richTotal": {
+          "games": 58,
+          "mae": 12.95402272115286,
+          "rmse": 16.91955064798956,
+          "bias": -0.25985808998115406
+        }
+      },
+      {
+        "testWeekStart": "2026-10-12T00:00:00Z",
+        "previousWeekInnerValidation": "2026-10-05T00:00:00Z",
+        "priorSeasonRows": 601,
+        "earlierCurrentSeasonRows": 168,
+        "trainingRows": 769,
+        "innerValidationRows": 58,
+        "testRows": 59,
+        "selectedMargin": {
+          "bundle": "core_efficiency",
+          "alpha": 0.1
+        },
+        "selectedTotal": {
+          "bundle": "core_efficiency",
+          "alpha": 100.0
+        },
+        "simpleMargin": {
+          "games": 59,
+          "mae": 11.496550551061226,
+          "rmse": 14.572518095655052,
+          "bias": 0.7742975626413622
+        },
+        "richMargin": {
+          "games": 59,
+          "mae": 12.086511675888795,
+          "rmse": 14.659901287517135,
+          "bias": 0.05766260717147125
+        },
+        "simpleTotal": {
+          "games": 59,
+          "mae": 13.283776035596286,
+          "rmse": 16.32405111759132,
+          "bias": 0.9060074565523148
+        },
+        "richTotal": {
+          "games": 59,
+          "mae": 13.162943369814961,
+          "rmse": 16.267352412290276,
+          "bias": -0.0821555967229663
+        }
+      }
+    ],
+    "aggregate": {
+      "games": 173,
+      "simpleMargin": {
+        "games": 173,
+        "mae": 13.070322817582262,
+        "rmse": 16.820458616146304,
+        "bias": 0.18608232931704025
+      },
+      "richMargin": {
+        "games": 173,
+        "mae": 12.747413024930605,
+        "rmse": 16.333473930831765,
+        "bias": 0.1989057771069648
+      },
+      "simpleTotal": {
+        "games": 173,
+        "mae": 13.409013926679071,
+        "rmse": 16.603636412475087,
+        "bias": 0.8653185470364063
+      },
+      "richTotal": {
+        "games": 173,
+        "mae": 13.2701953722638,
+        "rmse": 16.545171119144815,
+        "bias": -0.21474451957282886
+      },
+      "richMinusSimpleMarginMae": -0.3229097926516573,
+      "richMinusSimpleTotalMae": -0.13881855441527158
+    },
+    "minimumRequiredFolds": 3,
+    "evidenceStatus": "RICH_REJECTED",
+    "prospectiveShadowGatePass": false,
+    "gateRule": "Across >=3 unseen 2026 weekly folds, rich must improve at least one MAE by >=0.50 and degrade neither margin nor total MAE by >0.25. Passing still does not authorize canonical promotion."
+  },
+  "establishedWeek7Reference": {
+    "week": 7,
+    "games": 53,
+    "marginMae": 11.335250909905998,
+    "totalMae": 12.911974822454155,
+    "suAccuracyPct": 64.15094339622641,
+    "policy": "Descriptive reference only; not used for coefficient fitting or hyperparameter selection."
+  },
+  "warning": "Research only. Prior-season coefficient evidence and any gate pass still require prospective frozen-week evidence before canonical promotion."
+}
