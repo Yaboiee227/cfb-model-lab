@@ -49,15 +49,15 @@ jobs:
         run: |
           latest=$(ls cfb/benchmarks/week-*.json 2>/dev/null | sort | tail -n 1 || true)
           if [ -n "$latest" ]; then python scripts/validate_benchmarks.py "$latest"; else echo 'No CFB benchmark snapshot yet.'; fi
-      - name: Audit open CFB pregame states
+      - name: Audit open canonical CFB pregame states
         run: |
           shopt -s nullglob
-          files=(cfb/pregame/*.json)
+          files=(cfb/pregame/*-open.json)
           if [ ${#files[@]} -eq 0 ]; then
-            echo 'No CFB pregame state files yet.'
+            echo 'No open canonical CFB pregame state files yet.'
           else
             for f in "${files[@]}"; do
-              echo "=== Pregame audit: $f ==="
+              echo "=== Canonical pregame audit: $f ==="
               python scripts/validate_pregame_state.py "$f"
             done
           fi
@@ -67,7 +67,7 @@ jobs:
           if compgen -G 'cfb/projections/week-*.json' > /dev/null; then echo 'ready=true' >> "$GITHUB_OUTPUT"; else echo 'ready=false' >> "$GITHUB_OUTPUT"; fi
       - name: Integrity-only push check
         if: github.event_name == 'push'
-        run: echo 'Push event runs tests, benchmark validation and pregame readiness audit only; no grading or publishing mutation.'
+        run: echo 'Push event runs tests, benchmark validation and canonical pregame readiness audit only; research context files use their dedicated audit workflow.'
       - name: No-op until first locked weekly JSON exists
         if: github.event_name != 'push' && steps.data.outputs.ready != 'true'
         run: echo 'No CFB week-XX.json projection file yet; preserving the current published record.'
