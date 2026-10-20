@@ -1,0 +1,76 @@
+name: CFB feature-family validation
+on:
+  push:
+    paths:
+      - 'scripts/cfb_feature_family_validation.py'
+      - 'tests/test_cfb_feature_family_validation.py'
+      - 'scripts/cfb_multiseason_walkforward.py'
+      - 'scripts/cfb_rich_challenger.py'
+      - 'scripts/cfb_shadow_engine.py'
+      - 'cfb/shadow/week-08-tuesday.json'
+      - '.github/workflows/cfb-feature-family-validation.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: cfb-feature-family-validation
+  cancel-in-progress: false
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check numpy
+      - name: Test feature-family evaluator
+        run: python -m unittest tests.test_cfb_feature_family_validation -v
+      - name: Run isolated feature-family walk-forward
+        run: |
+          python scripts/cfb_feature_family_validation.py \
+            --as-of '2026-10-20T00:00:00-04:00' \
+            --shadow cfb/shadow/week-08-tuesday.json \
+            --output cfb/validation/week-08-feature-family-validation.json
+      - name: Assert research-only policy and print ranking
+        run: |
+          python - <<'PY'
+          import json
+          p='cfb/validation/week-08-feature-family-validation.json'
+          d=json.load(open(p))
+          assert d['role']=='ISOLATED_FEATURE_FAMILY_RESEARCH'
+          assert d['canonicalInfluence'] is False
+          assert d['policy']['seasonReset'] is True
+          assert d['policy']['marketDataUsed'] is False
+          assert d['policy']['externalRatingsUsed'] is False
+          assert d['policy']['sameWeekLeakagePrevented'] is True
+          v=d['validation']
+          assert v['foldCount'] >= 3
+          assert v['games'] >= 100
+          print(json.dumps({
+              'folds':v['foldCount'],
+              'games':v['games'],
+              'eligible':v['challengerEligibleFamilies'],
+              'families':{k:{
+                  'marginDelta':r['marginMaeDeltaVsSimple'],
+                  'totalDelta':r['totalMaeDeltaVsSimple'],
+                  'marginImprovedFolds':r['marginImprovedFolds'],
+                  'totalImprovedFolds':r['totalImprovedFolds'],
+                  'marginEligible':r['marginChallengerEligible'],
+                  'totalEligible':r['totalChallengerEligible'],
+              } for k,r in v['families'].items()}
+          },indent=2))
+          PY
+      - name: Commit feature-family evidence
+        run: |
+          git config user.name "cb-model-validation-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add cfb/validation/week-08-feature-family-validation.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Refresh CFB feature-family validation evidence'
+          for attempt in 1 2 3; do
+            if git push; then exit 0; fi
+            git pull --rebase origin main
+          done
+          git push
