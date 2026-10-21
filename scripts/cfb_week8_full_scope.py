@@ -5,11 +5,17 @@ Operational only: this does not change any projection. It supersedes the earlier
 Tue-Thu pause after explicit user direction to process the entire remaining Week
 8 slate. Completed Tuesday games are preserved but excluded from the resumed
 pregame scope; Wednesday through Saturday games are included.
+
+The schedule's public gameId uses the America/New_York game date while some
+frozen foundation IDs were formed from the UTC kickoff date. Therefore the
+cross-artifact integrity join is teams + exact kickoff, with the frozen digest
+carried forward as the immutable projection identity.
 """
 from __future__ import annotations
 
 import argparse
 import json
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -18,25 +24,45 @@ def iso_now() -> str:
     return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
 
 
+def norm_team(value: str) -> str:
+    return re.sub(r"[^a-z0-9]", "", str(value).lower())
+
+
+def identity(game: dict) -> tuple[str, str, str]:
+    return (
+        norm_team(game.get("awayTeam", "")),
+        norm_team(game.get("homeTeam", "")),
+        str(game.get("kickoff", "")),
+    )
+
+
 def build(schedule: dict, foundation: dict, start_date: str = "2026-10-21") -> dict:
     if schedule.get("week") != 8 or foundation.get("week") != 8:
         raise ValueError("expected Week 8 inputs")
     if foundation.get("canonicalInfluence") is not False:
         raise ValueError("foundation must remain non-canonical")
 
-    frozen = {g["gameId"]: g for g in foundation.get("games", [])}
+    frozen: dict[tuple[str, str, str], dict] = {}
+    for row in foundation.get("games", []):
+        key = identity(row)
+        if key in frozen:
+            raise ValueError(f"duplicate foundation matchup identity: {key}")
+        frozen[key] = row
+
     rows = []
     for game in schedule.get("games", []):
         if str(game.get("gameDateET")) < start_date:
             continue
-        match = frozen.get(game.get("gameId"))
+        key = identity(game)
+        match = frozen.get(key)
         if not match:
-            raise ValueError(f"schedule game missing from foundation: {game.get('gameId')}")
+            raise ValueError(f"schedule game missing from foundation by teams+kickoff: {game.get('gameId')} {key}")
         digest = match.get("projectionDigest")
         if not digest:
-            raise ValueError(f"foundation game missing digest: {game.get('gameId')}")
+            raise ValueError(f"foundation game missing digest: {match.get('gameId')}")
         rows.append({
             "gameId": game["gameId"],
+            "foundationGameId": match.get("gameId"),
             "sourceGameId": game.get("sourceGameId"),
             "gameDateET": game["gameDateET"],
             "awayTeam": game["awayTeam"],
