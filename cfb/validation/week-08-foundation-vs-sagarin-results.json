@@ -1,0 +1,412 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "role": "POSTGAME_FROZEN_MODEL_VS_OFFICIAL_BENCHMARK_EVALUATION",
+  "canonicalInfluence": false,
+  "canonicalPromotionAuthorized": false,
+  "canonicalRecordMerged": false,
+  "gradedAt": "2026-10-21T08:01:10.042804Z",
+  "foundation": {
+    "modelId": "cfb-rebuild-foundation-v1-shadow",
+    "lockDigest": "72d0aa99176904f681264e69f57260152607914f712a1686d2cdaaf89af3115b",
+    "lockedAt": "2026-10-20T11:34:56.634210Z",
+    "sourceAsOf": "2026-10-20T04:00:00Z"
+  },
+  "benchmark": {
+    "sourceId": "sagarin-cfb",
+    "publisher": "Jeff Sagarin",
+    "officialUrl": "https://sagarin.com/sports/cfsend.htm",
+    "observedAt": "2026-10-20T11:45:56.031080Z",
+    "ratingsThrough": "2026-10-17",
+    "sourceWeek": 7
+  },
+  "pregameComparisonCreatedAt": "2026-10-20T11:49:57.288156Z",
+  "status": "IN_PROGRESS",
+  "counts": {
+    "games": 7,
+    "final": 3,
+    "pending": 3,
+    "review": 1,
+    "void": 0
+  },
+  "aggregate": {
+    "cbMargin": {
+      "games": 3,
+      "mae": 14.690518522393882,
+      "rmse": 14.91316208335092,
+      "bias": -3.372244470985526
+    },
+    "sagarinMargin": {
+      "games": 3,
+      "mae": 14.813333333333333,
+      "rmse": 14.946667410050532,
+      "bias": -4.579999999999997
+    },
+    "closerToFinalMargin": {
+      "CB": 2,
+      "SAGARIN": 1,
+      "TIE": 0
+    },
+    "cbStraightUp": {
+      "correct": 1,
+      "wrong": 2,
+      "graded": 3,
+      "accuracyPct": 33.333333333333336
+    },
+    "sagarinStraightUp": {
+      "correct": 1,
+      "wrong": 2,
+      "graded": 3,
+      "accuracyPct": 33.333333333333336
+    },
+    "directionalDisagreementGames": {
+      "games": 0,
+      "cbCloser": 0,
+      "sagarinCloser": 0,
+      "ties": 0,
+      "cbSuCorrect": 0,
+      "sagarinSuCorrect": 0
+    },
+    "byPregameDisagreementBucket": {
+      "LT_2": {
+        "games": 3,
+        "cbMargin": {
+          "games": 3,
+          "mae": 14.690518522393882,
+          "rmse": 14.91316208335092,
+          "bias": -3.372244470985526
+        },
+        "sagarinMargin": {
+          "games": 3,
+          "mae": 14.813333333333333,
+          "rmse": 14.946667410050532,
+          "bias": -4.579999999999997
+        },
+        "closer": {
+          "CB": 2,
+          "SAGARIN": 1,
+          "TIE": 0
+        }
+      },
+      "2_TO_LT_5": {
+        "games": 0,
+        "cbMargin": {
+          "games": 0,
+          "mae": null,
+          "rmse": null,
+          "bias": null
+        },
+        "sagarinMargin": {
+          "games": 0,
+          "mae": null,
+          "rmse": null,
+          "bias": null
+        },
+        "closer": {
+          "CB": 0,
+          "SAGARIN": 0,
+          "TIE": 0
+        }
+      },
+      "5_TO_LT_10": {
+        "games": 0,
+        "cbMargin": {
+          "games": 0,
+          "mae": null,
+          "rmse": null,
+          "bias": null
+        },
+        "sagarinMargin": {
+          "games": 0,
+          "mae": null,
+          "rmse": null,
+          "bias": null
+        },
+        "closer": {
+          "CB": 0,
+          "SAGARIN": 0,
+          "TIE": 0
+        }
+      },
+      "GE_10": {
+        "games": 0,
+        "cbMargin": {
+          "games": 0,
+          "mae": null,
+          "rmse": null,
+          "bias": null
+        },
+        "sagarinMargin": {
+          "games": 0,
+          "mae": null,
+          "rmse": null,
+          "bias": null
+        },
+        "closer": {
+          "CB": 0,
+          "SAGARIN": 0,
+          "TIE": 0
+        }
+      }
+    }
+  },
+  "games": [
+    {
+      "gameId": "2026-10-20-MIDDLETENNESSEE-FLORIDAINTERNATIONAL",
+      "sourceGameId": "401871055",
+      "awayTeam": "Middle Tennessee",
+      "homeTeam": "Florida International",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 13.977411077112537,
+        "projectedSpreadHome": -13.977411077112537,
+        "projectedWinner": "Florida International",
+        "homeWinProbability": 81.12113387563811,
+        "projectionDigest": "d837003b6ba482064b0d61e2f4d5d519d1110c204aabdca37ab58edaf15a4570"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 12.350000000000005,
+        "impliedSpreadHome": -12.350000000000005,
+        "predictorFavorite": "Florida International",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 1.6274110771125319,
+        "absoluteDisagreement": 1.6274110771125319,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      },
+      "postgameStatus": "FINAL",
+      "final": {
+        "awayScore": 26,
+        "homeScore": 23,
+        "homeMargin": -3.0,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "postgameComparison": {
+        "cbMarginError": 16.977411077112535,
+        "cbAbsoluteMarginError": 16.977411077112535,
+        "sagarinMarginError": 15.350000000000005,
+        "sagarinAbsoluteMarginError": 15.350000000000005,
+        "closerToFinalMargin": "SAGARIN",
+        "cbStraightUpCorrect": false,
+        "sagarinStraightUpCorrect": false
+      }
+    },
+    {
+      "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
+      "sourceGameId": "401871069",
+      "awayTeam": "Missouri State",
+      "homeTeam": "Delaware",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 7.01075758611438,
+        "projectedSpreadHome": -7.01075758611438,
+        "projectedWinner": "Delaware",
+        "homeWinProbability": 67.09639860904643,
+        "projectionDigest": "c2f169318d0835551d45c972f4dbf953b36a585e1579988b846e2aae084321c8"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 6.059999999999998,
+        "impliedSpreadHome": -6.059999999999998,
+        "predictorFavorite": "Delaware",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 0.9507575861143822,
+        "absoluteDisagreement": 0.9507575861143822,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      },
+      "postgameStatus": "FINAL",
+      "final": {
+        "awayScore": 38,
+        "homeScore": 61,
+        "homeMargin": 23.0,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "postgameComparison": {
+        "cbMarginError": -15.98924241388562,
+        "cbAbsoluteMarginError": 15.98924241388562,
+        "sagarinMarginError": -16.94,
+        "sagarinAbsoluteMarginError": 16.94,
+        "closerToFinalMargin": "CB",
+        "cbStraightUpCorrect": true,
+        "sagarinStraightUpCorrect": true
+      }
+    },
+    {
+      "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
+      "sourceGameId": "401871092",
+      "awayTeam": "South Alabama",
+      "homeTeam": "Marshall",
+      "kickoff": "2026-10-20T23:30:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": -4.1049020761834925,
+        "projectedSpreadHome": 4.1049020761834925,
+        "projectedWinner": "South Alabama",
+        "homeWinProbability": 39.77654933430052,
+        "projectionDigest": "1f3d9455b39a045403e0b5e7616dec22366f2c4669bb1f4903907ab43704b4b2"
+      },
+      "sagarin": {
+        "impliedHomeMargin": -5.149999999999996,
+        "impliedSpreadHome": 5.149999999999996,
+        "predictorFavorite": "South Alabama",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 1.0450979238165035,
+        "absoluteDisagreement": 1.0450979238165035,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      },
+      "postgameStatus": "FINAL",
+      "final": {
+        "awayScore": 13,
+        "homeScore": 20,
+        "homeMargin": 7.0,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "postgameComparison": {
+        "cbMarginError": -11.104902076183492,
+        "cbAbsoluteMarginError": 11.104902076183492,
+        "sagarinMarginError": -12.149999999999995,
+        "sagarinAbsoluteMarginError": 12.149999999999995,
+        "closerToFinalMargin": "CB",
+        "cbStraightUpCorrect": false,
+        "sagarinStraightUpCorrect": false
+      }
+    },
+    {
+      "gameId": "2026-10-22-NEWMEXICOSTATE-SAMHOUSTON",
+      "sourceGameId": "401871070",
+      "awayTeam": "New Mexico State",
+      "homeTeam": "Sam Houston",
+      "kickoff": "2026-10-22T00:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": -0.3864906855700596,
+        "projectedSpreadHome": 0.3864906855700596,
+        "projectedWinner": "New Mexico State",
+        "homeWinProbability": 49.02673862307157,
+        "projectionDigest": "76573e65de4174437af8f8b604ec6730d1b183804089c333a6186c8b182c26da"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 0.4500000000000055,
+        "impliedSpreadHome": -0.4500000000000055,
+        "predictorFavorite": "Sam Houston",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": -0.8364906855700651,
+        "absoluteDisagreement": 0.8364906855700651,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": false
+      },
+      "postgameStatus": "REVIEW",
+      "postgameReviewReason": "No final-score match; no guess made"
+    },
+    {
+      "gameId": "2026-10-22-JAMESMADISON-APPSTATE",
+      "sourceGameId": "401869845",
+      "awayTeam": "James Madison",
+      "homeTeam": "App State",
+      "kickoff": "2026-10-22T23:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": -10.44393434017666,
+        "projectedSpreadHome": 10.44393434017666,
+        "projectedWinner": "James Madison",
+        "homeWinProbability": 25.48493612139827,
+        "projectionDigest": "50147bbb9df5dbcabf7857833e94a663d537996bceaf0da92379c547913d8875"
+      },
+      "sagarin": {
+        "impliedHomeMargin": -11.309999999999992,
+        "impliedSpreadHome": 11.309999999999992,
+        "predictorFavorite": "James Madison",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 0.866065659823331,
+        "absoluteDisagreement": 0.866065659823331,
+        "disagreementBucket": "LT_2",
+        "directionalWinnerAgreement": true
+      },
+      "postgameStatus": "PENDING"
+    },
+    {
+      "gameId": "2026-10-22-LIBERTY-KENNESAWSTATE",
+      "sourceGameId": "401871056",
+      "awayTeam": "Liberty",
+      "homeTeam": "Kennesaw State",
+      "kickoff": "2026-10-22T23:00:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": -10.800803408442647,
+        "projectedSpreadHome": 10.800803408442647,
+        "projectedWinner": "Liberty",
+        "homeWinProbability": 24.76715217474573,
+        "projectionDigest": "f2dce35bbd39b50c1457eb063ae30cbbba26a98d6b38f7de39a2dcbc470977a7"
+      },
+      "sagarin": {
+        "impliedHomeMargin": -5.429999999999997,
+        "impliedSpreadHome": 5.429999999999997,
+        "predictorFavorite": "Liberty",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": -5.37080340844265,
+        "absoluteDisagreement": 5.37080340844265,
+        "disagreementBucket": "5_TO_LT_10",
+        "directionalWinnerAgreement": true
+      },
+      "postgameStatus": "PENDING"
+    },
+    {
+      "gameId": "2026-10-22-EASTCAROLINA-MEMPHIS",
+      "sourceGameId": "401862807",
+      "awayTeam": "East Carolina",
+      "homeTeam": "Memphis",
+      "kickoff": "2026-10-22T23:30:00Z",
+      "status": "COMPARED",
+      "foundation": {
+        "projectedHomeMargin": 16.28122286797865,
+        "projectedSpreadHome": -16.28122286797865,
+        "projectedWinner": "Memphis",
+        "homeWinProbability": 84.79790917211139,
+        "projectionDigest": "4e630ce63c2afc4ea179d3455e85efc5280b3838e8bfd6ac5feab7e23ff66409"
+      },
+      "sagarin": {
+        "impliedHomeMargin": 13.759999999999994,
+        "impliedSpreadHome": -13.759999999999994,
+        "predictorFavorite": "Memphis",
+        "observedAt": "2026-10-20T11:45:56.031080Z",
+        "ratingsThrough": "2026-10-17"
+      },
+      "comparison": {
+        "cbMinusSagarinHomeMargin": 2.521222867978654,
+        "absoluteDisagreement": 2.521222867978654,
+        "disagreementBucket": "2_TO_LT_5",
+        "directionalWinnerAgreement": true
+      },
+      "postgameStatus": "PENDING"
+    }
+  ],
+  "policy": "Postgame research evaluation of pregame-frozen values only. Final scores may grade the frozen CB and Sagarin margins but may never rewrite either pregame value or enter the established canonical record automatically.",
+  "activeScope": "cfb/pregame/week-08-active-through-thursday.json",
+  "pauseBeforeGameDateET": "2026-10-23"
+}
