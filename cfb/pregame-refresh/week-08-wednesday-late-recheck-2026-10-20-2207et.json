@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "role": "TIMESTAMPED_PREGAME_CONTEXT_REFRESH",
+  "canonicalInfluence": false,
+  "canonicalPromotionAuthorized": false,
+  "capturedAt": "2026-10-21T02:07:09Z",
+  "capturedAtET": "2026-10-20T22:07:09-04:00",
+  "scope": "Wednesday October 21 only; Thursday preparation remains paused for this resumed Work-tab task and Friday/Saturday remain out of scope.",
+  "game": {
+    "gameId": "2026-10-21-NEWMEXICOSTATE-SAMHOUSTON",
+    "sourceGameId": "401871070",
+    "awayTeam": "New Mexico State",
+    "homeTeam": "Sam Houston",
+    "kickoff": "2026-10-22T00:00:00Z",
+    "kickoffET": "2026-10-21T20:00:00-04:00",
+    "venue": "Elliott T. Bowers Stadium, Huntsville, Texas",
+    "frozenFoundationReference": {
+      "source": "cfb/research-locks/week-08-foundation-full.json",
+      "projectionDigest": "76573e65de4174437af8f8b604ec6730d1b183804089c333a6186c8b182c26da",
+      "projectedAwayPoints": 21.322981138871473,
+      "projectedHomePoints": 20.936490453301413,
+      "projectedMarginHome": -0.3864906855700596,
+      "projectedTotal": 42.259471592172886,
+      "homeWinProbability": 49.02673862307157,
+      "projectedWinner": "New Mexico State",
+      "status": "UNCHANGED_IMMUTABLE_RESEARCH_SHADOW"
+    },
+    "market": {
+      "status": "CONTEXT_ONLY_PUBLIC_RECHECK_PUBLICATION_LOCK_NOT_DUE",
+      "latestPublicBoard": {
+        "source": "Covers",
+        "sourceUrl": "https://www.covers.com/sport/football/ncaaf/matchup/378124",
+        "observedAt": "2026-10-21T02:07:09Z",
+        "spreadAway": -2.5,
+        "spreadHome": 2.5,
+        "total": 45.0
+      },
+      "preservedBookContext": {
+        "source": "cfb/pregame/week-08-wednesday-effective.json",
+        "fanDuel": {
+          "observedAt": "2026-10-20T19:56:42Z",
+          "spreadAway": -2.5,
+          "spreadHome": 2.5,
+          "total": 44.5,
+          "moneylineAway": -134,
+          "moneylineHome": 112
+        },
+        "draftKings": {
+          "observedAt": "2026-10-20T19:56:19Z",
+          "spreadAway": -2.5,
+          "spreadHome": 2.5,
+          "total": 44.5,
+          "moneylineAway": -142,
+          "moneylineHome": 120
+        }
+      },
+      "assessment": "No material spread-direction change from the latest timestamped FanDuel/DraftKings context: New Mexico State remains -2.5. The public total is about 45.0 versus 44.5 in the earlier book snapshot. Do not substitute this public-board observation for the immutable T-30 publication lock.",
+      "publicationLock": {
+        "source": "cfb/research-market-locks/week-08-foundation-market.json",
+        "status": "PENDING",
+        "targetWindow": "approximately T-30 Wednesday evening",
+        "note": "Not due at this refresh; do not fabricate an early publication lock."
+      }
+    },
+    "personnel": {
+      "status": "OFFICIAL_BASELINES_RECHECKED_FINAL_GAME_DAY_CONFIRMATION_PENDING",
+      "away": {
+        "mostRecentStartingQB": "Adam Damante",
+        "startingQB": "NOT_EXPLICITLY_CONFIRMED_FOR_WEDNESDAY",
+        "source": "https://nmstatesports.com/news/2026/10/18/football-aggies-continue-conference-usa-play-at-sam-houston-on-wednesday.aspx",
+        "assessment": "NM State's official Oct. 18 preview remains the current game preview and does not announce a quarterback change or explicit Wednesday starter. Preserve the existing Adam Damante recent-starter baseline; do not infer a new starter."
+      },
+      "home": {
+        "mostRecentStartingQB": "Landyn Locke",
+        "startingQB": "NOT_EXPLICITLY_CONFIRMED_FOR_WEDNESDAY",
+        "source": "https://gobearkats.com/news/2026/10/20/football-game-7-preview-vs-nm-state",
+        "assessment": "Sam Houston's Oct. 20 official preview describes Locke as the current quarterback baseline, including his 11 touchdown passes and 236.3 passing yards per game. This supports the existing Locke baseline but is not a final game-day starter announcement."
+      },
+      "thirdPartyInjuries": {
+        "source": "Covers matchup injury board",
+        "canonicalInfluence": false,
+        "note": "Retain existing third-party injury entries as context only; no invented point adjustment and no promotion into the frozen foundation."
+      }
+    },
+    "weather": {
+      "status": "NO_MATERIAL_ADVERSE_SIGNAL_FINAL_HOUR_RECHECK_PENDING",
+      "source": "National Weather Service Houston/Galveston point forecast for Huntsville, Texas",
+      "sourceUrl": "https://forecast.weather.gov/MapClick.php?FcstType=text&lat=30.7192&lg=en&lon=-95.5528&unit=0",
+      "sourceLastUpdate": "2026-10-20T11:01:00-05:00",
+      "forecast": "Wednesday sunny near 81 F with northeast wind around 5 mph; Wednesday night clear near 55 F with northeast wind around 5 mph becoming calm.",
+      "assessment": "No current weather reason to alter the frozen projection. Preserve weather as contextual only and repeat the stadium-level wind/precipitation check in the final pregame window."
+    },
+    "officialContext": {
+      "newMexicoState": {
+        "record": "2-4 overall, 1-1 CUSA",
+        "rest": "13 full days without a game after the Oct. 7 FIU matchup",
+        "tripMilesReportedByTeam": 1336,
+        "source": "https://nmstatesports.com/news/2026/10/18/football-aggies-continue-conference-usa-play-at-sam-houston-on-wednesday.aspx"
+      },
+      "samHouston": {
+        "record": "1-5 overall, 0-2 CUSA",
+        "source": "https://gobearkats.com/news/2026/10/20/football-game-7-preview-vs-nm-state"
+      }
+    },
+    "assessment": {
+      "materialPregameChangeSinceEffectiveFile": false,
+      "frozenProjectionChanged": false,
+      "canonicalReleaseAuthorized": false,
+      "readyForPublicationLock": false,
+      "remainingChecks": [
+        "Final official quarterback/personnel confirmation on game day",
+        "Final stadium-level weather recheck near kickoff",
+        "Immutable FanDuel/DraftKings T-30 publication-time market lock",
+        "Canonical model remains HOLD; research-shadow output must not be presented as promoted production"
+      ]
+    }
+  },
+  "policy": "Pregame-only context refresh. This artifact may document information observed before kickoff but cannot rewrite the immutable foundation, cannot promote a feature, and cannot merge research performance into the canonical record."
+}
