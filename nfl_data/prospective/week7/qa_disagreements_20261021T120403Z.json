@@ -11,7 +11,7 @@
   "definition": {
     "spread_difference_points": "canonical_home_margin minus market-implied home margin, where market-implied home margin equals negative home spread",
     "total_difference_points": "canonical total minus observed public-board total",
-    "qa_priority_rule": "absolute spread or total difference >= 3.0 points is a review-priority flag only"
+    "qa_priority_rule": "review-priority if absolute spread or total difference is at least 3.0 points, or if the model and market imply opposite favorites; this is QA triage only"
   },
   "games": [
     {"game_id":"2026_07_NE_CHI","canonical_home_margin":1.278,"market_home_margin":3.0,"spread_difference_points":-1.722,"canonical_total":49.149,"market_total":50.5,"total_difference_points":-1.351,"qa_priority":false},
