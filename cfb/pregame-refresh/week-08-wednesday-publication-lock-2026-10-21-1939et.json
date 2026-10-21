@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "role": "FINAL_WINDOW_PREGAME_CONTEXT_AND_MARKET_LOCK_EVIDENCE",
+  "canonicalInfluence": false,
+  "canonicalPromotionAuthorized": false,
+  "capturedAt": "2026-10-21T23:39:46Z",
+  "capturedAtET": "2026-10-21T19:39:46-04:00",
+  "game": {
+    "activeScopeGameId": "2026-10-21-NEWMEXICOSTATE-SAMHOUSTON",
+    "frozenFoundationGameId": "2026-10-22-NEWMEXICOSTATE-SAMHOUSTON",
+    "sourceGameId": "401871070",
+    "awayTeam": "New Mexico State",
+    "homeTeam": "Sam Houston",
+    "scheduledKickoff": "2026-10-22T00:00:00Z",
+    "sportsbookCommenceTime": "2026-10-22T00:05:00Z",
+    "kickoffIdentityPolicy": "Preserve the frozen 00:00Z kickoff identity. The sportsbook feed's five-minute-later commence time is retained as source metadata and is within the repository's exact matching tolerance.",
+    "frozenFoundation": {
+      "projectionDigest": "76573e65de4174437af8f8b604ec6730d1b183804089c333a6186c8b182c26da",
+      "projectedAwayPoints": 21.322981138871473,
+      "projectedHomePoints": 20.936490453301413,
+      "projectedMarginHome": -0.3864906855700596,
+      "projectedTotal": 42.259471592172886,
+      "homeWinProbability": 49.02673862307157,
+      "projectedWinner": "New Mexico State",
+      "status": "UNCHANGED_IMMUTABLE_RESEARCH_SHADOW"
+    },
+    "publicationMarketLock": {
+      "windowMinutes": 30,
+      "lockAt": "2026-10-21T23:39:17.549697Z",
+      "minutesBeforeFrozenKickoff": 20.7,
+      "provider": "The Odds API",
+      "snapshotGeneratedAt": "2026-10-21T23:32:32.793Z",
+      "coreMarketsLastRefresh": "2026-10-21T23:32:32.793Z",
+      "moneylineLastRefresh": "2026-10-21T22:37:02.546Z",
+      "sourceSnapshot": "data/markets-sportsbooks.json",
+      "lockRegistry": "cfb/research-market-locks/week-08-foundation-market.json",
+      "books": {
+        "fanduel": {
+          "bookUpdatedAt": "2026-10-21T23:32:03Z",
+          "spreadAway": -3.5,
+          "spreadAwayPrice": -104,
+          "spreadHome": 3.5,
+          "spreadHomePrice": -118,
+          "total": 46.5,
+          "overPrice": -118,
+          "underPrice": -104,
+          "moneylineAway": -160,
+          "moneylineHome": 132,
+          "moneylineFreshnessNote": "Moneyline values were carried from the feed's 22:37:02Z moneyline refresh; spread and total were refreshed at 23:32Z. The shared book updatedAt is the newest component timestamp."
+        },
+        "draftkings": {
+          "bookUpdatedAt": "2026-10-21T23:32:03Z",
+          "spreadAway": -3.0,
+          "spreadAwayPrice": -115,
+          "spreadHome": 3.0,
+          "spreadHomePrice": -105,
+          "total": 46.5,
+          "overPrice": -118,
+          "underPrice": -102,
+          "moneylineAway": -155,
+          "moneylineHome": 130,
+          "moneylineFreshnessNote": "Moneyline values were carried from the feed's 22:37:02Z moneyline refresh; spread and total were refreshed at 23:32Z. The shared book updatedAt is the newest component timestamp."
+        }
+      },
+      "movementSince1914ET": "Material favorite-strength move: FanDuel moved from New Mexico State -2.5 to -3.5 and DraftKings from -2.5 to -3.0. Both final-window totals are 46.5. This is benchmark evidence only and does not rewrite the frozen model."
+    },
+    "personnel": {
+      "samHouston": {
+        "qbBaseline": "Landyn Locke",
+        "officialPreview": "https://gobearkats.com/news/2026/10/20/football-game-7-preview-vs-nm-state",
+        "status": "BASELINE_SUPPORTED_NO_LATE_OFFICIAL_CHANGE_FOUND"
+      },
+      "newMexicoState": {
+        "officialPreview": "https://nmstatesports.com/news/2026/10/18/football-aggies-continue-conference-usa-play-at-sam-houston-on-wednesday.aspx",
+        "status": "OFFICIAL_STARTER_UNCONFIRMED",
+        "assessment": "The latest official preview still does not explicitly name the starter. Third-party previews and posted quarterback props point to Adam Damante, but that is operational market evidence, not an official team confirmation; no starter is inferred for canonical use."
+      },
+      "lateAvailability": "No new official inactive or depth announcement was located in the final-window recheck. Unknown remains unknown."
+    },
+    "weather": {
+      "source": "National Weather Service hourly API",
+      "sourceUrl": "https://api.weather.gov/gridpoints/HGX/56,137/forecast/hourly",
+      "retrievedAt": "2026-10-21T23:39:28Z",
+      "sourceGeneratedAt": "2026-10-21T23:39:28Z",
+      "kickoffHourLocal": {
+        "startTime": "2026-10-21T19:00:00-05:00",
+        "temperatureF": 74,
+        "precipProbabilityPct": 0,
+        "windSpeed": "5 mph",
+        "windDirection": "N",
+        "shortForecast": "Clear"
+      },
+      "nextHourLocal": {
+        "startTime": "2026-10-21T20:00:00-05:00",
+        "temperatureF": 69,
+        "precipProbabilityPct": 0,
+        "windSpeed": "5 mph",
+        "windDirection": "N",
+        "shortForecast": "Clear"
+      },
+      "assessment": "No material adverse weather signal. Gusts are not supplied by this endpoint and are not treated as zero."
+    },
+    "officiating": {
+      "source": "https://www.refmetrics.com/ncaa-football/official-assignments-today",
+      "sourcePageUpdatedAt": "2026-10-21T14:31:00-07:00",
+      "status": "CREW_NOT_POSTED",
+      "context": "RefMetrics listed the game with team trend context but explicitly reported no officials for upcoming NCAA games. No crew-based adjustment is made."
+    },
+    "benchmarks": {
+      "spPlus": "No independently verified official final-window snapshot was available. Third-party reporting listed New Mexico State 124th and Sam Houston 126th; retain as noncanonical context only.",
+      "sagarin": "No independently verified official final-window snapshot was available. Third-party reporting listed New Mexico State 135th and Sam Houston 151st; retain as noncanonical context only."
+    },
+    "travelRest": {
+      "newMexicoState": "Official preview reports 13 full days without a game after three games in 12 days, and a 1,336-mile trip described as the team's shortest road trip of 2026.",
+      "samHouston": "Seven calendar days since the Oct. 14 home game versus Western Kentucky; no quantified adjustment added."
+    },
+    "materialChanges": [
+      "Final-window sportsbook move toward New Mexico State, most notably FanDuel -3.5 from -2.5 at the 19:14 ET context check.",
+      "A valid T-30 publication-window lock is now available and was captured without backdating.",
+      "No material personnel, weather or officiating resolution arrived after the 19:14 ET recheck."
+    ],
+    "remainingGaps": [
+      "Official New Mexico State starting quarterback confirmation remains unresolved.",
+      "No referee/crew assignment was posted by RefMetrics.",
+      "Official final-window SP+ and Sagarin snapshots were not independently verified."
+    ]
+  },
+  "policy": "Pregame-only evidence. The publication market lock is an immutable research benchmark. It cannot alter the frozen projection, Prediction Log, canonical HOLD status, or promotion state."
+}
