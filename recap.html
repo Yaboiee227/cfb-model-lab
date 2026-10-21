@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="CB Model Projections audited CFB and NFL performance recap and validation state.">
+  <meta name="color-scheme" content="dark">
+  <title>Recap & Validation · CB Model Projections</title>
+  <link rel="stylesheet" href="audit-shell.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="shell topbar-inner">
+    <a class="brand" id="homeLink" href="index.html"><span class="brand-mark">CB</span><span class="brand-copy"><strong>CB Model Projections</strong><small>Football prediction research</small></span></a>
+    <nav class="page-nav" aria-label="Page navigation"><a id="projectionLink" href="index.html#projections">Projections</a><a aria-current="page" href="#performance">Recap</a><a id="ratingsLink" href="ratings.html">Ratings & benchmarks</a><a href="#validation">Validation</a></nav>
+    <div class="league-switch" aria-label="League"><a id="cfbSwitch" href="recap.html">CFB</a><a id="nflSwitch" href="recap.html?league=nfl">NFL</a></div>
+  </div>
+</header>
+<main class="shell">
+  <section class="hero">
+    <p class="kicker" id="kicker">AUDIT VIEW · CFB</p>
+    <h1>Grade what happened.<br><span>Preserve what was known.</span></h1>
+    <p class="lede" id="lede">Completed performance and the active research state are kept separate so a final score can never rewrite the projection, market snapshot or pregame information that existed before kickoff.</p>
+    <div class="system-line"><span id="systemState"><strong>Loading preserved state…</strong></span><span class="system-links"><a id="registryLink" href="data/model-registry.json">Model registry ↗</a><a id="sourceLink" href="data/results.csv">Result source ↗</a></span></div>
+  </section>
+
+  <section class="summary" id="performance" aria-label="Performance summary">
+    <article class="metric"><span>ATS</span><strong id="ats">—</strong><small id="atsPct">audited result</small></article>
+    <article class="metric"><span>Totals</span><strong id="totals">—</strong><small id="totalsPct">audited result</small></article>
+    <article class="metric"><span>Straight up</span><strong id="su">—</strong><small id="suPct">audited result</small></article>
+    <article class="metric"><span>Graded games</span><strong id="graded">—</strong><small>preserved completed rows</small></article>
+  </section>
+
+  <div class="notice"><span class="tag">Integrity gate</span><p id="integrityNotice"><strong>Current-week research is not silently folded into the completed record.</strong> Frozen projections are graded only after the game is final, against the appropriate saved market reference.</p></div>
+
+  <section class="section" aria-labelledby="weeklyTitle">
+    <div class="section-head" data-index="01 · COMPLETED EVIDENCE"><h2 id="weeklyTitle">Weekly grading</h2><p>ATS, totals and straight-up performance are reported independently. Poor weeks remain visible; there is no selective deletion, postgame reconstruction or retroactive line selection.</p></div>
+    <div class="table-wrap"><table><thead><tr><th>Week</th><th>Status</th><th>ATS</th><th>Totals</th><th>SU</th><th class="num">Graded</th></tr></thead><tbody id="weekBody"></tbody></table></div>
+  </section>
+
+  <section class="section" id="validation" aria-labelledby="validationTitle">
+    <div class="section-head" data-index="02 · CURRENT STATE"><h2 id="validationTitle">Validation state</h2><p id="validationIntro">Canonical status, prospective evidence and challenger status are exposed together without allowing one layer to impersonate another.</p></div>
+    <div class="grid">
+      <article class="panel"><span class="status hold" id="canonicalBadge">Loading</span><h3>Canonical layer</h3><p id="canonicalText">Loading model registry…</p></article>
+      <article class="panel"><span class="status" id="challengerBadge">Research only</span><h3>Challenger layer</h3><p id="challengerText">Loading model registry…</p></article>
+      <article class="panel"><span class="status good">Required discipline</span><h3>Promotion standard</h3><p>Historical testing can identify a candidate, but production promotion still requires leakage-safe evidence, out-of-sample or walk-forward validation, prospective frozen-week evidence and explicit approval.</p></article>
+      <article class="panel"><span class="status">Reference only</span><h3>External information</h3><p>Sportsbooks, outside ratings, prediction markets, trends, injuries, weather and coaching information remain benchmark, context or challenger inputs unless separately validated and promoted.</p></article>
+    </div>
+  </section>
+</main>
+<footer><div class="shell"><p id="meta">Loading audit provenance…</p><p>CB Model Projections is independent research. Projections and model/market differences are not official wager recommendations. Historical and prospective results are graded honestly, including poor performance.</p></div></footer>
+<script>
+(() => {
+  const params=new URL(location.href).searchParams;
+  const league=params.get('league')==='nfl'?'nfl':'cfb';
+  const q=id=>document.getElementById(id);
+  const rec=x=>`${x.wins}-${x.losses}${x.pushes?`-${x.pushes}`:''}`;
+  const pct=x=>{const d=x.wins+x.losses;return d?`${(x.wins/d*100).toFixed(1)}%`:'—'};
+  const empty=()=>({wins:0,losses:0,pushes:0});
+  const add=(obj,value)=>{const v=String(value||'').toUpperCase();if(v==='WIN')obj.wins++;else if(v==='LOSS')obj.losses++;else if(v==='PUSH')obj.pushes++;};
+
+  function setupLinks(){
+    const suffix=league==='nfl'?'?league=nfl':'';
+    q('homeLink').href=`index.html${suffix}`;
+    q('projectionLink').href=`index.html${suffix}#projections`;
+    q('ratingsLink').href=`ratings.html${suffix}`;
+    q('cfbSwitch').classList.toggle('active',league==='cfb');
+    q('nflSwitch').classList.toggle('active',league==='nfl');
+    q('kicker').textContent=`AUDIT VIEW · ${league.toUpperCase()}`;
+    document.title=`${league.toUpperCase()} Recap & Validation · CB Model Projections`;
+    if(league==='nfl'){
+      q('sourceLink').href='nfl_data/site/results.csv';
+      q('validationIntro').textContent='NFL Canonical V1, the current prospective sample and failure-analysis challengers stay visibly separate. A bad week is evidence to diagnose, not permission to rewrite the frozen model after the fact.';
+    } else {
+      q('sourceLink').href='cfb/record-summary.json';
+    }
+  }
+
+  function parseCsv(text){
+    const rows=[];let row=[],field='',quoted=false;
+    for(let i=0;i<text.length;i++){
+      const c=text[i],n=text[i+1];
+      if(c==='"'&&quoted&&n==='"'){field+='"';i++;continue;}
+      if(c==='"'){quoted=!quoted;continue;}
+      if(c===','&&!quoted){row.push(field);field='';continue;}
+      if((c==='\n'||c==='\r')&&!quoted){if(c==='\r'&&n==='\n')i++;row.push(field);field='';if(row.some(v=>v!==''))rows.push(row);row=[];continue;}
+      field+=c;
+    }
+    if(field||row.length){row.push(field);rows.push(row)}
+    const headers=rows.shift()||[];
+    return rows.map(r=>Object.fromEntries(headers.map((h,i)=>[h,r[i]??''])));
+  }
+
+  function renderSummary(overall,weeks,gradedCount){
+    q('ats').textContent=rec(overall.ats);q('atsPct').textContent=`${pct(overall.ats)} decision win rate`;
+    q('totals').textContent=rec(overall.totals);q('totalsPct').textContent=`${pct(overall.totals)} decision win rate`;
+    q('su').textContent=rec(overall.su);q('suPct').textContent=`${pct(overall.su)} decision win rate`;
+    q('graded').textContent=gradedCount;
+    q('weekBody').innerHTML=weeks.map(w=>`<tr><td>Week ${w.week}</td><td><span class="status good">${w.status||'GRADED'}</span></td><td>${rec(w.ats)} <span class="muted">(${pct(w.ats)})</span></td><td>${rec(w.totals)} <span class="muted">(${pct(w.totals)})</span></td><td>${rec(w.su)} <span class="muted">(${pct(w.su)})</span></td><td class="num">${w.graded}</td></tr>`).join('')||'<tr><td colspan="6" class="empty">No completed graded rows are available.</td></tr>';
+  }
+
+  async function loadCfb(){
+    const summary=await fetch('cfb/record-summary.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('CFB record summary unavailable');return r.json()});
+    const o=summary.overall||{};
+    const overall={ats:o.ats||empty(),totals:o.totals||empty(),su:o.straightUp||empty()};
+    const weeks=(summary.weeks||[]).map(w=>({week:w.week,status:w.status,ats:w.ats||empty(),totals:w.totals||empty(),su:w.straightUp||empty(),graded:Math.max(Number(w.ats?.graded||0),Number(w.totals?.graded||0),Number(w.straightUp?.graded||0))}));
+    renderSummary(overall,weeks,Math.max(Number(o.ats?.graded||0),Number(o.totals?.graded||0),Number(o.straightUp?.graded||0)));
+    q('meta').textContent=`CFB record summary generated ${summary.generatedAt||'unknown time'}. Current-week research remains outside the completed record until graded.`;
+  }
+
+  async function loadNfl(){
+    const text=await fetch('nfl_data/site/results.csv',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('NFL results unavailable');return r.text()});
+    const rows=parseCsv(text);
+    const overall={ats:empty(),totals:empty(),su:empty()};
+    const byWeek=new Map();
+    rows.forEach(row=>{
+      add(overall.ats,row.atsResult);add(overall.totals,row.totalResult);add(overall.su,row.suResult);
+      const key=String(row.week||'—');if(!byWeek.has(key))byWeek.set(key,{week:key,status:'GRADED',ats:empty(),totals:empty(),su:empty(),graded:0});
+      const w=byWeek.get(key);add(w.ats,row.atsResult);add(w.totals,row.totalResult);add(w.su,row.suResult);w.graded++;
+    });
+    renderSummary(overall,[...byWeek.values()].sort((a,b)=>Number(a.week)-Number(b.week)),rows.length);
+    q('meta').textContent=`NFL recap calculated directly from ${rows.length} preserved result rows in nfl_data/site/results.csv. Frozen weekly projections are not rewritten by this page.`;
+  }
+
+  async function loadRegistry(){
+    const registry=await fetch('data/model-registry.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('model registry unavailable');return r.json()});
+    if(league==='cfb'){
+      const c=registry.cfb||{},can=c.canonical||{},ch=c.leadResearchChallenger||{};
+      q('systemState').innerHTML=`<strong>CFB Week ${c.activeWeek||'—'} · ${String(can.status||'HOLD').replaceAll('_',' ')}</strong> · frozen research evidence preserved`;
+      q('canonicalBadge').textContent=String(can.status||'HOLD').replaceAll('_',' ');
+      q('canonicalText').textContent=`Historical label ${can.historicalVersionLabel||'canonical model'}. Reproducible generator currently available: ${can.reproducibleGeneratorAvailable?'yes':'no'}. Canonical publication authorized: ${can.publicationAuthorized?'yes':'no'}.`;
+      q('challengerBadge').textContent=String(ch.tier||'research only').replaceAll('_',' ');
+      q('challengerText').textContent=`${ch.modelId||'Lead research challenger'} remains a separate candidate. Canonical influence: ${ch.canonicalInfluence?'yes':'no'}; promotion authorized: ${ch.promotionAuthorized?'yes':'no'}.`;
+    } else {
+      const n=registry.nfl||{},can=n.canonical||{};
+      q('systemState').innerHTML=`<strong>NFL Week ${n.activeProspectiveWeek||'—'} · ${can.modelId||'Canonical V1'}</strong> · ${String(can.status||'frozen prospective').replaceAll('_',' ')}`;
+      q('canonicalBadge').textContent=can.canonicalChanged?'Changed':'Frozen prospective';
+      q('canonicalText').textContent=`${can.modelId||'NFL Canonical V1'} remains the production reference for the active prospective week. Canonical changed: ${can.canonicalChanged?'yes':'no'}; promotion authorized: ${can.promotionAuthorized?'yes':'no'}.`;
+      q('challengerBadge').textContent='Failure analysis / shadow';
+      q('challengerText').textContent='Week 6 failure analysis and challenger hypotheses remain research-only evidence. They can inform testing, but they do not rewrite Canonical V1 or its frozen weekly record.';
+    }
+  }
+
+  async function init(){
+    setupLinks();
+    try{await Promise.all([league==='nfl'?loadNfl():loadCfb(),loadRegistry()]);}
+    catch(err){q('weekBody').innerHTML=`<tr><td colspan="6" class="error">Unable to load preserved audit evidence: ${err.message}</td></tr>`;q('meta').textContent=`Audit load error: ${err.message}`;}
+  }
+  init();
+})();
+</script>
+</body>
+</html>
