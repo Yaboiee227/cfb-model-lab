@@ -1,0 +1,41 @@
+{
+  "league": "NFL",
+  "season": 2026,
+  "week": 7,
+  "derived_at_utc": "2026-10-21T12:04:03Z",
+  "model_snapshot_id": "20261021T114427Z",
+  "market_snapshot_id": "20261021T120403Z",
+  "canonical_influence": false,
+  "purpose": "QA_TRIAGE_ONLY",
+  "warning": "Model-market disagreement is descriptive research only. Week 6 did not validate larger disagreement as a stronger edge. These flags do not authorize release, wagering, confidence upgrades or model edits.",
+  "definition": {
+    "spread_difference_points": "canonical_home_margin minus market-implied home margin, where market-implied home margin equals negative home spread",
+    "total_difference_points": "canonical total minus observed public-board total",
+    "qa_priority_rule": "absolute spread or total difference >= 3.0 points is a review-priority flag only"
+  },
+  "games": [
+    {"game_id":"2026_07_NE_CHI","canonical_home_margin":1.278,"market_home_margin":3.0,"spread_difference_points":-1.722,"canonical_total":49.149,"market_total":50.5,"total_difference_points":-1.351,"qa_priority":false},
+    {"game_id":"2026_07_PIT_NO","canonical_home_margin":-3.343,"market_home_margin":-3.0,"spread_difference_points":-0.343,"canonical_total":41.966,"market_total":44.5,"total_difference_points":-2.534,"qa_priority":false},
+    {"game_id":"2026_07_CIN_BAL","canonical_home_margin":4.028,"market_home_margin":2.5,"spread_difference_points":1.528,"canonical_total":46.921,"market_total":51.5,"total_difference_points":-4.579,"qa_priority":true,"qa_reason":["TOTAL_DISAGREEMENT_GE_3","QB_STATE_UNRESOLVED"]},
+    {"game_id":"2026_07_CLE_TEN","canonical_home_margin":0.687,"market_home_margin":-1.5,"spread_difference_points":2.187,"canonical_total":39.384,"market_total":38.5,"total_difference_points":0.884,"qa_priority":true,"qa_reason":["SPREAD_DIRECTION_DIFFERS"]},
+    {"game_id":"2026_07_IND_MIN","canonical_home_margin":6.0,"market_home_margin":6.0,"spread_difference_points":0.0,"canonical_total":41.019,"market_total":41.5,"total_difference_points":-0.481,"qa_priority":false},
+    {"game_id":"2026_07_MIA_NYJ","canonical_home_margin":-0.474,"market_home_margin":4.5,"spread_difference_points":-4.974,"canonical_total":43.086,"market_total":39.5,"total_difference_points":3.586,"qa_priority":true,"qa_reason":["SPREAD_DISAGREEMENT_GE_3","TOTAL_DISAGREEMENT_GE_3","SPREAD_DIRECTION_DIFFERS"]},
+    {"game_id":"2026_07_NYG_HOU","canonical_home_margin":3.734,"market_home_margin":9.5,"spread_difference_points":-5.766,"canonical_total":46.25,"market_total":43.5,"total_difference_points":2.75,"qa_priority":true,"qa_reason":["SPREAD_DISAGREEMENT_GE_3"]},
+    {"game_id":"2026_07_SF_ATL","canonical_home_margin":-5.683,"market_home_margin":-4.5,"spread_difference_points":-1.183,"canonical_total":47.012,"market_total":50.5,"total_difference_points":-3.488,"qa_priority":true,"qa_reason":["TOTAL_DISAGREEMENT_GE_3"]},
+    {"game_id":"2026_07_TB_CAR","canonical_home_margin":6.122,"market_home_margin":3.0,"spread_difference_points":3.122,"canonical_total":44.991,"market_total":44.5,"total_difference_points":0.491,"qa_priority":true,"qa_reason":["SPREAD_DISAGREEMENT_GE_3","QB_RETURN_PENDING"]},
+    {"game_id":"2026_07_DEN_ARI","canonical_home_margin":-2.679,"market_home_margin":-4.5,"spread_difference_points":1.821,"canonical_total":43.108,"market_total":43.5,"total_difference_points":-0.392,"qa_priority":false},
+    {"game_id":"2026_07_GB_DET","canonical_home_margin":4.082,"market_home_margin":3.0,"spread_difference_points":1.082,"canonical_total":50.007,"market_total":52.5,"total_difference_points":-2.493,"qa_priority":false},
+    {"game_id":"2026_07_LA_LV","canonical_home_margin":-5.958,"market_home_margin":-4.5,"spread_difference_points":-1.458,"canonical_total":46.652,"market_total":47.5,"total_difference_points":-0.848,"qa_priority":false},
+    {"game_id":"2026_07_KC_SEA","canonical_home_margin":1.602,"market_home_margin":2.5,"spread_difference_points":-0.898,"canonical_total":42.851,"market_total":42.5,"total_difference_points":0.351,"qa_priority":false},
+    {"game_id":"2026_07_DAL_PHI","canonical_home_margin":-0.625,"market_home_margin":-4.5,"spread_difference_points":3.875,"canonical_total":45.876,"market_total":44.5,"total_difference_points":1.376,"qa_priority":true,"qa_reason":["SPREAD_DISAGREEMENT_GE_3","WEEK7_PHI_STARTER_CONFIRMATION_PENDING"]}
+  ],
+  "priority_review_order": [
+    "2026_07_MIA_NYJ",
+    "2026_07_NYG_HOU",
+    "2026_07_CIN_BAL",
+    "2026_07_DAL_PHI",
+    "2026_07_TB_CAR",
+    "2026_07_SF_ATL",
+    "2026_07_CLE_TEN"
+  ]
+}
