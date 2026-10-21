@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "gameDateET": "2026-10-21",
+  "gameId": "2026-10-21-NEWMEXICOSTATE-SAMHOUSTON",
+  "awayTeam": "New Mexico State",
+  "homeTeam": "Sam Houston",
+  "kickoff": "2026-10-22T00:00:00Z",
+  "assembledAt": "2026-10-21T21:00:00Z",
+  "role": "BEST_AVAILABLE_PREGAME_PRODUCTION_RESEARCH_PACKET",
+  "canonicalInfluence": false,
+  "canonicalPromotionAuthorized": false,
+  "gradingDeferredUntilWeekComplete": true,
+  "projectionPolicy": "Preserve the immutable Week 8 foundation. Refresh all defensible pregame evidence around it. Do not let markets, external models, injuries, weather or narrative context move the central projection unless a leakage-safe validated adjustment has been explicitly promoted. Use unresolved information as uncertainty, not invented points.",
+  "centralProjection": {
+    "source": "cfb/research-locks/week-08-foundation-full.json",
+    "projectionDigest": "76573e65de4174437af8f8b604ec6730d1b183804089c333a6186c8b182c26da",
+    "projectedAwayPoints": 21.322981138871473,
+    "projectedHomePoints": 20.936490453301413,
+    "projectedMarginHome": -0.3864906855700596,
+    "projectedSpreadHome": 0.3864906855700596,
+    "projectedTotal": 42.259471592172886,
+    "homeWinProbability": 49.02673862307157,
+    "projectedWinner": "New Mexico State",
+    "adjustmentFromFrozenFoundation": 0.0,
+    "adjustmentReason": "No newly confirmed pregame information has a separately validated quantitative adjustment."
+  },
+  "readiness": {
+    "status": "READY_WITH_FINAL_WINDOW_RECHECK_PENDING",
+    "marginConfidence": "LOW",
+    "totalConfidence": "MEDIUM_LOW",
+    "why": [
+      "Foundation and Sagarin are essentially pick'em but disagree on winner.",
+      "Current sportsbook market is materially more pro-New Mexico State than the frozen foundation.",
+      "New Mexico State quarterback usage is not explicitly confirmed for Wednesday.",
+      "Weather is benign and does not create a material projection shock.",
+      "No verified high-impact personnel change has been found that supports a manual points adjustment."
+    ]
+  },
+  "validatedModelEvidence": {
+    "foundationStatus": "VALIDATED_FOUNDATION_PROSPECTIVE_SHADOW",
+    "offenseDefenseScoreDecompositionChallenger": {
+      "status": "REJECTED_NOT_ELIGIBLE",
+      "canonicalInfluence": false,
+      "reason": "Leakage-safe 2024 selection followed by untouched 2025 and pre-Week-8 2026 confirmation produced no material unseen MAE gain versus foundation."
+    },
+    "richEfficiencyChallenger": {
+      "status": "REJECTED_NOT_ELIGIBLE",
+      "canonicalInfluence": false,
+      "source": "cfb/validation/week-08-multiseason-walkforward.json",
+      "aggregate2026WalkForwardGames": 173,
+      "richMinusSimpleMarginMae": -0.3229097926516573,
+      "richMinusSimpleTotalMae": -0.13881855441527158,
+      "gatePassed": false
+    }
+  },
+  "benchmarkContext": {
+    "sagarin": {
+      "source": "cfb/validation/week-08-foundation-vs-sagarin.json",
+      "observedAt": "2026-10-20T11:45:56.031080Z",
+      "ratingsThrough": "2026-10-17",
+      "impliedHomeMargin": 0.4500000000000055,
+      "predictorFavorite": "Sam Houston",
+      "absoluteDisagreementVsFoundation": 0.8364906855700651,
+      "canonicalInfluence": false
+    },
+    "spPlusContext": {
+      "newMexicoStateRank": 124,
+      "samHoustonRank": 126,
+      "sourceUrl": "https://nypost.com/2026/10/21/betting/new-mexico-state-vs-sam-houston-state-prediction-wednesday-night-college-football-picks-odds-best-bet/",
+      "canonicalInfluence": false
+    },
+    "coversComputer": {
+      "projectedAwayPoints": 23.41,
+      "projectedHomePoints": 21.63,
+      "projectedAwayWinPct": 57.0,
+      "sourceUrl": "https://www.covers.com/picks/ncaaf",
+      "canonicalInfluence": false
+    },
+    "dimers": {
+      "awayWinProbabilityPct": 58.0,
+      "sourceUrl": "https://www.dimers.com/cfb/news/new-mexico-state-vs-sam-houston-state-prediction-week-8-2026-ac",
+      "canonicalInfluence": false
+    }
+  },
+  "marketContext": {
+    "source": "cfb/pregame/week-08-wednesday-effective.json",
+    "observedAt": "2026-10-21T20:03:35.505Z",
+    "publicationLockStatus": "PENDING_FINAL_WINDOW",
+    "observations": [
+      {
+        "book": "FanDuel",
+        "marketObservedAt": "2026-10-21T20:03:01Z",
+        "awaySpread": -2.5,
+        "homeSpread": 2.5,
+        "total": 46.5,
+        "awayMoneyline": -150,
+        "homeMoneyline": 125
+      },
+      {
+        "book": "DraftKings",
+        "marketObservedAt": "2026-10-21T20:02:53Z",
+        "awaySpread": -3.0,
+        "homeSpread": 3.0,
+        "total": 47.5,
+        "awayMoneyline": -155,
+        "homeMoneyline": 130
+      }
+    ],
+    "foundationVsMarket": {
+      "spread": "Foundation is approximately 2.1 to 2.6 points less bullish on New Mexico State than the current market.",
+      "total": "Foundation total is approximately 4.2 to 5.2 points lower than the current FanDuel/DraftKings totals."
+    },
+    "canonicalInfluence": false
+  },
+  "personnelContext": {
+    "source": "cfb/pregame/week-08-wednesday-effective.json",
+    "newMexicoState": {
+      "mostRecentPrimaryQB": "Adam Damante",
+      "gameDayStarterConfirmed": false,
+      "depthStructureAlsoIncludes": ["Trey Hedden", "Kalani McLeod"],
+      "notableThirdPartyStatuses": [
+        "K I. Uvaydov questionable (undisclosed)",
+        "RB R. Burton questionable (undisclosed)",
+        "TE R. Lotten questionable (undisclosed)"
+      ],
+      "note": "Official New Mexico State preview does not announce a quarterback change or a Wednesday starter. Do not infer a QB points adjustment."
+    },
+    "samHouston": {
+      "mostRecentPrimaryQB": "Landyn Locke",
+      "gameDayStarterConfirmed": false,
+      "notableThirdPartyStatuses": [
+        "TE M. Whisner questionable (undisclosed)",
+        "TE B. Kuhl out (season-long / undisclosed)"
+      ],
+      "offensiveLineContext": "True freshmen Myles Joseph and Tr'e Williams started together in the previous two games; this is treated as absorbed baseline context, not a new shock."
+    },
+    "canonicalInfluence": false
+  },
+  "matchupContext": {
+    "newMexicoStateRest": "13 full days without a game after the Oct. 7 FIU matchup",
+    "samHoustonRest": "7 days after the Oct. 14 Western Kentucky game",
+    "samHoustonRecentOffense": "3 points in each of its past two games",
+    "newMexicoStateRecentOffense": "3 points at FIU with three turnovers in its most recent game",
+    "newMexicoStateRunMatchup": "Current public matchup data shows Sam Houston allowing approximately 5.1 yards per rush and ranking near the bottom nationally in rush defense.",
+    "sources": [
+      "https://nmstatesports.com/news/2026/10/18/football-aggies-continue-conference-usa-play-at-sam-houston-on-wednesday.aspx",
+      "https://gobearkats.com/news/2026/10/20/football-game-7-preview-vs-nm-state",
+      "https://www.covers.com/sport/football/ncaaf/matchup/378124"
+    ],
+    "canonicalInfluence": false
+  },
+  "weatherContext": {
+    "source": "cfb/pregame/week-08-wednesday-effective.json",
+    "nwsObservedAt": "2026-10-21T20:01:00.589894Z",
+    "temperatureF": "approximately 74 at kickoff, falling through the upper 60s",
+    "windMph": "approximately 5 or less",
+    "precipProbabilityPct": 0,
+    "condition": "Clear",
+    "materialProjectionImpact": "NONE_VALIDATED"
+  },
+  "finalWindowChecklist": [
+    "Recheck official QB/starting lineup information.",
+    "Recheck listed injuries/status changes from official or corroborated sources.",
+    "Recheck NWS hourly forecast for any material wind/precipitation change.",
+    "Capture immutable FanDuel and DraftKings publication-time market locks inside the existing lock window.",
+    "Recompute only if a promoted/validated input changes; otherwise preserve the central projection unchanged.",
+    "Freeze this packet before kickoff and do not grade it until the Week 8 grading window."
+  ]
+}
