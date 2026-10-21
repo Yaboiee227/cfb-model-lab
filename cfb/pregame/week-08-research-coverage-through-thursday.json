@@ -6,7 +6,7 @@
   "role": "ACTIVE_WINDOW_RESEARCH_PREGAME_COVERAGE_AUDIT",
   "canonicalInfluence": false,
   "canonicalPromotionAuthorized": false,
-  "auditedAt": "2026-10-21T23:40:26.024546Z",
+  "auditedAt": "2026-10-21T23:41:49.406817Z",
   "summary": {
     "games": 7,
     "foundationLocked": 7,
@@ -15,24 +15,10 @@
     "weatherCaptured": 7,
     "refereeCapturedOrExplicitlyChecked": 7,
     "gamesWithMarketLock": 4,
-    "critical": 4,
+    "critical": 3,
     "high": 0
   },
   "workQueue": [
-    {
-      "gameId": "2026-10-21-NEWMEXICOSTATE-SAMHOUSTON",
-      "awayTeam": "New Mexico State",
-      "homeTeam": "Sam Houston",
-      "kickoff": "2026-10-22T00:00:00Z",
-      "priority": "FINAL_WINDOW",
-      "urgency": "CRITICAL",
-      "gaps": [
-        "weather final review pending: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED"
-      ],
-      "warnings": [
-        "referee assignment status: UNAVAILABLE_STALE_RETRIEVAL; do not guess"
-      ]
-    },
     {
       "gameId": "2026-10-22-JAMESMADISON-APPSTATE",
       "awayTeam": "James Madison",
@@ -250,7 +236,7 @@
       "homeTeam": "Sam Houston",
       "kickoff": "2026-10-22T00:00:00Z",
       "priority": "FINAL_WINDOW",
-      "urgency": "CRITICAL",
+      "urgency": "MONITOR",
       "foundation": {
         "status": "LOCKED",
         "projectionDigest": "76573e65de4174437af8f8b604ec6730d1b183804089c333a6186c8b182c26da"
@@ -260,10 +246,10 @@
         "spPlus": "PENDING_OFFICIAL_CAPTURE"
       },
       "context": {
-        "personnel": "OFFICIAL_DEPTH_CAPTURED_FINAL_AVAILABILITY_UNCONFIRMED",
-        "weather": "NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED",
-        "referee": "UNAVAILABLE_STALE_RETRIEVAL",
-        "marketContext": "SAVED_PIPELINE_CONTEXT_NOT_LOCKED",
+        "personnel": "FINAL_OFFICIAL_RECHECK_COMPLETE_AVAILABILITY_GAPS_PRESERVED",
+        "weather": "NWS_FINAL_WINDOW_RECHECK_COMPLETE_LOW_IMPACT",
+        "referee": "CREW_NOT_POSTED_FINAL_WINDOW_CHECK",
+        "marketContext": "LOCKED",
         "contextSource": "cfb/pregame/week-08-through-thursday-effective.json"
       },
       "marketLock": {
@@ -274,12 +260,8 @@
         ],
         "bookCount": 2
       },
-      "gaps": [
-        "weather final review pending: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED"
-      ],
-      "warnings": [
-        "referee assignment status: UNAVAILABLE_STALE_RETRIEVAL; do not guess"
-      ]
+      "gaps": [],
+      "warnings": []
     },
     {
       "gameId": "2026-10-22-JAMESMADISON-APPSTATE",
