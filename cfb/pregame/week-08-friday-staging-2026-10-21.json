@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "role": "ROLLING_PREGAME_REFRESH_OVERLAY",
+  "status": "FRIDAY_INITIAL_STAGE_OPEN",
+  "observedAt": "2026-10-21T21:56:14Z",
+  "canonicalInfluence": false,
+  "canonicalPromotionAuthorized": false,
+  "foundationSource": "cfb/research-locks/week-08-foundation-full.json",
+  "benchmarkSource": "cfb/benchmarks/week-08-sagarin-full.json",
+  "scopeSource": "cfb/pregame/week-08-active-full-week.json",
+  "policy": {
+    "pregameOnly": true,
+    "preserveFrozenProjectionDigests": true,
+    "week8ResultsCannotTuneLaterWeek8Games": true,
+    "marketsAreContextUntilPublicationLock": true,
+    "externalBenchmarksAreNonCanonical": true,
+    "personnelWeatherRequireValidatedAdjustmentForCanonicalInfluence": true,
+    "unknownStaysUnknown": true
+  },
+  "thursdayRollForwardGate": {
+    "status": "PASSED_FOR_ROLLING_WORK",
+    "meaning": "Thursday is staged and has no unresolved issue that blocks Friday preparation. Thursday remains subject to its normal final-window QB/personnel/weather/market checks before kickoff.",
+    "openThursdayItems": [
+      "App State official QB/availability recheck",
+      "late FanDuel/DraftKings movement and immutable publication locks",
+      "final stadium-level weather and personnel check",
+      "ECU-Memphis large model/market disagreement review without market-forced projection change"
+    ]
+  },
+  "games": [
+    {
+      "gameId": "2026-10-23-DUKE-VIRGINIA",
+      "kickoff": "2026-10-23T23:00:00Z",
+      "awayTeam": "Duke",
+      "homeTeam": "Virginia",
+      "frozenFoundationReference": {
+        "projectedAwayPoints": 19.963371409585466,
+        "projectedHomePoints": 21.66255950622396,
+        "projectedMarginHome": 1.699188096638494,
+        "projectedSpreadHome": -1.699188096638494,
+        "projectedTotal": 41.62593091580943,
+        "homeWinProbability": 54.27113006427374,
+        "projectedWinner": "Virginia",
+        "projectionDigest": "ac8c27876df7b09dfcab509a5258b3e96fc1fae76aaf4a9ed50a925020a118be",
+        "centralProjectionChanged": false
+      },
+      "marketContext": {
+        "status": "CURRENT_PUBLIC_CONTEXT_NOT_PUBLICATION_LOCK",
+        "captureAt": "2026-10-21T21:56:14Z",
+        "fanduel": {"homeSpread": -1.5, "total": 47.5, "homeMoneyline": -120},
+        "draftkings": {"homeSpread": -1.5, "total": 47.5, "homeMoneyline": -122},
+        "foundationSpreadDifferencePoints": 0.199,
+        "foundationTotalDifferencePoints": 5.874,
+        "note": "Spread alignment is excellent; total is materially higher than the frozen foundation. Direct in-repo final-window capture remains pending."
+      },
+      "benchmarkContext": {"sagarin": {"status": "CURRENT_WEEK8_BENCHMARK", "impliedHomeMargin": 3.77, "favorite": "Virginia", "ratingsThrough": "2026-10-17"}, "canonicalInfluence": false},
+      "personnelContext": {"summary": "Virginia's latest official material has Beau Pribula at quarterback; Duke's Oct. 17 official game center has Walker Eget as the primary passer. No verified late QB change captured in this pass.", "canonicalInfluence": false},
+      "weatherContext": {"summary": "NWS Charlottesville forecast for Friday is sunny near 61 F with northeast wind 6-10 mph; Friday night mostly clear near 35 F. Low-impact baseline.", "canonicalInfluence": false},
+      "priority": "MEDIUM_TOTAL_DISAGREEMENT",
+      "sources": ["https://virginiasports.com/news/2026/10/21/virginia-hosts-duke-in-friday-night-acc-championship-rematch", "https://goduke.com/game-center/24827", "https://theaccline.com/odds/duke-at-virginia-2026-10-23", "https://forecast.weather.gov/MapClick.php?lat=38.0310605&lon=-78.4742794"],
+      "decision": "PRESERVE_FROZEN_PROJECTION_PENDING_ROLLING_RECHECK"
+    },
+    {
+      "gameId": "2026-10-23-MASSACHUSETTS-UCONN",
+      "kickoff": "2026-10-23T23:00:00Z",
+      "awayTeam": "Massachusetts",
+      "homeTeam": "UConn",
+      "frozenFoundationReference": {
+        "projectedAwayPoints": 22.329458182694985,
+        "projectedHomePoints": 29.61955790681207,
+        "projectedMarginHome": 7.290099724117084,
+        "projectedSpreadHome": -7.290099724117084,
+        "projectedTotal": 51.949016089507055,
+        "homeWinProbability": 67.7317593713909,
+        "projectedWinner": "UConn",
+        "projectionDigest": "e28b611abc7981dc14eab506b169856f8f7b94fbec5e9936fb378e9e7d9d1838",
+        "centralProjectionChanged": false
+      },
+      "marketContext": {
+        "status": "CURRENT_PUBLIC_CONTEXT_NOT_PUBLICATION_LOCK",
+        "captureAt": "2026-10-21T21:56:14Z",
+        "draftkings": {"homeSpread": -14.5, "total": 49.5, "homeMoneyline": -700},
+        "fanduelVisibleContext": {"homeMoneyline": -671, "total": 48.5},
+        "foundationVsDraftKingsSpreadDifferencePoints": 7.21,
+        "foundationVsDraftKingsTotalDifferencePoints": 2.449,
+        "note": "This is Friday's largest early side disagreement. Direct FanDuel/DraftKings in-repo refresh is intentionally deferred until the adaptive workflow enters the pregame window; do not reconstruct a publication line."
+      },
+      "benchmarkContext": {"sagarin": {"status": "CURRENT_WEEK8_BENCHMARK", "impliedHomeMargin": 17.99, "favorite": "UConn", "ratingsThrough": "2026-10-17"}, "canonicalInfluence": false},
+      "personnelContext": {"summary": "UMass started Logan Inagawa at Buffalo because William 'Pop' Watson III and Aedan McCarthy were injured. UConn's latest official game data has Kalieb Osborne as its primary quarterback. UMass QB availability is a material open item.", "canonicalInfluence": false},
+      "weatherContext": {"summary": "NWS East Hartford forecast is sunny Friday near 55 F; Friday night mostly clear around 32-35 F with light north wind. Low precipitation risk.", "canonicalInfluence": false},
+      "priority": "HIGH_QB_AND_MARGIN_DISAGREEMENT",
+      "sources": ["https://umassathletics.com/news/2026/10/19/football-heads-to-uconn-for-friday-night-tilt", "https://umassathletics.com/news/2026/10/17/massachusetts-football-drops-25-18-contest-to-buffalo-in-overtime", "https://uconnhuskies.com/game-center/25435", "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/", "https://forecast.weather.gov/MapClick.php?FcstType=digital&FcstType=text&dd=1&lat=41.7869&lon=-72.6291"],
+      "decision": "PRESERVE_FROZEN_PROJECTION_PENDING_ROLLING_RECHECK"
+    },
+    {
+      "gameId": "2026-10-23-ARMY-TULSA",
+      "kickoff": "2026-10-24T00:30:00Z",
+      "awayTeam": "Army",
+      "homeTeam": "Tulsa",
+      "frozenFoundationReference": {
+        "projectedAwayPoints": 27.454377301998562,
+        "projectedHomePoints": 28.500337750409052,
+        "projectedMarginHome": 1.04596044841049,
+        "projectedSpreadHome": -1.04596044841049,
+        "projectedTotal": 55.954715052407614,
+        "homeWinProbability": 52.63228747434996,
+        "projectedWinner": "Tulsa",
+        "projectionDigest": "069fb25d7a8b71a2564fcff9e206994a79617b0d2721c695fe1773949e6a8f2e",
+        "centralProjectionChanged": false
+      },
+      "marketContext": {
+        "status": "CURRENT_PUBLIC_CONTEXT_NOT_PUBLICATION_LOCK",
+        "captureAt": "2026-10-21T21:56:14Z",
+        "fanduel": {"homeSpread": -1.5, "total": 54.5, "homeMoneyline": -118},
+        "draftkings": {"homeSpread": -1.5, "total": 54.5, "homeMoneyline": -120},
+        "foundationSpreadDifferencePoints": 0.454,
+        "foundationTotalDifferencePoints": 1.455,
+        "note": "Foundation and sportsbook side are tightly aligned. Sagarin has Army by about one, creating a small side benchmark split."
+      },
+      "benchmarkContext": {"sagarin": {"status": "CURRENT_WEEK8_BENCHMARK", "impliedHomeMargin": -1.0, "favorite": "Army", "ratingsThrough": "2026-10-17"}, "canonicalInfluence": false},
+      "personnelContext": {"summary": "Army QB Cale Hellums remains its current offensive leader. Tulsa QB Baylor Hayes completed 20-of-27 for 249 yards and three touchdowns at Rice. No verified material QB change captured.", "canonicalInfluence": false},
+      "weatherContext": {"summary": "NWS Tulsa forecast Friday is mostly sunny near 79 F with south wind 5-10 mph; Friday night partly cloudy near 56 F. Low-impact baseline.", "canonicalInfluence": false},
+      "priority": "MEDIUM_SIDE_BENCHMARK_SPLIT",
+      "sources": ["https://goarmywestpoint.com/game-center/20139", "https://tulsahurricane.com/news/2026/10/21/football-tulsa-welcomes-army-to-h-a-chapman-stadium-friday-night", "https://commish.rotowire.com/betting/college-football/game/tulsa-vs-army-odds-2026-10-23-2968302?book=fanduel", "https://forecast.weather.gov/MapClick.php?CityName=Tulsa&e=0&site=TSA&state=OK&textField1=36.1277&textField2=-95.9164"],
+      "decision": "PRESERVE_FROZEN_PROJECTION_PENDING_ROLLING_RECHECK"
+    },
+    {
+      "gameId": "2026-10-23-AIRFORCE-WYOMING",
+      "kickoff": "2026-10-24T01:00:00Z",
+      "awayTeam": "Air Force",
+      "homeTeam": "Wyoming",
+      "frozenFoundationReference": {
+        "projectedAwayPoints": 25.697332504760343,
+        "projectedHomePoints": 22.08886781699678,
+        "projectedMarginHome": -3.608464687763565,
+        "projectedSpreadHome": 3.608464687763565,
+        "projectedTotal": 47.78620032175712,
+        "homeWinProbability": 40.99024501033256,
+        "projectedWinner": "Air Force",
+        "projectionDigest": "0f5d93d1b02d155e5a2bbc9f582826318cf4bdac375d8f66689b6727258e7ff9",
+        "centralProjectionChanged": false
+      },
+      "marketContext": {
+        "status": "CURRENT_PUBLIC_CONTEXT_NOT_PUBLICATION_LOCK",
+        "captureAt": "2026-10-21T21:56:14Z",
+        "consensusContext": {"awaySpreadRange": [-5.5, -4.5], "total": 45.5, "awayMoneylineApprox": -205},
+        "foundationSpreadDifferencePointsRange": [0.892, 1.892],
+        "foundationTotalDifferencePoints": 2.286,
+        "note": "Market and Sagarin are somewhat more pro-Air Force than the frozen foundation. Direct book lock remains pending."
+      },
+      "benchmarkContext": {"sagarin": {"status": "CURRENT_WEEK8_BENCHMARK", "impliedAwayMargin": 6.07, "favorite": "Air Force", "ratingsThrough": "2026-10-17"}, "canonicalInfluence": false},
+      "personnelContext": {"summary": "Wyoming's official preview states Air Force starter Liam Szarka suffered a season-ending injury and Evan Medders has taken over the option attack; Medders rushed for 152 yards and three TDs vs UNLV. Wyoming QB Tyler Hughes is coming off 183 rushing yards/four rushing TDs plus 196 passing yards. No manual QB-point adjustment is authorized.", "canonicalInfluence": false},
+      "weatherContext": {"summary": "NWS Laramie forecast Friday calls for a chance of showers and breezy conditions, with west-southwest wind rising to 15-20 mph and gusts up to 30 mph. This is Friday's most material weather watch and needs an hourly stadium-level recheck.", "canonicalInfluence": false},
+      "priority": "HIGH_WEATHER_AND_QB_CONTEXT",
+      "sources": ["https://gowyo.com/news/2026/10/19/football-cowboys-host-air-force-on-friday-night-for-cowboys-and-coal-black-out-out-game.aspx", "https://goairforcefalcons.com/news/2026/10/19/football-game-7-air-force-at-wyoming", "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/", "https://forecast.weather.gov/MapClick.php?FcstType=text&TextType=2&lat=41.3195&lg=english&lon=-105.5625&unit=0"],
+      "decision": "PRESERVE_FROZEN_PROJECTION_PENDING_ROLLING_RECHECK"
+    },
+    {
+      "gameId": "2026-10-23-NCSTATE-STANFORD",
+      "kickoff": "2026-10-24T02:30:00Z",
+      "awayTeam": "NC State",
+      "homeTeam": "Stanford",
+      "frozenFoundationReference": {
+        "projectedAwayPoints": 31.944478973399118,
+        "projectedHomePoints": 27.064741432133562,
+        "projectedMarginHome": -4.8797375412655555,
+        "projectedSpreadHome": 4.8797375412655555,
+        "projectedTotal": 59.00922040553268,
+        "homeWinProbability": 37.90224863321451,
+        "projectedWinner": "NC State",
+        "projectionDigest": "eb80be12b6c2c447ae176b44dcfee1fd23b9c0649df683275c5ab147a5fb9991",
+        "centralProjectionChanged": false
+      },
+      "marketContext": {
+        "status": "CURRENT_PUBLIC_CONTEXT_NOT_PUBLICATION_LOCK",
+        "captureAt": "2026-10-21T21:56:14Z",
+        "fanduel": {"awaySpread": -7.5, "total": 55.5, "awayMoneyline": -275},
+        "draftkings": {"awaySpread": -7.0, "total": 55.5, "awayMoneyline": -278},
+        "foundationVsMarketSpreadDifferencePointsRange": [2.12, 2.62],
+        "foundationTotalDifferencePoints": 3.509,
+        "note": "Market and Sagarin are more pro-NC State and lower-total than the frozen foundation; preserve the model and recheck rather than force convergence."
+      },
+      "benchmarkContext": {"sagarin": {"status": "CURRENT_WEEK8_BENCHMARK", "impliedAwayMargin": 9.24, "favorite": "NC State", "ratingsThrough": "2026-10-17"}, "canonicalInfluence": false},
+      "personnelContext": {"summary": "NC State's latest official game data has CJ Bailey as the primary passer. Stanford's latest official recap has Davis Warren at quarterback and Micah Ford coming off four rushing touchdowns against Elon. No verified late QB change captured.", "canonicalInfluence": false},
+      "weatherContext": {"summary": "NWS Stanford forecast Friday has patchy morning fog, then mostly sunny near 74 F; Friday night clear near 48 F. Low-impact baseline for the 7:30 p.m. PT kickoff.", "canonicalInfluence": false},
+      "priority": "HIGH_SIDE_AND_TOTAL_DISAGREEMENT",
+      "sources": ["https://gopack.com/sports/football/stats/2026/wake-forest/boxscore/24542", "https://gostanford.com/news/2026/10/19/friday-night-battle-with-the-wolfpack-up-next", "https://theaccline.com/odds/nc-state-at-stanford-2026-10-23", "https://forecast.weather.gov/MapClick.php?FcstType=digital&FcstType=text&bw=1&lat=37.4214&lg=english&lon=-122.167&menu=1"],
+      "decision": "PRESERVE_FROZEN_PROJECTION_PENDING_ROLLING_RECHECK"
+    }
+  ],
+  "fridayPriorityOrder": [
+    "Massachusetts at UConn — largest side disagreement plus UMass QB availability",
+    "Air Force at Wyoming — replacement QB context plus potentially material wind",
+    "NC State at Stanford — meaningful side/total disagreement",
+    "Duke at Virginia — spread aligned, total disagreement",
+    "Army at Tulsa — side/total largely aligned; small Sagarin side split"
+  ],
+  "nextRequiredChecks": [
+    "Refresh official availability/depth/QB news Thursday night and Friday.",
+    "Allow adaptive direct sportsbook workflow to enter the six-hour/three-hour/final-hour windows; preserve immutable publication locks only inside the defined final window.",
+    "Recheck Laramie hourly wind/precipitation and all stadium weather near kickoff.",
+    "Refresh Sagarin/SP+/RefMetrics or other benchmarks only as benchmark/context unless separately validated and promoted.",
+    "Do not use Wednesday/Thursday results to tune any Friday projection."
+  ]
+}
