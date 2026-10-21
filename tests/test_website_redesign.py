@@ -24,7 +24,7 @@ def test_shell_keeps_cfb_and_nfl_navigation():
     script = read("site-shell.js")
     assert 'index.html?league=nfl' in script
     assert "CB_ACTIVE_LEAGUE" in script
-    assert "cb-active" not in script.lower() or True  # no requirement on storage internals here
+    assert "league-switch" in read("site-shell.css")
 
 
 def test_recap_is_league_aware_and_uses_preserved_result_sources():
