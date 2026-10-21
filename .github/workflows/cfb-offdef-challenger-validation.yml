@@ -10,7 +10,7 @@ on:
       - .github/workflows/cfb-offdef-challenger-validation.yml
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   validate:
@@ -18,6 +18,8 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -33,3 +35,14 @@ jobs:
           name: cfb-offdef-challenger-validation
           path: cfb/validation/week-08-offdef-challenger-validation.json
           if-no-files-found: error
+      - name: Preserve validation evidence on research branch
+        run: |
+          git config user.name "cb-model-validation-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add cfb/validation/week-08-offdef-challenger-validation.json
+          if git diff --cached --quiet; then
+            echo 'No challenger validation changes.'
+            exit 0
+          fi
+          git commit -m 'Preserve CFB offdef challenger validation evidence'
+          git push origin HEAD:cfb-model-week8-optimization-20261021
