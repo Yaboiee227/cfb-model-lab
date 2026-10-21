@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "role": "FINAL_WINDOW_PREGAME_CONTEXT_OVERLAY",
+  "observedAt": "2026-10-21T23:39:46Z",
+  "canonicalInfluence": false,
+  "games": [
+    {
+      "gameId": "2026-10-21-NEWMEXICOSTATE-SAMHOUSTON",
+      "patch": {
+        "personnel": {
+          "status": "FINAL_OFFICIAL_RECHECK_COMPLETE_AVAILABILITY_GAPS_PRESERVED",
+          "lastCheckedAt": "2026-10-21T23:39:46Z",
+          "lastOfficialCheckAt": "2026-10-21T23:39:46Z",
+          "away": {
+            "startingQB": "NOT_EXPLICITLY_CONFIRMED_FOR_WEDNESDAY",
+            "finalAssessment": "No official team source located in the final window explicitly named the starter. Third-party preview and quarterback-prop evidence pointing to Adam Damante is retained as noncanonical context only."
+          },
+          "home": {
+            "startingQB": "NOT_EXPLICITLY_CONFIRMED_FOR_WEDNESDAY",
+            "finalAssessment": "Landyn Locke remains the supported recent-starter and official-preview baseline; no new official change announcement was located."
+          },
+          "lateAvailability": "No new official inactive or depth announcement was located. Unknown remains unknown.",
+          "sourceSnapshot": "cfb/pregame-refresh/week-08-wednesday-publication-lock-2026-10-21-1939et.json"
+        },
+        "weather": {
+          "status": "NWS_FINAL_WINDOW_RECHECK_COMPLETE_LOW_IMPACT",
+          "observedAt": "2026-10-21T23:39:28Z",
+          "lastCheckedAt": "2026-10-21T23:39:28Z",
+          "source": "National Weather Service hourly API",
+          "sourceUrl": "https://api.weather.gov/gridpoints/HGX/56,137/forecast/hourly",
+          "sourceGeneratedAt": "2026-10-21T23:39:28Z",
+          "sourceSnapshot": "cfb/pregame-refresh/week-08-wednesday-publication-lock-2026-10-21-1939et.json",
+          "spatialScope": "Nearby NWS forecast grid, not an on-field observation",
+          "kickoffApprox": "74 F, clear, 0% precipitation, north wind 5 mph",
+          "kickoffWindow": "74 F at 19:00 CDT falling to 69 F at 20:00 CDT; clear; 0% precipitation; north wind 5 mph",
+          "gustMph": null,
+          "note": "Gusts are not supplied by this endpoint; null is not zero. No material adverse weather signal was present."
+        },
+        "market": {
+          "status": "LOCKED",
+          "observedAt": "2026-10-21T23:32:03Z",
+          "lockedAt": "2026-10-21T23:39:17.549697Z",
+          "provider": "The Odds API",
+          "lockRegistry": "cfb/research-market-locks/week-08-foundation-market.json",
+          "sourceSnapshot": "data/markets-sportsbooks.json",
+          "observations": [
+            {
+              "book": "FanDuel",
+              "observedAt": "2026-10-21T23:32:03Z",
+              "spreadHome": 3.5,
+              "spreadHomePrice": -118,
+              "spreadAway": -3.5,
+              "spreadAwayPrice": -104,
+              "total": 46.5,
+              "overPrice": -118,
+              "underPrice": -104,
+              "moneylineHome": 132,
+              "moneylineAway": -160,
+              "source": "The Odds API",
+              "componentFreshness": "Spread/total refreshed at 23:32Z; moneyline last independently refreshed at 22:37Z."
+            },
+            {
+              "book": "DraftKings",
+              "observedAt": "2026-10-21T23:32:03Z",
+              "spreadHome": 3.0,
+              "spreadHomePrice": -105,
+              "spreadAway": -3.0,
+              "spreadAwayPrice": -115,
+              "total": 46.5,
+              "overPrice": -118,
+              "underPrice": -102,
+              "moneylineHome": 130,
+              "moneylineAway": -155,
+              "source": "The Odds API",
+              "componentFreshness": "Spread/total refreshed at 23:32Z; moneyline last independently refreshed at 22:37Z."
+            }
+          ],
+          "note": "Immutable research-only publication-window lock. Market movement cannot rewrite the frozen projection or canonical HOLD."
+        },
+        "benchmarks": {
+          "spPlus": {
+            "status": "PENDING_CURRENT_OFFICIAL_CAPTURE_FINAL_WINDOW_UNVERIFIED",
+            "lastCheckedAt": "2026-10-21T23:39:46Z",
+            "note": "No independently verified official final-window snapshot. Third-party reported ranks remain comparison-only."
+          },
+          "sagarin": {
+            "status": "CURRENT_EXISTING_SNAPSHOT_NO_FINAL_WINDOW_OFFICIAL_REFRESH",
+            "lastCheckedAt": "2026-10-21T23:39:46Z",
+            "note": "Existing saved Week 8 Sagarin benchmark retained; no independently verified official final-window refresh."
+          },
+          "refMetrics": {
+            "status": "CREW_NOT_POSTED_FINAL_WINDOW_CHECK",
+            "source": "https://www.refmetrics.com/ncaa-football/official-assignments-today",
+            "sourcePageUpdatedAt": "2026-10-21T14:31:00-07:00",
+            "lastCheckedAt": "2026-10-21T23:39:46Z",
+            "note": "Page explicitly reported that upcoming NCAA Football officials were not available; game trend context only, no crew adjustment."
+          }
+        },
+        "audit": {
+          "priority": "FINAL_WINDOW",
+          "oneHourRefreshAt": "2026-10-21T23:39:46Z",
+          "materialOpenItems": [
+            "official New Mexico State starter confirmation unresolved",
+            "referee/crew assignment not posted",
+            "official final-window SP+ and Sagarin snapshots unverified"
+          ],
+          "marketLockStatus": "LOCKED_TWO_BOOKS",
+          "canonicalGate": "HOLD"
+        }
+      }
+    }
+  ]
+}
