@@ -200,3 +200,52 @@ The four-game priority source pass is captured; final-hour checks and publicatio
 - Public status: `week-8.html`; it reads saved game states and lock files on load. Research Hub now distinguishes current Week 8 preparation from historical Week 7 grades.
 - Existing scheduled CFB refresh prompts now carry the Tuesday–Thursday boundary; NFL instructions are unchanged. Hourly polling is best effort and cannot guarantee an exact minute. The existing GitHub market-lock workflow remains responsible for configured T−30 captures; inspect actual lock records rather than assuming a scheduled run succeeded.
 - Canonical HOLD remains the overriding release gate. Research locks may be captured and graded independently without promoting their projections.
+
+## Efficient resume and resource integration — October 20 evening
+
+Start each work session from current GitHub main, not an older spreadsheet snapshot:
+
+```sh
+python scripts/cfb_operations_check.py
+```
+
+This single offline command verifies immutable foundation and market locks, rebuilds
+an integrated state in memory, audits all seven active games, reads the existing
+challenger decision registry, and reports source-file SHA-256 fingerprints. It
+performs no ingestion, freeze, grading, promotion or production-file writes.
+`auditedAt` is an audit clock; `sourceObservedAt` remains the saved source time.
+Captured personnel/weather coverage is not release clearance or current freshness.
+A kickoff-passed game still needs a verified FINAL score before grading.
+
+The `CFB read-only operations check` Action runs on changes to this check and on
+manual dispatch, storing a report artifact tied to the checkout commit. It adds
+no recurring poll and cannot commit to main. Use the existing ingestion,
+market-lock, source-refresh and grading jobs as their respective owners.
+
+Research-shadow, market and Sagarin postgame jobs now pass the active scope to
+their graders. They verify complete immutable inputs, then restrict score-request
+dates and graded rows to the seven authorized games by foundation digest. They
+never rewrite the full-week locks. The scheduled shadow job targets the full
+Week 8 foundation once; older overlapping Tuesday result artifacts are retained.
+Standalone grader calls must include `--scope
+cfb/pregame/week-08-active-through-thursday.json` during this operating window.
+
+### Resource decisions carried forward
+
+- Keep GitHub Actions, Python and the existing static site as the production backbone.
+- Improve shared GameState/provenance, audit, freeze and grading contracts before
+  adding another orchestration system. The operations check and scoped grading
+  are implemented; a universal ingestion schema is still pending.
+- Reuse `cfb/validation/week-08-rebuild-decision.json` as the current CFB challenger
+  decision registry. A cross-experiment registry, explicit promotion log and
+  reproducible experiment runner are next development work, not completed features.
+- Evaluate MiMo-Code as development support after those interfaces are stable.
+  Herdr remains later-stage; OmniRoute and local Qwen remain optional noncanonical
+  support. None is installed or needed to run the current production jobs.
+- Additional skill catalogs, workflow collections and UI libraries remain discovery
+  candidates until individually reviewed. Adding them is not evidence of increased
+  predictive accuracy. Do not replace the working site or scheduler solely to use them.
+- Keep NFL architectures, coefficients and operating jobs independent of CFB.
+
+The historical spreadsheet's absence of Week 8 games is not the current GitHub
+production state. Do not rebuild or overwrite the current slate from that snapshot.

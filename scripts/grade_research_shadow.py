@@ -12,6 +12,7 @@ from typing import Any
 from lock_research_shadow import verify
 from record_tracker import atomic_json, load_aliases, match_score
 from score_sources import fetch_scores_for_projection
+from cfb_grading_scope import scoped_digests, score_request
 
 
 def mean(values: list[float]) -> float | None:
@@ -36,7 +37,7 @@ def preserve_graded_at_if_unchanged(new: dict[str, Any], existing: dict[str, Any
     return new
 
 
-def grade(lock: dict[str, Any], scores: list[dict[str, Any]], aliases: dict[str, str]) -> dict[str, Any]:
+def grade(lock: dict[str, Any], scores: list[dict[str, Any]], aliases: dict[str, str], scope=None) -> dict[str, Any]:
     verify(lock)
     rows: list[dict[str, Any]] = []
     margin_errors: list[float] = []
@@ -45,7 +46,10 @@ def grade(lock: dict[str, Any], scores: list[dict[str, Any]], aliases: dict[str,
     su_wins = 0
     su_losses = 0
 
+    allowed = scoped_digests(scope, lock)
     for game in lock.get("games", []):
+        if allowed is not None and game.get("projectionDigest") not in allowed:
+            continue
         score = match_score(game, scores, aliases)
         base = {
             "gameId": game["gameId"],
@@ -178,17 +182,23 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("lock")
     ap.add_argument("--scores")
+    ap.add_argument("--scope", help="Active processing scope; excludes paused games from score requests and grades")
     ap.add_argument("--output", required=True)
     ap.add_argument("--root", default=".")
     args = ap.parse_args()
 
     root = Path(args.root)
     lock = json.loads(Path(args.lock).read_text(encoding="utf-8"))
+    scope = json.loads(Path(args.scope).read_text()) if args.scope else None
+    allowed = scoped_digests(scope, lock)
     if args.scores:
         scores = json.loads(Path(args.scores).read_text(encoding="utf-8")).get("games", [])
     else:
-        scores = fetch_scores_for_projection(str(lock.get("league")), lock)
-    out = grade(lock, scores, load_aliases(root))
+        scores = fetch_scores_for_projection(str(lock.get("league")), score_request(lock, allowed))
+    out = grade(lock, scores, load_aliases(root), scope=scope)
+    if scope is not None:
+        out["activeScope"] = args.scope
+        out["pauseBeforeGameDateET"] = scope["pauseBoundary"]["beforeGameDateET"]
     output_path = Path(args.output)
     existing = json.loads(output_path.read_text(encoding="utf-8")) if output_path.exists() else None
     out = preserve_graded_at_if_unchanged(out, existing)

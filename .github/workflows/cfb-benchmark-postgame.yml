@@ -2,6 +2,9 @@ name: CFB benchmark postgame evaluation
 on:
   push:
     paths:
+      - 'scripts/cfb_grading_scope.py'
+      - 'tests/test_cfb_grading_scope.py'
+      - 'cfb/pregame/week-08-active-through-thursday.json'
       - 'scripts/cfb_benchmark_postgame.py'
       - 'tests/test_cfb_benchmark_postgame.py'
       - 'cfb/research-locks/week-08-foundation-full.json'
@@ -46,6 +49,7 @@ jobs:
         if: github.event_name != 'push'
         run: |
           python scripts/cfb_benchmark_postgame.py \
+            --scope cfb/pregame/week-08-active-through-thursday.json \
             --foundation-lock cfb/research-locks/week-08-foundation-full.json \
             --comparison cfb/validation/week-08-foundation-vs-sagarin.json \
             --output cfb/validation/week-08-foundation-vs-sagarin-results.json

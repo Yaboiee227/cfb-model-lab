@@ -16,6 +16,7 @@ from typing import Any
 from lock_research_shadow import verify as verify_research_lock
 from record_tracker import atomic_json, load_aliases, match_score
 from score_sources import fetch_scores_for_projection
+from cfb_grading_scope import scoped_digests, score_request, row_digest
 
 
 def mean(values: list[float]) -> float | None:
@@ -82,6 +83,7 @@ def grade(
     comparison: dict[str, Any],
     scores: list[dict[str, Any]],
     aliases: dict[str, str],
+    scope=None,
 ) -> dict[str, Any]:
     verify_pregame_comparison(lock, comparison)
     rows: list[dict[str, Any]] = []
@@ -100,7 +102,10 @@ def grade(
         "sagarinSuCorrect": 0,
     }
 
+    allowed = scoped_digests(scope, lock)
     for row in comparison.get("games", []):
+        if allowed is not None and row_digest(row) not in allowed:
+            continue
         if row.get("status") != "COMPARED":
             rows.append({**row, "postgameStatus": "REVIEW", "postgameReviewReason": "Pregame comparison was not complete"})
             continue
@@ -263,17 +268,23 @@ def main() -> None:
     ap.add_argument("--foundation-lock", default="cfb/research-locks/week-08-foundation-full.json")
     ap.add_argument("--comparison", default="cfb/validation/week-08-foundation-vs-sagarin.json")
     ap.add_argument("--scores")
+    ap.add_argument("--scope", help="Active processing scope; excludes paused games from score requests and grades")
     ap.add_argument("--output", default="cfb/validation/week-08-foundation-vs-sagarin-results.json")
     ap.add_argument("--root", default=".")
     args = ap.parse_args()
     root = Path(args.root)
     lock = json.loads(Path(args.foundation_lock).read_text(encoding="utf-8"))
     comparison = json.loads(Path(args.comparison).read_text(encoding="utf-8"))
+    scope = json.loads(Path(args.scope).read_text()) if args.scope else None
+    allowed = scoped_digests(scope, lock)
     if args.scores:
         scores = json.loads(Path(args.scores).read_text(encoding="utf-8")).get("games", [])
     else:
-        scores = fetch_scores_for_projection("cfb", comparison)
-    out = grade(lock, comparison, scores, load_aliases(root))
+        scores = fetch_scores_for_projection("cfb", score_request(comparison, allowed))
+    out = grade(lock, comparison, scores, load_aliases(root), scope=scope)
+    if scope is not None:
+        out["activeScope"] = args.scope
+        out["pauseBeforeGameDateET"] = scope["pauseBoundary"]["beforeGameDateET"]
     output = Path(args.output)
     existing = json.loads(output.read_text(encoding="utf-8")) if output.exists() else None
     out = preserve_graded_at_if_unchanged(out, existing)

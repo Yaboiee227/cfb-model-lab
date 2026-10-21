@@ -1,0 +1,26 @@
+name: CFB read-only operations check
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/cfb_operations_check.py'
+      - 'scripts/cfb_grading_scope.py'
+      - 'tests/test_cfb_operations_check.py'
+      - 'tests/test_cfb_grading_scope.py'
+      - '.github/workflows/cfb-operations-check.yml'
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python -m unittest discover -s tests -p 'test_cfb_operations_check.py' -v
+      - run: python -m unittest discover -s tests -p 'test_cfb_grading_scope.py' -v
+      - run: python scripts/cfb_operations_check.py > "$RUNNER_TEMP/cfb-operations.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cfb-operations-${{ github.sha }}
+          path: ${{ runner.temp }}/cfb-operations.json
