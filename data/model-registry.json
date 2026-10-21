@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "project": "CB Model Projections",
+  "purpose": "Single machine-readable pointer registry. This file identifies canonical, challenger/research, benchmark and publication states without copying or relabeling frozen artifacts.",
+  "policy": {
+    "canonicalPromotionRequiresExplicitApproval": true,
+    "prospectiveFrozenEvidenceRequired": true,
+    "historicalPregameReconstructionForbidden": true,
+    "externalBenchmarksMayModifyCanonical": false,
+    "marketContextMayModifyCanonical": false
+  },
+  "cfb": {
+    "season": 2026,
+    "activeWeek": 8,
+    "canonical": {
+      "status": "HOLD",
+      "historicalVersionLabel": "Advanced Calibrated 0.9J",
+      "reproducibleGeneratorAvailable": false,
+      "week8CanonicalProjectionAvailable": false,
+      "publicationAuthorized": false,
+      "source": "cfb/projections/week-08-status.json",
+      "integrityRule": "Do not reconstruct or substitute an exact 0.9J generator after results."
+    },
+    "leadResearchChallenger": {
+      "modelId": "cfb-rebuild-foundation-v1-shadow",
+      "tier": "VALIDATED_FOUNDATION_PROSPECTIVE_SHADOW",
+      "canonicalInfluence": false,
+      "promotionAuthorized": false,
+      "generator": "scripts/cfb_foundation_candidate.py",
+      "decisionSource": "cfb/validation/week-08-rebuild-decision.json",
+      "frozenSource": "cfb/research-locks/week-08-foundation-full.json"
+    }
+  },
+  "nfl": {
+    "season": 2026,
+    "publishedMainSiteSnapshotWeek": 6,
+    "activeProspectiveWeek": 7,
+    "canonical": {
+      "modelId": "NFL Canonical v1",
+      "status": "FROZEN_PROSPECTIVE_RESEARCH",
+      "activeRef": "nfl-week7-live-release",
+      "activeRefHead": "6e7a5d973308a24d9fc74a8a3e9a238dc1fb6c0a",
+      "snapshotId": "20261021T114427Z",
+      "snapshotPath": "nfl_data/prospective/week7/20261021T114427Z",
+      "manifestPath": "nfl_data/prospective/week7/20261021T114427Z/manifest.json",
+      "games": 14,
+      "canonicalChanged": false,
+      "promotionAllowed": false,
+      "websitePublishAllowed": false,
+      "releaseAllowed": false
+    },
+    "week6FailureAnalysis": {
+      "status": "PRESERVED_RESEARCH_EVIDENCE",
+      "ref": "nfl-week6-challenger-build",
+      "refHead": "eff0416504ffef0fa2d1bbbaf6ddb7bedd807a9e",
+      "root": "nfl_data/research/week6_failure_20261021",
+      "challengerRegistry": "nfl_data/research/week6_failure_20261021/CHALLENGER_REGISTRY.json"
+    },
+    "siteSnapshot": {
+      "config": "nfl_data/site/config.json",
+      "status": "WEEK6_GRADED_MAIN_SNAPSHOT",
+      "note": "The main-site NFL data remains a Week 6 graded snapshot. Week 7 frozen prospective evidence is intentionally referenced by immutable branch/commit pointer rather than silently copied or merged."
+    }
+  }
+}
