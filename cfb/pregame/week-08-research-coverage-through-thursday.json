@@ -6,7 +6,7 @@
   "role": "ACTIVE_WINDOW_RESEARCH_PREGAME_COVERAGE_AUDIT",
   "canonicalInfluence": false,
   "canonicalPromotionAuthorized": false,
-  "auditedAt": "2026-10-21T16:39:37.703317Z",
+  "auditedAt": "2026-10-21T20:07:14.712567Z",
   "summary": {
     "games": 7,
     "foundationLocked": 7,
@@ -27,7 +27,6 @@
       "priority": "TODAY",
       "urgency": "CRITICAL",
       "gaps": [
-        "personnel requires follow-up: OFFICIAL_BASELINE_CAPTURED_FINAL_RECHECK_REQUIRED",
         "weather final review pending: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED"
       ],
       "warnings": [
@@ -262,10 +261,10 @@
         "spPlus": "PENDING_OFFICIAL_CAPTURE"
       },
       "context": {
-        "personnel": "OFFICIAL_BASELINE_CAPTURED_FINAL_RECHECK_REQUIRED",
+        "personnel": "OFFICIAL_DEPTH_CAPTURED_FINAL_AVAILABILITY_UNCONFIRMED",
         "weather": "NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED",
         "referee": "UNAVAILABLE_STALE_RETRIEVAL",
-        "marketContext": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
+        "marketContext": "SAVED_PIPELINE_CONTEXT_NOT_LOCKED",
         "contextSource": "cfb/pregame/week-08-through-thursday-effective.json"
       },
       "marketLock": {
@@ -274,7 +273,6 @@
         "bookCount": 0
       },
       "gaps": [
-        "personnel requires follow-up: OFFICIAL_BASELINE_CAPTURED_FINAL_RECHECK_REQUIRED",
         "weather final review pending: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED"
       ],
       "warnings": [
