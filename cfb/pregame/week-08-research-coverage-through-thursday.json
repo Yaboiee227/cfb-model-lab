@@ -6,7 +6,7 @@
   "role": "ACTIVE_WINDOW_RESEARCH_PREGAME_COVERAGE_AUDIT",
   "canonicalInfluence": false,
   "canonicalPromotionAuthorized": false,
-  "auditedAt": "2026-10-20T20:40:32.439153Z",
+  "auditedAt": "2026-10-21T00:49:05.491943Z",
   "summary": {
     "games": 7,
     "foundationLocked": 7,
@@ -14,66 +14,18 @@
     "personnelCaptured": 7,
     "weatherCaptured": 7,
     "refereeCapturedOrExplicitlyChecked": 7,
-    "gamesWithMarketLock": 0,
-    "critical": 3,
-    "high": 4
+    "gamesWithMarketLock": 3,
+    "critical": 1,
+    "high": 3
   },
   "workQueue": [
-    {
-      "gameId": "2026-10-20-MIDDLETENNESSEE-FLORIDAINTERNATIONAL",
-      "awayTeam": "Middle Tennessee",
-      "homeTeam": "Florida International",
-      "kickoff": "2026-10-20T23:00:00Z",
-      "priority": "TODAY",
-      "urgency": "CRITICAL",
-      "gaps": [
-        "personnel requires follow-up: OFFICIAL_BASELINE_CAPTURED_FINAL_RECHECK_REQUIRED",
-        "weather final review pending: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED"
-      ],
-      "warnings": [
-        "referee assignment status: UNAVAILABLE_STALE_RETRIEVAL; do not guess",
-        "immutable final-window market lock pending"
-      ]
-    },
-    {
-      "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
-      "awayTeam": "Missouri State",
-      "homeTeam": "Delaware",
-      "kickoff": "2026-10-20T23:00:00Z",
-      "priority": "TODAY",
-      "urgency": "CRITICAL",
-      "gaps": [
-        "personnel requires follow-up: MATERIAL_QB_STATUS_OPEN_SOURCE_CONFLICT",
-        "weather final review pending: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED"
-      ],
-      "warnings": [
-        "referee assignment status: UNAVAILABLE_STALE_RETRIEVAL; do not guess",
-        "immutable final-window market lock pending"
-      ]
-    },
-    {
-      "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
-      "awayTeam": "South Alabama",
-      "homeTeam": "Marshall",
-      "kickoff": "2026-10-20T23:30:00Z",
-      "priority": "TODAY",
-      "urgency": "CRITICAL",
-      "gaps": [
-        "personnel requires follow-up: MATERIAL_QB_STATUS_OPEN_OFFICIAL_ROTATION",
-        "weather final review pending: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED"
-      ],
-      "warnings": [
-        "referee assignment status: UNAVAILABLE_STALE_RETRIEVAL; do not guess",
-        "immutable final-window market lock pending"
-      ]
-    },
     {
       "gameId": "2026-10-21-NEWMEXICOSTATE-SAMHOUSTON",
       "awayTeam": "New Mexico State",
       "homeTeam": "Sam Houston",
       "kickoff": "2026-10-22T00:00:00Z",
-      "priority": "NEXT_48H",
-      "urgency": "HIGH",
+      "priority": "TODAY",
+      "urgency": "CRITICAL",
       "gaps": [
         "personnel requires follow-up: OFFICIAL_BASELINE_CAPTURED_FINAL_RECHECK_REQUIRED",
         "weather final review pending: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED"
@@ -88,7 +40,7 @@
       "awayTeam": "James Madison",
       "homeTeam": "App State",
       "kickoff": "2026-10-22T23:00:00Z",
-      "priority": "NEXT_72H",
+      "priority": "NEXT_48H",
       "urgency": "HIGH",
       "gaps": [
         "personnel requires follow-up: MATERIAL_QB_STATUS_OPEN_OFFICIAL_APP_STATE_ROTATION_AFTER_INJURY",
@@ -104,7 +56,7 @@
       "awayTeam": "Liberty",
       "homeTeam": "Kennesaw State",
       "kickoff": "2026-10-22T23:00:00Z",
-      "priority": "NEXT_72H",
+      "priority": "NEXT_48H",
       "urgency": "HIGH",
       "gaps": [
         "weather final review pending: NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED"
@@ -119,7 +71,7 @@
       "awayTeam": "East Carolina",
       "homeTeam": "Memphis",
       "kickoff": "2026-10-22T23:30:00Z",
-      "priority": "NEXT_72H",
+      "priority": "NEXT_48H",
       "urgency": "HIGH",
       "gaps": [
         "weather final review pending: NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED"
@@ -127,6 +79,51 @@
       "warnings": [
         "referee assignment status: NOT_YET_POSTED; do not guess",
         "immutable final-window market lock pending"
+      ]
+    },
+    {
+      "gameId": "2026-10-20-MIDDLETENNESSEE-FLORIDAINTERNATIONAL",
+      "awayTeam": "Middle Tennessee",
+      "homeTeam": "Florida International",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "priority": "STARTED_OR_PAST",
+      "urgency": "NORMAL",
+      "gaps": [
+        "personnel requires follow-up: OFFICIAL_BASELINE_CAPTURED_FINAL_RECHECK_REQUIRED",
+        "weather final review pending: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED"
+      ],
+      "warnings": [
+        "referee assignment status: UNAVAILABLE_STALE_RETRIEVAL; do not guess"
+      ]
+    },
+    {
+      "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
+      "awayTeam": "Missouri State",
+      "homeTeam": "Delaware",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "priority": "STARTED_OR_PAST",
+      "urgency": "NORMAL",
+      "gaps": [
+        "personnel requires follow-up: MATERIAL_QB_STATUS_OPEN_SOURCE_CONFLICT",
+        "weather final review pending: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED"
+      ],
+      "warnings": [
+        "referee assignment status: UNAVAILABLE_STALE_RETRIEVAL; do not guess"
+      ]
+    },
+    {
+      "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
+      "awayTeam": "South Alabama",
+      "homeTeam": "Marshall",
+      "kickoff": "2026-10-20T23:30:00Z",
+      "priority": "STARTED_OR_PAST",
+      "urgency": "NORMAL",
+      "gaps": [
+        "personnel requires follow-up: MATERIAL_QB_STATUS_OPEN_OFFICIAL_ROTATION",
+        "weather final review pending: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED"
+      ],
+      "warnings": [
+        "referee assignment status: UNAVAILABLE_STALE_RETRIEVAL; do not guess"
       ]
     }
   ],
@@ -137,8 +134,8 @@
       "awayTeam": "Middle Tennessee",
       "homeTeam": "Florida International",
       "kickoff": "2026-10-20T23:00:00Z",
-      "priority": "TODAY",
-      "urgency": "CRITICAL",
+      "priority": "STARTED_OR_PAST",
+      "urgency": "NORMAL",
       "foundation": {
         "status": "LOCKED",
         "projectionDigest": "d837003b6ba482064b0d61e2f4d5d519d1110c204aabdca37ab58edaf15a4570"
@@ -155,17 +152,19 @@
         "contextSource": "cfb/pregame/week-08-through-thursday-effective.json"
       },
       "marketLock": {
-        "status": "PENDING",
-        "booksLocked": [],
-        "bookCount": 0
+        "status": "LOCKED",
+        "booksLocked": [
+          "draftkings",
+          "fanduel"
+        ],
+        "bookCount": 2
       },
       "gaps": [
         "personnel requires follow-up: OFFICIAL_BASELINE_CAPTURED_FINAL_RECHECK_REQUIRED",
         "weather final review pending: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED"
       ],
       "warnings": [
-        "referee assignment status: UNAVAILABLE_STALE_RETRIEVAL; do not guess",
-        "immutable final-window market lock pending"
+        "referee assignment status: UNAVAILABLE_STALE_RETRIEVAL; do not guess"
       ]
     },
     {
@@ -174,8 +173,8 @@
       "awayTeam": "Missouri State",
       "homeTeam": "Delaware",
       "kickoff": "2026-10-20T23:00:00Z",
-      "priority": "TODAY",
-      "urgency": "CRITICAL",
+      "priority": "STARTED_OR_PAST",
+      "urgency": "NORMAL",
       "foundation": {
         "status": "LOCKED",
         "projectionDigest": "c2f169318d0835551d45c972f4dbf953b36a585e1579988b846e2aae084321c8"
@@ -192,17 +191,19 @@
         "contextSource": "cfb/pregame/week-08-through-thursday-effective.json"
       },
       "marketLock": {
-        "status": "PENDING",
-        "booksLocked": [],
-        "bookCount": 0
+        "status": "LOCKED",
+        "booksLocked": [
+          "draftkings",
+          "fanduel"
+        ],
+        "bookCount": 2
       },
       "gaps": [
         "personnel requires follow-up: MATERIAL_QB_STATUS_OPEN_SOURCE_CONFLICT",
         "weather final review pending: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED"
       ],
       "warnings": [
-        "referee assignment status: UNAVAILABLE_STALE_RETRIEVAL; do not guess",
-        "immutable final-window market lock pending"
+        "referee assignment status: UNAVAILABLE_STALE_RETRIEVAL; do not guess"
       ]
     },
     {
@@ -211,8 +212,8 @@
       "awayTeam": "South Alabama",
       "homeTeam": "Marshall",
       "kickoff": "2026-10-20T23:30:00Z",
-      "priority": "TODAY",
-      "urgency": "CRITICAL",
+      "priority": "STARTED_OR_PAST",
+      "urgency": "NORMAL",
       "foundation": {
         "status": "LOCKED",
         "projectionDigest": "1f3d9455b39a045403e0b5e7616dec22366f2c4669bb1f4903907ab43704b4b2"
@@ -229,17 +230,19 @@
         "contextSource": "cfb/pregame/week-08-through-thursday-effective.json"
       },
       "marketLock": {
-        "status": "PENDING",
-        "booksLocked": [],
-        "bookCount": 0
+        "status": "LOCKED",
+        "booksLocked": [
+          "draftkings",
+          "fanduel"
+        ],
+        "bookCount": 2
       },
       "gaps": [
         "personnel requires follow-up: MATERIAL_QB_STATUS_OPEN_OFFICIAL_ROTATION",
         "weather final review pending: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED"
       ],
       "warnings": [
-        "referee assignment status: UNAVAILABLE_STALE_RETRIEVAL; do not guess",
-        "immutable final-window market lock pending"
+        "referee assignment status: UNAVAILABLE_STALE_RETRIEVAL; do not guess"
       ]
     },
     {
@@ -248,8 +251,8 @@
       "awayTeam": "New Mexico State",
       "homeTeam": "Sam Houston",
       "kickoff": "2026-10-22T00:00:00Z",
-      "priority": "NEXT_48H",
-      "urgency": "HIGH",
+      "priority": "TODAY",
+      "urgency": "CRITICAL",
       "foundation": {
         "status": "LOCKED",
         "projectionDigest": "76573e65de4174437af8f8b604ec6730d1b183804089c333a6186c8b182c26da"
@@ -285,7 +288,7 @@
       "awayTeam": "James Madison",
       "homeTeam": "App State",
       "kickoff": "2026-10-22T23:00:00Z",
-      "priority": "NEXT_72H",
+      "priority": "NEXT_48H",
       "urgency": "HIGH",
       "foundation": {
         "status": "LOCKED",
@@ -322,7 +325,7 @@
       "awayTeam": "Liberty",
       "homeTeam": "Kennesaw State",
       "kickoff": "2026-10-22T23:00:00Z",
-      "priority": "NEXT_72H",
+      "priority": "NEXT_48H",
       "urgency": "HIGH",
       "foundation": {
         "status": "LOCKED",
@@ -358,7 +361,7 @@
       "awayTeam": "East Carolina",
       "homeTeam": "Memphis",
       "kickoff": "2026-10-22T23:30:00Z",
-      "priority": "NEXT_72H",
+      "priority": "NEXT_48H",
       "urgency": "HIGH",
       "foundation": {
         "status": "LOCKED",
