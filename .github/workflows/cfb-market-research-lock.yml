@@ -4,8 +4,9 @@ on:
     paths:
       - 'scripts/cfb_market_research_lock.py'
       - 'tests/test_cfb_market_research_lock.py'
+      - 'tests/test_cfb_market_scope_transition.py'
       - 'cfb/research-locks/week-08-foundation-full.json'
-      - 'cfb/pregame/week-08-active-through-thursday.json'
+      - 'cfb/pregame/week-08-active-full-week.json'
       - '.github/workflows/cfb-market-research-lock.yml'
   workflow_dispatch:
   workflow_run:
@@ -28,7 +29,7 @@ jobs:
       - name: Sync latest completed market snapshot
         run: git pull --rebase origin main
       - name: Test immutable per-book market locking
-        run: python -m unittest tests.test_cfb_market_research_lock -v
+        run: python -m unittest tests.test_cfb_market_research_lock tests.test_cfb_market_scope_transition -v
       - name: Push event is integrity-only
         if: github.event_name == 'push'
         run: echo 'Push event verifies market-lock code only; live locking follows completed sportsbook refreshes or manual dispatch.'
@@ -38,19 +39,20 @@ jobs:
           python scripts/cfb_market_research_lock.py \
             --foundation-lock cfb/research-locks/week-08-foundation-full.json \
             --markets data/markets-sportsbooks.json \
-            --scope cfb/pregame/week-08-active-through-thursday.json \
+            --scope cfb/pregame/week-08-active-full-week.json \
             --output cfb/research-market-locks/week-08-foundation-market.json \
             --lock-window-minutes 30 \
             --max-observation-age-minutes 35
-      - name: Assert research-only immutable observations and pause boundary
+      - name: Assert research-only immutable observations and full-week scope
         if: github.event_name != 'push'
         run: |
           python - <<'PY'
           import json,sys
           sys.path.insert(0,'scripts')
           from cfb_market_research_lock import active_ids_from_scope, verify_existing
+          from record_tracker import load_aliases
           foundation=json.load(open('cfb/research-locks/week-08-foundation-full.json'))
-          scope=json.load(open('cfb/pregame/week-08-active-through-thursday.json'))
+          scope=json.load(open('cfb/pregame/week-08-active-full-week.json'))
           d=json.load(open('cfb/research-market-locks/week-08-foundation-market.json'))
           verify_existing(d,foundation)
           assert d['role']=='IMMUTABLE_PREGAME_MARKET_RESEARCH_LOCK'
@@ -59,13 +61,14 @@ jobs:
           assert d['foundationLockDigest']==foundation['lockDigest']
           assert d['booksTracked']==['fanduel','draftkings']
           assert d['scopeRestricted'] is True
-          active=active_ids_from_scope(scope,foundation)
-          assert len(active)==7
+          active=active_ids_from_scope(scope,foundation,load_aliases('.'))
+          assert len(active)==53, len(active)
+          assert d['counts']['activeScopeGames']==53, d['counts']
+          assert d['counts']['preservedOutOfScopeLockedGames']==3, d['counts']
+          assert d['counts']['pausedGames']==0, d['counts']
           for game in d['games']:
-              if game['gameId'] not in active and not game['books']:
-                  assert game['status']=='PAUSED_OUT_OF_SCOPE', game
-          assert d['counts']['pausedGames']==49, d['counts']
-          assert d['counts']['activeScopeGames']==7, d['counts']
+              if game['gameId'] not in active and game['books']:
+                  assert game['status']=='LOCKED', game
           print(json.dumps({'updatedAt':d['updatedAt'],'counts':d['counts']},indent=2))
           PY
       - name: Commit changed market research locks
@@ -78,6 +81,6 @@ jobs:
             echo 'No durable market-lock changes.'
             exit 0
           fi
-          git commit -m 'Update scoped immutable Week 8 pregame market research locks'
+          git commit -m 'Update full-week immutable Week 8 pregame market research locks'
           git pull --rebase origin main
           git push
