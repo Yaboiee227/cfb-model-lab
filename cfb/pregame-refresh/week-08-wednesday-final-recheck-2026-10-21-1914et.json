@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "role": "FINAL_PREGAME_CONTEXT_RECHECK",
+  "canonicalInfluence": false,
+  "canonicalPromotionAuthorized": false,
+  "capturedAt": "2026-10-21T23:14:36Z",
+  "capturedAtET": "2026-10-21T19:14:36-04:00",
+  "game": {
+    "gameId": "2026-10-22-NEWMEXICOSTATE-SAMHOUSTON",
+    "awayTeam": "New Mexico State",
+    "homeTeam": "Sam Houston",
+    "kickoff": "2026-10-22T00:00:00Z",
+    "minutesToKickoff": 45.4,
+    "frozenFoundation": {
+      "projectionDigest": "76573e65de4174437af8f8b604ec6730d1b183804089c333a6186c8b182c26da",
+      "projectedAwayPoints": 21.322981138871473,
+      "projectedHomePoints": 20.936490453301413,
+      "projectedMarginHome": -0.3864906855700596,
+      "projectedTotal": 42.259471592172886,
+      "homeWinProbability": 49.02673862307157,
+      "projectedWinner": "New Mexico State",
+      "status": "UNCHANGED_IMMUTABLE_RESEARCH_SHADOW"
+    },
+    "personnel": {
+      "samHouston": {
+        "qbBaseline": "Landyn Locke",
+        "officialSource": "https://gobearkats.com/news/2026/10/20/football-game-7-preview-vs-nm-state",
+        "officialGameCenter": "https://gobearkats.com/game-center/15542",
+        "assessment": "Official Sam Houston preview/game center continues to support Locke as the active quarterback baseline. No fresh official pregame source found announcing a change."
+      },
+      "newMexicoState": {
+        "status": "QB_UNCERTAINTY_REMAINS",
+        "officialPreview": "https://nmstatesports.com/news/2026/10/18/football-aggies-continue-conference-usa-play-at-sam-houston-on-wednesday.aspx",
+        "lastGameOfficialRecap": "https://nmstatesports.com/news/2026/10/7/football-aggies-drop-weekday-clash-in-miami.aspx",
+        "assessment": "The official Oct. 7 recap shows both Adam Damante and Trey Hedden played against FIU. The Oct. 18 official preview does not explicitly name tonight's starter. A third-party matchup page lists Hedden, but that is not sufficient to overwrite the official-baseline uncertainty. Do not infer a starter or alter the frozen projection."
+      }
+    },
+    "weather": {
+      "source": "National Weather Service Huntsville TX point forecast",
+      "sourceUrl": "https://forecast.weather.gov/MapClick.php?FcstType=text&lat=30.7009&lg=en&lon=-95.5567&unit=0",
+      "sourceLastUpdate": "2026-10-21T01:21:00-05:00",
+      "corroboratingPregameContext": "Action Network matchup page showed approximately 71 F, 0% rain, wind 3-4 mph near game time.",
+      "assessment": "No material adverse weather signal. Weather remains non-actionable context for the frozen projection."
+    },
+    "market": {
+      "status": "T_MINUS_45_CONTEXT_ONLY_NOT_IMMUTABLE_LOCK",
+      "draftKings": {
+        "spreadAway": -2.5,
+        "spreadAwayPrice": -115,
+        "spreadHome": 2.5,
+        "spreadHomePrice": -105,
+        "total": 44.5,
+        "overPrice": -115,
+        "underPrice": -105,
+        "moneylineAway": -142,
+        "moneylineHome": 120,
+        "source": "RotoWire sportsbook comparison / Off The Number aggregation",
+        "sourceUrls": ["https://commish.rotowire.com/betting/college-football/game/sam-houston-vs-new-mexico-state-odds-2026-10-21-2973184", "https://www.offthenumber.com/cfb/games/2026-10-21-new-mexico-state-aggies-at-sam-houston-bearkats/"]
+      },
+      "fanDuel": {
+        "spreadAway": -2.5,
+        "spreadAwayPrice": -110,
+        "spreadHome": 2.5,
+        "spreadHomePrice": -110,
+        "total": 45.5,
+        "overPrice": -105,
+        "underPrice": -115,
+        "moneylineAway": -137,
+        "moneylineHome": 114,
+        "source": "Off The Number sportsbook aggregation",
+        "sourceUrl": "https://www.offthenumber.com/cfb/games/2026-10-21-new-mexico-state-aggies-at-sam-houston-bearkats/"
+      },
+      "crossCheck": {
+        "actionNetwork": "NMSU -2.5, total 45.5, moneyline approximately -138/+115",
+        "assessment": "Spread direction is stable at NMSU -2.5. Total is clustered around 44.5-45.5."
+      },
+      "publicationLock": {
+        "created": false,
+        "reason": "This capture occurred about 45 minutes before kickoff, outside the repository's 30-minute immutable publication lock window. Preserve as context only; do not fabricate a T-30 lock from an earlier observation."
+      }
+    },
+    "materialChanges": [
+      "New Mexico State quarterback uncertainty is more explicit than the prior baseline: the official previous-game recap confirms both Damante and Hedden played, while no official source found in this check names tonight's starter.",
+      "No material spread-direction change: NMSU remains approximately -2.5.",
+      "No material weather change."
+    ],
+    "remainingBlockers": [
+      "Official New Mexico State starting quarterback confirmation remains unresolved.",
+      "Immutable FanDuel/DraftKings publication-time market lock must wait for the proper T-30 window.",
+      "Canonical model remains HOLD; frozen foundation is research-only and must not be promoted from this check."
+    ]
+  },
+  "policy": "Pregame-only context. No frozen projection mutation, no feature promotion, no canonical record merge, and no early reconstruction of the publication-time market lock."
+}
