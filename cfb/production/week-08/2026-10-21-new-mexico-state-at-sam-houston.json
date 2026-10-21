@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "gameDateET": "2026-10-21",
+  "gameId": "2026-10-21-NEWMEXICOSTATE-SAMHOUSTON",
+  "foundationGameId": "2026-10-22-NEWMEXICOSTATE-SAMHOUSTON",
+  "awayTeam": "New Mexico State",
+  "homeTeam": "Sam Houston",
+  "kickoff": "2026-10-22T00:00:00Z",
+  "assembledAt": "2026-10-21T21:12:01Z",
+  "role": "BEST_AVAILABLE_PREGAME_PRODUCTION_RESEARCH_PACKET",
+  "canonicalInfluence": false,
+  "canonicalPromotionAuthorized": false,
+  "gradingDeferredUntilWeekComplete": true,
+  "status": "READY_WITH_FINAL_WINDOW_RECHECK_PENDING",
+  "projectionPolicy": "Preserve the immutable Week 8 foundation. Refresh all defensible pregame evidence around it. Markets, external ratings, injuries, weather and narrative context do not rewrite the central projection unless a leakage-safe validated adjustment has been explicitly promoted. Unresolved information increases uncertainty rather than creating invented point adjustments.",
+  "centralProjection": {
+    "source": "cfb/research-locks/week-08-foundation-full.json",
+    "projectionDigest": "76573e65de4174437af8f8b604ec6730d1b183804089c333a6186c8b182c26da",
+    "projectedAwayPoints": 21.322981138871473,
+    "projectedHomePoints": 20.936490453301413,
+    "projectedMarginHome": -0.3864906855700596,
+    "projectedSpreadHome": 0.3864906855700596,
+    "projectedTotal": 42.259471592172886,
+    "homeWinProbability": 49.02673862307157,
+    "projectedWinner": "New Mexico State",
+    "adjustmentFromFrozenFoundation": 0.0,
+    "adjustmentReason": "No newly verified input carries a separately validated/promoted quantitative adjustment."
+  },
+  "confidence": {
+    "margin": "LOW",
+    "total": "MEDIUM_LOW",
+    "drivers": [
+      "Foundation and Sagarin are both essentially pick'em but disagree on winner.",
+      "FanDuel and DraftKings are materially more bullish on New Mexico State than the frozen foundation.",
+      "New Mexico State quarterback usage remains unconfirmed for game day after Adam Damante handled most of the prior game while Trey Hedden remains in the depth structure.",
+      "Weather is benign and does not produce a material validated adjustment.",
+      "No verified high-impact personnel change supports a manual point adjustment."
+    ]
+  },
+  "validatedModelEvidence": {
+    "foundationStatus": "VALIDATED_FOUNDATION_PROSPECTIVE_SHADOW",
+    "richEfficiencyChallenger": {
+      "status": "REJECTED_NOT_ELIGIBLE",
+      "source": "cfb/validation/week-08-multiseason-walkforward.json",
+      "walkForwardGames": 173,
+      "richMinusSimpleMarginMae": -0.3229097926516573,
+      "richMinusSimpleTotalMae": -0.13881855441527158,
+      "gatePassed": false,
+      "canonicalInfluence": false
+    },
+    "offenseDefenseDecompositionChallenger": {
+      "status": "REJECTED_NOT_ELIGIBLE",
+      "canonicalInfluence": false,
+      "reason": "Leakage-safe development/holdout/confirmation testing produced no material unseen improvement versus the foundation."
+    }
+  },
+  "benchmarkContext": {
+    "sagarin": {
+      "source": "cfb/validation/week-08-foundation-vs-sagarin.json",
+      "observedAt": "2026-10-20T11:45:56.031080Z",
+      "ratingsThrough": "2026-10-17",
+      "impliedHomeMargin": 0.4500000000000055,
+      "predictorFavorite": "Sam Houston",
+      "absoluteDisagreementVsFoundation": 0.8364906855700651,
+      "canonicalInfluence": false
+    },
+    "publicComputerContext": {
+      "coversPredictedAwayPoints": 23.41,
+      "coversPredictedHomePoints": 21.63,
+      "coversAwayWinPct": 57.0,
+      "dimersAwayWinPct": 58.0,
+      "canonicalInfluence": false
+    },
+    "spPlusContext": {
+      "newMexicoStateRank": 124,
+      "samHoustonRank": 126,
+      "canonicalInfluence": false
+    }
+  },
+  "marketContext": {
+    "source": "data/markets-sportsbooks.json",
+    "provider": "The Odds API",
+    "snapshotGeneratedAt": "2026-10-21T21:05:32.227Z",
+    "publicationLockStatus": "PENDING_FINAL_30_MINUTE_WINDOW",
+    "fanduel": {
+      "marketObservedAt": "2026-10-21T21:05:27Z",
+      "awaySpread": -2.5,
+      "homeSpread": 2.5,
+      "awayMoneyline": -144,
+      "homeMoneyline": 120,
+      "total": 46.5,
+      "overPrice": -120,
+      "underPrice": -102
+    },
+    "draftkings": {
+      "marketObservedAt": "2026-10-21T21:03:17Z",
+      "awaySpread": -3.0,
+      "homeSpread": 3.0,
+      "awayMoneyline": -148,
+      "homeMoneyline": 124,
+      "total": 47.5,
+      "overPrice": -105,
+      "underPrice": -115
+    },
+    "foundationVsMarket": {
+      "spreadDifferencePoints": "Foundation is approximately 2.1 to 2.6 points less bullish on New Mexico State.",
+      "totalDifferencePoints": "Foundation total is approximately 4.2 to 5.2 points below the two tracked books."
+    },
+    "canonicalInfluence": false
+  },
+  "personnelContext": {
+    "source": "cfb/pregame/week-08-wednesday-effective.json",
+    "newMexicoState": {
+      "mostRecentPrimaryQB": "Adam Damante",
+      "gameDayStarterConfirmed": false,
+      "depthStructureAlsoIncludes": ["Trey Hedden", "Kalani McLeod"],
+      "notableThirdPartyStatuses": [
+        "K I. Uvaydov questionable (undisclosed)",
+        "RB R. Burton questionable (undisclosed)",
+        "TE R. Lotten questionable (undisclosed)"
+      ],
+      "quantitativeAdjustment": 0.0,
+      "reason": "No official game-day QB announcement or validated personnel coefficient."
+    },
+    "samHouston": {
+      "mostRecentPrimaryQB": "Landyn Locke",
+      "gameDayStarterConfirmed": false,
+      "notableThirdPartyStatuses": [
+        "TE M. Whisner questionable (undisclosed)",
+        "TE B. Kuhl out (season-long / undisclosed)"
+      ],
+      "offensiveLineContext": "True freshmen Myles Joseph and Tr'e Williams started together in the prior two games; treated as absorbed baseline context rather than a new shock.",
+      "quantitativeAdjustment": 0.0
+    },
+    "canonicalInfluence": false
+  },
+  "weatherContext": {
+    "source": "cfb/pregame/week-08-wednesday-effective.json",
+    "nwsObservedAt": "2026-10-21T20:01:00.589894Z",
+    "temperatureFAtKickoffApprox": 74,
+    "windMphAtKickoffApprox": 5,
+    "precipProbabilityPct": 0,
+    "condition": "Clear",
+    "validatedProjectionAdjustment": 0.0
+  },
+  "restTravelContext": {
+    "newMexicoStateRestDays": 13,
+    "samHoustonRestDays": 7,
+    "status": "CONTEXT_ONLY",
+    "validatedProjectionAdjustment": 0.0
+  },
+  "finalWindowChecklist": [
+    "Recheck official QB/starting lineup information.",
+    "Recheck official/corroborated injury availability.",
+    "Recheck NWS hourly weather for any material change.",
+    "Allow the five-minute sportsbook workflow to tighten to its kickoff-soon cadence.",
+    "Capture immutable FanDuel and DraftKings observations inside the final 30-minute publication window.",
+    "Do not change the central projection unless a previously validated/promoted input materially changes.",
+    "Do not grade or tune from Week 8 outcomes until the week is complete."
+  ]
+}
