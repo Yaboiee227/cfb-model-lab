@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "role": "TIMESTAMPED_PREGAME_MARKET_CONTEXT",
+  "observedAt": "2026-10-21T20:04:41.471691+00:00",
+  "canonicalInfluence": false,
+  "games": [
+    {
+      "gameId": "2026-10-21-NEWMEXICOSTATE-SAMHOUSTON",
+      "patch": {
+        "market": {
+          "observedAt": "2026-10-21T20:03:35.505Z",
+          "retrievedFromRepositoryAt": "2026-10-21T20:04:41.471691+00:00",
+          "observations": [
+            {
+              "book": "FanDuel",
+              "observedAt": "2026-10-21T20:03:01Z",
+              "spreadHome": 2.5,
+              "spreadHomePrice": -102,
+              "spreadAway": -2.5,
+              "spreadAwayPrice": -120,
+              "total": 46.5,
+              "overPrice": -115,
+              "underPrice": -105,
+              "moneylineHome": 125,
+              "moneylineAway": -150,
+              "source": "The Odds API",
+              "sourceSnapshot": "cfb/pregame-refresh/week-08-wednesday-afternoon-market-2026-10-21-1603et-capture.json"
+            },
+            {
+              "book": "DraftKings",
+              "observedAt": "2026-10-21T20:02:53Z",
+              "spreadHome": 3,
+              "spreadHomePrice": -115,
+              "spreadAway": -3,
+              "spreadAwayPrice": -105,
+              "total": 47.5,
+              "overPrice": -105,
+              "underPrice": -115,
+              "moneylineHome": 130,
+              "moneylineAway": -155,
+              "source": "The Odds API",
+              "sourceSnapshot": "cfb/pregame-refresh/week-08-wednesday-afternoon-market-2026-10-21-1603et-capture.json"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

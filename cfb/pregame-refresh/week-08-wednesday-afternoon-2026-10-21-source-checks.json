@@ -1,0 +1,68 @@
+[
+  {
+    "source": "https://api.weather.gov/gridpoints/HGX/56,137/forecast/hourly",
+    "retrievedAt": "2026-10-21T20:01:00.589894+00:00",
+    "status": 200,
+    "capture": "cfb/pregame-refresh/week-08-wednesday-afternoon-2026-10-21-nws.json",
+    "sha256": "75acabe433ac452db6d678b3f7e2fff792abcf4577d4481ecc22c614d579af21",
+    "contentType": "application/geo+json"
+  },
+  {
+    "source": "https://gobearkats.com/news/2026/10/20/football-game-7-preview-vs-nm-state",
+    "retrievedAt": "2026-10-21T20:01:00.591949+00:00",
+    "status": 200,
+    "capture": "cfb/pregame-refresh/week-08-wednesday-afternoon-2026-10-21-home-preview.html",
+    "sha256": "4c9c9c4102bf39e32e05bbd1c77db3b4987557fce25965aa6132e5cc32d6fd44",
+    "contentType": "text/html;charset=utf-8"
+  },
+  {
+    "source": "https://nmstatesports.com/news/2026/10/18/football-aggies-continue-conference-usa-play-at-sam-houston-on-wednesday.aspx",
+    "retrievedAt": "2026-10-21T20:01:00.592551+00:00",
+    "status": "FAILED",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261020&limit=100&groups=80",
+    "retrievedAt": "2026-10-21T20:01:00.594009+00:00",
+    "status": 200,
+    "capture": "cfb/pregame-refresh/week-08-wednesday-afternoon-2026-10-21-tuesday-scores.json",
+    "sha256": "364469b8532f3d4ffbf00dbd5d0bf892d59438989f7de17691b21d37ab365322",
+    "contentType": "application/json;charset=UTF-8"
+  },
+  {
+    "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401871070",
+    "retrievedAt": "2026-10-21T20:01:00.594915+00:00",
+    "status": 200,
+    "capture": "cfb/pregame-refresh/week-08-wednesday-afternoon-2026-10-21-wednesday-status.json",
+    "sha256": "cc6e65f6186ff8c65049c5fb3b1794e14cc9d3c3e64901345f95e5a86a5e8572",
+    "contentType": "application/json;charset=UTF-8"
+  },
+  {
+    "source": "https://gobearkats.com/documents/2026/10/20/Game_7_vs_NMSU.pdf",
+    "retrievedAt": "2026-10-21T20:01:00.599396+00:00",
+    "status": 200,
+    "capture": "cfb/pregame-refresh/week-08-wednesday-afternoon-2026-10-21-home-notes.html",
+    "sha256": "cf1da8a8778d7bcf52b9979f588f5a9b87d256841da3029fcf1ba1a72c6b2da1",
+    "contentType": "text/html;charset=utf-8"
+  },
+  {
+    "source": "https://gobearkats.com/documents/2026/10/20/GN7_-_at_Sam_Houston_-_FINAL.pdf",
+    "retrievedAt": "2026-10-21T20:01:00.603729+00:00",
+    "status": 200,
+    "capture": "cfb/pregame-refresh/week-08-wednesday-afternoon-2026-10-21-away-notes.html",
+    "sha256": "23e1fc2d99ddb244eb7030c5ce5e98eb0d072e7418f2f503c2d361d8ad9db3e5",
+    "contentType": "text/html;charset=utf-8"
+  },
+  {
+    "source": "https://s3.us-east-2.amazonaws.com/sidearm.nextgen.sites/gobearkats.com/documents/2026/10/20/Game_7_vs_NMSU.pdf?timestamp=20261020023754",
+    "retrievedAt": "2026-10-21T20:01:35.880545+00:00",
+    "status": 200,
+    "capture": "cfb/pregame-refresh/week-08-wednesday-afternoon-2026-10-21-home-notes.pdf"
+  },
+  {
+    "source": "https://s3.us-east-2.amazonaws.com/sidearm.nextgen.sites/gobearkats.com/documents/2026/10/20/GN7_-_at_Sam_Houston_-_FINAL.pdf?timestamp=20261020023930",
+    "retrievedAt": "2026-10-21T20:01:39.684297+00:00",
+    "status": 200,
+    "capture": "cfb/pregame-refresh/week-08-wednesday-afternoon-2026-10-21-away-notes.pdf"
+  }
+]

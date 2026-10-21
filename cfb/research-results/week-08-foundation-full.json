@@ -9,7 +9,7 @@
   "modelId": "cfb-rebuild-foundation-v1-shadow",
   "sourceLockDigest": "72d0aa99176904f681264e69f57260152607914f712a1686d2cdaaf89af3115b",
   "sourceLockedAt": "2026-10-20T11:34:56.634210Z",
-  "gradedAt": "2026-10-21T02:02:01Z",
+  "gradedAt": "2026-10-21T20:03:16.496984Z",
   "status": "IN_PROGRESS",
   "counts": {
     "games": 7,
@@ -21,25 +21,25 @@
   "metrics": {
     "margin": {
       "games": 3,
-      "mae": 12.364356913136803,
-      "rmse": 13.3148857464374,
-      "bias": 7.6277555290144745
+      "mae": 14.690518522393882,
+      "rmse": 14.91316208335092,
+      "bias": -3.372244470985526
     },
     "total": {
       "games": 3,
-      "mae": 27.456306306772206,
-      "rmse": 37.13608288904894,
-      "bias": 27.456306306772206
+      "mae": 29.9055356964703,
+      "rmse": 34.515582596969466,
+      "bias": -5.543693693227792
     },
     "straightUp": {
-      "wins": 0,
-      "losses": 3,
+      "wins": 1,
+      "losses": 2,
       "graded": 3,
-      "accuracyPct": 0.0
+      "accuracyPct": 33.333333333333336
     },
     "winProbability": {
       "games": 3,
-      "brierScore": 0.49031430258857295
+      "brierScore": 0.37633831186159666
     }
   },
   "games": [
@@ -60,18 +60,18 @@
       },
       "status": "FINAL",
       "final": {
-        "awayScore": 13,
-        "homeScore": 8,
-        "marginHome": -5,
-        "total": 21,
+        "awayScore": 26,
+        "homeScore": 23,
+        "marginHome": -3,
+        "total": 49,
         "overtime": false,
-        "source": "CBS Sports"
+        "source": "ESPN"
       },
       "errors": {
-        "margin": 18.977411077112535,
-        "absoluteMargin": 18.977411077112535,
-        "total": 21.721622349572456,
-        "absoluteTotal": 21.721622349572456
+        "margin": 16.977411077112535,
+        "absoluteMargin": 16.977411077112535,
+        "total": -6.278377650427544,
+        "absoluteTotal": 6.278377650427544
       },
       "straightUp": {
         "result": "LOSS"
@@ -94,21 +94,21 @@
       },
       "status": "FINAL",
       "final": {
-        "awayScore": 28,
-        "homeScore": 24,
-        "marginHome": -4,
-        "total": 52,
+        "awayScore": 38,
+        "homeScore": 61,
+        "marginHome": 23,
+        "total": 99,
         "overtime": false,
-        "source": "CBS Sports"
+        "source": "ESPN"
       },
       "errors": {
-        "margin": 11.01075758611438,
-        "absoluteMargin": 11.01075758611438,
-        "total": 0.10453356588040918,
-        "absoluteTotal": 0.10453356588040918
+        "margin": -15.98924241388562,
+        "absoluteMargin": 15.98924241388562,
+        "total": -46.89546643411959,
+        "absoluteTotal": 46.89546643411959
       },
       "straightUp": {
-        "result": "LOSS"
+        "result": "WIN"
       }
     },
     {
@@ -128,18 +128,18 @@
       },
       "status": "FINAL",
       "final": {
-        "awayScore": 3,
-        "homeScore": 6,
-        "marginHome": 3,
-        "total": 9,
+        "awayScore": 13,
+        "homeScore": 20,
+        "marginHome": 7,
+        "total": 33,
         "overtime": false,
-        "source": "CBS Sports"
+        "source": "ESPN"
       },
       "errors": {
-        "margin": -7.1049020761834925,
-        "absoluteMargin": 7.1049020761834925,
-        "total": 60.54276300486376,
-        "absoluteTotal": 60.54276300486376
+        "margin": -11.104902076183492,
+        "absoluteMargin": 11.104902076183492,
+        "total": 36.54276300486376,
+        "absoluteTotal": 36.54276300486376
       },
       "straightUp": {
         "result": "LOSS"

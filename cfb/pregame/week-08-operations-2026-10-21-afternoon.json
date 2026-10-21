@@ -1,0 +1,490 @@
+{
+  "schemaVersion": 1,
+  "role": "READ_ONLY_OPERATIONS_HANDOFF",
+  "auditedAt": "2026-10-21T20:04:41.524647+00:00",
+  "canonicalInfluence": false,
+  "sourceRefreshPerformed": false,
+  "pauseBeforeGameDateET": "2026-10-23",
+  "canonicalGate": {
+    "schemaVersion": 1,
+    "league": "cfb",
+    "season": 2026,
+    "week": 8,
+    "role": "CANONICAL_PROJECTION_RELEASE_GATE",
+    "status": "HOLD",
+    "canonicalProjectionAvailable": false,
+    "canonicalPublicationAuthorized": false,
+    "canonicalPromotionAuthorized": false,
+    "recordedAt": "2026-10-20T19:31:14Z",
+    "activeScope": "cfb/pregame/week-08-active-through-thursday.json",
+    "reasons": [
+      "No reproducible Week 8 canonical projection is present in the production pregame state.",
+      "The production projection ledger contains no Week 8 published canonical rows.",
+      "The current validated rebuild foundation remains a prospective shadow and its decision registry explicitly forbids canonical use without prospective frozen-week evidence plus explicit promotion review.",
+      "Spread and total publication validation remain HOLD in the current production configuration."
+    ],
+    "researchFoundation": {
+      "source": "cfb/research-locks/week-08-foundation-full.json",
+      "modelId": "cfb-rebuild-foundation-v1-shadow",
+      "role": "IMMUTABLE_PROSPECTIVE_RESEARCH_SHADOW_LOCK",
+      "canonicalInfluence": false,
+      "canonicalPromotionAuthorized": false
+    },
+    "validationDecision": {
+      "source": "cfb/validation/week-08-rebuild-decision.json",
+      "status": "VALIDATED_FOUNDATION_CANDIDATE_IDENTIFIED",
+      "leadCandidateTier": "VALIDATED_FOUNDATION_PROSPECTIVE_SHADOW",
+      "useLeadCandidateAsCanonical": false
+    },
+    "allowedWhileHeld": [
+      "Capture timestamped pregame personnel, QB, weather, referee, travel and contextual information.",
+      "Capture current sportsbook and external benchmark observations without allowing them to rewrite the frozen projection.",
+      "Lock publication-window FanDuel and DraftKings markets against the prospectively frozen research foundation for honest shadow grading.",
+      "Grade the research shadow honestly after final results and accumulate prospective promotion evidence.",
+      "Continue leakage-safe challenger and feature-family validation."
+    ],
+    "prohibitedWhileHeld": [
+      "Do not relabel the Week 8 research foundation as canonical.",
+      "Do not publish a Week 8 canonical spread, total, winner probability or recommendation without a reproducible authorized canonical projection.",
+      "Do not create manual point adjustments from unvalidated injuries, weather, markets, external ratings or trends.",
+      "Do not reconstruct missing pregame information after kickoff or after results are known."
+    ],
+    "promotionPath": [
+      "preserve frozen Week 8 evidence",
+      "grade prospectively",
+      "compare with established canonical reference and market benchmarks",
+      "complete required out-of-sample/frozen-week evidence",
+      "conduct explicit promotion review",
+      "only then replace canonical production architecture"
+    ]
+  },
+  "challengerDecision": {
+    "source": "cfb/validation/week-08-rebuild-decision.json",
+    "status": "VALIDATED_FOUNDATION_CANDIDATE_IDENTIFIED",
+    "policy": {
+      "useLeadCandidateAsCanonical": false,
+      "publishLeadCandidateAsEstablished09J": false,
+      "allowMarketOrExternalBenchmarkInfluence": false,
+      "allowUnvalidatedManualAdjustments": false,
+      "supersedeOldTemporaryShadowForResearchPriority": true,
+      "supersedeEarlierFamilyEligibilityAgainstWeakerBase": true,
+      "nextStep": "Freeze the validated foundation prospectively for Week 8 research, continue late factual QB/personnel/weather/referee/market capture, and require explicit promotion review before any canonical replacement.",
+      "promotionRequirement": "Prospective frozen-week evidence plus explicit review remains required. Historical/holdout success alone does not silently change canonical status."
+    }
+  },
+  "summary": {
+    "games": 7,
+    "foundationLocked": 7,
+    "sagarinCurrent": 7,
+    "personnelCaptured": 7,
+    "weatherCaptured": 7,
+    "refereeCapturedOrExplicitlyChecked": 7,
+    "gamesWithMarketLock": 3,
+    "critical": 1,
+    "high": 3
+  },
+  "games": [
+    {
+      "gameId": "2026-10-20-MIDDLETENNESSEE-FLORIDAINTERNATIONAL",
+      "sourceGameId": "401871055",
+      "awayTeam": "Middle Tennessee",
+      "homeTeam": "Florida International",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "priority": "STARTED_OR_PAST",
+      "urgency": "NORMAL",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "d837003b6ba482064b0d61e2f4d5d519d1110c204aabdca37ab58edaf15a4570"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "OFFICIAL_BASELINE_CAPTURED_FINAL_RECHECK_REQUIRED",
+        "weather": "NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED",
+        "referee": "UNAVAILABLE_STALE_RETRIEVAL",
+        "marketContext": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
+        "contextSource": "cfb/pregame/week-08-tuesday-effective.json"
+      },
+      "marketLock": {
+        "status": "LOCKED",
+        "booksLocked": [
+          "draftkings",
+          "fanduel"
+        ],
+        "bookCount": 2
+      },
+      "gaps": [
+        "personnel requires follow-up: OFFICIAL_BASELINE_CAPTURED_FINAL_RECHECK_REQUIRED",
+        "weather final review pending: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED"
+      ],
+      "warnings": [
+        "referee assignment status: UNAVAILABLE_STALE_RETRIEVAL; do not guess"
+      ],
+      "phase": "KICKOFF_PASSED_VERIFY_FINAL",
+      "nextAction": "Check final status; grade only preserved evidence. No pregame reconstruction.",
+      "canonicalGate": "HOLD",
+      "releaseBlockers": [
+        "No reproducible Week 8 canonical projection is present in the production pregame state.",
+        "The production projection ledger contains no Week 8 published canonical rows.",
+        "The current validated rebuild foundation remains a prospective shadow and its decision registry explicitly forbids canonical use without prospective frozen-week evidence plus explicit promotion review.",
+        "Spread and total publication validation remain HOLD in the current production configuration.",
+        "audit timestamp is at/after kickoff; pregame canonical state may not be created or revised",
+        "canonical projection incomplete: projectedSpreadHome, projectedTotal, projectedWinner, homeWinProbability",
+        "publication-time market is not lock-ready"
+      ],
+      "readinessWarnings": [
+        "latest market observation is 1448 minutes old",
+        "personnel refresh still required before final audit",
+        "weather context needs review: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED",
+        "official SP+ not currently captured; benchmark gap only, not a canonical freeze blocker",
+        "RefMetrics crew assignment not fully available; record status, do not guess, and do not block canonical freeze by itself"
+      ]
+    },
+    {
+      "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
+      "sourceGameId": "401871069",
+      "awayTeam": "Missouri State",
+      "homeTeam": "Delaware",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "priority": "STARTED_OR_PAST",
+      "urgency": "NORMAL",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "c2f169318d0835551d45c972f4dbf953b36a585e1579988b846e2aae084321c8"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "MATERIAL_QB_STATUS_OPEN_SOURCE_CONFLICT",
+        "weather": "NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED",
+        "referee": "UNAVAILABLE_STALE_RETRIEVAL",
+        "marketContext": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
+        "contextSource": "cfb/pregame/week-08-tuesday-effective.json"
+      },
+      "marketLock": {
+        "status": "LOCKED",
+        "booksLocked": [
+          "draftkings",
+          "fanduel"
+        ],
+        "bookCount": 2
+      },
+      "gaps": [
+        "personnel requires follow-up: MATERIAL_QB_STATUS_OPEN_SOURCE_CONFLICT",
+        "weather final review pending: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED"
+      ],
+      "warnings": [
+        "referee assignment status: UNAVAILABLE_STALE_RETRIEVAL; do not guess"
+      ],
+      "phase": "KICKOFF_PASSED_VERIFY_FINAL",
+      "nextAction": "Check final status; grade only preserved evidence. No pregame reconstruction.",
+      "canonicalGate": "HOLD",
+      "releaseBlockers": [
+        "No reproducible Week 8 canonical projection is present in the production pregame state.",
+        "The production projection ledger contains no Week 8 published canonical rows.",
+        "The current validated rebuild foundation remains a prospective shadow and its decision registry explicitly forbids canonical use without prospective frozen-week evidence plus explicit promotion review.",
+        "Spread and total publication validation remain HOLD in the current production configuration.",
+        "audit timestamp is at/after kickoff; pregame canonical state may not be created or revised",
+        "canonical projection incomplete: projectedSpreadHome, projectedTotal, projectedWinner, homeWinProbability",
+        "publication-time market is not lock-ready",
+        "material home starting-QB state unresolved",
+        "material away starting-QB state unresolved"
+      ],
+      "readinessWarnings": [
+        "latest market observation is 1448 minutes old",
+        "weather context needs review: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED",
+        "official SP+ not currently captured; benchmark gap only, not a canonical freeze blocker",
+        "RefMetrics crew assignment not fully available; record status, do not guess, and do not block canonical freeze by itself"
+      ]
+    },
+    {
+      "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
+      "sourceGameId": "401871092",
+      "awayTeam": "South Alabama",
+      "homeTeam": "Marshall",
+      "kickoff": "2026-10-20T23:30:00Z",
+      "priority": "STARTED_OR_PAST",
+      "urgency": "NORMAL",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "1f3d9455b39a045403e0b5e7616dec22366f2c4669bb1f4903907ab43704b4b2"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "MATERIAL_QB_STATUS_OPEN_OFFICIAL_ROTATION",
+        "weather": "NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED",
+        "referee": "UNAVAILABLE_STALE_RETRIEVAL",
+        "marketContext": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
+        "contextSource": "cfb/pregame/week-08-tuesday-effective.json"
+      },
+      "marketLock": {
+        "status": "LOCKED",
+        "booksLocked": [
+          "draftkings",
+          "fanduel"
+        ],
+        "bookCount": 2
+      },
+      "gaps": [
+        "personnel requires follow-up: MATERIAL_QB_STATUS_OPEN_OFFICIAL_ROTATION",
+        "weather final review pending: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED"
+      ],
+      "warnings": [
+        "referee assignment status: UNAVAILABLE_STALE_RETRIEVAL; do not guess"
+      ],
+      "phase": "KICKOFF_PASSED_VERIFY_FINAL",
+      "nextAction": "Check final status; grade only preserved evidence. No pregame reconstruction.",
+      "canonicalGate": "HOLD",
+      "releaseBlockers": [
+        "No reproducible Week 8 canonical projection is present in the production pregame state.",
+        "The production projection ledger contains no Week 8 published canonical rows.",
+        "The current validated rebuild foundation remains a prospective shadow and its decision registry explicitly forbids canonical use without prospective frozen-week evidence plus explicit promotion review.",
+        "Spread and total publication validation remain HOLD in the current production configuration.",
+        "audit timestamp is at/after kickoff; pregame canonical state may not be created or revised",
+        "canonical projection incomplete: projectedSpreadHome, projectedTotal, projectedWinner, homeWinProbability",
+        "publication-time market is not lock-ready",
+        "material home starting-QB state unresolved"
+      ],
+      "readinessWarnings": [
+        "latest market observation is 1448 minutes old",
+        "weather context needs review: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED",
+        "official SP+ not currently captured; benchmark gap only, not a canonical freeze blocker",
+        "RefMetrics crew assignment not fully available; record status, do not guess, and do not block canonical freeze by itself"
+      ]
+    },
+    {
+      "gameId": "2026-10-21-NEWMEXICOSTATE-SAMHOUSTON",
+      "sourceGameId": "401871070",
+      "awayTeam": "New Mexico State",
+      "homeTeam": "Sam Houston",
+      "kickoff": "2026-10-22T00:00:00Z",
+      "priority": "TODAY",
+      "urgency": "CRITICAL",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "76573e65de4174437af8f8b604ec6730d1b183804089c333a6186c8b182c26da"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "OFFICIAL_DEPTH_CAPTURED_FINAL_AVAILABILITY_UNCONFIRMED",
+        "weather": "NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED",
+        "referee": "UNAVAILABLE_STALE_RETRIEVAL",
+        "marketContext": "SAVED_PIPELINE_CONTEXT_NOT_LOCKED",
+        "contextSource": "cfb/pregame/week-08-wednesday-effective.json"
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "weather final review pending: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED"
+      ],
+      "warnings": [
+        "referee assignment status: UNAVAILABLE_STALE_RETRIEVAL; do not guess",
+        "immutable final-window market lock pending"
+      ],
+      "phase": "PREGAME",
+      "nextAction": "Refresh unresolved sources before T-60; existing market job captures T-30 locks.",
+      "canonicalGate": "HOLD",
+      "releaseBlockers": [
+        "No reproducible Week 8 canonical projection is present in the production pregame state.",
+        "The production projection ledger contains no Week 8 published canonical rows.",
+        "The current validated rebuild foundation remains a prospective shadow and its decision registry explicitly forbids canonical use without prospective frozen-week evidence plus explicit promotion review.",
+        "Spread and total publication validation remain HOLD in the current production configuration.",
+        "canonical projection incomplete: projectedSpreadHome, projectedTotal, projectedWinner, homeWinProbability",
+        "publication-time market is not lock-ready"
+      ],
+      "readinessWarnings": [
+        "weather context needs review: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED",
+        "official SP+ not currently captured; benchmark gap only, not a canonical freeze blocker",
+        "RefMetrics crew assignment not fully available; record status, do not guess, and do not block canonical freeze by itself"
+      ]
+    },
+    {
+      "gameId": "2026-10-22-JAMESMADISON-APPSTATE",
+      "sourceGameId": "401869845",
+      "awayTeam": "James Madison",
+      "homeTeam": "App State",
+      "kickoff": "2026-10-22T23:00:00Z",
+      "priority": "NEXT_48H",
+      "urgency": "HIGH",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "50147bbb9df5dbcabf7857833e94a663d537996bceaf0da92379c547913d8875"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "MATERIAL_QB_STATUS_OPEN_OFFICIAL_APP_STATE_ROTATION_AFTER_INJURY",
+        "weather": "NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED",
+        "referee": "NOT_YET_POSTED",
+        "marketContext": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
+        "contextSource": "cfb/pregame/week-08-thursday-effective.json"
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "personnel requires follow-up: MATERIAL_QB_STATUS_OPEN_OFFICIAL_APP_STATE_ROTATION_AFTER_INJURY",
+        "weather final review pending: NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_YET_POSTED; do not guess",
+        "immutable final-window market lock pending"
+      ],
+      "phase": "PREGAME",
+      "nextAction": "Refresh unresolved sources before T-60; existing market job captures T-30 locks.",
+      "canonicalGate": "HOLD",
+      "releaseBlockers": [
+        "No reproducible Week 8 canonical projection is present in the production pregame state.",
+        "The production projection ledger contains no Week 8 published canonical rows.",
+        "The current validated rebuild foundation remains a prospective shadow and its decision registry explicitly forbids canonical use without prospective frozen-week evidence plus explicit promotion review.",
+        "Spread and total publication validation remain HOLD in the current production configuration.",
+        "canonical projection incomplete: projectedSpreadHome, projectedTotal, projectedWinner, homeWinProbability",
+        "publication-time market is not lock-ready",
+        "material home starting-QB state unresolved"
+      ],
+      "readinessWarnings": [
+        "latest market observation is 1448 minutes old",
+        "weather context needs review: NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED",
+        "official SP+ not currently captured; benchmark gap only, not a canonical freeze blocker",
+        "RefMetrics crew assignment not fully available; record status, do not guess, and do not block canonical freeze by itself"
+      ]
+    },
+    {
+      "gameId": "2026-10-22-LIBERTY-KENNESAWSTATE",
+      "sourceGameId": "401871056",
+      "awayTeam": "Liberty",
+      "homeTeam": "Kennesaw State",
+      "kickoff": "2026-10-22T23:00:00Z",
+      "priority": "NEXT_48H",
+      "urgency": "HIGH",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "f2dce35bbd39b50c1457eb063ae30cbbba26a98d6b38f7de39a2dcbc470977a7"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "OFFICIAL_BASELINE_CAPTURED_STABLE_QB_STATE",
+        "weather": "NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED",
+        "referee": "NOT_YET_POSTED",
+        "marketContext": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
+        "contextSource": "cfb/pregame/week-08-thursday-effective.json"
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "weather final review pending: NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_YET_POSTED; do not guess",
+        "immutable final-window market lock pending"
+      ],
+      "phase": "PREGAME",
+      "nextAction": "Refresh unresolved sources before T-60; existing market job captures T-30 locks.",
+      "canonicalGate": "HOLD",
+      "releaseBlockers": [
+        "No reproducible Week 8 canonical projection is present in the production pregame state.",
+        "The production projection ledger contains no Week 8 published canonical rows.",
+        "The current validated rebuild foundation remains a prospective shadow and its decision registry explicitly forbids canonical use without prospective frozen-week evidence plus explicit promotion review.",
+        "Spread and total publication validation remain HOLD in the current production configuration.",
+        "canonical projection incomplete: projectedSpreadHome, projectedTotal, projectedWinner, homeWinProbability",
+        "publication-time market is not lock-ready"
+      ],
+      "readinessWarnings": [
+        "latest market observation is 1448 minutes old",
+        "weather context needs review: NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED",
+        "official SP+ not currently captured; benchmark gap only, not a canonical freeze blocker",
+        "RefMetrics crew assignment not fully available; record status, do not guess, and do not block canonical freeze by itself"
+      ]
+    },
+    {
+      "gameId": "2026-10-22-EASTCAROLINA-MEMPHIS",
+      "sourceGameId": "401862807",
+      "awayTeam": "East Carolina",
+      "homeTeam": "Memphis",
+      "kickoff": "2026-10-22T23:30:00Z",
+      "priority": "NEXT_48H",
+      "urgency": "HIGH",
+      "foundation": {
+        "status": "LOCKED",
+        "projectionDigest": "4e630ce63c2afc4ea179d3455e85efc5280b3838e8bfd6ac5feab7e23ff66409"
+      },
+      "benchmarks": {
+        "sagarin": "CURRENT",
+        "spPlus": "PENDING_OFFICIAL_CAPTURE"
+      },
+      "context": {
+        "personnel": "OFFICIAL_BASELINE_CAPTURED_STABLE_QB_STATE",
+        "weather": "NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED",
+        "referee": "NOT_YET_POSTED",
+        "marketContext": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
+        "contextSource": "cfb/pregame/week-08-thursday-effective.json"
+      },
+      "marketLock": {
+        "status": "PENDING",
+        "booksLocked": [],
+        "bookCount": 0
+      },
+      "gaps": [
+        "weather final review pending: NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_YET_POSTED; do not guess",
+        "immutable final-window market lock pending"
+      ],
+      "phase": "PREGAME",
+      "nextAction": "Refresh unresolved sources before T-60; existing market job captures T-30 locks.",
+      "canonicalGate": "HOLD",
+      "releaseBlockers": [
+        "No reproducible Week 8 canonical projection is present in the production pregame state.",
+        "The production projection ledger contains no Week 8 published canonical rows.",
+        "The current validated rebuild foundation remains a prospective shadow and its decision registry explicitly forbids canonical use without prospective frozen-week evidence plus explicit promotion review.",
+        "Spread and total publication validation remain HOLD in the current production configuration.",
+        "canonical projection incomplete: projectedSpreadHome, projectedTotal, projectedWinner, homeWinProbability",
+        "publication-time market is not lock-ready"
+      ],
+      "readinessWarnings": [
+        "latest market observation is 1448 minutes old",
+        "weather context needs review: NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED",
+        "official SP+ not currently captured; benchmark gap only, not a canonical freeze blocker",
+        "RefMetrics crew assignment not fully available; record status, do not guess, and do not block canonical freeze by itself"
+      ]
+    }
+  ],
+  "sourceObservedAt": "2026-10-21T20:04:41.471691Z",
+  "inputSha256": {
+    "cfb/pregame/week-08-active-through-thursday.json": "fee8c45dad5fd3b379c9179ea3b19155498bf5bcf901d4c6337c2ac808b83e66",
+    "cfb/research-locks/week-08-foundation-full.json": "39aa96a7d1c402061c116e40c629e7a7bb89ae1d424b5b8439632d9470b8d0db",
+    "cfb/projections/week-08-status.json": "6ba1b88a09b264e521496983af2ed4b24a4f0c86b912df46b6146f8b3a30e31e",
+    "cfb/research-market-locks/week-08-foundation-market.json": "ae0a0626e7341217f6e86ff374e6578379408268fe1c3b651cfd2212cf55254e",
+    "cfb/benchmarks/week-08-sagarin-full.json": "ab5beceec94e13ef6346f8171417e4cc2f0097454c261927be08426ca1c9ae46",
+    "cfb/validation/week-08-rebuild-decision.json": "23fd8562035805e028a77d9b20d4025a2156326825a7e4a0f073c023cbea502e",
+    "data/team-aliases.json": "3e417eff7880090d16c1413eefb61d0c3309aff0485f3c69c23397fa20e4080c",
+    "cfb/pregame/week-08-tuesday-effective.json": "55fbf7472edbe6152ca7532fefded18efa60d195a6541c201692a2a03dee74e6",
+    "cfb/pregame/week-08-wednesday-effective.json": "716128779b25dd4276bbc2ab89a15b710cabb4b9185fee8b95e622c04d1e49f7",
+    "cfb/pregame/week-08-thursday-effective.json": "1406cffe5d8c2bfe5de30a55e012a008ca109dc173afe2743a423e227e959dc3"
+  },
+  "policy": "Audit time does not refresh source timestamps. Kickoff passed does not mean FINAL. No release or promotion is authorized by this check."
+}

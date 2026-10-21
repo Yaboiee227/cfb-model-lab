@@ -3,43 +3,30 @@
   "league": "cfb",
   "season": 2026,
   "week": 8,
-  "auditedAt": "2026-10-21T02:07:09Z",
+  "auditedAt": "2026-10-21T20:04:41.471691Z",
   "games": [
     {
       "gameId": "2026-10-21-NEWMEXICOSTATE-SAMHOUSTON",
       "awayTeam": "New Mexico State",
       "homeTeam": "Sam Houston",
       "kickoff": "2026-10-22T00:00:00Z",
-      "minutesToKickoff": 1312.9,
+      "minutesToKickoff": 235.3,
       "readyToFreeze": false,
-      "researchFoundationFrozen": true,
-      "canonicalReleaseStatus": "HOLD",
       "blockers": [
-        "canonical publication remains HOLD: no validated/promoted production projection is authorized for this game",
-        "publication-time FanDuel/DraftKings market lock is pending and is not due until the Wednesday T-30 window"
+        "canonical projection incomplete: projectedSpreadHome, projectedTotal, projectedWinner, homeWinProbability",
+        "publication-time market is not lock-ready"
       ],
       "warnings": [
-        "final official quarterback/personnel confirmation remains required on game day; recent baselines are Adam Damante for NM State and Landyn Locke for Sam Houston, but neither has an explicit final Wednesday starter announcement in the captured official material",
-        "weather is currently benign but the final stadium-level wind/precipitation recheck remains required near kickoff",
-        "official current SP+ capture remains unavailable; this is a benchmark gap only and does not authorize substitution from an unverified source",
-        "RefMetrics current crew/metric retrieval remains incomplete; preserve status as unavailable rather than guessing"
+        "weather context needs review: NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED",
+        "official SP+ not currently captured; benchmark gap only, not a canonical freeze blocker",
+        "RefMetrics crew assignment not fully available; record status, do not guess, and do not block canonical freeze by itself"
       ],
-      "info": [
-        "frozen research-shadow projection remains New Mexico State by approximately 0.39 with a projected total of 42.26; it is unchanged and noncanonical",
-        "latest timestamped FanDuel/DraftKings context had New Mexico State -2.5 and total 44.5; late public-board recheck still shows New Mexico State -2.5 with total around 45.0, so there is no material spread-direction change",
-        "National Weather Service Huntsville, Texas forecast remains clear/light-wind with no material adverse weather signal",
-        "Tuesday prospective research results were graded separately and do not alter Wednesday's frozen projection or canonical status",
-        "Thursday preparation remains paused for this resumed Work-tab sequence; Friday/Saturday remain out of scope"
-      ],
-      "sourceRefresh": "cfb/pregame-refresh/week-08-wednesday-late-recheck-2026-10-20-2207et.json"
+      "info": []
     }
   ],
   "summary": {
     "games": 1,
     "ready": 0,
-    "blocked": 1,
-    "researchFoundationFrozen": 1,
-    "canonicalReleaseHold": 1
-  },
-  "policy": "Readiness separates an immutable prospective research shadow from canonical publication. A frozen research projection is not evidence of canonical release readiness."
+    "blocked": 1
+  }
 }

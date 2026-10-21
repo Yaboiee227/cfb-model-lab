@@ -7,7 +7,7 @@
   "canonicalInfluence": false,
   "canonicalPromotionAuthorized": false,
   "canonicalRecordMerged": false,
-  "gradedAt": "2026-10-21T08:01:10.042804Z",
+  "gradedAt": "2026-10-21T20:03:00.214853Z",
   "foundation": {
     "modelId": "cfb-rebuild-foundation-v1-shadow",
     "lockDigest": "72d0aa99176904f681264e69f57260152607914f712a1686d2cdaaf89af3115b",
@@ -27,8 +27,8 @@
   "counts": {
     "games": 7,
     "final": 3,
-    "pending": 3,
-    "review": 1,
+    "pending": 4,
+    "review": 0,
     "void": 0
   },
   "aggregate": {
@@ -315,8 +315,7 @@
         "disagreementBucket": "LT_2",
         "directionalWinnerAgreement": false
       },
-      "postgameStatus": "REVIEW",
-      "postgameReviewReason": "No final-score match; no guess made"
+      "postgameStatus": "PENDING"
     },
     {
       "gameId": "2026-10-22-JAMESMADISON-APPSTATE",

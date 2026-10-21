@@ -249,3 +249,16 @@ cfb/pregame/week-08-active-through-thursday.json` during this operating window.
 
 The historical spreadsheet's absence of Week 8 games is not the current GitHub
 production state. Do not rebuild or overwrite the current slate from that snapshot.
+
+## Wednesday afternoon verified handoff — October 21, 2026, 4:07 PM ET
+
+- Current pass: Tuesday postgame verification and Wednesday NM State–Sam Houston only. Thursday preparation remains paused until explicitly resumed; Friday/Saturday remain paused. NFL untouched.
+- Captures and overlay: `cfb/pregame-refresh/week-08-wednesday-afternoon-2026-10-21-*`; rebuilt Wednesday and unified effective state, Wednesday readiness and read-only operations report. The website consumes these saved states.
+- Tuesday correction: old CBS-labeled finals (13–8, 28–24, 3–6 away/home) conflicted with current ESPN completed FINAL results (26–23, 38–61, 13–20), corroborated by published team/results sources. Previous result artifacts are preserved byte-for-byte in `cfb/research-results/corrections/2026-10-21-afternoon/`. All three scoped graders were rerun against the verified score capture and unchanged frozen inputs. Underlying cause of the prior incorrect finals remains unconfirmed.
+- Corrected research record: 1–2 SU; 1–2 ATS and 0–3 totals at each locked sportsbook. These are three unique games, not six independent observations. No canonical record, ROI or CLV was manufactured.
+- Wednesday NWS retrieved 4:01 PM ET, forecast updated 2:22 PM ET: four contiguous hourly periods from kickoff to +4h; 64–74 F, 0–5 mph, 0% precipitation probability. Gusts unavailable, not zero. Final-hour refresh still required.
+- Latest available repository sportsbook snapshot: 4:03 PM ET. FanDuel NM State -2.5 (-120), total 46.5; DraftKings NM State -3 (-105), total 47.5. Earlier 2:15 PM ET capture retained separately. All captured sides/prices remain in the source overlay. Repository retrieval time is separate from book/feed time. These are context, not final-window locks; freshness must be rechecked by the existing pipeline.
+- Official Sam Houston notes list Locke first at QB and five OL roles. NM State's linked notes retain a WKU/Game 5 header on the depth page; do not treat that as final Wednesday availability. Recent participation is baseline context; quantitative absorption and injury impact remain unverified, not zero. Direct NM State preview retrieval returned 404 while web retrieval succeeded; both observations are retained. PDF landing pages required following the linked PDF asset.
+- Integrity: frozen foundation, all six Tuesday book locks, canonical status, Tuesday/Thursday effective states and original captures unchanged. Canonical remains HOLD. The operations check proves software/data integrity, not predictive validation.
+- Next checkpoint: Wednesday 7:00 PM ET final personnel/weather/market review; inspect actual FanDuel/DraftKings lock output in the 7:30–8:00 PM ET window. Never backdate or duplicate locks. Do not refresh pregame fields after 8:00 PM ET kickoff.
+- Follow-up engineering risk: investigate the earlier CBS-labeled final-score ingestion and team-alias mismatch before relying on unattended grades. This pass normalized score names only after exact ESPN event-ID matching, retaining raw source names and payload.

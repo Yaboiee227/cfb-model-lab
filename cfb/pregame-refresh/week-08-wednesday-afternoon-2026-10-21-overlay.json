@@ -1,0 +1,232 @@
+{
+  "schemaVersion": 1,
+  "role": "TIMESTAMPED_PREGAME_CONTEXT_REFRESH",
+  "observedAt": "2026-10-21T20:02:59.963062+00:00",
+  "canonicalInfluence": false,
+  "games": [
+    {
+      "gameId": "2026-10-21-NEWMEXICOSTATE-SAMHOUSTON",
+      "patch": {
+        "weather": {
+          "status": "NWS_HOURLY_CAPTURED_FINAL_RECHECK_REQUIRED",
+          "observedAt": "2026-10-21T20:01:00.589894+00:00",
+          "lastCheckedAt": "2026-10-21T20:01:00.589894+00:00",
+          "source": "National Weather Service hourly API",
+          "sourceUrl": "https://api.weather.gov/gridpoints/HGX/56,137/forecast/hourly",
+          "sourceLastUpdate": "2026-10-21T18:22:12+00:00",
+          "sourceGeneratedAt": "2026-10-21T19:01:59+00:00",
+          "sourceSnapshot": "cfb/pregame-refresh/week-08-wednesday-afternoon-2026-10-21-nws.json",
+          "spatialScope": "Nearby NWS forecast grid, not an on-field observation",
+          "temperatureFRange": [
+            64,
+            74
+          ],
+          "windMphRange": [
+            0,
+            5
+          ],
+          "precipProbabilityPctRange": [
+            0,
+            0
+          ],
+          "gustMph": null,
+          "gustMphRange": null,
+          "windDirection": null,
+          "kickoffApprox": null,
+          "kickoffWindow": null,
+          "hourly": [
+            {
+              "number": 6,
+              "name": "",
+              "startTime": "2026-10-21T19:00:00-05:00",
+              "endTime": "2026-10-21T20:00:00-05:00",
+              "isDaytime": false,
+              "temperature": 74,
+              "temperatureUnit": "F",
+              "temperatureTrend": null,
+              "probabilityOfPrecipitation": {
+                "unitCode": "wmoUnit:percent",
+                "value": 0
+              },
+              "dewpoint": {
+                "unitCode": "wmoUnit:degC",
+                "value": 10.555555555555555
+              },
+              "relativeHumidity": {
+                "unitCode": "wmoUnit:percent",
+                "value": 44
+              },
+              "windSpeed": "5 mph",
+              "windDirection": "N",
+              "icon": "https://api.weather.gov/icons/land/night/skc?size=small",
+              "shortForecast": "Clear",
+              "detailedForecast": ""
+            },
+            {
+              "number": 7,
+              "name": "",
+              "startTime": "2026-10-21T20:00:00-05:00",
+              "endTime": "2026-10-21T21:00:00-05:00",
+              "isDaytime": false,
+              "temperature": 69,
+              "temperatureUnit": "F",
+              "temperatureTrend": null,
+              "probabilityOfPrecipitation": {
+                "unitCode": "wmoUnit:percent",
+                "value": 0
+              },
+              "dewpoint": {
+                "unitCode": "wmoUnit:degC",
+                "value": 10.555555555555555
+              },
+              "relativeHumidity": {
+                "unitCode": "wmoUnit:percent",
+                "value": 53
+              },
+              "windSpeed": "5 mph",
+              "windDirection": "N",
+              "icon": "https://api.weather.gov/icons/land/night/skc?size=small",
+              "shortForecast": "Clear",
+              "detailedForecast": ""
+            },
+            {
+              "number": 8,
+              "name": "",
+              "startTime": "2026-10-21T21:00:00-05:00",
+              "endTime": "2026-10-21T22:00:00-05:00",
+              "isDaytime": false,
+              "temperature": 66,
+              "temperatureUnit": "F",
+              "temperatureTrend": null,
+              "probabilityOfPrecipitation": {
+                "unitCode": "wmoUnit:percent",
+                "value": 0
+              },
+              "dewpoint": {
+                "unitCode": "wmoUnit:degC",
+                "value": 10.555555555555555
+              },
+              "relativeHumidity": {
+                "unitCode": "wmoUnit:percent",
+                "value": 58
+              },
+              "windSpeed": "0 mph",
+              "windDirection": "",
+              "icon": "https://api.weather.gov/icons/land/night/skc?size=small",
+              "shortForecast": "Clear",
+              "detailedForecast": ""
+            },
+            {
+              "number": 9,
+              "name": "",
+              "startTime": "2026-10-21T22:00:00-05:00",
+              "endTime": "2026-10-21T23:00:00-05:00",
+              "isDaytime": false,
+              "temperature": 64,
+              "temperatureUnit": "F",
+              "temperatureTrend": null,
+              "probabilityOfPrecipitation": {
+                "unitCode": "wmoUnit:percent",
+                "value": 0
+              },
+              "dewpoint": {
+                "unitCode": "wmoUnit:degC",
+                "value": 10.555555555555555
+              },
+              "relativeHumidity": {
+                "unitCode": "wmoUnit:percent",
+                "value": 63
+              },
+              "windSpeed": "0 mph",
+              "windDirection": "",
+              "icon": "https://api.weather.gov/icons/land/night/few?size=small",
+              "shortForecast": "Mostly Clear",
+              "detailedForecast": ""
+            }
+          ],
+          "forecast": "Official hourly forecast covers kickoff through +4 hours. See hourly periods for exact time and wind direction.",
+          "note": "Latest direct API capture supersedes earlier cached tabular ranges. Different source snapshots are retained separately. Gusts are not supplied by this endpoint; null is not zero. Final-hour stadium-level recheck remains pending.",
+          "materiality": "Context only; no unvalidated weather adjustment. Recheck wind/gusts and precipitation before kickoff."
+        },
+        "market": {
+          "status": "SAVED_PIPELINE_CONTEXT_NOT_LOCKED",
+          "observedAt": "2026-10-21T18:15:54.364Z",
+          "retrievedFromRepositoryAt": "2026-10-21T20:02:59.963062+00:00",
+          "observations": [
+            {
+              "book": "FanDuel",
+              "observedAt": "2026-10-21T18:15:22Z",
+              "spreadHome": 2.5,
+              "spreadHomePrice": -102,
+              "spreadAway": -2.5,
+              "spreadAwayPrice": -120,
+              "total": 46.5,
+              "overPrice": -115,
+              "underPrice": -105,
+              "moneylineHome": 125,
+              "moneylineAway": -150,
+              "source": "The Odds API",
+              "sourceSnapshot": "cfb/pregame-refresh/week-08-wednesday-afternoon-2026-10-21-market.json"
+            },
+            {
+              "book": "DraftKings",
+              "observedAt": "2026-10-21T18:14:52Z",
+              "spreadHome": 3,
+              "spreadHomePrice": -112,
+              "spreadAway": -3,
+              "spreadAwayPrice": -108,
+              "total": 46.5,
+              "overPrice": -112,
+              "underPrice": -108,
+              "moneylineHome": 130,
+              "moneylineAway": -155,
+              "source": "The Odds API",
+              "sourceSnapshot": "cfb/pregame-refresh/week-08-wednesday-afternoon-2026-10-21-market.json"
+            }
+          ]
+        },
+        "personnel": {
+          "lastCheckedAt": "2026-10-21T20:02:59.963062+00:00",
+          "lastOfficialCheckAt": "2026-10-21T20:02:59.963062+00:00",
+          "status": "OFFICIAL_DEPTH_CAPTURED_FINAL_AVAILABILITY_UNCONFIRMED",
+          "home": {
+            "depthRoleEvidence": {
+              "source": "cfb/pregame-refresh/week-08-wednesday-afternoon-2026-10-21-home-notes.pdf",
+              "page": 5,
+              "QB": [
+                "Landyn Locke",
+                "Brett Holloway"
+              ],
+              "offensiveLineFirstListed": {
+                "LT": "Myles Joseph",
+                "LG": "Tr\u2019e Williams",
+                "C": "Josiah Chenault",
+                "RG": "Denell Nix Jr.",
+                "RT": "Graceson Spann"
+              },
+              "availabilityConfirmed": false
+            },
+            "baselineAbsorption": "Official preview reports Joseph/Williams started together in previous two games; not automatically a new personnel shock. Quantitative absorption in frozen model inputs unverified; impact unknown."
+          },
+          "away": {
+            "depthRoleEvidence": {
+              "source": "cfb/pregame-refresh/week-08-wednesday-afternoon-2026-10-21-away-notes.pdf",
+              "page": 8,
+              "status": "STALE_HEADER_CONFLICT",
+              "printedHeader": "NM STATE vs. WKU - GAME 5",
+              "QB": [
+                "Adam Damante",
+                "Kalani McLeod",
+                "OR Trey Hedden"
+              ],
+              "availabilityConfirmed": false,
+              "note": "Current-linked game notes contain an older depth-page header. Do not use this as final Wednesday starter confirmation."
+            },
+            "recentParticipationEvidence": "Game-by-game starts table lists Damante at FIU; no verified Wednesday starter or quantitative incremental impact."
+          },
+          "sourceChecks": "cfb/pregame-refresh/week-08-wednesday-afternoon-2026-10-21-source-checks.json"
+        }
+      }
+    }
+  ]
+}
