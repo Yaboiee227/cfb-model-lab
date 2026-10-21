@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "role": "POSTGAME_RESULT_SOURCE_SNAPSHOT",
+  "canonicalInfluence": false,
+  "capturedAt": "2026-10-21T02:02:01Z",
+  "source": {
+    "name": "CBS Sports",
+    "url": "https://www.cbssports.com/college-football/odds/",
+    "note": "Week 8 odds/results board showed all three Tuesday games as Final at capture time. This postgame source is used only to grade already-frozen pregame research projections; it cannot modify those projections."
+  },
+  "games": [
+    {
+      "gameId": "2026-10-20-MIDDLETENNESSEE-FLORIDAINTERNATIONAL",
+      "sourceGameId": "401871055",
+      "awayTeam": "Middle Tennessee",
+      "homeTeam": "Florida International",
+      "awayScore": 13,
+      "homeScore": 8,
+      "status": "FINAL",
+      "source": "CBS Sports"
+    },
+    {
+      "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
+      "sourceGameId": "401871069",
+      "awayTeam": "Missouri State",
+      "homeTeam": "Delaware",
+      "awayScore": 28,
+      "homeScore": 24,
+      "status": "FINAL",
+      "source": "CBS Sports"
+    },
+    {
+      "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
+      "sourceGameId": "401871092",
+      "awayTeam": "South Alabama",
+      "homeTeam": "Marshall",
+      "awayScore": 3,
+      "homeScore": 6,
+      "status": "FINAL",
+      "source": "CBS Sports"
+    }
+  ],
+  "policy": "Postgame result verification only. Never backfill or reconstruct pregame information from this source."
+}
