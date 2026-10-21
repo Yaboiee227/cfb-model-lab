@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "role": "ROLLING_PREGAME_SECOND_PASS",
+  "status": "FRIDAY_SECOND_PASS_COMPLETE_PENDING_LATE_WINDOWS",
+  "observedAt": "2026-10-21T22:00:15Z",
+  "canonicalInfluence": false,
+  "canonicalPromotionAuthorized": false,
+  "foundationSource": "cfb/research-locks/week-08-foundation-full.json",
+  "benchmarkSource": "cfb/benchmarks/week-08-sagarin-full.json",
+  "marketLockSource": "cfb/research-market-locks/week-08-foundation-market.json",
+  "policy": {
+    "pregameOnly": true,
+    "preserveFrozenProjectionDigests": true,
+    "week8ResultsCannotTuneLaterWeek8Games": true,
+    "directFanDuelDraftKingsPublicationLocksOnlyInsideFinalWindow": true,
+    "publicMarketConsensusIsContextOnly": true,
+    "externalBenchmarksAreNonCanonical": true,
+    "personnelAndWeatherRequireValidatedPromotionForCanonicalInfluence": true,
+    "unknownStaysUnknown": true
+  },
+  "operationalState": {
+    "directSportsbookFeed": "QUIET_PHASE_FOR_FRIDAY; CURRENT IN-REPO FRIDAY QUOTES MAY BE STALE UNTIL ADAPTIVE REFRESH ENTERS SIX-HOUR WINDOW",
+    "nextDirectMarketAction": "Allow scheduled sportsbook workflow to refresh Friday games as nearest kickoff enters six-hour/three-hour/one-hour phases, then capture immutable FanDuel/DraftKings observations inside final 30-minute window.",
+    "weekGrading": "DEFER_UNTIL_WEEK_COMPLETE"
+  },
+  "games": [
+    {
+      "gameId": "2026-10-23-DUKE-VIRGINIA",
+      "kickoff": "2026-10-23T23:00:00Z",
+      "awayTeam": "Duke",
+      "homeTeam": "Virginia",
+      "frozenFoundation": {
+        "projectedAwayPoints": 19.963371409585466,
+        "projectedHomePoints": 21.66255950622396,
+        "projectedMarginHome": 1.699188096638494,
+        "projectedSpreadHome": -1.699188096638494,
+        "projectedTotal": 41.62593091580943,
+        "homeWinProbability": 54.27113006427374,
+        "projectedWinner": "Virginia",
+        "projectionDigest": "ac8c27876df7b09dfcab509a5258b3e96fc1fae76aaf4a9ed50a925020a118be"
+      },
+      "currentPublicMarketContext": {"consensusSpreadHome": -1.5, "consensusTotal": 47.5, "observedAt": "2026-10-21", "source": "CBS Sports / current public board", "canonicalInfluence": false},
+      "benchmarks": {
+        "sagarin": {"impliedHomeMargin": 3.77, "favorite": "Virginia", "canonicalInfluence": false},
+        "havoc": {"impliedHomeMargin": 0.2, "projectedTotal": 47.5, "favorite": "Virginia", "canonicalInfluence": false}
+      },
+      "personnel": {
+        "status": "NO_VERIFIED_LATE_QB_CHANGE",
+        "summary": "Virginia official records confirm Beau Pribula started at SMU on Oct. 17. Duke roster/current game materials continue to identify Walker Eget as the primary quarterback. No authoritative Oct. 21 source captured a new starter change.",
+        "canonicalInfluence": false
+      },
+      "restTravel": {"summary": "Both teams last played Oct. 17 and move to a Friday game on six days rest. Duke travels to Charlottesville; no asymmetric bye advantage.", "canonicalInfluence": false},
+      "weather": {"status": "LOW_IMPACT", "summary": "NWS Charlottesville forecast: Friday sunny near 61 F with northeast wind 6-10 mph; mostly clear Friday night near 35 F.", "canonicalInfluence": false},
+      "diagnostic": "SIDE_STABLE_TOTAL_DISAGREEMENT",
+      "decision": "PRESERVE_FROZEN_PROJECTION",
+      "remainingChecks": ["late personnel/availability", "direct FanDuel/DraftKings refresh", "final-window weather", "publication lock"]
+    },
+    {
+      "gameId": "2026-10-23-MASSACHUSETTS-UCONN",
+      "kickoff": "2026-10-23T23:00:00Z",
+      "awayTeam": "Massachusetts",
+      "homeTeam": "UConn",
+      "frozenFoundation": {
+        "projectedAwayPoints": 22.329458182694985,
+        "projectedHomePoints": 29.61955790681207,
+        "projectedMarginHome": 7.290099724117084,
+        "projectedSpreadHome": -7.290099724117084,
+        "projectedTotal": 51.949016089507055,
+        "homeWinProbability": 67.7317593713909,
+        "projectedWinner": "UConn",
+        "projectionDigest": "e28b611abc7981dc14eab506b169856f8f7b94fbec5e9936fb378e9e7d9d1838"
+      },
+      "currentPublicMarketContext": {"consensusSpreadHome": -14.5, "consensusTotal": 49.5, "observedAt": "2026-10-21", "source": "CBS Sports / current public board", "canonicalInfluence": false},
+      "benchmarks": {
+        "sagarin": {"impliedHomeMargin": 17.99, "favorite": "UConn", "canonicalInfluence": false},
+        "havoc": {"impliedHomeMargin": 8.7, "projectedTotal": 48.0, "favorite": "UConn", "canonicalInfluence": false}
+      },
+      "personnel": {
+        "status": "MATERIAL_UMASS_QB_STATUS_UNRESOLVED",
+        "summary": "UMass official game-week notes state William 'Pop' Watson III missed the Miami (OH) and Buffalo games with a lower-body injury. UMass official Buffalo recap confirms Logan Inagawa made his first start because Watson and Aedan McCarthy were injured. UConn's Oct. 20 official preview also says Watson has missed the last two games. No authoritative source captured here confirms Watson's Friday return.",
+        "canonicalInfluence": false
+      },
+      "restTravel": {"summary": "UConn is coming off a bye after an Oct. 10 win at Temple; UMass played Oct. 17 at Buffalo. UConn therefore has a meaningful rest/preparation advantage, retained as context because rest has not been promoted into the canonical Week 8 model.", "canonicalInfluence": false},
+      "weather": {"status": "LOW_TO_MODERATE_IMPACT", "summary": "NWS East Hartford forecast: Friday sunny near 55 F with north wind around 9-13 mph; Friday night mostly clear near 32-35 F. Cold but not presently severe.", "canonicalInfluence": false},
+      "diagnostic": "HIGHEST_FRIDAY_PERSONNEL_AND_MARGIN_DISAGREEMENT",
+      "decision": "PRESERVE_FROZEN_PROJECTION_PENDING_QB_CONFIRMATION",
+      "remainingChecks": ["Pop Watson official availability/status", "UMass backup hierarchy", "direct FanDuel/DraftKings refresh", "final wind/temp", "publication lock"]
+    },
+    {
+      "gameId": "2026-10-23-ARMY-TULSA",
+      "kickoff": "2026-10-24T00:30:00Z",
+      "awayTeam": "Army",
+      "homeTeam": "Tulsa",
+      "frozenFoundation": {
+        "projectedAwayPoints": 27.454377301998562,
+        "projectedHomePoints": 28.500337750409052,
+        "projectedMarginHome": 1.04596044841049,
+        "projectedSpreadHome": -1.04596044841049,
+        "projectedTotal": 55.954715052407614,
+        "homeWinProbability": 52.63228747434996,
+        "projectedWinner": "Tulsa",
+        "projectionDigest": "069fb25d7a8b71a2564fcff9e206994a79617b0d2721c695fe1773949e6a8f2e"
+      },
+      "currentPublicMarketContext": {"consensusSpreadHome": -1.5, "consensusTotal": 54.5, "observedAt": "2026-10-21", "source": "CBS Sports / current public board", "canonicalInfluence": false},
+      "benchmarks": {
+        "sagarin": {"impliedHomeMargin": -1.0, "favorite": "Army", "canonicalInfluence": false},
+        "havoc": {"impliedHomeMargin": 1.3, "projectedTotal": 52.5, "favorite": "Tulsa", "canonicalInfluence": false}
+      },
+      "personnel": {
+        "status": "STABLE_PRIMARY_QB_STATE",
+        "summary": "Army official game center lists Cale Hellums as the team leader at quarterback and rushing. Tulsa's Oct. 21 official preview reports Baylor Hayes has returned to the lineup and has gone three straight games over 200 passing yards, with 728 yards and seven passing TDs across North Texas, Navy and Rice and no interceptions over that span.",
+        "canonicalInfluence": false
+      },
+      "restTravel": {"summary": "Standard short Friday week with Army traveling to Tulsa; no verified unusual travel/rest disruption captured.", "canonicalInfluence": false},
+      "weather": {"status": "LOW_IMPACT", "summary": "NWS Tulsa forecast: Friday mostly sunny near 79 F, south wind 5-10 mph; Friday night partly cloudy near 56 F.", "canonicalInfluence": false},
+      "diagnostic": "FRIDAY_MOST_STABLE_FULL_GAME",
+      "decision": "PRESERVE_FROZEN_PROJECTION",
+      "remainingChecks": ["late availability", "direct FanDuel/DraftKings refresh", "publication lock"]
+    },
+    {
+      "gameId": "2026-10-23-AIRFORCE-WYOMING",
+      "kickoff": "2026-10-24T01:00:00Z",
+      "awayTeam": "Air Force",
+      "homeTeam": "Wyoming",
+      "frozenFoundation": {
+        "projectedAwayPoints": 25.697332504760343,
+        "projectedHomePoints": 22.08886781699678,
+        "projectedMarginHome": -3.608464687763565,
+        "projectedSpreadHome": 3.608464687763565,
+        "projectedTotal": 47.78620032175712,
+        "homeWinProbability": 40.99024501033256,
+        "projectedWinner": "Air Force",
+        "projectionDigest": "0f5d93d1b02d155e5a2bbc9f582826318cf4bdac375d8f66689b6727258e7ff9"
+      },
+      "currentPublicMarketContext": {"consensusSpreadHome": 5.5, "consensusTotal": 44.5, "observedAt": "2026-10-21", "source": "CBS Sports / current public board", "canonicalInfluence": false},
+      "benchmarks": {
+        "sagarin": {"impliedHomeMargin": -6.07, "favorite": "Air Force", "canonicalInfluence": false},
+        "havoc": {"impliedHomeMargin": -8.2, "projectedTotal": 44.5, "favorite": "Air Force", "canonicalInfluence": false}
+      },
+      "personnel": {
+        "status": "MATERIAL_AIR_FORCE_QB_ROLE_CHANGE_CONFIRMED_BUT_NOT_CANONICALLY_QUANTIFIED",
+        "summary": "Wyoming's official Oct. 19 preview states Evan Medders has taken over the Air Force triple-option attack for injured starter Liam Szarka and that Szarka suffered a season-ending injury. Air Force's Oct. 17 official recap confirms Medders led the Falcons with 152 rushing yards and three TDs against UNLV. Wyoming's Tyler Hughes is coming off 183 rushing yards, four rushing TDs and 196 passing yards against NIU.",
+        "canonicalInfluence": false
+      },
+      "restTravel": {"summary": "Both teams played Oct. 17 and face a Friday kickoff on six days rest. Air Force travels to altitude at Laramie but already operates at altitude; no promoted travel adjustment.", "canonicalInfluence": false},
+      "weather": {"status": "MATERIAL_FINAL_WINDOW_RECHECK_REQUIRED", "summary": "NWS Laramie forecast issued Oct. 21: 20% shower chance Friday, high near 64 F, west-southwest wind increasing to 15-20 mph with gusts up to 30 mph. This is the only Friday game with a clearly material weather watch at present.", "canonicalInfluence": false},
+      "diagnostic": "HIGH_WEATHER_AND_ROLE_CHANGE_MONITORING",
+      "decision": "PRESERVE_FROZEN_PROJECTION_PENDING_FINAL_WIND_CHECK",
+      "remainingChecks": ["stadium-hourly wind/gusts", "Medders role confirmation", "Wyoming availability", "direct FanDuel/DraftKings refresh", "publication lock"]
+    },
+    {
+      "gameId": "2026-10-23-NCSTATE-STANFORD",
+      "kickoff": "2026-10-24T02:30:00Z",
+      "awayTeam": "NC State",
+      "homeTeam": "Stanford",
+      "frozenFoundation": {
+        "projectedAwayPoints": 31.944478973399118,
+        "projectedHomePoints": 27.064741432133562,
+        "projectedMarginHome": -4.8797375412655555,
+        "projectedSpreadHome": 4.8797375412655555,
+        "projectedTotal": 59.00922040553268,
+        "homeWinProbability": 37.90224863321451,
+        "projectedWinner": "NC State",
+        "projectionDigest": "eb80be12b6c2c447ae176b44dcfee1fd23b9c0649df683275c5ab147a5fb9991"
+      },
+      "currentPublicMarketContext": {"consensusSpreadHome": 6.5, "consensusTotal": 55.5, "observedAt": "2026-10-21", "source": "CBS Sports / current public board", "canonicalInfluence": false},
+      "benchmarks": {
+        "sagarin": {"impliedHomeMargin": -9.24, "favorite": "NC State", "canonicalInfluence": false},
+        "havoc": {"impliedHomeMargin": -9.0, "projectedTotal": 56.0, "favorite": "NC State", "canonicalInfluence": false}
+      },
+      "personnel": {
+        "status": "STABLE_PRIMARY_QB_STATE",
+        "summary": "NC State's most recent game material has CJ Bailey as primary passer (241 yards vs. Wake Forest on Oct. 10). Stanford's Oct. 21 official release identifies Davis Warren as the current quarterback, noting 1,630 passing yards, only two interceptions and a career-high 27 completions vs. Elon.",
+        "canonicalInfluence": false
+      },
+      "restTravel": {"summary": "NC State last played Oct. 10 and enters from a bye, while Stanford played Elon Oct. 17. NC State has the larger preparation/rest edge but must make cross-country travel to Stanford. Both effects remain context only.", "canonicalInfluence": false},
+      "weather": {"status": "LOW_IMPACT", "summary": "NWS Stanford forecast: Friday sunny near 72-74 F with light wind, Friday night clear near 48-50 F.", "canonicalInfluence": false},
+      "diagnostic": "MODERATE_SIDE_DISAGREEMENT_REST_TRAVEL_OFFSET",
+      "decision": "PRESERVE_FROZEN_PROJECTION",
+      "remainingChecks": ["late availability", "travel/status confirmation", "direct FanDuel/DraftKings refresh", "publication lock"]
+    }
+  ],
+  "priorityOrder": [
+    "2026-10-23-MASSACHUSETTS-UCONN",
+    "2026-10-23-AIRFORCE-WYOMING",
+    "2026-10-23-NCSTATE-STANFORD",
+    "2026-10-23-DUKE-VIRGINIA",
+    "2026-10-23-ARMY-TULSA"
+  ],
+  "promotionDecision": "NO_FRIDAY_CANONICAL_CHANGE_AUTHORIZED",
+  "nextGate": "Friday becomes final-ready only after late personnel/weather confirmation and fresh direct FanDuel/DraftKings publication-window locks."
+}
