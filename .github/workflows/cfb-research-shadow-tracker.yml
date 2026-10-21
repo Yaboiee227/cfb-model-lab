@@ -2,6 +2,9 @@ name: CFB research shadow tracker
 on:
   push:
     paths:
+      - 'scripts/cfb_grading_scope.py'
+      - 'tests/test_cfb_grading_scope.py'
+      - 'cfb/pregame/week-08-active-through-thursday.json'
       - 'scripts/grade_research_shadow.py'
       - 'scripts/lock_research_shadow.py'
       - 'tests/test_grade_research_shadow.py'
@@ -50,7 +53,7 @@ jobs:
         if: github.event_name != 'push'
         run: |
           shopt -s nullglob
-          locks=(cfb/research-locks/*.json)
+          locks=(cfb/research-locks/week-08-foundation-full.json)
           if [ ${#locks[@]} -eq 0 ]; then
             echo 'No prospective research locks found.'
             exit 0
@@ -59,7 +62,7 @@ jobs:
           for lock in "${locks[@]}"; do
             name=$(basename "$lock")
             echo "=== Research grade: $name ==="
-            python scripts/grade_research_shadow.py "$lock" --output "cfb/research-results/$name"
+            python scripts/grade_research_shadow.py "$lock" --scope cfb/pregame/week-08-active-through-thursday.json --output "cfb/research-results/$name"
           done
       - name: Assert research/canonical separation
         if: github.event_name != 'push'

@@ -13,6 +13,7 @@ from cfb_market_research_lock import verify_existing as verify_market_lock
 from lock_research_shadow import verify as verify_research_lock
 from record_tracker import atomic_json, load_aliases, match_score
 from score_sources import fetch_scores_for_projection
+from cfb_grading_scope import scoped_digests, score_request
 
 EPS = 1e-9
 
@@ -84,6 +85,7 @@ def grade(
     market_lock: dict[str, Any],
     scores: list[dict[str, Any]],
     aliases: dict[str, str],
+    scope=None,
 ) -> dict[str, Any]:
     verify_inputs(foundation, market_lock)
     foundation_by_digest = {g["projectionDigest"]: g for g in foundation.get("games", [])}
@@ -106,7 +108,10 @@ def grade(
             }
         return book_acc[book]
 
+    allowed = scoped_digests(scope, foundation)
     for market_game in market_lock.get("games", []):
+        if allowed is not None and market_game.get("projectionDigest") not in allowed:
+            continue
         locked_projection = foundation_by_digest.get(market_game.get("projectionDigest"))
         if not locked_projection:
             raise ValueError(f"market row projection digest missing from foundation: {market_game.get('gameId')}")
@@ -303,17 +308,23 @@ def main() -> None:
     ap.add_argument("--foundation-lock", default="cfb/research-locks/week-08-foundation-full.json")
     ap.add_argument("--market-lock", default="cfb/research-market-locks/week-08-foundation-market.json")
     ap.add_argument("--scores")
+    ap.add_argument("--scope", help="Active processing scope; excludes paused games from score requests and grades")
     ap.add_argument("--output", default="cfb/validation/week-08-foundation-vs-markets-results.json")
     ap.add_argument("--root", default=".")
     args = ap.parse_args()
     root = Path(args.root)
     foundation = json.loads(Path(args.foundation_lock).read_text(encoding="utf-8"))
     market_lock = json.loads(Path(args.market_lock).read_text(encoding="utf-8"))
+    scope = json.loads(Path(args.scope).read_text()) if args.scope else None
+    allowed = scoped_digests(scope, foundation)
     if args.scores:
         scores = json.loads(Path(args.scores).read_text(encoding="utf-8")).get("games", [])
     else:
-        scores = fetch_scores_for_projection("cfb", market_lock)
-    out = grade(foundation, market_lock, scores, load_aliases(root))
+        scores = fetch_scores_for_projection("cfb", score_request(market_lock, allowed))
+    out = grade(foundation, market_lock, scores, load_aliases(root), scope=scope)
+    if scope is not None:
+        out["activeScope"] = args.scope
+        out["pauseBeforeGameDateET"] = scope["pauseBoundary"]["beforeGameDateET"]
     output = Path(args.output)
     existing = json.loads(output.read_text(encoding="utf-8")) if output.exists() else None
     out = preserve_graded_at_if_unchanged(out, existing)

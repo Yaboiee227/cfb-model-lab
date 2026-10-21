@@ -1,4 +1,15 @@
-# CFB Model Lab — Step 7 Website Snapshot
+# CB Model Projections — CFB and NFL
+
+## Current CFB operations
+
+Week 8 operates from the GitHub artifacts described in [WEEK8_OPERATIONS.md](WEEK8_OPERATIONS.md).
+The active pass is October 20–22, 2026; Friday/Saturday remain paused.
+Use `python scripts/cfb_operations_check.py` for a read-only handoff with source
+fingerprints, immutable-lock checks, per-game blockers and current decision status.
+The [Week 8 board](https://yaboiee227.github.io/cfb-model-lab/week-8.html) shows
+research projections separately from the canonical HOLD gate.
+
+## Original Step 7 snapshot (historical)
 
 Snapshot: Oct 17, 2026 • 9:06 AM ET
 Model: Advanced Calibrated 0.9I - Validation-Aware Release Framework
