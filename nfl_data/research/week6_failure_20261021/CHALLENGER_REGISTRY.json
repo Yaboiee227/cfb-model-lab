@@ -1,0 +1,64 @@
+{
+  "canonical": {
+    "id": "CANONICAL_V1",
+    "changed": false,
+    "architecture": "core + coverage + recursive Elo/margin spread; frozen core totals",
+    "training_seasons": [
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "challengers": [
+    {
+      "id": "FTN50",
+      "state": "EXISTING_PROSPECTIVE_SHADOW",
+      "canonical_weight": 0.5,
+      "candidate_weight": 0.5,
+      "week6_ats": "3-10",
+      "week6_su": "6-7",
+      "promoted": false
+    },
+    {
+      "id": "S_BIAS",
+      "state": "HISTORICAL_SCREEN_INCONCLUSIVE",
+      "promoted": false
+    },
+    {
+      "id": "T_BIAS",
+      "state": "HISTORICAL_SCREEN_FAILED",
+      "promoted": false
+    },
+    {
+      "id": "T_SLOPE",
+      "state": "HISTORICAL_SCREEN_INCONCLUSIVE",
+      "promoted": false
+    },
+    {
+      "id": "QB_REPLACEMENT_V2",
+      "state": "SPECIFIED_NOT_FIT",
+      "hypothesis": "Replacement-vs-incumbent prior dropback EPA, partial pooling, expected snap-share uncertainty; lagged player features and as-of expected starter only",
+      "blocker": "Existing audit: 2022-24 depth is week-scoped proxy; 2025-26 injury date_modified missing. Exact injury/depth intersection needs validation. No numerical point penalty authorized.",
+      "promoted": false
+    }
+  ],
+  "market": {
+    "role": "BENCHMARK_AND_SEPARATE_LOCK",
+    "canonical_influence": false
+  },
+  "benchmarks": {
+    "nfelo_Sagarin_FTN_DVOA_prediction_markets": "Only captured pregame snapshots; unavailable stays null; historical reconstruction prohibited"
+  },
+  "context": {
+    "official_injuries_weather_roof_rest_travel_trenches_officiating": "Separate observations and gates; zero new coefficients"
+  },
+  "promotion": {
+    "allowed": false,
+    "requires": [
+      "independent temporal validation",
+      "prospective frozen multiweek evidence",
+      "explicit user approval"
+    ]
+  }
+}

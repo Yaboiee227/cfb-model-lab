@@ -1,0 +1,494 @@
+{
+  "official": {
+    "ats": {
+      "WIN": 3,
+      "LOSS": 10,
+      "PUSH": 0,
+      "NO_PICK": 0
+    },
+    "totals": {
+      "WIN": 6,
+      "LOSS": 6,
+      "PUSH": 1,
+      "NO_PICK": 0
+    },
+    "su": {
+      "WIN": 7,
+      "LOSS": 6,
+      "PUSH": 0,
+      "NO_PICK": 0
+    }
+  },
+  "canonical_spread": {
+    "n": 13,
+    "mae": 8.044923076923077,
+    "rmse": 8.626928796596067,
+    "bias": 4.098769230769231,
+    "prediction_sd": 6.269330118136827,
+    "actual_sd": 7.790906548795911
+  },
+  "ftn50_spread": {
+    "n": 13,
+    "mae": 8.458307692307692,
+    "rmse": 9.08590687231097,
+    "bias": 4.585538461538461,
+    "prediction_sd": 5.899343750485348,
+    "actual_sd": 7.790906548795911
+  },
+  "market_spread_benchmark": {
+    "n": 13,
+    "mae": 6.5,
+    "rmse": 7.558744299459758,
+    "bias": 2.576923076923077,
+    "prediction_sd": 5.351270379503937,
+    "actual_sd": 7.790906548795911
+  },
+  "canonical_total": {
+    "n": 13,
+    "mae": 11.03546153846154,
+    "rmse": 12.845542654046309,
+    "bias": 1.1548461538461554,
+    "prediction_sd": 2.40852295575574,
+    "actual_sd": 12.695337633680174
+  },
+  "market_total_benchmark": {
+    "n": 13,
+    "mae": 10.423076923076923,
+    "rmse": 12.722632770593696,
+    "bias": 1.4230769230769231,
+    "prediction_sd": 5.637994523633444,
+    "actual_sd": 12.695337633680174
+  },
+  "shadow_ats": {
+    "WIN": 3,
+    "LOSS": 10,
+    "PUSH": 0,
+    "NO_PICK": 0
+  },
+  "shadow_su": {
+    "WIN": 6,
+    "LOSS": 7,
+    "PUSH": 0,
+    "NO_PICK": 0
+  },
+  "subgroups": {
+    "all": {
+      "n": 13,
+      "ats": {
+        "WIN": 3,
+        "LOSS": 10,
+        "PUSH": 0,
+        "NO_PICK": 0
+      },
+      "spread": {
+        "n": 13,
+        "mae": 8.044923076923077,
+        "rmse": 8.626928796596067,
+        "bias": 4.098769230769231,
+        "prediction_sd": 6.269330118136827,
+        "actual_sd": 7.790906548795911
+      }
+    },
+    "hard_qb_break": {
+      "n": 3,
+      "ats": {
+        "WIN": 0,
+        "LOSS": 3,
+        "PUSH": 0,
+        "NO_PICK": 0
+      },
+      "spread": {
+        "n": 3,
+        "mae": 9.107333333333335,
+        "rmse": 9.145994496681777,
+        "bias": 2.3246666666666673,
+        "prediction_sd": 3.7590522150610726,
+        "actual_sd": 5.887840577551898
+      }
+    },
+    "no_hard_qb_break": {
+      "n": 10,
+      "ats": {
+        "WIN": 3,
+        "LOSS": 7,
+        "PUSH": 0,
+        "NO_PICK": 0
+      },
+      "spread": {
+        "n": 10,
+        "mae": 7.726199999999999,
+        "rmse": 8.465004784405027,
+        "bias": 4.630999999999999,
+        "prediction_sd": 5.561901203725216,
+        "actual_sd": 7.758865896508329
+      }
+    },
+    "home_ats_pick": {
+      "n": 10,
+      "ats": {
+        "WIN": 2,
+        "LOSS": 8,
+        "PUSH": 0,
+        "NO_PICK": 0
+      },
+      "spread": {
+        "n": 10,
+        "mae": 7.8307,
+        "rmse": 8.370012813610263,
+        "bias": 5.5239,
+        "prediction_sd": 4.6313910750443,
+        "actual_sd": 8.764131445842194
+      }
+    },
+    "away_ats_pick": {
+      "n": 3,
+      "ats": {
+        "WIN": 1,
+        "LOSS": 2,
+        "PUSH": 0,
+        "NO_PICK": 0
+      },
+      "spread": {
+        "n": 3,
+        "mae": 8.759,
+        "rmse": 9.432913318093549,
+        "bias": -0.6516666666666667,
+        "prediction_sd": 8.117667002012064,
+        "actual_sd": 2.6246692913372702
+      }
+    },
+    "edge_lt_1": {
+      "n": 2,
+      "ats": {
+        "WIN": 0,
+        "LOSS": 2,
+        "PUSH": 0,
+        "NO_PICK": 0
+      },
+      "spread": {
+        "n": 2,
+        "mae": 10.613,
+        "rmse": 10.901643591679193,
+        "bias": 10.613,
+        "prediction_sd": 4.992,
+        "actual_sd": 2.5
+      }
+    },
+    "edge_ge_3": {
+      "n": 6,
+      "ats": {
+        "WIN": 1,
+        "LOSS": 5,
+        "PUSH": 0,
+        "NO_PICK": 0
+      },
+      "spread": {
+        "n": 6,
+        "mae": 7.681833333333333,
+        "rmse": 8.331067408601774,
+        "bias": 2.599166666666667,
+        "prediction_sd": 6.612691091546786,
+        "actual_sd": 8.103497187428813
+      }
+    }
+  },
+  "all_games_preserved": true,
+  "executable_roi": null,
+  "closing_line_value": null,
+  "warning": "Subgroups are exploratory. Missing prices/closing snapshots preclude realized ROI or CLV. Saved official results are preserved; no postgame context reconstruction.",
+  "historical_by_season": {
+    "2023": {
+      "spread": {
+        "n": 272,
+        "mae": 10.503605213235293,
+        "rmse": 13.723386729729395,
+        "bias": -0.6308987720588234,
+        "prediction_sd": 4.9395131475333,
+        "actual_sd": 14.39602794783132
+      },
+      "total": {
+        "n": 272,
+        "mae": 10.506871102941176,
+        "rmse": 13.61166021301112,
+        "bias": -0.9916098235294115,
+        "prediction_sd": 3.083169953179236,
+        "actual_sd": 13.655912363297022
+      },
+      "market_spread": {
+        "n": 272,
+        "mae": 9.900735294117647,
+        "rmse": 13.07072109716981,
+        "bias": -1.025735294117647,
+        "prediction_sd": 5.762678543196257,
+        "actual_sd": 14.39602794783132
+      },
+      "market_total": {
+        "n": 272,
+        "mae": 10.238970588235293,
+        "rmse": 13.130146049991891,
+        "bias": -0.5882352941176471,
+        "prediction_sd": 4.387180276504114,
+        "actual_sd": 13.655912363297022
+      },
+      "ats": {
+        "WIN": 137,
+        "LOSS": 121,
+        "PUSH": 14,
+        "NO_PICK": 0
+      },
+      "home_ats": {
+        "WIN": 74,
+        "LOSS": 67,
+        "PUSH": 12,
+        "NO_PICK": 0
+      },
+      "away_ats": {
+        "WIN": 63,
+        "LOSS": 54,
+        "PUSH": 2,
+        "NO_PICK": 0
+      }
+    },
+    "2024": {
+      "spread": {
+        "n": 272,
+        "mae": 10.013459386029412,
+        "rmse": 13.185034409833357,
+        "bias": 0.5145487242647057,
+        "prediction_sd": 5.564559296919931,
+        "actual_sd": 14.431536557305472
+      },
+      "total": {
+        "n": 272,
+        "mae": 10.070764691176471,
+        "rmse": 13.166340166623819,
+        "bias": -2.2115946102941173,
+        "prediction_sd": 2.794888149861491,
+        "actual_sd": 13.08871446578242
+      },
+      "market_spread": {
+        "n": 272,
+        "mae": 9.610294117647058,
+        "rmse": 12.6051460079744,
+        "bias": -0.375,
+        "prediction_sd": 5.561152445536028,
+        "actual_sd": 14.431536557305472
+      },
+      "market_total": {
+        "n": 272,
+        "mae": 9.729779411764707,
+        "rmse": 12.551548123403649,
+        "bias": -1.4761029411764706,
+        "prediction_sd": 4.014412545171301,
+        "actual_sd": 13.08871446578242
+      },
+      "ats": {
+        "WIN": 141,
+        "LOSS": 127,
+        "PUSH": 4,
+        "NO_PICK": 0
+      },
+      "home_ats": {
+        "WIN": 82,
+        "LOSS": 72,
+        "PUSH": 2,
+        "NO_PICK": 0
+      },
+      "away_ats": {
+        "WIN": 59,
+        "LOSS": 55,
+        "PUSH": 2,
+        "NO_PICK": 0
+      }
+    },
+    "2025": {
+      "spread": {
+        "n": 272,
+        "mae": 10.252112187500002,
+        "rmse": 12.950711226108972,
+        "bias": 0.07850521691176467,
+        "prediction_sd": 5.683725877180813,
+        "actual_sd": 14.151188995217812
+      },
+      "total": {
+        "n": 272,
+        "mae": 10.922702569852941,
+        "rmse": 13.703418904200547,
+        "bias": -0.6135584963235293,
+        "prediction_sd": 2.716335821828616,
+        "actual_sd": 13.7886915320209
+      },
+      "market_spread": {
+        "n": 272,
+        "mae": 9.722426470588236,
+        "rmse": 12.271177672521421,
+        "bias": -0.5716911764705882,
+        "prediction_sd": 6.229893859709325,
+        "actual_sd": 14.151188995217812
+      },
+      "market_total": {
+        "n": 272,
+        "mae": 10.393382352941176,
+        "rmse": 13.18644580397525,
+        "bias": -1.150735294117647,
+        "prediction_sd": 4.170867979915254,
+        "actual_sd": 13.7886915320209
+      },
+      "ats": {
+        "WIN": 140,
+        "LOSS": 131,
+        "PUSH": 1,
+        "NO_PICK": 0
+      },
+      "home_ats": {
+        "WIN": 79,
+        "LOSS": 75,
+        "PUSH": 1,
+        "NO_PICK": 0
+      },
+      "away_ats": {
+        "WIN": 61,
+        "LOSS": 56,
+        "PUSH": 0,
+        "NO_PICK": 0
+      }
+    }
+  },
+  "challengers": {
+    "fits": {
+      "2024": {
+        "S_BIAS": -0.5151799999999997,
+        "T_BIAS": -0.9161590000000004,
+        "T_SLOPE": {
+          "slope": 0.629516587674631,
+          "intercept": 16.75388398225486
+        },
+        "train_seasons": [
+          2023
+        ]
+      },
+      "2025": {
+        "S_BIAS": -0.6832090000000002,
+        "T_BIAS": 0.8832885000000026,
+        "T_SLOPE": {
+          "slope": 0.6994394952403316,
+          "intercept": 14.549311398908777
+        },
+        "train_seasons": [
+          2023,
+          2024
+        ]
+      }
+    },
+    "evaluations": {
+      "S_BIAS": {
+        "canonical": {
+          "n": 544,
+          "mae": 10.132785786764707,
+          "rmse": 13.06839802061742,
+          "bias": 0.2965269705882352,
+          "prediction_sd": 5.625673294517985,
+          "actual_sd": 14.292407792122486
+        },
+        "challenger": {
+          "n": 544,
+          "mae": 10.107361272058824,
+          "rmse": 13.070210351322201,
+          "bias": -0.3026675294117645,
+          "prediction_sd": 5.628046215518192,
+          "actual_sd": 14.292407792122486
+        },
+        "mae_delta_by_season": {
+          "2024": -0.03198214705882485,
+          "2025": -0.01886688235294187
+        },
+        "simultaneous_cluster_interval": {
+          "improvement": 0.025424514705882244,
+          "ci": [
+            -0.03923933688910554,
+            0.08753449751907977
+          ],
+          "clusters": 36,
+          "draws": 10000
+        },
+        "historical_screen_pass": false,
+        "promotion_allowed": false,
+        "evidence_status": "REUSED_OOS_DEVELOPMENT_ONLY"
+      },
+      "T_BIAS": {
+        "canonical": {
+          "n": 544,
+          "mae": 10.496733630514704,
+          "rmse": 13.437563079800828,
+          "bias": -1.4125765533088233,
+          "prediction_sd": 2.899165025472765,
+          "actual_sd": 13.443639837139271
+        },
+        "challenger": {
+          "n": 544,
+          "mae": 10.5907001875,
+          "rmse": 13.522651278875587,
+          "bias": -1.4290118033088226,
+          "prediction_sd": 3.29156211411516,
+          "actual_sd": 13.443639837139271
+        },
+        "mae_delta_by_season": {
+          "2024": 0.16265002941176476,
+          "2025": 0.025283084558823887
+        },
+        "simultaneous_cluster_interval": {
+          "improvement": -0.09396655698529421,
+          "ci": [
+            -0.18696641964124594,
+            -0.0035987775100082805
+          ],
+          "clusters": 36,
+          "draws": 10000
+        },
+        "historical_screen_pass": false,
+        "promotion_allowed": false,
+        "evidence_status": "REUSED_OOS_DEVELOPMENT_ONLY"
+      },
+      "T_SLOPE": {
+        "canonical": {
+          "n": 544,
+          "mae": 10.496733630514704,
+          "rmse": 13.437563079800828,
+          "bias": -1.4125765533088233,
+          "prediction_sd": 2.899165025472765,
+          "actual_sd": 13.443639837139271
+        },
+        "challenger": {
+          "n": 544,
+          "mae": 10.446162588222169,
+          "rmse": 13.361539830130848,
+          "bias": -0.6642814646973254,
+          "prediction_sd": 2.111728280153041,
+          "actual_sd": 13.443639837139271
+        },
+        "mae_delta_by_season": {
+          "2024": -0.0969201441451144,
+          "2025": -0.004221940439959937
+        },
+        "simultaneous_cluster_interval": {
+          "improvement": 0.05057104229253729,
+          "ci": [
+            -0.08965758741622966,
+            0.19052098510945703
+          ],
+          "clusters": 36,
+          "draws": 10000
+        },
+        "historical_screen_pass": false,
+        "promotion_allowed": false,
+        "evidence_status": "REUSED_OOS_DEVELOPMENT_ONLY"
+      }
+    },
+    "limitations": [
+      "Prior OOS seasons have already informed architecture research; these are not untouched confirmation folds.",
+      "Week6 inspired hypotheses but is never a fitting or model-selection sample.",
+      "Feature-week exclusion checks pass; historical vendor revision/publication timestamps are not fully archived.",
+      "QB replacement and weather effects cannot be estimated from postgame starter or observed weather as if known pregame."
+    ]
+  }
+}
