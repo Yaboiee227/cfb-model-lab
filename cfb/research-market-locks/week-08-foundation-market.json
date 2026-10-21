@@ -16,15 +16,16 @@
   "lockWindowMinutes": 30.0,
   "maxObservationAgeMinutes": 35.0,
   "scopeRestricted": true,
-  "updatedAt": "2026-10-20T23:10:29.366779Z",
+  "updatedAt": "2026-10-21T23:39:17.549697Z",
   "counts": {
     "foundationGames": 56,
     "activeScopeGames": 7,
     "pausedGames": 49,
-    "gamesWithMarketLock": 3,
-    "bookObservationsLocked": 6,
-    "newBookObservationsThisRun": 0,
-    "pendingGames": 4,
+    "preservedOutOfScopeLockedGames": 0,
+    "gamesWithMarketLock": 4,
+    "bookObservationsLocked": 8,
+    "newBookObservationsThisRun": 2,
+    "pendingGames": 3,
     "missedGames": 0
   },
   "games": [
@@ -146,8 +147,35 @@
       "homeTeam": "Sam Houston",
       "kickoff": "2026-10-22T00:00:00Z",
       "projectionDigest": "76573e65de4174437af8f8b604ec6730d1b183804089c333a6186c8b182c26da",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-21T23:32:03Z",
+          "lockedAt": "2026-10-21T23:39:17.549697Z",
+          "marketSpreadHome": 3.5,
+          "marketTotal": 46.5,
+          "marketMoneylineHome": 132,
+          "marketMoneylineAway": -160,
+          "spreadHomePrice": -118,
+          "totalOverPrice": -118,
+          "totalUnderPrice": -104,
+          "observationDigest": "3fdc724c3af02906e8af6338f11cfe9c0681128e72587b3e9c867a95e103d764"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-21T23:32:03Z",
+          "lockedAt": "2026-10-21T23:39:17.549697Z",
+          "marketSpreadHome": 3.0,
+          "marketTotal": 46.5,
+          "marketMoneylineHome": 130,
+          "marketMoneylineAway": -155,
+          "spreadHomePrice": -105,
+          "totalOverPrice": -118,
+          "totalUnderPrice": -102,
+          "observationDigest": "c797d3f773cd2fb9d2c67ccd464910e803925c9a02f1f6a111eb55290c1943ee"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-22-JAMESMADISON-APPSTATE",
@@ -670,5 +698,5 @@
       "status": "PAUSED_OUT_OF_SCOPE"
     }
   ],
-  "policy": "Research-only per-book publication-window capture. FanDuel and DraftKings are preserved independently; no consensus or canonical benchmark is inferred. Existing book observations are immutable and post-kickoff reconstruction is prohibited. When an active scope is supplied, out-of-scope games remain paused and cannot receive new locks until explicitly resumed."
+  "policy": "Research-only per-book publication-window capture. FanDuel and DraftKings are preserved independently; no consensus or canonical benchmark is inferred. Existing book observations are immutable and post-kickoff reconstruction is prohibited. When an active scope is supplied, prior immutable locks remain preserved even if their games are no longer active, while unlocked out-of-scope games remain paused and cannot receive new observations."
 }
