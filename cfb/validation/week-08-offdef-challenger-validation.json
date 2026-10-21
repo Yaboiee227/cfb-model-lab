@@ -1,0 +1,846 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "role": "OFFENSE_DEFENSE_SCORE_DECOMPOSITION_CHALLENGER_VALIDATION",
+  "canonicalInfluence": false,
+  "canonicalPromotionAuthorized": false,
+  "asOf": "2026-10-20T04:00:00Z",
+  "architecture": {
+    "description": "Separate recency-weighted ridge offense and defensive-allowance team effects projected into team points, then margin and total.",
+    "seasonTeamStateReset": true,
+    "marketDataUsed": false,
+    "externalRatingsUsed": false,
+    "postKickoffTargetDataUsed": false
+  },
+  "foundationComparator": {
+    "model": "cfb_shadow_engine score-margin foundation comparator",
+    "params": {
+      "alpha": 2.5,
+      "halfLifeDays": 56,
+      "minTeamAppearances": 4
+    },
+    "note": "Comparator is refit only on games prior to each test week; no test-week outcome enters either model."
+  },
+  "selection": {
+    "developmentSeason": 2024,
+    "candidateCount": 144,
+    "objective": "minimize challenger margin MAE + total MAE on 2024 weekly walk-forward only",
+    "lockedParams": {
+      "alpha": 2.5,
+      "halfLifeDays": 42,
+      "minTeamAppearances": 4
+    },
+    "developmentBest": {
+      "params": {
+        "alpha": 2.5,
+        "halfLifeDays": 42,
+        "minTeamAppearances": 4
+      },
+      "folds": [
+        {
+          "weekStart": "2024-09-23T00:00:00Z",
+          "trainingGames": 316,
+          "testGames": 59,
+          "pairedGames": 24,
+          "challengerMargin": {
+            "games": 24,
+            "mae": 12.907768894480457,
+            "rmse": 15.44985229150176,
+            "bias": -1.0496164039416327
+          },
+          "foundationMargin": {
+            "games": 24,
+            "mae": 12.89027670551969,
+            "rmse": 15.481426287733193,
+            "bias": -1.207991899261722
+          },
+          "challengerTotal": {
+            "games": 24,
+            "mae": 12.40298661729431,
+            "rmse": 15.262254973889132,
+            "bias": -2.0727367227652747
+          },
+          "foundationTotal": {
+            "games": 24,
+            "mae": 12.696918937063659,
+            "rmse": 15.424190767936587,
+            "bias": -1.9036569337196998
+          }
+        },
+        {
+          "weekStart": "2024-09-30T00:00:00Z",
+          "trainingGames": 375,
+          "testGames": 51,
+          "pairedGames": 49,
+          "challengerMargin": {
+            "games": 49,
+            "mae": 12.224527141767322,
+            "rmse": 16.3981844763416,
+            "bias": 4.181375823465491
+          },
+          "foundationMargin": {
+            "games": 49,
+            "mae": 12.233305328627592,
+            "rmse": 16.377220296156516,
+            "bias": 4.079734144595444
+          },
+          "challengerTotal": {
+            "games": 49,
+            "mae": 14.813396109569627,
+            "rmse": 17.765846178060333,
+            "bias": -2.205438187384793
+          },
+          "foundationTotal": {
+            "games": 49,
+            "mae": 14.789528053810159,
+            "rmse": 17.744808777267973,
+            "bias": -2.440184912834568
+          }
+        },
+        {
+          "weekStart": "2024-10-07T00:00:00Z",
+          "trainingGames": 426,
+          "testGames": 56,
+          "pairedGames": 52,
+          "challengerMargin": {
+            "games": 52,
+            "mae": 11.816025367864832,
+            "rmse": 15.88892024180646,
+            "bias": 4.592897778042909
+          },
+          "foundationMargin": {
+            "games": 52,
+            "mae": 11.837425160430216,
+            "rmse": 15.90364049418304,
+            "bias": 4.568709269630521
+          },
+          "challengerTotal": {
+            "games": 52,
+            "mae": 12.689575585207185,
+            "rmse": 16.33495379057509,
+            "bias": 0.3467304640740896
+          },
+          "foundationTotal": {
+            "games": 52,
+            "mae": 12.824371354678384,
+            "rmse": 16.45973851904716,
+            "bias": 0.2868278415082974
+          }
+        },
+        {
+          "weekStart": "2024-10-14T00:00:00Z",
+          "trainingGames": 482,
+          "testGames": 63,
+          "pairedGames": 59,
+          "challengerMargin": {
+            "games": 59,
+            "mae": 12.594302144864956,
+            "rmse": 15.50651021669842,
+            "bias": 2.843305633959401
+          },
+          "foundationMargin": {
+            "games": 59,
+            "mae": 12.626226268333374,
+            "rmse": 15.51990219892609,
+            "bias": 2.8458562366696767
+          },
+          "challengerTotal": {
+            "games": 59,
+            "mae": 15.940035299679359,
+            "rmse": 19.14212818044572,
+            "bias": 1.19014797399802
+          },
+          "foundationTotal": {
+            "games": 59,
+            "mae": 15.987024756257629,
+            "rmse": 19.163132752804945,
+            "bias": 1.1035648053774574
+          }
+        },
+        {
+          "weekStart": "2024-10-21T00:00:00Z",
+          "trainingGames": 545,
+          "testGames": 61,
+          "pairedGames": 56,
+          "challengerMargin": {
+            "games": 56,
+            "mae": 12.20299193224979,
+            "rmse": 15.553003614938262,
+            "bias": -2.3951595109261623
+          },
+          "foundationMargin": {
+            "games": 56,
+            "mae": 12.222075107229012,
+            "rmse": 15.526633441322822,
+            "bias": -2.407070985713504
+          },
+          "challengerTotal": {
+            "games": 56,
+            "mae": 10.58358019430148,
+            "rmse": 15.341186855537899,
+            "bias": -0.0014872292630221068
+          },
+          "foundationTotal": {
+            "games": 56,
+            "mae": 10.486622803521277,
+            "rmse": 15.3058482234163,
+            "bias": -0.014292219790795155
+          }
+        },
+        {
+          "weekStart": "2024-10-28T00:00:00Z",
+          "trainingGames": 606,
+          "testGames": 52,
+          "pairedGames": 48,
+          "challengerMargin": {
+            "games": 48,
+            "mae": 14.182826176014865,
+            "rmse": 16.478050690507153,
+            "bias": 1.58557513960195
+          },
+          "foundationMargin": {
+            "games": 48,
+            "mae": 14.164759737781393,
+            "rmse": 16.42531922603897,
+            "bias": 1.573337067004904
+          },
+          "challengerTotal": {
+            "games": 48,
+            "mae": 13.297177969365626,
+            "rmse": 16.627191684045663,
+            "bias": -2.4434045542218925
+          },
+          "foundationTotal": {
+            "games": 48,
+            "mae": 13.096664356187304,
+            "rmse": 16.534966735440175,
+            "bias": -2.438354979040749
+          }
+        },
+        {
+          "weekStart": "2024-11-04T00:00:00Z",
+          "trainingGames": 658,
+          "testGames": 53,
+          "pairedGames": 50,
+          "challengerMargin": {
+            "games": 50,
+            "mae": 11.789307681083262,
+            "rmse": 14.212110072585643,
+            "bias": 1.3422538750551807
+          },
+          "foundationMargin": {
+            "games": 50,
+            "mae": 11.618269180834432,
+            "rmse": 13.990614239498854,
+            "bias": 1.333204641577203
+          },
+          "challengerTotal": {
+            "games": 50,
+            "mae": 13.286818341261615,
+            "rmse": 16.823719203907444,
+            "bias": 1.7616276711307983
+          },
+          "foundationTotal": {
+            "games": 50,
+            "mae": 13.44456004524492,
+            "rmse": 16.98066792759216,
+            "bias": 1.6825540603486229
+          }
+        },
+        {
+          "weekStart": "2024-11-11T00:00:00Z",
+          "trainingGames": 711,
+          "testGames": 58,
+          "pairedGames": 54,
+          "challengerMargin": {
+            "games": 54,
+            "mae": 12.79251545333425,
+            "rmse": 16.366694178325385,
+            "bias": -2.048749212118013
+          },
+          "foundationMargin": {
+            "games": 54,
+            "mae": 12.816958568065447,
+            "rmse": 16.360402107787554,
+            "bias": -2.0133611405818943
+          },
+          "challengerTotal": {
+            "games": 54,
+            "mae": 12.811385761596704,
+            "rmse": 15.690973996931202,
+            "bias": 1.434666524405536
+          },
+          "foundationTotal": {
+            "games": 54,
+            "mae": 12.745622641985634,
+            "rmse": 15.62211626303565,
+            "bias": 1.2758344148942187
+          }
+        },
+        {
+          "weekStart": "2024-11-18T00:00:00Z",
+          "trainingGames": 769,
+          "testGames": 69,
+          "pairedGames": 62,
+          "challengerMargin": {
+            "games": 62,
+            "mae": 12.700979780653885,
+            "rmse": 15.518180932275575,
+            "bias": -3.072858474059392
+          },
+          "foundationMargin": {
+            "games": 62,
+            "mae": 12.688918716772575,
+            "rmse": 15.441818754198527,
+            "bias": -2.996828038380215
+          },
+          "challengerTotal": {
+            "games": 62,
+            "mae": 13.617492800535398,
+            "rmse": 17.568491479630104,
+            "bias": -1.4630932832665642
+          },
+          "foundationTotal": {
+            "games": 62,
+            "mae": 13.648059003539526,
+            "rmse": 17.610205004270377,
+            "bias": -1.483650190432561
+          }
+        },
+        {
+          "weekStart": "2024-11-25T00:00:00Z",
+          "trainingGames": 838,
+          "testGames": 67,
+          "pairedGames": 67,
+          "challengerMargin": {
+            "games": 67,
+            "mae": 11.793341139363918,
+            "rmse": 15.633995278140159,
+            "bias": 2.762565499806192
+          },
+          "foundationMargin": {
+            "games": 67,
+            "mae": 11.798976709906627,
+            "rmse": 15.569185563708414,
+            "bias": 2.9518580545351143
+          },
+          "challengerTotal": {
+            "games": 67,
+            "mae": 12.704100461613239,
+            "rmse": 15.454454533795163,
+            "bias": -0.07487624894712944
+          },
+          "foundationTotal": {
+            "games": 67,
+            "mae": 12.695500769793096,
+            "rmse": 15.533601349526226,
+            "bias": -0.11883897734914176
+          }
+        }
+      ],
+      "potentialGames": 589,
+      "pairedGames": 521,
+      "coverage": 0.8845500848896435,
+      "challengerMargin": {
+        "games": 521,
+        "mae": 12.453559414619907,
+        "rmse": 15.715171220738126,
+        "bias": 0.9199921535504664
+      },
+      "foundationMargin": {
+        "games": 521,
+        "mae": 12.445125442127633,
+        "rmse": 15.672604987063053,
+        "bias": 0.9347939602018995
+      },
+      "challengerTotal": {
+        "games": 521,
+        "mae": 13.256061741759787,
+        "rmse": 16.71632229219635,
+        "bias": -0.22477016840578046
+      },
+      "foundationTotal": {
+        "games": 521,
+        "mae": 13.268090788882807,
+        "rmse": 16.747273756880215,
+        "bias": -0.28790522271055247
+      },
+      "marginMaeDeltaVsFoundation": 0.008433972492273512,
+      "totalMaeDeltaVsFoundation": -0.01202904712302022
+    }
+  },
+  "holdout2025": {
+    "params": {
+      "alpha": 2.5,
+      "halfLifeDays": 42,
+      "minTeamAppearances": 4
+    },
+    "folds": [
+      {
+        "weekStart": "2025-09-22T00:00:00Z",
+        "trainingGames": 317,
+        "testGames": 55,
+        "pairedGames": 18,
+        "challengerMargin": {
+          "games": 18,
+          "mae": 12.81423561376581,
+          "rmse": 17.79224724640808,
+          "bias": 6.018087004883259
+        },
+        "foundationMargin": {
+          "games": 18,
+          "mae": 12.813236343748486,
+          "rmse": 17.732037537718053,
+          "bias": 5.921347595174339
+        },
+        "challengerTotal": {
+          "games": 18,
+          "mae": 14.925700024363758,
+          "rmse": 19.378048231439895,
+          "bias": 0.00860959049202571
+        },
+        "foundationTotal": {
+          "games": 18,
+          "mae": 14.935340655242003,
+          "rmse": 19.41020308071842,
+          "bias": -0.22971472385656197
+        }
+      },
+      {
+        "weekStart": "2025-09-29T00:00:00Z",
+        "trainingGames": 372,
+        "testGames": 52,
+        "pairedGames": 50,
+        "challengerMargin": {
+          "games": 50,
+          "mae": 12.312433190002423,
+          "rmse": 14.64732882101166,
+          "bias": 0.21297223432766532
+        },
+        "foundationMargin": {
+          "games": 50,
+          "mae": 12.253587912046838,
+          "rmse": 14.565258103688773,
+          "bias": 0.17951914897338003
+        },
+        "challengerTotal": {
+          "games": 50,
+          "mae": 10.562463446233528,
+          "rmse": 13.846748172210253,
+          "bias": 0.5662271702167518
+        },
+        "foundationTotal": {
+          "games": 50,
+          "mae": 10.669387533991152,
+          "rmse": 13.98651880615899,
+          "bias": 0.36782075645859424
+        }
+      },
+      {
+        "weekStart": "2025-10-06T00:00:00Z",
+        "trainingGames": 424,
+        "testGames": 58,
+        "pairedGames": 56,
+        "challengerMargin": {
+          "games": 56,
+          "mae": 14.182250174020936,
+          "rmse": 17.96512809891066,
+          "bias": 0.9344945606247494
+        },
+        "foundationMargin": {
+          "games": 56,
+          "mae": 14.23277410303686,
+          "rmse": 18.018185071501932,
+          "bias": 0.8131923535640061
+        },
+        "challengerTotal": {
+          "games": 56,
+          "mae": 11.354992996410557,
+          "rmse": 14.317836436405447,
+          "bias": -0.524386246341041
+        },
+        "foundationTotal": {
+          "games": 56,
+          "mae": 11.431947307213878,
+          "rmse": 14.354684594686136,
+          "bias": -0.556016539940675
+        }
+      },
+      {
+        "weekStart": "2025-10-13T00:00:00Z",
+        "trainingGames": 482,
+        "testGames": 62,
+        "pairedGames": 59,
+        "challengerMargin": {
+          "games": 59,
+          "mae": 12.673927143060777,
+          "rmse": 16.125994844638,
+          "bias": 3.381480688929037
+        },
+        "foundationMargin": {
+          "games": 59,
+          "mae": 12.67473599822725,
+          "rmse": 16.05084014800924,
+          "bias": 3.207355941184388
+        },
+        "challengerTotal": {
+          "games": 59,
+          "mae": 12.852309657363621,
+          "rmse": 16.467109489510733,
+          "bias": 0.18037215977894266
+        },
+        "foundationTotal": {
+          "games": 59,
+          "mae": 12.742000584468494,
+          "rmse": 16.4244760649461,
+          "bias": 0.09317560194688092
+        }
+      },
+      {
+        "weekStart": "2025-10-20T00:00:00Z",
+        "trainingGames": 544,
+        "testGames": 55,
+        "pairedGames": 53,
+        "challengerMargin": {
+          "games": 53,
+          "mae": 11.014132786149231,
+          "rmse": 13.69548144455244,
+          "bias": 1.018369132197509
+        },
+        "foundationMargin": {
+          "games": 53,
+          "mae": 10.939365359972093,
+          "rmse": 13.593073336794129,
+          "bias": 1.0191822247230569
+        },
+        "challengerTotal": {
+          "games": 53,
+          "mae": 13.82929333922996,
+          "rmse": 16.694548514385744,
+          "bias": -1.5227099439612615
+        },
+        "foundationTotal": {
+          "games": 53,
+          "mae": 13.869663608141588,
+          "rmse": 16.71643146295857,
+          "bias": -1.6307232438298527
+        }
+      },
+      {
+        "weekStart": "2025-10-27T00:00:00Z",
+        "trainingGames": 599,
+        "testGames": 54,
+        "pairedGames": 52,
+        "challengerMargin": {
+          "games": 52,
+          "mae": 13.60452609598708,
+          "rmse": 17.34791681869131,
+          "bias": 4.636891692962587
+        },
+        "foundationMargin": {
+          "games": 52,
+          "mae": 13.490626219376178,
+          "rmse": 17.230128251811035,
+          "bias": 4.493474424007721
+        },
+        "challengerTotal": {
+          "games": 52,
+          "mae": 12.624542174254826,
+          "rmse": 16.271294105237722,
+          "bias": 0.39091893726928606
+        },
+        "foundationTotal": {
+          "games": 52,
+          "mae": 12.727047914972045,
+          "rmse": 16.370928053260283,
+          "bias": 0.38766469162116834
+        }
+      },
+      {
+        "weekStart": "2025-11-03T00:00:00Z",
+        "trainingGames": 653,
+        "testGames": 54,
+        "pairedGames": 51,
+        "challengerMargin": {
+          "games": 51,
+          "mae": 11.85310539598949,
+          "rmse": 15.23781935344468,
+          "bias": 0.7114990232664172
+        },
+        "foundationMargin": {
+          "games": 51,
+          "mae": 11.732030384346604,
+          "rmse": 15.1682666322264,
+          "bias": 0.6344399388448971
+        },
+        "challengerTotal": {
+          "games": 51,
+          "mae": 11.569298102946277,
+          "rmse": 14.611702315244315,
+          "bias": 2.479914810568426
+        },
+        "foundationTotal": {
+          "games": 51,
+          "mae": 11.581284096547504,
+          "rmse": 14.623512290625408,
+          "bias": 2.36904419699754
+        }
+      },
+      {
+        "weekStart": "2025-11-10T00:00:00Z",
+        "trainingGames": 707,
+        "testGames": 61,
+        "pairedGames": 58,
+        "challengerMargin": {
+          "games": 58,
+          "mae": 12.571173329021008,
+          "rmse": 16.033403223533725,
+          "bias": -1.1788140983251454
+        },
+        "foundationMargin": {
+          "games": 58,
+          "mae": 12.427933472317381,
+          "rmse": 15.819811717378805,
+          "bias": -1.2093022380992486
+        },
+        "challengerTotal": {
+          "games": 58,
+          "mae": 12.82904628479475,
+          "rmse": 14.887173802971274,
+          "bias": 2.1040651730373026
+        },
+        "foundationTotal": {
+          "games": 58,
+          "mae": 12.875406711680174,
+          "rmse": 14.894607237888339,
+          "bias": 2.067059553091713
+        }
+      },
+      {
+        "weekStart": "2025-11-17T00:00:00Z",
+        "trainingGames": 768,
+        "testGames": 66,
+        "pairedGames": 60,
+        "challengerMargin": {
+          "games": 60,
+          "mae": 12.964615889627714,
+          "rmse": 15.863313148914967,
+          "bias": 1.0279107120576152
+        },
+        "foundationMargin": {
+          "games": 60,
+          "mae": 12.926038175740072,
+          "rmse": 15.73582257995158,
+          "bias": 1.1155352927905922
+        },
+        "challengerTotal": {
+          "games": 60,
+          "mae": 14.264827884769316,
+          "rmse": 17.270332303936122,
+          "bias": -1.458257040577654
+        },
+        "foundationTotal": {
+          "games": 60,
+          "mae": 14.368037072567368,
+          "rmse": 17.372854025026207,
+          "bias": -1.484092476650878
+        }
+      },
+      {
+        "weekStart": "2025-11-24T00:00:00Z",
+        "trainingGames": 834,
+        "testGames": 67,
+        "pairedGames": 67,
+        "challengerMargin": {
+          "games": 67,
+          "mae": 13.910228850856877,
+          "rmse": 16.982689244499056,
+          "bias": 6.352849639692811
+        },
+        "foundationMargin": {
+          "games": 67,
+          "mae": 13.768424358195697,
+          "rmse": 16.764145419665905,
+          "bias": 6.234649531234036
+        },
+        "challengerTotal": {
+          "games": 67,
+          "mae": 13.127531047691587,
+          "rmse": 15.369984693385861,
+          "bias": -0.5892758052813059
+        },
+        "foundationTotal": {
+          "games": 67,
+          "mae": 13.077272752752188,
+          "rmse": 15.40286553993141,
+          "bias": -0.47203986325977737
+        }
+      }
+    ],
+    "potentialGames": 584,
+    "pairedGames": 524,
+    "coverage": 0.8972602739726028,
+    "challengerMargin": {
+      "games": 524,
+      "mae": 12.830016643234078,
+      "rmse": 16.1461859802382,
+      "bias": 2.139572456017572
+    },
+    "foundationMargin": {
+      "games": 524,
+      "mae": 12.760804894047654,
+      "rmse": 16.039912565754854,
+      "bias": 2.07038331618596
+    },
+    "challengerTotal": {
+      "games": 524,
+      "mae": 12.690712846228926,
+      "rmse": 15.740626690679019,
+      "bias": 0.13530792073712974
+    },
+    "foundationTotal": {
+      "games": 524,
+      "mae": 12.722995862559912,
+      "rmse": 15.783765805313301,
+      "bias": 0.08088803015602002
+    },
+    "marginMaeDeltaVsFoundation": 0.06921174918642414,
+    "totalMaeDeltaVsFoundation": -0.03228301633098596
+  },
+  "confirmation2026PreWeek8": {
+    "params": {
+      "alpha": 2.5,
+      "halfLifeDays": 42,
+      "minTeamAppearances": 4
+    },
+    "folds": [
+      {
+        "weekStart": "2026-09-28T00:00:00Z",
+        "trainingGames": 331,
+        "testGames": 59,
+        "pairedGames": 48,
+        "challengerMargin": {
+          "games": 48,
+          "mae": 14.022634170407267,
+          "rmse": 18.568179328227455,
+          "bias": 4.534138946892889
+        },
+        "foundationMargin": {
+          "games": 48,
+          "mae": 14.023776254070128,
+          "rmse": 18.571262480960744,
+          "bias": 4.718390251218977
+        },
+        "challengerTotal": {
+          "games": 48,
+          "mae": 13.050778971688857,
+          "rmse": 15.45231797869853,
+          "bias": 1.2318622305455584
+        },
+        "foundationTotal": {
+          "games": 48,
+          "mae": 12.999780287546523,
+          "rmse": 15.457735199500137,
+          "bias": 1.148365297690146
+        }
+      },
+      {
+        "weekStart": "2026-10-05T00:00:00Z",
+        "trainingGames": 390,
+        "testGames": 58,
+        "pairedGames": 58,
+        "challengerMargin": {
+          "games": 58,
+          "mae": 12.07371214642397,
+          "rmse": 14.923774257650388,
+          "bias": 2.035992112821725
+        },
+        "foundationMargin": {
+          "games": 58,
+          "mae": 12.007727306792681,
+          "rmse": 14.878130089123397,
+          "bias": 2.0429013305796277
+        },
+        "challengerTotal": {
+          "games": 58,
+          "mae": 14.12955838821017,
+          "rmse": 17.90811282998881,
+          "bias": 1.3076524561586378
+        },
+        "foundationTotal": {
+          "games": 58,
+          "mae": 14.140444478763042,
+          "rmse": 17.906167733821285,
+          "bias": 1.3090457421107846
+        }
+      },
+      {
+        "weekStart": "2026-10-12T00:00:00Z",
+        "trainingGames": 448,
+        "testGames": 62,
+        "pairedGames": 59,
+        "challengerMargin": {
+          "games": 59,
+          "mae": 11.984732719062135,
+          "rmse": 14.902342536944486,
+          "bias": 2.1942020088603096
+        },
+        "foundationMargin": {
+          "games": 59,
+          "mae": 12.031123962720143,
+          "rmse": 14.93024908662885,
+          "bias": 2.1783272089488173
+        },
+        "challengerTotal": {
+          "games": 59,
+          "mae": 13.119189712933823,
+          "rmse": 16.297337036768926,
+          "bias": 0.8536485564658572
+        },
+        "foundationTotal": {
+          "games": 59,
+          "mae": 13.08796980611669,
+          "rmse": 16.281016193242312,
+          "bias": 0.7400271407204583
+        }
+      }
+    ],
+    "potentialGames": 179,
+    "pairedGames": 165,
+    "coverage": 0.9217877094972067,
+    "challengerMargin": {
+      "games": 165,
+      "mae": 12.60885439452609,
+      "rmse": 16.0623261066421,
+      "bias": 2.819297760710769
+    },
+    "foundationMargin": {
+      "games": 165,
+      "mae": 12.602580350241393,
+      "rmse": 16.057744594853766,
+      "bias": 2.8696503912733906
+    },
+    "challengerTotal": {
+      "games": 165,
+      "mae": 13.454448304365757,
+      "rmse": 16.64830067885838,
+      "bias": 1.1232636021507478
+    },
+    "foundationTotal": {
+      "games": 165,
+      "mae": 13.432275467462874,
+      "rmse": 16.643317417268293,
+      "bias": 1.0588350826306636
+    },
+    "marginMaeDeltaVsFoundation": 0.006274044284696245,
+    "totalMaeDeltaVsFoundation": 0.02217283690288241
+  },
+  "decision": {
+    "prospectiveShadowEligible": false,
+    "canonicalPromotionAuthorized": false,
+    "rule": "Require >=80% paired coverage on 2025 and pre-Week8 2026, no MAE degradation >0.25 in either target on either unseen period, and >=0.50 MAE gain in at least one unseen target/period. Eligibility authorizes prospective shadow testing only.",
+    "nextStep": "If eligible, freeze unchanged prospective projections for remaining Week 8 games alongside the existing foundation. If not eligible, retain as rejected research evidence and continue challenger development."
+  },
+  "warning": "Tuesday Week 8 outcomes are not used anywhere in parameter selection or validation. This artifact cannot promote or rewrite the canonical model."
+}
