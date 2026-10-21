@@ -195,8 +195,15 @@ def merge_market_lock(
 
     locked_games = sum(bool(r["books"]) for r in rows)
     locked_book_observations = sum(len(r["books"]) for r in rows)
-    active_count = sum(r["status"] != "PAUSED_OUT_OF_SCOPE" or bool(r["books"]) for r in rows) if active_game_ids is not None else len(rows)
-    paused_count = sum(r["status"] == "PAUSED_OUT_OF_SCOPE" for r in rows)
+    active_count = len(active_game_ids) if active_game_ids is not None else len(rows)
+    paused_count = sum(
+        1 for r in rows
+        if active_game_ids is not None and r["gameId"] not in active_game_ids and not r["books"]
+    )
+    preserved_out_of_scope_locked = sum(
+        1 for r in rows
+        if active_game_ids is not None and r["gameId"] not in active_game_ids and bool(r["books"])
+    )
     return {
         "schemaVersion": 2,
         "league": foundation_lock.get("league"),
@@ -217,6 +224,7 @@ def merge_market_lock(
             "foundationGames": len(rows),
             "activeScopeGames": active_count,
             "pausedGames": paused_count,
+            "preservedOutOfScopeLockedGames": preserved_out_of_scope_locked,
             "gamesWithMarketLock": locked_games,
             "bookObservationsLocked": locked_book_observations,
             "newBookObservationsThisRun": newly_locked,
@@ -224,7 +232,7 @@ def merge_market_lock(
             "missedGames": sum(r["status"] == "MISSED" for r in rows),
         },
         "games": rows,
-        "policy": "Research-only per-book publication-window capture. FanDuel and DraftKings are preserved independently; no consensus or canonical benchmark is inferred. Existing book observations are immutable and post-kickoff reconstruction is prohibited. When an active scope is supplied, out-of-scope games remain paused and cannot receive new locks until explicitly resumed.",
+        "policy": "Research-only per-book publication-window capture. FanDuel and DraftKings are preserved independently; no consensus or canonical benchmark is inferred. Existing book observations are immutable and post-kickoff reconstruction is prohibited. When an active scope is supplied, prior immutable locks remain preserved even if their games are no longer active, while unlocked out-of-scope games remain paused and cannot receive new observations.",
     }
 
 
