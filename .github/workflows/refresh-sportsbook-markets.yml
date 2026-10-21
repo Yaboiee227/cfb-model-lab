@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - '.github/workflows/refresh-sportsbook-markets.yml'
+      - 'cfb/pregame/week-08-active-full-week.json'
   workflow_dispatch:
   schedule:
     - cron: '*/5 * * * *'
@@ -53,12 +54,6 @@ jobs:
             return Number.isFinite(t) ? (now - t) / 60000 : Infinity;
           };
           const round5 = value => Math.max(5, Math.ceil(value / 5) * 5);
-
-          async function publicJson(url) {
-            const r = await fetch(url, { headers: { Accept:'application/json' } });
-            if (!r.ok) throw new Error(`${r.status} ${r.statusText}: public data request failed`);
-            return r.json();
-          }
 
           async function oddsRequest(markets, commenceTimeFrom, commenceTimeTo) {
             const params = new URLSearchParams({
@@ -239,11 +234,11 @@ jobs:
 
           (async () => {
             const old=readExisting();
-            const scope=JSON.parse(fs.readFileSync('cfb/pregame/week-08-active-through-thursday.json','utf8'));
+            const scope=JSON.parse(fs.readFileSync('cfb/pregame/week-08-active-full-week.json','utf8'));
             const scopeGames=scope.games || [];
             const remainingScopeGames=scopeGames.filter(game => new Date(game.kickoff).getTime() > now);
             if (!remainingScopeGames.length) {
-              console.log('No remaining pregame games in the active Tuesday-Thursday scope; no odds credits used.');
+              console.log('No remaining pregame games in the active full Week 8 scope; no odds credits used.');
               return;
             }
             const phase=phaseFromScope(remainingScopeGames);
@@ -349,7 +344,7 @@ jobs:
                 manualOverride:manual
               },
               games,
-              note:'Adaptive free-tier snapshot. Refresh timing and bookmaker updates are restricted to the active Tuesday-Thursday scope; out-of-scope prior rows remain unchanged. Spreads/totals refresh more often than moneylines; automatic calls slow as quota falls and stop at the reserve floor.'
+              note:'Adaptive free-tier snapshot. Refresh timing and bookmaker updates are restricted to the active remaining Week 8 scope; prior out-of-scope rows remain unchanged. Spreads/totals refresh more often than moneylines; automatic calls slow as quota falls and stop at the reserve floor.'
             };
             fs.writeFileSync(path,JSON.stringify(output,null,2)+'\n');
             console.log(`Wrote ${games.length} NCAAF games using ${usageThisRun} credit${usageThisRun === 1 ? '' : 's'} this run.`);
