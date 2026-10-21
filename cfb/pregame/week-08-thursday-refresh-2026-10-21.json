@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "role": "ROLLING_PREGAME_REFRESH_OVERLAY",
+  "status": "THURSDAY_STAGED_FOR_FINAL_WINDOW",
+  "observedAt": "2026-10-21T21:50:05Z",
+  "canonicalInfluence": false,
+  "canonicalPromotionAuthorized": false,
+  "foundationSource": "cfb/research-locks/week-08-foundation-full.json",
+  "marketSnapshotSource": "data/markets-sportsbooks.json",
+  "marketSnapshotGeneratedAt": "2026-10-21T21:05:32.227Z",
+  "policy": "Pregame-only rolling refresh. Frozen foundation projections and digests are preserved exactly. Week 8 results are not used to tune remaining Week 8 games. Markets, external models, betting splits, personnel, weather and other context remain benchmark/context unless separately leakage-safe validated and explicitly promoted.",
+  "games": [
+    {
+      "gameId": "2026-10-22-JAMESMADISON-APPSTATE",
+      "kickoff": "2026-10-22T23:00:00Z",
+      "frozenProjection": {
+        "awayTeam": "James Madison",
+        "homeTeam": "App State",
+        "projectedAwayPoints": 31.99311570132898,
+        "projectedHomePoints": 21.549181361152318,
+        "projectedMarginHome": -10.44393434017666,
+        "projectedSpreadHome": 10.44393434017666,
+        "projectedTotal": 53.542297062481296,
+        "homeWinProbability": 25.48493612139827,
+        "projectedWinner": "James Madison",
+        "projectionDigest": "50147bbb9df5dbcabf7857833e94a663d537996bceaf0da92379c547913d8875"
+      },
+      "personnelRefresh": {
+        "status": "MATERIAL_QB_USAGE_UNRESOLVED_NO_QUANTITATIVE_ADJUSTMENT",
+        "officialObservedAt": "2026-10-21T14:40:00Z",
+        "summary": "App State's official Oct. 21 game-day preview says QB Malachi Singleton is listed questionable on the initial Sun Belt availability report. He was a game-time decision the prior week, started and went 12-of-14 for 151 yards in the first half, while Henry Hasselbeck played the entire second half and rushed for 125 yards. James Madison's established Camden Coleman/JC Evans two-QB usage remains intact. No official source captured here confirms Singleton out or announces a new starter.",
+        "sources": [
+          "https://appstatesports.com/news/2026/10/21/football-game-day-preview-app-state-hosts-unbeaten-jmu-on-thursday-night.aspx",
+          "https://jmusports.com/news/2026/10/20/football-dukes-brace-for-thursday-night-trip-to-app-state"
+        ],
+        "canonicalInfluence": false
+      },
+      "weatherRefresh": {
+        "status": "LOW_IMPACT",
+        "source": "National Weather Service Boone point forecast",
+        "sourceLastUpdate": "2026-10-21T13:30:00-04:00",
+        "forecast": "Thursday sunny near 61 F with north wind 6-9 mph; Thursday night clear near 36 F with light northwest wind.",
+        "canonicalInfluence": false
+      },
+      "marketRefresh": {
+        "status": "CONTEXT_NOT_PUBLICATION_LOCK",
+        "provider": "The Odds API",
+        "snapshotAt": "2026-10-21T21:05:32.227Z",
+        "fanduel": {"awaySpread": -10.5, "total": 56.5, "awayMoneyline": -430},
+        "draftkings": {"awaySpread": -10.5, "total": 56.5, "awayMoneyline": -425},
+        "spreadDifferenceVsFoundationPoints": 0.05606565982334064,
+        "totalDifferenceVsFoundationPoints": 2.957702937518704,
+        "canonicalInfluence": false
+      },
+      "benchmarkContext": {
+        "sagarinImpliedAwayFavoritePoints": 11.309999999999992,
+        "note": "Foundation, current market and Sagarin are tightly aligned on the spread. Market total remains about three points above the frozen foundation.",
+        "canonicalInfluence": false
+      },
+      "decision": "PRESERVE_FROZEN_PROJECTION",
+      "finalWindowPriority": "HIGH_QB_STATUS_RECHECK"
+    },
+    {
+      "gameId": "2026-10-22-LIBERTY-KENNESAWSTATE",
+      "kickoff": "2026-10-22T23:00:00Z",
+      "frozenProjection": {
+        "awayTeam": "Liberty",
+        "homeTeam": "Kennesaw State",
+        "projectedAwayPoints": 27.88338836095161,
+        "projectedHomePoints": 17.082584952508963,
+        "projectedMarginHome": -10.800803408442647,
+        "projectedSpreadHome": 10.800803408442647,
+        "projectedTotal": 44.96597331346057,
+        "homeWinProbability": 24.76715217474573,
+        "projectedWinner": "Liberty",
+        "projectionDigest": "f2dce35bbd39b50c1457eb063ae30cbbba26a98d6b38f7de39a2dcbc470977a7"
+      },
+      "personnelRefresh": {
+        "status": "OFFICIAL_QB_BASELINE_STABLE",
+        "officialObservedAt": "2026-10-21",
+        "summary": "Liberty's Oct. 21 game-day material does not announce a quarterback change from Deshawn Purdie, with Ethan Vasko continuing as a package option. Kennesaw State's official preview continues to frame Rickie Collins as the offensive leader and does not announce a quarterback change.",
+        "sources": [
+          "https://libertyflames.com/news/2026/10/21/football-game-day-kennesaw-state",
+          "https://ksuowls.com/news/2026/10/19/football-owls-return-home-to-host-longtime-foe-liberty-on-thursday.aspx"
+        ],
+        "canonicalInfluence": false
+      },
+      "weatherRefresh": {
+        "status": "LOW_IMPACT",
+        "source": "National Weather Service Kennesaw point forecast",
+        "sourceLastUpdate": "2026-10-21T12:16:00-04:00",
+        "forecast": "Thursday sunny near 74 F with north wind around 5 mph; Thursday night clear near 46 F, with northwest wind 5-10 mph and gusts up to 15 mph before becoming light.",
+        "canonicalInfluence": false
+      },
+      "marketRefresh": {
+        "status": "CONTEXT_NOT_PUBLICATION_LOCK",
+        "provider": "The Odds API",
+        "snapshotAt": "2026-10-21T21:05:32.227Z",
+        "fanduel": {"awaySpread": -10.5, "total": 50.5, "awayMoneyline": -385},
+        "draftkings": {"awaySpread": -10.0, "total": 50.5, "awayMoneyline": -395},
+        "marketSpreadRangeAway": [-10.5, -10.0],
+        "foundationAwayFavoritePoints": 10.800803408442647,
+        "totalDifferenceVsFoundationPoints": 5.53402668653943,
+        "canonicalInfluence": false
+      },
+      "decision": "PRESERVE_FROZEN_PROJECTION",
+      "finalWindowPriority": "STANDARD_PERSONNEL_WEATHER_MARKET_RECHECK"
+    },
+    {
+      "gameId": "2026-10-22-EASTCAROLINA-MEMPHIS",
+      "kickoff": "2026-10-22T23:30:00Z",
+      "frozenProjection": {
+        "awayTeam": "East Carolina",
+        "homeTeam": "Memphis",
+        "projectedAwayPoints": 18.487572445077312,
+        "projectedHomePoints": 34.76879531305596,
+        "projectedMarginHome": 16.28122286797865,
+        "projectedSpreadHome": -16.28122286797865,
+        "projectedTotal": 53.25636775813327,
+        "homeWinProbability": 84.79790917211139,
+        "projectedWinner": "Memphis",
+        "projectionDigest": "4e630ce63c2afc4ea179d3455e85efc5280b3838e8bfd6ac5feab7e23ff66409"
+      },
+      "personnelRefresh": {
+        "status": "OFFICIAL_QB_BASELINE_STABLE_NO_NEW_CHANGE_FOUND",
+        "summary": "Existing official baseline remains East Carolina QB Emory Williams and Memphis QB Marcus Stokes. Memphis has posted current East Carolina game notes; no official current source captured in this refresh announces a quarterback change for either team.",
+        "sources": [
+          "https://ecupirates.com/sports/football",
+          "https://gotigersgo.com/sports/2015/9/2/FB_0902151939",
+          "https://gotigersgo.com/news/2026/10/15/football-espn-sportscenter-on-campus-coming-to-tiger-lane-ahead-of-memphis-east-carolina"
+        ],
+        "canonicalInfluence": false
+      },
+      "weatherRefresh": {
+        "status": "LOW_IMPACT",
+        "source": "National Weather Service Memphis point forecast",
+        "sourceLastUpdate": "2026-10-21T06:15:00-05:00",
+        "forecast": "Thursday sunny near 78 F; Thursday night clear near 52 F with east-northeast wind around 5 mph.",
+        "canonicalInfluence": false
+      },
+      "marketRefresh": {
+        "status": "MATERIAL_MODEL_MARKET_DISAGREEMENT_CONTEXT_ONLY",
+        "observedOn": "2026-10-21",
+        "draftkings": {"homeSpread": -10.0, "total": 54.5, "homeMoneyline": -395},
+        "fanduelPublicCurrent": {"homeSpread": -10.5, "total": 54.5, "homeMoneyline": -365},
+        "foundationHomeFavoritePoints": 16.28122286797865,
+        "spreadDifferenceVsMarketPointsApprox": 5.8,
+        "totalDifferenceVsMarketPointsApprox": -1.24,
+        "note": "The frozen model is materially more pro-Memphis than the market. Market blending is not validated/promoted, so this disagreement raises final-window review priority but does not rewrite the projection.",
+        "canonicalInfluence": false
+      },
+      "externalBenchmark": {
+        "havocModel": {"homeSpread": -8.3, "total": 50.8, "homeWinProbability": 69},
+        "role": "BENCHMARK_ONLY",
+        "canonicalInfluence": false
+      },
+      "decision": "PRESERVE_FROZEN_PROJECTION",
+      "finalWindowPriority": "HIGHEST_THURSDAY_DISAGREEMENT_REVIEW"
+    }
+  ],
+  "nextRollingActions": [
+    "Recheck official availability/QB news Thursday morning and again inside the final pregame window.",
+    "Refresh stadium-level weather Thursday afternoon and final window.",
+    "Capture fresh FanDuel and DraftKings publication-time observations through the immutable final-window lock workflow.",
+    "Do not alter any frozen projection from Wednesday or Tuesday results.",
+    "After Thursday is staged, move rolling priority to Friday games: Duke-Virginia, UMass-UConn, Army-Tulsa, Air Force-Wyoming, NC State-Stanford.",
+    "Grade Week 8 only after the full week is complete."
+  ]
+}
