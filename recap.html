@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="CB Model Projections audited college football recap and validation status.">
+  <title>Recap & Validation · CB Model Projections</title>
+  <style>
+    :root{color-scheme:dark;background:#08111d;color:#eef5f8;font:16px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--panel:#111e2b;--line:#2c4051;--muted:#9fb2c1;--accent:#7fd7cf;--warn:#ffc978;--good:#8ee9c0}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 14% 0,#103049 0,transparent 38%),#08111d}a{color:var(--accent)}main{max-width:1120px;margin:auto;padding:30px 22px 56px}.top{display:flex;justify-content:space-between;gap:18px;align-items:center;margin-bottom:34px}.top nav{display:flex;gap:16px;flex-wrap:wrap}.top a{text-decoration:none;font-weight:750}.eyebrow{color:var(--accent);letter-spacing:.13em;text-transform:uppercase;font-size:.76rem;font-weight:850;margin:0 0 10px}h1{font-size:clamp(2.5rem,7vw,5rem);line-height:.94;letter-spacing:-.055em;margin:0 0 18px;max-width:900px}h1 span{color:var(--accent)}.lede{max-width:850px;color:#c4d2dc;font-size:1.08rem}.notice{margin:27px 0;border:1px solid #725a37;border-left:4px solid var(--warn);background:#211d18;padding:18px 20px;border-radius:12px}.notice strong{color:#ffe3b5}.notice p{margin:5px 0 0;color:#c9d3da}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:25px 0 35px}.card{background:rgba(17,30,43,.94);border:1px solid var(--line);border-radius:13px;padding:18px}.card span{display:block;color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;font-weight:800}.card strong{display:block;font-size:1.7rem;margin-top:5px}.card small{color:var(--muted)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;border-bottom:1px solid var(--line);padding-bottom:12px;margin:34px 0 16px}.section-head h2{margin:0;font-size:1.55rem}.section-head p{margin:0;color:var(--muted);max-width:620px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:19px}.panel h3{margin:0 0 8px}.panel p{margin:7px 0;color:#c6d3dc}.list{margin:8px 0 0;padding-left:20px}.list li{margin:8px 0;color:#c7d4dd}.status{display:inline-block;border:1px solid #496e74;border-radius:999px;padding:3px 9px;color:var(--accent);font-size:.72rem;font-weight:800}.hold{border-color:#7b623c;color:var(--warn)}.good{border-color:#47765f;color:var(--good)}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:13px;background:#0e1925}table{width:100%;border-collapse:collapse;min-width:650px}th,td{padding:12px 14px;text-align:left;border-bottom:1px solid #223443}th{background:#142433;color:#bcd0dd;font-size:.74rem;text-transform:uppercase;letter-spacing:.07em}td.num{text-align:right;font-variant-numeric:tabular-nums}.muted{color:var(--muted)}.error{color:var(--warn)}footer{border-top:1px solid var(--line);margin-top:38px;padding-top:20px;color:var(--muted)}@media(max-width:760px){.cards{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.section-head{align-items:flex-start;flex-direction:column}}@media(max-width:520px){main{padding:22px 15px 44px}.top{align-items:flex-start;flex-direction:column}}
+  </style>
+</head>
+<body><main>
+  <div class="top"><a href="index.html">← CB Model Projections</a><nav><a href="week-8.html">Week 8 status</a><a href="ratings.html">Ratings</a></nav></div>
+  <p class="eyebrow">FBS · AUDIT VIEW</p>
+  <h1>Grade what happened.<br><span>Preserve what was known.</span></h1>
+  <p class="lede">This recap is generated from the saved record summary and current model registry. Completed performance and the active Week 8 research state are shown separately so a postgame result cannot rewrite a pregame projection.</p>
+
+  <div class="notice"><strong>Week 8 is not a completed canonical recap.</strong><p>The canonical gate is HOLD. Week 8 foundation outputs are frozen prospective research evidence; they remain separate until their games are final and the research grader can evaluate them honestly.</p></div>
+
+  <section class="cards" aria-label="Audited performance summary">
+    <article class="card"><span>ATS</span><strong id="ats">—</strong><small id="atsPct">audited record</small></article>
+    <article class="card"><span>Totals</span><strong id="totals">—</strong><small id="totalsPct">audited record</small></article>
+    <article class="card"><span>Straight up</span><strong id="su">—</strong><small id="suPct">audited record</small></article>
+  </section>
+
+  <section aria-labelledby="weeklyTitle">
+    <div class="section-head"><div><p class="eyebrow">COMPLETED EVIDENCE</p><h2 id="weeklyTitle">Weekly grading</h2></div><p>Projection positions are graded against the locked publication-time market numbers. This is a research record, not a wager ledger.</p></div>
+    <div class="table-wrap"><table><thead><tr><th>Week</th><th>Status</th><th>ATS</th><th>Totals</th><th>SU</th><th>Review</th></tr></thead><tbody id="weekBody"></tbody></table></div>
+  </section>
+
+  <section aria-labelledby="currentTitle">
+    <div class="section-head"><div><p class="eyebrow">CURRENT STATE</p><h2 id="currentTitle">Week 8 validation recap</h2></div><span class="status hold" id="gate">Loading…</span></div>
+    <div class="grid">
+      <article class="panel"><h3>Canonical layer</h3><p id="canonicalText">Loading registry…</p><ul class="list" id="canonicalReasons"></ul></article>
+      <article class="panel"><h3>Lead research challenger</h3><p id="challengerText">Loading registry…</p><p><span class="status" id="challengerTier">Research only</span></p></article>
+      <article class="panel"><h3>Promotion discipline</h3><p>Historical and holdout performance can identify a candidate, but they do not silently change production. Prospective frozen-week evidence and explicit approval remain required.</p></article>
+      <article class="panel"><h3>What does not change the model</h3><p>Sportsbooks, Sagarin, SP+, injuries, weather, trends and other external context remain benchmark/context/challenger inputs unless separately validated and promoted.</p></article>
+    </div>
+  </section>
+
+  <footer><p id="meta">Loading audit timestamps…</p><p><a href="cfb/record-summary.json">Open record summary</a> · <a href="cfb/projections/week-08-status.json">Open Week 8 gate</a> · <a href="data/model-registry.json">Open model registry</a></p></footer>
+<script>
+const rec=x=>`${x.wins}-${x.losses}${x.pushes?`-${x.pushes}`:''}`;
+(async()=>{
+  try{
+    const [summary,gate,registry]=await Promise.all([
+      fetch('cfb/record-summary.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('record summary unavailable');return r.json()}),
+      fetch('cfb/projections/week-08-status.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('Week 8 status unavailable');return r.json()}),
+      fetch('data/model-registry.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('model registry unavailable');return r.json()})
+    ]);
+    const o=summary.overall;
+    document.getElementById('ats').textContent=rec(o.ats);document.getElementById('atsPct').textContent=`${o.ats.winPct}% win rate · ${o.ats.graded} graded`;
+    document.getElementById('totals').textContent=rec(o.totals);document.getElementById('totalsPct').textContent=`${o.totals.winPct}% win rate · ${o.totals.graded} graded`;
+    document.getElementById('su').textContent=rec(o.straightUp);document.getElementById('suPct').textContent=`${o.straightUp.winPct}% win rate · ${o.straightUp.graded} graded`;
+    document.getElementById('weekBody').innerHTML=(summary.weeks||[]).map(w=>`<tr><td>Week ${w.week}</td><td><span class="status good">${w.status}</span></td><td>${rec(w.ats)} (${w.ats.winPct}%)</td><td>${rec(w.totals)} (${w.totals.winPct}%)</td><td>${rec(w.straightUp)} (${w.straightUp.winPct}%)</td><td>${w.review||0}</td></tr>`).join('');
+    document.getElementById('gate').textContent=gate.status;
+    document.getElementById('canonicalText').textContent=`Week ${gate.week} canonical projection available: ${gate.canonicalProjectionAvailable?'yes':'no'}. Publication authorized: ${gate.canonicalPublicationAuthorized?'yes':'no'}. Exact 0.9J generator reproducibly available: ${registry.cfb.canonical.reproducibleGeneratorAvailable?'yes':'no'}.`;
+    document.getElementById('canonicalReasons').innerHTML=(gate.reasons||[]).map(x=>`<li>${x}</li>`).join('');
+    const ch=registry.cfb.leadResearchChallenger;
+    document.getElementById('challengerText').textContent=`${ch.modelId} is the active lead research candidate. Canonical influence: ${ch.canonicalInfluence?'yes':'no'}; promotion authorized: ${ch.promotionAuthorized?'yes':'no'}.`;
+    document.getElementById('challengerTier').textContent=ch.tier.replaceAll('_',' ');
+    document.getElementById('meta').textContent=`Record summary generated ${summary.generatedAt}; Week 8 gate recorded ${gate.recordedAt}. Missing pregame information is never reconstructed after results.`;
+  }catch(err){document.getElementById('meta').innerHTML=`<span class="error">Unable to load saved audit evidence: ${err.message}</span>`;}
+})();
+</script>
+</main></body></html>
