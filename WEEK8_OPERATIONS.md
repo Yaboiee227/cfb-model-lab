@@ -262,3 +262,14 @@ production state. Do not rebuild or overwrite the current slate from that snapsh
 - Integrity: frozen foundation, all six Tuesday book locks, canonical status, Tuesday/Thursday effective states and original captures unchanged. Canonical remains HOLD. The operations check proves software/data integrity, not predictive validation.
 - Next checkpoint: Wednesday 7:00 PM ET final personnel/weather/market review; inspect actual FanDuel/DraftKings lock output in the 7:30–8:00 PM ET window. Never backdate or duplicate locks. Do not refresh pregame fields after 8:00 PM ET kickoff.
 - Follow-up engineering risk: investigate the earlier CBS-labeled final-score ingestion and team-alias mismatch before relying on unattended grades. This pass normalized score names only after exact ESPN event-ID matching, retaining raw source names and payload.
+
+
+## Wednesday final-window lock — October 21, 2026, 7:39 PM ET
+
+- New Mexico State at Sam Houston entered the configured T−30 window. A current The Odds API snapshot generated at 7:32:32 PM ET was locked at 7:39:17 PM ET against the unchanged frozen projection digest `76573e65de4174437af8f8b604ec6730d1b183804089c333a6186c8b182c26da`.
+- FanDuel lock: NM State −3.5 (−104), Sam Houston +3.5 (−118), total 46.5 (O −118/U −104), moneyline −160/+132. DraftKings lock: NM State −3 (−115), Sam Houston +3 (−105), total 46.5 (O −118/U −102), moneyline −155/+130.
+- Component freshness is retained: spread/total refreshed at 7:32 PM ET; the feed's last independent moneyline refresh was 6:37 PM ET. No quote was backdated.
+- Material market move since the 7:14 PM ET context check: FanDuel strengthened from NM State −2.5 to −3.5 and DraftKings from −2.5 to −3. The benchmark movement does not alter the research foundation or canonical HOLD.
+- Final NWS hourly retrieval at 7:39 PM ET: 74 F, clear, 0% precipitation and north wind 5 mph for the 7:00–8:00 PM CDT kickoff hour; 69 F, clear and north wind 5 mph for the next hour. No weather adjustment was promoted.
+- Sam Houston's Locke baseline remains supported. No official NM State starter announcement was found; market/third-party evidence pointing to Adam Damante remains noncanonical. RefMetrics still had no crew assignment posted. Official final-window SP+ and Sagarin snapshots remain unverified.
+- Evidence packet: `cfb/pregame-refresh/week-08-wednesday-publication-lock-2026-10-21-1939et.json`. The existing market-lock registry now contains two immutable Wednesday book observations. No frozen projection, Prediction Log value or canonical record changed.
