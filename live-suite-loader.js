@@ -18,13 +18,13 @@
   function syncCfbWeek8Status(){
     if(league()!=='cfb')return;
     const banner=document.querySelector('main > .section-shell > .hold-note');
-    if(banner) banner.innerHTML='<strong>Week 8 · Active through Thursday · Canonical HOLD</strong> — 3 games tonight, 1 Wednesday and 3 Thursday are in the active pregame scope. Friday/Saturday are paused. <a href="week-8.html">Open live Week 8 readiness →</a>';
+    if(banner) banner.innerHTML='<strong>CFB · Week 8 active production · Canonical HOLD</strong> — Pregame research, market locks, provenance and frozen evidence are updated through the current production state without reconstructing information after results. <a href="week-8.html">Open Week 8 readiness →</a>';
     setText('.hero-kicker-row .eyebrow','FBS MODEL • WEEK 8 COMMAND CENTER');
     setText('.hero-kicker-row .research-chip','Week 8 · Research shadow');
     const projectionTitle=document.getElementById('projectionsTitle');
     if(projectionTitle) projectionTitle.textContent='Week 8 research projection board';
     const projectionIntro=document.querySelector('#projections .section-heading p:not(.eyebrow)');
-    if(projectionIntro) projectionIntro.textContent='Seven active Tuesday-through-Thursday games are shown from the prospectively frozen Week 8 research-shadow foundation with current market comparison and readiness context. These are not authorized canonical releases.';
+    if(projectionIntro) projectionIntro.textContent='The active Week 8 board shows prospectively preserved research projections with current market comparison, data readiness and pregame context. Canonical publication remains gated, and completed games never rewrite the frozen evidence.';
   }
 
   function legacyResultCounts(key){
@@ -149,6 +149,8 @@
   }
 
   async function boot(){
+    loadCss('site-shell.css');
+    await loadScript('site-shell.js');
     installLanguageSync();
     loadCss('record-tracker.css');
     await loadScript('record-tracker.js');
