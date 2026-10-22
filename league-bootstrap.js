@@ -30,15 +30,24 @@
     };
   }
 
-  // Reuse the existing static application while routing only the four site-data files.
+  // Reuse the existing static application while keeping the two site-data stacks isolated.
+  // Add a freshness token to the four primary site-data files so mobile browsers/CDN edges
+  // cannot keep serving an older slate after a Pages deployment.
   const nativeFetch = window.fetch.bind(window);
-  const NFL_FILES = new Set(['config.json', 'projections.csv', 'results.csv', 'research.json']);
+  const SITE_DATA_FILES = new Set(['config.json', 'projections.csv', 'results.csv', 'research.json']);
+  const fresh = target => `${target}${target.includes('?') ? '&' : '?'}cb=${Date.now()}`;
   window.fetch = function(input, init) {
-    if (window.CB_ACTIVE_LEAGUE !== 'nfl' || typeof input !== 'string') return nativeFetch(input, init);
+    if (typeof input !== 'string') return nativeFetch(input, init);
     const clean = input.replace(/^\.\//, '');
-    if (clean.startsWith('data/')) {
-      const file = clean.slice('data/'.length);
-      if (NFL_FILES.has(file)) return nativeFetch(`nfl_data/site/${file}`, init);
+    const pathOnly = clean.split(/[?#]/, 1)[0];
+    let target = input;
+    if (pathOnly.startsWith('data/')) {
+      const file = pathOnly.slice('data/'.length);
+      if (SITE_DATA_FILES.has(file)) {
+        target = window.CB_ACTIVE_LEAGUE === 'nfl' ? `nfl_data/site/${file}` : `data/${file}`;
+        target = fresh(target);
+        return nativeFetch(target, { ...(init || {}), cache: 'no-store' });
+      }
     }
     return nativeFetch(input, init);
   };
