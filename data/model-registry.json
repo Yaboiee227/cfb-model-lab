@@ -33,7 +33,7 @@
   },
   "nfl": {
     "season": 2026,
-    "publishedMainSiteSnapshotWeek": 6,
+    "publishedMainSiteSnapshotWeek": 7,
     "activeProspectiveWeek": 7,
     "canonical": {
       "modelId": "NFL Canonical v1",
@@ -58,8 +58,8 @@
     },
     "siteSnapshot": {
       "config": "nfl_data/site/config.json",
-      "status": "WEEK6_GRADED_MAIN_SNAPSHOT",
-      "note": "The main-site NFL data remains a Week 6 graded snapshot. Week 7 frozen prospective evidence is intentionally referenced by immutable branch/commit pointer rather than silently copied or merged."
+      "status": "WEEK7_FROZEN_RESEARCH_PREVIEW_PUBLISHED",
+      "note": "The main-site NFL projection feed displays the preserved Week 7 frozen research preview while completed Week 6 grades remain in results.csv. Website research display does not authorize recommendations, alter the frozen canonical projection, or promote a challenger."
     }
   }
 }
