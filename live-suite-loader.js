@@ -1,6 +1,6 @@
 (() => {
   const league = () => String(window.CB_ACTIVE_LEAGUE || 'cfb').toLowerCase() === 'nfl' ? 'nfl' : 'cfb';
-  const ASSET_VERSION = '20261022-iphone-mobile-fix-1';
+  const ASSET_VERSION = '20261022-shared-responsive-v2';
   const versioned = src => `${src}${src.includes('?') ? '&' : '?'}v=${encodeURIComponent(ASSET_VERSION)}`;
 
   const loadCss = href => {
@@ -154,6 +154,7 @@
     loadCss('slate-navigation.css');
     await loadScript('slate-navigation.js');
     loadCss('site-shell.css');
+    loadCss('site-shell-hotfix.css');
     await loadScript('site-shell.js');
     installLanguageSync();
     loadCss('record-tracker.css');
