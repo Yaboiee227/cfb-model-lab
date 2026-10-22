@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "role": "THURSDAY_FINAL_WINDOW_SOURCE_OVERLAY",
+  "canonicalInfluence": false,
+  "canonicalPromotionAuthorized": false,
+  "createdAt": "2026-10-22T23:03:00Z",
+  "evidenceCutoffPolicy": "Only evidence observed before each game's kickoff is recorded. No post-kickoff pregame backfills.",
+  "activeScope": "cfb/pregame/week-08-active-through-thursday.json",
+  "frozenFoundation": "cfb/research-locks/week-08-foundation-full.json",
+  "marketLock": "cfb/research-market-locks/week-08-foundation-market.json",
+  "globalChecks": {
+    "refMetrics": {
+      "checkedAt": "2026-10-22T22:48:50Z",
+      "status": "NO_UPCOMING_NCAA_FOOTBALL_OFFICIALS_POSTED",
+      "source": "https://www.refmetrics.com/",
+      "canonicalInfluence": false
+    },
+    "spPlus": {
+      "checkedAt": "2026-10-22T22:48:50Z",
+      "status": "OFFICIAL_PAGE_REACHABLE_EXACT_CURRENT_NUMERIC_CAPTURE_NOT_DEFENSIBLY_STORED",
+      "source": "https://www.espn.com/college-football/story/_/id/49868647/2026-college-football-sp+-rankings-all-138-fbs-teams",
+      "canonicalInfluence": false,
+      "note": "Official-only rule preserved; no mirror or inferred values substituted."
+    },
+    "sagarin": {
+      "status": "CURRENT_FOR_WEEK_8_OPEN",
+      "ratingsThrough": "2026-10-17",
+      "source": "cfb/benchmarks/week-08-sagarin-full.json",
+      "canonicalInfluence": false
+    }
+  },
+  "games": [
+    {
+      "gameId": "2026-10-22-JAMESMADISON-APPSTATE",
+      "kickoff": "2026-10-22T23:00:00Z",
+      "evidenceCutoffAt": "2026-10-22T22:48:50Z",
+      "frozenProjection": {
+        "favorite": "James Madison",
+        "margin": 10.44393434017666,
+        "total": 53.542297062481296,
+        "digest": "50147bbb9df5dbcabf7857833e94a663d537996bceaf0da92379c547913d8875",
+        "changed": false
+      },
+      "personnel": {
+        "status": "SINGLETON_AVAILABLE_ROTATION_UNRESOLVED",
+        "detail": "App State QB Malachi Singleton was listed available after previously being questionable with an ankle issue. Availability does not establish the starting snap split; Henry Hasselbeck's second-half usage from the prior game remains relevant context. James Madison's established Camden Coleman/JC Evans usage had no official change.",
+        "sources": [
+          {
+            "url": "https://sunbeltsports.org/news/2025/8/11/football-availability-report-new.aspx",
+            "tier": "official_conference_dynamic_availability"
+          },
+          {
+            "url": "https://www.foxsports.com/college-football/malachi-singleton-player",
+            "tier": "third_party_rendering_of_official_team_report"
+          }
+        ],
+        "canonicalInfluence": false
+      },
+      "weather": {
+        "status": "FINAL_WINDOW_RECHECK_COMPLETE_LOW_IMPACT",
+        "detail": "NWS Boone forecast was clear and dry with no precipitation signal and only modest northerly wind; no validated weather adjustment.",
+        "source": "https://forecast.weather.gov/MapClick.php?FcstType=graphical&lat=36.2157&lg=english&lon=-81.6828&unit=1",
+        "sourceLastUpdate": "2026-10-22T15:00:00-04:00",
+        "checkedAt": "2026-10-22T22:48:50Z",
+        "canonicalInfluence": false
+      },
+      "marketLock": {
+        "status": "LOCKED",
+        "books": {
+          "fanduel": {
+            "observedAt": "2026-10-22T22:37:10Z",
+            "lockedAt": "2026-10-22T22:37:28.022586Z",
+            "awaySpread": -12.5,
+            "awaySpreadPrice": -106,
+            "total": 56.5,
+            "overPrice": -115,
+            "underPrice": -105,
+            "awayMoneyline": -465,
+            "homeMoneyline": 350
+          },
+          "draftkings": {
+            "observedAt": "2026-10-22T22:37:10Z",
+            "lockedAt": "2026-10-22T22:37:28.022586Z",
+            "awaySpread": -12.5,
+            "awaySpreadPrice": -112,
+            "total": 56.5,
+            "overPrice": -112,
+            "underPrice": -108,
+            "awayMoneyline": -485,
+            "homeMoneyline": 370
+          }
+        },
+        "canonicalInfluence": false
+      }
+    },
+    {
+      "gameId": "2026-10-22-LIBERTY-KENNESAWSTATE",
+      "kickoff": "2026-10-22T23:00:00Z",
+      "evidenceCutoffAt": "2026-10-22T22:48:50Z",
+      "frozenProjection": {
+        "favorite": "Liberty",
+        "margin": 10.801898635273584,
+        "total": null,
+        "digest": "f2dce35bbd39b50c1457eb063ae30cbbba26a98d6b38f7de39a2dcbc470977a7",
+        "changed": false
+      },
+      "personnel": {
+        "status": "OFFICIAL_BASELINE_STABLE",
+        "detail": "No late official signal displaced Liberty QB Deshawn Purdie or Kennesaw State QB Rickie Collins from the captured baseline.",
+        "sources": [
+          {
+            "url": "https://www.libertyflames.com/",
+            "tier": "official_team"
+          },
+          {
+            "url": "https://ksuowls.com/",
+            "tier": "official_team"
+          }
+        ],
+        "canonicalInfluence": false
+      },
+      "weather": {
+        "status": "FINAL_WINDOW_RECHECK_COMPLETE_LOW_IMPACT",
+        "detail": "NWS north Georgia guidance remained dry/mostly clear with no material wind or precipitation issue for Kennesaw.",
+        "source": "https://www.weather.gov/ffc/",
+        "checkedAt": "2026-10-22T22:48:50Z",
+        "canonicalInfluence": false
+      },
+      "marketLock": {
+        "status": "LOCKED",
+        "books": {
+          "fanduel": {
+            "observedAt": "2026-10-22T22:37:10Z",
+            "lockedAt": "2026-10-22T22:37:28.022586Z",
+            "awaySpread": -9.5,
+            "awaySpreadPrice": -110,
+            "total": 50.5,
+            "overPrice": -110,
+            "underPrice": -110,
+            "awayMoneyline": -360,
+            "homeMoneyline": 280
+          },
+          "draftkings": {
+            "observedAt": "2026-10-22T22:37:10Z",
+            "lockedAt": "2026-10-22T22:37:28.022586Z",
+            "awaySpread": -8.5,
+            "awaySpreadPrice": -108,
+            "total": 50.5,
+            "overPrice": -108,
+            "underPrice": -112,
+            "awayMoneyline": -380,
+            "homeMoneyline": 300
+          }
+        },
+        "canonicalInfluence": false
+      }
+    },
+    {
+      "gameId": "2026-10-22-EASTCAROLINA-MEMPHIS",
+      "kickoff": "2026-10-22T23:30:00Z",
+      "evidenceCutoffAt": "2026-10-22T23:01:59.279Z",
+      "frozenProjection": {
+        "favorite": "Memphis",
+        "margin": 16.284044997328255,
+        "total": null,
+        "digest": "4e630ce63c2afc4ea179d3455e85efc5280b3838e8bfd6ac5feab7e23ff66409",
+        "changed": false
+      },
+      "personnel": {
+        "status": "OFFICIAL_BASELINE_STABLE",
+        "detail": "ECU's latest official baseline remained Emory Williams; Memphis' latest official baseline remained Marcus Stokes. No late official replacement signal was found before the evidence cutoff.",
+        "sources": [
+          {
+            "url": "https://ecupirates.com/news/2026/10/15/football-ecu-falls-at-uab-in-overtime-30-17",
+            "tier": "official_team"
+          },
+          {
+            "url": "https://gotigersgo.com/news/2026/10/21/football-memphis-to-host-east-carolina-thursday-night",
+            "tier": "official_team"
+          }
+        ],
+        "canonicalInfluence": false
+      },
+      "weather": {
+        "status": "FINAL_WINDOW_RECHECK_COMPLETE_LOW_IMPACT",
+        "detail": "NWS Memphis guidance remained clear and dry with light east-northeast wind; no validated weather adjustment.",
+        "source": "https://forecast.weather.gov/MapClick.php?FcstType=graphical&lat=35.1&lg=english&lon=-90&unit=0",
+        "sourceLastUpdate": "2026-10-22T16:11:00-05:00",
+        "checkedAt": "2026-10-22T22:48:50Z",
+        "canonicalInfluence": false
+      },
+      "marketLock": {
+        "status": "LOCKED",
+        "lockEligibility": {
+          "minutesToKickoff": 28.012,
+          "observationAgeMinutes": 24.821,
+          "lockWindowMinutes": 30,
+          "maxObservationAgeMinutes": 35
+        },
+        "books": {
+          "fanduel": {
+            "observedAt": "2026-10-22T22:37:10Z",
+            "lockedAt": "2026-10-22T23:01:59.279Z",
+            "homeSpread": -10.5,
+            "homeSpreadPrice": -110,
+            "total": 55.5,
+            "overPrice": -105,
+            "underPrice": -115,
+            "homeMoneyline": -420,
+            "awayMoneyline": 320
+          },
+          "draftkings": {
+            "observedAt": "2026-10-22T22:37:10Z",
+            "lockedAt": "2026-10-22T23:01:59.279Z",
+            "homeSpread": -10.5,
+            "homeSpreadPrice": -105,
+            "total": 55.5,
+            "overPrice": -105,
+            "underPrice": -115,
+            "homeMoneyline": -425,
+            "awayMoneyline": 330
+          }
+        },
+        "canonicalInfluence": false
+      }
+    }
+  ],
+  "unresolvedGaps": [
+    "App State's actual Singleton/Hasselbeck snap allocation was not officially confirmed before kickoff.",
+    "RefMetrics had no upcoming NCAA Football crew assignments posted at the final check.",
+    "Exact current official SP+ per-team numeric values were not defensibly captured; no substitute was used."
+  ],
+  "policyResult": {
+    "frozenFoundationsChanged": 0,
+    "canonicalWeek8Status": "HOLD",
+    "shadowPromotion": false,
+    "fridayOrLaterGamesProcessed": false
+  }
+}
