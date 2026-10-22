@@ -1,13 +1,15 @@
 (() => {
   const league = () => String(window.CB_ACTIVE_LEAGUE || 'cfb').toLowerCase() === 'nfl' ? 'nfl' : 'cfb';
+  const ASSET_VERSION = '20261022-slate-integrity-1';
+  const versioned = src => `${src}${src.includes('?') ? '&' : '?'}v=${encodeURIComponent(ASSET_VERSION)}`;
 
   const loadCss = href => {
-    if (document.querySelector(`link[href="${href}"]`)) return;
-    const link=document.createElement('link');link.rel='stylesheet';link.href=href;link.dataset.cbLiveSuite='true';document.head.appendChild(link);
+    if (document.querySelector(`link[data-cb-live-asset="${href}"]`)) return;
+    const link=document.createElement('link');link.rel='stylesheet';link.href=versioned(href);link.dataset.cbLiveSuite='true';link.dataset.cbLiveAsset=href;document.head.appendChild(link);
   };
   const loadScript = src => new Promise((resolve,reject)=>{
-    if (document.querySelector(`script[src="${src}"]`)) return resolve();
-    const script=document.createElement('script');script.src=src;script.async=false;script.dataset.cbLiveSuite='true';script.onload=resolve;script.onerror=()=>reject(new Error(`Could not load ${src}`));document.body.appendChild(script);
+    if (document.querySelector(`script[data-cb-live-asset="${src}"]`)) return resolve();
+    const script=document.createElement('script');script.src=versioned(src);script.async=false;script.dataset.cbLiveSuite='true';script.dataset.cbLiveAsset=src;script.onload=resolve;script.onerror=()=>reject(new Error(`Could not load ${src}`));document.body.appendChild(script);
   });
 
   function setText(selector, value) {
@@ -149,6 +151,8 @@
   }
 
   async function boot(){
+    loadCss('slate-navigation.css');
+    await loadScript('slate-navigation.js');
     loadCss('site-shell.css');
     await loadScript('site-shell.js');
     installLanguageSync();
