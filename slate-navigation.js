@@ -49,7 +49,7 @@
 
   function clearToFullSlate({ keepWeek = true } = {}) {
     const s = state();
-    if (!s) return;
+    if (!s) return false;
     const week = keepWeek ? (s.config?.currentWeek ?? '') : '';
     if (priorityActive()) $('priorityOnlyToggle')?.click();
     if ($('teamSearch')) $('teamSearch').value = '';
@@ -59,6 +59,27 @@
     if ($('sortFilter')) $('sortFilter').value = 'kickoff';
     if (typeof filterProjections === 'function') filterProjections();
     sync();
+    return true;
+  }
+
+  function openCurrentWeekProjections({ updateHistory = true } = {}) {
+    if (!clearToFullSlate({ keepWeek: true })) return false;
+    if (updateHistory && window.location.hash !== '#projections') {
+      history.pushState({ cbSection: 'projections' }, '', '#projections');
+    }
+    const target = $('projections');
+    window.setTimeout(() => target?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 40);
+    return true;
+  }
+
+  function isSamePageProjectionLink(anchor) {
+    if (!anchor) return false;
+    try {
+      const url = new URL(anchor.href, window.location.href);
+      return url.origin === window.location.origin && url.pathname === window.location.pathname && url.hash === '#projections';
+    } catch (_) {
+      return anchor.getAttribute('href') === '#projections';
+    }
   }
 
   function ensureToolbar() {
@@ -91,7 +112,7 @@
     const games = (s.projections || []).filter(game => !week || String(game.week) === week);
     const dates = [...new Set(games.map(game => game.date).filter(Boolean))].sort();
     const selected = dateFilter.value || '';
-    const allLabel = currentLeague() === 'cfb' && week ? `All Week ${week}` : 'All dates';
+    const allLabel = week ? `All Week ${week}` : 'All dates';
     host.innerHTML = '';
 
     const add = (value, label) => {
@@ -106,7 +127,7 @@
         dateFilter.value = value;
         if (typeof filterProjections === 'function') filterProjections();
         sync();
-        document.getElementById('projectionCards')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        $('projectionCards')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
       host.appendChild(button);
     };
@@ -173,8 +194,8 @@
     jump.id = 'mobileProjectionJump';
     jump.className = 'mobile-projection-jump';
     jump.type = 'button';
-    jump.textContent = '↓ Jump to projections';
-    jump.addEventListener('click', () => cards.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+    jump.textContent = '↓ Jump to current-week projections';
+    jump.addEventListener('click', () => openCurrentWeekProjections());
     const heading = section.querySelector('.projections-heading');
     heading?.insertAdjacentElement('afterend', jump);
   }
@@ -210,10 +231,21 @@
     });
     document.addEventListener('click', event => {
       if (event.target.closest('#priorityOnlyToggle')) window.setTimeout(schedule, 0);
+      const anchor = event.target.closest('a[href]');
+      if (!isSamePageProjectionLink(anchor)) return;
+      event.preventDefault();
+      openCurrentWeekProjections();
+      const mobileToggle = $('cbMobileNavToggle');
+      if (mobileToggle?.getAttribute('aria-expanded') === 'true') mobileToggle.click();
+    });
+    window.addEventListener('popstate', () => {
+      if (window.location.hash === '#projections') openCurrentWeekProjections({ updateHistory: false });
     });
     window.addEventListener('resize', schedule, { passive: true });
     schedule();
   }
+
+  window.CB_OPEN_CURRENT_WEEK_PROJECTIONS = openCurrentWeekProjections;
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot, { once: true });
   else boot();
