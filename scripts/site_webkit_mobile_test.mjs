@@ -69,7 +69,7 @@ if (projectionState.date || projectionState.conference || projectionState.search
 if (projectionState.navOpen === 'true') errors.push('mobile navigation remained open after Projections click');
 if (projectionState.width > projectionState.viewport + 2) errors.push(`horizontal overflow ${projectionState.width} > ${projectionState.viewport}`);
 
-await page.screenshot({ path: `${outDir}/cfb-mobile-webkit.png`, fullPage: true });
+await page.screenshot({ path: `${outDir}/cfb-mobile-webkit.png`, fullPage: false });
 const report = { base, cards, lastVisible, researchState, projectionState, failedRequests, errors };
 await fs.writeFile(`${outDir}/report.json`, JSON.stringify(report, null, 2));
 console.log(JSON.stringify(report, null, 2));
