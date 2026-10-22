@@ -49,3 +49,4 @@ jobs:
           name: responsive-site-smoke
           path: artifacts/site-smoke/
           retention-days: 7
+# Final QA trigger: rerun after responsive, live-feed, and audited-results fixes.
