@@ -1,0 +1,61 @@
+name: Publish CFB Week 8 site data
+on:
+  push:
+    paths:
+      - 'scripts/cfb_publish_week8_site.py'
+      - 'cfb/research-locks/week-08-foundation-full.json'
+      - 'data/markets-sportsbooks.json'
+      - 'data/team-aliases.json'
+      - '.github/workflows/cfb-publish-week8-site.yml'
+  workflow_dispatch:
+  workflow_run:
+    workflows: ['Refresh sportsbook markets']
+    types: [completed]
+permissions:
+  contents: write
+concurrency:
+  group: cfb-publish-week8-site
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Sync latest repository state
+        run: git pull --rebase origin main
+      - name: Generate public Week 8 research-shadow feed
+        run: python scripts/cfb_publish_week8_site.py
+      - name: Assert full slate and deferred Week 8 grading
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          rows=list(csv.DictReader(open('data/projections.csv',encoding='utf-8')))
+          cfg=json.load(open('data/config.json'))
+          assert len(rows)==56, len(rows)
+          assert {r['week'] for r in rows}=={'8'}
+          assert all('PROSPECTIVE RESEARCH SHADOW' in r['releaseStatus'] for r in rows)
+          assert all(str(r['executionVerified']).lower()=='false' for r in rows)
+          assert cfg['currentWeek']==8
+          assert cfg['spreadValidation']=='HOLD' and cfg['totalValidation']=='HOLD'
+          # The public performance ledger must remain completed-week only until Week 8 is finished.
+          result_rows=list(csv.DictReader(open('data/results.csv',encoding='utf-8')))
+          assert not any(r.get('week')=='8' for r in result_rows), 'Week 8 partial grades must not enter public results.csv'
+          print({'siteProjectionRows':len(rows),'publicWeek8Grades':0})
+          PY
+      - name: Commit changed public site data
+        run: |
+          git config user.name "cb-model-site-publisher"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/projections.csv data/config.json
+          if git diff --cached --quiet; then
+            echo 'No public site-data changes.'
+            exit 0
+          fi
+          git commit -m 'Publish full Week 8 CFB research-shadow slate to website'
+          git pull --rebase origin main
+          git push
