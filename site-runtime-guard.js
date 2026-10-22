@@ -13,18 +13,28 @@
 
   const isCompact = () => window.innerWidth <= BREAKPOINT;
   const isOpen = () => body.dataset.navOpen === 'true';
+  let syncFrame = 0;
+
+  const setAttr = (el, name, value) => {
+    if (el.getAttribute(name) !== value) el.setAttribute(name, value);
+  };
 
   function applyA11yState() {
     if (!isCompact()) {
-      nav.removeAttribute('aria-hidden');
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.setAttribute('aria-label', 'Open navigation');
+      if (nav.hasAttribute('aria-hidden')) nav.removeAttribute('aria-hidden');
+      setAttr(toggle, 'aria-expanded', 'false');
+      setAttr(toggle, 'aria-label', 'Open navigation');
       return;
     }
     const open = isOpen();
-    nav.setAttribute('aria-hidden', String(!open));
-    toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    setAttr(nav, 'aria-hidden', String(!open));
+    setAttr(toggle, 'aria-expanded', String(open));
+    setAttr(toggle, 'aria-label', open ? 'Close navigation' : 'Open navigation');
+  }
+
+  function scheduleSync() {
+    cancelAnimationFrame(syncFrame);
+    syncFrame = requestAnimationFrame(applyA11yState);
   }
 
   function closeNav({ focusToggle = false } = {}) {
@@ -33,9 +43,9 @@
     if (focusToggle && isCompact()) toggle.focus({ preventScroll: true });
   }
 
-  // site-shell.js owns the primary toggle behavior. Run after that listener so
-  // ARIA and background-scroll state always match the visual menu state.
-  toggle.addEventListener('click', () => requestAnimationFrame(applyA11yState));
+  // site-shell.js owns the visual state. This guard keeps accessibility state
+  // synchronized even when later CFB-only modules mutate the header DOM.
+  toggle.addEventListener('click', scheduleSync);
 
   nav.addEventListener('click', event => {
     if (!event.target.closest('a')) return;
@@ -56,6 +66,17 @@
   }, { passive: true });
 
   window.addEventListener('hashchange', () => closeNav());
+
+  const stateObserver = new MutationObserver(mutations => {
+    if (mutations.some(m =>
+      (m.target === body && m.attributeName === 'data-nav-open') ||
+      (m.target === nav && m.attributeName === 'aria-hidden') ||
+      (m.target === toggle && m.attributeName === 'aria-expanded')
+    )) scheduleSync();
+  });
+  stateObserver.observe(body, { attributes: true, attributeFilter: ['data-nav-open'] });
+  stateObserver.observe(nav, { attributes: true, attributeFilter: ['aria-hidden'] });
+  stateObserver.observe(toggle, { attributes: true, attributeFilter: ['aria-expanded'] });
 
   let resizeFrame = 0;
   window.addEventListener('resize', () => {
