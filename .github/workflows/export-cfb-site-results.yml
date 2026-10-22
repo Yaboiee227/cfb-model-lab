@@ -31,14 +31,19 @@ jobs:
           import csv,json,pathlib
           summary=json.load(open('cfb/record-summary.json'))
           week=int(summary['currentWeek'])
+          current=next((w for w in summary.get('weeks',[]) if int(w.get('week',-1))==week), None)
+          assert current, f'No summary row for Week {week}'
+          season=int(current['season'])
           path=pathlib.Path(f'cfb/results/week-{week:02d}.json')
           data=json.load(path.open())
-          source=[r for r in csv.DictReader(open('data/results.csv')) if int(r['season'])==int(summary['season']) and int(r['week'])==week]
+          source=[r for r in csv.DictReader(open('data/results.csv')) if int(r['season'])==season and int(r['week'])==week]
           assert data['role']=='AUDITED_SITE_RESULTS_COMPATIBILITY'
           assert data['canonicalInfluence'] is False
+          assert int(data['season'])==season and int(data['week'])==week
           assert len(data['games'])==len(source)>0
+          assert len(source)==int(current['ats']['graded'])
           assert all(g['status'] in ('FINAL','PENDING') for g in data['games'])
-          print({'week':week,'games':len(data['games']),'validated':True})
+          print({'season':season,'week':week,'games':len(data['games']),'validated':True})
           PY
       - name: Commit compatibility artifact
         run: |
