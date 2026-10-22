@@ -26,10 +26,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Install Playwright
+      - name: Install Playwright Chromium
         run: |
           npm install --no-save playwright@1.56.1
-          npx playwright install --with-deps chromium
+          npx playwright install chromium
       - name: Start local site
         run: |
           python3 -m http.server 8000 --bind 127.0.0.1 > /tmp/cb-site.log 2>&1 &
@@ -40,7 +40,7 @@ jobs:
           done
           cat /tmp/cb-site.log
           exit 1
-      - name: Run desktop and mobile browser checks
+      - name: Run local desktop and mobile browser checks
         run: node scripts/site_smoke_test.mjs
       - name: Upload local screenshots and report
         if: always()
@@ -49,40 +49,28 @@ jobs:
           name: responsive-site-smoke-local
           path: artifacts/site-smoke/
           retention-days: 7
-
-  production-smoke:
-    needs: smoke
-    runs-on: ubuntu-latest
-    timeout-minutes: 12
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-      - name: Install Playwright
-        run: |
-          npm install --no-save playwright@1.56.1
-          npx playwright install --with-deps chromium
-      - name: Wait for this Pages build to propagate
+      - name: Wait for current site assets to reach Pages
         shell: bash
         run: |
           set -euo pipefail
           base='https://yaboiee227.github.io/cfb-model-lab'
-          for i in {1..24}; do
-            if curl -fsS "${base}/slate-navigation.js?sha=${GITHUB_SHA}" | grep -q 'FULL SLATE'; then
-              echo 'Current slate-navigation asset is live.'
+          for i in {1..30}; do
+            nav="$(curl -fsS "${base}/slate-navigation.js?qa=${GITHUB_RUN_ID}" || true)"
+            boot="$(curl -fsS "${base}/league-bootstrap.js?qa=${GITHUB_RUN_ID}" || true)"
+            if grep -q 'priorityActive' <<<"$nav" && grep -q 'SITE_DATA_FILES' <<<"$boot"; then
+              echo 'Current full-slate and fresh-data assets are live on Pages.'
               exit 0
             fi
             sleep 10
           done
-          echo 'GitHub Pages did not expose the current slate-navigation asset in time.' >&2
+          echo 'GitHub Pages did not expose the current full-slate/fresh-data assets in time.' >&2
           exit 1
-      - name: Run production desktop and mobile browser checks
+      - name: Run deployed Pages desktop and mobile browser checks
         env:
           SITE_BASE_URL: https://yaboiee227.github.io/cfb-model-lab
           SITE_SMOKE_OUT: artifacts/site-smoke-production
         run: node scripts/site_smoke_test.mjs
-      - name: Upload production screenshots and report
+      - name: Upload deployed-site screenshots and report
         if: always()
         uses: actions/upload-artifact@v4
         with:
