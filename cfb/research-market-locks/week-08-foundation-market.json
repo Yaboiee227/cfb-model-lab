@@ -16,16 +16,16 @@
   "lockWindowMinutes": 30.0,
   "maxObservationAgeMinutes": 35.0,
   "scopeRestricted": true,
-  "updatedAt": "2026-10-22T17:54:05.277538Z",
+  "updatedAt": "2026-10-22T22:37:28.022586Z",
   "counts": {
     "foundationGames": 56,
     "activeScopeGames": 53,
     "pausedGames": 0,
     "preservedOutOfScopeLockedGames": 3,
-    "gamesWithMarketLock": 4,
-    "bookObservationsLocked": 8,
-    "newBookObservationsThisRun": 0,
-    "pendingGames": 52,
+    "gamesWithMarketLock": 6,
+    "bookObservationsLocked": 12,
+    "newBookObservationsThisRun": 4,
+    "pendingGames": 50,
     "missedGames": 0
   },
   "games": [
@@ -184,8 +184,35 @@
       "homeTeam": "App State",
       "kickoff": "2026-10-22T23:00:00Z",
       "projectionDigest": "50147bbb9df5dbcabf7857833e94a663d537996bceaf0da92379c547913d8875",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-22T22:37:10Z",
+          "lockedAt": "2026-10-22T22:37:28.022586Z",
+          "marketSpreadHome": 12.5,
+          "marketTotal": 56.5,
+          "marketMoneylineHome": 350,
+          "marketMoneylineAway": -465,
+          "spreadHomePrice": -114,
+          "totalOverPrice": -115,
+          "totalUnderPrice": -105,
+          "observationDigest": "1f52a562e2dc73ca94c69fea250e692d8047c5ab78dc5968697fe8e25e4c4aef"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-22T22:37:10Z",
+          "lockedAt": "2026-10-22T22:37:28.022586Z",
+          "marketSpreadHome": 12.5,
+          "marketTotal": 56.5,
+          "marketMoneylineHome": 370,
+          "marketMoneylineAway": -485,
+          "spreadHomePrice": -108,
+          "totalOverPrice": -112,
+          "totalUnderPrice": -108,
+          "observationDigest": "c400087a5fc176eefb3b7aca946d5ac74a50f66fb427a53b80bd9d26beac6573"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-22-LIBERTY-KENNESAWSTATE",
@@ -194,8 +221,35 @@
       "homeTeam": "Kennesaw State",
       "kickoff": "2026-10-22T23:00:00Z",
       "projectionDigest": "f2dce35bbd39b50c1457eb063ae30cbbba26a98d6b38f7de39a2dcbc470977a7",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-22T22:37:10Z",
+          "lockedAt": "2026-10-22T22:37:28.022586Z",
+          "marketSpreadHome": 9.5,
+          "marketTotal": 50.5,
+          "marketMoneylineHome": 280,
+          "marketMoneylineAway": -360,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "08cf011baf69aadbc349035180365ee1f6fdcd7dd27f6468dfa803548fa813be"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-22T22:37:10Z",
+          "lockedAt": "2026-10-22T22:37:28.022586Z",
+          "marketSpreadHome": 8.5,
+          "marketTotal": 50.5,
+          "marketMoneylineHome": 300,
+          "marketMoneylineAway": -380,
+          "spreadHomePrice": -112,
+          "totalOverPrice": -108,
+          "totalUnderPrice": -112,
+          "observationDigest": "f81d72bdf1e112e6bb9bac646d9185914a54cb6dc60c02e9cbb38432c04c4bdd"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-22-EASTCAROLINA-MEMPHIS",
