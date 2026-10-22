@@ -4,6 +4,8 @@ on:
     paths:
       - 'index.html'
       - 'week-8.html'
+      - 'recap.html'
+      - 'ratings.html'
       - '*.js'
       - '*.css'
       - 'data/**'
@@ -12,6 +14,7 @@ on:
       - 'scripts/site_smoke_test.mjs'
       - 'scripts/site_webkit_mobile_test.mjs'
       - 'scripts/site_shell_guard_test.mjs'
+      - 'scripts/site_static_pages_test.mjs'
       - '.github/workflows/site-smoke-test.yml'
   workflow_dispatch:
 permissions:
@@ -22,7 +25,7 @@ concurrency:
 jobs:
   smoke:
     runs-on: ubuntu-latest
-    timeout-minutes: 18
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -50,6 +53,8 @@ jobs:
         run: node scripts/site_webkit_mobile_test.mjs
       - name: Run local responsive shell guard checks
         run: node scripts/site_shell_guard_test.mjs
+      - name: Run local recap and ratings checks
+        run: node scripts/site_static_pages_test.mjs
       - name: Upload local screenshots and reports
         if: always()
         uses: actions/upload-artifact@v4
@@ -71,12 +76,14 @@ jobs:
             loader="$(curl -fsS "${base}/live-suite-loader.js?qa=${GITHUB_RUN_ID}" || true)"
             shellfix="$(curl -fsS "${base}/site-shell-hotfix.css?qa=${GITHUB_RUN_ID}" || true)"
             guard="$(curl -fsS "${base}/site-runtime-guard.js?qa=${GITHUB_RUN_ID}" || true)"
+            audit="$(curl -fsS "${base}/audit-shell.css?qa=${GITHUB_RUN_ID}" || true)"
             if grep -q 'openCurrentWeekProjections' <<<"$nav" \
               && grep -q 'content-visibility:visible' <<<"$css" \
               && grep -q 'SITE_DATA_FILES' <<<"$boot" \
               && grep -q '20261022-shared-responsive-v3' <<<"$loader" \
               && grep -q 'CB_SHELL_HARDENING_V3' <<<"$shellfix" \
-              && grep -q '__CB_SITE_RUNTIME_GUARD' <<<"$guard"; then
+              && grep -q '__CB_SITE_RUNTIME_GUARD' <<<"$guard" \
+              && grep -q 'scroll-padding-top:122px' <<<"$audit"; then
               echo 'Current full-slate, fresh-data and responsive-shell assets are live on Pages.'
               exit 0
             fi
@@ -98,6 +105,10 @@ jobs:
         env:
           SITE_BASE_URL: https://yaboiee227.github.io/cfb-model-lab
         run: node scripts/site_shell_guard_test.mjs
+      - name: Run deployed recap and ratings checks
+        env:
+          SITE_BASE_URL: https://yaboiee227.github.io/cfb-model-lab
+        run: node scripts/site_static_pages_test.mjs
       - name: Upload deployed-site screenshots and reports
         if: always()
         uses: actions/upload-artifact@v4
