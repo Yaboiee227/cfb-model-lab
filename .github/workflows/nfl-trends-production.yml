@@ -67,12 +67,17 @@ jobs:
           assert '<link rel="stylesheet" href="trends.css">' in html
           assert '<script src="trends.js" defer></script>' in html
           assert 'Action Network' in data['source']['name']
-          assert data['season']==2026 and data['week']==6
-          assert data['status'] in {'READY_FOR_MANUAL_ENTRY','CURRENT_WEEK_VERIFIED'}
+          config=json.loads(Path('nfl_data/site/config.json').read_text())
+          assert data['season']==config['season'] and data['week']==config['currentWeek']
+          assert data['status'] in {'READY_FOR_MANUAL_ENTRY','CURRENT_WEEK_VERIFIED','PENDING_VERIFIED_WEEK7_ENTRIES'}
+          if data['status']=='PENDING_VERIFIED_WEEK7_ENTRIES':
+              assert data['week']==7 and len(data['trends'])==0
+              assert data.get('coverage',{}).get('entryCount')==0
+              assert data.get('coverage',{}).get('currentSlateGames')==config['gamesInCurrentSlate']
           if data['status']=='CURRENT_WEEK_VERIFIED':
               assert len(data['trends']) > 0
               assert data.get('coverage',{}).get('entryCount') == len(data['trends'])
-              assert data.get('coverage',{}).get('currentSlateGames') == 13
+              assert data.get('coverage',{}).get('currentSlateGames') == config['gamesInCurrentSlate']
               assert all('Action Network' in t['sourceName'] for t in data['trends'])
           print('NFL trends production feature audit passed.')
           PY
