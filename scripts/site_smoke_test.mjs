@@ -7,7 +7,7 @@ await fs.mkdir(outDir, { recursive: true });
 
 const cases = [
   { name: 'cfb-desktop', path: '/', viewport: { width: 1440, height: 1000 }, league: 'cfb', expectedGames: 56 },
-  { name: 'cfb-mobile', path: '/', viewport: { width: 390, height: 844 }, league: 'cfb', expectedGames: 56 },
+  { name: 'cfb-mobile', path: '/', viewport: { width: 390, height: 844 }, league: 'cfb', expectedGames: 56, testSlateNavigation: true },
   { name: 'nfl-desktop', path: '/?league=nfl', viewport: { width: 1440, height: 1000 }, league: 'nfl' },
   { name: 'nfl-mobile', path: '/?league=nfl', viewport: { width: 390, height: 844 }, league: 'nfl' },
   { name: 'week8-desktop', path: '/week-8.html', viewport: { width: 1440, height: 1000 }, week8: true, expectedGames: 56 },
@@ -35,6 +35,9 @@ for (const tc of cases) {
   const response = await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
   if (!response || !response.ok()) errors.push(`HTTP ${response?.status() ?? 'no response'} for ${url}`);
 
+  let projectionIntegrity = null;
+  let navigationIntegrity = null;
+
   if (tc.week8) {
     await page.waitForFunction(() => document.querySelector('#weekCount')?.textContent?.trim() === '56', { timeout: 15000 }).catch(() => {});
     const count = await page.locator('#weekCount').textContent().catch(() => null);
@@ -53,6 +56,44 @@ for (const tc of cases) {
     const loaded = Number(String(loadedText || '').replace(/[^0-9]/g, ''));
     if (!Number.isFinite(loaded) || loaded <= 0) errors.push(`No games loaded: ${loadedText}`);
     if (tc.expectedGames && loaded !== tc.expectedGames) errors.push(`Expected ${tc.expectedGames} games, got ${loaded}`);
+
+    await page.waitForFunction(expected => {
+      const rows = document.querySelectorAll('#projectionBody tr[id^="game-"]').length;
+      const cards = document.querySelectorAll('#projectionCards .projection-card[id^="card-"]').length;
+      return rows === expected && cards === expected;
+    }, loaded, { timeout: 15000 }).catch(() => {});
+
+    projectionIntegrity = await page.evaluate(() => ({
+      loadedText: document.querySelector('#gamesLoaded')?.textContent?.trim() || '',
+      projectionCountText: document.querySelector('#projectionCount')?.textContent?.trim() || '',
+      rowCount: document.querySelectorAll('#projectionBody tr[id^="game-"]').length,
+      cardCount: document.querySelectorAll('#projectionCards .projection-card[id^="card-"]').length,
+      renderState: document.documentElement.dataset.slateRender || ''
+    }));
+    if (projectionIntegrity.rowCount !== loaded) errors.push(`Projection table rendered ${projectionIntegrity.rowCount}/${loaded} games`);
+    if (projectionIntegrity.cardCount !== loaded) errors.push(`Projection cards rendered ${projectionIntegrity.cardCount}/${loaded} games`);
+
+    if (tc.testSlateNavigation) {
+      await page.waitForSelector('#slateNavigation', { timeout: 15000 }).catch(() => {});
+      const summaryBefore = await page.locator('#slateNavigationStatus').textContent().catch(() => '');
+      if (!/56\s+CFB\s+Week\s+8\s+games\s+loaded/i.test(summaryBefore || '')) errors.push(`Full-slate mobile summary incorrect: ${summaryBefore}`);
+
+      const fridayChip = page.locator('#slateDayChips .slate-day-chip[data-date="2026-10-23"]');
+      if (await fridayChip.count()) {
+        await fridayChip.click();
+        await page.waitForFunction(() => document.querySelectorAll('#projectionCards .projection-card[id^="card-"]').length === 5, { timeout: 10000 }).catch(() => {});
+        const fridayCards = await page.locator('#projectionCards .projection-card[id^="card-"]').count();
+        if (fridayCards !== 5) errors.push(`Friday quick filter expected 5 games, got ${fridayCards}`);
+
+        await page.locator('#slateDayChips .slate-day-chip[data-date=""]').click();
+        await page.waitForFunction(() => document.querySelectorAll('#projectionCards .projection-card[id^="card-"]').length === 56, { timeout: 10000 }).catch(() => {});
+        const restoredCards = await page.locator('#projectionCards .projection-card[id^="card-"]').count();
+        if (restoredCards !== 56) errors.push(`Show-all recovery expected 56 games, got ${restoredCards}`);
+        navigationIntegrity = { summaryBefore, fridayCards, restoredCards };
+      } else {
+        errors.push('Friday quick-filter chip missing on CFB mobile');
+      }
+    }
   }
 
   const layout = await page.evaluate(() => ({
@@ -86,7 +127,7 @@ for (const tc of cases) {
 
   const screenshot = `${outDir}/${tc.name}.png`;
   await page.screenshot({ path: screenshot, fullPage: true });
-  report.push({ name: tc.name, url, viewport: tc.viewport, layout, overflowOffenders, failedRequests, errors, screenshot });
+  report.push({ name: tc.name, url, viewport: tc.viewport, layout, projectionIntegrity, navigationIntegrity, overflowOffenders, failedRequests, errors, screenshot });
   if (errors.length) failed = true;
   await page.close();
 }
