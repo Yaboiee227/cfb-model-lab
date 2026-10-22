@@ -31,6 +31,15 @@
     return Array.isArray(s?.projections) ? s.projections.length : 0;
   }
 
+  function priorityActive() {
+    return $('priorityOnlyToggle')?.getAttribute('aria-pressed') === 'true';
+  }
+
+  function visibleCardTotal() {
+    const cards = [...document.querySelectorAll('#projectionCards .projection-card[id^="card-"]')];
+    return cards.filter(card => !card.hidden && getComputedStyle(card).display !== 'none').length;
+  }
+
   function activeWeek() {
     const filter = $('weekFilter');
     if (filter?.value) return String(filter.value);
@@ -42,6 +51,7 @@
     const s = state();
     if (!s) return;
     const week = keepWeek ? (s.config?.currentWeek ?? '') : '';
+    if (priorityActive()) $('priorityOnlyToggle')?.click();
     if ($('teamSearch')) $('teamSearch').value = '';
     if ($('conferenceFilter')) $('conferenceFilter').value = '';
     if ($('dateFilter')) $('dateFilter').value = '';
@@ -92,6 +102,7 @@
       button.setAttribute('aria-pressed', String(selected === value));
       button.textContent = label;
       button.addEventListener('click', () => {
+        if (priorityActive()) $('priorityOnlyToggle')?.click();
         dateFilter.value = value;
         if (typeof filterProjections === 'function') filterProjections();
         sync();
@@ -106,20 +117,26 @@
 
   function updateSummary() {
     const loaded = loadedTotal();
-    const shown = filteredTotal();
+    const filtered = filteredTotal();
+    const priority = priorityActive();
+    const shown = priority ? visibleCardTotal() : filtered;
     const week = activeWeek();
     const status = $('slateNavigationStatus');
     const count = $('projectionCount');
     if (!status || !loaded) return;
 
-    const filtersActive = Boolean($('teamSearch')?.value || $('conferenceFilter')?.value || $('dateFilter')?.value);
+    const filtersActive = Boolean(priority || $('teamSearch')?.value || $('conferenceFilter')?.value || $('dateFilter')?.value);
     const leagueLabel = currentLeague().toUpperCase();
-    status.textContent = filtersActive
-      ? `${shown} of ${loaded} ${leagueLabel} games shown`
-      : `${loaded} ${leagueLabel}${week ? ` Week ${week}` : ''} games loaded`;
-    if (count) count.textContent = filtersActive
-      ? `${shown} of ${loaded} games shown`
-      : `${shown} game${shown === 1 ? '' : 's'} shown · full slate loaded`;
+    status.textContent = priority
+      ? `${shown} priority game${shown === 1 ? '' : 's'} shown · ${loaded} ${leagueLabel} loaded`
+      : filtersActive
+        ? `${shown} of ${loaded} ${leagueLabel} games shown`
+        : `${loaded} ${leagueLabel}${week ? ` Week ${week}` : ''} games loaded`;
+    if (count) count.textContent = priority
+      ? `${shown} priority game${shown === 1 ? '' : 's'} shown · ${loaded} loaded`
+      : filtersActive
+        ? `${shown} of ${loaded} games shown`
+        : `${shown} game${shown === 1 ? '' : 's'} shown · full slate loaded`;
 
     const fullButton = $('showFullSlate');
     if (fullButton) fullButton.hidden = !filtersActive && shown === loaded;
@@ -190,6 +207,9 @@
       const el = $(id);
       if (!el) return;
       el.addEventListener(id === 'teamSearch' ? 'input' : 'change', schedule, { passive: true });
+    });
+    document.addEventListener('click', event => {
+      if (event.target.closest('#priorityOnlyToggle')) window.setTimeout(schedule, 0);
     });
     window.addEventListener('resize', schedule, { passive: true });
     schedule();
