@@ -6,7 +6,7 @@
   "role": "ACTIVE_WINDOW_RESEARCH_PREGAME_COVERAGE_AUDIT",
   "canonicalInfluence": false,
   "canonicalPromotionAuthorized": false,
-  "auditedAt": "2026-10-22T20:37:34.875877Z",
+  "auditedAt": "2026-10-22T23:02:09.877303Z",
   "summary": {
     "games": 7,
     "foundationLocked": 7,
@@ -14,55 +14,23 @@
     "personnelCaptured": 7,
     "weatherCaptured": 7,
     "refereeCapturedOrExplicitlyChecked": 7,
-    "gamesWithMarketLock": 4,
-    "critical": 3,
+    "gamesWithMarketLock": 7,
+    "critical": 1,
     "high": 0
   },
   "workQueue": [
-    {
-      "gameId": "2026-10-22-JAMESMADISON-APPSTATE",
-      "awayTeam": "James Madison",
-      "homeTeam": "App State",
-      "kickoff": "2026-10-22T23:00:00Z",
-      "priority": "TODAY",
-      "urgency": "CRITICAL",
-      "gaps": [
-        "personnel requires follow-up: MATERIAL_QB_STATUS_OPEN_OFFICIAL_APP_STATE_ROTATION_AFTER_INJURY",
-        "weather final review pending: NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED"
-      ],
-      "warnings": [
-        "referee assignment status: NOT_YET_POSTED; do not guess",
-        "immutable final-window market lock pending"
-      ]
-    },
-    {
-      "gameId": "2026-10-22-LIBERTY-KENNESAWSTATE",
-      "awayTeam": "Liberty",
-      "homeTeam": "Kennesaw State",
-      "kickoff": "2026-10-22T23:00:00Z",
-      "priority": "TODAY",
-      "urgency": "CRITICAL",
-      "gaps": [
-        "weather final review pending: NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED"
-      ],
-      "warnings": [
-        "referee assignment status: NOT_YET_POSTED; do not guess",
-        "immutable final-window market lock pending"
-      ]
-    },
     {
       "gameId": "2026-10-22-EASTCAROLINA-MEMPHIS",
       "awayTeam": "East Carolina",
       "homeTeam": "Memphis",
       "kickoff": "2026-10-22T23:30:00Z",
-      "priority": "TODAY",
+      "priority": "FINAL_WINDOW",
       "urgency": "CRITICAL",
       "gaps": [
         "weather final review pending: NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED"
       ],
       "warnings": [
-        "referee assignment status: NOT_YET_POSTED; do not guess",
-        "immutable final-window market lock pending"
+        "referee assignment status: NOT_YET_POSTED; do not guess"
       ]
     },
     {
@@ -108,6 +76,35 @@
       ],
       "warnings": [
         "referee assignment status: UNAVAILABLE_STALE_RETRIEVAL; do not guess"
+      ]
+    },
+    {
+      "gameId": "2026-10-22-JAMESMADISON-APPSTATE",
+      "awayTeam": "James Madison",
+      "homeTeam": "App State",
+      "kickoff": "2026-10-22T23:00:00Z",
+      "priority": "STARTED_OR_PAST",
+      "urgency": "NORMAL",
+      "gaps": [
+        "personnel requires follow-up: MATERIAL_QB_STATUS_OPEN_OFFICIAL_APP_STATE_ROTATION_AFTER_INJURY",
+        "weather final review pending: NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_YET_POSTED; do not guess"
+      ]
+    },
+    {
+      "gameId": "2026-10-22-LIBERTY-KENNESAWSTATE",
+      "awayTeam": "Liberty",
+      "homeTeam": "Kennesaw State",
+      "kickoff": "2026-10-22T23:00:00Z",
+      "priority": "STARTED_OR_PAST",
+      "urgency": "NORMAL",
+      "gaps": [
+        "weather final review pending: NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_YET_POSTED; do not guess"
       ]
     }
   ],
@@ -269,8 +266,8 @@
       "awayTeam": "James Madison",
       "homeTeam": "App State",
       "kickoff": "2026-10-22T23:00:00Z",
-      "priority": "TODAY",
-      "urgency": "CRITICAL",
+      "priority": "STARTED_OR_PAST",
+      "urgency": "NORMAL",
       "foundation": {
         "status": "LOCKED",
         "projectionDigest": "50147bbb9df5dbcabf7857833e94a663d537996bceaf0da92379c547913d8875"
@@ -287,17 +284,19 @@
         "contextSource": "cfb/pregame/week-08-through-thursday-effective.json"
       },
       "marketLock": {
-        "status": "PENDING",
-        "booksLocked": [],
-        "bookCount": 0
+        "status": "LOCKED",
+        "booksLocked": [
+          "draftkings",
+          "fanduel"
+        ],
+        "bookCount": 2
       },
       "gaps": [
         "personnel requires follow-up: MATERIAL_QB_STATUS_OPEN_OFFICIAL_APP_STATE_ROTATION_AFTER_INJURY",
         "weather final review pending: NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED"
       ],
       "warnings": [
-        "referee assignment status: NOT_YET_POSTED; do not guess",
-        "immutable final-window market lock pending"
+        "referee assignment status: NOT_YET_POSTED; do not guess"
       ]
     },
     {
@@ -306,8 +305,8 @@
       "awayTeam": "Liberty",
       "homeTeam": "Kennesaw State",
       "kickoff": "2026-10-22T23:00:00Z",
-      "priority": "TODAY",
-      "urgency": "CRITICAL",
+      "priority": "STARTED_OR_PAST",
+      "urgency": "NORMAL",
       "foundation": {
         "status": "LOCKED",
         "projectionDigest": "f2dce35bbd39b50c1457eb063ae30cbbba26a98d6b38f7de39a2dcbc470977a7"
@@ -324,16 +323,18 @@
         "contextSource": "cfb/pregame/week-08-through-thursday-effective.json"
       },
       "marketLock": {
-        "status": "PENDING",
-        "booksLocked": [],
-        "bookCount": 0
+        "status": "LOCKED",
+        "booksLocked": [
+          "draftkings",
+          "fanduel"
+        ],
+        "bookCount": 2
       },
       "gaps": [
         "weather final review pending: NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED"
       ],
       "warnings": [
-        "referee assignment status: NOT_YET_POSTED; do not guess",
-        "immutable final-window market lock pending"
+        "referee assignment status: NOT_YET_POSTED; do not guess"
       ]
     },
     {
@@ -342,7 +343,7 @@
       "awayTeam": "East Carolina",
       "homeTeam": "Memphis",
       "kickoff": "2026-10-22T23:30:00Z",
-      "priority": "TODAY",
+      "priority": "FINAL_WINDOW",
       "urgency": "CRITICAL",
       "foundation": {
         "status": "LOCKED",
@@ -360,16 +361,18 @@
         "contextSource": "cfb/pregame/week-08-through-thursday-effective.json"
       },
       "marketLock": {
-        "status": "PENDING",
-        "booksLocked": [],
-        "bookCount": 0
+        "status": "LOCKED",
+        "booksLocked": [
+          "draftkings",
+          "fanduel"
+        ],
+        "bookCount": 2
       },
       "gaps": [
         "weather final review pending: NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED"
       ],
       "warnings": [
-        "referee assignment status: NOT_YET_POSTED; do not guess",
-        "immutable final-window market lock pending"
+        "referee assignment status: NOT_YET_POSTED; do not guess"
       ]
     }
   ],
