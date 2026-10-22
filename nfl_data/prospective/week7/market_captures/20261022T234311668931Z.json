@@ -1,0 +1,95 @@
+{
+  "captured_at": "2026-10-22T23:43:11.776102+00:00",
+  "provider": "The Odds API",
+  "sport": "americanfootball_nfl",
+  "events": [
+    {
+      "id": "ffebea881c1d7b2dfb85b3e590c35985",
+      "sport_key": "americanfootball_nfl",
+      "sport_title": "NFL",
+      "commence_time": "2026-10-23T00:15:00Z",
+      "home_team": "Chicago Bears",
+      "away_team": "New England Patriots",
+      "bookmakers": [
+        {
+          "key": "draftkings",
+          "title": "DraftKings",
+          "last_update": "2026-10-22T23:42:09Z",
+          "markets": [
+            {
+              "key": "spreads",
+              "last_update": "2026-10-22T23:42:09Z",
+              "outcomes": [
+                {
+                  "name": "Chicago Bears",
+                  "price": -108,
+                  "point": -3.0
+                },
+                {
+                  "name": "New England Patriots",
+                  "price": -112,
+                  "point": 3.0
+                }
+              ]
+            },
+            {
+              "key": "totals",
+              "last_update": "2026-10-22T23:42:09Z",
+              "outcomes": [
+                {
+                  "name": "Over",
+                  "price": -120,
+                  "point": 50.5
+                },
+                {
+                  "name": "Under",
+                  "price": 100,
+                  "point": 50.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "fanduel",
+          "title": "FanDuel",
+          "last_update": "2026-10-22T23:42:55Z",
+          "markets": [
+            {
+              "key": "spreads",
+              "last_update": "2026-10-22T23:42:55Z",
+              "outcomes": [
+                {
+                  "name": "Chicago Bears",
+                  "price": -105,
+                  "point": -3.0
+                },
+                {
+                  "name": "New England Patriots",
+                  "price": -115,
+                  "point": 3.0
+                }
+              ]
+            },
+            {
+              "key": "totals",
+              "last_update": "2026-10-22T23:42:55Z",
+              "outcomes": [
+                {
+                  "name": "Over",
+                  "price": -115,
+                  "point": 50.5
+                },
+                {
+                  "name": "Under",
+                  "price": -105,
+                  "point": 50.5
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
