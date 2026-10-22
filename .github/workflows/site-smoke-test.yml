@@ -80,7 +80,7 @@ jobs:
             if grep -q 'openCurrentWeekProjections' <<<"$nav" \
               && grep -q 'content-visibility:visible' <<<"$css" \
               && grep -q 'SITE_DATA_FILES' <<<"$boot" \
-              && grep -q '20261022-shared-responsive-v3' <<<"$loader" \
+              && grep -q '20261022-shared-responsive-v4' <<<"$loader" \
               && grep -q 'CB_SHELL_HARDENING_V3' <<<"$shellfix" \
               && grep -q '__CB_SITE_RUNTIME_GUARD' <<<"$guard" \
               && grep -q 'scroll-padding-top:122px' <<<"$audit"; then
