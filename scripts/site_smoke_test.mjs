@@ -6,10 +6,10 @@ const outDir = process.env.SITE_SMOKE_OUT || 'artifacts/site-smoke';
 await fs.mkdir(outDir, { recursive: true });
 
 const cases = [
-  { name: 'cfb-desktop', path: '/', viewport: { width: 1440, height: 1000 }, league: 'cfb', expectedGames: 56 },
-  { name: 'cfb-mobile', path: '/', viewport: { width: 390, height: 844 }, league: 'cfb', expectedGames: 56, testSlateNavigation: true },
-  { name: 'nfl-desktop', path: '/?league=nfl', viewport: { width: 1440, height: 1000 }, league: 'nfl' },
-  { name: 'nfl-mobile', path: '/?league=nfl', viewport: { width: 390, height: 844 }, league: 'nfl' },
+  { name: 'cfb-desktop', path: '/', viewport: { width: 1440, height: 1000 }, league: 'cfb', expectedGames: 56, testProjectionNav: true },
+  { name: 'cfb-mobile', path: '/', viewport: { width: 390, height: 844 }, league: 'cfb', expectedGames: 56, testSlateNavigation: true, testProjectionNav: true },
+  { name: 'nfl-desktop', path: '/?league=nfl', viewport: { width: 1440, height: 1000 }, league: 'nfl', testProjectionNav: true },
+  { name: 'nfl-mobile', path: '/?league=nfl', viewport: { width: 390, height: 844 }, league: 'nfl', testProjectionNav: true },
   { name: 'week8-desktop', path: '/week-8.html', viewport: { width: 1440, height: 1000 }, week8: true, expectedGames: 56 },
   { name: 'week8-mobile', path: '/week-8.html', viewport: { width: 390, height: 844 }, week8: true, expectedGames: 56 }
 ];
@@ -92,6 +92,42 @@ for (const tc of cases) {
         navigationIntegrity = { summaryBefore, fridayCards, restoredCards };
       } else {
         errors.push('Friday quick-filter chip missing on CFB mobile');
+      }
+    }
+
+    if (tc.testProjectionNav) {
+      await page.locator('#teamSearch').fill(tc.league === 'cfb' ? 'Virginia' : 'Chiefs');
+      await page.waitForTimeout(75);
+      const narrowedCards = await page.locator('#projectionCards .projection-card[id^="card-"]').count();
+      if (narrowedCards >= loaded) errors.push(`Projection-nav setup did not narrow the slate: ${narrowedCards}/${loaded}`);
+
+      const projectionLink = page.locator('.primary-nav a[href="#projections"]').first();
+      if (!(await projectionLink.count())) {
+        errors.push('Primary Projections navigation link missing');
+      } else {
+        await projectionLink.click();
+        await page.waitForFunction(expected => {
+          const cards = document.querySelectorAll('#projectionCards .projection-card[id^="card-"]').length;
+          const rows = document.querySelectorAll('#projectionBody tr[id^="game-"]').length;
+          const search = document.querySelector('#teamSearch')?.value || '';
+          const date = document.querySelector('#dateFilter')?.value || '';
+          return cards === expected && rows === expected && !search && !date && location.hash === '#projections';
+        }, loaded, { timeout: 10000 }).catch(() => {});
+
+        const projectionNavState = await page.evaluate(() => ({
+          hash: location.hash,
+          search: document.querySelector('#teamSearch')?.value || '',
+          week: document.querySelector('#weekFilter')?.value || '',
+          date: document.querySelector('#dateFilter')?.value || '',
+          sort: document.querySelector('#sortFilter')?.value || '',
+          rowCount: document.querySelectorAll('#projectionBody tr[id^="game-"]').length,
+          cardCount: document.querySelectorAll('#projectionCards .projection-card[id^="card-"]').length
+        }));
+        if (projectionNavState.cardCount !== loaded || projectionNavState.rowCount !== loaded) errors.push(`Projections tab did not restore full current-week slate: ${projectionNavState.cardCount}/${loaded}`);
+        if (projectionNavState.search || projectionNavState.date) errors.push(`Projections tab left filters active: ${JSON.stringify(projectionNavState)}`);
+        if (projectionNavState.sort !== 'kickoff') errors.push(`Projections tab did not restore kickoff order: ${projectionNavState.sort}`);
+        if (projectionNavState.hash !== '#projections') errors.push(`Projections tab did not land on #projections: ${projectionNavState.hash}`);
+        navigationIntegrity = { ...(navigationIntegrity || {}), narrowedCards, projectionNavState };
       }
     }
   }
