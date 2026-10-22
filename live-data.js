@@ -1,12 +1,12 @@
 (() => {
-  const SCOREBOARD_URL = 'https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard';
-  const SUMMARY_URL = 'https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=';
-  const POLL_MS = 30000;
+  const ACTIVE_LEAGUE = String(window.CB_ACTIVE_LEAGUE || 'cfb').toLowerCase() === 'nfl' ? 'nfl' : 'cfb';
+  const SCOREBOARD_URL = ACTIVE_LEAGUE === 'nfl' ? 'nfl_data/site/live-scoreboard.json' : 'data/live-scoreboard.json';
+  const POLL_MS = 60000;
   const DETAIL_TTL_MS = 25000;
   const state = {
     games: [], lastUpdated: null, paused: localStorage.getItem('cb-live-paused') === '1',
     aliases: {}, mockMode: new URL(location.href).searchParams.get('mock') === '1' || localStorage.getItem('cb-live-mock') === '1',
-    timer: null, wakeTimer: null, detailCache: new Map(), previous: new Map(), mock: null
+    timer: null, wakeTimer: null, detailCache: new Map(), previous: new Map(), mock: null, initialized: false
   };
 
   const emit = (name, detail) => document.dispatchEvent(new CustomEvent(name, { detail }));
@@ -15,7 +15,7 @@
   async function loadAliases() {
     try {
       const data = await fetch('data/team-aliases.json', { cache:'no-store' }).then(r => r.ok ? r.json() : Promise.reject());
-      state.aliases = data.aliases || {};
+      state.aliases = data.aliases || data || {};
     } catch { state.aliases = {}; }
   }
   async function loadMock() {
@@ -112,9 +112,8 @@
         const mock = await loadMock();
         games = (mock.scoreboard?.events || []).map(g => ({ ...g }));
       } else {
-        const week = (() => { try { return STATE.config?.currentWeek; } catch { return null; } })();
-        const url = week ? `${SCOREBOARD_URL}?week=${encodeURIComponent(week)}&seasontype=2&limit=200` : `${SCOREBOARD_URL}?limit=200`;
-        const json = await fetch(url, { cache:'no-store', headers:{'Accept':'application/json'} }).then(r => { if (!r.ok) throw new Error(`ESPN ${r.status}`); return r.json(); });
+        const json = await fetch(SCOREBOARD_URL, { cache:'no-store', headers:{'Accept':'application/json'} }).then(r => { if (!r.ok) throw new Error(`Local scoreboard ${r.status}`); return r.json(); });
+        if (json.league && String(json.league).toLowerCase() !== ACTIVE_LEAGUE) throw new Error(`Scoreboard league mismatch: ${json.league}`);
         games = (json.events || []).map(normalizeEspnEvent);
       }
       const changes = [];
@@ -126,11 +125,11 @@
       }
       state.games = games;
       state.lastUpdated = new Date();
-      emit('cb:live-update', { games, updatedAt:state.lastUpdated, changes, mockMode:state.mockMode, paused:state.paused });
+      emit('cb:live-update', { games, updatedAt:state.lastUpdated, changes, mockMode:state.mockMode, paused:state.paused, league:ACTIVE_LEAGUE });
       scheduleNext();
       return games;
     } catch (error) {
-      emit('cb:live-error', { source:'ESPN', error:String(error?.message || error) });
+      emit('cb:live-error', { source:`${ACTIVE_LEAGUE.toUpperCase()} scoreboard`, error:String(error?.message || error) });
       scheduleNext();
       return state.games;
     }
@@ -139,18 +138,14 @@
   async function fetchSummary(eventId, { force=false } = {}) {
     const cached = state.detailCache.get(String(eventId));
     if (!force && cached && Date.now() - cached.ts < DETAIL_TTL_MS) return cached.data;
+    if (!state.mockMode) return cached?.data || null;
     try {
-      let data;
-      if (state.mockMode) {
-        const mock = await loadMock();
-        data = mock.summaries?.[eventId] || {};
-      } else {
-        data = await fetch(`${SUMMARY_URL}${encodeURIComponent(eventId)}`, { cache:'no-store', headers:{'Accept':'application/json'} }).then(r => { if (!r.ok) throw new Error(`ESPN summary ${r.status}`); return r.json(); });
-      }
+      const mock = await loadMock();
+      const data = mock.summaries?.[eventId] || {};
       state.detailCache.set(String(eventId), { ts:Date.now(), data });
       return data;
     } catch (error) {
-      emit('cb:live-error', { source:'ESPN summary', eventId, error:String(error?.message || error) });
+      emit('cb:live-error', { source:'Mock game detail', eventId, error:String(error?.message || error) });
       return cached?.data || null;
     }
   }
@@ -177,13 +172,15 @@
   });
 
   async function init() {
+    if (state.initialized) return state.games;
+    state.initialized = true;
     await loadAliases();
     if (state.mockMode) await loadMock();
-    refreshScoreboard();
+    return refreshScoreboard();
   }
 
   window.CBLiveData = {
     state, init, refreshScoreboard, fetchSummary, getGame, getGameForProjection, getProjectionForEvent,
-    matchProjection, sameTeam, setPaused, setMockMode, normalizeName:clean, pollMs:POLL_MS
+    matchProjection, sameTeam, setPaused, setMockMode, normalizeName:clean, pollMs:POLL_MS, league:ACTIVE_LEAGUE
   };
 })();
