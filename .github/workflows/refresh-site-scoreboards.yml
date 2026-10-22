@@ -1,0 +1,51 @@
+name: Refresh local site scoreboards
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/5 * * * *'
+  push:
+    paths:
+      - 'scripts/refresh_site_scoreboards.py'
+      - '.github/workflows/refresh-site-scoreboards.yml'
+permissions:
+  contents: write
+concurrency:
+  group: refresh-local-site-scoreboards
+  cancel-in-progress: true
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Refresh CFB and NFL scoreboard snapshots
+        run: python scripts/refresh_site_scoreboards.py
+      - name: Validate league isolation
+        run: |
+          python - <<'PY'
+          import json
+          cfb=json.load(open('data/live-scoreboard.json'))
+          nfl=json.load(open('nfl_data/site/live-scoreboard.json'))
+          assert cfb['league']=='cfb' and cfb['events']
+          assert nfl['league']=='nfl' and nfl['events']
+          assert cfb['week']==json.load(open('data/config.json'))['currentWeek']
+          assert nfl['week']==json.load(open('nfl_data/site/config.json'))['currentWeek']
+          print({'cfbEvents':len(cfb['events']),'nflEvents':len(nfl['events'])})
+          PY
+      - name: Commit changed scoreboards
+        run: |
+          git config user.name "cb-model-live-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/live-scoreboard.json nfl_data/site/live-scoreboard.json
+          if git diff --cached --quiet; then
+            echo 'No scoreboard state change.'
+            exit 0
+          fi
+          git commit -m 'Refresh local CFB and NFL scoreboard snapshots'
+          git pull --rebase origin main
+          git push
