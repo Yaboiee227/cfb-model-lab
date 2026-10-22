@@ -30,11 +30,7 @@ jobs:
         run: git pull --rebase origin main
       - name: Test immutable per-book market locking
         run: python -m unittest tests.test_cfb_market_research_lock tests.test_cfb_market_scope_transition -v
-      - name: Push event is integrity-only
-        if: github.event_name == 'push'
-        run: echo 'Push event verifies market-lock code only; live locking follows completed sportsbook refreshes or manual dispatch.'
-      - name: Capture eligible active-scope pregame book observations
-        if: github.event_name != 'push'
+      - name: Reconcile durable full-week scope and capture only eligible fresh observations
         run: |
           python scripts/cfb_market_research_lock.py \
             --foundation-lock cfb/research-locks/week-08-foundation-full.json \
@@ -44,7 +40,6 @@ jobs:
             --lock-window-minutes 30 \
             --max-observation-age-minutes 35
       - name: Assert research-only immutable observations and full-week scope
-        if: github.event_name != 'push'
         run: |
           python - <<'PY'
           import json,sys
@@ -72,7 +67,6 @@ jobs:
           print(json.dumps({'updatedAt':d['updatedAt'],'counts':d['counts']},indent=2))
           PY
       - name: Commit changed market research locks
-        if: github.event_name != 'push'
         run: |
           git config user.name "cb-model-market-lock-bot"
           git config user.email "actions@users.noreply.github.com"
