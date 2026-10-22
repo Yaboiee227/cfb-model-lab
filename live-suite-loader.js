@@ -1,6 +1,6 @@
 (() => {
   const league = () => String(window.CB_ACTIVE_LEAGUE || 'cfb').toLowerCase() === 'nfl' ? 'nfl' : 'cfb';
-  const ASSET_VERSION = '20261022-shared-responsive-v2';
+  const ASSET_VERSION = '20261022-shared-responsive-v3';
   const versioned = src => `${src}${src.includes('?') ? '&' : '?'}v=${encodeURIComponent(ASSET_VERSION)}`;
 
   const loadCss = href => {
@@ -156,6 +156,7 @@
     loadCss('site-shell.css');
     loadCss('site-shell-hotfix.css');
     await loadScript('site-shell.js');
+    await loadScript('site-runtime-guard.js');
     installLanguageSync();
     loadCss('record-tracker.css');
     await loadScript('record-tracker.js');
