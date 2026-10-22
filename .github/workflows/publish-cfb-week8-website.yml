@@ -1,0 +1,51 @@
+name: Publish CFB Week 8 website data
+on:
+  push:
+    paths:
+      - 'scripts/publish_cfb_week8_website.py'
+      - 'cfb/research-locks/week-08-foundation-full.json'
+      - 'cfb/pregame/week-08-schedule.json'
+      - '.github/workflows/publish-cfb-week8-website.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publish-cfb-week8-website
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Sync main
+        run: git pull --rebase origin main
+      - name: Generate full Week 8 projection dataset
+        run: python scripts/publish_cfb_week8_website.py
+      - name: Validate full frozen slate
+        run: |
+          python - <<'PY'
+          import csv,json
+          rows=list(csv.DictReader(open('data/projections.csv',encoding='utf-8')))
+          foundation=json.load(open('cfb/research-locks/week-08-foundation-full.json'))
+          assert len(rows)==56, len(rows)
+          assert len(foundation['games'])==56
+          assert all(r['season']=='2026' and r['week']=='8' for r in rows)
+          assert all(r['releaseStatus']=='RESEARCH SHADOW - CANONICAL HOLD' for r in rows)
+          assert all(r['executionVerified']=='false' for r in rows)
+          print({'rows':len(rows),'status':'validated'})
+          PY
+      - name: Commit website dataset
+        run: |
+          git config user.name "cb-model-site-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/projections.csv
+          if git diff --cached --quiet; then
+            echo 'Website projection dataset already current.'
+            exit 0
+          fi
+          git commit -m 'Publish full frozen CFB Week 8 website slate'
+          git pull --rebase origin main
+          git push
