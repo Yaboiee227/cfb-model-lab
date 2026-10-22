@@ -1,6 +1,6 @@
 (() => {
   const league = () => String(window.CB_ACTIVE_LEAGUE || 'cfb').toLowerCase() === 'nfl' ? 'nfl' : 'cfb';
-  const ASSET_VERSION = '20261022-shared-responsive-v3';
+  const ASSET_VERSION = '20261022-shared-responsive-v4';
   const versioned = src => `${src}${src.includes('?') ? '&' : '?'}v=${encodeURIComponent(ASSET_VERSION)}`;
 
   const loadCss = href => {
@@ -16,17 +16,21 @@
     const el=document.querySelector(selector);
     if (el && el.textContent !== value) el.textContent=value;
   }
+  function setNodeText(el, value) {
+    if (el && el.textContent !== value) el.textContent=value;
+  }
+  function setNodeHtml(el, value) {
+    if (el && el.innerHTML !== value) el.innerHTML=value;
+  }
 
   function syncCfbWeek8Status(){
     if(league()!=='cfb')return;
     const banner=document.querySelector('main > .section-shell > .hold-note');
-    if(banner) banner.innerHTML='<strong>CFB · Week 8 active production · Canonical HOLD</strong> — Pregame research, market locks, provenance and frozen evidence are updated through the current production state without reconstructing information after results. <a href="week-8.html">Open Week 8 readiness →</a>';
+    setNodeHtml(banner,'<strong>CFB · Week 8 active production · Canonical HOLD</strong> — Pregame research, market locks, provenance and frozen evidence are updated through the current production state without reconstructing information after results. <a href="week-8.html">Open Week 8 readiness →</a>');
     setText('.hero-kicker-row .eyebrow','FBS MODEL • WEEK 8 COMMAND CENTER');
     setText('.hero-kicker-row .research-chip','Week 8 · Research shadow');
-    const projectionTitle=document.getElementById('projectionsTitle');
-    if(projectionTitle) projectionTitle.textContent='Week 8 research projection board';
-    const projectionIntro=document.querySelector('#projections .section-heading p:not(.eyebrow)');
-    if(projectionIntro) projectionIntro.textContent='The active Week 8 board shows prospectively preserved research projections with current market comparison, data readiness and pregame context. Canonical publication remains gated, and completed games never rewrite the frozen evidence.';
+    setNodeText(document.getElementById('projectionsTitle'),'Week 8 research projection board');
+    setNodeText(document.querySelector('#projections .section-heading p:not(.eyebrow)'),'The active Week 8 board shows prospectively preserved research projections with current market comparison, data readiness and pregame context. Canonical publication remains gated, and completed games never rewrite the frozen evidence.');
   }
 
   function legacyResultCounts(key){
@@ -52,56 +56,54 @@
     const small=card.querySelector('.record-card-head small');
     const strong=card.querySelector(':scope > strong');
     const sub=card.querySelector('.record-sub');
-    if(label)label.textContent='Totals';
-    if(small)small.textContent='Over / under';
-    if(strong)strong.textContent=`${totals.wins}-${totals.losses}${totals.pushes?`-${totals.pushes}`:''}`;
-    if(sub)sub.innerHTML=`<span>${totals.pct===null?'—':`${totals.pct.toFixed(1)}%`}</span> win rate${totals.pushes?` <span>•</span> ${totals.pushes} push${totals.pushes===1?'':'es'}`:''}`;
+    setNodeText(label,'Totals');
+    setNodeText(small,'Over / under');
+    setNodeText(strong,`${totals.wins}-${totals.losses}${totals.pushes?`-${totals.pushes}`:''}`);
+    setNodeHtml(sub,`<span>${totals.pct===null?'—':`${totals.pct.toFixed(1)}%`}</span> win rate${totals.pushes?` <span>•</span> ${totals.pushes} push${totals.pushes===1?'':'es'}`:''}`);
   }
 
   function syncSharedCopy(){
     syncCfbWeek8Status();
     setText('#recordTitle','Projection performance');
-    const recordIntro=document.querySelector('#record .section-heading p:not(.eyebrow)');
-    if(recordIntro) recordIntro.textContent='Tracks model projection positions against the market spread and total saved when the projection was published. ATS, Totals and Straight Up are graded separately. This is not a wager ledger.';
+    setNodeText(document.querySelector('#record .section-heading p:not(.eyebrow)'),'Tracks model projection positions against the market spread and total saved when the projection was published. ATS, Totals and Straight Up are graded separately. This is not a wager ledger.');
 
     const ruleItems=[...document.querySelectorAll('.projection-rules .rule-item')];
     const marketRule=ruleItems.find(x=>x.querySelector('strong')?.textContent?.trim()==='Market');
-    if(marketRule?.querySelector('small')) marketRule.querySelector('small').textContent='Current comparison; publication snapshot is locked for grading';
+    setNodeText(marketRule?.querySelector('small'),'Current comparison; publication snapshot is locked for grading');
     const validationRule=ruleItems.find(x=>x.querySelector('strong')?.textContent?.trim()==='Validation');
-    if(validationRule?.querySelector('small')) validationRule.querySelector('small').textContent='Research and publication state stay separate';
+    setNodeText(validationRule?.querySelector('small'),'Research and publication state stay separate');
 
     const sort=document.getElementById('sortFilter');
     if(sort){
       const spread=[...sort.options].find(o=>o.value==='spreadgap');
       const total=[...sort.options].find(o=>o.value==='totalgap');
-      if(spread) spread.textContent='Spread difference';
-      if(total) total.textContent='Total difference';
+      setNodeText(spread,'Spread difference');
+      setNodeText(total,'Total difference');
     }
     const headers=document.querySelectorAll('.projection-table thead th');
-    if(headers.length>=5) headers[4].textContent='Spread difference';
+    if(headers.length>=5) setNodeText(headers[4],'Spread difference');
 
     const glossary=[...document.querySelectorAll('.glossary-grid article')];
     const byTitle=title=>glossary.find(x=>x.querySelector('h3')?.textContent?.trim()===title);
     const ats=byTitle('ATS');
-    if(ats?.querySelector('p')) ats.querySelector('p').textContent='Against the spread. The model/market difference identifies the projection side, then the final score is graded against the market spread saved when the projection was published.';
+    setNodeText(ats?.querySelector('p'),'Against the spread. The model/market difference identifies the projection side, then the final score is graded against the market spread saved when the projection was published.');
     const total=byTitle('Total');
-    if(total?.querySelector('p')) total.querySelector('p').textContent='The model total is compared with the market total to create an Over or Under projection. The record is graded against the publication-time market total.';
+    setNodeText(total?.querySelector('p'),'The model total is compared with the market total to create an Over or Under projection. The record is graded against the publication-time market total.');
     const ml=byTitle('Moneyline');
-    if(ml?.querySelector('p')) ml.querySelector('p').textContent='The projection board may show a model-implied moneyline. The record tracker also saves the publication-time market moneyline for reference, but Straight-Up W/L is graded only on whether the projected winner won.';
+    setNodeText(ml?.querySelector('p'),'The projection board may show a model-implied moneyline. The record tracker also saves the publication-time market moneyline for reference, but Straight-Up W/L is graded only on whether the projected winner won.');
     const gap=byTitle('Model / market gap') || byTitle('Model / market difference');
     if(gap){
-      if(gap.querySelector('h3')) gap.querySelector('h3').textContent='Model / market difference';
-      if(gap.querySelector('p')) gap.querySelector('p').textContent='The numerical difference between the independent model and the current market reference. It identifies a projection direction; it is not automatically expected value or a wager instruction.';
+      setNodeText(gap.querySelector('h3'),'Model / market difference');
+      setNodeText(gap.querySelector('p'),'The numerical difference between the independent model and the current market reference. It identifies a projection direction; it is not automatically expected value or a wager instruction.');
     }
 
     const trendIntro=document.querySelector('#trends .section-heading p:not(.eyebrow)');
-    if(trendIntro && /official model record/i.test(trendIntro.textContent)) trendIntro.textContent=trendIntro.textContent.replace(/official model record/i,'official projection-performance record');
+    if(trendIntro && /official model record/i.test(trendIntro.textContent)) setNodeText(trendIntro,trendIntro.textContent.replace(/official model record/i,'official projection-performance record'));
 
-    const nflPolicy=document.querySelector('.nfl-policy-note');
-    if(nflPolicy) nflPolicy.textContent='NFL alternative-line research targets, moneyline comparisons, thresholds and sizing remain locked until prospective calibration earns them. Model/market differences and win probability are descriptive research outputs.';
+    setNodeText(document.querySelector('.nfl-policy-note'),'NFL alternative-line research targets, moneyline comparisons, thresholds and sizing remain locked until prospective calibration earns them. Model/market differences and win probability are descriptive research outputs.');
     document.querySelectorAll('.nfl-validation-strip div').forEach(box=>{
       const label=box.querySelector('span');
-      if(label?.textContent?.trim()==='Recommendation state') label.textContent='Projection state';
+      if(label?.textContent?.trim()==='Recommendation state') setNodeText(label,'Projection state');
     });
 
     const tracker=document.getElementById('recordTrackerV2');
@@ -110,7 +112,7 @@
       const weekValue=weekMeta?.querySelector('strong')?.textContent?.trim();
       if(weekValue==='—'){
         const status=tracker.querySelector('.rt-meta .rt-status');
-        if(status){status.className='rt-status rt-pending';status.textContent='◷ Awaiting first graded week';}
+        if(status){status.className='rt-status rt-pending';setNodeText(status,'◷ Awaiting first graded week');}
       }
     } else {
       syncLegacyFallback();
@@ -119,8 +121,7 @@
 
   function syncProductCopy(){
     setText('#topSignalsTitle','Top spread differences');
-    const topCopy=document.querySelector('.top-signals-head p');
-    if(topCopy) topCopy.textContent='Largest current model/market differences for the loaded week. Ranked by difference only—not by publication readiness.';
+    setNodeText(document.querySelector('.top-signals-head p'),'Largest current model/market differences for the loaded week. Ranked by difference only—not by publication readiness.');
     document.querySelectorAll('.top-signal-main b').forEach(el=>{
       const next=el.textContent.replace(/spread gap/gi,'spread difference');
       if(el.textContent!==next) el.textContent=next;
@@ -131,7 +132,7 @@
     });
     setText('.model-product-head h3','Projection differences, alternatives & readiness');
     document.querySelectorAll('.readiness-title-row .command-label').forEach(el=>{
-      if(/SPREAD RELEASE GATES/i.test(el.textContent)) el.textContent='SPREAD READINESS CHECKS';
+      if(/SPREAD RELEASE GATES/i.test(el.textContent)) setNodeText(el,'SPREAD READINESS CHECKS');
     });
     document.querySelectorAll('.readiness-blocker-copy').forEach(el=>{
       let next=el.textContent.replace(/release blockers/gi,'publication blockers');
