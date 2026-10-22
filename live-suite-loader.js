@@ -1,6 +1,6 @@
 (() => {
   const league = () => String(window.CB_ACTIVE_LEAGUE || 'cfb').toLowerCase() === 'nfl' ? 'nfl' : 'cfb';
-  const ASSET_VERSION = '20261022-current-week-projections-1';
+  const ASSET_VERSION = '20261022-iphone-mobile-fix-1';
   const versioned = src => `${src}${src.includes('?') ? '&' : '?'}v=${encodeURIComponent(ASSET_VERSION)}`;
 
   const loadCss = href => {
@@ -54,7 +54,7 @@
     const sub=card.querySelector('.record-sub');
     if(label)label.textContent='Totals';
     if(small)small.textContent='Over / under';
-    if(strong){strong.removeAttribute('id');strong.textContent=`${totals.wins}-${totals.losses}${totals.pushes?`-${totals.pushes}`:''}`;}
+    if(strong)strong.textContent=`${totals.wins}-${totals.losses}${totals.pushes?`-${totals.pushes}`:''}`;
     if(sub)sub.innerHTML=`<span>${totals.pct===null?'—':`${totals.pct.toFixed(1)}%`}</span> win rate${totals.pushes?` <span>•</span> ${totals.pushes} push${totals.pushes===1?'':'es'}`:''}`;
   }
 
