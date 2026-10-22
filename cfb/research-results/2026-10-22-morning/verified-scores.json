@@ -1,0 +1,112 @@
+{
+  "observedAt": "2026-10-22T11:56:58.545394+00:00",
+  "sourceCapture": "cfb/research-results/2026-10-22-morning/espn-wednesday-summary.json",
+  "crossCheckUrls": [
+    "https://nmstatesports.com/news/2026/10/21/football-nm-state-outlasts-sam-houston-in-wednesday-night-win.aspx"
+  ],
+  "games": [
+    {
+      "sourceGameId": "401871055",
+      "awayTeam": "Middle Tennessee",
+      "homeTeam": "Florida International",
+      "awayScore": 26,
+      "homeScore": 23,
+      "status": "FINAL",
+      "overtime": false,
+      "source": "ESPN",
+      "sourceUpdatedAt": "2026-10-21T20:02:59.972949Z",
+      "originalSourceTeamNames": {
+        "awayTeam": "Middle Tennessee Blue Raiders",
+        "homeTeam": "Florida International Panthers"
+      },
+      "identityVerification": "Exact ESPN event ID matched active scope; source display names retained."
+    },
+    {
+      "sourceGameId": "401871069",
+      "awayTeam": "Missouri State",
+      "homeTeam": "Delaware",
+      "awayScore": 38,
+      "homeScore": 61,
+      "status": "FINAL",
+      "overtime": false,
+      "source": "ESPN",
+      "sourceUpdatedAt": "2026-10-21T20:02:59.972965Z",
+      "originalSourceTeamNames": {
+        "awayTeam": "Missouri State Bears",
+        "homeTeam": "Delaware Blue Hens"
+      },
+      "identityVerification": "Exact ESPN event ID matched active scope; source display names retained."
+    },
+    {
+      "sourceGameId": "401871092",
+      "awayTeam": "South Alabama",
+      "homeTeam": "Marshall",
+      "awayScore": 13,
+      "homeScore": 20,
+      "status": "FINAL",
+      "overtime": false,
+      "source": "ESPN",
+      "sourceUpdatedAt": "2026-10-21T20:02:59.972972Z",
+      "originalSourceTeamNames": {
+        "awayTeam": "South Alabama Jaguars",
+        "homeTeam": "Marshall Thundering Herd"
+      },
+      "identityVerification": "Exact ESPN event ID matched active scope; source display names retained."
+    },
+    {
+      "gameId": "2026-10-21-NEWMEXICOSTATE-SAMHOUSTON",
+      "sourceGameId": "401871070",
+      "gameDateET": "2026-10-21",
+      "awayTeam": "New Mexico State",
+      "homeTeam": "Sam Houston",
+      "kickoff": "2026-10-22T00:00:00Z",
+      "foundationDigest": "76573e65de4174437af8f8b604ec6730d1b183804089c333a6186c8b182c26da",
+      "status": "FINAL",
+      "source": "ESPN",
+      "awayScore": 30,
+      "homeScore": 24,
+      "overtime": false,
+      "retrievedAt": "2026-10-22T11:56:58.545394+00:00",
+      "sourcePublishedAt": null,
+      "originalSourceTeamNames": {
+        "awayTeam": "New Mexico State Aggies",
+        "homeTeam": "Sam Houston Bearkats"
+      },
+      "identityVerification": "Exact event ID, team IDs, scheduled kickoff and quarter-score sums checked; official NM State recap corroborates FINAL 30\u201324."
+    },
+    {
+      "gameId": "2026-10-22-JAMESMADISON-APPSTATE",
+      "sourceGameId": "401869845",
+      "gameDateET": "2026-10-22",
+      "awayTeam": "James Madison",
+      "homeTeam": "App State",
+      "kickoff": "2026-10-22T23:00:00Z",
+      "foundationDigest": "50147bbb9df5dbcabf7857833e94a663d537996bceaf0da92379c547913d8875",
+      "status": "PENDING",
+      "source": "Scope schedule; no score requested for paused Thursday games"
+    },
+    {
+      "gameId": "2026-10-22-LIBERTY-KENNESAWSTATE",
+      "sourceGameId": "401871056",
+      "gameDateET": "2026-10-22",
+      "awayTeam": "Liberty",
+      "homeTeam": "Kennesaw State",
+      "kickoff": "2026-10-22T23:00:00Z",
+      "foundationDigest": "f2dce35bbd39b50c1457eb063ae30cbbba26a98d6b38f7de39a2dcbc470977a7",
+      "status": "PENDING",
+      "source": "Scope schedule; no score requested for paused Thursday games"
+    },
+    {
+      "gameId": "2026-10-22-EASTCAROLINA-MEMPHIS",
+      "sourceGameId": "401862807",
+      "gameDateET": "2026-10-22",
+      "awayTeam": "East Carolina",
+      "homeTeam": "Memphis",
+      "kickoff": "2026-10-22T23:30:00Z",
+      "foundationDigest": "4e630ce63c2afc4ea179d3455e85efc5280b3838e8bfd6ac5feab7e23ff66409",
+      "status": "PENDING",
+      "source": "Scope schedule; no score requested for paused Thursday games"
+    }
+  ],
+  "priorTuesdayCapture": "cfb/pregame-refresh/week-08-wednesday-afternoon-2026-10-21-verified-scores.json"
+}

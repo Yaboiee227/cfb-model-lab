@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "role": "PROSPECTIVE_RESEARCH_SHADOW_RESULTS",
+  "canonicalInfluence": false,
+  "canonicalRecordMerged": false,
+  "modelId": "cfb-rebuild-foundation-v1-shadow",
+  "sourceLockDigest": "72d0aa99176904f681264e69f57260152607914f712a1686d2cdaaf89af3115b",
+  "sourceLockedAt": "2026-10-20T11:34:56.634210Z",
+  "gradedAt": "2026-10-21T20:03:16.496984Z",
+  "status": "IN_PROGRESS",
+  "counts": {
+    "games": 7,
+    "final": 3,
+    "pending": 4,
+    "review": 0,
+    "void": 0
+  },
+  "metrics": {
+    "margin": {
+      "games": 3,
+      "mae": 14.690518522393882,
+      "rmse": 14.91316208335092,
+      "bias": -3.372244470985526
+    },
+    "total": {
+      "games": 3,
+      "mae": 29.9055356964703,
+      "rmse": 34.515582596969466,
+      "bias": -5.543693693227792
+    },
+    "straightUp": {
+      "wins": 1,
+      "losses": 2,
+      "graded": 3,
+      "accuracyPct": 33.333333333333336
+    },
+    "winProbability": {
+      "games": 3,
+      "brierScore": 0.37633831186159666
+    }
+  },
+  "games": [
+    {
+      "gameId": "2026-10-20-MIDDLETENNESSEE-FLORIDAINTERNATIONAL",
+      "awayTeam": "Middle Tennessee",
+      "homeTeam": "Florida International",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "projectionDigest": "d837003b6ba482064b0d61e2f4d5d519d1110c204aabdca37ab58edaf15a4570",
+      "projection": {
+        "awayPoints": 14.372105636229959,
+        "homePoints": 28.349516713342496,
+        "marginHome": 13.977411077112537,
+        "spreadHome": -13.977411077112537,
+        "total": 42.721622349572456,
+        "homeWinProbability": 81.12113387563811,
+        "winner": "Florida International"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 26,
+        "homeScore": 23,
+        "marginHome": -3,
+        "total": 49,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 16.977411077112535,
+        "absoluteMargin": 16.977411077112535,
+        "total": -6.278377650427544,
+        "absoluteTotal": 6.278377650427544
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
+    },
+    {
+      "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
+      "awayTeam": "Missouri State",
+      "homeTeam": "Delaware",
+      "kickoff": "2026-10-20T23:00:00Z",
+      "projectionDigest": "c2f169318d0835551d45c972f4dbf953b36a585e1579988b846e2aae084321c8",
+      "projection": {
+        "awayPoints": 22.546887989883015,
+        "homePoints": 29.557645575997395,
+        "marginHome": 7.01075758611438,
+        "spreadHome": -7.01075758611438,
+        "total": 52.10453356588041,
+        "homeWinProbability": 67.09639860904643,
+        "winner": "Delaware"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 38,
+        "homeScore": 61,
+        "marginHome": 23,
+        "total": 99,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -15.98924241388562,
+        "absoluteMargin": 15.98924241388562,
+        "total": -46.89546643411959,
+        "absoluteTotal": 46.89546643411959
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
+      "awayTeam": "South Alabama",
+      "homeTeam": "Marshall",
+      "kickoff": "2026-10-20T23:30:00Z",
+      "projectionDigest": "1f3d9455b39a045403e0b5e7616dec22366f2c4669bb1f4903907ab43704b4b2",
+      "projection": {
+        "awayPoints": 36.823832540523625,
+        "homePoints": 32.71893046434013,
+        "marginHome": -4.1049020761834925,
+        "spreadHome": 4.1049020761834925,
+        "total": 69.54276300486376,
+        "homeWinProbability": 39.77654933430052,
+        "winner": "South Alabama"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 13,
+        "homeScore": 20,
+        "marginHome": 7,
+        "total": 33,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -11.104902076183492,
+        "absoluteMargin": 11.104902076183492,
+        "total": 36.54276300486376,
+        "absoluteTotal": 36.54276300486376
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
+    },
+    {
+      "gameId": "2026-10-22-NEWMEXICOSTATE-SAMHOUSTON",
+      "awayTeam": "New Mexico State",
+      "homeTeam": "Sam Houston",
+      "kickoff": "2026-10-22T00:00:00Z",
+      "projectionDigest": "76573e65de4174437af8f8b604ec6730d1b183804089c333a6186c8b182c26da",
+      "projection": {
+        "awayPoints": 21.322981138871473,
+        "homePoints": 20.936490453301413,
+        "marginHome": -0.3864906855700596,
+        "spreadHome": 0.3864906855700596,
+        "total": 42.259471592172886,
+        "homeWinProbability": 49.02673862307157,
+        "winner": "New Mexico State"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-10-22-JAMESMADISON-APPSTATE",
+      "awayTeam": "James Madison",
+      "homeTeam": "App State",
+      "kickoff": "2026-10-22T23:00:00Z",
+      "projectionDigest": "50147bbb9df5dbcabf7857833e94a663d537996bceaf0da92379c547913d8875",
+      "projection": {
+        "awayPoints": 31.99311570132898,
+        "homePoints": 21.549181361152318,
+        "marginHome": -10.44393434017666,
+        "spreadHome": 10.44393434017666,
+        "total": 53.542297062481296,
+        "homeWinProbability": 25.48493612139827,
+        "winner": "James Madison"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-10-22-LIBERTY-KENNESAWSTATE",
+      "awayTeam": "Liberty",
+      "homeTeam": "Kennesaw State",
+      "kickoff": "2026-10-22T23:00:00Z",
+      "projectionDigest": "f2dce35bbd39b50c1457eb063ae30cbbba26a98d6b38f7de39a2dcbc470977a7",
+      "projection": {
+        "awayPoints": 27.88338836095161,
+        "homePoints": 17.082584952508963,
+        "marginHome": -10.800803408442647,
+        "spreadHome": 10.800803408442647,
+        "total": 44.96597331346057,
+        "homeWinProbability": 24.76715217474573,
+        "winner": "Liberty"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-10-22-EASTCAROLINA-MEMPHIS",
+      "awayTeam": "East Carolina",
+      "homeTeam": "Memphis",
+      "kickoff": "2026-10-22T23:30:00Z",
+      "projectionDigest": "4e630ce63c2afc4ea179d3455e85efc5280b3838e8bfd6ac5feab7e23ff66409",
+      "projection": {
+        "awayPoints": 18.487572445077312,
+        "homePoints": 34.76879531305596,
+        "marginHome": 16.28122286797865,
+        "spreadHome": -16.28122286797865,
+        "total": 53.25636775813327,
+        "homeWinProbability": 84.79790917211139,
+        "winner": "Memphis"
+      },
+      "status": "PENDING",
+      "final": null
+    }
+  ],
+  "policy": "Research-only prospective performance. Never merge these results into the established canonical record or use postgame outcomes to rewrite the frozen projections.",
+  "activeScope": "cfb/pregame/week-08-active-through-thursday.json",
+  "pauseBeforeGameDateET": "2026-10-23"
+}

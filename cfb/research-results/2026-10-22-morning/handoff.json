@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-10-22T11:58:22.892445+00:00",
+  "baseCommit": "9fe9ae5a7f7395f916f5d58ba7cd990bc0d505af",
+  "changedGameIds": [
+    "2026-10-21-NEWMEXICOSTATE-SAMHOUSTON"
+  ],
+  "tuesdayResultRowsUnchanged": true,
+  "operationsInputsUnchanged": true,
+  "pregameRefreshPerformed": false,
+  "thursdayPreparationAuthorized": false,
+  "sourceChecks": [
+    {
+      "url": "https://www.espn.com/college-football/game/_/gameId/401871070/new-mexico-st-sam-houston",
+      "status": "WEB_VERIFICATION_WALL"
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401871070",
+      "status": "FINAL_VERIFIED",
+      "retrievedAt": "2026-10-22T11:56:58.545394+00:00",
+      "sourcePublishedAt": null
+    },
+    {
+      "url": "https://nmstatesports.com/news/2026/10/21/football-nm-state-outlasts-sam-houston-in-wednesday-night-win.aspx",
+      "status": "OFFICIAL_FINAL_CORROBORATED",
+      "publicationDate": "2026-10-21",
+      "retrievedAt": null,
+      "retrievalTimePrecision": "Exact web retrieval timestamp unavailable; retrieved during this October 22 morning run"
+    }
+  ],
+  "nextCheckpoint": "Explicit Thursday resumption required before preparation; do not treat broad operations-check Thursday queue as authorization.",
+  "canonicalGate": "HOLD"
+}

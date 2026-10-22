@@ -7,7 +7,7 @@
   "canonicalInfluence": false,
   "canonicalPromotionAuthorized": false,
   "canonicalRecordMerged": false,
-  "gradedAt": "2026-10-21T20:03:00.214853Z",
+  "gradedAt": "2026-10-22T11:57:40.657543Z",
   "foundation": {
     "modelId": "cfb-rebuild-foundation-v1-shadow",
     "lockDigest": "72d0aa99176904f681264e69f57260152607914f712a1686d2cdaaf89af3115b",
@@ -26,66 +26,66 @@
   "status": "IN_PROGRESS",
   "counts": {
     "games": 7,
-    "final": 3,
-    "pending": 4,
+    "final": 4,
+    "pending": 3,
     "review": 0,
     "void": 0
   },
   "aggregate": {
     "cbMargin": {
-      "games": 3,
-      "mae": 14.690518522393882,
-      "rmse": 14.91316208335092,
-      "bias": -3.372244470985526
+      "games": 4,
+      "mae": 12.421266220402897,
+      "rmse": 13.216643832646001,
+      "bias": -1.1258060246316592
     },
     "sagarinMargin": {
-      "games": 3,
-      "mae": 14.813333333333333,
-      "rmse": 14.946667410050532,
-      "bias": -4.579999999999997
+      "games": 4,
+      "mae": 12.722500000000002,
+      "rmse": 13.339894115022053,
+      "bias": -1.8224999999999965
     },
     "closerToFinalMargin": {
-      "CB": 2,
+      "CB": 3,
       "SAGARIN": 1,
       "TIE": 0
     },
     "cbStraightUp": {
-      "correct": 1,
+      "correct": 2,
       "wrong": 2,
-      "graded": 3,
-      "accuracyPct": 33.333333333333336
+      "graded": 4,
+      "accuracyPct": 50.0
     },
     "sagarinStraightUp": {
       "correct": 1,
-      "wrong": 2,
-      "graded": 3,
-      "accuracyPct": 33.333333333333336
+      "wrong": 3,
+      "graded": 4,
+      "accuracyPct": 25.0
     },
     "directionalDisagreementGames": {
-      "games": 0,
-      "cbCloser": 0,
+      "games": 1,
+      "cbCloser": 1,
       "sagarinCloser": 0,
       "ties": 0,
-      "cbSuCorrect": 0,
+      "cbSuCorrect": 1,
       "sagarinSuCorrect": 0
     },
     "byPregameDisagreementBucket": {
       "LT_2": {
-        "games": 3,
+        "games": 4,
         "cbMargin": {
-          "games": 3,
-          "mae": 14.690518522393882,
-          "rmse": 14.91316208335092,
-          "bias": -3.372244470985526
+          "games": 4,
+          "mae": 12.421266220402897,
+          "rmse": 13.216643832646001,
+          "bias": -1.1258060246316592
         },
         "sagarinMargin": {
-          "games": 3,
-          "mae": 14.813333333333333,
-          "rmse": 14.946667410050532,
-          "bias": -4.579999999999997
+          "games": 4,
+          "mae": 12.722500000000002,
+          "rmse": 13.339894115022053,
+          "bias": -1.8224999999999965
         },
         "closer": {
-          "CB": 2,
+          "CB": 3,
           "SAGARIN": 1,
           "TIE": 0
         }
@@ -315,7 +315,23 @@
         "disagreementBucket": "LT_2",
         "directionalWinnerAgreement": false
       },
-      "postgameStatus": "PENDING"
+      "postgameStatus": "FINAL",
+      "final": {
+        "awayScore": 30,
+        "homeScore": 24,
+        "homeMargin": -6.0,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "postgameComparison": {
+        "cbMarginError": 5.61350931442994,
+        "cbAbsoluteMarginError": 5.61350931442994,
+        "sagarinMarginError": 6.4500000000000055,
+        "sagarinAbsoluteMarginError": 6.4500000000000055,
+        "closerToFinalMargin": "CB",
+        "cbStraightUpCorrect": true,
+        "sagarinStraightUpCorrect": false
+      }
     },
     {
       "gameId": "2026-10-22-JAMESMADISON-APPSTATE",

@@ -9,37 +9,37 @@
   "modelId": "cfb-rebuild-foundation-v1-shadow",
   "sourceLockDigest": "72d0aa99176904f681264e69f57260152607914f712a1686d2cdaaf89af3115b",
   "sourceLockedAt": "2026-10-20T11:34:56.634210Z",
-  "gradedAt": "2026-10-21T20:03:16.496984Z",
+  "gradedAt": "2026-10-22T11:57:40.489025Z",
   "status": "IN_PROGRESS",
   "counts": {
     "games": 7,
-    "final": 3,
-    "pending": 4,
+    "final": 4,
+    "pending": 3,
     "review": 0,
     "void": 0
   },
   "metrics": {
     "margin": {
-      "games": 3,
-      "mae": 14.690518522393882,
-      "rmse": 14.91316208335092,
-      "bias": -3.372244470985526
+      "games": 4,
+      "mae": 12.421266220402897,
+      "rmse": 13.216643832646001,
+      "bias": -1.1258060246316592
     },
     "total": {
-      "games": 3,
-      "mae": 29.9055356964703,
-      "rmse": 34.515582596969466,
-      "bias": -5.543693693227792
+      "games": 4,
+      "mae": 25.3642838743095,
+      "rmse": 30.462338769863273,
+      "bias": -7.0929023718776225
     },
     "straightUp": {
-      "wins": 1,
+      "wins": 2,
       "losses": 2,
-      "graded": 3,
-      "accuracyPct": 33.333333333333336
+      "graded": 4,
+      "accuracyPct": 50.0
     },
     "winProbability": {
-      "games": 3,
-      "brierScore": 0.37633831186159666
+      "games": 4,
+      "brierScore": 0.342344261396572
     }
   },
   "games": [
@@ -160,8 +160,24 @@
         "homeWinProbability": 49.02673862307157,
         "winner": "New Mexico State"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 30,
+        "homeScore": 24,
+        "marginHome": -6,
+        "total": 54,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 5.61350931442994,
+        "absoluteMargin": 5.61350931442994,
+        "total": -11.740528407827114,
+        "absoluteTotal": 11.740528407827114
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-10-22-JAMESMADISON-APPSTATE",

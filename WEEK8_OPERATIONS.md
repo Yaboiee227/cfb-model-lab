@@ -273,3 +273,13 @@ production state. Do not rebuild or overwrite the current slate from that snapsh
 - Final NWS hourly retrieval at 7:39 PM ET: 74 F, clear, 0% precipitation and north wind 5 mph for the 7:00–8:00 PM CDT kickoff hour; 69 F, clear and north wind 5 mph for the next hour. No weather adjustment was promoted.
 - Sam Houston's Locke baseline remains supported. No official NM State starter announcement was found; market/third-party evidence pointing to Adam Damante remains noncanonical. RefMetrics still had no crew assignment posted. Official final-window SP+ and Sagarin snapshots remain unverified.
 - Evidence packet: `cfb/pregame-refresh/week-08-wednesday-publication-lock-2026-10-21-1939et.json`. The existing market-lock registry now contains two immutable Wednesday book observations. No frozen projection, Prediction Log value or canonical record changed.
+
+
+## Wednesday postgame handoff — October 22, 2026, morning ET
+
+- Verified NM State 30–24 Sam Houston FINAL using ESPN event 401871070 (retrieved 7:56:58 AM ET), exact team IDs, kickoff identity and quarter-score sums, corroborated by the official NM State October 21 recap. ESPN's public game page returned a verification wall; its summary endpoint succeeded. Source publication time was not supplied by the endpoint and remains unknown.
+- Evidence, prior result snapshots, operations report and verified score input: `cfb/research-results/2026-10-22-morning/`. Tuesday score rows are reused with their original timestamps, not labeled freshly retrieved.
+- Ran all three scoped graders with the verified saved score input. Only Wednesday changed from pending to FINAL. Tuesday result rows are identical; prior aggregate artifacts are preserved. Research record across four unique games: **1–3 ATS, 0–4 totals, 2–2 SU**, separately at FanDuel and DraftKings. Wednesday: ATS LOSS, total LOSS, SU WIN. The market report's COMPLETE status covers currently locked games only; three Thursday games remain unprocessed without locks.
+- All operations input fingerprints remain unchanged, including foundation, eight book locks across four games, canonical gate and pregame states. No post-kickoff personnel/weather/market reconstruction. No ROI/CLV or promotion. Canonical remains HOLD.
+- Wednesday source packet remains the last pregame evidence (October 21, 7:39 PM ET); final availability and benchmark gaps stay unresolved historically. This postgame capture does not improve pregame freshness.
+- **Next checkpoint: explicit Thursday resumption.** Thursday preparation remains paused under the narrower current instruction, despite the broader seven-game operations report listing today's games. Friday/Saturday remain paused; NFL unaffected. Software integrity checks are not predictive validation.
