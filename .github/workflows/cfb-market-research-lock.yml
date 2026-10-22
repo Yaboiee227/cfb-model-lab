@@ -43,6 +43,7 @@ jobs:
         run: |
           python - <<'PY'
           import json,sys
+          from pathlib import Path
           sys.path.insert(0,'scripts')
           from cfb_market_research_lock import active_ids_from_scope, verify_existing
           from record_tracker import load_aliases
@@ -56,7 +57,7 @@ jobs:
           assert d['foundationLockDigest']==foundation['lockDigest']
           assert d['booksTracked']==['fanduel','draftkings']
           assert d['scopeRestricted'] is True
-          active=active_ids_from_scope(scope,foundation,load_aliases('.'))
+          active=active_ids_from_scope(scope,foundation,load_aliases(Path('.')))
           assert len(active)==53, len(active)
           assert d['counts']['activeScopeGames']==53, d['counts']
           assert d['counts']['preservedOutOfScopeLockedGames']==3, d['counts']
