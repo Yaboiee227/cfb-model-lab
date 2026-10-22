@@ -1,16 +1,6 @@
 name: Publish CFB Week 8 website data
 on:
-  push:
-    paths:
-      - 'scripts/publish_cfb_week8_website.py'
-      - 'cfb/research-locks/week-08-foundation-full.json'
-      - 'cfb/pregame/week-08-schedule.json'
-      - 'data/team-aliases.json'
-      - '.github/workflows/publish-cfb-week8-website.yml'
   workflow_dispatch:
-  workflow_run:
-    workflows: ['Refresh sportsbook markets']
-    types: [completed]
 permissions:
   contents: write
 concurrency:
@@ -18,7 +8,6 @@ concurrency:
   cancel-in-progress: false
 jobs:
   publish:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
