@@ -1,10 +1,58 @@
 /* Shared responsive shell hardening — CFB + NFL
-   CB_SHELL_HARDENING_V3
+   CB_SHELL_HARDENING_V4
    Loaded after site-shell.css. Keeps the compact header single-row, anchors the
    absolute navigation panel to the real header height, prevents background
-   scroll while the menu is open, and protects narrow mobile widths. */
+   scroll while the menu is open, and contains WebKit intrinsic-width leakage
+   without disabling intentional horizontal scrollers. */
 
 @media(max-width:1180px){
+  body.site-v2{
+    max-width:100%;
+  }
+  body.site-v2 main,
+  body.site-v2 .site-footer{
+    max-width:100vw;
+    overflow-x:clip;
+  }
+  body.site-v2 main > *,
+  body.site-v2 .section-shell,
+  body.site-v2 .alt-section,
+  body.site-v2 .hero-grid,
+  body.site-v2 .command-center,
+  body.site-v2 .cb-product-rail,
+  body.site-v2 .cb-product-rail-inner,
+  body.site-v2 .cb-product-rail-copy,
+  body.site-v2 .cb-product-links,
+  body.site-v2 .projection-cards,
+  body.site-v2 .live-center,
+  body.site-v2 .live-center-head,
+  body.site-v2 .live-center-status,
+  body.site-v2 .live-game-grid,
+  body.site-v2 .next-kickoff,
+  body.site-v2 .top-signals,
+  body.site-v2 .top-signals-head,
+  body.site-v2 .top-signals-grid{
+    min-width:0;
+    max-width:100%;
+  }
+  body.site-v2 .cb-product-links{
+    width:100%;
+  }
+  body.site-v2 .live-game-card,
+  body.site-v2 .top-signal-card{
+    min-width:0;
+    max-width:100%;
+  }
+  body.site-v2 .live-game-card *,
+  body.site-v2 .top-signal-card *{
+    min-width:0;
+  }
+  body.site-v2 .live-card-foot span,
+  body.site-v2 .live-matchup-row span,
+  body.site-v2 .top-signal-card strong,
+  body.site-v2 .top-signal-card small{
+    overflow-wrap:anywhere;
+  }
   body.site-v2 .header-inner{
     position:relative;
     flex-wrap:nowrap!important;
