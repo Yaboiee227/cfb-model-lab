@@ -21,7 +21,12 @@ let failed = false;
 for (const tc of cases) {
   const page = await browser.newPage({ viewport: tc.viewport });
   const errors = [];
+  const failedRequests = [];
   page.on('pageerror', err => errors.push(`pageerror: ${err.message}`));
+  page.on('requestfailed', req => failedRequests.push(`${req.method()} ${req.url()} :: ${req.failure()?.errorText || 'failed'}`));
+  page.on('response', res => {
+    if (res.status() >= 400) failedRequests.push(`HTTP ${res.status()} ${res.url()}`);
+  });
   page.on('console', msg => {
     if (msg.type() === 'error') errors.push(`console: ${msg.text()}`);
   });
@@ -57,12 +62,31 @@ for (const tc of cases) {
     bodyClientWidth: document.body.clientWidth,
     title: document.title
   }));
+
+  const overflowOffenders = await page.evaluate(() => {
+    const vw = document.documentElement.clientWidth;
+    return [...document.querySelectorAll('body *')].map((el, index) => {
+      const r = el.getBoundingClientRect();
+      const style = getComputedStyle(el);
+      return {
+        index,
+        tag: el.tagName.toLowerCase(),
+        id: el.id || '',
+        className: typeof el.className === 'string' ? el.className : '',
+        left: Math.round(r.left), right: Math.round(r.right), width: Math.round(r.width),
+        position: style.position, overflowX: style.overflowX, display: style.display
+      };
+    }).filter(x => x.right > vw + 2 || x.left < -2)
+      .sort((a,b) => (b.right - vw) - (a.right - vw))
+      .slice(0, 20);
+  });
+
   if (layout.scrollWidth > layout.clientWidth + 2) errors.push(`Horizontal document overflow ${layout.scrollWidth}px > ${layout.clientWidth}px`);
   if (layout.bodyScrollWidth > layout.bodyClientWidth + 2) errors.push(`Horizontal body overflow ${layout.bodyScrollWidth}px > ${layout.bodyClientWidth}px`);
 
   const screenshot = `${outDir}/${tc.name}.png`;
   await page.screenshot({ path: screenshot, fullPage: true });
-  report.push({ name: tc.name, url, viewport: tc.viewport, layout, errors, screenshot });
+  report.push({ name: tc.name, url, viewport: tc.viewport, layout, overflowOffenders, failedRequests, errors, screenshot });
   if (errors.length) failed = true;
   await page.close();
 }
