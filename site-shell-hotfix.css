@@ -1,0 +1,75 @@
+/* Shared responsive shell hardening — CFB + NFL
+   Loaded after site-shell.css. Keeps the mobile header single-row so the
+   absolute navigation panel is anchored to the real header height instead of
+   the legacy wrapped header rules injected by league-bootstrap.js. */
+
+@media(max-width:1180px){
+  body.site-v2 .header-inner{
+    position:relative;
+    flex-wrap:nowrap!important;
+    min-width:0;
+  }
+  body.site-v2 .brand{
+    min-width:0;
+    flex:1 1 auto;
+  }
+  body.site-v2 .brand-copy{
+    min-width:0;
+  }
+  body.site-v2 .primary-nav{
+    order:0!important;
+    width:auto!important;
+    overflow:visible;
+  }
+  body.site-v2 .cb-mobile-nav-toggle,
+  body.site-v2 .league-switch,
+  body.site-v2 .theme-toggle{
+    order:0!important;
+    flex:0 0 auto;
+  }
+  body.site-v2 .league-switch{
+    margin-left:0!important;
+  }
+}
+
+@media(max-width:560px){
+  body.site-v2 .header-inner{
+    padding-inline:11px;
+    gap:7px;
+  }
+  body.site-v2 .brand-mark{
+    width:34px;
+    height:34px;
+  }
+  body.site-v2 .brand-copy strong{
+    display:block;
+    max-width:92px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+  body.site-v2 .cb-mobile-nav-toggle{
+    width:34px;
+    height:34px;
+  }
+  body.site-v2 .league-switch{
+    padding:2px;
+  }
+  body.site-v2 .league-switch button{
+    min-width:36px!important;
+    padding:7px 6px!important;
+    font-size:9px!important;
+  }
+  body.site-v2 .theme-toggle{
+    min-width:34px;
+    width:34px!important;
+    height:34px!important;
+  }
+  body.site-v2 .primary-nav{
+    top:62px;
+    max-height:calc(100vh - 74px);
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;
+  }
+}
