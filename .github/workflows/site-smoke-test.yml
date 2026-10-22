@@ -42,11 +42,50 @@ jobs:
           exit 1
       - name: Run desktop and mobile browser checks
         run: node scripts/site_smoke_test.mjs
-      - name: Upload screenshots and report
+      - name: Upload local screenshots and report
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: responsive-site-smoke
+          name: responsive-site-smoke-local
           path: artifacts/site-smoke/
           retention-days: 7
-# Final QA trigger: rerun after responsive, live-feed, and audited-results fixes.
+
+  production-smoke:
+    needs: smoke
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Wait for this Pages build to propagate
+        shell: bash
+        run: |
+          set -euo pipefail
+          base='https://yaboiee227.github.io/cfb-model-lab'
+          for i in {1..24}; do
+            if curl -fsS "${base}/slate-navigation.js?sha=${GITHUB_SHA}" | grep -q 'FULL SLATE'; then
+              echo 'Current slate-navigation asset is live.'
+              exit 0
+            fi
+            sleep 10
+          done
+          echo 'GitHub Pages did not expose the current slate-navigation asset in time.' >&2
+          exit 1
+      - name: Run production desktop and mobile browser checks
+        env:
+          SITE_BASE_URL: https://yaboiee227.github.io/cfb-model-lab
+          SITE_SMOKE_OUT: artifacts/site-smoke-production
+        run: node scripts/site_smoke_test.mjs
+      - name: Upload production screenshots and report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: responsive-site-smoke-production
+          path: artifacts/site-smoke-production/
+          retention-days: 7
