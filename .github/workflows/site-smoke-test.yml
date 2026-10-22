@@ -10,6 +10,7 @@ on:
       - 'cfb/results/**'
       - 'nfl_data/site/**'
       - 'scripts/site_smoke_test.mjs'
+      - 'scripts/site_webkit_mobile_test.mjs'
       - '.github/workflows/site-smoke-test.yml'
   workflow_dispatch:
 permissions:
@@ -20,16 +21,16 @@ concurrency:
 jobs:
   smoke:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 14
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Install Playwright Chromium
+      - name: Install Playwright Chromium and WebKit
         run: |
           npm install --no-save playwright@1.56.1
-          npx playwright install chromium
+          npx playwright install chromium webkit
       - name: Start local site
         run: |
           python3 -m http.server 8000 --bind 127.0.0.1 > /tmp/cb-site.log 2>&1 &
@@ -40,14 +41,20 @@ jobs:
           done
           cat /tmp/cb-site.log
           exit 1
-      - name: Run local desktop and mobile browser checks
+      - name: Run local desktop and mobile Chromium checks
         run: node scripts/site_smoke_test.mjs
-      - name: Upload local screenshots and report
+      - name: Run local iPhone WebKit checks
+        env:
+          SITE_SMOKE_OUT: artifacts/site-webkit-local
+        run: node scripts/site_webkit_mobile_test.mjs
+      - name: Upload local screenshots and reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: responsive-site-smoke-local
-          path: artifacts/site-smoke/
+          path: |
+            artifacts/site-smoke/
+            artifacts/site-webkit-local/
           retention-days: 7
       - name: Wait for current site assets to reach Pages
         shell: bash
@@ -56,24 +63,32 @@ jobs:
           base='https://yaboiee227.github.io/cfb-model-lab'
           for i in {1..30}; do
             nav="$(curl -fsS "${base}/slate-navigation.js?qa=${GITHUB_RUN_ID}" || true)"
+            css="$(curl -fsS "${base}/slate-navigation.css?qa=${GITHUB_RUN_ID}" || true)"
             boot="$(curl -fsS "${base}/league-bootstrap.js?qa=${GITHUB_RUN_ID}" || true)"
-            if grep -q 'priorityActive' <<<"$nav" && grep -q 'SITE_DATA_FILES' <<<"$boot"; then
-              echo 'Current full-slate and fresh-data assets are live on Pages.'
+            if grep -q 'openCurrentWeekProjections' <<<"$nav" && grep -q 'content-visibility:visible' <<<"$css" && grep -q 'SITE_DATA_FILES' <<<"$boot"; then
+              echo 'Current full-slate, iPhone-safe and fresh-data assets are live on Pages.'
               exit 0
             fi
             sleep 10
           done
-          echo 'GitHub Pages did not expose the current full-slate/fresh-data assets in time.' >&2
+          echo 'GitHub Pages did not expose the current mobile/full-slate assets in time.' >&2
           exit 1
-      - name: Run deployed Pages desktop and mobile browser checks
+      - name: Run deployed Pages desktop and mobile Chromium checks
         env:
           SITE_BASE_URL: https://yaboiee227.github.io/cfb-model-lab
           SITE_SMOKE_OUT: artifacts/site-smoke-production
         run: node scripts/site_smoke_test.mjs
-      - name: Upload deployed-site screenshots and report
+      - name: Run deployed Pages iPhone WebKit checks
+        env:
+          SITE_BASE_URL: https://yaboiee227.github.io/cfb-model-lab
+          SITE_SMOKE_OUT: artifacts/site-webkit-production
+        run: node scripts/site_webkit_mobile_test.mjs
+      - name: Upload deployed-site screenshots and reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: responsive-site-smoke-production
-          path: artifacts/site-smoke-production/
+          path: |
+            artifacts/site-smoke-production/
+            artifacts/site-webkit-production/
           retention-days: 7
