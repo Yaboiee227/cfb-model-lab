@@ -1,0 +1,64 @@
+{
+  "snapshot_id": "20261021T114427Z",
+  "created_at_utc": "2026-10-21T11:44:27.964407+00:00",
+  "games": 14,
+  "max_source_week": 6,
+  "training_seasons": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "training_games": 1087,
+  "canonical_changed": false,
+  "promotion_allowed": false,
+  "website_publish_allowed": false,
+  "release_allowed": false,
+  "source_policy": "Sources retrieved before Week7; no claim these revised bytes were available before earlier historical games.",
+  "coverage_params": {
+    "feature_k": 1.0,
+    "lambda": 100.0,
+    "mae": 9.253145825908062,
+    "rmse": 12.11675150556487,
+    "team_k": 8.0
+  },
+  "total_params": {
+    "k": 8.0,
+    "lambda": 100.0,
+    "mae": 10.805254515528455,
+    "rmse": 13.633007925124653,
+    "n": 91
+  },
+  "ftn_params": {
+    "feature_k": 1.0,
+    "lambda": 300.0,
+    "mae": 9.287578495429901,
+    "rmse": 12.082098786767094,
+    "validation_games": 91
+  },
+  "rating_params": {
+    "elo_k": 40.0,
+    "elo_hfa": 35.0,
+    "offseason_regression": 0.25,
+    "margin_k": 0.05,
+    "margin_hfa": 3.0,
+    "lambda": 100.0
+  },
+  "ftn_weight": 0.5,
+  "source_hashes": {
+    "nfl_data/research/week6_failure_20261021/inputs/nflverse_games.csv": "772c3d4cb871c9ecac42da79cfbb5c39e0ef5db764fd3ee1c84c9b8a6e6db838",
+    "nfl_data/historical/game_pregame_features_2022_2025.csv": "edb1d2c1ff384f8d25025c53f0f4aa861f6d06faf77da033c8a9eb106489c0bf",
+    "nfl_data/historical/team_week_coverage_2022_2025.csv": "5ef9a65d6bd8aa4bd19e892a83bebcc07195f81a4cba232f6ae5c9c771ce15b3",
+    "nfl_data/historical/team_week_ftn_charting_2022_2025.csv": "62cf57653657579f130c6fffb22d9d38da2eb06d67c422935fa1ef05ded9bef2"
+  },
+  "files": {
+    "coverage_inputs.csv": "f65af6a22aab0415e89ee4a5f3161d5f49f8da090cca63249b55b05f6b40dd8b",
+    "source_manifest.json": "b2962242b9be82a8d29e78dcc59e5e13477b14d8b95a734a0b20361e254945f0",
+    "game_feature_inputs.csv": "7710dbf37528fb42e90f7a4648ce040254c3011804c44118a2bce01ea3498b1a",
+    "core_inputs.csv": "3106ceed498c9778a8bca988c9618be2c91e2ff365e71a275802b9184e0cf576",
+    "ftn_join_qa.json": "a65ab43fc0df0fd473bfbda2293821151cd503bfdc4aa1520146a709851ef6aa",
+    "context_market_gates.json": "eb55d986065bdf20075b233798aa7feb7d8ac0d9f1dbc01a7b4f9415cfcdcbcd",
+    "paired_projections.csv": "3e3d6588c2a42e489e34b4937b651bf4345fe2ea5f3c7888380f035ef1a3ba7b",
+    "ftn_inputs.csv": "f1150e03fa27294ecff4e199a18d8dde5f3d17c25ff51d1704e9c34c76dbef38"
+  }
+}

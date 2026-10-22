@@ -1,0 +1,410 @@
+{
+  "display_probability_eligible": true,
+  "generated_at_utc": "2026-10-18T01:04:59.149047+00:00",
+  "market_used_in_fit": false,
+  "method": "Two-parameter logistic calibration of canonical home margin; walk-forward validation by season.",
+  "moneyline_edge_release_allowed": false,
+  "predeclared_display_gates": {
+    "each_fold_beats_50_50_brier": true,
+    "each_fold_beats_50_50_logloss": true,
+    "each_fold_beats_prior_base_rate_brier": true,
+    "each_fold_brier_le_0_245": true,
+    "each_fold_ece_le_0_10": true,
+    "each_fold_positive_slope": true
+  },
+  "production_2026_mapping": {
+    "fit_years": [
+      2023,
+      2024,
+      2025
+    ],
+    "intercept": -0.09481431,
+    "margin_slope": 0.13002864,
+    "n": 815,
+    "policy": "Presentation/research probability only. Does not authorize a wager, confidence tier, moneyline edge, or sizing rule."
+  },
+  "purpose": "Research/presentation calibration from canonical projected home margin to home-win probability.",
+  "recommendation_release_allowed": false,
+  "source": "nfl_data/calibration/final_architecture_oos_predictions_2023_2025.csv",
+  "source_games_excluding_ties": 815,
+  "validation_folds": [
+    {
+      "accuracy_at_50pct": 0.6765,
+      "beats_50_50_brier": true,
+      "beats_50_50_logloss": true,
+      "beats_prior_base_rate_brier": true,
+      "brier": 0.215097,
+      "calibration_bins": [
+        {
+          "hi": 0.3,
+          "lo": 0.2,
+          "mean_probability": 0.2581,
+          "n": 5,
+          "observed_home_win_rate": 0.4
+        },
+        {
+          "hi": 0.4,
+          "lo": 0.3,
+          "mean_probability": 0.3719,
+          "n": 26,
+          "observed_home_win_rate": 0.1154
+        },
+        {
+          "hi": 0.5,
+          "lo": 0.4,
+          "mean_probability": 0.4557,
+          "n": 66,
+          "observed_home_win_rate": 0.3636
+        },
+        {
+          "hi": 0.6,
+          "lo": 0.5,
+          "mean_probability": 0.546,
+          "n": 61,
+          "observed_home_win_rate": 0.4918
+        },
+        {
+          "hi": 0.7,
+          "lo": 0.6,
+          "mean_probability": 0.6532,
+          "n": 76,
+          "observed_home_win_rate": 0.7368
+        },
+        {
+          "hi": 0.8,
+          "lo": 0.7,
+          "mean_probability": 0.7405,
+          "n": 31,
+          "observed_home_win_rate": 0.7419
+        },
+        {
+          "hi": 0.9,
+          "lo": 0.8,
+          "mean_probability": 0.8279,
+          "n": 7,
+          "observed_home_win_rate": 1.0
+        }
+      ],
+      "ece_10bin": 0.08955,
+      "fifty_fifty_baseline": {
+        "accuracy_at_50pct": 0.5331,
+        "brier": 0.25,
+        "calibration_bins": [
+          {
+            "hi": 0.6,
+            "lo": 0.5,
+            "mean_probability": 0.5,
+            "n": 272,
+            "observed_home_win_rate": 0.5331
+          }
+        ],
+        "ece_10bin": 0.033088,
+        "log_loss": 0.693147,
+        "n": 272
+      },
+      "intercept": 0.02898706,
+      "log_loss": 0.620264,
+      "margin_slope": 0.0997444,
+      "n": 272,
+      "positive_margin_slope": true,
+      "prior_base_rate_baseline": {
+        "accuracy_at_50pct": 0.5331,
+        "brier": 0.249392,
+        "calibration_bins": [
+          {
+            "hi": 0.6,
+            "lo": 0.5,
+            "mean_probability": 0.5551,
+            "n": 272,
+            "observed_home_win_rate": 0.5331
+          }
+        ],
+        "ece_10bin": 0.022059,
+        "log_loss": 0.691938,
+        "n": 272
+      },
+      "test_year": 2024,
+      "train_n": 272,
+      "train_years": [
+        2023
+      ],
+      "training_base_rate": 0.5551
+    },
+    {
+      "accuracy_at_50pct": 0.6199,
+      "beats_50_50_brier": true,
+      "beats_50_50_logloss": true,
+      "beats_prior_base_rate_brier": true,
+      "brier": 0.225016,
+      "calibration_bins": [
+        {
+          "hi": 0.2,
+          "lo": 0.1,
+          "mean_probability": 0.1735,
+          "n": 4,
+          "observed_home_win_rate": 0.25
+        },
+        {
+          "hi": 0.3,
+          "lo": 0.2,
+          "mean_probability": 0.252,
+          "n": 20,
+          "observed_home_win_rate": 0.35
+        },
+        {
+          "hi": 0.4,
+          "lo": 0.3,
+          "mean_probability": 0.3627,
+          "n": 30,
+          "observed_home_win_rate": 0.4
+        },
+        {
+          "hi": 0.5,
+          "lo": 0.4,
+          "mean_probability": 0.4519,
+          "n": 60,
+          "observed_home_win_rate": 0.4333
+        },
+        {
+          "hi": 0.6,
+          "lo": 0.5,
+          "mean_probability": 0.5474,
+          "n": 57,
+          "observed_home_win_rate": 0.5439
+        },
+        {
+          "hi": 0.7,
+          "lo": 0.6,
+          "mean_probability": 0.6443,
+          "n": 42,
+          "observed_home_win_rate": 0.5238
+        },
+        {
+          "hi": 0.8,
+          "lo": 0.7,
+          "mean_probability": 0.7365,
+          "n": 42,
+          "observed_home_win_rate": 0.7619
+        },
+        {
+          "hi": 0.9,
+          "lo": 0.8,
+          "mean_probability": 0.8446,
+          "n": 14,
+          "observed_home_win_rate": 0.9286
+        },
+        {
+          "hi": 1.0,
+          "lo": 0.9,
+          "mean_probability": 0.9294,
+          "n": 2,
+          "observed_home_win_rate": 1.0
+        }
+      ],
+      "ece_10bin": 0.044824,
+      "fifty_fifty_baseline": {
+        "accuracy_at_50pct": 0.5387,
+        "brier": 0.25,
+        "calibration_bins": [
+          {
+            "hi": 0.6,
+            "lo": 0.5,
+            "mean_probability": 0.5,
+            "n": 271,
+            "observed_home_win_rate": 0.5387
+          }
+        ],
+        "ece_10bin": 0.038745,
+        "log_loss": 0.693147,
+        "n": 271
+      },
+      "intercept": -0.09887918,
+      "log_loss": 0.639583,
+      "margin_slope": 0.1339941,
+      "n": 271,
+      "positive_margin_slope": true,
+      "prior_base_rate_baseline": {
+        "accuracy_at_50pct": 0.5387,
+        "brier": 0.248528,
+        "calibration_bins": [
+          {
+            "hi": 0.6,
+            "lo": 0.5,
+            "mean_probability": 0.5441,
+            "n": 271,
+            "observed_home_win_rate": 0.5387
+          }
+        ],
+        "ece_10bin": 0.005372,
+        "log_loss": 0.6902,
+        "n": 271
+      },
+      "test_year": 2025,
+      "train_n": 544,
+      "train_years": [
+        2023,
+        2024
+      ],
+      "training_base_rate": 0.5441
+    }
+  ],
+  "website_publish_allowed": false,
+  "week6_rows": [
+    {
+      "away_team": "HOU",
+      "away_win_probability": 0.3917,
+      "canonical_home_margin": 4.113,
+      "display_caveat": "CANONICAL_MARGIN_CALIBRATION",
+      "display_eligible": true,
+      "game_id": "2026_06_HOU_JAX",
+      "hard_qb_state_break": false,
+      "home_team": "JAX",
+      "home_win_probability": 0.6083,
+      "spread_reliability_tier": "B \u2014 STANDARD_MODEL_PENDING_FINAL_GATES"
+    },
+    {
+      "away_team": "BAL",
+      "away_win_probability": 0.7365,
+      "canonical_home_margin": -7.174,
+      "display_caveat": "OUT_OF_DISTRIBUTION_QB_BREAK",
+      "display_eligible": true,
+      "game_id": "2026_06_BAL_CLE",
+      "hard_qb_state_break": true,
+      "home_team": "CLE",
+      "home_win_probability": 0.2635,
+      "spread_reliability_tier": "D \u2014 OUT_OF_DISTRIBUTION_QB_BREAK"
+    },
+    {
+      "away_team": "CAR",
+      "away_win_probability": 0.6152,
+      "canonical_home_margin": -2.879,
+      "display_caveat": "OUT_OF_DISTRIBUTION_QB_BREAK",
+      "display_eligible": true,
+      "game_id": "2026_06_CAR_PHI",
+      "hard_qb_state_break": true,
+      "home_team": "PHI",
+      "home_win_probability": 0.3848,
+      "spread_reliability_tier": "D \u2014 OUT_OF_DISTRIBUTION_QB_BREAK"
+    },
+    {
+      "away_team": "CHI",
+      "away_win_probability": 0.5369,
+      "canonical_home_margin": -0.409,
+      "display_caveat": "CANONICAL_MARGIN_CALIBRATION",
+      "display_eligible": true,
+      "game_id": "2026_06_CHI_ATL",
+      "hard_qb_state_break": false,
+      "home_team": "ATL",
+      "home_win_probability": 0.4631,
+      "spread_reliability_tier": "C \u2014 ELEVATED_STATE_UNCERTAINTY"
+    },
+    {
+      "away_team": "NO",
+      "away_win_probability": 0.3395,
+      "canonical_home_margin": 5.846,
+      "display_caveat": "CANONICAL_MARGIN_CALIBRATION",
+      "display_eligible": true,
+      "game_id": "2026_06_NO_NYG",
+      "hard_qb_state_break": false,
+      "home_team": "NYG",
+      "home_win_probability": 0.6605,
+      "spread_reliability_tier": "B \u2014 STANDARD_MODEL_PENDING_FINAL_GATES"
+    },
+    {
+      "away_team": "NYJ",
+      "away_win_probability": 0.208,
+      "canonical_home_margin": 11.012,
+      "display_caveat": "CANONICAL_MARGIN_CALIBRATION",
+      "display_eligible": true,
+      "game_id": "2026_06_NYJ_NE",
+      "hard_qb_state_break": false,
+      "home_team": "NE",
+      "home_win_probability": 0.792,
+      "spread_reliability_tier": "C \u2014 ELEVATED_STATE_UNCERTAINTY"
+    },
+    {
+      "away_team": "PIT",
+      "away_win_probability": 0.4579,
+      "canonical_home_margin": 2.027,
+      "display_caveat": "OUT_OF_DISTRIBUTION_QB_BREAK",
+      "display_eligible": true,
+      "game_id": "2026_06_PIT_TB",
+      "hard_qb_state_break": true,
+      "home_team": "TB",
+      "home_win_probability": 0.5421,
+      "spread_reliability_tier": "D \u2014 OUT_OF_DISTRIBUTION_QB_BREAK"
+    },
+    {
+      "away_team": "TEN",
+      "away_win_probability": 0.3038,
+      "canonical_home_margin": 7.105,
+      "display_caveat": "CANONICAL_MARGIN_CALIBRATION",
+      "display_eligible": true,
+      "game_id": "2026_06_TEN_IND",
+      "hard_qb_state_break": false,
+      "home_team": "IND",
+      "home_win_probability": 0.6962,
+      "spread_reliability_tier": "B \u2014 STANDARD_MODEL_PENDING_FINAL_GATES"
+    },
+    {
+      "away_team": "ARI",
+      "away_win_probability": 0.2268,
+      "canonical_home_margin": 10.161,
+      "display_caveat": "CANONICAL_MARGIN_CALIBRATION",
+      "display_eligible": true,
+      "game_id": "2026_06_ARI_LA",
+      "hard_qb_state_break": false,
+      "home_team": "LA",
+      "home_win_probability": 0.7732,
+      "spread_reliability_tier": "B \u2014 STANDARD_MODEL_PENDING_FINAL_GATES"
+    },
+    {
+      "away_team": "BUF",
+      "away_win_probability": 0.7306,
+      "canonical_home_margin": -6.942,
+      "display_caveat": "CANONICAL_MARGIN_CALIBRATION",
+      "display_eligible": true,
+      "game_id": "2026_06_BUF_LV",
+      "hard_qb_state_break": false,
+      "home_team": "LV",
+      "home_win_probability": 0.2694,
+      "spread_reliability_tier": "B \u2014 STANDARD_MODEL_PENDING_FINAL_GATES"
+    },
+    {
+      "away_team": "LAC",
+      "away_win_probability": 0.2098,
+      "canonical_home_margin": 10.926,
+      "display_caveat": "CANONICAL_MARGIN_CALIBRATION",
+      "display_eligible": true,
+      "game_id": "2026_06_LAC_KC",
+      "hard_qb_state_break": false,
+      "home_team": "KC",
+      "home_win_probability": 0.7902,
+      "spread_reliability_tier": "C \u2014 ELEVATED_STATE_UNCERTAINTY"
+    },
+    {
+      "away_team": "DAL",
+      "away_win_probability": 0.4096,
+      "canonical_home_margin": 3.54,
+      "display_caveat": "CANONICAL_MARGIN_CALIBRATION",
+      "display_eligible": true,
+      "game_id": "2026_06_DAL_GB",
+      "hard_qb_state_break": false,
+      "home_team": "GB",
+      "home_win_probability": 0.5904,
+      "spread_reliability_tier": "B \u2014 STANDARD_MODEL_PENDING_FINAL_GATES"
+    },
+    {
+      "away_team": "WAS",
+      "away_win_probability": 0.2092,
+      "canonical_home_margin": 10.958,
+      "display_caveat": "CANONICAL_MARGIN_CALIBRATION",
+      "display_eligible": true,
+      "game_id": "2026_06_WAS_SF",
+      "hard_qb_state_break": false,
+      "home_team": "SF",
+      "home_win_probability": 0.7908,
+      "spread_reliability_tier": "C \u2014 ELEVATED_STATE_UNCERTAINTY"
+    }
+  ]
+}

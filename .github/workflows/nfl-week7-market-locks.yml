@@ -1,0 +1,47 @@
+name: NFL Week 7 market locks
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['scripts/nfl_week7_operations.py', '.github/workflows/nfl-week7-market-locks.yml']
+  schedule:
+    - cron: '*/10 23 22,26 10 *'
+    - cron: '*/10 0 23,26,27 10 *'
+    - cron: '*/10 12-20,23 25 10 *'
+permissions:
+  contents: write
+concurrency:
+  group: market-snapshot-writes
+  cancel-in-progress: false
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Verify freeze and lock gates
+        run: |
+          python scripts/nfl_week7_operations.py --check
+          python -m unittest discover -s tests -p 'test_nfl_week7_operations.py' -v
+      - name: Capture in-window quotes only
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: python scripts/nfl_week7_operations.py
+      - name: Preserve append-only observations
+        if: always()
+        run: |
+          git config user.name 'cb-nfl-week7-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add nfl_data/prospective/week7/
+          if ! git diff --cached --quiet; then
+            git commit -m 'Capture NFL Week 7 market evidence [skip ci]'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nfl-week7-market-audit
+          path: nfl_data/prospective/week7/

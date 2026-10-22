@@ -1,0 +1,89 @@
+{
+  "updated": "2026-10-18T11:55:09+00:00",
+  "categories": [
+    {
+      "id": "readiness",
+      "label": "Input readiness",
+      "short": "Readiness",
+      "status": "8/8 · 100%",
+      "summary": "All 13 current NFL games meet the same eight-layer input-completeness standard used by the CFB model. This is a readiness score, not prediction accuracy or betting confidence.",
+      "items": [
+        {"title": "Eight required layers", "detail": "Base stats, opponent adjustment, advanced efficiency, injuries/personnel, weather, market, travel/rest and depth chart are present for all 13 Week 6 games.", "tag": "13/13 PASS"},
+        {"title": "How the 90% rule works", "detail": "Eight equally weighted layers are worth 12.5% each, so a nominal 90% minimum effectively requires all eight layers. The current NFL slate is 8/8 on every game.", "tag": "100% coverage"},
+        {"title": "What remains unresolved", "detail": "Input readiness does not clear final inactives, remaining roof/weather decisions, account-level executable prices or prospective recommendation calibration. Those remain separate game-day and release gates.", "tag": "Recommendations HOLD"}
+      ]
+    },
+    {
+      "id": "availability",
+      "label": "Injuries & availability",
+      "short": "Availability",
+      "status": "Game-day refreshed",
+      "summary": "Official Week 6 status reports are refreshed. Confirmed hard-QB breaks remain Baltimore with Tyler Huntley, Philadelphia with Tanner McKee and Tampa Bay with Jalon Daniels; Caleb Williams is expected back for Chicago pending final active status.",
+      "items": [
+        {"title": "Confirmed hard-QB breaks", "detail": "Lamar Jackson, Jalen Hurts and Baker Mayfield are out. Their replacement states are treated as reliability/release events; the operational QB point adjustment remains zero because an additive coefficient has not been prospectively validated.", "tag": "3 hard breaks"},
+        {"title": "Final inactives", "detail": "Official inactive lists are still checked close to kickoff and can change contextual reliability without rewriting the frozen canonical projection.", "tag": "Pending"},
+        {"title": "Personnel discipline", "detail": "Non-QB absences and questionable designations are recorded as context unless a historically validated numerical adjustment exists.", "tag": "No discretionary points"}
+      ]
+    },
+    {
+      "id": "weather",
+      "label": "Weather & venue",
+      "short": "Weather",
+      "status": "Game-day refreshed",
+      "summary": "Weather and venue context has been refreshed for the full slate. Tampa carries the clearest elevated wind uncertainty; Indianapolis has confirmed the Lucas Oil Stadium roof and window open.",
+      "items": [
+        {"title": "London", "detail": "Wembley is cool with a moderate breeze/gust and shower-variability profile; it remains a game-day context gate rather than a discretionary point adjustment.", "tag": "HOU-JAX"},
+        {"title": "Tampa", "detail": "Raymond James Stadium carries elevated wind with sustained northeast flow and stronger gusts. Reliability is flagged, but the frozen total is not rewritten.", "tag": "PIT-TB"},
+        {"title": "Roof status", "detail": "Indianapolis has confirmed the roof and window open. Atlanta's game-specific retractable-roof decision remains pending; SoFi and Allegiant are treated as covered/indoor venues.", "tag": "Venue"}
+      ]
+    },
+    {
+      "id": "market",
+      "label": "Market comparison",
+      "short": "Market",
+      "status": "Game-day benchmark",
+      "summary": "The NFL projection remains independent of sportsbook lines. The full Week 6 board was refreshed from Action Network public game pages at 7:55 AM ET; these are comparison benchmarks, not verified executable account prices.",
+      "items": [
+        {"title": "Current benchmark", "detail": "All 13 remaining Week 6 games now use a single game-day Action Network public benchmark source and timestamp for spread/total comparison.", "tag": "Public board"},
+        {"title": "Model / market difference", "detail": "A numerical difference is descriptive research only. Historical testing did not support a simple larger-difference-equals-better-edge rule.", "tag": "No edge claim"},
+        {"title": "Consensus test", "detail": "A walk-forward model-plus-market blend was tested previously. The optimal historical solution collapsed to the market itself, so no market-consensus model layer was promoted.", "tag": "Rejected"}
+      ]
+    },
+    {
+      "id": "efficiency",
+      "label": "Efficiency & architecture",
+      "short": "Efficiency",
+      "status": "Canonical V1",
+      "summary": "The spread model uses only feature families that survived leakage-safe out-of-sample testing; the totals model remains deliberately simpler.",
+      "items": [
+        {"title": "Canonical spread", "detail": "Frozen core efficiency plus validated defensive coverage, market-independent recursive win Elo and margin rating.", "tag": "Canonical"},
+        {"title": "Canonical total", "detail": "Frozen core totals architecture. Pace, red-zone and other tested additions did not earn robust promotion.", "tag": "Totals"},
+        {"title": "FTN50", "detail": "FTN50 remains a shadow/challenger model and cannot silently replace the canonical projection without explicit promotion review.", "tag": "Shadow"}
+      ]
+    },
+    {
+      "id": "validation",
+      "label": "Validation",
+      "short": "Validation",
+      "status": "HOLD",
+      "summary": "Historical research validation is complete, but betting recommendation thresholds remain locked while prospective frozen-week evidence accumulates.",
+      "items": [
+        {"title": "Historical sample", "detail": "The canonical architecture has 816 outer out-of-sample games from 2023-2025.", "tag": "OOS"},
+        {"title": "Win probability", "detail": "Canonical-margin win probability passed the separate walk-forward research-display calibration gate. Moneyline edge remains HOLD.", "tag": "Display validated"},
+        {"title": "Prospective milestones", "detail": "Research/Beta review begins at 40+ completed prospective games across at least 3 frozen weeks; recommendation calibration review begins at 75+ games across at least 5 weeks and still requires explicit review.", "tag": "Prospective"}
+      ]
+    },
+    {
+      "id": "workflow",
+      "label": "Weekly production workflow",
+      "short": "Workflow",
+      "status": "Active",
+      "summary": "Each week uses an immutable prediction freeze followed by separate context, market, grading and registry updates.",
+      "items": [
+        {"title": "Pregame freeze", "detail": "Canonical and challenger projections are timestamped before games and are never rewritten after results are known.", "tag": "Integrity"},
+        {"title": "Game-day gates", "detail": "Starting QB, final inactives, weather/roof and fresh public market benchmarks are refreshed separately from the frozen numerical prediction.", "tag": "Operations"},
+        {"title": "Postgame grading", "detail": "Canonical and FTN50 are graded on identical games, then the prospective registry updates model-health and release-calibration evidence.", "tag": "Audit"}
+      ]
+    }
+  ]
+}

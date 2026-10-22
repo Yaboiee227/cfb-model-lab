@@ -43,6 +43,11 @@ jobs:
           python - <<'PY'
           import csv, json
           from pathlib import Path
+          import runpy, sys
+          if json.loads(Path('nfl_data/site/config.json').read_text()).get('currentWeek') == 7:
+              sys.path.insert(0, 'scripts')
+              runpy.run_path('scripts/audit_nfl_week7_release.py', run_name='__main__')
+              sys.exit(0)
 
           disclaimer = (
               'All content on CB Model Projections is model-generated and provided for research and entertainment purposes only. '

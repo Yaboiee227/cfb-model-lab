@@ -1,0 +1,335 @@
+{
+  "source_site": "https://nfelo.com/",
+  "data_url": "https://raw.githubusercontent.com/walk-the-program/NFLELO/main/site/data/upcoming.json",
+  "endpoint_discovery": "nfelo.com/common.js REMOTE_DATA",
+  "observed_at": "2026-10-22T17:20:39.509934+00:00",
+  "source_published_at": null,
+  "sha256": "1d2d49417bfb78a496693cedf8b4d74e4ade54d069979f0cab0a96612cdf4119",
+  "canonical_influence": false,
+  "identity_note": "NFLELO/walk-the-program endpoint used by nfelo.com; do not conflate with another nfelo provider. Vendor as-of date is not established by retrieval time.",
+  "source_data": {
+    "season": 2026,
+    "week": 7,
+    "played": 0,
+    "total": 14,
+    "has_lines": true,
+    "spread_note": "Spreads are from the home team's side, positive when the home team is favored.",
+    "flagged": [
+      "2026_07_DAL_PHI",
+      "2026_07_SF_ATL",
+      "2026_07_NYG_HOU"
+    ],
+    "games": [
+      {
+        "game_id": "2026_07_NE_CHI",
+        "date": "2026-10-22",
+        "time": "20:15",
+        "kickoff_utc": "2026-10-23T00:15:00Z",
+        "away": "NE",
+        "home": "CHI",
+        "neutral": false,
+        "p_home": 0.4929,
+        "elo_spread": -0.2,
+        "vegas_spread": 3.0,
+        "diff": -3.2,
+        "gap": -9.0,
+        "p_market_home": 0.583,
+        "flagged": false
+      },
+      {
+        "game_id": "2026_07_PIT_NO",
+        "date": "2026-10-25",
+        "time": "09:30",
+        "kickoff_utc": "2026-10-25T13:30:00Z",
+        "away": "PIT",
+        "home": "NO",
+        "neutral": true,
+        "p_home": 0.3327,
+        "elo_spread": -4.8,
+        "vegas_spread": -3.5,
+        "diff": -1.3,
+        "gap": -5.8,
+        "p_market_home": 0.3908,
+        "flagged": false
+      },
+      {
+        "game_id": "2026_07_CIN_BAL",
+        "date": "2026-10-25",
+        "time": "13:00",
+        "kickoff_utc": "2026-10-25T17:00:00Z",
+        "away": "CIN",
+        "home": "BAL",
+        "neutral": false,
+        "p_home": 0.5887,
+        "elo_spread": 2.5,
+        "vegas_spread": -1.5,
+        "diff": 4.0,
+        "gap": 11.5,
+        "p_market_home": 0.4739,
+        "flagged": false
+      },
+      {
+        "game_id": "2026_07_CLE_TEN",
+        "date": "2026-10-25",
+        "time": "13:00",
+        "kickoff_utc": "2026-10-25T17:00:00Z",
+        "away": "CLE",
+        "home": "TEN",
+        "neutral": false,
+        "p_home": 0.3677,
+        "elo_spread": -3.8,
+        "vegas_spread": -1.5,
+        "diff": -2.3,
+        "gap": -9.0,
+        "p_market_home": 0.4573,
+        "flagged": false
+      },
+      {
+        "game_id": "2026_07_IND_MIN",
+        "date": "2026-10-25",
+        "time": "13:00",
+        "kickoff_utc": "2026-10-25T17:00:00Z",
+        "away": "IND",
+        "home": "MIN",
+        "neutral": false,
+        "p_home": 0.7939,
+        "elo_spread": 9.4,
+        "vegas_spread": 6.5,
+        "diff": 2.9,
+        "gap": 8.9,
+        "p_market_home": 0.705,
+        "flagged": false
+      },
+      {
+        "game_id": "2026_07_MIA_NYJ",
+        "date": "2026-10-25",
+        "time": "13:00",
+        "kickoff_utc": "2026-10-25T17:00:00Z",
+        "away": "MIA",
+        "home": "NYJ",
+        "neutral": false,
+        "p_home": 0.5729,
+        "elo_spread": 2.0,
+        "vegas_spread": 4.5,
+        "diff": -2.5,
+        "gap": -10.2,
+        "p_market_home": 0.675,
+        "flagged": false
+      },
+      {
+        "game_id": "2026_07_NYG_HOU",
+        "date": "2026-10-25",
+        "time": "13:00",
+        "kickoff_utc": "2026-10-25T17:00:00Z",
+        "away": "NYG",
+        "home": "HOU",
+        "neutral": false,
+        "p_home": 0.6809,
+        "elo_spread": 5.3,
+        "vegas_spread": 10.5,
+        "diff": -5.2,
+        "gap": -12.3,
+        "p_market_home": 0.8043,
+        "flagged": true
+      },
+      {
+        "game_id": "2026_07_SF_ATL",
+        "date": "2026-10-25",
+        "time": "13:00",
+        "kickoff_utc": "2026-10-25T17:00:00Z",
+        "away": "SF",
+        "home": "ATL",
+        "neutral": false,
+        "p_home": 0.2859,
+        "elo_spread": -6.4,
+        "vegas_spread": -3.0,
+        "diff": -3.4,
+        "gap": -13.1,
+        "p_market_home": 0.417,
+        "flagged": true
+      },
+      {
+        "game_id": "2026_07_TB_CAR",
+        "date": "2026-10-25",
+        "time": "13:00",
+        "kickoff_utc": "2026-10-25T17:00:00Z",
+        "away": "TB",
+        "home": "CAR",
+        "neutral": false,
+        "p_home": 0.6544,
+        "elo_spread": 4.4,
+        "vegas_spread": 3.0,
+        "diff": 1.4,
+        "gap": 5.5,
+        "p_market_home": 0.5996,
+        "flagged": false
+      },
+      {
+        "game_id": "2026_07_DEN_ARI",
+        "date": "2026-10-25",
+        "time": "16:05",
+        "kickoff_utc": "2026-10-25T20:05:00Z",
+        "away": "DEN",
+        "home": "ARI",
+        "neutral": false,
+        "p_home": 0.2681,
+        "elo_spread": -7.0,
+        "vegas_spread": -4.5,
+        "diff": -2.5,
+        "gap": -6.3,
+        "p_market_home": 0.331,
+        "flagged": false
+      },
+      {
+        "game_id": "2026_07_GB_DET",
+        "date": "2026-10-25",
+        "time": "16:25",
+        "kickoff_utc": "2026-10-25T20:25:00Z",
+        "away": "GB",
+        "home": "DET",
+        "neutral": false,
+        "p_home": 0.5587,
+        "elo_spread": 1.6,
+        "vegas_spread": 3.0,
+        "diff": -1.4,
+        "gap": -4.1,
+        "p_market_home": 0.5996,
+        "flagged": false
+      },
+      {
+        "game_id": "2026_07_LA_LV",
+        "date": "2026-10-25",
+        "time": "16:25",
+        "kickoff_utc": "2026-10-25T20:25:00Z",
+        "away": "LA",
+        "home": "LV",
+        "neutral": false,
+        "p_home": 0.388,
+        "elo_spread": -3.2,
+        "vegas_spread": -4.5,
+        "diff": 1.3,
+        "gap": 4.6,
+        "p_market_home": 0.3425,
+        "flagged": false
+      },
+      {
+        "game_id": "2026_07_KC_SEA",
+        "date": "2026-10-25",
+        "time": "20:20",
+        "kickoff_utc": "2026-10-26T00:20:00Z",
+        "away": "KC",
+        "home": "SEA",
+        "neutral": false,
+        "p_home": 0.5943,
+        "elo_spread": 2.7,
+        "vegas_spread": 2.5,
+        "diff": 0.2,
+        "gap": 2.2,
+        "p_market_home": 0.5721,
+        "flagged": false
+      },
+      {
+        "game_id": "2026_07_DAL_PHI",
+        "date": "2026-10-26",
+        "time": "20:15",
+        "kickoff_utc": "2026-10-27T00:15:00Z",
+        "away": "DAL",
+        "home": "PHI",
+        "neutral": false,
+        "p_home": 0.6147,
+        "elo_spread": 3.2,
+        "vegas_spread": -4.5,
+        "diff": 7.7,
+        "gap": 27.8,
+        "p_market_home": 0.3364,
+        "flagged": true
+      }
+    ]
+  },
+  "normalized": [
+    {
+      "game_id": "2026_07_NE_CHI",
+      "benchmark_home_margin": -0.2,
+      "benchmark_home_spread": 0.2,
+      "home_probability": 0.4929
+    },
+    {
+      "game_id": "2026_07_PIT_NO",
+      "benchmark_home_margin": -4.8,
+      "benchmark_home_spread": 4.8,
+      "home_probability": 0.3327
+    },
+    {
+      "game_id": "2026_07_CIN_BAL",
+      "benchmark_home_margin": 2.5,
+      "benchmark_home_spread": -2.5,
+      "home_probability": 0.5887
+    },
+    {
+      "game_id": "2026_07_CLE_TEN",
+      "benchmark_home_margin": -3.8,
+      "benchmark_home_spread": 3.8,
+      "home_probability": 0.3677
+    },
+    {
+      "game_id": "2026_07_IND_MIN",
+      "benchmark_home_margin": 9.4,
+      "benchmark_home_spread": -9.4,
+      "home_probability": 0.7939
+    },
+    {
+      "game_id": "2026_07_MIA_NYJ",
+      "benchmark_home_margin": 2.0,
+      "benchmark_home_spread": -2.0,
+      "home_probability": 0.5729
+    },
+    {
+      "game_id": "2026_07_NYG_HOU",
+      "benchmark_home_margin": 5.3,
+      "benchmark_home_spread": -5.3,
+      "home_probability": 0.6809
+    },
+    {
+      "game_id": "2026_07_SF_ATL",
+      "benchmark_home_margin": -6.4,
+      "benchmark_home_spread": 6.4,
+      "home_probability": 0.2859
+    },
+    {
+      "game_id": "2026_07_TB_CAR",
+      "benchmark_home_margin": 4.4,
+      "benchmark_home_spread": -4.4,
+      "home_probability": 0.6544
+    },
+    {
+      "game_id": "2026_07_DEN_ARI",
+      "benchmark_home_margin": -7.0,
+      "benchmark_home_spread": 7.0,
+      "home_probability": 0.2681
+    },
+    {
+      "game_id": "2026_07_GB_DET",
+      "benchmark_home_margin": 1.6,
+      "benchmark_home_spread": -1.6,
+      "home_probability": 0.5587
+    },
+    {
+      "game_id": "2026_07_LA_LV",
+      "benchmark_home_margin": -3.2,
+      "benchmark_home_spread": 3.2,
+      "home_probability": 0.388
+    },
+    {
+      "game_id": "2026_07_KC_SEA",
+      "benchmark_home_margin": 2.7,
+      "benchmark_home_spread": -2.7,
+      "home_probability": 0.5943
+    },
+    {
+      "game_id": "2026_07_DAL_PHI",
+      "benchmark_home_margin": 3.2,
+      "benchmark_home_spread": -3.2,
+      "home_probability": 0.6147
+    }
+  ]
+}

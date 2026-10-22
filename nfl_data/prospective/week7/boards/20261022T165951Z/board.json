@@ -1,0 +1,4230 @@
+{
+  "asof_utc": "2026-10-22T16:59:51.368919+00:00",
+  "frozen_snapshot": "nfl_data/prospective/week7/20261021T114427Z",
+  "canonical_changed": false,
+  "challenger_changed": false,
+  "promotion_allowed": false,
+  "context_capture": "nfl_data/prospective/week7/context_captures/20261022T165651Z",
+  "sources": {
+    "market": {
+      "url": "https://www.covers.com/nfl/week-7-odds-opening-lines-2026",
+      "resolved_url": "https://www.covers.com/nfl/week-7-odds-opening-lines-2026",
+      "observed_at": "2026-10-22T16:59:57.925397+00:00",
+      "sha256": "640c2511b07d7e345e60a8ed81a25c309928f3ab49f091a717e46d6a4550c84b",
+      "tables": [
+        [
+          [
+            "Matchup",
+            "Spread",
+            "Moneyline",
+            "Over/Under"
+          ],
+          [
+            "Patriots vs Bears",
+            "+2.5 45% -2.5 55%",
+            "41% 59%",
+            "o50.5 52% u50.5 49%"
+          ],
+          [
+            "Steelers vs Saints",
+            "-3.5 46% +3.5 54%",
+            "62% 38%",
+            "o44.5 51% u44.5 50%"
+          ],
+          [
+            "49ers vs Falcons",
+            "-2.5 53% +2.5 48%",
+            "58% 42%",
+            "o49.5 51% u49.5 49%"
+          ],
+          [
+            "Browns vs Titans",
+            "-1.5 50% +1.5 51%",
+            "54% 46%",
+            "o37.5 47% u37.5 53%"
+          ],
+          [
+            "Colts vs Vikings",
+            "+6.5 52% -6.5 48%",
+            "29% 71%",
+            "o41.5 49% u41.5 51%"
+          ],
+          [
+            "Dolphins vs Jets",
+            "+4.5 52% -4.5 49%",
+            "34% 66%",
+            "o39.5 48% u39.5 52%"
+          ],
+          [
+            "Buccaneers vs Panthers",
+            "+3.5 55% -3.5 46%",
+            "40% 60%",
+            "o44.5 51% u44.5 50%"
+          ],
+          [
+            "Bengals vs Ravens",
+            "-1.5 48% +1.5 53%",
+            "51% 49%",
+            "o48.5 50% u48.5 51%"
+          ],
+          [
+            "Giants vs Texans",
+            "+10.5 52% -10.5 48%",
+            "19% 81%",
+            "o42.5 52% u42.5 48%"
+          ],
+          [
+            "Broncos vs Cardinals",
+            "-4.5 49% +4.5 52%",
+            "66% 34%",
+            "o43.5 49% u43.5 51%"
+          ],
+          [
+            "Packers vs Lions",
+            "+3.5 53% -3.5 48%",
+            "39% 61%",
+            "o53.5 50% u53.5 50%"
+          ],
+          [
+            "Rams vs Raiders",
+            "-3.5 52% +3.5 49%",
+            "65% 35%",
+            "o48.5 49% u48.5 51%"
+          ],
+          [
+            "Chiefs vs Seahawks",
+            "+2.5 48% -2.5 52%",
+            "44% 56%",
+            "o42.5 49% u42.5 51%"
+          ],
+          [
+            "Cowboys vs Eagles",
+            "-4.5 48% +4.5 52%",
+            "64% 36%",
+            "o44.5 51% u44.5 50%"
+          ]
+        ]
+      ]
+    },
+    "paris": {
+      "url": "https://meteofrance.com/previsions-meteo-france/saint-denis/93200",
+      "resolved_url": "https://meteofrance.com/previsions-meteo-france/saint-denis/93200",
+      "observed_at": "2026-10-22T17:00:05.336850+00:00",
+      "sha256": "4821e49951614aa2c973c1a8270190a9b7ff0bfcfcc2d62dc0fcb62ad8f4fbc6"
+    },
+    "giants_qb": {
+      "url": "https://www.giants.com/news/j-j-mccarthy-to-start-quarterback-new-york-giants-week-7-houston-texans-john-harbaugh-jameis-winston",
+      "resolved_url": "https://www.giants.com/news/j-j-mccarthy-to-start-quarterback-new-york-giants-week-7-houston-texans-john-harbaugh-jameis-winston",
+      "observed_at": "2026-10-22T17:00:10.208999+00:00",
+      "sha256": "c36720f6c3ed79df6e017d78a572184045309fa3f089cf058f68492e68ebed0a"
+    }
+  },
+  "games": [
+    {
+      "game_id": "2026_07_NE_CHI",
+      "away": "NE",
+      "home": "CHI",
+      "kickoff_utc": "2026-10-23T00:15:00+00:00",
+      "kickoff_et": "Thu 10/22 08:15 PM",
+      "canonical": {
+        "home_margin": 1.2775707065437034,
+        "home_spread": -1.2775707065437034,
+        "total": 49.14872303704848,
+        "away_score": 23.935576165252385,
+        "home_score": 25.21314687179609
+      },
+      "challenger": {
+        "name": "FTN50",
+        "home_margin": 0.890878244974659,
+        "total": 49.14872303704848
+      },
+      "market_context": {
+        "home_spread": -2.5,
+        "total": 50.5,
+        "source": "https://www.covers.com/nfl/week-7-odds-opening-lines-2026",
+        "source_asof": "2026-10-22",
+        "instrument": "Covers percentage-priced displayed thresholds; instrument/provider not verified",
+        "eligible_for_grading": false,
+        "price": null,
+        "note": "Manually read table, not conflicting headline; not sportsbook execution or consensus."
+      },
+      "personnel": {
+        "NE": {
+          "status": "CURRENT_PRACTICE_TABLE_FINAL_REVIEW_PENDING",
+          "rows": [
+            [
+              "Andy Borregales",
+              "K",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Ben Brown",
+              "C",
+              "Knee",
+              "Did Not Participate In Practice",
+              "Out"
+            ],
+            [
+              "A.J. Brown",
+              "WR",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Marcus Bryant",
+              "T",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Kevin Byard",
+              "S",
+              "Chest",
+              "Full Participation in Practice",
+              "Questionable"
+            ],
+            [
+              "Will Campbell",
+              "T",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Channing Canada",
+              "CB",
+              "Hamstring",
+              "Limited Participation in Practice",
+              "Out"
+            ],
+            [
+              "Carlton Davis III",
+              "CB",
+              "Neck",
+              "Limited Participation in Practice",
+              "Out"
+            ],
+            [
+              "Christian Elliss",
+              "LB",
+              "Chest",
+              "Full Participation in Practice",
+              "Questionable"
+            ],
+            [
+              "Joshua Farmer",
+              "DT",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "TreVeyon Henderson",
+              "RB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Dre'Mont Jones",
+              "LB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Drake Maye",
+              "QB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Morgan Moses",
+              "T",
+              "Foot",
+              "Limited Participation in Practice",
+              "Questionable"
+            ],
+            [
+              "Karon Prunty",
+              "CB",
+              "Hamstring",
+              "Limited Participation in Practice",
+              "Out"
+            ],
+            [
+              "Alijah Vera-Tucker",
+              "G",
+              "Hamstring",
+              "Did Not Participate In Practice",
+              "Out"
+            ],
+            [
+              "Craig Woodson",
+              "S",
+              "Shoulder",
+              "Full Participation in Practice",
+              "Questionable"
+            ]
+          ],
+          "source": "https://www.nfl.com/injuries/"
+        },
+        "CHI": {
+          "status": "CURRENT_PRACTICE_TABLE_FINAL_REVIEW_PENDING",
+          "rows": [
+            [
+              "T.J. Edwards",
+              "LB",
+              "Hamstring",
+              "Limited Participation in Practice",
+              "Doubtful"
+            ],
+            [
+              "Keyshaun Elliott",
+              "LB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Jonah Jackson",
+              "G",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Kyle Monangai",
+              "RB",
+              "Thumb, Toe",
+              "Did Not Participate In Practice",
+              "Out"
+            ],
+            [
+              "Jack Sanborn",
+              "LB",
+              "Concussion",
+              "Did Not Participate In Practice",
+              "Out"
+            ],
+            [
+              "Tyrique Stevenson",
+              "CB",
+              "Hip",
+              "Full Participation in Practice",
+              "Questionable"
+            ]
+          ],
+          "source": "https://www.nfl.com/injuries/"
+        }
+      },
+      "weather": "57\u201360 F; winds 5 mph; max rain probability 0%",
+      "weather_source": {
+        "home": "CHI",
+        "url": "https://api.weather.gov/gridpoints/LOT/76,72/forecast/hourly",
+        "resolved_url": "https://api.weather.gov/gridpoints/LOT/76,72/forecast/hourly",
+        "observed_at": "2026-10-22T16:57:13.457015+00:00",
+        "sha256": "ac3e62bb7f1c214c7b1e71d4b6e26d78402d5943eb5a889d6efa8be0e4fc38e6",
+        "point": {
+          "url": "https://api.weather.gov/points/41.8623,-87.6167",
+          "resolved_url": "https://api.weather.gov/points/41.8623,-87.6167",
+          "observed_at": "2026-10-22T16:57:09.750148+00:00",
+          "sha256": "036b56693181ad8934d1141e74f191053eb86f11bef9c1a5701ee20f726aebda"
+        },
+        "coordinates": [
+          41.8623,
+          -87.6167
+        ],
+        "coordinate_precision": "approximate stadium point; retain selected NWS grid",
+        "forecast_issued_at": "2026-10-22T16:06:08+00:00",
+        "generated_at": "2026-10-22T16:57:13+00:00",
+        "kickoff_utc": "2026-10-23T00:15:00+00:00",
+        "through_plus4h_contiguous": true,
+        "issue_time_valid": true,
+        "periods": [
+          {
+            "number": 9,
+            "name": "",
+            "startTime": "2026-10-22T19:00:00-05:00",
+            "endTime": "2026-10-22T20:00:00-05:00",
+            "isDaytime": false,
+            "temperature": 60,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 10
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 72
+            },
+            "windSpeed": "5 mph",
+            "windDirection": "ENE",
+            "icon": "https://api.weather.gov/icons/land/night/few?size=small",
+            "shortForecast": "Mostly Clear",
+            "detailedForecast": ""
+          },
+          {
+            "number": 10,
+            "name": "",
+            "startTime": "2026-10-22T20:00:00-05:00",
+            "endTime": "2026-10-22T21:00:00-05:00",
+            "isDaytime": false,
+            "temperature": 59,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 11.11111111111111
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 78
+            },
+            "windSpeed": "5 mph",
+            "windDirection": "E",
+            "icon": "https://api.weather.gov/icons/land/night/few?size=small",
+            "shortForecast": "Mostly Clear",
+            "detailedForecast": ""
+          },
+          {
+            "number": 11,
+            "name": "",
+            "startTime": "2026-10-22T21:00:00-05:00",
+            "endTime": "2026-10-22T22:00:00-05:00",
+            "isDaytime": false,
+            "temperature": 58,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 12.222222222222221
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 86
+            },
+            "windSpeed": "5 mph",
+            "windDirection": "E",
+            "icon": "https://api.weather.gov/icons/land/night/sct?size=small",
+            "shortForecast": "Partly Cloudy",
+            "detailedForecast": ""
+          },
+          {
+            "number": 12,
+            "name": "",
+            "startTime": "2026-10-22T22:00:00-05:00",
+            "endTime": "2026-10-22T23:00:00-05:00",
+            "isDaytime": false,
+            "temperature": 58,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 12.222222222222221
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 87
+            },
+            "windSpeed": "5 mph",
+            "windDirection": "E",
+            "icon": "https://api.weather.gov/icons/land/night/sct?size=small",
+            "shortForecast": "Partly Cloudy",
+            "detailedForecast": ""
+          },
+          {
+            "number": 13,
+            "name": "",
+            "startTime": "2026-10-22T23:00:00-05:00",
+            "endTime": "2026-10-23T00:00:00-05:00",
+            "isDaytime": false,
+            "temperature": 57,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 12.222222222222221
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 89
+            },
+            "windSpeed": "5 mph",
+            "windDirection": "E",
+            "icon": "https://api.weather.gov/icons/land/night/sct?size=small",
+            "shortForecast": "Partly Cloudy",
+            "detailedForecast": ""
+          }
+        ],
+        "status": "EARLY_FORECAST_ONLY",
+        "gusts": "UNAVAILABLE_IN_HOURLY_ENDPOINT",
+        "final_window_refresh_required": true,
+        "canonical_influence": false
+      },
+      "priority_note": "Final statuses available; five Patriots ruled out; Chicago Edwards doubtful. Inactives pending.",
+      "inactive_review_et": "2026-10-22T18:45:00-04:00",
+      "market_lock_start_et": "2026-10-22T19:45:00-04:00",
+      "release_state": "HOLD_RESEARCH_ONLY",
+      "benchmark_status": "NO_NEW_VERIFIED_INDEPENDENT_BENCHMARK",
+      "final_inactives": false,
+      "market_lock": null
+    },
+    {
+      "game_id": "2026_07_PIT_NO",
+      "away": "PIT",
+      "home": "NO",
+      "kickoff_utc": "2026-10-25T13:30:00+00:00",
+      "kickoff_et": "Sun 10/25 09:30 AM",
+      "canonical": {
+        "home_margin": -3.343270535808349,
+        "home_spread": 3.343270535808349,
+        "total": 41.96590088846535,
+        "away_score": 22.65458571213685,
+        "home_score": 19.3113151763285
+      },
+      "challenger": {
+        "name": "FTN50",
+        "home_margin": -2.732532592912236,
+        "total": 41.96590088846535
+      },
+      "market_context": {
+        "home_spread": 3.5,
+        "total": 44.5,
+        "source": "https://www.covers.com/nfl/week-7-odds-opening-lines-2026",
+        "source_asof": "2026-10-22",
+        "instrument": "Covers percentage-priced displayed thresholds; instrument/provider not verified",
+        "eligible_for_grading": false,
+        "price": null,
+        "note": "Manually read table, not conflicting headline; not sportsbook execution or consensus."
+      },
+      "personnel": {
+        "PIT": {
+          "status": "CURRENT_PRACTICE_TABLE_FINAL_REVIEW_PENDING",
+          "rows": [
+            [
+              "Rico Dowdle",
+              "RB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Brandin Echols",
+              "CB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "DeShon Elliott",
+              "S",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Cameron Heyward",
+              "DT",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Alex Highsmith",
+              "LB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Sebastian Joseph-Day",
+              "DE",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Jalen Ramsey",
+              "CB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Ben Skowronek",
+              "WR",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "T.J. Watt",
+              "LB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ]
+          ],
+          "source": "https://www.nfl.com/injuries/"
+        },
+        "NO": {
+          "status": "CURRENT_PRACTICE_TABLE_FINAL_REVIEW_PENDING",
+          "rows": [
+            [
+              "Daniel Carlson",
+              "K",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "CJ Donaldson",
+              "RB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Kaden Elliss",
+              "LB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Anfernee Jennings",
+              "LB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Alvin Kamara",
+              "RB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Kool-Aid McKinstry",
+              "CB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Cesar Ruiz",
+              "G",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Nathan Shepherd",
+              "DT",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Tyler Shough",
+              "QB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ]
+          ],
+          "source": "https://www.nfl.com/injuries/"
+        }
+      },
+      "weather": "Paris: afternoon fair, lighter wind; morning gust risk; hourly check pending",
+      "weather_source": null,
+      "priority_note": "Paris neutral site, exposed field. Sunday morning showers/gusts in regional forecast; afternoon easing. Kickoff-specific refresh required.",
+      "inactive_review_et": "2026-10-25T08:00:00-04:00",
+      "market_lock_start_et": "2026-10-25T09:00:00-04:00",
+      "release_state": "HOLD_RESEARCH_ONLY",
+      "benchmark_status": "NO_NEW_VERIFIED_INDEPENDENT_BENCHMARK",
+      "final_inactives": false,
+      "market_lock": null
+    },
+    {
+      "game_id": "2026_07_CIN_BAL",
+      "away": "CIN",
+      "home": "BAL",
+      "kickoff_utc": "2026-10-25T17:00:00+00:00",
+      "kickoff_et": "Sun 10/25 01:00 PM",
+      "canonical": {
+        "home_margin": 4.027868612055471,
+        "home_spread": -4.027868612055471,
+        "total": 46.92135705843933,
+        "away_score": 21.446744223191928,
+        "home_score": 25.4746128352474
+      },
+      "challenger": {
+        "name": "FTN50",
+        "home_margin": 5.496316642120076,
+        "total": 46.92135705843933
+      },
+      "market_context": {
+        "home_spread": 1.5,
+        "total": 48.5,
+        "source": "https://www.covers.com/nfl/week-7-odds-opening-lines-2026",
+        "source_asof": "2026-10-22",
+        "instrument": "Covers percentage-priced displayed thresholds; instrument/provider not verified",
+        "eligible_for_grading": false,
+        "price": null,
+        "note": "Manually read table, not conflicting headline; not sportsbook execution or consensus."
+      },
+      "personnel": {
+        "CIN": {
+          "status": "CURRENT_PRACTICE_TABLE_FINAL_REVIEW_PENDING",
+          "rows": [
+            [
+              "Kyle Dugger",
+              "S",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ]
+          ],
+          "source": "https://www.nfl.com/injuries/"
+        },
+        "BAL": {
+          "status": "CURRENT_PRACTICE_TABLE_FINAL_REVIEW_PENDING",
+          "rows": [
+            [
+              "Mark Andrews",
+              "TE",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Rashod Bateman",
+              "WR",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Calais Campbell",
+              "DT",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Jaylinn Hawkins",
+              "S",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Trey Hendrickson",
+              "LB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Matthew Hibner",
+              "TE",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Olaivavega Ioane",
+              "G",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Lamar Jackson",
+              "QB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Cam Jurgens",
+              "C",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Tavius Robinson",
+              "LB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "John Simpson",
+              "G",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Ronnie Stanley",
+              "T",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "T.J. Tampa",
+              "CB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Andrew Vorhees",
+              "G",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Broderick Washington",
+              "DE",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ]
+          ],
+          "source": "https://www.nfl.com/injuries/"
+        }
+      },
+      "weather": "62\u201365 F; winds 2 mph, 3 mph; max rain probability 0%",
+      "weather_source": {
+        "home": "BAL",
+        "url": "https://api.weather.gov/gridpoints/LWX/109,90/forecast/hourly",
+        "resolved_url": "https://api.weather.gov/gridpoints/LWX/109,90/forecast/hourly",
+        "observed_at": "2026-10-22T16:57:13.221083+00:00",
+        "sha256": "5f28d9940b5f08e78d099287e9322745885818460da36a251cfac2687a7b5093",
+        "point": {
+          "url": "https://api.weather.gov/points/39.278,-76.623",
+          "resolved_url": "https://api.weather.gov/points/39.278,-76.623",
+          "observed_at": "2026-10-22T16:57:09.777078+00:00",
+          "sha256": "c63a4ec059f8ce0d4a7f60494d47ca618f051f2302f8e3189d264409356264e5"
+        },
+        "coordinates": [
+          39.278,
+          -76.623
+        ],
+        "coordinate_precision": "approximate stadium point; retain selected NWS grid",
+        "forecast_issued_at": "2026-10-22T14:52:49+00:00",
+        "generated_at": "2026-10-22T16:06:25+00:00",
+        "kickoff_utc": "2026-10-25T17:00:00+00:00",
+        "through_plus4h_contiguous": true,
+        "issue_time_valid": true,
+        "periods": [
+          {
+            "number": 74,
+            "name": "",
+            "startTime": "2026-10-25T13:00:00-04:00",
+            "endTime": "2026-10-25T14:00:00-04:00",
+            "isDaytime": true,
+            "temperature": 62,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 5
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 46
+            },
+            "windSpeed": "2 mph",
+            "windDirection": "SE",
+            "icon": "https://api.weather.gov/icons/land/day/skc?size=small",
+            "shortForecast": "Sunny",
+            "detailedForecast": ""
+          },
+          {
+            "number": 75,
+            "name": "",
+            "startTime": "2026-10-25T14:00:00-04:00",
+            "endTime": "2026-10-25T15:00:00-04:00",
+            "isDaytime": true,
+            "temperature": 63,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 4.444444444444445
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 43
+            },
+            "windSpeed": "2 mph",
+            "windDirection": "SE",
+            "icon": "https://api.weather.gov/icons/land/day/skc?size=small",
+            "shortForecast": "Sunny",
+            "detailedForecast": ""
+          },
+          {
+            "number": 76,
+            "name": "",
+            "startTime": "2026-10-25T15:00:00-04:00",
+            "endTime": "2026-10-25T16:00:00-04:00",
+            "isDaytime": true,
+            "temperature": 64,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 4.444444444444445
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 41
+            },
+            "windSpeed": "3 mph",
+            "windDirection": "SE",
+            "icon": "https://api.weather.gov/icons/land/day/skc?size=small",
+            "shortForecast": "Sunny",
+            "detailedForecast": ""
+          },
+          {
+            "number": 77,
+            "name": "",
+            "startTime": "2026-10-25T16:00:00-04:00",
+            "endTime": "2026-10-25T17:00:00-04:00",
+            "isDaytime": true,
+            "temperature": 65,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 4.444444444444445
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 40
+            },
+            "windSpeed": "3 mph",
+            "windDirection": "SE",
+            "icon": "https://api.weather.gov/icons/land/day/skc?size=small",
+            "shortForecast": "Sunny",
+            "detailedForecast": ""
+          }
+        ],
+        "status": "EARLY_FORECAST_ONLY",
+        "gusts": "UNAVAILABLE_IN_HOURLY_ENDPOINT",
+        "final_window_refresh_required": true,
+        "canonical_influence": false
+      },
+      "priority_note": "Jackson limited Wednesday; starter confirmation pending. Do not infer return from participation.",
+      "inactive_review_et": "2026-10-25T11:30:00-04:00",
+      "market_lock_start_et": "2026-10-25T12:30:00-04:00",
+      "release_state": "HOLD_RESEARCH_ONLY",
+      "benchmark_status": "NO_NEW_VERIFIED_INDEPENDENT_BENCHMARK",
+      "final_inactives": false,
+      "market_lock": null
+    },
+    {
+      "game_id": "2026_07_CLE_TEN",
+      "away": "CLE",
+      "home": "TEN",
+      "kickoff_utc": "2026-10-25T17:00:00+00:00",
+      "kickoff_et": "Sun 10/25 01:00 PM",
+      "canonical": {
+        "home_margin": 0.6869115555417418,
+        "home_spread": -0.6869115555417418,
+        "total": 39.384384593537355,
+        "away_score": 19.348736518997807,
+        "home_score": 20.035648074539548
+      },
+      "challenger": {
+        "name": "FTN50",
+        "home_margin": -0.280447481650441,
+        "total": 39.384384593537355
+      },
+      "market_context": {
+        "home_spread": 1.5,
+        "total": 37.5,
+        "source": "https://www.covers.com/nfl/week-7-odds-opening-lines-2026",
+        "source_asof": "2026-10-22",
+        "instrument": "Covers percentage-priced displayed thresholds; instrument/provider not verified",
+        "eligible_for_grading": false,
+        "price": null,
+        "note": "Manually read table, not conflicting headline; not sportsbook execution or consensus."
+      },
+      "personnel": {
+        "CLE": {
+          "status": "CURRENT_PRACTICE_TABLE_FINAL_REVIEW_PENDING",
+          "rows": [
+            [
+              "Derek Barnett",
+              "DE",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Denzel Boston",
+              "WR",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Maliek Collins",
+              "DT",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "KC Concepcion",
+              "WR",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Kalia Davis",
+              "DT",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Grant Delpit",
+              "S",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Dillon Gabriel",
+              "QB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Mason Graham",
+              "DT",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Mike Hall Jr.",
+              "DT",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Tytus Howard",
+              "T",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Justin Jefferson",
+              "LB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Elgton Jenkins",
+              "C",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Teven Jenkins",
+              "G",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Quinshon Judkins",
+              "RB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Dylan Sampson",
+              "RB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Carson Schwesinger",
+              "LB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ]
+          ],
+          "source": "https://www.nfl.com/injuries/"
+        },
+        "TEN": {
+          "status": "CURRENT_PRACTICE_TABLE_FINAL_REVIEW_PENDING",
+          "rows": [
+            [
+              "Tony Adams",
+              "S",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "John Franklin-Myers",
+              "DE",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Dorian Mausi",
+              "LB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Calvin Ridley",
+              "WR",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Tyjae Spears",
+              "RB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Kevin Winston Jr.",
+              "S",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ]
+          ],
+          "source": "https://www.nfl.com/injuries/"
+        }
+      },
+      "weather": "71\u201377 F; winds 0 mph; max rain probability 0%",
+      "weather_source": {
+        "home": "TEN",
+        "url": "https://api.weather.gov/gridpoints/OHX/50,57/forecast/hourly",
+        "resolved_url": "https://api.weather.gov/gridpoints/OHX/50,57/forecast/hourly",
+        "observed_at": "2026-10-22T16:57:13.448942+00:00",
+        "sha256": "a98c5dcf8b315a4e0c5108e1f3e463d52efefed24157ef0680fcdafa37946f71",
+        "point": {
+          "url": "https://api.weather.gov/points/36.1665,-86.7713",
+          "resolved_url": "https://api.weather.gov/points/36.1665,-86.7713",
+          "observed_at": "2026-10-22T16:57:09.784829+00:00",
+          "sha256": "a1adcdae05835a18f3b061f8fcd47aea2b86f3300bd595a7f85b7917903aa470"
+        },
+        "coordinates": [
+          36.1665,
+          -86.7713
+        ],
+        "coordinate_precision": "approximate stadium point; retain selected NWS grid",
+        "forecast_issued_at": "2026-10-22T15:26:47+00:00",
+        "generated_at": "2026-10-22T16:57:13+00:00",
+        "kickoff_utc": "2026-10-25T17:00:00+00:00",
+        "through_plus4h_contiguous": true,
+        "issue_time_valid": true,
+        "periods": [
+          {
+            "number": 74,
+            "name": "",
+            "startTime": "2026-10-25T12:00:00-05:00",
+            "endTime": "2026-10-25T13:00:00-05:00",
+            "isDaytime": true,
+            "temperature": 71,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 9.444444444444445
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 46
+            },
+            "windSpeed": "0 mph",
+            "windDirection": "",
+            "icon": "https://api.weather.gov/icons/land/day/skc?size=small",
+            "shortForecast": "Sunny",
+            "detailedForecast": ""
+          },
+          {
+            "number": 75,
+            "name": "",
+            "startTime": "2026-10-25T13:00:00-05:00",
+            "endTime": "2026-10-25T14:00:00-05:00",
+            "isDaytime": true,
+            "temperature": 74,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 8.333333333333334
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 38
+            },
+            "windSpeed": "0 mph",
+            "windDirection": "",
+            "icon": "https://api.weather.gov/icons/land/day/few?size=small",
+            "shortForecast": "Sunny",
+            "detailedForecast": ""
+          },
+          {
+            "number": 76,
+            "name": "",
+            "startTime": "2026-10-25T14:00:00-05:00",
+            "endTime": "2026-10-25T15:00:00-05:00",
+            "isDaytime": true,
+            "temperature": 76,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 8.333333333333334
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 36
+            },
+            "windSpeed": "0 mph",
+            "windDirection": "",
+            "icon": "https://api.weather.gov/icons/land/day/few?size=small",
+            "shortForecast": "Sunny",
+            "detailedForecast": ""
+          },
+          {
+            "number": 77,
+            "name": "",
+            "startTime": "2026-10-25T15:00:00-05:00",
+            "endTime": "2026-10-25T16:00:00-05:00",
+            "isDaytime": true,
+            "temperature": 77,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 7.777777777777778
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 33
+            },
+            "windSpeed": "0 mph",
+            "windDirection": "",
+            "icon": "https://api.weather.gov/icons/land/day/few?size=small",
+            "shortForecast": "Sunny",
+            "detailedForecast": ""
+          }
+        ],
+        "status": "EARLY_FORECAST_ONLY",
+        "gusts": "UNAVAILABLE_IN_HOURLY_ENDPOINT",
+        "final_window_refresh_required": true,
+        "canonical_influence": false
+      },
+      "priority_note": "Near pick-em; Canonical and FTN50 disagree on winner. Check Browns injury burden.",
+      "inactive_review_et": "2026-10-25T11:30:00-04:00",
+      "market_lock_start_et": "2026-10-25T12:30:00-04:00",
+      "release_state": "HOLD_RESEARCH_ONLY",
+      "benchmark_status": "NO_NEW_VERIFIED_INDEPENDENT_BENCHMARK",
+      "final_inactives": false,
+      "market_lock": null
+    },
+    {
+      "game_id": "2026_07_IND_MIN",
+      "away": "IND",
+      "home": "MIN",
+      "kickoff_utc": "2026-10-25T17:00:00+00:00",
+      "kickoff_et": "Sun 10/25 01:00 PM",
+      "canonical": {
+        "home_margin": 5.999961118837756,
+        "home_spread": -5.999961118837756,
+        "total": 41.01896545515951,
+        "away_score": 17.50950216816088,
+        "home_score": 23.50946328699863
+      },
+      "challenger": {
+        "name": "FTN50",
+        "home_margin": 4.461235993755242,
+        "total": 41.01896545515951
+      },
+      "market_context": {
+        "home_spread": -6.5,
+        "total": 41.5,
+        "source": "https://www.covers.com/nfl/week-7-odds-opening-lines-2026",
+        "source_asof": "2026-10-22",
+        "instrument": "Covers percentage-priced displayed thresholds; instrument/provider not verified",
+        "eligible_for_grading": false,
+        "price": null,
+        "note": "Manually read table, not conflicting headline; not sportsbook execution or consensus."
+      },
+      "personnel": {
+        "IND": {
+          "status": "CURRENT_PRACTICE_TABLE_FINAL_REVIEW_PENDING",
+          "rows": [
+            [
+              "Austin Ajiake",
+              "LB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Keenan Allen",
+              "WR",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Bryce Boettcher",
+              "LB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Jaylon Carlies",
+              "LB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Ashton Dulin",
+              "WR",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Sauce Gardner",
+              "CB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Matt Goncalves",
+              "G",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Anthony Gould",
+              "WR",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Andrew Ogletree",
+              "TE",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Rigoberto Sanchez",
+              "P",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Jonathan Taylor",
+              "RB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Jerry Tillery",
+              "DT",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Jalen Travis",
+              "T",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Justin Walley",
+              "CB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Charvarius Ward",
+              "CB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Tyler Warren",
+              "TE",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ]
+          ],
+          "source": "https://www.nfl.com/injuries/"
+        },
+        "MIN": {
+          "status": "CURRENT_PRACTICE_TABLE_FINAL_REVIEW_PENDING",
+          "rows": [
+            [
+              "Jordan Addison",
+              "WR",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Christian Darrisaw",
+              "T",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Charles Demmings",
+              "CB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "T.J. Hockenson",
+              "TE",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Justin Jefferson",
+              "WR",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Jordan Mason",
+              "RB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Brian O'Neill",
+              "T",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "James Pierre",
+              "CB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ]
+          ],
+          "source": "https://www.nfl.com/injuries/"
+        }
+      },
+      "weather": "Indoor venue",
+      "weather_source": null,
+      "priority_note": "Post-bye Minnesota; verify concussion clearance and Colts availability.",
+      "inactive_review_et": "2026-10-25T11:30:00-04:00",
+      "market_lock_start_et": "2026-10-25T12:30:00-04:00",
+      "release_state": "HOLD_RESEARCH_ONLY",
+      "benchmark_status": "NO_NEW_VERIFIED_INDEPENDENT_BENCHMARK",
+      "final_inactives": false,
+      "market_lock": null
+    },
+    {
+      "game_id": "2026_07_MIA_NYJ",
+      "away": "MIA",
+      "home": "NYJ",
+      "kickoff_utc": "2026-10-25T17:00:00+00:00",
+      "kickoff_et": "Sun 10/25 01:00 PM",
+      "canonical": {
+        "home_margin": -0.4735792690094778,
+        "home_spread": 0.4735792690094778,
+        "total": 43.08643938100684,
+        "away_score": 21.78000932500816,
+        "home_score": 21.306430055998682
+      },
+      "challenger": {
+        "name": "FTN50",
+        "home_margin": -1.3062043049328746,
+        "total": 43.08643938100684
+      },
+      "market_context": {
+        "home_spread": -4.5,
+        "total": 39.5,
+        "source": "https://www.covers.com/nfl/week-7-odds-opening-lines-2026",
+        "source_asof": "2026-10-22",
+        "instrument": "Covers percentage-priced displayed thresholds; instrument/provider not verified",
+        "eligible_for_grading": false,
+        "price": null,
+        "note": "Manually read table, not conflicting headline; not sportsbook execution or consensus."
+      },
+      "personnel": {
+        "MIA": {
+          "status": "CURRENT_PRACTICE_TABLE_FINAL_REVIEW_PENDING",
+          "rows": [
+            [
+              "Tucker Addington",
+              "LS",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Rob Beal Jr.",
+              "DE",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Julius Brents",
+              "CB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Jordyn Brooks",
+              "LB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Caleb Douglas",
+              "WR",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Will Kacmarek",
+              "TE",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Kyle Louis",
+              "S",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Jonah Savaiinaea",
+              "G",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Reese Taylor",
+              "CB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Malik Willis",
+              "QB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Jackson Woodard",
+              "LB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Jaylen Wright",
+              "RB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ]
+          ],
+          "source": "https://www.nfl.com/injuries/"
+        },
+        "NYJ": {
+          "status": "CURRENT_PRACTICE_TABLE_FINAL_REVIEW_PENDING",
+          "rows": [
+            [
+              "Demario Davis",
+              "LB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Breece Hall",
+              "RB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Francisco Mauigoa",
+              "LB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Will McDonald IV",
+              "DE",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Adonai Mitchell",
+              "WR",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Kene Nwangwu",
+              "RB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Joseph Ossai",
+              "DE",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Dylan Parham",
+              "G",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Harrison Phillips",
+              "DT",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "T'Vondre Sweat",
+              "DT",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ]
+          ],
+          "source": "https://www.nfl.com/injuries/"
+        }
+      },
+      "weather": "62\u201365 F; winds 0 mph, 1 mph, 2 mph; max rain probability 0%",
+      "weather_source": {
+        "home": "NYJ",
+        "url": "https://api.weather.gov/gridpoints/OKX/30,46/forecast/hourly",
+        "resolved_url": "https://api.weather.gov/gridpoints/OKX/30,46/forecast/hourly",
+        "observed_at": "2026-10-22T16:57:13.181157+00:00",
+        "sha256": "540c8863c0815923c1517dd3910e0397d3ba9b222451e65a20fa3ff4c2b66956",
+        "point": {
+          "url": "https://api.weather.gov/points/40.8135,-74.0745",
+          "resolved_url": "https://api.weather.gov/points/40.8135,-74.0745",
+          "observed_at": "2026-10-22T16:57:09.776019+00:00",
+          "sha256": "c4a7dc161426dacd1d2483f35b37891aef5e35696fb58ed15e35f95f9f041a04"
+        },
+        "coordinates": [
+          40.8135,
+          -74.0745
+        ],
+        "coordinate_precision": "approximate stadium point; retain selected NWS grid",
+        "forecast_issued_at": "2026-10-22T15:41:31+00:00",
+        "generated_at": "2026-10-22T16:06:25+00:00",
+        "kickoff_utc": "2026-10-25T17:00:00+00:00",
+        "through_plus4h_contiguous": true,
+        "issue_time_valid": true,
+        "periods": [
+          {
+            "number": 74,
+            "name": "",
+            "startTime": "2026-10-25T13:00:00-04:00",
+            "endTime": "2026-10-25T14:00:00-04:00",
+            "isDaytime": true,
+            "temperature": 62,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 3.3333333333333335
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 41
+            },
+            "windSpeed": "2 mph",
+            "windDirection": "W",
+            "icon": "https://api.weather.gov/icons/land/day/skc?size=small",
+            "shortForecast": "Sunny",
+            "detailedForecast": ""
+          },
+          {
+            "number": 75,
+            "name": "",
+            "startTime": "2026-10-25T14:00:00-04:00",
+            "endTime": "2026-10-25T15:00:00-04:00",
+            "isDaytime": true,
+            "temperature": 63,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 2.7777777777777777
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 38
+            },
+            "windSpeed": "2 mph",
+            "windDirection": "W",
+            "icon": "https://api.weather.gov/icons/land/day/skc?size=small",
+            "shortForecast": "Sunny",
+            "detailedForecast": ""
+          },
+          {
+            "number": 76,
+            "name": "",
+            "startTime": "2026-10-25T15:00:00-04:00",
+            "endTime": "2026-10-25T16:00:00-04:00",
+            "isDaytime": true,
+            "temperature": 64,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 2.7777777777777777
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 37
+            },
+            "windSpeed": "1 mph",
+            "windDirection": "W",
+            "icon": "https://api.weather.gov/icons/land/day/skc?size=small",
+            "shortForecast": "Sunny",
+            "detailedForecast": ""
+          },
+          {
+            "number": 77,
+            "name": "",
+            "startTime": "2026-10-25T16:00:00-04:00",
+            "endTime": "2026-10-25T17:00:00-04:00",
+            "isDaytime": true,
+            "temperature": 65,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 2.7777777777777777
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 35
+            },
+            "windSpeed": "0 mph",
+            "windDirection": "",
+            "icon": "https://api.weather.gov/icons/land/day/skc?size=small",
+            "shortForecast": "Sunny",
+            "detailedForecast": ""
+          }
+        ],
+        "status": "EARLY_FORECAST_ONLY",
+        "gusts": "UNAVAILABLE_IN_HOURLY_ENDPOINT",
+        "final_window_refresh_required": true,
+        "canonical_influence": false
+      },
+      "priority_note": "Review Hall practice trajectory; model-market winner disagreement is not proven value.",
+      "inactive_review_et": "2026-10-25T11:30:00-04:00",
+      "market_lock_start_et": "2026-10-25T12:30:00-04:00",
+      "release_state": "HOLD_RESEARCH_ONLY",
+      "benchmark_status": "NO_NEW_VERIFIED_INDEPENDENT_BENCHMARK",
+      "final_inactives": false,
+      "market_lock": null
+    },
+    {
+      "game_id": "2026_07_NYG_HOU",
+      "away": "NYG",
+      "home": "HOU",
+      "kickoff_utc": "2026-10-25T17:00:00+00:00",
+      "kickoff_et": "Sun 10/25 01:00 PM",
+      "canonical": {
+        "home_margin": 3.733754200358406,
+        "home_spread": -3.733754200358406,
+        "total": 46.24993485141048,
+        "away_score": 21.258090325526037,
+        "home_score": 24.991844525884442
+      },
+      "challenger": {
+        "name": "FTN50",
+        "home_margin": 1.8435047354078526,
+        "total": 46.24993485141048
+      },
+      "market_context": {
+        "home_spread": -10.5,
+        "total": 42.5,
+        "source": "https://www.covers.com/nfl/week-7-odds-opening-lines-2026",
+        "source_asof": "2026-10-22",
+        "instrument": "Covers percentage-priced displayed thresholds; instrument/provider not verified",
+        "eligible_for_grading": false,
+        "price": null,
+        "note": "Manually read table, not conflicting headline; not sportsbook execution or consensus."
+      },
+      "personnel": {
+        "NYG": {
+          "status": "CURRENT_PRACTICE_TABLE_FINAL_REVIEW_PENDING",
+          "rows": [
+            [
+              "Paulson Adebo",
+              "CB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Tremaine Edmunds",
+              "LB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Jermaine Eluemunor",
+              "T",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Thomas Fidone II",
+              "TE",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Jevon Holland",
+              "S",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Colton Hood",
+              "CB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Theo Johnson",
+              "TE",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Charlie Jones",
+              "WR",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Marcus Mbow",
+              "T",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Darnell Mooney",
+              "WR",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Greg Newsome II",
+              "CB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Tyler Nubin",
+              "S",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Jordan Stout",
+              "P",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Kayvon Thibodeaux",
+              "LB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Andrew Thomas",
+              "T",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ]
+          ],
+          "source": "https://www.nfl.com/injuries/"
+        },
+        "HOU": {
+          "status": "CURRENT_PRACTICE_TABLE_FINAL_REVIEW_PENDING",
+          "rows": [
+            [
+              "Azeez Al-Shaair",
+              "LB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Will Anderson Jr.",
+              "DE",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Reed Blankenship",
+              "S",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Trent Brown",
+              "T",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Jadeveon Clowney",
+              "DE",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Nico Collins",
+              "WR",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Tank Dell",
+              "WR",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Blake Fisher",
+              "T",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Logan Hall",
+              "DE",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "David Montgomery",
+              "RB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Jalen Pitre",
+              "S",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Dalton Schultz",
+              "TE",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Henry To'oTo'o",
+              "LB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ]
+          ],
+          "source": "https://www.nfl.com/injuries/"
+        }
+      },
+      "weather": "78\u201381 F; winds 10 mph; max rain probability 0%",
+      "weather_source": {
+        "home": "HOU",
+        "url": "https://api.weather.gov/gridpoints/HGX/61,91/forecast/hourly",
+        "resolved_url": "https://api.weather.gov/gridpoints/HGX/61,91/forecast/hourly",
+        "observed_at": "2026-10-22T16:57:13.268941+00:00",
+        "sha256": "a459b593648858e4d69eacf6511d7e12e8859e887ad387ecd73b63cc515f68ac",
+        "point": {
+          "url": "https://api.weather.gov/points/29.6847,-95.4107",
+          "resolved_url": "https://api.weather.gov/points/29.6847,-95.4107",
+          "observed_at": "2026-10-22T16:57:09.777480+00:00",
+          "sha256": "80c657a56bcc973ccd37e98feb7b020cc5aa45ea2331917194ccc3dc37229bbf"
+        },
+        "coordinates": [
+          29.6847,
+          -95.4107
+        ],
+        "coordinate_precision": "approximate stadium point; retain selected NWS grid",
+        "forecast_issued_at": "2026-10-22T15:31:29+00:00",
+        "generated_at": "2026-10-22T16:06:26+00:00",
+        "kickoff_utc": "2026-10-25T17:00:00+00:00",
+        "through_plus4h_contiguous": true,
+        "issue_time_valid": true,
+        "periods": [
+          {
+            "number": 74,
+            "name": "",
+            "startTime": "2026-10-25T12:00:00-05:00",
+            "endTime": "2026-10-25T13:00:00-05:00",
+            "isDaytime": true,
+            "temperature": 78,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 13.88888888888889
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 48
+            },
+            "windSpeed": "10 mph",
+            "windDirection": "E",
+            "icon": "https://api.weather.gov/icons/land/day/bkn?size=small",
+            "shortForecast": "Partly Sunny",
+            "detailedForecast": ""
+          },
+          {
+            "number": 75,
+            "name": "",
+            "startTime": "2026-10-25T13:00:00-05:00",
+            "endTime": "2026-10-25T14:00:00-05:00",
+            "isDaytime": true,
+            "temperature": 80,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 13.333333333333334
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 44
+            },
+            "windSpeed": "10 mph",
+            "windDirection": "E",
+            "icon": "https://api.weather.gov/icons/land/day/bkn?size=small",
+            "shortForecast": "Partly Sunny",
+            "detailedForecast": ""
+          },
+          {
+            "number": 76,
+            "name": "",
+            "startTime": "2026-10-25T14:00:00-05:00",
+            "endTime": "2026-10-25T15:00:00-05:00",
+            "isDaytime": true,
+            "temperature": 81,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 12.777777777777779
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 41
+            },
+            "windSpeed": "10 mph",
+            "windDirection": "E",
+            "icon": "https://api.weather.gov/icons/land/day/bkn?size=small",
+            "shortForecast": "Partly Sunny",
+            "detailedForecast": ""
+          },
+          {
+            "number": 77,
+            "name": "",
+            "startTime": "2026-10-25T15:00:00-05:00",
+            "endTime": "2026-10-25T16:00:00-05:00",
+            "isDaytime": true,
+            "temperature": 81,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 12.777777777777779
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 41
+            },
+            "windSpeed": "10 mph",
+            "windDirection": "E",
+            "icon": "https://api.weather.gov/icons/land/day/bkn?size=small",
+            "shortForecast": "Partly Sunny",
+            "detailedForecast": ""
+          }
+        ],
+        "status": "EARLY_FORECAST_ONLY",
+        "gusts": "UNAVAILABLE_IN_HOURLY_ENDPOINT",
+        "final_window_refresh_required": true,
+        "canonical_influence": false
+      },
+      "priority_note": "Giants announced McCarthy starter after model freeze; new QB regime flag. Roof decision pending.",
+      "inactive_review_et": "2026-10-25T11:30:00-04:00",
+      "market_lock_start_et": "2026-10-25T12:30:00-04:00",
+      "release_state": "HOLD_RESEARCH_ONLY",
+      "benchmark_status": "NO_NEW_VERIFIED_INDEPENDENT_BENCHMARK",
+      "final_inactives": false,
+      "market_lock": null
+    },
+    {
+      "game_id": "2026_07_SF_ATL",
+      "away": "SF",
+      "home": "ATL",
+      "kickoff_utc": "2026-10-25T17:00:00+00:00",
+      "kickoff_et": "Sun 10/25 01:00 PM",
+      "canonical": {
+        "home_margin": -5.68334261203569,
+        "home_spread": 5.68334261203569,
+        "total": 47.012385011376814,
+        "away_score": 26.34786381170625,
+        "home_score": 20.664521199670563
+      },
+      "challenger": {
+        "name": "FTN50",
+        "home_margin": -4.8769668820827885,
+        "total": 47.012385011376814
+      },
+      "market_context": {
+        "home_spread": 2.5,
+        "total": 49.5,
+        "source": "https://www.covers.com/nfl/week-7-odds-opening-lines-2026",
+        "source_asof": "2026-10-22",
+        "instrument": "Covers percentage-priced displayed thresholds; instrument/provider not verified",
+        "eligible_for_grading": false,
+        "price": null,
+        "note": "Manually read table, not conflicting headline; not sportsbook execution or consensus."
+      },
+      "personnel": {
+        "SF": {
+          "status": "CURRENT_PRACTICE_TABLE_FINAL_REVIEW_PENDING",
+          "rows": [
+            [
+              "Nick Bosa",
+              "DE",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Ashtyn Davis",
+              "S",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Jaden Dugger",
+              "LB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Mike Evans",
+              "WR",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Luke Gifford",
+              "LB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Romello Height",
+              "DE",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Christian Kirk",
+              "WR",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Siran Neal",
+              "S",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Deebo Samuel Sr.",
+              "WR",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Marques Sigle",
+              "S",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Upton Stout",
+              "CB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Garret Wallow",
+              "LB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Mykel Williams",
+              "DE",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Trent Williams",
+              "T",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ]
+          ],
+          "source": "https://www.nfl.com/injuries/"
+        },
+        "ATL": {
+          "status": "CURRENT_PRACTICE_TABLE_FINAL_REVIEW_PENDING",
+          "rows": [
+            [
+              "Billy Bowman Jr.",
+              "CB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Beaux Collins",
+              "WR",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Kendal Daniels",
+              "LB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Divine Deablo",
+              "LB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Samson Ebukam",
+              "DE",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "C.J. Henderson",
+              "CB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Michael Jerrell",
+              "T",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Brian Robinson",
+              "RB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Za'Darius Smith",
+              "DE",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "A.J. Terrell",
+              "CB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Avieon Terrell",
+              "CB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Olamide Zaccheaus",
+              "WR",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ]
+          ],
+          "source": "https://www.nfl.com/injuries/"
+        }
+      },
+      "weather": "64\u201368 F; winds 10 mph; max rain probability 0%",
+      "weather_source": {
+        "home": "ATL",
+        "url": "https://api.weather.gov/gridpoints/FFC/50,87/forecast/hourly",
+        "resolved_url": "https://api.weather.gov/gridpoints/FFC/50,87/forecast/hourly",
+        "observed_at": "2026-10-22T16:57:13.296977+00:00",
+        "sha256": "425d201e45d3ddfd75ed46ec417abb18815649240b4794349b141d077ea3a75d",
+        "point": {
+          "url": "https://api.weather.gov/points/33.7554,-84.4008",
+          "resolved_url": "https://api.weather.gov/points/33.7554,-84.4008",
+          "observed_at": "2026-10-22T16:57:09.782550+00:00",
+          "sha256": "a4500f2f8557e0980fb5a7cbff1464e5471bd061ec37801796640ed0e150f4d5"
+        },
+        "coordinates": [
+          33.7554,
+          -84.4008
+        ],
+        "coordinate_precision": "approximate stadium point; retain selected NWS grid",
+        "forecast_issued_at": "2026-10-22T10:16:51+00:00",
+        "generated_at": "2026-10-22T16:06:26+00:00",
+        "kickoff_utc": "2026-10-25T17:00:00+00:00",
+        "through_plus4h_contiguous": true,
+        "issue_time_valid": true,
+        "periods": [
+          {
+            "number": 74,
+            "name": "",
+            "startTime": "2026-10-25T13:00:00-04:00",
+            "endTime": "2026-10-25T14:00:00-04:00",
+            "isDaytime": true,
+            "temperature": 64,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 5
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 43
+            },
+            "windSpeed": "10 mph",
+            "windDirection": "E",
+            "icon": "https://api.weather.gov/icons/land/day/skc?size=small",
+            "shortForecast": "Sunny",
+            "detailedForecast": ""
+          },
+          {
+            "number": 75,
+            "name": "",
+            "startTime": "2026-10-25T14:00:00-04:00",
+            "endTime": "2026-10-25T15:00:00-04:00",
+            "isDaytime": true,
+            "temperature": 66,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 4.444444444444445
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 39
+            },
+            "windSpeed": "10 mph",
+            "windDirection": "E",
+            "icon": "https://api.weather.gov/icons/land/day/skc?size=small",
+            "shortForecast": "Sunny",
+            "detailedForecast": ""
+          },
+          {
+            "number": 76,
+            "name": "",
+            "startTime": "2026-10-25T15:00:00-04:00",
+            "endTime": "2026-10-25T16:00:00-04:00",
+            "isDaytime": true,
+            "temperature": 68,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 4.444444444444445
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 36
+            },
+            "windSpeed": "10 mph",
+            "windDirection": "E",
+            "icon": "https://api.weather.gov/icons/land/day/skc?size=small",
+            "shortForecast": "Sunny",
+            "detailedForecast": ""
+          },
+          {
+            "number": 77,
+            "name": "",
+            "startTime": "2026-10-25T16:00:00-04:00",
+            "endTime": "2026-10-25T17:00:00-04:00",
+            "isDaytime": true,
+            "temperature": 68,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 3.888888888888889
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 35
+            },
+            "windSpeed": "10 mph",
+            "windDirection": "E",
+            "icon": "https://api.weather.gov/icons/land/day/skc?size=small",
+            "shortForecast": "Sunny",
+            "detailedForecast": ""
+          }
+        ],
+        "status": "EARLY_FORECAST_ONLY",
+        "gusts": "UNAVAILABLE_IN_HOURLY_ENDPOINT",
+        "final_window_refresh_required": true,
+        "canonical_influence": false
+      },
+      "priority_note": "Review 49ers availability; distinguish veteran rest from injury. Roof decision pending.",
+      "inactive_review_et": "2026-10-25T11:30:00-04:00",
+      "market_lock_start_et": "2026-10-25T12:30:00-04:00",
+      "release_state": "HOLD_RESEARCH_ONLY",
+      "benchmark_status": "NO_NEW_VERIFIED_INDEPENDENT_BENCHMARK",
+      "final_inactives": false,
+      "market_lock": null
+    },
+    {
+      "game_id": "2026_07_TB_CAR",
+      "away": "TB",
+      "home": "CAR",
+      "kickoff_utc": "2026-10-25T17:00:00+00:00",
+      "kickoff_et": "Sun 10/25 01:00 PM",
+      "canonical": {
+        "home_margin": 6.121991712398631,
+        "home_spread": -6.121991712398631,
+        "total": 44.99094705921449,
+        "away_score": 19.43447767340793,
+        "home_score": 25.55646938580656
+      },
+      "challenger": {
+        "name": "FTN50",
+        "home_margin": 2.6939922029411796,
+        "total": 44.99094705921449
+      },
+      "market_context": {
+        "home_spread": -3.5,
+        "total": 44.5,
+        "source": "https://www.covers.com/nfl/week-7-odds-opening-lines-2026",
+        "source_asof": "2026-10-22",
+        "instrument": "Covers percentage-priced displayed thresholds; instrument/provider not verified",
+        "eligible_for_grading": false,
+        "price": null,
+        "note": "Manually read table, not conflicting headline; not sportsbook execution or consensus."
+      },
+      "personnel": {
+        "TB": {
+          "status": "CURRENT_PRACTICE_TABLE_FINAL_REVIEW_PENDING",
+          "rows": [
+            [
+              "Riley Dixon",
+              "P",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Emeka Egbuka",
+              "WR",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Luke Goedeke",
+              "T",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Bucky Irving",
+              "RB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Calijah Kancey",
+              "DT",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Cody Mauch",
+              "G",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Baker Mayfield",
+              "QB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Zyon McCollum",
+              "CB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Chase McLaughlin",
+              "K",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Benjamin Morrison",
+              "CB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Christian Rozeboom",
+              "LB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "David Sills",
+              "WR",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Josiah Trotter",
+              "LB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Sean Tucker",
+              "RB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Vita Vea",
+              "DT",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Antoine Winfield Jr.",
+              "S",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ]
+          ],
+          "source": "https://www.nfl.com/injuries/"
+        },
+        "CAR": {
+          "status": "CURRENT_PRACTICE_TABLE_FINAL_REVIEW_PENDING",
+          "rows": [
+            [
+              "AJ Dillon",
+              "RB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Monroe Freeling",
+              "T",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Chuba Hubbard",
+              "RB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Thomas Incoom",
+              "LB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Devin Lloyd",
+              "LB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Bam Martin-Scott",
+              "LB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Taylor Moton",
+              "T",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Jaelan Phillips",
+              "LB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Darren Waller",
+              "TE",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Bryce Young",
+              "QB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ]
+          ],
+          "source": "https://www.nfl.com/injuries/"
+        }
+      },
+      "weather": "64\u201369 F; winds 10 mph; max rain probability 0%",
+      "weather_source": {
+        "home": "CAR",
+        "url": "https://api.weather.gov/gridpoints/GSP/118,65/forecast/hourly",
+        "resolved_url": "https://api.weather.gov/gridpoints/GSP/118,65/forecast/hourly",
+        "observed_at": "2026-10-22T16:57:18.353170+00:00",
+        "sha256": "4bc904cd0cc3ece55dbf74222793da8b3f3eb3c549084a9db0c09227261bfee6",
+        "point": {
+          "url": "https://api.weather.gov/points/35.2258,-80.8528",
+          "resolved_url": "https://api.weather.gov/points/35.2258,-80.8528",
+          "observed_at": "2026-10-22T16:57:15.927616+00:00",
+          "sha256": "dae9f9f7b50f0a80deb249f40419ec4e9a49ec3ee29a83cb80c7da3a44ed12df"
+        },
+        "coordinates": [
+          35.2258,
+          -80.8528
+        ],
+        "coordinate_precision": "approximate stadium point; retain selected NWS grid",
+        "forecast_issued_at": "2026-10-22T10:14:58+00:00",
+        "generated_at": "2026-10-22T16:06:35+00:00",
+        "kickoff_utc": "2026-10-25T17:00:00+00:00",
+        "through_plus4h_contiguous": true,
+        "issue_time_valid": true,
+        "periods": [
+          {
+            "number": 74,
+            "name": "",
+            "startTime": "2026-10-25T13:00:00-04:00",
+            "endTime": "2026-10-25T14:00:00-04:00",
+            "isDaytime": true,
+            "temperature": 64,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 8.333333333333334
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 54
+            },
+            "windSpeed": "10 mph",
+            "windDirection": "NE",
+            "icon": "https://api.weather.gov/icons/land/day/skc?size=small",
+            "shortForecast": "Sunny",
+            "detailedForecast": ""
+          },
+          {
+            "number": 75,
+            "name": "",
+            "startTime": "2026-10-25T14:00:00-04:00",
+            "endTime": "2026-10-25T15:00:00-04:00",
+            "isDaytime": true,
+            "temperature": 66,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 8.333333333333334
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 50
+            },
+            "windSpeed": "10 mph",
+            "windDirection": "NE",
+            "icon": "https://api.weather.gov/icons/land/day/few?size=small",
+            "shortForecast": "Sunny",
+            "detailedForecast": ""
+          },
+          {
+            "number": 76,
+            "name": "",
+            "startTime": "2026-10-25T15:00:00-04:00",
+            "endTime": "2026-10-25T16:00:00-04:00",
+            "isDaytime": true,
+            "temperature": 68,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 8.333333333333334
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 47
+            },
+            "windSpeed": "10 mph",
+            "windDirection": "NE",
+            "icon": "https://api.weather.gov/icons/land/day/few?size=small",
+            "shortForecast": "Sunny",
+            "detailedForecast": ""
+          },
+          {
+            "number": 77,
+            "name": "",
+            "startTime": "2026-10-25T16:00:00-04:00",
+            "endTime": "2026-10-25T17:00:00-04:00",
+            "isDaytime": true,
+            "temperature": 69,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 8.333333333333334
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 46
+            },
+            "windSpeed": "10 mph",
+            "windDirection": "NE",
+            "icon": "https://api.weather.gov/icons/land/day/few?size=small",
+            "shortForecast": "Sunny",
+            "detailedForecast": ""
+          }
+        ],
+        "status": "EARLY_FORECAST_ONLY",
+        "gusts": "UNAVAILABLE_IN_HOURLY_ENDPOINT",
+        "final_window_refresh_required": true,
+        "canonical_influence": false
+      },
+      "priority_note": "Mayfield full Wednesday, return not final. Largest Canonical\u2013FTN50 margin disagreement.",
+      "inactive_review_et": "2026-10-25T11:30:00-04:00",
+      "market_lock_start_et": "2026-10-25T12:30:00-04:00",
+      "release_state": "HOLD_RESEARCH_ONLY",
+      "benchmark_status": "NO_NEW_VERIFIED_INDEPENDENT_BENCHMARK",
+      "final_inactives": false,
+      "market_lock": null
+    },
+    {
+      "game_id": "2026_07_DEN_ARI",
+      "away": "DEN",
+      "home": "ARI",
+      "kickoff_utc": "2026-10-25T20:05:00+00:00",
+      "kickoff_et": "Sun 10/25 04:05 PM",
+      "canonical": {
+        "home_margin": -2.679316394749109,
+        "home_spread": 2.679316394749109,
+        "total": 43.10762352790158,
+        "away_score": 22.893469961325344,
+        "home_score": 20.214153566576236
+      },
+      "challenger": {
+        "name": "FTN50",
+        "home_margin": -2.4847745974320423,
+        "total": 43.10762352790158
+      },
+      "market_context": {
+        "home_spread": 4.5,
+        "total": 43.5,
+        "source": "https://www.covers.com/nfl/week-7-odds-opening-lines-2026",
+        "source_asof": "2026-10-22",
+        "instrument": "Covers percentage-priced displayed thresholds; instrument/provider not verified",
+        "eligible_for_grading": false,
+        "price": null,
+        "note": "Manually read table, not conflicting headline; not sportsbook execution or consensus."
+      },
+      "personnel": {
+        "DEN": {
+          "status": "CURRENT_PRACTICE_TABLE_FINAL_REVIEW_PENDING",
+          "rows": [
+            [
+              "Zach Allen",
+              "DE",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Tyler Badie",
+              "RB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Jonah Coleman",
+              "RB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Jonah Elliss",
+              "LB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Talanoa Hufanga",
+              "S",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Riley Moss",
+              "CB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Pat Surtain II",
+              "CB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Jaylen Waddle",
+              "WR",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ]
+          ],
+          "source": "https://www.nfl.com/injuries/"
+        },
+        "ARI": {
+          "status": "CURRENT_PRACTICE_TABLE_FINAL_REVIEW_PENDING",
+          "rows": [
+            [
+              "Budda Baker",
+              "S",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Carson Beck",
+              "QB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Jeremiyah Love",
+              "RB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Max Melton",
+              "CB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Walter Nolen",
+              "DT",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Isaac Seumalo",
+              "G",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Josh Sweat",
+              "LB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Garrett Williams",
+              "CB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Wydett Williams Jr.",
+              "S",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Jedrick Wills",
+              "T",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Andrew Wingard",
+              "S",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ]
+          ],
+          "source": "https://www.nfl.com/injuries/"
+        }
+      },
+      "weather": "77\u201378 F; winds 0 mph, 5 mph; max rain probability 0%",
+      "weather_source": {
+        "home": "ARI",
+        "url": "https://api.weather.gov/gridpoints/PSR/152,62/forecast/hourly",
+        "resolved_url": "https://api.weather.gov/gridpoints/PSR/152,62/forecast/hourly",
+        "observed_at": "2026-10-22T16:57:18.413162+00:00",
+        "sha256": "f554f0792bf74c19ea3ef47addd12fd9fa1e3e998f5c10b36355c45027a5082e",
+        "point": {
+          "url": "https://api.weather.gov/points/33.5276,-112.2626",
+          "resolved_url": "https://api.weather.gov/points/33.5276,-112.2626",
+          "observed_at": "2026-10-22T16:57:15.896968+00:00",
+          "sha256": "553cb1ab4fd4d3c2f5b1ab7d2bf25497abfba6c6d0a155847b0322a3bd37c2e0"
+        },
+        "coordinates": [
+          33.5276,
+          -112.2626
+        ],
+        "coordinate_precision": "approximate stadium point; retain selected NWS grid",
+        "forecast_issued_at": "2026-10-22T14:42:44+00:00",
+        "generated_at": "2026-10-22T16:06:35+00:00",
+        "kickoff_utc": "2026-10-25T20:05:00+00:00",
+        "through_plus4h_contiguous": true,
+        "issue_time_valid": true,
+        "periods": [
+          {
+            "number": 77,
+            "name": "",
+            "startTime": "2026-10-25T13:00:00-07:00",
+            "endTime": "2026-10-25T14:00:00-07:00",
+            "isDaytime": true,
+            "temperature": 78,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 8.333333333333334
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 34
+            },
+            "windSpeed": "5 mph",
+            "windDirection": "NNE",
+            "icon": "https://api.weather.gov/icons/land/day/skc?size=small",
+            "shortForecast": "Sunny",
+            "detailedForecast": ""
+          },
+          {
+            "number": 78,
+            "name": "",
+            "startTime": "2026-10-25T14:00:00-07:00",
+            "endTime": "2026-10-25T15:00:00-07:00",
+            "isDaytime": true,
+            "temperature": 78,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 8.333333333333334
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 34
+            },
+            "windSpeed": "5 mph",
+            "windDirection": "N",
+            "icon": "https://api.weather.gov/icons/land/day/skc?size=small",
+            "shortForecast": "Sunny",
+            "detailedForecast": ""
+          },
+          {
+            "number": 79,
+            "name": "",
+            "startTime": "2026-10-25T15:00:00-07:00",
+            "endTime": "2026-10-25T16:00:00-07:00",
+            "isDaytime": true,
+            "temperature": 78,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 8.333333333333334
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 34
+            },
+            "windSpeed": "5 mph",
+            "windDirection": "NNW",
+            "icon": "https://api.weather.gov/icons/land/day/skc?size=small",
+            "shortForecast": "Sunny",
+            "detailedForecast": ""
+          },
+          {
+            "number": 80,
+            "name": "",
+            "startTime": "2026-10-25T16:00:00-07:00",
+            "endTime": "2026-10-25T17:00:00-07:00",
+            "isDaytime": true,
+            "temperature": 78,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 8.88888888888889
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 35
+            },
+            "windSpeed": "0 mph",
+            "windDirection": "",
+            "icon": "https://api.weather.gov/icons/land/day/skc?size=small",
+            "shortForecast": "Sunny",
+            "detailedForecast": ""
+          },
+          {
+            "number": 81,
+            "name": "",
+            "startTime": "2026-10-25T17:00:00-07:00",
+            "endTime": "2026-10-25T18:00:00-07:00",
+            "isDaytime": true,
+            "temperature": 77,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 8.88888888888889
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 36
+            },
+            "windSpeed": "0 mph",
+            "windDirection": "",
+            "icon": "https://api.weather.gov/icons/land/day/skc?size=small",
+            "shortForecast": "Sunny",
+            "detailedForecast": ""
+          }
+        ],
+        "status": "EARLY_FORECAST_ONLY",
+        "gusts": "UNAVAILABLE_IN_HOURLY_ENDPOINT",
+        "final_window_refresh_required": true,
+        "canonical_influence": false
+      },
+      "priority_note": "Roof decision pending; review Cardinals RB availability.",
+      "inactive_review_et": "2026-10-25T14:35:00-04:00",
+      "market_lock_start_et": "2026-10-25T15:35:00-04:00",
+      "release_state": "HOLD_RESEARCH_ONLY",
+      "benchmark_status": "NO_NEW_VERIFIED_INDEPENDENT_BENCHMARK",
+      "final_inactives": false,
+      "market_lock": null
+    },
+    {
+      "game_id": "2026_07_GB_DET",
+      "away": "GB",
+      "home": "DET",
+      "kickoff_utc": "2026-10-25T20:25:00+00:00",
+      "kickoff_et": "Sun 10/25 04:25 PM",
+      "canonical": {
+        "home_margin": 4.081636347229041,
+        "home_spread": -4.081636347229041,
+        "total": 50.007353488534456,
+        "away_score": 22.962858570652706,
+        "home_score": 27.04449491788175
+      },
+      "challenger": {
+        "name": "FTN50",
+        "home_margin": 4.813216475973013,
+        "total": 50.007353488534456
+      },
+      "market_context": {
+        "home_spread": -3.5,
+        "total": 53.5,
+        "source": "https://www.covers.com/nfl/week-7-odds-opening-lines-2026",
+        "source_asof": "2026-10-22",
+        "instrument": "Covers percentage-priced displayed thresholds; instrument/provider not verified",
+        "eligible_for_grading": false,
+        "price": null,
+        "note": "Manually read table, not conflicting headline; not sportsbook execution or consensus."
+      },
+      "personnel": {
+        "GB": {
+          "status": "CURRENT_PRACTICE_TABLE_FINAL_REVIEW_PENDING",
+          "rows": [
+            [
+              "Aaron Banks",
+              "G",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Anthony Campbell",
+              "DT",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Brandon Cisse",
+              "CB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Matthew Golden",
+              "WR",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Jordan Love",
+              "QB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Bo Melton",
+              "WR",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Jordon Riley",
+              "DT",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Benjamin St-Juste",
+              "CB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Christian Watson",
+              "WR",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Savion Williams",
+              "WR",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ]
+          ],
+          "source": "https://www.nfl.com/injuries/"
+        },
+        "DET": {
+          "status": "CURRENT_PRACTICE_TABLE_FINAL_REVIEW_PENDING",
+          "rows": [
+            [
+              "Brian Branch",
+              "S",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Cade Mays",
+              "C",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Rock Ya-Sin",
+              "CB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ]
+          ],
+          "source": "https://www.nfl.com/injuries/"
+        }
+      },
+      "weather": "Indoor venue",
+      "weather_source": null,
+      "priority_note": "Love limited Wednesday (back); verify final status. Detroit return-to-roster decisions pending.",
+      "inactive_review_et": "2026-10-25T14:55:00-04:00",
+      "market_lock_start_et": "2026-10-25T15:55:00-04:00",
+      "release_state": "HOLD_RESEARCH_ONLY",
+      "benchmark_status": "NO_NEW_VERIFIED_INDEPENDENT_BENCHMARK",
+      "final_inactives": false,
+      "market_lock": null
+    },
+    {
+      "game_id": "2026_07_LA_LV",
+      "away": "LA",
+      "home": "LV",
+      "kickoff_utc": "2026-10-25T20:25:00+00:00",
+      "kickoff_et": "Sun 10/25 04:25 PM",
+      "canonical": {
+        "home_margin": -5.957699832058012,
+        "home_spread": 5.957699832058012,
+        "total": 46.651815739316646,
+        "away_score": 26.30475778568733,
+        "home_score": 20.347057953629317
+      },
+      "challenger": {
+        "name": "FTN50",
+        "home_margin": -6.502884864512487,
+        "total": 46.651815739316646
+      },
+      "market_context": {
+        "home_spread": 3.5,
+        "total": 48.5,
+        "source": "https://www.covers.com/nfl/week-7-odds-opening-lines-2026",
+        "source_asof": "2026-10-22",
+        "instrument": "Covers percentage-priced displayed thresholds; instrument/provider not verified",
+        "eligible_for_grading": false,
+        "price": null,
+        "note": "Manually read table, not conflicting headline; not sportsbook execution or consensus."
+      },
+      "personnel": {
+        "LA": {
+          "status": "CURRENT_PRACTICE_TABLE_FINAL_REVIEW_PENDING",
+          "rows": [
+            [
+              "Nate Landman",
+              "LB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Trent McDuffie",
+              "CB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Colby Parkinson",
+              "TE",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Josh Wallace",
+              "CB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ]
+          ],
+          "source": "https://www.nfl.com/injuries/"
+        },
+        "LV": {
+          "status": "CURRENT_PRACTICE_TABLE_FINAL_REVIEW_PENDING",
+          "rows": [
+            [
+              "Brock Bowers",
+              "TE",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Spencer Burford",
+              "G",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Foley Fatukasi",
+              "DT",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Tonka Hemingway",
+              "DT",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Kolton Miller",
+              "T",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Segun Olubi",
+              "LB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Carter Runyon",
+              "TE",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Dont'e Thornton Jr.",
+              "WR",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Quay Walker",
+              "LB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Mike Washington Jr.",
+              "RB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Trey Zuhn III",
+              "C",
+              "",
+              "Full Participation in Practice",
+              ""
+            ]
+          ],
+          "source": "https://www.nfl.com/injuries/"
+        }
+      },
+      "weather": "Indoor venue",
+      "weather_source": null,
+      "priority_note": "Verify Rams report and Bowers/Miller availability; indoor venue.",
+      "inactive_review_et": "2026-10-25T14:55:00-04:00",
+      "market_lock_start_et": "2026-10-25T15:55:00-04:00",
+      "release_state": "HOLD_RESEARCH_ONLY",
+      "benchmark_status": "NO_NEW_VERIFIED_INDEPENDENT_BENCHMARK",
+      "final_inactives": false,
+      "market_lock": null
+    },
+    {
+      "game_id": "2026_07_KC_SEA",
+      "away": "KC",
+      "home": "SEA",
+      "kickoff_utc": "2026-10-26T00:20:00+00:00",
+      "kickoff_et": "Sun 10/25 08:20 PM",
+      "canonical": {
+        "home_margin": 1.602236252102505,
+        "home_spread": -1.602236252102505,
+        "total": 42.8507742914254,
+        "away_score": 20.624269019661448,
+        "home_score": 22.226505271763955
+      },
+      "challenger": {
+        "name": "FTN50",
+        "home_margin": 0.9866746949927255,
+        "total": 42.8507742914254
+      },
+      "market_context": {
+        "home_spread": -2.5,
+        "total": 42.5,
+        "source": "https://www.covers.com/nfl/week-7-odds-opening-lines-2026",
+        "source_asof": "2026-10-22",
+        "instrument": "Covers percentage-priced displayed thresholds; instrument/provider not verified",
+        "eligible_for_grading": false,
+        "price": null,
+        "note": "Manually read table, not conflicting headline; not sportsbook execution or consensus."
+      },
+      "personnel": {
+        "KC": {
+          "status": "CURRENT_PRACTICE_TABLE_FINAL_REVIEW_PENDING",
+          "rows": [
+            [
+              "Cyrus Allen",
+              "WR",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Chamarri Conner",
+              "S",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Travis Kelce",
+              "TE",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Patrick Mahomes",
+              "QB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Cooper McDonald",
+              "LB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Jaylon Moore",
+              "T",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Rashee Rice",
+              "WR",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Josh Simmons",
+              "T",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Trey Smith",
+              "G",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "L'Jarius Sneed",
+              "CB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ]
+          ],
+          "source": "https://www.nfl.com/injuries/"
+        },
+        "SEA": {
+          "status": "CURRENT_PRACTICE_TABLE_FINAL_REVIEW_PENDING",
+          "rows": [
+            [
+              "Anthony Bradford",
+              "G",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Zach Charbonnet",
+              "RB",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Irvin Charles",
+              "WR",
+              "",
+              "Full Participation in Practice",
+              ""
+            ],
+            [
+              "Tyrice Knight",
+              "LB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "DeMarcus Lawrence",
+              "LB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Drew Lock",
+              "QB",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Connor O'Toole",
+              "LB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Rashid Shaheed",
+              "WR",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Beau Stephens",
+              "G",
+              "",
+              "Limited Participation in Practice",
+              ""
+            ],
+            [
+              "Chazz Surratt",
+              "LB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ],
+            [
+              "Drake Thomas",
+              "LB",
+              "",
+              "Did Not Participate In Practice",
+              ""
+            ]
+          ],
+          "source": "https://www.nfl.com/injuries/"
+        }
+      },
+      "weather": "50\u201356 F; winds 2 mph, 3 mph; max rain probability 19%",
+      "weather_source": {
+        "home": "SEA",
+        "url": "https://api.weather.gov/gridpoints/SEW/125,67/forecast/hourly",
+        "resolved_url": "https://api.weather.gov/gridpoints/SEW/125,67/forecast/hourly",
+        "observed_at": "2026-10-22T16:57:18.343575+00:00",
+        "sha256": "2d072d6748ab7ac7e6c9ed71cdcabaf98eb5fd883d08f7e83d3d273b99373304",
+        "point": {
+          "url": "https://api.weather.gov/points/47.5952,-122.3316",
+          "resolved_url": "https://api.weather.gov/points/47.5952,-122.3316",
+          "observed_at": "2026-10-22T16:57:15.951309+00:00",
+          "sha256": "b80b2da5b65982d2d212eb6d8dfd3445f049440fcc5604c0e21efd89e56483d4"
+        },
+        "coordinates": [
+          47.5952,
+          -122.3316
+        ],
+        "coordinate_precision": "approximate stadium point; retain selected NWS grid",
+        "forecast_issued_at": "2026-10-22T07:27:02+00:00",
+        "generated_at": "2026-10-22T16:06:35+00:00",
+        "kickoff_utc": "2026-10-26T00:20:00+00:00",
+        "through_plus4h_contiguous": true,
+        "issue_time_valid": true,
+        "periods": [
+          {
+            "number": 81,
+            "name": "",
+            "startTime": "2026-10-25T17:00:00-07:00",
+            "endTime": "2026-10-25T18:00:00-07:00",
+            "isDaytime": true,
+            "temperature": 56,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 19
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 8.333333333333334
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 72
+            },
+            "windSpeed": "3 mph",
+            "windDirection": "N",
+            "icon": "https://api.weather.gov/icons/land/day/rain,20?size=small",
+            "shortForecast": "Slight Chance Light Rain",
+            "detailedForecast": ""
+          },
+          {
+            "number": 82,
+            "name": "",
+            "startTime": "2026-10-25T18:00:00-07:00",
+            "endTime": "2026-10-25T19:00:00-07:00",
+            "isDaytime": false,
+            "temperature": 54,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 19
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 7.777777777777778
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 75
+            },
+            "windSpeed": "3 mph",
+            "windDirection": "N",
+            "icon": "https://api.weather.gov/icons/land/night/rain,20?size=small",
+            "shortForecast": "Slight Chance Light Rain",
+            "detailedForecast": ""
+          },
+          {
+            "number": 83,
+            "name": "",
+            "startTime": "2026-10-25T19:00:00-07:00",
+            "endTime": "2026-10-25T20:00:00-07:00",
+            "isDaytime": false,
+            "temperature": 52,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 19
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 7.222222222222222
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 77
+            },
+            "windSpeed": "3 mph",
+            "windDirection": "N",
+            "icon": "https://api.weather.gov/icons/land/night/rain,20?size=small",
+            "shortForecast": "Slight Chance Light Rain",
+            "detailedForecast": ""
+          },
+          {
+            "number": 84,
+            "name": "",
+            "startTime": "2026-10-25T20:00:00-07:00",
+            "endTime": "2026-10-25T21:00:00-07:00",
+            "isDaytime": false,
+            "temperature": 51,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 19
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 7.222222222222222
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 80
+            },
+            "windSpeed": "2 mph",
+            "windDirection": "N",
+            "icon": "https://api.weather.gov/icons/land/night/rain,20?size=small",
+            "shortForecast": "Slight Chance Light Rain",
+            "detailedForecast": ""
+          },
+          {
+            "number": 85,
+            "name": "",
+            "startTime": "2026-10-25T21:00:00-07:00",
+            "endTime": "2026-10-25T22:00:00-07:00",
+            "isDaytime": false,
+            "temperature": 50,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 19
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 6.666666666666667
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 81
+            },
+            "windSpeed": "2 mph",
+            "windDirection": "N",
+            "icon": "https://api.weather.gov/icons/land/night/rain,20?size=small",
+            "shortForecast": "Slight Chance Light Rain",
+            "detailedForecast": ""
+          }
+        ],
+        "status": "EARLY_FORECAST_ONLY",
+        "gusts": "UNAVAILABLE_IN_HOURLY_ENDPOINT",
+        "final_window_refresh_required": true,
+        "canonical_influence": false
+      },
+      "priority_note": "Monitor Chiefs pass catchers/line and Seattle availability; outdoor forecast refresh.",
+      "inactive_review_et": "2026-10-25T18:50:00-04:00",
+      "market_lock_start_et": "2026-10-25T19:50:00-04:00",
+      "release_state": "HOLD_RESEARCH_ONLY",
+      "benchmark_status": "NO_NEW_VERIFIED_INDEPENDENT_BENCHMARK",
+      "final_inactives": false,
+      "market_lock": null
+    },
+    {
+      "game_id": "2026_07_DAL_PHI",
+      "away": "DAL",
+      "home": "PHI",
+      "kickoff_utc": "2026-10-27T00:15:00+00:00",
+      "kickoff_et": "Mon 10/26 08:15 PM",
+      "canonical": {
+        "home_margin": -0.6253648897420163,
+        "home_spread": 0.6253648897420163,
+        "total": 45.87595074684257,
+        "away_score": 23.250657818292293,
+        "home_score": 22.625292928550277
+      },
+      "challenger": {
+        "name": "FTN50",
+        "home_margin": -1.0507153956590638,
+        "total": 45.87595074684257
+      },
+      "market_context": {
+        "home_spread": 4.5,
+        "total": 44.5,
+        "source": "https://www.covers.com/nfl/week-7-odds-opening-lines-2026",
+        "source_asof": "2026-10-22",
+        "instrument": "Covers percentage-priced displayed thresholds; instrument/provider not verified",
+        "eligible_for_grading": false,
+        "price": null,
+        "note": "Manually read table, not conflicting headline; not sportsbook execution or consensus."
+      },
+      "personnel": {
+        "DAL": {
+          "status": "REPORT_PENDING_NOT_HEALTHY",
+          "rows": [],
+          "source": "https://www.nfl.com/injuries/"
+        },
+        "PHI": {
+          "status": "REPORT_PENDING_NOT_HEALTHY",
+          "rows": [],
+          "source": "https://www.nfl.com/injuries/"
+        }
+      },
+      "weather": "51\u201358 F; winds 0 mph; max rain probability 0%",
+      "weather_source": {
+        "home": "PHI",
+        "url": "https://api.weather.gov/gridpoints/PHI/50,76/forecast/hourly",
+        "resolved_url": "https://api.weather.gov/gridpoints/PHI/50,76/forecast/hourly",
+        "observed_at": "2026-10-22T16:57:18.644946+00:00",
+        "sha256": "7926b417a49f61ce4564df668a3e06648a98d09373e11bef80a8acc45ee16d72",
+        "point": {
+          "url": "https://api.weather.gov/points/39.9008,-75.1675",
+          "resolved_url": "https://api.weather.gov/points/39.9008,-75.1675",
+          "observed_at": "2026-10-22T16:57:15.942260+00:00",
+          "sha256": "f84c13c160553836efb4089ae25552f49d93ae2546981103fa7fe3ed112c440d"
+        },
+        "coordinates": [
+          39.9008,
+          -75.1675
+        ],
+        "coordinate_precision": "approximate stadium point; retain selected NWS grid",
+        "forecast_issued_at": "2026-10-22T10:09:29+00:00",
+        "generated_at": "2026-10-22T16:57:18+00:00",
+        "kickoff_utc": "2026-10-27T00:15:00+00:00",
+        "through_plus4h_contiguous": true,
+        "issue_time_valid": true,
+        "periods": [
+          {
+            "number": 105,
+            "name": "",
+            "startTime": "2026-10-26T20:00:00-04:00",
+            "endTime": "2026-10-26T21:00:00-04:00",
+            "isDaytime": false,
+            "temperature": 58,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 8.88888888888889
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 69
+            },
+            "windSpeed": "0 mph",
+            "windDirection": "",
+            "icon": "https://api.weather.gov/icons/land/night/few?size=small",
+            "shortForecast": "Mostly Clear",
+            "detailedForecast": ""
+          },
+          {
+            "number": 106,
+            "name": "",
+            "startTime": "2026-10-26T21:00:00-04:00",
+            "endTime": "2026-10-26T22:00:00-04:00",
+            "isDaytime": false,
+            "temperature": 55,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 8.88888888888889
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 77
+            },
+            "windSpeed": "0 mph",
+            "windDirection": "",
+            "icon": "https://api.weather.gov/icons/land/night/few?size=small",
+            "shortForecast": "Mostly Clear",
+            "detailedForecast": ""
+          },
+          {
+            "number": 107,
+            "name": "",
+            "startTime": "2026-10-26T22:00:00-04:00",
+            "endTime": "2026-10-26T23:00:00-04:00",
+            "isDaytime": false,
+            "temperature": 53,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 8.88888888888889
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 83
+            },
+            "windSpeed": "0 mph",
+            "windDirection": "",
+            "icon": "https://api.weather.gov/icons/land/night/few?size=small",
+            "shortForecast": "Mostly Clear",
+            "detailedForecast": ""
+          },
+          {
+            "number": 108,
+            "name": "",
+            "startTime": "2026-10-26T23:00:00-04:00",
+            "endTime": "2026-10-27T00:00:00-04:00",
+            "isDaytime": false,
+            "temperature": 52,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 8.88888888888889
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 86
+            },
+            "windSpeed": "0 mph",
+            "windDirection": "",
+            "icon": "https://api.weather.gov/icons/land/night/few?size=small",
+            "shortForecast": "Mostly Clear",
+            "detailedForecast": ""
+          },
+          {
+            "number": 109,
+            "name": "",
+            "startTime": "2026-10-27T00:00:00-04:00",
+            "endTime": "2026-10-27T01:00:00-04:00",
+            "isDaytime": false,
+            "temperature": 51,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "dewpoint": {
+              "unitCode": "wmoUnit:degC",
+              "value": 8.88888888888889
+            },
+            "relativeHumidity": {
+              "unitCode": "wmoUnit:percent",
+              "value": 89
+            },
+            "windSpeed": "0 mph",
+            "windDirection": "",
+            "icon": "https://api.weather.gov/icons/land/night/few?size=small",
+            "shortForecast": "Mostly Clear",
+            "detailedForecast": ""
+          }
+        ],
+        "status": "EARLY_FORECAST_ONLY",
+        "gusts": "UNAVAILABLE_IN_HOURLY_ENDPOINT",
+        "final_window_refresh_required": true,
+        "canonical_influence": false
+      },
+      "priority_note": "Hurts IR carried forward; Week 7 starter confirmation and both Monday reports pending.",
+      "inactive_review_et": "2026-10-26T18:45:00-04:00",
+      "market_lock_start_et": "2026-10-26T19:45:00-04:00",
+      "release_state": "HOLD_RESEARCH_ONLY",
+      "benchmark_status": "NO_NEW_VERIFIED_INDEPENDENT_BENCHMARK",
+      "final_inactives": false,
+      "market_lock": null
+    }
+  ],
+  "automation_scheduled": false
+}
