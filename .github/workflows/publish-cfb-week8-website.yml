@@ -5,8 +5,12 @@ on:
       - 'scripts/publish_cfb_week8_website.py'
       - 'cfb/research-locks/week-08-foundation-full.json'
       - 'cfb/pregame/week-08-schedule.json'
+      - 'data/team-aliases.json'
       - '.github/workflows/publish-cfb-week8-website.yml'
   workflow_dispatch:
+  workflow_run:
+    workflows: ['Refresh sportsbook markets']
+    types: [completed]
 permissions:
   contents: write
 concurrency:
@@ -14,6 +18,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   publish:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,28 +29,34 @@ jobs:
         run: git pull --rebase origin main
       - name: Generate full Week 8 projection dataset
         run: python scripts/publish_cfb_week8_website.py
-      - name: Validate full frozen slate
+      - name: Validate full frozen slate and deferred grading
         run: |
           python - <<'PY'
           import csv,json
           rows=list(csv.DictReader(open('data/projections.csv',encoding='utf-8')))
           foundation=json.load(open('cfb/research-locks/week-08-foundation-full.json'))
+          cfg=json.load(open('data/config.json'))
+          results=list(csv.DictReader(open('data/results.csv',encoding='utf-8')))
           assert len(rows)==56, len(rows)
           assert len(foundation['games'])==56
           assert all(r['season']=='2026' and r['week']=='8' for r in rows)
           assert all(r['releaseStatus']=='RESEARCH SHADOW - CANONICAL HOLD' for r in rows)
           assert all(r['executionVerified']=='false' for r in rows)
-          print({'rows':len(rows),'status':'validated'})
+          assert all(r['dataQuality']=='' for r in rows), 'Do not publish an invented universal data-quality score.'
+          assert cfg['currentWeek']==8
+          assert cfg['spreadValidation']=='HOLD' and cfg['totalValidation']=='HOLD'
+          assert not any(r.get('week')=='8' for r in results), 'Partial Week 8 grades must not enter public results.csv.'
+          print({'rows':len(rows),'publicWeek8Grades':0,'status':'validated'})
           PY
       - name: Commit website dataset
         run: |
           git config user.name "cb-model-site-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/projections.csv
+          git add data/projections.csv data/config.json
           if git diff --cached --quiet; then
             echo 'Website projection dataset already current.'
             exit 0
           fi
-          git commit -m 'Publish full frozen CFB Week 8 website slate'
+          git commit -m 'Publish validated full CFB Week 8 website slate'
           git pull --rebase origin main
           git push
