@@ -105,6 +105,13 @@ for (const tc of cases) {
       if (!(await projectionLink.count())) {
         errors.push('Primary Projections navigation link missing');
       } else {
+        if (!(await projectionLink.isVisible().catch(() => false))) {
+          const mobileToggle = page.locator('#cbMobileNavToggle');
+          if (await mobileToggle.count()) {
+            await mobileToggle.click();
+            await projectionLink.waitFor({ state: 'visible', timeout: 5000 }).catch(() => {});
+          }
+        }
         await projectionLink.click();
         await page.waitForFunction(expected => {
           const cards = document.querySelectorAll('#projectionCards .projection-card[id^="card-"]').length;
@@ -121,12 +128,14 @@ for (const tc of cases) {
           date: document.querySelector('#dateFilter')?.value || '',
           sort: document.querySelector('#sortFilter')?.value || '',
           rowCount: document.querySelectorAll('#projectionBody tr[id^="game-"]').length,
-          cardCount: document.querySelectorAll('#projectionCards .projection-card[id^="card-"]').length
+          cardCount: document.querySelectorAll('#projectionCards .projection-card[id^="card-"]').length,
+          mobileNavOpen: document.body.dataset.navOpen || 'false'
         }));
         if (projectionNavState.cardCount !== loaded || projectionNavState.rowCount !== loaded) errors.push(`Projections tab did not restore full current-week slate: ${projectionNavState.cardCount}/${loaded}`);
         if (projectionNavState.search || projectionNavState.date) errors.push(`Projections tab left filters active: ${JSON.stringify(projectionNavState)}`);
         if (projectionNavState.sort !== 'kickoff') errors.push(`Projections tab did not restore kickoff order: ${projectionNavState.sort}`);
         if (projectionNavState.hash !== '#projections') errors.push(`Projections tab did not land on #projections: ${projectionNavState.hash}`);
+        if (tc.viewport.width <= 820 && projectionNavState.mobileNavOpen === 'true') errors.push('Mobile navigation remained open after selecting Projections');
         navigationIntegrity = { ...(navigationIntegrity || {}), narrowedCards, projectionNavState };
       }
     }
