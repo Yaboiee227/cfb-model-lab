@@ -1,0 +1,54 @@
+name: Export audited CFB site results
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'data/results.csv'
+      - 'cfb/record-summary.json'
+      - 'scripts/export_cfb_site_results.py'
+      - '.github/workflows/export-cfb-site-results.yml'
+permissions:
+  contents: write
+concurrency:
+  group: export-audited-cfb-site-results
+  cancel-in-progress: true
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Export audited current-week result rows
+        run: python scripts/export_cfb_site_results.py
+      - name: Validate compatibility artifact
+        run: |
+          python - <<'PY'
+          import csv,json,pathlib
+          summary=json.load(open('cfb/record-summary.json'))
+          week=int(summary['currentWeek'])
+          path=pathlib.Path(f'cfb/results/week-{week:02d}.json')
+          data=json.load(path.open())
+          source=[r for r in csv.DictReader(open('data/results.csv')) if int(r['season'])==int(summary['season']) and int(r['week'])==week]
+          assert data['role']=='AUDITED_SITE_RESULTS_COMPATIBILITY'
+          assert data['canonicalInfluence'] is False
+          assert len(data['games'])==len(source)>0
+          assert all(g['status'] in ('FINAL','PENDING') for g in data['games'])
+          print({'week':week,'games':len(data['games']),'validated':True})
+          PY
+      - name: Commit compatibility artifact
+        run: |
+          git config user.name "cb-model-results-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add cfb/results/week-*.json
+          if git diff --cached --quiet; then
+            echo 'Audited site results already current.'
+            exit 0
+          fi
+          git commit -m 'Publish audited CFB site results compatibility file'
+          git pull --rebase origin main
+          git push
