@@ -13,19 +13,19 @@
     "fanduel",
     "draftkings"
   ],
-  "lockWindowMinutes": 30.0,
-  "maxObservationAgeMinutes": 35.0,
+  "lockWindowMinutes": 30,
+  "maxObservationAgeMinutes": 35,
   "scopeRestricted": true,
-  "updatedAt": "2026-10-22T22:37:28.022586Z",
+  "updatedAt": "2026-10-22T23:01:59.279Z",
   "counts": {
     "foundationGames": 56,
     "activeScopeGames": 53,
     "pausedGames": 0,
     "preservedOutOfScopeLockedGames": 3,
-    "gamesWithMarketLock": 6,
-    "bookObservationsLocked": 12,
-    "newBookObservationsThisRun": 4,
-    "pendingGames": 50,
+    "gamesWithMarketLock": 7,
+    "bookObservationsLocked": 14,
+    "newBookObservationsThisRun": 2,
+    "pendingGames": 49,
     "missedGames": 0
   },
   "games": [
@@ -54,7 +54,7 @@
           "book": "draftkings",
           "marketObservedAt": "2026-10-20T22:46:14Z",
           "lockedAt": "2026-10-20T22:46:34.873750Z",
-          "marketSpreadHome": -10.0,
+          "marketSpreadHome": -10,
           "marketTotal": 46.5,
           "marketMoneylineHome": -410,
           "marketMoneylineAway": 320,
@@ -165,7 +165,7 @@
           "book": "draftkings",
           "marketObservedAt": "2026-10-21T23:32:03Z",
           "lockedAt": "2026-10-21T23:39:17.549697Z",
-          "marketSpreadHome": 3.0,
+          "marketSpreadHome": 3,
           "marketTotal": 46.5,
           "marketMoneylineHome": 130,
           "marketMoneylineAway": -155,
@@ -258,8 +258,35 @@
       "homeTeam": "Memphis",
       "kickoff": "2026-10-22T23:30:00Z",
       "projectionDigest": "4e630ce63c2afc4ea179d3455e85efc5280b3838e8bfd6ac5feab7e23ff66409",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-22T22:37:10Z",
+          "lockedAt": "2026-10-22T23:01:59.279Z",
+          "marketSpreadHome": -10.5,
+          "marketTotal": 55.5,
+          "marketMoneylineHome": -420,
+          "marketMoneylineAway": 320,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -105,
+          "totalUnderPrice": -115,
+          "observationDigest": "d8d4efc55b611c80409c34eed570390bcfc463025cdff76ca11ea1fd34437706"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-22T22:37:10Z",
+          "lockedAt": "2026-10-22T23:01:59.279Z",
+          "marketSpreadHome": -10.5,
+          "marketTotal": 55.5,
+          "marketMoneylineHome": -425,
+          "marketMoneylineAway": 330,
+          "spreadHomePrice": -105,
+          "totalOverPrice": -105,
+          "totalUnderPrice": -115,
+          "observationDigest": "e1e6168d23c6d2c65484abd31503c1751778c10de6610193ef7c70d57a444a3f"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-23-DUKE-VIRGINIA",
