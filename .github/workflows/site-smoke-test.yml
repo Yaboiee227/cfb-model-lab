@@ -1,0 +1,50 @@
+name: Responsive site smoke test
+on:
+  push:
+    paths:
+      - 'index.html'
+      - 'week-8.html'
+      - '*.js'
+      - '*.css'
+      - 'data/**'
+      - 'nfl_data/site/**'
+      - 'scripts/site_smoke_test.mjs'
+      - '.github/workflows/site-smoke-test.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: responsive-site-smoke
+  cancel-in-progress: true
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Start local site
+        run: |
+          python3 -m http.server 8000 --bind 127.0.0.1 > /tmp/cb-site.log 2>&1 &
+          echo $! > /tmp/cb-site.pid
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:8000/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/cb-site.log
+          exit 1
+      - name: Run desktop and mobile browser checks
+        run: node scripts/site_smoke_test.mjs
+      - name: Upload screenshots and report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: responsive-site-smoke
+          path: artifacts/site-smoke/
+          retention-days: 7
