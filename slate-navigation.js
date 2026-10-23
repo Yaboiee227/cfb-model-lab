@@ -13,6 +13,40 @@
     return String(window.CB_ACTIVE_LEAGUE || document.documentElement.dataset.league || 'cfb').toLowerCase() === 'nfl' ? 'nfl' : 'cfb';
   }
 
+  function powerRankingsHref() {
+    return currentLeague() === 'nfl' ? 'ratings.html?league=nfl' : 'ratings.html';
+  }
+
+  function ensurePowerRankingsLinks() {
+    const href = powerRankingsHref();
+    const nav = document.querySelector('.primary-nav');
+    if (nav) {
+      let link = document.getElementById('powerRankingsNav');
+      if (!link) {
+        link = document.createElement('a');
+        link.id = 'powerRankingsNav';
+        link.textContent = 'Power Rankings';
+        const research = [...nav.querySelectorAll('a')].find(a => a.getAttribute('href') === '#research');
+        research ? research.insertAdjacentElement('afterend', link) : nav.appendChild(link);
+      }
+      link.href = href;
+      link.setAttribute('aria-label', `${currentLeague().toUpperCase()} Power Rankings`);
+    }
+
+    const footer = document.querySelector('.footer-links');
+    if (footer) {
+      let link = document.getElementById('powerRankingsFooter');
+      if (!link) {
+        link = document.createElement('a');
+        link.id = 'powerRankingsFooter';
+        link.textContent = 'Power Rankings';
+        const projections = [...footer.querySelectorAll('a')].find(a => a.getAttribute('href') === '#projections');
+        projections ? projections.insertAdjacentElement('afterend', link) : footer.prepend(link);
+      }
+      link.href = href;
+    }
+  }
+
   function formatDay(dateStr) {
     try {
       return new Date(`${dateStr}T12:00:00`).toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' });
@@ -202,6 +236,7 @@
 
   function sync() {
     scheduled = false;
+    ensurePowerRankingsLinks();
     ensureToolbar();
     ensureMobileJump();
     renderDayChips();
@@ -216,6 +251,7 @@
   }
 
   function boot() {
+    ensurePowerRankingsLinks();
     ensureToolbar();
     ensureMobileJump();
     const body = $('projectionBody');

@@ -11,6 +11,7 @@ def test_main_site_loads_redesign_shell_through_live_suite():
     loader = read("live-suite-loader.js")
     assert "loadCss('site-shell.css')" in loader
     assert "await loadScript('site-shell.js')" in loader
+    assert "await loadScript('slate-navigation.js')" in loader
 
 
 def test_shell_preserves_four_model_information_layers():
@@ -27,6 +28,15 @@ def test_shell_keeps_cfb_and_nfl_navigation():
     assert "league-switch" in read("site-shell.css")
 
 
+def test_shared_navigation_exposes_league_aware_power_rankings():
+    script = read("slate-navigation.js")
+    assert "Power Rankings" in script
+    assert "ratings.html?league=nfl" in script
+    assert "ratings.html" in script
+    assert "powerRankingsNav" in script
+    assert "powerRankingsFooter" in script
+
+
 def test_recap_is_league_aware_and_uses_preserved_result_sources():
     page = read("recap.html")
     assert "cfb/record-summary.json" in page
@@ -35,12 +45,25 @@ def test_recap_is_league_aware_and_uses_preserved_result_sources():
     assert "Poor weeks remain visible" in page
 
 
-def test_ratings_page_does_not_blur_benchmark_and_canonical_layers():
+def test_power_rankings_page_keeps_model_and_market_layers_separate():
     page = read("ratings.html")
-    assert "cfb/benchmarks/week-08-sagarin-full.json" in page
-    assert "nfl_data/site/projections.csv" in page
-    assert "Benchmark only" in page
-    assert "never silent canonical influence" in page
+    script = read("power-rankings.js")
+    assert "CB power rankings" in page
+    assert "Power rankings do not change canonical projections" in page
+    assert "Market safeguard" in page
+    assert "data/power-rankings/${league}.json" in script
+    assert "remainingMatchupComparisons" in script
+    assert "marketNationalRatings" in script
+    assert "Context only" in script
+    assert '<script src="power-rankings.js"></script>' in page
+
+
+def test_power_ranking_snapshots_are_explicitly_noncanonical():
+    for name in ("data/power-rankings/cfb.json", "data/power-rankings/nfl.json"):
+        text = read(name)
+        assert '"canonicalInfluence": false' in text
+        assert '"canonicalPromotionAuthorized": false' in text
+        assert '"modelRole": "RESEARCH_POWER_RATING_ONLY"' in text
 
 
 def test_no_react_or_build_dependency_added_to_redesign_shell():
@@ -49,6 +72,8 @@ def test_no_react_or_build_dependency_added_to_redesign_shell():
         "site-shell.css",
         "recap.html",
         "ratings.html",
+        "power-rankings.js",
+        "power-rankings.css",
     )).lower()
     assert "react-dom" not in combined
     assert "create-react-app" not in combined

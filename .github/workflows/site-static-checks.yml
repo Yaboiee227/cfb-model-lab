@@ -8,7 +8,11 @@ on:
       - 'audit-shell.css'
       - 'recap.html'
       - 'ratings.html'
+      - 'power-rankings.js'
+      - 'power-rankings.css'
+      - 'slate-navigation.js'
       - 'live-suite-loader.js'
+      - 'data/power-rankings/**'
       - 'tests/test_website_redesign.py'
       - '.github/workflows/site-static-checks.yml'
   workflow_dispatch:
@@ -32,19 +36,20 @@ jobs:
         run: |
           node --check site-shell.js
           node --check live-suite-loader.js
-      - name: Extract and check inline page scripts
+          node --check slate-navigation.js
+          node --check power-rankings.js
+      - name: Extract and check remaining inline page scripts
         run: |
           python - <<'PY'
           from pathlib import Path
           import re
-          for name in ('recap.html', 'ratings.html'):
-              text = Path(name).read_text(encoding='utf-8')
-              scripts = re.findall(r'<script>(.*?)</script>', text, flags=re.S | re.I)
-              if not scripts:
-                  raise SystemExit(f'No inline script found in {name}')
-              target = Path('/tmp') / f'{name}.js'
-              target.write_text('\n'.join(scripts), encoding='utf-8')
-              print(target)
+          name = 'recap.html'
+          text = Path(name).read_text(encoding='utf-8')
+          scripts = re.findall(r'<script>(.*?)</script>', text, flags=re.S | re.I)
+          if not scripts:
+              raise SystemExit(f'No inline script found in {name}')
+          target = Path('/tmp') / f'{name}.js'
+          target.write_text('\n'.join(scripts), encoding='utf-8')
+          print(target)
           PY
           node --check /tmp/recap.html.js
-          node --check /tmp/ratings.html.js
