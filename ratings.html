@@ -12,7 +12,7 @@
 <header class="topbar">
   <div class="shell topbar-inner">
     <a class="brand" id="homeLink" href="index.html"><span class="brand-mark">CB</span><span class="brand-copy"><strong>CB Model Projections</strong><small>Football prediction research</small></span></a>
-    <nav class="page-nav" aria-label="Page navigation"><a id="projectionLink" href="index.html#projections">Projections</a><a id="recapLink" href="recap.html">Recap</a><a aria-current="page" href="#ratings">Ratings & benchmarks</a><a href="#separation">Layer policy</a></nav>
+    <nav class="page-nav" aria-label="Page navigation"><a id="projectionLink" href="index.html#projections">Projections</a><a id="recapLink" href="recap.html">Recap</a><a aria-current="page" href="#ratings">Ratings & benchmarks</a><a id="powerLink" href="power-rankings.html">CB power rankings</a><a href="#separation">Layer policy</a></nav>
     <div class="league-switch" aria-label="League"><a id="cfbSwitch" href="ratings.html">CFB</a><a id="nflSwitch" href="ratings.html?league=nfl">NFL</a></div>
   </div>
 </header>
@@ -59,6 +59,7 @@
 
   function setupLinks(){
     const suffix=league==='nfl'?'?league=nfl':'';
+    q('powerLink').href=`power-rankings.html${suffix}`;
     q('homeLink').href=`index.html${suffix}`;q('projectionLink').href=`index.html${suffix}#projections`;q('recapLink').href=`recap.html${suffix}`;
     q('cfbSwitch').classList.toggle('active',league==='cfb');q('nflSwitch').classList.toggle('active',league==='nfl');
     q('kicker').textContent=`BENCHMARK LAYER · ${league.toUpperCase()}`;

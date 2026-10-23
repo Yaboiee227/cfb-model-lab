@@ -1,0 +1,33 @@
+name: Power ratings integrity
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'scripts/*power*'
+      - 'scripts/power_ratings/**'
+      - 'tests/test_power_ratings.py'
+      - 'data/power-ratings/**'
+      - 'power-rankings.*'
+      - '.github/workflows/power-ratings.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install numpy
+      - run: OPENBLAS_NUM_THREADS=1 python scripts/build_power_ratings.py
+      - run: python -m unittest discover -s tests -p 'test_power_ratings.py' -v
+      - run: node --check power-rankings.js
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cb-power-ratings
+          path: |
+            data/power-ratings/cfb.json
+            data/power-ratings/nfl.json
+            data/power-ratings/*.csv
+            POWER_RATINGS.md

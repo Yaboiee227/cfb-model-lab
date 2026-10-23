@@ -35,3 +35,10 @@ No build step or external package is required.
 
 ## Data contract
 The site is intentionally release-aware. It can display model projections while keeping betting recommendations blocked whenever validation/readiness gates are not cleared.
+
+## CB power ratings
+
+[CB Power Rankings](power-rankings.html) covers all 138 FBS teams and 32 NFL teams.
+The [methodology and rebuild instructions](POWER_RATINGS.md) explain the independent
+models, preserved snapshot dates, matchup market comparisons, and why disconnected
+market history cannot yet support national market ranks.

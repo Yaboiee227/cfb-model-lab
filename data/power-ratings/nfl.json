@@ -1,0 +1,755 @@
+{
+  "modelId": "NFL Canonical v1 \u2014 neutral matchup summary",
+  "modelAsOf": "2026-10-21T11:44:27.964407+00:00",
+  "status": "CANONICAL_DERIVED_RESEARCH",
+  "sourceWeek": 6,
+  "rows": [
+    {
+      "teamId": "SF",
+      "team": "SF",
+      "key": "SF",
+      "conference": "NFL",
+      "rating": 6.29241391254115,
+      "games": 6,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": {
+        "opponent": "ATL",
+        "gap": 3.1833426120356902,
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100",
+        "basis": "Frozen game projection versus current market reference"
+      },
+      "rank": 1
+    },
+    {
+      "teamId": "KC",
+      "team": "KC",
+      "key": "KC",
+      "conference": "NFL",
+      "rating": 5.850728907385946,
+      "games": 5,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": {
+        "opponent": "SEA",
+        "gap": 1.397763747897495,
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100",
+        "basis": "Frozen game projection versus current market reference"
+      },
+      "rank": 2
+    },
+    {
+      "teamId": "BUF",
+      "team": "BUF",
+      "key": "BUF",
+      "conference": "NFL",
+      "rating": 5.728905794846714,
+      "games": 6,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": null,
+      "rank": 3
+    },
+    {
+      "teamId": "JAX",
+      "team": "JAX",
+      "key": "JAX",
+      "conference": "NFL",
+      "rating": 4.979575329477909,
+      "games": 6,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": null,
+      "rank": 4
+    },
+    {
+      "teamId": "SEA",
+      "team": "SEA",
+      "key": "SEA",
+      "conference": "NFL",
+      "rating": 4.59349036547848,
+      "games": 6,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": {
+        "opponent": "KC",
+        "gap": -1.397763747897495,
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100",
+        "basis": "Frozen game projection versus current market reference"
+      },
+      "rank": 5
+    },
+    {
+      "teamId": "LA",
+      "team": "LA",
+      "key": "LA",
+      "conference": "NFL",
+      "rating": 4.057045518864445,
+      "games": 6,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": {
+        "opponent": "LV",
+        "gap": 2.4576998320580117,
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100",
+        "basis": "Frozen game projection versus current market reference"
+      },
+      "rank": 6
+    },
+    {
+      "teamId": "NE",
+      "team": "NE",
+      "key": "NE",
+      "conference": "NFL",
+      "rating": 3.992791436517769,
+      "games": 6,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": null,
+      "rank": 7
+    },
+    {
+      "teamId": "CHI",
+      "team": "CHI",
+      "key": "CHI",
+      "conference": "NFL",
+      "rating": 3.1804373021694285,
+      "games": 6,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": null,
+      "rank": 8
+    },
+    {
+      "teamId": "DET",
+      "team": "DET",
+      "key": "DET",
+      "conference": "NFL",
+      "rating": 3.0102293718761937,
+      "games": 5,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": {
+        "opponent": "GB",
+        "gap": 1.0816363472290407,
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100",
+        "basis": "Frozen game projection versus current market reference"
+      },
+      "rank": 9
+    },
+    {
+      "teamId": "GB",
+      "team": "GB",
+      "key": "GB",
+      "conference": "NFL",
+      "rating": 2.8141344228143588,
+      "games": 6,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": {
+        "opponent": "DET",
+        "gap": -1.0816363472290407,
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100",
+        "basis": "Frozen game projection versus current market reference"
+      },
+      "rank": 10
+    },
+    {
+      "teamId": "BAL",
+      "team": "BAL",
+      "key": "BAL",
+      "conference": "NFL",
+      "rating": 2.4822971847633197,
+      "games": 6,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": {
+        "opponent": "CIN",
+        "gap": 2.527868612055471,
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100",
+        "basis": "Frozen game projection versus current market reference"
+      },
+      "rank": 11
+    },
+    {
+      "teamId": "DEN",
+      "team": "DEN",
+      "key": "DEN",
+      "conference": "NFL",
+      "rating": 1.4300409166872656,
+      "games": 6,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": {
+        "opponent": "ARI",
+        "gap": -1.820683605250891,
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100",
+        "basis": "Frozen game projection versus current market reference"
+      },
+      "rank": 12
+    },
+    {
+      "teamId": "HOU",
+      "team": "HOU",
+      "key": "HOU",
+      "conference": "NFL",
+      "rating": 1.193998214458968,
+      "games": 6,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": {
+        "opponent": "NYG",
+        "gap": -6.7662457996415935,
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100",
+        "basis": "Frozen game projection versus current market reference"
+      },
+      "rank": 13
+    },
+    {
+      "teamId": "CAR",
+      "team": "CAR",
+      "key": "CAR",
+      "conference": "NFL",
+      "rating": 0.7107042026450783,
+      "games": 5,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": {
+        "opponent": "TB",
+        "gap": 3.121991712398631,
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100",
+        "basis": "Frozen game projection versus current market reference"
+      },
+      "rank": 14
+    },
+    {
+      "teamId": "MIN",
+      "team": "MIN",
+      "key": "MIN",
+      "conference": "NFL",
+      "rating": -0.10317752951436315,
+      "games": 5,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": {
+        "opponent": "IND",
+        "gap": -0.5000388811622436,
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100",
+        "basis": "Frozen game projection versus current market reference"
+      },
+      "rank": 15
+    },
+    {
+      "teamId": "PIT",
+      "team": "PIT",
+      "key": "PIT",
+      "conference": "NFL",
+      "rating": -0.22756920578204573,
+      "games": 6,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": {
+        "opponent": "NO",
+        "gap": 0.3432705358083492,
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100",
+        "basis": "Frozen game projection versus current market reference"
+      },
+      "rank": 16
+    },
+    {
+      "teamId": "NYG",
+      "team": "NYG",
+      "key": "NYG",
+      "conference": "NFL",
+      "rating": -0.4498311450073934,
+      "games": 6,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": {
+        "opponent": "HOU",
+        "gap": 6.7662457996415935,
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100",
+        "basis": "Frozen game projection versus current market reference"
+      },
+      "rank": 17
+    },
+    {
+      "teamId": "DAL",
+      "team": "DAL",
+      "key": "DAL",
+      "conference": "NFL",
+      "rating": -1.0747788074890003,
+      "games": 6,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": {
+        "opponent": "PHI",
+        "gap": -3.8746351102579837,
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100",
+        "basis": "Frozen game projection versus current market reference"
+      },
+      "rank": 18
+    },
+    {
+      "teamId": "CIN",
+      "team": "CIN",
+      "key": "CIN",
+      "conference": "NFL",
+      "rating": -1.2512631436752697,
+      "games": 5,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": {
+        "opponent": "BAL",
+        "gap": -2.527868612055471,
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100",
+        "basis": "Frozen game projection versus current market reference"
+      },
+      "rank": 19
+    },
+    {
+      "teamId": "ATL",
+      "team": "ATL",
+      "key": "ATL",
+      "conference": "NFL",
+      "rating": -1.737370191425893,
+      "games": 6,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": {
+        "opponent": "SF",
+        "gap": -3.1833426120356902,
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100",
+        "basis": "Frozen game projection versus current market reference"
+      },
+      "rank": 20
+    },
+    {
+      "teamId": "IND",
+      "team": "IND",
+      "key": "IND",
+      "conference": "NFL",
+      "rating": -2.217597250184914,
+      "games": 6,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": {
+        "opponent": "MIN",
+        "gap": 0.5000388811622436,
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100",
+        "basis": "Frozen game projection versus current market reference"
+      },
+      "rank": 21
+    },
+    {
+      "teamId": "ARI",
+      "team": "ARI",
+      "key": "ARI",
+      "conference": "NFL",
+      "rating": -2.5696503658359604,
+      "games": 6,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": {
+        "opponent": "DEN",
+        "gap": 1.820683605250891,
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100",
+        "basis": "Frozen game projection versus current market reference"
+      },
+      "rank": 22
+    },
+    {
+      "teamId": "WAS",
+      "team": "WAS",
+      "key": "WAS",
+      "conference": "NFL",
+      "rating": -2.734491495412739,
+      "games": 6,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": null,
+      "rank": 23
+    },
+    {
+      "teamId": "TB",
+      "team": "TB",
+      "key": "TB",
+      "conference": "NFL",
+      "rating": -3.321362668861508,
+      "games": 6,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": {
+        "opponent": "CAR",
+        "gap": -3.121991712398631,
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100",
+        "basis": "Frozen game projection versus current market reference"
+      },
+      "rank": 24
+    },
+    {
+      "teamId": "NO",
+      "team": "NO",
+      "key": "NO",
+      "conference": "NFL",
+      "rating": -3.3500522830748753,
+      "games": 6,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": {
+        "opponent": "PIT",
+        "gap": -0.3432705358083492,
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100",
+        "basis": "Frozen game projection versus current market reference"
+      },
+      "rank": 25
+    },
+    {
+      "teamId": "PHI",
+      "team": "PHI",
+      "key": "PHI",
+      "conference": "NFL",
+      "rating": -3.7900685381230597,
+      "games": 6,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": {
+        "opponent": "DAL",
+        "gap": 3.8746351102579837,
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100",
+        "basis": "Frozen game projection versus current market reference"
+      },
+      "rank": 26
+    },
+    {
+      "teamId": "MIA",
+      "team": "MIA",
+      "key": "MIA",
+      "conference": "NFL",
+      "rating": -3.839011128398079,
+      "games": 5,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": {
+        "opponent": "NYJ",
+        "gap": 4.973579269009478,
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100",
+        "basis": "Frozen game projection versus current market reference"
+      },
+      "rank": 27
+    },
+    {
+      "teamId": "LAC",
+      "team": "LAC",
+      "key": "LAC",
+      "conference": "NFL",
+      "rating": -3.889029796551546,
+      "games": 6,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": null,
+      "rank": 28
+    },
+    {
+      "teamId": "LV",
+      "team": "LV",
+      "key": "LV",
+      "conference": "NFL",
+      "rating": -3.9905791540856095,
+      "games": 6,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": {
+        "opponent": "LA",
+        "gap": -2.4576998320580117,
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100",
+        "basis": "Frozen game projection versus current market reference"
+      },
+      "rank": 29
+    },
+    {
+      "teamId": "NYJ",
+      "team": "NYJ",
+      "key": "NYJ",
+      "conference": "NFL",
+      "rating": -4.60689868102444,
+      "games": 6,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": {
+        "opponent": "MIA",
+        "gap": -4.973579269009478,
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100",
+        "basis": "Frozen game projection versus current market reference"
+      },
+      "rank": 30
+    },
+    {
+      "teamId": "CLE",
+      "team": "CLE",
+      "key": "CLE",
+      "conference": "NFL",
+      "rating": -4.880524105365013,
+      "games": 6,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": {
+        "opponent": "TEN",
+        "gap": -2.1869115555417418,
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100",
+        "basis": "Frozen game projection versus current market reference"
+      },
+      "rank": 31
+    },
+    {
+      "teamId": "TEN",
+      "team": "TEN",
+      "key": "TEN",
+      "conference": "NFL",
+      "rating": -6.283537390715315,
+      "games": 6,
+      "marketRating": null,
+      "marketRank": null,
+      "ratingGap": null,
+      "matchup": {
+        "opponent": "CLE",
+        "gap": 2.1869115555417418,
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100",
+        "basis": "Frozen game projection versus current market reference"
+      },
+      "rank": 32
+    }
+  ],
+  "hfa": null,
+  "pairCompressionRmse": 6.215904188169237e-16,
+  "frozenReproductionMaxError": 0.0,
+  "inputHashes": {
+    "nfl-model-input.json": "27f48782e16d8675668e366be912fc0fb2b0db746c18d9cd5e4f01594ca4a64d"
+  },
+  "method": "Both orientations, equal rest, neutral venue, antisymmetrized; no market features",
+  "schemaVersion": 1,
+  "league": "nfl",
+  "generatedAt": "2026-10-23T19:59:48.120765Z",
+  "canonicalInfluence": false,
+  "market": {
+    "games": 13,
+    "components": 19,
+    "rejectedQuotes": 0,
+    "status": "INSUFFICIENT_CONNECTED_MARKETS",
+    "method": "equal-game-weight least squares; median of latest book quotes; zero-sum; fixed HFA",
+    "homeFieldPoints": 3.0,
+    "lookbackDays": 42,
+    "lookbackStatus": "BENCHMARK_DESIGN_NOT_PREDICTIVELY_VALIDATED",
+    "note": "National ratings withheld until quote graph connects every team. Matchup gaps are separate, dated comparisons, not national rating gaps.",
+    "inputHashes": {
+      "nfl_data/site/market-reference.json": "57c5c1b4966e292b2f6455934d50ad48b8f92c8e45004104ba208276f8fcd224"
+    },
+    "normalizedQuotes": [
+      {
+        "gameId": "2026_07_PIT_NO",
+        "home": "NO",
+        "away": "PIT",
+        "kickoff": "2026-10-25T13:30:00+00:00",
+        "neutral": true,
+        "homeSpread": 3.0,
+        "book": "DraftKings via ESPN",
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100"
+      },
+      {
+        "gameId": "2026_07_SF_ATL",
+        "home": "ATL",
+        "away": "SF",
+        "kickoff": "2026-10-25T17:00:00+00:00",
+        "neutral": false,
+        "homeSpread": 2.5,
+        "book": "DraftKings via ESPN",
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100"
+      },
+      {
+        "gameId": "2026_07_CLE_TEN",
+        "home": "TEN",
+        "away": "CLE",
+        "kickoff": "2026-10-25T17:00:00+00:00",
+        "neutral": false,
+        "homeSpread": 1.5,
+        "book": "DraftKings via ESPN",
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100"
+      },
+      {
+        "gameId": "2026_07_IND_MIN",
+        "home": "MIN",
+        "away": "IND",
+        "kickoff": "2026-10-25T17:00:00+00:00",
+        "neutral": false,
+        "homeSpread": -6.5,
+        "book": "DraftKings via ESPN",
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100"
+      },
+      {
+        "gameId": "2026_07_MIA_NYJ",
+        "home": "NYJ",
+        "away": "MIA",
+        "kickoff": "2026-10-25T17:00:00+00:00",
+        "neutral": false,
+        "homeSpread": -4.5,
+        "book": "DraftKings via ESPN",
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100"
+      },
+      {
+        "gameId": "2026_07_TB_CAR",
+        "home": "CAR",
+        "away": "TB",
+        "kickoff": "2026-10-25T17:00:00+00:00",
+        "neutral": false,
+        "homeSpread": -3.0,
+        "book": "DraftKings via ESPN",
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100"
+      },
+      {
+        "gameId": "2026_07_CIN_BAL",
+        "home": "BAL",
+        "away": "CIN",
+        "kickoff": "2026-10-25T17:00:00+00:00",
+        "neutral": false,
+        "homeSpread": -1.5,
+        "book": "DraftKings via ESPN",
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100"
+      },
+      {
+        "gameId": "2026_07_NYG_HOU",
+        "home": "HOU",
+        "away": "NYG",
+        "kickoff": "2026-10-25T17:00:00+00:00",
+        "neutral": false,
+        "homeSpread": -10.5,
+        "book": "DraftKings via ESPN",
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100"
+      },
+      {
+        "gameId": "2026_07_DEN_ARI",
+        "home": "ARI",
+        "away": "DEN",
+        "kickoff": "2026-10-25T20:05:00+00:00",
+        "neutral": false,
+        "homeSpread": 4.5,
+        "book": "DraftKings via ESPN",
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100"
+      },
+      {
+        "gameId": "2026_07_GB_DET",
+        "home": "DET",
+        "away": "GB",
+        "kickoff": "2026-10-25T20:25:00+00:00",
+        "neutral": false,
+        "homeSpread": -3.0,
+        "book": "DraftKings via ESPN",
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100"
+      },
+      {
+        "gameId": "2026_07_LA_LV",
+        "home": "LV",
+        "away": "LA",
+        "kickoff": "2026-10-25T20:25:00+00:00",
+        "neutral": false,
+        "homeSpread": 3.5,
+        "book": "DraftKings via ESPN",
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100"
+      },
+      {
+        "gameId": "2026_07_KC_SEA",
+        "home": "SEA",
+        "away": "KC",
+        "kickoff": "2026-10-26T00:20:00+00:00",
+        "neutral": false,
+        "homeSpread": -3.0,
+        "book": "DraftKings via ESPN",
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100"
+      },
+      {
+        "gameId": "2026_07_DAL_PHI",
+        "home": "PHI",
+        "away": "DAL",
+        "kickoff": "2026-10-27T00:15:00+00:00",
+        "neutral": false,
+        "homeSpread": 4.5,
+        "book": "DraftKings via ESPN",
+        "observedAt": "2026-10-23T12:17:40.028030+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100"
+      }
+    ]
+  },
+  "marketAsOf": "2026-10-23T12:17:40.028030+00:00",
+  "coverage": 32,
+  "ratingUnit": "points above league-average team on neutral field",
+  "uncertainty": "Rank intervals not calibrated; no probability or betting-confidence claim.",
+  "rankChange": null
+}
