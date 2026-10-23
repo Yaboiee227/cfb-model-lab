@@ -4,9 +4,14 @@ on:
   push:
     paths:
       - '.github/workflows/cfb-market-coverage-pipeline.yml'
+      - 'scripts/publish_cfb_week8_website.py'
+      - 'data/team-aliases.json'
   workflow_dispatch:
   schedule:
     - cron: '17 */4 * * *'
+  workflow_run:
+    workflows: ['Refresh sportsbook markets']
+    types: [completed]
 
 permissions:
   actions: write
@@ -20,6 +25,7 @@ concurrency:
 
 jobs:
   refresh-sync-deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -34,6 +40,7 @@ jobs:
           python-version: '3.12'
 
       - name: Dispatch sportsbook refresh and wait for completion
+        if: github.event_name != 'workflow_run'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
