@@ -3,139 +3,62 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="CB Model Projections ratings and benchmark research layers for CFB and NFL.">
+  <meta name="description" content="CB Model Projections proprietary research power rankings and separate market comparison layers for CFB and NFL.">
   <meta name="color-scheme" content="dark">
-  <title>Ratings & Benchmarks · CB Model Projections</title>
+  <title>Power Rankings · CB Model Projections</title>
   <link rel="stylesheet" href="audit-shell.css">
+  <link rel="stylesheet" href="power-rankings.css">
 </head>
 <body>
 <header class="topbar">
   <div class="shell topbar-inner">
     <a class="brand" id="homeLink" href="index.html"><span class="brand-mark">CB</span><span class="brand-copy"><strong>CB Model Projections</strong><small>Football prediction research</small></span></a>
-    <nav class="page-nav" aria-label="Page navigation"><a id="projectionLink" href="index.html#projections">Projections</a><a id="recapLink" href="recap.html">Recap</a><a aria-current="page" href="#ratings">Ratings & benchmarks</a><a href="#separation">Layer policy</a></nav>
+    <nav class="page-nav" aria-label="Page navigation"><a id="projectionLink" href="index.html#projections">Projections</a><a id="recapLink" href="recap.html">Recap</a><a aria-current="page" href="#ratings">Power rankings</a><a href="#comparisons">Market comparison</a><a href="#separation">Layer policy</a></nav>
     <div class="league-switch" aria-label="League"><a id="cfbSwitch" href="ratings.html">CFB</a><a id="nflSwitch" href="ratings.html?league=nfl">NFL</a></div>
   </div>
 </header>
 <main class="shell">
-  <section class="hero">
-    <p class="kicker" id="kicker">BENCHMARK LAYER · CFB</p>
-    <h1 id="heroTitle">Compare widely.<br><span>Promote narrowly.</span></h1>
-    <p class="lede" id="lede">Outside ratings and market information can sharpen research without being allowed to masquerade as the CB canonical model. This page makes that separation explicit.</p>
-    <div class="system-line"><span id="systemState"><strong>Loading benchmark state…</strong></span><span class="system-links"><a href="data/model-registry.json">Model registry ↗</a><a id="sourceLink" href="cfb/benchmarks/week-08-sagarin-full.json">Benchmark source ↗</a></span></div>
+  <section class="hero power-hero">
+    <p class="kicker" id="kicker">CB POWER RATINGS</p>
+    <h1>What does the model think<br><span>each team is worth?</span></h1>
+    <p class="lede">CB Points translate the model's own team-strength state onto a neutral-field point scale. Market rankings remain a separate benchmark and are withheld rather than manufactured when the timestamped spread graph cannot support a league-wide ranking.</p>
+    <div class="system-line"><span id="systemState"><strong>Loading power-ranking state…</strong></span><span class="system-links"><a href="data/power-rankings/manifest.json">Ranking manifest ↗</a><a href="POWER_RANKINGS.md">Methodology ↗</a></span></div>
   </section>
 
-  <section class="summary" aria-label="Benchmark summary">
-    <article class="metric"><span id="metric1Label">Canonical CFB</span><strong id="metric1">—</strong><small id="metric1Sub">publication gate</small></article>
-    <article class="metric"><span id="metric2Label">Benchmark coverage</span><strong id="metric2">—</strong><small id="metric2Sub">loaded schedule</small></article>
-    <article class="metric"><span id="metric3Label">Ratings through</span><strong id="metric3">—</strong><small id="metric3Sub">source date</small></article>
-    <article class="metric"><span id="metric4Label">Benchmark HFA</span><strong id="metric4">—</strong><small id="metric4Sub">comparison metadata</small></article>
+  <section class="summary" aria-label="Power ranking summary">
+    <article class="metric"><span>Teams ranked</span><strong id="metric1">—</strong><small id="metric1Sub">model coverage</small></article>
+    <article class="metric"><span>CB No. 1</span><strong id="metric2">—</strong><small id="metric2Sub">top team</small></article>
+    <article class="metric"><span>Snapshot</span><strong id="metric3">—</strong><small id="metric3Sub">frozen state</small></article>
+    <article class="metric"><span>Market rank</span><strong id="metric4">—</strong><small id="metric4Sub">separate benchmark</small></article>
   </section>
 
-  <div class="notice"><span class="tag">Layer rule</span><p id="notice"><strong>Benchmark only — never silent canonical influence.</strong> External ratings, markets and outside models stay in their own layer unless leakage-safe testing, out-of-sample validation, prospective evidence and explicit promotion earn a different role.</p></div>
+  <div class="notice"><span class="tag">Research only</span><p><strong>Power rankings do not change canonical projections.</strong> They summarize model state for research and comparison. No market, benchmark, injury, trend, or ranking value receives canonical influence through this page.</p></div>
 
   <section class="section" id="ratings" aria-labelledby="ratingsTitle">
-    <div class="section-head" data-index="01 · BENCHMARK VIEW"><h2 id="ratingsTitle">External rating context</h2><p id="ratingsIntro">Current Sagarin Predictor values are shown from the preserved Week 8 benchmark snapshot. They are comparison evidence, not CB canonical power ratings.</p></div>
+    <div class="section-head" data-index="01 · CB TEAM RATINGS"><h2 id="ratingsTitle">CB power rankings</h2><p>Higher CB Points means the model values the team more strongly on a neutral field. The point scale is centered at league average so differences between teams are directly interpretable.</p></div>
     <div class="controls"><label>Search<input id="search" type="search" placeholder="Search team…"></label><span class="count" id="count">Loading…</span></div>
-    <div class="table-wrap"><table><thead id="tableHead"></thead><tbody id="ratingsBody"></tbody></table></div>
+    <div class="table-wrap"><table class="power-table"><thead><tr><th>Rank</th><th>Team</th><th class="num">CB Points</th><th class="num">Market Rank</th><th class="num">Market Points</th><th class="num">Gap</th><th>Move</th><th>Evidence</th></tr></thead><tbody id="ratingsBody"></tbody></table></div>
+    <div class="method-card"><strong>How CB Points are built</strong><p id="methodText">Loading methodology…</p></div>
+  </section>
+
+  <section class="section" id="comparisons" aria-labelledby="comparisonsTitle">
+    <div class="section-head" data-index="02 · MARKET COMPARISON"><h2 id="comparisonsTitle">Model vs market matchup board</h2><p>Current spread comparisons remain visible even when a defensible national market power ranking cannot be constructed.</p></div>
+    <div class="notice market-rule"><span class="tag">Market safeguard</span><p id="marketNotice">Loading market-graph validation…</p></div>
+    <div class="controls"><span class="count" id="matchupCount">Loading…</span></div>
+    <div class="table-wrap"><table class="power-table matchup-table"><thead><tr><th>Game</th><th class="num">Model home spread</th><th class="num">Market home spread</th><th class="num">Gap</th><th>Model side</th><th>Role</th></tr></thead><tbody id="matchupsBody"></tbody></table></div>
   </section>
 
   <section class="section" id="separation" aria-labelledby="separationTitle">
-    <div class="section-head" data-index="02 · LAYER POLICY"><h2 id="separationTitle">What can influence production?</h2><p>The answer is intentionally narrow. Useful information may be collected broadly, but only validated and explicitly promoted features are allowed into the canonical architecture.</p></div>
+    <div class="section-head" data-index="03 · LAYER POLICY"><h2 id="separationTitle">What can influence production?</h2><p>Collection is broad; promotion is narrow. Rankings are useful diagnostics, not a shortcut around validation.</p></div>
     <div class="grid">
-      <article class="panel"><span class="status good">Canonical</span><h3>Production model</h3><p id="canonicalText">Loading registry…</p></article>
-      <article class="panel"><span class="status" style="color:var(--challenger)">Challenger</span><h3>Research candidates</h3><p id="challengerText">Loading registry…</p></article>
-      <article class="panel"><span class="status">Benchmark</span><h3>Comparison evidence</h3><p>Sportsbooks, Sagarin, SP+, RefMetrics, prediction markets and other external models can expose disagreements and hypotheses. They do not automatically modify the canonical projection.</p></article>
-      <article class="panel"><span class="status hold">Context</span><h3>Pregame information</h3><p>Injuries, quarterbacks, weather, travel, coaching and availability are timestamped and preserved as pregame evidence. Missing information is not reconstructed after the result.</p></article>
+      <article class="panel"><span class="status good">Canonical</span><h3>Frozen projection model</h3><p>The official projection architecture remains versioned and frozen. Power rankings never overwrite its pregame outputs.</p></article>
+      <article class="panel"><span class="status" style="color:var(--challenger)">Research</span><h3>CB power ratings</h3><p>Model-derived team values summarize the validated/frozen state and can identify disagreements worth testing. Their role is research-only.</p></article>
+      <article class="panel"><span class="status">Benchmark</span><h3>Market and outside ratings</h3><p>Sportsbooks, Sagarin, SP+, RefMetrics, prediction markets and other external sources remain separate comparison evidence unless explicitly promoted after validation.</p></article>
+      <article class="panel"><span class="status hold">Context</span><h3>Pregame evidence</h3><p>Injuries, quarterbacks, weather, travel, coaching and availability stay timestamped. Missing pregame information is never reconstructed after results.</p></article>
     </div>
   </section>
 </main>
-<footer><div class="shell"><p id="sourceMeta">Loading benchmark provenance…</p><p>CB Model Projections keeps canonical, challenger, benchmark and contextual layers separate. This page exists to make comparison evidence visible without overstating its role.</p></div></footer>
-<script>
-(() => {
-  const params=new URL(location.href).searchParams;
-  const league=params.get('league')==='nfl'?'nfl':'cfb';
-  const q=id=>document.getElementById(id);
-  let rows=[];
-
-  function setupLinks(){
-    const suffix=league==='nfl'?'?league=nfl':'';
-    q('homeLink').href=`index.html${suffix}`;q('projectionLink').href=`index.html${suffix}#projections`;q('recapLink').href=`recap.html${suffix}`;
-    q('cfbSwitch').classList.toggle('active',league==='cfb');q('nflSwitch').classList.toggle('active',league==='nfl');
-    q('kicker').textContent=`BENCHMARK LAYER · ${league.toUpperCase()}`;
-    document.title=`${league.toUpperCase()} Ratings & Benchmarks · CB Model Projections`;
-    if(league==='nfl'){
-      q('ratingsTitle').textContent='Market benchmark board';
-      q('ratingsIntro').textContent='NFL Canonical V1 is compared with the preserved public market benchmark and the shadow challenger. Reliability and release state remain visible; none of these comparison columns silently rewrite the frozen canonical number.';
-      q('search').placeholder='Search Bills, Chiefs, Steelers…';
-      q('sourceLink').href='nfl_data/site/projections.csv';
-      q('metric1Label').textContent='Canonical NFL';q('metric2Label').textContent='Games loaded';q('metric3Label').textContent='Market coverage';q('metric4Label').textContent='Recommendation state';
-      q('metric2Sub').textContent='current projection file';q('metric3Sub').textContent='spread reference';q('metric4Sub').textContent='research gate';
-    }
-  }
-
-  function parseCsv(text){
-    const out=[];let row=[],field='',quoted=false;
-    for(let i=0;i<text.length;i++){
-      const c=text[i],n=text[i+1];
-      if(c==='"'&&quoted&&n==='"'){field+='"';i++;continue}if(c==='"'){quoted=!quoted;continue}
-      if(c===','&&!quoted){row.push(field);field='';continue}
-      if((c==='\n'||c==='\r')&&!quoted){if(c==='\r'&&n==='\n')i++;row.push(field);field='';if(row.some(v=>v!==''))out.push(row);row=[];continue}
-      field+=c;
-    }
-    if(field||row.length){row.push(field);out.push(row)}const headers=out.shift()||[];
-    return out.map(r=>Object.fromEntries(headers.map((h,i)=>[h,r[i]??''])));
-  }
-  const num=v=>Number.isFinite(Number(v))?Number(v):null;
-  const fmt=v=>num(v)===null?'—':Number(v).toFixed(1);
-  const signed=v=>num(v)===null?'—':`${Number(v)>0?'+':''}${Number(v).toFixed(1)}`;
-
-  function render(){
-    const query=q('search').value.trim().toLowerCase();
-    const filtered=rows.filter(r=>String(r.searchText||'').includes(query));
-    if(league==='cfb'){
-      q('ratingsBody').innerHTML=filtered.map(r=>`<tr><td>${r.rank}</td><td><strong>${r.team}</strong></td><td class="num model">${r.rating.toFixed(2)}</td><td><span class="status">External benchmark</span></td></tr>`).join('');
-    } else {
-      q('ratingsBody').innerHTML=filtered.map(r=>`<tr><td><strong>${r.away}</strong><span class="muted"> @ </span><strong>${r.home}</strong></td><td class="num model">${signed(r.model)}</td><td class="num market">${signed(r.market)}</td><td class="num" style="color:var(--challenger)">${signed(r.shadow)}</td><td class="num context">${signed(r.diff)}</td><td>${r.reliability}</td><td><span class="status hold">${r.status}</span></td></tr>`).join('');
-    }
-    q('count').textContent=`${filtered.length} of ${rows.length} ${league==='cfb'?'teams':'games'}`;
-  }
-
-  async function loadCfb(registry){
-    const bench=await fetch('cfb/benchmarks/week-08-sagarin-full.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('benchmark snapshot unavailable');return r.json()});
-    const c=bench.coverage||{};
-    q('metric1').textContent=registry.cfb?.canonical?.status||'—';q('metric2').textContent=`${c.resolvedGames||0}/${c.scheduleGames||0}`;
-    q('metric3').textContent=(bench.source?.ratingsThrough||'—').replaceAll('-','/');q('metric4').textContent=num(bench.source?.predictorHomeAdvantage)===null?'—':Number(bench.source.predictorHomeAdvantage).toFixed(1);
-    const map=new Map();for(const g of bench.games||[]){const s=g.sagarin||{};if(num(s.awayPredictor)!==null)map.set(g.awayTeam,num(s.awayPredictor));if(num(s.homePredictor)!==null)map.set(g.homeTeam,num(s.homePredictor));}
-    rows=[...map].map(([team,rating])=>({team,rating,searchText:team.toLowerCase()})).sort((a,b)=>b.rating-a.rating).map((r,i)=>({...r,rank:i+1}));
-    q('tableHead').innerHTML='<tr><th>Rank</th><th>Team</th><th class="num">Predictor</th><th>Layer</th></tr>';
-    q('systemState').innerHTML=`<strong>CFB Week ${registry.cfb?.activeWeek||'—'} · benchmark only</strong> · zero canonical influence`;
-    q('sourceMeta').textContent=`Jeff Sagarin benchmark snapshot observed ${bench.observedAt||'unknown'}; ratings through ${bench.source?.ratingsThroughLabel||bench.source?.ratingsThrough||'unknown'}. Canonical influence: ${bench.canonicalInfluence?'yes':'no'}.`;
-  }
-
-  async function loadNfl(registry){
-    const text=await fetch('nfl_data/site/projections.csv',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('NFL projections unavailable');return r.text()});
-    const raw=parseCsv(text);const currentWeek=Math.max(...raw.map(r=>Number(r.week)||0));const current=raw.filter(r=>Number(r.week)===currentWeek);
-    rows=current.map(r=>{const model=num(r.modelSpreadHome),market=num(r.marketSpreadHome),shadow=num(r.shadowModelSpreadHome);return{away:r.awayTeam,home:r.homeTeam,model,market,shadow,diff:model!==null&&market!==null?market-model:null,reliability:`${r.spreadReliability||'—'}/${r.totalReliability||'—'}`,status:String(r.releaseStatus||'HOLD').replaceAll('_',' '),searchText:`${r.awayTeam} ${r.homeTeam}`.toLowerCase()}}).sort((a,b)=>Math.abs(b.diff||0)-Math.abs(a.diff||0));
-    const coverage=rows.filter(r=>r.market!==null).length;
-    q('metric1').textContent=registry.nfl?.canonical?.modelId||'Canonical V1';q('metric2').textContent=rows.length;q('metric3').textContent=`${coverage}/${rows.length}`;q('metric4').textContent='HOLD';
-    q('tableHead').innerHTML='<tr><th>Game</th><th class="num">Canonical spread</th><th class="num">Market</th><th class="num">Shadow</th><th class="num">Difference</th><th>Reliability</th><th>State</th></tr>';
-    q('systemState').innerHTML=`<strong>NFL Week ${registry.nfl?.activeProspectiveWeek||currentWeek} · ${registry.nfl?.canonical?.modelId||'Canonical V1'}</strong> · market and shadow are comparison layers`;
-    q('sourceMeta').textContent=`NFL benchmark board reads the preserved projection file for Week ${currentWeek}. Market values are public comparison references; shadow values are challenger evidence; canonical numbers remain frozen.`;
-  }
-
-  async function init(){
-    setupLinks();
-    try{
-      const registry=await fetch('data/model-registry.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('model registry unavailable');return r.json()});
-      if(league==='cfb')await loadCfb(registry);else await loadNfl(registry);
-      const can=league==='cfb'?registry.cfb?.canonical:registry.nfl?.canonical;const ch=league==='cfb'?registry.cfb?.leadResearchChallenger:null;
-      q('canonicalText').textContent=league==='cfb'?`CFB canonical status: ${String(can?.status||'HOLD').replaceAll('_',' ')}. Reproducible generator available: ${can?.reproducibleGeneratorAvailable?'yes':'no'}. Publication authorized: ${can?.publicationAuthorized?'yes':'no'}.`:`${can?.modelId||'NFL Canonical V1'} is the frozen production reference. Canonical changed: ${can?.canonicalChanged?'yes':'no'}. Recommendation thresholds remain separate from the numerical model.`;
-      q('challengerText').textContent=league==='cfb'?`${ch?.modelId||'Lead CFB research challenger'} · ${String(ch?.tier||'research').replaceAll('_',' ')} · canonical influence ${ch?.canonicalInfluence?'yes':'no'} · promotion authorized ${ch?.promotionAuthorized?'yes':'no'}.`:'NFL challenger hypotheses are built from failure analysis and prospective shadow tests. They remain non-canonical until leakage-safe evidence, prospective frozen weeks and explicit promotion justify a change.';
-      q('search').addEventListener('input',render);render();
-    }catch(err){q('ratingsBody').innerHTML=`<tr><td colspan="7" class="error">Unable to load preserved benchmark evidence: ${err.message}</td></tr>`;q('count').textContent='Load error';q('sourceMeta').textContent=`Benchmark load error: ${err.message}`;}
-  }
-  init();
-})();
-</script>
+<footer><div class="shell"><p id="sourceMeta">Loading power-ranking provenance…</p><p>CB Model Projections keeps canonical, challenger, benchmark and contextual layers separate. Power rankings are research summaries, not wagering recommendations.</p></div></footer>
+<script src="power-rankings.js"></script>
 </body>
 </html>
