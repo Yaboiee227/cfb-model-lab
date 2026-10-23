@@ -81,16 +81,17 @@ jobs:
             rankings="$(curl -fsS "${base}/power-rankings.js?qa=${GITHUB_RUN_ID}" || true)"
             manifest="$(curl -fsS "${base}/data/power-rankings/manifest.json?qa=${GITHUB_RUN_ID}" || true)"
             if grep -q 'openCurrentWeekProjections' <<<"$nav" \
+              && grep -q 'powerRankingsNav' <<<"$nav" \
               && grep -q 'content-visibility:visible' <<<"$css" \
               && grep -q 'SITE_DATA_FILES' <<<"$boot" \
-              && grep -q '20261022-shared-responsive-v5' <<<"$loader" \
+              && grep -q '20261023-power-rankings-nav-v6' <<<"$loader" \
               && grep -q 'CB_SHELL_HARDENING_V4' <<<"$shellfix" \
               && grep -q '__CB_SITE_RUNTIME_GUARD' <<<"$guard" \
               && grep -q 'scroll-padding-top:122px' <<<"$audit" \
               && grep -q 'remainingMatchupComparisons' <<<"$rankings" \
               && grep -q '"teamCount": 138' <<<"$manifest" \
               && grep -q '"teamCount": 32' <<<"$manifest"; then
-              echo 'Current responsive assets and both power-ranking snapshots are live on Pages.'
+              echo 'Current responsive assets, Power Rankings navigation, and both ranking snapshots are live on Pages.'
               exit 0
             fi
             sleep 10
