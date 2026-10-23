@@ -40,7 +40,8 @@ jobs:
 
       - name: Materialize pinned frozen NFL model source
         run: |
-          git fetch origin 0721b59b5f461ad590bd348bd655c4963265856c
+          git fetch origin nfl-week7-live-release
+          test "$(git rev-parse 0721b59b5f461ad590bd348bd655c4963265856c)" = "0721b59b5f461ad590bd348bd655c4963265856c"
           rm -rf /tmp/nfl-power
           git worktree add --detach /tmp/nfl-power 0721b59b5f461ad590bd348bd655c4963265856c
           cp scripts/build_nfl_power_rankings.py /tmp/nfl-power/scripts/build_nfl_power_rankings_cb.py
