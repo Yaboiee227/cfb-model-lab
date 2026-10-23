@@ -5,6 +5,10 @@ const pages = [
   { page: 'recap', path: '/recap.html', marker: '#performance' },
   { page: 'ratings', path: '/ratings.html', marker: '#ratings' }
 ];
+const expectedRatings = {
+  cfb: { teams: 138, matchups: 49 },
+  nfl: { teams: 32, matchups: 13 }
+};
 const cases = [];
 for (const page of pages) {
   for (const league of ['cfb', 'nfl']) {
@@ -31,16 +35,26 @@ for (const tc of cases) {
   const response = await page.goto(`${base}${tc.path}`, { waitUntil: 'networkidle', timeout: 30000 });
   if (!response || !response.ok()) errors.push(`page load failed: ${response?.status() ?? 'no response'}`);
 
-  await page.waitForFunction(({ kind }) => {
+  await page.waitForFunction(({ kind, league, expected }) => {
     if (kind === 'recap') return document.getElementById('graded')?.textContent?.trim() !== '—';
-    return !/loading/i.test(document.getElementById('count')?.textContent || 'Loading');
-  }, { kind: tc.page }, { timeout: 15000 }).catch(() => {});
+    const count = document.getElementById('count')?.textContent || '';
+    const matchupCount = document.getElementById('matchupCount')?.textContent || '';
+    const bodyRows = document.querySelectorAll('#ratingsBody tr').length;
+    const matchupRows = document.querySelectorAll('#matchupsBody tr').length;
+    const target = expected[league];
+    return count.includes(`${target.teams} of ${target.teams} teams`) &&
+      matchupCount.includes(`${target.matchups} current comparisons`) &&
+      bodyRows === target.teams && matchupRows === target.matchups;
+  }, { kind: tc.page, league: tc.league, expected: expectedRatings }, { timeout: 15000 }).catch(() => {});
 
   const state = await page.evaluate(({ kind }) => {
     const nav = document.querySelector('.page-nav');
     const topbar = document.querySelector('.topbar')?.getBoundingClientRect();
     const activeLeague = document.querySelector('.league-switch a.active')?.textContent?.trim().toLowerCase() || '';
     const marker = kind === 'recap' ? document.getElementById('graded')?.textContent?.trim() || '' : document.getElementById('count')?.textContent?.trim() || '';
+    const ratingsRows = kind === 'ratings' ? [...document.querySelectorAll('#ratingsBody tr')].map(tr => tr.textContent.trim()) : [];
+    const matchupRows = kind === 'ratings' ? [...document.querySelectorAll('#matchupsBody tr')].map(tr => tr.textContent.trim()) : [];
+    const marketNotice = kind === 'ratings' ? document.getElementById('marketNotice')?.textContent?.trim() || '' : '';
     return {
       title: document.title,
       activeLeague,
@@ -50,6 +64,11 @@ for (const tc of cases) {
       topbarHeight: topbar?.height || 0,
       scrollWidth: document.documentElement.scrollWidth,
       clientWidth: document.documentElement.clientWidth,
+      ratingsRowCount: ratingsRows.length,
+      matchupRowCount: matchupRows.length,
+      firstRatingRow: ratingsRows[0] || '',
+      lastRatingRow: ratingsRows.at(-1) || '',
+      marketNotice,
       tableWraps: [...document.querySelectorAll('.table-wrap')].map(el => ({ scrollWidth: el.scrollWidth, clientWidth: el.clientWidth, overflowX: getComputedStyle(el).overflowX }))
     };
   }, { kind: tc.page });
@@ -62,6 +81,16 @@ for (const tc of cases) {
   if (mobile && state.topbarHeight > 132) errors.push(`mobile audit topbar unexpectedly tall: ${state.topbarHeight}`);
   for (const wrap of state.tableWraps) {
     if (wrap.scrollWidth > wrap.clientWidth + 2 && !['auto', 'scroll'].includes(wrap.overflowX)) errors.push(`wide table is not contained by scroll wrapper: ${JSON.stringify(wrap)}`);
+  }
+
+  if (tc.page === 'ratings') {
+    const expected = expectedRatings[tc.league];
+    if (state.ratingsRowCount !== expected.teams) errors.push(`ratings row count mismatch: expected ${expected.teams}, got ${state.ratingsRowCount}`);
+    if (state.matchupRowCount !== expected.matchups) errors.push(`matchup comparison count mismatch: expected ${expected.matchups}, got ${state.matchupRowCount}`);
+    if (!state.firstRatingRow || /loading|unavailable|error/i.test(state.firstRatingRow)) errors.push(`first ranking row invalid: ${state.firstRatingRow}`);
+    if (!state.lastRatingRow || /loading|unavailable|error/i.test(state.lastRatingRow)) errors.push(`last ranking row invalid: ${state.lastRatingRow}`);
+    if (tc.league === 'cfb' && !/Notre Dame/i.test(state.firstRatingRow)) errors.push(`expected human-readable CFB No. 1 Notre Dame, got: ${state.firstRatingRow}`);
+    if (!/WITHHELD DISCONNECTED MARKET GRAPH/i.test(state.marketNotice)) errors.push(`market safeguard not visible: ${state.marketNotice}`);
   }
 
   const navLink = page.locator(`.page-nav a[href="${tc.marker}"]`).first();
