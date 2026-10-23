@@ -4,6 +4,7 @@ from __future__ import annotations
 import csv
 import json
 import re
+import unicodedata
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -12,11 +13,13 @@ ROOT = Path(__file__).resolve().parents[1]
 FOUNDATION = ROOT / 'cfb/research-locks/week-08-foundation-full.json'
 SCHEDULE = ROOT / 'cfb/pregame/week-08-schedule.json'
 MARKETS = ROOT / 'data/markets-sportsbooks.json'
+TEAM_ALIASES = ROOT / 'data/team-aliases.json'
 OUTPUT = ROOT / 'data/projections.csv'
 CONFIG = ROOT / 'data/config.json'
 ET = ZoneInfo('America/New_York')
 FIELDS = ['season','week','date','kickoffET','gameId','awayTeam','awayConference','homeTeam','homeConference','projectedAwayPoints','projectedHomePoints','modelSpreadHome','modelTotal','homeWinProbability','awayWinProbability','marketSpreadHome','marketTotal','marketSource','marketObservedAt','executionVerified','dataQuality','signalStrength','releaseStatus','notes']
-ALIASES = {
+
+STATIC_ALIASES = {
     'appalachianstate':'appstate','appalachianstatemountaineers':'appstate',
     'floridainternationalpanthers':'floridainternational','fiupanthers':'floridainternational',
     'newmexicostateaggies':'newmexicostate','samhoustonbearkats':'samhouston',
@@ -26,13 +29,31 @@ ALIASES = {
     'hawaiirainbowwarriors':'hawaii','hawaiiwarriors':'hawaii'
 }
 
+def raw_norm(value):
+    text = unicodedata.normalize('NFKD', str(value or ''))
+    text = ''.join(ch for ch in text if not unicodedata.combining(ch)).lower()
+    return re.sub(r'[^a-z0-9]', '', text)
+
+_ALIAS_TO_CANONICAL = {}
+try:
+    _alias_groups = json.loads(TEAM_ALIASES.read_text(encoding='utf-8'))
+except Exception:
+    _alias_groups = {}
+for canonical, variants in _alias_groups.items():
+    canonical_norm = raw_norm(canonical)
+    for form in [canonical, *(variants or [])]:
+        _ALIAS_TO_CANONICAL[raw_norm(form)] = canonical_norm
+
 def norm(value):
-    n = re.sub(r'[^a-z0-9]', '', str(value or '').lower())
-    return ALIASES.get(n, n)
+    n = raw_norm(value)
+    if n in _ALIAS_TO_CANONICAL:
+        return _ALIAS_TO_CANONICAL[n]
+    n = STATIC_ALIASES.get(n, n)
+    return _ALIAS_TO_CANONICAL.get(n, n)
 
 def team_match(a, b):
     x, y = norm(a), norm(b)
-    return bool(x and y) and (x == y or (min(len(x), len(y)) >= 5 and (x.startswith(y) or y.startswith(x))))
+    return bool(x and y) and (x == y or (min(len(x), len(y)) >= 4 and (x.startswith(y) or y.startswith(x))))
 
 def market_for(game, markets):
     kickoff = datetime.fromisoformat(game['kickoff'].replace('Z', '+00:00'))
