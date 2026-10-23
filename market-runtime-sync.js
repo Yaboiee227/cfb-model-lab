@@ -1,4 +1,5 @@
 (() => {
+  if (window.CB_ACTIVE_LEAGUE === 'nfl') return; // Never match NFL abbreviations to CFB books/cache.
   const STALE_MS = 15 * 60 * 1000;
   const PREKICKOFF_LOOKBACK_MS = 45 * 60 * 1000;
   const CACHE_KEY = 'cb-pregame-market-freeze-v1';

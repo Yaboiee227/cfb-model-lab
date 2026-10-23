@@ -1,16 +1,16 @@
 {
-  "updated": "2026-10-22T17:18:08.440043+00:00",
+  "updated": "2026-10-23T12:17:40+00:00",
   "categories": [
     {
       "id": "readiness",
       "label": "Readiness",
       "short": "Readiness",
       "status": "PARTIAL",
-      "summary": "Fourteen frozen forecasts; personnel, crews, benchmarks and market locks are not all complete.",
+      "summary": "Friday morning: 14 frozen forecast pairs preserved, 13 games upcoming. DraftKings/ESPN comparison spreads and totals captured at 8:17 AM ET. Friday final injury reports are not yet verified. Research context here supersedes older card notes.",
       "items": [
         {
           "title": "Readiness",
-          "detail": "Fourteen frozen forecasts; personnel, crews, benchmarks and market locks are not all complete.",
+          "detail": "All 14 forecast pairs and frozen hashes pass. These are frozen research baselines, not newly personnel-adjusted forecasts. No feature promotion or numeric change.",
           "tag": "PARTIAL"
         }
       ]
@@ -20,11 +20,11 @@
       "label": "Personnel",
       "short": "Personnel",
       "status": "PENDING",
-      "summary": "Official reports captured for 26 Thursday/Sunday teams. McCarthy announced for NYG; Jackson/Mayfield returns unresolved; Monday reports and final inactives pending.",
+      "summary": "Thursday team updates: Jackson limited again; Mayfield full again; Love upgraded to full; Bowers and Kolton Miller full. Dallas/Philadelphia initial reports captured. League summary lags team reports; no blank status implies clearance.",
       "items": [
         {
           "title": "Personnel",
-          "detail": "Official reports captured for 26 Thursday/Sunday teams. McCarthy announced for NYG; Jackson/Mayfield returns unresolved; Monday reports and final inactives pending.",
+          "detail": "NE/CHI official inactive lists verified this evening; Chicago Edwards is inactive. NE confirms Moses, Gonzalez, Woodson, Byard and Elliss active; Vera-Tucker moved to IR. Guard/CB absences remain material. NYG QB regime change remains flagged. Sunday/Monday final reports, starter confirmations and inactives remain pending. Raw evidence covers 28 team pages; table date/opponent validation remains necessary.",
           "tag": "PENDING"
         }
       ]
@@ -34,11 +34,11 @@
       "label": "Weather / roofs",
       "short": "Weather / roofs",
       "status": "PRELIMINARY",
-      "summary": "Ten NWS game windows captured. Paris exposed field; morning gust risk. Final roof/gust information pending.",
+      "summary": "Friday weather refresh captured separately; Sunday/Monday final weather, Paris hourly wind and retractable-roof decisions remain pending. Thursday is completed; its forecast is historical context only.",
       "items": [
         {
           "title": "Weather / roofs",
-          "detail": "Ten NWS game windows captured. Paris exposed field; morning gust risk. Final roof/gust information pending.",
+          "detail": "All ten refreshed NWS windows cover kickoff through four hours. Forecasts are contextual, not model adjustments. Houston/Atlanta/Arizona roof decisions and Paris hourly wind remain open; missing gust fields are not zero gusts.",
           "tag": "PRELIMINARY"
         }
       ]
@@ -61,13 +61,13 @@
       "id": "market",
       "label": "Markets",
       "short": "Markets",
-      "status": "LOCKS PENDING",
-      "summary": "NFL-specific FD/DK final-window capture configured. No current executable-price, consensus, or CLV claim. Prediction markets separate.",
+      "status": "13 COMPARISON REFERENCES",
+      "summary": "13 upcoming DraftKings spreads/totals via ESPN, retrieved Friday 8:17 AM ET. Provider update timestamps are unavailable. Comparison gaps are not grading locks, executable prices or expected-value claims. Thursday lock failed; no backfill.",
       "items": [
         {
           "title": "Markets",
-          "detail": "NFL-specific FD/DK final-window capture configured. No current executable-price, consensus, or CLV claim. Prediction markets separate.",
-          "tag": "LOCKS PENDING"
+          "detail": "Gap = market home spread minus model home spread. Positive favors the home side relative to the quoted handicap; negative favors away. Upcoming display references expire after 24 hours. Thursday event matching failed in both retained final-window attempts; ATS/totals cannot be graded from this new capture.",
+          "tag": "COMPARISON ONLY"
         }
       ]
     },
