@@ -62,10 +62,37 @@ jobs:
       - name: Pull refreshed market snapshot
         run: git pull --rebase origin main
 
+      - name: Decide whether publication sync is needed
+        id: sync_check
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+
+          market = json.loads(Path('data/markets-sportsbooks.json').read_text(encoding='utf-8'))
+          market_stamp = market.get('generatedAt')
+          audit_path = Path('cfb/pregame/week-08-market-coverage-latest.json')
+          prior_stamp = None
+          if audit_path.exists():
+              try:
+                  prior_stamp = json.loads(audit_path.read_text(encoding='utf-8')).get('marketSnapshotGeneratedAt')
+              except Exception:
+                  pass
+          event = os.environ.get('EVENT_NAME', '')
+          needs = event != 'workflow_run' or not market_stamp or market_stamp != prior_stamp
+          print(json.dumps({'event': event, 'marketSnapshotGeneratedAt': market_stamp, 'previousPublishedSnapshot': prior_stamp, 'needsSync': needs}, indent=2))
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as fp:
+              fp.write(f"needs_sync={'true' if needs else 'false'}\n")
+          PY
+
       - name: Regenerate frozen Week 8 site board with current market context
+        if: steps.sync_check.outputs.needs_sync == 'true'
         run: python scripts/publish_cfb_week8_website.py
 
       - name: Audit projection, market, and model-market gap coverage
+        if: steps.sync_check.outputs.needs_sync == 'true'
         run: |
           python - <<'PY'
           import csv, json
@@ -74,6 +101,7 @@ jobs:
           from zoneinfo import ZoneInfo
 
           rows = list(csv.DictReader(open('data/projections.csv', encoding='utf-8')))
+          markets = json.loads(Path('data/markets-sportsbooks.json').read_text(encoding='utf-8'))
           assert len(rows) == 56, f'expected 56 Week 8 rows, found {len(rows)}'
           model_missing = [r['gameId'] for r in rows if not r['modelSpreadHome'] or not r['modelTotal']]
           assert not model_missing, f'missing frozen model projections: {model_missing}'
@@ -95,6 +123,7 @@ jobs:
 
           report = {
             'checkedAt': now.isoformat(),
+            'marketSnapshotGeneratedAt': markets.get('generatedAt'),
             'week8Rows': len(rows),
             'modelProjectionCoverage': f'{len(rows) - len(model_missing)}/{len(rows)}',
             'marketSpreadCoverageAllWeek': f'{len(spread_rows)}/{len(rows)}',
@@ -113,6 +142,7 @@ jobs:
           PY
 
       - name: Commit synchronized site data and coverage audit
+        if: steps.sync_check.outputs.needs_sync == 'true'
         id: commit
         run: |
           git config user.name "cb-model-market-site-bot"
@@ -129,15 +159,15 @@ jobs:
           echo 'changed=true' >> "$GITHUB_OUTPUT"
 
       - name: Configure GitHub Pages
-        if: steps.commit.outputs.changed == 'true'
+        if: steps.sync_check.outputs.needs_sync == 'true' && steps.commit.outputs.changed == 'true'
         uses: actions/configure-pages@v5
 
       - name: Upload synchronized Pages artifact
-        if: steps.commit.outputs.changed == 'true'
+        if: steps.sync_check.outputs.needs_sync == 'true' && steps.commit.outputs.changed == 'true'
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
 
       - name: Deploy synchronized CFB market board
-        if: steps.commit.outputs.changed == 'true'
+        if: steps.sync_check.outputs.needs_sync == 'true' && steps.commit.outputs.changed == 'true'
         uses: actions/deploy-pages@v4
