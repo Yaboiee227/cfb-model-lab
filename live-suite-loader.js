@@ -1,6 +1,6 @@
 (() => {
   const league = () => String(window.CB_ACTIVE_LEAGUE || 'cfb').toLowerCase() === 'nfl' ? 'nfl' : 'cfb';
-  const ASSET_VERSION = '20261022-shared-responsive-v5';
+  const ASSET_VERSION = '20261023-power-rankings-nav-v6';
   const versioned = src => `${src}${src.includes('?') ? '&' : '?'}v=${encodeURIComponent(ASSET_VERSION)}`;
 
   const loadCss = href => {
