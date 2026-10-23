@@ -8,6 +8,7 @@ on:
     paths:
       - 'scripts/build_power_rankings.py'
       - 'scripts/build_nfl_power_rankings.py'
+      - 'scripts/fix_cfb_power_display_names.py'
       - 'tests/test_power_rankings.py'
       - 'ratings.html'
       - 'power-rankings.js'
@@ -59,6 +60,7 @@ jobs:
           python scripts/build_power_rankings.py \
             --nfl-model "$GITHUB_WORKSPACE/.tmp-power/nfl-model.json" \
             --output-dir data/power-rankings
+          python scripts/fix_cfb_power_display_names.py
 
       - name: Run ranking integrity suite
         run: pytest -q tests/test_power_rankings.py
