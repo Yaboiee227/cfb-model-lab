@@ -7,9 +7,6 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '17 */4 * * *'
-  workflow_run:
-    workflows: ['Refresh sportsbook markets']
-    types: [completed]
 
 permissions:
   actions: write
@@ -22,20 +19,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  dispatch-refresh:
-    if: github.event_name != 'workflow_run'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Dispatch an immediate sportsbook refresh
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh workflow run refresh-sportsbook-markets.yml \
-            --repo "$GITHUB_REPOSITORY" \
-            --ref main
-
-  sync-site:
-    if: github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success'
+  refresh-sync-deploy:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -49,13 +33,32 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Sync latest main
+      - name: Dispatch sportsbook refresh and wait for completion
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run refresh-sportsbook-markets.yml \
+            --repo "$GITHUB_REPOSITORY" \
+            --ref main
+          sleep 3
+          run_id="$(gh run list \
+            --repo "$GITHUB_REPOSITORY" \
+            --workflow refresh-sportsbook-markets.yml \
+            --event workflow_dispatch \
+            --limit 1 \
+            --json databaseId \
+            --jq '.[0].databaseId')"
+          test -n "$run_id"
+          echo "Waiting for sportsbook refresh run $run_id"
+          gh run watch "$run_id" --repo "$GITHUB_REPOSITORY" --exit-status
+
+      - name: Pull refreshed market snapshot
         run: git pull --rebase origin main
 
-      - name: Regenerate the frozen Week 8 site board with current market context
+      - name: Regenerate frozen Week 8 site board with current market context
         run: python scripts/publish_cfb_week8_website.py
 
-      - name: Audit projection, market, and gap coverage
+      - name: Audit projection, market, and model-market gap coverage
         run: |
           python - <<'PY'
           import csv, json
@@ -64,7 +67,7 @@ jobs:
           from zoneinfo import ZoneInfo
 
           rows = list(csv.DictReader(open('data/projections.csv', encoding='utf-8')))
-          assert len(rows) == 56, len(rows)
+          assert len(rows) == 56, f'expected 56 Week 8 rows, found {len(rows)}'
           model_missing = [r['gameId'] for r in rows if not r['modelSpreadHome'] or not r['modelTotal']]
           assert not model_missing, f'missing frozen model projections: {model_missing}'
 
@@ -79,6 +82,7 @@ jobs:
           total_rows = [r for r in rows if r['marketTotal'] != '']
           gap_rows = [r for r in rows if r['modelSpreadHome'] != '' and r['marketSpreadHome'] != '']
           future_spread = [r for r in future if r['marketSpreadHome'] != '']
+          future_total = [r for r in future if r['marketTotal'] != '']
           future_gap = [r for r in future if r['modelSpreadHome'] != '' and r['marketSpreadHome'] != '']
           missing_future = [f"{r['awayTeam']} @ {r['homeTeam']}" for r in future if r['marketSpreadHome'] == '']
 
@@ -91,6 +95,7 @@ jobs:
             'modelMarketGapCoverageAllWeek': f'{len(gap_rows)}/{len(rows)}',
             'remainingPregameGames': len(future),
             'remainingMarketSpreadCoverage': f'{len(future_spread)}/{len(future)}',
+            'remainingMarketTotalCoverage': f'{len(future_total)}/{len(future)}',
             'remainingModelMarketGapCoverage': f'{len(future_gap)}/{len(future)}',
             'missingRemainingMarketSpreads': missing_future,
             'gapConvention': 'marketSpreadHome - modelSpreadHome; UI labels the side favored by the model relative to market',
