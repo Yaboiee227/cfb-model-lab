@@ -1,0 +1,131 @@
+name: CFB market coverage pipeline
+
+on:
+  push:
+    paths:
+      - '.github/workflows/cfb-market-coverage-pipeline.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */4 * * *'
+  workflow_run:
+    workflows: ['Refresh sportsbook markets']
+    types: [completed]
+
+permissions:
+  actions: write
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: cfb-market-coverage-pipeline
+  cancel-in-progress: false
+
+jobs:
+  dispatch-refresh:
+    if: github.event_name != 'workflow_run'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch an immediate sportsbook refresh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run refresh-sportsbook-markets.yml \
+            --repo "$GITHUB_REPOSITORY" \
+            --ref main
+
+  sync-site:
+    if: github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Sync latest main
+        run: git pull --rebase origin main
+
+      - name: Regenerate the frozen Week 8 site board with current market context
+        run: python scripts/publish_cfb_week8_website.py
+
+      - name: Audit projection, market, and gap coverage
+        run: |
+          python - <<'PY'
+          import csv, json
+          from datetime import datetime
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+
+          rows = list(csv.DictReader(open('data/projections.csv', encoding='utf-8')))
+          assert len(rows) == 56, len(rows)
+          model_missing = [r['gameId'] for r in rows if not r['modelSpreadHome'] or not r['modelTotal']]
+          assert not model_missing, f'missing frozen model projections: {model_missing}'
+
+          now = datetime.now(ZoneInfo('America/New_York'))
+          future = []
+          for r in rows:
+            kickoff = datetime.strptime(f"{r['date']} {r['kickoffET']}", '%Y-%m-%d %I:%M %p').replace(tzinfo=ZoneInfo('America/New_York'))
+            if kickoff > now:
+              future.append(r)
+
+          spread_rows = [r for r in rows if r['marketSpreadHome'] != '']
+          total_rows = [r for r in rows if r['marketTotal'] != '']
+          gap_rows = [r for r in rows if r['modelSpreadHome'] != '' and r['marketSpreadHome'] != '']
+          future_spread = [r for r in future if r['marketSpreadHome'] != '']
+          future_gap = [r for r in future if r['modelSpreadHome'] != '' and r['marketSpreadHome'] != '']
+          missing_future = [f"{r['awayTeam']} @ {r['homeTeam']}" for r in future if r['marketSpreadHome'] == '']
+
+          report = {
+            'checkedAt': now.isoformat(),
+            'week8Rows': len(rows),
+            'modelProjectionCoverage': f'{len(rows) - len(model_missing)}/{len(rows)}',
+            'marketSpreadCoverageAllWeek': f'{len(spread_rows)}/{len(rows)}',
+            'marketTotalCoverageAllWeek': f'{len(total_rows)}/{len(rows)}',
+            'modelMarketGapCoverageAllWeek': f'{len(gap_rows)}/{len(rows)}',
+            'remainingPregameGames': len(future),
+            'remainingMarketSpreadCoverage': f'{len(future_spread)}/{len(future)}',
+            'remainingModelMarketGapCoverage': f'{len(future_gap)}/{len(future)}',
+            'missingRemainingMarketSpreads': missing_future,
+            'gapConvention': 'marketSpreadHome - modelSpreadHome; UI labels the side favored by the model relative to market',
+            'canonicalProjectionChanges': 0
+          }
+          print(json.dumps(report, indent=2))
+          Path('cfb/pregame/week-08-market-coverage-latest.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
+          PY
+
+      - name: Commit synchronized site data and coverage audit
+        id: commit
+        run: |
+          git config user.name "cb-model-market-site-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/projections.csv data/config.json cfb/pregame/week-08-market-coverage-latest.json
+          if git diff --cached --quiet; then
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+            echo 'Site market context already synchronized.'
+            exit 0
+          fi
+          git commit -m 'Sync CFB Week 8 market coverage to site [skip ci]'
+          git pull --rebase origin main
+          git push origin HEAD:main
+          echo 'changed=true' >> "$GITHUB_OUTPUT"
+
+      - name: Configure GitHub Pages
+        if: steps.commit.outputs.changed == 'true'
+        uses: actions/configure-pages@v5
+
+      - name: Upload synchronized Pages artifact
+        if: steps.commit.outputs.changed == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy synchronized CFB market board
+        if: steps.commit.outputs.changed == 'true'
+        uses: actions/deploy-pages@v4
