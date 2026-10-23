@@ -17,6 +17,7 @@ def test_01_cfb_has_all_138_fbs_teams():
     assert doc["teamCount"] == 138
     assert len(doc["teams"]) == 138
     assert len({r["team"] for r in doc["teams"]}) == 138
+    assert all(r["teamName"] and r["teamName"] != r["team"] for r in doc["teams"]), "CFB display-name normalization incomplete"
 
 
 def test_02_nfl_has_all_32_teams():
