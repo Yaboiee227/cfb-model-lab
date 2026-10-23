@@ -6,7 +6,7 @@
   "role": "ACTIVE_WINDOW_RESEARCH_PREGAME_COVERAGE_AUDIT",
   "canonicalInfluence": false,
   "canonicalPromotionAuthorized": false,
-  "auditedAt": "2026-10-22T23:03:17.513Z",
+  "auditedAt": "2026-10-23T00:51:29.231051Z",
   "summary": {
     "games": 7,
     "foundationLocked": 7,
@@ -16,19 +16,9 @@
     "refereeCapturedOrExplicitlyChecked": 7,
     "gamesWithMarketLock": 7,
     "critical": 0,
-    "high": 1
+    "high": 0
   },
   "workQueue": [
-    {
-      "gameId": "2026-10-22-EASTCAROLINA-MEMPHIS",
-      "awayTeam": "East Carolina",
-      "homeTeam": "Memphis",
-      "kickoff": "2026-10-22T23:30:00Z",
-      "priority": "TODAY",
-      "urgency": "NORMAL",
-      "gaps": [],
-      "warnings": []
-    },
     {
       "gameId": "2026-10-20-MIDDLETENNESSEE-FLORIDAINTERNATIONAL",
       "awayTeam": "Middle Tennessee",
@@ -80,12 +70,13 @@
       "homeTeam": "App State",
       "kickoff": "2026-10-22T23:00:00Z",
       "priority": "STARTED_OR_PAST",
-      "urgency": "HIGH",
+      "urgency": "NORMAL",
       "gaps": [
-        "App State QB snap allocation unresolved; Singleton available but Singleton/Hasselbeck split not officially confirmed"
+        "personnel requires follow-up: MATERIAL_QB_STATUS_OPEN_OFFICIAL_APP_STATE_ROTATION_AFTER_INJURY",
+        "weather final review pending: NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED"
       ],
       "warnings": [
-        "RefMetrics had no crew posted at the final pre-kickoff check"
+        "referee assignment status: NOT_YET_POSTED; do not guess"
       ]
     },
     {
@@ -95,8 +86,26 @@
       "kickoff": "2026-10-22T23:00:00Z",
       "priority": "STARTED_OR_PAST",
       "urgency": "NORMAL",
-      "gaps": [],
-      "warnings": []
+      "gaps": [
+        "weather final review pending: NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_YET_POSTED; do not guess"
+      ]
+    },
+    {
+      "gameId": "2026-10-22-EASTCAROLINA-MEMPHIS",
+      "awayTeam": "East Carolina",
+      "homeTeam": "Memphis",
+      "kickoff": "2026-10-22T23:30:00Z",
+      "priority": "STARTED_OR_PAST",
+      "urgency": "NORMAL",
+      "gaps": [
+        "weather final review pending: NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_YET_POSTED; do not guess"
+      ]
     }
   ],
   "games": [
@@ -258,7 +267,7 @@
       "homeTeam": "App State",
       "kickoff": "2026-10-22T23:00:00Z",
       "priority": "STARTED_OR_PAST",
-      "urgency": "HIGH",
+      "urgency": "NORMAL",
       "foundation": {
         "status": "LOCKED",
         "projectionDigest": "50147bbb9df5dbcabf7857833e94a663d537996bceaf0da92379c547913d8875"
@@ -268,11 +277,11 @@
         "spPlus": "PENDING_OFFICIAL_CAPTURE"
       },
       "context": {
-        "personnel": "SINGLETON_AVAILABLE_ROTATION_UNRESOLVED",
-        "weather": "NWS_FINAL_WINDOW_RECHECK_COMPLETE_LOW_IMPACT",
-        "referee": "CREW_NOT_POSTED_FINAL_WINDOW_CHECK",
-        "marketContext": "LOCKED",
-        "contextSource": "cfb/pregame/week-08-thursday-final-window-2026-10-22.json"
+        "personnel": "MATERIAL_QB_STATUS_OPEN_OFFICIAL_APP_STATE_ROTATION_AFTER_INJURY",
+        "weather": "NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED",
+        "referee": "NOT_YET_POSTED",
+        "marketContext": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
+        "contextSource": "cfb/pregame/week-08-through-thursday-effective.json"
       },
       "marketLock": {
         "status": "LOCKED",
@@ -283,10 +292,11 @@
         "bookCount": 2
       },
       "gaps": [
-        "App State QB snap allocation unresolved; official availability confirmed Singleton available but did not establish the Singleton/Hasselbeck split"
+        "personnel requires follow-up: MATERIAL_QB_STATUS_OPEN_OFFICIAL_APP_STATE_ROTATION_AFTER_INJURY",
+        "weather final review pending: NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED"
       ],
       "warnings": [
-        "RefMetrics had no upcoming NCAA Football crew posted at the final pre-kickoff check"
+        "referee assignment status: NOT_YET_POSTED; do not guess"
       ]
     },
     {
@@ -306,11 +316,11 @@
         "spPlus": "PENDING_OFFICIAL_CAPTURE"
       },
       "context": {
-        "personnel": "FINAL_OFFICIAL_BASELINE_RECHECK_COMPLETE_STABLE_QB_STATE",
-        "weather": "NWS_FINAL_WINDOW_RECHECK_COMPLETE_LOW_IMPACT",
-        "referee": "CREW_NOT_POSTED_FINAL_WINDOW_CHECK",
-        "marketContext": "LOCKED",
-        "contextSource": "cfb/pregame/week-08-thursday-final-window-2026-10-22.json"
+        "personnel": "OFFICIAL_BASELINE_CAPTURED_STABLE_QB_STATE",
+        "weather": "NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED",
+        "referee": "NOT_YET_POSTED",
+        "marketContext": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
+        "contextSource": "cfb/pregame/week-08-through-thursday-effective.json"
       },
       "marketLock": {
         "status": "LOCKED",
@@ -320,8 +330,12 @@
         ],
         "bookCount": 2
       },
-      "gaps": [],
-      "warnings": []
+      "gaps": [
+        "weather final review pending: NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_YET_POSTED; do not guess"
+      ]
     },
     {
       "gameId": "2026-10-22-EASTCAROLINA-MEMPHIS",
@@ -329,7 +343,7 @@
       "awayTeam": "East Carolina",
       "homeTeam": "Memphis",
       "kickoff": "2026-10-22T23:30:00Z",
-      "priority": "TODAY",
+      "priority": "STARTED_OR_PAST",
       "urgency": "NORMAL",
       "foundation": {
         "status": "LOCKED",
@@ -340,11 +354,11 @@
         "spPlus": "PENDING_OFFICIAL_CAPTURE"
       },
       "context": {
-        "personnel": "FINAL_OFFICIAL_BASELINE_RECHECK_COMPLETE_STABLE_QB_STATE",
-        "weather": "NWS_FINAL_WINDOW_RECHECK_COMPLETE_LOW_IMPACT",
-        "referee": "CREW_NOT_POSTED_FINAL_WINDOW_CHECK",
-        "marketContext": "LOCKED",
-        "contextSource": "cfb/pregame/week-08-thursday-final-window-2026-10-22.json"
+        "personnel": "OFFICIAL_BASELINE_CAPTURED_STABLE_QB_STATE",
+        "weather": "NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED",
+        "referee": "NOT_YET_POSTED",
+        "marketContext": "CURRENT_SCOPE_CONTEXT_NOT_LOCKED",
+        "contextSource": "cfb/pregame/week-08-through-thursday-effective.json"
       },
       "marketLock": {
         "status": "LOCKED",
@@ -354,8 +368,12 @@
         ],
         "bookCount": 2
       },
-      "gaps": [],
-      "warnings": []
+      "gaps": [
+        "weather final review pending: NWS_LOW_IMPACT_BASELINE_FINAL_RECHECK_REQUIRED"
+      ],
+      "warnings": [
+        "referee assignment status: NOT_YET_POSTED; do not guess"
+      ]
     }
   ],
   "policy": "Operational research audit only. Context gaps prioritize source collection but cannot rewrite the immutable foundation. Official benchmarks and locked markets remain comparison layers only; unknown facts stay unknown. Active operational scope is Tuesday through Thursday only; Friday and Saturday are paused until explicit resumption.",
