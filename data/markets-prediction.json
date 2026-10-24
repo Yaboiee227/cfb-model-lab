@@ -1,10 +1,34 @@
 {
-  "generatedAt": "2026-10-24T15:40:56.199Z",
+  "generatedAt": "2026-10-24T16:07:30.372Z",
   "sources": [
     "kalshi",
     "polymarket"
   ],
   "games": [
+    {
+      "eventId": "401856840",
+      "date": "2026-10-24T16:00Z",
+      "homeTeam": "Cincinnati",
+      "awayTeam": "Texas Tech",
+      "kalshi": {
+        "matched": false,
+        "error": "No market listed / no reliable match"
+      },
+      "polymarket": {
+        "matched": true,
+        "updatedAt": "2026-10-24T16:07:25.887Z",
+        "homeProbability": 0,
+        "awayProbability": 1,
+        "volume": 261060.55265899998,
+        "liquidity": 649796.5358000001,
+        "history": [
+          {
+            "ts": "2026-10-24T10:05:06.438Z",
+            "home": 0
+          }
+        ]
+      }
+    },
     {
       "eventId": "401858274",
       "date": "2026-10-24T16:00Z",
@@ -30,39 +54,15 @@
       },
       "polymarket": {
         "matched": true,
-        "updatedAt": "2026-10-24T15:40:51.602Z",
+        "updatedAt": "2026-10-24T16:07:26.509Z",
         "homeProbability": 1,
         "awayProbability": 0,
-        "volume": 421062.77182499995,
-        "liquidity": 2946257.1997600025,
+        "volume": 453001.4329949999,
+        "liquidity": 1099228.3955000013,
         "history": [
           {
             "ts": "2026-10-24T10:05:05.935Z",
             "home": 1
-          }
-        ]
-      }
-    },
-    {
-      "eventId": "401856840",
-      "date": "2026-10-24T16:00Z",
-      "homeTeam": "Cincinnati",
-      "awayTeam": "Texas Tech",
-      "kalshi": {
-        "matched": false,
-        "error": "No market listed / no reliable match"
-      },
-      "polymarket": {
-        "matched": true,
-        "updatedAt": "2026-10-24T15:40:52.250Z",
-        "homeProbability": 0,
-        "awayProbability": 1,
-        "volume": 209406.946364,
-        "liquidity": 2141221.4573200047,
-        "history": [
-          {
-            "ts": "2026-10-24T10:05:06.438Z",
-            "home": 0
           }
         ]
       }
@@ -78,11 +78,11 @@
       },
       "polymarket": {
         "matched": true,
-        "updatedAt": "2026-10-24T15:40:52.594Z",
+        "updatedAt": "2026-10-24T16:07:27.109Z",
         "homeProbability": 0,
         "awayProbability": 1,
-        "volume": 306451.6764560001,
-        "liquidity": 3062389.2803800046,
+        "volume": 329871.42538300017,
+        "liquidity": 1632184.7801000008,
         "history": [
           {
             "ts": "2026-10-24T10:05:06.804Z",
@@ -102,11 +102,11 @@
       },
       "polymarket": {
         "matched": true,
-        "updatedAt": "2026-10-24T15:40:53.094Z",
+        "updatedAt": "2026-10-24T16:07:27.523Z",
         "homeProbability": 0,
         "awayProbability": 1,
-        "volume": 652447.9324220001,
-        "liquidity": 2709573.429420005,
+        "volume": 680329.1120839999,
+        "liquidity": 882041.0617600002,
         "history": [
           {
             "ts": "2026-10-24T10:05:07.159Z",
@@ -126,11 +126,11 @@
       },
       "polymarket": {
         "matched": true,
-        "updatedAt": "2026-10-24T15:40:53.965Z",
+        "updatedAt": "2026-10-24T16:07:27.826Z",
         "homeProbability": 1,
         "awayProbability": 0,
-        "volume": 159223.323327,
-        "liquidity": 2625107.6518600057,
+        "volume": 251700.427219,
+        "liquidity": 792149.9224000002,
         "history": [
           {
             "ts": "2026-10-24T10:05:07.709Z",
@@ -150,11 +150,11 @@
       },
       "polymarket": {
         "matched": true,
-        "updatedAt": "2026-10-24T15:40:54.333Z",
+        "updatedAt": "2026-10-24T16:07:28.437Z",
         "homeProbability": 0,
         "awayProbability": 1,
-        "volume": 726481.85254,
-        "liquidity": 2225845.4527600077,
+        "volume": 728405.2062939999,
+        "liquidity": 2069519.8905600046,
         "history": [
           {
             "ts": "2026-10-24T13:30:40.500Z",
@@ -188,11 +188,11 @@
       },
       "polymarket": {
         "matched": true,
-        "updatedAt": "2026-10-24T15:40:55.444Z",
+        "updatedAt": "2026-10-24T16:07:29.376Z",
         "homeProbability": 0,
         "awayProbability": 1,
-        "volume": 701059.6839169998,
-        "liquidity": 2625061.1114999996,
+        "volume": 715346.1614699998,
+        "liquidity": 2466225.0004000003,
         "history": [
           {
             "ts": "2026-10-24T13:30:41.265Z",
@@ -212,11 +212,11 @@
       },
       "polymarket": {
         "matched": true,
-        "updatedAt": "2026-10-24T15:40:55.807Z",
+        "updatedAt": "2026-10-24T16:07:29.758Z",
         "homeProbability": 1,
         "awayProbability": 0,
-        "volume": 75454.60348499999,
-        "liquidity": 2685098.3753200034,
+        "volume": 75600.191721,
+        "liquidity": 2473620.8360200045,
         "history": [
           {
             "ts": "2026-10-24T13:30:41.820Z",
@@ -236,15 +236,39 @@
       },
       "polymarket": {
         "matched": true,
-        "updatedAt": "2026-10-24T15:40:56.199Z",
+        "updatedAt": "2026-10-24T16:07:30.055Z",
         "homeProbability": 1,
         "awayProbability": 0,
         "volume": 381274.8743839999,
-        "liquidity": 2219728.8535800036,
+        "liquidity": 2084822.481080004,
         "history": [
           {
             "ts": "2026-10-24T13:30:42.475Z",
             "home": 1
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "401860907",
+      "date": "2026-10-24T22:00Z",
+      "homeTeam": "Washington St",
+      "awayTeam": "Boise St",
+      "kalshi": {
+        "matched": false,
+        "error": "No market listed / no reliable match"
+      },
+      "polymarket": {
+        "matched": true,
+        "updatedAt": "2026-10-24T16:07:30.372Z",
+        "homeProbability": 0,
+        "awayProbability": 1,
+        "volume": 9400.063553,
+        "liquidity": 0,
+        "history": [
+          {
+            "ts": "2026-10-24T16:07:30.372Z",
+            "home": 0
           }
         ]
       }
