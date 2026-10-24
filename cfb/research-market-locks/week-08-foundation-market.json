@@ -16,16 +16,16 @@
   "lockWindowMinutes": 30.0,
   "maxObservationAgeMinutes": 35.0,
   "scopeRestricted": true,
-  "updatedAt": "2026-10-24T20:33:59.955996Z",
+  "updatedAt": "2026-10-24T21:51:02.737775Z",
   "counts": {
     "foundationGames": 56,
     "activeScopeGames": 53,
     "pausedGames": 0,
     "preservedOutOfScopeLockedGames": 3,
-    "gamesWithMarketLock": 37,
-    "bookObservationsLocked": 74,
-    "newBookObservationsThisRun": 0,
-    "pendingGames": 14,
+    "gamesWithMarketLock": 38,
+    "bookObservationsLocked": 76,
+    "newBookObservationsThisRun": 2,
+    "pendingGames": 13,
     "missedGames": 5
   },
   "games": [
@@ -1455,8 +1455,35 @@
       "homeTeam": "Washington State",
       "kickoff": "2026-10-24T22:00:00Z",
       "projectionDigest": "17b3526936202ab8c1b1ecc096e5483afe8aa46a334d121c7a2050091f491cb4",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-24T21:50:00Z",
+          "lockedAt": "2026-10-24T21:51:02.737775Z",
+          "marketSpreadHome": 14.5,
+          "marketTotal": 52.5,
+          "marketMoneylineHome": 470,
+          "marketMoneylineAway": -670,
+          "spreadHomePrice": -115,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "10ca2dc68abfa3546a9fa13c24f7617315bd385ff591533475367b6044d80974"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-24T21:50:39Z",
+          "lockedAt": "2026-10-24T21:51:02.737775Z",
+          "marketSpreadHome": 14.5,
+          "marketTotal": 52.5,
+          "marketMoneylineHome": 455,
+          "marketMoneylineAway": -625,
+          "spreadHomePrice": -115,
+          "totalOverPrice": -105,
+          "totalUnderPrice": -115,
+          "observationDigest": "57b23964405e1d72aa512110460d0abddb89b888c25a3ba09eb12290e29264b0"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-24-SANDIEGOSTATE-COLORADOSTATE",
