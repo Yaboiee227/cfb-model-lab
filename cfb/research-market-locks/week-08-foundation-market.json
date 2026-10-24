@@ -16,16 +16,16 @@
   "lockWindowMinutes": 30.0,
   "maxObservationAgeMinutes": 35.0,
   "scopeRestricted": true,
-  "updatedAt": "2026-10-24T16:56:06.212178Z",
+  "updatedAt": "2026-10-24T18:35:05.038056Z",
   "counts": {
     "foundationGames": 56,
     "activeScopeGames": 53,
     "pausedGames": 0,
     "preservedOutOfScopeLockedGames": 3,
-    "gamesWithMarketLock": 19,
-    "bookObservationsLocked": 38,
-    "newBookObservationsThisRun": 0,
-    "pendingGames": 32,
+    "gamesWithMarketLock": 20,
+    "bookObservationsLocked": 40,
+    "newBookObservationsThisRun": 2,
+    "pendingGames": 31,
     "missedGames": 5
   },
   "games": [
@@ -789,8 +789,35 @@
       "homeTeam": "Illinois",
       "kickoff": "2026-10-24T19:00:00Z",
       "projectionDigest": "611fe222699256ba13676866f8ebf92bad5f4caf8c18aac3c8fd70f377d579d7",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-24T18:34:20Z",
+          "lockedAt": "2026-10-24T18:35:05.038056Z",
+          "marketSpreadHome": 10.5,
+          "marketTotal": 48.5,
+          "marketMoneylineHome": 285,
+          "marketMoneylineAway": -365,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -115,
+          "totalUnderPrice": -104,
+          "observationDigest": "1c0fdd57599f33e9b63d548d5ee77998794002f2fa6f7749708a6120fbdc3f96"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-24T18:34:16Z",
+          "lockedAt": "2026-10-24T18:35:05.038056Z",
+          "marketSpreadHome": 10.5,
+          "marketTotal": 48.5,
+          "marketMoneylineHome": 310,
+          "marketMoneylineAway": -395,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -112,
+          "totalUnderPrice": -108,
+          "observationDigest": "474103e6ce5103ed6450d8cf492d36b5ea4cb75bd977ba537fd30f340b9b1539"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-24-BYU-UCF",
