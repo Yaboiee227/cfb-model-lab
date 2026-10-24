@@ -16,16 +16,16 @@
   "lockWindowMinutes": 30.0,
   "maxObservationAgeMinutes": 35.0,
   "scopeRestricted": true,
-  "updatedAt": "2026-10-24T21:51:02.737775Z",
+  "updatedAt": "2026-10-24T22:10:22.133849Z",
   "counts": {
     "foundationGames": 56,
     "activeScopeGames": 53,
     "pausedGames": 0,
     "preservedOutOfScopeLockedGames": 3,
-    "gamesWithMarketLock": 38,
-    "bookObservationsLocked": 76,
+    "gamesWithMarketLock": 39,
+    "bookObservationsLocked": 78,
     "newBookObservationsThisRun": 2,
-    "pendingGames": 13,
+    "pendingGames": 12,
     "missedGames": 5
   },
   "games": [
@@ -1492,8 +1492,35 @@
       "homeTeam": "Colorado State",
       "kickoff": "2026-10-24T22:30:00Z",
       "projectionDigest": "19226231c83683368377a077312cce6f77a8ea14e8667b9db672f9f3ded83ba8",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-24T21:50:00Z",
+          "lockedAt": "2026-10-24T22:10:22.133849Z",
+          "marketSpreadHome": 1.5,
+          "marketTotal": 58.5,
+          "marketMoneylineHome": -110,
+          "marketMoneylineAway": -110,
+          "spreadHomePrice": -115,
+          "totalOverPrice": -108,
+          "totalUnderPrice": -112,
+          "observationDigest": "ed110b31d3ceb3de3c02159ee6ba9e5dc206f109f8ee4ccef52f49b88f1af0ce"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-24T21:50:39Z",
+          "lockedAt": "2026-10-24T22:10:22.133849Z",
+          "marketSpreadHome": 1.5,
+          "marketTotal": 57.5,
+          "marketMoneylineHome": -110,
+          "marketMoneylineAway": -110,
+          "spreadHomePrice": -120,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "aad7eb8e60cb2ec8fa6b4790bdb4260f314597474671740cb46222579cf6df7a"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-24-COLORADO-OKLAHOMASTATE",
