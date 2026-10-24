@@ -16,16 +16,16 @@
   "lockWindowMinutes": 30.0,
   "maxObservationAgeMinutes": 35.0,
   "scopeRestricted": true,
-  "updatedAt": "2026-10-24T23:00:08.199355Z",
+  "updatedAt": "2026-10-24T23:43:23.710581Z",
   "counts": {
     "foundationGames": 56,
     "activeScopeGames": 53,
     "pausedGames": 0,
     "preservedOutOfScopeLockedGames": 3,
-    "gamesWithMarketLock": 48,
-    "bookObservationsLocked": 96,
-    "newBookObservationsThisRun": 0,
-    "pendingGames": 3,
+    "gamesWithMarketLock": 49,
+    "bookObservationsLocked": 98,
+    "newBookObservationsThisRun": 2,
+    "pendingGames": 2,
     "missedGames": 5
   },
   "games": [
@@ -1862,8 +1862,35 @@
       "homeTeam": "Tulane",
       "kickoff": "2026-10-25T00:00:00Z",
       "projectionDigest": "a63b1830e30a0375df153b4fa621878d02d9096fcfcd99559de0b5b0e2429ba4",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-24T23:42:36Z",
+          "lockedAt": "2026-10-24T23:43:23.710581Z",
+          "marketSpreadHome": 2.5,
+          "marketTotal": 51.5,
+          "marketMoneylineHome": 116,
+          "marketMoneylineAway": -140,
+          "spreadHomePrice": -104,
+          "totalOverPrice": -115,
+          "totalUnderPrice": -105,
+          "observationDigest": "2c3c2c405493e54f6f01eea89bf15f26f4b48e7e66722541af93e386e38fed6c"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-24T23:42:56Z",
+          "lockedAt": "2026-10-24T23:43:23.710581Z",
+          "marketSpreadHome": 3.0,
+          "marketTotal": 52.5,
+          "marketMoneylineHome": 124,
+          "marketMoneylineAway": -148,
+          "spreadHomePrice": -112,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "a8526a4b0feb35c6c75babad776298da525972fec688532608dfee5170dc4380"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-25-NORTHDAKOTASTATE-NEWMEXICO",
