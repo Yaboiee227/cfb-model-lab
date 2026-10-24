@@ -16,16 +16,16 @@
   "lockWindowMinutes": 30.0,
   "maxObservationAgeMinutes": 35.0,
   "scopeRestricted": true,
-  "updatedAt": "2026-10-24T19:30:06.869683Z",
+  "updatedAt": "2026-10-24T20:33:59.955996Z",
   "counts": {
     "foundationGames": 56,
     "activeScopeGames": 53,
     "pausedGames": 0,
     "preservedOutOfScopeLockedGames": 3,
-    "gamesWithMarketLock": 34,
-    "bookObservationsLocked": 68,
-    "newBookObservationsThisRun": 0,
-    "pendingGames": 17,
+    "gamesWithMarketLock": 37,
+    "bookObservationsLocked": 74,
+    "newBookObservationsThisRun": 6,
+    "pendingGames": 14,
     "missedGames": 5
   },
   "games": [
@@ -1344,8 +1344,35 @@
       "homeTeam": "Southern Miss",
       "kickoff": "2026-10-24T21:00:00Z",
       "projectionDigest": "e2c47b9299e80d9c1e8f0e7c91adf4f16cc84c97246bdba7ee3480db4729ed23",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-24T20:33:40Z",
+          "lockedAt": "2026-10-24T20:33:59.955996Z",
+          "marketSpreadHome": 11.5,
+          "marketTotal": 53.5,
+          "marketMoneylineHome": 365,
+          "marketMoneylineAway": -490,
+          "spreadHomePrice": -105,
+          "totalOverPrice": -106,
+          "totalUnderPrice": -114,
+          "observationDigest": "f590751c1ce2a750e434fe935f91e9eaecfd617065bb346ac31c0b278109709f"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-24T20:33:40Z",
+          "lockedAt": "2026-10-24T20:33:59.955996Z",
+          "marketSpreadHome": 11.5,
+          "marketTotal": 52.5,
+          "marketMoneylineHome": 350,
+          "marketMoneylineAway": -455,
+          "spreadHomePrice": -112,
+          "totalOverPrice": -112,
+          "totalUnderPrice": -108,
+          "observationDigest": "6b5142393e6d719575cb38404034f2ce925bdad2790686590d7a147586ae0d79"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-24-OLDDOMINION-LOUISIANATECH",
@@ -1354,8 +1381,35 @@
       "homeTeam": "Louisiana Tech",
       "kickoff": "2026-10-24T21:00:00Z",
       "projectionDigest": "db419e8e6fc0e2721f3cf46f260d5e250c872095884349baa3ddcb8121e59531",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-24T20:33:40Z",
+          "lockedAt": "2026-10-24T20:33:59.955996Z",
+          "marketSpreadHome": -13.5,
+          "marketTotal": 43.5,
+          "marketMoneylineHome": -710,
+          "marketMoneylineAway": 490,
+          "spreadHomePrice": -115,
+          "totalOverPrice": -114,
+          "totalUnderPrice": -106,
+          "observationDigest": "0a0c61a1c20a1a3d1fc15f3fe0aea3ca382a5176b0ea670aafbe921d061b7693"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-24T20:33:40Z",
+          "lockedAt": "2026-10-24T20:33:59.955996Z",
+          "marketSpreadHome": -13.5,
+          "marketTotal": 43.5,
+          "marketMoneylineHome": -550,
+          "marketMoneylineAway": 410,
+          "spreadHomePrice": -115,
+          "totalOverPrice": -115,
+          "totalUnderPrice": -105,
+          "observationDigest": "6d8afe8f0c9b0c142f721f99c6ef75d05852da93d9275ab03720d4f8b14661aa"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-24-SANJOSSTATE-NEVADA",
@@ -1364,8 +1418,35 @@
       "homeTeam": "Nevada",
       "kickoff": "2026-10-24T21:00:00Z",
       "projectionDigest": "9fac7b02504d92673d051574404f79c46810dbf92cb01d0effabd6f8809d258a",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-24T20:33:40Z",
+          "lockedAt": "2026-10-24T20:33:59.955996Z",
+          "marketSpreadHome": -5.5,
+          "marketTotal": 45.5,
+          "marketMoneylineHome": -215,
+          "marketMoneylineAway": 176,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -108,
+          "totalUnderPrice": -112,
+          "observationDigest": "f901be86ccc39c3de53dd1e9198b4c6823e2a8d213310021b8de205ab59e3f5e"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-24T20:33:40Z",
+          "lockedAt": "2026-10-24T20:33:59.955996Z",
+          "marketSpreadHome": -5.5,
+          "marketTotal": 45.5,
+          "marketMoneylineHome": -218,
+          "marketMoneylineAway": 180,
+          "spreadHomePrice": -112,
+          "totalOverPrice": -112,
+          "totalUnderPrice": -108,
+          "observationDigest": "1b051ee9a46be465d98d0b85b8a76978f8e44d9f8e94df8f55b4780b0c33323b"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-24-BOISESTATE-WASHINGTONSTATE",
