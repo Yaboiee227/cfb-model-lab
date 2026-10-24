@@ -16,16 +16,16 @@
   "lockWindowMinutes": 30.0,
   "maxObservationAgeMinutes": 35.0,
   "scopeRestricted": true,
-  "updatedAt": "2026-10-24T19:06:09.118848Z",
+  "updatedAt": "2026-10-24T19:30:06.869683Z",
   "counts": {
     "foundationGames": 56,
     "activeScopeGames": 53,
     "pausedGames": 0,
     "preservedOutOfScopeLockedGames": 3,
-    "gamesWithMarketLock": 31,
-    "bookObservationsLocked": 62,
-    "newBookObservationsThisRun": 22,
-    "pendingGames": 20,
+    "gamesWithMarketLock": 34,
+    "bookObservationsLocked": 68,
+    "newBookObservationsThisRun": 6,
+    "pendingGames": 17,
     "missedGames": 5
   },
   "games": [
@@ -1233,8 +1233,35 @@
       "homeTeam": "Arizona State",
       "kickoff": "2026-10-24T19:45:00Z",
       "projectionDigest": "6b098a022b8588e0511a21733495e26b2b6b7831fd3967dbded871f247e740df",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-24T19:29:33Z",
+          "lockedAt": "2026-10-24T19:30:06.869683Z",
+          "marketSpreadHome": 1.5,
+          "marketTotal": 51.5,
+          "marketMoneylineHome": -108,
+          "marketMoneylineAway": -111,
+          "spreadHomePrice": -118,
+          "totalOverPrice": -106,
+          "totalUnderPrice": -114,
+          "observationDigest": "5a258afcbb0670f6961fb6d15c81a910181f96e24c6b659874c5611fc6bcf570"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-24T19:28:50Z",
+          "lockedAt": "2026-10-24T19:30:06.869683Z",
+          "marketSpreadHome": 1.5,
+          "marketTotal": 51.5,
+          "marketMoneylineHome": -102,
+          "marketMoneylineAway": -118,
+          "spreadHomePrice": -115,
+          "totalOverPrice": -115,
+          "totalUnderPrice": -105,
+          "observationDigest": "0c81ea6b72e939761b5077611657bca3c5de8215b8812e789ddbba5cb85d4007"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-24-EASTERNMICHIGAN-OHIO",
@@ -1243,8 +1270,35 @@
       "homeTeam": "Ohio",
       "kickoff": "2026-10-24T20:00:00Z",
       "projectionDigest": "fdaacdefad184225aba8e52e7b0e350a369b6f96b3371c1aead652027ab19372",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-24T19:29:34Z",
+          "lockedAt": "2026-10-24T19:30:06.869683Z",
+          "marketSpreadHome": -11.5,
+          "marketTotal": 48.5,
+          "marketMoneylineHome": -465,
+          "marketMoneylineAway": 340,
+          "spreadHomePrice": -105,
+          "totalOverPrice": -115,
+          "totalUnderPrice": -105,
+          "observationDigest": "efaae803b1f9f278def4f25f67c5b4db094c4c594cab4a742525f2ba5f1600f3"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-24T19:28:50Z",
+          "lockedAt": "2026-10-24T19:30:06.869683Z",
+          "marketSpreadHome": -11.5,
+          "marketTotal": 48.5,
+          "marketMoneylineHome": -485,
+          "marketMoneylineAway": 370,
+          "spreadHomePrice": -112,
+          "totalOverPrice": -112,
+          "totalUnderPrice": -108,
+          "observationDigest": "e6c3ea6fefcede8a5bcb3511d6b68ae5cd2f9c6541949085f4c9a466cd282cc2"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-24-ULMONROE-TROY",
@@ -1253,8 +1307,35 @@
       "homeTeam": "Troy",
       "kickoff": "2026-10-24T20:00:00Z",
       "projectionDigest": "717b742735a8750cf9bedf12eba328895892ea283b01aae5f25e72d9db583d10",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-24T19:29:34Z",
+          "lockedAt": "2026-10-24T19:30:06.869683Z",
+          "marketSpreadHome": -12.5,
+          "marketTotal": 50.5,
+          "marketMoneylineHome": -650,
+          "marketMoneylineAway": 460,
+          "spreadHomePrice": -120,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "1a48f827c3887976b50c43d60f8f9cdcc6d4b9db504585bfa865c8e02257b333"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-24T19:28:50Z",
+          "lockedAt": "2026-10-24T19:30:06.869683Z",
+          "marketSpreadHome": -13.5,
+          "marketTotal": 50.5,
+          "marketMoneylineHome": -625,
+          "marketMoneylineAway": 455,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -112,
+          "totalUnderPrice": -108,
+          "observationDigest": "1b7b9f82c7c9292334a07616125a9193ede163b0d1755181634739372cbe7b39"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-24-LOUISIANA-SOUTHERNMISS",
