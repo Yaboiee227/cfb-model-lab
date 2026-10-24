@@ -34,7 +34,41 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "OFFICIAL_REPORT_CAPTURED_NOT_MODEL_CLEARANCE",
+      "availability": {
+        "reportId": "3297",
+        "conference": "ACC",
+        "publishedAt": "2026-10-24T10:00:00-04:00",
+        "observedAt": "2026-10-24T15:51:01.624680+00:00",
+        "reportType": "Game Day",
+        "capturedBeforeKickoff": true,
+        "numericalAdjustmentApplied": false,
+        "teams": [
+          {
+            "name": "Pittsburgh",
+            "statusCounts": {
+              "Available": 103,
+              "Game Time Decision": 1,
+              "Out": 9
+            }
+          },
+          {
+            "name": "Miami (FL)",
+            "statusCounts": {
+              "Available": 108,
+              "Out": 7
+            }
+          }
+        ]
+      },
+      "officialsReview": {
+        "eventId": "401858274",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858274",
+        "observedAt": "2026-10-24T15:59:30.487235+00:00",
+        "sha256": "4c7cf34a0cc119a52d37ba32056938a92893c7e946574a6bf8f85b7057b59683",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401858496",
@@ -69,7 +103,40 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "OFFICIAL_REPORT_CAPTURED_NOT_MODEL_CLEARANCE",
+      "availability": {
+        "reportId": "3301",
+        "conference": "B10",
+        "publishedAt": "2026-10-24T09:00:00-05:00",
+        "observedAt": "2026-10-24T15:51:01.386843+00:00",
+        "reportType": "Game Day",
+        "capturedBeforeKickoff": true,
+        "numericalAdjustmentApplied": false,
+        "teams": [
+          {
+            "name": "Indiana",
+            "statusCounts": {
+              "Available": 106
+            }
+          },
+          {
+            "name": "Michigan",
+            "statusCounts": {
+              "Out": 10,
+              "Available": 106,
+              "Game Time Decision": 2
+            }
+          }
+        ]
+      },
+      "officialsReview": {
+        "eventId": "401858496",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858496",
+        "observedAt": "2026-10-24T15:59:30.549348+00:00",
+        "sha256": "655f4021893b016eef31b59115c972d37647c9221d766a207456f0deceb6facd",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401856840",
@@ -104,7 +171,43 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "OFFICIAL_REPORT_CAPTURED_NOT_MODEL_CLEARANCE",
+      "availability": {
+        "reportId": "3305",
+        "conference": "B12",
+        "publishedAt": "2026-10-24T09:30:00-05:00",
+        "observedAt": "2026-10-24T15:57:51.401166+00:00",
+        "reportType": "Game Day",
+        "capturedBeforeKickoff": true,
+        "numericalAdjustmentApplied": false,
+        "teams": [
+          {
+            "name": "Texas Tech",
+            "statusCounts": {
+              "Available": 100,
+              "Game Time Decision": 1,
+              "Out": 6,
+              "Exempt": 3
+            }
+          },
+          {
+            "name": "Cincinnati",
+            "statusCounts": {
+              "Available": 104,
+              "Out": 5,
+              "Exempt": 2
+            }
+          }
+        ]
+      },
+      "officialsReview": {
+        "eventId": "401856840",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856840",
+        "observedAt": "2026-10-24T15:59:30.530066+00:00",
+        "sha256": "11260b2e99096942e72479e2b12851ba1c1c0b9ef3652991f7fd64318298eb56",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401856728",
@@ -139,7 +242,42 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "OFFICIAL_REPORT_CAPTURED_NOT_MODEL_CLEARANCE",
+      "availability": {
+        "reportId": "3309",
+        "conference": "SEC",
+        "publishedAt": "2026-10-24T09:30:00-05:00",
+        "observedAt": "2026-10-24T15:51:03.075395+00:00",
+        "reportType": "Game Day",
+        "capturedBeforeKickoff": true,
+        "numericalAdjustmentApplied": false,
+        "teams": [
+          {
+            "name": "LSU",
+            "statusCounts": {
+              "Available": 86,
+              "Out": 5,
+              "Exempt": 21
+            }
+          },
+          {
+            "name": "Auburn",
+            "statusCounts": {
+              "Available": 92,
+              "Exempt": 18,
+              "Out": 3
+            }
+          }
+        ]
+      },
+      "officialsReview": {
+        "eventId": "401856728",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856728",
+        "observedAt": "2026-10-24T15:59:30.493915+00:00",
+        "sha256": "c96e4fc2c7e8945a4aae8c84c925b6c55379e094421db09db9cacaa0638d2505",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401858270",
@@ -174,7 +312,41 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "OFFICIAL_REPORT_CAPTURED_NOT_MODEL_CLEARANCE",
+      "availability": {
+        "reportId": "3313",
+        "conference": "ACC",
+        "publishedAt": "2026-10-24T10:00:00-04:00",
+        "observedAt": "2026-10-24T15:51:01.624680+00:00",
+        "reportType": "Game Day",
+        "capturedBeforeKickoff": true,
+        "numericalAdjustmentApplied": false,
+        "teams": [
+          {
+            "name": "California",
+            "statusCounts": {
+              "Out": 10,
+              "Available": 103
+            }
+          },
+          {
+            "name": "SMU",
+            "statusCounts": {
+              "Available": 93,
+              "Out": 11,
+              "Game Time Decision": 1
+            }
+          }
+        ]
+      },
+      "officialsReview": {
+        "eventId": "401858270",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858270",
+        "observedAt": "2026-10-24T15:59:30.495046+00:00",
+        "sha256": "8383a2331ffe933c208fe63b70992e11f92d89525ae4a7869182be69aeec4d56",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401858498",
@@ -209,7 +381,41 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "OFFICIAL_REPORT_CAPTURED_NOT_MODEL_CLEARANCE",
+      "availability": {
+        "reportId": "3317",
+        "conference": "B10",
+        "publishedAt": "2026-10-24T09:00:00-05:00",
+        "observedAt": "2026-10-24T15:51:01.386843+00:00",
+        "reportType": "Game Day",
+        "capturedBeforeKickoff": true,
+        "numericalAdjustmentApplied": false,
+        "teams": [
+          {
+            "name": "Rutgers",
+            "statusCounts": {
+              "Available": 126,
+              "Out": 3,
+              "Game Time Decision": 5
+            }
+          },
+          {
+            "name": "Northwestern",
+            "statusCounts": {
+              "Available": 110,
+              "Out": 13
+            }
+          }
+        ]
+      },
+      "officialsReview": {
+        "eventId": "401858498",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858498",
+        "observedAt": "2026-10-24T15:59:30.497502+00:00",
+        "sha256": "2dc437aa750a2a1734c597e5ba572aafc804de7ba6bfc27218d1c1376f30a913",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401856841",
@@ -244,7 +450,43 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "OFFICIAL_REPORT_CAPTURED_NOT_MODEL_CLEARANCE",
+      "availability": {
+        "reportId": "3321",
+        "conference": "B12",
+        "publishedAt": "2026-10-24T09:30:00-05:00",
+        "observedAt": "2026-10-24T15:57:51.401166+00:00",
+        "reportType": "Game Day",
+        "capturedBeforeKickoff": true,
+        "numericalAdjustmentApplied": false,
+        "teams": [
+          {
+            "name": "West Virginia",
+            "statusCounts": {
+              "Available": 112,
+              "Out": 7,
+              "Exempt": 2
+            }
+          },
+          {
+            "name": "TCU",
+            "statusCounts": {
+              "Game Time Decision": 1,
+              "Exempt": 8,
+              "Available": 98,
+              "Out": 8
+            }
+          }
+        ]
+      },
+      "officialsReview": {
+        "eventId": "401856841",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856841",
+        "observedAt": "2026-10-24T15:59:30.505377+00:00",
+        "sha256": "e49ca2cb97037e78d43bf9fc0e06838b3faf2c8b8ea4e8b62483e3d283471a1a",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401862809",
@@ -279,7 +521,43 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "OFFICIAL_REPORT_CAPTURED_NOT_MODEL_CLEARANCE",
+      "availability": {
+        "reportId": "3322",
+        "conference": "American",
+        "publishedAt": "2026-10-24T09:00:00-05:00",
+        "observedAt": "2026-10-24T15:51:01.872359+00:00",
+        "reportType": "Game Day",
+        "capturedBeforeKickoff": true,
+        "numericalAdjustmentApplied": false,
+        "teams": [
+          {
+            "name": "Rice",
+            "statusCounts": {
+              "Available": 90,
+              "Out": 10,
+              "Questionable": 1,
+              "Exempt": 1
+            }
+          },
+          {
+            "name": "Fla. Atlantic",
+            "statusCounts": {
+              "Available": 98,
+              "Questionable": 8,
+              "Out": 8
+            }
+          }
+        ]
+      },
+      "officialsReview": {
+        "eventId": "401862809",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401862809",
+        "observedAt": "2026-10-24T15:59:30.486048+00:00",
+        "sha256": "ca21882288cf7c12604520cae87020f7b046cde3945fcc487e2bf63bd8128999",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401866450",
@@ -314,7 +592,42 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "OFFICIAL_REPORT_CAPTURED_NOT_MODEL_CLEARANCE",
+      "availability": {
+        "reportId": "3323",
+        "conference": "MAC",
+        "publishedAt": "2026-10-24T11:00:00-04:00",
+        "observedAt": "2026-10-24T15:58:18.424369+00:00",
+        "reportType": "Game Day",
+        "capturedBeforeKickoff": true,
+        "numericalAdjustmentApplied": false,
+        "teams": [
+          {
+            "name": "Western Mich.",
+            "statusCounts": {
+              "Available": 96,
+              "Questionable": 4,
+              "Out": 4
+            }
+          },
+          {
+            "name": "Toledo",
+            "statusCounts": {
+              "Available": 91,
+              "Out": 11,
+              "Questionable": 4
+            }
+          }
+        ]
+      },
+      "officialsReview": {
+        "eventId": "401866450",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401866450",
+        "observedAt": "2026-10-24T15:59:32.617105+00:00",
+        "sha256": "6841e717ae8b1ee25d565ef02cd6bfadc4954a408897ec34c0222d086dc59ccc",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401856834",
@@ -349,7 +662,42 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "OFFICIAL_REPORT_CAPTURED_NOT_MODEL_CLEARANCE",
+      "availability": {
+        "reportId": "3327",
+        "conference": "B12",
+        "publishedAt": "2026-10-24T10:30:00-05:00",
+        "observedAt": "2026-10-24T15:57:51.401166+00:00",
+        "reportType": "Game Day",
+        "capturedBeforeKickoff": true,
+        "numericalAdjustmentApplied": false,
+        "teams": [
+          {
+            "name": "Baylor",
+            "statusCounts": {
+              "Available": 109,
+              "Out": 5
+            }
+          },
+          {
+            "name": "Kansas",
+            "statusCounts": {
+              "Available": 102,
+              "Out": 6,
+              "Exempt": 7,
+              "Game Time Decision": 1
+            }
+          }
+        ]
+      },
+      "officialsReview": {
+        "eventId": "401856834",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856834",
+        "observedAt": "2026-10-24T15:59:32.641495+00:00",
+        "sha256": "c2b802c949dee518091e4c5013fa1981755936d522ec1aea9be61db088cf52d7",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401866446",
@@ -384,7 +732,15 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "PENDING_REPORT",
+      "officialsReview": {
+        "eventId": "401866446",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401866446",
+        "observedAt": "2026-10-24T15:59:32.603725+00:00",
+        "sha256": "a59667ddb739c401fe9b6173ee69ce06e314d9fba828e2fcb1865aa1191ccfd3",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401866476",
@@ -419,7 +775,15 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "PENDING_REPORT",
+      "officialsReview": {
+        "eventId": "401866476",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401866476",
+        "observedAt": "2026-10-24T15:59:32.529839+00:00",
+        "sha256": "b7d7bcfd6baafeff11b2c691b013c827d9c820bd679b26c4e76e0b5fcfa39513",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401858495",
@@ -454,7 +818,44 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "OFFICIAL_REPORT_CAPTURED_NOT_MODEL_CLEARANCE",
+      "availability": {
+        "reportId": "3332",
+        "conference": "B10",
+        "publishedAt": "2026-10-23T19:00:00-05:00",
+        "observedAt": "2026-10-24T15:51:01.386843+00:00",
+        "reportType": "Update 2",
+        "capturedBeforeKickoff": true,
+        "numericalAdjustmentApplied": false,
+        "teams": [
+          {
+            "name": "Oregon",
+            "statusCounts": {
+              "Available": 86,
+              "Out": 11,
+              "Exempt": 15
+            }
+          },
+          {
+            "name": "Illinois",
+            "statusCounts": {
+              "Available": 98,
+              "Questionable": 1,
+              "Out": 8,
+              "Exempt": 8,
+              "Probable": 1
+            }
+          }
+        ]
+      },
+      "officialsReview": {
+        "eventId": "401858495",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858495",
+        "observedAt": "2026-10-24T15:59:32.601788+00:00",
+        "sha256": "257bfadd0ab1b00dc08a1451ca790b80efee9623a374e34f2ed5722f54a4d097",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401856835",
@@ -489,7 +890,45 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "OFFICIAL_REPORT_CAPTURED_NOT_MODEL_CLEARANCE",
+      "availability": {
+        "reportId": "3336",
+        "conference": "B12",
+        "publishedAt": "2026-10-23T21:00:00-05:00",
+        "observedAt": "2026-10-24T15:57:51.401166+00:00",
+        "reportType": "Update 2",
+        "capturedBeforeKickoff": true,
+        "numericalAdjustmentApplied": false,
+        "teams": [
+          {
+            "name": "BYU",
+            "statusCounts": {
+              "Available": 110,
+              "Out": 1,
+              "Exempt": 5,
+              "Questionable": 1
+            }
+          },
+          {
+            "name": "UCF",
+            "statusCounts": {
+              "Available": 93,
+              "Out": 7,
+              "Probable": 5,
+              "Questionable": 2,
+              "Exempt": 2
+            }
+          }
+        ]
+      },
+      "officialsReview": {
+        "eventId": "401856835",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856835",
+        "observedAt": "2026-10-24T15:59:32.573610+00:00",
+        "sha256": "b595aa09d6030413416afe00cd0910d1ab13b148c07d0946ed6ee9f2207d89b2",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401858499",
@@ -524,7 +963,41 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "OFFICIAL_REPORT_CAPTURED_NOT_MODEL_CLEARANCE",
+      "availability": {
+        "reportId": "3340",
+        "conference": "B10",
+        "publishedAt": "2026-10-23T19:00:00-05:00",
+        "observedAt": "2026-10-24T15:51:01.386843+00:00",
+        "reportType": "Update 2",
+        "capturedBeforeKickoff": true,
+        "numericalAdjustmentApplied": false,
+        "teams": [
+          {
+            "name": "Michigan St.",
+            "statusCounts": {
+              "Available": 94,
+              "Out": 11,
+              "Questionable": 6
+            }
+          },
+          {
+            "name": "UCLA",
+            "statusCounts": {
+              "Available": 112,
+              "Out": 7
+            }
+          }
+        ]
+      },
+      "officialsReview": {
+        "eventId": "401858499",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858499",
+        "observedAt": "2026-10-24T15:59:32.609463+00:00",
+        "sha256": "d91f679536147cc570ec9df13ab6a20023716ca671b9a75184049c3e22a7124f",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401856731",
@@ -559,7 +1032,44 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "OFFICIAL_REPORT_CAPTURED_NOT_MODEL_CLEARANCE",
+      "availability": {
+        "reportId": "3352",
+        "conference": "SEC",
+        "publishedAt": "2026-10-23T19:10:00-05:00",
+        "observedAt": "2026-10-24T15:51:03.075395+00:00",
+        "reportType": "Update 2",
+        "capturedBeforeKickoff": true,
+        "numericalAdjustmentApplied": false,
+        "teams": [
+          {
+            "name": "Tennessee",
+            "statusCounts": {
+              "Out": 6,
+              "Available": 82,
+              "Exempt": 25
+            }
+          },
+          {
+            "name": "South Carolina",
+            "statusCounts": {
+              "Available": 77,
+              "Exempt": 26,
+              "Out": 5,
+              "Doubtful": 1,
+              "Probable": 1
+            }
+          }
+        ]
+      },
+      "officialsReview": {
+        "eventId": "401856731",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856731",
+        "observedAt": "2026-10-24T15:59:32.611538+00:00",
+        "sha256": "6687d84754b2b9e36f0bb94922c25ac9d834ede3c7346e0062b363d85cf753cb",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401856727",
@@ -594,7 +1104,45 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "OFFICIAL_REPORT_CAPTURED_NOT_MODEL_CLEARANCE",
+      "availability": {
+        "reportId": "3344",
+        "conference": "SEC",
+        "publishedAt": "2026-10-23T19:10:00-05:00",
+        "observedAt": "2026-10-24T15:51:03.075395+00:00",
+        "reportType": "Update 2",
+        "capturedBeforeKickoff": true,
+        "numericalAdjustmentApplied": false,
+        "teams": [
+          {
+            "name": "Texas A&M",
+            "statusCounts": {
+              "Available": 107,
+              "Probable": 4,
+              "Out": 3,
+              "Questionable": 1,
+              "Exempt": 2
+            }
+          },
+          {
+            "name": "Alabama",
+            "statusCounts": {
+              "Available": 96,
+              "Out": 6,
+              "Doubtful": 3,
+              "Exempt": 22
+            }
+          }
+        ]
+      },
+      "officialsReview": {
+        "eventId": "401856727",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856727",
+        "observedAt": "2026-10-24T15:59:36.065362+00:00",
+        "sha256": "a20d568df2a3be9e663f9a919c1e821230b3f159529e915c5278dda570f54819",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401858497",
@@ -629,7 +1177,42 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "OFFICIAL_REPORT_CAPTURED_NOT_MODEL_CLEARANCE",
+      "availability": {
+        "reportId": "3348",
+        "conference": "B10",
+        "publishedAt": "2026-10-23T19:00:00-05:00",
+        "observedAt": "2026-10-24T15:51:01.386843+00:00",
+        "reportType": "Update 2",
+        "capturedBeforeKickoff": true,
+        "numericalAdjustmentApplied": false,
+        "teams": [
+          {
+            "name": "Iowa",
+            "statusCounts": {
+              "Available": 106,
+              "Out": 3,
+              "Probable": 2
+            }
+          },
+          {
+            "name": "Minnesota",
+            "statusCounts": {
+              "Available": 101,
+              "Out": 9,
+              "Probable": 3
+            }
+          }
+        ]
+      },
+      "officialsReview": {
+        "eventId": "401858497",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858497",
+        "observedAt": "2026-10-24T15:59:36.053107+00:00",
+        "sha256": "0e1c8232aa72be92b7c9ee10a8990b0d3031fb324f4ae29a15bcfd54356c79c5",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401856730",
@@ -664,7 +1247,45 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "OFFICIAL_REPORT_CAPTURED_NOT_MODEL_CLEARANCE",
+      "availability": {
+        "reportId": "3363",
+        "conference": "SEC",
+        "publishedAt": "2026-10-23T19:10:00-05:00",
+        "observedAt": "2026-10-24T15:51:03.075395+00:00",
+        "reportType": "Update 2",
+        "capturedBeforeKickoff": true,
+        "numericalAdjustmentApplied": false,
+        "teams": [
+          {
+            "name": "Oklahoma",
+            "statusCounts": {
+              "Available": 67,
+              "Exempt": 34,
+              "Out": 7,
+              "Doubtful": 1,
+              "Questionable": 3
+            }
+          },
+          {
+            "name": "Mississippi St.",
+            "statusCounts": {
+              "Available": 70,
+              "Questionable": 1,
+              "Out": 5,
+              "Exempt": 38
+            }
+          }
+        ]
+      },
+      "officialsReview": {
+        "eventId": "401856730",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856730",
+        "observedAt": "2026-10-24T15:59:36.067180+00:00",
+        "sha256": "71892f79486a77b9f680c462eeb0231d5da6ab38fcac6b1208808d8ba48e2f15",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401858273",
@@ -699,7 +1320,42 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "OFFICIAL_REPORT_CAPTURED_NOT_MODEL_CLEARANCE",
+      "availability": {
+        "reportId": "3356",
+        "conference": "ACC",
+        "publishedAt": "2026-10-23T20:00:00-04:00",
+        "observedAt": "2026-10-24T15:51:01.624680+00:00",
+        "reportType": "Update 2",
+        "capturedBeforeKickoff": true,
+        "numericalAdjustmentApplied": false,
+        "teams": [
+          {
+            "name": "Boston College",
+            "statusCounts": {
+              "Available": 113,
+              "Out": 9
+            }
+          },
+          {
+            "name": "Georgia Tech",
+            "statusCounts": {
+              "Out": 14,
+              "Available": 89,
+              "Questionable": 4,
+              "Doubtful": 1
+            }
+          }
+        ]
+      },
+      "officialsReview": {
+        "eventId": "401858273",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858273",
+        "observedAt": "2026-10-24T15:59:36.045316+00:00",
+        "sha256": "5f5e9bc0240a6ddeae175aed3ea26f171b109c33324327294d8609ee0a407bae",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401862810",
@@ -734,7 +1390,15 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "PENDING_REPORT",
+      "officialsReview": {
+        "eventId": "401862810",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401862810",
+        "observedAt": "2026-10-24T15:59:36.069281+00:00",
+        "sha256": "5b8a44bd459fd1aa7f0fee92dc6839cf8cdc9719635acd8fe46dc2e52b2451ce",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401864526",
@@ -769,7 +1433,15 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "REPORT_NOT_RECOVERED",
+      "officialsReview": {
+        "eventId": "401864526",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401864526",
+        "observedAt": "2026-10-24T15:59:36.041745+00:00",
+        "sha256": "210adc53852db83686d90e5a62ce1a0ca773b386698a6ed95030f06472be7f6b",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401866447",
@@ -804,7 +1476,15 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "PENDING_REPORT",
+      "officialsReview": {
+        "eventId": "401866447",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401866447",
+        "observedAt": "2026-10-24T15:59:36.081280+00:00",
+        "sha256": "cf95388a72394d3c3e301d3524e533dfb72a5f2e3aa8ba3b7ef764dedbfd1159",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401866448",
@@ -839,7 +1519,15 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "PENDING_REPORT",
+      "officialsReview": {
+        "eventId": "401866448",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401866448",
+        "observedAt": "2026-10-24T15:59:36.121675+00:00",
+        "sha256": "573b51eeaf15d912aae8b4649047daad0a9abf6bc771557816fd7c760342c84f",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401856839",
@@ -874,7 +1562,45 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "OFFICIAL_REPORT_CAPTURED_NOT_MODEL_CLEARANCE",
+      "availability": {
+        "reportId": "3367",
+        "conference": "B12",
+        "publishedAt": "2026-10-23T21:00:00-05:00",
+        "observedAt": "2026-10-24T15:57:51.401166+00:00",
+        "reportType": "Update 2",
+        "capturedBeforeKickoff": true,
+        "numericalAdjustmentApplied": false,
+        "teams": [
+          {
+            "name": "Kansas St.",
+            "statusCounts": {
+              "Available": 105,
+              "Doubtful": 2,
+              "Questionable": 1,
+              "Exempt": 4
+            }
+          },
+          {
+            "name": "Arizona St.",
+            "statusCounts": {
+              "Available": 96,
+              "Out": 3,
+              "Exempt": 3,
+              "Probable": 1,
+              "Doubtful": 2
+            }
+          }
+        ]
+      },
+      "officialsReview": {
+        "eventId": "401856839",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856839",
+        "observedAt": "2026-10-24T15:59:38.133716+00:00",
+        "sha256": "6410d83706687e280241d0c510e2e4f289435377a1f9f1f74e0432202ae8f16e",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401866449",
@@ -909,7 +1635,15 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "PENDING_REPORT",
+      "officialsReview": {
+        "eventId": "401866449",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401866449",
+        "observedAt": "2026-10-24T15:59:38.095135+00:00",
+        "sha256": "470cb3728ddfab84309f783c39028b2b09c2140cdccbc7e13831a8e9c33beb06",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401871094",
@@ -944,7 +1678,15 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "REPORT_NOT_RECOVERED",
+      "officialsReview": {
+        "eventId": "401871094",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401871094",
+        "observedAt": "2026-10-24T15:59:38.101217+00:00",
+        "sha256": "cb63cb1dc4f831e32973cf4582cceae2b23515f15d8cfab08ecc6953c00285c8",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401864528",
@@ -979,7 +1721,15 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "REPORT_NOT_RECOVERED",
+      "officialsReview": {
+        "eventId": "401864528",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401864528",
+        "observedAt": "2026-10-24T15:59:38.089938+00:00",
+        "sha256": "6770ac44e789abaa6dd2197a2fccd78fde1b365962e69decd808ae8c8b24767b",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401869967",
@@ -1014,7 +1764,15 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "REPORT_NOT_RECOVERED",
+      "officialsReview": {
+        "eventId": "401869967",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401869967",
+        "observedAt": "2026-10-24T15:59:38.092244+00:00",
+        "sha256": "3d03d538836e2dc536e7fea6f5242ba744750b4d289103762a2c7d7ea7bd6ecc",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401871093",
@@ -1049,7 +1807,15 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "REPORT_NOT_RECOVERED",
+      "officialsReview": {
+        "eventId": "401871093",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401871093",
+        "observedAt": "2026-10-24T15:59:38.021813+00:00",
+        "sha256": "c58ab3e66ecc19331006fac974ec626d73ca49979d5883e76940660b56cdeeba",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401860907",
@@ -1084,7 +1850,15 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "REPORT_NOT_RECOVERED",
+      "officialsReview": {
+        "eventId": "401860907",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401860907",
+        "observedAt": "2026-10-24T15:59:38.093204+00:00",
+        "sha256": "3397241dcf89eec46a6e0b340c36ee6ada81e158aa3e4c3eccbb4833c7b6f68c",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401860905",
@@ -1119,7 +1893,15 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "REPORT_NOT_RECOVERED",
+      "officialsReview": {
+        "eventId": "401860905",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401860905",
+        "observedAt": "2026-10-24T15:59:38.057450+00:00",
+        "sha256": "1f43c9e38af4175f872d7b4d72707bfc81a906da10a390fc5f4fcc01c9325ad4",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401856836",
@@ -1154,7 +1936,45 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "OFFICIAL_REPORT_CAPTURED_NOT_MODEL_CLEARANCE",
+      "availability": {
+        "reportId": "3372",
+        "conference": "B12",
+        "publishedAt": "2026-10-23T21:00:00-05:00",
+        "observedAt": "2026-10-24T15:57:51.401166+00:00",
+        "reportType": "Update 2",
+        "capturedBeforeKickoff": true,
+        "numericalAdjustmentApplied": false,
+        "teams": [
+          {
+            "name": "Colorado",
+            "statusCounts": {
+              "Available": 80,
+              "Exempt": 11,
+              "Out": 5,
+              "Probable": 3
+            }
+          },
+          {
+            "name": "Oklahoma St.",
+            "statusCounts": {
+              "Available": 107,
+              "Exempt": 5,
+              "Questionable": 1,
+              "Probable": 1,
+              "Out": 1
+            }
+          }
+        ]
+      },
+      "officialsReview": {
+        "eventId": "401856836",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856836",
+        "observedAt": "2026-10-24T15:59:40.257158+00:00",
+        "sha256": "eadfce326d70df3b120ab53f0f35045a7a9ae38291c0b392186fe3ae7962d61d",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401858276",
@@ -1189,7 +2009,43 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "OFFICIAL_REPORT_CAPTURED_NOT_MODEL_CLEARANCE",
+      "availability": {
+        "reportId": "3376",
+        "conference": "ACC",
+        "publishedAt": "2026-10-23T20:00:00-04:00",
+        "observedAt": "2026-10-24T15:51:01.624680+00:00",
+        "reportType": "Update 2",
+        "capturedBeforeKickoff": true,
+        "numericalAdjustmentApplied": false,
+        "teams": [
+          {
+            "name": "Virginia Tech",
+            "statusCounts": {
+              "Available": 106,
+              "Exempt": 4,
+              "Out": 10
+            }
+          },
+          {
+            "name": "Clemson",
+            "statusCounts": {
+              "Available": 105,
+              "Out": 10,
+              "Exempt": 5,
+              "Questionable": 1
+            }
+          }
+        ]
+      },
+      "officialsReview": {
+        "eventId": "401858276",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858276",
+        "observedAt": "2026-10-24T15:59:40.293586+00:00",
+        "sha256": "b9824cb24fdf7cadc05b9c767ff735063f6259cf95be6f6cfcaff11d04f14724",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401869935",
@@ -1224,7 +2080,15 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "REPORT_NOT_RECOVERED",
+      "officialsReview": {
+        "eventId": "401869935",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401869935",
+        "observedAt": "2026-10-24T15:59:40.241942+00:00",
+        "sha256": "4efbec4df8d9b2a46ee0f912ae3c1b2811569bf831a48b63dafd5770609d7757",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401856732",
@@ -1259,7 +2123,46 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "OFFICIAL_REPORT_CAPTURED_NOT_MODEL_CLEARANCE",
+      "availability": {
+        "reportId": "3380",
+        "conference": "SEC",
+        "publishedAt": "2026-10-23T19:10:00-05:00",
+        "observedAt": "2026-10-24T15:51:03.075395+00:00",
+        "reportType": "Update 2",
+        "capturedBeforeKickoff": true,
+        "numericalAdjustmentApplied": false,
+        "teams": [
+          {
+            "name": "Ole Miss",
+            "statusCounts": {
+              "Available": 94,
+              "Out": 8,
+              "Exempt": 17,
+              "Questionable": 1,
+              "Probable": 1
+            }
+          },
+          {
+            "name": "Texas",
+            "statusCounts": {
+              "Available": 79,
+              "Out": 5,
+              "Probable": 1,
+              "Exempt": 25,
+              "Questionable": 1
+            }
+          }
+        ]
+      },
+      "officialsReview": {
+        "eventId": "401856732",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856732",
+        "observedAt": "2026-10-24T15:59:40.249904+00:00",
+        "sha256": "a5c3d67b82362fd98aef1d980a27158558f372e207d464e655bf08233e98a956",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401856729",
@@ -1294,7 +2197,43 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "OFFICIAL_REPORT_CAPTURED_NOT_MODEL_CLEARANCE",
+      "availability": {
+        "reportId": "3384",
+        "conference": "SEC",
+        "publishedAt": "2026-10-23T19:10:00-05:00",
+        "observedAt": "2026-10-24T15:51:03.075395+00:00",
+        "reportType": "Update 2",
+        "capturedBeforeKickoff": true,
+        "numericalAdjustmentApplied": false,
+        "teams": [
+          {
+            "name": "Vanderbilt",
+            "statusCounts": {
+              "Available": 76,
+              "Out": 9,
+              "Exempt": 32
+            }
+          },
+          {
+            "name": "Kentucky",
+            "statusCounts": {
+              "Available": 80,
+              "Exempt": 23,
+              "Out": 6,
+              "Questionable": 2
+            }
+          }
+        ]
+      },
+      "officialsReview": {
+        "eventId": "401856729",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856729",
+        "observedAt": "2026-10-24T15:59:40.305248+00:00",
+        "sha256": "38735c38685443657131c3e9af90e1f2653eec300d89962ca5ba2b33e8376dc5",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401858500",
@@ -1329,7 +2268,46 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "OFFICIAL_REPORT_CAPTURED_NOT_MODEL_CLEARANCE",
+      "availability": {
+        "reportId": "3388",
+        "conference": "B10",
+        "publishedAt": "2026-10-23T19:00:00-05:00",
+        "observedAt": "2026-10-24T15:51:01.386843+00:00",
+        "reportType": "Update 2",
+        "capturedBeforeKickoff": true,
+        "numericalAdjustmentApplied": false,
+        "teams": [
+          {
+            "name": "Southern California",
+            "statusCounts": {
+              "Available": 80,
+              "Probable": 2,
+              "Out": 6,
+              "Questionable": 3,
+              "Exempt": 38
+            }
+          },
+          {
+            "name": "Wisconsin",
+            "statusCounts": {
+              "Available": 77,
+              "Probable": 3,
+              "Out": 1,
+              "Questionable": 2,
+              "Exempt": 30
+            }
+          }
+        ]
+      },
+      "officialsReview": {
+        "eventId": "401858500",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858500",
+        "observedAt": "2026-10-24T15:59:40.261040+00:00",
+        "sha256": "331542b7cfe31b0474451a5112acd63b9803345141978841c645bb5335951172",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401856838",
@@ -1364,7 +2342,42 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "OFFICIAL_REPORT_CAPTURED_NOT_MODEL_CLEARANCE",
+      "availability": {
+        "reportId": "3392",
+        "conference": "B12",
+        "publishedAt": "2026-10-23T21:00:00-05:00",
+        "observedAt": "2026-10-24T15:57:51.401166+00:00",
+        "reportType": "Update 2",
+        "capturedBeforeKickoff": true,
+        "numericalAdjustmentApplied": false,
+        "teams": [
+          {
+            "name": "Iowa St.",
+            "statusCounts": {
+              "Available": 111,
+              "Exempt": 10,
+              "Out": 5
+            }
+          },
+          {
+            "name": "Arizona",
+            "statusCounts": {
+              "Available": 100,
+              "Exempt": 3,
+              "Out": 7
+            }
+          }
+        ]
+      },
+      "officialsReview": {
+        "eventId": "401856838",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856838",
+        "observedAt": "2026-10-24T15:59:40.244112+00:00",
+        "sha256": "39a53fcd9c9ac084bc35c6b37f78bcaa900af902983776395ab70069691bceea",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401858275",
@@ -1399,7 +2412,43 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "OFFICIAL_REPORT_CAPTURED_NOT_MODEL_CLEARANCE",
+      "availability": {
+        "reportId": "3396",
+        "conference": "ACC",
+        "publishedAt": "2026-10-23T20:00:00-04:00",
+        "observedAt": "2026-10-24T15:51:01.624680+00:00",
+        "reportType": "Update 2",
+        "capturedBeforeKickoff": true,
+        "numericalAdjustmentApplied": false,
+        "teams": [
+          {
+            "name": "Syracuse",
+            "statusCounts": {
+              "Available": 102,
+              "Probable": 3,
+              "Out": 6
+            }
+          },
+          {
+            "name": "North Carolina",
+            "statusCounts": {
+              "Available": 91,
+              "Probable": 6,
+              "Out": 8,
+              "Exempt": 6
+            }
+          }
+        ]
+      },
+      "officialsReview": {
+        "eventId": "401858275",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858275",
+        "observedAt": "2026-10-24T15:59:40.202628+00:00",
+        "sha256": "27be8722718626b4e5b54054bde5fe8f537f814e6675b8306335f0d28beb5169",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401860906",
@@ -1434,7 +2483,15 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "REPORT_NOT_RECOVERED",
+      "officialsReview": {
+        "eventId": "401860906",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401860906",
+        "observedAt": "2026-10-24T15:59:42.653334+00:00",
+        "sha256": "177cb1c48e1163c9732eb83b8dd2d11bf1ff891ac97a744fa1b909944fc09bdc",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401862811",
@@ -1469,7 +2526,15 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "PENDING_REPORT",
+      "officialsReview": {
+        "eventId": "401862811",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401862811",
+        "observedAt": "2026-10-24T15:59:42.657755+00:00",
+        "sha256": "3163779589a9b4e030a0c263db3c611aad14eb5783dfc657c9e0fa9d09327b6e",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401864527",
@@ -1504,7 +2569,15 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "REPORT_NOT_RECOVERED",
+      "officialsReview": {
+        "eventId": "401864527",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401864527",
+        "observedAt": "2026-10-24T15:59:42.697592+00:00",
+        "sha256": "c5e38cd6cc9de706999a647127d8bb31880f5607b088d612db7fb6bc54393422",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     },
     {
       "eventId": "401856837",
@@ -1539,7 +2612,43 @@
           "isPremium": false
         }
       },
-      "personnelReview": "NOT_CLEARED_EMPTY_FEED_IS_NOT_AVAILABILITY_CONFIRMATION"
+      "personnelReview": "OFFICIAL_REPORT_CAPTURED_NOT_MODEL_CLEARANCE",
+      "availability": {
+        "reportId": "3401",
+        "conference": "B12",
+        "publishedAt": "2026-10-23T21:00:00-05:00",
+        "observedAt": "2026-10-24T15:57:51.401166+00:00",
+        "reportType": "Update 2",
+        "capturedBeforeKickoff": true,
+        "numericalAdjustmentApplied": false,
+        "teams": [
+          {
+            "name": "Houston",
+            "statusCounts": {
+              "Available": 108,
+              "Out": 2,
+              "Probable": 4,
+              "Exempt": 2
+            }
+          },
+          {
+            "name": "Utah",
+            "statusCounts": {
+              "Available": 101,
+              "Out": 3,
+              "Exempt": 2
+            }
+          }
+        ]
+      },
+      "officialsReview": {
+        "eventId": "401856837",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856837",
+        "observedAt": "2026-10-24T15:59:42.646155+00:00",
+        "sha256": "106f6ff43cbdab3561c59807fc58ec582f21a605d9486113e872fbd6d341ad94",
+        "officials": [],
+        "status": "STATUS_SCHEDULED"
+      }
     }
   ],
   "reportSources": [
@@ -1586,13 +2695,19 @@
     "projectionsComplete": 44,
     "marketComparisonsComplete": 44,
     "frozenDigestVerified": true,
-    "websiteFilesMatchRepository": true
+    "websiteFilesMatchRepository": true,
+    "officialReportsRecovered": 27,
+    "gameDayReportsRecovered": 10,
+    "pendingReportGames": 7,
+    "unrecoveredReportGames": 10
   },
   "policy": "No empty feed is treated as clearance. No frozen projection changes. Post-kickoff captures cannot establish pregame evidence.",
   "limitations": [
-    "Player-level official reports were not accessible from retrieved conference page shells; final injury clearance remains unresolved.",
+    "Player-level reports recovered for 27/44 games. Report coverage is not model clearance; later reports and unresolved player designations still require review.",
     "No referee assignments returned by game feeds; missing does not mean no crew assigned.",
     "Weather fields are ESPN context, not a completed NWS forecast review.",
     "Browser rendering test unavailable locally; served file integrity verified."
-  ]
+  ],
+  "availabilityUpdatedAt": "2026-10-24T16:00:51.708704+00:00",
+  "availabilityEvidence": "availability-reconciled.json"
 }
