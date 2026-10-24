@@ -16,16 +16,16 @@
   "lockWindowMinutes": 30.0,
   "maxObservationAgeMinutes": 35.0,
   "scopeRestricted": true,
-  "updatedAt": "2026-10-24T15:42:14.254958Z",
+  "updatedAt": "2026-10-24T16:56:06.212178Z",
   "counts": {
     "foundationGames": 56,
     "activeScopeGames": 53,
     "pausedGames": 0,
     "preservedOutOfScopeLockedGames": 3,
-    "gamesWithMarketLock": 16,
-    "bookObservationsLocked": 32,
-    "newBookObservationsThisRun": 0,
-    "pendingGames": 35,
+    "gamesWithMarketLock": 19,
+    "bookObservationsLocked": 38,
+    "newBookObservationsThisRun": 6,
+    "pendingGames": 32,
     "missedGames": 5
   },
   "games": [
@@ -678,8 +678,35 @@
       "homeTeam": "Kent State",
       "kickoff": "2026-10-24T17:00:00Z",
       "projectionDigest": "0674abc73c3d06f0dd691260f76fed568a5aad1aa4ae074e5d5b24cdb83e008c",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-24T16:40:31Z",
+          "lockedAt": "2026-10-24T16:56:06.212178Z",
+          "marketSpreadHome": -2.5,
+          "marketTotal": 47.5,
+          "marketMoneylineHome": -154,
+          "marketMoneylineAway": 128,
+          "spreadHomePrice": -124,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "90cdeca7704553b12598f27bd259d1dc2c70d01e202759bec6cdb56370191965"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-24T16:40:49Z",
+          "lockedAt": "2026-10-24T16:56:06.212178Z",
+          "marketSpreadHome": -3.0,
+          "marketTotal": 48.5,
+          "marketMoneylineHome": -148,
+          "marketMoneylineAway": 124,
+          "spreadHomePrice": -102,
+          "totalOverPrice": -105,
+          "totalUnderPrice": -115,
+          "observationDigest": "ec65d147171b20291704ae590d434ce4b1b6e04a927c611e736f0a6e7df0c413"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-24-BAYLOR-KANSAS",
@@ -688,8 +715,35 @@
       "homeTeam": "Kansas",
       "kickoff": "2026-10-24T17:00:00Z",
       "projectionDigest": "03f9e70fab2e4da61d4412460ea77a5b0b0e087adc6f1843eac96ac86b396ae3",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-24T16:40:31Z",
+          "lockedAt": "2026-10-24T16:56:06.212178Z",
+          "marketSpreadHome": -1.5,
+          "marketTotal": 53.5,
+          "marketMoneylineHome": -115,
+          "marketMoneylineAway": -104,
+          "spreadHomePrice": -105,
+          "totalOverPrice": -112,
+          "totalUnderPrice": -108,
+          "observationDigest": "590bdbcf569f15f4c0ff39bd64f78ddd86f8f9fa7bb3dbb4b9d5c6cdbca009fd"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-24T16:40:49Z",
+          "lockedAt": "2026-10-24T16:56:06.212178Z",
+          "marketSpreadHome": -1.5,
+          "marketTotal": 54.5,
+          "marketMoneylineHome": -118,
+          "marketMoneylineAway": -102,
+          "spreadHomePrice": -102,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "d293f596d26753b1a8f2992435a18dfdd22ef16af53bba057c86bbde82e12f8c"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-24-MIAMIOH-CENTRALMICHIGAN",
@@ -698,8 +752,35 @@
       "homeTeam": "Central Michigan",
       "kickoff": "2026-10-24T17:00:00Z",
       "projectionDigest": "9b14ab8bb28ca7f18322c4791e426f921efba9f539189b9a15238d3b2adf4588",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-24T16:40:31Z",
+          "lockedAt": "2026-10-24T16:56:06.212178Z",
+          "marketSpreadHome": 3.5,
+          "marketTotal": 40.5,
+          "marketMoneylineHome": 140,
+          "marketMoneylineAway": -170,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -112,
+          "totalUnderPrice": -108,
+          "observationDigest": "5fb35378914e46175bf0e29f5444406d54ffe2f30f9bc0f5046b57ac3caee6c7"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-24T16:40:49Z",
+          "lockedAt": "2026-10-24T16:56:06.212178Z",
+          "marketSpreadHome": 3.5,
+          "marketTotal": 40.5,
+          "marketMoneylineHome": 145,
+          "marketMoneylineAway": -175,
+          "spreadHomePrice": -112,
+          "totalOverPrice": -112,
+          "totalUnderPrice": -108,
+          "observationDigest": "fec5564c7194b97504c6010a18720c10a601c4dd033c32b5e0f081dd8cff450e"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-24-OREGON-ILLINOIS",
