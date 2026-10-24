@@ -16,17 +16,17 @@
   "lockWindowMinutes": 30.0,
   "maxObservationAgeMinutes": 35.0,
   "scopeRestricted": true,
-  "updatedAt": "2026-10-23T04:44:10.143Z",
+  "updatedAt": "2026-10-24T15:42:14.254958Z",
   "counts": {
     "foundationGames": 56,
-    "activeScopeGames": 7,
-    "pausedGames": 49,
-    "preservedOutOfScopeLockedGames": 0,
-    "gamesWithMarketLock": 7,
-    "bookObservationsLocked": 14,
-    "newBookObservationsThisRun": 0,
-    "pendingGames": 0,
-    "missedGames": 0
+    "activeScopeGames": 53,
+    "pausedGames": 0,
+    "preservedOutOfScopeLockedGames": 3,
+    "gamesWithMarketLock": 16,
+    "bookObservationsLocked": 32,
+    "newBookObservationsThisRun": 18,
+    "pendingGames": 35,
+    "missedGames": 5
   },
   "games": [
     {
@@ -296,7 +296,7 @@
       "kickoff": "2026-10-23T23:00:00Z",
       "projectionDigest": "ac8c27876df7b09dfcab509a5258b3e96fc1fae76aaf4a9ed50a925020a118be",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "MISSED"
     },
     {
       "gameId": "2026-10-23-MASSACHUSETTS-UCONN",
@@ -306,7 +306,7 @@
       "kickoff": "2026-10-23T23:00:00Z",
       "projectionDigest": "e28b611abc7981dc14eab506b169856f8f7b94fbec5e9936fb378e9e7d9d1838",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "MISSED"
     },
     {
       "gameId": "2026-10-24-ARMY-TULSA",
@@ -316,7 +316,7 @@
       "kickoff": "2026-10-24T00:30:00Z",
       "projectionDigest": "069fb25d7a8b71a2564fcff9e206994a79617b0d2721c695fe1773949e6a8f2e",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "MISSED"
     },
     {
       "gameId": "2026-10-24-AIRFORCE-WYOMING",
@@ -326,7 +326,7 @@
       "kickoff": "2026-10-24T01:00:00Z",
       "projectionDigest": "0f5d93d1b02d155e5a2bbc9f582826318cf4bdac375d8f66689b6727258e7ff9",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "MISSED"
     },
     {
       "gameId": "2026-10-24-NCSTATE-STANFORD",
@@ -336,7 +336,7 @@
       "kickoff": "2026-10-24T02:30:00Z",
       "projectionDigest": "eb80be12b6c2c447ae176b44dcfee1fd23b9c0649df683275c5ab147a5fb9991",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "MISSED"
     },
     {
       "gameId": "2026-10-24-CALIFORNIA-SMU",
@@ -345,8 +345,35 @@
       "homeTeam": "SMU",
       "kickoff": "2026-10-24T16:00:00Z",
       "projectionDigest": "dcce36ec5b06381478354641845ef94a4fb7572cd33a5916d621718221091d02",
-      "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-24T15:31:01Z",
+          "lockedAt": "2026-10-24T15:42:14.254958Z",
+          "marketSpreadHome": -18.5,
+          "marketTotal": 55.5,
+          "marketMoneylineHome": -1250,
+          "marketMoneylineAway": 740,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -105,
+          "totalUnderPrice": -115,
+          "observationDigest": "5f2ae2d8ca728f301e60bca0c01541fb56f68be2d9a450b1264a2dded179bc44"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-24T15:32:08Z",
+          "lockedAt": "2026-10-24T15:42:14.254958Z",
+          "marketSpreadHome": -18.5,
+          "marketTotal": 55.5,
+          "marketMoneylineHome": -1100,
+          "marketMoneylineAway": 700,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -105,
+          "totalUnderPrice": -115,
+          "observationDigest": "0d93eb847361f267cb1b5e5e63f6d4c5e31677c76885350f13ccff581b198da5"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-24-INDIANA-MICHIGAN",
@@ -355,8 +382,35 @@
       "homeTeam": "Michigan",
       "kickoff": "2026-10-24T16:00:00Z",
       "projectionDigest": "b51652e6006c7f9e280eee8e900de233c6c935a6a9f189755cfa1a9db3989ef8",
-      "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-24T15:31:01Z",
+          "lockedAt": "2026-10-24T15:42:14.254958Z",
+          "marketSpreadHome": 7.5,
+          "marketTotal": 42.5,
+          "marketMoneylineHome": 250,
+          "marketMoneylineAway": -315,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "5d0754da866fc968188c26d50ab46cc5114c8cfb26978808b1820427c30b609e"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-24T15:32:08Z",
+          "lockedAt": "2026-10-24T15:42:14.254958Z",
+          "marketSpreadHome": 7.5,
+          "marketTotal": 42.5,
+          "marketMoneylineHome": 240,
+          "marketMoneylineAway": -298,
+          "spreadHomePrice": -115,
+          "totalOverPrice": -115,
+          "totalUnderPrice": -105,
+          "observationDigest": "57d5b548a6eac41fc924822cdf9b21fe7f70c325cae2e7c77c6b1c114f4ca005"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-24-LSU-AUBURN",
@@ -365,8 +419,35 @@
       "homeTeam": "Auburn",
       "kickoff": "2026-10-24T16:00:00Z",
       "projectionDigest": "4bd3f0e23dfe88ed74cf8b3f6e5c469f830fe7cab8869fe277a57661136010b1",
-      "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-24T15:31:01Z",
+          "lockedAt": "2026-10-24T15:42:14.254958Z",
+          "marketSpreadHome": 7.5,
+          "marketTotal": 52.5,
+          "marketMoneylineHome": 215,
+          "marketMoneylineAway": -265,
+          "spreadHomePrice": -120,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "ab349cc8fcd874961632b53fe3df3c4d020a301701111dc3b9d7b2e812f91a0d"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-24T15:32:08Z",
+          "lockedAt": "2026-10-24T15:42:14.254958Z",
+          "marketSpreadHome": 7.0,
+          "marketTotal": 52.5,
+          "marketMoneylineHome": 230,
+          "marketMoneylineAway": -285,
+          "spreadHomePrice": -105,
+          "totalOverPrice": -105,
+          "totalUnderPrice": -115,
+          "observationDigest": "abb23be2804451c7bb88d2fed7855c9106e7e91fc2ad0db29715c136cf138215"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-24-PITTSBURGH-MIAMI",
@@ -375,8 +456,35 @@
       "homeTeam": "Miami",
       "kickoff": "2026-10-24T16:00:00Z",
       "projectionDigest": "278795334741951ad1c9741288de44cf35c7c95ad8d0bdfd57e62b1eb4dba63d",
-      "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-24T15:31:01Z",
+          "lockedAt": "2026-10-24T15:42:14.254958Z",
+          "marketSpreadHome": -20.5,
+          "marketTotal": 50.5,
+          "marketMoneylineHome": -2000,
+          "marketMoneylineAway": 980,
+          "spreadHomePrice": -118,
+          "totalOverPrice": -115,
+          "totalUnderPrice": -105,
+          "observationDigest": "044c2e43c49f1bb9057cab31bbab920255b5c4f494ba3726ea22cba0c205c324"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-24T15:32:08Z",
+          "lockedAt": "2026-10-24T15:42:14.254958Z",
+          "marketSpreadHome": -20.5,
+          "marketTotal": 50.5,
+          "marketMoneylineHome": -1800,
+          "marketMoneylineAway": 1000,
+          "spreadHomePrice": -115,
+          "totalOverPrice": -118,
+          "totalUnderPrice": -102,
+          "observationDigest": "0d41eaac32fed644ad58c827ce869ec1f3a2cdbf4ddbbf1cfa5d2b2f6a8799fe"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-24-RICE-FLORIDAATLANTIC",
@@ -385,8 +493,35 @@
       "homeTeam": "Florida Atlantic",
       "kickoff": "2026-10-24T16:00:00Z",
       "projectionDigest": "15450779f24ba0cd139d3473762d99d0fc92b4fbc2d3ca0ba2483361f272dff4",
-      "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-24T15:31:01Z",
+          "lockedAt": "2026-10-24T15:42:14.254958Z",
+          "marketSpreadHome": -9.5,
+          "marketTotal": 54.5,
+          "marketMoneylineHome": -365,
+          "marketMoneylineAway": 285,
+          "spreadHomePrice": -122,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "bae2699a311310b483d6bf7c9f8dce26f9567fb2024a47510b7ba1bc197da80d"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-24T15:32:08Z",
+          "lockedAt": "2026-10-24T15:42:14.254958Z",
+          "marketSpreadHome": -10.0,
+          "marketTotal": 54.5,
+          "marketMoneylineHome": -340,
+          "marketMoneylineAway": 270,
+          "spreadHomePrice": -105,
+          "totalOverPrice": -112,
+          "totalUnderPrice": -108,
+          "observationDigest": "69836eace3777f59c76af38c47313fa83c67c0066b959bcfeee9c6a996eaa8c7"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-24-RUTGERS-NORTHWESTERN",
@@ -395,8 +530,35 @@
       "homeTeam": "Northwestern",
       "kickoff": "2026-10-24T16:00:00Z",
       "projectionDigest": "32a860a673d1c91476c31cafc1bc90eb73df717bc525bce4eb6f7642f840a7f4",
-      "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-24T15:31:01Z",
+          "lockedAt": "2026-10-24T15:42:14.254958Z",
+          "marketSpreadHome": -14.5,
+          "marketTotal": 58.5,
+          "marketMoneylineHome": -820,
+          "marketMoneylineAway": 550,
+          "spreadHomePrice": -115,
+          "totalOverPrice": -118,
+          "totalUnderPrice": -104,
+          "observationDigest": "de77b96a63e68172a35818056985395446b4b797f631e570437fae07d783535a"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-24T15:32:08Z",
+          "lockedAt": "2026-10-24T15:42:14.254958Z",
+          "marketSpreadHome": -14.5,
+          "marketTotal": 59.5,
+          "marketMoneylineHome": -750,
+          "marketMoneylineAway": 525,
+          "spreadHomePrice": -112,
+          "totalOverPrice": -105,
+          "totalUnderPrice": -115,
+          "observationDigest": "3cafa4688c9c92db86efeb821f636891fe1269793fc602f2b0b251b739b81b7c"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-24-TEXASTECH-CINCINNATI",
@@ -405,8 +567,35 @@
       "homeTeam": "Cincinnati",
       "kickoff": "2026-10-24T16:00:00Z",
       "projectionDigest": "833c07f4f79449a0ab165d492a5e8446d106baaf87a5cc0c44b05bede8757912",
-      "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-24T15:31:01Z",
+          "lockedAt": "2026-10-24T15:42:14.254958Z",
+          "marketSpreadHome": 10.5,
+          "marketTotal": 57.5,
+          "marketMoneylineHome": 330,
+          "marketMoneylineAway": -430,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -115,
+          "totalUnderPrice": -105,
+          "observationDigest": "f53d29bf9f33451bb96370a60605e231fa95f963f60a50b468e355fcf480a8f5"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-24T15:32:08Z",
+          "lockedAt": "2026-10-24T15:42:14.254958Z",
+          "marketSpreadHome": 10.5,
+          "marketTotal": 57.5,
+          "marketMoneylineHome": 340,
+          "marketMoneylineAway": -440,
+          "spreadHomePrice": -108,
+          "totalOverPrice": -115,
+          "totalUnderPrice": -105,
+          "observationDigest": "3b262a42b45372c399f28a7d74d59e38be3e72c5d295a57a7e8b505c25f54771"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-24-WESTVIRGINIA-TCU",
@@ -415,8 +604,35 @@
       "homeTeam": "TCU",
       "kickoff": "2026-10-24T16:00:00Z",
       "projectionDigest": "a61fc8f9a4ba78e7da5358b38483d94e515dc46ddca424140cefb048a24f01fc",
-      "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-24T15:31:01Z",
+          "lockedAt": "2026-10-24T15:42:14.254958Z",
+          "marketSpreadHome": -10.5,
+          "marketTotal": 58.5,
+          "marketMoneylineHome": -400,
+          "marketMoneylineAway": 310,
+          "spreadHomePrice": 100,
+          "totalOverPrice": -118,
+          "totalUnderPrice": -104,
+          "observationDigest": "355a896004f1cfa53315da1324deb294c2a8a635adfe109b092dd21dcf900c41"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-24T15:32:08Z",
+          "lockedAt": "2026-10-24T15:42:14.254958Z",
+          "marketSpreadHome": -10.0,
+          "marketTotal": 58.5,
+          "marketMoneylineHome": -410,
+          "marketMoneylineAway": 320,
+          "spreadHomePrice": -112,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "6fd7a5679da061782d2cef23f5591b2e3aab630347e2b5161f1d12d3f91e3f36"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-24-WESTERNMICHIGAN-TOLEDO",
@@ -425,8 +641,35 @@
       "homeTeam": "Toledo",
       "kickoff": "2026-10-24T16:00:00Z",
       "projectionDigest": "e4d92c94803138eabefad01295256c6535fcb9b4d878a0f085dd91c250d4b740",
-      "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-24T15:31:01Z",
+          "lockedAt": "2026-10-24T15:42:14.254958Z",
+          "marketSpreadHome": -2.5,
+          "marketTotal": 47.5,
+          "marketMoneylineHome": -140,
+          "marketMoneylineAway": 116,
+          "spreadHomePrice": -118,
+          "totalOverPrice": -114,
+          "totalUnderPrice": -106,
+          "observationDigest": "1eb7f2b8fc8cf0afcb93bc93ec35845ff8bd60805c2a5ced6e83be66fe3a9432"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-24T15:32:08Z",
+          "lockedAt": "2026-10-24T15:42:14.254958Z",
+          "marketSpreadHome": -2.5,
+          "marketTotal": 48.5,
+          "marketMoneylineHome": -142,
+          "marketMoneylineAway": 120,
+          "spreadHomePrice": -118,
+          "totalOverPrice": -105,
+          "totalUnderPrice": -115,
+          "observationDigest": "b7e587affa775ca66c482d2a6bb57a097f64ea18d9ca8ebc59dcbf4364e94356"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-24-AKRON-KENTSTATE",
@@ -436,7 +679,7 @@
       "kickoff": "2026-10-24T17:00:00Z",
       "projectionDigest": "0674abc73c3d06f0dd691260f76fed568a5aad1aa4ae074e5d5b24cdb83e008c",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-BAYLOR-KANSAS",
@@ -446,7 +689,7 @@
       "kickoff": "2026-10-24T17:00:00Z",
       "projectionDigest": "03f9e70fab2e4da61d4412460ea77a5b0b0e087adc6f1843eac96ac86b396ae3",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-MIAMIOH-CENTRALMICHIGAN",
@@ -456,7 +699,7 @@
       "kickoff": "2026-10-24T17:00:00Z",
       "projectionDigest": "9b14ab8bb28ca7f18322c4791e426f921efba9f539189b9a15238d3b2adf4588",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-OREGON-ILLINOIS",
@@ -466,7 +709,7 @@
       "kickoff": "2026-10-24T19:00:00Z",
       "projectionDigest": "611fe222699256ba13676866f8ebf92bad5f4caf8c18aac3c8fd70f377d579d7",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-BYU-UCF",
@@ -476,7 +719,7 @@
       "kickoff": "2026-10-24T19:30:00Z",
       "projectionDigest": "876abdaa9c4638018b01f9c128ed3ee1547ba78f213702f0cf5f6dcc564efc42",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-BOSTONCOLLEGE-GEORGIATECH",
@@ -486,7 +729,7 @@
       "kickoff": "2026-10-24T19:30:00Z",
       "projectionDigest": "e7eff4f75aea074f20a636cd56f00608551057f9dd6919b1cef2bbeb797ef7f4",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-BOWLINGGREEN-BUFFALO",
@@ -496,7 +739,7 @@
       "kickoff": "2026-10-24T19:30:00Z",
       "projectionDigest": "893df08229a2a0e0eabcc5427756adc8f3393446f039fcc45dd37e5d2dccca64",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-HAWAII-NORTHERNILLINOIS",
@@ -506,7 +749,7 @@
       "kickoff": "2026-10-24T19:30:00Z",
       "projectionDigest": "8bdfc3c88a77cc51b0d9e7ec3fe9c544ff2b839d2b6b35f32738160b14e58344",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-IOWA-MINNESOTA",
@@ -516,7 +759,7 @@
       "kickoff": "2026-10-24T19:30:00Z",
       "projectionDigest": "fa565396a5f0d6e40af0721dadd59f1fcb84dad37c53cf133e48d27f08e124d6",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-MICHIGANSTATE-UCLA",
@@ -526,7 +769,7 @@
       "kickoff": "2026-10-24T19:30:00Z",
       "projectionDigest": "f380117808f067db8f3494e201878f6f1ef5cf775f2ef019e8420713fe2eeffb",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-NORTHTEXAS-NAVY",
@@ -536,7 +779,7 @@
       "kickoff": "2026-10-24T19:30:00Z",
       "projectionDigest": "50b840afc38208d17930e21768804292ace06c0c2771207639aa0a84f374e0aa",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-OKLAHOMA-MISSISSIPPISTATE",
@@ -546,7 +789,7 @@
       "kickoff": "2026-10-24T19:30:00Z",
       "projectionDigest": "ebfe6cc5b912bc6578fd82e381c720013b5a273bd399f1435caacdb0906208d7",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-SACRAMENTOSTATE-BALLSTATE",
@@ -556,7 +799,7 @@
       "kickoff": "2026-10-24T19:30:00Z",
       "projectionDigest": "467d17f653d84aacd0c4dc2cc9e39be3ed62d7a00f3fc153618eeeff9a1f5cb7",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-TENNESSEE-SOUTHCAROLINA",
@@ -566,7 +809,7 @@
       "kickoff": "2026-10-24T19:30:00Z",
       "projectionDigest": "ff4afb941720d8d9da6bc6fcfa62836ec76791f2b67e86e23eec0ed5ec1503c8",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-TEXASAM-ALABAMA",
@@ -576,7 +819,7 @@
       "kickoff": "2026-10-24T19:30:00Z",
       "projectionDigest": "0bc476e40aaf2ae2d71020e7489734d06bc996142a056c9f486894e5b2f6fac0",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-KANSASSTATE-ARIZONASTATE",
@@ -586,7 +829,7 @@
       "kickoff": "2026-10-24T19:45:00Z",
       "projectionDigest": "6b098a022b8588e0511a21733495e26b2b6b7831fd3967dbded871f247e740df",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-EASTERNMICHIGAN-OHIO",
@@ -596,7 +839,7 @@
       "kickoff": "2026-10-24T20:00:00Z",
       "projectionDigest": "fdaacdefad184225aba8e52e7b0e350a369b6f96b3371c1aead652027ab19372",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-ULMONROE-TROY",
@@ -606,7 +849,7 @@
       "kickoff": "2026-10-24T20:00:00Z",
       "projectionDigest": "717b742735a8750cf9bedf12eba328895892ea283b01aae5f25e72d9db583d10",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-LOUISIANA-SOUTHERNMISS",
@@ -616,7 +859,7 @@
       "kickoff": "2026-10-24T21:00:00Z",
       "projectionDigest": "e2c47b9299e80d9c1e8f0e7c91adf4f16cc84c97246bdba7ee3480db4729ed23",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-OLDDOMINION-LOUISIANATECH",
@@ -626,7 +869,7 @@
       "kickoff": "2026-10-24T21:00:00Z",
       "projectionDigest": "db419e8e6fc0e2721f3cf46f260d5e250c872095884349baa3ddcb8121e59531",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-SANJOSSTATE-NEVADA",
@@ -636,7 +879,7 @@
       "kickoff": "2026-10-24T21:00:00Z",
       "projectionDigest": "9fac7b02504d92673d051574404f79c46810dbf92cb01d0effabd6f8809d258a",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-BOISESTATE-WASHINGTONSTATE",
@@ -646,7 +889,7 @@
       "kickoff": "2026-10-24T22:00:00Z",
       "projectionDigest": "17b3526936202ab8c1b1ecc096e5483afe8aa46a334d121c7a2050091f491cb4",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-SANDIEGOSTATE-COLORADOSTATE",
@@ -656,7 +899,7 @@
       "kickoff": "2026-10-24T22:30:00Z",
       "projectionDigest": "19226231c83683368377a077312cce6f77a8ea14e8667b9db672f9f3ded83ba8",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-COLORADO-OKLAHOMASTATE",
@@ -666,7 +909,7 @@
       "kickoff": "2026-10-24T23:00:00Z",
       "projectionDigest": "eb47553e0448831c0b15ab8af29eb95ec06c83ad0d41ca498aeacc22e272426c",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-GEORGIASTATE-ARKANSASSTATE",
@@ -676,7 +919,7 @@
       "kickoff": "2026-10-24T23:00:00Z",
       "projectionDigest": "6b8ad3544d1382e614f9272b6b0d4036cbba4861fae1cec8de76667f3eeea30f",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-VIRGINIATECH-CLEMSON",
@@ -686,7 +929,7 @@
       "kickoff": "2026-10-24T23:00:00Z",
       "projectionDigest": "6d34b2fae6bb25d048cb029f911be56b3d982e1e629c7fb8c0df8c280d73219d",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-IOWASTATE-ARIZONA",
@@ -696,7 +939,7 @@
       "kickoff": "2026-10-24T23:30:00Z",
       "projectionDigest": "8919d0dcc7d046d19a690fcb556e1686442d8a20d3d9ba70878d472b454fd3cc",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-OLEMISS-TEXAS",
@@ -706,7 +949,7 @@
       "kickoff": "2026-10-24T23:30:00Z",
       "projectionDigest": "ad6572b61f29fb48e2796adc8dc64c2e8260d68c705f7d81a62b7f187f452f71",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-SYRACUSE-NORTHCAROLINA",
@@ -716,7 +959,7 @@
       "kickoff": "2026-10-24T23:30:00Z",
       "projectionDigest": "824ccd921e6913a91dee810ed0c52708db8951d8c2b233f93e5cc74b8a5e104f",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-USC-WISCONSIN",
@@ -726,7 +969,7 @@
       "kickoff": "2026-10-24T23:30:00Z",
       "projectionDigest": "3521b6da0b466cdb4fcd769aef3a2e076940c72ae3a15000fdec76bd2b8b02f2",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-UTAHSTATE-TEXASSTATE",
@@ -736,7 +979,7 @@
       "kickoff": "2026-10-24T23:30:00Z",
       "projectionDigest": "9291d1b7f9363a56c73958df8a53407925a3c4f53cbcde7d328dd109eb83d9b2",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-24-VANDERBILT-KENTUCKY",
@@ -746,7 +989,7 @@
       "kickoff": "2026-10-24T23:30:00Z",
       "projectionDigest": "587838e10404f4a2af34ccaa211a61b92b3dcb4c3be97ac3d3090ded1bc4375a",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-25-UTSA-TULANE",
@@ -756,7 +999,7 @@
       "kickoff": "2026-10-25T00:00:00Z",
       "projectionDigest": "a63b1830e30a0375df153b4fa621878d02d9096fcfcd99559de0b5b0e2429ba4",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-25-NORTHDAKOTASTATE-NEWMEXICO",
@@ -766,7 +1009,7 @@
       "kickoff": "2026-10-25T02:00:00Z",
       "projectionDigest": "b920b10e37670fe796ecbc663efdc522b5ee1d11e7955a550f98eb2aae5d26e9",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     },
     {
       "gameId": "2026-10-25-HOUSTON-UTAH",
@@ -776,7 +1019,7 @@
       "kickoff": "2026-10-25T02:15:00Z",
       "projectionDigest": "15b827902593d6d6604ce90eef0a4fba9aa97974c10a64986f0af10f93bca77f",
       "books": {},
-      "status": "PAUSED_OUT_OF_SCOPE"
+      "status": "PENDING"
     }
   ],
   "policy": "Research-only per-book publication-window capture. FanDuel and DraftKings are preserved independently; no consensus or canonical benchmark is inferred. Existing book observations are immutable and post-kickoff reconstruction is prohibited. When an active scope is supplied, prior immutable locks remain preserved even if their games are no longer active, while unlocked out-of-scope games remain paused and cannot receive new observations."
