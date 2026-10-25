@@ -1,0 +1,90 @@
+{
+  "observed_at_utc": "2026-10-25T22:56:00Z",
+  "scope": "NFL Week 7 Kansas City at Seattle T-84 final-inactive review; append-only",
+  "game_id": "2026_07_KC_SEA",
+  "kickoff_utc": "2026-10-26T00:20:00Z",
+  "freeze": {
+    "snapshot_id": "20261021T114427Z",
+    "canonical_v1_changed": false,
+    "ftn50_changed": false,
+    "publication_state": "HOLD_RESEARCH_ONLY",
+    "numerical_projection_changes": 0,
+    "canonical_home_margin_sea": 1.602236252102505,
+    "canonical_total": 42.8507742914254
+  },
+  "quarterbacks": {
+    "KC": "Patrick Mahomes supported starter",
+    "SEA": "Sam Darnold supported starter",
+    "SEA_backup": "Jalen Milroe; Drew Lock officially inactive"
+  },
+  "official_inactives": {
+    "SEA": [
+      "Drew Lock",
+      "Zach Charbonnet",
+      "Drake Thomas",
+      "Robert Henry Jr.",
+      "Chazz Surratt",
+      "Connor O'Toole",
+      "Beau Stephens"
+    ],
+    "KC": null
+  },
+  "material_active_context": {
+    "SEA": [
+      "Nick Emmanwori active",
+      "Uchenna Nwosu active",
+      "DeMarcus Lawrence active"
+    ],
+    "KC": [
+      "Cooper McDonald activated from Reserve/Injured on October 24; final game-day status not yet confirmed"
+    ]
+  },
+  "chiefs_prior_official_status": {
+    "out": ["Jaylon Moore", "Rashee Rice", "Brashard Smith"],
+    "questionable": ["L'Jarius Sneed"],
+    "full_official_inactive_list": "PENDING_AT_CAPTURE"
+  },
+  "offensive_line_context": {
+    "KC": "Jaylon Moore out; Josh Simmons on Reserve/Injured. Secondary reporting expects Joshua Ezeudu at right tackle; not recorded as an official starter declaration.",
+    "SEA": "Anthony Bradford activated from Reserve/Injured on October 24 and absent from Seattle's inactive list; no numerical canonical influence."
+  },
+  "weather": {
+    "venue": "Lumen Field; open air",
+    "nws_last_update_local": "2026-10-25T12:45:00-07:00",
+    "kickoff_context": "Approximately 52 F with a chance of light rain/showers and light wind near 3 mph; NWS point forecast called for 40-50 percent rain chance mainly after 5 p.m. PDT.",
+    "numerical_adjustment": false
+  },
+  "officiating": {
+    "reported_referee": "John Hussey",
+    "full_crew_confirmed": false,
+    "refmetrics": "SUBSCRIPTION_RESTRICTED_SUNDAY_DATA",
+    "numerical_adjustment": false
+  },
+  "market": {
+    "lock_window_open": false,
+    "eligible_window_begins_utc": "2026-10-25T23:50:00Z",
+    "fresh_fd_dk_quote_captured": false,
+    "prior_site_context": "FanDuel SEA -3, total 42.5, SEA -154/KC +130 observed 2026-10-25T16:35:11Z; stale at this review and not a lock.",
+    "note": "No premature lock; NFL-specific workflow remains responsible for the immutable T-30 capture."
+  },
+  "source_urls": {
+    "seahawks_official_inactives": "https://www.seahawks.com/news/seahawks-vs-chiefs-week-7-inactives",
+    "chiefs_official_injury_report": "https://www.chiefs.com/news/week-7-injury-report-chiefs-vs-seahawks-2026",
+    "nfl_aggregate_inactives": "https://www.nfl.com/news/nfl-week-7-inactives-players-ruled-out-sunday-2026-season",
+    "nws_point_forecast": "https://forecast.weather.gov/MapClick.php?site=SEW&textField1=47.6218&textField2=-122.35",
+    "football_zebras_assignments": "https://www.footballzebras.com/2026/10/week-7-referee-assignments-2026/"
+  },
+  "unresolved": [
+    "Kansas City complete official inactive list not published on the team or populated on NFL.com's aggregate page at capture",
+    "Full officiating crew/substitutions unconfirmed",
+    "RefMetrics Sunday assignment context subscription restricted",
+    "Fresh FanDuel/DraftKings lock pending T-30 window"
+  ],
+  "controls": {
+    "no_post_kickoff_backfill": true,
+    "kalshi_polymarket_separate": true,
+    "play_or_lean_labels_added": false,
+    "arbitrary_point_adjustments_added": false,
+    "frozen_projection_files_modified": false
+  }
+}
