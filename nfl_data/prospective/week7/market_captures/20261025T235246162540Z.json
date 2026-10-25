@@ -1,0 +1,123 @@
+{
+  "captured_at": "2026-10-25T23:52:46.334311+00:00",
+  "provider": "The Odds API",
+  "sport": "americanfootball_nfl",
+  "events": [
+    {
+      "id": "176d474ed8b2bbf1eb4d7e9c56b4bf22",
+      "sport_key": "americanfootball_nfl",
+      "sport_title": "NFL",
+      "commence_time": "2026-10-26T00:22:00Z",
+      "home_team": "Seattle Seahawks",
+      "away_team": "Kansas City Chiefs",
+      "bookmakers": [
+        {
+          "key": "draftkings",
+          "title": "DraftKings",
+          "last_update": "2026-10-25T23:51:23Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-10-25T23:51:23Z",
+              "outcomes": [
+                {
+                  "name": "Kansas City Chiefs",
+                  "price": 136
+                },
+                {
+                  "name": "Seattle Seahawks",
+                  "price": -162
+                }
+              ]
+            },
+            {
+              "key": "spreads",
+              "last_update": "2026-10-25T23:51:23Z",
+              "outcomes": [
+                {
+                  "name": "Kansas City Chiefs",
+                  "price": -115,
+                  "point": 3.0
+                },
+                {
+                  "name": "Seattle Seahawks",
+                  "price": -105,
+                  "point": -3.0
+                }
+              ]
+            },
+            {
+              "key": "totals",
+              "last_update": "2026-10-25T23:51:23Z",
+              "outcomes": [
+                {
+                  "name": "Over",
+                  "price": -102,
+                  "point": 43.5
+                },
+                {
+                  "name": "Under",
+                  "price": -118,
+                  "point": 43.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "fanduel",
+          "title": "FanDuel",
+          "last_update": "2026-10-25T23:52:45Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-10-25T23:52:45Z",
+              "outcomes": [
+                {
+                  "name": "Kansas City Chiefs",
+                  "price": 140
+                },
+                {
+                  "name": "Seattle Seahawks",
+                  "price": -166
+                }
+              ]
+            },
+            {
+              "key": "spreads",
+              "last_update": "2026-10-25T23:52:45Z",
+              "outcomes": [
+                {
+                  "name": "Kansas City Chiefs",
+                  "price": -108,
+                  "point": 3.0
+                },
+                {
+                  "name": "Seattle Seahawks",
+                  "price": -112,
+                  "point": -3.0
+                }
+              ]
+            },
+            {
+              "key": "totals",
+              "last_update": "2026-10-25T23:52:45Z",
+              "outcomes": [
+                {
+                  "name": "Over",
+                  "price": -105,
+                  "point": 43.5
+                },
+                {
+                  "name": "Under",
+                  "price": -115,
+                  "point": 43.5
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
