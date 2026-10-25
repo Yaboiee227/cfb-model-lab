@@ -16,16 +16,16 @@
   "lockWindowMinutes": 30.0,
   "maxObservationAgeMinutes": 35.0,
   "scopeRestricted": true,
-  "updatedAt": "2026-10-24T23:43:23.710581Z",
+  "updatedAt": "2026-10-25T01:42:53.902938Z",
   "counts": {
     "foundationGames": 56,
     "activeScopeGames": 53,
     "pausedGames": 0,
     "preservedOutOfScopeLockedGames": 3,
-    "gamesWithMarketLock": 49,
-    "bookObservationsLocked": 98,
-    "newBookObservationsThisRun": 0,
-    "pendingGames": 2,
+    "gamesWithMarketLock": 50,
+    "bookObservationsLocked": 100,
+    "newBookObservationsThisRun": 2,
+    "pendingGames": 1,
     "missedGames": 5
   },
   "games": [
@@ -1899,8 +1899,35 @@
       "homeTeam": "New Mexico",
       "kickoff": "2026-10-25T02:00:00Z",
       "projectionDigest": "b920b10e37670fe796ecbc663efdc522b5ee1d11e7955a550f98eb2aae5d26e9",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-25T01:42:05Z",
+          "lockedAt": "2026-10-25T01:42:53.902938Z",
+          "marketSpreadHome": -4.5,
+          "marketTotal": 39.5,
+          "marketMoneylineHome": -200,
+          "marketMoneylineAway": 164,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -114,
+          "totalUnderPrice": -106,
+          "observationDigest": "690a083cbcdb52b2188f6c53658e7b59904da74ea15b53e03c051449f9197a69"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-25T01:41:47Z",
+          "lockedAt": "2026-10-25T01:42:53.902938Z",
+          "marketSpreadHome": -4.5,
+          "marketTotal": 39.5,
+          "marketMoneylineHome": -192,
+          "marketMoneylineAway": 160,
+          "spreadHomePrice": -112,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "f5282d85ab994809db1ca3aec2c5c722084bac18b01ed7216b1f77a79732fc11"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-10-25-HOUSTON-UTAH",
