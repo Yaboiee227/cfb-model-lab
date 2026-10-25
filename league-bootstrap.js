@@ -77,6 +77,8 @@
     const style = document.createElement('style');
     style.id = 'leagueBootstrapStyle';
     style.textContent = `
+      html[data-league="nfl"] #saturday-readiness,
+      html[data-league="nfl"] #nflTrendModeChip[hidden]{display:none!important}
       .league-switch{display:flex;align-items:center;gap:3px;padding:3px;border:1px solid rgba(143,240,203,.2);border-radius:10px;background:rgba(7,17,31,.44);margin-left:auto}
       .league-switch button{border:0;background:transparent;color:var(--muted,#9fb1c4);font:800 10px/1 system-ui;letter-spacing:.08em;padding:9px 10px;border-radius:7px;cursor:pointer}
       .league-switch button[aria-pressed="true"]{background:var(--accent,#8ff0cb);color:#07111f}
@@ -199,7 +201,7 @@
         details.className = 'nfl-pregame-details';
         details.style.cssText = 'margin-top:8px;max-width:100%;font-size:11px;line-height:1.5;overflow-wrap:anywhere';
         const summary = document.createElement('summary');
-        summary.textContent = 'Pregame sources · frozen research / HOLD';
+        summary.textContent = (String(game.hardQbStateBreak) === 'true' ? 'QB regime flag · ' : String(game.finalInactivesResolved) !== 'true' ? 'Final inactives pending · ' : '') + 'Pregame sources · frozen research / HOLD';
         const body = document.createElement('div');
         body.style.cssText = 'white-space:normal;padding-top:6px';
         const lines = [game.notes, game.personnelState, game.weatherRoofState,
