@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-10-25T01:42:42.838Z",
-  "lastCoreRefresh": "2026-10-25T01:42:42.838Z",
-  "lastMoneylineRefresh": "2026-10-25T00:49:46.989Z",
+  "generatedAt": "2026-10-25T02:11:08.511Z",
+  "lastCoreRefresh": "2026-10-25T02:11:08.511Z",
+  "lastMoneylineRefresh": "2026-10-25T02:11:08.511Z",
   "provider": "The Odds API",
   "books": [
     "fanduel",
     "draftkings"
   ],
   "quota": {
-    "remaining": 267,
-    "used": 233,
-    "lastCost": 2,
-    "usageThisRun": 2,
+    "remaining": 264,
+    "used": 236,
+    "lastCost": 1,
+    "usageThisRun": 3,
     "reserveCredits": 30
   },
   "refreshPolicy": {
@@ -27,6 +27,214 @@
     "manualOverride": false
   },
   "games": [
+    {
+      "id": "47595bd2a188e4dab8a27dce97c5b45d",
+      "sportKey": "americanfootball_ncaaf",
+      "commenceTime": "2026-10-25T02:15:00Z",
+      "homeTeam": "Utah Utes",
+      "awayTeam": "Houston Cougars",
+      "books": {
+        "fanduel": {
+          "updatedAt": "2026-10-25T02:10:58Z",
+          "moneyline": {
+            "home": -245,
+            "away": 198
+          },
+          "spread": {
+            "home": -6.5,
+            "homePrice": -112,
+            "away": 6.5,
+            "awayPrice": -108
+          },
+          "total": {
+            "point": 57.5,
+            "overPrice": -110,
+            "underPrice": -110
+          },
+          "opening": {
+            "moneyline": {
+              "home": -240,
+              "away": 195
+            },
+            "spread": {
+              "home": -6.5,
+              "away": 6.5
+            },
+            "total": {
+              "point": 56.5
+            }
+          },
+          "history": [
+            {
+              "ts": "2026-10-21T22:07:16.835Z",
+              "spreadHome": -6.5,
+              "total": 56.5,
+              "homeMl": null,
+              "awayMl": null
+            },
+            {
+              "ts": "2026-10-21T22:37:02.546Z",
+              "spreadHome": -6.5,
+              "total": 56.5,
+              "homeMl": -240,
+              "awayMl": 195
+            },
+            {
+              "ts": "2026-10-22T17:25:24.925Z",
+              "spreadHome": -6.5,
+              "total": 56.5,
+              "homeMl": -245,
+              "awayMl": 198
+            },
+            {
+              "ts": "2026-10-22T20:08:48.950Z",
+              "spreadHome": -6.5,
+              "total": 56.5,
+              "homeMl": -260,
+              "awayMl": 210
+            },
+            {
+              "ts": "2026-10-23T16:45:09.814Z",
+              "spreadHome": -6.5,
+              "total": 56.5,
+              "homeMl": -265,
+              "awayMl": 215
+            },
+            {
+              "ts": "2026-10-23T20:43:19.427Z",
+              "spreadHome": -6.5,
+              "total": 56.5,
+              "homeMl": -260,
+              "awayMl": 210
+            },
+            {
+              "ts": "2026-10-24T02:03:28.096Z",
+              "spreadHome": -6.5,
+              "total": 57.5,
+              "homeMl": -260,
+              "awayMl": 210
+            },
+            {
+              "ts": "2026-10-24T20:33:47.841Z",
+              "spreadHome": -6.5,
+              "total": 57.5,
+              "homeMl": -260,
+              "awayMl": 215
+            },
+            {
+              "ts": "2026-10-25T00:34:23.839Z",
+              "spreadHome": -6.5,
+              "total": 57.5,
+              "homeMl": -255,
+              "awayMl": 205
+            },
+            {
+              "ts": "2026-10-25T00:49:46.989Z",
+              "spreadHome": -6.5,
+              "total": 57.5,
+              "homeMl": -250,
+              "awayMl": 202
+            },
+            {
+              "ts": "2026-10-25T02:11:08.511Z",
+              "spreadHome": -6.5,
+              "total": 57.5,
+              "homeMl": -245,
+              "awayMl": 198
+            }
+          ]
+        },
+        "draftkings": {
+          "updatedAt": "2026-10-25T02:10:41Z",
+          "moneyline": {
+            "home": -230,
+            "away": 190
+          },
+          "spread": {
+            "home": -6.5,
+            "homePrice": -108,
+            "away": 6.5,
+            "awayPrice": -112
+          },
+          "total": {
+            "point": 57.5,
+            "overPrice": -105,
+            "underPrice": -115
+          },
+          "opening": {
+            "moneyline": {
+              "home": -250,
+              "away": 205
+            },
+            "spread": {
+              "home": -6.5,
+              "away": 6.5
+            },
+            "total": {
+              "point": 56.5
+            }
+          },
+          "history": [
+            {
+              "ts": "2026-10-21T22:07:16.835Z",
+              "spreadHome": -6.5,
+              "total": 56.5,
+              "homeMl": null,
+              "awayMl": null
+            },
+            {
+              "ts": "2026-10-21T22:37:02.546Z",
+              "spreadHome": -6.5,
+              "total": 56.5,
+              "homeMl": -250,
+              "awayMl": 205
+            },
+            {
+              "ts": "2026-10-22T20:08:48.950Z",
+              "spreadHome": -7,
+              "total": 56.5,
+              "homeMl": -250,
+              "awayMl": 205
+            },
+            {
+              "ts": "2026-10-22T22:09:21.777Z",
+              "spreadHome": -6.5,
+              "total": 56.5,
+              "homeMl": -250,
+              "awayMl": 205
+            },
+            {
+              "ts": "2026-10-24T02:03:28.096Z",
+              "spreadHome": -6.5,
+              "total": 57.5,
+              "homeMl": -258,
+              "awayMl": 210
+            },
+            {
+              "ts": "2026-10-24T14:39:41.157Z",
+              "spreadHome": -6.5,
+              "total": 57.5,
+              "homeMl": -250,
+              "awayMl": 205
+            },
+            {
+              "ts": "2026-10-25T00:34:23.839Z",
+              "spreadHome": -6.5,
+              "total": 57.5,
+              "homeMl": -238,
+              "awayMl": 195
+            },
+            {
+              "ts": "2026-10-25T02:11:08.511Z",
+              "spreadHome": -6.5,
+              "total": 57.5,
+              "homeMl": -230,
+              "awayMl": 190
+            }
+          ]
+        }
+      }
+    },
     {
       "id": "ebe9883d9cb488e233e6c45cfa009008",
       "sportKey": "americanfootball_ncaaf",
@@ -181,200 +389,6 @@
               "total": 39.5,
               "homeMl": -192,
               "awayMl": 160
-            }
-          ]
-        }
-      }
-    },
-    {
-      "id": "47595bd2a188e4dab8a27dce97c5b45d",
-      "sportKey": "americanfootball_ncaaf",
-      "commenceTime": "2026-10-25T02:15:00Z",
-      "homeTeam": "Utah Utes",
-      "awayTeam": "Houston Cougars",
-      "books": {
-        "fanduel": {
-          "updatedAt": "2026-10-25T01:42:05Z",
-          "moneyline": {
-            "home": -250,
-            "away": 202
-          },
-          "spread": {
-            "home": -6.5,
-            "homePrice": -114,
-            "away": 6.5,
-            "awayPrice": -106
-          },
-          "total": {
-            "point": 57.5,
-            "overPrice": -110,
-            "underPrice": -110
-          },
-          "opening": {
-            "moneyline": {
-              "home": -240,
-              "away": 195
-            },
-            "spread": {
-              "home": -6.5,
-              "away": 6.5
-            },
-            "total": {
-              "point": 56.5
-            }
-          },
-          "history": [
-            {
-              "ts": "2026-10-21T22:07:16.835Z",
-              "spreadHome": -6.5,
-              "total": 56.5,
-              "homeMl": null,
-              "awayMl": null
-            },
-            {
-              "ts": "2026-10-21T22:37:02.546Z",
-              "spreadHome": -6.5,
-              "total": 56.5,
-              "homeMl": -240,
-              "awayMl": 195
-            },
-            {
-              "ts": "2026-10-22T17:25:24.925Z",
-              "spreadHome": -6.5,
-              "total": 56.5,
-              "homeMl": -245,
-              "awayMl": 198
-            },
-            {
-              "ts": "2026-10-22T20:08:48.950Z",
-              "spreadHome": -6.5,
-              "total": 56.5,
-              "homeMl": -260,
-              "awayMl": 210
-            },
-            {
-              "ts": "2026-10-23T16:45:09.814Z",
-              "spreadHome": -6.5,
-              "total": 56.5,
-              "homeMl": -265,
-              "awayMl": 215
-            },
-            {
-              "ts": "2026-10-23T20:43:19.427Z",
-              "spreadHome": -6.5,
-              "total": 56.5,
-              "homeMl": -260,
-              "awayMl": 210
-            },
-            {
-              "ts": "2026-10-24T02:03:28.096Z",
-              "spreadHome": -6.5,
-              "total": 57.5,
-              "homeMl": -260,
-              "awayMl": 210
-            },
-            {
-              "ts": "2026-10-24T20:33:47.841Z",
-              "spreadHome": -6.5,
-              "total": 57.5,
-              "homeMl": -260,
-              "awayMl": 215
-            },
-            {
-              "ts": "2026-10-25T00:34:23.839Z",
-              "spreadHome": -6.5,
-              "total": 57.5,
-              "homeMl": -255,
-              "awayMl": 205
-            },
-            {
-              "ts": "2026-10-25T00:49:46.989Z",
-              "spreadHome": -6.5,
-              "total": 57.5,
-              "homeMl": -250,
-              "awayMl": 202
-            }
-          ]
-        },
-        "draftkings": {
-          "updatedAt": "2026-10-25T01:41:47Z",
-          "moneyline": {
-            "home": -238,
-            "away": 195
-          },
-          "spread": {
-            "home": -6.5,
-            "homePrice": -108,
-            "away": 6.5,
-            "awayPrice": -112
-          },
-          "total": {
-            "point": 57.5,
-            "overPrice": -110,
-            "underPrice": -110
-          },
-          "opening": {
-            "moneyline": {
-              "home": -250,
-              "away": 205
-            },
-            "spread": {
-              "home": -6.5,
-              "away": 6.5
-            },
-            "total": {
-              "point": 56.5
-            }
-          },
-          "history": [
-            {
-              "ts": "2026-10-21T22:07:16.835Z",
-              "spreadHome": -6.5,
-              "total": 56.5,
-              "homeMl": null,
-              "awayMl": null
-            },
-            {
-              "ts": "2026-10-21T22:37:02.546Z",
-              "spreadHome": -6.5,
-              "total": 56.5,
-              "homeMl": -250,
-              "awayMl": 205
-            },
-            {
-              "ts": "2026-10-22T20:08:48.950Z",
-              "spreadHome": -7,
-              "total": 56.5,
-              "homeMl": -250,
-              "awayMl": 205
-            },
-            {
-              "ts": "2026-10-22T22:09:21.777Z",
-              "spreadHome": -6.5,
-              "total": 56.5,
-              "homeMl": -250,
-              "awayMl": 205
-            },
-            {
-              "ts": "2026-10-24T02:03:28.096Z",
-              "spreadHome": -6.5,
-              "total": 57.5,
-              "homeMl": -258,
-              "awayMl": 210
-            },
-            {
-              "ts": "2026-10-24T14:39:41.157Z",
-              "spreadHome": -6.5,
-              "total": 57.5,
-              "homeMl": -250,
-              "awayMl": 205
-            },
-            {
-              "ts": "2026-10-25T00:34:23.839Z",
-              "spreadHome": -6.5,
-              "total": 57.5,
-              "homeMl": -238,
-              "awayMl": 195
             }
           ]
         }
