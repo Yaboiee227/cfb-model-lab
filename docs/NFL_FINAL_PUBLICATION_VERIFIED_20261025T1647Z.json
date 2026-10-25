@@ -1,0 +1,53 @@
+{
+  "verified_at_utc": "2026-10-25 16:47:32 UTC",
+  "live_url": "https://yaboiee227.github.io/cfb-model-lab/?league=nfl",
+  "publication_commit": "49e7a6c514242a3674576b209928dd120184dbb8",
+  "final_site_asset_commit": "9afe9ebdd5ce593d0f7e0f71624e99ca702c5e02",
+  "research_audit_commit": "6d656468ff4acb66dc3fbef9df63b4642e17c525",
+  "deployment": {
+    "run_id": 40213062269,
+    "conclusion": "success",
+    "url": "https://github.com/Yaboiee227/cfb-model-lab/actions/runs/40213062269"
+  },
+  "production_research_audit": {
+    "run_id": 40213062255,
+    "conclusion": "success"
+  },
+  "responsive_smoke": {
+    "id": 40213062226,
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/Yaboiee227/cfb-model-lab/actions/runs/40213062226",
+    "head": "9afe9ebdd5ce593d0f7e0f71624e99ca702c5e02"
+  },
+  "live_data": {
+    "http_status": 200,
+    "total_pairs": 14,
+    "sunday_games": 12,
+    "not_started_games_refreshed": 11,
+    "early_official_inactive_lists_complete": 7,
+    "immutable_early_locks": 7,
+    "current_fd_dk_book_observations": 22,
+    "moneyline_spread_total_timestamp_identity_validation": "PASS",
+    "signed_gap_validation": "PASS"
+  },
+  "browser": {
+    "rows": 14,
+    "cards": 14,
+    "horizontal_page_overflow": false,
+    "nfl_hides_cfb_notice": true,
+    "qb_regime_label_visible": true,
+    "desktop_mobile_chromium_and_iphone_webkit": "PASS local and deployed CI"
+  },
+  "projection_changes": 0,
+  "freeze_integrity": "PASS",
+  "cfb_data_changed": false,
+  "started_game_rows": "PRESERVED",
+  "remaining": [
+    "Later official inactives and T30 market windows remain pending.",
+    "Houston and Arizona roof decisions unresolved; full crew substitutions not certified; NWS gust detail unavailable.",
+    "Sunday RefMetrics details subscription restricted; no invented medical/referee coefficients.",
+    "All recommendations HOLD; later quotes contextual, no later-monitoring claim."
+  ],
+  "local_environment_limitation": "Local Playwright browser install failed; equivalent complete local-build and deployed browser tests succeeded in repository CI."
+}
