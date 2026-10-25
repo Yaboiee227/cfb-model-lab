@@ -1,0 +1,189 @@
+{
+  "observed_at_utc": "2026-10-25T18:38:39Z",
+  "scope": "NFL Week 7 late-window T-90 observation; append-only context",
+  "freeze": {
+    "snapshot_id": "20261021T114427Z",
+    "canonical_v1_changed": false,
+    "ftn50_changed": false,
+    "publication_state": "HOLD_RESEARCH_ONLY",
+    "numerical_influence_from_this_observation": false
+  },
+  "source_observations": [
+    {
+      "source": "NFL.com Week 7 inactives tracker",
+      "url": "https://www.nfl.com/news/nfl-week-7-inactives-players-ruled-out-sunday-2026-season",
+      "observed_at_utc": "2026-10-25T18:37:00Z",
+      "displayed_update": "Oct 25, 2026 at 11:44 AM",
+      "late_game_sections_present": true,
+      "late_game_inactive_lists_present": false,
+      "data_quality": "OFFICIAL_SOURCE_BUT_LATE_LISTS_NOT_POPULATED"
+    },
+    {
+      "source": "Detroit Lions team site",
+      "url": "https://www.detroitlions.com/news/lions-daily-detroit-activates-brian-branch-cade-mays-for-packers-game",
+      "published_at_local": "2026-10-25T13:45:00-04:00",
+      "observed_at_utc": "2026-10-25T18:38:00Z",
+      "fact": "Detroit reported DB Brian Branch and C Cade Mays activated for the Packers game.",
+      "data_quality": "OFFICIAL_TEAM_SITE_REPORT"
+    }
+  ],
+  "games": [
+    {
+      "game_id": "2026_07_DEN_ARI",
+      "kickoff_utc": "2026-10-25T20:05:00Z",
+      "inactive_deadline_utc": "2026-10-25T18:35:00Z",
+      "deadline_state": "DEADLINE_PASSED_SOURCE_NOT_POPULATED",
+      "official_inactives": {
+        "DEN": null,
+        "ARI": null
+      },
+      "availability_context": [
+        "Patrick Surtain II and Jonah Coleman remained questionable on Denver's final injury report; media expectation is not official clearance.",
+        "Tyler Badie, Jonah Elliss and Talanoa Hufanga were ruled out on Denver's final injury report.",
+        "Budda Baker, Carson Beck, Darius Robinson and Max Melton remained questionable on Arizona's final injury report; Jeremiyah Love, Jon Gaines II, Walter Nolen III and Andrew Wingard were ruled out."
+      ],
+      "officiating": {
+        "reported_referee": "Craig Wrolstad",
+        "source": "Football Zebras",
+        "full_crew_confirmed": false,
+        "refmetrics": "SUBSCRIPTION_RESTRICTED_SUNDAY_DATA",
+        "numerical_influence": false
+      },
+      "venue_weather": {
+        "venue": "State Farm Stadium",
+        "roof_state": "UNRESOLVED",
+        "outside_nws_context": "Sunny, 80-82 F, 0 percent precipitation probability, 0-5 mph wind",
+        "outside_weather_numerical_influence": false
+      },
+      "market": {
+        "lock_window_start_utc": "2026-10-25T19:35:00Z",
+        "lock_window_end_utc": "2026-10-25T20:05:00Z",
+        "lock": null,
+        "state": "NOT_YET_ELIGIBLE",
+        "eligible_books": [
+          "FanDuel",
+          "DraftKings"
+        ]
+      },
+      "projection": {
+        "canonical_home_margin": -2.679316394749109,
+        "canonical_total": 43.10762352790158,
+        "ftn50_home_margin": -2.4847745974320423,
+        "state": "FROZEN_UNCHANGED"
+      },
+      "unresolved_gaps": [
+        "Official final inactive lists",
+        "Official roof position",
+        "Full officiating crew",
+        "RefMetrics Sunday detail",
+        "Eligible T-30 FD/DK lock"
+      ]
+    },
+    {
+      "game_id": "2026_07_GB_DET",
+      "kickoff_utc": "2026-10-25T20:25:00Z",
+      "inactive_deadline_utc": "2026-10-25T18:55:00Z",
+      "deadline_state": "NOT_YET_REACHED_AT_OBSERVATION",
+      "official_inactives": {
+        "GB": null,
+        "DET": null
+      },
+      "availability_context": [
+        "Detroit's team site reported Brian Branch and Cade Mays activated, resolving the earlier activation-status discrepancy but not substituting for the final inactive lists.",
+        "Green Bay activated Josh Jacobs from the exempt list and Jordon Riley from PUP; activation is not a final health or workload claim.",
+        "Zaire Franklin was ruled out on Green Bay's final injury report."
+      ],
+      "officiating": {
+        "reported_referee": "Alex Moore",
+        "source": "Football Zebras",
+        "full_crew_confirmed": false,
+        "refmetrics": "SUBSCRIPTION_RESTRICTED_SUNDAY_DATA",
+        "numerical_influence": false
+      },
+      "venue_weather": {
+        "venue": "Ford Field",
+        "roof_state": "FIXED_ROOF_INDOOR",
+        "weather_numerical_influence": false
+      },
+      "market": {
+        "lock_window_start_utc": "2026-10-25T19:55:00Z",
+        "lock_window_end_utc": "2026-10-25T20:25:00Z",
+        "lock": null,
+        "state": "NOT_YET_ELIGIBLE",
+        "eligible_books": [
+          "FanDuel",
+          "DraftKings"
+        ]
+      },
+      "projection": {
+        "canonical_home_margin": 4.081636347229041,
+        "canonical_total": 50.007353488534456,
+        "ftn50_home_margin": 4.813216475973013,
+        "state": "FROZEN_UNCHANGED"
+      },
+      "unresolved_gaps": [
+        "Official final inactive lists",
+        "Full officiating crew",
+        "RefMetrics Sunday detail",
+        "Eligible T-30 FD/DK lock"
+      ]
+    },
+    {
+      "game_id": "2026_07_LA_LV",
+      "kickoff_utc": "2026-10-25T20:25:00Z",
+      "inactive_deadline_utc": "2026-10-25T18:55:00Z",
+      "deadline_state": "NOT_YET_REACHED_AT_OBSERVATION",
+      "official_inactives": {
+        "LA": null,
+        "LV": null
+      },
+      "availability_context": [
+        "Puka Nacua and Trent McDuffie remained questionable on the Rams' final injury report; reported optimism about Nacua is not official clearance.",
+        "Nate Landman was ruled out on the Rams' final injury report.",
+        "Mike Washington Jr. remained a reported game-time decision; final inactive status was not yet published."
+      ],
+      "officiating": {
+        "reported_referee": "Ron Torbert",
+        "source": "Football Zebras",
+        "full_crew_confirmed": false,
+        "refmetrics": "SUBSCRIPTION_RESTRICTED_SUNDAY_DATA",
+        "numerical_influence": false
+      },
+      "venue_weather": {
+        "venue": "Allegiant Stadium",
+        "roof_state": "FIXED_ROOF_INDOOR",
+        "weather_numerical_influence": false
+      },
+      "market": {
+        "lock_window_start_utc": "2026-10-25T19:55:00Z",
+        "lock_window_end_utc": "2026-10-25T20:25:00Z",
+        "lock": null,
+        "state": "NOT_YET_ELIGIBLE",
+        "eligible_books": [
+          "FanDuel",
+          "DraftKings"
+        ]
+      },
+      "projection": {
+        "canonical_home_margin": -5.957699832058012,
+        "canonical_total": 46.651815739316646,
+        "ftn50_home_margin": -6.502884864512487,
+        "state": "FROZEN_UNCHANGED"
+      },
+      "unresolved_gaps": [
+        "Official final inactive lists",
+        "Full officiating crew",
+        "RefMetrics Sunday detail",
+        "Eligible T-30 FD/DK lock"
+      ]
+    }
+  ],
+  "cross_game_controls": {
+    "no_post_kickoff_backfill": true,
+    "kalshi_polymarket_separate": true,
+    "external_context_silently_overwrites_canonical": false,
+    "play_or_lean_labels_added": false,
+    "invented_uncertainty_probabilities_added": false,
+    "arbitrary_point_adjustments_added": false
+  }
+}
