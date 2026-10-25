@@ -1,0 +1,221 @@
+{
+  "league": "NFL",
+  "season": 2026,
+  "week": 7,
+  "game_id": "2026_07_PIT_NO",
+  "matchup": {
+    "away": "PIT",
+    "home": "NO",
+    "neutral_site": true,
+    "venue": "Stade de France, Saint-Denis, France",
+    "kickoff_utc": "2026-10-25T13:30:00Z",
+    "kickoff_et": "2026-10-25T09:30:00-04:00"
+  },
+  "capture": {
+    "observed_at_utc": "2026-10-25T12:15:02Z",
+    "observed_at_et": "2026-10-25T08:15:02-04:00",
+    "minutes_to_kickoff": 74.97,
+    "capture_type": "T_MINUS_75_CONTEXT_AND_OFFICIAL_INACTIVES_PRE_MARKET_LOCK_WINDOW",
+    "append_only": true,
+    "post_kickoff_information_used": false
+  },
+  "model_state": {
+    "parent_freeze_id": "20261021T114427Z",
+    "canonical_model": "CANONICAL_V1_UNCHANGED",
+    "canonical_home_margin": -3.343270535808349,
+    "canonical_fair_spread": "PIT -3.34",
+    "canonical_total": 41.96590088846535,
+    "canonical_implied_score": {
+      "PIT": 22.65,
+      "NO": 19.31
+    },
+    "ftn50_home_margin": -2.732532592912236,
+    "ftn50_fair_spread": "PIT -2.73",
+    "ftn50_total": 41.96590088846535,
+    "canonical_projection_changed": false,
+    "challenger_projection_changed": false,
+    "numeric_context_adjustment_applied": false,
+    "release_state": "HOLD_RESEARCH_ONLY"
+  },
+  "official_inactives": {
+    "published": true,
+    "PIT": [
+      {"number": 15, "position": "WR", "name": "Ben Skowronek"},
+      {"number": 16, "position": "QB", "name": "Drew Allar"},
+      {"number": 18, "position": "QB", "name": "Will Howard", "role": "designated third quarterback"},
+      {"number": 26, "position": "CB", "name": "Brandin Echols"},
+      {"number": 29, "position": "RB", "name": "Eli Heidenreich"},
+      {"number": 39, "position": "CB", "name": "Terell Smith"}
+    ],
+    "NO": [
+      {"number": 11, "position": "QB", "name": "Zach Wilson", "role": "designated third quarterback"},
+      {"number": 42, "position": "S", "name": "Mike Reid"},
+      {"number": 51, "position": "G", "name": "Cesar Ruiz"},
+      {"number": 82, "position": "TE", "name": "Treyton Welch"},
+      {"number": 93, "position": "DL", "name": "Nathan Shepherd"},
+      {"number": 95, "position": "DL", "name": "John Ridgeway III"},
+      {"number": 98, "position": "EDGE", "name": "Tyree Wilson"}
+    ],
+    "sources": [
+      {
+        "publisher": "Pittsburgh Steelers",
+        "published_at_local": "2026-10-25T08:00:00-04:00",
+        "url": "https://www.steelers.com/news/steelers-inactives-for-week-7-at-saints"
+      },
+      {
+        "publisher": "New Orleans Saints",
+        "published_at_local": "2026-10-25T07:02:00-04:00",
+        "url": "https://www.neworleanssaints.com/news/new-orleans-saints-inactives-pittsburgh-steelers-2026-nfl-week-7-gameday"
+      }
+    ]
+  },
+  "quarterbacks": {
+    "PIT": {
+      "expected_starter": "Aaron Rodgers",
+      "state": "SUPPORTED_EXPECTED_STARTER_NO_QB_BREAK",
+      "evidence": "Rodgers is the preserved official depth-chart QB1; Drew Allar is inactive and Will Howard is the designated third quarterback. No contrary official starter report was found."
+    },
+    "NO": {
+      "expected_starter": "Tyler Shough",
+      "state": "SUPPORTED_EXPECTED_STARTER_NO_QB_BREAK",
+      "evidence": "Shough was a full participant all week with a left-hand designation and had no game-status designation; Zach Wilson is the designated third quarterback. No contrary official starter report was found."
+    }
+  },
+  "personnel_context": {
+    "PIT": {
+      "returns": [
+        "S DeShon Elliott was activated from Reserve/Injured and is active for his first game of the season."
+      ],
+      "clusters": [
+        "Wide receiver depth remains depleted: Ben Skowronek is inactive, while Michael Pittman Jr. and Roman Wilson remain on Reserve/Injured. Brandon Johnson and Brandon Smith were elevated; Germie Bernard retains an expanded role.",
+        "Defensive line depth remains reduced: Sebastian Joseph-Day joined Derrick Harmon on Reserve/Injured; Gabriel Rubio and Kevin Jobity are identified by the club as next-man-up options, with Jobity making his NFL debut.",
+        "Secondary availability is mixed: Brandin Echols and Terell Smith are inactive, but Elliott returns and Jalen Ramsey has no game designation."
+      ],
+      "active_after_designation": [
+        "RB Rico Dowdle",
+        "S DeShon Elliott",
+        "LB T.J. Watt",
+        "LB Alex Highsmith",
+        "CB Jalen Ramsey"
+      ]
+    },
+    "NO": {
+      "clusters": [
+        "Offensive line cluster is material: starting G Cesar Ruiz is inactive, with Kelvin Banks Jr. and Dillon Radunz already on Reserve/Injured. The official game-day sources reviewed did not explicitly name Ruiz's starter replacement.",
+        "Defensive interior/front depth is materially reduced: Nathan Shepherd, John Ridgeway III and Tyree Wilson are inactive, while Bryan Bresee remains on Reserve/Injured."
+      ],
+      "active_after_designation": [
+        "RB Alvin Kamara",
+        "QB Tyler Shough",
+        "QB Spencer Rattler",
+        "K Daniel Carlson"
+      ]
+    },
+    "medical_context": {
+      "source": "Sports Injury Central / SICScore",
+      "summary": "SIC's Week 7 matchup review identified Pittsburgh secondary/WR clusters and New Orleans OL/defensive-interior clusters. Official inactives now resolve the Ruiz, Shepherd, Echols and Skowronek availability questions. SIC remains qualitative medical context and has zero canonical influence.",
+      "url": "https://sicscore.com/news/nfl-week-7-injury-report-matchup-by-matchup-betting-and-fantasy-football-preview"
+    }
+  },
+  "officiating": {
+    "football_zebras_reported_referee": "Bill Vinovich",
+    "football_zebras_full_crew_confirmed": false,
+    "football_zebras_note": "Football Zebras lists Vinovich as referee and warns that weekly substitutions from regular crews may occur.",
+    "football_zebras_url": "https://www.footballzebras.com/2026/10/week-7-referee-assignments-2026/",
+    "refmetrics_assignment_state": "UNAVAILABLE_NA",
+    "refmetrics_context_state": "NO_GAME_OR_CREW_TRENDS_AVAILABLE",
+    "refmetrics_url": "https://www.refmetrics.com/nfl/official-assignments-today",
+    "canonical_influence": false
+  },
+  "weather_venue": {
+    "venue_state": "OUTDOOR_EXPOSED_PLAYING_SURFACE_STADE_DE_FRANCE",
+    "roof_note": "The stadium roof covers spectators but not the playing surface.",
+    "official_source_state": "MISSING_KICKOFF_SPECIFIC_CURRENT_DETAIL",
+    "meteo_france_context": "The retrievable local Météo-France page remained stale to the October 23 storm bulletin and did not expose a defensible kickoff-specific October 25 hourly forecast.",
+    "current_book_page_display": {
+      "temperature_f": 59,
+      "humidity_pct": 85,
+      "wind_mph": 22,
+      "source": "FanDuel team odds page",
+      "quality": "CURRENT_PUBLIC_DISPLAY_NONOFFICIAL_WEATHER_INPUT"
+    },
+    "assessment": "Elevated sustained wind is a material reliability/context flag on an exposed field; precipitation and gust detail remain unresolved. No arbitrary point or total adjustment was applied.",
+    "sources": [
+      "https://meteofrance.com/previsions-meteo-france/saint-denis/93200",
+      "https://sportsbook.fanduel.com/teams/nfl/new-orleans-saints/odds",
+      "https://www.stadefrance.com/en/stadium/our-history"
+    ]
+  },
+  "travel_rest": {
+    "shared_rest_days": 7,
+    "NO": "New Orleans flew directly from the New York area after its October 18 Giants game and arrived Monday, giving the designated home team the full week in France.",
+    "PIT": "Pittsburgh returned from its October 18 overtime game at Tampa Bay, traveled Thursday night and arrived Friday morning; NFL.com reported kickoff approximately 55 hours after arrival.",
+    "assessment": "New Orleans had a materially earlier acclimation window; both teams otherwise had seven calendar days between games. Context only, with zero canonical influence.",
+    "source": "https://www.nfl.com/news/would-have-been-nice-one-time-to-come-over-on-a-monday-steelers-race-to-acclimate-to-paris"
+  },
+  "sportsbook_context": {
+    "capture_state": "PRE_LOCK_WINDOW_RESEARCH_QUOTE_ONLY",
+    "configured_lock_window_utc": {
+      "start": "2026-10-25T13:00:00Z",
+      "end": "2026-10-25T13:30:00Z"
+    },
+    "FanDuel": {
+      "away_spread": -3.0,
+      "away_spread_price": -106,
+      "home_spread": 3.0,
+      "home_spread_price": -114,
+      "total": 43.5,
+      "over_price": -102,
+      "under_price": -120,
+      "away_moneyline": -158,
+      "home_moneyline": 134,
+      "source_url": "https://sportsbook.fanduel.com/teams/nfl/new-orleans-saints/odds",
+      "source_quality": "DIRECT_PUBLIC_PAGE_RETRIEVAL_NOT_EXECUTION_VERIFIED"
+    },
+    "DraftKings": {
+      "state": "DIRECT_PAGE_UNAVAILABLE_IN_BROWSER",
+      "named_book_comparison_snapshot": {
+        "away_spread": -3.5,
+        "away_spread_price": -101,
+        "home_spread": 3.5,
+        "home_spread_price": -132,
+        "total": 43.5,
+        "over_price": -105,
+        "under_price": -115,
+        "away_moneyline": -162,
+        "home_moneyline": 136,
+        "source_url": "https://www.covers.com/sport/football/nfl/matchup/379627/odds",
+        "quality": "THIRD_PARTY_NAMED_BOOK_DISPLAY_NOT_DIRECT_NOT_A_LOCK"
+      }
+    },
+    "movement_from_early_october_21_benchmark": {
+      "early_spread": "PIT -3",
+      "early_total": 44.5,
+      "current_fanduel_spread": "PIT -3",
+      "current_fanduel_total": 43.5,
+      "note": "The FanDuel spread remains PIT -3 while the displayed total is one point lower. The early benchmark was an Action Network public-board observation, not a qualifying sportsbook lock."
+    },
+    "qualifies_as_final_lock": false,
+    "reason_not_locked": "Observation preceded the configured T-30 lock window; no quote was backdated."
+  },
+  "external_context": {
+    "evan_abrams_action": "The Week 7 primer was current, but the retrievable article shell did not expose a matchup-specific PIT-NO system/trend with a verifiable record. No trend signal was recorded or applied.",
+    "nick_giffen_luck": "Giffen reported two official Week 7 luck-based sides and no totals, but the public page did not identify the two sides. PIT-NO was not assumed to be one of them; no signal or adjustment was applied.",
+    "canonical_influence": false
+  },
+  "remaining_gaps": [
+    "Qualifying FanDuel and DraftKings market locks are still pending because this observation was before the configured lock window.",
+    "DraftKings direct page was unavailable in the browser; no direct execution-verified DK quote was claimed.",
+    "Kickoff-specific official Saint-Denis precipitation/gust detail remains unavailable from the retrieved Météo-France page.",
+    "RefMetrics still shows N/A for the Steelers-Saints crew and no crew betting context.",
+    "Football Zebras reports Bill Vinovich as referee, but the full game crew has not been independently confirmed.",
+    "No official matchup-specific Abrams or accessible Giffen PIT-NO signal was verified."
+  ],
+  "source_policy": [
+    "Official club inactive lists control active/inactive status.",
+    "SIC medical analysis, Abrams trends and Giffen luck research remain separate context layers with zero canonical weight.",
+    "Only FanDuel and DraftKings are eligible for the sportsbook lock, and only when captured inside the configured window.",
+    "Canonical V1 and FTN50 remain immutable under freeze 20261021T114427Z.",
+    "No PLAY, LEAN, discretionary points or invented uncertainty probability was created."
+  ]
+}
