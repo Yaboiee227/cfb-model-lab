@@ -193,7 +193,30 @@
           badge.title = `Spread/total reliability ${reliability}. Reliability is not betting confidence.`;
         });
       }
+      const addPregameDetails = host => {
+        if (!host || host.querySelector('.nfl-pregame-details')) return;
+        const details = document.createElement('details');
+        details.className = 'nfl-pregame-details';
+        details.style.cssText = 'margin-top:8px;max-width:100%;font-size:11px;line-height:1.5;overflow-wrap:anywhere';
+        const summary = document.createElement('summary');
+        summary.textContent = 'Pregame sources · frozen research / HOLD';
+        const body = document.createElement('div');
+        body.style.cssText = 'white-space:normal;padding-top:6px';
+        const lines = [game.notes, game.personnelState, game.weatherRoofState,
+          `Freeze: ${game.projectionFreezeUtc || '2026-10-21T11:44:27Z'} · Context: ${game.contextObservedAt || 'Earlier pregame state preserved'}`,
+          `Market: ${game.marketSource || 'Unavailable'} · Observed: ${game.marketObservedAt || 'Unavailable'} · Captured: ${game.marketCapturedAt || 'Unavailable'}`,
+          `Market moneyline (home / away): ${game.marketHomeMoneyline || 'Unavailable'} / ${game.marketAwayMoneyline || 'Unavailable'}`,
+          `Open gates: ${game.releaseBlockers || 'See audit'}`];
+        for (const text of lines) { const p = document.createElement('p'); p.textContent = String(text || '').replaceAll('_', ' '); body.appendChild(p); }
+        const link = document.createElement('a');
+        link.href = 'https://github.com/Yaboiee227/cfb-model-lab/blob/main/' + String(STATE.config.finalAuditArtifact || 'NFL_WEEK7_OPERATIONS.md');
+        link.textContent = 'Source provenance, official inactive lists and audit';
+        link.target = '_blank'; link.rel = 'noopener'; body.appendChild(link);
+        details.append(summary, body); host.appendChild(details);
+      };
+      addPregameDetails(document.getElementById(`game-${game.gameId}`)?.querySelector('td'));
       const card = document.getElementById(`card-${game.gameId}`);
+      addPregameDetails(card);
       if (card && !card.querySelector('.nfl-card-context')) {
         const shadow = Number(game.shadowModelSpreadHome);
         const shadowText = Number.isFinite(shadow) ? ` · Shadow challenger ${shadow > 0 ? '+' : ''}${shadow.toFixed(1)}` : '';

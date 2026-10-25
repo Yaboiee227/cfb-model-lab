@@ -1,17 +1,17 @@
 {
-  "updated": "2026-10-23T12:17:40+00:00",
+  "updated": "2026-10-25T16:37:36.743636+00:00",
   "categories": [
     {
       "id": "readiness",
       "label": "Readiness",
       "short": "Readiness",
-      "status": "PARTIAL",
-      "summary": "Friday morning: 14 frozen forecast pairs preserved, 13 games upcoming. DraftKings/ESPN comparison spreads and totals captured at 8:17 AM ET. Friday final injury reports are not yet verified. Research context here supersedes older card notes.",
+      "status": "CHECKED_WITH_OPEN_GATES",
+      "summary": "All 12 Sunday frozen pairs covered; eleven open games refreshed. Seven early official inactive lists complete and seven immutable T30 locks. Later final gates remain pending.",
       "items": [
         {
           "title": "Readiness",
-          "detail": "All 14 forecast pairs and frozen hashes pass. These are frozen research baselines, not newly personnel-adjusted forecasts. No feature promotion or numeric change.",
-          "tag": "PARTIAL"
+          "detail": "All 12 Sunday frozen pairs covered; eleven open games refreshed. Seven early official inactive lists complete and seven immutable T30 locks. Later final gates remain pending.",
+          "tag": "RESEARCH HOLD"
         }
       ]
     },
@@ -19,13 +19,13 @@
       "id": "availability",
       "label": "Personnel",
       "short": "Personnel",
-      "status": "PENDING",
-      "summary": "Thursday team updates: Jackson limited again; Mayfield full again; Love upgraded to full; Bowers and Kolton Miller full. Dallas/Philadelphia initial reports captured. League summary lags team reports; no blank status implies clearance.",
+      "status": "CHECKED_WITH_OPEN_GATES",
+      "summary": "Jackson out/Huntley starts; Mayfield starts; McCarthy regime flag; Hall inactive; Mason back in lineup. OL/secondary clusters recorded. Active is not full health. Later discrepancies remain unresolved.",
       "items": [
         {
           "title": "Personnel",
-          "detail": "NE/CHI official inactive lists verified this evening; Chicago Edwards is inactive. NE confirms Moses, Gonzalez, Woodson, Byard and Elliss active; Vera-Tucker moved to IR. Guard/CB absences remain material. NYG QB regime change remains flagged. Sunday/Monday final reports, starter confirmations and inactives remain pending. Raw evidence covers 28 team pages; table date/opponent validation remains necessary.",
-          "tag": "PENDING"
+          "detail": "Jackson out/Huntley starts; Mayfield starts; McCarthy regime flag; Hall inactive; Mason back in lineup. OL/secondary clusters recorded. Active is not full health. Later discrepancies remain unresolved.",
+          "tag": "RESEARCH HOLD"
         }
       ]
     },
@@ -33,13 +33,13 @@
       "id": "weather",
       "label": "Weather / roofs",
       "short": "Weather / roofs",
-      "status": "PRELIMINARY",
-      "summary": "Friday weather refresh captured separately; Sunday/Monday final weather, Paris hourly wind and retractable-roof decisions remain pending. Thursday is completed; its forecast is historical context only.",
+      "status": "CHECKED_WITH_OPEN_GATES",
+      "summary": "Fresh NWS kickoff-through-four-hour coverage for eight open/retractable venues; Atlanta roof open. Houston/Arizona roofs unresolved; gust fields unavailable; Seattle rain chance.",
       "items": [
         {
           "title": "Weather / roofs",
-          "detail": "All ten refreshed NWS windows cover kickoff through four hours. Forecasts are contextual, not model adjustments. Houston/Atlanta/Arizona roof decisions and Paris hourly wind remain open; missing gust fields are not zero gusts.",
-          "tag": "PRELIMINARY"
+          "detail": "Fresh NWS kickoff-through-four-hour coverage for eight open/retractable venues; Atlanta roof open. Houston/Arizona roofs unresolved; gust fields unavailable; Seattle rain chance.",
+          "tag": "RESEARCH HOLD"
         }
       ]
     },
@@ -47,13 +47,13 @@
       "id": "officiating",
       "label": "Officiating",
       "short": "Officiating",
-      "status": "14 REPORTED LEADS",
-      "summary": "Football Zebras assignments; full crew and substitutions unverified. RefMetrics assignment page retrieved was Week 6. No referee adjustment.",
+      "status": "CHECKED_WITH_OPEN_GATES",
+      "summary": "Reported heads rechecked. Jeff Seeman reported returning in Baltimore. Full crew substitutions unverified. RefMetrics Week 7 Sunday fields subscription restricted, no numeric influence.",
       "items": [
         {
           "title": "Officiating",
-          "detail": "Football Zebras assignments; full crew and substitutions unverified. RefMetrics assignment page retrieved was Week 6. No referee adjustment.",
-          "tag": "14 REPORTED LEADS"
+          "detail": "Reported heads rechecked. Jeff Seeman reported returning in Baltimore. Full crew substitutions unverified. RefMetrics Week 7 Sunday fields subscription restricted, no numeric influence.",
+          "tag": "RESEARCH HOLD"
         }
       ]
     },
@@ -61,13 +61,13 @@
       "id": "market",
       "label": "Markets",
       "short": "Markets",
-      "status": "13 COMPARISON REFERENCES",
-      "summary": "13 upcoming DraftKings spreads/totals via ESPN, retrieved Friday 8:17 AM ET. Provider update timestamps are unavailable. Comparison gaps are not grading locks, executable prices or expected-value claims. Thursday lock failed; no backfill.",
+      "status": "CHECKED_WITH_OPEN_GATES",
+      "summary": "FD/DK spread/total/moneyline provenance captured for all eleven open Sunday games. Seven eligible immutable FanDuel locks; later quotes are current context only. Signed home gap = market home spread minus model home spread.",
       "items": [
         {
           "title": "Markets",
-          "detail": "Gap = market home spread minus model home spread. Positive favors the home side relative to the quoted handicap; negative favors away. Upcoming display references expire after 24 hours. Thursday event matching failed in both retained final-window attempts; ATS/totals cannot be graded from this new capture.",
-          "tag": "COMPARISON ONLY"
+          "detail": "FD/DK spread/total/moneyline provenance captured for all eleven open Sunday games. Seven eligible immutable FanDuel locks; later quotes are current context only. Signed home gap = market home spread minus model home spread.",
+          "tag": "RESEARCH HOLD"
         }
       ]
     },
@@ -117,13 +117,13 @@
       "id": "workflow",
       "label": "Workflow",
       "short": "Workflow",
-      "status": "VERIFICATION REQUIRED",
-      "summary": "Existing hourly pregame task updated for Week 7. Verify actual NFL market workflow runs and immutable locks; configured schedules do not guarantee capture.",
+      "status": "CHECKED_WITH_OPEN_GATES",
+      "summary": "Final publication audit nfl_data/prospective/week7/pregame_refresh/20261025T163736Z_FINAL_PUBLICATION.json. No numerical forecast changes; later final gates remain open.",
       "items": [
         {
           "title": "Workflow",
-          "detail": "Existing hourly pregame task updated for Week 7. Verify actual NFL market workflow runs and immutable locks; configured schedules do not guarantee capture.",
-          "tag": "VERIFICATION REQUIRED"
+          "detail": "Final publication audit nfl_data/prospective/week7/pregame_refresh/20261025T163736Z_FINAL_PUBLICATION.json. No numerical forecast changes; later final gates remain open.",
+          "tag": "RESEARCH HOLD"
         }
       ]
     }
