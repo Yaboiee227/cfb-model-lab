@@ -68,14 +68,15 @@ def write_new(path,data):
     with path.open('x') as f:json.dump(data,f,indent=2)
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--check',action='store_true');args=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--check',action='store_true');ap.add_argument('--context',action='store_true');args=ap.parse_args()
     rows=verify();now=datetime.now(timezone.utc)
     if args.check:
         print(json.dumps({'freeze_verified':True,'games':len(rows),'now':now.isoformat()}));return
     if not utc('2026-10-22T00:00:00Z')<=now<utc('2026-10-27T01:00:00Z'):
         print('Outside Week 7 capture scope; no requests.');return
     active=[r for r in rows if timedelta(0)<utc(r['kickoff_utc'])-now<=timedelta(minutes=35) and not (ROOT/'locks'/f"{r['game_id']}.json").exists()]
-    if not active:
+    context_rows=[r for r in rows if now<utc(r['kickoff_utc']) and utc(r['kickoff_utc']).astimezone(__import__('zoneinfo').ZoneInfo('America/New_York')).date()==now.astimezone(__import__('zoneinfo').ZoneInfo('America/New_York')).date()] if args.context else []
+    if not active and not context_rows:
         print('No unlocked NFL game in capture window; no requests.');return
     stamp=now.strftime('%Y%m%dT%H%M%S%fZ');audit={'captured_at':now.isoformat(),'games':[r['game_id'] for r in active],'locks_created':[],'failures':[]}
     key=os.environ.get('ODDS_API_KEY')
@@ -87,7 +88,7 @@ def main():
         if remaining is not None and remaining<=30:audit['failures'].append('SHARED_QUOTA_RESERVE_REACHED')
         else:
             params=urlencode({'apiKey':key,'bookmakers':'fanduel,draftkings','markets':'spreads,totals,h2h','oddsFormat':'american','dateFormat':'iso',
-                'commenceTimeFrom':now.strftime('%Y-%m-%dT%H:%M:%SZ'),'commenceTimeTo':(now+timedelta(minutes=36)).strftime('%Y-%m-%dT%H:%M:%SZ')})
+                'commenceTimeFrom':now.strftime('%Y-%m-%dT%H:%M:%SZ'),'commenceTimeTo':(max([utc(r['kickoff_utc'])+timedelta(minutes=1) for r in context_rows],default=now+timedelta(minutes=36))).strftime('%Y-%m-%dT%H:%M:%SZ')})
             try:
                 data,headers=fetch('https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds?'+params)
                 captured=datetime.now(timezone.utc)

@@ -28,7 +28,7 @@ jobs:
       - name: Capture in-window quotes only
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
-        run: python scripts/nfl_week7_operations.py
+        run: python scripts/nfl_week7_operations.py ${{ github.event_name == 'push' && '--context' || '' }}
       - name: Preserve append-only observations
         if: always()
         run: |
