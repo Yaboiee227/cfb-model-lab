@@ -59,7 +59,8 @@ def lock_from(row,event,book,now):
     return dict(game_id=row['game_id'],book=book['key'],event_id=event['id'],spread_home=home['point'],total=over['point'],
         source='The Odds API / '+book['key'],observed_at=min(times).isoformat(),captured_at=now.isoformat(),
         market_timestamps={k:markets[k].get('last_update') or book['last_update'] for k in ['spreads','totals']},
-        prices={'home':home['price'],'away':away['price'],'over':over['price'],'under':under['price']},execution_verified=False,
+        prices={'home':home['price'],'away':away['price'],'over':over['price'],'under':under['price']},
+        moneyline=markets.get('h2h'),execution_verified=False,
         policy='First qualifying capture. FanDuel primary, DraftKings fallback at that capture; no best-line selection or replacement.')
 
 def write_new(path,data):
@@ -85,7 +86,7 @@ def main():
         remaining=old.get('quota',{}).get('remaining')
         if remaining is not None and remaining<=30:audit['failures'].append('SHARED_QUOTA_RESERVE_REACHED')
         else:
-            params=urlencode({'apiKey':key,'bookmakers':'fanduel,draftkings','markets':'spreads,totals','oddsFormat':'american','dateFormat':'iso',
+            params=urlencode({'apiKey':key,'bookmakers':'fanduel,draftkings','markets':'spreads,totals,h2h','oddsFormat':'american','dateFormat':'iso',
                 'commenceTimeFrom':now.strftime('%Y-%m-%dT%H:%M:%SZ'),'commenceTimeTo':(now+timedelta(minutes=36)).strftime('%Y-%m-%dT%H:%M:%SZ')})
             try:
                 data,headers=fetch('https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds?'+params)
