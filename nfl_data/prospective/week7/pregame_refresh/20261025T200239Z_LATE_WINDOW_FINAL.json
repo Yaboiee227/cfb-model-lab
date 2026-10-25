@@ -1,0 +1,60 @@
+{
+  "observed_at_utc": "2026-10-25T20:02:39Z",
+  "scope": "NFL Week 7 late-window final inactives and eligible FanDuel locks; append-only",
+  "freeze": {"snapshot_id": "20261021T114427Z", "canonical_v1_changed": false, "ftn50_changed": false, "publication_state": "HOLD_RESEARCH_ONLY", "numerical_projection_changes": 0},
+  "games": [
+    {
+      "game_id": "2026_07_DEN_ARI",
+      "kickoff_utc": "2026-10-25T20:05:00Z",
+      "official_inactives": {
+        "DEN": ["Pat Surtain II", "Sam Ehlinger (emergency third QB)", "Talanoa Hufanga", "Kage Casey", "Dallan Bentley", "Jordan Jackson", "Tyler Onyedim"],
+        "ARI": ["Jeremiyah Love", "Max Melton", "Carson Beck (emergency third QB)", "Andrew Wingard", "Jon Gaines II", "Albert Reese", "Walter Nolen III"]
+      },
+      "material_active_context": ["Jonah Coleman active", "Jonathon Cooper active", "Budda Baker active"],
+      "market_lock": "nfl_data/prospective/week7/locks/2026_07_DEN_ARI.json",
+      "roof_state": "UNRESOLVED_AT_CAPTURE",
+      "reported_referee": "Craig Wrolstad",
+      "full_crew_confirmed": false,
+      "refmetrics": "SUBSCRIPTION_RESTRICTED_SUNDAY_DATA"
+    },
+    {
+      "game_id": "2026_07_GB_DET",
+      "kickoff_utc": "2026-10-25T20:25:00Z",
+      "official_inactives": {
+        "GB": ["Benjamin St-Juste", "Kaleb Johnson", "Zaire Franklin", "Jager Burton", "Donovan Jennings", "Kevin Zeitler"],
+        "DET": ["Jackson Meeks", "Mekhi Wingo", "Ahmed Hassanein", "Bishop Fitzgerald", "Seth McLaughlin"]
+      },
+      "material_active_context": ["Aaron Banks active", "Josh Jacobs active", "Brian Branch active", "Cade Mays active"],
+      "market_lock": "nfl_data/prospective/week7/locks/2026_07_GB_DET.json",
+      "roof_state": "FIXED_ROOF_INDOOR",
+      "reported_referee": "Alex Moore",
+      "full_crew_confirmed": false,
+      "refmetrics": "SUBSCRIPTION_RESTRICTED_SUNDAY_DATA"
+    },
+    {
+      "game_id": "2026_07_LA_LV",
+      "kickoff_utc": "2026-10-25T20:25:00Z",
+      "official_inactives": {
+        "LA": ["Ty Simpson (emergency third QB)", "Trent McDuffie", "Nate Landman", "Bill Murray", "Keagen Trost", "Max Klare"],
+        "LV": ["Aidan O'Connell (emergency third QB)", "Tristin McCollum", "Dalton Johnson", "Cian Slone", "Bryce Cabeldue", "Jonah Laulu", "Thomas Booker IV"]
+      },
+      "material_active_context": ["Puka Nacua active", "Mike Washington Jr. active", "Quay Walker active"],
+      "market_lock": "nfl_data/prospective/week7/locks/2026_07_LA_LV.json",
+      "roof_state": "FIXED_ROOF_INDOOR",
+      "reported_referee": "Ron Torbert",
+      "full_crew_confirmed": false,
+      "refmetrics": "SUBSCRIPTION_RESTRICTED_SUNDAY_DATA"
+    }
+  ],
+  "source_urls": {
+    "official_nfl_inactives": "https://www.nfl.com/news/nfl-week-7-inactives-players-ruled-out-sunday-2026-season",
+    "broncos": "https://www.denverbroncos.com/news/cb-pat-surtain-ii-among-broncos-inactive-players-for-week-7-game-vs-cardinals",
+    "cardinals": "https://www.azcardinals.com/news/cornerback-max-melton-inactive-for-game-against-broncos",
+    "packers": "https://www.packers.com/news/packers-lions-week-7-inactives-oct-25-2026",
+    "lions": "https://www.detroitlions.com/news/inactives-lions-vs-packers-branch-mays",
+    "rams": "https://www.therams.com/news/trent-mcduffie-among-rams-inactives-for-week-7-2026-at-raiders",
+    "raiders": "https://www.raiders.com/news/las-vegas-raiders-week-7-inactives-vs-los-angeles-rams",
+    "fanduel": "https://www.fanduel.com/research/nfl-week-7-schedule-odds-for-every-game"
+  },
+  "controls": {"no_post_kickoff_backfill": true, "kalshi_polymarket_separate": true, "play_or_lean_labels_added": false, "arbitrary_point_adjustments_added": false}
+}
