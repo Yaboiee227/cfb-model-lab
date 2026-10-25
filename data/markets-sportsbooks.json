@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-25T00:34:23.839Z",
-  "lastCoreRefresh": "2026-10-25T00:34:23.839Z",
-  "lastMoneylineRefresh": "2026-10-25T00:34:23.839Z",
+  "generatedAt": "2026-10-25T00:49:46.989Z",
+  "lastCoreRefresh": "2026-10-25T00:49:46.989Z",
+  "lastMoneylineRefresh": "2026-10-25T00:49:46.989Z",
   "provider": "The Odds API",
   "books": [
     "fanduel",
     "draftkings"
   ],
   "quota": {
-    "remaining": 274,
-    "used": 226,
+    "remaining": 271,
+    "used": 229,
     "lastCost": 1,
     "usageThisRun": 3,
     "reserveCredits": 30
@@ -24,7 +24,7 @@
     "coreIntervalMinutes": 45,
     "moneylineIntervalMinutes": 90,
     "quotaFactor": 1,
-    "manualOverride": false
+    "manualOverride": true
   },
   "games": [
     {
@@ -35,7 +35,7 @@
       "awayTeam": "North Dakota State Bison",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-10-25T00:34:07Z",
+          "updatedAt": "2026-10-25T00:49:46Z",
           "moneyline": {
             "home": -200,
             "away": 164
@@ -124,7 +124,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-10-25T00:33:44Z",
+          "updatedAt": "2026-10-25T00:49:43Z",
           "moneyline": {
             "home": -192,
             "away": 160
@@ -137,8 +137,8 @@
           },
           "total": {
             "point": 39.5,
-            "overPrice": -115,
-            "underPrice": -105
+            "overPrice": -110,
+            "underPrice": -110
           },
           "opening": {
             "moneyline": {
@@ -194,10 +194,10 @@
       "awayTeam": "Houston Cougars",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-10-25T00:34:07Z",
+          "updatedAt": "2026-10-25T00:49:46Z",
           "moneyline": {
-            "home": -255,
-            "away": 205
+            "home": -250,
+            "away": 202
           },
           "spread": {
             "home": -6.5,
@@ -286,11 +286,18 @@
               "total": 57.5,
               "homeMl": -255,
               "awayMl": 205
+            },
+            {
+              "ts": "2026-10-25T00:49:46.989Z",
+              "spreadHome": -6.5,
+              "total": 57.5,
+              "homeMl": -250,
+              "awayMl": 202
             }
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-10-25T00:33:44Z",
+          "updatedAt": "2026-10-25T00:49:43Z",
           "moneyline": {
             "home": -238,
             "away": 195
