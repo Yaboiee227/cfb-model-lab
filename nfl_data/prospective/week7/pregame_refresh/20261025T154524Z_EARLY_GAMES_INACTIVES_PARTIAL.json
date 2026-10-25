@@ -1,0 +1,129 @@
+{
+  "league": "NFL",
+  "season": 2026,
+  "week": 7,
+  "capture": {
+    "observed_at_utc": "2026-10-25T15:45:24Z",
+    "observed_at_et": "2026-10-25T11:45:24-04:00",
+    "capture_type": "EARLY_GAMES_OFFICIAL_INACTIVES_PARTIAL_PRE_MARKET_LOCK",
+    "kickoff_et": "2026-10-25T13:00:00-04:00",
+    "minutes_to_kickoff": 74.6,
+    "market_lock_window_open": false
+  },
+  "parent_freeze": {
+    "freeze_id": "20261021T114427Z",
+    "canonical_v1_changed": false,
+    "ftn50_changed": false,
+    "promotion_allowed": false,
+    "release_state": "HOLD_RESEARCH_ONLY",
+    "canonical_adjustment_points": 0
+  },
+  "games": [
+    {
+      "game_id": "2026_07_SF_ATL",
+      "projection": {"canonical_home_margin": -5.68334261203569, "canonical_total": 47.012385011376814, "ftn50_home_margin": -4.8769668820827885},
+      "referee": "Clay Martin",
+      "refmetrics": "N/A_NO_VERIFIED_CREW_SIGNAL",
+      "official_inactives": {
+        "SF": ["DE Nick Bosa", "WR Mike Evans", "WR Deebo Samuel", "LB Luke Gifford", "LB Garret Wallow", "S Marques Sigle", "QB Kurtis Rourke (emergency third QB)"],
+        "ATL": ["QB Jack Strand (emergency third QB)", "ILB Divine Deablo", "CB Avieon Terrell", "QB Andy Dalton", "WR Olamide Zaccheaus", "RB Brian Robinson Jr.", "DB Billy Bowman Jr."]
+      },
+      "material_context": "Christian Kirk, Siran Neal and Upton Stout are active for San Francisco. Za'Darius Smith and Gervon Dexter are active for Atlanta. The receiver/front-seven attrition remains material context only.",
+      "venue_weather": "Mercedes-Benz Stadium roof officially listed open; NWS 67 F, 0% precipitation, east wind 15 mph at kickoff. Gust detail unavailable."
+    },
+    {
+      "game_id": "2026_07_CIN_BAL",
+      "projection": {"canonical_home_margin": 4.027868612055471, "canonical_total": 46.92135705843933, "ftn50_home_margin": 5.496316642120076},
+      "referee": "Shawn Smith",
+      "refmetrics": "N/A_NO_VERIFIED_CREW_SIGNAL",
+      "official_inactives": {
+        "CIN": ["S Russ Yeast", "C Connor Lew", "OT Myles Hinton", "DE Shemar Stewart", "DT Landon Robinson"],
+        "BAL": null
+      },
+      "material_context": "Baltimore officially ruled out Lamar Jackson on October 24 and named Tyler Huntley the starter. The complete Ravens inactive list was not yet available at this timestamp.",
+      "venue_weather": "Outdoor; NWS 62 F, sunny, 0% precipitation, southeast wind 2 mph at kickoff."
+    },
+    {
+      "game_id": "2026_07_TB_CAR",
+      "projection": {"canonical_home_margin": 6.121991712398631, "canonical_total": 44.99094705921449, "ftn50_home_margin": 2.6939922029411796},
+      "referee": "Carl Cheffers",
+      "refmetrics": "N/A_NO_VERIFIED_CREW_SIGNAL",
+      "official_inactives": {
+        "TB": null,
+        "CAR": ["TE Ja'Tavion Sanders", "OLB Jaelan Phillips", "QB Haynes King (emergency third QB)", "RB AJ Dillon", "C Sam Hecht", "OT Stone Forsythe", "DT TeRah Edwards"]
+      },
+      "material_context": "Baker Mayfield is confirmed to start after a three-game absence. Tampa previously ruled out WR Emeka Egbuka, T Luke Goedeke and S Antoine Winfield Jr. The complete Tampa inactive list was not yet available at this timestamp. Carolina will start Princely Umanmielen for Jaelan Phillips and has altered OL depth.",
+      "venue_weather": "Outdoor; NWS 67 F, 0% precipitation, northeast wind 10 mph at kickoff."
+    },
+    {
+      "game_id": "2026_07_NYG_HOU",
+      "projection": {"canonical_home_margin": 3.733754200358406, "canonical_total": 46.24993485141048, "ftn50_home_margin": 1.8435047354078526},
+      "referee": "Land Clark",
+      "refmetrics": "N/A_NO_VERIFIED_CREW_SIGNAL",
+      "official_inactives": {
+        "NYG": ["QB Jake Haener (emergency third QB)", "S Jevon Holland", "TE Theo Johnson", "OT Marcus Mbow", "CB Greg Newsome II", "CB Nikko Reed", "OL Josh Sills"],
+        "HOU": ["S Reed Blankenship", "OT Blake Fisher", "TE Marlin Klein", "RB David Montgomery", "G Febechi Nwaiwu", "S Jalen Pitre", "OT Nathan Thomas"]
+      },
+      "material_context": "Tank Dell is active. The post-freeze Giants starting-QB announcement remains a regime/reliability flag only. Both clubs have confirmed OL and secondary attrition.",
+      "venue_weather": "NRG Stadium roof decision unresolved; outside NWS context 78 F and 10 mph at kickoff, no numeric influence."
+    },
+    {
+      "game_id": "2026_07_IND_MIN",
+      "projection": {"canonical_home_margin": 5.999961118837756, "canonical_total": 41.01896545515951, "ftn50_home_margin": 4.461235993755242},
+      "referee": "Brad Rogers",
+      "refmetrics": "N/A_NO_VERIFIED_CREW_SIGNAL",
+      "official_inactives": {"IND": null, "MIN": null},
+      "material_context": "Indianapolis officially ruled out WR Anthony Gould, TE Tyler Warren, LB CJ Allen and CB Sauce Gardner. Minnesota carried no final injury designations and activated Jordan Mason, but complete official inactive lists were not yet available at this timestamp.",
+      "venue_weather": "Fixed-roof indoor game."
+    },
+    {
+      "game_id": "2026_07_MIA_NYJ",
+      "projection": {"canonical_home_margin": -0.4735792690094778, "canonical_total": 43.08643938100684, "ftn50_home_margin": -1.3062043049328746},
+      "referee": "Brad Allen",
+      "refmetrics": "N/A_NO_VERIFIED_CREW_SIGNAL",
+      "official_inactives": {"MIA": null, "NYJ": ["RB Breece Hall"]},
+      "material_context": "NFL.com confirmed Breece Hall inactive. Miami previously ruled out CB Reese Taylor; complete team inactive lists were not yet available at this timestamp.",
+      "venue_weather": "Outdoor; NWS 65 F, 0% precipitation, light wind near 2 mph at kickoff."
+    },
+    {
+      "game_id": "2026_07_CLE_TEN",
+      "projection": {"canonical_home_margin": 0.6869115555417418, "canonical_total": 39.384384593537355, "ftn50_home_margin": -0.280447481650441},
+      "referee": "Scott Novak",
+      "refmetrics": "N/A_NO_VERIFIED_CREW_SIGNAL",
+      "official_inactives": {
+        "CLE": ["QB Taylen Green (emergency third QB)", "LB Justin Jefferson", "CB Noah Igbinoghene", "RB Audric Estime", "DT Mike Hall", "C Parker Brailsford"],
+        "TEN": ["WR Calvin Ridley", "RB Tyjae Spears", "RB Nick Singleton", "CB Jaylon Jones", "T Brandon Crenshaw-Dickson", "TE Kylen Granson", "DT Jackie Marshall"]
+      },
+      "material_context": "Denzel Ward and Quincy Williams are active for Cleveland. Tennessee's official absences create a material WR/RB skill-position cluster. Canonical V1 and FTN50 continue to disagree on the winner; neither was changed.",
+      "venue_weather": "Outdoor; NWS 72 F, sunny, 0% precipitation and calm wind at kickoff."
+    }
+  ],
+  "source_quality": {
+    "official_nfl_inactives": "PARTIAL_LIVE_PAGE_AND_OFFICIAL_TEAM_PAGES",
+    "official_inactives_complete_for_games": ["2026_07_SF_ATL", "2026_07_NYG_HOU", "2026_07_CLE_TEN"],
+    "official_inactives_partial_for_games": ["2026_07_CIN_BAL", "2026_07_TB_CAR", "2026_07_IND_MIN", "2026_07_MIA_NYJ"],
+    "head_referees": "FOOTBALL_ZEBRAS_REPORTED_HEAD_REFEREE_FULL_CREW_NOT_CONFIRMED",
+    "weather": "NWS_HOURLY_CAPTURE_FROM_20261025T151411Z",
+    "market": "NOT_CAPTURED_AS_LOCK_WINDOW_NOT_OPEN",
+    "sic_chao": "QUALITATIVE_CONTEXT_ONLY_NO_NUMERIC_SIGNAL",
+    "abrams_giffen": "NO_GAME_SPECIFIC_VERIFIED_NUMERIC_SIGNAL_NO_CANONICAL_INFLUENCE"
+  },
+  "remaining_gaps": [
+    "Complete official inactive lists for BAL, TB, IND, MIN, MIA and NYJ.",
+    "Direct FanDuel and DraftKings spread, total and moneyline quotes inside 12:30-12:59 PM ET lock window.",
+    "Full officiating crews and usable RefMetrics context remain unverified.",
+    "Houston roof decision remains unverified."
+  ],
+  "sources": [
+    "https://www.nfl.com/news/nfl-week-7-inactives-players-ruled-out-sunday-2026-season",
+    "https://www.nfl.com/news/week-7-injuries-sunday-pregame-2026-nfl-season",
+    "https://www.bengals.com/news/bengals-ravens-inactives-week-7-2026",
+    "https://www.panthers.com/news/week-7-inactives-vs-tampa-bay-no-jaelan-phillips-this-week",
+    "https://www.baltimoreravens.com/news/lamar-jackson-out-against-bengals-week-7-tyler-huntley-third-straight-start",
+    "https://www.buccaneers.com/news/buccaneers-panthers-injury-report-oct-23-week-7-2026",
+    "https://www.colts.com/news/colts-rule-out-te-tyler-warren-wr-anthony-gould-cb-sauce-gardner-for-week-7",
+    "https://www.vikings.com/news/jordan-mason-activated-colts-game-week-7-2026",
+    "https://www.footballzebras.com/2026/10/week-7-referee-assignments-2026/",
+    "https://www.refmetrics.com/nfl/official-assignments-today"
+  ]
+}
