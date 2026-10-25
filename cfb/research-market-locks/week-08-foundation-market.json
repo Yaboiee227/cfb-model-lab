@@ -16,16 +16,16 @@
   "lockWindowMinutes": 30.0,
   "maxObservationAgeMinutes": 35.0,
   "scopeRestricted": true,
-  "updatedAt": "2026-10-25T01:42:53.902938Z",
+  "updatedAt": "2026-10-25T02:11:22.586454Z",
   "counts": {
     "foundationGames": 56,
     "activeScopeGames": 53,
     "pausedGames": 0,
     "preservedOutOfScopeLockedGames": 3,
-    "gamesWithMarketLock": 50,
-    "bookObservationsLocked": 100,
+    "gamesWithMarketLock": 51,
+    "bookObservationsLocked": 102,
     "newBookObservationsThisRun": 2,
-    "pendingGames": 1,
+    "pendingGames": 0,
     "missedGames": 5
   },
   "games": [
@@ -1936,8 +1936,35 @@
       "homeTeam": "Utah",
       "kickoff": "2026-10-25T02:15:00Z",
       "projectionDigest": "15b827902593d6d6604ce90eef0a4fba9aa97974c10a64986f0af10f93bca77f",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-10-25T02:10:58Z",
+          "lockedAt": "2026-10-25T02:11:22.586454Z",
+          "marketSpreadHome": -6.5,
+          "marketTotal": 57.5,
+          "marketMoneylineHome": -245,
+          "marketMoneylineAway": 198,
+          "spreadHomePrice": -112,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "0f4f287f294283eeff2f7072f1f4ccbdb21de449ce0a5dcdb5a32c5b1919a426"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-10-25T02:10:41Z",
+          "lockedAt": "2026-10-25T02:11:22.586454Z",
+          "marketSpreadHome": -6.5,
+          "marketTotal": 57.5,
+          "marketMoneylineHome": -230,
+          "marketMoneylineAway": 190,
+          "spreadHomePrice": -108,
+          "totalOverPrice": -105,
+          "totalUnderPrice": -115,
+          "observationDigest": "ee5b05f639cf4a56bbb2434012231facd5a634df133403d9e02051a5a40ef9d1"
+        }
+      },
+      "status": "LOCKED"
     }
   ],
   "policy": "Research-only per-book publication-window capture. FanDuel and DraftKings are preserved independently; no consensus or canonical benchmark is inferred. Existing book observations are immutable and post-kickoff reconstruction is prohibited. When an active scope is supplied, prior immutable locks remain preserved even if their games are no longer active, while unlocked out-of-scope games remain paused and cannot receive new observations."
