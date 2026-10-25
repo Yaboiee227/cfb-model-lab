@@ -1,0 +1,95 @@
+{
+  "captured_at": "2026-10-25T13:11:54.431313+00:00",
+  "provider": "The Odds API",
+  "sport": "americanfootball_nfl",
+  "events": [
+    {
+      "id": "2e710ea5a306b614f0f966e3d78732f8",
+      "sport_key": "americanfootball_nfl",
+      "sport_title": "NFL",
+      "commence_time": "2026-10-25T13:30:00Z",
+      "home_team": "New Orleans Saints",
+      "away_team": "Pittsburgh Steelers",
+      "bookmakers": [
+        {
+          "key": "draftkings",
+          "title": "DraftKings",
+          "last_update": "2026-10-25T13:11:31Z",
+          "markets": [
+            {
+              "key": "spreads",
+              "last_update": "2026-10-25T13:11:30Z",
+              "outcomes": [
+                {
+                  "name": "New Orleans Saints",
+                  "price": -105,
+                  "point": 3.0
+                },
+                {
+                  "name": "Pittsburgh Steelers",
+                  "price": -115,
+                  "point": -3.0
+                }
+              ]
+            },
+            {
+              "key": "totals",
+              "last_update": "2026-10-25T13:11:30Z",
+              "outcomes": [
+                {
+                  "name": "Over",
+                  "price": -108,
+                  "point": 43.5
+                },
+                {
+                  "name": "Under",
+                  "price": -112,
+                  "point": 43.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "fanduel",
+          "title": "FanDuel",
+          "last_update": "2026-10-25T13:11:31Z",
+          "markets": [
+            {
+              "key": "spreads",
+              "last_update": "2026-10-25T13:11:31Z",
+              "outcomes": [
+                {
+                  "name": "New Orleans Saints",
+                  "price": -110,
+                  "point": 3.0
+                },
+                {
+                  "name": "Pittsburgh Steelers",
+                  "price": -110,
+                  "point": -3.0
+                }
+              ]
+            },
+            {
+              "key": "totals",
+              "last_update": "2026-10-25T13:11:31Z",
+              "outcomes": [
+                {
+                  "name": "Over",
+                  "price": -104,
+                  "point": 43.5
+                },
+                {
+                  "name": "Under",
+                  "price": -118,
+                  "point": 43.5
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
