@@ -1,0 +1,122 @@
+{
+  "observed_at_utc": "2026-10-25T23:59:57Z",
+  "scope": "NFL Week 7 Kansas City at Seattle final pre-kickoff review; append-only",
+  "game_id": "2026_07_KC_SEA",
+  "kickoff_utc_frozen": "2026-10-26T00:20:00Z",
+  "freeze": {
+    "snapshot_id": "20261021T114427Z",
+    "canonical_v1_changed": false,
+    "ftn50_changed": false,
+    "publication_state": "HOLD_RESEARCH_ONLY",
+    "numerical_projection_changes": 0,
+    "canonical_home_margin_sea": 1.602236252102505,
+    "canonical_total": 42.8507742914254,
+    "canonical_score": {
+      "KC": 20.624269019661446,
+      "SEA": 22.22650527176395
+    }
+  },
+  "quarterbacks": {
+    "KC_starter": "Patrick Mahomes",
+    "SEA_starter": "Sam Darnold",
+    "KC_emergency_third": "Garrett Nussmeier; officially inactive",
+    "SEA_emergency_third": "Drew Lock; officially inactive"
+  },
+  "official_inactives": {
+    "KC": [
+      "Rashee Rice",
+      "Garrett Nussmeier (emergency third quarterback)",
+      "Jadon Canady",
+      "Ben VanSumeren",
+      "Jack Pyburn",
+      "Jaylon Moore"
+    ],
+    "SEA": [
+      "Drew Lock (emergency third quarterback)",
+      "Zach Charbonnet",
+      "Drake Thomas",
+      "Robert Henry Jr.",
+      "Chazz Surratt",
+      "Connor O'Toole",
+      "Beau Stephens"
+    ]
+  },
+  "material_active_context": {
+    "KC": [
+      "L'Jarius Sneed active after a questionable designation",
+      "Cooper McDonald active after activation from Reserve/Injured",
+      "Travis Kelce active",
+      "Justin Watson elevated and active"
+    ],
+    "SEA": [
+      "Nick Emmanwori active",
+      "Uchenna Nwosu active",
+      "DeMarcus Lawrence active",
+      "Anthony Bradford active after activation from Reserve/Injured"
+    ]
+  },
+  "offensive_line_context": {
+    "KC": "Jaylon Moore inactive and Josh Simmons on Reserve/Injured. Secondary reporting expects Joshua Ezeudu at right tackle; no official starter declaration was recorded and no numerical adjustment was made.",
+    "SEA": "Anthony Bradford is active; Beau Stephens is inactive. No numerical adjustment was made."
+  },
+  "weather": {
+    "venue": "Lumen Field; open air",
+    "nws_last_update_local": "2026-10-25T15:06:00-07:00",
+    "kickoff_context": "NWS Seattle forecast approximately 52 F near 8 p.m. PDT, light/calm wind and a chance of light rain; no severe condition identified.",
+    "numerical_adjustment": false
+  },
+  "officiating": {
+    "reported_referee": "John Hussey",
+    "full_crew_confirmed": false,
+    "refmetrics": "SUBSCRIPTION_RESTRICTED_SUNDAY_DATA",
+    "numerical_adjustment": false
+  },
+  "sportsbook_capture": {
+    "provider_transport": "The Odds API",
+    "captured_at_utc": "2026-10-25T23:52:46.334311Z",
+    "provider_event_commence_time_utc": "2026-10-26T00:22:00Z",
+    "official_and_frozen_kickoff_utc": "2026-10-26T00:20:00Z",
+    "FanDuel": {
+      "last_update_utc": "2026-10-25T23:52:45Z",
+      "spread": "SEA -3 (-112); KC +3 (-108)",
+      "total": "43.5; Over -105, Under -115",
+      "moneyline": "SEA -166; KC +140"
+    },
+    "DraftKings": {
+      "last_update_utc": "2026-10-25T23:51:23Z",
+      "spread": "SEA -3 (-105); KC +3 (-115)",
+      "total": "43.5; Over -102, Under -118",
+      "moneyline": "SEA -162; KC +136"
+    },
+    "lock_created": false,
+    "workflow_failure": "2026_07_KC_SEA: EVENT_MISSING_OR_DUPLICATE",
+    "failure_explanation": "Exact kickoff matching rejected the provider event because its commence_time was two minutes later than the frozen and NFL-official kickoff. Quotes are retained as timestamped evidence only and are not an immutable sportsbook lock.",
+    "manual_override": false,
+    "backfill": false
+  },
+  "context_layers": {
+    "sic_chao": "No new verified final-window medical fact promoted.",
+    "abrams_trends": "Context only; no numerical canonical influence.",
+    "giffen_luck": "Context only; no numerical canonical influence."
+  },
+  "source_urls": {
+    "chiefs_official_inactives": "https://www.chiefs.com/news/week-7-inactive-players-chiefs-vs-seahawks",
+    "seahawks_official_inactives": "https://www.seahawks.com/news/seahawks-vs-chiefs-week-7-inactives",
+    "nfl_aggregate_inactives": "https://www.nfl.com/news/nfl-week-7-inactives-players-ruled-out-sunday-2026-season",
+    "nws_point_forecast": "https://forecast.weather.gov/MapClick.php?FcstType=text&TextType=1&lat=47.6368&lg=english&lon=-122.3539&unit=0",
+    "football_zebras_assignments": "https://www.footballzebras.com/2026/10/week-7-referee-assignments-2026/"
+  },
+  "unresolved": [
+    "Full officiating crew and substitutions unconfirmed",
+    "RefMetrics Sunday assignment context subscription restricted",
+    "No immutable sportsbook lock because the exact kickoff-time identity gate failed"
+  ],
+  "controls": {
+    "no_post_kickoff_backfill": true,
+    "kalshi_polymarket_separate": true,
+    "play_or_lean_labels_added": false,
+    "arbitrary_point_adjustments_added": false,
+    "frozen_projection_files_modified": false,
+    "website_market_columns_modified": false
+  }
+}
