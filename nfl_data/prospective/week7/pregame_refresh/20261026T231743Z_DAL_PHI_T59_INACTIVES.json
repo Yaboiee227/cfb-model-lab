@@ -1,0 +1,91 @@
+{
+  "observed_at_utc": "2026-10-26T23:17:43Z",
+  "scope": "NFL Week 7 Dallas at Philadelphia T-59 material inactive follow-up; append-only",
+  "game_id": "2026_07_DAL_PHI",
+  "kickoff_utc": "2026-10-27T00:15:00Z",
+  "supersedes_fact_gap_only": "20261026T225106Z_DAL_PHI_T84_OBSERVATION.json",
+  "material_change": "Dallas complete game-day inactive list became available after the T-84 capture",
+  "freeze": {
+    "snapshot_id": "20261021T114427Z",
+    "canonical_v1_changed": false,
+    "ftn50_changed": false,
+    "publication_state": "HOLD_RESEARCH_ONLY",
+    "numerical_projection_changes": 0
+  },
+  "official_inactives": {
+    "PHI": [
+      "Nolan Smith",
+      "DeVonta Smith",
+      "Dontayvion Wicks",
+      "Cole Payton (emergency third quarterback)",
+      "Michael Carter II",
+      "Jake Majors"
+    ],
+    "DAL": [
+      "KaVontae Turpin",
+      "Dee Winters",
+      "Drew Shelton",
+      "Tyrus Wheat",
+      "Emari Demercado"
+    ]
+  },
+  "availability_delta": {
+    "DAL_newly_resolved_healthy_scratches": [
+      "Tyrus Wheat",
+      "Emari Demercado"
+    ],
+    "DAL_confirmed_active_material": [
+      "DeMarvion Overshown",
+      "Cobie Durant"
+    ],
+    "PHI_change_since_prior_capture": false,
+    "quarterback_change": false
+  },
+  "source_quality": {
+    "DAL_injury_outs": "OFFICIAL_TEAM_CONFIRMED",
+    "DAL_complete_game_day_list": "TEAM_BEAT_CORROBORATED; NFL.com dynamic aggregate not yet populated in retrieval",
+    "PHI_complete_game_day_list": "OFFICIAL_TEAM_CONFIRMED"
+  },
+  "weather": {
+    "change_since_prior_capture": false,
+    "context": "Clear near kickoff, approximately 61 F with light wind; open-air venue; no active NWS hazard",
+    "numerical_adjustment": false
+  },
+  "officiating": {
+    "reported_referee": "Alex Kemp",
+    "full_crew_confirmed": false,
+    "refmetrics_week7_context_available": false,
+    "numerical_adjustment": false
+  },
+  "market": {
+    "lock_window_open": false,
+    "eligible_window_begins_utc": "2026-10-26T23:45:00Z",
+    "eligible_window_ends_utc": "2026-10-27T00:15:00Z",
+    "fresh_fd_dk_quote_captured": false,
+    "note": "No premature or backdated lock. Exact-identity FanDuel/DraftKings capture remains pending T-30."
+  },
+  "source_urls": {
+    "eagles_official_inactives": "https://www.philadelphiaeagles.com/news/cowboys-vs-eagles-inactives-saquon-barkley-jalyx-hunt-2026-week-7-monday-night-football",
+    "cowboys_official_updates": "https://www.dallascowboys.com/news/updates-october-2026",
+    "complete_lists_corroboration": "https://www.bleedinggreennation.com/news/188220/eagles-cowboys-inactives-saquon-barkley-will-play",
+    "nfl_inactives_aggregate": "https://www.nfl.com/inactives/",
+    "nws_point_forecast": "https://forecast.weather.gov/MapClick.php?lat=39.961978912353516&lon=-75.14990234375",
+    "football_zebras_assignments": "https://www.footballzebras.com/2026/10/week-7-referee-assignments-2026/"
+  },
+  "unresolved": [
+    "NFL.com dynamic inactive aggregate had not populated the Monday game in retrieved content",
+    "Full officiating crew and substitutions unconfirmed",
+    "RefMetrics Week 7 context unavailable",
+    "Fresh FanDuel/DraftKings lock pending the 7:45-8:15 p.m. ET T-30 window"
+  ],
+  "controls": {
+    "no_post_kickoff_backfill": true,
+    "kalshi_polymarket_separate": true,
+    "play_or_lean_labels_added": false,
+    "invented_uncertainty_probabilities_added": false,
+    "arbitrary_point_adjustments_added": false,
+    "frozen_projection_files_modified": false,
+    "website_market_columns_modified": false,
+    "cfb_operations_performed": false
+  }
+}
