@@ -1,0 +1,116 @@
+{
+  "observed_at_utc": "2026-10-26T22:51:06Z",
+  "scope": "NFL Week 7 Dallas at Philadelphia T-84 official-inactive review; append-only",
+  "game_id": "2026_07_DAL_PHI",
+  "kickoff_utc": "2026-10-27T00:15:00Z",
+  "freeze": {
+    "snapshot_id": "20261021T114427Z",
+    "canonical_v1_changed": false,
+    "ftn50_changed": false,
+    "publication_state": "HOLD_RESEARCH_ONLY",
+    "numerical_projection_changes": 0,
+    "canonical_home_margin_phi": -0.6253648897420163,
+    "canonical_total": 45.87595074684257,
+    "ftn50_home_margin_phi": -1.0507153956590638
+  },
+  "quarterbacks": {
+    "DAL_starter": "Dak Prescott",
+    "PHI_starter": "Tanner McKee",
+    "PHI_backup": "Joe Milton III",
+    "PHI_emergency_third": "Cole Payton; officially inactive"
+  },
+  "official_inactives": {
+    "PHI": [
+      "Nolan Smith",
+      "DeVonta Smith",
+      "Dontayvion Wicks",
+      "Cole Payton (emergency third quarterback)",
+      "Michael Carter II",
+      "Jake Majors"
+    ],
+    "DAL": null
+  },
+  "dallas_official_confirmed_unavailable": [
+    "Drew Shelton (hamstring; ruled out on final injury report)",
+    "KaVontae Turpin (ribs; ruled out on final injury report)",
+    "Dee Winters (calf; ruled out on final injury report)",
+    "Marist Liufau (forearm; remains on Reserve/Injured and was ruled out October 25)",
+    "P.J. Locke (foot; remains on Reserve/Injured and was ruled out October 25)"
+  ],
+  "material_active_context": {
+    "PHI": [
+      "Saquon Barkley active after two-game hamstring absence",
+      "Jonathan Greenard active despite missing the final two practices with an ankle injury",
+      "Jalyx Hunt active after a knee/ankle absence",
+      "Grant Calcaterra activated from Reserve/Injured",
+      "Landon Dickerson activated from Reserve/Injured",
+      "Eli Stowers activated from Reserve/Injured and set to make his NFL debut",
+      "Dallas Goedert cleared on the final injury report"
+    ],
+    "DAL": [
+      "DeMarvion Overshown cleared medically and available after a hamstring absence",
+      "Cobie Durant cleared medically and available after a hamstring absence"
+    ]
+  },
+  "personnel_context": {
+    "PHI": "Landon Dickerson's activation restores a veteran left-guard option; Jake Majors is inactive. Philadelphia elevated OLB Keyshawn James-Newby and RB Elijah Mitchell from the practice squad.",
+    "DAL": "Drew Shelton is unavailable. Jonathan Mingo is the official-team-reported alternative punt-return option with KaVontae Turpin out. No numerical role adjustment was made."
+  },
+  "weather": {
+    "venue": "Lincoln Financial Field; open air",
+    "nws_point_forecast_last_update_local": "2026-10-26T16:09:00-04:00",
+    "nws_observation_last_update_local": "2026-10-26T17:54:00-04:00",
+    "kickoff_context": "Clear and approximately 61 F near kickoff, falling into the upper 50s during the game; west wind easing toward about 5 mph and no active NWS hazard.",
+    "numerical_adjustment": false
+  },
+  "travel_rest": {
+    "context": "Routine domestic divisional road trip for Dallas; no verified unusual rest, venue or travel disruption identified.",
+    "numerical_adjustment": false
+  },
+  "officiating": {
+    "reported_referee": "Alex Kemp",
+    "source": "Football Zebras Week 7 assignment report",
+    "full_crew_confirmed": false,
+    "refmetrics": "LATEST_RETRIEVED_ASSIGNMENT_PAGE_STALE_WEEK_6",
+    "numerical_adjustment": false
+  },
+  "market": {
+    "lock_window_open": false,
+    "eligible_window_begins_utc": "2026-10-26T23:45:00Z",
+    "eligible_window_ends_utc": "2026-10-27T00:15:00Z",
+    "fresh_fd_dk_quote_captured": false,
+    "prior_context_only": "FanDuel Dallas -4.5, total 44.5, Dallas -205/Philadelphia +172 was preserved from an October 22 source timestamp; it is stale at this review and is not a lock.",
+    "note": "No premature lock; the NFL-specific workflow remains responsible for the first exact-identity fresh FanDuel quote, with DraftKings fallback, inside T-30."
+  },
+  "benchmark_context": {
+    "sp_plus": "NOT_APPLICABLE_NFL",
+    "sagarin": "No new verified Monday refresh; no canonical influence",
+    "sic_chao": "No new verified final-window medical fact promoted beyond official team availability",
+    "abrams_trends": "Context only; no numerical canonical influence",
+    "giffen_luck": "Context only; no numerical canonical influence"
+  },
+  "source_urls": {
+    "eagles_official_inactives": "https://www.philadelphiaeagles.com/news/cowboys-vs-eagles-inactives-saquon-barkley-jalyx-hunt-2026-week-7-monday-night-football",
+    "eagles_official_transactions": "https://www.philadelphiaeagles.com/news/eagles-activate-grant-calcaterra-landon-dickerson-and-eli-stowers-from-injured-reserve",
+    "cowboys_official_updates": "https://www.dallascowboys.com/news/updates-october-2026",
+    "eagles_official_injury_report": "https://www.philadelphiaeagles.com/news/cowboys-vs-eagles-injury-report-2026-nfl-week-7-saquon-barkley-jalyx-hunt",
+    "nws_point_forecast": "https://forecast.weather.gov/MapClick.php?lat=39.961978912353516&lon=-75.14990234375",
+    "football_zebras_assignments": "https://www.footballzebras.com/2026/10/week-7-referee-assignments-2026/"
+  },
+  "unresolved": [
+    "Dallas complete official game-day inactive list was not published on the Cowboys team site or populated on NFL.com's Week 7 aggregate page at capture",
+    "Full officiating crew and substitutions unconfirmed",
+    "RefMetrics Week 7 assignment context unavailable; latest retrieved assignment page was Week 6",
+    "Fresh FanDuel/DraftKings lock pending the 7:45-8:15 p.m. ET T-30 window"
+  ],
+  "controls": {
+    "no_post_kickoff_backfill": true,
+    "kalshi_polymarket_separate": true,
+    "play_or_lean_labels_added": false,
+    "invented_uncertainty_probabilities_added": false,
+    "arbitrary_point_adjustments_added": false,
+    "frozen_projection_files_modified": false,
+    "website_market_columns_modified": false,
+    "cfb_operations_performed": false
+  }
+}
