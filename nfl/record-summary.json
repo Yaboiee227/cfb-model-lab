@@ -1,27 +1,94 @@
 {
   "schemaVersion": 1,
   "league": "nfl",
-  "generatedAt": "2026-10-20T12:42:40Z",
-  "currentWeek": 6,
-  "label": "Projection performance graded against locked publication-time market numbers; not a wager ledger.",
-  "sourceNote": "Week 6 grades cover the 13 NFL research projections preserved before kickoff in nfl_data/site/projections.csv. Seattle-Denver on Thursday is not included because it was not in that published projection artifact. No postgame line reconstruction was used.",
+  "generatedAt": "2026-10-27T11:52:54.370650+00:00",
+  "currentWeek": 7,
+  "label": "Published projection performance; research only, not wagers. Missing market locks excluded.",
+  "sourceNote": "Published-model cumulative display, combining historical audited weeks and explicitly labeled frozen research weeks. Not a single validated model backtest. Week 7: frozen Canonical V1 research projections, qualifying first-capture market locks. Two games excluded from ATS/totals; all 14 SU graded.",
   "overall": {
-    "ats": {"wins": 3, "losses": 10, "pushes": 0, "winPct": 23.1, "graded": 13},
-    "totals": {"wins": 6, "losses": 6, "pushes": 1, "winPct": 50.0, "graded": 13},
-    "straightUp": {"wins": 7, "losses": 6, "pushes": 0, "winPct": 53.8, "graded": 13}
+    "ats": {
+      "wins": 8,
+      "losses": 17,
+      "pushes": 0,
+      "graded": 25,
+      "winPct": 32.0
+    },
+    "totals": {
+      "wins": 16,
+      "losses": 8,
+      "pushes": 1,
+      "graded": 25,
+      "winPct": 66.7
+    },
+    "straightUp": {
+      "wins": 16,
+      "losses": 11,
+      "pushes": 0,
+      "graded": 27,
+      "winPct": 59.3
+    }
   },
   "weeks": [
     {
       "season": 2026,
       "week": 6,
       "status": "COMPLETE",
-      "ats": {"wins": 3, "losses": 10, "pushes": 0, "winPct": 23.1, "graded": 13},
-      "totals": {"wins": 6, "losses": 6, "pushes": 1, "winPct": 50.0, "graded": 13},
-      "straightUp": {"wins": 7, "losses": 6, "pushes": 0, "winPct": 53.8, "graded": 13},
+      "ats": {
+        "wins": 3,
+        "losses": 10,
+        "pushes": 0,
+        "winPct": 23.1,
+        "graded": 13
+      },
+      "totals": {
+        "wins": 6,
+        "losses": 6,
+        "pushes": 1,
+        "winPct": 50.0,
+        "graded": 13
+      },
+      "straightUp": {
+        "wins": 7,
+        "losses": 6,
+        "pushes": 0,
+        "winPct": 53.8,
+        "graded": 13
+      },
       "pending": 0,
-      "review": 0
+      "review": 0,
+      "recordType": "Historical audited"
+    },
+    {
+      "season": 2026,
+      "week": 7,
+      "status": "COMPLETE_WITH_EXCLUSIONS",
+      "pending": 0,
+      "review": 2,
+      "recordType": "Frozen research",
+      "note": "Week 7: frozen Canonical V1 research projections, qualifying first-capture market locks. Two games excluded from ATS/totals; all 14 SU graded.",
+      "ats": {
+        "wins": 5,
+        "losses": 7,
+        "pushes": 0,
+        "graded": 12,
+        "winPct": 41.7
+      },
+      "totals": {
+        "wins": 10,
+        "losses": 2,
+        "pushes": 0,
+        "graded": 12,
+        "winPct": 83.3
+      },
+      "straightUp": {
+        "wins": 9,
+        "losses": 5,
+        "pushes": 0,
+        "graded": 14,
+        "winPct": 64.3
+      }
     }
   ],
   "pending": 0,
-  "review": 0
+  "review": 2
 }

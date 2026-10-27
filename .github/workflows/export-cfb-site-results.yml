@@ -41,7 +41,7 @@ jobs:
           assert data['canonicalInfluence'] is False
           assert int(data['season'])==season and int(data['week'])==week
           assert len(data['games'])==len(source)>0
-          assert len(source)==int(current['ats']['graded'])
+          assert sum(r['atsResult'] in ('WIN','LOSS','PUSH') for r in source)==int(current['ats']['graded'])
           assert all(g['status'] in ('FINAL','PENDING') for g in data['games'])
           print({'season':season,'week':week,'games':len(data['games']),'validated':True})
           PY

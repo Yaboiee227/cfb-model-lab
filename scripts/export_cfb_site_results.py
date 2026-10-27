@@ -39,7 +39,7 @@ def main() -> None:
         raise SystemExit(f'No audited rows found for {season} Week {week}')
 
     expected = int(((summary.get('weeks') or [{}])[-1].get('ats') or {}).get('graded') or 0)
-    if expected and len(rows) != expected:
+    if expected and sum(r.get('atsResult') in ('WIN','LOSS','PUSH') for r in rows) != expected:
         raise SystemExit(f'Audited row count mismatch: CSV={len(rows)} summary ATS graded={expected}')
 
     games = []
