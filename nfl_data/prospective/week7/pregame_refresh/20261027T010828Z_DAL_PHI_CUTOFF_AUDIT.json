@@ -1,0 +1,56 @@
+{
+  "audited_at_utc": "2026-10-27T01:08:28Z",
+  "scope": "NFL Week 7 Dallas at Philadelphia post-kickoff operational cutoff audit; no pregame backfill",
+  "game_id": "2026_07_DAL_PHI",
+  "kickoff_utc": "2026-10-27T00:15:00Z",
+  "kickoff_passed_at_audit": true,
+  "freeze": {
+    "snapshot_id": "20261021T114427Z",
+    "canonical_v1_changed": false,
+    "ftn50_changed": false,
+    "publication_state": "HOLD_RESEARCH_ONLY",
+    "numerical_projection_changes": 0
+  },
+  "immutable_market_lock": {
+    "status": "CREATED_PRE_KICKOFF",
+    "main_commit": "ffd95401adf2965060323be66906c6b6a3498382",
+    "book": "fanduel",
+    "observed_at_utc": "2026-10-26T23:45:38Z",
+    "captured_at_utc": "2026-10-26T23:46:02.614635Z",
+    "away_team": "Dallas Cowboys",
+    "home_team": "Philadelphia Eagles",
+    "away_spread": -4.5,
+    "away_spread_price": -105,
+    "home_spread": 4.5,
+    "home_spread_price": -115,
+    "total": 43.5,
+    "over_price": -120,
+    "under_price": -102,
+    "away_moneyline": -215,
+    "home_moneyline": 180,
+    "workflow_failures": [],
+    "execution_verified": false,
+    "policy": "First qualifying FanDuel capture inside T-30; no best-line selection or replacement"
+  },
+  "publication_audit": {
+    "main_ref_audited": "5f3d22f",
+    "site_projection_row_market_fields_populated": false,
+    "site_projection_row_status": "FD/DK current sportsbook capture pending; MARKET_LOCK_PENDING",
+    "finding": "The immutable pre-kickoff lock exists on main, but the NFL site export was not refreshed to carry it before kickoff.",
+    "post_kickoff_site_backfill_performed": false,
+    "classification": "PRE_KICKOFF_LOCK_SUCCESS_WITH_PUBLICATION_MISS"
+  },
+  "controls": {
+    "new_post_kickoff_market_quote_retrieved": false,
+    "post_kickoff_pregame_fact_backfill_performed": false,
+    "frozen_projection_files_modified": false,
+    "prediction_log_modified": false,
+    "website_modified": false,
+    "kalshi_polymarket_used": false,
+    "cfb_operations_performed": false
+  },
+  "week7_scope": {
+    "remaining_unstarted_games": 0,
+    "monitoring_complete": true
+  }
+}
