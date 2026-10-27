@@ -24,16 +24,16 @@ def _parse_event(event):
     for c,s in ((home,hs),(away,as_)):
         ls=c.get("linescores") or []
         if ls and _status(event)=="FINAL":
-            total=round(sum(float(x.get("value") or 0) for x in ls))
+            total=round(sum(float(x.get("value", x.get("displayValue")) or 0) for x in ls))
             if total!=s:raise RuntimeError(f"ESPN score/linescore mismatch for event {event.get('id')}")
     period=int((event.get("status") or {}).get("period") or 0)
-    return {"sourceGameId":str(event.get("id")),"awayTeam":away.get("team",{}).get("displayName") or away.get("team",{}).get("shortDisplayName"),"homeTeam":home.get("team",{}).get("displayName") or home.get("team",{}).get("shortDisplayName"),"awayScore":as_,"homeScore":hs,"status":_status(event),"overtime":period>4,"source":"ESPN","sourceUpdatedAt":datetime.now(timezone.utc).isoformat().replace('+00:00','Z')}
+    return {"sourceGameId":str(event.get("id")),"awayTeam":away.get("team",{}).get("location") or away.get("team",{}).get("displayName") or away.get("team",{}).get("shortDisplayName"),"homeTeam":home.get("team",{}).get("location") or home.get("team",{}).get("displayName") or home.get("team",{}).get("shortDisplayName"),"awayScore":as_,"homeScore":hs,"status":_status(event),"overtime":period>4,"source":"ESPN","sourceUpdatedAt":datetime.now(timezone.utc).isoformat().replace('+00:00','Z')}
 
 def fetch_scores_for_projection(league,projection):
     dates=sorted({str(g["kickoff"])[:10].replace("-","") for g in projection.get("games",[])})
     out={}
     for d in dates:
-        url=BASE[league]+"?"+urllib.parse.urlencode({"dates":d,"limit":1000})
+        url=BASE[league]+"?"+urllib.parse.urlencode({"dates":d,"limit":1000,**({"groups":80} if league=="cfb" else {})})
         doc=_get(url)
         for e in doc.get("events",[]):
             row=_parse_event(e)

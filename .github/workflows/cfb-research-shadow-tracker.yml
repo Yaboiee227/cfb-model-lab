@@ -62,7 +62,7 @@ jobs:
           for lock in "${locks[@]}"; do
             name=$(basename "$lock")
             echo "=== Research grade: $name ==="
-            python scripts/grade_research_shadow.py "$lock" --scope cfb/pregame/week-08-active-through-thursday.json --output "cfb/research-results/$name"
+            python scripts/grade_research_shadow.py "$lock" --output "cfb/research-results/$name"
           done
       - name: Assert research/canonical separation
         if: github.event_name != 'push'
