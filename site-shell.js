@@ -176,7 +176,7 @@
     const topNote = q('main > .section-shell .hold-note');
     if (topNote && !topNote.closest('#home')) {
       topNote.innerHTML = league === 'cfb'
-        ? '<strong>CFB · Week 8 production state</strong> — Canonical publication remains gated. Current pregame research, market locks and frozen evidence are preserved without reconstructing information after results. <a href="week-8.html">Open Week 8 audit →</a>'
+        ? '<strong>CFB · Week 9 research state</strong> — Canonical publication remains gated. Current pregame research, market locks and frozen evidence are preserved without reconstructing information after results. <a href="week-9.html">Open Week 9 projections →</a>'
         : `<strong>NFL · Week 7 prospective state</strong> — Canonical V1 is frozen weekly. Market differences, reliability and contextual evidence remain research outputs while recommendation thresholds stay on HOLD. <a href="recap.html${leagueQuery}">Open validation recap →</a>`;
     }
 
