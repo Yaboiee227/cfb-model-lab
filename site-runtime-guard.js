@@ -89,3 +89,12 @@
 
   applyA11yState();
 })();
+
+(() => {
+  if (document.querySelector('script[data-cb-foundation]')) return;
+  const script = document.createElement('script');
+  script.src = 'cb-foundation.js?v=20261028-phase1';
+  script.async = false;
+  script.dataset.cbFoundation = 'true';
+  document.body.appendChild(script);
+})();
