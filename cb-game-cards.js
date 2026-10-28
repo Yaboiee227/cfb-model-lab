@@ -12,18 +12,17 @@
   const fmt1 = value => num(value) === null ? '—' : Number(value).toFixed(1);
   const pct = value => num(value) === null ? '—' : `${Number(value).toFixed(1)}%`;
   const visuals = () => window.CBTeamVisuals;
-  const reducedMotion = () => window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 
   const trendState = { doc: null, loaded: false, error: null };
   let scheduleFrame = 0;
 
-  function siteState() {
+  function state() {
     try { return typeof STATE !== 'undefined' ? STATE : null; }
     catch (_) { return null; }
   }
 
   function gameById(id) {
-    return siteState()?.projections?.find(game => String(game.gameId) === String(id)) || null;
+    return state()?.projections?.find(game => String(game.gameId) === String(id)) || null;
   }
 
   function spreadText(game, value) {
@@ -47,8 +46,7 @@
     if (Math.abs(difference) < 0.05) return { text: 'Aligned', magnitude: 0, raw: difference };
     return {
       text: `${difference > 0 ? game.homeTeam : game.awayTeam} ${Math.abs(difference).toFixed(1)}`,
-      magnitude: Math.abs(difference),
-      raw: difference
+      magnitude: Math.abs(difference), raw: difference
     };
   }
 
@@ -60,8 +58,7 @@
     if (Math.abs(difference) < 0.05) return { text: 'Aligned', magnitude: 0, raw: difference };
     return {
       text: `${difference > 0 ? 'Over' : 'Under'} ${Math.abs(difference).toFixed(1)}`,
-      magnitude: Math.abs(difference),
-      raw: difference
+      magnitude: Math.abs(difference), raw: difference
     };
   }
 
@@ -78,8 +75,7 @@
       return hour * 60 + minute;
     }
     const twentyFour = raw.match(/^(\d{1,2}):(\d{2})/);
-    if (!twentyFour) return null;
-    return Number(twentyFour[1]) * 60 + Number(twentyFour[2]);
+    return twentyFour ? Number(twentyFour[1]) * 60 + Number(twentyFour[2]) : null;
   }
 
   function isPrimetime(game) {
@@ -92,7 +88,7 @@
     return /\brivalry\b|\brival\b/.test(text);
   }
 
-  function determineModelLeans(game, config = {}) {
+  function modelLeans(game, config = {}) {
     const spreadBand = num(config.spreadNeutralBand) ?? 0.25;
     const totalBand = num(config.totalNeutralBand) ?? 1.0;
     const moneylineBand = num(config.moneylineNeutralBandPct) ?? 0.5;
@@ -120,16 +116,6 @@
     return { spread, total, moneyline };
   }
 
-  function alignmentFor(trend, game) {
-    const pointsTo = String(trend?.pointsTo || 'none').toLowerCase();
-    const target = String(trend?.alignmentTarget || 'none').toLowerCase();
-    if (pointsTo === 'none' || target === 'none') return { state: 'informational', label: 'Informational' };
-    const modelSide = determineModelLeans(game, trendState.doc?.alignmentConfig || {})[target] || null;
-    if (!modelSide) return { state: 'neutral', label: 'No model lean' };
-    if (modelSide === pointsTo) return { state: 'aligns', label: 'Aligns with model' };
-    return { state: 'conflicts', label: 'Conflicts with model' };
-  }
-
   function trendsForGame(game) {
     const doc = trendState.doc;
     if (league !== 'nfl' || !doc || !Array.isArray(doc.trends)) return [];
@@ -137,13 +123,20 @@
     return doc.trends.filter(trend => String(trend.gameId) === String(game.gameId));
   }
 
+  function alignmentFor(trend, game) {
+    const pointsTo = String(trend?.pointsTo || 'none').toLowerCase();
+    const target = String(trend?.alignmentTarget || 'none').toLowerCase();
+    if (pointsTo === 'none' || target === 'none') return { state: 'informational', label: 'Informational' };
+    const lean = modelLeans(game, trendState.doc?.alignmentConfig || {})[target] || null;
+    if (!lean) return { state: 'neutral', label: 'No model lean' };
+    return lean === pointsTo
+      ? { state: 'aligns', label: 'Aligns with model' }
+      : { state: 'conflicts', label: 'Conflicts with model' };
+  }
+
   function trendSummary(game) {
     const rows = trendsForGame(game).map(trend => ({ trend, alignment: alignmentFor(trend, game) }));
-    return {
-      rows,
-      aligns: rows.filter(row => row.alignment.state === 'aligns').length,
-      conflicts: rows.filter(row => row.alignment.state === 'conflicts').length
-    };
+    return { rows, aligns: rows.filter(row => row.alignment.state === 'aligns').length };
   }
 
   function gameTags(game) {
@@ -161,12 +154,10 @@
     }
     if (!trendState.loaded) return '<div class="cb-card-empty-context">Loading preserved NFL trend context…</div>';
     if (trendState.error) return '<div class="cb-card-empty-context">NFL trend context is temporarily unavailable. The projection is unchanged.</div>';
-
     const rows = trendSummary(game).rows;
     if (!rows.length) {
       return '<div class="cb-card-empty-context">No verified current-week trend entry is attached to this game. No stale trend is carried forward.</div>';
     }
-
     return `<div class="cb-trend-list">${rows.map(({ trend, alignment }) => `
       <article class="cb-trend-row cb-trend-${esc(alignment.state)}">
         <div class="cb-trend-row-head">
@@ -178,18 +169,23 @@
       </article>`).join('')}</div>`;
   }
 
-  function detailMarkup(game) {
+  function detailSignature(game) {
+    return JSON.stringify({
+      score:[game.projectedAwayPoints,game.projectedHomePoints],
+      model:[game.modelSpreadHome,game.modelTotal,game.homeWinProbability,game.awayWinProbability],
+      market:[game.marketSpreadHome,game.marketTotal,game.marketSource,game.marketObservedAt],
+      trendLoaded:trendState.loaded,
+      trendError:Boolean(trendState.error),
+      trends:trendsForGame(game)
+    });
+  }
+
+  function detailMarkup(game, signature) {
     const spread = spreadDifference(game);
     const total = totalDifference(game);
-    const homeProbability = pct(game.homeWinProbability);
-    const awayProbability = pct(game.awayWinProbability);
-    const marketSource = game.marketSource || 'No current market reference';
-    const observed = game.marketObservedAt || 'Observation time unavailable';
     const score = num(game.projectedAwayPoints) === null || num(game.projectedHomePoints) === null
-      ? '—'
-      : `${fmt1(game.projectedAwayPoints)} – ${fmt1(game.projectedHomePoints)}`;
-
-    return `<details class="cb-game-breakdown">
+      ? '—' : `${fmt1(game.projectedAwayPoints)} – ${fmt1(game.projectedHomePoints)}`;
+    return `<details class="cb-game-breakdown" data-cb-signature="${esc(signature)}">
       <summary><span>Game breakdown</span><small>Model · market · difference · trends</small><i aria-hidden="true"></i></summary>
       <div class="cb-game-breakdown-body">
         <section class="cb-breakdown-section" aria-label="Model breakdown">
@@ -198,7 +194,7 @@
             <div><span>Projected score</span><strong>${esc(score)}</strong></div>
             <div><span>Spread</span><strong class="model-value">${esc(spreadText(game, game.modelSpreadHome))}</strong></div>
             <div><span>Total</span><strong class="model-value">${fmt1(game.modelTotal)}</strong></div>
-            <div><span>Win probability</span><strong>${esc(game.homeTeam)} ${homeProbability}</strong><small>${esc(game.awayTeam)} ${awayProbability}</small></div>
+            <div><span>Win probability</span><strong>${esc(game.homeTeam)} ${pct(game.homeWinProbability)}</strong><small>${esc(game.awayTeam)} ${pct(game.awayWinProbability)}</small></div>
           </div>
         </section>
         <section class="cb-breakdown-section" aria-label="Market comparison">
@@ -206,7 +202,7 @@
           <div class="cb-breakdown-grid">
             <div><span>Spread</span><strong class="market-value">${esc(spreadText(game, game.marketSpreadHome))}</strong></div>
             <div><span>Total</span><strong class="market-value">${fmt1(game.marketTotal)}</strong></div>
-            <div class="cb-breakdown-wide"><span>Source</span><strong>${esc(marketSource)}</strong><small>${esc(observed)}</small></div>
+            <div class="cb-breakdown-wide"><span>Source</span><strong>${esc(game.marketSource || 'No current market reference')}</strong><small>${esc(game.marketObservedAt || 'Observation time unavailable')}</small></div>
           </div>
         </section>
         <section class="cb-breakdown-section" aria-label="Model market differences">
@@ -227,50 +223,43 @@
   function rebuildCardHeader(card, game) {
     const head = card.querySelector('.projection-card-head');
     if (!head) return;
-
     const time = head.querySelector('.projection-card-time')?.textContent?.trim() || `${game.date || ''} · ${game.kickoffET || ''}`;
-    const dataBadge = head.querySelector('.data-badge');
-    const badgeHtml = dataBadge ? dataBadge.outerHTML : '';
+    const badgeHtml = head.querySelector('.data-badge')?.outerHTML || '';
     const awayAbbr = league === 'nfl' ? game.awayTeam : null;
     const homeAbbr = league === 'nfl' ? game.homeTeam : null;
-
     head.innerHTML = `
-      <div class="cb-game-card-meta">
-        <span class="projection-card-time">${esc(time)}</span>
-        <span class="cb-game-tag-row">${gameTags(game)}</span>
-      </div>
+      <div class="cb-game-card-meta"><span class="projection-card-time">${esc(time)}</span><span class="cb-game-tag-row">${gameTags(game)}</span></div>
       <div class="cb-game-card-matchup">
-        ${visuals()?.teamMarkup(game.awayTeam, { abbr: awayAbbr, size: 'md', detail: 'Away' }) || `<strong>${esc(game.awayTeam)}</strong>`}
+        ${visuals()?.teamMarkup(game.awayTeam,{abbr:awayAbbr,size:'md',detail:'Away'}) || `<strong>${esc(game.awayTeam)}</strong>`}
         <span class="cb-card-at" aria-hidden="true">@</span>
-        ${visuals()?.teamMarkup(game.homeTeam, { abbr: homeAbbr, size: 'md', detail: 'Home' }) || `<strong>${esc(game.homeTeam)}</strong>`}
-      </div>
-      ${badgeHtml}`;
+        ${visuals()?.teamMarkup(game.homeTeam,{abbr:homeAbbr,size:'md',detail:'Home'}) || `<strong>${esc(game.homeTeam)}</strong>`}
+      </div>${badgeHtml}`;
+    card.dataset.cbPhase2 = 'true';
   }
 
   function syncCard(card, game) {
     if (!card || !game) return;
-    if (card.dataset.cbPhase2 !== 'true') {
-      rebuildCardHeader(card, game);
-      card.dataset.cbPhase2 = 'true';
-    } else {
-      const tags = card.querySelector('.cb-game-tag-row');
-      if (tags) tags.innerHTML = gameTags(game);
-    }
+    if (card.dataset.cbPhase2 !== 'true') rebuildCardHeader(card, game);
 
+    const tags = card.querySelector('.cb-game-tag-row');
+    const nextTags = gameTags(game);
+    if (tags && tags.innerHTML !== nextTags) tags.innerHTML = nextTags;
+
+    const signature = detailSignature(game);
     const oldDetails = card.querySelector('.cb-game-breakdown');
+    if (oldDetails?.dataset.cbSignature === signature) return;
     const wasOpen = Boolean(oldDetails?.open);
     if (oldDetails) oldDetails.remove();
     const actions = card.querySelector('.projection-card-actions');
-    if (actions) actions.insertAdjacentHTML('beforebegin', detailMarkup(game));
-    else card.insertAdjacentHTML('beforeend', detailMarkup(game));
+    if (actions) actions.insertAdjacentHTML('beforebegin', detailMarkup(game, signature));
+    else card.insertAdjacentHTML('beforeend', detailMarkup(game, signature));
     const details = card.querySelector('.cb-game-breakdown');
     if (details && wasOpen) details.open = true;
   }
 
   function decorateCards() {
     qa('#projectionCards .projection-card[id^="card-"]').forEach(card => {
-      const id = card.id.replace(/^card-/, '');
-      syncCard(card, gameById(id));
+      syncCard(card, gameById(card.id.replace(/^card-/, '')));
     });
   }
 
@@ -294,17 +283,13 @@
     const toolbar = document.createElement('div');
     toolbar.id = 'cbProjectionViewToggle';
     toolbar.className = 'cb-projection-view-toggle';
-    toolbar.setAttribute('role', 'group');
-    toolbar.setAttribute('aria-label', 'Projection view');
-    toolbar.innerHTML = `
-      <span>View</span>
-      <button type="button" data-cb-view-choice="cards" aria-pressed="false">Cards</button>
-      <button type="button" data-cb-view-choice="table" aria-pressed="false">Table</button>`;
+    toolbar.setAttribute('role','group');
+    toolbar.setAttribute('aria-label','Projection view');
+    toolbar.innerHTML = '<span>View</span><button type="button" data-cb-view-choice="cards" aria-pressed="false">Cards</button><button type="button" data-cb-view-choice="table" aria-pressed="false">Table</button>';
     meta.insertAdjacentElement('afterend', toolbar);
     toolbar.addEventListener('click', event => {
       const button = event.target.closest('[data-cb-view-choice]');
-      if (!button) return;
-      applyView(button.dataset.cbViewChoice);
+      if (button) applyView(button.dataset.cbViewChoice);
     });
     applyView(localStorage.getItem('cb-projection-view') || 'cards');
   }
@@ -324,7 +309,7 @@
       return;
     }
     try {
-      const response = await fetch('nfl_data/site/nfl-trends.json', { cache: 'no-store' });
+      const response = await fetch('nfl_data/site/nfl-trends.json', { cache:'no-store' });
       if (!response.ok) throw new Error(`trend file unavailable (${response.status})`);
       trendState.doc = await response.json();
     } catch (error) {
@@ -338,8 +323,12 @@
   function installObserver() {
     const cards = q('#projectionCards');
     if (!cards) return;
-    const observer = new MutationObserver(scheduleDecorate);
-    observer.observe(cards, { childList: true });
+    const observer = new MutationObserver(mutations => {
+      const externalChange = mutations.some(mutation => [...mutation.addedNodes, ...mutation.removedNodes]
+        .some(node => !(node instanceof Element) || !node.closest?.('.cb-game-breakdown')));
+      if (externalChange) scheduleDecorate();
+    });
+    observer.observe(cards,{childList:true,subtree:false});
   }
 
   function init() {
@@ -348,15 +337,10 @@
     installObserver();
     decorateCards();
     loadTrendContext();
-
     document.addEventListener('cb:live-update', scheduleDecorate);
     document.addEventListener('cb:sportsbooks-update', scheduleDecorate);
-    window.addEventListener('resize', () => {
-      if (reducedMotion()) return;
-      scheduleDecorate();
-    }, { passive: true });
   }
 
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once:true });
   else init();
 })();
