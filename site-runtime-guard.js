@@ -132,3 +132,34 @@
     await loadScript('cb-game-cards.js');
   })().catch(error => console.error('CB Phase 2 asset load failed', error));
 })();
+
+(() => {
+  if (window.__CB_PHASE3_ASSET_LOADER) return;
+  window.__CB_PHASE3_ASSET_LOADER = true;
+
+  const version = '20261028-phase3';
+  const addCss = href => {
+    if (document.querySelector(`link[data-cb-phase3-asset="${href}"]`)) return;
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = `${href}?v=${version}`;
+    link.dataset.cbPhase3Asset = href;
+    document.head.appendChild(link);
+  };
+  const loadScript = src => new Promise((resolve, reject) => {
+    if (document.querySelector(`script[data-cb-phase3-asset="${src}"]`)) return resolve();
+    const script = document.createElement('script');
+    script.src = `${src}?v=${version}`;
+    script.async = false;
+    script.dataset.cbPhase3Asset = src;
+    script.onload = resolve;
+    script.onerror = () => reject(new Error(`Could not load ${src}`));
+    document.body.appendChild(script);
+  });
+
+  addCss('cb-phase3.css');
+  window.CB_PHASE3_READY = (async () => {
+    if (window.CB_PHASE2_READY) await window.CB_PHASE2_READY;
+    await loadScript('cb-phase3.js');
+  })().catch(error => console.error('CB Phase 3 asset load failed', error));
+})();
