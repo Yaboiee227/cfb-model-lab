@@ -6,6 +6,8 @@ CB Model Projections is a football prediction research product, not a sportsbook
 
 The visual direction takes inspiration from the editorial hierarchy and atmosphere of the Kyma and Neiden references supplied for the redesign, while applying the data-density and restraint principles reviewed from Taste Skill. Design Extract is treated as a QA concept/tooling reference rather than a production dependency. React Bits is inspiration only; the site stays static HTML/CSS/vanilla JavaScript for GitHub Pages.
 
+Apple's Human Interface Guidelines are used as an additional review layer for accessibility, adaptability, typography, color, controls, motion, feedback and design craft. They are not used to make the site visually imitate iOS or macOS. See `APPLE_DESIGN_REVIEW.md` for the web-specific translation and `AGENTS.md` for the rules future coding/design agents must follow.
+
 ## Non-negotiable model boundaries
 
 The interface must never visually blur these layers:
@@ -28,6 +30,7 @@ No visual treatment may imply that a benchmark or contextual input is part of th
 - Navigation and containers should recede. Color belongs on information more than on chrome.
 - Cards are used only where grouping is meaningful. Tables, status summaries and methodology sequences prefer borders and alignment over floating shadows.
 - Large typography is reserved for identity and section hierarchy. Projection tables, timestamps and audit metadata remain compact.
+- Important meaning must never depend on color alone; use labels, icons, borders or structure as secondary cues.
 
 ## Section rhythm
 
@@ -61,6 +64,25 @@ CFB and NFL share the presentation system but remain separate predictive product
 - Reduced-motion preferences are respected.
 - Mobile navigation collapses instead of forcing a horizontally scrolling header.
 - Missing values display honestly as unavailable rather than being inferred.
+- Keyboard focus must remain visible and navigation order must be logical.
+- Mobile controls should have comfortable touch targets; roughly 44px is the working target where practical.
+- Layouts should survive browser zoom, enlarged text and narrow widths without clipping essential content.
+- Empty, loading, stale and error states should be explicit rather than appearing as blank or broken surfaces.
+
+## Apple/HIG review layer
+
+Apple's design principles are used as a quality filter, especially where they map cleanly to responsive web design:
+
+- **Purpose** — every screen should have one obvious primary job.
+- **Agency** — users can filter, inspect, reset and recover without being trapped in a flow.
+- **Responsibility** — model state, uncertainty, provenance and research-only status remain explicit.
+- **Familiarity** — common web interaction patterns are preferred over novel controls that need explanation.
+- **Flexibility** — the same core information and actions work across screen sizes, input types and larger text.
+- **Simplicity** — chrome recedes behind the data.
+- **Craft** — spacing, alignment, labels, focus states and motion are deliberate.
+- **Delight** — personality comes from the CB research-terminal identity rather than decorative effects that reduce scan speed.
+
+Apple-specific native navigation conventions are not copied mechanically. For a web product, the underlying principle wins over literal platform imitation.
 
 ## Page roles
 
@@ -82,4 +104,4 @@ For CFB, the preserved Sagarin snapshot is explicitly external benchmark evidenc
 
 ## Deployment constraint
 
-The redesign must remain compatible with GitHub Pages: no React conversion, no build requirement, and no runtime dependency on the inspiration repositories. The existing data files, frozen artifacts and production workflows remain the source of truth.
+The redesign must remain compatible with GitHub Pages: no React conversion, no build requirement, and no runtime dependency on the inspiration repositories or the Apple Design Skill. The existing data files, frozen artifacts and production workflows remain the source of truth.
