@@ -158,6 +158,8 @@ def main():
     ap.add_argument("--team-inputs", type=Path)
     ap.add_argument("--results", type=Path)
     ap.add_argument("--previous", type=Path)
+    ap.add_argument("--matchups-output", type=Path)
+    ap.add_argument("--current-board", type=Path)
     args = ap.parse_args()
 
     spec = json.loads(SPEC.read_text(encoding="utf-8"))
@@ -223,6 +225,45 @@ def main():
     teams = sorted(core)
     if len(teams) != 32 or set(teams) != set(coverage):
         raise RuntimeError(f"Expected identical 32-team core/coverage state, core={len(core)} coverage={len(coverage)}")
+
+    if args.matchups_output:
+        from datetime import datetime, timezone
+        assert refresh and args.current_board
+        board = json.loads(args.current_board.read_text())["leagues"]["nfl"]
+        assert board["week"] == 8 and len(board["games"]) == 14
+        names = {name: team for team, name in TEAM_NAMES.items()}
+        current, metadata = [], []
+        for game in board["games"]:
+            home, away = names[game["home"]], names[game["away"]]
+            matches = schedule[(schedule.season == 2026) & (schedule.week == 8) & schedule.home_team.eq(home) & schedule.away_team.eq(away)]
+            assert len(matches) == 1, game
+            r = matches.iloc[0]
+            assert pd.isna(r.home_score) and pd.isna(r.away_score)
+            assert datetime.fromisoformat(game["kickoffUTC"].replace("Z", "+00:00")) > datetime.now(timezone.utc)
+            row = synthetic_row(home, away, core, coverage, elo, margin)
+            row.update(game_id=r.game_id, week=8, gameday=r.gameday, gametime=r.gametime,
+                       neutral_site=int(game["neutralSite"]), home_rest=float(r.home_rest), away_rest=float(r.away_rest))
+            current.append(row); metadata.append(game)
+        margins, _ = final_model.predict(current, coverage_params["team_k"], coverage_params["feature_k"], fitobj)
+        tp, _ = base.select_params([r for r in historical if r["season"] == 2022], "total")
+        totals, *_ = base.fit_and_predict(historical, current, "total", tp["k"], tp["lambda"])
+        old_totals, *_ = base.fit_and_predict(historical, frozen_features, "total", tp["k"], tp["lambda"])
+        targets = {r["game_id"]: float(r["canonical_total"]) for r in frozen_projection_rows}
+        total_diff = max(abs(float(t)-targets[r["game_id"]]) for r,t in zip(frozen_features,old_totals))
+        assert total_diff < 1e-8, total_diff
+        generated = datetime.now(timezone.utc).isoformat()
+        games = []
+        for r,g,m,t in zip(current, metadata, margins, totals):
+            games.append(dict(gameId=r["game_id"],eventId=g["eventId"],away=g["away"],home=g["home"],
+                kickoffUTC=g["kickoffUTC"],neutralSite=bool(r["neutral_site"]),homeRest=r["home_rest"],awayRest=r["away_rest"],
+                modelSpreadHome=-float(m),modelTotal=float(t),projectedHomePoints=float((t+m)/2),projectedAwayPoints=float((t-m)/2),
+                releaseStatus="RESEARCH_ONLY_FINAL_CONTEXT_UNVERIFIED",finalAvailabilityVerified=False,executionVerified=False))
+        outdoc=dict(league="nfl",season=2026,week=8,frozenAt=generated,canonicalInfluence=False,
+            role="PROSPECTIVE_RESEARCH",sourceCommit=args.source_commit,inputs=refresh,
+            priorWeekReproduction=dict(spreadMaxAbsDiff=max_diff,totalMaxAbsDiff=total_diff,games=14),games=games,
+            limitations="Dallas and Philadelphia coverage inputs lag at Week 6. Injuries, final availability, officials and weather are not adjusted in these baseline projections. Market execution locks remain pending.")
+        args.matchups_output.parent.mkdir(parents=True,exist_ok=True)
+        with args.matchups_output.open("x") as f: json.dump(outdoc,f,indent=2);f.write("\n")
 
     synth = []
     ordered_pairs = []
