@@ -98,3 +98,37 @@
   script.dataset.cbFoundation = 'true';
   document.body.appendChild(script);
 })();
+
+(() => {
+  if (window.__CB_PHASE2_ASSET_LOADER) return;
+  window.__CB_PHASE2_ASSET_LOADER = true;
+
+  const version = '20261028-phase2';
+  const addCss = href => {
+    if (document.querySelector(`link[data-cb-phase2-asset="${href}"]`)) return;
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = `${href}?v=${version}`;
+    link.dataset.cbPhase2Asset = href;
+    document.head.appendChild(link);
+  };
+  const loadScript = src => new Promise((resolve, reject) => {
+    if (document.querySelector(`script[data-cb-phase2-asset="${src}"]`)) return resolve();
+    const script = document.createElement('script');
+    script.src = `${src}?v=${version}`;
+    script.async = false;
+    script.dataset.cbPhase2Asset = src;
+    script.onload = resolve;
+    script.onerror = () => reject(new Error(`Could not load ${src}`));
+    document.body.appendChild(script);
+  });
+
+  addCss('cb-team-visuals.css');
+  addCss('cb-game-cards.css');
+
+  window.CB_PHASE2_READY = (async () => {
+    await loadScript('assets/teams/team-assets.js');
+    await loadScript('cb-team-visuals.js');
+    await loadScript('cb-game-cards.js');
+  })().catch(error => console.error('CB Phase 2 asset load failed', error));
+})();
