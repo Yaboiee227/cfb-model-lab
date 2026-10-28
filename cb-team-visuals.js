@@ -129,12 +129,97 @@
     })}</span>`;
   }
 
+  function cleanRenderedTeamName(value) {
+    return String(value || '').replace(/^◆\s*/, '').trim();
+  }
+
+  function decorateLiveSurfaces() {
+    document.querySelectorAll('.live-matchup-row > div').forEach(row => {
+      if (row.querySelector(':scope > .cb-team-badge')) return;
+      const nameNode = [...row.children].find(node => node.tagName === 'SPAN' && !node.classList.contains('cb-team-badge'));
+      const teamName = cleanRenderedTeamName(nameNode?.textContent);
+      if (!teamName) return;
+      row.insertAdjacentHTML('afterbegin', badgeMarkup(teamName, { size: 'sm' }));
+    });
+
+    document.querySelectorAll('.live-scoreboard .live-team').forEach(team => {
+      if (team.querySelector(':scope > .cb-team-badge')) return;
+      const nameNode = team.querySelector('div > span');
+      const teamName = cleanRenderedTeamName(nameNode?.textContent);
+      if (!teamName) return;
+      const badge = document.createElement('span');
+      badge.innerHTML = badgeMarkup(teamName, { size: 'lg' });
+      const node = badge.firstElementChild;
+      if (!node) return;
+      const copy = team.querySelector(':scope > div');
+      if (team.classList.contains('home')) team.appendChild(node);
+      else team.insertBefore(node, copy || team.firstChild);
+    });
+  }
+
+  function decoratePowerRankings() {
+    document.querySelectorAll('#ratingsBody tr').forEach(row => {
+      const cell = row.children[1];
+      if (!cell || cell.dataset.cbTeamVisual === 'true') return;
+      const name = cell.querySelector('strong')?.textContent?.trim();
+      const code = cell.querySelector('.team-code')?.textContent?.trim();
+      if (!name) return;
+      cell.dataset.cbTeamVisual = 'true';
+      cell.classList.add('cb-ranking-team-cell');
+      const strong = cell.querySelector('strong');
+      const teamCode = cell.querySelector('.team-code');
+      const wrapper = document.createElement('span');
+      wrapper.className = 'cb-ranking-team';
+      wrapper.innerHTML = badgeMarkup(name, { abbr: code, size: 'sm' });
+      const copy = document.createElement('span');
+      copy.className = 'cb-ranking-team-copy';
+      if (strong) copy.appendChild(strong);
+      if (teamCode) copy.appendChild(teamCode);
+      wrapper.appendChild(copy);
+      cell.appendChild(wrapper);
+    });
+
+    document.querySelectorAll('#matchupsBody tr').forEach(row => {
+      const cell = row.children[0];
+      if (!cell || cell.dataset.cbTeamVisual === 'true') return;
+      const teams = [...cell.querySelectorAll('strong')];
+      if (teams.length < 2) return;
+      const away = teams[0].textContent.trim();
+      const home = teams[1].textContent.trim();
+      const kickoff = cell.querySelector('.kickoff')?.outerHTML || '';
+      cell.dataset.cbTeamVisual = 'true';
+      cell.innerHTML = matchupMarkup(away, home, { size: 'xs' }) + kickoff;
+    });
+  }
+
+  function decorateAll() {
+    decorateLiveSurfaces();
+    decoratePowerRankings();
+  }
+
   window.CBTeamVisuals = Object.freeze({
     normalize,
     visual,
     abbreviation: autoAbbreviation,
     badgeMarkup,
     teamMarkup,
-    matchupMarkup
+    matchupMarkup,
+    decorateAll
   });
+
+  let frame = 0;
+  const schedule = () => {
+    cancelAnimationFrame(frame);
+    frame = requestAnimationFrame(decorateAll);
+  };
+
+  const start = () => {
+    decorateAll();
+    if (!document.body) return;
+    const observer = new MutationObserver(schedule);
+    observer.observe(document.body, { childList: true, subtree: true });
+  };
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true });
+  else start();
 })();
