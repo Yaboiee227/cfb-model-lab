@@ -142,6 +142,15 @@
     return siteState()?.projections?.find(game => String(game.gameId) === String(id)) || null;
   }
 
+  function stripUnlicensedLiveImages(root = document) {
+    root.querySelectorAll?.('.live-matchup-row img, .live-scoreboard .live-team > img').forEach(img => {
+      img.removeAttribute('src');
+      img.removeAttribute('srcset');
+      img.removeAttribute('sizes');
+      img.setAttribute('aria-hidden', 'true');
+    });
+  }
+
   function decorateProjectionTable() {
     document.querySelectorAll('#projectionBody tr[id^="game-"]').forEach(row => {
       const cell = row.querySelector('.game-matchup');
@@ -176,6 +185,7 @@
   }
 
   function decorateLiveSurfaces() {
+    stripUnlicensedLiveImages();
     document.querySelectorAll('.live-matchup-row > div').forEach(row => {
       if (row.querySelector(':scope > .cb-team-badge')) return;
       const nameNode = [...row.children].find(node => node.tagName === 'SPAN' && !node.classList.contains('cb-team-badge'));
