@@ -7,6 +7,7 @@
     '#315C8A', '#4A6D7C', '#6A4C93', '#2F7D63', '#8A5A44', '#7A4E76',
     '#8B5E34', '#38686A', '#586F7C', '#765D69', '#3D5A80', '#5F6F52'
   ];
+  const LIVE_IMAGE_PLACEHOLDER = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
@@ -140,6 +141,14 @@
 
   function projectionById(id) {
     return siteState()?.projections?.find(game => String(game.gameId) === String(id)) || null;
+  }
+
+  function neutralizeLiveLogoUrls(games) {
+    if (!Array.isArray(games)) return;
+    games.forEach(game => {
+      if (game?.away) game.away.logo = LIVE_IMAGE_PLACEHOLDER;
+      if (game?.home) game.home.logo = LIVE_IMAGE_PLACEHOLDER;
+    });
   }
 
   function stripUnlicensedLiveImages(root = document) {
@@ -280,6 +289,10 @@
     matchupMarkup,
     decorateAll
   });
+
+  document.addEventListener('cb:live-update', event => {
+    neutralizeLiveLogoUrls(event.detail?.games);
+  }, { capture: true });
 
   let frame = 0;
   const schedule = () => {
