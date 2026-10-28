@@ -52,8 +52,8 @@ def test_05_market_national_ratings_are_withheld_when_graph_is_disconnected():
 
 
 def test_06_remaining_matchup_comparison_counts_are_frozen():
-    assert len(load("cfb.json")["remainingMatchupComparisons"]) == 49
-    assert len(load("nfl.json")["remainingMatchupComparisons"]) == 13
+    assert len(load("cfb.json")["remainingMatchupComparisons"]) == 54
+    assert len(load("nfl.json")["remainingMatchupComparisons"]) == 0
 
 
 def test_07_gap_convention_and_side_label_are_exact():
@@ -91,8 +91,34 @@ def test_10_manifest_hashes_and_snapshot_provenance_match_files():
     manifest = load("manifest.json")
     assert manifest["canonicalInfluence"] is False
     assert manifest["canonicalPromotionAuthorized"] is False
-    assert manifest["leagues"]["cfb"]["snapshotAsOf"] == "2026-10-23T20:03:00Z"
+    assert manifest["leagues"]["cfb"]["snapshotAsOf"] == "2026-10-28T12:45:00Z"
     assert manifest["leagues"]["nfl"]["sourceCommit"] == "0721b59b5f461ad590bd348bd655c4963265856c"
     for name, expected in manifest["files"].items():
         actual = hashlib.sha256((DIR / name).read_bytes()).hexdigest()
         assert actual == expected, name
+
+
+def test_11_nfl_refresh_sources_and_coverage_lag_are_explicit():
+    d = load("nfl.json")
+    assert d["week"] == 8 and d["sourceMaxWeek"] == 7
+    p = d["refreshProvenance"]
+    assert len(set(p["week7FinalsCrossChecked"])) == 14
+    assert {x["team"] for x in p["coverageLag"]} == {"DAL", "PHI"}
+    assert d["inputLimitations"]
+    for name, expected in p["files"].items():
+        assert hashlib.sha256((DIR / "inputs/nfl-20261027" / name).read_bytes()).hexdigest() == expected
+
+
+def test_12_current_comparisons_exclude_completed_kickoffs():
+    from datetime import datetime
+    for name in ("cfb.json", "nfl.json"):
+        d = load(name)
+        cutoff = datetime.fromisoformat(d["snapshotAsOf"].replace("Z", "+00:00"))
+        assert all(datetime.fromisoformat(g["kickoff"].replace("Z", "+00:00")) > cutoff for g in d["remainingMatchupComparisons"])
+    assert load("cfb.json")["trainingGames"] == 568
+
+
+def test_13_movement_matches_previous_published_snapshot():
+    for league in ("cfb", "nfl"):
+        previous = {r["team"]: r["rank"] for r in load(f"archive/{league}-previous.json")["teams"]}
+        assert all(r["movement"] == previous[r["team"]] - r["rank"] for r in load(f"{league}.json")["teams"])

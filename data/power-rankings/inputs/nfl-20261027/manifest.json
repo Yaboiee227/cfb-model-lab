@@ -1,0 +1,67 @@
+{
+  "asOf": "2026-10-28T12:46:11.530652+00:00",
+  "targetWeek": 8,
+  "maxSourceWeek": 7,
+  "coverageLag": [
+    {
+      "team": "PHI",
+      "latestCoverageWeek": 6,
+      "expectedWeek": 7
+    },
+    {
+      "team": "DAL",
+      "latestCoverageWeek": 6,
+      "expectedWeek": 7
+    }
+  ],
+  "week7FinalsCrossChecked": [
+    "2026_07_NE_CHI",
+    "2026_07_PIT_NO",
+    "2026_07_CIN_BAL",
+    "2026_07_CLE_TEN",
+    "2026_07_IND_MIN",
+    "2026_07_MIA_NYJ",
+    "2026_07_NYG_HOU",
+    "2026_07_SF_ATL",
+    "2026_07_TB_CAR",
+    "2026_07_DEN_ARI",
+    "2026_07_GB_DET",
+    "2026_07_LA_LV",
+    "2026_07_KC_SEA",
+    "2026_07_DAL_PHI"
+  ],
+  "sources": [
+    {
+      "file": "play_by_play_2025.csv.gz",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2025.csv.gz",
+      "bytes": 19105296,
+      "sha256": "2f135887790a013fd004e609e37096bb4816d5cc80b9f19122e1bad478961978",
+      "retrievedAt": "2026-10-27T22:18:46.222673+00:00"
+    },
+    {
+      "file": "play_by_play_2026.csv.gz",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2026.csv.gz",
+      "bytes": 7359438,
+      "sha256": "5badd819b0c4c836dc0d5406f4a3e40af2244cbc8221e1f7389a098ec55eecc4",
+      "retrievedAt": "2026-10-28T12:44:58.490462+00:00"
+    },
+    {
+      "file": "advstats_week_def_2025.parquet",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_def_2025.parquet",
+      "bytes": 155798,
+      "sha256": "a1224b47bd23840a9c0e072d6ed91dd0298777fd53570290b273080975bdb7ea",
+      "retrievedAt": "2026-10-27T22:18:45.747225+00:00"
+    },
+    {
+      "file": "advstats_week_def_2026.parquet",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_def_2026.parquet",
+      "bytes": 79915,
+      "sha256": "861bea30b69ebd539b8cc893f3a82448bd8623831f6d210cb80c9f421115239f",
+      "retrievedAt": "2026-10-28T12:45:04.429661+00:00"
+    }
+  ],
+  "files": {
+    "core_inputs.csv": "a1c85d16d0ce76346a92f67eed38d3b119357a1bccf379116218a525fd478d23",
+    "coverage_inputs.csv": "e1db0e5bcb739348274e7172b87dc91b738671aaa3b53035ab151034d9c38a51"
+  }
+}

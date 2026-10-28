@@ -81,7 +81,8 @@ jobs:
               except Exception:
                   pass
           event = os.environ.get('EVENT_NAME', '')
-          needs = event != 'workflow_run' or not market_stamp or market_stamp != prior_stamp
+          current_week = int(json.loads(Path('data/config.json').read_text())['currentWeek'])
+          needs = current_week == 8 and (event != 'workflow_run' or not market_stamp or market_stamp != prior_stamp)
           print(json.dumps({'event': event, 'marketSnapshotGeneratedAt': market_stamp, 'previousPublishedSnapshot': prior_stamp, 'needsSync': needs}, indent=2))
           with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as fp:
               fp.write(f"needs_sync={'true' if needs else 'false'}\n")

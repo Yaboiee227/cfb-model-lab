@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Extract research-only NFL team power ratings from the frozen pre-Week-7 model.
 
-Run this script from the pinned nfl-week7-live-release source tree. It does not
-retune, read post-Week-6 results, or alter any projection. Team CB Points are a
+Run from the pinned NFL source tree. The optional refresh updates team inputs
+and recursive ratings after the frozen Week 7 reproduction guard passes.
+It never retunes coefficients or alters published projections. Team CB Points are a
 least-squares point-scale summary of the frozen model's all-pairs neutral-field
 matchups. The underlying predictor is first regression-checked against every
 frozen Week 7 canonical margin.
@@ -11,6 +12,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import json
 import math
 import sys
@@ -50,7 +52,7 @@ def read_csv(path: Path):
         return list(csv.DictReader(f))
 
 
-def rating_state_through_week6(schedule: pd.DataFrame, params: dict):
+def rating_state_through_week6(schedule: pd.DataFrame, params: dict, target_week: int = 7):
     df = schedule.copy()
     df = df[df["game_type"].astype(str).str.upper().eq("REG")].copy()
     df["season"] = pd.to_numeric(df["season"], errors="coerce")
@@ -61,7 +63,7 @@ def rating_state_through_week6(schedule: pd.DataFrame, params: dict):
     df["away_score"] = pd.to_numeric(df["away_score"], errors="coerce")
     df = df[df["season"].between(2021, 2026)].sort_values(["season","week","gameday","gametime","game_id"])
     # Hard prospective cutoff: no Week 7 or later result can update state.
-    df.loc[(df["season"] == 2026) & (df["week"] >= 7), ["home_score","away_score"]] = float("nan")
+    df.loc[(df["season"] == 2026) & (df["week"] >= target_week), ["home_score","away_score"]] = float("nan")
 
     elo = {}
     margin = {}
@@ -153,6 +155,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--output", required=True)
     ap.add_argument("--source-commit", required=True)
+    ap.add_argument("--team-inputs", type=Path)
+    ap.add_argument("--results", type=Path)
+    ap.add_argument("--previous", type=Path)
     args = ap.parse_args()
 
     spec = json.loads(SPEC.read_text(encoding="utf-8"))
@@ -192,8 +197,29 @@ def main():
     if max_diff > 1e-8 or len(regression) != 14:
         raise RuntimeError(f"Frozen Week 7 regression failed n={len(regression)} maxDiff={max_diff}")
 
-    core = {r["team"]:r for r in read_csv(SNAPSHOT / "core_inputs.csv")}
-    coverage = {r["team"]:r for r in read_csv(SNAPSHOT / "coverage_inputs.csv")}
+    input_dir = SNAPSHOT
+    refresh = None
+    if args.team_inputs:
+        if not args.results:
+            raise RuntimeError("Updated rating state requires verified final results")
+        input_dir = args.team_inputs
+        refresh = json.loads((input_dir / "manifest.json").read_text())
+        assert refresh["targetWeek"] == 8 and refresh["maxSourceWeek"] == 7
+        for name, expected in refresh["files"].items():
+            assert hashlib.sha256((input_dir / name).read_bytes()).hexdigest() == expected
+        results = json.loads(args.results.read_text())
+        assert results["week"] == 7 and len(results["games"]) == 14
+        assert set(refresh["week7FinalsCrossChecked"]) == {g["gameId"] for g in results["games"]}
+        for game in results["games"]:
+            mask = schedule.game_id.eq(game["gameId"])
+            assert mask.sum() == 1, game["gameId"]
+            assert str(schedule.loc[mask, "home_team"].iloc[0]) == game["homeTeam"]
+            assert str(schedule.loc[mask, "away_team"].iloc[0]) == game["awayTeam"]
+            schedule.loc[mask, "home_score"] = game["homeScore"]
+            schedule.loc[mask, "away_score"] = game["awayScore"]
+        elo, margin, _ = rating_state_through_week6(schedule, rating_params, target_week=8)
+    core = {r["team"]:r for r in read_csv(input_dir / "core_inputs.csv")}
+    coverage = {r["team"]:r for r in read_csv(input_dir / "coverage_inputs.csv")}
     teams = sorted(core)
     if len(teams) != 32 or set(teams) != set(coverage):
         raise RuntimeError(f"Expected identical 32-team core/coverage state, core={len(core)} coverage={len(coverage)}")
@@ -214,6 +240,8 @@ def main():
     points, residual_rmse = solve_team_points(teams, pair_margins)
 
     ranked = sorted(teams, key=lambda t:(-points[t], t))
+    previous = json.loads(args.previous.read_text()) if args.previous else {"teams": []}
+    old_ranks = {r["team"]: r["rank"] for r in previous["teams"]}
     rows = []
     for rank, team in enumerate(ranked, 1):
         rows.append({
@@ -221,11 +249,11 @@ def main():
             "team": team,
             "teamName": TEAM_NAMES.get(team, team),
             "cbPoints": round(points[team], 4),
-            "movement": "NEW",
+            "movement": old_ranks.get(team, rank) - rank,
             "marketRank": None,
             "marketPoints": None,
             "marketGap": None,
-            "evidenceStatus": "FROZEN_PRE_WEEK7_MODEL_EXTRACT",
+            "evidenceStatus": ("COVERAGE_LAG_WEEK6" if team in {r["team"] for r in refresh.get("coverageLag", [])} else "UPDATED_THROUGH_WEEK7") if refresh else "FROZEN_PRE_WEEK7_MODEL_EXTRACT",
         })
 
     out = {
@@ -248,6 +276,12 @@ def main():
         "marketNationalRatingStatus": "WITHHELD_UNTIL_CONNECTED_TIMESTAMPED_MARKET_GRAPH",
         "teams": rows,
     }
+    if refresh:
+        out.update(week=8, snapshotAsOf=refresh["asOf"], sourceMaxWeek=7,
+                   method="Established canonical spread architecture with efficiency, Elo and margin state updated through completed Week 7; defensive coverage uses the latest available report for each team. All 992 neutral-field orientations are summarized as zero-mean team points. No injury, referee or weather adjustment is included in this baseline rating.",
+                   refreshProvenance=refresh,
+                   inputLimitations="Dallas and Philadelphia defensive coverage remains through Week 6; all other Week 7 participants have Week 7 coverage. Efficiency and final-score ratings include all 14 Week 7 games." if refresh.get("coverageLag") else "",
+                   previousSnapshotAsOf=previous.get("snapshotAsOf"))
     path = Path(args.output)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(out, indent=2) + "\n", encoding="utf-8")

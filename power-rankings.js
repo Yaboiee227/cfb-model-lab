@@ -3,7 +3,7 @@
   const league = params.get('league') === 'nfl' ? 'nfl' : 'cfb';
   const $ = id => document.getElementById(id);
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const number = value => Number.isFinite(Number(value)) ? Number(value) : null;
+  const number = value => value !== null && value !== undefined && String(value).trim() !== "" && Number.isFinite(Number(value)) ? Number(value) : null;
   const points = value => number(value) === null ? '—' : `${Number(value) > 0 ? '+' : ''}${Number(value).toFixed(1)}`;
   const rank = value => number(value) === null ? '—' : `#${Number(value)}`;
   const dateLabel = value => {
@@ -44,7 +44,7 @@
         <td class="num market">${rank(r.marketRank)}</td>
         <td class="num market">${points(r.marketPoints)}</td>
         <td class="num context">${points(r.marketGap)}</td>
-        <td><span class="movement ${r.movement === 'NEW' ? 'new' : ''}">${esc(r.movement || '—')}</span></td>
+        <td><span class="movement ${r.movement === 'NEW' ? 'new' : ''}">${esc(typeof r.movement === 'number' ? (r.movement > 0 ? '+' : '') + r.movement : (r.movement || '—'))}</span></td>
         <td><span class="status">${esc(String(r.evidenceStatus || 'research').replaceAll('_',' '))}</span></td>
       </tr>`).join('');
     $('count').textContent = `${filtered.length} of ${rows.length} teams`;
@@ -53,7 +53,7 @@
   function renderMatchups() {
     const games = [...(doc.remainingMatchupComparisons || [])].sort((a,b) => Number(b.gapMagnitude || 0) - Number(a.gapMagnitude || 0));
     $('matchupCount').textContent = `${games.length} current comparisons`;
-    $('matchupsBody').innerHTML = games.map(g => `
+    $('matchupsBody').innerHTML = games.length ? games.map(g => `
       <tr>
         <td><strong>${esc(g.awayTeam)}</strong><span class="muted"> @ </span><strong>${esc(g.homeTeam)}</strong><small class="kickoff">${esc(dateLabel(g.kickoff))}</small></td>
         <td class="num model">${points(g.modelSpreadHome)}</td>
@@ -61,7 +61,7 @@
         <td class="num context">${points(g.modelMarketGapHome)}</td>
         <td><strong>${esc(g.gapSide)}</strong><small class="kickoff">${Number(g.gapMagnitude || 0).toFixed(1)} pts</small></td>
         <td><span class="status">Context only</span></td>
-      </tr>`).join('');
+      </tr>`).join('') : '<tr><td colspan="6">Current-week comparisons await matching projections and timestamped market lines.</td></tr>';
   }
 
   function renderMeta() {
@@ -71,7 +71,7 @@
     $('metric2').textContent = top ? top.teamName : '—';
     $('metric2Sub').textContent = top ? `${points(top.cbPoints)} CB points` : 'top team';
     $('metric3').textContent = dateLabel(doc.snapshotAsOf);
-    $('metric3Sub').textContent = league === 'cfb' ? 'Friday pregame cutoff' : 'frozen pre-Week-7 state';
+    $('metric3Sub').textContent = league === 'cfb' ? 'includes October 27 finals' : 'Week 8 baseline rating';
     $('metric4').innerHTML = marketBadge();
     $('metric4Sub').textContent = 'national market rank';
 
@@ -79,9 +79,9 @@
     $('marketNotice').innerHTML = `<strong>${esc((market.nationalRatingStatus || '').replaceAll('_',' '))}.</strong> ${esc(market.reason || '')}`;
     $('systemState').innerHTML = `<strong>${league.toUpperCase()} · ${rows.length} teams</strong> · research-only point scale · zero canonical influence`;
     $('sourceMeta').textContent = league === 'cfb'
-      ? `CFB snapshot ${doc.snapshotAsOf}; model ${doc.modelId}; ${doc.trainingGames} completed games inside the fixed training window. Week 8 frozen projections were not rewritten.`
-      : `NFL snapshot ${doc.snapshotAsOf}; pinned source commit ${String(doc.sourceCommit || '').slice(0,12)}; frozen Week 7 regression ${doc.frozenRegression?.pass ? 'PASS' : 'FAIL'} across ${doc.frozenRegression?.games || 0} games.`;
-    $('methodText').textContent = doc.method || 'Research-only model-derived team point rating.';
+      ? `CFB snapshot ${doc.snapshotAsOf}; model ${doc.modelId}; ${doc.trainingGames} completed games inside the fixed training window. Published pregame projections were not rewritten.`
+      : `NFL snapshot ${doc.snapshotAsOf}; pinned source commit ${String(doc.sourceCommit || '').slice(0,12)}; Week 7 reproduction check ${doc.frozenRegression?.pass ? 'PASS' : 'FAIL'} across ${doc.frozenRegression?.games || 0} games.`;
+    $('methodText').textContent = (doc.method || 'Research-only model-derived team point rating.') + (doc.inputLimitations ? ' Input lag: ' + doc.inputLimitations : '');
   }
 
   async function init() {

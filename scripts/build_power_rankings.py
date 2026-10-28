@@ -3,7 +3,7 @@
 
 CFB CB Points are the zero-mean team-strength coefficients from the same frozen
 validated Week 8 foundation architecture, refit only on games completed before
-the fixed Friday 2026-10-23 16:03 ET cutoff.  These rankings are descriptive
+the October 28 morning cutoff.  These rankings are descriptive
 research output only; they do not rewrite the immutable Week 8 projections.
 
 NFL CB Points are produced by build_nfl_power_rankings.py from the exact pinned
@@ -35,7 +35,7 @@ from run_cfb_shadow_week8 import extract_grouped_team_ids  # noqa: E402
 
 engine.extract_team_ids = extract_grouped_team_ids
 
-CFB_AS_OF = engine.parse_dt("2026-10-23T20:03:00Z")
+CFB_AS_OF = engine.parse_dt("2026-10-28T12:45:00Z")
 CFB_START = engine.parse_dt("2026-08-20T04:00:00Z")
 ET = ZoneInfo("America/New_York")
 EXPECTED_CFB_TEAMS = 138
@@ -74,6 +74,8 @@ def cfb_display_names() -> dict[str, str]:
     for sport in doc.get("sports", []):
         for league in sport.get("leagues", []):
             entries.extend(league.get("teams", []))
+            for group in league.get("groups", []):
+                entries.extend(group.get("teams", []))
     entries.extend(doc.get("teams", []))
     for entry in entries:
         team = entry.get("team") or entry
@@ -205,8 +207,8 @@ def build_cfb(output_dir: Path):
         edges.append((away_code, home_code))
         if row.get("marketObservedAt"):
             observed.append(row["marketObservedAt"])
-    if len(remaining) != 49:
-        raise RuntimeError(f"Expected 49 remaining CFB market comparisons at fixed cutoff, got {len(remaining)}")
+    if len(remaining) != 54:
+        raise RuntimeError(f"Expected 54 remaining CFB market comparisons at fixed cutoff, got {len(remaining)}")
 
     graph = graph_status(set(teams), edges)
     market = market_status(
@@ -216,6 +218,9 @@ def build_cfb(output_dir: Path):
     )
 
     ranked = sorted(teams, key=lambda t: (-points[t], displays.get(t, t)))
+    previous_path = output_dir / "archive/cfb-previous.json"
+    previous = json.loads(previous_path.read_text()) if previous_path.exists() else {"teams": []}
+    old_ranks = {r["team"]: r["rank"] for r in previous["teams"]}
     rows = []
     for rank, team in enumerate(ranked, 1):
         rows.append({
@@ -223,18 +228,18 @@ def build_cfb(output_dir: Path):
             "team": team,
             "teamName": displays.get(team, team),
             "cbPoints": round(points[team], 4),
-            "movement": "NEW",
+            "movement": old_ranks.get(team, rank) - rank,
             "marketRank": None,
             "marketPoints": None,
             "marketGap": None,
-            "evidenceStatus": "FROZEN_FOUNDATION_STRENGTH_EXTRACT",
+            "evidenceStatus": "UPDATED_FOUNDATION_STRENGTH_EXTRACT",
         })
 
     out = {
         "schemaVersion": 1,
         "league": "cfb",
         "season": 2026,
-        "week": 8,
+        "week": 9,
         "snapshotAsOf": engine.iso(CFB_AS_OF),
         "trainingWindowStart": engine.iso(CFB_START),
         "modelId": "cfb-rebuild-foundation-v1-shadow",
@@ -242,7 +247,7 @@ def build_cfb(output_dir: Path):
         "canonicalInfluence": False,
         "canonicalPromotionAuthorized": False,
         "week8FrozenProjectionsRewritten": False,
-        "method": "Zero-mean schedule-adjusted team-strength coefficients from the frozen validated Week 8 foundation architecture, refit only on completed games before the fixed Friday cutoff.",
+        "method": "Zero-mean schedule-adjusted team-strength coefficients from the frozen validated Week 8 foundation architecture, refit only on completed games before the October 28 morning cutoff.",
         "lockedParameters": params,
         "structuralHomeMarginAdvantage": hfa,
         "trainingGames": len(completed),
@@ -261,7 +266,7 @@ def build_cfb(output_dir: Path):
     }
     (output_dir / "cfb.json").write_text(json.dumps(out, indent=2) + "\n", encoding="utf-8")
     with (output_dir / "cfb.csv").open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=list(rows[0]))
+        writer = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
         writer.writeheader(); writer.writerows(rows)
     return out
 
@@ -278,6 +283,9 @@ def enrich_nfl(nfl_model_path: Path, output_dir: Path):
     comparisons = []
     edges = []
     for game in market_doc.get("games", []):
+        kickoff = engine.parse_dt(game["kickoffUtc"]) if game.get("kickoffUtc") else None
+        if kickoff is None or kickoff <= engine.parse_dt(out["snapshotAsOf"]):
+            continue
         model_spread = as_float(game.get("modelSpreadHome"))
         market_spread = as_float(game.get("marketSpreadHome"))
         if model_spread is None or market_spread is None:
@@ -299,12 +307,13 @@ def enrich_nfl(nfl_model_path: Path, output_dir: Path):
             "eligibleForGrading": False,
         })
         edges.append((str(game.get("away")), str(game.get("home"))))
-    if len(comparisons) != 13:
-        raise RuntimeError(f"Expected 13 remaining NFL market comparisons, got {len(comparisons)}")
+
     team_keys = {str(row["team"]) for row in out["teams"]}
     graph = graph_status(team_keys, edges)
     out["marketNationalRatings"] = market_status(graph, market_doc.get("observedAt"), market_doc.get("provider", "NFL market reference"))
     out["remainingMatchupComparisons"] = comparisons
+    if not comparisons:
+        out["marketNationalRatings"]["reason"] = "Current Week 8 matchup comparisons await fresh market snapshots and matching projections; completed Week 7 lines are archived."
     out["marketReferenceProvenance"] = {
         "path": str(market_path.relative_to(ROOT)),
         "sha256": sha256(market_path),
@@ -315,7 +324,7 @@ def enrich_nfl(nfl_model_path: Path, output_dir: Path):
     out["canonicalPromotionAuthorized"] = False
     (output_dir / "nfl.json").write_text(json.dumps(out, indent=2) + "\n", encoding="utf-8")
     with (output_dir / "nfl.csv").open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=list(out["teams"][0]))
+        writer = csv.DictWriter(f, fieldnames=list(out["teams"][0]), lineterminator="\n")
         writer.writeheader(); writer.writerows(out["teams"])
     return out
 
