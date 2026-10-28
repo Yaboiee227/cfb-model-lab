@@ -15,6 +15,35 @@
   let doc = null;
   let rows = [];
 
+  function loadCss(href) {
+    if (document.querySelector(`link[data-cb-power-asset="${href}"]`)) return;
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    link.dataset.cbPowerAsset = href;
+    document.head.appendChild(link);
+  }
+
+  function loadScript(src) {
+    return new Promise((resolve, reject) => {
+      if (document.querySelector(`script[data-cb-power-asset="${src}"]`)) return resolve();
+      const script = document.createElement('script');
+      script.src = src;
+      script.async = false;
+      script.dataset.cbPowerAsset = src;
+      script.onload = resolve;
+      script.onerror = () => reject(new Error(`Could not load ${src}`));
+      document.body.appendChild(script);
+    });
+  }
+
+  async function ensureTeamVisuals() {
+    if (window.CBTeamVisuals) return;
+    loadCss('cb-team-visuals.css?v=20261028-phase2');
+    await loadScript('assets/teams/team-assets.js?v=20261028-phase2');
+    await loadScript('cb-team-visuals.js?v=20261028-phase2');
+  }
+
   function links() {
     const suffix = league === 'nfl' ? '?league=nfl' : '';
     $('homeLink').href = `index.html${suffix}`;
@@ -33,13 +62,27 @@
     return `<span class="status ${withheld ? 'hold' : 'good'}">${esc(text)}</span>`;
   }
 
+  function teamCell(row) {
+    const visual = window.CBTeamVisuals;
+    if (!visual) return `<strong>${esc(row.teamName)}</strong><span class="team-code">${esc(row.team)}</span>`;
+    return `<span class="cb-ranking-team">${visual.badgeMarkup(row.teamName, { abbr: row.team, size: 'sm' })}<span class="cb-ranking-team-copy"><strong>${esc(row.teamName)}</strong><span class="team-code">${esc(row.team)}</span></span></span>`;
+  }
+
+  function matchupCell(game) {
+    const visual = window.CBTeamVisuals;
+    const matchup = visual
+      ? visual.matchupMarkup(game.awayTeam, game.homeTeam, { awayAbbr: game.awayTeam, homeAbbr: game.homeTeam, size: 'xs' })
+      : `<strong>${esc(game.awayTeam)}</strong><span class="muted"> @ </span><strong>${esc(game.homeTeam)}</strong>`;
+    return `${matchup}<small class="kickoff">${esc(dateLabel(game.kickoff))}</small>`;
+  }
+
   function renderRows() {
     const query = $('search').value.trim().toLowerCase();
     const filtered = rows.filter(r => `${r.teamName} ${r.team}`.toLowerCase().includes(query));
     $('ratingsBody').innerHTML = filtered.map(r => `
       <tr>
         <td class="rank-cell">${rank(r.rank)}</td>
-        <td><strong>${esc(r.teamName)}</strong><span class="team-code">${esc(r.team)}</span></td>
+        <td>${teamCell(r)}</td>
         <td class="num model">${points(r.cbPoints)}</td>
         <td class="num market">${rank(r.marketRank)}</td>
         <td class="num market">${points(r.marketPoints)}</td>
@@ -55,7 +98,7 @@
     $('matchupCount').textContent = `${games.length} current comparisons`;
     $('matchupsBody').innerHTML = games.length ? games.map(g => `
       <tr>
-        <td><strong>${esc(g.awayTeam)}</strong><span class="muted"> @ </span><strong>${esc(g.homeTeam)}</strong><small class="kickoff">${esc(dateLabel(g.kickoff))}</small></td>
+        <td>${matchupCell(g)}</td>
         <td class="num model">${points(g.modelSpreadHome)}</td>
         <td class="num market">${points(g.marketSpreadHome)}</td>
         <td class="num context">${points(g.modelMarketGapHome)}</td>
@@ -87,6 +130,7 @@
   async function init() {
     links();
     try {
+      await ensureTeamVisuals();
       const response = await fetch(`data/power-rankings/${league}.json`, {cache:'no-store'});
       if (!response.ok) throw new Error(`power ranking snapshot unavailable (${response.status})`);
       doc = await response.json();
