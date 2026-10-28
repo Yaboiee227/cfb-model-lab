@@ -24,6 +24,7 @@ on:
       - 'cb-game-cards.js'
       - 'cb-phase3.css'
       - 'cb-phase3.js'
+      - 'cb-phase3-link-integrity.js'
       - 'assets/teams/**'
       - 'data/power-rankings/**'
       - 'tests/test_website_redesign.py'
@@ -60,6 +61,7 @@ jobs:
           node --check cb-team-visuals.js
           node --check cb-game-cards.js
           node --check cb-phase3.js
+          node --check cb-phase3-link-integrity.js
       - name: Extract and check remaining inline page scripts
         run: |
           python - <<'PY'
