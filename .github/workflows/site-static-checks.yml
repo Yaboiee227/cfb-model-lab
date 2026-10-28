@@ -5,6 +5,7 @@ on:
     paths:
       - 'site-shell.css'
       - 'site-shell.js'
+      - 'site-runtime-guard.js'
       - 'audit-shell.css'
       - 'recap.html'
       - 'ratings.html'
@@ -12,6 +13,14 @@ on:
       - 'power-rankings.css'
       - 'slate-navigation.js'
       - 'live-suite-loader.js'
+      - 'live-data.js'
+      - 'cb-foundation.css'
+      - 'cb-foundation.js'
+      - 'cb-team-visuals.css'
+      - 'cb-team-visuals.js'
+      - 'cb-game-cards.css'
+      - 'cb-game-cards.js'
+      - 'assets/teams/**'
       - 'data/power-rankings/**'
       - 'tests/test_website_redesign.py'
       - '.github/workflows/site-static-checks.yml'
@@ -36,8 +45,14 @@ jobs:
         run: |
           node --check site-shell.js
           node --check live-suite-loader.js
+          node --check site-runtime-guard.js
           node --check slate-navigation.js
           node --check power-rankings.js
+          node --check live-data.js
+          node --check cb-foundation.js
+          node --check assets/teams/team-assets.js
+          node --check cb-team-visuals.js
+          node --check cb-game-cards.js
       - name: Extract and check remaining inline page scripts
         run: |
           python - <<'PY'
