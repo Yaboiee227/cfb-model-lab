@@ -1,15 +1,16 @@
 @import url("cb-foundation.css");
 
 /* Shared responsive shell hardening — CFB + NFL
-   CB_SHELL_HARDENING_V4
+   CB_SHELL_HARDENING_V5
    Loaded after site-shell.css. Keeps the compact header single-row, anchors the
-   absolute navigation panel to the real header height, prevents background
-   scroll while the menu is open, and contains WebKit intrinsic-width leakage
-   without disabling intentional horizontal scrollers. */
+   navigation panel to the viewport immediately below the real header, prevents
+   background scroll while the menu is open, and contains WebKit intrinsic-width
+   leakage without disabling intentional horizontal scrollers. */
 
 @media(max-width:1180px){
   body.site-v2{
     max-width:100%;
+    --cb-compact-header-height:73px;
   }
   body.site-v2 main,
   body.site-v2 .site-footer{
@@ -68,14 +69,20 @@
     min-width:0;
   }
   body.site-v2 .primary-nav{
+    position:fixed!important;
+    top:var(--cb-compact-header-height)!important;
+    left:16px!important;
+    right:16px!important;
     order:0!important;
     width:auto!important;
+    margin:0!important;
     overflow-y:auto!important;
     overflow-x:hidden!important;
-    max-height:calc(100dvh - 80px);
+    max-height:calc(100dvh - var(--cb-compact-header-height) - 12px)!important;
     overscroll-behavior:contain;
     -webkit-overflow-scrolling:touch;
     box-shadow:0 24px 60px rgba(0,0,0,.34);
+    z-index:80!important;
   }
   body.site-v2 .primary-nav a{
     min-height:44px;
@@ -93,6 +100,12 @@
   }
   body.site-v2[data-nav-open="true"]{
     overflow:hidden;
+  }
+}
+
+@media(max-width:700px){
+  body.site-v2{
+    --cb-compact-header-height:65px;
   }
 }
 
@@ -131,10 +144,9 @@
     height:34px!important;
   }
   body.site-v2 .primary-nav{
-    top:62px;
-    left:11px;
-    right:11px;
-    max-height:calc(100dvh - 74px);
+    left:11px!important;
+    right:11px!important;
+    max-height:calc(100dvh - var(--cb-compact-header-height) - 9px)!important;
   }
 }
 
