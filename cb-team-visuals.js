@@ -133,6 +133,48 @@
     return String(value || '').replace(/^◆\s*/, '').trim();
   }
 
+  function siteState() {
+    try { return typeof STATE !== 'undefined' ? STATE : null; }
+    catch (_) { return null; }
+  }
+
+  function projectionById(id) {
+    return siteState()?.projections?.find(game => String(game.gameId) === String(id)) || null;
+  }
+
+  function decorateProjectionTable() {
+    document.querySelectorAll('#projectionBody tr[id^="game-"]').forEach(row => {
+      const cell = row.querySelector('.game-matchup');
+      if (!cell || cell.dataset.cbTeamVisual === 'true') return;
+      const game = projectionById(row.id.replace(/^game-/, ''));
+      if (!game) return;
+      cell.dataset.cbTeamVisual = 'true';
+      cell.classList.add('cb-table-matchup');
+      cell.innerHTML = matchupMarkup(game.awayTeam, game.homeTeam, {
+        awayAbbr: String(window.CB_ACTIVE_LEAGUE || '').toLowerCase() === 'nfl' ? game.awayTeam : null,
+        homeAbbr: String(window.CB_ACTIVE_LEAGUE || '').toLowerCase() === 'nfl' ? game.homeTeam : null,
+        size: 'xs'
+      });
+    });
+  }
+
+  function decorateTopSignals() {
+    document.querySelectorAll('.top-signal-card').forEach(card => {
+      if (card.dataset.cbTeamVisual === 'true') return;
+      const gameId = card.querySelector('[data-inspect-game]')?.dataset.inspectGame;
+      const game = projectionById(gameId);
+      const heading = card.querySelector('h3');
+      if (!game || !heading) return;
+      card.dataset.cbTeamVisual = 'true';
+      heading.classList.add('cb-top-signal-matchup');
+      heading.innerHTML = matchupMarkup(game.awayTeam, game.homeTeam, {
+        awayAbbr: String(window.CB_ACTIVE_LEAGUE || '').toLowerCase() === 'nfl' ? game.awayTeam : null,
+        homeAbbr: String(window.CB_ACTIVE_LEAGUE || '').toLowerCase() === 'nfl' ? game.homeTeam : null,
+        size: 'xs'
+      });
+    });
+  }
+
   function decorateLiveSurfaces() {
     document.querySelectorAll('.live-matchup-row > div').forEach(row => {
       if (row.querySelector(':scope > .cb-team-badge')) return;
@@ -161,6 +203,10 @@
     document.querySelectorAll('#ratingsBody tr').forEach(row => {
       const cell = row.children[1];
       if (!cell || cell.dataset.cbTeamVisual === 'true') return;
+      if (cell.querySelector('.cb-ranking-team')) {
+        cell.dataset.cbTeamVisual = 'true';
+        return;
+      }
       const name = cell.querySelector('strong')?.textContent?.trim();
       const code = cell.querySelector('.team-code')?.textContent?.trim();
       if (!name) return;
@@ -182,6 +228,10 @@
     document.querySelectorAll('#matchupsBody tr').forEach(row => {
       const cell = row.children[0];
       if (!cell || cell.dataset.cbTeamVisual === 'true') return;
+      if (cell.querySelector('.cb-matchup-lockup')) {
+        cell.dataset.cbTeamVisual = 'true';
+        return;
+      }
       const teams = [...cell.querySelectorAll('strong')];
       if (teams.length < 2) return;
       const away = teams[0].textContent.trim();
@@ -192,9 +242,23 @@
     });
   }
 
+  function decorateTickerItems() {
+    document.querySelectorAll('[data-cb-ticker-away][data-cb-ticker-home]').forEach(item => {
+      if (item.dataset.cbTeamVisual === 'true') return;
+      const away = item.dataset.cbTickerAway;
+      const home = item.dataset.cbTickerHome;
+      const target = item.querySelector('[data-cb-ticker-matchup]') || item;
+      item.dataset.cbTeamVisual = 'true';
+      target.innerHTML = matchupMarkup(away, home, { size: 'xs' });
+    });
+  }
+
   function decorateAll() {
+    decorateProjectionTable();
+    decorateTopSignals();
     decorateLiveSurfaces();
     decoratePowerRankings();
+    decorateTickerItems();
   }
 
   window.CBTeamVisuals = Object.freeze({
