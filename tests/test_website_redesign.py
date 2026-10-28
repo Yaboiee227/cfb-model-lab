@@ -90,13 +90,17 @@ def test_phase_two_rivalry_and_primetime_tags_are_derived_without_new_data_files
     assert "cb-game-tag-rivalry" in cards
 
 
-def test_phase_two_live_score_display_does_not_hotlink_team_logo_urls():
+def test_phase_two_live_team_logos_are_suppressed_only_in_the_presentation_layer():
     live = read("live-data.js")
-    assert "TEAM_IMAGE_PLACEHOLDER" in live
-    assert "stripExternalTeamImages" in live
-    assert "homeRaw.team?.logo" not in live
-    assert "awayRaw.team?.logo" not in live
-    assert "data:image/gif;base64" in live
+    visuals = read("cb-team-visuals.js")
+    styles = read("cb-game-cards.css")
+    # Live source normalization remains untouched; Phase 2 suppresses image rendering in UI only.
+    assert "homeRaw.team?.logo" in live
+    assert "awayRaw.team?.logo" in live
+    assert "stripUnlicensedLiveImages" in visuals
+    assert "removeAttribute('src')" in visuals
+    assert ".live-matchup-row img" in styles
+    assert ".live-scoreboard .live-team>img" in styles
 
 
 def test_phase_two_power_rankings_use_the_shared_team_visual_component():
