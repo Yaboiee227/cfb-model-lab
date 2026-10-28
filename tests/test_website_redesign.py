@@ -14,6 +14,27 @@ def test_main_site_loads_redesign_shell_through_live_suite():
     assert "await loadScript('slate-navigation.js')" in loader
 
 
+def test_phase_one_shared_brand_foundation_is_layered_without_model_changes():
+    hotfix = read("site-shell-hotfix.css")
+    guard = read("site-runtime-guard.js")
+    foundation = read("cb-foundation.css")
+    behavior = read("cb-foundation.js")
+    assert '@import url("cb-foundation.css")' in hotfix
+    assert "cb-foundation.js" in guard
+    assert "--cb-charcoal: #202329" in foundation
+    assert "--cb-orange: #FF652E" in foundation
+    assert "--cb-white: #F7F7F4" in foundation
+    assert "prefers-reduced-motion" in foundation
+    assert "prefers-color-scheme: dark" in behavior
+    assert "assets/brand/cb-logo.jpg" in foundation
+    assert "assets/brand/cb-favicon.png" in behavior
+
+
+def test_phase_one_brand_assets_exist():
+    assert (ROOT / "assets/brand/cb-logo.jpg").is_file()
+    assert (ROOT / "assets/brand/cb-favicon.png").is_file()
+
+
 def test_shell_preserves_four_model_information_layers():
     script = read("site-shell.js")
     for required in ("Canonical", "Challenger", "Benchmark", "Context"):
@@ -70,6 +91,8 @@ def test_no_react_or_build_dependency_added_to_redesign_shell():
     combined = "\n".join(read(name) for name in (
         "site-shell.js",
         "site-shell.css",
+        "cb-foundation.css",
+        "cb-foundation.js",
         "recap.html",
         "ratings.html",
         "power-rankings.js",
