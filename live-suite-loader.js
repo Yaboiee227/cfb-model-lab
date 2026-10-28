@@ -158,6 +158,7 @@
     loadCss('site-shell-hotfix.css');
     await loadScript('site-shell.js');
     await loadScript('site-runtime-guard.js');
+    if (window.CB_PHASE2_READY) await window.CB_PHASE2_READY;
     installLanguageSync();
     loadCss('record-tracker.css');
     await loadScript('record-tracker.js');
