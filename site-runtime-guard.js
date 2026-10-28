@@ -161,5 +161,6 @@
   window.CB_PHASE3_READY = (async () => {
     if (window.CB_PHASE2_READY) await window.CB_PHASE2_READY;
     await loadScript('cb-phase3.js');
+    await loadScript('cb-phase3-link-integrity.js');
   })().catch(error => console.error('CB Phase 3 asset load failed', error));
 })();
