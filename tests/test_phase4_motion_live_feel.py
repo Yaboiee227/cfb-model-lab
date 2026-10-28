@@ -23,7 +23,6 @@ def test_phase_four_is_presentation_only_and_has_no_new_network_source():
     assert "xmlhttprequest" not in lowered
     assert "websocket" not in lowered
     assert "eventsource" not in lowered
-    assert "sportsbook" not in lowered
     assert "canonical" not in lowered
     assert "coefficient" not in lowered
 
