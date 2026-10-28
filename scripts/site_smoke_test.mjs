@@ -75,23 +75,53 @@ for (const tc of cases) {
 
     if (tc.testSlateNavigation) {
       await page.waitForSelector('#slateNavigation', { timeout: 15000 }).catch(() => {});
-      const summaryBefore = await page.locator('#slateNavigationStatus').textContent().catch(() => '');
-      if (!/56\s+CFB\s+Week\s+8\s+games\s+loaded/i.test(summaryBefore || '')) errors.push(`Full-slate mobile summary incorrect: ${summaryBefore}`);
+      const currentSlate = await page.evaluate(() => {
+        let games = [];
+        let week = '';
+        try {
+          games = Array.isArray(STATE?.projections) ? STATE.projections : [];
+          week = String(document.querySelector('#weekFilter')?.value || STATE?.config?.currentWeek || '');
+        } catch (_) {}
+        const scoped = games.filter(game => !week || String(game.week) === week);
+        const byDate = scoped.reduce((acc, game) => {
+          if (game.date) acc[game.date] = (acc[game.date] || 0) + 1;
+          return acc;
+        }, {});
+        const dates = Object.keys(byDate).sort();
+        return {
+          week,
+          total: scoped.length,
+          sampleDate: dates[0] || '',
+          sampleDateCount: dates.length ? byDate[dates[0]] : 0
+        };
+      });
 
-      const fridayChip = page.locator('#slateDayChips .slate-day-chip[data-date="2026-10-23"]');
-      if (await fridayChip.count()) {
-        await fridayChip.click();
-        await page.waitForFunction(() => document.querySelectorAll('#projectionCards .projection-card[id^="card-"]').length === 5, { timeout: 10000 }).catch(() => {});
-        const fridayCards = await page.locator('#projectionCards .projection-card[id^="card-"]').count();
-        if (fridayCards !== 5) errors.push(`Friday quick filter expected 5 games, got ${fridayCards}`);
+      const summaryBefore = await page.locator('#slateNavigationStatus').textContent().catch(() => '');
+      const expectedSummary = new RegExp(`${currentSlate.total}\\s+CFB${currentSlate.week ? `\\s+Week\\s+${currentSlate.week}` : ''}\\s+games\\s+loaded`, 'i');
+      if (!expectedSummary.test(summaryBefore || '')) errors.push(`Full-slate mobile summary incorrect: ${summaryBefore}`);
+
+      const sampleChip = currentSlate.sampleDate
+        ? page.locator(`#slateDayChips .slate-day-chip[data-date="${currentSlate.sampleDate}"]`)
+        : page.locator('#slateDayChips .slate-day-chip[data-date]:not([data-date=""])').first();
+      if (currentSlate.sampleDate && await sampleChip.count()) {
+        await sampleChip.click();
+        await page.waitForFunction(expected => document.querySelectorAll('#projectionCards .projection-card[id^="card-"]').length === expected, currentSlate.sampleDateCount, { timeout: 10000 }).catch(() => {});
+        const sampleCards = await page.locator('#projectionCards .projection-card[id^="card-"]').count();
+        if (sampleCards !== currentSlate.sampleDateCount) errors.push(`Date quick filter expected ${currentSlate.sampleDateCount} games, got ${sampleCards}`);
 
         await page.locator('#slateDayChips .slate-day-chip[data-date=""]').click();
-        await page.waitForFunction(() => document.querySelectorAll('#projectionCards .projection-card[id^="card-"]').length === 56, { timeout: 10000 }).catch(() => {});
+        await page.waitForFunction(expected => document.querySelectorAll('#projectionCards .projection-card[id^="card-"]').length === expected, currentSlate.total, { timeout: 10000 }).catch(() => {});
         const restoredCards = await page.locator('#projectionCards .projection-card[id^="card-"]').count();
-        if (restoredCards !== 56) errors.push(`Show-all recovery expected 56 games, got ${restoredCards}`);
-        navigationIntegrity = { summaryBefore, fridayCards, restoredCards };
+        if (restoredCards !== currentSlate.total) errors.push(`Show-all recovery expected ${currentSlate.total} games, got ${restoredCards}`);
+        navigationIntegrity = {
+          summaryBefore,
+          activeWeek: currentSlate.week,
+          sampledDate: currentSlate.sampleDate,
+          sampleCards,
+          restoredCards
+        };
       } else {
-        errors.push('Friday quick-filter chip missing on CFB mobile');
+        errors.push('Current-slate date quick-filter chip missing on CFB mobile');
       }
     }
 
