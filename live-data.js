@@ -3,7 +3,6 @@
   const SCOREBOARD_URL = ACTIVE_LEAGUE === 'nfl' ? 'nfl_data/site/live-scoreboard.json' : 'data/live-scoreboard.json';
   const POLL_MS = 60000;
   const DETAIL_TTL_MS = 25000;
-  const TEAM_IMAGE_PLACEHOLDER = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
   const state = {
     games: [], lastUpdated: null, paused: localStorage.getItem('cb-live-paused') === '1',
     aliases: {}, mockMode: new URL(location.href).searchParams.get('mock') === '1' || localStorage.getItem('cb-live-mock') === '1',
@@ -63,13 +62,13 @@
         id: String(homeRaw.id || homeRaw.team?.id || ''),
         name: homeRaw.team?.shortDisplayName || homeRaw.team?.location || homeRaw.team?.displayName || '',
         displayName: homeRaw.team?.displayName || homeRaw.team?.shortDisplayName || '',
-        score: Number(homeRaw.score || 0), logo: TEAM_IMAGE_PLACEHOLDER
+        score: Number(homeRaw.score || 0), logo: homeRaw.team?.logo || ''
       },
       away: {
         id: String(awayRaw.id || awayRaw.team?.id || ''),
         name: awayRaw.team?.shortDisplayName || awayRaw.team?.location || awayRaw.team?.displayName || '',
         displayName: awayRaw.team?.displayName || awayRaw.team?.shortDisplayName || '',
-        score: Number(awayRaw.score || 0), logo: TEAM_IMAGE_PLACEHOLDER
+        score: Number(awayRaw.score || 0), logo: awayRaw.team?.logo || ''
       },
       possessionTeamId: String(situation.possession || situation.lastPlay?.team?.id || ''),
       down: Number.isFinite(Number(situation.down)) && Number(situation.down) > 0 ? Number(situation.down) : null,
@@ -79,12 +78,6 @@
       lastPlay: situation.lastPlay?.text || '',
       playByPlayAvailable: Boolean(c.playByPlayAvailable)
     };
-  }
-
-  function stripExternalTeamImages(game) {
-    if (game?.home) game.home.logo = TEAM_IMAGE_PLACEHOLDER;
-    if (game?.away) game.away.logo = TEAM_IMAGE_PLACEHOLDER;
-    return game;
   }
 
   function matchProjection(game) {
@@ -117,11 +110,11 @@
       let games;
       if (state.mockMode) {
         const mock = await loadMock();
-        games = (mock.scoreboard?.events || []).map(g => stripExternalTeamImages({ ...g }));
+        games = (mock.scoreboard?.events || []).map(g => ({ ...g }));
       } else {
         const json = await fetch(SCOREBOARD_URL, { cache:'no-store', headers:{'Accept':'application/json'} }).then(r => { if (!r.ok) throw new Error(`Local scoreboard ${r.status}`); return r.json(); });
         if (json.league && String(json.league).toLowerCase() !== ACTIVE_LEAGUE) throw new Error(`Scoreboard league mismatch: ${json.league}`);
-        games = (json.events || []).map(normalizeEspnEvent).map(stripExternalTeamImages);
+        games = (json.events || []).map(normalizeEspnEvent);
       }
       const changes = [];
       for (const game of games) {
