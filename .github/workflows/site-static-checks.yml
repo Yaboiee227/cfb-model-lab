@@ -11,6 +11,8 @@ on:
       - 'ratings.html'
       - 'power-rankings.js'
       - 'power-rankings.css'
+      - 'power-rankings-phase3.js'
+      - 'power-rankings-phase3.css'
       - 'slate-navigation.js'
       - 'live-suite-loader.js'
       - 'live-data.js'
@@ -20,9 +22,12 @@ on:
       - 'cb-team-visuals.js'
       - 'cb-game-cards.css'
       - 'cb-game-cards.js'
+      - 'cb-phase3.css'
+      - 'cb-phase3.js'
       - 'assets/teams/**'
       - 'data/power-rankings/**'
       - 'tests/test_website_redesign.py'
+      - 'tests/test_phase3_website.py'
       - '.github/workflows/site-static-checks.yml'
   workflow_dispatch:
 
@@ -40,7 +45,7 @@ jobs:
       - name: Install pytest
         run: python -m pip install pytest
       - name: Run redesign regression tests
-        run: python -m pytest tests/test_website_redesign.py -q
+        run: python -m pytest tests/test_website_redesign.py tests/test_phase3_website.py -q
       - name: Check standalone JavaScript syntax
         run: |
           node --check site-shell.js
@@ -48,11 +53,13 @@ jobs:
           node --check site-runtime-guard.js
           node --check slate-navigation.js
           node --check power-rankings.js
+          node --check power-rankings-phase3.js
           node --check live-data.js
           node --check cb-foundation.js
           node --check assets/teams/team-assets.js
           node --check cb-team-visuals.js
           node --check cb-game-cards.js
+          node --check cb-phase3.js
       - name: Extract and check remaining inline page scripts
         run: |
           python - <<'PY'
