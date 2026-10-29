@@ -171,6 +171,40 @@ for (const tc of cases) {
     }
   }
 
+  // Exercise the composed redesign, including recovery from an empty slate.
+  if (!tc.week8) {
+    await page.waitForSelector('#cbTeamFilter', { timeout: 15000 });
+    const frozenBefore = await page.evaluate(() => JSON.stringify([STATE.projections, STATE.results]));
+    const team = await page.locator('#cbTeamFilter option').nth(1).getAttribute('value');
+    await page.locator('#cbTeamFilter').selectOption(team);
+    await page.waitForFunction(team => {
+      const cards = [...document.querySelectorAll('#projectionCards .projection-card[id^="card-"]')];
+      return cards.length > 0 && cards.every(card => card.textContent.includes(team));
+    }, team, { timeout: 10000 });
+    if (!(await page.locator('#cbTeamLensBody').innerText()).includes(team)) errors.push('Selected team lens did not render');
+    await page.locator('#resetFilters').click();
+    await page.locator('#teamSearch').fill('zzzz-no-matching-football-team');
+    await page.waitForFunction(() => document.querySelectorAll('#projectionCards .projection-card[id^="card-"]').length === 0);
+    if (!/no|match|0/i.test(await page.locator('#projectionCount').innerText())) errors.push('Empty slate has no count feedback');
+    await page.locator('#resetFilters').click();
+    await page.waitForSelector('.cb-game-breakdown summary');
+    const detail = page.locator('.cb-game-breakdown').first();
+    await detail.locator('summary').click();
+    if (!(await detail.getAttribute('open') !== null)) errors.push('Game breakdown did not open');
+    await detail.locator('summary').press('Enter');
+    if (await detail.getAttribute('open') !== null) errors.push('Game breakdown keyboard close failed');
+    await page.locator('[data-cb-view-choice="table"]').click();
+    if (!(await page.locator('#projectionBody').isVisible())) errors.push('Table view did not become visible');
+    await page.locator('[data-cb-view-choice="cards"]').click();
+    if (!(await page.locator('#projectionCards').isVisible())) errors.push('Cards view did not become visible');
+    const themeBefore = await page.locator('html').getAttribute('data-theme');
+    await page.locator('#themeToggle').click();
+    if ((await page.locator('html').getAttribute('data-theme')) === themeBefore) errors.push('Theme toggle did not change appearance');
+    await page.locator('#themeToggle').click();
+    const frozenAfter = await page.evaluate(() => JSON.stringify([STATE.projections, STATE.results]));
+    if (frozenBefore !== frozenAfter) errors.push('Presentation controls mutated source projection/result state');
+  }
+
   const layout = await page.evaluate(() => ({
     scrollWidth: document.documentElement.scrollWidth,
     clientWidth: document.documentElement.clientWidth,
