@@ -71,3 +71,9 @@ Live Week 8 personnel gates were verified after deployment: 14 HOLD rows. Existi
 The QB event contract now requires starter expectation/source by freeze, confirmation/source before kickoff, replacement prior as-of no later than confirmation, and explicit exclusion of realized target-game starter information. Boundary tests cover invalid timing and missing evidence. The saved Huntley event has pregame confirmation but lacks verified expectation-at-freeze and replacement-prior timestamps, so it is ineligible. No numeric QB-change model was fitted from that event. The timeline contract is ready for valid events; historical source recovery and prospective collection remain necessary.
 
 No model coefficients, frozen predictions or recorded outcomes were changed.
+
+## Recovered starter context and prospective ledger
+
+Official Ravens reports published October 19 and October 24 clarify that Jackson was unresolved before freeze and Huntley made his third consecutive start in Week 7. This corrects any implication of a sudden first replacement start. Current recovered article versions do not prove original pregame capture, and the baseline has no explicit single-starter assumption. A fixed Jackson-to-Huntley downgrade could double-count Huntley's recent performance already in team inputs.
+
+The prospective observation recorder writes immutable game/team-scoped observations, stamps actual collection time, rejects post-kickoff observations and supplied backdated timestamps, and keeps practice participation separate from starter confirmation. The first record captures Jackson's full-practice report for Week 8 without marking him a confirmed starter. Week 8 personnel evidence now includes that observation; the gate remains HOLD. No starter probabilities or numerical adjustment are invented.

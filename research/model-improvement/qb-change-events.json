@@ -26,5 +26,19 @@
       }
     }
   ],
-  "policy": "Saved pregame note identifies a replacement, but it does not document an explicit expected starter at forecast freeze. Do not infer one from the eventual starter or the final score."
+  "policy": "Saved pregame note identifies a replacement, but it does not document an explicit expected starter at forecast freeze. Do not infer one from the eventual starter or the final score.",
+  "interpretationCorrection": {
+    "stateBeforeFreeze": "UNRESOLVED_BY_PUBLISHED_REPORT",
+    "priorStarterContext": "Huntley had already started the previous two games; this was not his first late replacement start.",
+    "beforeFreezeReport": {
+      "url": "https://www.baltimoreravens.com/news/jesse-minter-lamar-jackson-ankle-still-day-day-monday-week-7-injuries-rashod-bateman-cam-jurgens-trey-hendrickson-tyler-loop-critical-misses",
+      "publishedDate": "2026-10-19",
+      "retrievedDate": "2026-10-29"
+    },
+    "confirmationReport": {
+      "url": "https://www.baltimoreravens.com/news/lamar-jackson-out-against-bengals-week-7-tyler-huntley-third-straight-start",
+      "publishedDate": "2026-10-24"
+    },
+    "limitation": "Recovered current article versions, not captures made before the original freeze. Does not show baseline assumed Jackson; team-efficiency inputs may already contain Huntley performance."
+  }
 }
