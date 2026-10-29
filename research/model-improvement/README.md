@@ -49,3 +49,11 @@ An offline pinned-source audit reconstructs the canonical efficiency + coverage 
 A pass/rush allowance-sign hypothesis changes only those matchup definitions from offense minus defensive allowance to offense plus allowance. Higher defensive EPA allowed denotes weaker defense, motivating this alternative; the existing model also has net-efficiency features, so this does not establish that all forecasts have a sign bug. Candidate MAE 10.2447 vs baseline 10.2564: about 0.0117 points better. It improves 2023/2024 but worsens 2025. Too small and unstable to promote. These historical seasons have already been inspected; this is diagnostic reuse, not a blind holdout.
 
 The largest Week 7 misses have no missing raw spread-matrix features, but that does not establish current personnel information. Personnel-event timestamp validation remains outstanding. Contributions from standardized correlated features are not causal player or home-field effects. NFL totals and all frozen projections remain unchanged.
+
+## Personnel integration audit
+
+Saved Week 7 publication evidence includes a confirmed Jackson-to-Huntley switch with an explicitly unadjusted frozen forecast, other starter regime flags, and zero numerical projection changes. The 14-game audit found three archived hard-QB-break flags. This is an integration gap, not proof that personnel changes caused a particular loss.
+
+The reusable personnel gate checks game scope, timezone-aware pregame observation time, final availability and explicit QB state. Unknown is never treated as unchanged. A QB change requires a validated, actually applied adjustment before a personnel-adjusted label is allowed. A personnel-gate pass alone does not certify market, weather, referee or validation gates. The helper and tests are available for pipeline integration; they do not inject numerical adjustments into the canonical predictor.
+
+Week 8 derived personnel gates remain HOLD for all 14 frozen research projections because no dated official availability evidence is supplied to this audit. These are separate diagnostic outputs, not replacements for the frozen predictions or evidence that later reports do not exist. Next requirement: a starter-state/position-group ingestion contract with verified event timestamps, followed by an isolated historically causal adjustment test.
