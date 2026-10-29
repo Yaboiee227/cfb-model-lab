@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="How CB Model Projections turns pregame information into separate CFB and NFL projections, market comparisons, readiness states, and honest ATS, totals, and straight-up grading.">
+  <meta name="color-scheme" content="dark">
+  <title>How the Model Works · CB Model Projections</title>
+  <link rel="stylesheet" href="audit-shell.css">
+  <link rel="stylesheet" href="how-it-works.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="topbar">
+  <div class="shell topbar-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">CB</span><span class="brand-copy"><strong>CB Model Projections</strong><small>Football prediction research</small></span></a>
+    <nav class="page-nav" aria-label="Page navigation">
+      <a aria-current="page" href="#overview">How it works</a>
+      <a href="#inputs">Inputs</a>
+      <a href="#production">Projection</a>
+      <a href="#reading">Read the board</a>
+      <a href="#grading">Grading</a>
+      <a href="#validation">Validation</a>
+    </nav>
+    <div class="league-switch" aria-label="Open league model"><a href="index.html">CFB</a><a href="index.html?league=nfl">NFL</a></div>
+  </div>
+</header>
+
+<main class="shell" id="main">
+  <section class="hero how-hero" id="overview">
+    <p class="kicker">MODEL GUIDE · SHARED PROCESS, SEPARATE ARCHITECTURES</p>
+    <h1>Understand the projection.<br><span>Understand the evidence.</span></h1>
+    <p class="lede">CB Model Projections contains two predictive systems: one for FBS college football and one for the NFL. They share a public interface and operating discipline, but they do not share coefficients, feature weights, or a single model formula.</p>
+    <div class="system-line">
+      <span><strong>Process rule:</strong> collect pregame information broadly, promote model features narrowly, freeze what was known, then grade honestly.</span>
+      <span class="system-links"><a href="data/model-registry.json">Model registry ↗</a><a href="recap.html">Recap ↗</a><a href="ratings.html">Ratings ↗</a></span>
+    </div>
+  </section>
+
+  <section class="summary" aria-label="Operating principles">
+    <article class="metric"><span>Predictive models</span><strong>2</strong><small>CFB and NFL remain independent</small></article>
+    <article class="metric"><span>Evidence layers</span><strong>4</strong><small>Canonical · challenger · benchmark · context</small></article>
+    <article class="metric"><span>Graded markets</span><strong>3</strong><small>ATS · totals · straight up</small></article>
+    <article class="metric"><span>Postgame reconstruction</span><strong>0</strong><small>Missing pregame information stays missing</small></article>
+  </section>
+
+  <div class="notice"><span class="tag">Important distinction</span><p><strong>This page explains the public process, not hidden coefficients or a universal formula.</strong> Exact model architecture differs by league. A data source or contextual factor can be collected and displayed without receiving canonical numerical influence.</p></div>
+
+  <section class="section" aria-labelledby="architectureTitle">
+    <div class="section-head" data-index="01 · EVIDENCE ARCHITECTURE"><h2 id="architectureTitle">Four layers. One clear boundary.</h2><p>Every piece of information belongs to a role. The strongest safeguard in the project is keeping those roles separate instead of letting useful context silently become model logic.</p></div>
+    <div class="layer-grid">
+      <article class="layer-card canonical"><span>01 · Canonical</span><h3>Production projection model</h3><p>The only layer allowed to create the official frozen projection for its league. CFB and NFL use separate architectures and coefficients.</p></article>
+      <article class="layer-card challenger"><span>02 · Challenger</span><h3>Research candidates</h3><p>Alternative models, features, adjustments, or thresholds can be tested prospectively. They do not inherit production status automatically.</p></article>
+      <article class="layer-card benchmark"><span>03 · Benchmark</span><h3>Markets + outside models</h3><p>Sportsbooks, external ratings, prediction markets, trends, and similar sources provide comparison evidence unless explicitly validated and promoted.</p></article>
+      <article class="layer-card context"><span>04 · Context</span><h3>Pregame information</h3><p>Injuries, quarterback status, availability, weather, venue, travel, rest, coaching, and other matchup information are timestamped and audited separately.</p></article>
+    </div>
+  </section>
+
+  <section class="section" id="inputs" aria-labelledby="inputsTitle">
+    <div class="section-head" data-index="02 · INPUTS"><h2 id="inputsTitle">Collect broadly. Promote narrowly.</h2><p>The project can monitor far more information than the canonical models are allowed to use. That is intentional.</p></div>
+    <div class="input-table-wrap">
+      <table class="input-table">
+        <thead><tr><th>Input family</th><th>What it can include</th><th>Default role</th></tr></thead>
+        <tbody>
+          <tr><td><strong>League-specific statistical state</strong></td><td>Validated team-strength, efficiency, opponent-adjustment, scoring, pace/volume, and matchup variables where they belong in that league's tested architecture.</td><td><span class="status good">Canonical only if promoted</span></td></tr>
+          <tr><td><strong>Pregame personnel + environment</strong></td><td>Quarterbacks, injuries, inactives, depth, weather, roof/venue, travel, rest, coaching, referee information, and other availability context.</td><td><span class="status hold">Timestamped context</span></td></tr>
+          <tr><td><strong>External ratings + models</strong></td><td>SP+, Sagarin, RefMetrics, other public/private models, consensus ratings, and independent projections.</td><td><span class="status">Benchmark / challenger</span></td></tr>
+          <tr><td><strong>Sportsbook + prediction-market data</strong></td><td>Current spread, total, moneyline, publication-time market lock, movement, and market-implied comparison information.</td><td><span class="status">Benchmark only</span></td></tr>
+          <tr><td><strong>Trends + situational research</strong></td><td>Historical trends, schedule spots, travel/rest angles, coaching context, matchup narratives, and diagnostic research.</td><td><span class="status">Context / research</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="section-note">A source appearing on the website does not mean it changes the canonical number. Promotion requires leakage-safe historical testing, out-of-sample or walk-forward validation, prospective frozen-week evidence, and explicit approval.</p>
+  </section>
+
+  <section class="section" id="production" aria-labelledby="productionTitle">
+    <div class="section-head" data-index="03 · PROJECTION PRODUCTION"><h2 id="productionTitle">From pregame state to frozen projection.</h2><p>The weekly workflow is built around preserving what existed before kickoff, not reconstructing a cleaner story after the result.</p></div>
+    <ol class="pipeline" aria-label="Projection production steps">
+      <li><span>01</span><div><h3>Assemble the league's approved input state</h3><p>Only the inputs already authorized for that league's canonical architecture are allowed to drive the production calculation.</p></div></li>
+      <li><span>02</span><div><h3>Generate the independent projection</h3><p>The model produces projected team points, a home-team spread, game total, and straight-up win probabilities. Those outputs originate from the model, not from the sportsbook line.</p></div></li>
+      <li><span>03</span><div><h3>Freeze the projection and provenance</h3><p>The project preserves the model version, projection timestamp, snapshot or source reference, and the number that existed before the game.</p></div></li>
+      <li><span>04</span><div><h3>Attach market evidence separately</h3><p>Current market references can be compared with the model, and the publication-time market snapshot is saved for grading. Market information does not silently rewrite the frozen canonical projection.</p></div></li>
+      <li><span>05</span><div><h3>Audit context and readiness</h3><p>Pregame availability, quarterback state, weather, venue, referee information, data quality, reliability, and unresolved blockers remain visible so uncertainty is not hidden.</p></div></li>
+      <li><span>06</span><div><h3>Apply the publication / validation state</h3><p>A large model/market difference does not override a HOLD. Research output, recommendation status, and canonical status remain separate.</p></div></li>
+      <li><span>07</span><div><h3>Grade only after Final</h3><p>Once a game is final, the frozen projection is graded against the saved market benchmark. The final score never changes the pregame projection being evaluated.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="section" id="reading" aria-labelledby="readingTitle">
+    <div class="section-head" data-index="04 · READ THE BOARD"><h2 id="readingTitle">Difference is not the same as edge.</h2><p>The public board intentionally separates model output, market reference, model/market distance, win probability, and readiness metadata.</p></div>
+    <div class="definition-grid">
+      <article><span class="definition-label model">Model spread</span><h3>Home-team perspective</h3><p><code>modelSpreadHome</code> is expressed from the home team's perspective. A negative value means the model makes the home team the favorite; a positive value means it makes the away team the favorite.</p></article>
+      <article><span class="definition-label market">Spread difference</span><h3>Market minus model</h3><p><code>marketSpreadHome − modelSpreadHome</code>. A positive value points toward the home side relative to market; a negative value points toward the away side. The magnitude is the distance between the two numbers.</p></article>
+      <article><span class="definition-label market">Total difference</span><h3>Model minus market</h3><p><code>modelTotal − marketTotal</code>. Positive means the model total is higher than market; negative means it is lower.</p></article>
+      <article><span class="definition-label model">Win probability</span><h3>Straight-up outcome</h3><p>Home and away win probabilities describe the model's projected chance to win the game outright. They are not ATS cover probabilities.</p></article>
+      <article><span class="definition-label context">Confidence / reliability</span><h3>Readiness metadata, not certainty</h3><p>Data quality, signal strength, spread/total reliability, release status, and blockers describe the state of the research output. They should not be read as a guaranteed probability of covering a spread.</p></article>
+      <article><span class="definition-label challenger">“Edge” language</span><h3>Use with care</h3><p>When older project language uses “edge,” treat it as a research model/market difference unless a separately validated expected-value process is explicitly identified. The current public UX prefers “difference.”</p></article>
+    </div>
+    <div class="worked-example">
+      <div><span class="tag">Illustrative example</span><h3>No current game implied</h3></div>
+      <p>If the model makes the home team <strong>-6.0</strong> and the saved market is <strong>-3.5</strong>, the spread difference is <strong>+2.5 toward the home side</strong>. If the model total is <strong>48.0</strong> and market is <strong>45.5</strong>, the total difference is <strong>+2.5 toward Over</strong>. Those differences still do not override a validation HOLD or become official wager recommendations by themselves.</p>
+    </div>
+  </section>
+
+  <section class="section" id="grading" aria-labelledby="gradingTitle">
+    <div class="section-head" data-index="05 · HONEST GRADING"><h2 id="gradingTitle">Three grades. One preserved benchmark.</h2><p>The record tracker measures the projection positions that actually existed. It is not a bet slip and it does not choose a better line after the result.</p></div>
+    <div class="grading-grid">
+      <article class="grade-card"><span>ATS</span><h3>Against the spread</h3><p>The model's side is inferred from the frozen model spread versus the saved publication-time market spread. That exact saved spread is the benchmark used for Win, Loss, or Push.</p></article>
+      <article class="grade-card"><span>Totals</span><h3>Over / Under</h3><p>The model total is compared with the saved publication-time market total. The final combined score is graded against that preserved number, including pushes.</p></article>
+      <article class="grade-card"><span>SU</span><h3>Straight up</h3><p>The projected outright winner receives a Win or Loss based only on the final winner. Saved moneyline data is reference metadata and does not change the SU grade.</p></article>
+    </div>
+    <div class="grading-rules">
+      <h3>Grading safeguards</h3>
+      <ul>
+        <li>Games remain pending until the result is Final.</li>
+        <li>Missing or invalid publication-time market locks are not silently reconstructed after the game; they can remain excluded or under review.</li>
+        <li>Poor weeks remain visible in the cumulative record.</li>
+        <li>Canonical and challenger results stay separate unless a challenger is explicitly promoted.</li>
+        <li>Market movement after publication does not rewrite the benchmark used for the published projection grade.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="validation" aria-labelledby="validationTitle">
+    <div class="section-head" data-index="06 · VALIDATION + PROMOTION"><h2 id="validationTitle">A useful idea is not automatically a model feature.</h2><p>Promotion is deliberately harder than collection. That keeps the project from overfitting one bad week, one strong week, or a compelling narrative.</p></div>
+    <div class="validation-flow">
+      <article><span>1</span><h3>Hypothesis</h3><p>Identify a candidate feature, adjustment, model architecture, or rule.</p></article>
+      <article><span>2</span><h3>Leakage-safe history</h3><p>Test only information that would genuinely have been knowable before kickoff.</p></article>
+      <article><span>3</span><h3>OOS / walk-forward</h3><p>Require evidence outside the sample used to form or tune the idea.</p></article>
+      <article><span>4</span><h3>Prospective frozen weeks</h3><p>Track the candidate before results with timestamps and frozen predictions.</p></article>
+      <article><span>5</span><h3>Explicit promotion</h3><p>Only after evidence is strong enough can the candidate receive canonical influence.</p></article>
+    </div>
+    <div class="integrity-panel">
+      <p class="kicker">NON-NEGOTIABLE</p>
+      <h3>The project preserves evidence even when the model is wrong.</h3>
+      <p>No postgame reconstruction of missing pregame information. No retroactive coefficient changes to make a frozen week look better. No external benchmark silently becoming canonical. No challenger promoted because it happened to win one slate. The purpose of the record is to make improvement measurable, including when the result is poor.</p>
+    </div>
+  </section>
+</main>
+
+<footer><div class="shell"><p><a href="index.html">CFB projections</a> · <a href="index.html?league=nfl">NFL projections</a> · <a href="recap.html">Recap & validation</a> · <a href="ratings.html">Ratings & benchmarks</a></p><p>CB Model Projections is independent research. Projections, market comparisons, model/market differences, reliability labels, and validation states are not official wager recommendations. Past performance does not guarantee future results.</p></div></footer>
+</body>
+</html>
