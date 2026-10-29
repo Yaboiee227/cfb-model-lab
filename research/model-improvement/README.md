@@ -17,3 +17,7 @@ Run `python scripts/cfb_foundation_feature_validation.py --as-of 2026-10-27T04:0
 ## Next decision
 
 Use the expanded evaluation to select at most one isolated family for a new prospective snapshot before future kickoffs. Require later untouched games to confirm incremental value. Preserve losing tests and avoid retroactively replacing published forecasts. EPA/success-rate ingestion requires separate source and timestamp validation before testing.
+
+## Execution status
+
+The October 29 extended ESPN historical fetch was blocked by environment network policy. No extended result exists and no family earned new eligibility. The completed frozen-integrity audit checked 56 CFB and 14 NFL saved records, finding zero checked-field issues. Venue labels and advanced calculations still require independent verification. `cfb-total-experiment.json` defines the next isolated hypothesis; it is not a running prospective candidate.

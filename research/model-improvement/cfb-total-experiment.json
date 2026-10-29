@@ -1,0 +1,24 @@
+{
+  "createdAt": "2026-10-29T16:55:15.329624+00:00",
+  "status": "PROPOSED_TEST_NOT_RUNNING",
+  "canonicalInfluence": false,
+  "baseline": "Existing locked CFB foundation",
+  "candidate": "Existing tempo_possession family only for totals",
+  "selectionReason": "Prior two-fold retrospective study: total MAE delta -0.5395 points; second fold near zero. Hypothesis only, not sufficient evidence.",
+  "scope": [
+    "Keep baseline spread and winner unchanged",
+    "Use existing causal pregame play-volume and possession features",
+    "Tune only on earlier training folds",
+    "Use no current-game boxes, future results, market values or external ratings as features",
+    "Do not stack additional families"
+  ],
+  "evaluation": [
+    "Compare on identical games: total MAE, RMSE and signed bias",
+    "Report each unseen week and aggregate paired errors",
+    "Keep both forecasts, data versions and timestamps",
+    "Use future outcomes only after a new candidate snapshot is frozen"
+  ],
+  "promotion": "No automatic promotion. Require historical incremental evidence plus prospective confirmation and explicit review.",
+  "blocker": "Extended historical rerun blocked by environment network policy for ESPN endpoint. No updated eligibility result exists.",
+  "source": "cfb/validation/week-08-foundation-feature-family-validation.json"
+}
