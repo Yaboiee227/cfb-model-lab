@@ -21,3 +21,9 @@ Use the expanded evaluation to select at most one isolated family for a new pros
 ## Execution status
 
 The October 29 extended ESPN historical fetch was blocked by environment network policy. No extended result exists and no family earned new eligibility. The completed frozen-integrity audit checked 56 CFB and 14 NFL saved records, finding zero checked-field issues. Venue labels and advanced calculations still require independent verification. `cfb-total-experiment.json` defines the next isolated hypothesis; it is not a running prospective candidate.
+
+## Alternate-source extension completed
+
+SportsDataverse season files replaced live endpoint fetching. Upstream remains ESPN-derived. 2025: 912 regular-season games and 100% box coverage. 2026 through the cutoff: 566 regular-season games and 100% box coverage. The two overlapping baseline evaluation weeks reproduce prior metrics within 1e-8. Extended research covers 173 games in three evaluation weeks. No family passes the unchanged eligibility criteria. Tempo/possession total MAE delta is -0.4253 points; this does not authorize promotion. The earlier proposed prospective tempo experiment is now on HOLD.
+
+The runner uses saved prior-season HFA and preserves the existing foundation and feature definitions. This is revised-source retrospective research, not a blind prospective trial. It is also not a game-level EPA/success-rate test.

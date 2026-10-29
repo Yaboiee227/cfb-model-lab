@@ -1,6 +1,6 @@
 {
   "createdAt": "2026-10-29T16:55:15.329624+00:00",
-  "status": "PROPOSED_TEST_NOT_RUNNING",
+  "status": "HOLD_FAILED_EXTENDED_ELIGIBILITY",
   "canonicalInfluence": false,
   "baseline": "Existing locked CFB foundation",
   "candidate": "Existing tempo_possession family only for totals",
@@ -19,6 +19,7 @@
     "Use future outcomes only after a new candidate snapshot is frozen"
   ],
   "promotion": "No automatic promotion. Require historical incremental evidence plus prospective confirmation and explicit review.",
-  "blocker": "Extended historical rerun blocked by environment network policy for ESPN endpoint. No updated eligibility result exists.",
-  "source": "cfb/validation/week-08-foundation-feature-family-validation.json"
+  "blocker": "Alternate-source extension completed; no feature family passed existing eligibility rules.",
+  "source": "cfb/validation/week-08-foundation-feature-family-validation.json",
+  "extendedResult": "cfb/validation/oct29-alternate-source-feature-review.json"
 }
