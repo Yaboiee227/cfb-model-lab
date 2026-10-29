@@ -6,6 +6,7 @@ on:
       - 'week-8.html'
       - 'recap.html'
       - 'ratings.html'
+      - 'how-it-works.html'
       - '*.js'
       - '*.css'
       - 'data/**'
@@ -15,6 +16,7 @@ on:
       - 'scripts/site_webkit_mobile_test.mjs'
       - 'scripts/site_shell_guard_test.mjs'
       - 'scripts/site_static_pages_test.mjs'
+      - 'scripts/how_model_works_test.mjs'
       - '.github/workflows/site-smoke-test.yml'
   workflow_dispatch:
 permissions:
@@ -55,6 +57,8 @@ jobs:
         run: node scripts/site_shell_guard_test.mjs
       - name: Run local recap and power-ranking checks
         run: node scripts/site_static_pages_test.mjs
+      - name: Run local How the model works checks
+        run: node scripts/how_model_works_test.mjs
       - name: Upload local screenshots and reports
         if: always()
         uses: actions/upload-artifact@v4
@@ -120,6 +124,11 @@ jobs:
         env:
           SITE_BASE_URL: https://yaboiee227.github.io/cfb-model-lab
         run: node scripts/site_static_pages_test.mjs
+      - name: Run deployed How the model works checks
+        if: github.ref == 'refs/heads/main'
+        env:
+          SITE_BASE_URL: https://yaboiee227.github.io/cfb-model-lab
+        run: node scripts/how_model_works_test.mjs
       - name: Upload deployed-site screenshots and reports
         if: always() && github.ref == 'refs/heads/main'
         uses: actions/upload-artifact@v4
