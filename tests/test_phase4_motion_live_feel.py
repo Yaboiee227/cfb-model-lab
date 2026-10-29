@@ -69,6 +69,21 @@ def test_phase_four_motion_stays_subtle_and_touch_safe():
     assert ".cb-phase4-visible" in css
 
 
+def test_projection_cards_never_depend_on_intersection_observer_for_visibility():
+    css = read("cb-phase4.css")
+    rule = css.split(".projection-card.cb-phase4-reveal {", 1)[1].split("}", 1)[0]
+    assert "opacity:1" in rule
+    assert "translate3d(0,8px,0)" in rule
+
+
+def test_phase_four_ignores_its_own_counter_and_ticker_mutations():
+    script = read("cb-phase4.js")
+    assert "mutationTargetElement" in script
+    assert "#cbPhase4Pulse" in script
+    assert "[data-cb-phase4-animating=\"true\"]" in script
+    assert "if (onlyPhaseFourChanges) return" in script
+
+
 def test_phase_four_does_not_modify_model_or_result_sources_by_design():
     script = read("cb-phase4.js")
     forbidden_assignments = (
