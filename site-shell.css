@@ -613,7 +613,7 @@ html[data-theme="light"] body.site-v2 section[data-section-index]>.section-headi
 html[data-theme="light"] body.site-v2 .panel,
 html[data-theme="light"] body.site-v2 .research-shell{background:rgba(255,255,255,.75)}
 
-@media(max-width:1180px){
+@media(max-width:1400px){
   :root{--cb-shell:min(100% - 32px,1480px)}
   body.site-v2 .primary-nav{display:none;position:absolute;top:68px;left:16px;right:16px;margin:0;padding:8px;border:1px solid var(--cb-line-strong);background:#07101a;z-index:30;grid-template-columns:repeat(4,1fr)}
   body.site-v2[data-nav-open="true"] .primary-nav{display:grid}
