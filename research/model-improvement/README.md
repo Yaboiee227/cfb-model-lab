@@ -63,3 +63,11 @@ Week 8 derived personnel gates remain HOLD for all 14 frozen research projection
 `build_nfl_personnel_gates.py` reads explicit current-slate evidence and rejects duplicate/out-of-slate IDs. The main Week 8 publisher now calls it. `apply_nfl_personnel_gates.py` applies context to existing site rows while asserting all projection, freeze, and market fields remain unchanged. Unknown QB state is blank rather than false.
 
 A dated official October 28 NFL injury-designation report was captured for CAR at GB. This is not final inactives or a model-relative starter comparison; all 14 personnel gates remain HOLD. No numerical personnel adjustment or accuracy improvement is claimed. The current helper enforces unvalidated/unapplied adjustments as blocked. A future promotion requires a separate model registry and point-in-time performance evidence.
+
+## QB-change experiment and proxy comparison
+
+Live Week 8 personnel gates were verified after deployment: 14 HOLD rows. Existing prior-only QB-room data is a performance proxy, not a confirmed target-game starter dataset. A new test adds one proxy family at a time to the unchanged current canonical NFL architecture using fixed lambda and chronological 2023-2025 folds. On 816 matched games: baseline MAE 10.2564; primary-quality proxy 10.2544 (roughly -0.0020); room-transition proxy 10.2913 (+0.0349). These are reused historical seasons, not blind evidence; neither result justifies promotion.
+
+The QB event contract now requires starter expectation/source by freeze, confirmation/source before kickoff, replacement prior as-of no later than confirmation, and explicit exclusion of realized target-game starter information. Boundary tests cover invalid timing and missing evidence. The saved Huntley event has pregame confirmation but lacks verified expectation-at-freeze and replacement-prior timestamps, so it is ineligible. No numeric QB-change model was fitted from that event. The timeline contract is ready for valid events; historical source recovery and prospective collection remain necessary.
+
+No model coefficients, frozen predictions or recorded outcomes were changed.

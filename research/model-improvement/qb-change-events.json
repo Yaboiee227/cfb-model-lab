@@ -1,0 +1,30 @@
+{
+  "canonicalInfluence": false,
+  "status": "BLOCKED_MISSING_EXPECTATION_AND_PRIOR_TIMESTAMPS",
+  "events": [
+    {
+      "gameId": "2026_07_CIN_BAL",
+      "team": "BAL",
+      "forecastFrozenAt": "2026-10-21T11:44:27Z",
+      "kickoff": "2026-10-25T17:00:00+00:00",
+      "expectedStarter": null,
+      "expectedSource": null,
+      "expectedObservedAt": null,
+      "confirmedStarter": "Tyler Huntley",
+      "confirmedSource": "https://www.baltimoreravens.com/news/lamar-jackson-ravens-bengals-inactives-cam-jurgens-broderick-washington",
+      "confirmedObservedAt": "2026-10-25T16:34:33.290999+00:00",
+      "replacementStatsAsOf": null,
+      "realizedTargetGameStarterUsed": false,
+      "validation": {
+        "eligible": false,
+        "errors": [
+          "MISSING_STARTER_EXPECTATION_AT_FREEZE",
+          "EXPECTATION_NOT_VERIFIED_BY_FREEZE",
+          "REPLACEMENT_PRIOR_NOT_POINT_IN_TIME_VERIFIED"
+        ],
+        "actualChange": null
+      }
+    }
+  ],
+  "policy": "Saved pregame note identifies a replacement, but it does not document an explicit expected starter at forecast freeze. Do not infer one from the eventual starter or the final score."
+}

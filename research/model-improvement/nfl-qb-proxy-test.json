@@ -1,0 +1,95 @@
+{
+  "canonicalInfluence": false,
+  "status": "EXPLORATORY_NO_PROMOTION",
+  "sourceSha256": "8216fc021023d0b3fbe00dad664ed49c120ca4514f0de3939b5c570e460076a6",
+  "sourceTeamWeeks": 2304,
+  "historicalFolds": {
+    "2023": {
+      "baseline": {
+        "games": 272,
+        "mae": 10.503605176925252,
+        "rmse": 13.72338671856234,
+        "bias": -0.6308987706710963
+      },
+      "primary_quality_proxy": {
+        "games": 272,
+        "mae": 10.506389852271734,
+        "rmse": 13.726962416843762,
+        "bias": -0.6329572637175931
+      },
+      "room_transition_proxy": {
+        "games": 272,
+        "mae": 10.534551208003066,
+        "rmse": 13.722633995064331,
+        "bias": -0.6149944695469043
+      }
+    },
+    "2024": {
+      "baseline": {
+        "games": 272,
+        "mae": 10.013459378727442,
+        "rmse": 13.185034416753368,
+        "bias": 0.5145487405409653
+      },
+      "primary_quality_proxy": {
+        "games": 272,
+        "mae": 10.008145793419226,
+        "rmse": 13.187464761438958,
+        "bias": 0.52908037954561
+      },
+      "room_transition_proxy": {
+        "games": 272,
+        "mae": 10.067261809994664,
+        "rmse": 13.193970405053392,
+        "bias": 0.5360578275794452
+      }
+    },
+    "2025": {
+      "baseline": {
+        "games": 272,
+        "mae": 10.252112166574745,
+        "rmse": 12.950711220185882,
+        "bias": 0.07850520857977827
+      },
+      "primary_quality_proxy": {
+        "games": 272,
+        "mae": 10.248615392654393,
+        "rmse": 12.954763317001982,
+        "bias": 0.07053818155006418
+      },
+      "room_transition_proxy": {
+        "games": 272,
+        "mae": 10.272060306616202,
+        "rmse": 13.002129467272042,
+        "bias": 0.054091427592944774
+      }
+    }
+  },
+  "aggregate": {
+    "baseline": {
+      "games": 816,
+      "mae": 10.25639224074248,
+      "rmse": 13.29031472798685,
+      "bias": -0.01261494051678437
+    },
+    "primary_quality_proxy": {
+      "games": 816,
+      "mae": 10.254383679448452,
+      "rmse": 13.29366536647155,
+      "bias": -0.011112900873973064
+    },
+    "room_transition_proxy": {
+      "games": 816,
+      "mae": 10.291291108204643,
+      "rmse": 13.309732147262569,
+      "bias": -0.008281738124838267
+    }
+  },
+  "policy": [
+    "Only pre-target-week performance proxies used.",
+    "No target-game realized starter used.",
+    "Existing canonical feature architecture and lambda preserved; one feature family added at a time.",
+    "These seasons have been examined previously; not new blind holdouts.",
+    "Does not test actual timestamped starter changes or position-group injuries."
+  ]
+}
