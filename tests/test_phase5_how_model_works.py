@@ -75,7 +75,8 @@ def test_shared_navigation_exposes_guide_without_model_logic_changes():
     assert "How it works" in shell
     assert "modelSpreadHome =" not in shell
     assert "marketSpreadHome =" not in shell
-    assert "coefficient" not in shell.lower()
+    assert "STATE.projections =" not in shell
+    assert "STATE.results =" not in shell
 
 
 def test_phase_five_css_has_mobile_and_reduced_motion_guards():
