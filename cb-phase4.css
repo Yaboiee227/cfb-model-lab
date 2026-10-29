@@ -1,0 +1,302 @@
+/* CB Model Projections · Phase 4 presentation layer
+   Motion + live feel only. No model, grading or data-pipeline behavior lives here. */
+
+.cb-phase4-pulse-shell {
+  position:relative;
+  padding-top:0;
+  padding-bottom:18px;
+}
+
+.cb-phase4-pulse {
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--line-strong);
+  border-radius:16px;
+  background:color-mix(in srgb,var(--surface,#101820) 95%,transparent);
+}
+
+.cb-phase4-pulse-head {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  min-height:40px;
+  padding:8px 12px;
+  border-bottom:1px solid var(--line);
+}
+
+.cb-phase4-pulse-title {
+  display:flex;
+  align-items:center;
+  gap:9px;
+  min-width:0;
+}
+
+.cb-phase4-pulse-dot {
+  width:7px;
+  height:7px;
+  flex:0 0 7px;
+  border-radius:999px;
+  background:var(--accent);
+  box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 12%,transparent);
+  animation:cbPhase4PulseDot 2.4s ease-in-out infinite;
+}
+
+.cb-phase4-pulse-title strong {
+  font-size:.73rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.cb-phase4-pulse-title small,
+.cb-phase4-pulse-state {
+  color:var(--muted);
+  font-size:.67rem;
+}
+
+.cb-phase4-pulse-state {
+  flex:0 0 auto;
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:4px 8px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.cb-phase4-ticker-viewport {
+  position:relative;
+  overflow:hidden;
+  min-height:54px;
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 3%,#000 97%,transparent);
+  mask-image:linear-gradient(to right,transparent,#000 3%,#000 97%,transparent);
+}
+
+.cb-phase4-ticker-track {
+  display:flex;
+  width:max-content;
+  min-width:100%;
+  align-items:stretch;
+  will-change:transform;
+  animation:cbPhase4Ticker var(--cb-phase4-ticker-duration,42s) linear infinite;
+}
+
+.cb-phase4-ticker-viewport:hover .cb-phase4-ticker-track,
+.cb-phase4-ticker-viewport:focus-within .cb-phase4-ticker-track {
+  animation-play-state:paused;
+}
+
+.cb-phase4-ticker-group {
+  display:flex;
+  align-items:stretch;
+  flex:0 0 auto;
+}
+
+.cb-phase4-ticker-item {
+  display:grid;
+  grid-template-columns:auto minmax(150px,auto);
+  align-items:center;
+  gap:9px;
+  min-width:270px;
+  padding:10px 16px;
+  border-right:1px solid var(--line);
+  color:inherit;
+  text-decoration:none;
+}
+
+.cb-phase4-ticker-item:hover,
+.cb-phase4-ticker-item:focus-visible {
+  background:color-mix(in srgb,var(--accent) 6%,transparent);
+}
+
+.cb-phase4-ticker-tag {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:68px;
+  border:1px solid var(--line-strong);
+  border-radius:999px;
+  padding:4px 7px;
+  color:var(--muted);
+  font-size:.59rem;
+  font-weight:800;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+.cb-phase4-ticker-tag[data-kind="difference"] {
+  color:var(--accent);
+  border-color:color-mix(in srgb,var(--accent) 36%,var(--line-strong));
+}
+
+.cb-phase4-ticker-copy {
+  min-width:0;
+}
+
+.cb-phase4-ticker-copy strong {
+  display:block;
+  overflow:hidden;
+  color:var(--text);
+  font-size:.76rem;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
+.cb-phase4-ticker-copy small {
+  display:block;
+  overflow:hidden;
+  margin-top:2px;
+  color:var(--muted);
+  font-size:.65rem;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
+.cb-phase4-reveal {
+  opacity:0;
+  transform:translate3d(0,12px,0);
+  transition:
+    opacity 440ms cubic-bezier(.22,.61,.36,1),
+    transform 520ms cubic-bezier(.22,.61,.36,1);
+  transition-delay:calc(var(--cb-reveal-index,0) * 36ms);
+}
+
+.cb-phase4-reveal.cb-phase4-visible {
+  opacity:1;
+  transform:translate3d(0,0,0);
+}
+
+/* Long projection slates must remain readable even if a browser delays
+   IntersectionObserver delivery after programmatic or momentum scrolling.
+   Cards therefore use transform-only reveal motion instead of opacity hiding. */
+.projection-card.cb-phase4-reveal {
+  opacity:1;
+  transform:translate3d(0,8px,0);
+}
+
+.projection-card.cb-phase4-reveal.cb-phase4-visible {
+  opacity:1;
+  transform:translate3d(0,0,0);
+}
+
+/* Restrained athletic interaction. Color stays on data, not chrome. */
+.projection-card,
+.record-card,
+.cb-phase3-panel,
+.cb-layer-card,
+.method-card,
+.glossary-grid > article,
+.panel,
+.support-card,
+.contact-card,
+.cb-group-row,
+.cb-team-lens-game {
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+@media (hover:hover) and (pointer:fine) {
+  .projection-card:hover,
+  .record-card:hover,
+  .cb-phase3-panel:hover,
+  .cb-layer-card:hover,
+  .method-card:hover,
+  .glossary-grid > article:hover,
+  .support-card:hover,
+  .contact-card:hover {
+    transform:translateY(-2px);
+    border-color:color-mix(in srgb,var(--text) 22%,var(--line-strong));
+  }
+
+  .cb-group-row:hover,
+  .cb-team-lens-game:hover {
+    background:color-mix(in srgb,var(--text) 3%,transparent);
+  }
+}
+
+.projection-card:active,
+.record-card:active,
+.cb-phase3-panel:active,
+.cb-layer-card:active,
+.method-card:active,
+.glossary-grid > article:active,
+.button:active,
+.mini-button:active,
+.cb-team-lens-game:active {
+  transform:scale(.995);
+}
+
+.cb-phase4-counter-active {
+  font-variant-numeric:tabular-nums;
+}
+
+.cb-phase4-counter-settled {
+  animation:cbPhase4CounterSettle 300ms ease-out both;
+}
+
+@keyframes cbPhase4PulseDot {
+  0%,100% { transform:scale(.92); opacity:.66; }
+  50% { transform:scale(1.08); opacity:1; }
+}
+
+@keyframes cbPhase4Ticker {
+  from { transform:translate3d(0,0,0); }
+  to { transform:translate3d(-50%,0,0); }
+}
+
+@keyframes cbPhase4CounterSettle {
+  0% { transform:translateY(2px); opacity:.72; }
+  100% { transform:translateY(0); opacity:1; }
+}
+
+@media (max-width:720px) {
+  .cb-phase4-pulse-shell { padding-bottom:14px; }
+  .cb-phase4-pulse { border-radius:14px; }
+  .cb-phase4-pulse-head { align-items:flex-start; }
+  .cb-phase4-pulse-title { align-items:flex-start; }
+  .cb-phase4-pulse-title small { display:block; margin-top:2px; }
+  .cb-phase4-ticker-item { min-width:245px; padding-inline:13px; }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .cb-phase4-pulse-dot,
+  .cb-phase4-ticker-track,
+  .cb-phase4-counter-settled {
+    animation:none!important;
+  }
+
+  .cb-phase4-ticker-viewport {
+    overflow-x:auto;
+    -webkit-mask-image:none;
+    mask-image:none;
+  }
+
+  .cb-phase4-ticker-track { width:100%; }
+  .cb-phase4-ticker-group { flex-wrap:wrap; width:100%; }
+  .cb-phase4-ticker-group[aria-hidden="true"] { display:none; }
+  .cb-phase4-ticker-item { flex:1 1 260px; min-width:0; }
+
+  .cb-phase4-reveal,
+  .cb-phase4-reveal.cb-phase4-visible {
+    opacity:1!important;
+    transform:none!important;
+    transition:none!important;
+  }
+
+  .projection-card,
+  .record-card,
+  .cb-phase3-panel,
+  .cb-layer-card,
+  .method-card,
+  .glossary-grid > article,
+  .panel,
+  .support-card,
+  .contact-card,
+  .cb-group-row,
+  .cb-team-lens-game,
+  .button,
+  .mini-button {
+    transition:none!important;
+  }
+}

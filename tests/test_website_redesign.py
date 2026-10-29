@@ -35,6 +35,91 @@ def test_phase_one_brand_assets_exist():
     assert (ROOT / "assets/brand/cb-favicon.png").is_file()
 
 
+def test_phase_two_assets_are_loaded_after_the_existing_foundation():
+    guard = read("site-runtime-guard.js")
+    assert "assets/teams/team-assets.js" in guard
+    assert "cb-team-visuals.js" in guard
+    assert "cb-game-cards.js" in guard
+    assert "cb-team-visuals.css" in guard
+    assert "cb-game-cards.css" in guard
+    assert guard.index("cb-foundation.js") < guard.index("cb-game-cards.js")
+
+
+def test_phase_two_generated_team_badges_are_default_and_licensed_images_require_opt_in():
+    config = read("assets/teams/team-assets.js")
+    visuals = read("cb-team-visuals.js")
+    assert "generated-badge" in config
+    assert "teams: Object.freeze({})" in config
+    assert "licensed === true" in visuals
+    assert "licensedImage" in visuals
+    assert "cb-team-badge" in visuals
+    assert "clip-path" in read("cb-team-visuals.css")
+
+
+def test_phase_two_game_cards_are_expandable_and_preserve_the_table_view():
+    cards = read("cb-game-cards.js")
+    styles = read("cb-game-cards.css")
+    assert "cb-game-breakdown" in cards
+    assert "Game breakdown" in cards
+    assert "Model · market · difference · trends" in cards
+    assert "cb-projection-view" in cards
+    assert "data-cb-view-choice=\"cards\"" in cards
+    assert "data-cb-view-choice=\"table\"" in cards
+    assert '#projections[data-cb-view="cards"]' in styles
+    assert '#projections[data-cb-view="table"]' in styles
+
+
+def test_phase_two_trend_badges_use_only_existing_current_week_nfl_trend_data():
+    cards = read("cb-game-cards.js")
+    assert "nfl_data/site/nfl-trends.json" in cards
+    assert "Number(doc.season) !== Number(game.season)" in cards
+    assert "Number(doc.week) !== Number(game.week)" in cards
+    assert "Aligns with model" in cards
+    assert "No stale trend is carried forward" in cards
+    assert "zero canonical influence" in cards.lower()
+
+
+def test_phase_two_rivalry_and_primetime_tags_are_derived_without_new_data_files():
+    cards = read("cb-game-cards.js")
+    assert "function isPrimetime" in cards
+    assert "minutes >= 19 * 60" in cards
+    assert "function isRivalry" in cards
+    assert "game.notes" in cards
+    assert "rivalry" in cards
+    assert "cb-game-tag-primetime" in cards
+    assert "cb-game-tag-rivalry" in cards
+
+
+def test_phase_two_live_team_logos_are_suppressed_only_in_the_presentation_layer():
+    live = read("live-data.js")
+    visuals = read("cb-team-visuals.js")
+    styles = read("cb-game-cards.css")
+    # Live source normalization remains untouched; Phase 2 suppresses image rendering in UI only.
+    assert "homeRaw.team?.logo" in live
+    assert "awayRaw.team?.logo" in live
+    assert "stripUnlicensedLiveImages" in visuals
+    assert "removeAttribute('src')" in visuals
+    assert ".live-matchup-row img" in styles
+    assert ".live-scoreboard .live-team>img" in styles
+
+
+def test_phase_two_power_rankings_use_the_shared_team_visual_component():
+    script = read("power-rankings.js")
+    assert "CBTeamVisuals" in script
+    assert "teamCell" in script
+    assert "matchupCell" in script
+    assert "cb-team-visuals.js" in script
+
+
+def test_phase_two_does_not_change_projection_or_record_source_formats():
+    cfb_header = read("data/projections.csv").splitlines()[0]
+    nfl_header = read("nfl_data/site/projections.csv").splitlines()[0]
+    assert cfb_header.startswith("season,week,date,kickoffET,gameId,awayTeam")
+    assert nfl_header.startswith("league,season,week,date,kickoffET,gameId,awayTeam")
+    assert "modelSpreadHome" in cfb_header and "marketSpreadHome" in cfb_header
+    assert "modelSpreadHome" in nfl_header and "marketSpreadHome" in nfl_header
+
+
 def test_shell_preserves_four_model_information_layers():
     script = read("site-shell.js")
     for required in ("Canonical", "Challenger", "Benchmark", "Context"):
@@ -93,6 +178,10 @@ def test_no_react_or_build_dependency_added_to_redesign_shell():
         "site-shell.css",
         "cb-foundation.css",
         "cb-foundation.js",
+        "cb-team-visuals.js",
+        "cb-team-visuals.css",
+        "cb-game-cards.js",
+        "cb-game-cards.css",
         "recap.html",
         "ratings.html",
         "power-rankings.js",

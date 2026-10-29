@@ -5,10 +5,26 @@ const pages = [
   { page: 'recap', path: '/recap.html', marker: '#performance' },
   { page: 'ratings', path: '/ratings.html', marker: '#ratings' }
 ];
+
+async function rankingExpectation(league) {
+  const response = await fetch(`${base}/data/power-rankings/${league}.json`, { cache: 'no-store' });
+  if (!response.ok) throw new Error(`Could not load ${league} power-ranking snapshot (${response.status})`);
+  const snapshot = await response.json();
+  const teams = Array.isArray(snapshot.teams) ? snapshot.teams : [];
+  const matchups = Array.isArray(snapshot.remainingMatchupComparisons) ? snapshot.remainingMatchupComparisons : [];
+  return {
+    teams: teams.length,
+    matchups: matchups.length,
+    renderedMatchupRows: Math.max(1, matchups.length),
+    topTeam: teams[0]?.teamName || teams[0]?.team || ''
+  };
+}
+
 const expectedRatings = {
-  cfb: { teams: 138, matchups: 49 },
-  nfl: { teams: 32, matchups: 13 }
+  cfb: await rankingExpectation('cfb'),
+  nfl: await rankingExpectation('nfl')
 };
+
 const cases = [];
 for (const page of pages) {
   for (const league of ['cfb', 'nfl']) {
@@ -44,7 +60,7 @@ for (const tc of cases) {
     const target = expected[league];
     return count.includes(`${target.teams} of ${target.teams} teams`) &&
       matchupCount.includes(`${target.matchups} current comparisons`) &&
-      bodyRows === target.teams && matchupRows === target.matchups;
+      bodyRows === target.teams && matchupRows === target.renderedMatchupRows;
   }, { kind: tc.page, league: tc.league, expected: expectedRatings }, { timeout: 15000 }).catch(() => {});
 
   const state = await page.evaluate(({ kind }) => {
@@ -54,11 +70,13 @@ for (const tc of cases) {
     const marker = kind === 'recap' ? document.getElementById('graded')?.textContent?.trim() || '' : document.getElementById('count')?.textContent?.trim() || '';
     const ratingsRows = kind === 'ratings' ? [...document.querySelectorAll('#ratingsBody tr')].map(tr => tr.textContent.trim()) : [];
     const matchupRows = kind === 'ratings' ? [...document.querySelectorAll('#matchupsBody tr')].map(tr => tr.textContent.trim()) : [];
+    const matchupCount = kind === 'ratings' ? document.getElementById('matchupCount')?.textContent?.trim() || '' : '';
     const marketNotice = kind === 'ratings' ? document.getElementById('marketNotice')?.textContent?.trim() || '' : '';
     return {
       title: document.title,
       activeLeague,
       marker,
+      matchupCount,
       navDisplay: nav ? getComputedStyle(nav).display : '',
       navOverflowX: nav ? getComputedStyle(nav).overflowX : '',
       topbarHeight: topbar?.height || 0,
@@ -68,6 +86,7 @@ for (const tc of cases) {
       matchupRowCount: matchupRows.length,
       firstRatingRow: ratingsRows[0] || '',
       lastRatingRow: ratingsRows.at(-1) || '',
+      firstMatchupRow: matchupRows[0] || '',
       marketNotice,
       tableWraps: [...document.querySelectorAll('.table-wrap')].map(el => ({ scrollWidth: el.scrollWidth, clientWidth: el.clientWidth, overflowX: getComputedStyle(el).overflowX }))
     };
@@ -86,10 +105,12 @@ for (const tc of cases) {
   if (tc.page === 'ratings') {
     const expected = expectedRatings[tc.league];
     if (state.ratingsRowCount !== expected.teams) errors.push(`ratings row count mismatch: expected ${expected.teams}, got ${state.ratingsRowCount}`);
-    if (state.matchupRowCount !== expected.matchups) errors.push(`matchup comparison count mismatch: expected ${expected.matchups}, got ${state.matchupRowCount}`);
+    if (state.matchupRowCount !== expected.renderedMatchupRows) errors.push(`matchup row count mismatch: expected ${expected.renderedMatchupRows} rendered rows for ${expected.matchups} comparisons, got ${state.matchupRowCount}`);
+    if (!state.matchupCount.includes(`${expected.matchups} current comparisons`)) errors.push(`matchup summary mismatch: expected ${expected.matchups}, got ${state.matchupCount}`);
     if (!state.firstRatingRow || /loading|unavailable|error/i.test(state.firstRatingRow)) errors.push(`first ranking row invalid: ${state.firstRatingRow}`);
     if (!state.lastRatingRow || /loading|unavailable|error/i.test(state.lastRatingRow)) errors.push(`last ranking row invalid: ${state.lastRatingRow}`);
-    if (tc.league === 'cfb' && !/Notre Dame/i.test(state.firstRatingRow)) errors.push(`expected human-readable CFB No. 1 Notre Dame, got: ${state.firstRatingRow}`);
+    if (expected.topTeam && !state.firstRatingRow.toLowerCase().includes(expected.topTeam.toLowerCase())) errors.push(`snapshot No. 1 mismatch: expected ${expected.topTeam}, got: ${state.firstRatingRow}`);
+    if (expected.matchups === 0 && !/await|current-week comparisons/i.test(state.firstMatchupRow)) errors.push(`zero-comparison placeholder missing: ${state.firstMatchupRow}`);
     if (!/WITHHELD DISCONNECTED MARKET GRAPH/i.test(state.marketNotice)) errors.push(`market safeguard not visible: ${state.marketNotice}`);
   }
 
@@ -101,7 +122,7 @@ for (const tc of cases) {
     if (hash !== tc.marker) errors.push(`in-page navigation did not reach ${tc.marker}: ${hash}`);
   }
 
-  report.push({ ...tc, state, failedRequests, errors });
+  report.push({ ...tc, expected: tc.page === 'ratings' ? expectedRatings[tc.league] : null, state, failedRequests, errors });
   if (failedRequests.length || errors.length) failed = true;
   await page.close();
 }

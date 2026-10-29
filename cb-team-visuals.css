@@ -1,0 +1,122 @@
+/* CB Model Projections — original team visual system
+   No official team marks, helmets or wordmarks are bundled or recreated here. */
+
+.cb-team-badge{
+  --team-accent:#586F7C;
+  --team-ink:#F7F7F4;
+  position:relative;
+  display:inline-grid;
+  place-items:center;
+  flex:0 0 auto;
+  width:42px;
+  height:46px;
+  overflow:hidden;
+  color:var(--team-ink);
+  background:var(--team-accent);
+  clip-path:polygon(12% 0,100% 0,88% 76%,50% 100%,10% 76%,0 8%);
+  isolation:isolate;
+  filter:saturate(.86);
+}
+
+.cb-team-badge::after{
+  content:"";
+  position:absolute;
+  inset:3px;
+  z-index:-1;
+  clip-path:inherit;
+  border:1px solid color-mix(in srgb,var(--team-ink) 36%,transparent);
+  background:linear-gradient(145deg,color-mix(in srgb,var(--team-accent) 88%,white),var(--team-accent));
+}
+
+.cb-team-badge>span{
+  position:relative;
+  z-index:1;
+  transform:skewX(-8deg);
+  font-family:var(--cb-font-display,ui-sans-serif,system-ui,sans-serif);
+  font-size:.68rem;
+  font-weight:950;
+  font-style:italic;
+  line-height:1;
+  letter-spacing:-.035em;
+  text-transform:uppercase;
+}
+
+.cb-team-badge-xs{width:24px;height:27px}.cb-team-badge-xs>span{font-size:.48rem}
+.cb-team-badge-sm{width:32px;height:35px}.cb-team-badge-sm>span{font-size:.57rem}
+.cb-team-badge-md{width:42px;height:46px}.cb-team-badge-md>span{font-size:.68rem}
+.cb-team-badge-lg{width:54px;height:59px}.cb-team-badge-lg>span{font-size:.83rem}
+
+.cb-team-badge-image{
+  clip-path:polygon(12% 0,100% 0,88% 76%,50% 100%,10% 76%,0 8%);
+  background:var(--cb-surface-2,var(--surface-2,#eef0f1));
+}
+.cb-team-badge-image::after{display:none}
+.cb-team-badge-image img{width:100%;height:100%;object-fit:contain;display:block}
+
+.cb-team-lockup{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  min-width:0;
+}
+.cb-team-lockup-copy{display:grid;min-width:0;line-height:1.15}
+.cb-team-lockup-copy strong{
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  font-size:.83rem;
+  letter-spacing:-.015em;
+}
+.cb-team-lockup-copy small{margin-top:3px;color:var(--cb-muted,var(--muted,#6d747b));font-size:.62rem}
+.cb-team-lockup-compact{gap:7px}
+.cb-team-lockup-compact .cb-team-lockup-copy strong{font-size:.74rem}
+
+.cb-matchup-lockup{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  min-width:0;
+}
+.cb-matchup-lockup>.cb-team-lockup{min-width:0;flex:1 1 0}
+.cb-matchup-at{
+  flex:0 0 auto;
+  color:var(--cb-muted,var(--muted,#6d747b));
+  font-size:.58rem;
+  font-weight:850;
+  letter-spacing:.08em;
+}
+
+.cb-ranking-team{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  min-width:0;
+}
+.cb-ranking-team-copy{display:grid;line-height:1.12;min-width:0}
+.cb-ranking-team-copy strong{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cb-ranking-team-copy .team-code{margin-top:3px}
+
+.live-matchup-row .cb-team-badge,
+.live-scoreboard .cb-team-badge{filter:none}
+.live-matchup-row>div{
+  display:grid!important;
+  grid-template-columns:auto minmax(0,1fr) auto;
+  gap:8px;
+  align-items:center;
+}
+.live-matchup-row>div>span:not(.cb-team-badge){min-width:0}
+.live-scoreboard .live-team{gap:10px}
+.live-scoreboard .live-team.home{justify-content:flex-end}
+
+@media(max-width:560px){
+  .cb-team-badge-md{width:38px;height:42px}
+  .cb-team-badge-lg{width:48px;height:53px}
+  .cb-team-lockup{gap:8px}
+  .cb-matchup-lockup{gap:6px}
+  .cb-team-lockup-compact .cb-team-lockup-copy strong{font-size:.7rem}
+}
+
+@media(prefers-contrast:more){
+  .cb-team-badge::after{border-width:2px;border-color:currentColor}
+}
