@@ -1,0 +1,98 @@
+/* CB Model Projections · Phase 3 Power Rankings replay */
+
+.replay-shell {
+  border:1px solid var(--line-strong);
+  border-radius:20px;
+  overflow:hidden;
+  background:color-mix(in srgb,var(--panel,#101820) 95%,transparent);
+}
+.replay-controls {
+  display:grid;
+  grid-template-columns:auto minmax(220px,1fr) minmax(180px,260px);
+  gap:14px;
+  align-items:end;
+  padding:16px;
+  border-bottom:1px solid var(--line);
+}
+.replay-play {
+  min-height:42px;
+  border:1px solid var(--line-strong);
+  border-radius:999px;
+  padding:0 16px;
+  background:transparent;
+  color:var(--text);
+  font:inherit;
+  font-size:.78rem;
+  font-weight:800;
+  cursor:pointer;
+}
+.replay-play:hover,.replay-play:focus-visible { border-color:var(--accent);outline:none; }
+.replay-range-wrap label,
+.replay-team-wrap label { display:block;color:var(--muted);font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px; }
+.replay-range-wrap input { width:100%;accent-color:var(--accent); }
+.replay-range-meta { display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:.68rem;margin-top:4px; }
+.replay-team-wrap select { width:100%; }
+
+.replay-status {
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  padding:12px 16px;
+  border-bottom:1px solid var(--line);
+  color:var(--muted);
+  font-size:.76rem;
+}
+.replay-status strong { color:var(--text); }
+
+.replay-board {
+  position:relative;
+  display:grid;
+  gap:0;
+  padding:4px 14px 10px;
+}
+.replay-row {
+  position:relative;
+  display:grid;
+  grid-template-columns:42px minmax(0,1fr) 90px 86px;
+  gap:12px;
+  align-items:center;
+  min-height:54px;
+  padding:8px 4px;
+  border-bottom:1px solid var(--line);
+  transition:transform .38s cubic-bezier(.2,.8,.2,1),opacity .2s ease,background .2s ease;
+}
+.replay-row:last-child { border-bottom:0; }
+.replay-row.is-focus { background:color-mix(in srgb,var(--accent) 8%,transparent); }
+.replay-rank { color:var(--muted);font-variant-numeric:tabular-nums;font-weight:800; }
+.replay-team { min-width:0;display:flex;align-items:center;gap:10px; }
+.replay-team-copy { min-width:0; }
+.replay-team-copy strong { display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:.82rem; }
+.replay-team-copy small { display:block;color:var(--muted);font-size:.66rem;margin-top:2px; }
+.replay-points,.replay-move { text-align:right;font-variant-numeric:tabular-nums; }
+.replay-points strong,.replay-move strong { display:block;font-size:.82rem; }
+.replay-points small,.replay-move small { display:block;color:var(--muted);font-size:.64rem; }
+.replay-move.up strong { color:var(--accent); }
+.replay-move.down strong { color:var(--context,#f0b35b); }
+
+.replay-empty { padding:24px 16px;color:var(--muted);line-height:1.55;font-size:.84rem; }
+.replay-integrity {
+  margin:12px 0 0;
+  padding:12px 14px;
+  border-left:2px solid var(--line-strong);
+  color:var(--muted);
+  font-size:.75rem;
+  line-height:1.5;
+}
+.replay-integrity strong { color:var(--text); }
+
+@media (max-width:760px) {
+  .replay-controls { grid-template-columns:1fr;align-items:stretch; }
+  .replay-play { width:100%; }
+  .replay-status { flex-direction:column;gap:4px; }
+  .replay-row { grid-template-columns:34px minmax(0,1fr) 68px; }
+  .replay-move { display:none; }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .replay-row { transition:none; }
+}

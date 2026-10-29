@@ -8,6 +8,7 @@
   <title>Power Rankings · CB Model Projections</title>
   <link rel="stylesheet" href="audit-shell.css">
   <link rel="stylesheet" href="power-rankings.css">
+  <link rel="stylesheet" href="power-rankings-phase3.css">
 </head>
 <body>
 <header class="topbar">
@@ -42,7 +43,7 @@
   </section>
 
   <section class="section" id="comparisons" aria-labelledby="comparisonsTitle">
-    <div class="section-head" data-index="02 · MARKET COMPARISON"><h2 id="comparisonsTitle">Model vs market matchup board</h2><p>Current spread comparisons remain visible even when a defensible national market power ranking cannot be constructed.</p></div>
+    <div class="section-head" data-index="03 · MARKET COMPARISON"><h2 id="comparisonsTitle">Model vs market matchup board</h2><p>Current spread comparisons remain visible even when a defensible national market power ranking cannot be constructed.</p></div>
     <div class="notice market-rule"><span class="tag">Market safeguard</span><p id="marketNotice">Loading market-graph validation…</p></div>
     <div class="controls"><span class="count" id="matchupCount">Loading…</span></div>
     <div class="table-wrap"><table class="power-table matchup-table"><thead><tr><th>Game</th><th class="num">Model home spread</th><th class="num">Market home spread</th><th class="num">Gap</th><th>Model side</th><th>Role</th></tr></thead><tbody id="matchupsBody"></tbody></table></div>
@@ -58,7 +59,7 @@
   </section>
 
   <section class="section" id="separation" aria-labelledby="separationTitle">
-    <div class="section-head" data-index="03 · LAYER POLICY"><h2 id="separationTitle">What can influence production?</h2><p>Collection is broad; promotion is narrow. Rankings are useful diagnostics, not a shortcut around validation.</p></div>
+    <div class="section-head" data-index="04 · LAYER POLICY"><h2 id="separationTitle">What can influence production?</h2><p>Collection is broad; promotion is narrow. Rankings are useful diagnostics, not a shortcut around validation.</p></div>
     <div class="grid">
       <article class="panel"><span class="status good">Canonical</span><h3>Frozen projection model</h3><p>The official projection architecture remains versioned and frozen. Power rankings never overwrite its pregame outputs.</p></article>
       <article class="panel"><span class="status" style="color:var(--challenger)">Research</span><h3>CB power ratings</h3><p>Model-derived team values summarize the validated/frozen state and can identify disagreements worth testing. Their role is research-only.</p></article>
@@ -69,5 +70,6 @@
 </main>
 <footer><div class="shell"><p id="sourceMeta">Loading power-ranking provenance…</p><p>CB Model Projections keeps canonical, challenger, benchmark and contextual layers separate. Power rankings are research summaries, not wagering recommendations.</p></div></footer>
 <script src="power-rankings.js"></script>
+<script src="power-rankings-phase3.js"></script>
 </body>
 </html>

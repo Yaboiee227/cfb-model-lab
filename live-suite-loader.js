@@ -23,14 +23,26 @@
     if (el && el.innerHTML !== value) el.innerHTML=value;
   }
 
-  function syncCfbWeek8Status(){
+  function currentCfbWeek(){
+    try {
+      const fromState=typeof STATE!=='undefined' ? STATE?.config?.currentWeek : null;
+      const fromFilter=document.getElementById('weekFilter')?.value;
+      return String(fromState || fromFilter || '').trim();
+    } catch(_){
+      return String(document.getElementById('weekFilter')?.value || '').trim();
+    }
+  }
+
+  function syncCfbActiveWeekStatus(){
     if(league()!=='cfb')return;
+    const week=currentCfbWeek();
+    if(!week)return;
     const banner=document.querySelector('main > .section-shell > .hold-note');
-    setNodeHtml(banner,'<strong>CFB · Week 8 active production · Canonical HOLD</strong> — Pregame research, market locks, provenance and frozen evidence are updated through the current production state without reconstructing information after results. <a href="week-8.html">Open Week 8 readiness →</a>');
-    setText('.hero-kicker-row .eyebrow','FBS MODEL • WEEK 8 COMMAND CENTER');
-    setText('.hero-kicker-row .research-chip','Week 8 · Research shadow');
-    setNodeText(document.getElementById('projectionsTitle'),'Week 8 research projection board');
-    setNodeText(document.querySelector('#projections .section-heading p:not(.eyebrow)'),'The active Week 8 board shows prospectively preserved research projections with current market comparison, data readiness and pregame context. Canonical publication remains gated, and completed games never rewrite the frozen evidence.');
+    setNodeHtml(banner,`<strong>CFB · Week ${week} active production · Canonical HOLD</strong> — Pregame research, market locks, provenance and frozen evidence are updated through the current production state without reconstructing information after results. <a href="week-${week}.html">Open Week ${week} readiness →</a>`);
+    setText('.hero-kicker-row .eyebrow',`FBS MODEL • WEEK ${week} COMMAND CENTER`);
+    setText('.hero-kicker-row .research-chip',`Week ${week} · Research shadow`);
+    setNodeText(document.getElementById('projectionsTitle'),`Week ${week} research projection board`);
+    setNodeText(document.querySelector('#projections .section-heading p:not(.eyebrow)'),`The active Week ${week} board shows prospectively preserved research projections with current market comparison, data readiness and pregame context. Canonical publication remains gated, and completed games never rewrite the frozen evidence.`);
   }
 
   function legacyResultCounts(key){
@@ -63,7 +75,7 @@
   }
 
   function syncSharedCopy(){
-    syncCfbWeek8Status();
+    syncCfbActiveWeekStatus();
     setText('#recordTitle','Projection performance');
     setNodeText(document.querySelector('#record .section-heading p:not(.eyebrow)'),'Tracks model projection positions against the market spread and total saved when the projection was published. ATS, Totals and Straight Up are graded separately. This is not a wager ledger.');
 
@@ -158,6 +170,7 @@
     loadCss('site-shell-hotfix.css');
     await loadScript('site-shell.js');
     await loadScript('site-runtime-guard.js');
+    if (window.CB_PHASE2_READY) await window.CB_PHASE2_READY;
     installLanguageSync();
     loadCss('record-tracker.css');
     await loadScript('record-tracker.js');

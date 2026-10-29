@@ -73,6 +73,13 @@
       a.textContent = text;
       anchor ? nav.insertBefore(a, anchor) : nav.appendChild(a);
     }
+
+    if (!qa('.primary-nav a').some(a => a.getAttribute('href') === 'how-it-works.html')) {
+      const a = document.createElement('a');
+      a.href = 'how-it-works.html';
+      a.textContent = 'How it works';
+      anchor ? nav.insertBefore(a, anchor) : nav.appendChild(a);
+    }
   }
 
   function ensureProductRail() {
@@ -93,6 +100,7 @@
           <a href="index.html?league=nfl" ${league === 'nfl' ? 'aria-current="page"' : ''}>NFL</a>
           <a href="recap.html${leagueQuery}">Recap</a>
           <a href="ratings.html${leagueQuery}">${league === 'nfl' ? 'Benchmarks' : 'Ratings'}</a>
+          <a href="how-it-works.html">How it works</a>
         </nav>
       </div>`;
     main.insertBefore(rail, main.firstChild);
@@ -170,6 +178,7 @@
     };
     add(`recap.html${leagueQuery}`, 'Recap');
     add(`ratings.html${leagueQuery}`, league === 'nfl' ? 'Benchmarks' : 'Ratings');
+    add('how-it-works.html', 'How it works');
   }
 
   function updateStaticCopy() {
