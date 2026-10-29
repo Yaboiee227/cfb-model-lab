@@ -27,3 +27,9 @@ The October 29 extended ESPN historical fetch was blocked by environment network
 SportsDataverse season files replaced live endpoint fetching. Upstream remains ESPN-derived. 2025: 912 regular-season games and 100% box coverage. 2026 through the cutoff: 566 regular-season games and 100% box coverage. The two overlapping baseline evaluation weeks reproduce prior metrics within 1e-8. Extended research covers 173 games in three evaluation weeks. No family passes the unchanged eligibility criteria. Tempo/possession total MAE delta is -0.4253 points; this does not authorize promotion. The earlier proposed prospective tempo experiment is now on HOLD.
 
 The runner uses saved prior-season HFA and preserves the existing foundation and feature definitions. This is revised-source retrospective research, not a blind prospective trial. It is also not a game-level EPA/success-rate test.
+
+## EPA-only exploratory test
+
+The dataset runner now supports `--epa`. It substitutes overall, passing and rushing EPA/play in the existing opponent-adjustment fitter and tests one isolated family. Missing EPA values are left missing; box-score yardage is never used as an EPA fallback. Success rate is absent from this source schema and is not substituted with first-down rate. No new possession estimate was implemented in this test.
+
+Three evaluation weeks, 173 games: margin MAE delta +0.2657 points (worse); total MAE delta -0.1345 points (small improvement). Neither target passes the existing family rules. The historical EPA model training cutoff is unverified, so the result is exploratory regardless of apparent performance. No promotion or live projection change. Next research priority: explicit drive/possession estimates with validated definitions, and point-in-time EPA provenance before stronger claims.

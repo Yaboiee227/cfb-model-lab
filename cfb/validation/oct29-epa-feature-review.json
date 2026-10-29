@@ -1,0 +1,291 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 8,
+  "role": "FOUNDATION_INCREMENTAL_FEATURE_FAMILY_RESEARCH",
+  "canonicalInfluence": false,
+  "asOf": "2026-10-27T04:00:00Z",
+  "foundation": {
+    "params": {
+      "alpha": 2.5,
+      "halfLifeDays": 56,
+      "minTeamAppearances": 4
+    },
+    "selection": "2024 development only",
+    "holdout2025": {
+      "games": 534,
+      "potentialGames": 595,
+      "coverage": 0.8974789915966387,
+      "marginMae": 12.587521140809809,
+      "marginRmse": 15.824054276870637,
+      "marginBias": 0.14560203773549604,
+      "totalMae": 12.722343783161577,
+      "totalRmse": 15.764409145936714,
+      "totalBias": 0.31697954312479815,
+      "suAccuracyPct": 74.15730337078652
+    },
+    "confirmation2026PreWeek8": {
+      "games": 165,
+      "potentialGames": 179,
+      "coverage": 0.9217877094972067,
+      "marginMae": 12.499963600138242,
+      "marginRmse": 15.84077852991038,
+      "marginBias": 0.4666160229241316,
+      "totalMae": 13.432275467462874,
+      "totalRmse": 16.64331741726829,
+      "totalBias": 1.058835082630664,
+      "suAccuracyPct": 64.84848484848484
+    },
+    "validationSource": "cfb/validation/week-08-simple-foundation-validation.json"
+  },
+  "policy": {
+    "seasonReset": true,
+    "marketDataUsed": false,
+    "externalRatingsUsed": false,
+    "sameWeekLeakagePrevented": true,
+    "familyIsolation": true,
+    "foundationParamsRetunedForThisStudy": false,
+    "minimumUnseenFoldsForEligibility": 3
+  },
+  "hfa": {
+    "2025": 3.4917340983843785,
+    "2025DerivedFrom": [
+      2022,
+      2023,
+      2024
+    ],
+    "2025SeasonEstimates": [
+      {
+        "season": 2022,
+        "rawGames": 927,
+        "eligibleGames": 763,
+        "homeMarginAdvantage": 3.0167896313462124
+      },
+      {
+        "season": 2023,
+        "rawGames": 923,
+        "eligibleGames": 763,
+        "homeMarginAdvantage": 3.4917340983843785
+      },
+      {
+        "season": 2024,
+        "rawGames": 917,
+        "eligibleGames": 765,
+        "homeMarginAdvantage": 4.249132328925835
+      }
+    ],
+    "2026": 4.249132328925835,
+    "2026DerivedFrom": [
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "dataQuality": {
+    "season2025": {
+      "season": 2025,
+      "games": 912,
+      "boxscoreGames": 912,
+      "boxscoreCoverage": 1.0,
+      "boxscoreFailures": [],
+      "causalRows": 534,
+      "structuralHomeMarginAdvantage": 3.4917340983843785
+    },
+    "season2026": {
+      "season": 2026,
+      "games": 566,
+      "boxscoreGames": 566,
+      "boxscoreCoverage": 1.0,
+      "boxscoreFailures": [],
+      "causalRows": 221,
+      "structuralHomeMarginAdvantage": 4.249132328925835
+    }
+  },
+  "validation": {
+    "foldCount": 3,
+    "games": 173,
+    "simpleBaseline": {
+      "margin": {
+        "games": 173,
+        "mae": 11.717797397371974,
+        "rmse": 14.363574234227482,
+        "bias": -0.12879994418122961
+      },
+      "total": {
+        "games": 173,
+        "mae": 14.129012387100417,
+        "rmse": 17.74025929537591,
+        "bias": -0.28498490840053003
+      },
+      "folds": [
+        {
+          "testWeekStart": "2026-10-05T00:00:00Z",
+          "margin": {
+            "games": 58,
+            "mae": 12.139996070526484,
+            "rmse": 14.81145667912151,
+            "bias": -0.05441267476173489
+          },
+          "total": {
+            "games": 58,
+            "mae": 14.14044447876305,
+            "rmse": 17.906167733821285,
+            "bias": 1.309045742110839
+          }
+        },
+        {
+          "testWeekStart": "2026-10-12T00:00:00Z",
+          "margin": {
+            "games": 59,
+            "mae": 12.03220449397108,
+            "rmse": 14.798904187975397,
+            "bias": 0.3683198029863926
+          },
+          "total": {
+            "games": 59,
+            "mae": 13.087969806116687,
+            "rmse": 16.28101619324231,
+            "bias": 0.74002714072044
+          }
+        },
+        {
+          "testWeekStart": "2026-10-19T00:00:00Z",
+          "margin": {
+            "games": 56,
+            "mae": 10.949269866259316,
+            "rmse": 13.39414785793463,
+            "bias": -0.7295950639887366
+          },
+          "total": {
+            "games": 56,
+            "mae": 15.213984725700547,
+            "rmse": 18.997274089865734,
+            "bias": -3.015868633896899
+          }
+        }
+      ]
+    },
+    "families": {
+      "epa_efficiency": {
+        "features": [
+          "epaMatchupDiff",
+          "passingEpaMatchupDiff",
+          "rushingEpaMatchupDiff"
+        ],
+        "margin": {
+          "games": 173,
+          "mae": 11.983496141595209,
+          "rmse": 14.60393070393773,
+          "bias": -0.5665216926258058
+        },
+        "total": {
+          "games": 173,
+          "mae": 13.994477577098523,
+          "rmse": 17.52282549254618,
+          "bias": -0.3569607679553234
+        },
+        "marginMaeDeltaVsSimple": 0.2656987442232346,
+        "totalMaeDeltaVsSimple": -0.1345348100018935,
+        "marginFoldDeltas": [
+          0.15377925837401385,
+          0.5348630964466459,
+          0.0980314834745517
+        ],
+        "totalFoldDeltas": [
+          -0.7467755158152887,
+          0.21802242199400723,
+          0.12812740873772022
+        ],
+        "marginImprovedFolds": 0,
+        "totalImprovedFolds": 1,
+        "folds": [
+          {
+            "testWeekStart": "2026-10-05T00:00:00Z",
+            "selectedMarginAlpha": 0.1,
+            "selectedTotalAlpha": 10.0,
+            "margin": {
+              "games": 58,
+              "mae": 12.293775328900498,
+              "rmse": 15.035756734501552,
+              "bias": -0.2707110690221015
+            },
+            "total": {
+              "games": 58,
+              "mae": 13.39366896294776,
+              "rmse": 17.177774377855123,
+              "bias": 1.0449390938824472
+            }
+          },
+          {
+            "testWeekStart": "2026-10-12T00:00:00Z",
+            "selectedMarginAlpha": 0.1,
+            "selectedTotalAlpha": 100.0,
+            "margin": {
+              "games": 59,
+              "mae": 12.567067590417725,
+              "rmse": 15.126425098034053,
+              "bias": -0.22528908510156817
+            },
+            "total": {
+              "games": 59,
+              "mae": 13.305992228110695,
+              "rmse": 16.24378776753297,
+              "bias": 0.8800647471243712
+            }
+          },
+          {
+            "testWeekStart": "2026-10-19T00:00:00Z",
+            "selectedMarginAlpha": 100.0,
+            "selectedTotalAlpha": 0.1,
+            "margin": {
+              "games": 56,
+              "mae": 11.047301349733868,
+              "rmse": 13.55184008645062,
+              "bias": -1.232409907142678
+            },
+            "total": {
+              "games": 56,
+              "mae": 15.342112134438267,
+              "rmse": 19.10374242519821,
+              "bias": -3.112223221103407
+            }
+          }
+        ],
+        "marginChallengerEligible": false,
+        "totalChallengerEligible": false
+      }
+    },
+    "challengerEligibleFamilies": [],
+    "gateRule": "Per target: improve aggregate MAE by >=0.50, improve at least 2 unseen folds, and no unseen fold may degrade by >0.75. Eligibility means isolated shadow research only, never canonical promotion.",
+    "minimumRequiredFolds": 3,
+    "evidenceStatus": "NO_INCREMENTAL_FAMILY_ELIGIBLE"
+  },
+  "warning": "Incremental research against the validated foundation only. Fewer than three unseen folds cannot grant eligibility. Any future eligibility allows prospective isolated shadowing only, not canonical influence or family stacking. Alternate-source retrospective replication; eligibility requires baseline coverage/parity review.",
+  "alternateSource": {
+    "publisher": "SportsDataverse",
+    "upstream": "ESPN-derived; not independent corroboration",
+    "historicalRevisionWarning": "Current revised season files, not archived original pregame bytes",
+    "files": {
+      "cfb_schedule_2026.csv": "cbba07033a3eb2f64f3641f22e3248ff1017606e0fccddbf191fabd0d84284d1",
+      "adv_team_gamelog_2025.csv": "e9c9df0e8d36ee74c20e8b24b657c5761e51a83c398d81144c118db0faf79b2e",
+      "team_box_2026.csv": "1196dd39c7f95fea8d8c42edc15392600934c1764fe0502c4db3dc4b3c51bce6",
+      "adv_team_gamelog_2026.csv": "09a4cdb18b2d464115c1c640ad64b0042d85226136db4d45eaaeb98a8d185655",
+      "team_box_2025.csv": "4ecc44939c4a90760fced98b8802a6d2483556516fe47410c41ccb79f8ed10b8",
+      "cfb_schedule_2025.csv": "2b8e4e24f3c62c8833b7e15703675d9648f438aaa01de966e6498eae50b1d86f"
+    }
+  },
+  "featureDefinition": {
+    "epa_efficiency": [
+      "opponent-adjusted overall EPA/play difference",
+      "opponent-adjusted passing EPA/play difference",
+      "opponent-adjusted rushing EPA/play difference"
+    ],
+    "excluded": [
+      "success rate absent from source schema",
+      "possession estimates not implemented in this experiment"
+    ],
+    "note": "Existing opponent-adjusted metric fitter reused. Source EPA model training cutoff is not verified, so this cannot certify strictly point-in-time historical evaluation."
+  },
+  "promotionStatus": "HOLD_EPA_MODEL_POINT_IN_TIME_PROVENANCE_UNVERIFIED"
+}

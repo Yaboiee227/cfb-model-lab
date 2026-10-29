@@ -5,7 +5,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parent))
 import cfb_foundation_feature_validation as ff
 import cfb_shadow_engine as engine
 import cfb_rich_challenger as rich
-ap=argparse.ArgumentParser();ap.add_argument('--inputs',type=Path,required=True);ap.add_argument('--output',required=True);a=ap.parse_args();root=Path.cwd();cache={};boxes={}
+ap=argparse.ArgumentParser();ap.add_argument('--inputs',type=Path,required=True);ap.add_argument('--output',required=True);ap.add_argument('--epa',action='store_true');a=ap.parse_args();root=Path.cwd();cache={};boxes={}
 for year in [2025,2026]:
  rows=list(csv.DictReader((a.inputs/f'cfb_schedule_{year}.csv').open()));games=[];names={}
  for r in rows:
@@ -17,6 +17,18 @@ for year in [2025,2026]:
   gid=str(r['game_id']);key=names.get(r['team_id'])
   if key:
    boxes.setdefault(gid,{})[key]=rich.normalized_box([dict(name=k,displayValue=v) for k,v in r.items()])
+ if a.epa:
+  for g in cache[year]:
+   for v in boxes.get(g.game_id,{}).values():
+    for k in ["yardsPerPlay","passYpa","rushYpa"]:v[k]=None
+  matched=0
+  for r in csv.DictReader((a.inputs/f'adv_team_gamelog_{year}.csv').open()):
+   gid=str(r['game_id']);key=names.get(r['team_id'])
+   if key and key in boxes.get(gid,{}):
+    vals=[rich.numeric(r.get(k)) for k in ['EPA_per_play','EPA_passing_per_play','EPA_rushing_per_play']]
+    for k,v in zip(['yardsPerPlay','passYpa','rushYpa'],vals):boxes[gid][key][k]=v
+    matched+=all(v is not None for v in vals)
+  print(year,'complete EPA team-game rows',matched,flush=True)
  print(year,len(cache[year]),'regular finals',flush=True)
 def fetch_games(start,end):return [g for y in range(start.year,end.year+1) for g in cache.get(y,[]) if start<=g.kickoff<end]
 def fetch_boxes(games):
@@ -25,5 +37,14 @@ def fetch_boxes(games):
 prior=json.loads((root/'cfb/validation/week-08-foundation-feature-family-validation.json').read_text())
 ff.estimate_prior_only_hfa=lambda *args,**kwargs:(prior['hfa']['2025'],prior['hfa']['2025SeasonEstimates'])
 engine.fetch_completed_games=fetch_games;rich.fetch_boxes=fetch_boxes
+if a.epa:ff.ff.FEATURE_FAMILIES={'epa_efficiency':(2,3,4)}
 sys.argv=['cfb_foundation_feature_validation.py','--as-of','2026-10-27T04:00:00Z','--output',a.output];ff.main()
-p=Path(a.output);d=json.loads(p.read_text());d['alternateSource']={'publisher':'SportsDataverse','upstream':'ESPN-derived; not independent corroboration','historicalRevisionWarning':'Current revised season files, not archived original pregame bytes','files':{f.name:hashlib.sha256(f.read_bytes()).hexdigest() for f in a.inputs.glob('*.csv')}};d['warning']+=' Alternate-source retrospective replication; eligibility requires baseline coverage/parity review.';p.write_text(json.dumps(d,indent=2)+'\n')
+p=Path(a.output);d=json.loads(p.read_text());d['alternateSource']={'publisher':'SportsDataverse','upstream':'ESPN-derived; not independent corroboration','historicalRevisionWarning':'Current revised season files, not archived original pregame bytes','files':{f.name:hashlib.sha256(f.read_bytes()).hexdigest() for f in a.inputs.glob('*.csv')}};
+if a.epa:
+ d['featureDefinition']={'epa_efficiency':['opponent-adjusted overall EPA/play difference','opponent-adjusted passing EPA/play difference','opponent-adjusted rushing EPA/play difference'],'excluded':['success rate absent from source schema','possession estimates not implemented in this experiment'],'note':'Existing opponent-adjusted metric fitter reused. Source EPA model training cutoff is not verified, so this cannot certify strictly point-in-time historical evaluation.'}
+ d['promotionStatus']='HOLD_EPA_MODEL_POINT_IN_TIME_PROVENANCE_UNVERIFIED'
+ d['validation']['families']['epa_efficiency']['marginChallengerEligible']=False
+ d['validation']['families']['epa_efficiency']['totalChallengerEligible']=False
+ d['validation']['challengerEligibleFamilies']=[]
+ d['validation']['families']['epa_efficiency']['features']=['epaMatchupDiff','passingEpaMatchupDiff','rushingEpaMatchupDiff']
+d['warning']+=' Alternate-source retrospective replication; eligibility requires baseline coverage/parity review.';p.write_text(json.dumps(d,indent=2)+'\n')
