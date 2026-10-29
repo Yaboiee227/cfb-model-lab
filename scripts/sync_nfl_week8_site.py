@@ -1,6 +1,8 @@
 """Publish frozen Week 8 research into the main site's existing NFL schema."""
 import csv,json,pathlib,datetime
 from zoneinfo import ZoneInfo
+from build_nfl_personnel_gates import build
+personnel_by_game={r["gameId"]:r for r in build()["games"]}
 R=pathlib.Path(__file__).resolve().parents[1];S=R/'nfl_data/site';d=json.loads((R/'nfl/research-projections/week-08.json').read_text());ctx={g['eventId']:g for g in json.loads((R/'data/game-readiness.json').read_text())['games']}
 archive=S/'archive/week7-before-week8';archive.mkdir(parents=True,exist_ok=True)
 for name in ['config.json','projections.csv','research.json']:
@@ -15,6 +17,12 @@ for g in d['games']:
  if o.get('spread') is not None:
   r['marketSpreadHome']=(-1 if o.get('homeTeamOdds',{}).get('favorite') else 1)*abs(float(o['spread']));r['spreadGapHome']=r['marketSpreadHome']-g['modelSpreadHome']
  r.update(marketTotal=o.get('overUnder',''),marketSource='ESPN / '+o.get('provider',{}).get('name','unavailable'),marketObservedAt=c['observedAt'])
+ gate=personnel_by_game[g['gameId']]
+ r['personnelState']=gate['status']
+ r['hardQbStateBreak']='true' if gate['qbChange'] is True else 'false' if gate['qbChange'] is False else ''
+ r['finalInactivesResolved']='true' if gate['finalAvailabilityVerified'] else 'false'
+ r['notes']+=' Personnel: '+gate['summary']
+ r['releaseBlockers']+='|'+'|'.join(gate['blockers'])
  rows.append(r)
 assert len(rows)==14 and len({r['gameId'] for r in rows})==14
 with (S/'projections.csv').open('w') as f:

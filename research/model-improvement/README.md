@@ -57,3 +57,9 @@ Saved Week 7 publication evidence includes a confirmed Jackson-to-Huntley switch
 The reusable personnel gate checks game scope, timezone-aware pregame observation time, final availability and explicit QB state. Unknown is never treated as unchanged. A QB change requires a validated, actually applied adjustment before a personnel-adjusted label is allowed. A personnel-gate pass alone does not certify market, weather, referee or validation gates. The helper and tests are available for pipeline integration; they do not inject numerical adjustments into the canonical predictor.
 
 Week 8 derived personnel gates remain HOLD for all 14 frozen research projections because no dated official availability evidence is supplied to this audit. These are separate diagnostic outputs, not replacements for the frozen predictions or evidence that later reports do not exist. Next requirement: a starter-state/position-group ingestion contract with verified event timestamps, followed by an isolated historically causal adjustment test.
+
+## Personnel gates integrated into publication
+
+`build_nfl_personnel_gates.py` reads explicit current-slate evidence and rejects duplicate/out-of-slate IDs. The main Week 8 publisher now calls it. `apply_nfl_personnel_gates.py` applies context to existing site rows while asserting all projection, freeze, and market fields remain unchanged. Unknown QB state is blank rather than false.
+
+A dated official October 28 NFL injury-designation report was captured for CAR at GB. This is not final inactives or a model-relative starter comparison; all 14 personnel gates remain HOLD. No numerical personnel adjustment or accuracy improvement is claimed. The current helper enforces unvalidated/unapplied adjustments as blocked. A future promotion requires a separate model registry and point-in-time performance evidence.
