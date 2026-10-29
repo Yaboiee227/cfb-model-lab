@@ -2,6 +2,8 @@ import { webkit } from 'playwright';
 
 const base = process.env.SITE_BASE_URL || 'http://127.0.0.1:8000';
 const cases = [
+  { name: 'cfb-laptop', path: '/', league: 'cfb', width: 1348 },
+  { name: 'nfl-laptop', path: '/?league=nfl', league: 'nfl', width: 1348 },
   { name: 'cfb-320', path: '/', league: 'cfb', width: 320 },
   { name: 'nfl-320', path: '/?league=nfl', league: 'nfl', width: 320 },
   { name: 'cfb-390', path: '/', league: 'cfb', width: 390 },
@@ -17,7 +19,7 @@ const report = [];
 let failed = false;
 
 for (const tc of cases) {
-  const compact = tc.width <= 1180;
+  const compact = tc.width <= 1400;
   const page = await browser.newPage({ viewport: { width: tc.width, height: 844 }, isMobile: compact, hasTouch: compact });
   const errors = [];
   const failedRequests = [];

@@ -1,4 +1,5 @@
 from pathlib import Path
+import re
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -19,7 +20,7 @@ def test_phase_one_shared_brand_foundation_is_layered_without_model_changes():
     guard = read("site-runtime-guard.js")
     foundation = read("cb-foundation.css")
     behavior = read("cb-foundation.js")
-    assert '@import url("cb-foundation.css")' in hotfix
+    assert re.search(r'@import url\("cb-foundation\.css(?:\?[^"]+)?"\)', hotfix)
     assert "cb-foundation.js" in guard
     assert "--cb-charcoal: #202329" in foundation
     assert "--cb-orange: #FF652E" in foundation

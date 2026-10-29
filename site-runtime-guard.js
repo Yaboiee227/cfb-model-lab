@@ -2,7 +2,7 @@
   if (window.__CB_SITE_RUNTIME_GUARD) return;
   window.__CB_SITE_RUNTIME_GUARD = true;
 
-  const BREAKPOINT = 1180;
+  const BREAKPOINT = 1400;
   const body = document.body;
   const header = document.querySelector('.site-header');
   const toggle = document.getElementById('cbMobileNavToggle');

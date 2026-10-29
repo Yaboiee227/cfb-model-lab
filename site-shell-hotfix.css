@@ -1,4 +1,4 @@
-@import url("cb-foundation.css");
+@import url("cb-foundation.css?v=20261029-redesign-release-v2");
 
 /* Shared responsive shell hardening — CFB + NFL
    CB_SHELL_HARDENING_V5
@@ -7,7 +7,7 @@
    background scroll while the menu is open, and contains WebKit intrinsic-width
    leakage without disabling intentional horizontal scrollers. */
 
-@media(max-width:1180px){
+@media(max-width:1400px){
   body.site-v2{
     max-width:100%;
     --cb-compact-header-height:73px;

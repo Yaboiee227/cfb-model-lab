@@ -307,7 +307,7 @@
 (() => {
   if (document.querySelector('script[data-cb-live-suite-loader]')) return;
   const script = document.createElement('script');
-  script.src = 'live-suite-loader.js?v=20261029-redesign-release';
+  script.src = 'live-suite-loader.js?v=20261029-redesign-release-v2';
   script.async = false;
   script.dataset.cbLiveSuiteLoader = 'true';
   document.body.appendChild(script);
