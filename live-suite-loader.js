@@ -1,6 +1,6 @@
 (() => {
   const league = () => String(window.CB_ACTIVE_LEAGUE || 'cfb').toLowerCase() === 'nfl' ? 'nfl' : 'cfb';
-  const ASSET_VERSION = '20261029-redesign-release-v2';
+  const ASSET_VERSION = '20261029-redesign-release-v3';
   const versioned = src => `${src}${src.includes('?') ? '&' : '?'}v=${encodeURIComponent(ASSET_VERSION)}`;
 
   const loadCss = href => {
