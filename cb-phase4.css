@@ -165,6 +165,19 @@
   transform:translate3d(0,0,0);
 }
 
+/* Long projection slates must remain readable even if a browser delays
+   IntersectionObserver delivery after programmatic or momentum scrolling.
+   Cards therefore use transform-only reveal motion instead of opacity hiding. */
+.projection-card.cb-phase4-reveal {
+  opacity:1;
+  transform:translate3d(0,8px,0);
+}
+
+.projection-card.cb-phase4-reveal.cb-phase4-visible {
+  opacity:1;
+  transform:translate3d(0,0,0);
+}
+
 /* Restrained athletic interaction. Color stays on data, not chrome. */
 .projection-card,
 .record-card,
