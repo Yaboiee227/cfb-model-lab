@@ -1,0 +1,596 @@
+{
+  "generatedAt": "2026-10-29T16:45:10.940815+00:00",
+  "canonicalInfluence": false,
+  "referencePolicy": "Stored grading references, not verified closing prices. Mixed model periods remain separated by week. Descriptive diagnosis only; no causal or significance claim.",
+  "spreadConvention": "away score minus home score; negative prediction error means model favored home too strongly",
+  "sources": [
+    {
+      "path": "data/results.csv",
+      "sha256": "20e9e7b2ddcdd261701324149f10657aab86882c5eb171613da5b212f8f74d93",
+      "groups": [
+        {
+          "league": "cfb",
+          "week": 7,
+          "target": "spread",
+          "games": 53,
+          "excludedMissingReference": [],
+          "modelMAE": 11.335250909905998,
+          "marketMAE": 10.283018867924529,
+          "modelBias": -2.666532202183387,
+          "modelRMSE": 14.55481926684937,
+          "pairedMAEDelta": 1.0522320419814697,
+          "worstMisses": [
+            {
+              "gameId": "2026-10-17-OHIO-SACRAMENTOST",
+              "away": "Ohio",
+              "home": "Sacramento State",
+              "actual": 41.0,
+              "model": -1.288406312,
+              "market": 15.5,
+              "modelError": -42.288406312,
+              "marketError": -25.5,
+              "pairedAbsoluteErrorDelta": 16.788406312
+            },
+            {
+              "gameId": "2026-10-17-WAKEFOREST-CALIFORNIA",
+              "away": "Wake Forest",
+              "home": "California",
+              "actual": 34.0,
+              "model": 2.800181975,
+              "market": 10.0,
+              "modelError": -31.199818025,
+              "marketError": -24.0,
+              "pairedAbsoluteErrorDelta": 7.199818024999999
+            },
+            {
+              "gameId": "2026-10-17-TULSA-RICE",
+              "away": "Tulsa",
+              "home": "Rice",
+              "actual": 21.0,
+              "model": -4.587103726,
+              "market": 4.5,
+              "modelError": -25.587103726,
+              "marketError": -16.5,
+              "pairedAbsoluteErrorDelta": 9.087103725999999
+            },
+            {
+              "gameId": "2026-10-17-MISSOURI-OLEMISS",
+              "away": "Missouri",
+              "home": "Ole Miss",
+              "actual": -28.0,
+              "model": -3.692958229,
+              "market": -5.5,
+              "modelError": 24.307041771,
+              "marketError": 22.5,
+              "pairedAbsoluteErrorDelta": 1.8070417710000015
+            },
+            {
+              "gameId": "2026-10-17-FLORIDAATLAN-ARMY",
+              "away": "Florida Atlantic",
+              "home": "Army",
+              "actual": -32.0,
+              "model": -8.494795919807238,
+              "market": -2.5,
+              "modelError": 23.50520408019276,
+              "marketError": 29.5,
+              "pairedAbsoluteErrorDelta": -5.994795919807238
+            }
+          ]
+        },
+        {
+          "league": "cfb",
+          "week": 7,
+          "target": "total",
+          "games": 48,
+          "excludedMissingReference": [
+            "2026-10-17-UNLV-AIRFORCE",
+            "2026-10-17-NORTHERNILLI-WYOMING",
+            "2026-10-17-ARKANSASSTAT-SOUTHERNMISS",
+            "2026-10-17-NAVY-UTSA",
+            "2026-10-17-NEBRASKA-OREGON"
+          ],
+          "modelMAE": 12.347406108959797,
+          "marketMAE": 11.791666666666666,
+          "modelBias": 2.456925824306365,
+          "modelRMSE": 15.169728128294512,
+          "pairedMAEDelta": 0.5557394422931309,
+          "worstMisses": [
+            {
+              "gameId": "2026-10-17-LOUISIANATEC-ULMONROE",
+              "away": "Louisiana Tech",
+              "home": "UL Monroe",
+              "actual": 24.0,
+              "model": 57.77295055,
+              "market": 55.5,
+              "modelError": 33.77295055,
+              "marketError": 31.5,
+              "pairedAbsoluteErrorDelta": 2.2729505499999973
+            },
+            {
+              "gameId": "2026-10-17-WASHINGTONST-OREGONSTATE",
+              "away": "Washington State",
+              "home": "Oregon State",
+              "actual": 78.0,
+              "model": 46.4384343,
+              "market": 52.5,
+              "modelError": -31.561565700000003,
+              "marketError": -25.5,
+              "pairedAbsoluteErrorDelta": 6.061565700000003
+            },
+            {
+              "gameId": "2026-10-17-ARIZONASTATE-TEXASTECH",
+              "away": "Arizona State",
+              "home": "Texas Tech",
+              "actual": 78.0,
+              "model": 48.82732815,
+              "market": 50.5,
+              "modelError": -29.17267185,
+              "marketError": -27.5,
+              "pairedAbsoluteErrorDelta": 1.6726718500000004
+            },
+            {
+              "gameId": "2026-10-17-CINCINNATI-WESTVIRGINIA",
+              "away": "Cincinnati",
+              "home": "West Virginia",
+              "actual": 87.0,
+              "model": 61.74278700757257,
+              "market": 63.5,
+              "modelError": -25.257212992427426,
+              "marketError": -23.5,
+              "pairedAbsoluteErrorDelta": 1.7572129924274265
+            },
+            {
+              "gameId": "2026-10-17-MISSISSIPPIS-LSU",
+              "away": "Mississippi State",
+              "home": "LSU",
+              "actual": 31.0,
+              "model": 54.597741411530215,
+              "market": 57.5,
+              "modelError": 23.597741411530215,
+              "marketError": 26.5,
+              "pairedAbsoluteErrorDelta": -2.9022585884697847
+            }
+          ]
+        },
+        {
+          "league": "cfb",
+          "week": 8,
+          "target": "spread",
+          "games": 51,
+          "excludedMissingReference": [
+            "2026-10-23-DUKE-VIRGINIA",
+            "2026-10-23-MASSACHUSETTS-UCONN",
+            "2026-10-24-ARMY-TULSA",
+            "2026-10-24-AIRFORCE-WYOMING",
+            "2026-10-24-NCSTATE-STANFORD"
+          ],
+          "modelMAE": 11.111260170799186,
+          "marketMAE": 11.029411764705882,
+          "modelBias": 0.24546871948831545,
+          "modelRMSE": 13.640657515356263,
+          "pairedMAEDelta": 0.0818484060933031,
+          "worstMisses": [
+            {
+              "gameId": "2026-10-24-HAWAII-NORTHERNILLINOIS",
+              "away": "Hawai'i",
+              "home": "Northern Illinois",
+              "actual": 35.0,
+              "model": -1.3124099256545492,
+              "market": 3.0,
+              "modelError": -36.31240992565455,
+              "marketError": -32.0,
+              "pairedAbsoluteErrorDelta": 4.312409925654549
+            },
+            {
+              "gameId": "2026-10-25-UTSA-TULANE",
+              "away": "UTSA",
+              "home": "Tulane",
+              "actual": 23.0,
+              "model": -4.896902177578603,
+              "market": 3.0,
+              "modelError": -27.896902177578603,
+              "marketError": -20.0,
+              "pairedAbsoluteErrorDelta": 7.896902177578603
+            },
+            {
+              "gameId": "2026-10-24-CALIFORNIA-SMU",
+              "away": "California",
+              "home": "SMU",
+              "actual": -39.0,
+              "model": -11.99795691372588,
+              "market": -18.5,
+              "modelError": 27.00204308627412,
+              "marketError": 20.5,
+              "pairedAbsoluteErrorDelta": 6.502043086274121
+            },
+            {
+              "gameId": "2026-10-24-IOWASTATE-ARIZONA",
+              "away": "Iowa State",
+              "home": "Arizona",
+              "actual": -36.0,
+              "model": -9.528954300992162,
+              "market": -12.5,
+              "modelError": 26.47104569900784,
+              "marketError": 23.5,
+              "pairedAbsoluteErrorDelta": 2.9710456990078384
+            },
+            {
+              "gameId": "2026-10-24-BOSTONCOLLEGE-GEORGIATECH",
+              "away": "Boston College",
+              "home": "Georgia Tech",
+              "actual": 22.0,
+              "model": -1.9221563073829344,
+              "market": -6.5,
+              "modelError": -23.922156307382934,
+              "marketError": -28.5,
+              "pairedAbsoluteErrorDelta": -4.577843692617066
+            }
+          ]
+        },
+        {
+          "league": "cfb",
+          "week": 8,
+          "target": "total",
+          "games": 51,
+          "excludedMissingReference": [
+            "2026-10-23-DUKE-VIRGINIA",
+            "2026-10-23-MASSACHUSETTS-UCONN",
+            "2026-10-24-ARMY-TULSA",
+            "2026-10-24-AIRFORCE-WYOMING",
+            "2026-10-24-NCSTATE-STANFORD"
+          ],
+          "modelMAE": 16.108443847366544,
+          "marketMAE": 15.22549019607843,
+          "modelBias": -3.238454015682471,
+          "modelRMSE": 19.723747727237566,
+          "pairedMAEDelta": 0.8829536512881134,
+          "worstMisses": [
+            {
+              "gameId": "2026-10-20-MISSOURISTATE-DELAWARE",
+              "away": "Missouri State",
+              "home": "Delaware",
+              "actual": 99.0,
+              "model": 52.10453356588041,
+              "market": 54.5,
+              "modelError": -46.89546643411959,
+              "marketError": -44.5,
+              "pairedAbsoluteErrorDelta": 2.395466434119591
+            },
+            {
+              "gameId": "2026-10-24-RICE-FLORIDAATLANTIC",
+              "away": "Rice",
+              "home": "Florida Atlantic",
+              "actual": 100.0,
+              "model": 56.77476765399879,
+              "market": 54.5,
+              "modelError": -43.22523234600121,
+              "marketError": -45.5,
+              "pairedAbsoluteErrorDelta": -2.2747676539987935
+            },
+            {
+              "gameId": "2026-10-24-SANDIEGOSTATE-COLORADOSTATE",
+              "away": "San Diego State",
+              "home": "Colorado State",
+              "actual": 105.0,
+              "model": 67.34180439907381,
+              "market": 57.5,
+              "modelError": -37.65819560092619,
+              "marketError": -47.5,
+              "pairedAbsoluteErrorDelta": -9.841804399073808
+            },
+            {
+              "gameId": "2026-10-20-SOUTHALABAMA-MARSHALL",
+              "away": "South Alabama",
+              "home": "Marshall",
+              "actual": 33.0,
+              "model": 69.54276300486376,
+              "market": 66.5,
+              "modelError": 36.54276300486376,
+              "marketError": 33.5,
+              "pairedAbsoluteErrorDelta": 3.042763004863758
+            },
+            {
+              "gameId": "2026-10-24-WESTERNMICHIGAN-TOLEDO",
+              "away": "Western Michigan",
+              "home": "Toledo",
+              "actual": 83.0,
+              "model": 47.554809809830125,
+              "market": 48.5,
+              "modelError": -35.445190190169875,
+              "marketError": -34.5,
+              "pairedAbsoluteErrorDelta": 0.9451901901698747
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "nfl_data/site/results.csv",
+      "sha256": "b8b28170b9b0f243f147a15c17509bac715daba7da44cc89f0522f3b19c641aa",
+      "groups": [
+        {
+          "league": "nfl",
+          "week": 6,
+          "target": "spread",
+          "games": 13,
+          "excludedMissingReference": [],
+          "modelMAE": 8.044923076923077,
+          "marketMAE": 6.5,
+          "modelBias": -4.098769230769231,
+          "modelRMSE": 8.626928796596067,
+          "pairedMAEDelta": 1.544923076923077,
+          "worstMisses": [
+            {
+              "gameId": "2026_06_TEN_IND",
+              "away": "TEN",
+              "home": "IND",
+              "actual": 6.0,
+              "model": -7.105,
+              "market": -6.5,
+              "modelError": -13.105,
+              "marketError": -12.5,
+              "pairedAbsoluteErrorDelta": 0.6050000000000004
+            },
+            {
+              "gameId": "2026_06_NO_NYG",
+              "away": "NO",
+              "home": "NYG",
+              "actual": 7.0,
+              "model": -5.846,
+              "market": 1.5,
+              "modelError": -12.846,
+              "marketError": -5.5,
+              "pairedAbsoluteErrorDelta": 7.346
+            },
+            {
+              "gameId": "2026_06_ARI_LA",
+              "away": "ARI",
+              "home": "LA",
+              "actual": 2.0,
+              "model": -10.161,
+              "market": -12.5,
+              "modelError": -12.161,
+              "marketError": -14.5,
+              "pairedAbsoluteErrorDelta": -2.3390000000000004
+            },
+            {
+              "gameId": "2026_06_BAL_CLE",
+              "away": "BAL",
+              "home": "CLE",
+              "actual": -3.0,
+              "model": 7.174,
+              "market": 3.0,
+              "modelError": 10.174,
+              "marketError": 6.0,
+              "pairedAbsoluteErrorDelta": 4.1739999999999995
+            },
+            {
+              "gameId": "2026_06_PIT_TB",
+              "away": "PIT",
+              "home": "TB",
+              "actual": 7.0,
+              "model": -2.027,
+              "market": 2.5,
+              "modelError": -9.027000000000001,
+              "marketError": -4.5,
+              "pairedAbsoluteErrorDelta": 4.527000000000001
+            }
+          ]
+        },
+        {
+          "league": "nfl",
+          "week": 6,
+          "target": "total",
+          "games": 13,
+          "excludedMissingReference": [],
+          "modelMAE": 11.03546153846154,
+          "marketMAE": 10.423076923076923,
+          "modelBias": 1.1548461538461554,
+          "modelRMSE": 12.845542654046309,
+          "pairedMAEDelta": 0.6123846153846164,
+          "worstMisses": [
+            {
+              "gameId": "2026_06_BAL_CLE",
+              "away": "BAL",
+              "home": "CLE",
+              "actual": 23.0,
+              "model": 43.523,
+              "market": 39.5,
+              "modelError": 20.523000000000003,
+              "marketError": 16.5,
+              "pairedAbsoluteErrorDelta": 4.023000000000003
+            },
+            {
+              "gameId": "2026_06_HOU_JAX",
+              "away": "HOU",
+              "home": "JAX",
+              "actual": 65.0,
+              "model": 44.9,
+              "market": 42.0,
+              "modelError": -20.1,
+              "marketError": -23.0,
+              "pairedAbsoluteErrorDelta": -2.8999999999999986
+            },
+            {
+              "gameId": "2026_06_NO_NYG",
+              "away": "NO",
+              "home": "NYG",
+              "actual": 61.0,
+              "model": 44.584,
+              "market": 46.0,
+              "modelError": -16.415999999999997,
+              "marketError": -15.0,
+              "pairedAbsoluteErrorDelta": 1.4159999999999968
+            },
+            {
+              "gameId": "2026_06_LAC_KC",
+              "away": "LAC",
+              "home": "KC",
+              "actual": 28.0,
+              "model": 42.834,
+              "market": 41.5,
+              "modelError": 14.834000000000003,
+              "marketError": 13.5,
+              "pairedAbsoluteErrorDelta": 1.3340000000000032
+            },
+            {
+              "gameId": "2026_06_BUF_LV",
+              "away": "BUF",
+              "home": "LV",
+              "actual": 63.0,
+              "model": 48.188,
+              "market": 53.5,
+              "modelError": -14.811999999999998,
+              "marketError": -9.5,
+              "pairedAbsoluteErrorDelta": 5.311999999999998
+            }
+          ]
+        },
+        {
+          "league": "nfl",
+          "week": 7,
+          "target": "spread",
+          "games": 12,
+          "excludedMissingReference": [
+            "2026_07_NE_CHI",
+            "2026_07_KC_SEA"
+          ],
+          "modelMAE": 11.021359416617855,
+          "marketMAE": 10.416666666666666,
+          "modelBias": -8.574129167751533,
+          "modelRMSE": 15.225428735866615,
+          "pairedMAEDelta": 0.6046927499511886,
+          "worstMisses": [
+            {
+              "gameId": "2026_07_TB_CAR",
+              "away": "TB",
+              "home": "CAR",
+              "actual": 30.0,
+              "model": -6.121991712398631,
+              "market": -3.0,
+              "modelError": -36.12199171239863,
+              "marketError": -33.0,
+              "pairedAbsoluteErrorDelta": 3.121991712398632
+            },
+            {
+              "gameId": "2026_07_CIN_BAL",
+              "away": "CIN",
+              "home": "BAL",
+              "actual": 22.0,
+              "model": -4.027868612055471,
+              "market": 2.5,
+              "modelError": -26.02786861205547,
+              "marketError": -19.5,
+              "pairedAbsoluteErrorDelta": 6.527868612055471
+            },
+            {
+              "gameId": "2026_07_DAL_PHI",
+              "away": "DAL",
+              "home": "PHI",
+              "actual": 17.0,
+              "model": 0.6253648897420163,
+              "market": 4.5,
+              "modelError": -16.374635110257984,
+              "marketError": -12.5,
+              "pairedAbsoluteErrorDelta": 3.8746351102579837
+            },
+            {
+              "gameId": "2026_07_SF_ATL",
+              "away": "SF",
+              "home": "ATL",
+              "actual": -9.0,
+              "model": 5.68334261203569,
+              "market": 2.5,
+              "modelError": 14.683342612035691,
+              "marketError": 11.5,
+              "pairedAbsoluteErrorDelta": 3.183342612035691
+            },
+            {
+              "gameId": "2026_07_DEN_ARI",
+              "away": "DEN",
+              "home": "ARI",
+              "actual": 14.0,
+              "model": 2.679316394749109,
+              "market": 4.5,
+              "modelError": -11.320683605250892,
+              "marketError": -9.5,
+              "pairedAbsoluteErrorDelta": 1.820683605250892
+            }
+          ]
+        },
+        {
+          "league": "nfl",
+          "week": 7,
+          "target": "total",
+          "games": 12,
+          "excludedMissingReference": [
+            "2026_07_NE_CHI",
+            "2026_07_KC_SEA"
+          ],
+          "modelMAE": 8.892615155259435,
+          "marketMAE": 10.333333333333334,
+          "modelBias": -1.5605785165662152,
+          "modelRMSE": 10.328935419327305,
+          "pairedMAEDelta": -1.4407181780738991,
+          "worstMisses": [
+            {
+              "gameId": "2026_07_PIT_NO",
+              "away": "PIT",
+              "home": "NO",
+              "actual": 26.0,
+              "model": 41.96590088846535,
+              "market": 43.5,
+              "modelError": 15.965900888465349,
+              "marketError": 17.5,
+              "pairedAbsoluteErrorDelta": -1.5340991115346512
+            },
+            {
+              "gameId": "2026_07_IND_MIN",
+              "away": "IND",
+              "home": "MIN",
+              "actual": 26.0,
+              "model": 41.01896545515951,
+              "market": 41.5,
+              "modelError": 15.01896545515951,
+              "marketError": 15.5,
+              "pairedAbsoluteErrorDelta": -0.48103454484049024
+            },
+            {
+              "gameId": "2026_07_DAL_PHI",
+              "away": "DAL",
+              "home": "PHI",
+              "actual": 59.0,
+              "model": 45.87595074684257,
+              "market": 43.5,
+              "modelError": -13.12404925315743,
+              "marketError": -15.5,
+              "pairedAbsoluteErrorDelta": -2.3759507468425696
+            },
+            {
+              "gameId": "2026_07_GB_DET",
+              "away": "GB",
+              "home": "DET",
+              "actual": 37.0,
+              "model": 50.007353488534456,
+              "market": 55.5,
+              "modelError": 13.007353488534456,
+              "marketError": 18.5,
+              "pairedAbsoluteErrorDelta": -5.492646511465544
+            },
+            {
+              "gameId": "2026_07_CLE_TEN",
+              "away": "CLE",
+              "home": "TEN",
+              "actual": 51.0,
+              "model": 39.384384593537355,
+              "market": 36.5,
+              "modelError": -11.615615406462645,
+              "marketError": -14.5,
+              "pairedAbsoluteErrorDelta": -2.884384593537355
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "canonicalInfluence": false,
+  "activeCFB": [
+    "schedule-adjusted score strengths",
+    "regularization",
+    "56-day recency weighting",
+    "prior-season structural home advantage"
+  ],
+  "activeNFL": [
+    "efficiency core",
+    "defensive coverage",
+    "win Elo",
+    "margin rating"
+  ],
+  "existingCFBResearch": [
+    "opponent-adjusted yards/play",
+    "passing/rushing yards per attempt",
+    "drive control",
+    "tempo/possession",
+    "discipline",
+    "recent form/rest"
+  ],
+  "notClaimedImplemented": [
+    "EPA/success-rate CFB upgrade",
+    "validated numerical injury adjustment",
+    "validated numerical referee adjustment",
+    "kickoff weather adjustment",
+    "new probability calibration"
+  ],
+  "priority": "Complete incremental feature evaluation, then isolate the strongest candidate for prospective testing. No family stacking or canonical promotion."
+}
