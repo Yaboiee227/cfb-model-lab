@@ -181,6 +181,15 @@ for (const tc of cases) {
       const cards = [...document.querySelectorAll('#projectionCards .projection-card[id^="card-"]')];
       return cards.length > 0 && cards.every(card => card.textContent.includes(team));
     }, team, { timeout: 10000 });
+    // A completed background market sync must preserve the selected team.
+    await page.evaluate(() => {
+      filterProjections();
+      document.dispatchEvent(new CustomEvent('cb:pregame-market-sync'));
+    });
+    await page.waitForFunction(team => {
+      const cards = [...document.querySelectorAll('#projectionCards .projection-card[id^="card-"]')];
+      return cards.length > 0 && cards.every(card => card.textContent.includes(team));
+    }, team, { timeout: 10000 });
     if (!(await page.locator('#cbTeamLensBody').innerText()).includes(team)) errors.push('Selected team lens did not render');
     await page.locator('#resetFilters').click();
     await page.locator('#teamSearch').fill('zzzz-no-matching-football-team');
