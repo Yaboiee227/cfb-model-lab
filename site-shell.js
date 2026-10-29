@@ -185,8 +185,8 @@
     const topNote = q('main > .section-shell .hold-note');
     if (topNote && !topNote.closest('#home')) {
       topNote.innerHTML = league === 'cfb'
-        ? '<strong>CFB · Week 9 research state</strong> — Canonical publication remains gated. Current pregame research, market locks and frozen evidence are preserved without reconstructing information after results. <a href="week-9.html">Open Week 9 projections →</a>'
-        : `<strong>NFL · Week 7 prospective state</strong> — Canonical V1 is frozen weekly. Market differences, reliability and contextual evidence remain research outputs while recommendation thresholds stay on HOLD. <a href="recap.html${leagueQuery}">Open validation recap →</a>`;
+        ? '<strong>CFB · current-week research state</strong> — Canonical publication remains gated. Current pregame research, market locks and frozen evidence are preserved without reconstructing information after results. <a href="week-9.html">Open current-week projections →</a>'
+        : `<strong>NFL · current-week prospective state</strong> — Canonical V1 is frozen weekly. Market differences, reliability and contextual evidence remain research outputs while recommendation thresholds stay on HOLD. <a href="recap.html${leagueQuery}">Open validation recap →</a>`;
     }
 
     const heroTitle = q('#heroTitle');
@@ -214,26 +214,35 @@
 
   async function hydrateRegistry() {
     try {
-      const response = await fetch('data/model-registry.json', { cache: 'no-store' });
-      if (!response.ok) throw new Error('registry unavailable');
-      const registry = await response.json();
+      const [registryResponse, configResponse] = await Promise.all([
+        fetch('data/model-registry.json', { cache: 'no-store' }),
+        fetch('data/config.json', { cache: 'no-store' })
+      ]);
+      if (!registryResponse.ok) throw new Error('registry unavailable');
+      const registry = await registryResponse.json();
+      const liveConfig = configResponse.ok ? await configResponse.json() : {};
       const state = q('#cbProductState');
       const modelState = q('#cbModelLayerState');
       const challengerState = q('#cbChallengerState');
+      const topNote = q('main > .section-shell .hold-note');
 
       if (league === 'cfb') {
         const cfb = registry.cfb || {};
         const canonical = cfb.canonical || {};
         const challenger = cfb.leadResearchChallenger || {};
-        if (state) state.textContent = `CFB Week ${cfb.activeWeek || '—'} · canonical ${label(canonical.status || 'HOLD')} · challenger ${label(challenger.tier || 'shadow')}`;
+        const activeWeek = liveConfig.currentWeek || cfb.activeWeek || '—';
+        if (state) state.textContent = `CFB Week ${activeWeek} · canonical ${label(canonical.status || 'HOLD')} · challenger ${label(challenger.tier || 'shadow')}`;
         if (modelState) modelState.textContent = label(canonical.status || 'HOLD');
         if (challengerState) challengerState.textContent = challenger.canonicalInfluence ? 'Canonical influence' : 'Zero canonical influence';
+        if (topNote && !topNote.closest('#home')) topNote.innerHTML = `<strong>CFB · Week ${activeWeek} research state</strong> — Canonical publication remains gated. Current pregame research, market locks and frozen evidence are preserved without reconstructing information after results. <a href="week-${activeWeek}.html">Open Week ${activeWeek} projections →</a>`;
       } else {
         const nfl = registry.nfl || {};
         const canonical = nfl.canonical || {};
-        if (state) state.textContent = `NFL Week ${nfl.activeProspectiveWeek || '—'} · ${label(canonical.modelId || 'Canonical V1')} · ${label(canonical.status || 'frozen prospective')}`;
+        const activeWeek = liveConfig.currentWeek || nfl.activeProspectiveWeek || '—';
+        if (state) state.textContent = `NFL Week ${activeWeek} · ${label(canonical.modelId || 'Canonical V1')} · ${label(canonical.status || 'frozen prospective')}`;
         if (modelState) modelState.textContent = canonical.canonicalChanged ? 'Changed' : 'Frozen prospective';
         if (challengerState) challengerState.textContent = 'Failure analysis / shadow testing only';
+        if (topNote && !topNote.closest('#home')) topNote.innerHTML = `<strong>NFL · Week ${activeWeek} prospective state</strong> — Canonical V1 is frozen weekly. Market differences, reliability and contextual evidence remain research outputs while recommendation thresholds stay on HOLD. <a href="recap.html${leagueQuery}">Open validation recap →</a>`;
       }
     } catch (_) {
       const state = q('#cbProductState');
