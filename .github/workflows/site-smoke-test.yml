@@ -88,7 +88,7 @@ jobs:
               && grep -q 'powerRankingsNav' <<<"$nav" \
               && grep -q 'content-visibility:visible' <<<"$css" \
               && grep -q 'SITE_DATA_FILES' <<<"$boot" \
-              && grep -q '20261023-power-rankings-nav-v6' <<<"$loader" \
+              && grep -q '20261029-redesign-release' <<<"$loader" \
               && grep -q 'CB_SHELL_HARDENING_V5' <<<"$shellfix" \
               && grep -q '__CB_SITE_RUNTIME_GUARD' <<<"$guard" \
               && grep -q 'scroll-padding-top:122px' <<<"$audit" \
