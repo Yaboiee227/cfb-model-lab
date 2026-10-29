@@ -4,7 +4,6 @@ const base = process.env.SITE_BASE_URL || 'http://127.0.0.1:8000';
 const widths = [390, 1440];
 const browser = await webkit.launch({ headless: true });
 const report = [];
-let failed = false;
 
 for (const width of widths) {
   const mobile = width < 900;
@@ -61,6 +60,7 @@ for (const width of widths) {
   }
   if (state.scrollWidth > state.clientWidth + 2) errors.push(`document horizontal overflow ${state.scrollWidth} > ${state.clientWidth}`);
   if (mobile && state.navDisplay === 'none') errors.push('mobile page navigation is hidden');
+  if (mobile && state.navClientWidth > state.clientWidth + 2) errors.push(`mobile nav escapes viewport: ${state.navClientWidth} > ${state.clientWidth}`);
   if (mobile && state.navLinks.some(link => link.width <= 0 || link.height <= 0)) errors.push(`mobile nav contains inaccessible links: ${JSON.stringify(state.navLinks)}`);
   if (mobile && state.topbarHeight > 132) errors.push(`mobile topbar unexpectedly tall: ${state.topbarHeight}`);
   for (const wrap of state.tableWraps) {
@@ -89,10 +89,10 @@ for (const width of widths) {
   }
 
   report.push({ width, state: { ...state, text: undefined }, failedRequests, errors });
-  if (failedRequests.length || errors.length) failed = true;
   await page.close();
 }
 
 await browser.close();
 console.log(JSON.stringify(report, null, 2));
+const failed = report.some(entry => entry.failedRequests.length || entry.errors.length);
 if (failed) process.exit(1);
