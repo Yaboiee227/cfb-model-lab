@@ -1,42 +1,15 @@
 {
   "GB": {
-    "observedAt": "2026-10-29T17:43:35.635962+00:00",
+    "observedAt": "2026-10-29T23:07:56.538878+00:00",
     "sourceUrl": "https://api.weather.gov/gridpoints/GRB/78,31/forecast/hourly",
-    "forecastIssuedAt": "2026-10-29T13:36:45+00:00",
+    "forecastIssuedAt": "2026-10-29T21:56:34+00:00",
     "kickoff": "2026-10-30T00:15:00Z",
     "periods": [
       {
-        "number": 9,
+        "number": 3,
         "name": "",
         "startTime": "2026-10-29T19:00:00-05:00",
         "endTime": "2026-10-29T20:00:00-05:00",
-        "isDaytime": false,
-        "temperature": 53,
-        "temperatureUnit": "F",
-        "temperatureTrend": null,
-        "probabilityOfPrecipitation": {
-          "unitCode": "wmoUnit:percent",
-          "value": 0
-        },
-        "dewpoint": {
-          "unitCode": "wmoUnit:degC",
-          "value": 5.555555555555555
-        },
-        "relativeHumidity": {
-          "unitCode": "wmoUnit:percent",
-          "value": 66
-        },
-        "windSpeed": "7 mph",
-        "windDirection": "WNW",
-        "icon": "https://api.weather.gov/icons/land/night/skc?size=small",
-        "shortForecast": "Clear",
-        "detailedForecast": ""
-      },
-      {
-        "number": 10,
-        "name": "",
-        "startTime": "2026-10-29T20:00:00-05:00",
-        "endTime": "2026-10-29T21:00:00-05:00",
         "isDaytime": false,
         "temperature": 51,
         "temperatureUnit": "F",
@@ -60,10 +33,10 @@
         "detailedForecast": ""
       },
       {
-        "number": 11,
+        "number": 4,
         "name": "",
-        "startTime": "2026-10-29T21:00:00-05:00",
-        "endTime": "2026-10-29T22:00:00-05:00",
+        "startTime": "2026-10-29T20:00:00-05:00",
+        "endTime": "2026-10-29T21:00:00-05:00",
         "isDaytime": false,
         "temperature": 49,
         "temperatureUnit": "F",
@@ -74,23 +47,23 @@
         },
         "dewpoint": {
           "unitCode": "wmoUnit:degC",
-          "value": 4.444444444444445
+          "value": 5
         },
         "relativeHumidity": {
           "unitCode": "wmoUnit:percent",
-          "value": 71
+          "value": 74
         },
-        "windSpeed": "6 mph",
+        "windSpeed": "5 mph",
         "windDirection": "WNW",
         "icon": "https://api.weather.gov/icons/land/night/few?size=small",
         "shortForecast": "Mostly Clear",
         "detailedForecast": ""
       },
       {
-        "number": 12,
+        "number": 5,
         "name": "",
-        "startTime": "2026-10-29T22:00:00-05:00",
-        "endTime": "2026-10-29T23:00:00-05:00",
+        "startTime": "2026-10-29T21:00:00-05:00",
+        "endTime": "2026-10-29T22:00:00-05:00",
         "isDaytime": false,
         "temperature": 48,
         "temperatureUnit": "F",
@@ -107,17 +80,17 @@
           "unitCode": "wmoUnit:percent",
           "value": 71
         },
-        "windSpeed": "6 mph",
-        "windDirection": "WNW",
-        "icon": "https://api.weather.gov/icons/land/night/skc?size=small",
-        "shortForecast": "Clear",
+        "windSpeed": "5 mph",
+        "windDirection": "NW",
+        "icon": "https://api.weather.gov/icons/land/night/few?size=small",
+        "shortForecast": "Mostly Clear",
         "detailedForecast": ""
       },
       {
-        "number": 13,
+        "number": 6,
         "name": "",
-        "startTime": "2026-10-29T23:00:00-05:00",
-        "endTime": "2026-10-30T00:00:00-05:00",
+        "startTime": "2026-10-29T22:00:00-05:00",
+        "endTime": "2026-10-29T23:00:00-05:00",
         "isDaytime": false,
         "temperature": 46,
         "temperatureUnit": "F",
@@ -134,27 +107,54 @@
           "unitCode": "wmoUnit:percent",
           "value": 76
         },
-        "windSpeed": "6 mph",
-        "windDirection": "WNW",
+        "windSpeed": "5 mph",
+        "windDirection": "NW",
         "icon": "https://api.weather.gov/icons/land/night/few?size=small",
         "shortForecast": "Mostly Clear",
+        "detailedForecast": ""
+      },
+      {
+        "number": 7,
+        "name": "",
+        "startTime": "2026-10-29T23:00:00-05:00",
+        "endTime": "2026-10-30T00:00:00-05:00",
+        "isDaytime": false,
+        "temperature": 45,
+        "temperatureUnit": "F",
+        "temperatureTrend": null,
+        "probabilityOfPrecipitation": {
+          "unitCode": "wmoUnit:percent",
+          "value": 0
+        },
+        "dewpoint": {
+          "unitCode": "wmoUnit:degC",
+          "value": 3.3333333333333335
+        },
+        "relativeHumidity": {
+          "unitCode": "wmoUnit:percent",
+          "value": 76
+        },
+        "windSpeed": "3 mph",
+        "windDirection": "NW",
+        "icon": "https://api.weather.gov/icons/land/night/skc?size=small",
+        "shortForecast": "Clear",
         "detailedForecast": ""
       }
     ]
   },
   "UNT": {
-    "observedAt": "2026-10-29T17:43:35.637466+00:00",
+    "observedAt": "2026-10-29T23:07:56.538878+00:00",
     "sourceUrl": "https://api.weather.gov/gridpoints/FWD/76,123/forecast/hourly",
-    "forecastIssuedAt": "2026-10-29T17:26:43+00:00",
+    "forecastIssuedAt": "2026-10-29T22:26:57+00:00",
     "kickoff": "2026-10-29T23:30:00Z",
     "periods": [
       {
-        "number": 7,
+        "number": 2,
         "name": "",
         "startTime": "2026-10-29T18:00:00-05:00",
         "endTime": "2026-10-29T19:00:00-05:00",
         "isDaytime": false,
-        "temperature": 79,
+        "temperature": 77,
         "temperatureUnit": "F",
         "temperatureTrend": null,
         "probabilityOfPrecipitation": {
@@ -163,7 +163,7 @@
         },
         "dewpoint": {
           "unitCode": "wmoUnit:degC",
-          "value": 19.444444444444443
+          "value": 18.333333333333332
         },
         "relativeHumidity": {
           "unitCode": "wmoUnit:percent",
@@ -176,7 +176,7 @@
         "detailedForecast": ""
       },
       {
-        "number": 8,
+        "number": 3,
         "name": "",
         "startTime": "2026-10-29T19:00:00-05:00",
         "endTime": "2026-10-29T20:00:00-05:00",
@@ -186,15 +186,15 @@
         "temperatureTrend": null,
         "probabilityOfPrecipitation": {
           "unitCode": "wmoUnit:percent",
-          "value": 15
+          "value": 17
         },
         "dewpoint": {
           "unitCode": "wmoUnit:degC",
-          "value": 19.444444444444443
+          "value": 18.333333333333332
         },
         "relativeHumidity": {
           "unitCode": "wmoUnit:percent",
-          "value": 71
+          "value": 67
         },
         "windSpeed": "5 mph",
         "windDirection": "S",
@@ -203,7 +203,7 @@
         "detailedForecast": ""
       },
       {
-        "number": 9,
+        "number": 4,
         "name": "",
         "startTime": "2026-10-29T20:00:00-05:00",
         "endTime": "2026-10-29T21:00:00-05:00",
@@ -213,15 +213,15 @@
         "temperatureTrend": null,
         "probabilityOfPrecipitation": {
           "unitCode": "wmoUnit:percent",
-          "value": 15
+          "value": 17
         },
         "dewpoint": {
           "unitCode": "wmoUnit:degC",
-          "value": 18.88888888888889
+          "value": 18.333333333333332
         },
         "relativeHumidity": {
           "unitCode": "wmoUnit:percent",
-          "value": 74
+          "value": 71
         },
         "windSpeed": "5 mph",
         "windDirection": "SSE",
@@ -230,7 +230,7 @@
         "detailedForecast": ""
       },
       {
-        "number": 10,
+        "number": 5,
         "name": "",
         "startTime": "2026-10-29T21:00:00-05:00",
         "endTime": "2026-10-29T22:00:00-05:00",
@@ -240,15 +240,15 @@
         "temperatureTrend": null,
         "probabilityOfPrecipitation": {
           "unitCode": "wmoUnit:percent",
-          "value": 15
+          "value": 17
         },
         "dewpoint": {
           "unitCode": "wmoUnit:degC",
-          "value": 18.88888888888889
+          "value": 18.333333333333332
         },
         "relativeHumidity": {
           "unitCode": "wmoUnit:percent",
-          "value": 84
+          "value": 81
         },
         "windSpeed": "5 mph",
         "windDirection": "S",
@@ -257,7 +257,7 @@
         "detailedForecast": ""
       },
       {
-        "number": 11,
+        "number": 6,
         "name": "",
         "startTime": "2026-10-29T22:00:00-05:00",
         "endTime": "2026-10-29T23:00:00-05:00",
@@ -271,11 +271,11 @@
         },
         "dewpoint": {
           "unitCode": "wmoUnit:degC",
-          "value": 19.444444444444443
+          "value": 18.88888888888889
         },
         "relativeHumidity": {
           "unitCode": "wmoUnit:percent",
-          "value": 90
+          "value": 87
         },
         "windSpeed": "5 mph",
         "windDirection": "S",
@@ -286,18 +286,18 @@
     ]
   },
   "JMU": {
-    "observedAt": "2026-10-29T17:43:35.638731+00:00",
+    "observedAt": "2026-10-29T23:07:56.538878+00:00",
     "sourceUrl": "https://api.weather.gov/gridpoints/LWX/35,43/forecast/hourly",
-    "forecastIssuedAt": "2026-10-29T14:52:45+00:00",
+    "forecastIssuedAt": "2026-10-29T20:52:40+00:00",
     "kickoff": "2026-10-29T23:30:00Z",
     "periods": [
       {
-        "number": 7,
+        "number": 2,
         "name": "",
         "startTime": "2026-10-29T19:00:00-04:00",
         "endTime": "2026-10-29T20:00:00-04:00",
         "isDaytime": false,
-        "temperature": 63,
+        "temperature": 65,
         "temperatureUnit": "F",
         "temperatureTrend": null,
         "probabilityOfPrecipitation": {
@@ -310,7 +310,7 @@
         },
         "relativeHumidity": {
           "unitCode": "wmoUnit:percent",
-          "value": 65
+          "value": 60
         },
         "windSpeed": "1 mph",
         "windDirection": "S",
@@ -319,7 +319,7 @@
         "detailedForecast": ""
       },
       {
-        "number": 8,
+        "number": 3,
         "name": "",
         "startTime": "2026-10-29T20:00:00-04:00",
         "endTime": "2026-10-29T21:00:00-04:00",
@@ -333,20 +333,20 @@
         },
         "dewpoint": {
           "unitCode": "wmoUnit:degC",
-          "value": 10.555555555555555
+          "value": 11.11111111111111
         },
         "relativeHumidity": {
           "unitCode": "wmoUnit:percent",
-          "value": 75
+          "value": 78
         },
-        "windSpeed": "0 mph",
-        "windDirection": "",
+        "windSpeed": "1 mph",
+        "windDirection": "S",
         "icon": "https://api.weather.gov/icons/land/night/skc?size=small",
         "shortForecast": "Clear",
         "detailedForecast": ""
       },
       {
-        "number": 9,
+        "number": 4,
         "name": "",
         "startTime": "2026-10-29T21:00:00-04:00",
         "endTime": "2026-10-29T22:00:00-04:00",
@@ -360,20 +360,20 @@
         },
         "dewpoint": {
           "unitCode": "wmoUnit:degC",
-          "value": 10.555555555555555
+          "value": 11.666666666666666
         },
         "relativeHumidity": {
           "unitCode": "wmoUnit:percent",
-          "value": 80
+          "value": 86
         },
         "windSpeed": "1 mph",
-        "windDirection": "SW",
+        "windDirection": "S",
         "icon": "https://api.weather.gov/icons/land/night/skc?size=small",
         "shortForecast": "Clear",
         "detailedForecast": ""
       },
       {
-        "number": 10,
+        "number": 5,
         "name": "",
         "startTime": "2026-10-29T22:00:00-04:00",
         "endTime": "2026-10-29T23:00:00-04:00",
@@ -387,11 +387,11 @@
         },
         "dewpoint": {
           "unitCode": "wmoUnit:degC",
-          "value": 10
+          "value": 11.11111111111111
         },
         "relativeHumidity": {
           "unitCode": "wmoUnit:percent",
-          "value": 83
+          "value": 90
         },
         "windSpeed": "1 mph",
         "windDirection": "S",
@@ -400,7 +400,7 @@
         "detailedForecast": ""
       },
       {
-        "number": 11,
+        "number": 6,
         "name": "",
         "startTime": "2026-10-29T23:00:00-04:00",
         "endTime": "2026-10-30T00:00:00-04:00",
@@ -414,16 +414,16 @@
         },
         "dewpoint": {
           "unitCode": "wmoUnit:degC",
-          "value": 9.444444444444445
+          "value": 10
         },
         "relativeHumidity": {
           "unitCode": "wmoUnit:percent",
-          "value": 86
+          "value": 89
         },
-        "windSpeed": "1 mph",
+        "windSpeed": "2 mph",
         "windDirection": "S",
-        "icon": "https://api.weather.gov/icons/land/night/few?size=small",
-        "shortForecast": "Mostly Clear",
+        "icon": "https://api.weather.gov/icons/land/night/skc?size=small",
+        "shortForecast": "Clear",
         "detailedForecast": ""
       }
     ]

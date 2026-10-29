@@ -2,8 +2,10 @@
 from __future__ import annotations
 
 import argparse
+from datetime import datetime
 import json
 import urllib.request
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -30,17 +32,29 @@ def stable_event(event: dict) -> dict:
 
 
 def write_feed(path: Path, league: str, week: int, endpoint_sport: str, limit: int) -> tuple[int, bool]:
+    local_date = datetime.now(ZoneInfo("America/New_York")).strftime("%Y%m%d")
     url = (
         f"https://site.api.espn.com/apis/site/v2/sports/football/{endpoint_sport}/scoreboard"
         f"?week={week}&seasontype=2&limit={limit}"
     )
     payload = fetch(url)
+    date_url = (
+        f"https://site.api.espn.com/apis/site/v2/sports/football/{endpoint_sport}/scoreboard"
+        f"?dates={local_date}&seasontype=2&limit={limit}"
+    )
+    date_payload = fetch(date_url)
+    # Preserve the full configured-week schedule and overlay today's events by
+    # ESPN event ID so same-day status and odds are never lost to week filtering.
+    events_by_id = {str(event.get("id")): event for event in payload.get("events", [])}
+    for event in date_payload.get("events", []):
+        events_by_id[str(event.get("id"))] = event
     out = {
         "schemaVersion": 1,
         "league": league,
         "week": week,
         "source": "ESPN public site scoreboard endpoint",
-        "events": [stable_event(event) for event in payload.get("events", [])],
+        "refreshedAt": datetime.now(ZoneInfo("UTC")).isoformat(),
+        "events": [stable_event(event) for event in events_by_id.values()],
     }
     rendered = json.dumps(out, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n"
     previous = path.read_text(encoding="utf-8") if path.exists() else ""
