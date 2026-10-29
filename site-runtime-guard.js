@@ -137,7 +137,7 @@
   if (window.__CB_PHASE3_ASSET_LOADER) return;
   window.__CB_PHASE3_ASSET_LOADER = true;
 
-  const version = '20261028-phase3';
+  const version = '20261029-phase3-refresh';
   const addCss = href => {
     if (document.querySelector(`link[data-cb-phase3-asset="${href}"]`)) return;
     const link = document.createElement('link');

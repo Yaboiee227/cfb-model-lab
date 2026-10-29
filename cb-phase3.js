@@ -364,6 +364,8 @@
     });
     document.addEventListener('cb:live-update',() => scheduleApply({syncHistory:false}));
     document.addEventListener('cb:sportsbooks-update',() => scheduleApply({syncHistory:false}));
+    // Async market synchronization can rerender after the sportsbook event.
+    document.addEventListener('cb:pregame-market-sync',() => scheduleApply({syncHistory:false}));
   }
 
   function installLenses() {
