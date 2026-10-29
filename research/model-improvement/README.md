@@ -33,3 +33,11 @@ The runner uses saved prior-season HFA and preserves the existing foundation and
 The dataset runner now supports `--epa`. It substitutes overall, passing and rushing EPA/play in the existing opponent-adjustment fitter and tests one isolated family. Missing EPA values are left missing; box-score yardage is never used as an EPA fallback. Success rate is absent from this source schema and is not substituted with first-down rate. No new possession estimate was implemented in this test.
 
 Three evaluation weeks, 173 games: margin MAE delta +0.2657 points (worse); total MAE delta -0.1345 points (small improvement). Neither target passes the existing family rules. The historical EPA model training cutoff is unverified, so the result is exploratory regardless of apparent performance. No promotion or live projection change. Next research priority: explicit drive/possession estimates with validated definitions, and point-in-time EPA provenance before stronger claims.
+
+## Drive-based testing
+
+A new drive-count helper rejects duplicate drive IDs and excludes non-regulation periods, invalid period/play fields and drives without offensive plays. It retains kneel-only drives when the source counts them as offensive plays; this is recorded offensive-drive volume, not a verified non-kneel possession simulator. Tests cover team ownership and exclusions.
+
+The opponent-adjusted combined expected drive-volume feature was evaluated alone on the same 173 games. Existing baseline-refit approach: total MAE delta -0.0935; fixed-baseline residual correction: +0.0089 (worse). Neither passes eligibility. Both baseline metric sets exactly reproduce the previous evaluation. No live model changes.
+
+The runner now supports --residual, holding the existing baseline coefficient at one and learning a correction using only earlier games. This is an experimental evaluation option, not production behavior. Historical source revisions and repeated testing of these same three weeks limit inference; future candidate selection must use later untouched games.
