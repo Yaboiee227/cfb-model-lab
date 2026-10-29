@@ -10,6 +10,8 @@ on:
       - league-bootstrap.js
       - live-suite-loader.js
       - nfl_data/site/**
+      - scripts/audit_nfl_week8_release.py
+      - nfl/research-projections/week-08.json
       - .github/workflows/nfl-production-site-audit.yml
 
 permissions:
@@ -47,6 +49,11 @@ jobs:
           if json.loads(Path('nfl_data/site/config.json').read_text()).get('currentWeek') == 7:
               sys.path.insert(0, 'scripts')
               runpy.run_path('scripts/audit_nfl_week7_release.py', run_name='__main__')
+              sys.exit(0)
+
+          if json.loads(Path('nfl_data/site/config.json').read_text()).get('currentWeek') == 8:
+              sys.path.insert(0, 'scripts')
+              runpy.run_path('scripts/audit_nfl_week8_release.py', run_name='__main__')
               sys.exit(0)
 
           disclaimer = (
