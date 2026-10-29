@@ -41,3 +41,11 @@ A new drive-count helper rejects duplicate drive IDs and excludes non-regulation
 The opponent-adjusted combined expected drive-volume feature was evaluated alone on the same 173 games. Existing baseline-refit approach: total MAE delta -0.0935; fixed-baseline residual correction: +0.0089 (worse). Neither passes eligibility. Both baseline metric sets exactly reproduce the previous evaluation. No live model changes.
 
 The runner now supports --residual, holding the existing baseline coefficient at one and learning a correction using only earlier games. This is an experimental evaluation option, not production behavior. Historical source revisions and repeated testing of these same three weeks limit inference; future candidate selection must use later untouched games.
+
+## NFL spread component diagnosis
+
+An offline pinned-source audit reconstructs the canonical efficiency + coverage + Elo + margin-rating architecture and verifies all 14 frozen Week 7 margins. Component contributions sum to each original margin. Removing coverage, Elo or margin ratings and refitting with fixed hyperparameters slightly worsens aggregate MAE across 816 historical games.
+
+A pass/rush allowance-sign hypothesis changes only those matchup definitions from offense minus defensive allowance to offense plus allowance. Higher defensive EPA allowed denotes weaker defense, motivating this alternative; the existing model also has net-efficiency features, so this does not establish that all forecasts have a sign bug. Candidate MAE 10.2447 vs baseline 10.2564: about 0.0117 points better. It improves 2023/2024 but worsens 2025. Too small and unstable to promote. These historical seasons have already been inspected; this is diagnostic reuse, not a blind holdout.
+
+The largest Week 7 misses have no missing raw spread-matrix features, but that does not establish current personnel information. Personnel-event timestamp validation remains outstanding. Contributions from standardized correlated features are not causal player or home-field effects. NFL totals and all frozen projections remain unchanged.

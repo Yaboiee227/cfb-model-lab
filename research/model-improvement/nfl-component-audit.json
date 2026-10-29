@@ -1,0 +1,360 @@
+{
+  "canonicalInfluence": false,
+  "status": "DIAGNOSTIC_ONLY_NO_PROMOTION",
+  "historicalFolds": {
+    "2023": {
+      "baseline": {
+        "games": 272,
+        "mae": 10.503605176925252,
+        "rmse": 13.72338671856234,
+        "biasHomeMargin": -0.6308987706710965
+      },
+      "without_coverage": {
+        "games": 272,
+        "mae": 10.439096170583415,
+        "rmse": 13.64873271128341,
+        "biasHomeMargin": -0.7217371717752784
+      },
+      "without_elo": {
+        "games": 272,
+        "mae": 10.51300280264949,
+        "rmse": 13.71992489364147,
+        "biasHomeMargin": -0.6247817290158657
+      },
+      "without_margin_rating": {
+        "games": 272,
+        "mae": 10.520811525771265,
+        "rmse": 13.746910703800049,
+        "biasHomeMargin": -0.6265440277909984
+      },
+      "allowance_sign_candidate": {
+        "games": 272,
+        "mae": 10.457401264097905,
+        "rmse": 13.67005082577212,
+        "biasHomeMargin": -0.5856108860813982
+      }
+    },
+    "2024": {
+      "baseline": {
+        "games": 272,
+        "mae": 10.013459378727442,
+        "rmse": 13.185034416753368,
+        "biasHomeMargin": 0.5145487405409651
+      },
+      "without_coverage": {
+        "games": 272,
+        "mae": 10.179668156208061,
+        "rmse": 13.169703350594439,
+        "biasHomeMargin": 0.4954856450006466
+      },
+      "without_elo": {
+        "games": 272,
+        "mae": 10.033182709441004,
+        "rmse": 13.215809722421174,
+        "biasHomeMargin": 0.5124281620883419
+      },
+      "without_margin_rating": {
+        "games": 272,
+        "mae": 10.036600012144776,
+        "rmse": 13.214127533484197,
+        "biasHomeMargin": 0.5353799757569514
+      },
+      "allowance_sign_candidate": {
+        "games": 272,
+        "mae": 9.984991422758693,
+        "rmse": 13.126203671429797,
+        "biasHomeMargin": 0.4802023857013333
+      }
+    },
+    "2025": {
+      "baseline": {
+        "games": 272,
+        "mae": 10.252112166574744,
+        "rmse": 12.95071122018588,
+        "biasHomeMargin": 0.07850520857977827
+      },
+      "without_coverage": {
+        "games": 272,
+        "mae": 10.286600333362768,
+        "rmse": 13.013840655732178,
+        "biasHomeMargin": 0.08003125257516572
+      },
+      "without_elo": {
+        "games": 272,
+        "mae": 10.303735174830361,
+        "rmse": 13.018382410870789,
+        "biasHomeMargin": 0.07059506792693838
+      },
+      "without_margin_rating": {
+        "games": 272,
+        "mae": 10.25674672536436,
+        "rmse": 12.967108745272519,
+        "biasHomeMargin": 0.09575620792866701
+      },
+      "allowance_sign_candidate": {
+        "games": 272,
+        "mae": 10.291771484692898,
+        "rmse": 12.956707517311893,
+        "biasHomeMargin": 0.04300770529623201
+      }
+    }
+  },
+  "historicalAggregate": {
+    "baseline": {
+      "games": 816,
+      "mae": 10.25639224074248,
+      "rmse": 13.290314727986852,
+      "biasHomeMargin": -0.0126149405167843
+    },
+    "without_coverage": {
+      "games": 816,
+      "mae": 10.301788220051415,
+      "rmse": 13.280173688365975,
+      "biasHomeMargin": -0.0487400913998218
+    },
+    "without_elo": {
+      "games": 816,
+      "mae": 10.283306895640285,
+      "rmse": 13.32131432832455,
+      "biasHomeMargin": -0.013919499666861792
+    },
+    "without_margin_rating": {
+      "games": 816,
+      "mae": 10.271386087760135,
+      "rmse": 13.313359575769,
+      "biasHomeMargin": 0.0015307186315400192
+    },
+    "allowance_sign_candidate": {
+      "games": 816,
+      "mae": 10.2447213905165,
+      "rmse": 13.254480778114456,
+      "biasHomeMargin": -0.02080026502794433
+    }
+  },
+  "week7ReproductionMaxAbsDiff": 8.881784197001252e-15,
+  "week7Contributions": [
+    {
+      "gameId": "2026_07_NE_CHI",
+      "predictedHomeMargin": 1.2775707065437123,
+      "actualHomeMargin": 6,
+      "errorHomeMargin": -4.722429293456288,
+      "contributions": {
+        "intercept": 2.1499540018399266,
+        "efficiency": 0.07257836079793953,
+        "venue_rest": 0.04606088599255033,
+        "coverage": -0.2956745038790456,
+        "elo": -0.3725193671194586,
+        "margin_rating": -0.32282867108820007
+      },
+      "missingRawFeatures": []
+    },
+    {
+      "gameId": "2026_07_PIT_NO",
+      "predictedHomeMargin": -3.3432705358083545,
+      "actualHomeMargin": -6,
+      "errorHomeMargin": 2.6567294641916455,
+      "contributions": {
+        "intercept": 2.1499540018399266,
+        "efficiency": -2.026897497677409,
+        "venue_rest": -2.264651413415011,
+        "coverage": 0.9691649503389466,
+        "elo": -1.311374629145129,
+        "margin_rating": -0.8594659477496791
+      },
+      "missingRawFeatures": []
+    },
+    {
+      "gameId": "2026_07_CIN_BAL",
+      "predictedHomeMargin": 4.027868612055473,
+      "actualHomeMargin": -22,
+      "errorHomeMargin": 26.02786861205547,
+      "contributions": {
+        "intercept": 2.1499540018399266,
+        "efficiency": 0.6458846270410422,
+        "venue_rest": -1.7495556712826128,
+        "coverage": 2.176150241419342,
+        "elo": 0.4076198652143674,
+        "margin_rating": 0.3978155478234074
+      },
+      "missingRawFeatures": []
+    },
+    {
+      "gameId": "2026_07_CLE_TEN",
+      "predictedHomeMargin": 0.6869115555417449,
+      "actualHomeMargin": -3,
+      "errorHomeMargin": 3.686911555541745,
+      "contributions": {
+        "intercept": 2.1499540018399266,
+        "efficiency": 0.11432114157420495,
+        "venue_rest": 0.04606088599255033,
+        "coverage": 0.9867238282901224,
+        "elo": -1.8577381312225068,
+        "margin_rating": -0.752410170932553
+      },
+      "missingRawFeatures": []
+    },
+    {
+      "gameId": "2026_07_IND_MIN",
+      "predictedHomeMargin": 5.999961118837755,
+      "actualHomeMargin": 6,
+      "errorHomeMargin": -3.888116224537441e-05,
+      "contributions": {
+        "intercept": 2.1499540018399266,
+        "efficiency": -3.085478425988295,
+        "venue_rest": 1.841677443267713,
+        "coverage": 1.7426056040028455,
+        "elo": 2.298922458035024,
+        "margin_rating": 1.0522800376805408
+      },
+      "missingRawFeatures": []
+    },
+    {
+      "gameId": "2026_07_MIA_NYJ",
+      "predictedHomeMargin": -0.47357926900947067,
+      "actualHomeMargin": -3,
+      "errorHomeMargin": 2.5264207309905293,
+      "contributions": {
+        "intercept": 2.1499540018399266,
+        "efficiency": 0.20375687320119726,
+        "venue_rest": -1.7495556712826128,
+        "coverage": -2.0351154536451674,
+        "elo": 0.5804934854566964,
+        "margin_rating": 0.3768874954204901
+      },
+      "missingRawFeatures": []
+    },
+    {
+      "gameId": "2026_07_NYG_HOU",
+      "predictedHomeMargin": 3.7337542003584074,
+      "actualHomeMargin": -6,
+      "errorHomeMargin": 9.733754200358408,
+      "contributions": {
+        "intercept": 2.1499540018399266,
+        "efficiency": 2.086087954129363,
+        "venue_rest": 0.04606088599255033,
+        "coverage": -1.570840553750061,
+        "elo": 0.2407543200289634,
+        "margin_rating": 0.7817375921176656
+      },
+      "missingRawFeatures": []
+    },
+    {
+      "gameId": "2026_07_SF_ATL",
+      "predictedHomeMargin": -5.6833426120356965,
+      "actualHomeMargin": 9,
+      "errorHomeMargin": -14.683342612035696,
+      "contributions": {
+        "intercept": 2.1499540018399266,
+        "efficiency": -4.016395640193161,
+        "venue_rest": 0.3025775370318593,
+        "coverage": -0.19891009183687686,
+        "elo": -2.454134784772514,
+        "margin_rating": -1.46643363410493
+      },
+      "missingRawFeatures": []
+    },
+    {
+      "gameId": "2026_07_TB_CAR",
+      "predictedHomeMargin": 6.121991712398634,
+      "actualHomeMargin": -30,
+      "errorHomeMargin": 36.12199171239863,
+      "contributions": {
+        "intercept": 2.1499540018399266,
+        "efficiency": 1.9246989437854982,
+        "venue_rest": 0.04606088599255033,
+        "coverage": -0.028966555665596694,
+        "elo": 1.4980830481018448,
+        "margin_rating": 0.5321613883444107
+      },
+      "missingRawFeatures": []
+    },
+    {
+      "gameId": "2026_07_DEN_ARI",
+      "predictedHomeMargin": -2.6793163947491,
+      "actualHomeMargin": -14,
+      "errorHomeMargin": 11.320683605250899,
+      "contributions": {
+        "intercept": 2.1499540018399266,
+        "efficiency": -0.6197577942734009,
+        "venue_rest": -0.7234890671253766,
+        "coverage": -0.15135711390372364,
+        "elo": -2.0042288272877515,
+        "margin_rating": -1.3304375939987743
+      },
+      "missingRawFeatures": []
+    },
+    {
+      "gameId": "2026_07_GB_DET",
+      "predictedHomeMargin": 4.081636347229045,
+      "actualHomeMargin": 3,
+      "errorHomeMargin": 1.0816363472290451,
+      "contributions": {
+        "intercept": 2.1499540018399266,
+        "efficiency": 1.5754268925162516,
+        "venue_rest": 1.841677443267713,
+        "coverage": -1.5825132182599144,
+        "elo": -0.2956452375266055,
+        "margin_rating": 0.39273646539167417
+      },
+      "missingRawFeatures": []
+    },
+    {
+      "gameId": "2026_07_LA_LV",
+      "predictedHomeMargin": -5.957699832058017,
+      "actualHomeMargin": -14,
+      "errorHomeMargin": 8.042300167941983,
+      "contributions": {
+        "intercept": 2.1499540018399266,
+        "efficiency": -5.76448023525054,
+        "venue_rest": 0.04606088599255033,
+        "coverage": -1.196545054551173,
+        "elo": -0.1529229627669449,
+        "margin_rating": -1.0397664673218376
+      },
+      "missingRawFeatures": []
+    },
+    {
+      "gameId": "2026_07_KC_SEA",
+      "predictedHomeMargin": 1.6022362521024966,
+      "actualHomeMargin": 17,
+      "errorHomeMargin": -15.397763747897503,
+      "contributions": {
+        "intercept": 2.1499540018399266,
+        "efficiency": -2.2761706436383973,
+        "venue_rest": 0.8156108391104773,
+        "coverage": 1.5583276360863356,
+        "elo": -0.6884830385915565,
+        "margin_rating": 0.04299745729571045
+      },
+      "missingRawFeatures": []
+    },
+    {
+      "gameId": "2026_07_DAL_PHI",
+      "predictedHomeMargin": -0.6253648897420199,
+      "actualHomeMargin": -17,
+      "errorHomeMargin": 16.37463511025798,
+      "contributions": {
+        "intercept": 2.1499540018399266,
+        "efficiency": -3.216480261670232,
+        "venue_rest": 0.04606088599255033,
+        "coverage": 0.010206376127966682,
+        "elo": 0.3311345644632151,
+        "margin_rating": 0.05375954350455433
+      },
+      "missingRawFeatures": []
+    }
+  ],
+  "signCandidate": "Only pass/rush matchup features change from offense minus opponent defensive EPA allowed to offense plus allowance. Higher allowance denotes weaker defense. Coefficients are refit with unchanged hyperparameters.",
+  "limitations": [
+    "Historical 2023-2025 outcomes have been examined previously; not new blind holdouts.",
+    "Feature ablations refit remaining coefficients; contribution groups alone do not establish causality.",
+    "No personnel-point adjustment evaluated; as-of starter reports require separate evidence.",
+    "No production coefficients, predictions or totals are changed."
+  ],
+  "sourceCommit": "0721b59b5f461ad590bd348bd655c4963265856c",
+  "inputHashes": {
+    "nfl_data/prospective/week7/20261021T114427Z/game_feature_inputs.csv": "7710dbf37528fb42e90f7a4648ce040254c3011804c44118a2bce01ea3498b1a",
+    "nfl_data/prospective/week7/20261021T114427Z/paired_projections.csv": "3e3d6588c2a42e489e34b4937b651bf4345fe2ea5f3c7888380f035ef1a3ba7b",
+    "/workspace/scratch/38511441621a/model-improvement/nfl/research-results/week-07.json": "3fdc0d4567ce9262792088d919e5e9d07ce6d9102332b7933663678a85ec165d"
+  }
+}
