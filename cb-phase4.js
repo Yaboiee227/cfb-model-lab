@@ -258,9 +258,18 @@
     mutationFrame = requestAnimationFrame(refreshPresentation);
   }
 
+  function mutationTargetElement(mutation) {
+    if (mutation.target instanceof Element) return mutation.target;
+    return mutation.target?.parentElement || null;
+  }
+
   function installMutationObserver() {
     const observer = new MutationObserver(mutations => {
-      if (mutations.every(mutation => mutation.target.closest?.('#cbPhase4Pulse'))) return;
+      const onlyPhaseFourChanges = mutations.every(mutation => {
+        const target = mutationTargetElement(mutation);
+        return target?.closest?.('#cbPhase4Pulse') || target?.closest?.('[data-cb-phase4-animating="true"]');
+      });
+      if (onlyPhaseFourChanges) return;
       scheduleRefresh();
     });
     observer.observe(document.body,{ childList:true, subtree:true });
