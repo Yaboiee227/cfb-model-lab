@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 9,
+  "auditedAt": "2026-10-30T21:34:27.210973+00:00",
+  "role": "CONTEXT_READINESS_AUDIT",
+  "canonicalInfluence": false,
+  "status": "NOT_CLEARED",
+  "projectionCoverage": {
+    "games": 56,
+    "marketSpreadReferences": 56,
+    "marketTotalReferences": 56
+  },
+  "freshSummarySweep": {
+    "games": 56,
+    "completed": 6,
+    "marketReferences": 56,
+    "postedRefereeCrews": 0,
+    "listedInjuryRows": 0,
+    "sourceErrors": 0,
+    "source": "ESPN game summary endpoints listed in data/current-matchups.json",
+    "warning": "Empty injury lists are not official availability clearance; market references are not execution locks."
+  },
+  "powerRatings": {
+    "teams": 138,
+    "snapshotAsOf": "2026-10-28T12:45:00Z",
+    "role": "RESEARCH_POWER_RATING_ONLY",
+    "builderCutoffPinned": true,
+    "refreshCompleted": false
+  },
+  "personnelWatch": [
+    {
+      "matchup": "Florida vs Georgia",
+      "source": "https://floridagators.com/news/2026/10/29/football-the-opening-kickoff-no-17-gators-vs-no-3-georgia-storied-rivalry-hits-the-atl-for-first-time",
+      "sourceReportAsOf": "Thursday morning October 29",
+      "verification": "OFFICIAL_TEAM_PREVIEW_NOT_FINAL_GAME_DAY_REPORT",
+      "questionable": [
+        "Florida QB Aaron Philo",
+        "Florida QB Tramell Jones Jr.",
+        "Florida RB Duke Clark",
+        "Georgia DB KJ Bolden",
+        "Georgia RB Chauncey Bowens",
+        "Georgia WR Isiah Canion"
+      ],
+      "out": [
+        "Georgia WR Thomas Blackshear",
+        "Georgia LB Amaris Williams",
+        "Georgia S Tyriq Green"
+      ],
+      "warning": "Later reports may supersede these designations; verify the latest official report before kickoff."
+    }
+  ],
+  "remainingBlockers": [
+    "Full current official personnel-report coverage for remaining slate not completed",
+    "Final quarterback starters and backup readiness unresolved",
+    "Referee crews unavailable in refreshed summaries",
+    "Power ratings have not been refreshed beyond pinned cutoff",
+    "Publication-time market locks require separate verification"
+  ],
+  "frozenProjectionsRewritten": false,
+  "numericalForecastChanges": 0,
+  "completedGamesReconstructed": false
+}
