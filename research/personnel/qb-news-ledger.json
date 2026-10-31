@@ -1,0 +1,52 @@
+[
+  {
+    "caseId": "rodgers-2023-jets-cowboys",
+    "league": "nfl",
+    "affectedSide": "away",
+    "evidenceStatus": "NARRATIVE_ONLY_EXCLUDED_FROM_ESTIMATION",
+    "reportedAffectedSpreadBefore": 3,
+    "reportedAffectedSpreadAfter": 7.5,
+    "reportedDeterioration": 4.5,
+    "source": "https://abcnews.com/Sports/jets-odds-win-super-bowl-lengthen-after-aaron/story?id=103115869",
+    "limitations": [
+      "Specific bookmaker and quote observation timestamps not identified",
+      "Opening quote is not established as immediately before news",
+      "No paired total or isolated causal effect"
+    ],
+    "preNewsQuote": null
+  },
+  {
+    "caseId": "luck-2019-colts-chargers",
+    "league": "nfl",
+    "affectedSide": "away",
+    "evidenceStatus": "NARRATIVE_ONLY_EXCLUDED_FROM_ESTIMATION",
+    "reportedAffectedSpreadBefore": 3,
+    "reportedAffectedSpreadAfter": 6.5,
+    "reportedDeterioration": 3.5,
+    "source": "https://www.actionnetwork.com/nfl/colts-vs-chargers-betting-odds-picks-week-1-2019",
+    "limitations": [
+      "Retirement availability shock, not a new in-game injury",
+      "Specific same-book timestamps missing",
+      "Earlier injury uncertainty complicates starter expectation"
+    ],
+    "preNewsQuote": null
+  },
+  {
+    "caseId": "lawrence-2020-clemson-notre-dame",
+    "league": "cfb",
+    "affectedSide": "away",
+    "evidenceStatus": "NARRATIVE_ONLY_EXCLUDED_FROM_ESTIMATION",
+    "bookmakerReported": "FanDuel",
+    "reportedAffectedSpreadBefore": -14.5,
+    "reportedAffectedSpreadAfter": -6.5,
+    "reportedDeterioration": 8,
+    "source": "https://www.covers.com/ncaaf/college-football-odds-week-10-opening-lines-sharp-money-line-movement",
+    "limitations": [
+      "Oct 24 look-ahead compared with Nov 1 reopening, not immediate pre-news and post-news observations",
+      "Clemson played Boston College between quotes; major concurrent performance confounder",
+      "COVID absence rather than traumatic injury",
+      "Exact quote and news timestamps and paired pre-news total absent"
+    ],
+    "preNewsQuote": null
+  }
+]
