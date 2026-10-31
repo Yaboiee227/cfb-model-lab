@@ -5,6 +5,8 @@ on:
       - 'scripts/personnel_scenarios.py'
       - 'scripts/validate_personnel_challenger.py'
       - 'tests/test_personnel_scenarios.py'
+      - 'scripts/qb_market_event_study.py'
+      - 'tests/test_qb_market_event_study.py'
       - 'research/personnel/**'
       - '.github/workflows/personnel-challenger-tests.yml'
   workflow_dispatch:
@@ -19,4 +21,6 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m unittest discover -s tests -p test_personnel_scenarios.py -v
+      - run: python -m unittest discover -s tests -p test_qb_market_event_study.py -v
+      - run: python scripts/qb_market_event_study.py research/personnel/qb-news-ledger.json
       - run: python scripts/personnel_scenarios.py research/personnel/synthetic-request.json --as-of 2026-10-01T12:00:00Z --output /tmp/personnel-example.json
