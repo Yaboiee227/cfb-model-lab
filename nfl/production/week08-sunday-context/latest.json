@@ -1,13 +1,13 @@
 {
-  "asOf": "2026-11-01T13:09:30.755995+00:00",
+  "asOf": "2026-11-01T13:12:28.404194+00:00",
   "league": "nfl",
   "week": 8,
   "canonicalInfluence": false,
   "forecastChanges": 0,
   "injuryReport": {
     "source": "https://fantasy-www.nfl.com/news/nfl-week-8-injury-report-2026-season",
-    "observedAt": "2026-11-01T13:09:30.755995+00:00",
-    "sha256": "6d44a2c3e3e0dbe0dee9f3f9fac405e890f37137cca4ca08868303deabc5ae2a",
+    "observedAt": "2026-11-01T13:12:28.404194+00:00",
+    "sha256": "2f0f6555cb5f455e79d897e94d812d2b9a4249bba20df2a481fcba82d85b78fd",
     "teams": {
       "RAVENS": [
         "OUT: G Olaivavega Ioane (knee), S Jaylinn Hawkins (knee)",
@@ -122,9 +122,7 @@
       ]
     },
     "status": "DATED_GAME_STATUS_REPORT_NOT_FINAL_INACTIVES",
-    "finalInactivesVerified": false,
-    "sourceUpdatedAt": "2026-10-31 17:25 ET per article",
-    "scope": "Week 8, 2026; dated status report, not comprehensive IR/season-long absence inventory"
+    "finalInactivesVerified": false
   },
   "refereeSource": "https://www.footballzebras.com/2026/10/week-8-referee-assignments-2026/",
   "policy": "Context only. No validated numeric personnel/referee adjustment; final inactives and execution locks remain unresolved.",
@@ -141,7 +139,9 @@
         "roof": "Retractable; final decision unverified"
       },
       "finalInactivesVerified": false,
-      "releaseStatus": "HOLD_FINAL_AVAILABILITY_AND_EXECUTION_LOCKS"
+      "releaseStatus": "HOLD_FINAL_AVAILABILITY_AND_EXECUTION_LOCKS",
+      "materialRosterChanges": [],
+      "baselineRosterState": "NOT_INDEPENDENTLY_RECONCILED"
     },
     {
       "gameId": "2026_08_ATL_TB",
@@ -154,10 +154,10 @@
         "status": "NWS_HOURLY_CONTEXT_NOT_MODEL_ADJUSTMENT",
         "source": "https://api.weather.gov/gridpoints/TBW/69,99/forecast/hourly",
         "issuedAt": "2026-11-01T07:01:43+00:00",
-        "observedAt": "2026-11-01T13:09:30.755995+00:00",
+        "observedAt": "2026-11-01T13:12:28.404194+00:00",
         "kickoffThroughFourHours": [
           {
-            "number": 7,
+            "number": 6,
             "name": "",
             "startTime": "2026-11-01T13:00:00-05:00",
             "endTime": "2026-11-01T14:00:00-05:00",
@@ -184,7 +184,7 @@
             "detailedForecast": ""
           },
           {
-            "number": 8,
+            "number": 7,
             "name": "",
             "startTime": "2026-11-01T14:00:00-05:00",
             "endTime": "2026-11-01T15:00:00-05:00",
@@ -211,7 +211,7 @@
             "detailedForecast": ""
           },
           {
-            "number": 9,
+            "number": 8,
             "name": "",
             "startTime": "2026-11-01T15:00:00-05:00",
             "endTime": "2026-11-01T16:00:00-05:00",
@@ -238,7 +238,7 @@
             "detailedForecast": ""
           },
           {
-            "number": 10,
+            "number": 9,
             "name": "",
             "startTime": "2026-11-01T16:00:00-05:00",
             "endTime": "2026-11-01T17:00:00-05:00",
@@ -268,7 +268,9 @@
         "coverageComplete": true
       },
       "finalInactivesVerified": false,
-      "releaseStatus": "HOLD_FINAL_AVAILABILITY_AND_EXECUTION_LOCKS"
+      "releaseStatus": "HOLD_FINAL_AVAILABILITY_AND_EXECUTION_LOCKS",
+      "materialRosterChanges": [],
+      "baselineRosterState": "NOT_INDEPENDENTLY_RECONCILED"
     },
     {
       "gameId": "2026_08_BAL_BUF",
@@ -281,7 +283,7 @@
         "status": "NWS_HOURLY_CONTEXT_NOT_MODEL_ADJUSTMENT",
         "source": "https://api.weather.gov/gridpoints/BUF/39,42/forecast/hourly",
         "issuedAt": "2026-11-01T11:57:33+00:00",
-        "observedAt": "2026-11-01T13:09:30.755995+00:00",
+        "observedAt": "2026-11-01T13:12:28.404194+00:00",
         "kickoffThroughFourHours": [
           {
             "number": 7,
@@ -395,7 +397,9 @@
         "coverageComplete": true
       },
       "finalInactivesVerified": false,
-      "releaseStatus": "HOLD_FINAL_AVAILABILITY_AND_EXECUTION_LOCKS"
+      "releaseStatus": "HOLD_FINAL_AVAILABILITY_AND_EXECUTION_LOCKS",
+      "materialRosterChanges": [],
+      "baselineRosterState": "NOT_INDEPENDENTLY_RECONCILED"
     },
     {
       "gameId": "2026_08_CLE_PIT",
@@ -408,7 +412,7 @@
         "status": "NWS_HOURLY_CONTEXT_NOT_MODEL_ADJUSTMENT",
         "source": "https://api.weather.gov/gridpoints/PBZ/77,66/forecast/hourly",
         "issuedAt": "2026-11-01T11:21:51+00:00",
-        "observedAt": "2026-11-01T13:09:30.755995+00:00",
+        "observedAt": "2026-11-01T13:12:28.404194+00:00",
         "kickoffThroughFourHours": [
           {
             "number": 7,
@@ -522,7 +526,9 @@
         "coverageComplete": true
       },
       "finalInactivesVerified": false,
-      "releaseStatus": "HOLD_FINAL_AVAILABILITY_AND_EXECUTION_LOCKS"
+      "releaseStatus": "HOLD_FINAL_AVAILABILITY_AND_EXECUTION_LOCKS",
+      "materialRosterChanges": [],
+      "baselineRosterState": "NOT_INDEPENDENTLY_RECONCILED"
     },
     {
       "gameId": "2026_08_IND_JAX",
@@ -535,7 +541,7 @@
         "status": "NWS_HOURLY_CONTEXT_NOT_MODEL_ADJUSTMENT",
         "source": "https://api.weather.gov/gridpoints/JAX/66,64/forecast/hourly",
         "issuedAt": "2026-11-01T10:06:52+00:00",
-        "observedAt": "2026-11-01T13:09:30.755995+00:00",
+        "observedAt": "2026-11-01T13:12:28.404194+00:00",
         "kickoffThroughFourHours": [
           {
             "number": 7,
@@ -649,7 +655,30 @@
         "coverageComplete": true
       },
       "finalInactivesVerified": false,
-      "releaseStatus": "HOLD_FINAL_AVAILABILITY_AND_EXECUTION_LOCKS"
+      "releaseStatus": "HOLD_FINAL_AVAILABILITY_AND_EXECUTION_LOCKS",
+      "materialRosterChanges": [
+        {
+          "player": "Quenton Nelson",
+          "fromTeam": "IND",
+          "toTeam": "SEA",
+          "date": "2026-10-27",
+          "source": "https://www.colts.com/news/colts-trade-g-quenton-nelson-to-seattle-seahawks-for-2-future-nfl-draft-picks",
+          "newSinceLastPlayedWeek7": true,
+          "explicitPlayerAdjustmentValidated": false,
+          "baselineExposure": "NOT_REPRESENTED_BY_WEEK7_GAME_STATS"
+        },
+        {
+          "player": "DeForest Buckner",
+          "fromTeam": "IND",
+          "toTeam": "SF",
+          "date": "2026-10-27",
+          "source": "https://www.colts.com/news/colts-acquire-2027-fourth-round-pick-in-exchange-for-dt-deforest-buckner-in-trade-with-san-francisco-49ers",
+          "newSinceLastPlayedWeek7": true,
+          "explicitPlayerAdjustmentValidated": false,
+          "baselineExposure": "NOT_REPRESENTED_BY_WEEK7_GAME_STATS"
+        }
+      ],
+      "baselineRosterState": "UNRESOLVED_MATERIAL_CHANGE"
     },
     {
       "gameId": "2026_08_LV_NYJ",
@@ -662,7 +691,7 @@
         "status": "NWS_HOURLY_CONTEXT_NOT_MODEL_ADJUSTMENT",
         "source": "https://api.weather.gov/gridpoints/OKX/30,46/forecast/hourly",
         "issuedAt": "2026-11-01T11:18:38+00:00",
-        "observedAt": "2026-11-01T13:09:30.755995+00:00",
+        "observedAt": "2026-11-01T13:12:28.404194+00:00",
         "kickoffThroughFourHours": [
           {
             "number": 7,
@@ -776,7 +805,9 @@
         "coverageComplete": true
       },
       "finalInactivesVerified": false,
-      "releaseStatus": "HOLD_FINAL_AVAILABILITY_AND_EXECUTION_LOCKS"
+      "releaseStatus": "HOLD_FINAL_AVAILABILITY_AND_EXECUTION_LOCKS",
+      "materialRosterChanges": [],
+      "baselineRosterState": "NOT_INDEPENDENTLY_RECONCILED"
     },
     {
       "gameId": "2026_08_MIN_DET",
@@ -790,7 +821,9 @@
         "roof": "Fixed roof"
       },
       "finalInactivesVerified": false,
-      "releaseStatus": "HOLD_FINAL_AVAILABILITY_AND_EXECUTION_LOCKS"
+      "releaseStatus": "HOLD_FINAL_AVAILABILITY_AND_EXECUTION_LOCKS",
+      "materialRosterChanges": [],
+      "baselineRosterState": "NOT_INDEPENDENTLY_RECONCILED"
     },
     {
       "gameId": "2026_08_TEN_CIN",
@@ -803,7 +836,7 @@
         "status": "NWS_HOURLY_CONTEXT_NOT_MODEL_ADJUSTMENT",
         "source": "https://api.weather.gov/gridpoints/ILN/35,38/forecast/hourly",
         "issuedAt": "2026-11-01T10:47:07+00:00",
-        "observedAt": "2026-11-01T13:09:30.755995+00:00",
+        "observedAt": "2026-11-01T13:12:28.404194+00:00",
         "kickoffThroughFourHours": [
           {
             "number": 6,
@@ -917,7 +950,20 @@
         "coverageComplete": true
       },
       "finalInactivesVerified": false,
-      "releaseStatus": "HOLD_FINAL_AVAILABILITY_AND_EXECUTION_LOCKS"
+      "releaseStatus": "HOLD_FINAL_AVAILABILITY_AND_EXECUTION_LOCKS",
+      "materialRosterChanges": [
+        {
+          "player": "Jeffery Simmons",
+          "fromTeam": "TEN",
+          "toTeam": "CHI",
+          "date": "2026-10-29",
+          "source": "https://www.tennesseetitans.com/news/titans-trade-dt-jeffery-simmons-to-the-chicago-bears-in-exchange-for-two-first-round-picks",
+          "newSinceLastPlayedWeek7": true,
+          "explicitPlayerAdjustmentValidated": false,
+          "baselineExposure": "NOT_REPRESENTED_BY_WEEK7_GAME_STATS"
+        }
+      ],
+      "baselineRosterState": "UNRESOLVED_MATERIAL_CHANGE"
     },
     {
       "gameId": "2026_08_LAC_LA",
@@ -931,7 +977,9 @@
         "roof": "Fixed canopy, open sides"
       },
       "finalInactivesVerified": false,
-      "releaseStatus": "HOLD_FINAL_AVAILABILITY_AND_EXECUTION_LOCKS"
+      "releaseStatus": "HOLD_FINAL_AVAILABILITY_AND_EXECUTION_LOCKS",
+      "materialRosterChanges": [],
+      "baselineRosterState": "NOT_INDEPENDENTLY_RECONCILED"
     },
     {
       "gameId": "2026_08_KC_DEN",
@@ -944,7 +992,7 @@
         "status": "NWS_HOURLY_CONTEXT_NOT_MODEL_ADJUSTMENT",
         "source": "https://api.weather.gov/gridpoints/BOU/62,62/forecast/hourly",
         "issuedAt": "2026-11-01T09:21:45+00:00",
-        "observedAt": "2026-11-01T13:09:30.755995+00:00",
+        "observedAt": "2026-11-01T13:12:28.404194+00:00",
         "kickoffThroughFourHours": [
           {
             "number": 10,
@@ -1085,7 +1133,9 @@
         "coverageComplete": true
       },
       "finalInactivesVerified": false,
-      "releaseStatus": "HOLD_FINAL_AVAILABILITY_AND_EXECUTION_LOCKS"
+      "releaseStatus": "HOLD_FINAL_AVAILABILITY_AND_EXECUTION_LOCKS",
+      "materialRosterChanges": [],
+      "baselineRosterState": "NOT_INDEPENDENTLY_RECONCILED"
     },
     {
       "gameId": "2026_08_NE_MIA",
@@ -1098,7 +1148,7 @@
         "status": "NWS_HOURLY_CONTEXT_NOT_MODEL_ADJUSTMENT",
         "source": "https://api.weather.gov/gridpoints/MFL/107,58/forecast/hourly",
         "issuedAt": "2026-11-01T08:47:43+00:00",
-        "observedAt": "2026-11-01T13:09:30.755995+00:00",
+        "observedAt": "2026-11-01T13:12:28.404194+00:00",
         "kickoffThroughFourHours": [
           {
             "number": 10,
@@ -1239,7 +1289,9 @@
         "coverageComplete": true
       },
       "finalInactivesVerified": false,
-      "releaseStatus": "HOLD_FINAL_AVAILABILITY_AND_EXECUTION_LOCKS"
+      "releaseStatus": "HOLD_FINAL_AVAILABILITY_AND_EXECUTION_LOCKS",
+      "materialRosterChanges": [],
+      "baselineRosterState": "NOT_INDEPENDENTLY_RECONCILED"
     },
     {
       "gameId": "2026_08_PHI_WAS",
@@ -1252,7 +1304,7 @@
         "status": "NWS_HOURLY_CONTEXT_NOT_MODEL_ADJUSTMENT",
         "source": "https://api.weather.gov/gridpoints/LWX/102,73/forecast/hourly",
         "issuedAt": "2026-11-01T11:52:59+00:00",
-        "observedAt": "2026-11-01T13:09:30.755995+00:00",
+        "observedAt": "2026-11-01T13:12:28.404194+00:00",
         "kickoffThroughFourHours": [
           {
             "number": 14,
@@ -1393,7 +1445,9 @@
         "coverageComplete": true
       },
       "finalInactivesVerified": false,
-      "releaseStatus": "HOLD_FINAL_AVAILABILITY_AND_EXECUTION_LOCKS"
+      "releaseStatus": "HOLD_FINAL_AVAILABILITY_AND_EXECUTION_LOCKS",
+      "materialRosterChanges": [],
+      "baselineRosterState": "NOT_INDEPENDENTLY_RECONCILED"
     },
     {
       "gameId": "2026_08_CHI_SEA",
@@ -1406,7 +1460,7 @@
         "status": "NWS_HOURLY_CONTEXT_NOT_MODEL_ADJUSTMENT",
         "source": "https://api.weather.gov/gridpoints/SEW/125,67/forecast/hourly",
         "issuedAt": "2026-11-01T07:55:50+00:00",
-        "observedAt": "2026-11-01T13:09:30.755995+00:00",
+        "observedAt": "2026-11-01T13:12:28.404194+00:00",
         "kickoffThroughFourHours": [
           {
             "number": 37,
@@ -1547,7 +1601,30 @@
         "coverageComplete": true
       },
       "finalInactivesVerified": false,
-      "releaseStatus": "HOLD_FINAL_AVAILABILITY_AND_EXECUTION_LOCKS"
+      "releaseStatus": "HOLD_FINAL_AVAILABILITY_AND_EXECUTION_LOCKS",
+      "materialRosterChanges": [
+        {
+          "player": "Jeffery Simmons",
+          "fromTeam": "TEN",
+          "toTeam": "CHI",
+          "date": "2026-10-29",
+          "source": "https://www.tennesseetitans.com/news/titans-trade-dt-jeffery-simmons-to-the-chicago-bears-in-exchange-for-two-first-round-picks",
+          "newSinceLastPlayedWeek7": true,
+          "explicitPlayerAdjustmentValidated": false,
+          "baselineExposure": "NOT_REPRESENTED_BY_WEEK7_GAME_STATS"
+        },
+        {
+          "player": "Quenton Nelson",
+          "fromTeam": "IND",
+          "toTeam": "SEA",
+          "date": "2026-10-27",
+          "source": "https://www.colts.com/news/colts-trade-g-quenton-nelson-to-seattle-seahawks-for-2-future-nfl-draft-picks",
+          "newSinceLastPlayedWeek7": true,
+          "explicitPlayerAdjustmentValidated": false,
+          "baselineExposure": "NOT_REPRESENTED_BY_WEEK7_GAME_STATS"
+        }
+      ],
+      "baselineRosterState": "UNRESOLVED_MATERIAL_CHANGE"
     }
   ],
   "confirmedUpdates": [
@@ -1569,12 +1646,16 @@
     }
   ],
   "remainingBlockers": [
-    "Final game-day inactive lists not yet verified",
-    "No validated numeric personnel or referee effect in baseline",
-    "Dallas and Philadelphia model input coverage lags Week 6",
     "Dallas roof decision unverified",
+    "Seahawks team report: Charles Cross out, Josh Jones to start LT; Nelson arrival also changes guard alignment",
+    "Colts unofficial Oct 27 depth chart still lists traded Nelson and Buckner; do not use as current starters",
+    "No validated numeric personnel or referee effect in baseline",
+    "Final game-day inactive lists not yet verified",
     "NWS hourly endpoint does not provide gust observations",
-    "Buffalo ESPN temperature 43F conflicts with NWS hourly 66\u201367F; use issued-time NWS forecast and retain conflict"
+    "IR, suspension, activation and final-inactive reconciliation remains incomplete; weekly injury lists are not full roster inventories",
+    "Buffalo ESPN temperature 43F conflicts with NWS hourly 66\u201367F; use issued-time NWS forecast and retain conflict",
+    "Dallas and Philadelphia model input coverage lags Week 6",
+    "Trade rumors including Jonathan Taylor are not completed moves"
   ],
   "marketReferences": [
     {
@@ -1772,5 +1853,85 @@
       "eligibleForGrading": false,
       "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873036"
     }
+  ],
+  "reviewStatus": "MATERIAL_ROSTER_CHANGES_NOT_NUMERICALLY_REPRESENTED",
+  "rosterAudit": {
+    "asOf": "2026-11-01T13:12:28.404194+00:00",
+    "canonicalInfluence": false,
+    "sourceStatus": "TEAM_CONFIRMED_TRANSACTIONS",
+    "scope": "Six material October trades; not a complete transaction or reserve-list inventory",
+    "trades": [
+      {
+        "player": "Jeffery Simmons",
+        "fromTeam": "TEN",
+        "toTeam": "CHI",
+        "date": "2026-10-29",
+        "source": "https://www.tennesseetitans.com/news/titans-trade-dt-jeffery-simmons-to-the-chicago-bears-in-exchange-for-two-first-round-picks",
+        "newSinceLastPlayedWeek7": true,
+        "explicitPlayerAdjustmentValidated": false,
+        "baselineExposure": "NOT_REPRESENTED_BY_WEEK7_GAME_STATS"
+      },
+      {
+        "player": "Quenton Nelson",
+        "fromTeam": "IND",
+        "toTeam": "SEA",
+        "date": "2026-10-27",
+        "source": "https://www.colts.com/news/colts-trade-g-quenton-nelson-to-seattle-seahawks-for-2-future-nfl-draft-picks",
+        "newSinceLastPlayedWeek7": true,
+        "explicitPlayerAdjustmentValidated": false,
+        "baselineExposure": "NOT_REPRESENTED_BY_WEEK7_GAME_STATS"
+      },
+      {
+        "player": "DeForest Buckner",
+        "fromTeam": "IND",
+        "toTeam": "SF",
+        "date": "2026-10-27",
+        "source": "https://www.colts.com/news/colts-acquire-2027-fourth-round-pick-in-exchange-for-dt-deforest-buckner-in-trade-with-san-francisco-49ers",
+        "newSinceLastPlayedWeek7": true,
+        "explicitPlayerAdjustmentValidated": false,
+        "baselineExposure": "NOT_REPRESENTED_BY_WEEK7_GAME_STATS"
+      },
+      {
+        "player": "Marvin Harrison Jr.",
+        "fromTeam": "ARI",
+        "toTeam": "HOU",
+        "date": "2026-10-12",
+        "source": "https://www.houstontexans.com/news/houston-texans-transactions-10-12-2026",
+        "newSinceLastPlayedWeek7": false,
+        "explicitPlayerAdjustmentValidated": false,
+        "baselineExposure": "MAY_BE_PARTIALLY_EMBEDDED_IN_TEAM_STATS_NOT_MEASURED"
+      },
+      {
+        "player": "Cam Jurgens",
+        "fromTeam": "PHI",
+        "toTeam": "BAL",
+        "date": "2026-10-07",
+        "source": "https://www.baltimoreravens.com/news/ravens-trade-cam-jurgens-center-pro-bowl-injuries-2026",
+        "newSinceLastPlayedWeek7": false,
+        "explicitPlayerAdjustmentValidated": false,
+        "baselineExposure": "MAY_BE_PARTIALLY_EMBEDDED_IN_TEAM_STATS_NOT_MEASURED"
+      },
+      {
+        "player": "Joey Porter Jr.",
+        "fromTeam": "PIT",
+        "toTeam": "DAL",
+        "date": "2026-10-01",
+        "source": "https://www.steelers.com/news/steelers-acquire-two-draft-picks-from-cowboys",
+        "newSinceLastPlayedWeek7": false,
+        "explicitPlayerAdjustmentValidated": false,
+        "baselineExposure": "MAY_BE_PARTIALLY_EMBEDDED_IN_TEAM_STATS_NOT_MEASURED"
+      }
+    ],
+    "additionalFindings": [
+      "Colts unofficial Oct 27 depth chart still lists traded Nelson and Buckner; do not use as current starters",
+      "Seahawks team report: Charles Cross out, Josh Jones to start LT; Nelson arrival also changes guard alignment",
+      "Trade rumors including Jonathan Taylor are not completed moves",
+      "IR, suspension, activation and final-inactive reconciliation remains incomplete; weekly injury lists are not full roster inventories"
+    ]
+  },
+  "otherFactors": [
+    "Rest and travel remain context: baseline rest fields unchanged; no ad hoc fatigue adjustments",
+    "Referee late swap retained: Alex Moore NE-MIA, Shawn Hochuli PHI-WAS",
+    "Dallas roof unknown; NWS gusts unavailable; weather source disagreement retained"
   ]
 }
