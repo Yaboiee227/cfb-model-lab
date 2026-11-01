@@ -1,46 +1,38 @@
 {
+  "schemaVersion": 1,
   "league": "cfb",
   "season": 2026,
   "week": 9,
-  "role": "PUBLISHED_RESEARCH_RESULTS_COMPATIBILITY",
+  "role": "AUDITED_SITE_RESULTS_COMPATIBILITY",
   "canonicalInfluence": false,
+  "source": "data/results.csv",
+  "sourcePolicy": "Mechanical export of already-audited published result rows. Never reconstructs missing pregame information and never changes a grade.",
   "games": [
     {
       "gameId": "2026-10-27-DELAWARE-WESTERNKENTUCKY",
+      "date": "2026-10-27",
       "awayTeam": "Delaware",
       "homeTeam": "Western Kentucky",
-      "kickoff": "2026-10-27T23:00:00Z",
-      "projectionDigest": "a29b3094f8544282a4494a07e37e305b59eb88b0571a2a70f89ea5db862ebc69",
+      "conference": "",
+      "status": "FINAL",
+      "final": {
+        "awayScore": 35,
+        "homeScore": 21,
+        "marginHome": -14,
+        "total": 56
+      },
       "projection": {
-        "awayPoints": 27.194152064025232,
-        "homePoints": 28.470970151052008,
-        "marginHome": 1.2768180870267756,
         "spreadHome": -1.2768180870267756,
         "total": 55.66512221507724,
         "homeWinProbability": 53.21212556139938,
         "winner": "Western Kentucky"
       },
-      "status": "FINAL",
-      "final": {
-        "awayScore": 35,
-        "homeScore": 21,
-        "marginHome": -14,
-        "total": 56,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401871071"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "errors": {
-        "margin": 15.276818087026776,
-        "absoluteMargin": 15.276818087026776,
-        "total": -0.3348777849227602,
-        "absoluteTotal": 0.3348777849227602
-      },
-      "straightUp": {
-        "result": "LOSS",
-        "pick": "Western Kentucky"
-      },
-      "date": "2026-10-27",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -48,44 +40,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Western Kentucky",
+        "result": "LOSS"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-27-SAMHOUSTON-MISSOURISTATE",
+      "date": "2026-10-28",
       "awayTeam": "Sam Houston",
       "homeTeam": "Missouri State",
-      "kickoff": "2026-10-28T00:00:00Z",
-      "projectionDigest": "c657f598c6d4ff74ac498adb3a44adddc9210a901dc23ca0a3f328151dfd9428",
+      "conference": "",
+      "status": "FINAL",
+      "final": {
+        "awayScore": 3,
+        "homeScore": 24,
+        "marginHome": 21,
+        "total": 27
+      },
       "projection": {
-        "awayPoints": 24.99032130002837,
-        "homePoints": 27.813326336858047,
-        "marginHome": 2.8230050368296773,
         "spreadHome": -2.8230050368296773,
         "total": 52.80364763688642,
         "homeWinProbability": 57.07214648680531,
         "winner": "Missouri State"
       },
-      "status": "FINAL",
-      "final": {
-        "awayScore": 3,
-        "homeScore": 24,
-        "marginHome": 21,
-        "total": 27,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401871072"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "errors": {
-        "margin": -18.176994963170323,
-        "absoluteMargin": 18.176994963170323,
-        "total": 25.803647636886417,
-        "absoluteTotal": 25.803647636886417
-      },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "Missouri State"
-      },
-      "date": "2026-10-28",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -93,44 +80,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Missouri State",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-28-KENNESAWSTATE-MIDDLETENNESSEE",
+      "date": "2026-10-28",
       "awayTeam": "Kennesaw State",
       "homeTeam": "Middle Tennessee",
-      "kickoff": "2026-10-28T23:00:00Z",
-      "projectionDigest": "1538a7c715750eeb50fd4082b43245c28c33f049f481100b01a377c6db1b6d55",
-      "projection": {
-        "awayPoints": 19.888401932680342,
-        "homePoints": 26.613883688083927,
-        "marginHome": 6.725481755403585,
-        "spreadHome": -6.725481755403585,
-        "total": 46.50228562076427,
-        "homeWinProbability": 66.44240518288353,
-        "winner": "Middle Tennessee"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 44,
         "homeScore": 28,
         "marginHome": -16,
-        "total": 72,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401871058"
+        "total": 72
       },
-      "errors": {
-        "margin": 22.725481755403585,
-        "absoluteMargin": 22.725481755403585,
-        "total": -25.49771437923573,
-        "absoluteTotal": 25.49771437923573
+      "projection": {
+        "spreadHome": -6.725481755403585,
+        "total": 46.50228562076427,
+        "homeWinProbability": 66.44240518288353,
+        "winner": "Middle Tennessee"
       },
-      "straightUp": {
-        "result": "LOSS",
-        "pick": "Middle Tennessee"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-28",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -138,44 +120,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Middle Tennessee",
+        "result": "LOSS"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-28-JACKSONVILLESTATE-NEWMEXICOSTATE",
+      "date": "2026-10-29",
       "awayTeam": "Jacksonville State",
       "homeTeam": "New Mexico State",
-      "kickoff": "2026-10-29T00:00:00Z",
-      "projectionDigest": "0d4052f30601de1cfb3b0bfd273f6013843e4c58565ac72175bcdbd3a7db26df",
-      "projection": {
-        "awayPoints": 25.116370035095507,
-        "homePoints": 26.714300142936366,
-        "marginHome": 1.5979301078408596,
-        "spreadHome": -1.5979301078408596,
-        "total": 51.83067017803187,
-        "homeWinProbability": 54.01749443794648,
-        "winner": "New Mexico State"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 24,
         "homeScore": 0,
         "marginHome": -24,
-        "total": 24,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401871057"
+        "total": 24
       },
-      "errors": {
-        "margin": 25.59793010784086,
-        "absoluteMargin": 25.59793010784086,
-        "total": 27.830670178031873,
-        "absoluteTotal": 27.830670178031873
+      "projection": {
+        "spreadHome": -1.5979301078408596,
+        "total": 51.83067017803187,
+        "homeWinProbability": 54.01749443794648,
+        "winner": "New Mexico State"
       },
-      "straightUp": {
-        "result": "LOSS",
-        "pick": "New Mexico State"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-29",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -183,44 +160,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "New Mexico State",
+        "result": "LOSS"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-29-FLORIDAATLANTIC-NORTHTEXAS",
+      "date": "2026-10-29",
       "awayTeam": "Florida Atlantic",
       "homeTeam": "North Texas",
-      "kickoff": "2026-10-29T23:30:00Z",
-      "projectionDigest": "2ccd1c03ebdafea3f95a5821a050b26dfab514dfc5478c20e0546d50de03d1cf",
-      "projection": {
-        "awayPoints": 31.733383868684086,
-        "homePoints": 46.87059000969053,
-        "marginHome": 15.137206141006445,
-        "spreadHome": -15.137206141006445,
-        "total": 78.60397387837462,
-        "homeWinProbability": 83.03589614354259,
-        "winner": "North Texas"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 41,
         "homeScore": 48,
         "marginHome": 7,
-        "total": 89,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401862812"
+        "total": 89
       },
-      "errors": {
-        "margin": 8.137206141006445,
-        "absoluteMargin": 8.137206141006445,
-        "total": -10.396026121625383,
-        "absoluteTotal": 10.396026121625383
+      "projection": {
+        "spreadHome": -15.137206141006445,
+        "total": 78.60397387837462,
+        "homeWinProbability": 83.03589614354259,
+        "winner": "North Texas"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "North Texas"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-29",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -228,44 +200,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "North Texas",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-29-TROY-JAMESMADISON",
+      "date": "2026-10-29",
       "awayTeam": "Troy",
       "homeTeam": "James Madison",
-      "kickoff": "2026-10-29T23:30:00Z",
-      "projectionDigest": "2ea478c9cbc9e834238844b709ea139d2e1147b94db8baa4e0720bb7a7d19911",
+      "conference": "",
+      "status": "FINAL",
+      "final": {
+        "awayScore": 24,
+        "homeScore": 21,
+        "marginHome": -3,
+        "total": 45
+      },
       "projection": {
-        "awayPoints": 17.420874960220367,
-        "homePoints": 36.846456022169626,
-        "marginHome": 19.42558106194926,
         "spreadHome": -19.42558106194926,
         "total": 54.26733098238999,
         "homeWinProbability": 88.9957507187092,
         "winner": "James Madison"
       },
-      "status": "FINAL",
-      "final": {
-        "awayScore": 24,
-        "homeScore": 21,
-        "marginHome": -3,
-        "total": 45,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401869963"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "errors": {
-        "margin": 22.42558106194926,
-        "absoluteMargin": 22.42558106194926,
-        "total": 9.267330982389993,
-        "absoluteTotal": 9.267330982389993
-      },
-      "straightUp": {
-        "result": "LOSS",
-        "pick": "James Madison"
-      },
-      "date": "2026-10-29",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -273,44 +240,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "James Madison",
+        "result": "LOSS"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-30-TULANE-CHARLOTTE",
+      "date": "2026-10-30",
       "awayTeam": "Tulane",
       "homeTeam": "Charlotte",
-      "kickoff": "2026-10-30T23:00:00Z",
-      "projectionDigest": "759700886ec361a6e6e24db29a6dc2d60961804ced6fc27181f6d69aad81cc4f",
+      "conference": "",
+      "status": "FINAL",
+      "final": {
+        "awayScore": 38,
+        "homeScore": 31,
+        "marginHome": -7,
+        "total": 69
+      },
       "projection": {
-        "awayPoints": 25.699902139083257,
-        "homePoints": 19.990616534820447,
-        "marginHome": -5.70928560426281,
         "spreadHome": 5.70928560426281,
         "total": 45.6905186739037,
         "homeWinProbability": 35.92676641663018,
         "winner": "Tulane"
       },
-      "status": "FINAL",
-      "final": {
-        "awayScore": 38,
-        "homeScore": 31,
-        "marginHome": -7,
-        "total": 69,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401862813"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "errors": {
-        "margin": 1.29071439573719,
-        "absoluteMargin": 1.29071439573719,
-        "total": -23.309481326096297,
-        "absoluteTotal": 23.309481326096297
-      },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "Tulane"
-      },
-      "date": "2026-10-30",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -318,44 +280,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Tulane",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-30-BAYLOR-UCF",
+      "date": "2026-10-30",
       "awayTeam": "Baylor",
       "homeTeam": "UCF",
-      "kickoff": "2026-10-30T23:30:00Z",
-      "projectionDigest": "df71b71a2a69327c70afedb3502f8be12ffc8ee193e3b0c91da8fe3f7754278d",
-      "projection": {
-        "awayPoints": 23.78688115124554,
-        "homePoints": 27.061733124280625,
-        "marginHome": 3.2748519730350836,
-        "spreadHome": -3.2748519730350836,
-        "total": 50.84861427552617,
-        "homeWinProbability": 58.18918017009301,
-        "winner": "UCF"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 41,
         "homeScore": 9,
         "marginHome": -32,
-        "total": 50,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856844"
+        "total": 50
       },
-      "errors": {
-        "margin": 35.274851973035084,
-        "absoluteMargin": 35.274851973035084,
-        "total": 0.8486142755261668,
-        "absoluteTotal": 0.8486142755261668
+      "projection": {
+        "spreadHome": -3.2748519730350836,
+        "total": 50.84861427552617,
+        "homeWinProbability": 58.18918017009301,
+        "winner": "UCF"
       },
-      "straightUp": {
-        "result": "LOSS",
-        "pick": "UCF"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-30",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -363,44 +320,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "UCF",
+        "result": "LOSS"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-30-KENTSTATE-SACRAMENTOSTATE",
+      "date": "2026-10-31",
       "awayTeam": "Kent State",
       "homeTeam": "Sacramento State",
-      "kickoff": "2026-10-31T02:30:00Z",
-      "projectionDigest": "fb947c228f2f674afef156743c5a8dc340e3de4fc906cf099c195b171e83d4c4",
+      "conference": "",
+      "status": "FINAL",
+      "final": {
+        "awayScore": 10,
+        "homeScore": 31,
+        "marginHome": 21,
+        "total": 41
+      },
       "projection": {
-        "awayPoints": 24.578287054889834,
-        "homePoints": 20.64259654867574,
-        "marginHome": -3.935690506214094,
         "spreadHome": 3.935690506214094,
         "total": 45.220883603565575,
         "homeWinProbability": 40.189192729431284,
         "winner": "Kent State"
       },
-      "status": "FINAL",
-      "final": {
-        "awayScore": 10,
-        "homeScore": 31,
-        "marginHome": 21,
-        "total": 41,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401866451"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "errors": {
-        "margin": -24.935690506214094,
-        "absoluteMargin": 24.935690506214094,
-        "total": 4.220883603565575,
-        "absoluteTotal": 4.220883603565575
-      },
-      "straightUp": {
-        "result": "LOSS",
-        "pick": "Kent State"
-      },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -408,44 +360,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Kent State",
+        "result": "LOSS"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-ARIZONA-TEXASTECH",
+      "date": "2026-10-31",
       "awayTeam": "Arizona",
       "homeTeam": "Texas Tech",
-      "kickoff": "2026-10-31T16:00:00Z",
-      "projectionDigest": "74d92733a7181c148c5c36dc35c456092dbac9e0a51bed11b980790d119843d3",
+      "conference": "",
+      "status": "FINAL",
+      "final": {
+        "awayScore": 26,
+        "homeScore": 34,
+        "marginHome": 8,
+        "total": 60
+      },
       "projection": {
-        "awayPoints": 27.51091521840224,
-        "homePoints": 28.753886355833785,
-        "marginHome": 1.242971137431546,
         "spreadHome": -1.242971137431546,
         "total": 56.264801574236024,
         "homeWinProbability": 53.12715287151626,
         "winner": "Texas Tech"
       },
-      "status": "FINAL",
-      "final": {
-        "awayScore": 26,
-        "homeScore": 34,
-        "marginHome": 8,
-        "total": 60,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856842"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "errors": {
-        "margin": -6.757028862568454,
-        "absoluteMargin": 6.757028862568454,
-        "total": -3.7351984257639756,
-        "absoluteTotal": 3.7351984257639756
-      },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "Texas Tech"
-      },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -453,44 +400,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Texas Tech",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-BOSTONCOLLEGE-DUKE",
+      "date": "2026-10-31",
       "awayTeam": "Boston College",
       "homeTeam": "Duke",
-      "kickoff": "2026-10-31T16:00:00Z",
-      "projectionDigest": "d17449f750b1fa2238eacb41e406d65535d61b5314dfb1b251982143657fb639",
-      "projection": {
-        "awayPoints": 19.507929407489215,
-        "homePoints": 24.539850479806077,
-        "marginHome": 5.031921072316862,
-        "spreadHome": -5.031921072316862,
-        "total": 44.04777988729529,
-        "homeWinProbability": 62.46271200113127,
-        "winner": "Duke"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 2,
         "homeScore": 47,
         "marginHome": 45,
-        "total": 49,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858279"
+        "total": 49
       },
-      "errors": {
-        "margin": -39.96807892768314,
-        "absoluteMargin": 39.96807892768314,
-        "total": -4.952220112704708,
-        "absoluteTotal": 4.952220112704708
+      "projection": {
+        "spreadHome": -5.031921072316862,
+        "total": 44.04777988729529,
+        "homeWinProbability": 62.46271200113127,
+        "winner": "Duke"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "Duke"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -498,44 +440,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Duke",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-BOWLINGGREEN-WESTERNMICHIGAN",
+      "date": "2026-10-31",
       "awayTeam": "Bowling Green",
       "homeTeam": "Western Michigan",
-      "kickoff": "2026-10-31T16:00:00Z",
-      "projectionDigest": "24cd81440048bab0b0cd1c3a9b34236db22f2f0d65100fa33d14217922545f83",
-      "projection": {
-        "awayPoints": 17.567733970355732,
-        "homePoints": 31.807624204970942,
-        "marginHome": 14.23989023461521,
-        "spreadHome": -14.23989023461521,
-        "total": 49.375358175326674,
-        "homeWinProbability": 81.56573666539654,
-        "winner": "Western Michigan"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 10,
         "homeScore": 23,
         "marginHome": 13,
-        "total": 33,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401866452"
+        "total": 33
       },
-      "errors": {
-        "margin": 1.2398902346152099,
-        "absoluteMargin": 1.2398902346152099,
-        "total": 16.375358175326674,
-        "absoluteTotal": 16.375358175326674
+      "projection": {
+        "spreadHome": -14.23989023461521,
+        "total": 49.375358175326674,
+        "homeWinProbability": 81.56573666539654,
+        "winner": "Western Michigan"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "Western Michigan"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -543,44 +480,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Western Michigan",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-CALIFORNIA-NCSTATE",
+      "date": "2026-10-31",
       "awayTeam": "California",
       "homeTeam": "NC State",
-      "kickoff": "2026-10-31T16:00:00Z",
-      "projectionDigest": "d79e911022ae8e47b0389266b3f73add91789a9bb2cc738df91882ce5a27f4ea",
-      "projection": {
-        "awayPoints": 25.20787384790299,
-        "homePoints": 33.80274463784233,
-        "marginHome": 8.594870789939339,
-        "spreadHome": -8.594870789939339,
-        "total": 59.010618485745326,
-        "homeWinProbability": 70.62900846111116,
-        "winner": "NC State"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 10,
         "homeScore": 31,
         "marginHome": 21,
-        "total": 41,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858277"
+        "total": 41
       },
-      "errors": {
-        "margin": -12.405129210060661,
-        "absoluteMargin": 12.405129210060661,
-        "total": 18.010618485745326,
-        "absoluteTotal": 18.010618485745326
+      "projection": {
+        "spreadHome": -8.594870789939339,
+        "total": 59.010618485745326,
+        "homeWinProbability": 70.62900846111116,
+        "winner": "NC State"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "NC State"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -588,44 +520,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "NC State",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-ILLINOIS-MARYLAND",
+      "date": "2026-10-31",
       "awayTeam": "Illinois",
       "homeTeam": "Maryland",
-      "kickoff": "2026-10-31T16:00:00Z",
-      "projectionDigest": "70ab66ddc8035ad5b02245c7704e2111b3dc440aee9e125f60f98508b072b63e",
+      "conference": "",
+      "status": "FINAL",
+      "final": {
+        "awayScore": 20,
+        "homeScore": 17,
+        "marginHome": -3,
+        "total": 37
+      },
       "projection": {
-        "awayPoints": 31.973443471881694,
-        "homePoints": 27.732766728948356,
-        "marginHome": -4.2406767429333385,
         "spreadHome": 4.2406767429333385,
         "total": 59.70621020083005,
         "homeWinProbability": 39.44626870698288,
         "winner": "Illinois"
       },
-      "status": "FINAL",
-      "final": {
-        "awayScore": 20,
-        "homeScore": 17,
-        "marginHome": -3,
-        "total": 37,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858503"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "errors": {
-        "margin": -1.2406767429333385,
-        "absoluteMargin": 1.2406767429333385,
-        "total": 22.70621020083005,
-        "absoluteTotal": 22.70621020083005
-      },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "Illinois"
-      },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -633,44 +560,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Illinois",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-NOTREDAME-NAVY",
+      "date": "2026-10-31",
       "awayTeam": "Notre Dame",
       "homeTeam": "Navy",
-      "kickoff": "2026-10-31T16:00:00Z",
-      "projectionDigest": "f17ae7debdc6c488d8617778d2c612306b1e9c4f8dd22abb77d61558f515881e",
-      "projection": {
-        "awayPoints": 37.6670173213315,
-        "homePoints": 19.059738924914072,
-        "marginHome": -18.607278396417428,
-        "spreadHome": 18.607278396417428,
-        "total": 56.72675624624557,
-        "homeWinProbability": 12.006854894729935,
-        "winner": "Notre Dame"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 35,
         "homeScore": 13,
         "marginHome": -22,
-        "total": 48,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401859185"
+        "total": 48
       },
-      "errors": {
-        "margin": 3.3927216035825722,
-        "absoluteMargin": 3.3927216035825722,
-        "total": 8.726756246245571,
-        "absoluteTotal": 8.726756246245571
+      "projection": {
+        "spreadHome": 18.607278396417428,
+        "total": 56.72675624624557,
+        "homeWinProbability": 12.006854894729935,
+        "winner": "Notre Dame"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "Notre Dame"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -678,44 +600,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Notre Dame",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-SMU-SYRACUSE",
+      "date": "2026-10-31",
       "awayTeam": "SMU",
       "homeTeam": "Syracuse",
-      "kickoff": "2026-10-31T16:00:00Z",
-      "projectionDigest": "a94d239f2f18876619d7edf6d83eb17bad96655a30238ec3df06ae2b767d987f",
-      "projection": {
-        "awayPoints": 29.558017188180347,
-        "homePoints": 27.665891416283966,
-        "marginHome": -1.8921257718963815,
-        "spreadHome": 1.8921257718963815,
-        "total": 57.22390860446431,
-        "homeWinProbability": 45.24608061644621,
-        "winner": "SMU"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 27,
         "homeScore": 30,
         "marginHome": 3,
-        "total": 57,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858278"
+        "total": 57
       },
-      "errors": {
-        "margin": -4.8921257718963815,
-        "absoluteMargin": 4.8921257718963815,
-        "total": 0.22390860446431304,
-        "absoluteTotal": 0.22390860446431304
+      "projection": {
+        "spreadHome": 1.8921257718963815,
+        "total": 57.22390860446431,
+        "homeWinProbability": 45.24608061644621,
+        "winner": "SMU"
       },
-      "straightUp": {
-        "result": "LOSS",
-        "pick": "SMU"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -723,44 +640,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "SMU",
+        "result": "LOSS"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-UAB-SOUTHFLORIDA",
+      "date": "2026-10-31",
       "awayTeam": "UAB",
       "homeTeam": "South Florida",
-      "kickoff": "2026-10-31T16:00:00Z",
-      "projectionDigest": "07675623ec4673688362b7231cd4a3c916c9155551c1519e21e191402d2e2444",
-      "projection": {
-        "awayPoints": 14.686410161035894,
-        "homePoints": 23.894968988696974,
-        "marginHome": 9.20855882766108,
-        "spreadHome": -9.20855882766108,
-        "total": 38.58137914973287,
-        "homeWinProbability": 71.9487543985729,
-        "winner": "South Florida"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 10,
         "homeScore": 30,
         "marginHome": 20,
-        "total": 40,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401862816"
+        "total": 40
       },
-      "errors": {
-        "margin": -10.79144117233892,
-        "absoluteMargin": 10.79144117233892,
-        "total": -1.418620850267132,
-        "absoluteTotal": 1.418620850267132
+      "projection": {
+        "spreadHome": -9.20855882766108,
+        "total": 38.58137914973287,
+        "homeWinProbability": 71.9487543985729,
+        "winner": "South Florida"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "South Florida"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -768,44 +680,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "South Florida",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-WISCONSIN-IOWA",
+      "date": "2026-10-31",
       "awayTeam": "Wisconsin",
       "homeTeam": "Iowa",
-      "kickoff": "2026-10-31T16:00:00Z",
-      "projectionDigest": "8377bd49b74b1bb0c5049ab3110529cf616b5ce1c05461d24a4f47dc0e9b6864",
+      "conference": "",
+      "status": "FINAL",
+      "final": {
+        "awayScore": 0,
+        "homeScore": 30,
+        "marginHome": 30,
+        "total": 30
+      },
       "projection": {
-        "awayPoints": 19.668421995263877,
-        "homePoints": 18.608997580450904,
-        "marginHome": -1.0594244148129732,
         "spreadHome": 1.0594244148129732,
         "total": 38.27741957571478,
         "homeWinProbability": 47.33387897464881,
         "winner": "Wisconsin"
       },
-      "status": "FINAL",
-      "final": {
-        "awayScore": 0,
-        "homeScore": 30,
-        "marginHome": 30,
-        "total": 30,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858502"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "errors": {
-        "margin": -31.059424414812973,
-        "absoluteMargin": 31.059424414812973,
-        "total": 8.27741957571478,
-        "absoluteTotal": 8.27741957571478
-      },
-      "straightUp": {
-        "result": "LOSS",
-        "pick": "Wisconsin"
-      },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -813,44 +720,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Wisconsin",
+        "result": "LOSS"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-MICHIGAN-RUTGERS",
+      "date": "2026-10-31",
       "awayTeam": "Michigan",
       "homeTeam": "Rutgers",
-      "kickoff": "2026-10-31T16:30:00Z",
-      "projectionDigest": "eb0f2604ea90321074e9e16488b2ef7753242f8b572cb41cb3704bc73cef6f40",
-      "projection": {
-        "awayPoints": 27.23396297695256,
-        "homePoints": 23.10010875660027,
-        "marginHome": -4.1338542203522906,
-        "spreadHome": 4.1338542203522906,
-        "total": 50.33407173355283,
-        "homeWinProbability": 39.70605900548256,
-        "winner": "Michigan"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 28,
         "homeScore": 21,
         "marginHome": -7,
-        "total": 49,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858507"
+        "total": 49
       },
-      "errors": {
-        "margin": 2.8661457796477094,
-        "absoluteMargin": 2.8661457796477094,
-        "total": 1.3340717335528325,
-        "absoluteTotal": 1.3340717335528325
+      "projection": {
+        "spreadHome": 4.1338542203522906,
+        "total": 50.33407173355283,
+        "homeWinProbability": 39.70605900548256,
+        "winner": "Michigan"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "Michigan"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -858,44 +760,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Michigan",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-AUBURN-OLEMISS",
+      "date": "2026-10-31",
       "awayTeam": "Auburn",
       "homeTeam": "Ole Miss",
-      "kickoff": "2026-10-31T16:45:00Z",
-      "projectionDigest": "b3fe48fe3b4729c95a3c4c05d3f65bc52249fc286a61996576108c87b5293cd4",
-      "projection": {
-        "awayPoints": 21.608297748994403,
-        "homePoints": 33.13177740007861,
-        "marginHome": 11.523479651084209,
-        "spreadHome": -11.523479651084209,
-        "total": 54.740075149073014,
-        "homeWinProbability": 76.65268684044236,
-        "winner": "Ole Miss"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 15,
         "homeScore": 45,
         "marginHome": 30,
-        "total": 60,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856735"
+        "total": 60
       },
-      "errors": {
-        "margin": -18.47652034891579,
-        "absoluteMargin": 18.47652034891579,
-        "total": -5.259924850926986,
-        "absoluteTotal": 5.259924850926986
+      "projection": {
+        "spreadHome": -11.523479651084209,
+        "total": 54.740075149073014,
+        "homeWinProbability": 76.65268684044236,
+        "winner": "Ole Miss"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "Ole Miss"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -903,44 +800,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Ole Miss",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-MARSHALL-OLDDOMINION",
+      "date": "2026-10-31",
       "awayTeam": "Marshall",
       "homeTeam": "Old Dominion",
-      "kickoff": "2026-10-31T17:00:00Z",
-      "projectionDigest": "3e7d3be8ddf7745255bae9b91ea13f589dd68d0c0a76584a8723435ef1a87db2",
-      "projection": {
-        "awayPoints": 18.72518162852891,
-        "homePoints": 20.108028495433548,
-        "marginHome": 1.3828468669046359,
-        "spreadHome": -1.3828468669046359,
-        "total": 38.83321012396246,
-        "homeWinProbability": 53.4782140808649,
-        "winner": "Old Dominion"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 36,
         "homeScore": 23,
         "marginHome": -13,
-        "total": 59,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401871096"
+        "total": 59
       },
-      "errors": {
-        "margin": 14.382846866904636,
-        "absoluteMargin": 14.382846866904636,
-        "total": -20.16678987603754,
-        "absoluteTotal": 20.16678987603754
+      "projection": {
+        "spreadHome": -1.3828468669046359,
+        "total": 38.83321012396246,
+        "homeWinProbability": 53.4782140808649,
+        "winner": "Old Dominion"
       },
-      "straightUp": {
-        "result": "LOSS",
-        "pick": "Old Dominion"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -948,44 +840,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Old Dominion",
+        "result": "LOSS"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-COASTALCAROLINA-GEORGIASTATE",
+      "date": "2026-10-31",
       "awayTeam": "Coastal Carolina",
       "homeTeam": "Georgia State",
-      "kickoff": "2026-10-31T18:00:00Z",
-      "projectionDigest": "046edd29f91029d96d61a61201bbafd7f82f726b8173c8ad1c3cbb42fb098100",
-      "projection": {
-        "awayPoints": 25.01395737601827,
-        "homePoints": 33.32036625875995,
-        "marginHome": 8.306408882741678,
-        "spreadHome": -8.306408882741678,
-        "total": 58.334323634778215,
-        "homeWinProbability": 69.9988948478571,
-        "winner": "Georgia State"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 31,
         "homeScore": 20,
         "marginHome": -11,
-        "total": 51,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401869944"
+        "total": 51
       },
-      "errors": {
-        "margin": 19.306408882741678,
-        "absoluteMargin": 19.306408882741678,
-        "total": 7.334323634778215,
-        "absoluteTotal": 7.334323634778215
+      "projection": {
+        "spreadHome": -8.306408882741678,
+        "total": 58.334323634778215,
+        "homeWinProbability": 69.9988948478571,
+        "winner": "Georgia State"
       },
-      "straightUp": {
-        "result": "LOSS",
-        "pick": "Georgia State"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -993,44 +880,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Georgia State",
+        "result": "LOSS"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-KANSASSTATE-COLORADO",
+      "date": "2026-10-31",
       "awayTeam": "Kansas State",
       "homeTeam": "Colorado",
-      "kickoff": "2026-10-31T18:00:00Z",
-      "projectionDigest": "6ad4ba3f8d0c3acec68e10ada08870c7dad2260df9714fc6d95fdc65244c2600",
-      "projection": {
-        "awayPoints": 24.888202481160228,
-        "homePoints": 23.00895134786864,
-        "marginHome": -1.8792511332915893,
-        "spreadHome": 1.8792511332915893,
-        "total": 47.897153829028866,
-        "homeWinProbability": 45.278275842756464,
-        "winner": "Kansas State"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 24,
         "homeScore": 27,
         "marginHome": 3,
-        "total": 51,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856846"
+        "total": 51
       },
-      "errors": {
-        "margin": -4.879251133291589,
-        "absoluteMargin": 4.879251133291589,
-        "total": -3.1028461709711337,
-        "absoluteTotal": 3.1028461709711337
+      "projection": {
+        "spreadHome": 1.8792511332915893,
+        "total": 47.897153829028866,
+        "homeWinProbability": 45.278275842756464,
+        "winner": "Kansas State"
       },
-      "straightUp": {
-        "result": "LOSS",
-        "pick": "Kansas State"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -1038,44 +920,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Kansas State",
+        "result": "LOSS"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-LOUISIANATECH-SOUTHALABAMA",
+      "date": "2026-10-31",
       "awayTeam": "Louisiana Tech",
       "homeTeam": "South Alabama",
-      "kickoff": "2026-10-31T19:00:00Z",
-      "projectionDigest": "2d2423b591eae40b6f78152ddf0a0d772a035bc664c211a42ba54883a0b5f9f5",
-      "projection": {
-        "awayPoints": 30.35324504214784,
-        "homePoints": 30.966404002515844,
-        "marginHome": 0.6131589603680041,
-        "spreadHome": -0.6131589603680041,
-        "total": 61.319649044663684,
-        "homeWinProbability": 51.54382540926006,
-        "winner": "South Alabama"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 35,
         "homeScore": 20,
         "marginHome": -15,
-        "total": 55,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401871097"
+        "total": 55
       },
-      "errors": {
-        "margin": 15.613158960368004,
-        "absoluteMargin": 15.613158960368004,
-        "total": 6.319649044663684,
-        "absoluteTotal": 6.319649044663684
+      "projection": {
+        "spreadHome": -0.6131589603680041,
+        "total": 61.319649044663684,
+        "homeWinProbability": 51.54382540926006,
+        "winner": "South Alabama"
       },
-      "straightUp": {
-        "result": "LOSS",
-        "pick": "South Alabama"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -1083,44 +960,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "South Alabama",
+        "result": "LOSS"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-TEMPLE-EASTCAROLINA",
+      "date": "2026-10-31",
       "awayTeam": "Temple",
       "homeTeam": "East Carolina",
-      "kickoff": "2026-10-31T19:00:00Z",
-      "projectionDigest": "349a3524ccdce3443415a7277b82c66b0a6d0ee806bb47e0432823e619daef19",
-      "projection": {
-        "awayPoints": 23.48391030922926,
-        "homePoints": 29.904787593545294,
-        "marginHome": 6.420877284316035,
-        "spreadHome": -6.420877284316035,
-        "total": 53.38869790277455,
-        "homeWinProbability": 65.73856419425748,
-        "winner": "East Carolina"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 9,
         "homeScore": 17,
         "marginHome": 8,
-        "total": 26,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401862815"
+        "total": 26
       },
-      "errors": {
-        "margin": -1.5791227156839653,
-        "absoluteMargin": 1.5791227156839653,
-        "total": 27.388697902774553,
-        "absoluteTotal": 27.388697902774553
+      "projection": {
+        "spreadHome": -6.420877284316035,
+        "total": 53.38869790277455,
+        "homeWinProbability": 65.73856419425748,
+        "winner": "East Carolina"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "East Carolina"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -1128,44 +1000,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "East Carolina",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-UCONN-AIRFORCE",
+      "date": "2026-10-31",
       "awayTeam": "UConn",
       "homeTeam": "Air Force",
-      "kickoff": "2026-10-31T19:00:00Z",
-      "projectionDigest": "b904a5c8398475db639472fc6e90601b483cbaadad495fd895097682f8e571fe",
-      "projection": {
-        "awayPoints": 25.965712121084298,
-        "homePoints": 29.934122418410883,
-        "marginHome": 3.968410297326585,
-        "spreadHome": -3.968410297326585,
-        "total": 55.89983453949518,
-        "homeWinProbability": 59.890685431023094,
-        "winner": "Air Force"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 26,
         "homeScore": 35,
         "marginHome": 9,
-        "total": 61,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401861966"
+        "total": 61
       },
-      "errors": {
-        "margin": -5.031589702673415,
-        "absoluteMargin": 5.031589702673415,
-        "total": -5.100165460504819,
-        "absoluteTotal": 5.100165460504819
+      "projection": {
+        "spreadHome": -3.968410297326585,
+        "total": 55.89983453949518,
+        "homeWinProbability": 59.890685431023094,
+        "winner": "Air Force"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "Air Force"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -1173,44 +1040,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Air Force",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-STANFORD-LOUISVILLE",
+      "date": "2026-10-31",
       "awayTeam": "Stanford",
       "homeTeam": "Louisville",
-      "kickoff": "2026-10-31T19:15:00Z",
-      "projectionDigest": "ab63da5230976ecc3923ad5e7466dfd69488fe57b17439d40eb0102d8d1437f5",
-      "projection": {
-        "awayPoints": 19.168786478653153,
-        "homePoints": 41.363545056379834,
-        "marginHome": 22.19475857772668,
-        "spreadHome": -22.19475857772668,
-        "total": 60.53233153503299,
-        "homeWinProbability": 91.94102148293304,
-        "winner": "Louisville"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 24,
         "homeScore": 52,
         "marginHome": 28,
-        "total": 76,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858283"
+        "total": 76
       },
-      "errors": {
-        "margin": -5.805241422273319,
-        "absoluteMargin": 5.805241422273319,
-        "total": -15.467668464967012,
-        "absoluteTotal": 15.467668464967012
+      "projection": {
+        "spreadHome": -22.19475857772668,
+        "total": 60.53233153503299,
+        "homeWinProbability": 91.94102148293304,
+        "winner": "Louisville"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "Louisville"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -1218,44 +1080,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Louisville",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-ARIZONASTATE-BYU",
+      "date": "2026-10-31",
       "awayTeam": "Arizona State",
       "homeTeam": "BYU",
-      "kickoff": "2026-10-31T19:30:00Z",
-      "projectionDigest": "ae03f9421a084cc1e99d502b550ce7aaa7fe9f80c66784b450b579af7dc25016",
+      "conference": "",
+      "status": "FINAL",
+      "final": {
+        "awayScore": 20,
+        "homeScore": 27,
+        "marginHome": 7,
+        "total": 47
+      },
       "projection": {
-        "awayPoints": 18.952031712231655,
-        "homePoints": 35.003927572311824,
-        "marginHome": 16.05189586008017,
         "spreadHome": -16.05189586008017,
         "total": 53.95595928454348,
         "homeWinProbability": 84.45481121094693,
         "winner": "BYU"
       },
-      "status": "FINAL",
-      "final": {
-        "awayScore": 20,
-        "homeScore": 27,
-        "marginHome": 7,
-        "total": 47,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856843"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "errors": {
-        "margin": 9.051895860080169,
-        "absoluteMargin": 9.051895860080169,
-        "total": 6.955959284543482,
-        "absoluteTotal": 6.955959284543482
-      },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "BYU"
-      },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -1263,44 +1120,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "BYU",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-COLORADOSTATE-UTAHSTATE",
+      "date": "2026-10-31",
       "awayTeam": "Colorado State",
       "homeTeam": "Utah State",
-      "kickoff": "2026-10-31T19:30:00Z",
-      "projectionDigest": "8f16b14cfce7778993aba57bcd5774322639d9e6d7274693bf78a77da153cbcd",
-      "projection": {
-        "awayPoints": 26.21315010377477,
-        "homePoints": 35.99261118018722,
-        "marginHome": 9.77946107641245,
-        "spreadHome": -9.77946107641245,
-        "total": 62.20576128396199,
-        "homeWinProbability": 73.15013095395328,
-        "winner": "Utah State"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 14,
         "homeScore": 31,
         "marginHome": 17,
-        "total": 45,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401860910"
+        "total": 45
       },
-      "errors": {
-        "margin": -7.220538923587551,
-        "absoluteMargin": 7.220538923587551,
-        "total": 17.20576128396199,
-        "absoluteTotal": 17.20576128396199
+      "projection": {
+        "spreadHome": -9.77946107641245,
+        "total": 62.20576128396199,
+        "homeWinProbability": 73.15013095395328,
+        "winner": "Utah State"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "Utah State"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -1308,44 +1160,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Utah State",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-FLORIDA-GEORGIA",
+      "date": "2026-10-31",
       "awayTeam": "Florida",
       "homeTeam": "Georgia",
-      "kickoff": "2026-10-31T19:30:00Z",
-      "projectionDigest": "193df4824973fb184fa23adae820a9fbbad431e92b9392fec874ebbda0aa02dd",
-      "projection": {
-        "awayPoints": 28.701657304510817,
-        "homePoints": 35.83538427514341,
-        "marginHome": 7.133726970632594,
-        "spreadHome": -7.133726970632594,
-        "total": 64.53704157965423,
-        "homeWinProbability": 67.37671394052758,
-        "winner": "Georgia"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 8,
         "homeScore": 27,
         "marginHome": 19,
-        "total": 35,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856734"
+        "total": 35
       },
-      "errors": {
-        "margin": -11.866273029367406,
-        "absoluteMargin": 11.866273029367406,
-        "total": 29.53704157965423,
-        "absoluteTotal": 29.53704157965423
+      "projection": {
+        "spreadHome": -7.133726970632594,
+        "total": 64.53704157965423,
+        "homeWinProbability": 67.37671394052758,
+        "winner": "Georgia"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "Georgia"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -1353,44 +1200,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Georgia",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-FLORIDAINTERNATIONAL-LIBERTY",
+      "date": "2026-10-31",
       "awayTeam": "Florida International",
       "homeTeam": "Liberty",
-      "kickoff": "2026-10-31T19:30:00Z",
-      "projectionDigest": "873b5096a030465924208b23462a756eb47f8ffcc251cc748050b9f97a37cb6a",
-      "projection": {
-        "awayPoints": 11.725908027970076,
-        "homePoints": 28.09080182590509,
-        "marginHome": 16.36489379793501,
-        "spreadHome": -16.36489379793501,
-        "total": 39.81670985387517,
-        "homeWinProbability": 84.92182801651774,
-        "winner": "Liberty"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 10,
         "homeScore": 49,
         "marginHome": 39,
-        "total": 59,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401871059"
+        "total": 59
       },
-      "errors": {
-        "margin": -22.63510620206499,
-        "absoluteMargin": 22.63510620206499,
-        "total": -19.183290146124833,
-        "absoluteTotal": 19.183290146124833
+      "projection": {
+        "spreadHome": -16.36489379793501,
+        "total": 39.81670985387517,
+        "homeWinProbability": 84.92182801651774,
+        "winner": "Liberty"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "Liberty"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -1398,44 +1240,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Liberty",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-KANSAS-TCU",
+      "date": "2026-10-31",
       "awayTeam": "Kansas",
       "homeTeam": "TCU",
-      "kickoff": "2026-10-31T19:30:00Z",
-      "projectionDigest": "897a6b16dcd86d0818b85953b341b2c4140bca30d2201fef0616b9f53c9629a9",
-      "projection": {
-        "awayPoints": 17.804898323151864,
-        "homePoints": 22.890285882243166,
-        "marginHome": 5.085387559091302,
-        "spreadHome": -5.085387559091302,
-        "total": 40.69518420539503,
-        "homeWinProbability": 62.59067082255406,
-        "winner": "TCU"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 16,
         "homeScore": 22,
         "marginHome": 6,
-        "total": 38,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856845"
+        "total": 38
       },
-      "errors": {
-        "margin": -0.914612440908698,
-        "absoluteMargin": 0.914612440908698,
-        "total": 2.69518420539503,
-        "absoluteTotal": 2.69518420539503
+      "projection": {
+        "spreadHome": -5.085387559091302,
+        "total": 40.69518420539503,
+        "homeWinProbability": 62.59067082255406,
+        "winner": "TCU"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "TCU"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -1443,44 +1280,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "TCU",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-MINNESOTA-INDIANA",
+      "date": "2026-10-31",
       "awayTeam": "Minnesota",
       "homeTeam": "Indiana",
-      "kickoff": "2026-10-31T19:30:00Z",
-      "projectionDigest": "c580851d35be7d60c6d4bd701e4feb087f7d13129dee755977f0096a69db4d54",
-      "projection": {
-        "awayPoints": 9.698534190472346,
-        "homePoints": 29.188434899471133,
-        "marginHome": 19.48990070899879,
-        "spreadHome": -19.48990070899879,
-        "total": 38.88696908994348,
-        "homeWinProbability": 89.07193151478243,
-        "winner": "Indiana"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 16,
         "homeScore": 23,
         "marginHome": 7,
-        "total": 39,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858501"
+        "total": 39
       },
-      "errors": {
-        "margin": 12.489900708998789,
-        "absoluteMargin": 12.489900708998789,
-        "total": -0.11303091005652277,
-        "absoluteTotal": 0.11303091005652277
+      "projection": {
+        "spreadHome": -19.48990070899879,
+        "total": 38.88696908994348,
+        "homeWinProbability": 89.07193151478243,
+        "winner": "Indiana"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "Indiana"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -1488,44 +1320,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Indiana",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-NORTHWESTERN-OREGON",
+      "date": "2026-10-31",
       "awayTeam": "Northwestern",
       "homeTeam": "Oregon",
-      "kickoff": "2026-10-31T19:30:00Z",
-      "projectionDigest": "3847797ac345fa8537060538f42ca9560d83c32efb40ce42a67db0536bc2db16",
-      "projection": {
-        "awayPoints": 24.01379743815732,
-        "homePoints": 22.481264780239087,
-        "marginHome": -1.5325326579182317,
-        "spreadHome": 1.5325326579182317,
-        "total": 46.495062218396406,
-        "homeWinProbability": 46.146403670880275,
-        "winner": "Northwestern"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 26,
         "homeScore": 34,
         "marginHome": 8,
-        "total": 60,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858505"
+        "total": 60
       },
-      "errors": {
-        "margin": -9.532532657918232,
-        "absoluteMargin": 9.532532657918232,
-        "total": -13.504937781603594,
-        "absoluteTotal": 13.504937781603594
+      "projection": {
+        "spreadHome": 1.5325326579182317,
+        "total": 46.495062218396406,
+        "homeWinProbability": 46.146403670880275,
+        "winner": "Northwestern"
       },
-      "straightUp": {
-        "result": "LOSS",
-        "pick": "Northwestern"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -1533,44 +1360,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Northwestern",
+        "result": "LOSS"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-SOUTHERNMISS-ULMONROE",
+      "date": "2026-10-31",
       "awayTeam": "Southern Miss",
       "homeTeam": "UL Monroe",
-      "kickoff": "2026-10-31T19:30:00Z",
-      "projectionDigest": "301579b3541f2fe5a8f7c797512cde2fdb8456a679d8b457c648973a1c2342f7",
-      "projection": {
-        "awayPoints": 26.536175291677903,
-        "homePoints": 28.94742869743283,
-        "marginHome": 2.411253405754927,
-        "spreadHome": -2.411253405754927,
-        "total": 55.48360398911073,
-        "homeWinProbability": 56.0492545575695,
-        "winner": "UL Monroe"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 35,
         "homeScore": 21,
         "marginHome": -14,
-        "total": 56,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401871095"
+        "total": 56
       },
-      "errors": {
-        "margin": 16.411253405754927,
-        "absoluteMargin": 16.411253405754927,
-        "total": -0.5163960108892667,
-        "absoluteTotal": 0.5163960108892667
+      "projection": {
+        "spreadHome": -2.411253405754927,
+        "total": 55.48360398911073,
+        "homeWinProbability": 56.0492545575695,
+        "winner": "UL Monroe"
       },
-      "straightUp": {
-        "result": "LOSS",
-        "pick": "UL Monroe"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -1578,44 +1400,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "UL Monroe",
+        "result": "LOSS"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-UTEP-NORTHDAKOTASTATE",
+      "date": "2026-10-31",
       "awayTeam": "UTEP",
       "homeTeam": "North Dakota State",
-      "kickoff": "2026-10-31T19:30:00Z",
-      "projectionDigest": "c888a350a0a01f7ab91982ff53e7531d61fa1ef65007788200224033b95f46bf",
-      "projection": {
-        "awayPoints": 8.487055856014669,
-        "homePoints": 37.18429452767288,
-        "marginHome": 28.697238671658212,
-        "spreadHome": -28.697238671658212,
-        "total": 45.67135038368755,
-        "homeWinProbability": 96.49763988980176,
-        "winner": "North Dakota State"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 7,
         "homeScore": 31,
         "marginHome": 24,
-        "total": 38,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401864531"
+        "total": 38
       },
-      "errors": {
-        "margin": 4.697238671658212,
-        "absoluteMargin": 4.697238671658212,
-        "total": 7.671350383687553,
-        "absoluteTotal": 7.671350383687553
+      "projection": {
+        "spreadHome": -28.697238671658212,
+        "total": 45.67135038368755,
+        "homeWinProbability": 96.49763988980176,
+        "winner": "North Dakota State"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "North Dakota State"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -1623,44 +1440,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "North Dakota State",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-UTAH-CINCINNATI",
+      "date": "2026-10-31",
       "awayTeam": "Utah",
       "homeTeam": "Cincinnati",
-      "kickoff": "2026-10-31T19:45:00Z",
-      "projectionDigest": "1eb42d0209760141c6e46505cdaa877f5bd9784432774351b31fef79d691bb81",
+      "conference": "",
+      "status": "FINAL",
+      "final": {
+        "awayScore": 49,
+        "homeScore": 25,
+        "marginHome": -24,
+        "total": 74
+      },
       "projection": {
-        "awayPoints": 28.91831119821676,
-        "homePoints": 25.71451540314057,
-        "marginHome": -3.2037957950761893,
         "spreadHome": 3.2037957950761893,
         "total": 54.63282660135733,
         "homeWinProbability": 41.98606842012838,
         "winner": "Utah"
       },
-      "status": "FINAL",
-      "final": {
-        "awayScore": 49,
-        "homeScore": 25,
-        "marginHome": -24,
-        "total": 74,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856848"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "errors": {
-        "margin": 20.79620420492381,
-        "absoluteMargin": 20.79620420492381,
-        "total": -19.36717339864267,
-        "absoluteTotal": 19.36717339864267
-      },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "Utah"
-      },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -1668,44 +1480,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Utah",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-VIRGINIA-WAKEFOREST",
+      "date": "2026-10-31",
       "awayTeam": "Virginia",
       "homeTeam": "Wake Forest",
-      "kickoff": "2026-10-31T19:45:00Z",
-      "projectionDigest": "c9299d18193fb3d5049e3a5e98202daac08f42cd3363541724da34e934be806e",
-      "projection": {
-        "awayPoints": 14.231400902948446,
-        "homePoints": 30.756072953085614,
-        "marginHome": 16.52467205013717,
-        "spreadHome": -16.52467205013717,
-        "total": 44.98747385603406,
-        "homeWinProbability": 85.15659060072764,
-        "winner": "Wake Forest"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 7,
         "homeScore": 51,
         "marginHome": 44,
-        "total": 58,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858284"
+        "total": 58
       },
-      "errors": {
-        "margin": -27.47532794986283,
-        "absoluteMargin": 27.47532794986283,
-        "total": -13.012526143965943,
-        "absoluteTotal": 13.012526143965943
+      "projection": {
+        "spreadHome": -16.52467205013717,
+        "total": 44.98747385603406,
+        "homeWinProbability": 85.15659060072764,
+        "winner": "Wake Forest"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "Wake Forest"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -1713,44 +1520,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Wake Forest",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-NEWMEXICO-SANJOSSTATE",
+      "date": "2026-10-31",
       "awayTeam": "New Mexico",
-      "homeTeam": "San Jos\u00e9 State",
-      "kickoff": "2026-10-31T20:00:00Z",
-      "projectionDigest": "5fa9765b671bea70f39a1ed1ed52276bd0cfb8a5e99100ca7b62843389f09ae8",
-      "projection": {
-        "awayPoints": 25.52557845648296,
-        "homePoints": 16.16777701802213,
-        "marginHome": -9.357801438460832,
-        "spreadHome": 9.357801438460832,
-        "total": 41.69335547450509,
-        "homeWinProbability": 27.734689959539704,
-        "winner": "New Mexico"
-      },
+      "homeTeam": "San José State",
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 21,
         "homeScore": 16,
         "marginHome": -5,
-        "total": 37,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401864529"
+        "total": 37
       },
-      "errors": {
-        "margin": -4.357801438460832,
-        "absoluteMargin": 4.357801438460832,
-        "total": 4.69335547450509,
-        "absoluteTotal": 4.69335547450509
+      "projection": {
+        "spreadHome": 9.357801438460832,
+        "total": 41.69335547450509,
+        "homeWinProbability": 27.734689959539704,
+        "winner": "New Mexico"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "New Mexico"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -1758,44 +1560,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "New Mexico",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-NEVADA-UCLA",
+      "date": "2026-10-31",
       "awayTeam": "Nevada",
       "homeTeam": "UCLA",
-      "kickoff": "2026-10-31T20:15:00Z",
-      "projectionDigest": "3c307901803692afb677e3c790f0ad8a667dd6a3ba8679d33fabd8b24f148134",
-      "projection": {
-        "awayPoints": 17.909461856508685,
-        "homePoints": 32.021405963656605,
-        "marginHome": 14.11194410714792,
-        "spreadHome": -14.11194410714792,
-        "total": 49.93086782016529,
-        "homeWinProbability": 81.34983358273999,
-        "winner": "UCLA"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 0,
         "homeScore": 27,
         "marginHome": 27,
-        "total": 27,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858508"
+        "total": 27
       },
-      "errors": {
-        "margin": -12.88805589285208,
-        "absoluteMargin": 12.88805589285208,
-        "total": 22.93086782016529,
-        "absoluteTotal": 22.93086782016529
+      "projection": {
+        "spreadHome": -14.11194410714792,
+        "total": 49.93086782016529,
+        "homeWinProbability": 81.34983358273999,
+        "winner": "UCLA"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "UCLA"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -1803,44 +1600,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "UCLA",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-PURDUE-PENNSTATE",
+      "date": "2026-10-31",
       "awayTeam": "Purdue",
       "homeTeam": "Penn State",
-      "kickoff": "2026-10-31T20:15:00Z",
-      "projectionDigest": "7988bfb406eae405a52c9d337ec84ccf63bcab93a51c50f64d358f6d506c45b9",
-      "projection": {
-        "awayPoints": 23.90996887539122,
-        "homePoints": 34.07450549354862,
-        "marginHome": 10.164536618157403,
-        "spreadHome": -10.164536618157403,
-        "total": 57.98447436893984,
-        "homeWinProbability": 73.9455941366175,
-        "winner": "Penn State"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 17,
         "homeScore": 31,
         "marginHome": 14,
-        "total": 48,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858506"
+        "total": 48
       },
-      "errors": {
-        "margin": -3.8354633818425974,
-        "absoluteMargin": 3.8354633818425974,
-        "total": 9.984474368939843,
-        "absoluteTotal": 9.984474368939843
+      "projection": {
+        "spreadHome": -10.164536618157403,
+        "total": 57.98447436893984,
+        "homeWinProbability": 73.9455941366175,
+        "winner": "Penn State"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "Penn State"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -1848,44 +1640,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Penn State",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-SOUTHCAROLINA-OKLAHOMA",
+      "date": "2026-10-31",
       "awayTeam": "South Carolina",
       "homeTeam": "Oklahoma",
-      "kickoff": "2026-10-31T20:15:00Z",
-      "projectionDigest": "02d9fd22c8cefc46d9341cd03cbde38c5137b71821aba8e72b3335c6ced96fc1",
-      "projection": {
-        "awayPoints": 22.8931193900413,
-        "homePoints": 26.222621037018648,
-        "marginHome": 3.3295016469773486,
-        "spreadHome": -3.3295016469773486,
-        "total": 49.11574042705995,
-        "homeWinProbability": 58.32385443352286,
-        "winner": "Oklahoma"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 42,
         "homeScore": 25,
         "marginHome": -17,
-        "total": 67,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856736"
+        "total": 67
       },
-      "errors": {
-        "margin": 20.32950164697735,
-        "absoluteMargin": 20.32950164697735,
-        "total": -17.884259572940053,
-        "absoluteTotal": 17.884259572940053
+      "projection": {
+        "spreadHome": -3.3295016469773486,
+        "total": 49.11574042705995,
+        "homeWinProbability": 58.32385443352286,
+        "winner": "Oklahoma"
       },
-      "straightUp": {
-        "result": "LOSS",
-        "pick": "Oklahoma"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -1893,44 +1680,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Oklahoma",
+        "result": "LOSS"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-APPSTATE-GEORGIASOUTHERN",
+      "date": "2026-10-31",
       "awayTeam": "App State",
       "homeTeam": "Georgia Southern",
-      "kickoff": "2026-10-31T22:30:00Z",
-      "projectionDigest": "6bf2cf97e3be2a4a99db74acca2a447f0bacea9d7f6363db6461812a5a6d2e97",
-      "projection": {
-        "awayPoints": 23.363947970203963,
-        "homePoints": 29.54805710469662,
-        "marginHome": 6.184109134492658,
-        "spreadHome": -6.184109134492658,
-        "total": 52.912005074900584,
-        "homeWinProbability": 65.18765535543609,
-        "winner": "Georgia Southern"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 3,
         "homeScore": 19,
         "marginHome": 16,
-        "total": 22,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401869846"
+        "total": 22
       },
-      "errors": {
-        "margin": -9.815890865507342,
-        "absoluteMargin": 9.815890865507342,
-        "total": 30.912005074900584,
-        "absoluteTotal": 30.912005074900584
+      "projection": {
+        "spreadHome": -6.184109134492658,
+        "total": 52.912005074900584,
+        "homeWinProbability": 65.18765535543609,
+        "winner": "Georgia Southern"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "Georgia Southern"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -1938,44 +1720,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Georgia Southern",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-CLEMSON-FLORIDASTATE",
+      "date": "2026-10-31",
       "awayTeam": "Clemson",
       "homeTeam": "Florida State",
-      "kickoff": "2026-10-31T23:00:00Z",
-      "projectionDigest": "69da7ab32fcc8226e959a4e0f266be6190360e2b0de758e93d7a00caa5f578e7",
-      "projection": {
-        "awayPoints": 20.59318093716945,
-        "homePoints": 30.801053833394988,
-        "marginHome": 10.207872896225538,
-        "spreadHome": -10.207872896225538,
-        "total": 51.39423477056444,
-        "homeWinProbability": 74.03434967558535,
-        "winner": "Florida State"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 36,
         "homeScore": 24,
         "marginHome": -12,
-        "total": 60,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858280"
+        "total": 60
       },
-      "errors": {
-        "margin": 22.20787289622554,
-        "absoluteMargin": 22.20787289622554,
-        "total": -8.605765229435562,
-        "absoluteTotal": 8.605765229435562
+      "projection": {
+        "spreadHome": -10.207872896225538,
+        "total": 51.39423477056444,
+        "homeWinProbability": 74.03434967558535,
+        "winner": "Florida State"
       },
-      "straightUp": {
-        "result": "LOSS",
-        "pick": "Florida State"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -1983,44 +1760,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Florida State",
+        "result": "LOSS"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-OKLAHOMASTATE-IOWASTATE",
+      "date": "2026-10-31",
       "awayTeam": "Oklahoma State",
       "homeTeam": "Iowa State",
-      "kickoff": "2026-10-31T23:00:00Z",
-      "projectionDigest": "76d1d7243c93fa363c85a3984cf12f5d82e4e0a0589ce9cb598bcd878bfa2f0a",
-      "projection": {
-        "awayPoints": 31.782216689183482,
-        "homePoints": 27.581507123379144,
-        "marginHome": -4.200709565804338,
-        "spreadHome": 4.200709565804338,
-        "total": 59.363723812562625,
-        "homeWinProbability": 39.5434138325117,
-        "winner": "Oklahoma State"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 49,
         "homeScore": 51,
         "marginHome": 2,
-        "total": 100,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856847"
+        "total": 100
       },
-      "errors": {
-        "margin": -6.200709565804338,
-        "absoluteMargin": 6.200709565804338,
-        "total": -40.636276187437375,
-        "absoluteTotal": 40.636276187437375
+      "projection": {
+        "spreadHome": 4.200709565804338,
+        "total": 59.363723812562625,
+        "homeWinProbability": 39.5434138325117,
+        "winner": "Oklahoma State"
       },
-      "straightUp": {
-        "result": "LOSS",
-        "pick": "Oklahoma State"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -2028,44 +1800,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Oklahoma State",
+        "result": "LOSS"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-WASHINGTONSTATE-SANDIEGOSTATE",
+      "date": "2026-10-31",
       "awayTeam": "Washington State",
       "homeTeam": "San Diego State",
-      "kickoff": "2026-10-31T23:00:00Z",
-      "projectionDigest": "12c446cc1849d668cafe90e0f3a2ff61c5e1f9288189f929456d4c6ce8c58c3b",
-      "projection": {
-        "awayPoints": 24.582084831076454,
-        "homePoints": 27.893711096377654,
-        "marginHome": 3.3116262653012,
-        "spreadHome": -3.3116262653012,
-        "total": 52.47579592745411,
-        "homeWinProbability": 58.2798144484994,
-        "winner": "San Diego State"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 20,
         "homeScore": 26,
         "marginHome": 6,
-        "total": 46,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401860909"
+        "total": 46
       },
-      "errors": {
-        "margin": -2.6883737346988,
-        "absoluteMargin": 2.6883737346988,
-        "total": 6.475795927454108,
-        "absoluteTotal": 6.475795927454108
+      "projection": {
+        "spreadHome": -3.3116262653012,
+        "total": 52.47579592745411,
+        "homeWinProbability": 58.2798144484994,
+        "winner": "San Diego State"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "San Diego State"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -2073,44 +1840,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "San Diego State",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-GEORGIATECH-PITTSBURGH",
+      "date": "2026-10-31",
       "awayTeam": "Georgia Tech",
       "homeTeam": "Pittsburgh",
-      "kickoff": "2026-10-31T23:30:00Z",
-      "projectionDigest": "8939555873324fd8dc865311012b83ad26f5cb7616c4239fdbad35daa9d16634",
-      "projection": {
-        "awayPoints": 21.62673768557785,
-        "homePoints": 36.154087284504165,
-        "marginHome": 14.527349598926314,
-        "spreadHome": -14.527349598926314,
-        "total": 57.780824970082016,
-        "homeWinProbability": 82.04511021897711,
-        "winner": "Pittsburgh"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 11,
         "homeScore": 34,
         "marginHome": 23,
-        "total": 45,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858281"
+        "total": 45
       },
-      "errors": {
-        "margin": -8.472650401073686,
-        "absoluteMargin": 8.472650401073686,
-        "total": 12.780824970082016,
-        "absoluteTotal": 12.780824970082016
+      "projection": {
+        "spreadHome": -14.527349598926314,
+        "total": 57.780824970082016,
+        "homeWinProbability": 82.04511021897711,
+        "winner": "Pittsburgh"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "Pittsburgh"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -2118,44 +1880,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Pittsburgh",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-MIAMI-NORTHCAROLINA",
+      "date": "2026-10-31",
       "awayTeam": "Miami",
       "homeTeam": "North Carolina",
-      "kickoff": "2026-10-31T23:30:00Z",
-      "projectionDigest": "0ccd75b92236b905c23112d7675f5c480d8e926a8bf25c68c05fb7177e406f65",
-      "projection": {
-        "awayPoints": 34.63601805078756,
-        "homePoints": 23.87587649858625,
-        "marginHome": -10.760141552201311,
-        "spreadHome": 10.760141552201311,
-        "total": 58.511894549373814,
-        "homeWinProbability": 24.848388212418136,
-        "winner": "Miami"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 38,
         "homeScore": 35,
         "marginHome": -3,
-        "total": 73,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858282"
+        "total": 73
       },
-      "errors": {
-        "margin": -7.760141552201311,
-        "absoluteMargin": 7.760141552201311,
-        "total": -14.488105450626186,
-        "absoluteTotal": 14.488105450626186
+      "projection": {
+        "spreadHome": 10.760141552201311,
+        "total": 58.511894549373814,
+        "homeWinProbability": 24.848388212418136,
+        "winner": "Miami"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "Miami"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -2163,44 +1920,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Miami",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-MISSISSIPPISTATE-TEXAS",
+      "date": "2026-10-31",
       "awayTeam": "Mississippi State",
       "homeTeam": "Texas",
-      "kickoff": "2026-10-31T23:30:00Z",
-      "projectionDigest": "2545ae9efdb3c067589c85e997398711b3e1249107ba49a48becfd1ada2d6843",
-      "projection": {
-        "awayPoints": 20.85098292423895,
-        "homePoints": 32.331064868690625,
-        "marginHome": 11.480081944451676,
-        "spreadHome": -11.480081944451676,
-        "total": 53.18204779292957,
-        "homeWinProbability": 76.56871768628825,
-        "winner": "Texas"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 3,
         "homeScore": 31,
         "marginHome": 28,
-        "total": 34,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856737"
+        "total": 34
       },
-      "errors": {
-        "margin": -16.519918055548324,
-        "absoluteMargin": 16.519918055548324,
-        "total": 19.182047792929573,
-        "absoluteTotal": 19.182047792929573
+      "projection": {
+        "spreadHome": -11.480081944451676,
+        "total": 53.18204779292957,
+        "homeWinProbability": 76.56871768628825,
+        "winner": "Texas"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "Texas"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -2208,44 +1960,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Texas",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-OHIOSTATE-USC",
+      "date": "2026-10-31",
       "awayTeam": "Ohio State",
       "homeTeam": "USC",
-      "kickoff": "2026-10-31T23:30:00Z",
-      "projectionDigest": "126b6b90f85a5340425fab7af739e3329dcd518c67feb3d082b6820167828e7e",
-      "projection": {
-        "awayPoints": 32.11902858085771,
-        "homePoints": 25.082456100359394,
-        "marginHome": -7.0365724804983145,
-        "spreadHome": 7.0365724804983145,
-        "total": 57.2014846812171,
-        "homeWinProbability": 32.84467449125535,
-        "winner": "Ohio State"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 18,
         "homeScore": 30,
         "marginHome": 12,
-        "total": 48,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858509"
+        "total": 48
       },
-      "errors": {
-        "margin": -19.036572480498315,
-        "absoluteMargin": 19.036572480498315,
-        "total": 9.201484681217103,
-        "absoluteTotal": 9.201484681217103
+      "projection": {
+        "spreadHome": 7.0365724804983145,
+        "total": 57.2014846812171,
+        "homeWinProbability": 32.84467449125535,
+        "winner": "Ohio State"
       },
-      "straightUp": {
-        "result": "LOSS",
-        "pick": "Ohio State"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -2253,44 +2000,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Ohio State",
+        "result": "LOSS"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-MISSOURI-ARKANSAS",
+      "date": "2026-10-31",
       "awayTeam": "Missouri",
       "homeTeam": "Arkansas",
-      "kickoff": "2026-10-31T23:45:00Z",
-      "projectionDigest": "5971adbdad54f233622d6550d37ab451ca1462cc6da6b4420a7f298fbd4cc4a0",
-      "projection": {
-        "awayPoints": 24.39621038824729,
-        "homePoints": 20.65072695614476,
-        "marginHome": -3.7454834321025317,
-        "spreadHome": 3.7454834321025317,
-        "total": 45.04693734439205,
-        "homeWinProbability": 40.65434320408705,
-        "winner": "Missouri"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 34,
         "homeScore": 10,
         "marginHome": -24,
-        "total": 44,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856733"
+        "total": 44
       },
-      "errors": {
-        "margin": 20.25451656789747,
-        "absoluteMargin": 20.25451656789747,
-        "total": 1.0469373443920489,
-        "absoluteTotal": 1.0469373443920489
+      "projection": {
+        "spreadHome": 3.7454834321025317,
+        "total": 45.04693734439205,
+        "homeWinProbability": 40.65434320408705,
+        "winner": "Missouri"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "Missouri"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-10-31",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -2298,44 +2040,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Missouri",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-ARMY-MEMPHIS",
+      "date": "2026-11-01",
       "awayTeam": "Army",
       "homeTeam": "Memphis",
-      "kickoff": "2026-11-01T00:00:00Z",
-      "projectionDigest": "ff1382f1f231b4c541a05a09b294db7cb46787f841b846616f0809db83467898",
-      "projection": {
-        "awayPoints": 27.836176119292958,
-        "homePoints": 34.335361973081575,
-        "marginHome": 6.499185853788617,
-        "spreadHome": -6.499185853788617,
-        "total": 62.17153809237453,
-        "homeWinProbability": 65.92004424192956,
-        "winner": "Memphis"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 22,
         "homeScore": 49,
         "marginHome": 27,
-        "total": 71,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401862814"
+        "total": 71
       },
-      "errors": {
-        "margin": -20.500814146211383,
-        "absoluteMargin": 20.500814146211383,
-        "total": -8.828461907625467,
-        "absoluteTotal": 8.828461907625467
+      "projection": {
+        "spreadHome": -6.499185853788617,
+        "total": 62.17153809237453,
+        "homeWinProbability": 65.92004424192956,
+        "winner": "Memphis"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "Memphis"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-11-01",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -2343,44 +2080,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Memphis",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-WASHINGTON-NEBRASKA",
+      "date": "2026-11-01",
       "awayTeam": "Washington",
       "homeTeam": "Nebraska",
-      "kickoff": "2026-11-01T00:00:00Z",
-      "projectionDigest": "bbd081d0a58957854396fb96db2a20f7ead2742b8d45c0d03c3a8bd556928837",
-      "projection": {
-        "awayPoints": 18.854306222671667,
-        "homePoints": 33.900433083011734,
-        "marginHome": 15.046126860340067,
-        "spreadHome": -15.046126860340067,
-        "total": 52.7547393056834,
-        "homeWinProbability": 82.89019664680922,
-        "winner": "Nebraska"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 17,
         "homeScore": 10,
         "marginHome": -7,
-        "total": 27,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858504"
+        "total": 27
       },
-      "errors": {
-        "margin": 22.046126860340067,
-        "absoluteMargin": 22.046126860340067,
-        "total": 25.7547393056834,
-        "absoluteTotal": 25.7547393056834
+      "projection": {
+        "spreadHome": -15.046126860340067,
+        "total": 52.7547393056834,
+        "homeWinProbability": 82.89019664680922,
+        "winner": "Nebraska"
       },
-      "straightUp": {
-        "result": "LOSS",
-        "pick": "Nebraska"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-11-01",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -2388,44 +2120,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Nebraska",
+        "result": "LOSS"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-TEXASSTATE-BOISESTATE",
+      "date": "2026-11-01",
       "awayTeam": "Texas State",
       "homeTeam": "Boise State",
-      "kickoff": "2026-11-01T02:00:00Z",
-      "projectionDigest": "0bda1256a8bcc3c40b4e5c20412a0571fa82b06f69ab8d99b1ce34f77ddb2190",
-      "projection": {
-        "awayPoints": 22.846205986639422,
-        "homePoints": 37.39294857423528,
-        "marginHome": 14.546742587595855,
-        "spreadHome": -14.546742587595855,
-        "total": 60.239154560874695,
-        "homeWinProbability": 82.07716579546889,
-        "winner": "Boise State"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 45,
         "homeScore": 46,
         "marginHome": 1,
-        "total": 91,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401860908"
+        "total": 91
       },
-      "errors": {
-        "margin": 13.546742587595855,
-        "absoluteMargin": 13.546742587595855,
-        "total": -30.760845439125305,
-        "absoluteTotal": 30.760845439125305
+      "projection": {
+        "spreadHome": -14.546742587595855,
+        "total": 60.239154560874695,
+        "homeWinProbability": 82.07716579546889,
+        "winner": "Boise State"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "Boise State"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-11-01",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -2433,44 +2160,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Boise State",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-NORTHERNILLINOIS-UNLV",
+      "date": "2026-11-01",
       "awayTeam": "Northern Illinois",
       "homeTeam": "UNLV",
-      "kickoff": "2026-11-01T02:30:00Z",
-      "projectionDigest": "f5a4acd3e4d3d08b9cc3a7ced67d673c9ae93070652ef6329689ed40805ce55e",
-      "projection": {
-        "awayPoints": 16.349805900409738,
-        "homePoints": 36.44388299200148,
-        "marginHome": 20.09407709159174,
-        "spreadHome": -20.09407709159174,
-        "total": 52.79368889241121,
-        "homeWinProbability": 89.76908325434133,
-        "winner": "UNLV"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 24,
         "homeScore": 31,
         "marginHome": 7,
-        "total": 55,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401864530"
+        "total": 55
       },
-      "errors": {
-        "margin": 13.094077091591739,
-        "absoluteMargin": 13.094077091591739,
-        "total": -2.206311107588789,
-        "absoluteTotal": 2.206311107588789
+      "projection": {
+        "spreadHome": -20.09407709159174,
+        "total": 52.79368889241121,
+        "homeWinProbability": 89.76908325434133,
+        "winner": "UNLV"
       },
-      "straightUp": {
-        "result": "WIN",
-        "pick": "UNLV"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-11-01",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -2478,44 +2200,39 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "UNLV",
+        "result": "WIN"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     },
     {
       "gameId": "2026-10-31-OREGONSTATE-FRESNOSTATE",
+      "date": "2026-11-01",
       "awayTeam": "Oregon State",
       "homeTeam": "Fresno State",
-      "kickoff": "2026-11-01T03:00:00Z",
-      "projectionDigest": "3a2c690bc024e8f093b50c7f49bb609827d5307f35b61a34f9c007d2aa80fff0",
-      "projection": {
-        "awayPoints": 30.152112617777874,
-        "homePoints": 27.050289761176302,
-        "marginHome": -3.101822856601572,
-        "spreadHome": 3.101822856601572,
-        "total": 57.202402378954176,
-        "homeWinProbability": 42.23784527970449,
-        "winner": "Oregon State"
-      },
+      "conference": "",
       "status": "FINAL",
       "final": {
         "awayScore": 22,
         "homeScore": 38,
         "marginHome": 16,
-        "total": 60,
-        "overtime": false,
-        "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401860924"
+        "total": 60
       },
-      "errors": {
-        "margin": -19.101822856601572,
-        "absoluteMargin": 19.101822856601572,
-        "total": -2.797597621045824,
-        "absoluteTotal": 2.797597621045824
+      "projection": {
+        "spreadHome": 3.101822856601572,
+        "total": 57.202402378954176,
+        "homeWinProbability": 42.23784527970449,
+        "winner": "Oregon State"
       },
-      "straightUp": {
-        "result": "LOSS",
-        "pick": "Oregon State"
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null
       },
-      "date": "2026-11-01",
-      "market": {},
       "ats": {
         "pick": null,
         "result": "REVIEW"
@@ -2523,8 +2240,13 @@
       "totals": {
         "pick": null,
         "result": "REVIEW"
-      }
+      },
+      "straightUp": {
+        "pick": "Oregon State",
+        "result": "LOSS"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-09-foundation-full.json"
     }
-  ],
-  "sourceNote": "Week 9 frozen foundation research: 56 final scores matched by ESPN event ID. ATS/totals excluded because publication-time execution locks were absent; no retrospective lines used."
+  ]
 }
