@@ -1,0 +1,18 @@
+name: NFL trend content review
+on:
+  pull_request:
+    paths:
+      - 'nfl_data/site/nfl-trends.json'
+      - '.github/workflows/nfl-trend-content-review.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/validate_nfl_trends.py
+      - run: node --check trends.js
