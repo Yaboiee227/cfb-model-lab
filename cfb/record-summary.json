@@ -1,24 +1,24 @@
 {
   "schemaVersion": 1,
   "league": "cfb",
-  "generatedAt": "2026-11-01T12:58:27.403865+00:00",
+  "generatedAt": "2026-11-01T12:59:59.557866+00:00",
   "currentWeek": 9,
   "label": "Published projection performance; research only, not wagers. Missing market locks excluded.",
-  "sourceNote": "Published-model cumulative display, combining historical audited weeks and explicitly labeled frozen research weeks. Not a single validated model backtest. Week 9 frozen foundation research: 56 final scores matched by ESPN event ID. ATS/totals excluded because publication-time execution locks were absent; no retrospective lines used.",
+  "sourceNote": "Published-model cumulative display, combining historical audited weeks and explicitly labeled frozen research weeks. Not a single validated model backtest. Week 9 grades use model positions versus pre-kickoff ESPN/DraftKings market references saved with published forecasts. Reference-based research grades; not verified execution locks or wagers. User authorized this grading basis.",
   "overall": {
     "ats": {
-      "wins": 53,
-      "losses": 49,
-      "pushes": 2,
-      "graded": 104,
-      "winPct": 52.0
+      "wins": 80,
+      "losses": 77,
+      "pushes": 3,
+      "graded": 160,
+      "winPct": 51.0
     },
     "totals": {
-      "wins": 45,
-      "losses": 54,
+      "wins": 68,
+      "losses": 87,
       "pushes": 0,
-      "graded": 99,
-      "winPct": 45.5
+      "graded": 155,
+      "winPct": 43.9
     },
     "straightUp": {
       "wins": 102,
@@ -91,24 +91,24 @@
     {
       "season": 2026,
       "week": 9,
-      "status": "COMPLETE_WITH_EXCLUSIONS",
+      "status": "COMPLETE",
       "pending": 0,
-      "review": 56,
+      "review": 0,
       "recordType": "Frozen research",
-      "note": "Week 9 frozen foundation research: 56 final scores matched by ESPN event ID. ATS/totals excluded because publication-time execution locks were absent; no retrospective lines used.",
+      "note": "Week 9 grades use model positions versus pre-kickoff ESPN/DraftKings market references saved with published forecasts. Reference-based research grades; not verified execution locks or wagers. User authorized this grading basis.",
       "ats": {
-        "wins": 0,
-        "losses": 0,
-        "pushes": 0,
-        "graded": 0,
-        "winPct": null
+        "wins": 27,
+        "losses": 28,
+        "pushes": 1,
+        "graded": 56,
+        "winPct": 49.1
       },
       "totals": {
-        "wins": 0,
-        "losses": 0,
+        "wins": 23,
+        "losses": 33,
         "pushes": 0,
-        "graded": 0,
-        "winPct": null
+        "graded": 56,
+        "winPct": 41.1
       },
       "straightUp": {
         "wins": 36,
@@ -120,5 +120,5 @@
     }
   ],
   "pending": 0,
-  "review": 56
+  "review": 0
 }
