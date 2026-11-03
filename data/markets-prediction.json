@@ -1,22 +1,56 @@
 {
-  "generatedAt": "2026-11-01T05:55:00.464Z",
+  "generatedAt": "2026-11-03T23:59:44.745Z",
   "sources": [
     "kalshi",
     "polymarket"
   ],
   "games": [
     {
-      "eventId": "401860908",
-      "date": "2026-11-01T02:00Z",
-      "homeTeam": "Boise St",
-      "awayTeam": "Texas St",
+      "eventId": "401866453",
+      "date": "2026-11-04T00:00Z",
+      "homeTeam": "Akron",
+      "awayTeam": "Ohio",
       "kalshi": {
         "matched": false,
         "error": "No market listed / no reliable match"
       },
       "polymarket": {
+        "matched": true,
+        "updatedAt": "2026-11-03T23:59:44.283Z",
+        "homeProbability": 0,
+        "awayProbability": 1,
+        "volume": 775806.152471,
+        "liquidity": 2117054.54422,
+        "history": [
+          {
+            "ts": "2026-11-03T23:59:44.283Z",
+            "home": 0
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "401866454",
+      "date": "2026-11-04T01:00Z",
+      "homeTeam": "Miami OH",
+      "awayTeam": "Buffalo",
+      "kalshi": {
         "matched": false,
         "error": "No market listed / no reliable match"
+      },
+      "polymarket": {
+        "matched": true,
+        "updatedAt": "2026-11-03T23:59:44.745Z",
+        "homeProbability": 1,
+        "awayProbability": 0,
+        "volume": 2605864.7641499997,
+        "liquidity": 2071985.3569000047,
+        "history": [
+          {
+            "ts": "2026-11-03T23:59:44.745Z",
+            "home": 1
+          }
+        ]
       }
     }
   ],
