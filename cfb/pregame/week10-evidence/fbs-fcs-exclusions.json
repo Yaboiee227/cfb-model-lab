@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 10,
+  "role": "EXCLUDED_FBS_FCS_MATCHUP_AUDIT",
+  "canonicalInfluence": false,
+  "reason": "The validated foundation model was trained and confirmed for FBS-vs-FBS games. It has no validated FCS calibration; do not invent a numerical projection.",
+  "games": [
+    {
+      "awayTeam": "Merrimack",
+      "homeTeam": "Wake Forest",
+      "dateET": "2026-11-07",
+      "kickoffET": "3:30 PM EST",
+      "venue": "Allegacy Federal Credit Union Stadium",
+      "classification": "FBS_VS_FCS",
+      "projectionStatus": "WITHHELD_UNVALIDATED_FCS_OPPONENT",
+      "modelSpreadHome": null,
+      "modelTotal": null,
+      "homeWinProbability": null,
+      "source": "https://godeacs.com/news/2026/10/26/football-kickoff-time-for-homecoming-game-against-merrimack-announced-for-3-30-pm",
+      "corroboratingSource": "https://merrimackathletics.com/sports/football/schedule/2026"
+    }
+  ],
+  "exclusionsCount": 1,
+  "modelledFbsVsFbsGames": 62,
+  "note": "Supplemental schedule coverage. Week 10 frozen 62-game FBS-vs-FBS lock and saved market snapshots were not changed."
+}
