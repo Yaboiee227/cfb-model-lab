@@ -1,491 +1,1071 @@
 {
-  "week": 10,
+  "schemaVersion": 2,
+  "league": "cfb",
   "season": 2026,
-  "observedAt": "2026-11-01T13:04:06.651310+00:00",
-  "source": "ESPN FBS scoreboard daily Nov 2–8",
-  "gameCount": 37,
+  "week": 10,
+  "role": "WEEK_SCHEDULE_STATE",
+  "canonicalInfluence": false,
+  "dateWindowET": [
+    "2026-11-03",
+    "2026-11-07"
+  ],
+  "observedAt": "2026-11-03T23:17:08.968314Z",
+  "source": "ESPN public FBS team schedules, deduplicated by event ID",
+  "gameCount": 62,
   "games": [
     {
-      "eventId": "401866453",
-      "away": "Ohio Bobcats",
-      "home": "Akron Zips",
-      "kickoffUTC": "2026-11-04T00:00Z",
-      "dateET": "2026-11-03",
-      "kickoffET": "Tue Nov 03 · 07:00 PM EST",
+      "gameId": "2026-11-03-OHIO-AKRON",
+      "sourceGameId": "401866453",
+      "gameDateET": "2026-11-03",
+      "awayTeam": "Ohio",
+      "homeTeam": "Akron",
+      "awayTeamId": "195",
+      "homeTeamId": "2006",
+      "kickoff": "2026-11-04T00:00:00Z",
       "neutralSite": false,
-      "venue": "InfoCision Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401866453",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "InfoCision Stadium",
+        "city": "Akron",
+        "state": "OH"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401866454",
-      "away": "Buffalo Bulls",
-      "home": "Miami (OH) RedHawks",
-      "kickoffUTC": "2026-11-04T01:00Z",
-      "dateET": "2026-11-03",
-      "kickoffET": "Tue Nov 03 · 08:00 PM EST",
+      "gameId": "2026-11-03-BUFFALO-MIAMIOH",
+      "sourceGameId": "401866454",
+      "gameDateET": "2026-11-03",
+      "awayTeam": "Buffalo",
+      "homeTeam": "Miami (OH)",
+      "awayTeamId": "2084",
+      "homeTeamId": "193",
+      "kickoff": "2026-11-04T01:00:00Z",
       "neutralSite": false,
-      "venue": "Yager Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401866454",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Yager Stadium",
+        "city": "Oxford",
+        "state": "OH"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401866455",
-      "away": "Ball State Cardinals",
-      "home": "Massachusetts Minutemen",
-      "kickoffUTC": "2026-11-05T00:00Z",
-      "dateET": "2026-11-04",
-      "kickoffET": "Wed Nov 04 · 07:00 PM EST",
+      "gameId": "2026-11-04-BALLSTATE-MASSACHUSETTS",
+      "sourceGameId": "401866455",
+      "gameDateET": "2026-11-04",
+      "awayTeam": "Ball State",
+      "homeTeam": "Massachusetts",
+      "awayTeamId": "2050",
+      "homeTeamId": "113",
+      "kickoff": "2026-11-05T00:00:00Z",
       "neutralSite": false,
-      "venue": "Warren McGuirk Alumni Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401866455",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Warren McGuirk Alumni Stadium",
+        "city": "Amherst",
+        "state": "MA"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401866457",
-      "away": "Toledo Rockets",
-      "home": "Sacramento State Hornets",
-      "kickoffUTC": "2026-11-05T00:00Z",
-      "dateET": "2026-11-04",
-      "kickoffET": "Wed Nov 04 · 07:00 PM EST",
+      "gameId": "2026-11-04-TOLEDO-SACRAMENTOSTATE",
+      "sourceGameId": "401866457",
+      "gameDateET": "2026-11-04",
+      "awayTeam": "Toledo",
+      "homeTeam": "Sacramento State",
+      "awayTeamId": "2649",
+      "homeTeamId": "16",
+      "kickoff": "2026-11-05T00:00:00Z",
       "neutralSite": false,
-      "venue": "Hornet Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401866457",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Hornet Stadium",
+        "city": "Sacramento",
+        "state": "CA"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401866456",
-      "away": "Central Michigan Chippewas",
-      "home": "Eastern Michigan Eagles",
-      "kickoffUTC": "2026-11-05T00:30Z",
-      "dateET": "2026-11-04",
-      "kickoffET": "Wed Nov 04 · 07:30 PM EST",
+      "gameId": "2026-11-04-CENTRALMICHIGAN-EASTERNMICHIGAN",
+      "sourceGameId": "401866456",
+      "gameDateET": "2026-11-04",
+      "awayTeam": "Central Michigan",
+      "homeTeam": "Eastern Michigan",
+      "awayTeamId": "2117",
+      "homeTeamId": "2199",
+      "kickoff": "2026-11-05T00:30:00Z",
       "neutralSite": true,
-      "venue": "Ford Field",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401866456",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Ford Field",
+        "city": "Detroit",
+        "state": "MI"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401862817",
-      "away": "UTSA Roadrunners",
-      "home": "Florida Atlantic Owls",
-      "kickoffUTC": "2026-11-06T00:30Z",
-      "dateET": "2026-11-05",
-      "kickoffET": "Thu Nov 05 · 07:30 PM EST",
+      "gameId": "2026-11-05-UTSA-FLORIDAATLANTIC",
+      "sourceGameId": "401862817",
+      "gameDateET": "2026-11-05",
+      "awayTeam": "UTSA",
+      "homeTeam": "Florida Atlantic",
+      "awayTeamId": "2636",
+      "homeTeamId": "2226",
+      "kickoff": "2026-11-06T00:30:00Z",
       "neutralSite": false,
-      "venue": "Flagler Credit Union Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401862817",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Flagler Credit Union Stadium",
+        "city": "Boca Raton",
+        "state": "FL"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401869964",
-      "away": "James Madison Dukes",
-      "home": "Southern Miss Golden Eagles",
-      "kickoffUTC": "2026-11-06T01:00Z",
-      "dateET": "2026-11-05",
-      "kickoffET": "Thu Nov 05 · 08:00 PM EST",
+      "gameId": "2026-11-05-JAMESMADISON-SOUTHERNMISS",
+      "sourceGameId": "401869964",
+      "gameDateET": "2026-11-05",
+      "awayTeam": "James Madison",
+      "homeTeam": "Southern Miss",
+      "awayTeamId": "256",
+      "homeTeamId": "2572",
+      "kickoff": "2026-11-06T01:00:00Z",
       "neutralSite": false,
-      "venue": "M. M. Roberts Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401869964",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "M. M. Roberts Stadium",
+        "city": "Hattiesburg",
+        "state": "MS"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401858288",
-      "away": "Virginia Tech Hokies",
-      "home": "SMU Mustangs",
-      "kickoffUTC": "2026-11-07T00:00Z",
-      "dateET": "2026-11-06",
-      "kickoffET": "Fri Nov 06 · 07:00 PM EST",
+      "gameId": "2026-11-06-VIRGINIATECH-SMU",
+      "sourceGameId": "401858288",
+      "gameDateET": "2026-11-06",
+      "awayTeam": "Virginia Tech",
+      "homeTeam": "SMU",
+      "awayTeamId": "259",
+      "homeTeamId": "2567",
+      "kickoff": "2026-11-07T00:00:00Z",
       "neutralSite": false,
-      "venue": "Gerald J. Ford Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401858288",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Gerald J. Ford Stadium",
+        "city": "Dallas",
+        "state": "TX"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401862818",
-      "away": "South Florida Bulls",
-      "home": "East Carolina Pirates",
-      "kickoffUTC": "2026-11-07T00:30Z",
-      "dateET": "2026-11-06",
-      "kickoffET": "Fri Nov 06 · 07:30 PM EST",
+      "gameId": "2026-11-06-SOUTHFLORIDA-EASTCAROLINA",
+      "sourceGameId": "401862818",
+      "gameDateET": "2026-11-06",
+      "awayTeam": "South Florida",
+      "homeTeam": "East Carolina",
+      "awayTeamId": "58",
+      "homeTeamId": "151",
+      "kickoff": "2026-11-07T00:30:00Z",
       "neutralSite": false,
-      "venue": "Dowdy-Ficklen Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401862818",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Dowdy-Ficklen Stadium",
+        "city": "Greenville",
+        "state": "NC"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401858510",
-      "away": "Nebraska Cornhuskers",
-      "home": "Illinois Fighting Illini",
-      "kickoffUTC": "2026-11-07T01:00Z",
-      "dateET": "2026-11-06",
-      "kickoffET": "Fri Nov 06 · 08:00 PM EST",
+      "gameId": "2026-11-06-NEBRASKA-ILLINOIS",
+      "sourceGameId": "401858510",
+      "gameDateET": "2026-11-06",
+      "awayTeam": "Nebraska",
+      "homeTeam": "Illinois",
+      "awayTeamId": "158",
+      "homeTeamId": "356",
+      "kickoff": "2026-11-07T01:00:00Z",
       "neutralSite": false,
-      "venue": "Gies Memorial Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401858510",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Gies Memorial Stadium",
+        "city": "Champaign",
+        "state": "IL"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401864533",
-      "away": "New Mexico Lobos",
-      "home": "Nevada Wolf Pack",
-      "kickoffUTC": "2026-11-07T02:00Z",
-      "dateET": "2026-11-06",
-      "kickoffET": "Fri Nov 06 · 09:00 PM EST",
+      "gameId": "2026-11-06-NEWMEXICO-NEVADA",
+      "sourceGameId": "401864533",
+      "gameDateET": "2026-11-06",
+      "awayTeam": "New Mexico",
+      "homeTeam": "Nevada",
+      "awayTeamId": "167",
+      "homeTeamId": "2440",
+      "kickoff": "2026-11-07T02:00:00Z",
       "neutralSite": false,
-      "venue": "Mackay Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401864533",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Mackay Stadium",
+        "city": "Reno",
+        "state": "NV"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401856855",
-      "away": "TCU Horned Frogs",
-      "home": "Arizona Wildcats",
-      "kickoffUTC": "2026-11-07T03:15Z",
-      "dateET": "2026-11-06",
-      "kickoffET": "Fri Nov 06 · 10:15 PM EST",
+      "gameId": "2026-11-06-TCU-ARIZONA",
+      "sourceGameId": "401856855",
+      "gameDateET": "2026-11-06",
+      "awayTeam": "TCU",
+      "homeTeam": "Arizona",
+      "awayTeamId": "2628",
+      "homeTeamId": "12",
+      "kickoff": "2026-11-07T03:15:00Z",
       "neutralSite": false,
-      "venue": "Casino Del Sol Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401856855",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Casino Del Sol Stadium",
+        "city": "Tucson",
+        "state": "AZ"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401856851",
-      "away": "Cincinnati Bearcats",
-      "home": "Houston Cougars",
-      "kickoffUTC": "2026-11-07T05:00Z",
-      "dateET": "2026-11-07",
-      "kickoffET": "Sat Nov 07 · 12:00 AM EST",
+      "gameId": "2026-11-07-BYU-UTAH",
+      "sourceGameId": "401856849",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "BYU",
+      "homeTeam": "Utah",
+      "awayTeamId": "252",
+      "homeTeamId": "254",
+      "kickoff": "2026-11-07T17:00:00Z",
       "neutralSite": false,
-      "venue": "TDECU Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401856851",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Rice-Eccles Stadium",
+        "city": "Salt Lake City",
+        "state": "UT"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401856853",
-      "away": "Iowa State Cyclones",
-      "home": "Baylor Bears",
-      "kickoffUTC": "2026-11-07T05:00Z",
-      "dateET": "2026-11-07",
-      "kickoffET": "Sat Nov 07 · 12:00 AM EST",
+      "gameId": "2026-11-07-CLEMSON-SYRACUSE",
+      "sourceGameId": "401858285",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Clemson",
+      "homeTeam": "Syracuse",
+      "awayTeamId": "228",
+      "homeTeamId": "183",
+      "kickoff": "2026-11-07T17:00:00Z",
       "neutralSite": false,
-      "venue": "McLane Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401856853",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "JMA Wireless Dome",
+        "city": "Syracuse",
+        "state": "NY"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401858511",
-      "away": "Michigan State Spartans",
-      "home": "Michigan Wolverines",
-      "kickoffUTC": "2026-11-07T05:00Z",
-      "dateET": "2026-11-07",
-      "kickoffET": "Sat Nov 07 · 12:00 AM EST",
+      "gameId": "2026-11-07-FLORIDASTATE-BOSTONCOLLEGE",
+      "sourceGameId": "401858289",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Florida State",
+      "homeTeam": "Boston College",
+      "awayTeamId": "52",
+      "homeTeamId": "103",
+      "kickoff": "2026-11-07T17:00:00Z",
       "neutralSite": false,
-      "venue": "Michigan Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401858511",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Alumni Stadium (Chestnut Hill, MA)",
+        "city": "Chestnut Hill",
+        "state": "MA"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401858512",
-      "away": "UCLA Bruins",
-      "home": "Minnesota Golden Gophers",
-      "kickoffUTC": "2026-11-07T05:00Z",
-      "dateET": "2026-11-07",
-      "kickoffET": "Sat Nov 07 · 12:00 AM EST",
+      "gameId": "2026-11-07-IOWASTATE-BAYLOR",
+      "sourceGameId": "401856853",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Iowa State",
+      "homeTeam": "Baylor",
+      "awayTeamId": "66",
+      "homeTeamId": "239",
+      "kickoff": "2026-11-07T17:00:00Z",
       "neutralSite": false,
-      "venue": "Huntington Bank Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401858512",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "McLane Stadium",
+        "city": "Waco",
+        "state": "TX"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401858513",
-      "away": "Iowa Hawkeyes",
-      "home": "Northwestern Wildcats",
-      "kickoffUTC": "2026-11-07T05:00Z",
-      "dateET": "2026-11-07",
-      "kickoffET": "Sat Nov 07 · 12:00 AM EST",
+      "gameId": "2026-11-07-NORTHCAROLINA-UCONN",
+      "sourceGameId": "401858292",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "North Carolina",
+      "homeTeam": "UConn",
+      "awayTeamId": "153",
+      "homeTeamId": "41",
+      "kickoff": "2026-11-07T17:00:00Z",
       "neutralSite": false,
-      "venue": "Ryan Field",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401858513",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Pratt & Whitney Stadium",
+        "city": "East Hartford",
+        "state": "CT"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401858516",
-      "away": "Penn State Nittany Lions",
-      "home": "Washington Huskies",
-      "kickoffUTC": "2026-11-07T05:00Z",
-      "dateET": "2026-11-07",
-      "kickoffET": "Sat Nov 07 · 12:00 AM EST",
+      "gameId": "2026-11-07-TEXAS-MISSOURI",
+      "sourceGameId": "401856743",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Texas",
+      "homeTeam": "Missouri",
+      "awayTeamId": "251",
+      "homeTeamId": "142",
+      "kickoff": "2026-11-07T17:00:00Z",
       "neutralSite": false,
-      "venue": "Husky Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401858516",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Memorial Stadium",
+        "city": "Columbia",
+        "state": "MO"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401856743",
-      "away": "Texas Longhorns",
-      "home": "Missouri Tigers",
-      "kickoffUTC": "2026-11-07T17:00Z",
-      "dateET": "2026-11-07",
-      "kickoffET": "Sat Nov 07 · 12:00 PM EST",
+      "gameId": "2026-11-07-TULSA-TULANE",
+      "sourceGameId": "401862822",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Tulsa",
+      "homeTeam": "Tulane",
+      "awayTeamId": "202",
+      "homeTeamId": "2655",
+      "kickoff": "2026-11-07T17:00:00Z",
       "neutralSite": false,
-      "venue": "Memorial Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401856743",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Yulman Stadium",
+        "city": "New Orleans",
+        "state": "LA"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401856849",
-      "away": "BYU Cougars",
-      "home": "Utah Utes",
-      "kickoffUTC": "2026-11-07T17:00Z",
-      "dateET": "2026-11-07",
-      "kickoffET": "Sat Nov 07 · 12:00 PM EST",
+      "gameId": "2026-11-07-UCLA-MINNESOTA",
+      "sourceGameId": "401858512",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "UCLA",
+      "homeTeam": "Minnesota",
+      "awayTeamId": "26",
+      "homeTeamId": "135",
+      "kickoff": "2026-11-07T17:00:00Z",
       "neutralSite": false,
-      "venue": "Rice-Eccles Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401856849",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Huntington Bank Stadium",
+        "city": "Minneapolis",
+        "state": "MN"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401856854",
-      "away": "Oklahoma State Cowboys",
-      "home": "Kansas State Wildcats",
-      "kickoffUTC": "2026-11-07T17:00Z",
-      "dateET": "2026-11-07",
-      "kickoffET": "Sat Nov 07 · 12:00 PM EST",
+      "gameId": "2026-11-07-DUKE-NCSTATE",
+      "sourceGameId": "401858286",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Duke",
+      "homeTeam": "NC State",
+      "awayTeamId": "150",
+      "homeTeamId": "152",
+      "kickoff": "2026-11-07T17:30:00Z",
       "neutralSite": false,
-      "venue": "Bill Snyder Family Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401856854",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Carter-Finley Stadium",
+        "city": "Raleigh",
+        "state": "NC"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401858285",
-      "away": "Clemson Tigers",
-      "home": "Syracuse Orange",
-      "kickoffUTC": "2026-11-07T17:00Z",
-      "dateET": "2026-11-07",
-      "kickoffET": "Sat Nov 07 · 12:00 PM EST",
+      "gameId": "2026-11-07-MARYLAND-PURDUE",
+      "sourceGameId": "401858515",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Maryland",
+      "homeTeam": "Purdue",
+      "awayTeamId": "120",
+      "homeTeamId": "2509",
+      "kickoff": "2026-11-07T17:30:00Z",
       "neutralSite": false,
-      "venue": "JMA Wireless Dome",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401858285",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Ross-Ade Stadium",
+        "city": "West Lafayette",
+        "state": "IN"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401858289",
-      "away": "Florida State Seminoles",
-      "home": "Boston College Eagles",
-      "kickoffUTC": "2026-11-07T17:00Z",
-      "dateET": "2026-11-07",
-      "kickoffET": "Sat Nov 07 · 12:00 PM EST",
+      "gameId": "2026-11-07-ARKANSAS-AUBURN",
+      "sourceGameId": "401856738",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Arkansas",
+      "homeTeam": "Auburn",
+      "awayTeamId": "8",
+      "homeTeamId": "2",
+      "kickoff": "2026-11-07T17:45:00Z",
       "neutralSite": false,
-      "venue": "Alumni Stadium (Chestnut Hill, MA)",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401858289",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Jordan-Hare Stadium",
+        "city": "Auburn",
+        "state": "AL"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401858292",
-      "away": "North Carolina Tar Heels",
-      "home": "UConn Huskies",
-      "kickoffUTC": "2026-11-07T17:00Z",
-      "dateET": "2026-11-07",
-      "kickoffET": "Sat Nov 07 · 12:00 PM EST",
+      "gameId": "2026-11-07-OKLAHOMASTATE-KANSASSTATE",
+      "sourceGameId": "401856854",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Oklahoma State",
+      "homeTeam": "Kansas State",
+      "awayTeamId": "197",
+      "homeTeamId": "2306",
+      "kickoff": "2026-11-07T18:00:00Z",
       "neutralSite": false,
-      "venue": "Pratt & Whitney Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401858292",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Bill Snyder Family Stadium",
+        "city": "Manhattan",
+        "state": "KS"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401862822",
-      "away": "Tulsa Golden Hurricane",
-      "home": "Tulane Green Wave",
-      "kickoffUTC": "2026-11-07T17:00Z",
-      "dateET": "2026-11-07",
-      "kickoffET": "Sat Nov 07 · 12:00 PM EST",
+      "gameId": "2026-11-07-OLDDOMINION-COASTALCAROLINA",
+      "sourceGameId": "401869945",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Old Dominion",
+      "homeTeam": "Coastal Carolina",
+      "awayTeamId": "295",
+      "homeTeamId": "324",
+      "kickoff": "2026-11-07T18:00:00Z",
       "neutralSite": false,
-      "venue": "Yulman Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401862822",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Brooks Stadium (SC)",
+        "city": "Conway",
+        "state": "SC"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401858286",
-      "away": "Duke Blue Devils",
-      "home": "NC State Wolfpack",
-      "kickoffUTC": "2026-11-07T17:30Z",
-      "dateET": "2026-11-07",
-      "kickoffET": "Sat Nov 07 · 12:30 PM EST",
+      "gameId": "2026-11-07-GEORGIASTATE-APPSTATE",
+      "sourceGameId": "401869927",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Georgia State",
+      "homeTeam": "App State",
+      "awayTeamId": "2247",
+      "homeTeamId": "2026",
+      "kickoff": "2026-11-07T19:30:00Z",
       "neutralSite": false,
-      "venue": "Carter-Finley Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401858286",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Kidd Brewer Stadium",
+        "city": "Boone",
+        "state": "NC"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401858515",
-      "away": "Maryland Terrapins",
-      "home": "Purdue Boilermakers",
-      "kickoffUTC": "2026-11-07T17:30Z",
-      "dateET": "2026-11-07",
-      "kickoffET": "Sat Nov 07 · 12:30 PM EST",
+      "gameId": "2026-11-07-DELAWARE-KENNESAWSTATE",
+      "sourceGameId": "401871073",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Delaware",
+      "homeTeam": "Kennesaw State",
+      "awayTeamId": "48",
+      "homeTeamId": "338",
+      "kickoff": "2026-11-07T20:00:00Z",
       "neutralSite": false,
-      "venue": "Ross-Ade Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401858515",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Walens Family Field at Fifth Third Stadium",
+        "city": "Kennesaw",
+        "state": "GA"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401858517",
-      "away": "Rutgers Scarlet Knights",
-      "home": "Wisconsin Badgers",
-      "kickoffUTC": "2026-11-07T17:30Z",
-      "dateET": "2026-11-07",
-      "kickoffET": "Sat Nov 07 · 12:30 PM EST",
+      "gameId": "2026-11-07-TEXASAM-SOUTHCAROLINA",
+      "sourceGameId": "401856744",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Texas A&M",
+      "homeTeam": "South Carolina",
+      "awayTeamId": "245",
+      "homeTeamId": "2579",
+      "kickoff": "2026-11-07T20:00:00Z",
       "neutralSite": false,
-      "venue": "Camp Randall Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401858517",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Williams-Brice Stadium",
+        "city": "Columbia",
+        "state": "SC"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401856738",
-      "away": "Arkansas Razorbacks",
-      "home": "Auburn Tigers",
-      "kickoffUTC": "2026-11-07T17:45Z",
-      "dateET": "2026-11-07",
-      "kickoffET": "Sat Nov 07 · 12:45 PM EST",
+      "gameId": "2026-11-07-ULMONROE-ARKANSASSTATE",
+      "sourceGameId": "401869936",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "UL Monroe",
+      "homeTeam": "Arkansas State",
+      "awayTeamId": "2433",
+      "homeTeamId": "2032",
+      "kickoff": "2026-11-07T20:00:00Z",
       "neutralSite": false,
-      "venue": "Jordan-Hare Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401856738",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Centennial Bank Stadium",
+        "city": "Jonesboro",
+        "state": "AR"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401869945",
-      "away": "Old Dominion Monarchs",
-      "home": "Coastal Carolina Chanticleers",
-      "kickoffUTC": "2026-11-07T18:00Z",
-      "dateET": "2026-11-07",
-      "kickoffET": "Sat Nov 07 · 01:00 PM EST",
+      "gameId": "2026-11-07-ALABAMA-LSU",
+      "sourceGameId": "401856740",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Alabama",
+      "homeTeam": "LSU",
+      "awayTeamId": "333",
+      "homeTeamId": "99",
+      "kickoff": "2026-11-07T20:30:00Z",
       "neutralSite": false,
-      "venue": "Brooks Stadium (SC)",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401869945",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Tiger Stadium (LA)",
+        "city": "Baton Rouge",
+        "state": "LA"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401869927",
-      "away": "Georgia State Panthers",
-      "home": "App State Mountaineers",
-      "kickoffUTC": "2026-11-07T19:30Z",
-      "dateET": "2026-11-07",
-      "kickoffET": "Sat Nov 07 · 02:30 PM EST",
+      "gameId": "2026-11-07-CHARLOTTE-UAB",
+      "sourceGameId": "401862819",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Charlotte",
+      "homeTeam": "UAB",
+      "awayTeamId": "2429",
+      "homeTeamId": "5",
+      "kickoff": "2026-11-07T20:30:00Z",
       "neutralSite": false,
-      "venue": "Kidd Brewer Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401869927",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Protective Stadium",
+        "city": "Birmingham",
+        "state": "AL"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401856744",
-      "away": "Texas A&M Aggies",
-      "home": "South Carolina Gamecocks",
-      "kickoffUTC": "2026-11-07T20:00Z",
-      "dateET": "2026-11-07",
-      "kickoffET": "Sat Nov 07 · 03:00 PM EST",
+      "gameId": "2026-11-07-CINCINNATI-HOUSTON",
+      "sourceGameId": "401856851",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Cincinnati",
+      "homeTeam": "Houston",
+      "awayTeamId": "2132",
+      "homeTeamId": "248",
+      "kickoff": "2026-11-07T20:30:00Z",
       "neutralSite": false,
-      "venue": "Williams-Brice Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401856744",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "TDECU Stadium",
+        "city": "Houston",
+        "state": "TX"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401869936",
-      "away": "UL Monroe Warhawks",
-      "home": "Arkansas State Red Wolves",
-      "kickoffUTC": "2026-11-07T20:00Z",
-      "dateET": "2026-11-07",
-      "kickoffET": "Sat Nov 07 · 03:00 PM EST",
+      "gameId": "2026-11-07-MARSHALL-GEORGIASOUTHERN",
+      "sourceGameId": "401869951",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Marshall",
+      "homeTeam": "Georgia Southern",
+      "awayTeamId": "276",
+      "homeTeamId": "290",
+      "kickoff": "2026-11-07T20:30:00Z",
       "neutralSite": false,
-      "venue": "Centennial Bank Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401869936",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Allen E. Paulson Stadium",
+        "city": "Statesboro",
+        "state": "GA"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401871073",
-      "away": "Delaware Blue Hens",
-      "home": "Kennesaw State Owls",
-      "kickoffUTC": "2026-11-07T20:00Z",
-      "dateET": "2026-11-07",
-      "kickoffET": "Sat Nov 07 · 03:00 PM EST",
+      "gameId": "2026-11-07-OREGON-OHIOSTATE",
+      "sourceGameId": "401858514",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Oregon",
+      "homeTeam": "Ohio State",
+      "awayTeamId": "2483",
+      "homeTeamId": "194",
+      "kickoff": "2026-11-07T20:30:00Z",
       "neutralSite": false,
-      "venue": "Walens Family Field at Fifth Third Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401871073",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Ohio Stadium",
+        "city": "Columbus",
+        "state": "OH"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401856740",
-      "away": "Alabama Crimson Tide",
-      "home": "LSU Tigers",
-      "kickoffUTC": "2026-11-07T20:30Z",
-      "dateET": "2026-11-07",
-      "kickoffET": "Sat Nov 07 · 03:30 PM EST",
+      "gameId": "2026-11-07-PENNSTATE-WASHINGTON",
+      "sourceGameId": "401858516",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Penn State",
+      "homeTeam": "Washington",
+      "awayTeamId": "213",
+      "homeTeamId": "264",
+      "kickoff": "2026-11-07T20:30:00Z",
       "neutralSite": false,
-      "venue": "Tiger Stadium (LA)",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401856740",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Husky Stadium",
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401858290",
-      "away": "Merrimack Warriors",
-      "home": "Wake Forest Demon Deacons",
-      "kickoffUTC": "2026-11-07T20:30Z",
-      "dateET": "2026-11-07",
-      "kickoffET": "Sat Nov 07 · 03:30 PM EST",
+      "gameId": "2026-11-07-TEMPLE-NAVY",
+      "sourceGameId": "401862820",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Temple",
+      "homeTeam": "Navy",
+      "awayTeamId": "218",
+      "homeTeamId": "2426",
+      "kickoff": "2026-11-07T20:30:00Z",
       "neutralSite": false,
-      "venue": "Allegacy Federal Credit Union Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401858290",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Navy-Marine Corps Memorial Stadium",
+        "city": "Annapolis",
+        "state": "MD"
+      },
+      "status": "STATUS_SCHEDULED"
     },
     {
-      "eventId": "401858514",
-      "away": "Oregon Ducks",
-      "home": "Ohio State Buckeyes",
-      "kickoffUTC": "2026-11-07T20:30Z",
-      "dateET": "2026-11-07",
-      "kickoffET": "Sat Nov 07 · 03:30 PM EST",
+      "gameId": "2026-11-07-WESTERNKENTUCKY-MIDDLETENNESSEE",
+      "sourceGameId": "401871076",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Western Kentucky",
+      "homeTeam": "Middle Tennessee",
+      "awayTeamId": "98",
+      "homeTeamId": "2393",
+      "kickoff": "2026-11-07T20:30:00Z",
       "neutralSite": false,
-      "venue": "Ohio Stadium",
-      "source": "https://www.espn.com/college-football/game/_/gameId/401858514",
-      "projectionStatus": "Pending Week 10 model run",
-      "projectionUrl": "week-10.html"
+      "venue": {
+        "name": "Johnny \"Red\" Floyd Stadium",
+        "city": "Murfreesboro",
+        "state": "TN"
+      },
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-11-07-UCF-KANSAS",
+      "sourceGameId": "401856850",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "UCF",
+      "homeTeam": "Kansas",
+      "awayTeamId": "2116",
+      "homeTeamId": "2305",
+      "kickoff": "2026-11-07T20:45:00Z",
+      "neutralSite": false,
+      "venue": {
+        "name": "David Booth Kansas Memorial Stadium",
+        "city": "Lawrence",
+        "state": "KS"
+      },
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-11-07-LOUISIANATECH-TROY",
+      "sourceGameId": "401871098",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Louisiana Tech",
+      "homeTeam": "Troy",
+      "awayTeamId": "2348",
+      "homeTeamId": "2653",
+      "kickoff": "2026-11-07T21:00:00Z",
+      "neutralSite": false,
+      "venue": {
+        "name": "Veterans Memorial Stadium (AL)",
+        "city": "Troy",
+        "state": "AL"
+      },
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-11-07-MISSOURISTATE-FLORIDAINTERNATIONAL",
+      "sourceGameId": "401871074",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Missouri State",
+      "homeTeam": "Florida International",
+      "awayTeamId": "2623",
+      "homeTeamId": "2229",
+      "kickoff": "2026-11-07T21:00:00Z",
+      "neutralSite": false,
+      "venue": {
+        "name": "Pitbull Stadium",
+        "city": "Miami",
+        "state": "FL"
+      },
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-11-07-NORTHERNILLINOIS-SANJOSSTATE",
+      "sourceGameId": "401864534",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Northern Illinois",
+      "homeTeam": "San José State",
+      "awayTeamId": "2459",
+      "homeTeamId": "23",
+      "kickoff": "2026-11-07T21:00:00Z",
+      "neutralSite": false,
+      "venue": {
+        "name": "CEFCU Stadium",
+        "city": "San Jose",
+        "state": "CA"
+      },
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-11-07-RICE-NORTHTEXAS",
+      "sourceGameId": "401862821",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Rice",
+      "homeTeam": "North Texas",
+      "awayTeamId": "242",
+      "homeTeamId": "249",
+      "kickoff": "2026-11-07T21:00:00Z",
+      "neutralSite": false,
+      "venue": {
+        "name": "DATCU Stadium",
+        "city": "Denton",
+        "state": "TX"
+      },
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-11-07-RUTGERS-WISCONSIN",
+      "sourceGameId": "401858517",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Rutgers",
+      "homeTeam": "Wisconsin",
+      "awayTeamId": "164",
+      "homeTeamId": "275",
+      "kickoff": "2026-11-07T21:15:00Z",
+      "neutralSite": false,
+      "venue": {
+        "name": "Camp Randall Stadium",
+        "city": "Madison",
+        "state": "WI"
+      },
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-11-07-VANDERBILT-MISSISSIPPISTATE",
+      "sourceGameId": "401856742",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Vanderbilt",
+      "homeTeam": "Mississippi State",
+      "awayTeamId": "238",
+      "homeTeamId": "344",
+      "kickoff": "2026-11-07T21:15:00Z",
+      "neutralSite": false,
+      "venue": {
+        "name": "Davis Wade Stadium",
+        "city": "Starkville",
+        "state": "MS"
+      },
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-11-07-SOUTHALABAMA-LOUISIANA",
+      "sourceGameId": "401869968",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "South Alabama",
+      "homeTeam": "Louisiana",
+      "awayTeamId": "6",
+      "homeTeamId": "309",
+      "kickoff": "2026-11-07T22:00:00Z",
+      "neutralSite": false,
+      "venue": {
+        "name": "Our Lady of Lourdes Stadium",
+        "city": "Lafayette",
+        "state": "LA"
+      },
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-11-07-BOISESTATE-COLORADOSTATE",
+      "sourceGameId": "401860911",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Boise State",
+      "homeTeam": "Colorado State",
+      "awayTeamId": "68",
+      "homeTeamId": "36",
+      "kickoff": "2026-11-07T23:00:00Z",
+      "neutralSite": false,
+      "venue": {
+        "name": "Canvas Stadium",
+        "city": "Fort Collins",
+        "state": "CO"
+      },
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-11-07-KENTUCKY-TENNESSEE",
+      "sourceGameId": "401856745",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Kentucky",
+      "homeTeam": "Tennessee",
+      "awayTeamId": "96",
+      "homeTeamId": "2633",
+      "kickoff": "2026-11-07T23:15:00Z",
+      "neutralSite": false,
+      "venue": {
+        "name": "Neyland Stadium",
+        "city": "Knoxville",
+        "state": "TN"
+      },
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-11-07-SAMHOUSTON-JACKSONVILLESTATE",
+      "sourceGameId": "401871075",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Sam Houston",
+      "homeTeam": "Jacksonville State",
+      "awayTeamId": "2534",
+      "homeTeamId": "55",
+      "kickoff": "2026-11-08T00:00:00Z",
+      "neutralSite": false,
+      "venue": {
+        "name": "AmFirst Stadium",
+        "city": "Jacksonville",
+        "state": "AL"
+      },
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-11-07-AIRFORCE-ARMY",
+      "sourceGameId": "401862823",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Air Force",
+      "homeTeam": "Army",
+      "awayTeamId": "2005",
+      "homeTeamId": "349",
+      "kickoff": "2026-11-08T00:30:00Z",
+      "neutralSite": false,
+      "venue": {
+        "name": "Michie Stadium",
+        "city": "West Point",
+        "state": "NY"
+      },
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-11-07-COLORADO-ARIZONASTATE",
+      "sourceGameId": "401856852",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Colorado",
+      "homeTeam": "Arizona State",
+      "awayTeamId": "38",
+      "homeTeamId": "9",
+      "kickoff": "2026-11-08T00:30:00Z",
+      "neutralSite": false,
+      "venue": {
+        "name": "Mountain America Stadium",
+        "city": "Tempe",
+        "state": "AZ"
+      },
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-11-07-GEORGIA-OLEMISS",
+      "sourceGameId": "401856741",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Georgia",
+      "homeTeam": "Ole Miss",
+      "awayTeamId": "61",
+      "homeTeamId": "145",
+      "kickoff": "2026-11-08T00:30:00Z",
+      "neutralSite": false,
+      "venue": {
+        "name": "Vaught-Hemingway Stadium",
+        "city": "Oxford",
+        "state": "MS"
+      },
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-11-07-IOWA-NORTHWESTERN",
+      "sourceGameId": "401858513",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Iowa",
+      "homeTeam": "Northwestern",
+      "awayTeamId": "2294",
+      "homeTeamId": "77",
+      "kickoff": "2026-11-08T00:30:00Z",
+      "neutralSite": false,
+      "venue": {
+        "name": "Ryan Field",
+        "city": "Evanston",
+        "state": "IL"
+      },
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-11-07-LOUISVILLE-GEORGIATECH",
+      "sourceGameId": "401858287",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Louisville",
+      "homeTeam": "Georgia Tech",
+      "awayTeamId": "97",
+      "homeTeamId": "59",
+      "kickoff": "2026-11-08T00:30:00Z",
+      "neutralSite": false,
+      "venue": {
+        "name": "Bobby Dodd Stadium",
+        "city": "Atlanta",
+        "state": "GA"
+      },
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-11-07-MIAMI-NOTREDAME",
+      "sourceGameId": "401858291",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Miami",
+      "homeTeam": "Notre Dame",
+      "awayTeamId": "2390",
+      "homeTeamId": "87",
+      "kickoff": "2026-11-08T00:30:00Z",
+      "neutralSite": false,
+      "venue": {
+        "name": "Notre Dame Stadium",
+        "city": "Notre Dame",
+        "state": "IN"
+      },
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-11-07-MICHIGANSTATE-MICHIGAN",
+      "sourceGameId": "401858511",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Michigan State",
+      "homeTeam": "Michigan",
+      "awayTeamId": "127",
+      "homeTeamId": "130",
+      "kickoff": "2026-11-08T00:30:00Z",
+      "neutralSite": false,
+      "venue": {
+        "name": "Michigan Stadium",
+        "city": "Ann Arbor",
+        "state": "MI"
+      },
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-11-07-OKLAHOMA-FLORIDA",
+      "sourceGameId": "401856739",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Oklahoma",
+      "homeTeam": "Florida",
+      "awayTeamId": "201",
+      "homeTeamId": "57",
+      "kickoff": "2026-11-08T00:45:00Z",
+      "neutralSite": false,
+      "venue": {
+        "name": "Ben Hill Griffin Stadium",
+        "city": "Gainesville",
+        "state": "FL"
+      },
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-11-07-LIBERTY-NEWMEXICOSTATE",
+      "sourceGameId": "401870795",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Liberty",
+      "homeTeam": "New Mexico State",
+      "awayTeamId": "2335",
+      "homeTeamId": "166",
+      "kickoff": "2026-11-08T01:00:00Z",
+      "neutralSite": false,
+      "venue": {
+        "name": "Aggie Memorial Stadium",
+        "city": "Las Cruces",
+        "state": "NM"
+      },
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-11-07-FRESNOSTATE-UTAHSTATE",
+      "sourceGameId": "401860913",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Fresno State",
+      "homeTeam": "Utah State",
+      "awayTeamId": "278",
+      "homeTeamId": "328",
+      "kickoff": "2026-11-08T02:30:00Z",
+      "neutralSite": false,
+      "venue": {
+        "name": "Maverik Stadium",
+        "city": "Logan",
+        "state": "UT"
+      },
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-11-07-HAWAII-UTEP",
+      "sourceGameId": "401864532",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Hawai'i",
+      "homeTeam": "UTEP",
+      "awayTeamId": "62",
+      "homeTeamId": "2638",
+      "kickoff": "2026-11-08T02:30:00Z",
+      "neutralSite": false,
+      "venue": {
+        "name": "Sun Bowl",
+        "city": "El Paso",
+        "state": "TX"
+      },
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-11-07-WESTVIRGINIA-TEXASTECH",
+      "sourceGameId": "401856856",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "West Virginia",
+      "homeTeam": "Texas Tech",
+      "awayTeamId": "277",
+      "homeTeamId": "2641",
+      "kickoff": "2026-11-08T02:30:00Z",
+      "neutralSite": false,
+      "venue": {
+        "name": "Galaxy Stadium",
+        "city": "Lubbock",
+        "state": "TX"
+      },
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-11-07-TEXASSTATE-OREGONSTATE",
+      "sourceGameId": "401860912",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Texas State",
+      "homeTeam": "Oregon State",
+      "awayTeamId": "326",
+      "homeTeamId": "204",
+      "kickoff": "2026-11-08T03:30:00Z",
+      "neutralSite": false,
+      "venue": {
+        "name": "Reser Stadium",
+        "city": "Corvallis",
+        "state": "OR"
+      },
+      "status": "STATUS_SCHEDULED"
+    },
+    {
+      "gameId": "2026-11-07-WYOMING-UNLV",
+      "sourceGameId": "401864535",
+      "gameDateET": "2026-11-07",
+      "awayTeam": "Wyoming",
+      "homeTeam": "UNLV",
+      "awayTeamId": "2751",
+      "homeTeamId": "2439",
+      "kickoff": "2026-11-08T03:30:00Z",
+      "neutralSite": false,
+      "venue": {
+        "name": "Allegiant Stadium",
+        "city": "Las Vegas",
+        "state": "NV"
+      },
+      "status": "STATUS_SCHEDULED"
     }
-  ],
-  "coverageStatus": "PRELIMINARY_ESPN_SCHEDULE_REQUIRES_TEAM_SCHEDULE_RECONCILIATION"
+  ]
 }
