@@ -1,0 +1,59 @@
+name: Publish prospective CFB Week 10 research projections
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/build_cfb_week10_release.py'
+      - '.github/workflows/cfb-week10-release.yml'
+permissions:
+  contents: write
+concurrency:
+  group: cfb-week10-first-freeze
+  cancel-in-progress: false
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install locked model runtime dependency
+        run: python -m pip install --disable-pip-version-check numpy
+      - name: Verify existing research-locking tests
+        run: python -m unittest tests.test_lock_research_shadow -v
+      - name: Build, prospectively freeze, and publish Week 10 foundation SHADOW
+        run: python scripts/build_cfb_week10_release.py
+      - name: Check integrity of prospective published output
+        run: |
+          python - <<'PY'
+          import csv,json,sys
+          sys.path.insert(0,'scripts')
+          from lock_research_shadow import verify
+          d=json.load(open('cfb/research-locks/week-10-foundation-full.json'))
+          s=json.load(open('cfb/pregame/week-10-schedule.json'))
+          rows=list(csv.DictReader(open('data/projections.csv')))
+          verify(d)
+          assert d['week']==10 and d['canonicalInfluence'] is False
+          assert len(rows)==len(d['games'])==s['gameCount']
+          assert all(int(r['week'])==10 for r in rows)
+          assert all(r['releaseStatus']=='RESEARCH SHADOW - CANONICAL HOLD' for r in rows)
+          assert json.load(open('data/config.json'))['currentWeek']==10
+          print('Week 10 immutable research lock and site dataset validated:',len(rows))
+          PY
+      - name: Commit Week 10 research release artifacts and site
+        run: |
+          git config user.name cb-model-cfb-research-bot
+          git config user.email actions@users.noreply.github.com
+          git add scripts/build_cfb_week10_release.py cfb/pregame/week-10-schedule.json cfb/pregame/week10-evidence/market-context.json cfb/shadow/week-10-foundation-full.json cfb/research-locks/week-10-foundation-full.json data/archive/week-09-projections.csv data/projections.csv data/config.json data/current-matchups.json week-10.html index.html
+          if git diff --cached --quiet; then echo 'No change'; exit 0; fi
+          git commit -m 'Publish frozen Week 10 CFB research projections and market reference context'
+          for attempt in 1 2 3; do
+            if git push; then exit 0; fi
+            git pull --rebase origin main
+          done
+          exit 1
