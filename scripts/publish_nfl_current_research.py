@@ -76,8 +76,19 @@ def audit(root=ROOT):
                 raise ValueError(f"published projection differs: {row['gameId']} {key}")
         if row["projectionFreezeUtc"] != doc["frozenAt"] or row["releaseStatus"] != "HOLD_RESEARCH_ONLY":
             raise ValueError("freeze/release status mismatch")
-        if row["hardQbStateBreak"] or row["homeWinProbability"] or row["awayWinProbability"]:
+        if row["homeWinProbability"] or row["awayWinProbability"] or row["hardQbStateBreak"] not in {"", "true"}:
             raise ValueError("unknown QB/probability must remain unavailable")
+        if row["hardQbStateBreak"] == "true":
+            from datetime import datetime
+            gate_doc=json.loads((site / "personnel-gates.json").read_text())
+            matches=[g for g in gate_doc['games'] if g['gameId']==row['gameId']]
+            if len(matches)!=1:
+                raise ValueError("QB break requires unique current-game evidence")
+            gate=matches[0]
+            observed=datetime.fromisoformat(gate['observedAt'].replace('Z','+00:00'))
+            kickoff=datetime.fromisoformat(next(g for g in doc['games'] if g['gameId']==row['gameId'])['kickoffUTC'].replace('Z','+00:00'))
+            if not (observed.tzinfo and observed<kickoff and gate.get('qbChange') is True and gate.get('source','').startswith('https://') and gate.get('personnelAdjusted') is False and 'QB_CHANGE_NOT_REPRESENTED_IN_FORECAST' in gate.get('blockers',[])):
+                raise ValueError("QB break lacks dated evidence or incorrectly claims adjustment")
         if row["executionVerified"] != "false" or not row["releaseBlockers"]:
             raise ValueError("unsupported clearance")
     if cfg["spreadValidation"] != "HOLD" or cfg["totalValidation"] != "HOLD" or cfg["recommendationReleaseAllowed"] is not False:

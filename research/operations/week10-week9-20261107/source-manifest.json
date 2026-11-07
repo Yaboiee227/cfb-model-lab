@@ -1,0 +1,2206 @@
+[
+  {
+    "sourceId": "nfl-official-injuries",
+    "url": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+    "requestStartedAt": "2026-11-07T12:19:49.326940+00:00",
+    "observedAt": "2026-11-07T12:19:53.690633+00:00",
+    "sha256": "955f57e324a36ee7f585301332121dcd2625b85f248183268b2c79e53dd5caa8",
+    "bytes": 1045617
+  },
+  {
+    "sourceId": "nfl-injuries",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/injuries",
+    "requestStartedAt": "2026-11-07T12:19:49.327940+00:00",
+    "observedAt": "2026-11-07T12:19:54.014879+00:00",
+    "sha256": "73a0c2588af19567fbebeeff2f9488b90fcb89febbb18b1fb0c4417a8ac0250c",
+    "bytes": 8748387
+  },
+  {
+    "sourceId": "nfl-trends",
+    "url": "https://www.covers.com/sport/football/nfl/league-trends",
+    "requestStartedAt": "2026-11-07T12:19:49.328460+00:00",
+    "observedAt": "2026-11-07T12:19:54.398411+00:00",
+    "sha256": "491dbb2d89ae2ca0688d5f5e14f80c006818d2919c16b3e9db7916793889c200",
+    "bytes": 409840
+  },
+  {
+    "sourceId": "nfl-officials",
+    "url": "https://www.footballzebras.com/2026/11/week-9-referee-assignments-2026/",
+    "requestStartedAt": "2026-11-07T12:19:49.328923+00:00",
+    "observedAt": "2026-11-07T12:19:55.330663+00:00",
+    "sha256": "296638305487171451b6f64430c8794fe1d13f573f40cf19701f49dd4d987dd7",
+    "bytes": 198662
+  },
+  {
+    "sourceId": "nfl-scoreboard-20261105",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261105&limit=1000",
+    "requestStartedAt": "2026-11-07T12:19:49.329291+00:00",
+    "observedAt": "2026-11-07T12:19:53.859284+00:00",
+    "sha256": "446bc8c7815debb8a04ae345f0566e014505809efb5452c6b8c02e04fcc9ffc3",
+    "bytes": 22671
+  },
+  {
+    "sourceId": "nfl-scoreboard-20261108",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261108&limit=1000",
+    "requestStartedAt": "2026-11-07T12:19:49.329913+00:00",
+    "observedAt": "2026-11-07T12:19:53.922502+00:00",
+    "sha256": "effbf9b038f2afa749b67ae781934314b0bd267912c9b2cc5c4e59a4cf7babb3",
+    "bytes": 234137
+  },
+  {
+    "sourceId": "nfl-scoreboard-20261109",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261109&limit=1000",
+    "requestStartedAt": "2026-11-07T12:19:49.330404+00:00",
+    "observedAt": "2026-11-07T12:19:53.854589+00:00",
+    "sha256": "b01e4ddff5e53693aa799f7dfc70bfaccb524b3e5a19547ef631e43a029b8337",
+    "bytes": 23280
+  },
+  {
+    "sourceId": "sunbelt-official-report",
+    "url": "https://sbcautostorage.blob.core.windows.net/availability-reports/sunbelt-football/prod/report.json",
+    "requestStartedAt": "2026-11-07T12:19:49.331124+00:00",
+    "observedAt": "2026-11-07T12:19:55.202519+00:00",
+    "sha256": "935c66d74dddcc314b2e07e4ed189a9e7876759a862896f821bb1abe2cdd0af0",
+    "bytes": 9019
+  },
+  {
+    "sourceId": "pac12-official-report",
+    "url": "https://sbcautostorage.blob.core.windows.net/availability-reports/pac12-football/prod/report.json",
+    "requestStartedAt": "2026-11-07T12:19:49.331852+00:00",
+    "observedAt": "2026-11-07T12:19:55.172116+00:00",
+    "sha256": "43dfd66db211607ff2c5c50bd46471517978b613db2887c6b0c2f074ee2122b1",
+    "bytes": 4888
+  },
+  {
+    "sourceId": "american-2026-page",
+    "url": "https://theamerican.org/sports/2026/8/6/football_player_availability.aspx",
+    "requestStartedAt": "2026-11-07T12:19:49.333438+00:00",
+    "observedAt": "2026-11-07T12:19:54.981135+00:00",
+    "sha256": "1464decaf5591707e4069e3edb26242caf23c8190f24e886317b24c3aea0e448",
+    "bytes": 151942
+  },
+  {
+    "sourceId": "SEC-official-public-report",
+    "url": "https://app.hdintelligence.com/api/get-publish-public",
+    "requestBody": {
+      "sport": "Football",
+      "organization": "SEC",
+      "conference": "SEC"
+    },
+    "observedAt": "2026-11-07T12:19:55.222176+00:00",
+    "sha256": "b3375f48c8253e60be3ac4f6bef4f1bb778ff4dd69cff9ddbef60458d9d0c40d",
+    "bytes": 10754869
+  },
+  {
+    "sourceId": "ACC-official-public-report",
+    "url": "https://app.hdintelligence.com/api/get-publish-public",
+    "requestBody": {
+      "sport": "Football",
+      "organization": "ACC",
+      "conference": "ACC"
+    },
+    "observedAt": "2026-11-07T12:19:54.884477+00:00",
+    "sha256": "c8743d451cf7188eef668a9b73a257440b3c4b230057dcd4fabbeb2d14124525",
+    "bytes": 5636100
+  },
+  {
+    "sourceId": "B10-official-public-report",
+    "url": "https://app.hdintelligence.com/api/get-publish-public",
+    "requestBody": {
+      "sport": "Football",
+      "organization": "B10",
+      "conference": "B10"
+    },
+    "observedAt": "2026-11-07T12:19:54.924854+00:00",
+    "sha256": "a4c95c99957f1901795f597d61901433f402995b8e20094f6e138a102e148fd7",
+    "bytes": 1156948
+  },
+  {
+    "sourceId": "B12-official-public-report",
+    "url": "https://app.hdintelligence.com/api/get-publish-public",
+    "requestBody": {
+      "sport": "Football",
+      "organization": "B12",
+      "conference": "B12"
+    },
+    "observedAt": "2026-11-07T12:19:54.566949+00:00",
+    "sha256": "a8255d11097e386e30eb2337a2a4c064b433159e3446b8bcfc40cc220179afd1",
+    "bytes": 1382509
+  },
+  {
+    "sourceId": "seattle-qb-update",
+    "url": "https://www.seahawks.com/news/what-to-watch-in-the-seahawks-week-9-game-vs-the-cardinals",
+    "requestStartedAt": "2026-11-07T01:16:22.232090+00:00",
+    "observedAt": "2026-11-07T01:16:26.819209+00:00",
+    "sha256": "755324c9defb44f4297977e0bd9ddf2a7c9d4766ad86a8d3ce8ade3200c0394d",
+    "bytes": 516241
+  },
+  {
+    "sourceId": "seattle-roster-update",
+    "url": "https://www.seahawks.com/news/seahawks-guard-quenton-nelson-to-have-minor-procedure-on-knee-considered-week-to-week",
+    "requestStartedAt": "2026-11-07T01:16:22.232564+00:00",
+    "observedAt": "2026-11-07T01:16:26.731065+00:00",
+    "sha256": "4910848f188ab0102b8c3245c131c31da7f8a5bf2dfa085e488ddd0013267f90",
+    "bytes": 461305
+  },
+  {
+    "sourceId": "cfb-trends",
+    "url": "https://www.covers.com/sport/football/ncaaf/league-trends",
+    "requestStartedAt": "2026-11-07T01:04:28.025704+00:00",
+    "observedAt": "2026-11-07T01:04:33.284651+00:00",
+    "sha256": "af2d5a18ab882c70c1622cd5d1df4f062a43dc173d0d66b22ff2afa1bad34ab8",
+    "bytes": 560340
+  },
+  {
+    "sourceId": "cfb-covers-injuries",
+    "url": "https://www.covers.com/sport/football/ncaaf/injuries",
+    "requestStartedAt": "2026-11-07T01:04:28.023610+00:00",
+    "observedAt": "2026-11-07T01:04:33.848447+00:00",
+    "sha256": "0c8f71d014a3322761b72cf4505126a75e3e6bfba517dc0b045dff477f10d8eb",
+    "bytes": 1714585
+  },
+  {
+    "sourceId": "cfb-injuries",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/injuries",
+    "requestStartedAt": "2026-11-07T01:04:28.022801+00:00",
+    "observedAt": "2026-11-07T01:04:32.179176+00:00",
+    "sha256": "174a87fed090ba0d0b303efb61423317ac38fc9d1f3390e5d40702172f2cf68b",
+    "bytes": 28635
+  },
+  {
+    "sourceId": "cfb-game-401858512",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858512",
+    "requestStartedAt": "2026-11-07T12:20:49.644259+00:00",
+    "observedAt": "2026-11-07T12:20:52.788543+00:00",
+    "sha256": "0e65ea2fbd8df21766e212b6a0a378eaadcc616db52ec2b4bc41a52b0eb964be",
+    "bytes": 110183
+  },
+  {
+    "sourceId": "cfb-game-401856849",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856849",
+    "requestStartedAt": "2026-11-07T12:20:49.638003+00:00",
+    "observedAt": "2026-11-07T12:20:52.830471+00:00",
+    "sha256": "b3445bfc2bf86f64c3efe0e828be549c09a30a07bd1a811ce9593976f62b7434",
+    "bytes": 107911
+  },
+  {
+    "sourceId": "cfb-game-401856743",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856743",
+    "requestStartedAt": "2026-11-07T12:20:49.641191+00:00",
+    "observedAt": "2026-11-07T12:20:52.991048+00:00",
+    "sha256": "cda96097aa1fb9dcbb6ec38f42cf6df62186782b5aa5a3d58924353485f41a56",
+    "bytes": 126677
+  },
+  {
+    "sourceId": "cfb-game-401862822",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401862822",
+    "requestStartedAt": "2026-11-07T12:20:49.642311+00:00",
+    "observedAt": "2026-11-07T12:20:53.003786+00:00",
+    "sha256": "458477385c3be4604bcf9ad1f3b87db4b69f261410fc7a8232fb00a943c5f62b",
+    "bytes": 104750
+  },
+  {
+    "sourceId": "cfb-game-401858515",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858515",
+    "requestStartedAt": "2026-11-07T12:20:49.649536+00:00",
+    "observedAt": "2026-11-07T12:20:53.006653+00:00",
+    "sha256": "6136df0a4a4cf9a4e3daeaee04cb60aaaea686bcd9bb6f432a6c5d2071826031",
+    "bytes": 106679
+  },
+  {
+    "sourceId": "cfb-game-401858289",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858289",
+    "requestStartedAt": "2026-11-07T12:20:49.639327+00:00",
+    "observedAt": "2026-11-07T12:20:53.014054+00:00",
+    "sha256": "4bbb95e825203d24995ffc759392710550861374cb78641880279f48da691431",
+    "bytes": 108191
+  },
+  {
+    "sourceId": "cfb-game-401856854",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856854",
+    "requestStartedAt": "2026-11-07T12:20:49.653500+00:00",
+    "observedAt": "2026-11-07T12:20:53.038546+00:00",
+    "sha256": "fd8715d026410e477d8b1f3138d71639192b2eb842c0cd1b3f728351b1b41528",
+    "bytes": 106765
+  },
+  {
+    "sourceId": "cfb-game-401858286",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858286",
+    "requestStartedAt": "2026-11-07T12:20:49.646589+00:00",
+    "observedAt": "2026-11-07T12:20:53.054683+00:00",
+    "sha256": "d70cdbc8b948b4882980ceac588c9cad2e722746b5818ce16bb311f5f5313858",
+    "bytes": 106938
+  },
+  {
+    "sourceId": "cfb-game-401858292",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858292",
+    "requestStartedAt": "2026-11-07T12:20:49.640266+00:00",
+    "observedAt": "2026-11-07T12:20:53.055605+00:00",
+    "sha256": "6808dff29f0df075d88def8f4aad3b98ccab8f218ee0f08656f10bdbc1fc40fe",
+    "bytes": 109787
+  },
+  {
+    "sourceId": "cfb-game-401856853",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856853",
+    "requestStartedAt": "2026-11-07T12:20:49.639783+00:00",
+    "observedAt": "2026-11-07T12:20:53.055114+00:00",
+    "sha256": "4c58eaaac5a61add0fbd575c1461e8aefae9afe71d43cdc029811a330b0f6450",
+    "bytes": 105600
+  },
+  {
+    "sourceId": "cfb-game-401858285",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858285",
+    "requestStartedAt": "2026-11-07T12:20:49.638749+00:00",
+    "observedAt": "2026-11-07T12:20:53.058625+00:00",
+    "sha256": "b1a19afdbab9d1ad4649eace884a033a1a35539df64d25cf65ca6965fdc22206",
+    "bytes": 107142
+  },
+  {
+    "sourceId": "cfb-game-401856738",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856738",
+    "requestStartedAt": "2026-11-07T12:20:49.652244+00:00",
+    "observedAt": "2026-11-07T12:20:53.064134+00:00",
+    "sha256": "18179ee9961270432de3fc5c016f6698cf5ce76d7ebfd76711ed86f6d4386c71",
+    "bytes": 115033
+  },
+  {
+    "sourceId": "cfb-game-401862822-postal",
+    "url": "https://api.zippopotam.us/us/70118",
+    "requestStartedAt": "2026-11-07T12:20:53.011342+00:00",
+    "observedAt": "2026-11-07T12:20:57.174152+00:00",
+    "sha256": "bac3c00eedcde046ec95a5543e614295201a162810e84effbbac8f4687e9713d",
+    "bytes": 221
+  },
+  {
+    "sourceId": "cfb-game-401858515-postal",
+    "url": "https://api.zippopotam.us/us/47906",
+    "requestStartedAt": "2026-11-07T12:20:53.013506+00:00",
+    "observedAt": "2026-11-07T12:20:57.177201+00:00",
+    "sha256": "df40517ff7c42711b0214d3564f190f0e3c91fff5449283f90facbeb009b4a47",
+    "bytes": 221
+  },
+  {
+    "sourceId": "cfb-game-401856853-postal",
+    "url": "https://api.zippopotam.us/us/76704",
+    "requestStartedAt": "2026-11-07T12:20:53.066950+00:00",
+    "observedAt": "2026-11-07T12:20:57.180496+00:00",
+    "sha256": "d95883d778f1bd504a7e76c08818b40c408ec38ae67f46f37f347f06611f1742",
+    "bytes": 210
+  },
+  {
+    "sourceId": "cfb-game-401856738-postal",
+    "url": "https://api.zippopotam.us/us/36849",
+    "requestStartedAt": "2026-11-07T12:20:53.070214+00:00",
+    "observedAt": "2026-11-07T12:20:57.197235+00:00",
+    "sha256": "2678e738f1d2ba49a652a44fd9967a7ba5b1b087459ee3df937e5a994a9b9673",
+    "bytes": 225
+  },
+  {
+    "sourceId": "cfb-game-401858289-postal",
+    "url": "https://api.zippopotam.us/us/02467",
+    "requestStartedAt": "2026-11-07T12:20:53.019438+00:00",
+    "observedAt": "2026-11-07T12:20:57.197980+00:00",
+    "sha256": "4c771461529d5bc82ac852b836fcfdbf77e824f635e912d7d903c6e4ad9a3645",
+    "bytes": 227
+  },
+  {
+    "sourceId": "cfb-game-401856743-postal",
+    "url": "https://api.zippopotam.us/us/65203",
+    "requestStartedAt": "2026-11-07T12:20:52.995331+00:00",
+    "observedAt": "2026-11-07T12:20:57.216153+00:00",
+    "sha256": "5d1f3593e6764eb28facb5170a5b1ff9ddc1f56deb2416ebeddd95bab9062160",
+    "bytes": 217
+  },
+  {
+    "sourceId": "cfb-game-401858292-postal",
+    "url": "https://api.zippopotam.us/us/06118",
+    "requestStartedAt": "2026-11-07T12:20:53.065497+00:00",
+    "observedAt": "2026-11-07T12:20:57.222610+00:00",
+    "sha256": "78c6d8de9b28a341c293b4cea3e4cd71d13dfa18bf19b3f689807020015ceb5f",
+    "bytes": 225
+  },
+  {
+    "sourceId": "cfb-game-401856854-postal",
+    "url": "https://api.zippopotam.us/us/66502",
+    "requestStartedAt": "2026-11-07T12:20:53.042909+00:00",
+    "observedAt": "2026-11-07T12:20:57.224232+00:00",
+    "sha256": "08f85b2211a04c1fbc139ffe4300877e84f74ce76dca950a799a26d7006d4e23",
+    "bytes": 216
+  },
+  {
+    "sourceId": "cfb-game-401858286-postal",
+    "url": "https://api.zippopotam.us/us/27607",
+    "requestStartedAt": "2026-11-07T12:20:53.063283+00:00",
+    "observedAt": "2026-11-07T12:20:57.225010+00:00",
+    "sha256": "0d0f224f2a5d3366d1257dfef39d552ed16d37bd6375e8aea9dd03f4f358df38",
+    "bytes": 222
+  },
+  {
+    "sourceId": "cfb-game-401856849-postal",
+    "url": "https://api.zippopotam.us/us/84112",
+    "requestStartedAt": "2026-11-07T12:20:52.834684+00:00",
+    "observedAt": "2026-11-07T12:20:57.232406+00:00",
+    "sha256": "4d5af122a7579b7a61095ca283d390137ba53676bf7dde7ce4466381368dcb30",
+    "bytes": 220
+  },
+  {
+    "sourceId": "cfb-game-401858285-postal",
+    "url": "https://api.zippopotam.us/us/13244",
+    "requestStartedAt": "2026-11-07T12:20:53.068573+00:00",
+    "observedAt": "2026-11-07T12:20:57.237984+00:00",
+    "sha256": "3a10d5fdee6758fe6bf7292dbada14123cabb1c49f997f31cc5926f1cd5b6fc2",
+    "bytes": 217
+  },
+  {
+    "sourceId": "cfb-game-401858512-postal",
+    "url": "https://api.zippopotam.us/us/55455",
+    "requestStartedAt": "2026-11-07T12:20:52.792569+00:00",
+    "observedAt": "2026-11-07T12:20:57.241428+00:00",
+    "sha256": "013b77e15824550e7f8f99a86c6325cfb441fd16b204ae52d4990990089c5aec",
+    "bytes": 221
+  },
+  {
+    "sourceId": "cfb-game-401862822-nws-point",
+    "url": "https://api.weather.gov/points/29.9504,-90.1236",
+    "requestStartedAt": "2026-11-07T12:20:57.174511+00:00",
+    "observedAt": "2026-11-07T12:21:00.646099+00:00",
+    "sha256": "e7da31bc7971c3010899c2a25e77d98f1dc9ec97f8788f6a0e64819f04f47f1c",
+    "bytes": 3919
+  },
+  {
+    "sourceId": "cfb-game-401858285-nws-point",
+    "url": "https://api.weather.gov/points/43.0377,-76.1396",
+    "requestStartedAt": "2026-11-07T12:20:57.238202+00:00",
+    "observedAt": "2026-11-07T12:21:00.650178+00:00",
+    "sha256": "7ac82d5f81667d23b15f6c6a29572f22e64998e55bbd0768c6aeefb8257c4fa4",
+    "bytes": 3917
+  },
+  {
+    "sourceId": "cfb-game-401856738-nws-point",
+    "url": "https://api.weather.gov/points/32.6024,-85.4873",
+    "requestStartedAt": "2026-11-07T12:20:57.197453+00:00",
+    "observedAt": "2026-11-07T12:21:00.708391+00:00",
+    "sha256": "140b8802534cc4294ec7bb4ba01221e4ee595409f7a68b243759bd97ee3e3dd8",
+    "bytes": 3919
+  },
+  {
+    "sourceId": "cfb-game-401858292-nws-point",
+    "url": "https://api.weather.gov/points/41.7472,-72.6103",
+    "requestStartedAt": "2026-11-07T12:20:57.222855+00:00",
+    "observedAt": "2026-11-07T12:21:00.742111+00:00",
+    "sha256": "95dade110fa320d2abcfd66a23a69f7dac0a961f599e49ead364b5be13016e9f",
+    "bytes": 3922
+  },
+  {
+    "sourceId": "cfb-game-401858289-nws-point",
+    "url": "https://api.weather.gov/points/42.3164,-71.1612",
+    "requestStartedAt": "2026-11-07T12:20:57.198734+00:00",
+    "observedAt": "2026-11-07T12:21:00.782346+00:00",
+    "sha256": "6b6d4efff0c72742bf08122bb8dcf133f7a24174ab9f3aabe42f1446b9bf2235",
+    "bytes": 3918
+  },
+  {
+    "sourceId": "cfb-game-401856743-nws-point",
+    "url": "https://api.weather.gov/points/38.9348,-92.3639",
+    "requestStartedAt": "2026-11-07T12:20:57.216448+00:00",
+    "observedAt": "2026-11-07T12:21:00.798248+00:00",
+    "sha256": "28eb495a4d792ea19b4ecf234ff65409b54b1cd57230ee5f6d995db932c519a7",
+    "bytes": 3916
+  },
+  {
+    "sourceId": "cfb-game-401858515-nws-point",
+    "url": "https://api.weather.gov/points/40.444,-86.9237",
+    "requestStartedAt": "2026-11-07T12:20:57.177349+00:00",
+    "observedAt": "2026-11-07T12:21:00.812585+00:00",
+    "sha256": "76e8fde242ae2ba764e5963732c637d350accefd86675af8a09642a099b0c763",
+    "bytes": 3931
+  },
+  {
+    "sourceId": "cfb-game-401856854-nws-point",
+    "url": "https://api.weather.gov/points/39.1938,-96.5858",
+    "requestStartedAt": "2026-11-07T12:20:57.224335+00:00",
+    "observedAt": "2026-11-07T12:21:00.837305+00:00",
+    "sha256": "9c7b1fc6e3f31a98e2b465dc161d870957d5ef84ed86019ea2422e548956d604",
+    "bytes": 3917
+  },
+  {
+    "sourceId": "cfb-game-401858286-nws-point",
+    "url": "https://api.weather.gov/points/35.8014,-78.6877",
+    "requestStartedAt": "2026-11-07T12:20:57.225197+00:00",
+    "observedAt": "2026-11-07T12:21:00.878255+00:00",
+    "sha256": "e65a068d8341ea919bbb97d13f7ef704a7de06ebfcf7d87ffbe11bf9fae3994c",
+    "bytes": 3917
+  },
+  {
+    "sourceId": "cfb-game-401856849-nws-point",
+    "url": "https://api.weather.gov/points/40.7659,-111.8403",
+    "requestStartedAt": "2026-11-07T12:20:57.232863+00:00",
+    "observedAt": "2026-11-07T12:21:00.890274+00:00",
+    "sha256": "404a4f181920c1ecd4cec3a750dc49ef19387b9527016b065ebf9499d19d64b1",
+    "bytes": 3936
+  },
+  {
+    "sourceId": "cfb-game-401856853-nws-point",
+    "url": "https://api.weather.gov/points/31.5773,-97.1241",
+    "requestStartedAt": "2026-11-07T12:20:57.180615+00:00",
+    "observedAt": "2026-11-07T12:21:00.897942+00:00",
+    "sha256": "5d8f4410a219006065f24595d6365c5a29473fa1c95331eb960b96ceb1ca71bc",
+    "bytes": 3912
+  },
+  {
+    "sourceId": "cfb-game-401858512-nws-point",
+    "url": "https://api.weather.gov/points/44.9735,-93.2331",
+    "requestStartedAt": "2026-11-07T12:20:57.241573+00:00",
+    "observedAt": "2026-11-07T12:21:00.924586+00:00",
+    "sha256": "42c03787e73ab799adaf003ee33db70798d66e958d4842f97a7bdd47a231e138",
+    "bytes": 3924
+  },
+  {
+    "sourceId": "cfb-game-401856854-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/TOP/49,55/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:00.837640+00:00",
+    "observedAt": "2026-11-07T12:21:03.611732+00:00",
+    "sha256": "d754f734837b945f0332c5c6b13a4fcd6758567055f6891a4b82586ea4b56bda",
+    "bytes": 161612
+  },
+  {
+    "sourceId": "cfb-game-401858512-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/MPX/109,72/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:00.924932+00:00",
+    "observedAt": "2026-11-07T12:21:03.618207+00:00",
+    "sha256": "cd3e4543930601ee4156994a9674a41711429dfa0a29add4b8f7970127266110",
+    "bytes": 162331
+  },
+  {
+    "sourceId": "cfb-game-401858515-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/IND/30,98/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:00.812971+00:00",
+    "observedAt": "2026-11-07T12:21:03.702517+00:00",
+    "sha256": "332564a6af32ae1becc8027d51e9c94c4e331baed19fee4450eb4d3f604fb7c8",
+    "bytes": 162368
+  },
+  {
+    "sourceId": "cfb-game-401858285-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/BGM/53,99/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:00.650798+00:00",
+    "observedAt": "2026-11-07T12:21:03.714276+00:00",
+    "sha256": "b5f22c08d45d8f74e3adea06811235d635a198dd5721d4d4a42ea37580c7c4b6",
+    "bytes": 164745
+  },
+  {
+    "sourceId": "cfb-game-401856738-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/BMX/111,47/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:00.708955+00:00",
+    "observedAt": "2026-11-07T12:21:03.846340+00:00",
+    "sha256": "298fbaaa5a65812e1b86eb2b6598574f48ab73444d75c5655139bc0732137cc9",
+    "bytes": 162016
+  },
+  {
+    "sourceId": "cfb-game-401858286-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/RAH/73,58/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:00.878827+00:00",
+    "observedAt": "2026-11-07T12:21:03.866417+00:00",
+    "sha256": "ae4d8565d963ab6d45c8242df0b40c58c0583a4b9572afc5ac79f2f096e075f8",
+    "bytes": 162425
+  },
+  {
+    "sourceId": "cfb-game-401862822-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/LIX/66,88/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:00.646527+00:00",
+    "observedAt": "2026-11-07T12:21:03.882992+00:00",
+    "sha256": "10292238857d9aea2042561b6045c0859939f45e1a0675e67697a42444423265",
+    "bytes": 162364
+  },
+  {
+    "sourceId": "cfb-game-401856849-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/SLC/102,175/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:00.890681+00:00",
+    "observedAt": "2026-11-07T12:21:03.882570+00:00",
+    "sha256": "1716dfbdd096a1a68a293a1b943da3c7171a8d1d3c3f8990e4aea16461c4f4bf",
+    "bytes": 162073
+  },
+  {
+    "sourceId": "cfb-game-401858289-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/BOX/68,98/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:00.782728+00:00",
+    "observedAt": "2026-11-07T12:21:03.898477+00:00",
+    "sha256": "b33a83feca4d45fcb0909708d091b7c1a7073436b14859b6a15b66de290a5d11",
+    "bytes": 163281
+  },
+  {
+    "sourceId": "cfb-game-401856743-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/LSX/19,86/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:00.798684+00:00",
+    "observedAt": "2026-11-07T12:21:03.951724+00:00",
+    "sha256": "8a13568d66065b7d8029f761d92f972dd9b8111feaabfde326a29cea80df409e",
+    "bytes": 161948
+  },
+  {
+    "sourceId": "cfb-game-401856853-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/FWD/76,51/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:00.898270+00:00",
+    "observedAt": "2026-11-07T12:21:04.006331+00:00",
+    "sha256": "5368f58b2b6e32f9ca62ec2eebca962b76613f6fcb65f3d484d3bcce574efb6b",
+    "bytes": 162595
+  },
+  {
+    "sourceId": "cfb-game-401858292-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/BOX/24,64/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:00.742551+00:00",
+    "observedAt": "2026-11-07T12:21:04.034444+00:00",
+    "sha256": "95088241353dad5d082e5b5ac21f89189c0c89fd77b0bb93d0a453abe171c1e1",
+    "bytes": 163237
+  },
+  {
+    "sourceId": "cfb-game-401869945",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401869945",
+    "requestStartedAt": "2026-11-07T12:21:03.617510+00:00",
+    "observedAt": "2026-11-07T12:21:06.536091+00:00",
+    "sha256": "bd3432dc5e3d0d7468aa6f269e94f529b10e6a7e5ccb0e3dd93e61c9e9a888d4",
+    "bytes": 105769
+  },
+  {
+    "sourceId": "cfb-game-401869927",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401869927",
+    "requestStartedAt": "2026-11-07T12:21:03.621796+00:00",
+    "observedAt": "2026-11-07T12:21:06.570306+00:00",
+    "sha256": "ca88b3dfef9962abad81664a000b1fbcdb20b6e6d81f2861ec736256f8a08552",
+    "bytes": 106201
+  },
+  {
+    "sourceId": "cfb-game-401869951",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401869951",
+    "requestStartedAt": "2026-11-07T12:21:03.903662+00:00",
+    "observedAt": "2026-11-07T12:21:06.598467+00:00",
+    "sha256": "6c47abd2768396e9aba94cc025eada12702c2ec08e95c4f6a8388d93bc2b0493",
+    "bytes": 105878
+  },
+  {
+    "sourceId": "cfb-game-401858514",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858514",
+    "requestStartedAt": "2026-11-07T12:21:03.955605+00:00",
+    "observedAt": "2026-11-07T12:21:06.645675+00:00",
+    "sha256": "a1f66220344d778f27916766917fdd44d3b8f31e38e0133249fa7ad355c199ce",
+    "bytes": 110590
+  },
+  {
+    "sourceId": "cfb-game-401856740",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856740",
+    "requestStartedAt": "2026-11-07T12:21:03.873768+00:00",
+    "observedAt": "2026-11-07T12:21:06.729314+00:00",
+    "sha256": "29b4b0e5b257ed5e2d72b32df2c120af046ef3d8a7fc2b9a54cdd30da89c3557",
+    "bytes": 144109
+  },
+  {
+    "sourceId": "cfb-game-401871073",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401871073",
+    "requestStartedAt": "2026-11-07T12:21:03.706754+00:00",
+    "observedAt": "2026-11-07T12:21:06.743204+00:00",
+    "sha256": "8d9f8db23f2b6df9dd1b86777f9f9451a4d56c827b9829ed07162ae559b80425",
+    "bytes": 101491
+  },
+  {
+    "sourceId": "cfb-game-401856744",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856744",
+    "requestStartedAt": "2026-11-07T12:21:03.718667+00:00",
+    "observedAt": "2026-11-07T12:21:06.782417+00:00",
+    "sha256": "33c2ae818818a96c469b46aefd20344dddf18f7d14757ca150e088c4d3caa2b9",
+    "bytes": 119533
+  },
+  {
+    "sourceId": "cfb-game-401856851",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856851",
+    "requestStartedAt": "2026-11-07T12:21:03.888142+00:00",
+    "observedAt": "2026-11-07T12:21:06.790664+00:00",
+    "sha256": "c8a1eb0d4b2f0280be16479cdea587c92d6a8104c988d308a164ff2b60c35b3f",
+    "bytes": 105743
+  },
+  {
+    "sourceId": "cfb-game-401858516",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858516",
+    "requestStartedAt": "2026-11-07T12:21:04.010295+00:00",
+    "observedAt": "2026-11-07T12:21:06.791185+00:00",
+    "sha256": "6ee12f4f560e26a47525ba69a2f6fc61b4e2aa0d3353b8b16cd50add9126d1df",
+    "bytes": 108698
+  },
+  {
+    "sourceId": "cfb-game-401869936",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401869936",
+    "requestStartedAt": "2026-11-07T12:21:03.851551+00:00",
+    "observedAt": "2026-11-07T12:21:06.790940+00:00",
+    "sha256": "0cc46a4d63c202593166592a33a8be88b282c7f05bd68c0c0b9a2aa2eb91bd88",
+    "bytes": 105737
+  },
+  {
+    "sourceId": "cfb-game-401862819",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401862819",
+    "requestStartedAt": "2026-11-07T12:21:03.886732+00:00",
+    "observedAt": "2026-11-07T12:21:06.802960+00:00",
+    "sha256": "df1a9bddeed14f7086f5e883193d93e6bfcf482fe113a9a9a715b003adc94942",
+    "bytes": 104335
+  },
+  {
+    "sourceId": "cfb-game-401862820",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401862820",
+    "requestStartedAt": "2026-11-07T12:21:04.038567+00:00",
+    "observedAt": "2026-11-07T12:21:06.834301+00:00",
+    "sha256": "6fcbfaf64db8da49d3648db4d24bc9f9dde5c5456c6a925902f68840160132e1",
+    "bytes": 104749
+  },
+  {
+    "sourceId": "cfb-game-401858516-postal",
+    "url": "https://api.zippopotam.us/us/98195",
+    "requestStartedAt": "2026-11-07T12:21:06.796978+00:00",
+    "observedAt": "2026-11-07T12:21:09.430933+00:00",
+    "sha256": "a396662e3dea56ed13590547a429df87eba0c5c3b42747ade8168b8f775b511b",
+    "bytes": 219
+  },
+  {
+    "sourceId": "cfb-game-401869936-postal",
+    "url": "https://api.zippopotam.us/us/72401",
+    "requestStartedAt": "2026-11-07T12:21:06.798534+00:00",
+    "observedAt": "2026-11-07T12:21:09.432129+00:00",
+    "sha256": "5f45eb9a9fa7d55b6751ec43651986e2569a6038738b483b8c4d07721d9a720b",
+    "bytes": 217
+  },
+  {
+    "sourceId": "cfb-game-401869945-postal",
+    "url": "https://api.zippopotam.us/us/29526",
+    "requestStartedAt": "2026-11-07T12:21:06.541950+00:00",
+    "observedAt": "2026-11-07T12:21:09.432525+00:00",
+    "sha256": "0f94937656257de905d4a71a7ee18c5bb40aa3d01da68427b927353df3e50ffb",
+    "bytes": 221
+  },
+  {
+    "sourceId": "cfb-game-401856851-postal",
+    "url": "https://api.zippopotam.us/us/77204",
+    "requestStartedAt": "2026-11-07T12:21:06.795523+00:00",
+    "observedAt": "2026-11-07T12:21:09.434166+00:00",
+    "sha256": "129c93e9af8e079be4477385e5fb2da91f0447ba5bfefda4fc7bd5317bb7a163",
+    "bytes": 212
+  },
+  {
+    "sourceId": "cfb-game-401871073-postal",
+    "url": "https://api.zippopotam.us/us/30144",
+    "requestStartedAt": "2026-11-07T12:21:06.747002+00:00",
+    "observedAt": "2026-11-07T12:21:09.438684+00:00",
+    "sha256": "329e3162037ed57779f5bd862f27d20ed2d613a2ac30505313467b74fe9ddc16",
+    "bytes": 216
+  },
+  {
+    "sourceId": "cfb-game-401858514-postal",
+    "url": "https://api.zippopotam.us/us/43210",
+    "requestStartedAt": "2026-11-07T12:21:06.649885+00:00",
+    "observedAt": "2026-11-07T12:21:09.445639+00:00",
+    "sha256": "e0abea201e996220efbbd803cd47821568993e777a81703eae3e4f6bca61023b",
+    "bytes": 213
+  },
+  {
+    "sourceId": "cfb-game-401856740-postal",
+    "url": "https://api.zippopotam.us/us/70803",
+    "requestStartedAt": "2026-11-07T12:21:06.733910+00:00",
+    "observedAt": "2026-11-07T12:21:09.448551+00:00",
+    "sha256": "e3986370b75c8cdf57ad3f655ffbf725805c332044f96bdf3d13c320064c235e",
+    "bytes": 220
+  },
+  {
+    "sourceId": "cfb-game-401862819-postal",
+    "url": "https://api.zippopotam.us/us/35203",
+    "requestStartedAt": "2026-11-07T12:21:06.808183+00:00",
+    "observedAt": "2026-11-07T12:21:09.468924+00:00",
+    "sha256": "2f2ae372a46e5d2fb6cfd8fc12a67845b85ace44c4cd403dcfc0e8008fb9b3a7",
+    "bytes": 217
+  },
+  {
+    "sourceId": "cfb-game-401869951-postal",
+    "url": "https://api.zippopotam.us/us/30458",
+    "requestStartedAt": "2026-11-07T12:21:06.602650+00:00",
+    "observedAt": "2026-11-07T12:21:09.470665+00:00",
+    "sha256": "764e60ede18eab7507a39f5b7061f608da79f58316a8cd46c28aa530d2c45ff0",
+    "bytes": 217
+  },
+  {
+    "sourceId": "cfb-game-401869927-postal",
+    "url": "https://api.zippopotam.us/us/28607",
+    "requestStartedAt": "2026-11-07T12:21:06.573842+00:00",
+    "observedAt": "2026-11-07T12:21:09.469554+00:00",
+    "sha256": "ab6c4a557174439623e5f9377bf47fae3d1821d6ab503f37f7943ff46415e7b6",
+    "bytes": 219
+  },
+  {
+    "sourceId": "cfb-game-401862820-postal",
+    "url": "https://api.zippopotam.us/us/21401",
+    "requestStartedAt": "2026-11-07T12:21:06.838699+00:00",
+    "observedAt": "2026-11-07T12:21:09.471139+00:00",
+    "sha256": "f63d9a26d48741a52de1afa1f393e9c2ebd6f0430e76ca05503d3281fbea2dab",
+    "bytes": 218
+  },
+  {
+    "sourceId": "cfb-game-401856744-postal",
+    "url": "https://api.zippopotam.us/us/29201",
+    "requestStartedAt": "2026-11-07T12:21:06.787957+00:00",
+    "observedAt": "2026-11-07T12:21:09.474574+00:00",
+    "sha256": "7f946d157849a9995dc3c088786efe07565f705d21f8790372c311d60964cf9a",
+    "bytes": 223
+  },
+  {
+    "sourceId": "cfb-game-401856851-nws-point",
+    "url": "https://api.weather.gov/points/29.834,-95.4342",
+    "requestStartedAt": "2026-11-07T12:21:09.434293+00:00",
+    "observedAt": "2026-11-07T12:21:12.613097+00:00",
+    "sha256": "1ba169d7994d2c006d18e10cfdcf8fc084820ae8a8a3ac0d052f080b4dead65e",
+    "bytes": 3911
+  },
+  {
+    "sourceId": "cfb-game-401862820-nws-point",
+    "url": "https://api.weather.gov/points/38.9898,-76.5501",
+    "requestStartedAt": "2026-11-07T12:21:09.471777+00:00",
+    "observedAt": "2026-11-07T12:21:12.617863+00:00",
+    "sha256": "2a4c23602fd1b5de129712467a2469d61711cb9d9d5d25a13b9de4dcc6467c0b",
+    "bytes": 3922
+  },
+  {
+    "sourceId": "cfb-game-401869927-nws-point",
+    "url": "https://api.weather.gov/points/36.2142,-81.666",
+    "requestStartedAt": "2026-11-07T12:21:09.471578+00:00",
+    "observedAt": "2026-11-07T12:21:12.678098+00:00",
+    "sha256": "e147499ace76a69762bc769f54c8ea189348940a1788847ee7cedf50531ce804",
+    "bytes": 3911
+  },
+  {
+    "sourceId": "cfb-game-401858516-nws-point",
+    "url": "https://api.weather.gov/points/47.6564,-122.3048",
+    "requestStartedAt": "2026-11-07T12:21:09.431186+00:00",
+    "observedAt": "2026-11-07T12:21:12.678506+00:00",
+    "sha256": "7659f7c6dbba10cb4ced0cefc374871b82900221a0f4ab8273a600bda1ba5c9a",
+    "bytes": 3929
+  },
+  {
+    "sourceId": "cfb-game-401858514-nws-point",
+    "url": "https://api.weather.gov/points/40.0028,-83.0164",
+    "requestStartedAt": "2026-11-07T12:21:09.445784+00:00",
+    "observedAt": "2026-11-07T12:21:12.679976+00:00",
+    "sha256": "43ca178bf477d6411a987402a5c84f03d00303905bdb625f915b5e6a6b0f4950",
+    "bytes": 3916
+  },
+  {
+    "sourceId": "cfb-game-401869936-nws-point",
+    "url": "https://api.weather.gov/points/35.833,-90.6965",
+    "requestStartedAt": "2026-11-07T12:21:09.432662+00:00",
+    "observedAt": "2026-11-07T12:21:12.694614+00:00",
+    "sha256": "c0ca7b43b683cd5d9f21203acfc61c8d27157db7e4c1c82f5e8430231fce085b",
+    "bytes": 3913
+  },
+  {
+    "sourceId": "cfb-game-401869945-nws-point",
+    "url": "https://api.weather.gov/points/33.8731,-79.0557",
+    "requestStartedAt": "2026-11-07T12:21:09.433261+00:00",
+    "observedAt": "2026-11-07T12:21:12.694493+00:00",
+    "sha256": "1727728842433db2ccff3af137f82346d419643b89fd49bc46bbdee84727a96a",
+    "bytes": 3931
+  },
+  {
+    "sourceId": "cfb-game-401856740-nws-point",
+    "url": "https://api.weather.gov/points/30.405,-91.1868",
+    "requestStartedAt": "2026-11-07T12:21:09.448755+00:00",
+    "observedAt": "2026-11-07T12:21:12.729536+00:00",
+    "sha256": "717c4ccc8f5d380fcc2b313eb2e40aa7bd5db76079846567a155f46a004b9363",
+    "bytes": 3919
+  },
+  {
+    "sourceId": "cfb-game-401856744-nws-point",
+    "url": "https://api.weather.gov/points/34.0004,-81.0334",
+    "requestStartedAt": "2026-11-07T12:21:09.474947+00:00",
+    "observedAt": "2026-11-07T12:21:12.785515+00:00",
+    "sha256": "27806d15f972fb9bb74c09a4ef677e92ad62891b7b6ef3be7c43c28b5df76425",
+    "bytes": 3917
+  },
+  {
+    "sourceId": "cfb-game-401871073-nws-point",
+    "url": "https://api.weather.gov/points/34.0287,-84.6047",
+    "requestStartedAt": "2026-11-07T12:21:09.438794+00:00",
+    "observedAt": "2026-11-07T12:21:12.991946+00:00",
+    "sha256": "bfce12d1b15aa4098f93961329098cf7ed0cc32e2bb3a6d8df2b18c63028c9de",
+    "bytes": 3914
+  },
+  {
+    "sourceId": "cfb-game-401862819-nws-point",
+    "url": "https://api.weather.gov/points/33.521,-86.8066",
+    "requestStartedAt": "2026-11-07T12:21:09.469704+00:00",
+    "observedAt": "2026-11-07T12:21:12.995784+00:00",
+    "sha256": "c0045e690f78f0d34e40d36405c43808e1c33fe520fabfc53fe7b359150ed829",
+    "bytes": 3914
+  },
+  {
+    "sourceId": "cfb-game-401869951-nws-point",
+    "url": "https://api.weather.gov/points/32.4408,-81.774",
+    "requestStartedAt": "2026-11-07T12:21:09.471212+00:00",
+    "observedAt": "2026-11-07T12:21:13.046422+00:00",
+    "sha256": "38ebdc7840a4da9906abab3614612428ab0d1f01560f65fd05562a26f4f64872",
+    "bytes": 3915
+  },
+  {
+    "sourceId": "cfb-game-401869951-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/CHS/20,55/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:13.046913+00:00",
+    "observedAt": "2026-11-07T12:21:15.398553+00:00",
+    "sha256": "ebaebd8e832984b574f96849e3094616e43d2bf4f3fa5480205a3f580613f768",
+    "bytes": 162182
+  },
+  {
+    "sourceId": "cfb-game-401862819-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/BMX/59,84/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:12.996348+00:00",
+    "observedAt": "2026-11-07T12:21:15.479544+00:00",
+    "sha256": "e728a9b8c263f8890707709b9b35134985567a11763c072ade85a7230f934cdc",
+    "bytes": 162084
+  },
+  {
+    "sourceId": "cfb-game-401862820-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/LWX/113,78/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:12.618549+00:00",
+    "observedAt": "2026-11-07T12:21:15.487690+00:00",
+    "sha256": "de5330212f3f5b2e13cdd85abd0c7559974bc1120fc9b18612881a841f4811f1",
+    "bytes": 162463
+  },
+  {
+    "sourceId": "cfb-game-401858514-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/ILN/84,83/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:12.680658+00:00",
+    "observedAt": "2026-11-07T12:21:15.546542+00:00",
+    "sha256": "57d3e43fa9e8fea5d3d433ae4bb61dfb8529257af26aa5f798066ef5c5098439",
+    "bytes": 162647
+  },
+  {
+    "sourceId": "cfb-game-401856744-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/CAE/65,61/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:12.786071+00:00",
+    "observedAt": "2026-11-07T12:21:15.606527+00:00",
+    "sha256": "1d9603e35a6cd1c2deab29ba061ee7fb43aa991613a3b463f2efc07852b586ac",
+    "bytes": 161873
+  },
+  {
+    "sourceId": "cfb-game-401869927-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/RNK/18,16/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:12.678729+00:00",
+    "observedAt": "2026-11-07T12:21:15.622812+00:00",
+    "sha256": "4ca0db631534b4a83cbd1a35960c68281b6c67cbb39b92ddf19014cba7bc5655",
+    "bytes": 162264
+  },
+  {
+    "sourceId": "cfb-game-401871073-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/FFC/42,98/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:12.992436+00:00",
+    "observedAt": "2026-11-07T12:21:15.664213+00:00",
+    "sha256": "9317943d22cf0e42f04c0375bb897d5c3651855f95ae14fd1bbafc44882080fc",
+    "bytes": 162341
+  },
+  {
+    "sourceId": "cfb-game-401869945-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/ILM/50,54/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:12.696436+00:00",
+    "observedAt": "2026-11-07T12:21:15.666222+00:00",
+    "sha256": "1383629fb1ba7e3af783dc90190fafb56cd9fc3327aa6fbf19a8bb271dc88576",
+    "bytes": 161875
+  },
+  {
+    "sourceId": "cfb-game-401856740-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/LIX/25,107/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:12.730053+00:00",
+    "observedAt": "2026-11-07T12:21:15.694442+00:00",
+    "sha256": "1f20875b0d66e0e8cffa760fe790fe834a372cebf44414195b33a05f6779da0e",
+    "bytes": 162381
+  },
+  {
+    "sourceId": "cfb-game-401858516-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/SEW/126,70/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:12.679494+00:00",
+    "observedAt": "2026-11-07T12:21:15.702520+00:00",
+    "sha256": "9a42be2a9b4079262f7fb0cad19f54991a369fb530697cd1f2468c181ddcbfde",
+    "bytes": 163545
+  },
+  {
+    "sourceId": "cfb-game-401869936-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/MEG/18,97/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:12.695021+00:00",
+    "observedAt": "2026-11-07T12:21:15.734478+00:00",
+    "sha256": "3418287fcfab65430e37ae3e40ff1b396d83799b15ccd206c5f1c1d8891a6d06",
+    "bytes": 162063
+  },
+  {
+    "sourceId": "cfb-game-401856851-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/HGX/60,98/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:12.613547+00:00",
+    "observedAt": "2026-11-07T12:21:15.830069+00:00",
+    "sha256": "673fa40288f6c1c9d760eb43612e9a6914638b897a73092b95cb704ef15d596c",
+    "bytes": 164063
+  },
+  {
+    "sourceId": "cfb-game-401856745",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856745",
+    "requestStartedAt": "2026-11-07T12:21:15.738674+00:00",
+    "observedAt": "2026-11-07T12:21:18.330730+00:00",
+    "sha256": "f684ed4891bc755440e358111aa006ce29bd769a23784b70e5c8c341c6b72080",
+    "bytes": 123203
+  },
+  {
+    "sourceId": "cfb-game-401871076",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401871076",
+    "requestStartedAt": "2026-11-07T12:21:15.402637+00:00",
+    "observedAt": "2026-11-07T12:21:18.378678+00:00",
+    "sha256": "25438ebc9264b20d508ac3752218a89337492404aa482083c36b1be3feedcd30",
+    "bytes": 102543
+  },
+  {
+    "sourceId": "cfb-game-401871098",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401871098",
+    "requestStartedAt": "2026-11-07T12:21:15.491628+00:00",
+    "observedAt": "2026-11-07T12:21:18.411123+00:00",
+    "sha256": "9a0162dd6310f76fecbca4e2c6c23c2f7ddf5383bc483cc0bc5504483b42df9e",
+    "bytes": 105706
+  },
+  {
+    "sourceId": "cfb-game-401858517",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858517",
+    "requestStartedAt": "2026-11-07T12:21:15.669176+00:00",
+    "observedAt": "2026-11-07T12:21:18.497105+00:00",
+    "sha256": "d5a5c5349d7bb3c401324cd34db5996a969b6f8c25c98b8ef7fd9cc3d21a2828",
+    "bytes": 108179
+  },
+  {
+    "sourceId": "cfb-game-401856742",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856742",
+    "requestStartedAt": "2026-11-07T12:21:15.671009+00:00",
+    "observedAt": "2026-11-07T12:21:18.499194+00:00",
+    "sha256": "214127c608e1aa0e6fffb0fde6cfd60cd0b0d1102982714c54585aca726aab9f",
+    "bytes": 114114
+  },
+  {
+    "sourceId": "cfb-game-401864534",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401864534",
+    "requestStartedAt": "2026-11-07T12:21:15.611453+00:00",
+    "observedAt": "2026-11-07T12:21:18.500628+00:00",
+    "sha256": "83399398669af7ecbf441d21a11c7bec1921535d304cb6a9d437856a52e64c20",
+    "bytes": 102124
+  },
+  {
+    "sourceId": "cfb-game-401871075",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401871075",
+    "requestStartedAt": "2026-11-07T12:21:15.834235+00:00",
+    "observedAt": "2026-11-07T12:21:18.554718+00:00",
+    "sha256": "9f510eef51137293faaf007685f85ced55721c95d5030e620c7fd6ebb9a8d670",
+    "bytes": 102005
+  },
+  {
+    "sourceId": "cfb-game-401856850",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856850",
+    "requestStartedAt": "2026-11-07T12:21:15.487008+00:00",
+    "observedAt": "2026-11-07T12:21:18.554561+00:00",
+    "sha256": "5bc12f11b079bc4e48a94b922727d2ecfc60906447ea313df60d5fcf2f0bf6d9",
+    "bytes": 106315
+  },
+  {
+    "sourceId": "cfb-game-401860911",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401860911",
+    "requestStartedAt": "2026-11-07T12:21:15.707023+00:00",
+    "observedAt": "2026-11-07T12:21:18.559251+00:00",
+    "sha256": "0210f186cabebfbf78e2471e7cf5fe21a8d1108d09e6846123f520d489379566",
+    "bytes": 99771
+  },
+  {
+    "sourceId": "cfb-game-401871074",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401871074",
+    "requestStartedAt": "2026-11-07T12:21:15.550768+00:00",
+    "observedAt": "2026-11-07T12:21:18.561335+00:00",
+    "sha256": "837175693e8efe1a1dbaf75d883c96ce75290576e9c838a1cb18712542c6248a",
+    "bytes": 102191
+  },
+  {
+    "sourceId": "cfb-game-401862821",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401862821",
+    "requestStartedAt": "2026-11-07T12:21:15.627643+00:00",
+    "observedAt": "2026-11-07T12:21:18.562352+00:00",
+    "sha256": "7a6232def1d16f96c968903303a8815941f6f13e7aab0dc8aa4650e036117833",
+    "bytes": 104596
+  },
+  {
+    "sourceId": "cfb-game-401869968",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401869968",
+    "requestStartedAt": "2026-11-07T12:21:15.704918+00:00",
+    "observedAt": "2026-11-07T12:21:18.562312+00:00",
+    "sha256": "9a552f055b69216abaf40efc8afd01392d826fa8e8a99e87be1759f2d9ecf614",
+    "bytes": 105640
+  },
+  {
+    "sourceId": "cfb-game-401860911-postal",
+    "url": "https://api.zippopotam.us/us/80521",
+    "requestStartedAt": "2026-11-07T12:21:18.563626+00:00",
+    "observedAt": "2026-11-07T12:21:21.338651+00:00",
+    "sha256": "380106643a64de6b2837752ca2d0c149e5e842f29d59984f0ef9004a05e918b8",
+    "bytes": 222
+  },
+  {
+    "sourceId": "cfb-game-401856742-postal",
+    "url": "https://api.zippopotam.us/us/39762",
+    "requestStartedAt": "2026-11-07T12:21:18.504170+00:00",
+    "observedAt": "2026-11-07T12:21:21.338748+00:00",
+    "sha256": "0d2c1afe59e53e116468559ce0a93c623d66a474f7c57f052d3dfcfbdac7d7df",
+    "bytes": 229
+  },
+  {
+    "sourceId": "cfb-game-401871076-postal",
+    "url": "https://api.zippopotam.us/us/37130",
+    "requestStartedAt": "2026-11-07T12:21:18.382390+00:00",
+    "observedAt": "2026-11-07T12:21:21.339892+00:00",
+    "sha256": "33fded265f28dfb76e55b7e43d38172acbc53ecdf597f57d6863ad92e17ebf35",
+    "bytes": 222
+  },
+  {
+    "sourceId": "cfb-game-401864534-postal",
+    "url": "https://api.zippopotam.us/us/95112",
+    "requestStartedAt": "2026-11-07T12:21:18.509538+00:00",
+    "observedAt": "2026-11-07T12:21:21.351837+00:00",
+    "sha256": "00be8823521bce251dd7565bfdb54ee5d19f3357c868cc2bd8ad7580728a9547",
+    "bytes": 219
+  },
+  {
+    "sourceId": "cfb-game-401856745-postal",
+    "url": "https://api.zippopotam.us/us/37996",
+    "requestStartedAt": "2026-11-07T12:21:18.335268+00:00",
+    "observedAt": "2026-11-07T12:21:21.355689+00:00",
+    "sha256": "88d0590842e6801c39d5f8f87ccb307f68ef7e4d7c25a1d2cad5543577a141b6",
+    "bytes": 219
+  },
+  {
+    "sourceId": "cfb-game-401856850-postal",
+    "url": "https://api.zippopotam.us/us/66044",
+    "requestStartedAt": "2026-11-07T12:21:18.560948+00:00",
+    "observedAt": "2026-11-07T12:21:21.374496+00:00",
+    "sha256": "0937908a14d60d323000db8b3aee70d41b605059d14850be9acbd5c469688bc5",
+    "bytes": 215
+  },
+  {
+    "sourceId": "cfb-game-401871098-postal",
+    "url": "https://api.zippopotam.us/us/36082",
+    "requestStartedAt": "2026-11-07T12:21:18.414943+00:00",
+    "observedAt": "2026-11-07T12:21:21.377063+00:00",
+    "sha256": "344cd17183b9580535544eacef3d5af2381a0f776c4ef7d049ce6a80ba67ff56",
+    "bytes": 212
+  },
+  {
+    "sourceId": "cfb-game-401871074-postal",
+    "url": "https://api.zippopotam.us/us/33199",
+    "requestStartedAt": "2026-11-07T12:21:18.565306+00:00",
+    "observedAt": "2026-11-07T12:21:21.377905+00:00",
+    "sha256": "c6996036894a3b3c3b9787af0e3b025ff275c7309f20c272eec380a4de745821",
+    "bytes": 213
+  },
+  {
+    "sourceId": "cfb-game-401869968-postal",
+    "url": "https://api.zippopotam.us/us/70506",
+    "requestStartedAt": "2026-11-07T12:21:18.569030+00:00",
+    "observedAt": "2026-11-07T12:21:21.380595+00:00",
+    "sha256": "f07c3098880ffa54b3c25736fc5f5ba9b6091d3b6a9827f7136f879d0cb45b68",
+    "bytes": 219
+  },
+  {
+    "sourceId": "cfb-game-401871075-postal",
+    "url": "https://api.zippopotam.us/us/36265",
+    "requestStartedAt": "2026-11-07T12:21:18.558559+00:00",
+    "observedAt": "2026-11-07T12:21:21.380859+00:00",
+    "sha256": "052e98cc4983df0d5daac19bf7789fc0440d159cfe1adecceb695939386f7dc7",
+    "bytes": 219
+  },
+  {
+    "sourceId": "cfb-game-401858517-postal",
+    "url": "https://api.zippopotam.us/us/53711",
+    "requestStartedAt": "2026-11-07T12:21:18.502131+00:00",
+    "observedAt": "2026-11-07T12:21:21.386322+00:00",
+    "sha256": "b9d2c9b1f072e8a688f9ae72a3a9c93f9bc467f3649c9be9b5ea43d2bf7054df",
+    "bytes": 217
+  },
+  {
+    "sourceId": "cfb-game-401862821-postal",
+    "url": "https://api.zippopotam.us/us/76205",
+    "requestStartedAt": "2026-11-07T12:21:18.567738+00:00",
+    "observedAt": "2026-11-07T12:21:21.395571+00:00",
+    "sha256": "0337a14530f8d056837825d17471039f028fb4f9c42172e1919e0394435dbd18",
+    "bytes": 212
+  },
+  {
+    "sourceId": "cfb-game-401856742-nws-point",
+    "url": "https://api.weather.gov/points/33.4156,-88.7433",
+    "requestStartedAt": "2026-11-07T12:21:21.339340+00:00",
+    "observedAt": "2026-11-07T12:21:24.534733+00:00",
+    "sha256": "16f7b2dba4d2bfde54142f76fc86512aea8d0bc93864fbf0adbf796c3d0ee7d2",
+    "bytes": 3951
+  },
+  {
+    "sourceId": "cfb-game-401871098-nws-point",
+    "url": "https://api.weather.gov/points/31.8028,-85.9546",
+    "requestStartedAt": "2026-11-07T12:21:21.377411+00:00",
+    "observedAt": "2026-11-07T12:21:24.574208+00:00",
+    "sha256": "0477b40c4f45153872c91d4df7775fb6c0e6cda226c1053923f81aef0aff9a32",
+    "bytes": 3912
+  },
+  {
+    "sourceId": "cfb-game-401871076-nws-point",
+    "url": "https://api.weather.gov/points/35.8478,-86.3647",
+    "requestStartedAt": "2026-11-07T12:21:21.340055+00:00",
+    "observedAt": "2026-11-07T12:21:24.581038+00:00",
+    "sha256": "63e299cb0f9c626256a3e94febf9950eea70f9a8f47ac84c808fcb79aeeeb607",
+    "bytes": 3920
+  },
+  {
+    "sourceId": "cfb-game-401864534-nws-point",
+    "url": "https://api.weather.gov/points/37.3476,-121.887",
+    "requestStartedAt": "2026-11-07T12:21:21.352029+00:00",
+    "observedAt": "2026-11-07T12:21:24.595968+00:00",
+    "sha256": "30c5c31901c5afbee5e63d16033eabc650360f65ead0549b29164c8cf403c99d",
+    "bytes": 3921
+  },
+  {
+    "sourceId": "cfb-game-401871074-nws-point",
+    "url": "https://api.weather.gov/points/25.5584,-80.4582",
+    "requestStartedAt": "2026-11-07T12:21:21.378066+00:00",
+    "observedAt": "2026-11-07T12:21:24.613127+00:00",
+    "sha256": "32339b58c17b02b1d55669c48e2c620a376e453f5e8b5813129202c79ade8458",
+    "bytes": 3941
+  },
+  {
+    "sourceId": "cfb-game-401856745-nws-point",
+    "url": "https://api.weather.gov/points/35.9901,-83.9622",
+    "requestStartedAt": "2026-11-07T12:21:21.355834+00:00",
+    "observedAt": "2026-11-07T12:21:24.614647+00:00",
+    "sha256": "beae567c4fd9da8127802ba37530664db56ae949963cede4ec6e2f1b7210b700",
+    "bytes": 3918
+  },
+  {
+    "sourceId": "cfb-game-401862821-nws-point",
+    "url": "https://api.weather.gov/points/33.1903,-97.1282",
+    "requestStartedAt": "2026-11-07T12:21:21.395768+00:00",
+    "observedAt": "2026-11-07T12:21:24.618394+00:00",
+    "sha256": "68acfe9e618c7e54cc5a993a062e7cb7da5e222724d622414f3df603a27d8687",
+    "bytes": 3919
+  },
+  {
+    "sourceId": "cfb-game-401860911-nws-point",
+    "url": "https://api.weather.gov/points/40.5813,-105.1039",
+    "requestStartedAt": "2026-11-07T12:21:21.338978+00:00",
+    "observedAt": "2026-11-07T12:21:24.620428+00:00",
+    "sha256": "6cd39135a94f1d6922f3280ebc2834ee4c3cdb1184e1275f71dc825e68121a84",
+    "bytes": 3929
+  },
+  {
+    "sourceId": "cfb-game-401858517-nws-point",
+    "url": "https://api.weather.gov/points/43.0356,-89.4526",
+    "requestStartedAt": "2026-11-07T12:21:21.386508+00:00",
+    "observedAt": "2026-11-07T12:21:24.626283+00:00",
+    "sha256": "8e2740b54a32e091fb9553a8a7333b74e4ef1adedc9791df2d2ff5a6a95402e8",
+    "bytes": 3915
+  },
+  {
+    "sourceId": "cfb-game-401856850-nws-point",
+    "url": "https://api.weather.gov/points/39.0289,-95.2086",
+    "requestStartedAt": "2026-11-07T12:21:21.374931+00:00",
+    "observedAt": "2026-11-07T12:21:24.634254+00:00",
+    "sha256": "83b86788abaedc25a5cd9110dfb3e4c5a2dfd2dd453f2b89b58fdaf6469051be",
+    "bytes": 3931
+  },
+  {
+    "sourceId": "cfb-game-401871075-nws-point",
+    "url": "https://api.weather.gov/points/33.831,-85.7752",
+    "requestStartedAt": "2026-11-07T12:21:21.381316+00:00",
+    "observedAt": "2026-11-07T12:21:24.734929+00:00",
+    "sha256": "1dd6b4b2be646435bcd21d291efeffece210fb8f4d4c43f0fbf61bdbe0784492",
+    "bytes": 3937
+  },
+  {
+    "sourceId": "cfb-game-401869968-nws-point",
+    "url": "https://api.weather.gov/points/30.2077,-92.0656",
+    "requestStartedAt": "2026-11-07T12:21:21.380973+00:00",
+    "observedAt": "2026-11-07T12:21:24.735031+00:00",
+    "sha256": "65ed9c7376d78a275a90552264b4084ec049a0b229f776aca5092e97b8d9c614",
+    "bytes": 3918
+  },
+  {
+    "sourceId": "cfb-game-401860911-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/BOU/62,100/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:24.620666+00:00",
+    "observedAt": "2026-11-07T12:21:27.414624+00:00",
+    "sha256": "1de0fece46965792860444bd5017d8c063c11b35f4437d0ed46348fb63462881",
+    "bytes": 162018
+  },
+  {
+    "sourceId": "cfb-game-401858517-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/MKX/36,62/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:24.626648+00:00",
+    "observedAt": "2026-11-07T12:21:27.424711+00:00",
+    "sha256": "0f2a08ed00e59c54ffe7f13416c7bbaa943a945f577e16ae435f287b00dcfa3e",
+    "bytes": 162517
+  },
+  {
+    "sourceId": "cfb-game-401869968-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/LCH/104,94/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:24.735810+00:00",
+    "observedAt": "2026-11-07T12:21:27.484865+00:00",
+    "sha256": "8eecc41b35e034ed3d678cd49022081217672d69a5fa34f7ccefde86e400a96c",
+    "bytes": 162605
+  },
+  {
+    "sourceId": "cfb-game-401862821-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/FWD/77,122/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:24.618660+00:00",
+    "observedAt": "2026-11-07T12:21:27.622349+00:00",
+    "sha256": "50354e798c2860bc0f66b952886da5b6cf21ce4c6fbe5a7f03346e0ca8971afc",
+    "bytes": 162190
+  },
+  {
+    "sourceId": "cfb-game-401864534-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/MTR/99,83/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:24.596461+00:00",
+    "observedAt": "2026-11-07T12:21:27.629119+00:00",
+    "sha256": "9e26362b6dac21345b0d82746d37c429eb1e8bf780884c0a5f49e140adc980cd",
+    "bytes": 162478
+  },
+  {
+    "sourceId": "cfb-game-401871076-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/OHX/66,44/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:24.581341+00:00",
+    "observedAt": "2026-11-07T12:21:27.662936+00:00",
+    "sha256": "1db72528ca689ce3ec417920c4dadf3325589e32a6b764b77d17d4c24f8be5f8",
+    "bytes": 162588
+  },
+  {
+    "sourceId": "cfb-game-401871098-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/BMX/96,11/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:24.574607+00:00",
+    "observedAt": "2026-11-07T12:21:27.674877+00:00",
+    "sha256": "d2f3cd0557dedf50174ce67ee46f3f1587d949c6537c8c05482e55ebc399beef",
+    "bytes": 161941
+  },
+  {
+    "sourceId": "cfb-game-401856850-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/TOP/98,48/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:24.634661+00:00",
+    "observedAt": "2026-11-07T12:21:27.674716+00:00",
+    "sha256": "7b2b78556459f037ea4f8b398e716a571338fb43daf3a3f91426574576a31066",
+    "bytes": 161702
+  },
+  {
+    "sourceId": "cfb-game-401856742-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/JAN/127,114/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:24.535190+00:00",
+    "observedAt": "2026-11-07T12:21:27.778246+00:00",
+    "sha256": "b0cdf9b1a7a9a10ff085974eb41450e87224bd6a0bb19eb51bead6eb37c36d1c",
+    "bytes": 162050
+  },
+  {
+    "sourceId": "cfb-game-401856745-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/MRX/69,52/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:24.614912+00:00",
+    "observedAt": "2026-11-07T12:21:27.783275+00:00",
+    "sha256": "7378dff3f5a2012b3e070ca6a988161a3928ce046c492723636510c76f9d8d3c",
+    "bytes": 162970
+  },
+  {
+    "sourceId": "cfb-game-401871075-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/BMX/96,101/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:24.735339+00:00",
+    "observedAt": "2026-11-07T12:21:27.830486+00:00",
+    "sha256": "b6ceec226eca14d2713787ea0c222f46714fb41c880c627c2f793e038ea1e28f",
+    "bytes": 162139
+  },
+  {
+    "sourceId": "cfb-game-401871074-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/MFL/100,40/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:24.613587+00:00",
+    "observedAt": "2026-11-07T12:21:27.918721+00:00",
+    "sha256": "62fa1f8a92f666282738ed5ebddb86a483e179815d1559f10096bc6b2857190f",
+    "bytes": 163430
+  },
+  {
+    "sourceId": "cfb-game-401870795",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401870795",
+    "requestStartedAt": "2026-11-07T12:21:27.782484+00:00",
+    "observedAt": "2026-11-07T12:21:30.554235+00:00",
+    "sha256": "69262702ba31b7b9e70b3d0c5c0983701c53195caf8ef175ef9cb419bfe03d94",
+    "bytes": 101910
+  },
+  {
+    "sourceId": "cfb-game-401858287",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858287",
+    "requestStartedAt": "2026-11-07T12:21:27.636998+00:00",
+    "observedAt": "2026-11-07T12:21:30.581900+00:00",
+    "sha256": "38041b4b12e3383d419de4b477303346ff777219b23e37f2c406143463aedbe2",
+    "bytes": 107829
+  },
+  {
+    "sourceId": "cfb-game-401858511",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858511",
+    "requestStartedAt": "2026-11-07T12:21:27.678773+00:00",
+    "observedAt": "2026-11-07T12:21:30.678311+00:00",
+    "sha256": "4200e924c39533375961e42550364764c5acf3cd1936d2a873f95d8b454b3d2e",
+    "bytes": 109026
+  },
+  {
+    "sourceId": "cfb-game-401860913",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401860913",
+    "requestStartedAt": "2026-11-07T12:21:27.788457+00:00",
+    "observedAt": "2026-11-07T12:21:30.680499+00:00",
+    "sha256": "749757c988f858fbc4633dfd51371adb2fa8022750289ee7b98918ea6a77a4db",
+    "bytes": 100099
+  },
+  {
+    "sourceId": "cfb-game-401858513",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858513",
+    "requestStartedAt": "2026-11-07T12:21:27.628569+00:00",
+    "observedAt": "2026-11-07T12:21:30.683515+00:00",
+    "sha256": "06a0feed5e813324282d8aef181196dcb3ea25a23790b418ca89feef710e8bca",
+    "bytes": 107537
+  },
+  {
+    "sourceId": "cfb-game-401858291",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401858291",
+    "requestStartedAt": "2026-11-07T12:21:27.668287+00:00",
+    "observedAt": "2026-11-07T12:21:30.722329+00:00",
+    "sha256": "4a6c36d8d6d0741c0e001a7646e24a7f4ff3f1fa52173e3bafa8115a0d1b648e",
+    "bytes": 132904
+  },
+  {
+    "sourceId": "cfb-game-401856852",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856852",
+    "requestStartedAt": "2026-11-07T12:21:27.430101+00:00",
+    "observedAt": "2026-11-07T12:21:30.727240+00:00",
+    "sha256": "e12435e13a609e9ec34e333d2d96f9d314bf792a992add00b88d05e313c22ef5",
+    "bytes": 106317
+  },
+  {
+    "sourceId": "cfb-game-401856741",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856741",
+    "requestStartedAt": "2026-11-07T12:21:27.489115+00:00",
+    "observedAt": "2026-11-07T12:21:30.727280+00:00",
+    "sha256": "06e50d557a55c553997fa3119d9e5be07fac35acd16e10e0f28a16b835a7eae5",
+    "bytes": 136020
+  },
+  {
+    "sourceId": "cfb-game-401856856",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856856",
+    "requestStartedAt": "2026-11-07T12:21:27.923150+00:00",
+    "observedAt": "2026-11-07T12:21:30.731311+00:00",
+    "sha256": "271b76138a30db1ea1b7a09d30d5acf170dcb1ebe4c9f6b4eca6f367adb55111",
+    "bytes": 106844
+  },
+  {
+    "sourceId": "cfb-game-401862823",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401862823",
+    "requestStartedAt": "2026-11-07T12:21:27.423641+00:00",
+    "observedAt": "2026-11-07T12:21:30.731572+00:00",
+    "sha256": "a3af2a6c422eca1933db684869d98654c31722c7d3b48f7bd2ca8c0d50a776ed",
+    "bytes": 113351
+  },
+  {
+    "sourceId": "cfb-game-401864532",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401864532",
+    "requestStartedAt": "2026-11-07T12:21:27.837484+00:00",
+    "observedAt": "2026-11-07T12:21:30.774578+00:00",
+    "sha256": "64f940ffcf152a07b9e794a9bf2c87ff8c1679f27f66979e320cc6f8f546d2d6",
+    "bytes": 101137
+  },
+  {
+    "sourceId": "cfb-game-401856739",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856739",
+    "requestStartedAt": "2026-11-07T12:21:27.680278+00:00",
+    "observedAt": "2026-11-07T12:21:30.775440+00:00",
+    "sha256": "f2b0d835252eeacc01d2d9570a65065a3d2ee0d1a3b6af938beace66d524a8ae",
+    "bytes": 119546
+  },
+  {
+    "sourceId": "cfb-game-401858291-postal",
+    "url": "https://api.zippopotam.us/us/46556",
+    "requestStartedAt": "2026-11-07T12:21:30.726697+00:00",
+    "observedAt": "2026-11-07T12:21:33.590862+00:00",
+    "sha256": "b9358ea75abb700d8d140335e620d50bb0338304511c8a0464e4ad978037c7fa",
+    "bytes": 217
+  },
+  {
+    "sourceId": "cfb-game-401856856-postal",
+    "url": "https://api.zippopotam.us/us/79407",
+    "requestStartedAt": "2026-11-07T12:21:30.734999+00:00",
+    "observedAt": "2026-11-07T12:21:33.590705+00:00",
+    "sha256": "ab7380d859c315184bc03c097ac9a88a7e122e754627ed6dabbf47c2321d06b9",
+    "bytes": 214
+  },
+  {
+    "sourceId": "cfb-game-401870795-postal",
+    "url": "https://api.zippopotam.us/us/88003",
+    "requestStartedAt": "2026-11-07T12:21:30.558033+00:00",
+    "observedAt": "2026-11-07T12:21:33.594075+00:00",
+    "sha256": "073acc9dd95b4383d3ff29265c2198ff6e772320d2f2af59ca5f661da6f887d4",
+    "bytes": 222
+  },
+  {
+    "sourceId": "cfb-game-401856852-postal",
+    "url": "https://api.zippopotam.us/us/85287",
+    "requestStartedAt": "2026-11-07T12:21:30.730883+00:00",
+    "observedAt": "2026-11-07T12:21:33.606603+00:00",
+    "sha256": "0878aed17ca6973ad5805879737ea962a898f7de5e569ece29236a0182821514",
+    "bytes": 214
+  },
+  {
+    "sourceId": "cfb-game-401862823-postal",
+    "url": "https://api.zippopotam.us/us/10996",
+    "requestStartedAt": "2026-11-07T12:21:30.738176+00:00",
+    "observedAt": "2026-11-07T12:21:33.632878+00:00",
+    "sha256": "8a251de203c98a9854d1a1efc04866c025ea4389313dc80570aeffb5b2a049c2",
+    "bytes": 219
+  },
+  {
+    "sourceId": "cfb-game-401860913-postal",
+    "url": "https://api.zippopotam.us/us/84341",
+    "requestStartedAt": "2026-11-07T12:21:30.684752+00:00",
+    "observedAt": "2026-11-07T12:21:33.637752+00:00",
+    "sha256": "183cc2b457aa9d52ae5f1faffac8a4130977102be8de542138375d750f580abd",
+    "bytes": 211
+  },
+  {
+    "sourceId": "cfb-game-401858513-postal",
+    "url": "https://api.zippopotam.us/us/60208",
+    "requestStartedAt": "2026-11-07T12:21:30.688498+00:00",
+    "observedAt": "2026-11-07T12:21:33.642118+00:00",
+    "sha256": "ecb4ff70fcd2785bda18388ce304f18b99e08f404de9c9238e19d01cb306214e",
+    "bytes": 217
+  },
+  {
+    "sourceId": "cfb-game-401858287-postal",
+    "url": "https://api.zippopotam.us/us/30332",
+    "requestStartedAt": "2026-11-07T12:21:30.585774+00:00",
+    "observedAt": "2026-11-07T12:21:33.641831+00:00",
+    "sha256": "2e081cc6d4d1aeb7b295d8e044899d8e9e5578db9f5c0a319024ed23c5a2e03d",
+    "bytes": 214
+  },
+  {
+    "sourceId": "cfb-game-401856741-postal",
+    "url": "https://api.zippopotam.us/us/38655",
+    "requestStartedAt": "2026-11-07T12:21:30.733205+00:00",
+    "observedAt": "2026-11-07T12:21:33.642569+00:00",
+    "sha256": "758ecd79b29b708cbaca3291c77242a80fa31805fd3f15dea63594e80e3b2f7d",
+    "bytes": 218
+  },
+  {
+    "sourceId": "cfb-game-401858511-postal",
+    "url": "https://api.zippopotam.us/us/48104",
+    "requestStartedAt": "2026-11-07T12:21:30.682566+00:00",
+    "observedAt": "2026-11-07T12:21:33.649335+00:00",
+    "sha256": "296f96d35c5f19cb08303e0b5c587af1c23546f01864178da86cf8e0ffc262d7",
+    "bytes": 218
+  },
+  {
+    "sourceId": "cfb-game-401856739-postal",
+    "url": "https://api.zippopotam.us/us/32611",
+    "requestStartedAt": "2026-11-07T12:21:30.779808+00:00",
+    "observedAt": "2026-11-07T12:21:33.656868+00:00",
+    "sha256": "b5065b340273dc720f7b133e7c42db811e266223c47456d3a7e3d6310c6a3b2c",
+    "bytes": 219
+  },
+  {
+    "sourceId": "cfb-game-401864532-postal",
+    "url": "https://api.zippopotam.us/us/79902",
+    "requestStartedAt": "2026-11-07T12:21:30.778427+00:00",
+    "observedAt": "2026-11-07T12:21:33.690079+00:00",
+    "sha256": "4a2871d13ceeaed3fa445fd284b416de66b8146759c51af169e6952075dbe1b0",
+    "bytes": 214
+  },
+  {
+    "sourceId": "cfb-game-401862823-nws-point",
+    "url": "https://api.weather.gov/points/41.3945,-73.9737",
+    "requestStartedAt": "2026-11-07T12:21:33.633110+00:00",
+    "observedAt": "2026-11-07T12:21:36.930831+00:00",
+    "sha256": "ac27b51e32f8810b44cf0707a13db94a584a3c251c1d39d21897c370c9f77f47",
+    "bytes": 3919
+  },
+  {
+    "sourceId": "cfb-game-401856741-nws-point",
+    "url": "https://api.weather.gov/points/34.3308,-89.4835",
+    "requestStartedAt": "2026-11-07T12:21:33.643262+00:00",
+    "observedAt": "2026-11-07T12:21:36.930927+00:00",
+    "sha256": "2d1422fad28217d14fd4e6f73c7817dd21004bd3df6be8b5383d0f258530c39e",
+    "bytes": 3930
+  },
+  {
+    "sourceId": "cfb-game-401858287-nws-point",
+    "url": "https://api.weather.gov/points/33.7763,-84.398",
+    "requestStartedAt": "2026-11-07T12:21:33.643021+00:00",
+    "observedAt": "2026-11-07T12:21:36.946614+00:00",
+    "sha256": "c04b550b4c72419a15c8e29c7d1bd785e9d4674dcf90ddee90d9d513eb3d7794",
+    "bytes": 3912
+  },
+  {
+    "sourceId": "cfb-game-401858291-nws-point",
+    "url": "https://api.weather.gov/points/41.5968,-86.293",
+    "requestStartedAt": "2026-11-07T12:21:33.591291+00:00",
+    "observedAt": "2026-11-07T12:21:36.952121+00:00",
+    "sha256": "9f69382ba466b2f1123ca2f94577ac5e7185038742c05f8fc7a264f53b162934",
+    "bytes": 3943
+  },
+  {
+    "sourceId": "cfb-game-401856852-nws-point",
+    "url": "https://api.weather.gov/points/33.4285,-111.9349",
+    "requestStartedAt": "2026-11-07T12:21:33.606794+00:00",
+    "observedAt": "2026-11-07T12:21:36.971657+00:00",
+    "sha256": "04f1c06387d41501520044d3be14a1cb59eb0ddf8f6664aa86507779f14eb517",
+    "bytes": 3923
+  },
+  {
+    "sourceId": "cfb-game-401856739-nws-point",
+    "url": "https://api.weather.gov/points/29.6813,-82.3539",
+    "requestStartedAt": "2026-11-07T12:21:33.657202+00:00",
+    "observedAt": "2026-11-07T12:21:36.980615+00:00",
+    "sha256": "7a203bd1a7139532cdfa9b8dd7e2d78f9e919bd4dc7550e647192e78b30ef79f",
+    "bytes": 3920
+  },
+  {
+    "sourceId": "cfb-game-401860913-nws-point",
+    "url": "https://api.weather.gov/points/41.7759,-111.8068",
+    "requestStartedAt": "2026-11-07T12:21:33.638057+00:00",
+    "observedAt": "2026-11-07T12:21:36.994198+00:00",
+    "sha256": "fe39b03354eb0a2bf2ca4cf5c30767c933bf5dcf2c48f65996269e29f5bd4f3a",
+    "bytes": 3933
+  },
+  {
+    "sourceId": "cfb-game-401870795-nws-point",
+    "url": "https://api.weather.gov/points/32.2738,-106.7472",
+    "requestStartedAt": "2026-11-07T12:21:33.594227+00:00",
+    "observedAt": "2026-11-07T12:21:37.010268+00:00",
+    "sha256": "0aac6af0f7179573e5655a8aa7bcd140ec0a0221dca74e6eba2c97c0f68e1a3c",
+    "bytes": 3927
+  },
+  {
+    "sourceId": "cfb-game-401858511-nws-point",
+    "url": "https://api.weather.gov/points/42.2694,-83.7282",
+    "requestStartedAt": "2026-11-07T12:21:33.649595+00:00",
+    "observedAt": "2026-11-07T12:21:37.020255+00:00",
+    "sha256": "69b76d8453f89a932733bf53ff8f9d71613d13aa18b1b0585ee275fcfe5a5a37",
+    "bytes": 3919
+  },
+  {
+    "sourceId": "cfb-game-401864532-nws-point",
+    "url": "https://api.weather.gov/points/31.7763,-106.4932",
+    "requestStartedAt": "2026-11-07T12:21:33.690411+00:00",
+    "observedAt": "2026-11-07T12:21:37.022173+00:00",
+    "sha256": "38d3befbb09852370cba79a6ba9041a453df9591f518919c7c374aa7887d662a",
+    "bytes": 3926
+  },
+  {
+    "sourceId": "cfb-game-401856856-nws-point",
+    "url": "https://api.weather.gov/points/33.5684,-101.9423",
+    "requestStartedAt": "2026-11-07T12:21:33.592220+00:00",
+    "observedAt": "2026-11-07T12:21:37.082340+00:00",
+    "sha256": "5e2f434b5711ce687d5e48a91c6562fb2c95a878883607cc73c7fae3a74820b3",
+    "bytes": 3919
+  },
+  {
+    "sourceId": "cfb-game-401858513-nws-point",
+    "url": "https://api.weather.gov/points/42.0586,-87.6845",
+    "requestStartedAt": "2026-11-07T12:21:33.642742+00:00",
+    "observedAt": "2026-11-07T12:21:37.138167+00:00",
+    "sha256": "5382b1151ff9ef3986737d64d7051808cd716813a007f67b444b97eeb70017b0",
+    "bytes": 3916
+  },
+  {
+    "sourceId": "cfb-game-401858513-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/LOT/73,81/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:37.138634+00:00",
+    "observedAt": "2026-11-07T12:21:40.149014+00:00",
+    "sha256": "bb2e0de37574746cc3330b7c50e69cbbe9216f59233bd588623c0255d1d63d6c",
+    "bytes": 162702
+  },
+  {
+    "sourceId": "cfb-game-401856852-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/PSR/164,56/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:36.971969+00:00",
+    "observedAt": "2026-11-07T12:21:40.254538+00:00",
+    "sha256": "e7fe7207e494240b248161c4dd7f2fc8af0c938398661dd363271cc079c1b93b",
+    "bytes": 161083
+  },
+  {
+    "sourceId": "cfb-game-401862823-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/OKX/30,73/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:36.931301+00:00",
+    "observedAt": "2026-11-07T12:21:40.268337+00:00",
+    "sha256": "d39598f3f7d395e0df21a277be04e54c9a3a734b0d796f9ff222a68e8b2757c4",
+    "bytes": 163033
+  },
+  {
+    "sourceId": "cfb-game-401858287-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/FFC/50,88/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:36.946918+00:00",
+    "observedAt": "2026-11-07T12:21:40.338455+00:00",
+    "sha256": "c287bde126da63b99dd333bb8bd4371efc1b431ccb58c8b196e767c1ab1092a2",
+    "bytes": 162376
+  },
+  {
+    "sourceId": "cfb-game-401858291-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/IWX/28,59/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:36.952461+00:00",
+    "observedAt": "2026-11-07T12:21:40.362285+00:00",
+    "sha256": "312c950eb887885f240f6a0067a1ebc707ba237dbf5f65e8d533768bb7e93ce2",
+    "bytes": 162546
+  },
+  {
+    "sourceId": "cfb-game-401856741-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/MEG/64,31/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:36.931668+00:00",
+    "observedAt": "2026-11-07T12:21:40.390222+00:00",
+    "sha256": "670432c87db544bc56206e1e05e0c10ad17e16af4dde67b6d85f4189b768e1fe",
+    "bytes": 162386
+  },
+  {
+    "sourceId": "cfb-game-401870795-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/EPZ/92,79/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:37.010620+00:00",
+    "observedAt": "2026-11-07T12:21:40.438444+00:00",
+    "sha256": "33e92e3f35c5971c620324202ddc2df2cc0b10a836cba5a9f00531e6862fcc02",
+    "bytes": 161844
+  },
+  {
+    "sourceId": "cfb-game-401864532-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/EPZ/100,57/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:37.022468+00:00",
+    "observedAt": "2026-11-07T12:21:40.558442+00:00",
+    "sha256": "18ba239694db96250ef1d5a89d6f08f6e07d6de8ee3f4fc717b81b2429594dd8",
+    "bytes": 162423
+  },
+  {
+    "sourceId": "cfb-game-401856739-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/JAX/42,34/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:36.980880+00:00",
+    "observedAt": "2026-11-07T12:21:40.564346+00:00",
+    "sha256": "94fa1bb76bb03561b46792efe9008463223b385bd953fed1b5e162de5121d189",
+    "bytes": 162844
+  },
+  {
+    "sourceId": "cfb-game-401860913-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/SLC/109,221/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:36.994542+00:00",
+    "observedAt": "2026-11-07T12:21:40.570224+00:00",
+    "sha256": "40cfa37d17bd94b0d8e70bfc7c37d9c9e29ae192d82a694b141ef20efccb1849",
+    "bytes": 162131
+  },
+  {
+    "sourceId": "cfb-game-401856856-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/LUB/46,33/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:37.082973+00:00",
+    "observedAt": "2026-11-07T12:21:40.602293+00:00",
+    "sha256": "e176dd986a5372ec693b63b13f71a0117f4c903cb6a3fdca5585d8b00f8c0f89",
+    "bytes": 162210
+  },
+  {
+    "sourceId": "cfb-game-401858511-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/DTX/43,29/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:37.020695+00:00",
+    "observedAt": "2026-11-07T12:21:40.607501+00:00",
+    "sha256": "4b51043cd672f5202f40a06daf9114365fc56f3ec209fd5050d37a207e586a6b",
+    "bytes": 162717
+  },
+  {
+    "sourceId": "nfl-game-401873045",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873045",
+    "requestStartedAt": "2026-11-07T12:21:40.394278+00:00",
+    "observedAt": "2026-11-07T12:21:43.146474+00:00",
+    "sha256": "6ea88e8e542ee9f219c1de03e7fb3c5a8e7c5955683a15b1344e0caf06ed66a0",
+    "bytes": 131311
+  },
+  {
+    "sourceId": "cfb-game-401864535",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401864535",
+    "requestStartedAt": "2026-11-07T12:21:40.258521+00:00",
+    "observedAt": "2026-11-07T12:21:43.152327+00:00",
+    "sha256": "e2f006e3d8c756f9dbf471446dac638b482569536edbfdab921c3f0fee5bfc3a",
+    "bytes": 100788
+  },
+  {
+    "sourceId": "nfl-game-401873040",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873040",
+    "requestStartedAt": "2026-11-07T12:21:40.365921+00:00",
+    "observedAt": "2026-11-07T12:21:43.166736+00:00",
+    "sha256": "3c350f5846eba3e3de8f8865c80b3726d08915a6613681e4b9f1dc6efd840848",
+    "bytes": 137397
+  },
+  {
+    "sourceId": "nfl-game-401873038",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873038",
+    "requestStartedAt": "2026-11-07T12:21:40.272464+00:00",
+    "observedAt": "2026-11-07T12:21:43.166823+00:00",
+    "sha256": "27e8a465843dc5ec3ac2e1960e5c454f5a38d944c8f74575913c4f803438d44c",
+    "bytes": 131081
+  },
+  {
+    "sourceId": "nfl-game-401873047",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873047",
+    "requestStartedAt": "2026-11-07T12:21:40.611517+00:00",
+    "observedAt": "2026-11-07T12:21:43.166782+00:00",
+    "sha256": "609de5bcedce0caf5b9899c0b2b21cd1aadd9f8c5e94616aaa83cfcbcd3937a2",
+    "bytes": 137181
+  },
+  {
+    "sourceId": "nfl-game-401873039",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873039",
+    "requestStartedAt": "2026-11-07T12:21:40.563816+00:00",
+    "observedAt": "2026-11-07T12:21:43.171415+00:00",
+    "sha256": "de88dec8fe8663a7f5ce574285d60aa6c24a4a741fb3a00dce8d181baa60f571",
+    "bytes": 131845
+  },
+  {
+    "sourceId": "cfb-game-401860912",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401860912",
+    "requestStartedAt": "2026-11-07T12:21:40.153467+00:00",
+    "observedAt": "2026-11-07T12:21:43.201285+00:00",
+    "sha256": "71b5e2837c1caa1104cb72185aa33db9dd51154805759be3eae81540b14a72d5",
+    "bytes": 99754
+  },
+  {
+    "sourceId": "nfl-game-401873044",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873044",
+    "requestStartedAt": "2026-11-07T12:21:40.568034+00:00",
+    "observedAt": "2026-11-07T12:21:43.283928+00:00",
+    "sha256": "626f961092508bde53ac20368ffe5b46595158d0d7d6b25f45212915e089c457",
+    "bytes": 132522
+  },
+  {
+    "sourceId": "nfl-game-401873043",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873043",
+    "requestStartedAt": "2026-11-07T12:21:40.573988+00:00",
+    "observedAt": "2026-11-07T12:21:43.314058+00:00",
+    "sha256": "13c13ea857ab8701e15edbc1a41873962a7bcf8cb854697c389d5b7f4f1c1874",
+    "bytes": 130806
+  },
+  {
+    "sourceId": "nfl-game-401873041",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873041",
+    "requestStartedAt": "2026-11-07T12:21:40.344759+00:00",
+    "observedAt": "2026-11-07T12:21:43.370587+00:00",
+    "sha256": "8d3878466bd1ffb28706e5bce0ed703194c6dc82ea5938fc0640e30cd53dd5d3",
+    "bytes": 131598
+  },
+  {
+    "sourceId": "nfl-game-401873042",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873042",
+    "requestStartedAt": "2026-11-07T12:21:40.443266+00:00",
+    "observedAt": "2026-11-07T12:21:43.370651+00:00",
+    "sha256": "8b3668167157c59cc7a838a5aa9e016fb604701ad831cc945eef99ce8ff418bc",
+    "bytes": 130542
+  },
+  {
+    "sourceId": "nfl-game-401873046",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873046",
+    "requestStartedAt": "2026-11-07T12:21:40.606582+00:00",
+    "observedAt": "2026-11-07T12:21:43.370908+00:00",
+    "sha256": "1c20c8847f6c77b5bbd8afad7f5ea70b347e1d1ad8e718bba6003cf75de73c09",
+    "bytes": 129784
+  },
+  {
+    "sourceId": "nfl-game-401873039-postal",
+    "url": "https://api.zippopotam.us/us/70112",
+    "requestStartedAt": "2026-11-07T12:21:43.179214+00:00",
+    "observedAt": "2026-11-07T12:21:46.207990+00:00",
+    "sha256": "48b804e6d27b26d7e49fd61b2030558e54a6f3e9f3c004cb75b1f1ab163e3010",
+    "bytes": 221
+  },
+  {
+    "sourceId": "cfb-game-401864535-postal",
+    "url": "https://api.zippopotam.us/us/89118",
+    "requestStartedAt": "2026-11-07T12:21:43.156687+00:00",
+    "observedAt": "2026-11-07T12:21:46.223504+00:00",
+    "sha256": "87778e34bb39318e9efc7d5d25639bbc37d4e53b5f8c1dad98e8a5ce0b233327",
+    "bytes": 217
+  },
+  {
+    "sourceId": "nfl-game-401873041-postal",
+    "url": "https://api.zippopotam.us/us/28202",
+    "requestStartedAt": "2026-11-07T12:21:43.376277+00:00",
+    "observedAt": "2026-11-07T12:21:46.226034+00:00",
+    "sha256": "76dfb732db13eaf3db882474c29c5aa368df3eb87e36d86e54470d0555addef2",
+    "bytes": 223
+  },
+  {
+    "sourceId": "nfl-game-401873043-postal",
+    "url": "https://api.zippopotam.us/us/20785",
+    "requestStartedAt": "2026-11-07T12:21:43.320198+00:00",
+    "observedAt": "2026-11-07T12:21:46.227858+00:00",
+    "sha256": "433939c45df6959629aafc48faa28d119c419cd8339c570b81d546d4d87ef11e",
+    "bytes": 220
+  },
+  {
+    "sourceId": "nfl-game-401873045-postal",
+    "url": "https://api.zippopotam.us/us/64129",
+    "requestStartedAt": "2026-11-07T12:21:43.151714+00:00",
+    "observedAt": "2026-11-07T12:21:46.249531+00:00",
+    "sha256": "1d6b7f069e857800755c78969f93e8bfca8916b89554148e36dcf7f6a2e0c924",
+    "bytes": 220
+  },
+  {
+    "sourceId": "nfl-game-401873044-postal",
+    "url": "https://api.zippopotam.us/us/19148",
+    "requestStartedAt": "2026-11-07T12:21:43.289989+00:00",
+    "observedAt": "2026-11-07T12:21:46.250882+00:00",
+    "sha256": "30174741ad1fa07b71d95f6153728a0b43da78e7fffa54fb8d9ee373b0db2b5e",
+    "bytes": 225
+  },
+  {
+    "sourceId": "cfb-game-401860912-postal",
+    "url": "https://api.zippopotam.us/us/97331",
+    "requestStartedAt": "2026-11-07T12:21:43.206281+00:00",
+    "observedAt": "2026-11-07T12:21:46.251504+00:00",
+    "sha256": "7650c958086799f490a22935e63d78d38f76555ea65297a5455d52907172106e",
+    "bytes": 217
+  },
+  {
+    "sourceId": "nfl-game-401873046-postal",
+    "url": "https://api.zippopotam.us/us/90301",
+    "requestStartedAt": "2026-11-07T12:21:43.379707+00:00",
+    "observedAt": "2026-11-07T12:21:46.252082+00:00",
+    "sha256": "23120e99a998e8388a53dddbb76b919462ee379d51d5cf1c00a7036cd51a282a",
+    "bytes": 220
+  },
+  {
+    "sourceId": "nfl-game-401873042-postal",
+    "url": "https://api.zippopotam.us/us/33056",
+    "requestStartedAt": "2026-11-07T12:21:43.378077+00:00",
+    "observedAt": "2026-11-07T12:21:46.254549+00:00",
+    "sha256": "55265b0e8246508f84dcfebf81f8523093bcfcc78cfa078d64b49236952a7b42",
+    "bytes": 217
+  },
+  {
+    "sourceId": "nfl-game-401873047-postal",
+    "url": "https://api.zippopotam.us/us/95054",
+    "requestStartedAt": "2026-11-07T12:21:43.177492+00:00",
+    "observedAt": "2026-11-07T12:21:46.255483+00:00",
+    "sha256": "92d927a9ac1e5fdd9fb850e54bc4682f884a15bb5ea004ddec86345514861df1",
+    "bytes": 223
+  },
+  {
+    "sourceId": "nfl-game-401873040-postal",
+    "url": "https://api.zippopotam.us/us/46225",
+    "requestStartedAt": "2026-11-07T12:21:43.173095+00:00",
+    "observedAt": "2026-11-07T12:21:46.256896+00:00",
+    "sha256": "87b6d5fc219a34b1e0ac45e72043606fa07ff171b783877b67796efea10be757",
+    "bytes": 220
+  },
+  {
+    "sourceId": "nfl-game-401873049",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873049",
+    "requestStartedAt": "2026-11-07T12:21:43.175953+00:00",
+    "observedAt": "2026-11-07T12:21:46.374431+00:00",
+    "sha256": "cc162e77cf8bf71cbae16e9c53c12da4ac96d1b4f8662cf2868edc09ca5121f2",
+    "bytes": 129370
+  },
+  {
+    "sourceId": "nfl-game-401873041-nws-point",
+    "url": "https://api.weather.gov/points/35.229,-80.8419",
+    "requestStartedAt": "2026-11-07T12:21:46.226190+00:00",
+    "observedAt": "2026-11-07T12:21:49.543994+00:00",
+    "sha256": "f60c2deb0410ed9bd83ae48cd63bd1648bc93b54f702338973b3a7c10bf82260",
+    "bytes": 3919
+  },
+  {
+    "sourceId": "nfl-game-401873045-nws-point",
+    "url": "https://api.weather.gov/points/39.0401,-94.4951",
+    "requestStartedAt": "2026-11-07T12:21:46.249847+00:00",
+    "observedAt": "2026-11-07T12:21:49.562568+00:00",
+    "sha256": "8c9b1d6f5c08aea749966d7d46af762cdf68c7bdb988deb9030ddc20c722e82b",
+    "bytes": 3919
+  },
+  {
+    "sourceId": "cfb-game-401864535-nws-point",
+    "url": "https://api.weather.gov/points/36.0811,-115.2169",
+    "requestStartedAt": "2026-11-07T12:21:46.223726+00:00",
+    "observedAt": "2026-11-07T12:21:49.584626+00:00",
+    "sha256": "b488ac3dc5e8d6c068fdfa04a6fd8079cd1a3938ce128b8dede129d77e3a3f67",
+    "bytes": 3937
+  },
+  {
+    "sourceId": "cfb-game-401860912-nws-point",
+    "url": "https://api.weather.gov/points/44.5638,-123.2779",
+    "requestStartedAt": "2026-11-07T12:21:46.251626+00:00",
+    "observedAt": "2026-11-07T12:21:49.590509+00:00",
+    "sha256": "d3dacd974db2876e7fabf0d8189accec113b0f6fadf3f763e1e38a887e5906a7",
+    "bytes": 3926
+  },
+  {
+    "sourceId": "nfl-game-401873046-nws-point",
+    "url": "https://api.weather.gov/points/33.955,-118.3556",
+    "requestStartedAt": "2026-11-07T12:21:46.252314+00:00",
+    "observedAt": "2026-11-07T12:21:49.598234+00:00",
+    "sha256": "1a2b6c834299c8bc2d11ed4bae026bac22d3d0bbb54c424019d210d0f4810d9a",
+    "bytes": 3927
+  },
+  {
+    "sourceId": "nfl-game-401873039-nws-point",
+    "url": "https://api.weather.gov/points/29.9605,-90.0753",
+    "requestStartedAt": "2026-11-07T12:21:46.208253+00:00",
+    "observedAt": "2026-11-07T12:21:49.606998+00:00",
+    "sha256": "b39bdbfe132c87149825ba0557381b43225a3a58ceb812153653cab1d73d0455",
+    "bytes": 3919
+  },
+  {
+    "sourceId": "nfl-game-401873040-nws-point",
+    "url": "https://api.weather.gov/points/39.7406,-86.1569",
+    "requestStartedAt": "2026-11-07T12:21:46.257024+00:00",
+    "observedAt": "2026-11-07T12:21:49.609493+00:00",
+    "sha256": "3c3dc47e2789c3f4881ea12a417630797a4a0d34294efba1bc7cbe099ce5fee3",
+    "bytes": 3948
+  },
+  {
+    "sourceId": "nfl-game-401873043-nws-point",
+    "url": "https://api.weather.gov/points/38.9223,-76.8755",
+    "requestStartedAt": "2026-11-07T12:21:46.227984+00:00",
+    "observedAt": "2026-11-07T12:21:49.614155+00:00",
+    "sha256": "f3cc959dd1ea16c5142a693d2207f6a8c784035710030db4c337bb5ff5314399",
+    "bytes": 3924
+  },
+  {
+    "sourceId": "nfl-game-401873042-nws-point",
+    "url": "https://api.weather.gov/points/25.9484,-80.2479",
+    "requestStartedAt": "2026-11-07T12:21:46.254760+00:00",
+    "observedAt": "2026-11-07T12:21:49.634479+00:00",
+    "sha256": "dd7a6b9813b56e502e11d721e9b8e3d519abca013972a4e1801ca6c4703998d7",
+    "bytes": 3926
+  },
+  {
+    "sourceId": "nfl-game-401873047-nws-point",
+    "url": "https://api.weather.gov/points/37.3924,-121.9623",
+    "requestStartedAt": "2026-11-07T12:21:46.255606+00:00",
+    "observedAt": "2026-11-07T12:21:49.646071+00:00",
+    "sha256": "6037a335c2c36770c2697c1b212b0d0c938d29ff7303024a022ae303200bd2a3",
+    "bytes": 3928
+  },
+  {
+    "sourceId": "nfl-game-401873044-nws-point",
+    "url": "https://api.weather.gov/points/39.9207,-75.1595",
+    "requestStartedAt": "2026-11-07T12:21:46.251004+00:00",
+    "observedAt": "2026-11-07T12:21:49.803098+00:00",
+    "sha256": "343162c3942c07b4c7c3cf8412906cb23cf2eda7f15428818015c26d51c07c6a",
+    "bytes": 3921
+  },
+  {
+    "sourceId": "nfl-game-401873049-postal",
+    "url": "https://api.zippopotam.us/us/02035",
+    "requestStartedAt": "2026-11-07T12:21:46.379629+00:00",
+    "observedAt": "2026-11-07T12:21:49.868976+00:00",
+    "sha256": "0f935e25f859932ee8d2c12a3bf462e063ffe056ce838e897dd8a8b64fe2d0ca",
+    "bytes": 221
+  },
+  {
+    "sourceId": "nfl-game-401873049-nws-point",
+    "url": "https://api.weather.gov/points/42.0649,-71.2441",
+    "requestStartedAt": "2026-11-07T12:21:49.869257+00:00",
+    "observedAt": "2026-11-07T12:21:53.101667+00:00",
+    "sha256": "209305ab27d8b14373dfd762ef24b964ddaa3a1f6e928acab3e10b8ef31021d3",
+    "bytes": 3919
+  },
+  {
+    "sourceId": "nfl-game-401873044-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/PHI/50,77/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:49.803583+00:00",
+    "observedAt": "2026-11-07T12:21:53.126822+00:00",
+    "sha256": "9a1b7b38c299a7778aba82822c560011d5daa07772387154aa7c8be4e0afd4f5",
+    "bytes": 162470
+  },
+  {
+    "sourceId": "nfl-game-401873040-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/IND/58,68/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:49.609770+00:00",
+    "observedAt": "2026-11-07T12:21:53.139871+00:00",
+    "sha256": "578ff54e3c728979a6c69dae7d45ae2fc81754c45aa09b3559264d8123c2f3bc",
+    "bytes": 162597
+  },
+  {
+    "sourceId": "nfl-game-401873039-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/LIX/67,89/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:49.607420+00:00",
+    "observedAt": "2026-11-07T12:21:53.146598+00:00",
+    "sha256": "422a071e557cad4a0f9bebd833f64f43e60121fbc4c1549fc7cc2e707e27a46c",
+    "bytes": 162390
+  },
+  {
+    "sourceId": "nfl-game-401873041-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/GSP/119,65/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:49.544453+00:00",
+    "observedAt": "2026-11-07T12:21:53.146881+00:00",
+    "sha256": "7b86219b6fddf0eff009e332096e95bd79ace54aa98805ef7a5dc22f2a7e55c6",
+    "bytes": 162235
+  },
+  {
+    "sourceId": "nfl-game-401873045-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/EAX/47,48/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:49.563015+00:00",
+    "observedAt": "2026-11-07T12:21:53.170502+00:00",
+    "sha256": "f10940f41e48e5aaae8a1f351d4979efd89528211d5e36adb223380748b30d0f",
+    "bytes": 161807
+  },
+  {
+    "sourceId": "cfb-game-401860912-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/PQR/84,64/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:49.590798+00:00",
+    "observedAt": "2026-11-07T12:21:53.206315+00:00",
+    "sha256": "801335b96f78820bd0f9cb7da28847b2bd6f750661e99fe03f25d149084ccc9b",
+    "bytes": 163149
+  },
+  {
+    "sourceId": "nfl-game-401873043-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/LWX/102,73/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:49.614504+00:00",
+    "observedAt": "2026-11-07T12:21:53.278592+00:00",
+    "sha256": "cc34401d26446a087c36ea31a09257128e81d7117a3b2842fd9d7586b6ae53f5",
+    "bytes": 162319
+  },
+  {
+    "sourceId": "nfl-game-401873047-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/MTR/97,85/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:49.646806+00:00",
+    "observedAt": "2026-11-07T12:21:53.354541+00:00",
+    "sha256": "671ae4d06d8aa1b6d88f37c414c23cf708c773a39959df267b8fd545bff5ddc2",
+    "bytes": 162577
+  },
+  {
+    "sourceId": "nfl-game-401873046-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/LOX/150,41/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:49.598571+00:00",
+    "observedAt": "2026-11-07T12:21:53.378568+00:00",
+    "sha256": "6051c8ed9072f52eb2c3ba98f7b195cc5011a3c6d2309e211c073599de9bcba4",
+    "bytes": 162273
+  },
+  {
+    "sourceId": "cfb-game-401864535-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/VEF/119,94/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:49.584978+00:00",
+    "observedAt": "2026-11-07T12:21:53.394344+00:00",
+    "sha256": "a7a266ac6781e4092d19cc22b8f283a52d396314fe397076eaf7bf490f02ae96",
+    "bytes": 162074
+  },
+  {
+    "sourceId": "nfl-game-401873042-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/MFL/107,58/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:49.634932+00:00",
+    "observedAt": "2026-11-07T12:21:53.402278+00:00",
+    "sha256": "573a3cb1d76d9517c9a51c1e15dbb57afc662231f6316ac7c25e12488e774d29",
+    "bytes": 163359
+  },
+  {
+    "sourceId": "nfl-game-401873048",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873048",
+    "requestStartedAt": "2026-11-07T12:21:53.133322+00:00",
+    "observedAt": "2026-11-07T12:21:56.438404+00:00",
+    "sha256": "b19d493d4ad9fac9edbf01ee8a1d58e67f3c3175405078c97c5843e7bcbc93a9",
+    "bytes": 132441
+  },
+  {
+    "sourceId": "nfl-game-401873051",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873051",
+    "requestStartedAt": "2026-11-07T12:21:53.151631+00:00",
+    "observedAt": "2026-11-07T12:21:56.506434+00:00",
+    "sha256": "bfab75ca8608acc6ca443a01b2456f28cb6d07df2598768ada9659da6bd515e4",
+    "bytes": 130670
+  },
+  {
+    "sourceId": "nfl-game-401873050",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873050",
+    "requestStartedAt": "2026-11-07T12:21:53.144429+00:00",
+    "observedAt": "2026-11-07T12:21:56.582463+00:00",
+    "sha256": "61c729f4ecf5203737c1ad05fa0b3af312169eae42aa535c236060508aa7b555",
+    "bytes": 140735
+  },
+  {
+    "sourceId": "nfl-game-401873049-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/BOX/68,87/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:21:53.102193+00:00",
+    "observedAt": "2026-11-07T12:21:56.633680+00:00",
+    "sha256": "d1f5060825143eb5e0595c6fdd43b5490d9dd7294e86f7c5ef7c2f7c68ff2f20",
+    "bytes": 163196
+  },
+  {
+    "sourceId": "nfl-game-401873051-postal",
+    "url": "https://api.zippopotam.us/us/55415",
+    "requestStartedAt": "2026-11-07T12:21:56.512604+00:00",
+    "observedAt": "2026-11-07T12:21:59.673865+00:00",
+    "sha256": "d091129593959793cfb87326ebb7cc5556722fb261e50db782d6778619cd1ef9",
+    "bytes": 221
+  },
+  {
+    "sourceId": "nfl-game-401873048-postal",
+    "url": "https://api.zippopotam.us/us/98134",
+    "requestStartedAt": "2026-11-07T12:21:56.443625+00:00",
+    "observedAt": "2026-11-07T12:21:59.677314+00:00",
+    "sha256": "f61f087e3d2c7db2be94b0c58771ba5f4391cd71ca2207f9dc866519b907b5cb",
+    "bytes": 219
+  },
+  {
+    "sourceId": "nfl-game-401873050-postal",
+    "url": "https://api.zippopotam.us/us/60605",
+    "requestStartedAt": "2026-11-07T12:21:56.587585+00:00",
+    "observedAt": "2026-11-07T12:21:59.691454+00:00",
+    "sha256": "17adeab782a45d6473638fae495a2208c9ebdc64942f7a43a0de285f031e28d7",
+    "bytes": 216
+  },
+  {
+    "sourceId": "nfl-game-401873051-nws-point",
+    "url": "https://api.weather.gov/points/44.9742,-93.2585",
+    "requestStartedAt": "2026-11-07T12:21:59.674438+00:00",
+    "observedAt": "2026-11-07T12:22:02.815070+00:00",
+    "sha256": "d0bc72283b542ce4e7a7b786613156b69227ad70d26769ace0987769e197e43b",
+    "bytes": 3924
+  },
+  {
+    "sourceId": "nfl-game-401873050-nws-point",
+    "url": "https://api.weather.gov/points/41.8712,-87.6277",
+    "requestStartedAt": "2026-11-07T12:21:59.691840+00:00",
+    "observedAt": "2026-11-07T12:22:02.879191+00:00",
+    "sha256": "b9897d48e118473626da476cf2ac071e7ea2c413f3277b869c1248698c784826",
+    "bytes": 3915
+  },
+  {
+    "sourceId": "nfl-game-401873048-nws-point",
+    "url": "https://api.weather.gov/points/47.5903,-122.3263",
+    "requestStartedAt": "2026-11-07T12:21:59.677511+00:00",
+    "observedAt": "2026-11-07T12:22:02.879091+00:00",
+    "sha256": "7249d1a420318a4a646caf7b3d895d6a03519182c56cfa21e65f9b0c972d8299",
+    "bytes": 3929
+  },
+  {
+    "sourceId": "nfl-game-401873051-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/MPX/109,72/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:22:02.815778+00:00",
+    "observedAt": "2026-11-07T12:22:05.774714+00:00",
+    "sha256": "cd3e4543930601ee4156994a9674a41711429dfa0a29add4b8f7970127266110",
+    "bytes": 162331
+  },
+  {
+    "sourceId": "nfl-game-401873048-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/SEW/125,67/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:22:02.879846+00:00",
+    "observedAt": "2026-11-07T12:22:05.862489+00:00",
+    "sha256": "a3d51a1f7b22e28d468246f5dbaf50f6405102849c003a74be8f5b4cb44e7fdb",
+    "bytes": 163579
+  },
+  {
+    "sourceId": "nfl-game-401873050-nws-hourly",
+    "url": "https://api.weather.gov/gridpoints/LOT/76,73/forecast/hourly",
+    "requestStartedAt": "2026-11-07T12:22:02.879541+00:00",
+    "observedAt": "2026-11-07T12:22:05.908211+00:00",
+    "sha256": "46f52d8018c6728a9977adc4c2461015f8f57f07e7c9b614c63f2e330fd30519",
+    "bytes": 162722
+  },
+  {
+    "sourceId": "American-official-public-report",
+    "url": "https://app.hdintelligence.com/api/get-publish-public",
+    "requestBody": {
+      "sport": "Football",
+      "organization": "American",
+      "conference": "American"
+    },
+    "observedAt": "2026-11-07T12:22:21.210914+00:00",
+    "sha256": "928cf4e86132e05a897dc15bb83b312d0b3f96cf90f2589d1c808d0e355085e3",
+    "bytes": 3867171
+  }
+]

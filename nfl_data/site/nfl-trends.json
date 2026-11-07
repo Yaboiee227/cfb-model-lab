@@ -1,374 +1,1242 @@
 {
   "schemaVersion": 1,
   "season": 2026,
-  "week": 8,
-  "lastUpdated": "2026-11-01T13:18:52.622383+00:00",
-  "status": "WEEK8_SOURCE_REVIEWED_CONTEXT_ONLY",
+  "week": 9,
+  "lastUpdated": "2026-11-07T12:19:54.398411+00:00",
+  "status": "SOURCE_REVIEWED_CONTEXT_ONLY",
   "source": {
     "name": "Covers",
-    "url": "https://www.covers.com/sport/football/nfl/league-trends?splittype=seasontodate"
+    "url": "https://www.covers.com/sport/football/nfl/league-trends"
   },
   "alignmentConfig": {
     "spreadNeutralBand": 0.25,
-    "totalNeutralBand": 1.0,
+    "totalNeutralBand": 1,
     "moneylineNeutralBandPct": 0.5
   },
   "coverage": {
-    "entryCount": 15,
-    "gamesWithVerifiedEntries": 13,
+    "entryCount": 45,
+    "gamesWithVerifiedEntries": 14,
     "currentSlateGames": 14,
-    "method": "Manual review of reported Week 8 records for 12 Sunday games plus Monday. Thursday excluded from retrospective trend publication. Source snapshot dated Oct 29; checked Nov 1. Records not independently reconstructed."
+    "fullScheduledSlateGames": 15,
+    "gamesWithResearchProjections": 14,
+    "method": "Retain eligible reported trends in both directions. Match exact pair and kickoff; exclude unverified situation predicates, false favorite/home/road predicates and mismatched kickoff."
   },
-  "notes": "Context only; no numerical forecast or confidence changes. Opposing trends retained. Historical samples span roster eras. Action Network Week 8 primer located but detailed records not accessible; none attributed to Action Network. Source-reported records are not validated predictive edges.",
+  "notes": "Small descriptive source-reported samples, not validated forecast features. No probability, confidence or numerical adjustment. CFB Covers trend source rejected as stale.",
   "trends": [
     {
-      "id": "2026-w8-reviewed-1",
-      "gameId": "2026_08_IND_JAX",
+      "id": "2026-w9-context-1",
+      "gameId": "2026_09_CIN_ATL",
       "season": 2026,
-      "week": 8,
+      "week": 9,
       "matchup": {
-        "away": "IND",
-        "home": "JAX"
-      },
-      "subject": "TOTAL",
-      "trendType": "TOTAL",
-      "alignmentTarget": "total",
-      "text": "Six of the last seven Colts\u2013Jaguars meetings went Over.",
-      "pointsTo": "over",
-      "sampleSize": 7,
-      "record": "6-1",
-      "sourceName": "Covers \u00b7 Week 8 matchup trends",
-      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends?splittype=seasontodate",
-      "tags": [
-        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
-        "SMALL_SAMPLE",
-        "ROSTER_CHANGE_CAUTION"
-      ]
-    },
-    {
-      "id": "2026-w8-reviewed-2",
-      "gameId": "2026_08_IND_JAX",
-      "season": 2026,
-      "week": 8,
-      "matchup": {
-        "away": "IND",
-        "home": "JAX"
-      },
-      "subject": "IND",
-      "trendType": "ATS",
-      "alignmentTarget": "spread",
-      "text": "Indianapolis covered seven of its last eight as a road underdog.",
-      "pointsTo": "away",
-      "sampleSize": 8,
-      "record": "7-1",
-      "sourceName": "Covers \u00b7 Week 8 matchup trends",
-      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends?splittype=seasontodate",
-      "tags": [
-        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
-        "SMALL_SAMPLE",
-        "ROSTER_CHANGE_CAUTION"
-      ]
-    },
-    {
-      "id": "2026-w8-reviewed-3",
-      "gameId": "2026_08_TEN_CIN",
-      "season": 2026,
-      "week": 8,
-      "matchup": {
-        "away": "TEN",
-        "home": "CIN"
-      },
-      "subject": "TOTAL",
-      "trendType": "TOTAL",
-      "alignmentTarget": "total",
-      "text": "Five of Cincinnati\u2019s last six home games went Under.",
-      "pointsTo": "under",
-      "sampleSize": 6,
-      "record": "5-1",
-      "sourceName": "Covers \u00b7 Week 8 matchup trends",
-      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends?splittype=seasontodate",
-      "tags": [
-        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
-        "SMALL_SAMPLE",
-        "ROSTER_CHANGE_CAUTION"
-      ]
-    },
-    {
-      "id": "2026-w8-reviewed-4",
-      "gameId": "2026_08_CLE_PIT",
-      "season": 2026,
-      "week": 8,
-      "matchup": {
-        "away": "CLE",
-        "home": "PIT"
-      },
-      "subject": "CLE",
-      "trendType": "ATS",
-      "alignmentTarget": "spread",
-      "text": "Cleveland covered its last five AFC North games.",
-      "pointsTo": "away",
-      "sampleSize": 5,
-      "record": "5-0",
-      "sourceName": "Covers \u00b7 Week 8 matchup trends",
-      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends?splittype=seasontodate",
-      "tags": [
-        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
-        "SMALL_SAMPLE"
-      ]
-    },
-    {
-      "id": "2026-w8-reviewed-5",
-      "gameId": "2026_08_CLE_PIT",
-      "season": 2026,
-      "week": 8,
-      "matchup": {
-        "away": "CLE",
-        "home": "PIT"
-      },
-      "subject": "PIT",
-      "trendType": "ATS",
-      "alignmentTarget": "spread",
-      "text": "Pittsburgh covered its last five as a home favorite.",
-      "pointsTo": "home",
-      "sampleSize": 5,
-      "record": "5-0",
-      "sourceName": "Covers \u00b7 Week 8 matchup trends",
-      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends?splittype=seasontodate",
-      "tags": [
-        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
-        "SMALL_SAMPLE"
-      ]
-    },
-    {
-      "id": "2026-w8-reviewed-6",
-      "gameId": "2026_08_MIN_DET",
-      "season": 2026,
-      "week": 8,
-      "matchup": {
-        "away": "MIN",
-        "home": "DET"
-      },
-      "subject": "MIN",
-      "trendType": "ATS",
-      "alignmentTarget": "spread",
-      "text": "Minnesota covered its last five road games.",
-      "pointsTo": "away",
-      "sampleSize": 5,
-      "record": "5-0",
-      "sourceName": "Covers \u00b7 Week 8 matchup trends",
-      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends?splittype=seasontodate",
-      "tags": [
-        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
-        "SMALL_SAMPLE"
-      ]
-    },
-    {
-      "id": "2026-w8-reviewed-7",
-      "gameId": "2026_08_ATL_TB",
-      "season": 2026,
-      "week": 8,
-      "matchup": {
-        "away": "ATL",
-        "home": "TB"
+        "away": "CIN",
+        "home": "ATL"
       },
       "subject": "ATL",
       "trendType": "ATS",
       "alignmentTarget": "spread",
-      "text": "Atlanta covered its last four visits to Tampa Bay.",
-      "pointsTo": "away",
-      "sampleSize": 4,
-      "record": "4-0",
-      "sourceName": "Covers \u00b7 Week 8 matchup trends",
-      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends?splittype=seasontodate",
+      "text": "ATL: 7-1 ATS; last 8 games as an underdog",
+      "pointsTo": "home",
+      "sampleSize": 8,
+      "record": "7-1",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
       "tags": [
+        "CONTEXT_ONLY",
         "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
-        "SMALL_SAMPLE"
-      ]
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "NO_MODEL_LEAN"
     },
     {
-      "id": "2026-w8-reviewed-8",
-      "gameId": "2026_08_ARI_DAL",
+      "id": "2026-w9-context-2",
+      "gameId": "2026_09_CIN_ATL",
       "season": 2026,
-      "week": 8,
+      "week": 9,
       "matchup": {
-        "away": "ARI",
-        "home": "DAL"
-      },
-      "subject": "ARI",
-      "trendType": "ATS",
-      "alignmentTarget": "spread",
-      "text": "Arizona covered its last four meetings with Dallas.",
-      "pointsTo": "away",
-      "sampleSize": 4,
-      "record": "4-0",
-      "sourceName": "Covers \u00b7 Week 8 matchup trends",
-      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends?splittype=seasontodate",
-      "tags": [
-        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
-        "SMALL_SAMPLE"
-      ]
-    },
-    {
-      "id": "2026-w8-reviewed-9",
-      "gameId": "2026_08_LV_NYJ",
-      "season": 2026,
-      "week": 8,
-      "matchup": {
-        "away": "LV",
-        "home": "NYJ"
+        "away": "CIN",
+        "home": "ATL"
       },
       "subject": "TOTAL",
       "trendType": "TOTAL",
       "alignmentTarget": "total",
-      "text": "Las Vegas\u2019s last five games went Over.",
+      "text": "ATL: 5-1 Over; Falcons last 6 games as an underdog",
+      "pointsTo": "over",
+      "sampleSize": 6,
+      "record": "5-1",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "CONFLICTS"
+    },
+    {
+      "id": "2026-w9-context-3",
+      "gameId": "2026_09_CIN_ATL",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "CIN",
+        "home": "ATL"
+      },
+      "subject": "TOTAL",
+      "trendType": "TOTAL",
+      "alignmentTarget": "total",
+      "text": "CIN: 5-1 Over; Bengals last 6 games as a favorite",
+      "pointsTo": "over",
+      "sampleSize": 6,
+      "record": "5-1",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "CONFLICTS"
+    },
+    {
+      "id": "2026-w9-context-4",
+      "gameId": "2026_09_CIN_ATL",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "CIN",
+        "home": "ATL"
+      },
+      "subject": "TOTAL",
+      "trendType": "TOTAL",
+      "alignmentTarget": "total",
+      "text": "CIN: 4-1 Over; Bengals last 5 games overall",
       "pointsTo": "over",
       "sampleSize": 5,
-      "record": "5-0",
-      "sourceName": "Covers \u00b7 Week 8 matchup trends",
-      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends?splittype=seasontodate",
+      "record": "4-1",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
       "tags": [
+        "CONTEXT_ONLY",
         "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
-        "SMALL_SAMPLE"
-      ]
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "CONFLICTS"
     },
     {
-      "id": "2026-w8-reviewed-10",
-      "gameId": "2026_08_BAL_BUF",
+      "id": "2026-w9-context-5",
+      "gameId": "2026_09_LA_WAS",
       "season": 2026,
-      "week": 8,
+      "week": 9,
       "matchup": {
-        "away": "BAL",
-        "home": "BUF"
+        "away": "LA",
+        "home": "WAS"
       },
       "subject": "TOTAL",
       "trendType": "TOTAL",
       "alignmentTarget": "total",
-      "text": "Baltimore\u2019s last eight as a road underdog went Over.",
-      "pointsTo": "over",
-      "sampleSize": 8,
-      "record": "8-0",
-      "sourceName": "Covers \u00b7 Week 8 matchup trends",
-      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends?splittype=seasontodate",
+      "text": "Matchup: 6-0 Under; the last 6 meetings in Washington",
+      "pointsTo": "under",
+      "sampleSize": 6,
+      "record": "6-0",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
       "tags": [
+        "CONTEXT_ONLY",
         "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
-        "SMALL_SAMPLE"
-      ]
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "NO_MODEL_LEAN"
     },
     {
-      "id": "2026-w8-reviewed-11",
-      "gameId": "2026_08_LAC_LA",
+      "id": "2026-w9-context-6",
+      "gameId": "2026_09_LA_WAS",
       "season": 2026,
-      "week": 8,
+      "week": 9,
       "matchup": {
-        "away": "LAC",
-        "home": "LA"
+        "away": "LA",
+        "home": "WAS"
       },
-      "subject": "LA",
+      "subject": "TOTAL",
+      "trendType": "TOTAL",
+      "alignmentTarget": "total",
+      "text": "WAS: 4-0 Over; Commanders last 4 games overall",
+      "pointsTo": "over",
+      "sampleSize": 4,
+      "record": "4-0",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "NO_MODEL_LEAN"
+    },
+    {
+      "id": "2026-w9-context-7",
+      "gameId": "2026_09_CLE_NO",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "CLE",
+        "home": "NO"
+      },
+      "subject": "CLE",
       "trendType": "ATS",
       "alignmentTarget": "spread",
-      "text": "The Rams covered eight of their last ten home games.",
-      "pointsTo": "home",
-      "sampleSize": 10,
-      "record": "8-2",
-      "sourceName": "Covers \u00b7 Week 8 matchup trends",
-      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends?splittype=seasontodate",
+      "text": "Matchup: 7-0 ATS; last 7 meetings",
+      "pointsTo": "away",
+      "sampleSize": 7,
+      "record": "7-0",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
       "tags": [
+        "CONTEXT_ONLY",
         "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
-        "SMALL_SAMPLE"
-      ]
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "NO_MODEL_LEAN"
     },
     {
-      "id": "2026-w8-reviewed-12",
-      "gameId": "2026_08_NE_MIA",
+      "id": "2026-w9-context-8",
+      "gameId": "2026_09_DET_MIA",
       "season": 2026,
-      "week": 8,
+      "week": 9,
       "matchup": {
-        "away": "NE",
+        "away": "DET",
+        "home": "MIA"
+      },
+      "subject": "MIA",
+      "trendType": "ATS",
+      "alignmentTarget": "spread",
+      "text": "MIA: 3-0-1 ATS; last 4 games overall",
+      "pointsTo": "home",
+      "sampleSize": 4,
+      "record": "3-0-1",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "ALIGNS"
+    },
+    {
+      "id": "2026-w9-context-9",
+      "gameId": "2026_09_DET_MIA",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "DET",
+        "home": "MIA"
+      },
+      "subject": "MIA",
+      "trendType": "ATS",
+      "alignmentTarget": "spread",
+      "text": "MIA: 3-0-1 ATS; last 4 games as an underdog",
+      "pointsTo": "home",
+      "sampleSize": 4,
+      "record": "3-0-1",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "ALIGNS"
+    },
+    {
+      "id": "2026-w9-context-10",
+      "gameId": "2026_09_DET_MIA",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "DET",
         "home": "MIA"
       },
       "subject": "TOTAL",
       "trendType": "TOTAL",
       "alignmentTarget": "total",
-      "text": "New England\u2019s last four games went Over.",
-      "pointsTo": "over",
-      "sampleSize": 4,
-      "record": "4-0",
-      "sourceName": "Covers \u00b7 Week 8 matchup trends",
-      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends?splittype=seasontodate",
+      "text": "MIA: 5-1 Under; Dolphins last 6 home games",
+      "pointsTo": "under",
+      "sampleSize": 6,
+      "record": "5-1",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
       "tags": [
+        "CONTEXT_ONLY",
         "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
-        "SMALL_SAMPLE"
-      ]
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "ALIGNS"
     },
     {
-      "id": "2026-w8-reviewed-13",
-      "gameId": "2026_08_KC_DEN",
+      "id": "2026-w9-context-11",
+      "gameId": "2026_09_DET_MIA",
       "season": 2026,
-      "week": 8,
+      "week": 9,
       "matchup": {
-        "away": "KC",
-        "home": "DEN"
+        "away": "DET",
+        "home": "MIA"
       },
       "subject": "TOTAL",
       "trendType": "TOTAL",
       "alignmentTarget": "total",
-      "text": "The last seven Chiefs\u2013Broncos meetings went Under.",
-      "pointsTo": "under",
+      "text": "DET: 6-1 Over; Lions last 7 games as a road favorite",
+      "pointsTo": "over",
       "sampleSize": 7,
-      "record": "7-0",
-      "sourceName": "Covers \u00b7 Week 8 matchup trends",
-      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends?splittype=seasontodate",
+      "record": "6-1",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
       "tags": [
+        "CONTEXT_ONLY",
         "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
-        "SMALL_SAMPLE"
-      ]
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "CONFLICTS"
     },
     {
-      "id": "2026-w8-reviewed-14",
-      "gameId": "2026_08_PHI_WAS",
+      "id": "2026-w9-context-12",
+      "gameId": "2026_09_DET_MIA",
       "season": 2026,
-      "week": 8,
+      "week": 9,
       "matchup": {
-        "away": "PHI",
-        "home": "WAS"
+        "away": "DET",
+        "home": "MIA"
       },
-      "subject": "PHI",
+      "subject": "DET",
       "trendType": "ATS",
       "alignmentTarget": "spread",
-      "text": "Philadelphia covered its last six as a road underdog.",
+      "text": "Matchup: 5-1 ATS; last 6 meetings",
+      "pointsTo": "away",
+      "sampleSize": 6,
+      "record": "5-1",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "CONFLICTS"
+    },
+    {
+      "id": "2026-w9-context-13",
+      "gameId": "2026_09_NYJ_KC",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "NYJ",
+        "home": "KC"
+      },
+      "subject": "KC",
+      "trendType": "ATS",
+      "alignmentTarget": "spread",
+      "text": "Matchup: 6-0 ATS; last 6 meetings",
+      "pointsTo": "home",
+      "sampleSize": 6,
+      "record": "6-0",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "ALIGNS"
+    },
+    {
+      "id": "2026-w9-context-14",
+      "gameId": "2026_09_NYJ_KC",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "NYJ",
+        "home": "KC"
+      },
+      "subject": "TOTAL",
+      "trendType": "TOTAL",
+      "alignmentTarget": "total",
+      "text": "Matchup: 4-0 Under; the last 4 meetings in Kansas City",
+      "pointsTo": "under",
+      "sampleSize": 4,
+      "record": "4-0",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "ALIGNS"
+    },
+    {
+      "id": "2026-w9-context-15",
+      "gameId": "2026_09_NYJ_KC",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "NYJ",
+        "home": "KC"
+      },
+      "subject": "TOTAL",
+      "trendType": "TOTAL",
+      "alignmentTarget": "total",
+      "text": "NYJ: 5-1 Over; Jets last 6 games overall",
+      "pointsTo": "over",
+      "sampleSize": 6,
+      "record": "5-1",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "CONFLICTS"
+    },
+    {
+      "id": "2026-w9-context-16",
+      "gameId": "2026_09_NYJ_KC",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "NYJ",
+        "home": "KC"
+      },
+      "subject": "TOTAL",
+      "trendType": "TOTAL",
+      "alignmentTarget": "total",
+      "text": "NYJ: 5-1 Over; Jets last 6 games as an underdog",
+      "pointsTo": "over",
+      "sampleSize": 6,
+      "record": "5-1",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "CONFLICTS"
+    },
+    {
+      "id": "2026-w9-context-17",
+      "gameId": "2026_09_DEN_CAR",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "DEN",
+        "home": "CAR"
+      },
+      "subject": "DEN",
+      "trendType": "ATS",
+      "alignmentTarget": "spread",
+      "text": "DEN: 6-0 ATS; last 6 games as a favorite",
       "pointsTo": "away",
       "sampleSize": 6,
       "record": "6-0",
-      "sourceName": "Covers \u00b7 Week 8 matchup trends",
-      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends?splittype=seasontodate",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
       "tags": [
+        "CONTEXT_ONLY",
         "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
-        "SMALL_SAMPLE"
-      ]
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "CONFLICTS"
     },
     {
-      "id": "2026-w8-reviewed-15",
-      "gameId": "2026_08_CHI_SEA",
+      "id": "2026-w9-context-18",
+      "gameId": "2026_09_DEN_CAR",
       "season": 2026,
-      "week": 8,
+      "week": 9,
       "matchup": {
-        "away": "CHI",
+        "away": "DEN",
+        "home": "CAR"
+      },
+      "subject": "TOTAL",
+      "trendType": "TOTAL",
+      "alignmentTarget": "total",
+      "text": "CAR: 4-0 Over; Panthers last 4 home games",
+      "pointsTo": "over",
+      "sampleSize": 4,
+      "record": "4-0",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "NO_MODEL_LEAN"
+    },
+    {
+      "id": "2026-w9-context-19",
+      "gameId": "2026_09_DEN_CAR",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "DEN",
+        "home": "CAR"
+      },
+      "subject": "DEN",
+      "trendType": "ATS",
+      "alignmentTarget": "spread",
+      "text": "DEN: 4-0 ATS; last 4 games overall",
+      "pointsTo": "away",
+      "sampleSize": 4,
+      "record": "4-0",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "CONFLICTS"
+    },
+    {
+      "id": "2026-w9-context-20",
+      "gameId": "2026_09_DEN_CAR",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "DEN",
+        "home": "CAR"
+      },
+      "subject": "DEN",
+      "trendType": "ATS",
+      "alignmentTarget": "spread",
+      "text": "DEN: 5-1 ATS; last 6 meetings",
+      "pointsTo": "away",
+      "sampleSize": 6,
+      "record": "5-1",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "CONFLICTS"
+    },
+    {
+      "id": "2026-w9-context-21",
+      "gameId": "2026_09_DEN_CAR",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "DEN",
+        "home": "CAR"
+      },
+      "subject": "TOTAL",
+      "trendType": "TOTAL",
+      "alignmentTarget": "total",
+      "text": "CAR: 4-1 Under; Panthers last 5 games overall",
+      "pointsTo": "under",
+      "sampleSize": 5,
+      "record": "4-1",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "NO_MODEL_LEAN"
+    },
+    {
+      "id": "2026-w9-context-22",
+      "gameId": "2026_09_DEN_CAR",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "DEN",
+        "home": "CAR"
+      },
+      "subject": "TOTAL",
+      "trendType": "TOTAL",
+      "alignmentTarget": "total",
+      "text": "DEN: 4-1 Under; Broncos last 5 road games",
+      "pointsTo": "under",
+      "sampleSize": 5,
+      "record": "4-1",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "NO_MODEL_LEAN"
+    },
+    {
+      "id": "2026-w9-context-23",
+      "gameId": "2026_09_NYG_PHI",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "NYG",
+        "home": "PHI"
+      },
+      "subject": "TOTAL",
+      "trendType": "TOTAL",
+      "alignmentTarget": "total",
+      "text": "NYG: 4-0 Over; Giants last 4 games overall",
+      "pointsTo": "over",
+      "sampleSize": 4,
+      "record": "4-0",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "ALIGNS"
+    },
+    {
+      "id": "2026-w9-context-24",
+      "gameId": "2026_09_NYG_PHI",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "NYG",
+        "home": "PHI"
+      },
+      "subject": "TOTAL",
+      "trendType": "TOTAL",
+      "alignmentTarget": "total",
+      "text": "PHI: 6-1 Under; Eagles last 7 games as an underdog",
+      "pointsTo": "under",
+      "sampleSize": 7,
+      "record": "6-1",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "CONFLICTS"
+    },
+    {
+      "id": "2026-w9-context-25",
+      "gameId": "2026_09_DAL_IND",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "DAL",
+        "home": "IND"
+      },
+      "subject": "DAL",
+      "trendType": "ATS",
+      "alignmentTarget": "spread",
+      "text": "Matchup: 5-1 ATS; last 6 meetings",
+      "pointsTo": "away",
+      "sampleSize": 6,
+      "record": "5-1",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "CONFLICTS"
+    },
+    {
+      "id": "2026-w9-context-26",
+      "gameId": "2026_09_DAL_IND",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "DAL",
+        "home": "IND"
+      },
+      "subject": "IND",
+      "trendType": "ATS",
+      "alignmentTarget": "spread",
+      "text": "Matchup: 5-1 ATS; last 6 meetings",
+      "pointsTo": "home",
+      "sampleSize": 6,
+      "record": "5-1",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "ALIGNS"
+    },
+    {
+      "id": "2026-w9-context-27",
+      "gameId": "2026_09_HOU_LAC",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "HOU",
+        "home": "LAC"
+      },
+      "subject": "TOTAL",
+      "trendType": "TOTAL",
+      "alignmentTarget": "total",
+      "text": "LAC: 4-0 Under; Chargers last 4 home games",
+      "pointsTo": "under",
+      "sampleSize": 4,
+      "record": "4-0",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "NO_MODEL_LEAN"
+    },
+    {
+      "id": "2026-w9-context-28",
+      "gameId": "2026_09_HOU_LAC",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "HOU",
+        "home": "LAC"
+      },
+      "subject": "TOTAL",
+      "trendType": "TOTAL",
+      "alignmentTarget": "total",
+      "text": "HOU: 4-0 Under; Texans last 4 games as a road favorite",
+      "pointsTo": "under",
+      "sampleSize": 4,
+      "record": "4-0",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "NO_MODEL_LEAN"
+    },
+    {
+      "id": "2026-w9-context-29",
+      "gameId": "2026_09_HOU_LAC",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "HOU",
+        "home": "LAC"
+      },
+      "subject": "TOTAL",
+      "trendType": "TOTAL",
+      "alignmentTarget": "total",
+      "text": "LAC: 9-1 Under; Chargers last 10 games overall",
+      "pointsTo": "under",
+      "sampleSize": 10,
+      "record": "9-1",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "NO_MODEL_LEAN"
+    },
+    {
+      "id": "2026-w9-context-30",
+      "gameId": "2026_09_LV_SF",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "LV",
+        "home": "SF"
+      },
+      "subject": "TOTAL",
+      "trendType": "TOTAL",
+      "alignmentTarget": "total",
+      "text": "LV: 6-0 Over; Raiders last 6 games overall",
+      "pointsTo": "over",
+      "sampleSize": 6,
+      "record": "6-0",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "CONFLICTS"
+    },
+    {
+      "id": "2026-w9-context-31",
+      "gameId": "2026_09_LV_SF",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "LV",
+        "home": "SF"
+      },
+      "subject": "TOTAL",
+      "trendType": "TOTAL",
+      "alignmentTarget": "total",
+      "text": "LV: 6-0 Over; Raiders last 6 games as an underdog",
+      "pointsTo": "over",
+      "sampleSize": 6,
+      "record": "6-0",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "CONFLICTS"
+    },
+    {
+      "id": "2026-w9-context-32",
+      "gameId": "2026_09_LV_SF",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "LV",
+        "home": "SF"
+      },
+      "subject": "LV",
+      "trendType": "ATS",
+      "alignmentTarget": "spread",
+      "text": "Matchup: 4-0 ATS; last 4 meetings",
+      "pointsTo": "away",
+      "sampleSize": 4,
+      "record": "4-0",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "CONFLICTS"
+    },
+    {
+      "id": "2026-w9-context-33",
+      "gameId": "2026_09_GB_NE",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "GB",
+        "home": "NE"
+      },
+      "subject": "TOTAL",
+      "trendType": "TOTAL",
+      "alignmentTarget": "total",
+      "text": "NE: 5-0 Over; Patriots last 5 games overall",
+      "pointsTo": "over",
+      "sampleSize": 5,
+      "record": "5-0",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "ALIGNS"
+    },
+    {
+      "id": "2026-w9-context-34",
+      "gameId": "2026_09_GB_NE",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "GB",
+        "home": "NE"
+      },
+      "subject": "TOTAL",
+      "trendType": "TOTAL",
+      "alignmentTarget": "total",
+      "text": "GB: 5-0 Under; Packers last 5 games overall",
+      "pointsTo": "under",
+      "sampleSize": 5,
+      "record": "5-0",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "CONFLICTS"
+    },
+    {
+      "id": "2026-w9-context-35",
+      "gameId": "2026_09_GB_NE",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "GB",
+        "home": "NE"
+      },
+      "subject": "GB",
+      "trendType": "ATS",
+      "alignmentTarget": "spread",
+      "text": "GB: 4-0-1 ATS; last 5 games overall",
+      "pointsTo": "away",
+      "sampleSize": 5,
+      "record": "4-0-1",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "ALIGNS"
+    },
+    {
+      "id": "2026-w9-context-36",
+      "gameId": "2026_09_GB_NE",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "GB",
+        "home": "NE"
+      },
+      "subject": "GB",
+      "trendType": "ATS",
+      "alignmentTarget": "spread",
+      "text": "GB: 5-0-1 ATS; last 6 games as an underdog",
+      "pointsTo": "away",
+      "sampleSize": 6,
+      "record": "5-0-1",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "ALIGNS"
+    },
+    {
+      "id": "2026-w9-context-37",
+      "gameId": "2026_09_GB_NE",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "GB",
+        "home": "NE"
+      },
+      "subject": "TOTAL",
+      "trendType": "TOTAL",
+      "alignmentTarget": "total",
+      "text": "GB: 5-0 Under; Packers last 5 games as an underdog",
+      "pointsTo": "under",
+      "sampleSize": 5,
+      "record": "5-0",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "CONFLICTS"
+    },
+    {
+      "id": "2026-w9-context-38",
+      "gameId": "2026_09_ARI_SEA",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "ARI",
         "home": "SEA"
+      },
+      "subject": "SEA",
+      "trendType": "ATS",
+      "alignmentTarget": "spread",
+      "text": "SEA: 5-0 ATS; last 5 games as a favorite",
+      "pointsTo": "home",
+      "sampleSize": 5,
+      "record": "5-0",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "ALIGNS"
+    },
+    {
+      "id": "2026-w9-context-39",
+      "gameId": "2026_09_ARI_SEA",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "ARI",
+        "home": "SEA"
+      },
+      "subject": "TOTAL",
+      "trendType": "TOTAL",
+      "alignmentTarget": "total",
+      "text": "Matchup: 6-1 Under; the last 7 meetings in Seattle",
+      "pointsTo": "under",
+      "sampleSize": 7,
+      "record": "6-1",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "CONFLICTS"
+    },
+    {
+      "id": "2026-w9-context-40",
+      "gameId": "2026_09_ARI_SEA",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "ARI",
+        "home": "SEA"
+      },
+      "subject": "TOTAL",
+      "trendType": "TOTAL",
+      "alignmentTarget": "total",
+      "text": "ARI: 5-1 Over; Cardinals last 6 games overall",
+      "pointsTo": "over",
+      "sampleSize": 6,
+      "record": "5-1",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "ALIGNS"
+    },
+    {
+      "id": "2026-w9-context-41",
+      "gameId": "2026_09_TB_CHI",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "TB",
+        "home": "CHI"
       },
       "subject": "CHI",
       "trendType": "ATS",
       "alignmentTarget": "spread",
-      "text": "Chicago covered four of its last five games.",
-      "pointsTo": "away",
-      "sampleSize": 5,
-      "record": "4-1",
-      "sourceName": "Covers \u00b7 Week 8 matchup trends",
-      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends?splittype=seasontodate",
+      "text": "Matchup: 6-0 ATS; last 6 meetings",
+      "pointsTo": "home",
+      "sampleSize": 6,
+      "record": "6-0",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
       "tags": [
+        "CONTEXT_ONLY",
         "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
         "SMALL_SAMPLE",
         "ROSTER_CHANGE_CAUTION"
-      ]
+      ],
+      "alignment": "ALIGNS"
+    },
+    {
+      "id": "2026-w9-context-42",
+      "gameId": "2026_09_TB_CHI",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "TB",
+        "home": "CHI"
+      },
+      "subject": "TOTAL",
+      "trendType": "TOTAL",
+      "alignmentTarget": "total",
+      "text": "TB: 5-1 Under; Buccaneers last 6 road games",
+      "pointsTo": "under",
+      "sampleSize": 6,
+      "record": "5-1",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "ALIGNS"
+    },
+    {
+      "id": "2026-w9-context-43",
+      "gameId": "2026_09_TB_CHI",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "TB",
+        "home": "CHI"
+      },
+      "subject": "CHI",
+      "trendType": "ATS",
+      "alignmentTarget": "spread",
+      "text": "CHI: 5-1 ATS; last 6 games overall",
+      "pointsTo": "home",
+      "sampleSize": 6,
+      "record": "5-1",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "ALIGNS"
+    },
+    {
+      "id": "2026-w9-context-44",
+      "gameId": "2026_09_BUF_MIN",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "BUF",
+        "home": "MIN"
+      },
+      "subject": "TOTAL",
+      "trendType": "TOTAL",
+      "alignmentTarget": "total",
+      "text": "BUF: 4-0 Over; Bills last 4 road games",
+      "pointsTo": "over",
+      "sampleSize": 4,
+      "record": "4-0",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "ALIGNS"
+    },
+    {
+      "id": "2026-w9-context-45",
+      "gameId": "2026_09_BUF_MIN",
+      "season": 2026,
+      "week": 9,
+      "matchup": {
+        "away": "BUF",
+        "home": "MIN"
+      },
+      "subject": "TOTAL",
+      "trendType": "TOTAL",
+      "alignmentTarget": "total",
+      "text": "BUF: 4-0 Over; Bills last 4 games as a road favorite",
+      "pointsTo": "over",
+      "sampleSize": 4,
+      "record": "4-0",
+      "sourceName": "Covers \u00b7 reported matchup statistics",
+      "sourceUrl": "https://www.covers.com/sport/football/nfl/league-trends",
+      "observedAt": "2026-11-07T12:19:54.398411+00:00",
+      "tags": [
+        "CONTEXT_ONLY",
+        "SOURCE_REPORTED_NOT_INDEPENDENTLY_RECOMPUTED",
+        "SMALL_SAMPLE",
+        "ROSTER_CHANGE_CAUTION"
+      ],
+      "alignment": "ALIGNS"
     }
   ]
 }

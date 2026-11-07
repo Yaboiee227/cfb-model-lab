@@ -69,15 +69,15 @@ jobs:
           assert data['source']['name'] in {'Covers', 'Evan Abrams / Action Network', 'Action Network'}
           config=json.loads(Path('nfl_data/site/config.json').read_text())
           assert data['season']==config['season'] and data['week']==config['currentWeek']
-          assert data['status'] in {'READY_FOR_MANUAL_ENTRY','CURRENT_WEEK_VERIFIED','PENDING_VERIFIED_WEEK7_ENTRIES','WEEK8_SOURCE_REVIEWED_CONTEXT_ONLY'}
+          assert data['status'] in {'READY_FOR_MANUAL_ENTRY','CURRENT_WEEK_VERIFIED','PENDING_VERIFIED_WEEK7_ENTRIES','WEEK8_SOURCE_REVIEWED_CONTEXT_ONLY','SOURCE_REVIEWED_CONTEXT_ONLY'}
           if data['status']=='PENDING_VERIFIED_WEEK7_ENTRIES':
               assert data['week']==7 and len(data['trends'])==0
               assert data.get('coverage',{}).get('entryCount')==0
-              assert data.get('coverage',{}).get('currentSlateGames')==config['gamesInCurrentSlate']
-          if data['status'] in {'CURRENT_WEEK_VERIFIED','WEEK8_SOURCE_REVIEWED_CONTEXT_ONLY'}:
+              assert data.get('coverage',{}).get('currentSlateGames')==config.get('gamesWithResearchProjections',config['gamesInCurrentSlate'])
+          if data['status'] in {'CURRENT_WEEK_VERIFIED','WEEK8_SOURCE_REVIEWED_CONTEXT_ONLY','SOURCE_REVIEWED_CONTEXT_ONLY'}:
               assert len(data['trends']) > 0
               assert data.get('coverage',{}).get('entryCount') == len(data['trends'])
-              assert data.get('coverage',{}).get('currentSlateGames') == config['gamesInCurrentSlate']
+              assert data.get('coverage',{}).get('currentSlateGames') == config.get('gamesWithResearchProjections',config['gamesInCurrentSlate'])
               from urllib.parse import urlparse
               assert all(urlparse(t['sourceUrl']).hostname in {'www.actionnetwork.com','actionnetwork.com','www.covers.com','covers.com'} for t in data['trends'])
               assert all(t['sampleSize'] > 0 and len(t['text']) <= 180 for t in data['trends'])

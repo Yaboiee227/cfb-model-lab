@@ -114,7 +114,7 @@
     $('metric2').textContent = top ? top.teamName : '—';
     $('metric2Sub').textContent = top ? `${points(top.cbPoints)} CB points` : 'top team';
     $('metric3').textContent = dateLabel(doc.snapshotAsOf);
-    $('metric3Sub').textContent = league === 'cfb' ? 'includes October 27 finals' : 'Week 8 baseline rating';
+    $('metric3Sub').textContent = league === 'cfb' ? 'completed games at source cutoff' : `Through Week ${doc.sourceMaxWeek ?? '—'}`;
     $('metric4').innerHTML = marketBadge();
     $('metric4Sub').textContent = 'national market rank';
 
@@ -124,7 +124,7 @@
     $('sourceMeta').textContent = league === 'cfb'
       ? `CFB snapshot ${doc.snapshotAsOf}; model ${doc.modelId}; ${doc.trainingGames} completed games inside the fixed training window. Published pregame projections were not rewritten.`
       : `NFL snapshot ${doc.snapshotAsOf}; pinned source commit ${String(doc.sourceCommit || '').slice(0,12)}; Week 7 reproduction check ${doc.frozenRegression?.pass ? 'PASS' : 'FAIL'} across ${doc.frozenRegression?.games || 0} games.`;
-    $('methodText').textContent = (doc.method || 'Research-only model-derived team point rating.') + (doc.inputLimitations ? ' Input lag: ' + doc.inputLimitations : '');
+    $('methodText').textContent = (doc.method || 'Research-only model-derived team point rating.') + (doc.inputLimitations ? ' Context: ' + doc.inputLimitations : '');
   }
 
   async function init() {
