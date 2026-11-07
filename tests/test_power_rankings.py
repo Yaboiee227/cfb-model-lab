@@ -51,9 +51,13 @@ def test_05_market_national_ratings_are_withheld_when_graph_is_disconnected():
         assert status["graph"]["coveredTeams"] < status["graph"]["teamCount"] or status["graph"]["components"] > 1
 
 
-def test_06_remaining_matchup_comparison_counts_are_frozen():
-    assert len(load("cfb.json")["remainingMatchupComparisons"]) == 54
-    assert len(load("nfl.json")["remainingMatchupComparisons"]) == 0
+def test_06_current_comparisons_match_captured_games_without_overwriting_archive():
+    context=json.loads((ROOT / "data/game-readiness.json").read_text())
+    for league in ("cfb","nfl"):
+        expected={g['projectionGameId'] for g in context['games'] if g['league']==league and (g.get('marketReference') or {}).get('spreadHome') is not None}
+        assert {g['gameId'] for g in load(f"{league}.json")['remainingMatchupComparisons']} == expected
+    assert len(load("archive/cfb-previous.json")["remainingMatchupComparisons"]) == 54
+    assert load("archive/nfl-previous.json")["week"] == 8
 
 
 def test_07_gap_convention_and_side_label_are_exact():
@@ -91,7 +95,8 @@ def test_10_manifest_hashes_and_snapshot_provenance_match_files():
     manifest = load("manifest.json")
     assert manifest["canonicalInfluence"] is False
     assert manifest["canonicalPromotionAuthorized"] is False
-    assert manifest["leagues"]["cfb"]["snapshotAsOf"] == "2026-10-28T12:45:00Z"
+    assert manifest["leagues"]["cfb"]["snapshotAsOf"] == load("cfb.json")["snapshotAsOf"]
+    assert load("archive/cfb-previous.json")["snapshotAsOf"] == "2026-10-28T12:45:00Z"
     assert manifest["leagues"]["nfl"]["sourceCommit"] == "0721b59b5f461ad590bd348bd655c4963265856c"
     for name, expected in manifest["files"].items():
         actual = hashlib.sha256((DIR / name).read_bytes()).hexdigest()
@@ -100,13 +105,17 @@ def test_10_manifest_hashes_and_snapshot_provenance_match_files():
 
 def test_11_nfl_refresh_sources_and_coverage_lag_are_explicit():
     d = load("nfl.json")
-    assert d["week"] == 8 and d["sourceMaxWeek"] == 7
+    assert d["week"] == 9 and d["sourceMaxWeek"] == 8
     p = d["refreshProvenance"]
-    assert len(set(p["week7FinalsCrossChecked"])) == 14
-    assert {x["team"] for x in p["coverageLag"]} == {"DAL", "PHI"}
-    assert d["inputLimitations"]
-    for name, expected in p["files"].items():
-        assert hashlib.sha256((DIR / "inputs/nfl-20261027" / name).read_bytes()).hexdigest() == expected
+    assert d['currentWeekReproductionMaxAbsDiff'] <= 1e-8
+    assert p['targetWeek'] == 9 and p['maxSourceWeek'] == 8
+    assert p['coverageLag'] == []
+    assert hashlib.sha256((ROOT / p['inputPath']).read_bytes()).hexdigest() == p['inputSha256']
+    inputs=json.loads((ROOT / p['inputPath']).read_text())
+    assert len(inputs['teamCore']) == len(inputs['teamCoverage']) == 32
+    assert max(r['max_current_season_week_used'] for r in inputs['teamCore'].values()) == 8
+    assert max(r['max_current_week_used'] for r in inputs['teamCoverage'].values()) == 8
+    assert d['inputLimitations']
 
 
 def test_12_current_comparisons_exclude_completed_kickoffs():
@@ -115,7 +124,11 @@ def test_12_current_comparisons_exclude_completed_kickoffs():
         d = load(name)
         cutoff = datetime.fromisoformat(d["snapshotAsOf"].replace("Z", "+00:00"))
         assert all(datetime.fromisoformat(g["kickoff"].replace("Z", "+00:00")) > cutoff for g in d["remainingMatchupComparisons"])
-    assert load("cfb.json")["trainingGames"] == 568
+    cfb=load("cfb.json");p=ROOT / cfb['provenance']['trainingPath']
+    assert hashlib.sha256(p.read_bytes()).hexdigest() == cfb['provenance']['trainingSha256']
+    train=json.loads(p.read_text());assert len(train['games'])==cfb['trainingGames']
+    assert all(datetime.fromisoformat(g['kickoff']) < datetime.fromisoformat(cfb['snapshotAsOf']) for g in train['games'])
+    assert cfb['lockedParameters'] == {'alpha':2.5,'halfLifeDays':56,'minTeamAppearances':4}
 
 
 def test_13_movement_matches_previous_published_snapshot():

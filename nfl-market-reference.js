@@ -29,6 +29,7 @@
         note.textContent=data.status === 'SUPERSEDED_BY_TIMESTAMPED_PRODUCTION_CSV' ? 'FanDuel market references and timestamps are shown per game. Early-game T−30 locks are immutable; later-game quotes are context pending their own final windows. Gap = home market spread minus home model spread. Research only / HOLD.' : usable ? `${count} upcoming games: DraftKings via ESPN, retrieved ${new Date(data.observedAt).toLocaleString('en-US',{timeZone:'America/New_York'})} ET. Dated comparison, not live execution or a grading lock. Gap = home market spread minus home model spread. Completed games have no current quote.` : 'Market comparison snapshot is unavailable or older than 24 hours. No current market gaps are published.';
         document.getElementById('projectionCount')?.after(note);
         filterProjections();renderHeroMetrics();
+        window.CBNFLTrends?.refresh();
       };
       apply();
     } catch(error) { console.warn('NFL market reference:',error.message); }
