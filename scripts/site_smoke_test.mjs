@@ -5,9 +5,13 @@ const base = process.env.SITE_BASE_URL || 'http://127.0.0.1:8000';
 const outDir = process.env.SITE_SMOKE_OUT || 'artifacts/site-smoke';
 await fs.mkdir(outDir, { recursive: true });
 
+const publishedCount = async path => (await fs.readFile(new URL(path, import.meta.url), 'utf8')).trim().split(/\r?\n/).length - 1;
+const currentCfbGames = await publishedCount('../data/projections.csv');
+const currentNflGames = await publishedCount('../nfl_data/site/projections.csv');
+
 const cases = [
-  { name: 'cfb-desktop', path: '/', viewport: { width: 1440, height: 1000 }, league: 'cfb', expectedGames: 56, testProjectionNav: true },
-  { name: 'cfb-mobile', path: '/', viewport: { width: 390, height: 844 }, league: 'cfb', expectedGames: 56, testSlateNavigation: true, testProjectionNav: true },
+  { name: 'cfb-desktop', path: '/', viewport: { width: 1440, height: 1000 }, league: 'cfb', expectedGames: currentCfbGames, testProjectionNav: true },
+  { name: 'cfb-mobile', path: '/', viewport: { width: 390, height: 844 }, league: 'cfb', expectedGames: currentCfbGames, testSlateNavigation: true, testProjectionNav: true },
   { name: 'nfl-desktop', path: '/?league=nfl', viewport: { width: 1440, height: 1000 }, league: 'nfl', testProjectionNav: true },
   { name: 'nfl-mobile', path: '/?league=nfl', viewport: { width: 390, height: 844 }, league: 'nfl', testProjectionNav: true },
   { name: 'week8-desktop', path: '/week-8.html', viewport: { width: 1440, height: 1000 }, week8: true, expectedGames: 56 },

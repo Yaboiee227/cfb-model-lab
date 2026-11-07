@@ -1,34 +1,17 @@
 {
   "league": "nfl",
-  "week": 8,
+  "week": 9,
   "canonicalInfluence": false,
-  "policy": "Official designation report is not final inactives. QB state must be explicitly verified. No numerical adjustments are applied.",
+  "policy": "Unknown current-week personnel remains HOLD; no prior-week context carried forward.",
   "games": [
     {
-      "gameId": "2026_08_CAR_GB",
-      "source": "https://amp.nfl.com/news/nfl-week-8-injury-report-2026-season",
-      "observedAt": "2026-10-29T17:29:53.047736+00:00",
-      "reportType": "OFFICIAL_GAME_STATUS_DESIGNATIONS_NOT_FINAL_INACTIVES",
-      "finalAvailabilityVerified": false,
-      "qbChange": null,
-      "summary": "Carolina: three offensive-line/guard or defensive position groups affected by listed absences. Green Bay: two offensive linemen and one linebacker ruled out; four players questionable. Final inactives and model-relative starter identity remain unverified.",
-      "status": "HOLD",
-      "blockers": [
-        "FINAL_AVAILABILITY_UNVERIFIED",
-        "QB_STATE_UNVERIFIED"
-      ],
-      "personnelAdjusted": false,
-      "baselineResearchDisplayAllowed": true,
-      "fullReleaseCertified": false
-    },
-    {
-      "gameId": "2026_08_ARI_DAL",
+      "gameId": "2026_09_CIN_ATL",
       "source": null,
       "observedAt": null,
       "reportType": "NO_VERIFIED_REPORT",
       "finalAvailabilityVerified": false,
       "qbChange": null,
-      "summary": "Current game-specific personnel evidence not supplied.",
+      "summary": "No current game-specific final personnel evidence supplied.",
       "status": "HOLD",
       "blockers": [
         "MISSING_OR_NON_PREGAME_TIMESTAMP",
@@ -41,13 +24,13 @@
       "fullReleaseCertified": false
     },
     {
-      "gameId": "2026_08_ATL_TB",
+      "gameId": "2026_09_CLE_NO",
       "source": null,
       "observedAt": null,
       "reportType": "NO_VERIFIED_REPORT",
       "finalAvailabilityVerified": false,
       "qbChange": null,
-      "summary": "Current game-specific personnel evidence not supplied.",
+      "summary": "No current game-specific final personnel evidence supplied.",
       "status": "HOLD",
       "blockers": [
         "MISSING_OR_NON_PREGAME_TIMESTAMP",
@@ -60,30 +43,13 @@
       "fullReleaseCertified": false
     },
     {
-      "gameId": "2026_08_BAL_BUF",
-      "source": "https://www.baltimoreravens.com/news/lamar-jackson-injury-practice-report-emotional-boost",
-      "observedAt": "2026-10-29T17:39:24.063584+00:00",
-      "reportType": "PRACTICE_FULL_NOT_START_CONFIRMED",
-      "finalAvailabilityVerified": false,
-      "qbChange": null,
-      "summary": "Full Wednesday practice participation reported. This does not establish the Sunday starter or final availability.",
-      "status": "HOLD",
-      "blockers": [
-        "FINAL_AVAILABILITY_UNVERIFIED",
-        "QB_STATE_UNVERIFIED"
-      ],
-      "personnelAdjusted": false,
-      "baselineResearchDisplayAllowed": true,
-      "fullReleaseCertified": false
-    },
-    {
-      "gameId": "2026_08_CLE_PIT",
+      "gameId": "2026_09_DAL_IND",
       "source": null,
       "observedAt": null,
       "reportType": "NO_VERIFIED_REPORT",
       "finalAvailabilityVerified": false,
       "qbChange": null,
-      "summary": "Current game-specific personnel evidence not supplied.",
+      "summary": "No current game-specific final personnel evidence supplied.",
       "status": "HOLD",
       "blockers": [
         "MISSING_OR_NON_PREGAME_TIMESTAMP",
@@ -96,13 +62,13 @@
       "fullReleaseCertified": false
     },
     {
-      "gameId": "2026_08_IND_JAX",
+      "gameId": "2026_09_DEN_CAR",
       "source": null,
       "observedAt": null,
       "reportType": "NO_VERIFIED_REPORT",
       "finalAvailabilityVerified": false,
       "qbChange": null,
-      "summary": "Current game-specific personnel evidence not supplied.",
+      "summary": "No current game-specific final personnel evidence supplied.",
       "status": "HOLD",
       "blockers": [
         "MISSING_OR_NON_PREGAME_TIMESTAMP",
@@ -115,13 +81,13 @@
       "fullReleaseCertified": false
     },
     {
-      "gameId": "2026_08_LV_NYJ",
+      "gameId": "2026_09_DET_MIA",
       "source": null,
       "observedAt": null,
       "reportType": "NO_VERIFIED_REPORT",
       "finalAvailabilityVerified": false,
       "qbChange": null,
-      "summary": "Current game-specific personnel evidence not supplied.",
+      "summary": "No current game-specific final personnel evidence supplied.",
       "status": "HOLD",
       "blockers": [
         "MISSING_OR_NON_PREGAME_TIMESTAMP",
@@ -134,13 +100,13 @@
       "fullReleaseCertified": false
     },
     {
-      "gameId": "2026_08_MIN_DET",
+      "gameId": "2026_09_LA_WAS",
       "source": null,
       "observedAt": null,
       "reportType": "NO_VERIFIED_REPORT",
       "finalAvailabilityVerified": false,
       "qbChange": null,
-      "summary": "Current game-specific personnel evidence not supplied.",
+      "summary": "No current game-specific final personnel evidence supplied.",
       "status": "HOLD",
       "blockers": [
         "MISSING_OR_NON_PREGAME_TIMESTAMP",
@@ -153,13 +119,13 @@
       "fullReleaseCertified": false
     },
     {
-      "gameId": "2026_08_TEN_CIN",
+      "gameId": "2026_09_NYG_PHI",
       "source": null,
       "observedAt": null,
       "reportType": "NO_VERIFIED_REPORT",
       "finalAvailabilityVerified": false,
       "qbChange": null,
-      "summary": "Current game-specific personnel evidence not supplied.",
+      "summary": "No current game-specific final personnel evidence supplied.",
       "status": "HOLD",
       "blockers": [
         "MISSING_OR_NON_PREGAME_TIMESTAMP",
@@ -172,13 +138,13 @@
       "fullReleaseCertified": false
     },
     {
-      "gameId": "2026_08_LAC_LA",
+      "gameId": "2026_09_NYJ_KC",
       "source": null,
       "observedAt": null,
       "reportType": "NO_VERIFIED_REPORT",
       "finalAvailabilityVerified": false,
       "qbChange": null,
-      "summary": "Current game-specific personnel evidence not supplied.",
+      "summary": "No current game-specific final personnel evidence supplied.",
       "status": "HOLD",
       "blockers": [
         "MISSING_OR_NON_PREGAME_TIMESTAMP",
@@ -191,13 +157,13 @@
       "fullReleaseCertified": false
     },
     {
-      "gameId": "2026_08_KC_DEN",
+      "gameId": "2026_09_HOU_LAC",
       "source": null,
       "observedAt": null,
       "reportType": "NO_VERIFIED_REPORT",
       "finalAvailabilityVerified": false,
       "qbChange": null,
-      "summary": "Current game-specific personnel evidence not supplied.",
+      "summary": "No current game-specific final personnel evidence supplied.",
       "status": "HOLD",
       "blockers": [
         "MISSING_OR_NON_PREGAME_TIMESTAMP",
@@ -210,13 +176,13 @@
       "fullReleaseCertified": false
     },
     {
-      "gameId": "2026_08_NE_MIA",
+      "gameId": "2026_09_LV_SF",
       "source": null,
       "observedAt": null,
       "reportType": "NO_VERIFIED_REPORT",
       "finalAvailabilityVerified": false,
       "qbChange": null,
-      "summary": "Current game-specific personnel evidence not supplied.",
+      "summary": "No current game-specific final personnel evidence supplied.",
       "status": "HOLD",
       "blockers": [
         "MISSING_OR_NON_PREGAME_TIMESTAMP",
@@ -229,13 +195,13 @@
       "fullReleaseCertified": false
     },
     {
-      "gameId": "2026_08_PHI_WAS",
+      "gameId": "2026_09_ARI_SEA",
       "source": null,
       "observedAt": null,
       "reportType": "NO_VERIFIED_REPORT",
       "finalAvailabilityVerified": false,
       "qbChange": null,
-      "summary": "Current game-specific personnel evidence not supplied.",
+      "summary": "No current game-specific final personnel evidence supplied.",
       "status": "HOLD",
       "blockers": [
         "MISSING_OR_NON_PREGAME_TIMESTAMP",
@@ -248,13 +214,51 @@
       "fullReleaseCertified": false
     },
     {
-      "gameId": "2026_08_CHI_SEA",
+      "gameId": "2026_09_GB_NE",
       "source": null,
       "observedAt": null,
       "reportType": "NO_VERIFIED_REPORT",
       "finalAvailabilityVerified": false,
       "qbChange": null,
-      "summary": "Current game-specific personnel evidence not supplied.",
+      "summary": "No current game-specific final personnel evidence supplied.",
+      "status": "HOLD",
+      "blockers": [
+        "MISSING_OR_NON_PREGAME_TIMESTAMP",
+        "REPORT_GAME_SCOPE_MISMATCH",
+        "FINAL_AVAILABILITY_UNVERIFIED",
+        "QB_STATE_UNVERIFIED"
+      ],
+      "personnelAdjusted": false,
+      "baselineResearchDisplayAllowed": true,
+      "fullReleaseCertified": false
+    },
+    {
+      "gameId": "2026_09_TB_CHI",
+      "source": null,
+      "observedAt": null,
+      "reportType": "NO_VERIFIED_REPORT",
+      "finalAvailabilityVerified": false,
+      "qbChange": null,
+      "summary": "No current game-specific final personnel evidence supplied.",
+      "status": "HOLD",
+      "blockers": [
+        "MISSING_OR_NON_PREGAME_TIMESTAMP",
+        "REPORT_GAME_SCOPE_MISMATCH",
+        "FINAL_AVAILABILITY_UNVERIFIED",
+        "QB_STATE_UNVERIFIED"
+      ],
+      "personnelAdjusted": false,
+      "baselineResearchDisplayAllowed": true,
+      "fullReleaseCertified": false
+    },
+    {
+      "gameId": "2026_09_BUF_MIN",
+      "source": null,
+      "observedAt": null,
+      "reportType": "NO_VERIFIED_REPORT",
+      "finalAvailabilityVerified": false,
+      "qbChange": null,
+      "summary": "No current game-specific final personnel evidence supplied.",
       "status": "HOLD",
       "blockers": [
         "MISSING_OR_NON_PREGAME_TIMESTAMP",

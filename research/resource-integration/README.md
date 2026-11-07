@@ -18,9 +18,9 @@ Withheld: new canonical features, arbitrary injury/weather/referee points, new w
 - Current NFL diagnostic capture has 32 teams, offense and defense-allowed rows, with no missing completed prior-week game IDs. These unadjusted diagnostic aggregates are not replacements for the canonical feature definitions.
 - Final CFB capture contains 53 Moore and 52 PiRate future-game benchmark observations, with every remaining game covered by at least one. Nine started games are excluded. The unmatched PiRate FIU row remains missing rather than being guessed from a misspelled source name. FEI bytes are retained as possession-scale context; no unvalidated conversion into points is made.
 - CFB benchmark observations were captured later than the foundation's original freeze. Origin differences are explicit. They are prospective observations for remaining games, not same-information comparisons or evidence of superiority.
-- Website publication was blocked by automatic approval review, citing a retained approval requirement for website changes. Production feeds were restored locally. The candidate feed, new freeze, input features and corrected matchup index are in an isolated release package; no production deployment was performed.
+- Website publication was initially blocked by automatic approval review, citing a retained approval requirement. Production feeds were restored locally and a review package was saved. Caleb subsequently explicitly approved the prepared Week 9 research feed and pipeline activation. This approved release preserves every forecast number and frozen timestamp; final context remains unverified.
 
-The current audit deliberately reports the missing production Week 9 projection and stale published week. A source-capture success must not conceal that operational gap.
+The preserved capture-time audit reports the then-missing production Week 9 projection and stale published week. The approved release supplies the prepared research feed; future audits evaluate the current repository state. A source-capture success must not conceal that operational gap.
 
 ## Commands
 
@@ -49,7 +49,7 @@ python scripts/refresh_nfl_pinned_research.py \
 
 This audited source is season-specific to 2026. It is intentionally not an unattended weekly forecast publisher. A new season needs its own reviewed source and eligibility decisions. Fresh source data does not retroactively establish what was known before historical games.
 
-`publish_nfl_current_research.py` stages an approved weekly research artifact into the existing NFL schema, preserves the prior feed in a write-once archive, and audits exact forecast parity. `publish_current_matchups.py` renders the existing matchup layout from saved league schedules. **These publication commands remain pending website approval for this release.** Neither obtains final personnel, weather, officials or market evidence.
+`publish_nfl_current_research.py` stages an approved weekly research artifact into the existing NFL schema, preserves the prior feed in a write-once archive, and audits exact forecast parity. `publish_current_matchups.py` renders the existing matchup layout from saved league schedules. **Caleb explicitly approved publication of the prepared research release and activation of this evidence pipeline.** Neither obtains final personnel, weather, officials or market evidence.
 
 ## Automation and retention
 

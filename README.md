@@ -5,7 +5,7 @@
 See [the resource integration audit](research/resource-integration/README.md) for
 the November 6 review: current CFB Week 10 and NFL Week 9 source capture,
 prospective benchmark evidence, diagnostic scorecards, and a verified NFL
-research refresh. Website publication is pending approval; the new pipeline
+research refresh. Website publication has been approved for the prepared research release; the new pipeline
 does not promote features or rewrite frozen forecasts. Older operation notes
 below describe their original historical scopes.
 

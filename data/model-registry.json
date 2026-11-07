@@ -11,7 +11,7 @@
   },
   "cfb": {
     "season": 2026,
-    "activeWeek": 8,
+    "activeWeek": 10,
     "canonical": {
       "status": "HOLD",
       "historicalVersionLabel": "Advanced Calibrated 0.9J",
@@ -28,13 +28,14 @@
       "promotionAuthorized": false,
       "generator": "scripts/cfb_foundation_candidate.py",
       "decisionSource": "cfb/validation/week-08-rebuild-decision.json",
-      "frozenSource": "cfb/research-locks/week-08-foundation-full.json"
+      "frozenSource": "cfb/research-locks/week-10-foundation-full.json",
+      "architectureReferenceFrozenSource": "cfb/research-locks/week-08-foundation-full.json"
     }
   },
   "nfl": {
     "season": 2026,
-    "publishedMainSiteSnapshotWeek": 7,
-    "activeProspectiveWeek": 7,
+    "publishedMainSiteSnapshotWeek": 9,
+    "activeProspectiveWeek": 9,
     "canonical": {
       "modelId": "NFL Canonical v1",
       "status": "FROZEN_PROSPECTIVE_RESEARCH",
@@ -58,8 +59,15 @@
     },
     "siteSnapshot": {
       "config": "nfl_data/site/config.json",
-      "status": "WEEK7_FROZEN_RESEARCH_PREVIEW_PUBLISHED",
-      "note": "The main-site NFL projection feed displays the preserved Week 7 frozen research preview while completed Week 6 grades remain in results.csv. Website research display does not authorize recommendations, alter the frozen canonical projection, or promote a challenger."
+      "status": "WEEK9_FROZEN_RESEARCH_PUBLISHED",
+      "note": "Fourteen remaining Week 9 games have frozen baseline research. Final personnel, weather, officials and market locks remain unverified. Earlier architecture snapshots and all recorded results are preserved."
+    },
+    "currentResearchSnapshot": {
+      "source": "nfl/research-projections/week-09.json",
+      "role": "PROSPECTIVE_RESEARCH",
+      "canonicalArchitectureUnchanged": true,
+      "newFeaturesPromoted": [],
+      "finalContextClearance": false
     }
   }
 }
