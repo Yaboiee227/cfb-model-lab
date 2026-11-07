@@ -5,9 +5,13 @@ const base = process.env.SITE_BASE_URL || 'http://127.0.0.1:8000';
 const outDir = process.env.SITE_SMOKE_OUT || 'artifacts/site-webkit';
 await fs.mkdir(outDir, { recursive: true });
 
+const publishedCount = async path => (await fs.readFile(new URL(path, import.meta.url), 'utf8')).trim().split(/\r?\n/).length - 1;
+const currentCfbGames = await publishedCount('../data/projections.csv');
+const currentNflGames = await publishedCount('../nfl_data/site/projections.csv');
+
 const cases = [
-  { name: 'cfb-mobile-webkit', path: '/', league: 'cfb', expectedGames: 56, search: 'Virginia' },
-  { name: 'nfl-mobile-webkit', path: '/?league=nfl', league: 'nfl', expectedGames: 14, search: 'Chiefs' }
+  { name: 'cfb-mobile-webkit', path: '/', league: 'cfb', expectedGames: currentCfbGames, search: 'Virginia' },
+  { name: 'nfl-mobile-webkit', path: '/?league=nfl', league: 'nfl', expectedGames: currentNflGames, search: 'Chiefs' }
 ];
 
 const browser = await webkit.launch({ headless: true });

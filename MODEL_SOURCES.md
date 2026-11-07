@@ -91,6 +91,15 @@ This file is the source-of-truth registry for external data, information, benchm
 - Status: **APPROVED PRIMARY FACTUAL / STRUCTURED BACKBONE**
 - Uses: schedules, historical spread/total lines, play-by-play, EPA/success-rate research, team/player stats, roster/depth-chart data where available, and reproducible historical model inputs.
 - Preserve data release/update timing. Derived features must use only records available before the target game.
+- November 6 integration: `scripts/capture_projection_resources.py` adds actual-time immutable source capture and current-cycle checks. It does not duplicate the existing canonical nflverse inputs. Revised raw files cannot certify historical pregame availability; diagnostics and operational refreshes remain separately labeled.
+
+## Percival CFB comparison research and linked public benchmarks
+- Directory/methodology: https://public.tableau.com/app/profile/andrew.percival
+- Source roles: **EXTERNAL BENCHMARK / RESEARCH DESIGN**, with no canonical influence.
+- Direct captured publishers: https://piratings.wordpress.com/ and https://sonnymoorepowerratings.com/col-foot.htm. PiRate variants are one related family; Moore's published rating/HFA conversion is its benchmark convention, not CB's coefficient.
+- FEI: https://bcftoys.com/ — retain source bytes/context; do not invent a possession-to-points conversion.
+- Raw Tableau exports are disabled. Use publisher observations actually captured before kickoff; do not reconstruct pregame values from the current dashboard after results.
+- See `research/resource-integration/README.md` for current scope, limitations, commands, and the prospective validation path.
 
 ## NFL Next Gen Stats
 - Site: https://nextgenstats.nfl.com/

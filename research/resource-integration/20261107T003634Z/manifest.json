@@ -1,0 +1,751 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-11-07T00:36:34.127220+00:00",
+  "canonicalInfluence": false,
+  "promotionAuthorized": false,
+  "productionFilesModified": false,
+  "sources": [
+    {
+      "sourceId": "nflverse-schedule",
+      "url": "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv",
+      "responseUrl": "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv",
+      "retrievalStartedAt": "2026-11-07T00:36:34.127358+00:00",
+      "observedAt": "2026-11-07T00:36:39.619062+00:00",
+      "sha256": "fcd45ea244ef9479afa73a872103da76aaa66a2b036e1eed7ff136d777e7c36b",
+      "bytes": 2188945,
+      "httpLastModified": null,
+      "availabilityPolicy": "First usable at completed retrieval; HTTP dates do not certify historical availability.",
+      "rawPath": "raw/nflverse-schedule.source"
+    },
+    {
+      "sourceId": "nflverse-pbp",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2026.csv.gz",
+      "responseUrl": "https://release-assets.githubusercontent.com/github-production-release-asset/452908115/7a685f5e-9df4-4977-8396-ed9e216fb9f9",
+      "retrievalStartedAt": "2026-11-07T00:36:39.675051+00:00",
+      "observedAt": "2026-11-07T00:36:48.971153+00:00",
+      "sha256": "3f9b215e8820aa20f244150afae98513ca294fe91eae3fbdc684fbca1e77da4f",
+      "bytes": 8372686,
+      "httpLastModified": "Fri, 06 Nov 2026 16:45:55 GMT",
+      "availabilityPolicy": "First usable at completed retrieval; HTTP dates do not certify historical availability.",
+      "rawPath": "raw/nflverse-pbp.csv.gz"
+    },
+    {
+      "sourceId": "pirate-cfb",
+      "url": "https://piratings.wordpress.com/",
+      "responseUrl": "https://piratings.wordpress.com/",
+      "retrievalStartedAt": "2026-11-07T00:36:50.009120+00:00",
+      "observedAt": "2026-11-07T00:36:53.583136+00:00",
+      "sha256": "78bc1c93c4f2d73fcbe68157ddd532feb85dfb77c2badb1032728a1437d740b2",
+      "bytes": 664886,
+      "httpLastModified": null,
+      "availabilityPolicy": "First usable at completed retrieval; HTTP dates do not certify historical availability.",
+      "rawPath": "raw/pirate-cfb.source"
+    },
+    {
+      "sourceId": "moore-cfb",
+      "url": "https://sonnymoorepowerratings.com/col-foot.htm",
+      "responseUrl": "https://sonnymoorepowerratings.com/col-foot.htm",
+      "retrievalStartedAt": "2026-11-07T00:36:53.815315+00:00",
+      "observedAt": "2026-11-07T00:36:57.883073+00:00",
+      "sha256": "f154d07491093eb9ef2d68ea7a2d0db482b81e9a52928efc313003b66c5ce786",
+      "bytes": 20866,
+      "httpLastModified": "Sun, 01 Nov 2026 14:05:00 GMT",
+      "availabilityPolicy": "First usable at completed retrieval; HTTP dates do not certify historical availability.",
+      "rawPath": "raw/moore-cfb.source"
+    },
+    {
+      "sourceId": "fei-cfb",
+      "url": "https://bcftoys.com/2026-fei",
+      "responseUrl": "https://bcftoys.com/2026-fei",
+      "retrievalStartedAt": "2026-11-07T00:36:58.085978+00:00",
+      "observedAt": "2026-11-07T00:37:02.603081+00:00",
+      "sha256": "8eefe6542e4548848c412ea1a8f61f3c45855548a98605b83eaed8bb12d7e250",
+      "bytes": 162343,
+      "httpLastModified": null,
+      "availabilityPolicy": "First usable at completed retrieval; HTTP dates do not certify historical availability.",
+      "rawPath": "raw/fei-cfb.source",
+      "role": "rating_context_only_no_unvalidated_points_conversion"
+    }
+  ],
+  "errors": [],
+  "leagues": {
+    "nfl": {
+      "season": 2026,
+      "week": 9,
+      "games": [
+        {
+          "gameId": "2026_09_JAX_BAL",
+          "awayTeam": "JAX",
+          "homeTeam": "BAL",
+          "kickoff": "2026-11-06T01:15:00+00:00",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026_09_CIN_ATL",
+          "awayTeam": "CIN",
+          "homeTeam": "ATL",
+          "kickoff": "2026-11-08T14:30:00+00:00",
+          "neutralSite": true
+        },
+        {
+          "gameId": "2026_09_DEN_CAR",
+          "awayTeam": "DEN",
+          "homeTeam": "CAR",
+          "kickoff": "2026-11-08T18:00:00+00:00",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026_09_DAL_IND",
+          "awayTeam": "DAL",
+          "homeTeam": "IND",
+          "kickoff": "2026-11-08T18:00:00+00:00",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026_09_NYJ_KC",
+          "awayTeam": "NYJ",
+          "homeTeam": "KC",
+          "kickoff": "2026-11-08T18:00:00+00:00",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026_09_DET_MIA",
+          "awayTeam": "DET",
+          "homeTeam": "MIA",
+          "kickoff": "2026-11-08T18:00:00+00:00",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026_09_CLE_NO",
+          "awayTeam": "CLE",
+          "homeTeam": "NO",
+          "kickoff": "2026-11-08T18:00:00+00:00",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026_09_NYG_PHI",
+          "awayTeam": "NYG",
+          "homeTeam": "PHI",
+          "kickoff": "2026-11-08T18:00:00+00:00",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026_09_LA_WAS",
+          "awayTeam": "LA",
+          "homeTeam": "WAS",
+          "kickoff": "2026-11-08T18:00:00+00:00",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026_09_HOU_LAC",
+          "awayTeam": "HOU",
+          "homeTeam": "LAC",
+          "kickoff": "2026-11-08T21:05:00+00:00",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026_09_LV_SF",
+          "awayTeam": "LV",
+          "homeTeam": "SF",
+          "kickoff": "2026-11-08T21:05:00+00:00",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026_09_GB_NE",
+          "awayTeam": "GB",
+          "homeTeam": "NE",
+          "kickoff": "2026-11-08T21:25:00+00:00",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026_09_ARI_SEA",
+          "awayTeam": "ARI",
+          "homeTeam": "SEA",
+          "kickoff": "2026-11-08T21:25:00+00:00",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026_09_TB_CHI",
+          "awayTeam": "TB",
+          "homeTeam": "CHI",
+          "kickoff": "2026-11-09T01:20:00+00:00",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026_09_BUF_MIN",
+          "awayTeam": "BUF",
+          "homeTeam": "MIN",
+          "kickoff": "2026-11-10T01:15:00+00:00",
+          "neutralSite": false
+        }
+      ],
+      "projectionCoverage": {
+        "status": "MISSING_CURRENT_WEEK_PROJECTIONS",
+        "expectedPath": "nfl/research-projections/week-09.json"
+      },
+      "publishedWeek": 8,
+      "publishedWeekMatches": false,
+      "alreadyStartedGameIds": [
+        "2026_09_JAX_BAL"
+      ],
+      "inputCaptureStatus": "CAPTURED_RESEARCH_ONLY"
+    },
+    "cfb": {
+      "season": 2026,
+      "week": 10,
+      "schedulePath": "cfb/pregame/week-10-schedule.json",
+      "scheduleSha256": "f05e06083a8ae69e35c647ee5c0d1faa8674ae0dc014bd3f0d42dcefcf8a63e9",
+      "games": [
+        {
+          "gameId": "2026-11-03-OHIO-AKRON",
+          "awayTeam": "Ohio",
+          "homeTeam": "Akron",
+          "kickoff": "2026-11-04T00:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-03-BUFFALO-MIAMIOH",
+          "awayTeam": "Buffalo",
+          "homeTeam": "Miami (OH)",
+          "kickoff": "2026-11-04T01:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-04-BALLSTATE-MASSACHUSETTS",
+          "awayTeam": "Ball State",
+          "homeTeam": "Massachusetts",
+          "kickoff": "2026-11-05T00:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-04-TOLEDO-SACRAMENTOSTATE",
+          "awayTeam": "Toledo",
+          "homeTeam": "Sacramento State",
+          "kickoff": "2026-11-05T00:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-04-CENTRALMICHIGAN-EASTERNMICHIGAN",
+          "awayTeam": "Central Michigan",
+          "homeTeam": "Eastern Michigan",
+          "kickoff": "2026-11-05T00:30:00Z",
+          "neutralSite": true
+        },
+        {
+          "gameId": "2026-11-05-UTSA-FLORIDAATLANTIC",
+          "awayTeam": "UTSA",
+          "homeTeam": "Florida Atlantic",
+          "kickoff": "2026-11-06T00:30:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-05-JAMESMADISON-SOUTHERNMISS",
+          "awayTeam": "James Madison",
+          "homeTeam": "Southern Miss",
+          "kickoff": "2026-11-06T01:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-06-VIRGINIATECH-SMU",
+          "awayTeam": "Virginia Tech",
+          "homeTeam": "SMU",
+          "kickoff": "2026-11-07T00:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-06-SOUTHFLORIDA-EASTCAROLINA",
+          "awayTeam": "South Florida",
+          "homeTeam": "East Carolina",
+          "kickoff": "2026-11-07T00:30:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-06-NEBRASKA-ILLINOIS",
+          "awayTeam": "Nebraska",
+          "homeTeam": "Illinois",
+          "kickoff": "2026-11-07T01:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-06-NEWMEXICO-NEVADA",
+          "awayTeam": "New Mexico",
+          "homeTeam": "Nevada",
+          "kickoff": "2026-11-07T02:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-06-TCU-ARIZONA",
+          "awayTeam": "TCU",
+          "homeTeam": "Arizona",
+          "kickoff": "2026-11-07T03:15:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-BYU-UTAH",
+          "awayTeam": "BYU",
+          "homeTeam": "Utah",
+          "kickoff": "2026-11-07T17:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-CLEMSON-SYRACUSE",
+          "awayTeam": "Clemson",
+          "homeTeam": "Syracuse",
+          "kickoff": "2026-11-07T17:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-FLORIDASTATE-BOSTONCOLLEGE",
+          "awayTeam": "Florida State",
+          "homeTeam": "Boston College",
+          "kickoff": "2026-11-07T17:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-IOWASTATE-BAYLOR",
+          "awayTeam": "Iowa State",
+          "homeTeam": "Baylor",
+          "kickoff": "2026-11-07T17:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-NORTHCAROLINA-UCONN",
+          "awayTeam": "North Carolina",
+          "homeTeam": "UConn",
+          "kickoff": "2026-11-07T17:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-TEXAS-MISSOURI",
+          "awayTeam": "Texas",
+          "homeTeam": "Missouri",
+          "kickoff": "2026-11-07T17:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-TULSA-TULANE",
+          "awayTeam": "Tulsa",
+          "homeTeam": "Tulane",
+          "kickoff": "2026-11-07T17:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-UCLA-MINNESOTA",
+          "awayTeam": "UCLA",
+          "homeTeam": "Minnesota",
+          "kickoff": "2026-11-07T17:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-DUKE-NCSTATE",
+          "awayTeam": "Duke",
+          "homeTeam": "NC State",
+          "kickoff": "2026-11-07T17:30:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-MARYLAND-PURDUE",
+          "awayTeam": "Maryland",
+          "homeTeam": "Purdue",
+          "kickoff": "2026-11-07T17:30:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-ARKANSAS-AUBURN",
+          "awayTeam": "Arkansas",
+          "homeTeam": "Auburn",
+          "kickoff": "2026-11-07T17:45:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-OKLAHOMASTATE-KANSASSTATE",
+          "awayTeam": "Oklahoma State",
+          "homeTeam": "Kansas State",
+          "kickoff": "2026-11-07T18:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-OLDDOMINION-COASTALCAROLINA",
+          "awayTeam": "Old Dominion",
+          "homeTeam": "Coastal Carolina",
+          "kickoff": "2026-11-07T18:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-GEORGIASTATE-APPSTATE",
+          "awayTeam": "Georgia State",
+          "homeTeam": "App State",
+          "kickoff": "2026-11-07T19:30:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-DELAWARE-KENNESAWSTATE",
+          "awayTeam": "Delaware",
+          "homeTeam": "Kennesaw State",
+          "kickoff": "2026-11-07T20:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-TEXASAM-SOUTHCAROLINA",
+          "awayTeam": "Texas A&M",
+          "homeTeam": "South Carolina",
+          "kickoff": "2026-11-07T20:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-ULMONROE-ARKANSASSTATE",
+          "awayTeam": "UL Monroe",
+          "homeTeam": "Arkansas State",
+          "kickoff": "2026-11-07T20:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-ALABAMA-LSU",
+          "awayTeam": "Alabama",
+          "homeTeam": "LSU",
+          "kickoff": "2026-11-07T20:30:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-CHARLOTTE-UAB",
+          "awayTeam": "Charlotte",
+          "homeTeam": "UAB",
+          "kickoff": "2026-11-07T20:30:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-CINCINNATI-HOUSTON",
+          "awayTeam": "Cincinnati",
+          "homeTeam": "Houston",
+          "kickoff": "2026-11-07T20:30:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-MARSHALL-GEORGIASOUTHERN",
+          "awayTeam": "Marshall",
+          "homeTeam": "Georgia Southern",
+          "kickoff": "2026-11-07T20:30:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-OREGON-OHIOSTATE",
+          "awayTeam": "Oregon",
+          "homeTeam": "Ohio State",
+          "kickoff": "2026-11-07T20:30:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-PENNSTATE-WASHINGTON",
+          "awayTeam": "Penn State",
+          "homeTeam": "Washington",
+          "kickoff": "2026-11-07T20:30:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-TEMPLE-NAVY",
+          "awayTeam": "Temple",
+          "homeTeam": "Navy",
+          "kickoff": "2026-11-07T20:30:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-WESTERNKENTUCKY-MIDDLETENNESSEE",
+          "awayTeam": "Western Kentucky",
+          "homeTeam": "Middle Tennessee",
+          "kickoff": "2026-11-07T20:30:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-UCF-KANSAS",
+          "awayTeam": "UCF",
+          "homeTeam": "Kansas",
+          "kickoff": "2026-11-07T20:45:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-LOUISIANATECH-TROY",
+          "awayTeam": "Louisiana Tech",
+          "homeTeam": "Troy",
+          "kickoff": "2026-11-07T21:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-MISSOURISTATE-FLORIDAINTERNATIONAL",
+          "awayTeam": "Missouri State",
+          "homeTeam": "Florida International",
+          "kickoff": "2026-11-07T21:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-NORTHERNILLINOIS-SANJOSSTATE",
+          "awayTeam": "Northern Illinois",
+          "homeTeam": "San Jos\u00e9 State",
+          "kickoff": "2026-11-07T21:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-RICE-NORTHTEXAS",
+          "awayTeam": "Rice",
+          "homeTeam": "North Texas",
+          "kickoff": "2026-11-07T21:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-RUTGERS-WISCONSIN",
+          "awayTeam": "Rutgers",
+          "homeTeam": "Wisconsin",
+          "kickoff": "2026-11-07T21:15:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-VANDERBILT-MISSISSIPPISTATE",
+          "awayTeam": "Vanderbilt",
+          "homeTeam": "Mississippi State",
+          "kickoff": "2026-11-07T21:15:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-SOUTHALABAMA-LOUISIANA",
+          "awayTeam": "South Alabama",
+          "homeTeam": "Louisiana",
+          "kickoff": "2026-11-07T22:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-BOISESTATE-COLORADOSTATE",
+          "awayTeam": "Boise State",
+          "homeTeam": "Colorado State",
+          "kickoff": "2026-11-07T23:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-KENTUCKY-TENNESSEE",
+          "awayTeam": "Kentucky",
+          "homeTeam": "Tennessee",
+          "kickoff": "2026-11-07T23:15:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-SAMHOUSTON-JACKSONVILLESTATE",
+          "awayTeam": "Sam Houston",
+          "homeTeam": "Jacksonville State",
+          "kickoff": "2026-11-08T00:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-AIRFORCE-ARMY",
+          "awayTeam": "Air Force",
+          "homeTeam": "Army",
+          "kickoff": "2026-11-08T00:30:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-COLORADO-ARIZONASTATE",
+          "awayTeam": "Colorado",
+          "homeTeam": "Arizona State",
+          "kickoff": "2026-11-08T00:30:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-GEORGIA-OLEMISS",
+          "awayTeam": "Georgia",
+          "homeTeam": "Ole Miss",
+          "kickoff": "2026-11-08T00:30:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-IOWA-NORTHWESTERN",
+          "awayTeam": "Iowa",
+          "homeTeam": "Northwestern",
+          "kickoff": "2026-11-08T00:30:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-LOUISVILLE-GEORGIATECH",
+          "awayTeam": "Louisville",
+          "homeTeam": "Georgia Tech",
+          "kickoff": "2026-11-08T00:30:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-MIAMI-NOTREDAME",
+          "awayTeam": "Miami",
+          "homeTeam": "Notre Dame",
+          "kickoff": "2026-11-08T00:30:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-MICHIGANSTATE-MICHIGAN",
+          "awayTeam": "Michigan State",
+          "homeTeam": "Michigan",
+          "kickoff": "2026-11-08T00:30:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-OKLAHOMA-FLORIDA",
+          "awayTeam": "Oklahoma",
+          "homeTeam": "Florida",
+          "kickoff": "2026-11-08T00:45:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-LIBERTY-NEWMEXICOSTATE",
+          "awayTeam": "Liberty",
+          "homeTeam": "New Mexico State",
+          "kickoff": "2026-11-08T01:00:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-FRESNOSTATE-UTAHSTATE",
+          "awayTeam": "Fresno State",
+          "homeTeam": "Utah State",
+          "kickoff": "2026-11-08T02:30:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-HAWAII-UTEP",
+          "awayTeam": "Hawai'i",
+          "homeTeam": "UTEP",
+          "kickoff": "2026-11-08T02:30:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-WESTVIRGINIA-TEXASTECH",
+          "awayTeam": "West Virginia",
+          "homeTeam": "Texas Tech",
+          "kickoff": "2026-11-08T02:30:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-TEXASSTATE-OREGONSTATE",
+          "awayTeam": "Texas State",
+          "homeTeam": "Oregon State",
+          "kickoff": "2026-11-08T03:30:00Z",
+          "neutralSite": false
+        },
+        {
+          "gameId": "2026-11-07-WYOMING-UNLV",
+          "awayTeam": "Wyoming",
+          "homeTeam": "UNLV",
+          "kickoff": "2026-11-08T03:30:00Z",
+          "neutralSite": false
+        }
+      ],
+      "projectionCoverage": {
+        "status": "COVERED",
+        "projectionCount": 62,
+        "missingGameIds": [],
+        "sourcePath": "cfb/research-locks/week-10-foundation-full.json",
+        "sourceSha256": "a2842b01c27c2129523cd64d6b65577672381e01d1de811a1a1b8427140d59a6"
+      },
+      "benchmarkCoverage": {
+        "pirate-cfb": {
+          "captured": 52,
+          "skipped": [
+            {
+              "gameId": "2026-11-03-OHIO-AKRON",
+              "reason": "already_started_no_backfill"
+            },
+            {
+              "gameId": "2026-11-03-BUFFALO-MIAMIOH",
+              "reason": "already_started_no_backfill"
+            },
+            {
+              "gameId": "2026-11-04-BALLSTATE-MASSACHUSETTS",
+              "reason": "already_started_no_backfill"
+            },
+            {
+              "gameId": "2026-11-04-TOLEDO-SACRAMENTOSTATE",
+              "reason": "already_started_no_backfill"
+            },
+            {
+              "gameId": "2026-11-04-CENTRALMICHIGAN-EASTERNMICHIGAN",
+              "reason": "already_started_no_backfill"
+            },
+            {
+              "gameId": "2026-11-05-UTSA-FLORIDAATLANTIC",
+              "reason": "already_started_no_backfill"
+            },
+            {
+              "gameId": "2026-11-05-JAMESMADISON-SOUTHERNMISS",
+              "reason": "already_started_no_backfill"
+            },
+            {
+              "gameId": "2026-11-06-VIRGINIATECH-SMU",
+              "reason": "already_started_no_backfill"
+            },
+            {
+              "gameId": "2026-11-06-SOUTHFLORIDA-EASTCAROLINA",
+              "reason": "already_started_no_backfill"
+            },
+            {
+              "gameId": "2026-11-07-MISSOURISTATE-FLORIDAINTERNATIONAL",
+              "reason": "source_match_missing"
+            }
+          ]
+        },
+        "moore-cfb": {
+          "captured": 53,
+          "skipped": [
+            {
+              "gameId": "2026-11-03-OHIO-AKRON",
+              "reason": "already_started_no_backfill"
+            },
+            {
+              "gameId": "2026-11-03-BUFFALO-MIAMIOH",
+              "reason": "already_started_no_backfill"
+            },
+            {
+              "gameId": "2026-11-04-BALLSTATE-MASSACHUSETTS",
+              "reason": "already_started_no_backfill"
+            },
+            {
+              "gameId": "2026-11-04-TOLEDO-SACRAMENTOSTATE",
+              "reason": "already_started_no_backfill"
+            },
+            {
+              "gameId": "2026-11-04-CENTRALMICHIGAN-EASTERNMICHIGAN",
+              "reason": "already_started_no_backfill"
+            },
+            {
+              "gameId": "2026-11-05-UTSA-FLORIDAATLANTIC",
+              "reason": "already_started_no_backfill"
+            },
+            {
+              "gameId": "2026-11-05-JAMESMADISON-SOUTHERNMISS",
+              "reason": "already_started_no_backfill"
+            },
+            {
+              "gameId": "2026-11-06-VIRGINIATECH-SMU",
+              "reason": "already_started_no_backfill"
+            },
+            {
+              "gameId": "2026-11-06-SOUTHFLORIDA-EASTCAROLINA",
+              "reason": "already_started_no_backfill"
+            }
+          ]
+        }
+      },
+      "alreadyStartedGameIds": [
+        "2026-11-03-OHIO-AKRON",
+        "2026-11-03-BUFFALO-MIAMIOH",
+        "2026-11-04-BALLSTATE-MASSACHUSETTS",
+        "2026-11-04-TOLEDO-SACRAMENTOSTATE",
+        "2026-11-04-CENTRALMICHIGAN-EASTERNMICHIGAN",
+        "2026-11-05-UTSA-FLORIDAATLANTIC",
+        "2026-11-05-JAMESMADISON-SOUTHERNMISS",
+        "2026-11-06-VIRGINIATECH-SMU",
+        "2026-11-06-SOUTHFLORIDA-EASTCAROLINA"
+      ],
+      "missingFutureBenchmarkGameIds": []
+    }
+  },
+  "completedAt": "2026-11-07T00:37:02.606542+00:00",
+  "status": "CAPTURED_WITH_GAPS",
+  "blockers": [
+    "nfl: MISSING_CURRENT_WEEK_PROJECTIONS",
+    "NFL published feed week differs from current schedule week"
+  ],
+  "readinessCertified": false,
+  "policy": "Source capture only. No injury/inactive/weather/referee clearance, new projection, market lock, or model promotion. Revised source bytes do not prove historical availability."
+}
