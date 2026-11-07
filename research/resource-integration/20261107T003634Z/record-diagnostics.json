@@ -1,0 +1,786 @@
+{
+  "generatedAt": "2026-11-07T00:24:25.011122+00:00",
+  "canonicalInfluence": false,
+  "promotionAuthorized": false,
+  "newOutOfSampleValidation": false,
+  "sources": [
+    {
+      "path": "data/results.csv",
+      "sha256": "06e620d2290db2c4dee171b37beff2c301a01e5aabdeca5608fd899baa4e5ec3"
+    },
+    {
+      "path": "nfl_data/site/results.csv",
+      "sha256": "b8b28170b9b0f243f147a15c17509bac715daba7da44cc89f0522f3b19c641aa"
+    }
+  ],
+  "groups": [
+    {
+      "league": "cfb",
+      "season": 2026,
+      "week": 7,
+      "trackingClass": "PROJECTION_AUDIT",
+      "games": 53,
+      "metrics": {
+        "margin": {
+          "allStoredModel": {
+            "n": 53,
+            "mae": 11.335250909905998,
+            "rmse": 14.55481926684937,
+            "medianAbsoluteError": 10.652775976000001,
+            "bias": 2.666532202183387
+          },
+          "pairedStoredModel": {
+            "n": 53,
+            "mae": 11.335250909905998,
+            "rmse": 14.55481926684937,
+            "medianAbsoluteError": 10.652775976000001,
+            "bias": 2.666532202183387
+          },
+          "pairedStoredMarketReference": {
+            "n": 53,
+            "mae": 10.283018867924529,
+            "rmse": 13.009793118306382,
+            "medianAbsoluteError": 8.5,
+            "bias": 0.018867924528301886
+          },
+          "pairedMaeDelta": 1.052232041981469
+        },
+        "total": {
+          "allStoredModel": {
+            "n": 53,
+            "mae": 12.911974822454157,
+            "rmse": 15.58337399608773,
+            "medianAbsoluteError": 13.323343579086739,
+            "bias": 2.1550131989944434
+          },
+          "pairedStoredModel": {
+            "n": 48,
+            "mae": 12.347406108959797,
+            "rmse": 15.169728128294512,
+            "medianAbsoluteError": 13.036636585,
+            "bias": 2.4569258243063645
+          },
+          "pairedStoredMarketReference": {
+            "n": 48,
+            "mae": 11.791666666666666,
+            "rmse": 14.947477490644813,
+            "medianAbsoluteError": 9.0,
+            "bias": 0.7708333333333334
+          },
+          "pairedMaeDelta": 0.555739442293131
+        }
+      },
+      "storedGrades": {
+        "ats": {
+          "WIN": 27,
+          "LOSS": 24,
+          "PUSH": 2
+        },
+        "total": {
+          "WIN": 25,
+          "LOSS": 23,
+          "UNAVAILABLE": 5
+        },
+        "straightUp": {
+          "WIN": 34,
+          "LOSS": 19
+        }
+      },
+      "winProbability": {
+        "n": 38,
+        "brier": 0.21370584210526317,
+        "logLoss": 0.612859834798952,
+        "inputUnits": "percent",
+        "logLossProbabilityFloor": 1e-15,
+        "calibration": [
+          {
+            "lower": 0.2,
+            "upper": 0.4,
+            "n": 1,
+            "meanPrediction": 0.39399999999999996,
+            "actualHomeWinRate": 0.0
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.6,
+            "n": 11,
+            "meanPrediction": 0.48918181818181816,
+            "actualHomeWinRate": 0.2727272727272727
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.8,
+            "n": 21,
+            "meanPrediction": 0.7111904761904763,
+            "actualHomeWinRate": 0.7142857142857143
+          },
+          {
+            "lower": 0.8,
+            "upper": 1.0,
+            "n": 5,
+            "meanPrediction": 0.8616,
+            "actualHomeWinRate": 0.8
+          }
+        ]
+      },
+      "exclusions": [
+        {
+          "gameId": "2026-10-17-UNLV-AIRFORCE",
+          "target": "total",
+          "reason": "missing stored market reference"
+        },
+        {
+          "gameId": "2026-10-17-NORTHERNILLI-WYOMING",
+          "target": "total",
+          "reason": "missing stored market reference"
+        },
+        {
+          "gameId": "2026-10-17-ARKANSASSTAT-SOUTHERNMISS",
+          "target": "total",
+          "reason": "missing stored market reference"
+        },
+        {
+          "gameId": "2026-10-17-NAVY-UTSA",
+          "target": "total",
+          "reason": "missing stored market reference"
+        },
+        {
+          "gameId": "2026-10-17-NEBRASKA-OREGON",
+          "target": "total",
+          "reason": "missing stored market reference"
+        },
+        {
+          "gameId": "2026-10-17-GEORGIASTATE-JAMESMADISON",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        },
+        {
+          "gameId": "2026-10-17-BALLSTATE-BOWLINGGREEN",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        },
+        {
+          "gameId": "2026-10-17-CINCINNATI-WESTVIRGINIA",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        },
+        {
+          "gameId": "2026-10-17-FLORIDAATLAN-ARMY",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        },
+        {
+          "gameId": "2026-10-17-FLORIDA-TEXAS",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        },
+        {
+          "gameId": "2026-10-17-MISSISSIPPIS-LSU",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        },
+        {
+          "gameId": "2026-10-17-KANSAS-KANSASSTATE",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        },
+        {
+          "gameId": "2026-10-17-NORTHWESTERN-MICHIGANSTAT",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        },
+        {
+          "gameId": "2026-10-17-OHIOSTATE-INDIANA",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        },
+        {
+          "gameId": "2026-10-17-PITTSBURGH-BOSTONCOLLEG",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        },
+        {
+          "gameId": "2026-10-17-VIRGINIA-SMU",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        },
+        {
+          "gameId": "2026-10-17-RUTGERS-MARYLAND",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        },
+        {
+          "gameId": "2026-10-17-UMASS-BUFFALO",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        },
+        {
+          "gameId": "2026-10-17-CHARLOTTE-TEMPLE",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        },
+        {
+          "gameId": "2026-10-17-WESTERNMICHI-CENTRALMICHI",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        }
+      ]
+    },
+    {
+      "league": "cfb",
+      "season": 2026,
+      "week": 8,
+      "trackingClass": "FROZEN_RESEARCH",
+      "games": 56,
+      "metrics": {
+        "margin": {
+          "allStoredModel": {
+            "n": 56,
+            "mae": 10.939598567155706,
+            "rmse": 13.387872064712266,
+            "medianAbsoluteError": 9.871494261107372,
+            "bias": -0.7316403331029846
+          },
+          "pairedStoredModel": {
+            "n": 51,
+            "mae": 11.111260170799186,
+            "rmse": 13.640657515356263,
+            "medianAbsoluteError": 10.461765654236096,
+            "bias": -0.24546871948831545
+          },
+          "pairedStoredMarketReference": {
+            "n": 51,
+            "mae": 11.029411764705882,
+            "rmse": 13.474558452513243,
+            "medianAbsoluteError": 9.5,
+            "bias": -1.7941176470588236
+          },
+          "pairedMaeDelta": 0.0818484060933038
+        },
+        "total": {
+          "allStoredModel": {
+            "n": 56,
+            "mae": 15.213326587426652,
+            "rmse": 18.99678684059697,
+            "medianAbsoluteError": 12.002324667109022,
+            "bias": -3.014929857407002
+          },
+          "pairedStoredModel": {
+            "n": 51,
+            "mae": 16.108443847366544,
+            "rmse": 19.723747727237566,
+            "medianAbsoluteError": 12.553908499935616,
+            "bias": -3.238454015682471
+          },
+          "pairedStoredMarketReference": {
+            "n": 51,
+            "mae": 15.22549019607843,
+            "rmse": 19.277514077795608,
+            "medianAbsoluteError": 11.5,
+            "bias": -3.656862745098039
+          },
+          "pairedMaeDelta": 0.8829536512881138
+        }
+      },
+      "storedGrades": {
+        "ats": {
+          "LOSS": 25,
+          "WIN": 26,
+          "REVIEW": 5
+        },
+        "total": {
+          "LOSS": 31,
+          "WIN": 20,
+          "REVIEW": 5
+        },
+        "straightUp": {
+          "LOSS": 24,
+          "WIN": 32
+        }
+      },
+      "winProbability": {
+        "n": 56,
+        "brier": 0.2264155490828446,
+        "logLoss": 0.6405459854749438,
+        "inputUnits": "percent",
+        "logLossProbabilityFloor": 1e-15,
+        "calibration": [
+          {
+            "lower": 0.2,
+            "upper": 0.4,
+            "n": 10,
+            "meanPrediction": 0.31293161373772027,
+            "actualHomeWinRate": 0.6
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.6,
+            "n": 18,
+            "meanPrediction": 0.5070218861244692,
+            "actualHomeWinRate": 0.5555555555555556
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.8,
+            "n": 18,
+            "meanPrediction": 0.7020006189065382,
+            "actualHomeWinRate": 0.7777777777777778
+          },
+          {
+            "lower": 0.8,
+            "upper": 1.0,
+            "n": 10,
+            "meanPrediction": 0.8402832589103989,
+            "actualHomeWinRate": 0.8
+          }
+        ]
+      },
+      "exclusions": [
+        {
+          "gameId": "2026-10-23-DUKE-VIRGINIA",
+          "target": "margin",
+          "reason": "missing stored market reference"
+        },
+        {
+          "gameId": "2026-10-23-MASSACHUSETTS-UCONN",
+          "target": "margin",
+          "reason": "missing stored market reference"
+        },
+        {
+          "gameId": "2026-10-24-ARMY-TULSA",
+          "target": "margin",
+          "reason": "missing stored market reference"
+        },
+        {
+          "gameId": "2026-10-24-AIRFORCE-WYOMING",
+          "target": "margin",
+          "reason": "missing stored market reference"
+        },
+        {
+          "gameId": "2026-10-24-NCSTATE-STANFORD",
+          "target": "margin",
+          "reason": "missing stored market reference"
+        },
+        {
+          "gameId": "2026-10-23-DUKE-VIRGINIA",
+          "target": "total",
+          "reason": "missing stored market reference"
+        },
+        {
+          "gameId": "2026-10-23-MASSACHUSETTS-UCONN",
+          "target": "total",
+          "reason": "missing stored market reference"
+        },
+        {
+          "gameId": "2026-10-24-ARMY-TULSA",
+          "target": "total",
+          "reason": "missing stored market reference"
+        },
+        {
+          "gameId": "2026-10-24-AIRFORCE-WYOMING",
+          "target": "total",
+          "reason": "missing stored market reference"
+        },
+        {
+          "gameId": "2026-10-24-NCSTATE-STANFORD",
+          "target": "total",
+          "reason": "missing stored market reference"
+        }
+      ]
+    },
+    {
+      "league": "cfb",
+      "season": 2026,
+      "week": 9,
+      "trackingClass": "FROZEN_RESEARCH",
+      "games": 56,
+      "metrics": {
+        "margin": {
+          "allStoredModel": {
+            "n": 56,
+            "mae": 13.558500139668386,
+            "rmse": 16.318835437705342,
+            "medianAbsoluteError": 12.688978300925434,
+            "bias": -0.6136756271004236
+          },
+          "pairedStoredModel": {
+            "n": 56,
+            "mae": 13.558500139668386,
+            "rmse": 16.318835437705342,
+            "medianAbsoluteError": 12.688978300925434,
+            "bias": -0.6136756271004236
+          },
+          "pairedStoredMarketReference": {
+            "n": 56,
+            "mae": 13.035714285714286,
+            "rmse": 15.64505855351322,
+            "medianAbsoluteError": 11.0,
+            "bias": -2.1964285714285716
+          },
+          "pairedMaeDelta": 0.5227858539540993
+        },
+        "total": {
+          "allStoredModel": {
+            "n": 56,
+            "mae": 12.541830366234612,
+            "rmse": 15.974368002200368,
+            "medianAbsoluteError": 9.234407831803548,
+            "bias": 1.4473121258370802
+          },
+          "pairedStoredModel": {
+            "n": 56,
+            "mae": 12.541830366234612,
+            "rmse": 15.974368002200368,
+            "medianAbsoluteError": 9.234407831803548,
+            "bias": 1.4473121258370802
+          },
+          "pairedStoredMarketReference": {
+            "n": 56,
+            "mae": 11.446428571428571,
+            "rmse": 14.743037097462071,
+            "medianAbsoluteError": 8.5,
+            "bias": 0.625
+          },
+          "pairedMaeDelta": 1.0954017948060404
+        }
+      },
+      "storedGrades": {
+        "ats": {
+          "WIN": 27,
+          "LOSS": 28,
+          "PUSH": 1
+        },
+        "total": {
+          "WIN": 23,
+          "LOSS": 33
+        },
+        "straightUp": {
+          "LOSS": 20,
+          "WIN": 36
+        }
+      },
+      "winProbability": {
+        "n": 56,
+        "brier": 0.19367648787062644,
+        "logLoss": 0.5694127559921868,
+        "inputUnits": "percent",
+        "logLossProbabilityFloor": 1e-15,
+        "calibration": [
+          {
+            "lower": 0.0,
+            "upper": 0.2,
+            "n": 1,
+            "meanPrediction": 0.12006854894729935,
+            "actualHomeWinRate": 0.0
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.4,
+            "n": 7,
+            "meanPrediction": 0.3429289437497436,
+            "actualHomeWinRate": 0.2857142857142857
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.6,
+            "n": 19,
+            "meanPrediction": 0.5064504403297806,
+            "actualHomeWinRate": 0.5263157894736842
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.8,
+            "n": 15,
+            "meanPrediction": 0.6950979351594316,
+            "actualHomeWinRate": 0.8
+          },
+          {
+            "lower": 0.8,
+            "upper": 1.0,
+            "n": 14,
+            "meanPrediction": 0.8598375683869246,
+            "actualHomeWinRate": 0.8571428571428571
+          }
+        ]
+      },
+      "exclusions": []
+    },
+    {
+      "league": "nfl",
+      "season": 2026,
+      "week": 6,
+      "trackingClass": "UNSPECIFIED",
+      "games": 13,
+      "metrics": {
+        "margin": {
+          "allStoredModel": {
+            "n": 13,
+            "mae": 8.044923076923077,
+            "rmse": 8.626928796596067,
+            "medianAbsoluteError": 7.591,
+            "bias": 4.098769230769231
+          },
+          "pairedStoredModel": {
+            "n": 13,
+            "mae": 8.044923076923077,
+            "rmse": 8.626928796596067,
+            "medianAbsoluteError": 7.591,
+            "bias": 4.098769230769231
+          },
+          "pairedStoredMarketReference": {
+            "n": 13,
+            "mae": 6.5,
+            "rmse": 7.558744299459758,
+            "medianAbsoluteError": 6.0,
+            "bias": 2.576923076923077
+          },
+          "pairedMaeDelta": 1.5449230769230766
+        },
+        "total": {
+          "allStoredModel": {
+            "n": 13,
+            "mae": 11.03546153846154,
+            "rmse": 12.84554265404631,
+            "medianAbsoluteError": 14.374000000000002,
+            "bias": 1.1548461538461554
+          },
+          "pairedStoredModel": {
+            "n": 13,
+            "mae": 11.03546153846154,
+            "rmse": 12.84554265404631,
+            "medianAbsoluteError": 14.374000000000002,
+            "bias": 1.1548461538461554
+          },
+          "pairedStoredMarketReference": {
+            "n": 13,
+            "mae": 10.423076923076923,
+            "rmse": 12.722632770593696,
+            "medianAbsoluteError": 12.0,
+            "bias": 1.4230769230769231
+          },
+          "pairedMaeDelta": 0.6123846153846166
+        }
+      },
+      "storedGrades": {
+        "ats": {
+          "LOSS": 10,
+          "WIN": 3
+        },
+        "total": {
+          "WIN": 6,
+          "LOSS": 6,
+          "PUSH": 1
+        },
+        "straightUp": {
+          "LOSS": 6,
+          "WIN": 7
+        }
+      },
+      "winProbability": {
+        "n": 13,
+        "brier": 0.26608094846153846,
+        "logLoss": 0.7276452203909175,
+        "inputUnits": "percent",
+        "logLossProbabilityFloor": 1e-15,
+        "calibration": [
+          {
+            "lower": 0.2,
+            "upper": 0.4,
+            "n": 3,
+            "meanPrediction": 0.3059,
+            "actualHomeWinRate": 0.3333333333333333
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.6,
+            "n": 3,
+            "meanPrediction": 0.5318666666666667,
+            "actualHomeWinRate": 0.3333333333333333
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.8,
+            "n": 7,
+            "meanPrediction": 0.7301714285714286,
+            "actualHomeWinRate": 0.42857142857142855
+          }
+        ]
+      },
+      "exclusions": []
+    },
+    {
+      "league": "nfl",
+      "season": 2026,
+      "week": 7,
+      "trackingClass": "FROZEN_RESEARCH",
+      "games": 14,
+      "metrics": {
+        "margin": {
+          "allStoredModel": {
+            "n": 14,
+            "mae": 10.884036145769146,
+            "rmse": 14.73857094535868,
+            "medianAbsoluteError": 8.888027184150197,
+            "bias": 5.912096926547472
+          },
+          "pairedStoredModel": {
+            "n": 12,
+            "mae": 11.021359416617855,
+            "rmse": 15.225428735866615,
+            "medianAbsoluteError": 8.888027184150197,
+            "bias": 8.574129167751533
+          },
+          "pairedStoredMarketReference": {
+            "n": 12,
+            "mae": 10.416666666666666,
+            "rmse": 13.797644726546629,
+            "medianAbsoluteError": 10.0,
+            "bias": 8.5
+          },
+          "pairedMaeDelta": 0.6046927499511892
+        },
+        "total": {
+          "allStoredModel": {
+            "n": 14,
+            "mae": 9.386673794106438,
+            "rmse": 11.012431322633233,
+            "medianAbsoluteError": 10.461306779889334,
+            "bias": -0.26624606216576446
+          },
+          "pairedStoredModel": {
+            "n": 12,
+            "mae": 8.892615155259435,
+            "rmse": 10.328935419327305,
+            "medianAbsoluteError": 10.461306779889334,
+            "bias": -1.5605785165662152
+          },
+          "pairedStoredMarketReference": {
+            "n": 12,
+            "mae": 10.333333333333334,
+            "rmse": 12.072696467649637,
+            "medianAbsoluteError": 12.5,
+            "bias": -1.6666666666666667
+          },
+          "pairedMaeDelta": -1.4407181780738991
+        }
+      },
+      "storedGrades": {
+        "ats": {
+          "REVIEW": 2,
+          "WIN": 5,
+          "LOSS": 7
+        },
+        "total": {
+          "REVIEW": 2,
+          "WIN": 10,
+          "LOSS": 2
+        },
+        "straightUp": {
+          "WIN": 9,
+          "LOSS": 5
+        }
+      },
+      "winProbability": {
+        "n": 0,
+        "brier": null,
+        "logLoss": null,
+        "inputUnits": "percent",
+        "logLossProbabilityFloor": 1e-15,
+        "calibration": []
+      },
+      "exclusions": [
+        {
+          "gameId": "2026_07_NE_CHI",
+          "target": "margin",
+          "reason": "missing stored market reference"
+        },
+        {
+          "gameId": "2026_07_KC_SEA",
+          "target": "margin",
+          "reason": "missing stored market reference"
+        },
+        {
+          "gameId": "2026_07_NE_CHI",
+          "target": "total",
+          "reason": "missing stored market reference"
+        },
+        {
+          "gameId": "2026_07_KC_SEA",
+          "target": "total",
+          "reason": "missing stored market reference"
+        },
+        {
+          "gameId": "2026_07_NE_CHI",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        },
+        {
+          "gameId": "2026_07_PIT_NO",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        },
+        {
+          "gameId": "2026_07_CIN_BAL",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        },
+        {
+          "gameId": "2026_07_CLE_TEN",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        },
+        {
+          "gameId": "2026_07_IND_MIN",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        },
+        {
+          "gameId": "2026_07_MIA_NYJ",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        },
+        {
+          "gameId": "2026_07_NYG_HOU",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        },
+        {
+          "gameId": "2026_07_SF_ATL",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        },
+        {
+          "gameId": "2026_07_TB_CAR",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        },
+        {
+          "gameId": "2026_07_DEN_ARI",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        },
+        {
+          "gameId": "2026_07_GB_DET",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        },
+        {
+          "gameId": "2026_07_LA_LV",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        },
+        {
+          "gameId": "2026_07_KC_SEA",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        },
+        {
+          "gameId": "2026_07_DAL_PHI",
+          "target": "win_probability",
+          "reason": "missing/invalid percent probability, score, or tied outcome"
+        }
+      ]
+    }
+  ],
+  "policy": "Stored historical diagnosis only; groups preserve league/season/week/tracking class, not certified model-version homogeneity. Uses existing grades without changing them. Market references are not verified publication or closing prices. No ROI claim."
+}

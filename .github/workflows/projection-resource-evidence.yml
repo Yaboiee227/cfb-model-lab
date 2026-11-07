@@ -1,0 +1,71 @@
+name: Current-week projection resource evidence
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 10 * * *'
+  pull_request:
+    paths:
+      - 'scripts/projection_resource_evidence.py'
+      - 'scripts/capture_projection_resources.py'
+      - 'scripts/evaluate_projection_records.py'
+      - 'scripts/publish_nfl_current_research.py'
+      - 'scripts/publish_current_matchups.py'
+      - 'scripts/refresh_nfl_pinned_research.py'
+      - 'tests/test_projection_resource_evidence.py'
+      - 'tests/test_projection_record_evaluation.py'
+      - 'tests/test_nfl_current_research.py'
+      - '.github/workflows/projection-resource-evidence.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/projection_resource_evidence.py'
+      - 'scripts/capture_projection_resources.py'
+      - 'scripts/evaluate_projection_records.py'
+      - '.github/workflows/projection-resource-evidence.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: projection-resource-evidence-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test evidence and diagnostic contracts
+        run: |
+          python -m unittest discover -s tests -p 'test_projection_resource_evidence.py' -v
+          python -m unittest discover -s tests -p 'test_projection_record_evaluation.py' -v
+          python -m unittest discover -s tests -p 'test_nfl_current_research.py' -v
+      - name: Capture current sources without changing projection feeds
+        id: capture
+        if: github.event_name != 'pull_request'
+        continue-on-error: true
+        run: python scripts/capture_projection_resources.py --output "$RUNNER_TEMP/resource-evidence" --strict
+      - name: Evaluate existing stored records separately
+        if: github.event_name != 'pull_request' && always()
+        run: python scripts/evaluate_projection_records.py --output "$RUNNER_TEMP/resource-evidence/record-diagnostics.json"
+      - name: Preserve source bytes, manifests and diagnostics
+        if: github.event_name != 'pull_request' && always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: projection-resource-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/resource-evidence
+          retention-days: 90
+          if-no-files-found: error
+      - name: Assert source capture did not mutate repository
+        if: always()
+        run: git diff --exit-code && test -z "$(git ls-files --others --exclude-standard)"
+      - name: Expose gaps as a failed check after preserving evidence
+        if: github.event_name != 'pull_request' && steps.capture.outcome == 'failure'
+        run: |
+          echo 'Current-week evidence has gaps; inspect the preserved manifest. This is not projection readiness clearance.'
+          exit 1

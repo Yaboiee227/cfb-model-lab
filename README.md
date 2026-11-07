@@ -1,5 +1,14 @@
 # CB Model Projections — CFB and NFL
 
+## Current-week resource integration review
+
+See [the resource integration audit](research/resource-integration/README.md) for
+the November 6 review: current CFB Week 10 and NFL Week 9 source capture,
+prospective benchmark evidence, diagnostic scorecards, and a verified NFL
+research refresh. Website publication is pending approval; the new pipeline
+does not promote features or rewrite frozen forecasts. Older operation notes
+below describe their original historical scopes.
+
 ## Current CFB operations
 
 Week 8 operates from the GitHub artifacts described in [WEEK8_OPERATIONS.md](WEEK8_OPERATIONS.md).
