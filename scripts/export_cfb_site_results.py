@@ -97,6 +97,21 @@ def main() -> None:
     out = OUT_DIR / f'week-{week:02d}.json'
     rendered = json.dumps(payload, indent=2, ensure_ascii=False) + '\n'
     previous = out.read_text(encoding='utf-8') if out.exists() else ''
+    saved = json.loads(previous) if previous else {}
+    if saved.get('role') == 'PUBLISHED_RESEARCH_RESULTS_COMPATIBILITY' and saved.get('sourceLockDigest'):
+        by_id = {g['gameId']: g for g in saved['games']}
+        if len(by_id) != len(games) or any(
+            not (original := by_id.get(row['gameId']))
+            or any(original[k] != row[k] for k in ('awayTeam', 'homeTeam', 'status', 'projection'))
+            or any(original['final'][k] != row['final'][k] for k in ('awayScore', 'homeScore'))
+            or any(original['market'][k] != row['market'][k] for k in ('spreadHome', 'total'))
+            or any(original[k]['result'] != row[k]['result'] or original[k]['pick'] != row[k]['pick']
+                   for k in ('ats', 'totals', 'straightUp'))
+            for row in games
+        ):
+            raise SystemExit('Saved research grades and published CSV disagree.')
+        print(f'Preserved {len(games)} audited research rows with original provenance.')
+        return
     if previous != rendered:
         out.write_text(rendered, encoding='utf-8')
     print(json.dumps({'output': str(out.relative_to(ROOT)), 'games': len(games), 'week': week}, indent=2))

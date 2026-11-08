@@ -29,10 +29,14 @@ def publish(capture, root=ROOT):
     board["updatedAt"] = manifest["completedAt"]
     board["projectionStatus"] = "CURRENT_LEAGUE_RESEARCH_FINAL_CONTEXT_UNVERIFIED"
     (root / "data/current-matchups.json").write_text(json.dumps(board, indent=2)+"\n")
+    render(board, root)
+
+
+def render(board, root=ROOT):
     page = (root / "current-matchups.html").read_text()
     head = page[:page.index("<body>")+6]
     e = lambda x: html.escape(str(x), quote=True)
-    body = '<main><nav><a href="index.html">Projections</a><a href="#cfb">CFB</a><a href="#nfl">NFL</a><a href="recap.html">Recorded results</a></nav><h1>Current matchups</h1><p class="note">Frozen research projections. Final personnel, weather and officials remain unverified. Markets and benchmarks remain separate. Completed games without an archived pregame forecast are not backfilled.</p>'
+    body = '<main><nav><a href="index.html">Projections</a><a href="#cfb">CFB</a><a href="#nfl">NFL</a><a href="recap.html">Recorded results</a></nav><h1>Current matchups</h1><p class="note">Matchup schedules and forecast status by league. Kickoff times are Eastern. See the linked research pages for saved projections and evidence.</p>'
     for league, data in board["leagues"].items():
         body += f'<section id="{league}"><h2>{league.upper()} · Week {data["week"]} · {len(data["games"])} games</h2><div class="grid">'
         for g in data["games"]:

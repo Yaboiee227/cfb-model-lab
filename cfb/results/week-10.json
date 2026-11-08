@@ -1,0 +1,2992 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 10,
+  "status": "COMPLETE",
+  "role": "PUBLISHED_RESEARCH_RESULTS_COMPATIBILITY",
+  "canonicalInfluence": false,
+  "sourceLock": "cfb/research-locks/week-10-foundation-full.json",
+  "sourceLockDigest": "cf8cad1075fe42f87ec1bf702d47a6867d4b3fe3888ff760580e19abc926bf72",
+  "sourceMarkets": "cfb/pregame/week10-evidence/market-context.json",
+  "sourceScores": "cfb/postgame/week-10-final-scores.json",
+  "sourceNote": "Frozen Week 10 foundation research graded against the original pregame ESPN-carried DraftKings references. Research benchmark grades. Execution locks were unverified.",
+  "games": [
+    {
+      "gameId": "2026-11-03-OHIO-AKRON",
+      "awayTeam": "Ohio",
+      "homeTeam": "Akron",
+      "kickoff": "2026-11-04T00:00:00Z",
+      "projection": {
+        "spreadHome": 10.995775151734207,
+        "total": 53.343572252532326,
+        "winner": "Ohio",
+        "homeWinProbability": 24.37960768275378
+      },
+      "market": {
+        "spreadHome": 13.5,
+        "total": 51.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.529482Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 28,
+        "homeScore": 20,
+        "total": 48,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Akron",
+        "result": "WIN",
+        "position": "Akron +13.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "LOSS",
+        "position": "Over 51.5"
+      },
+      "straightUp": {
+        "pick": "Ohio",
+        "result": "WIN",
+        "position": "Ohio SU"
+      },
+      "date": "2026-11-03",
+      "sourceGameId": "401866453",
+      "projectionDigest": "e340dcb3b4e64a297f16680de8bb1e39f9d721140a5dc88e37837f23917b3959",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-03-BUFFALO-MIAMIOH",
+      "awayTeam": "Buffalo",
+      "homeTeam": "Miami (OH)",
+      "kickoff": "2026-11-04T01:00:00Z",
+      "projection": {
+        "spreadHome": -3.2555921400884813,
+        "total": 49.71000414778296,
+        "winner": "Miami (OH)",
+        "homeWinProbability": 58.141694808200754
+      },
+      "market": {
+        "spreadHome": -6.5,
+        "total": 45.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.680366Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 34,
+        "homeScore": 31,
+        "total": 65,
+        "overtime": true,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Buffalo",
+        "result": "WIN",
+        "position": "Buffalo +6.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "WIN",
+        "position": "Over 45.5"
+      },
+      "straightUp": {
+        "pick": "Miami (OH)",
+        "result": "LOSS",
+        "position": "Miami (OH) SU"
+      },
+      "date": "2026-11-03",
+      "sourceGameId": "401866454",
+      "projectionDigest": "8649277abaaaa00349340bf58dde3696d844e7c4415ff4b8573b7f4126243086",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-04-BALLSTATE-MASSACHUSETTS",
+      "awayTeam": "Ball State",
+      "homeTeam": "Massachusetts",
+      "kickoff": "2026-11-05T00:00:00Z",
+      "projection": {
+        "spreadHome": -9.671338383072623,
+        "total": 51.943050845034136,
+        "winner": "Massachusetts",
+        "homeWinProbability": 72.92460301896728
+      },
+      "market": {
+        "spreadHome": -3.0,
+        "total": 49.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.544581Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 30,
+        "homeScore": 31,
+        "total": 61,
+        "overtime": true,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Massachusetts",
+        "result": "LOSS",
+        "position": "Massachusetts -3"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "WIN",
+        "position": "Over 49.5"
+      },
+      "straightUp": {
+        "pick": "Massachusetts",
+        "result": "WIN",
+        "position": "Massachusetts SU"
+      },
+      "date": "2026-11-04",
+      "sourceGameId": "401866455",
+      "projectionDigest": "84e06d6b9ed9d0225afbd7cebcfd36a7a3edca97082154367bcc98693260306d",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-04-TOLEDO-SACRAMENTOSTATE",
+      "awayTeam": "Toledo",
+      "homeTeam": "Sacramento State",
+      "kickoff": "2026-11-05T00:00:00Z",
+      "projection": {
+        "spreadHome": 13.813859262352779,
+        "total": 56.69083390957347,
+        "winner": "Toledo",
+        "homeWinProbability": 19.159212880434513
+      },
+      "market": {
+        "spreadHome": 25.5,
+        "total": 52.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.599350Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 20,
+        "homeScore": 17,
+        "total": 37,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Sacramento State",
+        "result": "WIN",
+        "position": "Sacramento State +25.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "LOSS",
+        "position": "Over 52.5"
+      },
+      "straightUp": {
+        "pick": "Toledo",
+        "result": "WIN",
+        "position": "Toledo SU"
+      },
+      "date": "2026-11-04",
+      "sourceGameId": "401866457",
+      "projectionDigest": "08f701d4a4db8a9eb048976820f2bd10ce5ec0a355b11b81bb8fad749c4e6d77",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-04-CENTRALMICHIGAN-EASTERNMICHIGAN",
+      "awayTeam": "Central Michigan",
+      "homeTeam": "Eastern Michigan",
+      "kickoff": "2026-11-05T00:30:00Z",
+      "projection": {
+        "spreadHome": 0.6595759648898181,
+        "total": 48.000967277550835,
+        "winner": "Central Michigan",
+        "homeWinProbability": 48.339369961304605
+      },
+      "market": {
+        "spreadHome": -1.5,
+        "total": 44.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.617652Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 35,
+        "homeScore": 7,
+        "total": 42,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Central Michigan",
+        "result": "WIN",
+        "position": "Central Michigan +1.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "LOSS",
+        "position": "Over 44.5"
+      },
+      "straightUp": {
+        "pick": "Central Michigan",
+        "result": "WIN",
+        "position": "Central Michigan SU"
+      },
+      "date": "2026-11-04",
+      "sourceGameId": "401866456",
+      "projectionDigest": "c3949594188c51d10cb41cab26412a52c5dc5d42b28f2ded662c32d145cc1152",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-05-UTSA-FLORIDAATLANTIC",
+      "awayTeam": "UTSA",
+      "homeTeam": "Florida Atlantic",
+      "kickoff": "2026-11-06T00:30:00Z",
+      "projection": {
+        "spreadHome": 3.7263044235199914,
+        "total": 69.70179826078842,
+        "winner": "UTSA",
+        "homeWinProbability": 40.70131982803598
+      },
+      "market": {
+        "spreadHome": 7.0,
+        "total": 73.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.557830Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 29,
+        "homeScore": 60,
+        "total": 89,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Florida Atlantic",
+        "result": "WIN",
+        "position": "Florida Atlantic +7"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "LOSS",
+        "position": "Under 73.5"
+      },
+      "straightUp": {
+        "pick": "UTSA",
+        "result": "LOSS",
+        "position": "UTSA SU"
+      },
+      "date": "2026-11-05",
+      "sourceGameId": "401862817",
+      "projectionDigest": "04e82bce214c06a6d846ed4bed10738f35d47e0803cedbb6deb8c715e7b33a9c",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-05-JAMESMADISON-SOUTHERNMISS",
+      "awayTeam": "James Madison",
+      "homeTeam": "Southern Miss",
+      "kickoff": "2026-11-06T01:00:00Z",
+      "projection": {
+        "spreadHome": 8.90550231343104,
+        "total": 59.84083555373057,
+        "winner": "James Madison",
+        "homeWinProbability": 28.699382387219874
+      },
+      "market": {
+        "spreadHome": 14.5,
+        "total": 58.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.579804Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 54,
+        "homeScore": 23,
+        "total": 77,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Southern Miss",
+        "result": "LOSS",
+        "position": "Southern Miss +14.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "WIN",
+        "position": "Over 58.5"
+      },
+      "straightUp": {
+        "pick": "James Madison",
+        "result": "WIN",
+        "position": "James Madison SU"
+      },
+      "date": "2026-11-05",
+      "sourceGameId": "401869964",
+      "projectionDigest": "aabffe43609c4bca572589cc592613dd105771010c6230b7389847c04dff7e9f",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-06-VIRGINIATECH-SMU",
+      "awayTeam": "Virginia Tech",
+      "homeTeam": "SMU",
+      "kickoff": "2026-11-07T00:00:00Z",
+      "projection": {
+        "spreadHome": -7.004334846620878,
+        "total": 54.31139920604268,
+        "winner": "SMU",
+        "homeWinProbability": 67.08173100083975
+      },
+      "market": {
+        "spreadHome": -6.0,
+        "total": 56.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.561837Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 28,
+        "homeScore": 51,
+        "total": 79,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "SMU",
+        "result": "WIN",
+        "position": "SMU -6"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "LOSS",
+        "position": "Under 56.5"
+      },
+      "straightUp": {
+        "pick": "SMU",
+        "result": "WIN",
+        "position": "SMU SU"
+      },
+      "date": "2026-11-06",
+      "sourceGameId": "401858288",
+      "projectionDigest": "64235287ad61490b4110d3b726753db80d7c79487284d8a237a1bef87b036674",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-06-SOUTHFLORIDA-EASTCAROLINA",
+      "awayTeam": "South Florida",
+      "homeTeam": "East Carolina",
+      "kickoff": "2026-11-07T00:30:00Z",
+      "projection": {
+        "spreadHome": 1.2450441028616268,
+        "total": 39.77063779796033,
+        "winner": "South Florida",
+        "homeWinProbability": 46.86764253999184
+      },
+      "market": {
+        "spreadHome": -1.5,
+        "total": 39.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.635782Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 17,
+        "homeScore": 20,
+        "total": 37,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "South Florida",
+        "result": "LOSS",
+        "position": "South Florida +1.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "LOSS",
+        "position": "Over 39.5"
+      },
+      "straightUp": {
+        "pick": "South Florida",
+        "result": "LOSS",
+        "position": "South Florida SU"
+      },
+      "date": "2026-11-06",
+      "sourceGameId": "401862818",
+      "projectionDigest": "dd314cc2aa5e1eef060f3bb46d4c86395e4b5dcdf4a904a1f8cffc1ea1b6d65f",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-06-NEBRASKA-ILLINOIS",
+      "awayTeam": "Nebraska",
+      "homeTeam": "Illinois",
+      "kickoff": "2026-11-07T01:00:00Z",
+      "projection": {
+        "spreadHome": 2.1331126878690867,
+        "total": 48.55588098227657,
+        "winner": "Nebraska",
+        "homeWinProbability": 44.64405136587198
+      },
+      "market": {
+        "spreadHome": 4.5,
+        "total": 50.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.565168Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 13,
+        "homeScore": 24,
+        "total": 37,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Illinois",
+        "result": "WIN",
+        "position": "Illinois +4.5"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "WIN",
+        "position": "Under 50.5"
+      },
+      "straightUp": {
+        "pick": "Nebraska",
+        "result": "LOSS",
+        "position": "Nebraska SU"
+      },
+      "date": "2026-11-06",
+      "sourceGameId": "401858510",
+      "projectionDigest": "bcc6f376c9935c9b3049e17d07be93b35cc32f0471435251d2d0ebc6f6cdb671",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-06-NEWMEXICO-NEVADA",
+      "awayTeam": "New Mexico",
+      "homeTeam": "Nevada",
+      "kickoff": "2026-11-07T02:00:00Z",
+      "projection": {
+        "spreadHome": 4.8643389568419835,
+        "total": 46.327553157468415,
+        "winner": "New Mexico",
+        "homeWinProbability": 37.93923769162879
+      },
+      "market": {
+        "spreadHome": 9.5,
+        "total": 37.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.637256Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 31,
+        "homeScore": 3,
+        "total": 34,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Nevada",
+        "result": "LOSS",
+        "position": "Nevada +9.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "LOSS",
+        "position": "Over 37.5"
+      },
+      "straightUp": {
+        "pick": "New Mexico",
+        "result": "WIN",
+        "position": "New Mexico SU"
+      },
+      "date": "2026-11-06",
+      "sourceGameId": "401864533",
+      "projectionDigest": "df512fe8d3cbd0759f6271d811063cede15a10a20a28c458ca037f9280905eee",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-06-TCU-ARIZONA",
+      "awayTeam": "TCU",
+      "homeTeam": "Arizona",
+      "kickoff": "2026-11-07T03:15:00Z",
+      "projection": {
+        "spreadHome": -11.812441617621323,
+        "total": 38.49560251363007,
+        "winner": "Arizona",
+        "homeWinProbability": 77.20751567704063
+      },
+      "market": {
+        "spreadHome": -9.5,
+        "total": 43.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.570696Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 28,
+        "homeScore": 29,
+        "total": 57,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Arizona",
+        "result": "LOSS",
+        "position": "Arizona -9.5"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "LOSS",
+        "position": "Under 43.5"
+      },
+      "straightUp": {
+        "pick": "Arizona",
+        "result": "WIN",
+        "position": "Arizona SU"
+      },
+      "date": "2026-11-06",
+      "sourceGameId": "401856855",
+      "projectionDigest": "c80622f3a3c5ff48ec0f5408a1fd963c7ba4af01f01ff88dd401c91bcf524930",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-BYU-UTAH",
+      "awayTeam": "BYU",
+      "homeTeam": "Utah",
+      "kickoff": "2026-11-07T17:00:00Z",
+      "projection": {
+        "spreadHome": -10.481751608665377,
+        "total": 49.528765348727376,
+        "winner": "Utah",
+        "homeWinProbability": 74.59163954311956
+      },
+      "market": {
+        "spreadHome": -5.5,
+        "total": 48.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.653528Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 20,
+        "homeScore": 28,
+        "total": 48,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Utah",
+        "result": "WIN",
+        "position": "Utah -5.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "LOSS",
+        "position": "Over 48.5"
+      },
+      "straightUp": {
+        "pick": "Utah",
+        "result": "WIN",
+        "position": "Utah SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401856849",
+      "projectionDigest": "5b58509c9913c207447a096326d7f753b9d7c18ea8e4b65f95f48fc81c8c7013",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-CLEMSON-SYRACUSE",
+      "awayTeam": "Clemson",
+      "homeTeam": "Syracuse",
+      "kickoff": "2026-11-07T17:00:00Z",
+      "projection": {
+        "spreadHome": -3.188843120061705,
+        "total": 49.39068275991668,
+        "winner": "Syracuse",
+        "homeWinProbability": 57.977032849950184
+      },
+      "market": {
+        "spreadHome": 2.5,
+        "total": 49.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.696875Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 18,
+        "homeScore": 13,
+        "total": 31,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Syracuse",
+        "result": "LOSS",
+        "position": "Syracuse +2.5"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "WIN",
+        "position": "Under 49.5"
+      },
+      "straightUp": {
+        "pick": "Syracuse",
+        "result": "LOSS",
+        "position": "Syracuse SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401858285",
+      "projectionDigest": "aabffa16ded4496fbe99cea13c78203addfe12c37e833d1dbc32cefa1f8cf5ce",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-FLORIDASTATE-BOSTONCOLLEGE",
+      "awayTeam": "Florida State",
+      "homeTeam": "Boston College",
+      "kickoff": "2026-11-07T17:00:00Z",
+      "projection": {
+        "spreadHome": 0.3935991924633768,
+        "total": 57.092427973675136,
+        "winner": "Florida State",
+        "homeWinProbability": 49.008841621509326
+      },
+      "market": {
+        "spreadHome": 6.5,
+        "total": 50.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.651797Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 31,
+        "homeScore": 24,
+        "total": 55,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Boston College",
+        "result": "LOSS",
+        "position": "Boston College +6.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "WIN",
+        "position": "Over 50.5"
+      },
+      "straightUp": {
+        "pick": "Florida State",
+        "result": "WIN",
+        "position": "Florida State SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401858289",
+      "projectionDigest": "940bc2bc3fc71b81e3d99ec01385986e0d879a38fd4316248b2ecc43583d014d",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-IOWASTATE-BAYLOR",
+      "awayTeam": "Iowa State",
+      "homeTeam": "Baylor",
+      "kickoff": "2026-11-07T17:00:00Z",
+      "projection": {
+        "spreadHome": -12.34768323849654,
+        "total": 52.8313872273375,
+        "winner": "Baylor",
+        "homeWinProbability": 78.21535965636048
+      },
+      "market": {
+        "spreadHome": -10.0,
+        "total": 50.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.693620Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 31,
+        "homeScore": 42,
+        "total": 73,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Baylor",
+        "result": "WIN",
+        "position": "Baylor -10"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "WIN",
+        "position": "Over 50.5"
+      },
+      "straightUp": {
+        "pick": "Baylor",
+        "result": "WIN",
+        "position": "Baylor SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401856853",
+      "projectionDigest": "691b826685e17ebfebdf2b08b78305704d31fc95d36f488544f5a20cbbfed3f3",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-NORTHCAROLINA-UCONN",
+      "awayTeam": "North Carolina",
+      "homeTeam": "UConn",
+      "kickoff": "2026-11-07T17:00:00Z",
+      "projection": {
+        "spreadHome": -1.5579186234461702,
+        "total": 57.586617455292625,
+        "winner": "UConn",
+        "homeWinProbability": 53.91722618258438
+      },
+      "market": {
+        "spreadHome": 7.0,
+        "total": 54.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.656578Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 38,
+        "homeScore": 21,
+        "total": 59,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "UConn",
+        "result": "LOSS",
+        "position": "UConn +7"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "WIN",
+        "position": "Over 54.5"
+      },
+      "straightUp": {
+        "pick": "UConn",
+        "result": "LOSS",
+        "position": "UConn SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401858292",
+      "projectionDigest": "bd3916245d6688e0c3ef60c407e8f63c80f9f3d552d44b6eaff6f5735f3edfe6",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-TEXAS-MISSOURI",
+      "awayTeam": "Texas",
+      "homeTeam": "Missouri",
+      "kickoff": "2026-11-07T17:00:00Z",
+      "projection": {
+        "spreadHome": -1.7772614770309119,
+        "total": 43.491221587544096,
+        "winner": "Missouri",
+        "homeWinProbability": 54.46657366067691
+      },
+      "market": {
+        "spreadHome": 2.5,
+        "total": 42.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.745684Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 34,
+        "homeScore": 20,
+        "total": 54,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Missouri",
+        "result": "LOSS",
+        "position": "Missouri +2.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "WIN",
+        "position": "Over 42.5"
+      },
+      "straightUp": {
+        "pick": "Missouri",
+        "result": "LOSS",
+        "position": "Missouri SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401856743",
+      "projectionDigest": "719d12de375bfbda22473725b9f0dd8415e5f5c8943848198641a1b626af82fa",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-TULSA-TULANE",
+      "awayTeam": "Tulsa",
+      "homeTeam": "Tulane",
+      "kickoff": "2026-11-07T17:00:00Z",
+      "projection": {
+        "spreadHome": -2.8017957492672068,
+        "total": 49.69988229288319,
+        "winner": "Tulane",
+        "homeWinProbability": 57.0195671777745
+      },
+      "market": {
+        "spreadHome": 1.5,
+        "total": 49.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.643635Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 60,
+        "homeScore": 10,
+        "total": 70,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Tulane",
+        "result": "LOSS",
+        "position": "Tulane +1.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "WIN",
+        "position": "Over 49.5"
+      },
+      "straightUp": {
+        "pick": "Tulane",
+        "result": "LOSS",
+        "position": "Tulane SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401862822",
+      "projectionDigest": "1247d91a0226a94925d033cd05a0baa6352ce2249ab0c8141542ea8acd5529b2",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-UCLA-MINNESOTA",
+      "awayTeam": "UCLA",
+      "homeTeam": "Minnesota",
+      "kickoff": "2026-11-07T17:00:00Z",
+      "projection": {
+        "spreadHome": 7.854133494600845,
+        "total": 41.75385211389044,
+        "winner": "UCLA",
+        "homeWinProbability": 31.00116266026743
+      },
+      "market": {
+        "spreadHome": 5.5,
+        "total": 39.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.685888Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 34,
+        "homeScore": 20,
+        "total": 54,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "UCLA",
+        "result": "WIN",
+        "position": "UCLA -5.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "WIN",
+        "position": "Over 39.5"
+      },
+      "straightUp": {
+        "pick": "UCLA",
+        "result": "WIN",
+        "position": "UCLA SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401858512",
+      "projectionDigest": "3eaa5680f524832ec4583ce3fc3e2a969fb805f1c2f93221118d0c8e7990331c",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-DUKE-NCSTATE",
+      "awayTeam": "Duke",
+      "homeTeam": "NC State",
+      "kickoff": "2026-11-07T17:30:00Z",
+      "projection": {
+        "spreadHome": 4.695192316446644,
+        "total": 47.88489955475673,
+        "winner": "Duke",
+        "homeWinProbability": 38.346266069484315
+      },
+      "market": {
+        "spreadHome": 4.5,
+        "total": 51.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.698322Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 41,
+        "homeScore": 3,
+        "total": 44,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Duke",
+        "result": "WIN",
+        "position": "Duke -4.5"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "WIN",
+        "position": "Under 51.5"
+      },
+      "straightUp": {
+        "pick": "Duke",
+        "result": "WIN",
+        "position": "Duke SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401858286",
+      "projectionDigest": "e224706b6a5296335b2be3de8b4b1903de438b8635e1590fbcd8d6517728f0c8",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-MARYLAND-PURDUE",
+      "awayTeam": "Maryland",
+      "homeTeam": "Purdue",
+      "kickoff": "2026-11-07T17:30:00Z",
+      "projection": {
+        "spreadHome": -12.117612169019925,
+        "total": 61.71404973114652,
+        "winner": "Purdue",
+        "homeWinProbability": 77.78532621273638
+      },
+      "market": {
+        "spreadHome": -6.5,
+        "total": 57.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.676605Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 34,
+        "homeScore": 29,
+        "total": 63,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Purdue",
+        "result": "LOSS",
+        "position": "Purdue -6.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "WIN",
+        "position": "Over 57.5"
+      },
+      "straightUp": {
+        "pick": "Purdue",
+        "result": "LOSS",
+        "position": "Purdue SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401858515",
+      "projectionDigest": "064bc4db43615e37c0cc08bd3ee25da2d98a3bbe23f80f03c7e7eff29a3768d6",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-ARKANSAS-AUBURN",
+      "awayTeam": "Arkansas",
+      "homeTeam": "Auburn",
+      "kickoff": "2026-11-07T17:45:00Z",
+      "projection": {
+        "spreadHome": -9.624871235482956,
+        "total": 48.82535153342086,
+        "winner": "Auburn",
+        "homeWinProbability": 72.82738969430481
+      },
+      "market": {
+        "spreadHome": -10.5,
+        "total": 52.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.673802Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 23,
+        "homeScore": 26,
+        "total": 49,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Arkansas",
+        "result": "WIN",
+        "position": "Arkansas +10.5"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "WIN",
+        "position": "Under 52.5"
+      },
+      "straightUp": {
+        "pick": "Auburn",
+        "result": "WIN",
+        "position": "Auburn SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401856738",
+      "projectionDigest": "a47dc5c2e010a2c7329d9579f4e716349cfb934eb2e06f8a1414e5f7a41f2179",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-OKLAHOMASTATE-KANSASSTATE",
+      "awayTeam": "Oklahoma State",
+      "homeTeam": "Kansas State",
+      "kickoff": "2026-11-07T18:00:00Z",
+      "projection": {
+        "spreadHome": 3.2321364615589516,
+        "total": 64.87475234743003,
+        "winner": "Oklahoma State",
+        "homeWinProbability": 41.91615148410768
+      },
+      "market": {
+        "spreadHome": 4.5,
+        "total": 61.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.747213Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 66,
+        "homeScore": 28,
+        "total": 94,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Kansas State",
+        "result": "LOSS",
+        "position": "Kansas State +4.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "WIN",
+        "position": "Over 61.5"
+      },
+      "straightUp": {
+        "pick": "Oklahoma State",
+        "result": "WIN",
+        "position": "Oklahoma State SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401856854",
+      "projectionDigest": "22e3f8e742fa6fa4e5ffd60c18948ca33697cfb3995345e7ab6b0a3fccdcdaad",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-OLDDOMINION-COASTALCAROLINA",
+      "awayTeam": "Old Dominion",
+      "homeTeam": "Coastal Carolina",
+      "kickoff": "2026-11-07T18:00:00Z",
+      "projection": {
+        "spreadHome": -14.029206164950295,
+        "total": 46.345767886911865,
+        "winner": "Coastal Carolina",
+        "homeWinProbability": 81.20938689997548
+      },
+      "market": {
+        "spreadHome": -7.0,
+        "total": 43.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.739187Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 21,
+        "homeScore": 8,
+        "total": 29,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Coastal Carolina",
+        "result": "LOSS",
+        "position": "Coastal Carolina -7"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "LOSS",
+        "position": "Over 43.5"
+      },
+      "straightUp": {
+        "pick": "Coastal Carolina",
+        "result": "LOSS",
+        "position": "Coastal Carolina SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401869945",
+      "projectionDigest": "57fc1346216285340e74a4a70bbda160c094eb5951a1e31dace2f1d70dc461bd",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-GEORGIASTATE-APPSTATE",
+      "awayTeam": "Georgia State",
+      "homeTeam": "App State",
+      "kickoff": "2026-11-07T19:30:00Z",
+      "projection": {
+        "spreadHome": -3.0664910269306063,
+        "total": 54.12301883784047,
+        "winner": "App State",
+        "homeWinProbability": 57.674843878460806
+      },
+      "market": {
+        "spreadHome": -5.5,
+        "total": 55.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.766384Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 39,
+        "homeScore": 23,
+        "total": 62,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Georgia State",
+        "result": "WIN",
+        "position": "Georgia State +5.5"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "LOSS",
+        "position": "Under 55.5"
+      },
+      "straightUp": {
+        "pick": "App State",
+        "result": "LOSS",
+        "position": "App State SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401869927",
+      "projectionDigest": "e44763fb729407cf81dc4f68928a3c5c7fe5fc7f616ff266834b3cdb368d764a",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-DELAWARE-KENNESAWSTATE",
+      "awayTeam": "Delaware",
+      "homeTeam": "Kennesaw State",
+      "kickoff": "2026-11-07T20:00:00Z",
+      "projection": {
+        "spreadHome": -2.2823895109954293,
+        "total": 55.483064832994344,
+        "winner": "Kennesaw State",
+        "homeWinProbability": 55.72826009153171
+      },
+      "market": {
+        "spreadHome": 1.5,
+        "total": 56.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.765049Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 40,
+        "homeScore": 42,
+        "total": 82,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Kennesaw State",
+        "result": "WIN",
+        "position": "Kennesaw State +1.5"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "LOSS",
+        "position": "Under 56.5"
+      },
+      "straightUp": {
+        "pick": "Kennesaw State",
+        "result": "WIN",
+        "position": "Kennesaw State SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401871073",
+      "projectionDigest": "5456a336e0c6ff9f162767828eff26659cca4d8b0df0490039c6a4fa6904c035",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-TEXASAM-SOUTHCAROLINA",
+      "awayTeam": "Texas A&M",
+      "homeTeam": "South Carolina",
+      "kickoff": "2026-11-07T20:00:00Z",
+      "projection": {
+        "spreadHome": -7.169849318953759,
+        "total": 56.357081419865175,
+        "winner": "South Carolina",
+        "homeWinProbability": 67.45887149318996
+      },
+      "market": {
+        "spreadHome": -7.0,
+        "total": 51.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.795180Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 9,
+        "homeScore": 17,
+        "total": 26,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "South Carolina",
+        "result": "WIN",
+        "position": "South Carolina -7"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "LOSS",
+        "position": "Over 51.5"
+      },
+      "straightUp": {
+        "pick": "South Carolina",
+        "result": "WIN",
+        "position": "South Carolina SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401856744",
+      "projectionDigest": "49c462c8ecb7a80bdefe261c902d84775d156a46d00cbf826f3876a1c44d186c",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-ULMONROE-ARKANSASSTATE",
+      "awayTeam": "UL Monroe",
+      "homeTeam": "Arkansas State",
+      "kickoff": "2026-11-07T20:00:00Z",
+      "projection": {
+        "spreadHome": -14.490503157662356,
+        "total": 52.328128877336425,
+        "winner": "Arkansas State",
+        "homeWinProbability": 81.98410581507204
+      },
+      "market": {
+        "spreadHome": -14.5,
+        "total": 53.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.777425Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 19,
+        "homeScore": 17,
+        "total": 36,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "UL Monroe",
+        "result": "WIN",
+        "position": "UL Monroe +14.5"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "WIN",
+        "position": "Under 53.5"
+      },
+      "straightUp": {
+        "pick": "Arkansas State",
+        "result": "LOSS",
+        "position": "Arkansas State SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401869936",
+      "projectionDigest": "dc70476ea36b1b3eb7e05b400de503cd4888427773523926c6f02d3983429d39",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-ALABAMA-LSU",
+      "awayTeam": "Alabama",
+      "homeTeam": "LSU",
+      "kickoff": "2026-11-07T20:30:00Z",
+      "projection": {
+        "spreadHome": -6.901940112071479,
+        "total": 56.50505056768082,
+        "winner": "LSU",
+        "homeWinProbability": 66.84753831383372
+      },
+      "market": {
+        "spreadHome": -5.5,
+        "total": 52.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.781256Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 31,
+        "homeScore": 13,
+        "total": 44,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "LSU",
+        "result": "LOSS",
+        "position": "LSU -5.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "LOSS",
+        "position": "Over 52.5"
+      },
+      "straightUp": {
+        "pick": "LSU",
+        "result": "LOSS",
+        "position": "LSU SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401856740",
+      "projectionDigest": "30bf8e67bfab08ccada46a878d5e003551a4333b69454fdb8e97d6e90d478874",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-CHARLOTTE-UAB",
+      "awayTeam": "Charlotte",
+      "homeTeam": "UAB",
+      "kickoff": "2026-11-07T20:30:00Z",
+      "projection": {
+        "spreadHome": -12.338365043488352,
+        "total": 52.51740696961494,
+        "winner": "UAB",
+        "homeWinProbability": 78.19803653388263
+      },
+      "market": {
+        "spreadHome": -8.5,
+        "total": 47.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.830093Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 12,
+        "homeScore": 23,
+        "total": 35,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "UAB",
+        "result": "WIN",
+        "position": "UAB -8.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "LOSS",
+        "position": "Over 47.5"
+      },
+      "straightUp": {
+        "pick": "UAB",
+        "result": "WIN",
+        "position": "UAB SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401862819",
+      "projectionDigest": "e308fa20837a419468b5eb90f55bc5374bce1eeb33d4334770108e610ea919d3",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-CINCINNATI-HOUSTON",
+      "awayTeam": "Cincinnati",
+      "homeTeam": "Houston",
+      "kickoff": "2026-11-07T20:30:00Z",
+      "projection": {
+        "spreadHome": -12.840365415764452,
+        "total": 56.507027121229,
+        "winner": "Houston",
+        "homeWinProbability": 79.11992152204326
+      },
+      "market": {
+        "spreadHome": -11.5,
+        "total": 62.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.774801Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 24,
+        "homeScore": 31,
+        "total": 55,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Houston",
+        "result": "LOSS",
+        "position": "Houston -11.5"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "WIN",
+        "position": "Under 62.5"
+      },
+      "straightUp": {
+        "pick": "Houston",
+        "result": "WIN",
+        "position": "Houston SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401856851",
+      "projectionDigest": "215b34094c6db11a35853a2caffde55e9874b5904df9bacd6d539181232b9265",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-MARSHALL-GEORGIASOUTHERN",
+      "awayTeam": "Marshall",
+      "homeTeam": "Georgia Southern",
+      "kickoff": "2026-11-07T20:30:00Z",
+      "projection": {
+        "spreadHome": -9.710500705594235,
+        "total": 46.7417050784758,
+        "winner": "Georgia Southern",
+        "homeWinProbability": 73.00639895552189
+      },
+      "market": {
+        "spreadHome": -10.5,
+        "total": 54.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:12.016570Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 13,
+        "homeScore": 49,
+        "total": 62,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Marshall",
+        "result": "LOSS",
+        "position": "Marshall +10.5"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "LOSS",
+        "position": "Under 54.5"
+      },
+      "straightUp": {
+        "pick": "Georgia Southern",
+        "result": "WIN",
+        "position": "Georgia Southern SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401869951",
+      "projectionDigest": "bebc5d30bed507b22486fd1c74a61e03547909b48fab6ba5eb51c367a207ca15",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-OREGON-OHIOSTATE",
+      "awayTeam": "Oregon",
+      "homeTeam": "Ohio State",
+      "kickoff": "2026-11-07T20:30:00Z",
+      "projection": {
+        "spreadHome": -12.534390395465614,
+        "total": 49.28363885849497,
+        "winner": "Ohio State",
+        "homeWinProbability": 78.56078346898866
+      },
+      "market": {
+        "spreadHome": -7.5,
+        "total": 46.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.780013Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 41,
+        "homeScore": 28,
+        "total": 69,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Ohio State",
+        "result": "LOSS",
+        "position": "Ohio State -7.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "WIN",
+        "position": "Over 46.5"
+      },
+      "straightUp": {
+        "pick": "Ohio State",
+        "result": "LOSS",
+        "position": "Ohio State SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401858514",
+      "projectionDigest": "f42542dbe43b8b1d0c7568fd1d30d7f0461e1cd0cf7669c27f1c70abeaeedefa",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-PENNSTATE-WASHINGTON",
+      "awayTeam": "Penn State",
+      "homeTeam": "Washington",
+      "kickoff": "2026-11-07T20:30:00Z",
+      "projection": {
+        "spreadHome": -1.1102965637332503,
+        "total": 47.25614645729139,
+        "winner": "Washington",
+        "homeWinProbability": 52.79393989403722
+      },
+      "market": {
+        "spreadHome": -2.5,
+        "total": 44.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.836192Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 28,
+        "homeScore": 25,
+        "total": 53,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Penn State",
+        "result": "WIN",
+        "position": "Penn State +2.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "WIN",
+        "position": "Over 44.5"
+      },
+      "straightUp": {
+        "pick": "Washington",
+        "result": "LOSS",
+        "position": "Washington SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401858516",
+      "projectionDigest": "bf6c7190a754c810a9a4798e8ceb55b0b56fc04d14b1d86e66be2459c97ae258",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-TEMPLE-NAVY",
+      "awayTeam": "Temple",
+      "homeTeam": "Navy",
+      "kickoff": "2026-11-07T20:30:00Z",
+      "projection": {
+        "spreadHome": -7.9061737910268945,
+        "total": 50.80651734724379,
+        "winner": "Navy",
+        "homeWinProbability": 69.11464479052025
+      },
+      "market": {
+        "spreadHome": -7.5,
+        "total": 54.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.928821Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 35,
+        "homeScore": 42,
+        "total": 77,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Navy",
+        "result": "LOSS",
+        "position": "Navy -7.5"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "LOSS",
+        "position": "Under 54.5"
+      },
+      "straightUp": {
+        "pick": "Navy",
+        "result": "WIN",
+        "position": "Navy SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401862820",
+      "projectionDigest": "40d3df82bc818faeb75b4b0f1e2b7983918d5b6023b2ba82c368dee5a823d613",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-WESTERNKENTUCKY-MIDDLETENNESSEE",
+      "awayTeam": "Western Kentucky",
+      "homeTeam": "Middle Tennessee",
+      "kickoff": "2026-11-07T20:30:00Z",
+      "projection": {
+        "spreadHome": -6.326990287864653,
+        "total": 54.18000608336358,
+        "winner": "Middle Tennessee",
+        "homeWinProbability": 65.52050164358688
+      },
+      "market": {
+        "spreadHome": -1.5,
+        "total": 53.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.833387Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 42,
+        "homeScore": 51,
+        "total": 93,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Middle Tennessee",
+        "result": "WIN",
+        "position": "Middle Tennessee -1.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "WIN",
+        "position": "Over 53.5"
+      },
+      "straightUp": {
+        "pick": "Middle Tennessee",
+        "result": "WIN",
+        "position": "Middle Tennessee SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401871076",
+      "projectionDigest": "ad1ff0de929313f2779904187cdaf66923b06a6ed44a200f473f55f98fec0253",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-UCF-KANSAS",
+      "awayTeam": "UCF",
+      "homeTeam": "Kansas",
+      "kickoff": "2026-11-07T20:45:00Z",
+      "projection": {
+        "spreadHome": -7.547560009312377,
+        "total": 54.921963819534454,
+        "winner": "Kansas",
+        "homeWinProbability": 68.31280600421262
+      },
+      "market": {
+        "spreadHome": -2.5,
+        "total": 48.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.859468Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 33,
+        "homeScore": 32,
+        "total": 65,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Kansas",
+        "result": "LOSS",
+        "position": "Kansas -2.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "WIN",
+        "position": "Over 48.5"
+      },
+      "straightUp": {
+        "pick": "Kansas",
+        "result": "LOSS",
+        "position": "Kansas SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401856850",
+      "projectionDigest": "7fcaa20dd78dcbecc8db0d7b9e2b369d1c7fec86b9c2d7c05b4fd27e4009f5d3",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-LOUISIANATECH-TROY",
+      "awayTeam": "Louisiana Tech",
+      "homeTeam": "Troy",
+      "kickoff": "2026-11-07T21:00:00Z",
+      "projection": {
+        "spreadHome": 3.1855928241602527,
+        "total": 45.671276633718215,
+        "winner": "Louisiana Tech",
+        "homeWinProbability": 42.03098883712059
+      },
+      "market": {
+        "spreadHome": 4.5,
+        "total": 47.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.855312Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 41,
+        "homeScore": 17,
+        "total": 58,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Troy",
+        "result": "LOSS",
+        "position": "Troy +4.5"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "LOSS",
+        "position": "Under 47.5"
+      },
+      "straightUp": {
+        "pick": "Louisiana Tech",
+        "result": "WIN",
+        "position": "Louisiana Tech SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401871098",
+      "projectionDigest": "8ec36a37afdd4205cba2933a671ac498c2814fd87e56295d18f80c7ef56f0bb3",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-MISSOURISTATE-FLORIDAINTERNATIONAL",
+      "awayTeam": "Missouri State",
+      "homeTeam": "Florida International",
+      "kickoff": "2026-11-07T21:00:00Z",
+      "projection": {
+        "spreadHome": -9.587849713765735,
+        "total": 49.16452663142577,
+        "winner": "Florida International",
+        "homeWinProbability": 72.74981329168556
+      },
+      "market": {
+        "spreadHome": -4.5,
+        "total": 49.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.847618Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 20,
+        "homeScore": 23,
+        "total": 43,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Florida International",
+        "result": "LOSS",
+        "position": "Florida International -4.5"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "WIN",
+        "position": "Under 49.5"
+      },
+      "straightUp": {
+        "pick": "Florida International",
+        "result": "WIN",
+        "position": "Florida International SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401871074",
+      "projectionDigest": "a1998e9265eedafdcd409c5206012e4dc0f8169d837e166867e20fcf17dafed5",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-NORTHERNILLINOIS-SANJOSSTATE",
+      "awayTeam": "Northern Illinois",
+      "homeTeam": "San Jos\u00e9 State",
+      "kickoff": "2026-11-07T21:00:00Z",
+      "projection": {
+        "spreadHome": -15.082632771571227,
+        "total": 48.86138642212879,
+        "winner": "San Jos\u00e9 State",
+        "homeWinProbability": 82.94869097740963
+      },
+      "market": {
+        "spreadHome": -10.0,
+        "total": 51.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.858061Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 19,
+        "homeScore": 30,
+        "total": 49,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "San Jos\u00e9 State",
+        "result": "WIN",
+        "position": "San Jos\u00e9 State -10"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "WIN",
+        "position": "Under 51.5"
+      },
+      "straightUp": {
+        "pick": "San Jos\u00e9 State",
+        "result": "WIN",
+        "position": "San Jos\u00e9 State SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401864534",
+      "projectionDigest": "ec2126d4985d614a889f9b7c4cf74168e4c054e6f99b87982d65cbc7ed27e75d",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-RICE-NORTHTEXAS",
+      "awayTeam": "Rice",
+      "homeTeam": "North Texas",
+      "kickoff": "2026-11-07T21:00:00Z",
+      "projection": {
+        "spreadHome": -17.002097720906804,
+        "total": 68.39798210605835,
+        "winner": "North Texas",
+        "homeWinProbability": 85.84344240642395
+      },
+      "market": {
+        "spreadHome": -16.5,
+        "total": 64.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.875266Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 23,
+        "homeScore": 52,
+        "total": 75,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "North Texas",
+        "result": "WIN",
+        "position": "North Texas -16.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "WIN",
+        "position": "Over 64.5"
+      },
+      "straightUp": {
+        "pick": "North Texas",
+        "result": "WIN",
+        "position": "North Texas SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401862821",
+      "projectionDigest": "4c816f871c1053220089f64bf2cb157e6c563a56d8df241430a6a5eaf5149c3a",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-RUTGERS-WISCONSIN",
+      "awayTeam": "Rutgers",
+      "homeTeam": "Wisconsin",
+      "kickoff": "2026-11-07T21:15:00Z",
+      "projection": {
+        "spreadHome": -17.30275436167637,
+        "total": 50.14573958142507,
+        "winner": "Wisconsin",
+        "homeWinProbability": 86.26475941900438
+      },
+      "market": {
+        "spreadHome": -16.5,
+        "total": 45.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.936996Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 10,
+        "homeScore": 31,
+        "total": 41,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Wisconsin",
+        "result": "WIN",
+        "position": "Wisconsin -16.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "LOSS",
+        "position": "Over 45.5"
+      },
+      "straightUp": {
+        "pick": "Wisconsin",
+        "result": "WIN",
+        "position": "Wisconsin SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401858517",
+      "projectionDigest": "bc0062e480db91ec405eabe428debe23ed30f47ad3e230fc901c81fcdab2ff2d",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-VANDERBILT-MISSISSIPPISTATE",
+      "awayTeam": "Vanderbilt",
+      "homeTeam": "Mississippi State",
+      "kickoff": "2026-11-07T21:15:00Z",
+      "projection": {
+        "spreadHome": -10.751859961917443,
+        "total": 53.73266858964685,
+        "winner": "Mississippi State",
+        "homeWinProbability": 75.13504907699276
+      },
+      "market": {
+        "spreadHome": -3.0,
+        "total": 48.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.939858Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 25,
+        "homeScore": 23,
+        "total": 48,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Mississippi State",
+        "result": "LOSS",
+        "position": "Mississippi State -3"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "LOSS",
+        "position": "Over 48.5"
+      },
+      "straightUp": {
+        "pick": "Mississippi State",
+        "result": "LOSS",
+        "position": "Mississippi State SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401856742",
+      "projectionDigest": "3280a61a9acf4090c238d66a7a0e1b5c0a22cd56ce62b059745c15f6c6daf819",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-SOUTHALABAMA-LOUISIANA",
+      "awayTeam": "South Alabama",
+      "homeTeam": "Louisiana",
+      "kickoff": "2026-11-07T22:00:00Z",
+      "projection": {
+        "spreadHome": -9.940274586746483,
+        "total": 62.45551931160068,
+        "winner": "Louisiana",
+        "homeWinProbability": 73.48380803122215
+      },
+      "market": {
+        "spreadHome": -8.5,
+        "total": 57.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.951525Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 26,
+        "homeScore": 28,
+        "total": 54,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Louisiana",
+        "result": "LOSS",
+        "position": "Louisiana -8.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "LOSS",
+        "position": "Over 57.5"
+      },
+      "straightUp": {
+        "pick": "Louisiana",
+        "result": "WIN",
+        "position": "Louisiana SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401869968",
+      "projectionDigest": "ccb220d2779acaecc1058401cc4999a2384933d544611a018ed5776b8fdb6ed5",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-BOISESTATE-COLORADOSTATE",
+      "awayTeam": "Boise State",
+      "homeTeam": "Colorado State",
+      "kickoff": "2026-11-07T23:00:00Z",
+      "projection": {
+        "spreadHome": 13.900010714808108,
+        "total": 75.70947281526506,
+        "winner": "Boise State",
+        "homeWinProbability": 19.011222828620696
+      },
+      "market": {
+        "spreadHome": 17.5,
+        "total": 68.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.917041Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 64,
+        "homeScore": 38,
+        "total": 102,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Colorado State",
+        "result": "LOSS",
+        "position": "Colorado State +17.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "WIN",
+        "position": "Over 68.5"
+      },
+      "straightUp": {
+        "pick": "Boise State",
+        "result": "WIN",
+        "position": "Boise State SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401860911",
+      "projectionDigest": "8bf39e6e650feda3f9f455385eb6967127699f698dcc553a279dcbe91cd15f5e",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-KENTUCKY-TENNESSEE",
+      "awayTeam": "Kentucky",
+      "homeTeam": "Tennessee",
+      "kickoff": "2026-11-07T23:15:00Z",
+      "projection": {
+        "spreadHome": -6.419375034809896,
+        "total": 48.659035910669374,
+        "winner": "Tennessee",
+        "homeWinProbability": 65.73507916184263
+      },
+      "market": {
+        "spreadHome": -6.5,
+        "total": 50.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:12.010906Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 6,
+        "homeScore": 34,
+        "total": 40,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Kentucky",
+        "result": "LOSS",
+        "position": "Kentucky +6.5"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "WIN",
+        "position": "Under 50.5"
+      },
+      "straightUp": {
+        "pick": "Tennessee",
+        "result": "WIN",
+        "position": "Tennessee SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401856745",
+      "projectionDigest": "76ff00b930c056c0e09a90cab67ca1d8fae565a4da9b69acad6d6b467fd941d9",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-SAMHOUSTON-JACKSONVILLESTATE",
+      "awayTeam": "Sam Houston",
+      "homeTeam": "Jacksonville State",
+      "kickoff": "2026-11-08T00:00:00Z",
+      "projection": {
+        "spreadHome": -17.892537077365816,
+        "total": 40.76097929264448,
+        "winner": "Jacksonville State",
+        "homeWinProbability": 87.06615418509321
+      },
+      "market": {
+        "spreadHome": -16.5,
+        "total": 48.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.990820Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 14,
+        "homeScore": 47,
+        "total": 61,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Jacksonville State",
+        "result": "WIN",
+        "position": "Jacksonville State -16.5"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "LOSS",
+        "position": "Under 48.5"
+      },
+      "straightUp": {
+        "pick": "Jacksonville State",
+        "result": "WIN",
+        "position": "Jacksonville State SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401871075",
+      "projectionDigest": "8217a922842e8088916c33f66826c429da66a499772718fbb6f3202d6f4a623b",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-AIRFORCE-ARMY",
+      "awayTeam": "Air Force",
+      "homeTeam": "Army",
+      "kickoff": "2026-11-08T00:30:00Z",
+      "projection": {
+        "spreadHome": -4.37505487255666,
+        "total": 58.28624373527094,
+        "winner": "Army",
+        "homeWinProbability": 60.87986949079915
+      },
+      "market": {
+        "spreadHome": -3.0,
+        "total": 45.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.986648Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 24,
+        "homeScore": 21,
+        "total": 45,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Army",
+        "result": "LOSS",
+        "position": "Army -3"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "LOSS",
+        "position": "Over 45.5"
+      },
+      "straightUp": {
+        "pick": "Army",
+        "result": "LOSS",
+        "position": "Army SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401862823",
+      "projectionDigest": "b96fed78c9fa3b93a4f8f408eb5d1903077c6f020184bba2cf9dbafb1013f35b",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-COLORADO-ARIZONASTATE",
+      "awayTeam": "Colorado",
+      "homeTeam": "Arizona State",
+      "kickoff": "2026-11-08T00:30:00Z",
+      "projection": {
+        "spreadHome": -6.718613737022558,
+        "total": 51.65029243680102,
+        "winner": "Arizona State",
+        "homeWinProbability": 66.42659770816957
+      },
+      "market": {
+        "spreadHome": -3.0,
+        "total": 48.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.989472Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 10,
+        "homeScore": 20,
+        "total": 30,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Arizona State",
+        "result": "WIN",
+        "position": "Arizona State -3"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "LOSS",
+        "position": "Over 48.5"
+      },
+      "straightUp": {
+        "pick": "Arizona State",
+        "result": "WIN",
+        "position": "Arizona State SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401856852",
+      "projectionDigest": "c52cafe8eb2c91b800392c1108621c6ca36e16fe8762549e3e530d030fb0cc88",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-GEORGIA-OLEMISS",
+      "awayTeam": "Georgia",
+      "homeTeam": "Ole Miss",
+      "kickoff": "2026-11-08T00:30:00Z",
+      "projection": {
+        "spreadHome": -3.801149819799093,
+        "total": 56.936757556837065,
+        "winner": "Ole Miss",
+        "homeWinProbability": 59.4819283853575
+      },
+      "market": {
+        "spreadHome": 3.5,
+        "total": 56.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.996768Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 42,
+        "homeScore": 7,
+        "total": 49,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Ole Miss",
+        "result": "LOSS",
+        "position": "Ole Miss +3.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "LOSS",
+        "position": "Over 56.5"
+      },
+      "straightUp": {
+        "pick": "Ole Miss",
+        "result": "LOSS",
+        "position": "Ole Miss SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401856741",
+      "projectionDigest": "88d4ba28abfaab67223210688b8638c13ede495dccf76534b2c24eff0b7f717f",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-IOWA-NORTHWESTERN",
+      "awayTeam": "Iowa",
+      "homeTeam": "Northwestern",
+      "kickoff": "2026-11-08T00:30:00Z",
+      "projection": {
+        "spreadHome": -5.077996015391037,
+        "total": 46.3033750665484,
+        "winner": "Northwestern",
+        "homeWinProbability": 62.57298921460775
+      },
+      "market": {
+        "spreadHome": -2.5,
+        "total": 45.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.967310Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 24,
+        "homeScore": 10,
+        "total": 34,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Northwestern",
+        "result": "LOSS",
+        "position": "Northwestern -2.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "LOSS",
+        "position": "Over 45.5"
+      },
+      "straightUp": {
+        "pick": "Northwestern",
+        "result": "LOSS",
+        "position": "Northwestern SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401858513",
+      "projectionDigest": "782aaede186a50fbf6af300cac4b335d3524adddb6ed62005fa3fb1997a5083c",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-LOUISVILLE-GEORGIATECH",
+      "awayTeam": "Louisville",
+      "homeTeam": "Georgia Tech",
+      "kickoff": "2026-11-08T00:30:00Z",
+      "projection": {
+        "spreadHome": 11.179277832957663,
+        "total": 63.55563352121072,
+        "winner": "Louisville",
+        "homeWinProbability": 24.017871362590874
+      },
+      "market": {
+        "spreadHome": 14.5,
+        "total": 61.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:12.013671Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 44,
+        "homeScore": 17,
+        "total": 61,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Georgia Tech",
+        "result": "LOSS",
+        "position": "Georgia Tech +14.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "LOSS",
+        "position": "Over 61.5"
+      },
+      "straightUp": {
+        "pick": "Louisville",
+        "result": "WIN",
+        "position": "Louisville SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401858287",
+      "projectionDigest": "9c72ea743e4e3ce0ad360ae5cb00ddbdd1303c7bbe32ccc7ff0e08909e1179cf",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-MIAMI-NOTREDAME",
+      "awayTeam": "Miami",
+      "homeTeam": "Notre Dame",
+      "kickoff": "2026-11-08T00:30:00Z",
+      "projection": {
+        "spreadHome": -5.45729596822742,
+        "total": 61.37352117266554,
+        "winner": "Notre Dame",
+        "homeWinProbability": 63.47683589564572
+      },
+      "market": {
+        "spreadHome": -6.0,
+        "total": 57.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:12.039635Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 24,
+        "homeScore": 31,
+        "total": 55,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Miami",
+        "result": "LOSS",
+        "position": "Miami +6"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "LOSS",
+        "position": "Over 57.5"
+      },
+      "straightUp": {
+        "pick": "Notre Dame",
+        "result": "WIN",
+        "position": "Notre Dame SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401858291",
+      "projectionDigest": "4426ad6d6bacd81f7a46e5a7ebc1cef1f38f642f4bbc3ebdc3e5d27d8fd053f3",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-MICHIGANSTATE-MICHIGAN",
+      "awayTeam": "Michigan State",
+      "homeTeam": "Michigan",
+      "kickoff": "2026-11-08T00:30:00Z",
+      "projection": {
+        "spreadHome": -7.681342494260797,
+        "total": 40.97345492095444,
+        "winner": "Michigan",
+        "homeWinProbability": 68.61296947373614
+      },
+      "market": {
+        "spreadHome": -13.5,
+        "total": 39.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:12.024364Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 15,
+        "homeScore": 6,
+        "total": 21,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Michigan State",
+        "result": "WIN",
+        "position": "Michigan State +13.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "LOSS",
+        "position": "Over 39.5"
+      },
+      "straightUp": {
+        "pick": "Michigan",
+        "result": "LOSS",
+        "position": "Michigan SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401858511",
+      "projectionDigest": "16e322df2c273698defa5a1d55864f248c44b466a704c8dea6db601364a3dd44",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-OKLAHOMA-FLORIDA",
+      "awayTeam": "Oklahoma",
+      "homeTeam": "Florida",
+      "kickoff": "2026-11-08T00:45:00Z",
+      "projection": {
+        "spreadHome": -6.068789480880213,
+        "total": 51.74667586884111,
+        "winner": "Florida",
+        "homeWinProbability": 64.91815717489075
+      },
+      "market": {
+        "spreadHome": -6.0,
+        "total": 44.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:11.998883Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 23,
+        "homeScore": 7,
+        "total": 30,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Florida",
+        "result": "LOSS",
+        "position": "Florida -6"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "LOSS",
+        "position": "Over 44.5"
+      },
+      "straightUp": {
+        "pick": "Florida",
+        "result": "LOSS",
+        "position": "Florida SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401856739",
+      "projectionDigest": "d5021416730ffb0a58f3b54d47993c6577051d8c8385cd1c0684fd71e1c24c2e",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-LIBERTY-NEWMEXICOSTATE",
+      "awayTeam": "Liberty",
+      "homeTeam": "New Mexico State",
+      "kickoff": "2026-11-08T01:00:00Z",
+      "projection": {
+        "spreadHome": 17.647826590782735,
+        "total": 45.95986221708394,
+        "winner": "Liberty",
+        "homeWinProbability": 13.262335402753866
+      },
+      "market": {
+        "spreadHome": 16.5,
+        "total": 46.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:12.075051Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 30,
+        "homeScore": 14,
+        "total": 44,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Liberty",
+        "result": "LOSS",
+        "position": "Liberty -16.5"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "WIN",
+        "position": "Under 46.5"
+      },
+      "straightUp": {
+        "pick": "Liberty",
+        "result": "WIN",
+        "position": "Liberty SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401870795",
+      "projectionDigest": "dd2599467596ff5224567d837e9baa8ebd24f20003ae04c0f03a90b6a772766a",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-FRESNOSTATE-UTAHSTATE",
+      "awayTeam": "Fresno State",
+      "homeTeam": "Utah State",
+      "kickoff": "2026-11-08T02:30:00Z",
+      "projection": {
+        "spreadHome": 1.3463600336910986,
+        "total": 38.057036755955494,
+        "winner": "Fresno State",
+        "homeWinProbability": 46.61333588350693
+      },
+      "market": {
+        "spreadHome": 2.5,
+        "total": 42.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:12.103816Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 10,
+        "homeScore": 17,
+        "total": 27,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Utah State",
+        "result": "WIN",
+        "position": "Utah State +2.5"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "WIN",
+        "position": "Under 42.5"
+      },
+      "straightUp": {
+        "pick": "Fresno State",
+        "result": "LOSS",
+        "position": "Fresno State SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401860913",
+      "projectionDigest": "66e5af5694df5188901946855b9e6e7d68e20bc956d23536d5a5016e3a40d417",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-HAWAII-UTEP",
+      "awayTeam": "Hawai'i",
+      "homeTeam": "UTEP",
+      "kickoff": "2026-11-08T02:30:00Z",
+      "projection": {
+        "spreadHome": 8.762407941300296,
+        "total": 48.63595451130762,
+        "winner": "Hawai'i",
+        "homeWinProbability": 29.007859368923018
+      },
+      "market": {
+        "spreadHome": 9.5,
+        "total": 49.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:12.071069Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 17,
+        "homeScore": 14,
+        "total": 31,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "UTEP",
+        "result": "WIN",
+        "position": "UTEP +9.5"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "WIN",
+        "position": "Under 49.5"
+      },
+      "straightUp": {
+        "pick": "Hawai'i",
+        "result": "WIN",
+        "position": "Hawai'i SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401864532",
+      "projectionDigest": "dfaa0963debeb3a0d4ba6ae40beb10b858310f78e7dd8e3572808d009ce0472a",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-WESTVIRGINIA-TEXASTECH",
+      "awayTeam": "West Virginia",
+      "homeTeam": "Texas Tech",
+      "kickoff": "2026-11-08T02:30:00Z",
+      "projection": {
+        "spreadHome": -13.315142537423583,
+        "total": 68.11573549251604,
+        "winner": "Texas Tech",
+        "homeWinProbability": 79.97030760891357
+      },
+      "market": {
+        "spreadHome": -16.5,
+        "total": 64.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:12.120586Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 48,
+        "homeScore": 53,
+        "total": 101,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "West Virginia",
+        "result": "WIN",
+        "position": "West Virginia +16.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "WIN",
+        "position": "Over 64.5"
+      },
+      "straightUp": {
+        "pick": "Texas Tech",
+        "result": "WIN",
+        "position": "Texas Tech SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401856856",
+      "projectionDigest": "1911ac111fdcd286fd3ae0b9fecf76badcf5da17412e10def03f66f6e9616a8e",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-TEXASSTATE-OREGONSTATE",
+      "awayTeam": "Texas State",
+      "homeTeam": "Oregon State",
+      "kickoff": "2026-11-08T03:30:00Z",
+      "projection": {
+        "spreadHome": -9.162673229003445,
+        "total": 69.25165634610474,
+        "winner": "Oregon State",
+        "homeWinProbability": 71.8510770466218
+      },
+      "market": {
+        "spreadHome": -6.5,
+        "total": 72.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:12.125970Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 42,
+        "homeScore": 21,
+        "total": 63,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Oregon State",
+        "result": "LOSS",
+        "position": "Oregon State -6.5"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "WIN",
+        "position": "Under 72.5"
+      },
+      "straightUp": {
+        "pick": "Oregon State",
+        "result": "LOSS",
+        "position": "Oregon State SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401860912",
+      "projectionDigest": "3664e33456786865fee7a8added81f1fd2361e2e78d95e111160eb50d0484cc3",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    },
+    {
+      "gameId": "2026-11-07-WYOMING-UNLV",
+      "awayTeam": "Wyoming",
+      "homeTeam": "UNLV",
+      "kickoff": "2026-11-08T03:30:00Z",
+      "projection": {
+        "spreadHome": -5.034216784935154,
+        "total": 42.311213762653296,
+        "winner": "UNLV",
+        "homeWinProbability": 62.46820905164987
+      },
+      "market": {
+        "spreadHome": -6.0,
+        "total": 48.5,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": "ESPN-carried DraftKings reference",
+        "observedAt": "2026-11-03T23:17:12.113867Z"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 41,
+        "homeScore": 35,
+        "total": 76,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "ats": {
+        "pick": "Wyoming",
+        "result": "WIN",
+        "position": "Wyoming +6"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "LOSS",
+        "position": "Under 48.5"
+      },
+      "straightUp": {
+        "pick": "UNLV",
+        "result": "LOSS",
+        "position": "UNLV SU"
+      },
+      "date": "2026-11-07",
+      "sourceGameId": "401864535",
+      "projectionDigest": "b4f3b4f1067401a53055a1b5bcab783f97eab20c54637f6205e0c51ee439868e",
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "cfb/research-results/week-10-foundation-full.json"
+    }
+  ]
+}

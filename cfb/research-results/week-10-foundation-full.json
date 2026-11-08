@@ -1,0 +1,2156 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 10,
+  "role": "PROSPECTIVE_RESEARCH_SHADOW_RESULTS",
+  "canonicalInfluence": false,
+  "canonicalRecordMerged": false,
+  "modelId": "cfb-rebuild-foundation-v1-shadow",
+  "sourceLockDigest": "cf8cad1075fe42f87ec1bf702d47a6867d4b3fe3888ff760580e19abc926bf72",
+  "sourceLockedAt": "2026-11-03T23:17:11.472065Z",
+  "gradedAt": "2026-11-08T12:13:26.582968Z",
+  "status": "COMPLETE",
+  "counts": {
+    "games": 62,
+    "final": 62,
+    "pending": 0,
+    "review": 0,
+    "void": 0
+  },
+  "metrics": {
+    "margin": {
+      "games": 62,
+      "mae": 13.780012159432514,
+      "rmse": 17.649270187153284,
+      "bias": 7.823033413139952
+    },
+    "total": {
+      "games": 62,
+      "mae": 13.574689118310447,
+      "rmse": 16.416372409084033,
+      "bias": -1.9606685379419038
+    },
+    "straightUp": {
+      "wins": 37,
+      "losses": 25,
+      "graded": 62,
+      "accuracyPct": 59.67741935483871
+    },
+    "winProbability": {
+      "games": 62,
+      "brierScore": 0.2208053567161409
+    }
+  },
+  "games": [
+    {
+      "gameId": "2026-11-03-OHIO-AKRON",
+      "awayTeam": "Ohio",
+      "homeTeam": "Akron",
+      "kickoff": "2026-11-04T00:00:00Z",
+      "projectionDigest": "e340dcb3b4e64a297f16680de8bb1e39f9d721140a5dc88e37837f23917b3959",
+      "projection": {
+        "awayPoints": 32.16967370213327,
+        "homePoints": 21.17389855039906,
+        "marginHome": -10.995775151734207,
+        "spreadHome": 10.995775151734207,
+        "total": 53.343572252532326,
+        "homeWinProbability": 24.37960768275378,
+        "winner": "Ohio"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 28,
+        "homeScore": 20,
+        "marginHome": -8,
+        "total": 48,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -2.9957751517342075,
+        "absoluteMargin": 2.9957751517342075,
+        "total": 5.343572252532326,
+        "absoluteTotal": 5.343572252532326
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-03-BUFFALO-MIAMIOH",
+      "awayTeam": "Buffalo",
+      "homeTeam": "Miami (OH)",
+      "kickoff": "2026-11-04T01:00:00Z",
+      "projectionDigest": "8649277abaaaa00349340bf58dde3696d844e7c4415ff4b8573b7f4126243086",
+      "projection": {
+        "awayPoints": 23.22720600384724,
+        "homePoints": 26.48279814393572,
+        "marginHome": 3.2555921400884813,
+        "spreadHome": -3.2555921400884813,
+        "total": 49.71000414778296,
+        "homeWinProbability": 58.141694808200754,
+        "winner": "Miami (OH)"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 34,
+        "homeScore": 31,
+        "marginHome": -3,
+        "total": 65,
+        "overtime": true,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 6.255592140088481,
+        "absoluteMargin": 6.255592140088481,
+        "total": -15.28999585221704,
+        "absoluteTotal": 15.28999585221704
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
+    },
+    {
+      "gameId": "2026-11-04-BALLSTATE-MASSACHUSETTS",
+      "awayTeam": "Ball State",
+      "homeTeam": "Massachusetts",
+      "kickoff": "2026-11-05T00:00:00Z",
+      "projectionDigest": "84e06d6b9ed9d0225afbd7cebcfd36a7a3edca97082154367bcc98693260306d",
+      "projection": {
+        "awayPoints": 21.135856230980757,
+        "homePoints": 30.80719461405338,
+        "marginHome": 9.671338383072623,
+        "spreadHome": -9.671338383072623,
+        "total": 51.943050845034136,
+        "homeWinProbability": 72.92460301896728,
+        "winner": "Massachusetts"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 30,
+        "homeScore": 31,
+        "marginHome": 1,
+        "total": 61,
+        "overtime": true,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 8.671338383072623,
+        "absoluteMargin": 8.671338383072623,
+        "total": -9.056949154965864,
+        "absoluteTotal": 9.056949154965864
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-04-TOLEDO-SACRAMENTOSTATE",
+      "awayTeam": "Toledo",
+      "homeTeam": "Sacramento State",
+      "kickoff": "2026-11-05T00:00:00Z",
+      "projectionDigest": "08f701d4a4db8a9eb048976820f2bd10ce5ec0a355b11b81bb8fad749c4e6d77",
+      "projection": {
+        "awayPoints": 35.252346585963124,
+        "homePoints": 21.438487323610346,
+        "marginHome": -13.813859262352779,
+        "spreadHome": 13.813859262352779,
+        "total": 56.69083390957347,
+        "homeWinProbability": 19.159212880434513,
+        "winner": "Toledo"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 20,
+        "homeScore": 17,
+        "marginHome": -3,
+        "total": 37,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -10.813859262352779,
+        "absoluteMargin": 10.813859262352779,
+        "total": 19.69083390957347,
+        "absoluteTotal": 19.69083390957347
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-04-CENTRALMICHIGAN-EASTERNMICHIGAN",
+      "awayTeam": "Central Michigan",
+      "homeTeam": "Eastern Michigan",
+      "kickoff": "2026-11-05T00:30:00Z",
+      "projectionDigest": "c3949594188c51d10cb41cab26412a52c5dc5d42b28f2ded662c32d145cc1152",
+      "projection": {
+        "awayPoints": 24.330271621220326,
+        "homePoints": 23.67069565633051,
+        "marginHome": -0.6595759648898181,
+        "spreadHome": 0.6595759648898181,
+        "total": 48.000967277550835,
+        "homeWinProbability": 48.339369961304605,
+        "winner": "Central Michigan"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 35,
+        "homeScore": 7,
+        "marginHome": -28,
+        "total": 42,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 27.340424035110182,
+        "absoluteMargin": 27.340424035110182,
+        "total": 6.000967277550835,
+        "absoluteTotal": 6.000967277550835
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-05-UTSA-FLORIDAATLANTIC",
+      "awayTeam": "UTSA",
+      "homeTeam": "Florida Atlantic",
+      "kickoff": "2026-11-06T00:30:00Z",
+      "projectionDigest": "04e82bce214c06a6d846ed4bed10738f35d47e0803cedbb6deb8c715e7b33a9c",
+      "projection": {
+        "awayPoints": 36.71405134215421,
+        "homePoints": 32.987746918634215,
+        "marginHome": -3.7263044235199914,
+        "spreadHome": 3.7263044235199914,
+        "total": 69.70179826078842,
+        "homeWinProbability": 40.70131982803598,
+        "winner": "UTSA"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 29,
+        "homeScore": 60,
+        "marginHome": 31,
+        "total": 89,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -34.72630442351999,
+        "absoluteMargin": 34.72630442351999,
+        "total": -19.298201739211578,
+        "absoluteTotal": 19.298201739211578
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
+    },
+    {
+      "gameId": "2026-11-05-JAMESMADISON-SOUTHERNMISS",
+      "awayTeam": "James Madison",
+      "homeTeam": "Southern Miss",
+      "kickoff": "2026-11-06T01:00:00Z",
+      "projectionDigest": "aabffe43609c4bca572589cc592613dd105771010c6230b7389847c04dff7e9f",
+      "projection": {
+        "awayPoints": 34.37316893358081,
+        "homePoints": 25.467666620149767,
+        "marginHome": -8.90550231343104,
+        "spreadHome": 8.90550231343104,
+        "total": 59.84083555373057,
+        "homeWinProbability": 28.699382387219874,
+        "winner": "James Madison"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 54,
+        "homeScore": 23,
+        "marginHome": -31,
+        "total": 77,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 22.09449768656896,
+        "absoluteMargin": 22.09449768656896,
+        "total": -17.15916444626943,
+        "absoluteTotal": 17.15916444626943
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-06-VIRGINIATECH-SMU",
+      "awayTeam": "Virginia Tech",
+      "homeTeam": "SMU",
+      "kickoff": "2026-11-07T00:00:00Z",
+      "projectionDigest": "64235287ad61490b4110d3b726753db80d7c79487284d8a237a1bef87b036674",
+      "projection": {
+        "awayPoints": 23.6535321797109,
+        "homePoints": 30.65786702633178,
+        "marginHome": 7.004334846620878,
+        "spreadHome": -7.004334846620878,
+        "total": 54.31139920604268,
+        "homeWinProbability": 67.08173100083975,
+        "winner": "SMU"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 28,
+        "homeScore": 51,
+        "marginHome": 23,
+        "total": 79,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -15.995665153379122,
+        "absoluteMargin": 15.995665153379122,
+        "total": -24.68860079395732,
+        "absoluteTotal": 24.68860079395732
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-06-SOUTHFLORIDA-EASTCAROLINA",
+      "awayTeam": "South Florida",
+      "homeTeam": "East Carolina",
+      "kickoff": "2026-11-07T00:30:00Z",
+      "projectionDigest": "dd314cc2aa5e1eef060f3bb46d4c86395e4b5dcdf4a904a1f8cffc1ea1b6d65f",
+      "projection": {
+        "awayPoints": 20.50784095041098,
+        "homePoints": 19.262796847549353,
+        "marginHome": -1.2450441028616268,
+        "spreadHome": 1.2450441028616268,
+        "total": 39.77063779796033,
+        "homeWinProbability": 46.86764253999184,
+        "winner": "South Florida"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 17,
+        "homeScore": 20,
+        "marginHome": 3,
+        "total": 37,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -4.245044102861627,
+        "absoluteMargin": 4.245044102861627,
+        "total": 2.770637797960333,
+        "absoluteTotal": 2.770637797960333
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
+    },
+    {
+      "gameId": "2026-11-06-NEBRASKA-ILLINOIS",
+      "awayTeam": "Nebraska",
+      "homeTeam": "Illinois",
+      "kickoff": "2026-11-07T01:00:00Z",
+      "projectionDigest": "bcc6f376c9935c9b3049e17d07be93b35cc32f0471435251d2d0ebc6f6cdb671",
+      "projection": {
+        "awayPoints": 25.344496835072828,
+        "homePoints": 23.21138414720374,
+        "marginHome": -2.1331126878690867,
+        "spreadHome": 2.1331126878690867,
+        "total": 48.55588098227657,
+        "homeWinProbability": 44.64405136587198,
+        "winner": "Nebraska"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 13,
+        "homeScore": 24,
+        "marginHome": 11,
+        "total": 37,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -13.133112687869087,
+        "absoluteMargin": 13.133112687869087,
+        "total": 11.55588098227657,
+        "absoluteTotal": 11.55588098227657
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
+    },
+    {
+      "gameId": "2026-11-06-NEWMEXICO-NEVADA",
+      "awayTeam": "New Mexico",
+      "homeTeam": "Nevada",
+      "kickoff": "2026-11-07T02:00:00Z",
+      "projectionDigest": "df512fe8d3cbd0759f6271d811063cede15a10a20a28c458ca037f9280905eee",
+      "projection": {
+        "awayPoints": 25.5959460571552,
+        "homePoints": 20.731607100313216,
+        "marginHome": -4.8643389568419835,
+        "spreadHome": 4.8643389568419835,
+        "total": 46.327553157468415,
+        "homeWinProbability": 37.93923769162879,
+        "winner": "New Mexico"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 31,
+        "homeScore": 3,
+        "marginHome": -28,
+        "total": 34,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 23.135661043158017,
+        "absoluteMargin": 23.135661043158017,
+        "total": 12.327553157468415,
+        "absoluteTotal": 12.327553157468415
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-06-TCU-ARIZONA",
+      "awayTeam": "TCU",
+      "homeTeam": "Arizona",
+      "kickoff": "2026-11-07T03:15:00Z",
+      "projectionDigest": "c80622f3a3c5ff48ec0f5408a1fd963c7ba4af01f01ff88dd401c91bcf524930",
+      "projection": {
+        "awayPoints": 13.341580448004374,
+        "homePoints": 25.154022065625696,
+        "marginHome": 11.812441617621323,
+        "spreadHome": -11.812441617621323,
+        "total": 38.49560251363007,
+        "homeWinProbability": 77.20751567704063,
+        "winner": "Arizona"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 28,
+        "homeScore": 29,
+        "marginHome": 1,
+        "total": 57,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 10.812441617621323,
+        "absoluteMargin": 10.812441617621323,
+        "total": -18.504397486369932,
+        "absoluteTotal": 18.504397486369932
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-BYU-UTAH",
+      "awayTeam": "BYU",
+      "homeTeam": "Utah",
+      "kickoff": "2026-11-07T17:00:00Z",
+      "projectionDigest": "5b58509c9913c207447a096326d7f753b9d7c18ea8e4b65f95f48fc81c8c7013",
+      "projection": {
+        "awayPoints": 19.523506870031,
+        "homePoints": 30.005258478696376,
+        "marginHome": 10.481751608665377,
+        "spreadHome": -10.481751608665377,
+        "total": 49.528765348727376,
+        "homeWinProbability": 74.59163954311956,
+        "winner": "Utah"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 20,
+        "homeScore": 28,
+        "marginHome": 8,
+        "total": 48,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 2.481751608665377,
+        "absoluteMargin": 2.481751608665377,
+        "total": 1.5287653487273758,
+        "absoluteTotal": 1.5287653487273758
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-CLEMSON-SYRACUSE",
+      "awayTeam": "Clemson",
+      "homeTeam": "Syracuse",
+      "kickoff": "2026-11-07T17:00:00Z",
+      "projectionDigest": "aabffa16ded4496fbe99cea13c78203addfe12c37e833d1dbc32cefa1f8cf5ce",
+      "projection": {
+        "awayPoints": 23.100919819927487,
+        "homePoints": 26.289762939989192,
+        "marginHome": 3.188843120061705,
+        "spreadHome": -3.188843120061705,
+        "total": 49.39068275991668,
+        "homeWinProbability": 57.977032849950184,
+        "winner": "Syracuse"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 18,
+        "homeScore": 13,
+        "marginHome": -5,
+        "total": 31,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 8.188843120061705,
+        "absoluteMargin": 8.188843120061705,
+        "total": 18.39068275991668,
+        "absoluteTotal": 18.39068275991668
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
+    },
+    {
+      "gameId": "2026-11-07-FLORIDASTATE-BOSTONCOLLEGE",
+      "awayTeam": "Florida State",
+      "homeTeam": "Boston College",
+      "kickoff": "2026-11-07T17:00:00Z",
+      "projectionDigest": "940bc2bc3fc71b81e3d99ec01385986e0d879a38fd4316248b2ecc43583d014d",
+      "projection": {
+        "awayPoints": 28.743013583069256,
+        "homePoints": 28.34941439060588,
+        "marginHome": -0.3935991924633768,
+        "spreadHome": 0.3935991924633768,
+        "total": 57.092427973675136,
+        "homeWinProbability": 49.008841621509326,
+        "winner": "Florida State"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 31,
+        "homeScore": 24,
+        "marginHome": -7,
+        "total": 55,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 6.606400807536623,
+        "absoluteMargin": 6.606400807536623,
+        "total": 2.092427973675136,
+        "absoluteTotal": 2.092427973675136
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-IOWASTATE-BAYLOR",
+      "awayTeam": "Iowa State",
+      "homeTeam": "Baylor",
+      "kickoff": "2026-11-07T17:00:00Z",
+      "projectionDigest": "691b826685e17ebfebdf2b08b78305704d31fc95d36f488544f5a20cbbfed3f3",
+      "projection": {
+        "awayPoints": 20.241851994420482,
+        "homePoints": 32.58953523291702,
+        "marginHome": 12.34768323849654,
+        "spreadHome": -12.34768323849654,
+        "total": 52.8313872273375,
+        "homeWinProbability": 78.21535965636048,
+        "winner": "Baylor"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 31,
+        "homeScore": 42,
+        "marginHome": 11,
+        "total": 73,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 1.3476832384965398,
+        "absoluteMargin": 1.3476832384965398,
+        "total": -20.1686127726625,
+        "absoluteTotal": 20.1686127726625
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-NORTHCAROLINA-UCONN",
+      "awayTeam": "North Carolina",
+      "homeTeam": "UConn",
+      "kickoff": "2026-11-07T17:00:00Z",
+      "projectionDigest": "bd3916245d6688e0c3ef60c407e8f63c80f9f3d552d44b6eaff6f5735f3edfe6",
+      "projection": {
+        "awayPoints": 28.014349415923228,
+        "homePoints": 29.572268039369398,
+        "marginHome": 1.5579186234461702,
+        "spreadHome": -1.5579186234461702,
+        "total": 57.586617455292625,
+        "homeWinProbability": 53.91722618258438,
+        "winner": "UConn"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 38,
+        "homeScore": 21,
+        "marginHome": -17,
+        "total": 59,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 18.55791862344617,
+        "absoluteMargin": 18.55791862344617,
+        "total": -1.4133825447073747,
+        "absoluteTotal": 1.4133825447073747
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
+    },
+    {
+      "gameId": "2026-11-07-TEXAS-MISSOURI",
+      "awayTeam": "Texas",
+      "homeTeam": "Missouri",
+      "kickoff": "2026-11-07T17:00:00Z",
+      "projectionDigest": "719d12de375bfbda22473725b9f0dd8415e5f5c8943848198641a1b626af82fa",
+      "projection": {
+        "awayPoints": 20.856980055256592,
+        "homePoints": 22.634241532287504,
+        "marginHome": 1.7772614770309119,
+        "spreadHome": -1.7772614770309119,
+        "total": 43.491221587544096,
+        "homeWinProbability": 54.46657366067691,
+        "winner": "Missouri"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 34,
+        "homeScore": 20,
+        "marginHome": -14,
+        "total": 54,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 15.777261477030912,
+        "absoluteMargin": 15.777261477030912,
+        "total": -10.508778412455904,
+        "absoluteTotal": 10.508778412455904
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
+    },
+    {
+      "gameId": "2026-11-07-TULSA-TULANE",
+      "awayTeam": "Tulsa",
+      "homeTeam": "Tulane",
+      "kickoff": "2026-11-07T17:00:00Z",
+      "projectionDigest": "1247d91a0226a94925d033cd05a0baa6352ce2249ab0c8141542ea8acd5529b2",
+      "projection": {
+        "awayPoints": 23.44904327180799,
+        "homePoints": 26.250839021075198,
+        "marginHome": 2.8017957492672068,
+        "spreadHome": -2.8017957492672068,
+        "total": 49.69988229288319,
+        "homeWinProbability": 57.0195671777745,
+        "winner": "Tulane"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 60,
+        "homeScore": 10,
+        "marginHome": -50,
+        "total": 70,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 52.80179574926721,
+        "absoluteMargin": 52.80179574926721,
+        "total": -20.30011770711681,
+        "absoluteTotal": 20.30011770711681
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
+    },
+    {
+      "gameId": "2026-11-07-UCLA-MINNESOTA",
+      "awayTeam": "UCLA",
+      "homeTeam": "Minnesota",
+      "kickoff": "2026-11-07T17:00:00Z",
+      "projectionDigest": "3eaa5680f524832ec4583ce3fc3e2a969fb805f1c2f93221118d0c8e7990331c",
+      "projection": {
+        "awayPoints": 24.80399280424564,
+        "homePoints": 16.949859309644797,
+        "marginHome": -7.854133494600845,
+        "spreadHome": 7.854133494600845,
+        "total": 41.75385211389044,
+        "homeWinProbability": 31.00116266026743,
+        "winner": "UCLA"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 34,
+        "homeScore": 20,
+        "marginHome": -14,
+        "total": 54,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 6.145866505399155,
+        "absoluteMargin": 6.145866505399155,
+        "total": -12.246147886109561,
+        "absoluteTotal": 12.246147886109561
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-DUKE-NCSTATE",
+      "awayTeam": "Duke",
+      "homeTeam": "NC State",
+      "kickoff": "2026-11-07T17:30:00Z",
+      "projectionDigest": "e224706b6a5296335b2be3de8b4b1903de438b8635e1590fbcd8d6517728f0c8",
+      "projection": {
+        "awayPoints": 26.290045935601686,
+        "homePoints": 21.594853619155042,
+        "marginHome": -4.695192316446644,
+        "spreadHome": 4.695192316446644,
+        "total": 47.88489955475673,
+        "homeWinProbability": 38.346266069484315,
+        "winner": "Duke"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 41,
+        "homeScore": 3,
+        "marginHome": -38,
+        "total": 44,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 33.304807683553356,
+        "absoluteMargin": 33.304807683553356,
+        "total": 3.8848995547567284,
+        "absoluteTotal": 3.8848995547567284
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-MARYLAND-PURDUE",
+      "awayTeam": "Maryland",
+      "homeTeam": "Purdue",
+      "kickoff": "2026-11-07T17:30:00Z",
+      "projectionDigest": "064bc4db43615e37c0cc08bd3ee25da2d98a3bbe23f80f03c7e7eff29a3768d6",
+      "projection": {
+        "awayPoints": 24.798218781063294,
+        "homePoints": 36.91583095008322,
+        "marginHome": 12.117612169019925,
+        "spreadHome": -12.117612169019925,
+        "total": 61.71404973114652,
+        "homeWinProbability": 77.78532621273638,
+        "winner": "Purdue"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 34,
+        "homeScore": 29,
+        "marginHome": -5,
+        "total": 63,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 17.117612169019925,
+        "absoluteMargin": 17.117612169019925,
+        "total": -1.2859502688534832,
+        "absoluteTotal": 1.2859502688534832
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
+    },
+    {
+      "gameId": "2026-11-07-ARKANSAS-AUBURN",
+      "awayTeam": "Arkansas",
+      "homeTeam": "Auburn",
+      "kickoff": "2026-11-07T17:45:00Z",
+      "projectionDigest": "a47dc5c2e010a2c7329d9579f4e716349cfb934eb2e06f8a1414e5f7a41f2179",
+      "projection": {
+        "awayPoints": 19.60024014896895,
+        "homePoints": 29.225111384451907,
+        "marginHome": 9.624871235482956,
+        "spreadHome": -9.624871235482956,
+        "total": 48.82535153342086,
+        "homeWinProbability": 72.82738969430481,
+        "winner": "Auburn"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 23,
+        "homeScore": 26,
+        "marginHome": 3,
+        "total": 49,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 6.624871235482956,
+        "absoluteMargin": 6.624871235482956,
+        "total": -0.1746484665791428,
+        "absoluteTotal": 0.1746484665791428
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-OKLAHOMASTATE-KANSASSTATE",
+      "awayTeam": "Oklahoma State",
+      "homeTeam": "Kansas State",
+      "kickoff": "2026-11-07T18:00:00Z",
+      "projectionDigest": "22e3f8e742fa6fa4e5ffd60c18948ca33697cfb3995345e7ab6b0a3fccdcdaad",
+      "projection": {
+        "awayPoints": 34.05344440449449,
+        "homePoints": 30.82130794293554,
+        "marginHome": -3.2321364615589516,
+        "spreadHome": 3.2321364615589516,
+        "total": 64.87475234743003,
+        "homeWinProbability": 41.91615148410768,
+        "winner": "Oklahoma State"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 66,
+        "homeScore": 28,
+        "marginHome": -38,
+        "total": 94,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 34.76786353844105,
+        "absoluteMargin": 34.76786353844105,
+        "total": -29.125247652569968,
+        "absoluteTotal": 29.125247652569968
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-OLDDOMINION-COASTALCAROLINA",
+      "awayTeam": "Old Dominion",
+      "homeTeam": "Coastal Carolina",
+      "kickoff": "2026-11-07T18:00:00Z",
+      "projectionDigest": "57fc1346216285340e74a4a70bbda160c094eb5951a1e31dace2f1d70dc461bd",
+      "projection": {
+        "awayPoints": 16.158280860980785,
+        "homePoints": 30.18748702593108,
+        "marginHome": 14.029206164950295,
+        "spreadHome": -14.029206164950295,
+        "total": 46.345767886911865,
+        "homeWinProbability": 81.20938689997548,
+        "winner": "Coastal Carolina"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 21,
+        "homeScore": 8,
+        "marginHome": -13,
+        "total": 29,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 27.029206164950295,
+        "absoluteMargin": 27.029206164950295,
+        "total": 17.345767886911865,
+        "absoluteTotal": 17.345767886911865
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
+    },
+    {
+      "gameId": "2026-11-07-GEORGIASTATE-APPSTATE",
+      "awayTeam": "Georgia State",
+      "homeTeam": "App State",
+      "kickoff": "2026-11-07T19:30:00Z",
+      "projectionDigest": "e44763fb729407cf81dc4f68928a3c5c7fe5fc7f616ff266834b3cdb368d764a",
+      "projection": {
+        "awayPoints": 25.52826390545493,
+        "homePoints": 28.594754932385538,
+        "marginHome": 3.0664910269306063,
+        "spreadHome": -3.0664910269306063,
+        "total": 54.12301883784047,
+        "homeWinProbability": 57.674843878460806,
+        "winner": "App State"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 39,
+        "homeScore": 23,
+        "marginHome": -16,
+        "total": 62,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 19.066491026930606,
+        "absoluteMargin": 19.066491026930606,
+        "total": -7.876981162159531,
+        "absoluteTotal": 7.876981162159531
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
+    },
+    {
+      "gameId": "2026-11-07-DELAWARE-KENNESAWSTATE",
+      "awayTeam": "Delaware",
+      "homeTeam": "Kennesaw State",
+      "kickoff": "2026-11-07T20:00:00Z",
+      "projectionDigest": "5456a336e0c6ff9f162767828eff26659cca4d8b0df0490039c6a4fa6904c035",
+      "projection": {
+        "awayPoints": 26.600337660999458,
+        "homePoints": 28.882727171994887,
+        "marginHome": 2.2823895109954293,
+        "spreadHome": -2.2823895109954293,
+        "total": 55.483064832994344,
+        "homeWinProbability": 55.72826009153171,
+        "winner": "Kennesaw State"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 40,
+        "homeScore": 42,
+        "marginHome": 2,
+        "total": 82,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 0.2823895109954293,
+        "absoluteMargin": 0.2823895109954293,
+        "total": -26.516935167005656,
+        "absoluteTotal": 26.516935167005656
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-TEXASAM-SOUTHCAROLINA",
+      "awayTeam": "Texas A&M",
+      "homeTeam": "South Carolina",
+      "kickoff": "2026-11-07T20:00:00Z",
+      "projectionDigest": "49c462c8ecb7a80bdefe261c902d84775d156a46d00cbf826f3876a1c44d186c",
+      "projection": {
+        "awayPoints": 24.593616050455708,
+        "homePoints": 31.763465369409467,
+        "marginHome": 7.169849318953759,
+        "spreadHome": -7.169849318953759,
+        "total": 56.357081419865175,
+        "homeWinProbability": 67.45887149318996,
+        "winner": "South Carolina"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 9,
+        "homeScore": 17,
+        "marginHome": 8,
+        "total": 26,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -0.8301506810462413,
+        "absoluteMargin": 0.8301506810462413,
+        "total": 30.357081419865175,
+        "absoluteTotal": 30.357081419865175
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-ULMONROE-ARKANSASSTATE",
+      "awayTeam": "UL Monroe",
+      "homeTeam": "Arkansas State",
+      "kickoff": "2026-11-07T20:00:00Z",
+      "projectionDigest": "dc70476ea36b1b3eb7e05b400de503cd4888427773523926c6f02d3983429d39",
+      "projection": {
+        "awayPoints": 18.918812859837036,
+        "homePoints": 33.40931601749939,
+        "marginHome": 14.490503157662356,
+        "spreadHome": -14.490503157662356,
+        "total": 52.328128877336425,
+        "homeWinProbability": 81.98410581507204,
+        "winner": "Arkansas State"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 19,
+        "homeScore": 17,
+        "marginHome": -2,
+        "total": 36,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 16.490503157662356,
+        "absoluteMargin": 16.490503157662356,
+        "total": 16.328128877336425,
+        "absoluteTotal": 16.328128877336425
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
+    },
+    {
+      "gameId": "2026-11-07-ALABAMA-LSU",
+      "awayTeam": "Alabama",
+      "homeTeam": "LSU",
+      "kickoff": "2026-11-07T20:30:00Z",
+      "projectionDigest": "30bf8e67bfab08ccada46a878d5e003551a4333b69454fdb8e97d6e90d478874",
+      "projection": {
+        "awayPoints": 24.80155522780467,
+        "homePoints": 31.70349533987615,
+        "marginHome": 6.901940112071479,
+        "spreadHome": -6.901940112071479,
+        "total": 56.50505056768082,
+        "homeWinProbability": 66.84753831383372,
+        "winner": "LSU"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 31,
+        "homeScore": 13,
+        "marginHome": -18,
+        "total": 44,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 24.90194011207148,
+        "absoluteMargin": 24.90194011207148,
+        "total": 12.505050567680819,
+        "absoluteTotal": 12.505050567680819
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
+    },
+    {
+      "gameId": "2026-11-07-CHARLOTTE-UAB",
+      "awayTeam": "Charlotte",
+      "homeTeam": "UAB",
+      "kickoff": "2026-11-07T20:30:00Z",
+      "projectionDigest": "e308fa20837a419468b5eb90f55bc5374bce1eeb33d4334770108e610ea919d3",
+      "projection": {
+        "awayPoints": 20.089520963063293,
+        "homePoints": 32.427886006551645,
+        "marginHome": 12.338365043488352,
+        "spreadHome": -12.338365043488352,
+        "total": 52.51740696961494,
+        "homeWinProbability": 78.19803653388263,
+        "winner": "UAB"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 12,
+        "homeScore": 23,
+        "marginHome": 11,
+        "total": 35,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 1.338365043488352,
+        "absoluteMargin": 1.338365043488352,
+        "total": 17.51740696961494,
+        "absoluteTotal": 17.51740696961494
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-CINCINNATI-HOUSTON",
+      "awayTeam": "Cincinnati",
+      "homeTeam": "Houston",
+      "kickoff": "2026-11-07T20:30:00Z",
+      "projectionDigest": "215b34094c6db11a35853a2caffde55e9874b5904df9bacd6d539181232b9265",
+      "projection": {
+        "awayPoints": 21.833330852732274,
+        "homePoints": 34.67369626849673,
+        "marginHome": 12.840365415764452,
+        "spreadHome": -12.840365415764452,
+        "total": 56.507027121229,
+        "homeWinProbability": 79.11992152204326,
+        "winner": "Houston"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 24,
+        "homeScore": 31,
+        "marginHome": 7,
+        "total": 55,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 5.8403654157644525,
+        "absoluteMargin": 5.8403654157644525,
+        "total": 1.507027121229001,
+        "absoluteTotal": 1.507027121229001
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-MARSHALL-GEORGIASOUTHERN",
+      "awayTeam": "Marshall",
+      "homeTeam": "Georgia Southern",
+      "kickoff": "2026-11-07T20:30:00Z",
+      "projectionDigest": "bebc5d30bed507b22486fd1c74a61e03547909b48fab6ba5eb51c367a207ca15",
+      "projection": {
+        "awayPoints": 18.515602186440784,
+        "homePoints": 28.22610289203502,
+        "marginHome": 9.710500705594235,
+        "spreadHome": -9.710500705594235,
+        "total": 46.7417050784758,
+        "homeWinProbability": 73.00639895552189,
+        "winner": "Georgia Southern"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 13,
+        "homeScore": 49,
+        "marginHome": 36,
+        "total": 62,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -26.289499294405765,
+        "absoluteMargin": 26.289499294405765,
+        "total": -15.258294921524197,
+        "absoluteTotal": 15.258294921524197
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-OREGON-OHIOSTATE",
+      "awayTeam": "Oregon",
+      "homeTeam": "Ohio State",
+      "kickoff": "2026-11-07T20:30:00Z",
+      "projectionDigest": "f42542dbe43b8b1d0c7568fd1d30d7f0461e1cd0cf7669c27f1c70abeaeedefa",
+      "projection": {
+        "awayPoints": 18.374624231514677,
+        "homePoints": 30.90901462698029,
+        "marginHome": 12.534390395465614,
+        "spreadHome": -12.534390395465614,
+        "total": 49.28363885849497,
+        "homeWinProbability": 78.56078346898866,
+        "winner": "Ohio State"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 41,
+        "homeScore": 28,
+        "marginHome": -13,
+        "total": 69,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 25.534390395465614,
+        "absoluteMargin": 25.534390395465614,
+        "total": -19.716361141505033,
+        "absoluteTotal": 19.716361141505033
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
+    },
+    {
+      "gameId": "2026-11-07-PENNSTATE-WASHINGTON",
+      "awayTeam": "Penn State",
+      "homeTeam": "Washington",
+      "kickoff": "2026-11-07T20:30:00Z",
+      "projectionDigest": "bf6c7190a754c810a9a4798e8ceb55b0b56fc04d14b1d86e66be2459c97ae258",
+      "projection": {
+        "awayPoints": 23.07292494677907,
+        "homePoints": 24.183221510512322,
+        "marginHome": 1.1102965637332503,
+        "spreadHome": -1.1102965637332503,
+        "total": 47.25614645729139,
+        "homeWinProbability": 52.79393989403722,
+        "winner": "Washington"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 28,
+        "homeScore": 25,
+        "marginHome": -3,
+        "total": 53,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 4.11029656373325,
+        "absoluteMargin": 4.11029656373325,
+        "total": -5.743853542708607,
+        "absoluteTotal": 5.743853542708607
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
+    },
+    {
+      "gameId": "2026-11-07-TEMPLE-NAVY",
+      "awayTeam": "Temple",
+      "homeTeam": "Navy",
+      "kickoff": "2026-11-07T20:30:00Z",
+      "projectionDigest": "40d3df82bc818faeb75b4b0f1e2b7983918d5b6023b2ba82c368dee5a823d613",
+      "projection": {
+        "awayPoints": 21.450171778108448,
+        "homePoints": 29.356345569135343,
+        "marginHome": 7.9061737910268945,
+        "spreadHome": -7.9061737910268945,
+        "total": 50.80651734724379,
+        "homeWinProbability": 69.11464479052025,
+        "winner": "Navy"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 35,
+        "homeScore": 42,
+        "marginHome": 7,
+        "total": 77,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 0.9061737910268945,
+        "absoluteMargin": 0.9061737910268945,
+        "total": -26.19348265275621,
+        "absoluteTotal": 26.19348265275621
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-WESTERNKENTUCKY-MIDDLETENNESSEE",
+      "awayTeam": "Western Kentucky",
+      "homeTeam": "Middle Tennessee",
+      "kickoff": "2026-11-07T20:30:00Z",
+      "projectionDigest": "ad1ff0de929313f2779904187cdaf66923b06a6ed44a200f473f55f98fec0253",
+      "projection": {
+        "awayPoints": 23.926507897749463,
+        "homePoints": 30.253498185614117,
+        "marginHome": 6.326990287864653,
+        "spreadHome": -6.326990287864653,
+        "total": 54.18000608336358,
+        "homeWinProbability": 65.52050164358688,
+        "winner": "Middle Tennessee"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 42,
+        "homeScore": 51,
+        "marginHome": 9,
+        "total": 93,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -2.6730097121353467,
+        "absoluteMargin": 2.6730097121353467,
+        "total": -38.81999391663642,
+        "absoluteTotal": 38.81999391663642
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-UCF-KANSAS",
+      "awayTeam": "UCF",
+      "homeTeam": "Kansas",
+      "kickoff": "2026-11-07T20:45:00Z",
+      "projectionDigest": "7fcaa20dd78dcbecc8db0d7b9e2b369d1c7fec86b9c2d7c05b4fd27e4009f5d3",
+      "projection": {
+        "awayPoints": 23.68720190511104,
+        "homePoints": 31.234761914423416,
+        "marginHome": 7.547560009312377,
+        "spreadHome": -7.547560009312377,
+        "total": 54.921963819534454,
+        "homeWinProbability": 68.31280600421262,
+        "winner": "Kansas"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 33,
+        "homeScore": 32,
+        "marginHome": -1,
+        "total": 65,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 8.547560009312377,
+        "absoluteMargin": 8.547560009312377,
+        "total": -10.078036180465546,
+        "absoluteTotal": 10.078036180465546
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
+    },
+    {
+      "gameId": "2026-11-07-LOUISIANATECH-TROY",
+      "awayTeam": "Louisiana Tech",
+      "homeTeam": "Troy",
+      "kickoff": "2026-11-07T21:00:00Z",
+      "projectionDigest": "8ec36a37afdd4205cba2933a671ac498c2814fd87e56295d18f80c7ef56f0bb3",
+      "projection": {
+        "awayPoints": 24.428434728939234,
+        "homePoints": 21.24284190477898,
+        "marginHome": -3.1855928241602527,
+        "spreadHome": 3.1855928241602527,
+        "total": 45.671276633718215,
+        "homeWinProbability": 42.03098883712059,
+        "winner": "Louisiana Tech"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 41,
+        "homeScore": 17,
+        "marginHome": -24,
+        "total": 58,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 20.814407175839747,
+        "absoluteMargin": 20.814407175839747,
+        "total": -12.328723366281785,
+        "absoluteTotal": 12.328723366281785
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-MISSOURISTATE-FLORIDAINTERNATIONAL",
+      "awayTeam": "Missouri State",
+      "homeTeam": "Florida International",
+      "kickoff": "2026-11-07T21:00:00Z",
+      "projectionDigest": "a1998e9265eedafdcd409c5206012e4dc0f8169d837e166867e20fcf17dafed5",
+      "projection": {
+        "awayPoints": 19.78833845883002,
+        "homePoints": 29.376188172595754,
+        "marginHome": 9.587849713765735,
+        "spreadHome": -9.587849713765735,
+        "total": 49.16452663142577,
+        "homeWinProbability": 72.74981329168556,
+        "winner": "Florida International"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 20,
+        "homeScore": 23,
+        "marginHome": 3,
+        "total": 43,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 6.587849713765735,
+        "absoluteMargin": 6.587849713765735,
+        "total": 6.1645266314257725,
+        "absoluteTotal": 6.1645266314257725
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-NORTHERNILLINOIS-SANJOSSTATE",
+      "awayTeam": "Northern Illinois",
+      "homeTeam": "San Jos\u00e9 State",
+      "kickoff": "2026-11-07T21:00:00Z",
+      "projectionDigest": "ec2126d4985d614a889f9b7c4cf74168e4c054e6f99b87982d65cbc7ed27e75d",
+      "projection": {
+        "awayPoints": 16.88937682527878,
+        "homePoints": 31.972009596850008,
+        "marginHome": 15.082632771571227,
+        "spreadHome": -15.082632771571227,
+        "total": 48.86138642212879,
+        "homeWinProbability": 82.94869097740963,
+        "winner": "San Jos\u00e9 State"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 19,
+        "homeScore": 30,
+        "marginHome": 11,
+        "total": 49,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 4.082632771571227,
+        "absoluteMargin": 4.082632771571227,
+        "total": -0.13861357787121165,
+        "absoluteTotal": 0.13861357787121165
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-RICE-NORTHTEXAS",
+      "awayTeam": "Rice",
+      "homeTeam": "North Texas",
+      "kickoff": "2026-11-07T21:00:00Z",
+      "projectionDigest": "4c816f871c1053220089f64bf2cb157e6c563a56d8df241430a6a5eaf5149c3a",
+      "projection": {
+        "awayPoints": 25.697942192575773,
+        "homePoints": 42.70003991348258,
+        "marginHome": 17.002097720906804,
+        "spreadHome": -17.002097720906804,
+        "total": 68.39798210605835,
+        "homeWinProbability": 85.84344240642395,
+        "winner": "North Texas"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 23,
+        "homeScore": 52,
+        "marginHome": 29,
+        "total": 75,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -11.997902279093196,
+        "absoluteMargin": 11.997902279093196,
+        "total": -6.60201789394165,
+        "absoluteTotal": 6.60201789394165
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-RUTGERS-WISCONSIN",
+      "awayTeam": "Rutgers",
+      "homeTeam": "Wisconsin",
+      "kickoff": "2026-11-07T21:15:00Z",
+      "projectionDigest": "bc0062e480db91ec405eabe428debe23ed30f47ad3e230fc901c81fcdab2ff2d",
+      "projection": {
+        "awayPoints": 16.42149260987435,
+        "homePoints": 33.72424697155072,
+        "marginHome": 17.30275436167637,
+        "spreadHome": -17.30275436167637,
+        "total": 50.14573958142507,
+        "homeWinProbability": 86.26475941900438,
+        "winner": "Wisconsin"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 10,
+        "homeScore": 31,
+        "marginHome": 21,
+        "total": 41,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -3.697245638323629,
+        "absoluteMargin": 3.697245638323629,
+        "total": 9.145739581425069,
+        "absoluteTotal": 9.145739581425069
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-VANDERBILT-MISSISSIPPISTATE",
+      "awayTeam": "Vanderbilt",
+      "homeTeam": "Mississippi State",
+      "kickoff": "2026-11-07T21:15:00Z",
+      "projectionDigest": "3280a61a9acf4090c238d66a7a0e1b5c0a22cd56ce62b059745c15f6c6daf819",
+      "projection": {
+        "awayPoints": 21.490404313864705,
+        "homePoints": 32.24226427578215,
+        "marginHome": 10.751859961917443,
+        "spreadHome": -10.751859961917443,
+        "total": 53.73266858964685,
+        "homeWinProbability": 75.13504907699276,
+        "winner": "Mississippi State"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 25,
+        "homeScore": 23,
+        "marginHome": -2,
+        "total": 48,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 12.751859961917443,
+        "absoluteMargin": 12.751859961917443,
+        "total": 5.732668589646849,
+        "absoluteTotal": 5.732668589646849
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
+    },
+    {
+      "gameId": "2026-11-07-SOUTHALABAMA-LOUISIANA",
+      "awayTeam": "South Alabama",
+      "homeTeam": "Louisiana",
+      "kickoff": "2026-11-07T22:00:00Z",
+      "projectionDigest": "ccb220d2779acaecc1058401cc4999a2384933d544611a018ed5776b8fdb6ed5",
+      "projection": {
+        "awayPoints": 26.2576223624271,
+        "homePoints": 36.19789694917358,
+        "marginHome": 9.940274586746483,
+        "spreadHome": -9.940274586746483,
+        "total": 62.45551931160068,
+        "homeWinProbability": 73.48380803122215,
+        "winner": "Louisiana"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 26,
+        "homeScore": 28,
+        "marginHome": 2,
+        "total": 54,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 7.940274586746483,
+        "absoluteMargin": 7.940274586746483,
+        "total": 8.455519311600682,
+        "absoluteTotal": 8.455519311600682
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-BOISESTATE-COLORADOSTATE",
+      "awayTeam": "Boise State",
+      "homeTeam": "Colorado State",
+      "kickoff": "2026-11-07T23:00:00Z",
+      "projectionDigest": "8bf39e6e650feda3f9f455385eb6967127699f698dcc553a279dcbe91cd15f5e",
+      "projection": {
+        "awayPoints": 44.80474176503658,
+        "homePoints": 30.904731050228474,
+        "marginHome": -13.900010714808108,
+        "spreadHome": 13.900010714808108,
+        "total": 75.70947281526506,
+        "homeWinProbability": 19.011222828620696,
+        "winner": "Boise State"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 64,
+        "homeScore": 38,
+        "marginHome": -26,
+        "total": 102,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 12.099989285191892,
+        "absoluteMargin": 12.099989285191892,
+        "total": -26.29052718473494,
+        "absoluteTotal": 26.29052718473494
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-KENTUCKY-TENNESSEE",
+      "awayTeam": "Kentucky",
+      "homeTeam": "Tennessee",
+      "kickoff": "2026-11-07T23:15:00Z",
+      "projectionDigest": "76ff00b930c056c0e09a90cab67ca1d8fae565a4da9b69acad6d6b467fd941d9",
+      "projection": {
+        "awayPoints": 21.11983043792974,
+        "homePoints": 27.539205472739635,
+        "marginHome": 6.419375034809896,
+        "spreadHome": -6.419375034809896,
+        "total": 48.659035910669374,
+        "homeWinProbability": 65.73507916184263,
+        "winner": "Tennessee"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 6,
+        "homeScore": 34,
+        "marginHome": 28,
+        "total": 40,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -21.580624965190104,
+        "absoluteMargin": 21.580624965190104,
+        "total": 8.659035910669374,
+        "absoluteTotal": 8.659035910669374
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-SAMHOUSTON-JACKSONVILLESTATE",
+      "awayTeam": "Sam Houston",
+      "homeTeam": "Jacksonville State",
+      "kickoff": "2026-11-08T00:00:00Z",
+      "projectionDigest": "8217a922842e8088916c33f66826c429da66a499772718fbb6f3202d6f4a623b",
+      "projection": {
+        "awayPoints": 11.43422110763933,
+        "homePoints": 29.326758185005147,
+        "marginHome": 17.892537077365816,
+        "spreadHome": -17.892537077365816,
+        "total": 40.76097929264448,
+        "homeWinProbability": 87.06615418509321,
+        "winner": "Jacksonville State"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 14,
+        "homeScore": 47,
+        "marginHome": 33,
+        "total": 61,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -15.107462922634184,
+        "absoluteMargin": 15.107462922634184,
+        "total": -20.23902070735552,
+        "absoluteTotal": 20.23902070735552
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-AIRFORCE-ARMY",
+      "awayTeam": "Air Force",
+      "homeTeam": "Army",
+      "kickoff": "2026-11-08T00:30:00Z",
+      "projectionDigest": "b96fed78c9fa3b93a4f8f408eb5d1903077c6f020184bba2cf9dbafb1013f35b",
+      "projection": {
+        "awayPoints": 26.95559443135714,
+        "homePoints": 31.330649303913802,
+        "marginHome": 4.37505487255666,
+        "spreadHome": -4.37505487255666,
+        "total": 58.28624373527094,
+        "homeWinProbability": 60.87986949079915,
+        "winner": "Army"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 24,
+        "homeScore": 21,
+        "marginHome": -3,
+        "total": 45,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 7.37505487255666,
+        "absoluteMargin": 7.37505487255666,
+        "total": 13.286243735270943,
+        "absoluteTotal": 13.286243735270943
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
+    },
+    {
+      "gameId": "2026-11-07-COLORADO-ARIZONASTATE",
+      "awayTeam": "Colorado",
+      "homeTeam": "Arizona State",
+      "kickoff": "2026-11-08T00:30:00Z",
+      "projectionDigest": "c52cafe8eb2c91b800392c1108621c6ca36e16fe8762549e3e530d030fb0cc88",
+      "projection": {
+        "awayPoints": 22.46583934988923,
+        "homePoints": 29.184453086911788,
+        "marginHome": 6.718613737022558,
+        "spreadHome": -6.718613737022558,
+        "total": 51.65029243680102,
+        "homeWinProbability": 66.42659770816957,
+        "winner": "Arizona State"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 10,
+        "homeScore": 20,
+        "marginHome": 10,
+        "total": 30,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -3.281386262977442,
+        "absoluteMargin": 3.281386262977442,
+        "total": 21.650292436801017,
+        "absoluteTotal": 21.650292436801017
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-GEORGIA-OLEMISS",
+      "awayTeam": "Georgia",
+      "homeTeam": "Ole Miss",
+      "kickoff": "2026-11-08T00:30:00Z",
+      "projectionDigest": "88d4ba28abfaab67223210688b8638c13ede495dccf76534b2c24eff0b7f717f",
+      "projection": {
+        "awayPoints": 26.567803868518986,
+        "homePoints": 30.36895368831808,
+        "marginHome": 3.801149819799093,
+        "spreadHome": -3.801149819799093,
+        "total": 56.936757556837065,
+        "homeWinProbability": 59.4819283853575,
+        "winner": "Ole Miss"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 42,
+        "homeScore": 7,
+        "marginHome": -35,
+        "total": 49,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 38.80114981979909,
+        "absoluteMargin": 38.80114981979909,
+        "total": 7.936757556837065,
+        "absoluteTotal": 7.936757556837065
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
+    },
+    {
+      "gameId": "2026-11-07-IOWA-NORTHWESTERN",
+      "awayTeam": "Iowa",
+      "homeTeam": "Northwestern",
+      "kickoff": "2026-11-08T00:30:00Z",
+      "projectionDigest": "782aaede186a50fbf6af300cac4b335d3524adddb6ed62005fa3fb1997a5083c",
+      "projection": {
+        "awayPoints": 20.61268952557868,
+        "homePoints": 25.690685540969717,
+        "marginHome": 5.077996015391037,
+        "spreadHome": -5.077996015391037,
+        "total": 46.3033750665484,
+        "homeWinProbability": 62.57298921460775,
+        "winner": "Northwestern"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 24,
+        "homeScore": 10,
+        "marginHome": -14,
+        "total": 34,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 19.077996015391037,
+        "absoluteMargin": 19.077996015391037,
+        "total": 12.303375066548398,
+        "absoluteTotal": 12.303375066548398
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
+    },
+    {
+      "gameId": "2026-11-07-LOUISVILLE-GEORGIATECH",
+      "awayTeam": "Louisville",
+      "homeTeam": "Georgia Tech",
+      "kickoff": "2026-11-08T00:30:00Z",
+      "projectionDigest": "9c72ea743e4e3ce0ad360ae5cb00ddbdd1303c7bbe32ccc7ff0e08909e1179cf",
+      "projection": {
+        "awayPoints": 37.367455677084195,
+        "homePoints": 26.188177844126532,
+        "marginHome": -11.179277832957663,
+        "spreadHome": 11.179277832957663,
+        "total": 63.55563352121072,
+        "homeWinProbability": 24.017871362590874,
+        "winner": "Louisville"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 44,
+        "homeScore": 17,
+        "marginHome": -27,
+        "total": 61,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 15.820722167042337,
+        "absoluteMargin": 15.820722167042337,
+        "total": 2.555633521210723,
+        "absoluteTotal": 2.555633521210723
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-MIAMI-NOTREDAME",
+      "awayTeam": "Miami",
+      "homeTeam": "Notre Dame",
+      "kickoff": "2026-11-08T00:30:00Z",
+      "projectionDigest": "4426ad6d6bacd81f7a46e5a7ebc1cef1f38f642f4bbc3ebdc3e5d27d8fd053f3",
+      "projection": {
+        "awayPoints": 27.95811260221906,
+        "homePoints": 33.41540857044648,
+        "marginHome": 5.45729596822742,
+        "spreadHome": -5.45729596822742,
+        "total": 61.37352117266554,
+        "homeWinProbability": 63.47683589564572,
+        "winner": "Notre Dame"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 24,
+        "homeScore": 31,
+        "marginHome": 7,
+        "total": 55,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -1.5427040317725798,
+        "absoluteMargin": 1.5427040317725798,
+        "total": 6.373521172665541,
+        "absoluteTotal": 6.373521172665541
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-MICHIGANSTATE-MICHIGAN",
+      "awayTeam": "Michigan State",
+      "homeTeam": "Michigan",
+      "kickoff": "2026-11-08T00:30:00Z",
+      "projectionDigest": "16e322df2c273698defa5a1d55864f248c44b466a704c8dea6db601364a3dd44",
+      "projection": {
+        "awayPoints": 16.64605621334682,
+        "homePoints": 24.327398707607617,
+        "marginHome": 7.681342494260797,
+        "spreadHome": -7.681342494260797,
+        "total": 40.97345492095444,
+        "homeWinProbability": 68.61296947373614,
+        "winner": "Michigan"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 15,
+        "homeScore": 6,
+        "marginHome": -9,
+        "total": 21,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 16.681342494260797,
+        "absoluteMargin": 16.681342494260797,
+        "total": 19.97345492095444,
+        "absoluteTotal": 19.97345492095444
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
+    },
+    {
+      "gameId": "2026-11-07-OKLAHOMA-FLORIDA",
+      "awayTeam": "Oklahoma",
+      "homeTeam": "Florida",
+      "kickoff": "2026-11-08T00:45:00Z",
+      "projectionDigest": "d5021416730ffb0a58f3b54d47993c6577051d8c8385cd1c0684fd71e1c24c2e",
+      "projection": {
+        "awayPoints": 22.838943193980448,
+        "homePoints": 28.90773267486066,
+        "marginHome": 6.068789480880213,
+        "spreadHome": -6.068789480880213,
+        "total": 51.74667586884111,
+        "homeWinProbability": 64.91815717489075,
+        "winner": "Florida"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 23,
+        "homeScore": 7,
+        "marginHome": -16,
+        "total": 30,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 22.068789480880213,
+        "absoluteMargin": 22.068789480880213,
+        "total": 21.74667586884111,
+        "absoluteTotal": 21.74667586884111
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
+    },
+    {
+      "gameId": "2026-11-07-LIBERTY-NEWMEXICOSTATE",
+      "awayTeam": "Liberty",
+      "homeTeam": "New Mexico State",
+      "kickoff": "2026-11-08T01:00:00Z",
+      "projectionDigest": "dd2599467596ff5224567d837e9baa8ebd24f20003ae04c0f03a90b6a772766a",
+      "projection": {
+        "awayPoints": 31.803844403933336,
+        "homePoints": 14.156017813150601,
+        "marginHome": -17.647826590782735,
+        "spreadHome": 17.647826590782735,
+        "total": 45.95986221708394,
+        "homeWinProbability": 13.262335402753866,
+        "winner": "Liberty"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 30,
+        "homeScore": 14,
+        "marginHome": -16,
+        "total": 44,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -1.647826590782735,
+        "absoluteMargin": 1.647826590782735,
+        "total": 1.9598622170839377,
+        "absoluteTotal": 1.9598622170839377
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-FRESNOSTATE-UTAHSTATE",
+      "awayTeam": "Fresno State",
+      "homeTeam": "Utah State",
+      "kickoff": "2026-11-08T02:30:00Z",
+      "projectionDigest": "66e5af5694df5188901946855b9e6e7d68e20bc956d23536d5a5016e3a40d417",
+      "projection": {
+        "awayPoints": 19.701698394823296,
+        "homePoints": 18.355338361132198,
+        "marginHome": -1.3463600336910986,
+        "spreadHome": 1.3463600336910986,
+        "total": 38.057036755955494,
+        "homeWinProbability": 46.61333588350693,
+        "winner": "Fresno State"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 10,
+        "homeScore": 17,
+        "marginHome": 7,
+        "total": 27,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -8.346360033691099,
+        "absoluteMargin": 8.346360033691099,
+        "total": 11.057036755955494,
+        "absoluteTotal": 11.057036755955494
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
+    },
+    {
+      "gameId": "2026-11-07-HAWAII-UTEP",
+      "awayTeam": "Hawai'i",
+      "homeTeam": "UTEP",
+      "kickoff": "2026-11-08T02:30:00Z",
+      "projectionDigest": "dfaa0963debeb3a0d4ba6ae40beb10b858310f78e7dd8e3572808d009ce0472a",
+      "projection": {
+        "awayPoints": 28.699181226303956,
+        "homePoints": 19.93677328500366,
+        "marginHome": -8.762407941300296,
+        "spreadHome": 8.762407941300296,
+        "total": 48.63595451130762,
+        "homeWinProbability": 29.007859368923018,
+        "winner": "Hawai'i"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 17,
+        "homeScore": 14,
+        "marginHome": -3,
+        "total": 31,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -5.762407941300296,
+        "absoluteMargin": 5.762407941300296,
+        "total": 17.635954511307617,
+        "absoluteTotal": 17.635954511307617
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-WESTVIRGINIA-TEXASTECH",
+      "awayTeam": "West Virginia",
+      "homeTeam": "Texas Tech",
+      "kickoff": "2026-11-08T02:30:00Z",
+      "projectionDigest": "1911ac111fdcd286fd3ae0b9fecf76badcf5da17412e10def03f66f6e9616a8e",
+      "projection": {
+        "awayPoints": 27.400296477546227,
+        "homePoints": 40.71543901496981,
+        "marginHome": 13.315142537423583,
+        "spreadHome": -13.315142537423583,
+        "total": 68.11573549251604,
+        "homeWinProbability": 79.97030760891357,
+        "winner": "Texas Tech"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 48,
+        "homeScore": 53,
+        "marginHome": 5,
+        "total": 101,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 8.315142537423583,
+        "absoluteMargin": 8.315142537423583,
+        "total": -32.88426450748396,
+        "absoluteTotal": 32.88426450748396
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
+    },
+    {
+      "gameId": "2026-11-07-TEXASSTATE-OREGONSTATE",
+      "awayTeam": "Texas State",
+      "homeTeam": "Oregon State",
+      "kickoff": "2026-11-08T03:30:00Z",
+      "projectionDigest": "3664e33456786865fee7a8added81f1fd2361e2e78d95e111160eb50d0484cc3",
+      "projection": {
+        "awayPoints": 30.044491558550646,
+        "homePoints": 39.20716478755409,
+        "marginHome": 9.162673229003445,
+        "spreadHome": -9.162673229003445,
+        "total": 69.25165634610474,
+        "homeWinProbability": 71.8510770466218,
+        "winner": "Oregon State"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 42,
+        "homeScore": 21,
+        "marginHome": -21,
+        "total": 63,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 30.162673229003445,
+        "absoluteMargin": 30.162673229003445,
+        "total": 6.251656346104738,
+        "absoluteTotal": 6.251656346104738
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
+    },
+    {
+      "gameId": "2026-11-07-WYOMING-UNLV",
+      "awayTeam": "Wyoming",
+      "homeTeam": "UNLV",
+      "kickoff": "2026-11-08T03:30:00Z",
+      "projectionDigest": "b4f3b4f1067401a53055a1b5bcab783f97eab20c54637f6205e0c51ee439868e",
+      "projection": {
+        "awayPoints": 18.63849848885907,
+        "homePoints": 23.672715273794225,
+        "marginHome": 5.034216784935154,
+        "spreadHome": -5.034216784935154,
+        "total": 42.311213762653296,
+        "homeWinProbability": 62.46820905164987,
+        "winner": "UNLV"
+      },
+      "status": "FINAL",
+      "final": {
+        "awayScore": 41,
+        "homeScore": 35,
+        "marginHome": -6,
+        "total": 76,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 11.034216784935154,
+        "absoluteMargin": 11.034216784935154,
+        "total": -33.688786237346704,
+        "absoluteTotal": 33.688786237346704
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
+    }
+  ],
+  "policy": "Research-only prospective performance. Never merge these results into the established canonical record or use postgame outcomes to rewrite the frozen projections."
+}
