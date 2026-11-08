@@ -2,7 +2,7 @@
   "league": "nfl",
   "week": 9,
   "canonicalInfluence": false,
-  "updatedAt": "2026-11-07T12:23:05.274154+00:00",
+  "updatedAt": "2026-11-08T15:20:03.154977+00:00",
   "policy": "Official reports are context, not final-inactive clearance. No personnel points are applied.",
   "games": [
     {
@@ -92,16 +92,16 @@
     },
     {
       "gameId": "2026_09_CLE_NO",
-      "source": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
-      "observedAt": "2026-11-07T12:21:43.171415+00:00",
+      "source": "https://www.clevelandbrowns.com/news/shedeur-sanders-to-start-week-9-against-the-saints",
+      "observedAt": "2026-11-08T15:20:02.877528+00:00",
       "reportType": "OFFICIAL_DESIGNATION_REPORT_NOT_FINAL_INACTIVES",
       "finalAvailabilityVerified": false,
-      "qbChange": null,
-      "summary": "QB_AVAILABILITY_REQUIRES_REVIEW; no validated personnel-point adjustment is applied.",
+      "qbChange": true,
+      "summary": "Cleveland announced Shedeur Sanders as the starter while Deshaun Watson is in concussion protocol. New Orleans activated WR Jordyn Tyson and LT Kelvin Banks Jr. from injured reserve.",
       "status": "HOLD",
       "blockers": [
         "FINAL_AVAILABILITY_UNVERIFIED",
-        "QB_STATE_NOT_FULLY_VERIFIED"
+        "QB_CHANGE_NOT_REPRESENTED_IN_FORECAST"
       ],
       "personnelAdjusted": false,
       "baselineResearchDisplayAllowed": true,
@@ -194,12 +194,12 @@
     },
     {
       "gameId": "2026_09_ARI_SEA",
-      "source": "https://www.seahawks.com/news/what-to-watch-in-the-seahawks-week-9-game-vs-the-cardinals",
-      "observedAt": "2026-11-07T12:21:56.438404+00:00",
+      "source": "https://www.seahawks.com/news/week-9-injury-report-cardinals-at-seahawks",
+      "observedAt": "2026-11-08T15:20:02.152195+00:00",
       "reportType": "OFFICIAL_DESIGNATION_REPORT_NOT_FINAL_INACTIVES",
       "finalAvailabilityVerified": false,
       "qbChange": true,
-      "summary": "QB_CHANGE_NOT_REPRESENTED_IN_FORECAST: Seattle plans Drew Lock for injured Sam Darnold; Arizona changed to Gardner Minshew. SEATTLE_PERSONNEL_BREAK: team report lists Charles Cross, Quenton Nelson, Leonard Williams, Uchenna Nwosu and Rashid Shaheed out. QB_AVAILABILITY_REQUIRES_REVIEW; no validated personnel-point adjustment is applied.",
+      "summary": "Drew Lock starts for Seattle in place of Sam Darnold. Gardner Minshew starts for Arizona. Seattle lists Charles Cross and Quenton Nelson out.",
       "status": "HOLD",
       "blockers": [
         "FINAL_AVAILABILITY_UNVERIFIED",
@@ -228,16 +228,16 @@
     },
     {
       "gameId": "2026_09_BUF_MIN",
-      "source": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
-      "observedAt": "2026-11-07T12:21:56.506434+00:00",
+      "source": "https://www.vikings.com/news/bills-injury-report-week-9-2026-nfl-season",
+      "observedAt": "2026-11-08T15:17:38.887638+00:00",
       "reportType": "OFFICIAL_DESIGNATION_REPORT_NOT_FINAL_INACTIVES",
       "finalAvailabilityVerified": false,
-      "qbChange": null,
-      "summary": "Official designations captured; final inactives and starting-lineup verification remain pending.",
+      "qbChange": true,
+      "summary": "Carson Wentz starts for Minnesota. Kyler Murray is out with a hamstring injury. Buffalo lists LT Dion Dawkins questionable.",
       "status": "HOLD",
       "blockers": [
         "FINAL_AVAILABILITY_UNVERIFIED",
-        "QB_STATE_NOT_FULLY_VERIFIED"
+        "QB_CHANGE_NOT_REPRESENTED_IN_FORECAST"
       ],
       "personnelAdjusted": false,
       "baselineResearchDisplayAllowed": true,
