@@ -1,0 +1,1572 @@
+{
+  "week": 9,
+  "season": 2026,
+  "updatedAt": "2026-11-08T15:40:53.394982+00:00",
+  "role": "PREGAME_CONTEXT_ONLY",
+  "canonicalInfluence": false,
+  "forecastChanges": 0,
+  "excludedAlreadyStartedGameIds": [
+    "2026_09_JAX_BAL",
+    "2026_09_CIN_ATL"
+  ],
+  "games": [
+    {
+      "gameId": "2026_09_DEN_CAR",
+      "eventId": "401873041",
+      "away": "DEN",
+      "home": "CAR",
+      "kickoffUTC": "2026-11-08T18:00:00+00:00",
+      "venue": "Bank of America Stadium",
+      "marketReference": {
+        "spreadHome": 2.5,
+        "total": 44.5,
+        "provider": "DraftKings",
+        "executionVerified": false,
+        "eligibleForGrading": false
+      },
+      "marketObservedAt": "2026-11-08T15:40:18.785705+00:00",
+      "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873041",
+      "officials": [
+        {
+          "displayName": "Alan Eck",
+          "position": "Referee"
+        }
+      ],
+      "officialsSource": "https://www.footballzebras.com/2026/11/week-9-referee-assignments-2026/",
+      "injuryDesignations": {
+        "CAR": [
+          "OUT: G Damien Lewis (knee), OLB Jaelan Phillips (hamstring), LB Bobby Okereke (foot), CB Will Lee III (hamstring)",
+          "QUESTIONABLE: OL Corey Bullock (quad), OL Brady Christensen (hamstring), OL Torricelli Simpkins III (ankle)"
+        ],
+        "DEN": [
+          "OUT: DL Eyioma Uwazurike (shoulder), CB Kris Abrams-Draine (ankle), S Brandon Jones (hamstring)",
+          "QUESTIONABLE: WR Pat Bryant (ankle), OLB Dondrea Tillman (hip), S Talanoa Hufanga (ankle)"
+        ]
+      },
+      "designationSource": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+      "inactives": {},
+      "finalInactivesPosted": false,
+      "inactivesSource": "https://www.nfl.com/news/nfl-week-9-inactives-players-ruled-out-sunday-2026-season",
+      "weather": {
+        "source": "https://api.weather.gov/gridpoints/GSP/119,65/forecast/hourly",
+        "issuedAt": "2026-11-08T11:43:06+00:00",
+        "observedAt": "2026-11-08T15:40:18.679936+00:00",
+        "coordinateBasis": "Approximate venue postal centroid",
+        "hours": [
+          {
+            "startTime": "2026-11-08T13:00:00-05:00",
+            "endTime": "2026-11-08T14:00:00-05:00",
+            "temperature": 64,
+            "temperatureUnit": "F",
+            "windSpeed": "6 mph",
+            "windDirection": "WSW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Sunny"
+          },
+          {
+            "startTime": "2026-11-08T14:00:00-05:00",
+            "endTime": "2026-11-08T15:00:00-05:00",
+            "temperature": 65,
+            "temperatureUnit": "F",
+            "windSpeed": "7 mph",
+            "windDirection": "WSW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Sunny"
+          },
+          {
+            "startTime": "2026-11-08T15:00:00-05:00",
+            "endTime": "2026-11-08T16:00:00-05:00",
+            "temperature": 65,
+            "temperatureUnit": "F",
+            "windSpeed": "7 mph",
+            "windDirection": "WSW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Sunny"
+          },
+          {
+            "startTime": "2026-11-08T16:00:00-05:00",
+            "endTime": "2026-11-08T17:00:00-05:00",
+            "temperature": 65,
+            "temperatureUnit": "F",
+            "windSpeed": "7 mph",
+            "windDirection": "WSW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Sunny"
+          }
+        ]
+      },
+      "roofStatus": "Venue exposure and game-time conditions pending review",
+      "releaseStatus": "HOLD"
+    },
+    {
+      "gameId": "2026_09_DAL_IND",
+      "eventId": "401873040",
+      "away": "DAL",
+      "home": "IND",
+      "kickoffUTC": "2026-11-08T18:00:00+00:00",
+      "venue": "Lucas Oil Stadium",
+      "marketReference": {
+        "spreadHome": 4.5,
+        "total": 51.5,
+        "provider": "DraftKings",
+        "executionVerified": false,
+        "eligibleForGrading": false
+      },
+      "marketObservedAt": "2026-11-08T15:40:18.751987+00:00",
+      "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873040",
+      "officials": [
+        {
+          "displayName": "Clay Martin",
+          "position": "Referee"
+        }
+      ],
+      "officialsSource": "https://www.footballzebras.com/2026/11/week-9-referee-assignments-2026/",
+      "injuryDesignations": {
+        "IND": [
+          "OUT: LB Akeem Davis-Gaither (knee), CB Justin Walley (knee), S A.J. Haulcy (ankle)",
+          "QUESTIONABLE: OT Jalen Travis (thumb, hamstring)"
+        ],
+        "DAL": [
+          "OUT: WR KaVontae Turpin (ribs), LB Malachi Lawrence (ankle)",
+          "QUESTIONABLE: WR George Pickens (hamstring), TE Jake Ferguson (ankle), TE Luke Schoonmaker (groin), DT Jonathan Bullard (calf), LB Marist Liufau (forearm), LB DeMarvion Overshown (hamstring/back), CB Joey Porter Jr. (ankle)"
+        ]
+      },
+      "designationSource": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+      "inactives": {},
+      "finalInactivesPosted": false,
+      "inactivesSource": "https://www.nfl.com/news/nfl-week-9-inactives-players-ruled-out-sunday-2026-season",
+      "weather": {
+        "source": "https://api.weather.gov/gridpoints/IND/58,68/forecast/hourly",
+        "issuedAt": "2026-11-08T15:15:27+00:00",
+        "observedAt": "2026-11-08T15:40:18.751697+00:00",
+        "coordinateBasis": "Approximate venue postal centroid",
+        "hours": [
+          {
+            "startTime": "2026-11-08T13:00:00-05:00",
+            "endTime": "2026-11-08T14:00:00-05:00",
+            "temperature": 54,
+            "temperatureUnit": "F",
+            "windSpeed": "13 mph",
+            "windDirection": "SW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Chance Light Rain"
+          },
+          {
+            "startTime": "2026-11-08T14:00:00-05:00",
+            "endTime": "2026-11-08T15:00:00-05:00",
+            "temperature": 55,
+            "temperatureUnit": "F",
+            "windSpeed": "13 mph",
+            "windDirection": "SW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Chance Light Rain"
+          },
+          {
+            "startTime": "2026-11-08T15:00:00-05:00",
+            "endTime": "2026-11-08T16:00:00-05:00",
+            "temperature": 56,
+            "temperatureUnit": "F",
+            "windSpeed": "13 mph",
+            "windDirection": "WSW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Chance Light Rain"
+          },
+          {
+            "startTime": "2026-11-08T16:00:00-05:00",
+            "endTime": "2026-11-08T17:00:00-05:00",
+            "temperature": 57,
+            "temperatureUnit": "F",
+            "windSpeed": "12 mph",
+            "windDirection": "WSW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Chance Light Rain"
+          }
+        ]
+      },
+      "roofStatus": "Retractable roof decision pending",
+      "releaseStatus": "HOLD"
+    },
+    {
+      "gameId": "2026_09_NYJ_KC",
+      "eventId": "401873045",
+      "away": "NYJ",
+      "home": "KC",
+      "kickoffUTC": "2026-11-08T18:00:00+00:00",
+      "venue": "Arrowhead Stadium",
+      "marketReference": {
+        "spreadHome": -9.5,
+        "total": 47.5,
+        "provider": "DraftKings",
+        "executionVerified": false,
+        "eligibleForGrading": false
+      },
+      "marketObservedAt": "2026-11-08T15:40:18.851705+00:00",
+      "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873045",
+      "officials": [
+        {
+          "displayName": "Adrian Hill",
+          "position": "Referee"
+        }
+      ],
+      "officialsSource": "https://www.footballzebras.com/2026/11/week-9-referee-assignments-2026/",
+      "injuryDesignations": {
+        "KC": [
+          "OUT: DT Omarr Norman-Lott (knee), DL Peter Woods (neck), CB Mansoor Delane (shoulder)",
+          "QUESTIONABLE: WR Nikko Remigio (hip)"
+        ],
+        "NYJ": [
+          "OUT: WR Garrett Wilson (concussion), LB Joseph Ossai (ankle),\u00a0LB Trevin Wallace (groin),\u00a0CB Nahshon Wright (back), S VJ Payne (knee)",
+          "QUESTIONABLE: DL Harrison Phillips (ankle)"
+        ]
+      },
+      "designationSource": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+      "inactives": {},
+      "finalInactivesPosted": false,
+      "inactivesSource": "https://www.nfl.com/news/nfl-week-9-inactives-players-ruled-out-sunday-2026-season",
+      "weather": {
+        "source": "https://api.weather.gov/gridpoints/EAX/47,48/forecast/hourly",
+        "issuedAt": "2026-11-08T12:31:28+00:00",
+        "observedAt": "2026-11-08T15:40:18.839851+00:00",
+        "coordinateBasis": "Approximate venue postal centroid",
+        "hours": [
+          {
+            "startTime": "2026-11-08T12:00:00-06:00",
+            "endTime": "2026-11-08T13:00:00-06:00",
+            "temperature": 61,
+            "temperatureUnit": "F",
+            "windSpeed": "6 mph",
+            "windDirection": "WNW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Sunny"
+          },
+          {
+            "startTime": "2026-11-08T13:00:00-06:00",
+            "endTime": "2026-11-08T14:00:00-06:00",
+            "temperature": 63,
+            "temperatureUnit": "F",
+            "windSpeed": "6 mph",
+            "windDirection": "WNW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Sunny"
+          },
+          {
+            "startTime": "2026-11-08T14:00:00-06:00",
+            "endTime": "2026-11-08T15:00:00-06:00",
+            "temperature": 64,
+            "temperatureUnit": "F",
+            "windSpeed": "6 mph",
+            "windDirection": "WNW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Sunny"
+          },
+          {
+            "startTime": "2026-11-08T15:00:00-06:00",
+            "endTime": "2026-11-08T16:00:00-06:00",
+            "temperature": 65,
+            "temperatureUnit": "F",
+            "windSpeed": "6 mph",
+            "windDirection": "NW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Sunny"
+          }
+        ]
+      },
+      "roofStatus": "Venue exposure and game-time conditions pending review",
+      "releaseStatus": "HOLD"
+    },
+    {
+      "gameId": "2026_09_DET_MIA",
+      "eventId": "401873042",
+      "away": "DET",
+      "home": "MIA",
+      "kickoffUTC": "2026-11-08T18:00:00+00:00",
+      "venue": "Hard Rock Stadium",
+      "marketReference": {
+        "spreadHome": 6.5,
+        "total": 49.5,
+        "provider": "DraftKings",
+        "executionVerified": false,
+        "eligibleForGrading": false
+      },
+      "marketObservedAt": "2026-11-08T15:40:22.599673+00:00",
+      "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873042",
+      "officials": [
+        {
+          "displayName": "Land Clark",
+          "position": "Referee"
+        }
+      ],
+      "officialsSource": "https://www.footballzebras.com/2026/11/week-9-referee-assignments-2026/",
+      "injuryDesignations": {
+        "MIA": [
+          "QUESTIONABLE: RB Kaytron Allen (quad), RB Jaylen Wright (quad), EDGE Malik Herring (neck)"
+        ],
+        "DET": [
+          "OUT: C Cade Mays (ankle), EDGE D.J. Wonnum (concussion), LB Jack Campbell (neck), CB D.J. Reed (hip), S Kerby Joseph (knee)",
+          "QUESTIONABLE: RB Jacob Saylors (neck), RB Sione Vaki (ankle), WR Amon-Ra St. Brown (rib)"
+        ]
+      },
+      "designationSource": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+      "inactives": {},
+      "finalInactivesPosted": false,
+      "inactivesSource": "https://www.nfl.com/news/nfl-week-9-inactives-players-ruled-out-sunday-2026-season",
+      "weather": {
+        "source": "https://api.weather.gov/gridpoints/MFL/107,58/forecast/hourly",
+        "issuedAt": "2026-11-08T08:32:12+00:00",
+        "observedAt": "2026-11-08T15:40:22.672234+00:00",
+        "coordinateBasis": "Approximate venue postal centroid",
+        "hours": [
+          {
+            "startTime": "2026-11-08T13:00:00-05:00",
+            "endTime": "2026-11-08T14:00:00-05:00",
+            "temperature": 83,
+            "temperatureUnit": "F",
+            "windSpeed": "5 mph",
+            "windDirection": "N",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 2
+            },
+            "shortForecast": "Mostly Sunny"
+          },
+          {
+            "startTime": "2026-11-08T14:00:00-05:00",
+            "endTime": "2026-11-08T15:00:00-05:00",
+            "temperature": 83,
+            "temperatureUnit": "F",
+            "windSpeed": "6 mph",
+            "windDirection": "N",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 3
+            },
+            "shortForecast": "Mostly Sunny"
+          },
+          {
+            "startTime": "2026-11-08T15:00:00-05:00",
+            "endTime": "2026-11-08T16:00:00-05:00",
+            "temperature": 83,
+            "temperatureUnit": "F",
+            "windSpeed": "6 mph",
+            "windDirection": "N",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 3
+            },
+            "shortForecast": "Mostly Sunny"
+          },
+          {
+            "startTime": "2026-11-08T16:00:00-05:00",
+            "endTime": "2026-11-08T17:00:00-05:00",
+            "temperature": 82,
+            "temperatureUnit": "F",
+            "windSpeed": "7 mph",
+            "windDirection": "N",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 2
+            },
+            "shortForecast": "Mostly Sunny"
+          }
+        ]
+      },
+      "roofStatus": "Venue exposure and game-time conditions pending review",
+      "releaseStatus": "HOLD"
+    },
+    {
+      "gameId": "2026_09_CLE_NO",
+      "eventId": "401873039",
+      "away": "CLE",
+      "home": "NO",
+      "kickoffUTC": "2026-11-08T18:00:00+00:00",
+      "venue": "Caesars Superdome",
+      "marketReference": {
+        "spreadHome": -3.5,
+        "total": 42.5,
+        "provider": "DraftKings",
+        "executionVerified": false,
+        "eligibleForGrading": false
+      },
+      "marketObservedAt": "2026-11-08T15:40:22.643950+00:00",
+      "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873039",
+      "officials": [
+        {
+          "displayName": "Shawn Hochuli",
+          "position": "Referee"
+        }
+      ],
+      "officialsSource": "https://www.footballzebras.com/2026/11/week-9-referee-assignments-2026/",
+      "injuryDesignations": {
+        "NO": [
+          "OUT: RB CJ Donaldson (shoulder, concussion)",
+          "QUESTIONABLE: WR Jordyn Tyson (hamstring), OT Kelvin Banks Jr. (ankle), OT Asim Richards (thumb), CB Martin Emerson (shin)"
+        ],
+        "CLE": [
+          "OUT: DT Maliek Collins (elbow, illness)",
+          "QUESTIONABLE: QB Deshaun Watson (concussion)"
+        ]
+      },
+      "designationSource": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+      "inactives": {},
+      "finalInactivesPosted": false,
+      "inactivesSource": "https://www.nfl.com/news/nfl-week-9-inactives-players-ruled-out-sunday-2026-season",
+      "weather": {
+        "source": "https://api.weather.gov/gridpoints/LIX/67,89/forecast/hourly",
+        "issuedAt": "2026-11-08T11:23:50+00:00",
+        "observedAt": "2026-11-08T15:40:22.839690+00:00",
+        "coordinateBasis": "Approximate venue postal centroid",
+        "hours": [
+          {
+            "startTime": "2026-11-08T12:00:00-06:00",
+            "endTime": "2026-11-08T13:00:00-06:00",
+            "temperature": 65,
+            "temperatureUnit": "F",
+            "windSpeed": "5 mph",
+            "windDirection": "N",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Partly Sunny"
+          },
+          {
+            "startTime": "2026-11-08T13:00:00-06:00",
+            "endTime": "2026-11-08T14:00:00-06:00",
+            "temperature": 67,
+            "temperatureUnit": "F",
+            "windSpeed": "5 mph",
+            "windDirection": "N",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Mostly Sunny"
+          },
+          {
+            "startTime": "2026-11-08T14:00:00-06:00",
+            "endTime": "2026-11-08T15:00:00-06:00",
+            "temperature": 67,
+            "temperatureUnit": "F",
+            "windSpeed": "5 mph",
+            "windDirection": "N",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Partly Sunny"
+          },
+          {
+            "startTime": "2026-11-08T15:00:00-06:00",
+            "endTime": "2026-11-08T16:00:00-06:00",
+            "temperature": 69,
+            "temperatureUnit": "F",
+            "windSpeed": "5 mph",
+            "windDirection": "N",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Partly Sunny"
+          }
+        ]
+      },
+      "roofStatus": "Venue exposure and game-time conditions pending review",
+      "releaseStatus": "HOLD",
+      "confirmedQbChange": "Cleveland announced Shedeur Sanders as the starter while Deshaun Watson is in concussion protocol. New Orleans activated WR Jordyn Tyson and LT Kelvin Banks Jr. from injured reserve.",
+      "qbSource": "https://www.clevelandbrowns.com/news/shedeur-sanders-to-start-week-9-against-the-saints"
+    },
+    {
+      "gameId": "2026_09_NYG_PHI",
+      "eventId": "401873044",
+      "away": "NYG",
+      "home": "PHI",
+      "kickoffUTC": "2026-11-08T18:00:00+00:00",
+      "venue": "Lincoln Financial Field",
+      "marketReference": {
+        "spreadHome": 3.0,
+        "total": 38.5,
+        "provider": "DraftKings",
+        "executionVerified": false,
+        "eligibleForGrading": false
+      },
+      "marketObservedAt": "2026-11-08T15:40:22.667676+00:00",
+      "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873044",
+      "officials": [
+        {
+          "displayName": "Bill Vinovich",
+          "position": "Referee"
+        }
+      ],
+      "officialsSource": "https://www.footballzebras.com/2026/11/week-9-referee-assignments-2026/",
+      "injuryDesignations": {
+        "PHI": [
+          "OUT: WR Britain Covey (knee), WR DeVonta Smith (hamstring), WR Dontayvion Wicks (ankle), LB Jihaad Campbell (hamstring/quad), CB Jonathan Jones (hamstring), DB Michael Carter II (abdomen)",
+          "QUESTIONABLE: QB Tanner McKee (rib)"
+        ],
+        "NYG": [
+          "DOUBTFUL: RB Cam Skattebo (hamstring)",
+          "QUESTIONABLE: WR Charlie Jones (hand)"
+        ]
+      },
+      "designationSource": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+      "inactives": {},
+      "finalInactivesPosted": false,
+      "inactivesSource": "https://www.nfl.com/news/nfl-week-9-inactives-players-ruled-out-sunday-2026-season",
+      "weather": {
+        "source": "https://api.weather.gov/gridpoints/PHI/50,77/forecast/hourly",
+        "issuedAt": "2026-11-08T13:55:27+00:00",
+        "observedAt": "2026-11-08T15:40:23.091696+00:00",
+        "coordinateBasis": "Approximate venue postal centroid",
+        "hours": [
+          {
+            "startTime": "2026-11-08T13:00:00-05:00",
+            "endTime": "2026-11-08T14:00:00-05:00",
+            "temperature": 60,
+            "temperatureUnit": "F",
+            "windSpeed": "10 mph",
+            "windDirection": "W",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Sunny"
+          },
+          {
+            "startTime": "2026-11-08T14:00:00-05:00",
+            "endTime": "2026-11-08T15:00:00-05:00",
+            "temperature": 61,
+            "temperatureUnit": "F",
+            "windSpeed": "10 mph",
+            "windDirection": "W",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Sunny"
+          },
+          {
+            "startTime": "2026-11-08T15:00:00-05:00",
+            "endTime": "2026-11-08T16:00:00-05:00",
+            "temperature": 61,
+            "temperatureUnit": "F",
+            "windSpeed": "10 mph",
+            "windDirection": "W",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Sunny"
+          },
+          {
+            "startTime": "2026-11-08T16:00:00-05:00",
+            "endTime": "2026-11-08T17:00:00-05:00",
+            "temperature": 60,
+            "temperatureUnit": "F",
+            "windSpeed": "5 mph",
+            "windDirection": "W",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Sunny"
+          }
+        ]
+      },
+      "roofStatus": "Venue exposure and game-time conditions pending review",
+      "releaseStatus": "HOLD"
+    },
+    {
+      "gameId": "2026_09_LA_WAS",
+      "eventId": "401873043",
+      "away": "LA",
+      "home": "WAS",
+      "kickoffUTC": "2026-11-08T18:00:00+00:00",
+      "venue": "Northwest Stadium",
+      "marketReference": {
+        "spreadHome": 4.5,
+        "total": 47.5,
+        "provider": "DraftKings",
+        "executionVerified": false,
+        "eligibleForGrading": false
+      },
+      "marketObservedAt": "2026-11-08T15:40:22.699618+00:00",
+      "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873043",
+      "officials": [
+        {
+          "displayName": "John Hussey",
+          "position": "Referee"
+        }
+      ],
+      "officialsSource": "https://www.footballzebras.com/2026/11/week-9-referee-assignments-2026/",
+      "injuryDesignations": {
+        "WAS": [
+          "OUT: WR Dyami Brown (calf), WR Treylon Burks (foot)"
+        ],
+        "LA": [
+          "OUT: TE Terrance Ferguson (ankle/hamstring), CB Jaylen Watson (shoulder)",
+          "DOUBTFUL: LS Joe Cardona (ankle)",
+          "QUESTIONABLE: WR Jordan Whittington (back), TE Colby Parkinson (ribs), LB Grant Stuard (hamstring), CB Trent McDuffie (back), S Kamren Curl (foot)"
+        ]
+      },
+      "designationSource": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+      "inactives": {},
+      "finalInactivesPosted": false,
+      "inactivesSource": "https://www.nfl.com/news/nfl-week-9-inactives-players-ruled-out-sunday-2026-season",
+      "weather": {
+        "source": "https://api.weather.gov/gridpoints/LWX/102,73/forecast/hourly",
+        "issuedAt": "2026-11-08T14:36:40+00:00",
+        "observedAt": "2026-11-08T15:40:22.575857+00:00",
+        "coordinateBasis": "Approximate venue postal centroid",
+        "hours": [
+          {
+            "startTime": "2026-11-08T13:00:00-05:00",
+            "endTime": "2026-11-08T14:00:00-05:00",
+            "temperature": 61,
+            "temperatureUnit": "F",
+            "windSpeed": "9 mph",
+            "windDirection": "W",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Sunny"
+          },
+          {
+            "startTime": "2026-11-08T14:00:00-05:00",
+            "endTime": "2026-11-08T15:00:00-05:00",
+            "temperature": 62,
+            "temperatureUnit": "F",
+            "windSpeed": "9 mph",
+            "windDirection": "W",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Sunny"
+          },
+          {
+            "startTime": "2026-11-08T15:00:00-05:00",
+            "endTime": "2026-11-08T16:00:00-05:00",
+            "temperature": 62,
+            "temperatureUnit": "F",
+            "windSpeed": "8 mph",
+            "windDirection": "SW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Sunny"
+          },
+          {
+            "startTime": "2026-11-08T16:00:00-05:00",
+            "endTime": "2026-11-08T17:00:00-05:00",
+            "temperature": 63,
+            "temperatureUnit": "F",
+            "windSpeed": "7 mph",
+            "windDirection": "SW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Sunny"
+          }
+        ]
+      },
+      "roofStatus": "Venue exposure and game-time conditions pending review",
+      "releaseStatus": "HOLD"
+    },
+    {
+      "gameId": "2026_09_HOU_LAC",
+      "eventId": "401873046",
+      "away": "HOU",
+      "home": "LAC",
+      "kickoffUTC": "2026-11-08T21:05:00+00:00",
+      "venue": "SoFi Stadium",
+      "marketReference": {
+        "spreadHome": 5.5,
+        "total": 40.5,
+        "provider": "DraftKings",
+        "executionVerified": false,
+        "eligibleForGrading": false
+      },
+      "marketObservedAt": "2026-11-08T15:40:22.611141+00:00",
+      "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873046",
+      "officials": [
+        {
+          "displayName": "Alex Moore",
+          "position": "Referee"
+        }
+      ],
+      "officialsSource": "https://www.footballzebras.com/2026/11/week-9-referee-assignments-2026/",
+      "injuryDesignations": {
+        "LAC": [
+          "OUT: CB Deane Leonard (concussion), S Kendall Williamson (calf)",
+          "QUESTIONABLE: WR Brenen Thompson (quad/hamstring), TE David Njoku (fibula), G Kayode Awosika (fibula), LB Denzel Perryman (pectoral)"
+        ],
+        "HOU": [
+          "OUT: RB David Montgomery (groin), S Reed Blankenship (concussion/hand)"
+        ]
+      },
+      "designationSource": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+      "inactives": {},
+      "finalInactivesPosted": false,
+      "inactivesSource": "https://www.nfl.com/news/nfl-week-9-inactives-players-ruled-out-sunday-2026-season",
+      "weather": {
+        "source": "https://api.weather.gov/gridpoints/LOX/150,41/forecast/hourly",
+        "issuedAt": "2026-11-08T09:41:42+00:00",
+        "observedAt": "2026-11-08T15:40:22.935778+00:00",
+        "coordinateBasis": "Approximate venue postal centroid",
+        "hours": [
+          {
+            "startTime": "2026-11-08T13:00:00-08:00",
+            "endTime": "2026-11-08T14:00:00-08:00",
+            "temperature": 85,
+            "temperatureUnit": "F",
+            "windSpeed": "10 mph",
+            "windDirection": "WNW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Sunny"
+          },
+          {
+            "startTime": "2026-11-08T14:00:00-08:00",
+            "endTime": "2026-11-08T15:00:00-08:00",
+            "temperature": 84,
+            "temperatureUnit": "F",
+            "windSpeed": "10 mph",
+            "windDirection": "WNW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Sunny"
+          },
+          {
+            "startTime": "2026-11-08T15:00:00-08:00",
+            "endTime": "2026-11-08T16:00:00-08:00",
+            "temperature": 85,
+            "temperatureUnit": "F",
+            "windSpeed": "10 mph",
+            "windDirection": "WNW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Sunny"
+          },
+          {
+            "startTime": "2026-11-08T16:00:00-08:00",
+            "endTime": "2026-11-08T17:00:00-08:00",
+            "temperature": 81,
+            "temperatureUnit": "F",
+            "windSpeed": "5 mph",
+            "windDirection": "W",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Sunny"
+          },
+          {
+            "startTime": "2026-11-08T17:00:00-08:00",
+            "endTime": "2026-11-08T18:00:00-08:00",
+            "temperature": 78,
+            "temperatureUnit": "F",
+            "windSpeed": "5 mph",
+            "windDirection": "W",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Sunny"
+          }
+        ]
+      },
+      "roofStatus": "Venue exposure and game-time conditions pending review",
+      "releaseStatus": "HOLD"
+    },
+    {
+      "gameId": "2026_09_LV_SF",
+      "eventId": "401873047",
+      "away": "LV",
+      "home": "SF",
+      "kickoffUTC": "2026-11-08T21:25Z",
+      "venue": "Levi's Stadium",
+      "marketReference": {
+        "spreadHome": -9.5,
+        "total": 51.5,
+        "provider": "DraftKings",
+        "executionVerified": false,
+        "eligibleForGrading": false
+      },
+      "marketObservedAt": "2026-11-08T15:40:22.639671+00:00",
+      "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873047",
+      "officials": [
+        {
+          "displayName": "Scott Novak",
+          "position": "Referee"
+        }
+      ],
+      "officialsSource": "https://www.footballzebras.com/2026/11/week-9-referee-assignments-2026/",
+      "injuryDesignations": {
+        "SF": [
+          "OUT: WR Mike Evans (Achilles), WR Christian Kirk (knee), WR Deebo Samuel (hamstring)",
+          "QUESTIONABLE: CB Upton Stout (shoulder), DB Nate Hobbs (adductor), DB Siran Neal (knee, foot)"
+        ],
+        "LV": [
+          "OUT: DT Thomas Booker (ankle)",
+          "QUESTIONABLE: CB Darien Porter (groin)"
+        ]
+      },
+      "designationSource": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+      "inactives": {},
+      "finalInactivesPosted": false,
+      "inactivesSource": "https://www.nfl.com/news/nfl-week-9-inactives-players-ruled-out-sunday-2026-season",
+      "weather": {
+        "source": "https://api.weather.gov/gridpoints/MTR/97,85/forecast/hourly",
+        "issuedAt": "2026-11-08T08:26:34+00:00",
+        "observedAt": "2026-11-08T15:40:22.632876+00:00",
+        "coordinateBasis": "Approximate venue postal centroid",
+        "hours": [
+          {
+            "startTime": "2026-11-08T13:00:00-08:00",
+            "endTime": "2026-11-08T14:00:00-08:00",
+            "temperature": 71,
+            "temperatureUnit": "F",
+            "windSpeed": "5 mph",
+            "windDirection": "NNW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Mostly Sunny"
+          },
+          {
+            "startTime": "2026-11-08T14:00:00-08:00",
+            "endTime": "2026-11-08T15:00:00-08:00",
+            "temperature": 72,
+            "temperatureUnit": "F",
+            "windSpeed": "6 mph",
+            "windDirection": "NNW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Mostly Sunny"
+          },
+          {
+            "startTime": "2026-11-08T15:00:00-08:00",
+            "endTime": "2026-11-08T16:00:00-08:00",
+            "temperature": 72,
+            "temperatureUnit": "F",
+            "windSpeed": "7 mph",
+            "windDirection": "NNW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Mostly Sunny"
+          },
+          {
+            "startTime": "2026-11-08T16:00:00-08:00",
+            "endTime": "2026-11-08T17:00:00-08:00",
+            "temperature": 70,
+            "temperatureUnit": "F",
+            "windSpeed": "6 mph",
+            "windDirection": "NNW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Mostly Sunny"
+          },
+          {
+            "startTime": "2026-11-08T17:00:00-08:00",
+            "endTime": "2026-11-08T18:00:00-08:00",
+            "temperature": 68,
+            "temperatureUnit": "F",
+            "windSpeed": "5 mph",
+            "windDirection": "NNW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Mostly Sunny"
+          }
+        ]
+      },
+      "roofStatus": "Venue exposure and game-time conditions pending review",
+      "releaseStatus": "HOLD"
+    },
+    {
+      "gameId": "2026_09_GB_NE",
+      "eventId": "401873049",
+      "away": "GB",
+      "home": "NE",
+      "kickoffUTC": "2026-11-08T21:25:00+00:00",
+      "venue": "Gillette Stadium",
+      "marketReference": {
+        "spreadHome": -3.0,
+        "total": 44.5,
+        "provider": "DraftKings",
+        "executionVerified": false,
+        "eligibleForGrading": false
+      },
+      "marketObservedAt": "2026-11-08T15:40:26.095672+00:00",
+      "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873049",
+      "officials": [
+        {
+          "displayName": "Alex Kemp",
+          "position": "Referee"
+        }
+      ],
+      "officialsSource": "https://www.footballzebras.com/2026/11/week-9-referee-assignments-2026/",
+      "injuryDesignations": {
+        "NE": [
+          "OUT: RB TreVeyon Henderson (illness), WR A.J. Brown (ankle/knee)",
+          "QUESTIONABLE: WR Mack Hollins (calf), TE Hunter Henry (foot), OT Morgan Moses (foot), OL Greg Van Roten (hamstring), CB Carlton Davis (neck), S Kevin Byard (chest), S Brenden Schooler (hamstring)"
+        ],
+        "GB": [
+          "OUT: TE Josh Whyle (concussion, OL Travis Glover (knee), OL Sean Rhyan (ankle), EDGE Micah Parsons (knee), LB Zaire Franklin (shin)",
+          "QUESTIONABLE: RB Chris Brooks (ankle),\u00a0RB MarShawn Lloyd (knee), CB Keisean Nixon (groin)"
+        ]
+      },
+      "designationSource": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+      "inactives": {},
+      "finalInactivesPosted": false,
+      "inactivesSource": "https://www.nfl.com/news/nfl-week-9-inactives-players-ruled-out-sunday-2026-season",
+      "weather": {
+        "source": "https://api.weather.gov/gridpoints/BOX/68,87/forecast/hourly",
+        "issuedAt": "2026-11-08T15:12:10+00:00",
+        "observedAt": "2026-11-08T15:40:26.651729+00:00",
+        "coordinateBasis": "Approximate venue postal centroid",
+        "hours": [
+          {
+            "startTime": "2026-11-08T16:00:00-05:00",
+            "endTime": "2026-11-08T17:00:00-05:00",
+            "temperature": 56,
+            "temperatureUnit": "F",
+            "windSpeed": "13 mph",
+            "windDirection": "W",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Sunny"
+          },
+          {
+            "startTime": "2026-11-08T17:00:00-05:00",
+            "endTime": "2026-11-08T18:00:00-05:00",
+            "temperature": 53,
+            "temperatureUnit": "F",
+            "windSpeed": "10 mph",
+            "windDirection": "W",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 1
+            },
+            "shortForecast": "Sunny"
+          },
+          {
+            "startTime": "2026-11-08T18:00:00-05:00",
+            "endTime": "2026-11-08T19:00:00-05:00",
+            "temperature": 51,
+            "temperatureUnit": "F",
+            "windSpeed": "9 mph",
+            "windDirection": "W",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 2
+            },
+            "shortForecast": "Mostly Clear"
+          },
+          {
+            "startTime": "2026-11-08T19:00:00-05:00",
+            "endTime": "2026-11-08T20:00:00-05:00",
+            "temperature": 48,
+            "temperatureUnit": "F",
+            "windSpeed": "7 mph",
+            "windDirection": "W",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 3
+            },
+            "shortForecast": "Mostly Clear"
+          },
+          {
+            "startTime": "2026-11-08T20:00:00-05:00",
+            "endTime": "2026-11-08T21:00:00-05:00",
+            "temperature": 46,
+            "temperatureUnit": "F",
+            "windSpeed": "7 mph",
+            "windDirection": "W",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 3
+            },
+            "shortForecast": "Partly Cloudy"
+          }
+        ]
+      },
+      "roofStatus": "Venue exposure and game-time conditions pending review",
+      "releaseStatus": "HOLD"
+    },
+    {
+      "gameId": "2026_09_ARI_SEA",
+      "eventId": "401873048",
+      "away": "ARI",
+      "home": "SEA",
+      "kickoffUTC": "2026-11-08T21:25:00+00:00",
+      "venue": "Lumen Field",
+      "marketReference": {
+        "spreadHome": -8.5,
+        "total": 39.5,
+        "provider": "DraftKings",
+        "executionVerified": false,
+        "eligibleForGrading": false
+      },
+      "marketObservedAt": "2026-11-08T15:40:26.043687+00:00",
+      "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873048",
+      "officials": [
+        {
+          "displayName": "Clete Blakeman",
+          "position": "Referee"
+        }
+      ],
+      "officialsSource": "https://www.footballzebras.com/2026/11/week-9-referee-assignments-2026/",
+      "injuryDesignations": {
+        "SEA": [
+          "OUT: QB Sam Darnold (quadricep, ribs), WR Rashid Shaheed (knee), OT Charles Cross (ankle), G Quenton Nelson (knee), DT Brandon Pili (back),\u00a0 DT Leonard Williams (stinger), LB Uchenna Nwosu (ankle)",
+          "QUESTIONABLE: LB Connor O'Toole (foot)"
+        ],
+        "ARI": [
+          "OUT: RB Bam Knight (concussion), OL Jon Gaines II (ankle), OL Jayden Williams (knee)",
+          "QUESTIONABLE: OL Isaiah Adams (ankle), DL Walter Nolen (ankle), CB Max Melton (knee)"
+        ]
+      },
+      "designationSource": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+      "inactives": {},
+      "finalInactivesPosted": false,
+      "inactivesSource": "https://www.nfl.com/news/nfl-week-9-inactives-players-ruled-out-sunday-2026-season",
+      "weather": {
+        "source": "https://api.weather.gov/gridpoints/SEW/125,67/forecast/hourly",
+        "issuedAt": "2026-11-08T07:45:50+00:00",
+        "observedAt": "2026-11-08T15:40:26.433855+00:00",
+        "coordinateBasis": "Approximate venue postal centroid",
+        "hours": [
+          {
+            "startTime": "2026-11-08T13:00:00-08:00",
+            "endTime": "2026-11-08T14:00:00-08:00",
+            "temperature": 55,
+            "temperatureUnit": "F",
+            "windSpeed": "10 mph",
+            "windDirection": "SSW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 10
+            },
+            "shortForecast": "Partly Sunny"
+          },
+          {
+            "startTime": "2026-11-08T14:00:00-08:00",
+            "endTime": "2026-11-08T15:00:00-08:00",
+            "temperature": 56,
+            "temperatureUnit": "F",
+            "windSpeed": "9 mph",
+            "windDirection": "SSW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 5
+            },
+            "shortForecast": "Partly Sunny"
+          },
+          {
+            "startTime": "2026-11-08T15:00:00-08:00",
+            "endTime": "2026-11-08T16:00:00-08:00",
+            "temperature": 55,
+            "temperatureUnit": "F",
+            "windSpeed": "7 mph",
+            "windDirection": "SSW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 2
+            },
+            "shortForecast": "Mostly Cloudy"
+          },
+          {
+            "startTime": "2026-11-08T16:00:00-08:00",
+            "endTime": "2026-11-08T17:00:00-08:00",
+            "temperature": 54,
+            "temperatureUnit": "F",
+            "windSpeed": "6 mph",
+            "windDirection": "SSW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Partly Sunny"
+          },
+          {
+            "startTime": "2026-11-08T17:00:00-08:00",
+            "endTime": "2026-11-08T18:00:00-08:00",
+            "temperature": 54,
+            "temperatureUnit": "F",
+            "windSpeed": "5 mph",
+            "windDirection": "S",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Mostly Sunny"
+          }
+        ]
+      },
+      "roofStatus": "Venue exposure and game-time conditions pending review",
+      "releaseStatus": "HOLD",
+      "confirmedQbChange": "Drew Lock starts for Seattle in place of Sam Darnold. Gardner Minshew starts for Arizona. Seattle lists Charles Cross and Quenton Nelson out.",
+      "qbSource": "https://www.seahawks.com/news/week-9-injury-report-cardinals-at-seahawks"
+    },
+    {
+      "gameId": "2026_09_TB_CHI",
+      "eventId": "401873050",
+      "away": "TB",
+      "home": "CHI",
+      "kickoffUTC": "2026-11-09T01:20:00+00:00",
+      "venue": "Soldier Field",
+      "marketReference": {
+        "spreadHome": -6.0,
+        "total": 47.5,
+        "provider": "DraftKings",
+        "executionVerified": false,
+        "eligibleForGrading": false
+      },
+      "marketObservedAt": "2026-11-08T15:40:25.979675+00:00",
+      "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873050",
+      "officials": [
+        {
+          "displayName": "Ron Torbert",
+          "position": "Referee"
+        }
+      ],
+      "officialsSource": "https://www.footballzebras.com/2026/11/week-9-referee-assignments-2026/",
+      "injuryDesignations": {
+        "CHI": [
+          "QUESTIONABLE: RB Kyle Monangai (thumb/toe), DB Malik Muhammad (toe), DB Tyrique Stevenson (thumb)"
+        ],
+        "TB": [
+          "OUT: OLB YaYa Diaby (knee)",
+          "QUESTIONABLE: WR Emeka Egbuka (foot)"
+        ]
+      },
+      "designationSource": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+      "inactives": {},
+      "finalInactivesPosted": false,
+      "inactivesSource": "https://www.nfl.com/news/nfl-week-9-inactives-players-ruled-out-sunday-2026-season",
+      "weather": {
+        "source": "https://api.weather.gov/gridpoints/LOT/76,73/forecast/hourly",
+        "issuedAt": "2026-11-08T08:21:03+00:00",
+        "observedAt": "2026-11-08T15:40:26.539712+00:00",
+        "coordinateBasis": "Approximate venue postal centroid",
+        "hours": [
+          {
+            "startTime": "2026-11-08T19:00:00-06:00",
+            "endTime": "2026-11-08T20:00:00-06:00",
+            "temperature": 51,
+            "temperatureUnit": "F",
+            "windSpeed": "15 mph",
+            "windDirection": "WNW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Clear"
+          },
+          {
+            "startTime": "2026-11-08T20:00:00-06:00",
+            "endTime": "2026-11-08T21:00:00-06:00",
+            "temperature": 50,
+            "temperatureUnit": "F",
+            "windSpeed": "10 mph",
+            "windDirection": "NW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Clear"
+          },
+          {
+            "startTime": "2026-11-08T21:00:00-06:00",
+            "endTime": "2026-11-08T22:00:00-06:00",
+            "temperature": 50,
+            "temperatureUnit": "F",
+            "windSpeed": "10 mph",
+            "windDirection": "NW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Mostly Clear"
+          },
+          {
+            "startTime": "2026-11-08T22:00:00-06:00",
+            "endTime": "2026-11-08T23:00:00-06:00",
+            "temperature": 48,
+            "temperatureUnit": "F",
+            "windSpeed": "10 mph",
+            "windDirection": "NNW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Mostly Clear"
+          },
+          {
+            "startTime": "2026-11-08T23:00:00-06:00",
+            "endTime": "2026-11-09T00:00:00-06:00",
+            "temperature": 47,
+            "temperatureUnit": "F",
+            "windSpeed": "10 mph",
+            "windDirection": "NW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Mostly Clear"
+          }
+        ]
+      },
+      "roofStatus": "Venue exposure and game-time conditions pending review",
+      "releaseStatus": "HOLD"
+    },
+    {
+      "gameId": "2026_09_BUF_MIN",
+      "eventId": "401873051",
+      "away": "BUF",
+      "home": "MIN",
+      "kickoffUTC": "2026-11-10T01:15:00+00:00",
+      "venue": "U.S. Bank Stadium",
+      "marketReference": {
+        "spreadHome": 3.0,
+        "total": 43.5,
+        "provider": "DraftKings",
+        "executionVerified": false,
+        "eligibleForGrading": false
+      },
+      "marketObservedAt": "2026-11-08T15:40:25.988395+00:00",
+      "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873051",
+      "officials": [
+        {
+          "displayName": "Carl Cheffers",
+          "position": "Referee"
+        }
+      ],
+      "officialsSource": "https://www.footballzebras.com/2026/11/week-9-referee-assignments-2026/",
+      "injuryDesignations": {
+        "MIN": [
+          "OUT: QB Kyler Murray (hamstring), RB Demond Claiborne (knee), WR Jauan Jennings (calf)",
+          "QUESTIONABLE: S Theo Jackson (quad), S Jay Ward (knee)"
+        ],
+        "BUF": [
+          "OUT: WR Josh Palmer (hamstring)",
+          "QUESTIONABLE: WR Tyrell Shavers (knee), OL Alec Anderson (ankle), OT Dion Dawkins (rib), DL Greg Gaines (calf), DB Jordan Hancock (hamstring)"
+        ]
+      },
+      "designationSource": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+      "inactives": {},
+      "finalInactivesPosted": false,
+      "inactivesSource": "https://www.nfl.com/news/nfl-week-9-inactives-players-ruled-out-sunday-2026-season",
+      "weather": {
+        "source": "https://api.weather.gov/gridpoints/MPX/109,72/forecast/hourly",
+        "issuedAt": "2026-11-08T13:41:18+00:00",
+        "observedAt": "2026-11-08T15:40:26.467737+00:00",
+        "coordinateBasis": "Approximate venue postal centroid",
+        "hours": [
+          {
+            "startTime": "2026-11-09T19:00:00-06:00",
+            "endTime": "2026-11-09T20:00:00-06:00",
+            "temperature": 50,
+            "temperatureUnit": "F",
+            "windSpeed": "5 mph",
+            "windDirection": "WNW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Mostly Clear"
+          },
+          {
+            "startTime": "2026-11-09T20:00:00-06:00",
+            "endTime": "2026-11-09T21:00:00-06:00",
+            "temperature": 49,
+            "temperatureUnit": "F",
+            "windSpeed": "5 mph",
+            "windDirection": "WNW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Mostly Clear"
+          },
+          {
+            "startTime": "2026-11-09T21:00:00-06:00",
+            "endTime": "2026-11-09T22:00:00-06:00",
+            "temperature": 48,
+            "temperatureUnit": "F",
+            "windSpeed": "5 mph",
+            "windDirection": "WNW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Mostly Clear"
+          },
+          {
+            "startTime": "2026-11-09T22:00:00-06:00",
+            "endTime": "2026-11-09T23:00:00-06:00",
+            "temperature": 47,
+            "temperatureUnit": "F",
+            "windSpeed": "5 mph",
+            "windDirection": "WNW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Mostly Clear"
+          },
+          {
+            "startTime": "2026-11-09T23:00:00-06:00",
+            "endTime": "2026-11-10T00:00:00-06:00",
+            "temperature": 46,
+            "temperatureUnit": "F",
+            "windSpeed": "5 mph",
+            "windDirection": "WNW",
+            "probabilityOfPrecipitation": {
+              "unitCode": "wmoUnit:percent",
+              "value": 0
+            },
+            "shortForecast": "Mostly Clear"
+          }
+        ]
+      },
+      "roofStatus": "Venue exposure and game-time conditions pending review",
+      "releaseStatus": "HOLD",
+      "confirmedQbChange": "Carson Wentz starts for Minnesota. Kyler Murray is out with a hamstring injury. Buffalo lists LT Dion Dawkins questionable.",
+      "qbSource": "https://www.vikings.com/news/bills-injury-report-week-9-2026-nfl-season"
+    }
+  ],
+  "sources": {
+    "nfl-inactives": {
+      "url": "https://www.nfl.com/news/nfl-week-9-inactives-players-ruled-out-sunday-2026-season",
+      "observedAt": "2026-11-08T15:40:19.327711+00:00",
+      "sha256": "729748c5aefcab88f53e0bf87971ad025f18148ba50a031ea9adeb44ead15aa9"
+    },
+    "nfl-injury-report": {
+      "url": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+      "observedAt": "2026-11-08T15:40:19.243885+00:00",
+      "sha256": "056169976fa7a997b4704e0c1636e924c8949776b95fc682bb4795c7c94fc024"
+    },
+    "vikings-injury-report": {
+      "url": "https://www.vikings.com/team/injury-report/",
+      "observedAt": "2026-11-08T15:40:18.503652+00:00",
+      "sha256": "e3ce7414ea32ba4dd46f8581f651d8352076d005c992c0e18d686694e8edc208"
+    },
+    "vikings-qb": {
+      "url": "https://www.vikings.com/news/bills-injury-report-week-9-2026-nfl-season",
+      "observedAt": "2026-11-08T15:40:18.559661+00:00",
+      "sha256": "8255309dfef5e28a5f3d781eb3bb54347f99247b8b0252b0ab3fee63ee8547ba"
+    },
+    "saints-roster": {
+      "url": "https://www.nfl.com/news/report-saints-activating-wr-jordyn-tyson-hamstring-lt-kelvin-banks-ankle-from-ir",
+      "observedAt": "2026-11-08T15:40:19.343797+00:00",
+      "sha256": "3b40f8caadffa3e47004858f0b2cbe64cbfe1a0ef75312eef197ef326845eefe"
+    },
+    "nfl-officials": {
+      "url": "https://www.footballzebras.com/2026/11/week-9-referee-assignments-2026/",
+      "observedAt": "2026-11-08T15:40:18.408124+00:00",
+      "sha256": "e517c0b66c6178dc1fdcbadfa6960ad88c6435804760597d880416326330d509"
+    },
+    "2026_09_DEN_CAR": {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873041",
+      "observedAt": "2026-11-08T15:40:18.785705+00:00",
+      "sha256": "b1b8009e08e59dde782507c99185510295694c304e3498962df89fc81359e269"
+    },
+    "2026_09_DEN_CAR-weather": {
+      "url": "https://api.weather.gov/gridpoints/GSP/119,65/forecast/hourly",
+      "observedAt": "2026-11-08T15:40:18.679936+00:00",
+      "sha256": "d648171a7af071f9e69164ddea9facc24b0f542c193aca6157e6e0fcc93c6f6a"
+    },
+    "2026_09_DAL_IND": {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873040",
+      "observedAt": "2026-11-08T15:40:18.751987+00:00",
+      "sha256": "9ff45d6769c58c86e7849eca854436d6db05467937c6614ee993706db3585781"
+    },
+    "2026_09_DAL_IND-weather": {
+      "url": "https://api.weather.gov/gridpoints/IND/58,68/forecast/hourly",
+      "observedAt": "2026-11-08T15:40:18.751697+00:00",
+      "sha256": "940e634bcede7e6ce358b9b86b0363ae328d71543a409f6cae21bfdd64204de2"
+    },
+    "2026_09_NYJ_KC": {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873045",
+      "observedAt": "2026-11-08T15:40:18.851705+00:00",
+      "sha256": "d8496f0201a4f13f9905d6c1fbe172c1d1a65994f5aff02ec57841f24cf8f4b6"
+    },
+    "2026_09_NYJ_KC-weather": {
+      "url": "https://api.weather.gov/gridpoints/EAX/47,48/forecast/hourly",
+      "observedAt": "2026-11-08T15:40:18.839851+00:00",
+      "sha256": "3c37f0ad08d4c0650cd45e050d0ff5b7b96e35da02b0e310df0ef0f6f94a4a44"
+    },
+    "2026_09_DET_MIA": {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873042",
+      "observedAt": "2026-11-08T15:40:22.599673+00:00",
+      "sha256": "ceec40d7fab9deaba71611a5846518389e1871e8e7d5f25fabde9ac015232a63"
+    },
+    "2026_09_DET_MIA-weather": {
+      "url": "https://api.weather.gov/gridpoints/MFL/107,58/forecast/hourly",
+      "observedAt": "2026-11-08T15:40:22.672234+00:00",
+      "sha256": "0653be80aabeb35554bb3b795095a4ac631ce27aa87ace3a362fee29cea1045f"
+    },
+    "2026_09_CLE_NO": {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873039",
+      "observedAt": "2026-11-08T15:40:22.643950+00:00",
+      "sha256": "6c80a5d00f90531a57e9af9311e98d7a47246da45ad78732796ba577ac47c5cb"
+    },
+    "2026_09_CLE_NO-weather": {
+      "url": "https://api.weather.gov/gridpoints/LIX/67,89/forecast/hourly",
+      "observedAt": "2026-11-08T15:40:22.839690+00:00",
+      "sha256": "00b3a3148e3096d75980d77480552b1331dcc086a032a9a7cf56dc50667200a7"
+    },
+    "2026_09_NYG_PHI": {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873044",
+      "observedAt": "2026-11-08T15:40:22.667676+00:00",
+      "sha256": "a2a015815b30968570a9cde51888a6b192ed767bb2ed635faa1fe22b82122655"
+    },
+    "2026_09_NYG_PHI-weather": {
+      "url": "https://api.weather.gov/gridpoints/PHI/50,77/forecast/hourly",
+      "observedAt": "2026-11-08T15:40:23.091696+00:00",
+      "sha256": "6e41002b0bf889bd07db142252e72374becec0904dedd25c744748b2e678520f"
+    },
+    "2026_09_LA_WAS": {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873043",
+      "observedAt": "2026-11-08T15:40:22.699618+00:00",
+      "sha256": "2aa38795607a23bdb38c3bb7017313110927c7ba6e42f9ec3a6c8dab5b5ff81b"
+    },
+    "2026_09_LA_WAS-weather": {
+      "url": "https://api.weather.gov/gridpoints/LWX/102,73/forecast/hourly",
+      "observedAt": "2026-11-08T15:40:22.575857+00:00",
+      "sha256": "3031b3d12e4b230885aaaa4dc14b01171230b06ee31852d5e51cfd75af1c1155"
+    },
+    "2026_09_HOU_LAC": {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873046",
+      "observedAt": "2026-11-08T15:40:22.611141+00:00",
+      "sha256": "08d31750b9929a4b0fa8bff9c09454510cb31765bddbc13f310d48d798399dce"
+    },
+    "2026_09_HOU_LAC-weather": {
+      "url": "https://api.weather.gov/gridpoints/LOX/150,41/forecast/hourly",
+      "observedAt": "2026-11-08T15:40:22.935778+00:00",
+      "sha256": "8b5c8d17213fc030d8ae86e8718ae3518790011501162afaa381a3491ffec700"
+    },
+    "2026_09_LV_SF": {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873047",
+      "observedAt": "2026-11-08T15:40:22.639671+00:00",
+      "sha256": "0ff09b2499182ff13b15b310c54d62ebf55fa4a7d90db807d4408ae84426a7c8"
+    },
+    "2026_09_LV_SF-weather": {
+      "url": "https://api.weather.gov/gridpoints/MTR/97,85/forecast/hourly",
+      "observedAt": "2026-11-08T15:40:22.632876+00:00",
+      "sha256": "1753ec7887456d554502ca825d655206d60e52a3a62e96671372ce972aaa2dd4"
+    },
+    "2026_09_GB_NE": {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873049",
+      "observedAt": "2026-11-08T15:40:26.095672+00:00",
+      "sha256": "4b56a699623bfb88722762106ccbb55cb0e2539071bc00e0ea60f655931bc1bf"
+    },
+    "2026_09_GB_NE-weather": {
+      "url": "https://api.weather.gov/gridpoints/BOX/68,87/forecast/hourly",
+      "observedAt": "2026-11-08T15:40:26.651729+00:00",
+      "sha256": "ddc47cf73ce15dfbf3009982a3234d859f9bcfe7527f8dfdc1356b9749c88812"
+    },
+    "2026_09_ARI_SEA": {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873048",
+      "observedAt": "2026-11-08T15:40:26.043687+00:00",
+      "sha256": "2fcbfb20a564e2901342aa6bc2ffb1b5e21163c977995fe6c87fe2126ae733ea"
+    },
+    "2026_09_ARI_SEA-weather": {
+      "url": "https://api.weather.gov/gridpoints/SEW/125,67/forecast/hourly",
+      "observedAt": "2026-11-08T15:40:26.433855+00:00",
+      "sha256": "1c711c7cb1927668b746c0d74b5dd27f058e61b1a78cc946707e9ef0233a3a68"
+    },
+    "2026_09_TB_CHI": {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873050",
+      "observedAt": "2026-11-08T15:40:25.979675+00:00",
+      "sha256": "e3515168fb9b7835abdf8a12656fba3362f10a536f89c022b4b3e9038e8c21ca"
+    },
+    "2026_09_TB_CHI-weather": {
+      "url": "https://api.weather.gov/gridpoints/LOT/76,73/forecast/hourly",
+      "observedAt": "2026-11-08T15:40:26.539712+00:00",
+      "sha256": "01c66785050f063881e85a4f35ef158baf52d37d51e4c53491f2cddf0da7eb6c"
+    },
+    "2026_09_BUF_MIN": {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873051",
+      "observedAt": "2026-11-08T15:40:25.988395+00:00",
+      "sha256": "c6bf8c9c93dba55312b3303f5b0c25eabd67953a535cf0e51ec105ba55d7ef0d"
+    },
+    "2026_09_BUF_MIN-weather": {
+      "url": "https://api.weather.gov/gridpoints/MPX/109,72/forecast/hourly",
+      "observedAt": "2026-11-08T15:40:26.467737+00:00",
+      "sha256": "fa0eb5a157e6ae6f35a59b1b8a64e47cd36ca9fdcf8de0f7fabb37f2288d7400"
+    },
+    "cle-starter": {
+      "url": "https://www.clevelandbrowns.com/news/shedeur-sanders-to-start-week-9-against-the-saints",
+      "observedAt": "2026-11-08T15:40:53.109148+00:00",
+      "sha256": "efb0ef3708ad8cdf88df5f38e038452b4959b1eebd22f0d5cdba36b2226cba82"
+    },
+    "sea-starter": {
+      "url": "https://www.seahawks.com/news/week-9-injury-report-cardinals-at-seahawks",
+      "observedAt": "2026-11-08T15:40:52.645263+00:00",
+      "sha256": "95631dccb7fcdf05208a6146b7457b7f237283ca2fb49be04f39bde5edee04dd"
+    },
+    "ari-starter": {
+      "url": "https://www.azcardinals.com/news/gardner-minshew-named-cardinals-starting-quarterback-carson-beck-made-backup",
+      "observedAt": "2026-11-08T15:40:52.845153+00:00",
+      "sha256": "319e013a1db08691e8f7e3e5c5b0c52cf8789c3eb4a10c333012d2c776489ab0"
+    }
+  }
+}
