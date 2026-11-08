@@ -1,7 +1,7 @@
 {
   "week": 9,
   "season": 2026,
-  "updatedAt": "2026-11-08T15:40:53.394982+00:00",
+  "updatedAt": "2026-11-08T15:43:58.579687+00:00",
   "role": "PREGAME_CONTEXT_ONLY",
   "canonicalInfluence": false,
   "forecastChanges": 0,
@@ -207,8 +207,10 @@
           }
         ]
       },
-      "roofStatus": "Retractable roof decision pending",
-      "releaseStatus": "HOLD"
+      "roofStatus": "Roof and north end zone window open per Colts game-day page. Kickoff conditions pending.",
+      "releaseStatus": "HOLD",
+      "roofSource": "https://www.colts.com/game-day/regular-season-game-4",
+      "roofObservedAt": "2026-11-08T15:43:58.579687+00:00"
     },
     {
       "gameId": "2026_09_NYJ_KC",
@@ -1567,6 +1569,11 @@
       "url": "https://www.azcardinals.com/news/gardner-minshew-named-cardinals-starting-quarterback-carson-beck-made-backup",
       "observedAt": "2026-11-08T15:40:52.845153+00:00",
       "sha256": "319e013a1db08691e8f7e3e5c5b0c52cf8789c3eb4a10c333012d2c776489ab0"
+    },
+    "colts-gameday": {
+      "url": "https://www.colts.com/game-day/regular-season-game-4",
+      "observedAt": "2026-11-08T15:43:58.579687+00:00",
+      "sha256": "7b3570741170208bd42c646454f59c9e9c1e94193e52e980b53ccf35deab8a0f"
     }
   }
 }
