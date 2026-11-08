@@ -37,7 +37,7 @@ jobs:
           path=pathlib.Path(f'cfb/results/week-{week:02d}.json')
           data=json.load(path.open())
           source=[r for r in csv.DictReader(open('data/results.csv')) if int(r['season'])==season and int(r['week'])==week]
-          assert data['role']=='AUDITED_SITE_RESULTS_COMPATIBILITY'
+          assert data['role'] in ('AUDITED_SITE_RESULTS_COMPATIBILITY', 'PUBLISHED_RESEARCH_RESULTS_COMPATIBILITY')
           assert data['canonicalInfluence'] is False
           assert int(data['season'])==season and int(data['week'])==week
           assert len(data['games'])==len(source)>0

@@ -122,6 +122,8 @@ def main():
     past = []
     for league, slate in board["leagues"].items():
         for g in slate["games"]:
+            if not g.get("kickoffUTC"):
+                continue  # Schedule-only matchup with kickoff time pending.
             if instant(g["kickoffUTC"]) <= cut:
                 past.append(
                     dict(
