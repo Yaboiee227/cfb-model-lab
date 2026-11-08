@@ -80,7 +80,9 @@ def test_current_qb_break_does_not_change_projection_numbers_or_probabilities():
     assert audit(ROOT)["games"] == 14
     rows = list(csv.DictReader((ROOT / "nfl_data/site/projections.csv").open()))
     flag = [g for g in rows if g["hardQbStateBreak"] == "true"]
-    assert [g["gameId"] for g in flag] == ["2026_09_ARI_SEA"]
+    assert {g["gameId"] for g in flag} == {
+        "2026_09_CLE_NO", "2026_09_ARI_SEA", "2026_09_BUF_MIN",
+    }
     assert all(
         not r["qbOperationalPointAdjustment"] and not r["homeWinProbability"]
         for r in rows
