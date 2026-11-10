@@ -62,6 +62,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--capture', type=Path)
     args = parser.parse_args()
+    summary_path = ROOT/'nfl/record-summary.json'
+    original_summary = json.loads(summary_path.read_text())
     for path in sorted((ROOT/'nfl/research-projections').glob('week-*.json')):
         freeze = json.loads(path.read_text())
         week = freeze['week']
@@ -84,10 +86,13 @@ def main():
         if previous != result:
             result_path.write_text(json.dumps(result, indent=2)+'\n')
         note = f'Week {week} frozen baseline research. All {len(games)} games graded straight up. ATS and totals excluded for missing original market locks.'
-        current = json.loads((ROOT/'nfl/record-summary.json').read_text())
-        if previous != result or not any(w['week'] == week for w in current['weeks']):
-            summary = sync('nfl', week, games, note)
-            print(week, summary['weeks'][-1]['straightUp'])
+        summary = sync('nfl', week, games, note)
+        print(week, next(w['straightUp'] for w in summary['weeks'] if w['week'] == week))
+    updated_summary = json.loads(summary_path.read_text())
+    comparable = lambda doc: {k: v for k, v in doc.items() if k != 'generatedAt'}
+    if comparable(original_summary) == comparable(updated_summary):
+        updated_summary['generatedAt'] = original_summary['generatedAt']
+        summary_path.write_text(json.dumps(updated_summary, indent=2)+'\n')
 
 
 if __name__ == '__main__':
