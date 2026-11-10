@@ -51,7 +51,7 @@ def discover_fbs_ids() -> list[str]:
     return ids
 
 
-def discover_games(start: datetime, end: datetime, season: int=2026) -> list[dict[str, Any]]:
+def discover_games(start: datetime, end: datetime, season: int=2026, max_games: int=MAX_EXPECTED_GAMES) -> list[dict[str, Any]]:
     fbs_ids=discover_fbs_ids()
     fbs_set=set(fbs_ids)
     events: dict[str, dict[str, Any]]={}
@@ -110,8 +110,8 @@ def discover_games(start: datetime, end: datetime, season: int=2026) -> list[dic
                 }
 
     games=sorted(events.values(),key=lambda g:(g["kickoff"],g["awayTeam"],g["homeTeam"]))
-    if len(games) < MIN_EXPECTED_GAMES or len(games) > MAX_EXPECTED_GAMES:
-        raise RuntimeError(f"Week 8 FBS schedule coverage failed: {len(games)} games outside [{MIN_EXPECTED_GAMES},{MAX_EXPECTED_GAMES}], scheduleFailures={len(failures)}")
+    if len(games) < MIN_EXPECTED_GAMES or len(games) > max_games:
+        raise RuntimeError(f"Week 8 FBS schedule coverage failed: {len(games)} games outside [{MIN_EXPECTED_GAMES},{max_games}], scheduleFailures={len(failures)}")
     return games
 
 
