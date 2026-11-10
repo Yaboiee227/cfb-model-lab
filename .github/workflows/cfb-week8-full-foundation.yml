@@ -25,13 +25,25 @@ jobs:
         run: python -m pip install --disable-pip-version-check numpy
       - name: Test Week 8 schedule helpers
         run: python -m unittest tests.test_cfb_week8_schedule -v
+      - name: Preserve the existing Week 8 research freeze
+        id: saved
+        run: |
+          python - <<'PYTHON'
+          import os
+          from pathlib import Path
+          exists = Path('cfb/research-locks/week-08-foundation-full.json').exists()
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as stream:
+              print('exists='+str(exists).lower(), file=stream)
+          PYTHON
       - name: Discover Oct. 20-24 FBS slate
+        if: steps.saved.outputs.exists != 'true'
         run: |
           python scripts/cfb_week8_schedule.py \
             --start '2026-10-20T00:00:00-04:00' \
             --end '2026-10-25T00:00:00-04:00' \
             --output cfb/pregame/week-08-schedule.json
       - name: Build validated foundation baseline for full slate
+        if: steps.saved.outputs.exists != 'true'
         run: |
           python scripts/cfb_foundation_candidate.py \
             --state cfb/pregame/week-08-schedule.json \
@@ -40,6 +52,7 @@ jobs:
             --start '2026-08-20T00:00:00-04:00' \
             --output cfb/shadow/week-08-foundation-full.json
       - name: Assert schedule and foundation coverage
+        if: steps.saved.outputs.exists != 'true'
         run: |
           python - <<'PY'
           import json
@@ -61,6 +74,7 @@ jobs:
           },indent=2))
           PY
       - name: Commit full Week 8 baseline
+        if: steps.saved.outputs.exists != 'true'
         run: |
           git config user.name "cb-model-shadow-bot"
           git config user.email "actions@users.noreply.github.com"

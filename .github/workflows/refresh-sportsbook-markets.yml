@@ -5,6 +5,8 @@ on:
     paths:
       - '.github/workflows/refresh-sportsbook-markets.yml'
       - 'cfb/pregame/week-08-active-full-week.json'
+      - 'cfb/pregame/week-*-schedule.json'
+      - 'data/config.json'
   workflow_dispatch:
   schedule:
     - cron: '*/5 * * * *'
@@ -234,11 +236,15 @@ jobs:
 
           (async () => {
             const old=readExisting();
-            const scope=JSON.parse(fs.readFileSync('cfb/pregame/week-08-active-full-week.json','utf8'));
+            const currentWeek=Number(JSON.parse(fs.readFileSync('data/config.json','utf8')).currentWeek);
+            if (!Number.isInteger(currentWeek) || currentWeek < 8) throw new Error('Invalid CFB week');
+            const scopePath=currentWeek === 8 ? 'cfb/pregame/week-08-active-full-week.json' : `cfb/pregame/week-${String(currentWeek).padStart(2,'0')}-schedule.json`;
+            const scope=JSON.parse(fs.readFileSync(scopePath,'utf8'));
+            if (Number(scope.week) !== currentWeek) throw new Error('Market scope week mismatch');
             const scopeGames=scope.games || [];
             const remainingScopeGames=scopeGames.filter(game => new Date(game.kickoff).getTime() > now);
             if (!remainingScopeGames.length) {
-              console.log('No remaining pregame games in the active full Week 8 scope; no odds credits used.');
+              console.log('No remaining pregame games in the active current CFB scope; no odds credits used.');
               return;
             }
             const phase=phaseFromScope(remainingScopeGames);
@@ -344,7 +350,7 @@ jobs:
                 manualOverride:manual
               },
               games,
-              note:'Adaptive free-tier snapshot. Refresh timing and bookmaker updates are restricted to the active remaining Week 8 scope; prior out-of-scope rows remain unchanged. Spreads/totals refresh more often than moneylines; automatic calls slow as quota falls and stop at the reserve floor.'
+              note:'Adaptive free-tier snapshot. Refresh timing and bookmaker updates are restricted to the active remaining CFB scope; prior out-of-scope rows remain unchanged. Spreads/totals refresh more often than moneylines; automatic calls slow as quota falls and stop at the reserve floor.'
             };
             fs.writeFileSync(path,JSON.stringify(output,null,2)+'\n');
             console.log(`Wrote ${games.length} NCAAF games using ${usageThisRun} credit${usageThisRun === 1 ? '' : 's'} this run.`);

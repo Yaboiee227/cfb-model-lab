@@ -1,5 +1,6 @@
 from __future__ import annotations
 import json, urllib.parse, urllib.request
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 
@@ -44,4 +45,22 @@ def fetch_scores_for_projection(league,projection):
         for e in doc.get("events",[]):
             row=_parse_event(e)
             if row:out[row["sourceGameId"]]=row
+    missing = {str(g['sourceGameId']) for g in projection.get('games', [])
+               if g.get('sourceGameId') and str(g['sourceGameId']) not in out}
+
+    def fetch_missing(source_id):
+        try:
+            url = BASE[league].replace('/scoreboard', '/summary')+'?'+urllib.parse.urlencode({'event': source_id})
+            header = _get(url)['header']
+            if str(header['id']) != source_id:
+                return None
+            competition = header['competitions'][0]
+            return _parse_event(dict(header, status=competition['status']))
+        except (OSError, ValueError, KeyError, IndexError, TypeError):
+            return None
+
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        for row in pool.map(fetch_missing, sorted(missing)):
+            if row:
+                out[row['sourceGameId']] = row
     return list(out.values())
