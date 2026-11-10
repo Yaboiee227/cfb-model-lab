@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "league": "nfl",
-  "generatedAt": "2026-10-27T11:52:54.370650+00:00",
-  "currentWeek": 7,
+  "generatedAt": "2026-11-10T22:40:41.623854+00:00",
+  "currentWeek": 9,
   "label": "Published projection performance; research only, not wagers. Missing market locks excluded.",
-  "sourceNote": "Published-model cumulative display, combining historical audited weeks and explicitly labeled frozen research weeks. Not a single validated model backtest. Week 7: frozen Canonical V1 research projections, qualifying first-capture market locks. Two games excluded from ATS/totals; all 14 SU graded.",
+  "sourceNote": "Published-model cumulative display, combining historical audited weeks and explicitly labeled frozen research weeks. Not a single validated model backtest. Week 9 frozen baseline research. All 14 games graded straight up. ATS and totals excluded for missing original market locks.",
   "overall": {
     "ats": {
       "wins": 8,
@@ -21,11 +21,11 @@
       "winPct": 66.7
     },
     "straightUp": {
-      "wins": 16,
-      "losses": 11,
+      "wins": 40,
+      "losses": 15,
       "pushes": 0,
-      "graded": 27,
-      "winPct": 59.3
+      "graded": 55,
+      "winPct": 72.7
     }
   },
   "weeks": [
@@ -87,8 +87,68 @@
         "graded": 14,
         "winPct": 64.3
       }
+    },
+    {
+      "season": 2026,
+      "week": 8,
+      "status": "COMPLETE_WITH_EXCLUSIONS",
+      "pending": 0,
+      "review": 14,
+      "recordType": "Frozen research",
+      "note": "Week 8 frozen baseline research. All 14 games graded straight up. ATS and totals excluded for missing original market locks.",
+      "ats": {
+        "wins": 0,
+        "losses": 0,
+        "pushes": 0,
+        "graded": 0,
+        "winPct": null
+      },
+      "totals": {
+        "wins": 0,
+        "losses": 0,
+        "pushes": 0,
+        "graded": 0,
+        "winPct": null
+      },
+      "straightUp": {
+        "wins": 11,
+        "losses": 3,
+        "pushes": 0,
+        "graded": 14,
+        "winPct": 78.6
+      }
+    },
+    {
+      "season": 2026,
+      "week": 9,
+      "status": "COMPLETE_WITH_EXCLUSIONS",
+      "pending": 0,
+      "review": 14,
+      "recordType": "Frozen research",
+      "note": "Week 9 frozen baseline research. All 14 games graded straight up. ATS and totals excluded for missing original market locks.",
+      "ats": {
+        "wins": 0,
+        "losses": 0,
+        "pushes": 0,
+        "graded": 0,
+        "winPct": null
+      },
+      "totals": {
+        "wins": 0,
+        "losses": 0,
+        "pushes": 0,
+        "graded": 0,
+        "winPct": null
+      },
+      "straightUp": {
+        "wins": 13,
+        "losses": 1,
+        "pushes": 0,
+        "graded": 14,
+        "winPct": 92.9
+      }
     }
   ],
   "pending": 0,
-  "review": 2
+  "review": 14
 }

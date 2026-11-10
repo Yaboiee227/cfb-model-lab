@@ -1,0 +1,36 @@
+name: Grade frozen NFL baseline research
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '25 15 * * 2'
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: nfl-frozen-research-grading
+  cancel-in-progress: false
+jobs:
+  grade:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Verify research grading
+        run: python -m unittest tests.test_nfl_frozen_research -v
+      - name: Grade completed baseline research weeks
+        run: python scripts/grade_nfl_frozen_research.py
+      - name: Publish research records
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name 'cb-model-record-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add nfl/research-results nfl/results nfl/record-summary.json nfl_data/site/results.csv
+          if ! git diff --cached --quiet; then
+            git commit -m 'Grade completed frozen NFL baseline research'
+            git pull --rebase origin main
+            git push
+            gh workflow run deploy-pages.yml --ref main
+          fi

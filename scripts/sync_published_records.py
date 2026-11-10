@@ -13,7 +13,7 @@ def sync(league,week,games,note):
  review=sum(g['ats']['result']=='REVIEW' or g['totals']['result']=='REVIEW' for g in games)
  current=dict(season=2026,week=week,status='COMPLETE_WITH_EXCLUSIONS' if review else 'COMPLETE',pending=0,review=review,recordType='Frozen research',note=note)
  for key in ['ats','totals','straightUp']:current[key]=tally(g[key]['result'] for g in games)
- s['weeks']=sorted(history+[current],key=lambda w:(w['season'],w['week']));s['currentWeek']=week;s['pending']=0;s['review']=review;s['generatedAt']=datetime.datetime.now(datetime.timezone.utc).isoformat()
+ s['weeks']=sorted(history+[current],key=lambda w:(w['season'],w['week']));s['currentWeek']=s['weeks'][-1]['week'];s['pending']=s['weeks'][-1].get('pending',0);s['review']=s['weeks'][-1].get('review',0);s['generatedAt']=datetime.datetime.now(datetime.timezone.utc).isoformat()
  s['sourceNote']='Published-model cumulative display, combining historical audited weeks and explicitly labeled frozen research weeks. Not a single validated model backtest. '+note
  s['label']='Published projection performance; research only, not wagers. Missing market locks excluded.'
  for key in ['ats','totals','straightUp']:
@@ -29,15 +29,16 @@ def sync(league,week,games,note):
   row=dict(season=2026,week=week,date=g.get('date',''),gameId=g['gameId'],awayTeam=g['awayTeam'],homeTeam=g['homeTeam'],conference='NFL' if league=='nfl' else '',awayScore=g['final']['awayScore'],homeScore=g['final']['homeScore'],modelSpreadHome=g['projection']['spreadHome'],modelTotal=g['projection']['total'],marketSpreadHome=g['market'].get('spreadHome'),marketTotal=g['market'].get('total'),homeWinProbability=g['projection'].get('homeWinProbability'),atsProjection=g['ats']['pick'],atsResult=g['ats']['result'],totalProjection=g['totals']['pick'],totalResult=g['totals']['result'],suProjection=g['straightUp']['pick'],suResult=g['straightUp']['result'],trackingClass='FROZEN_RESEARCH',gradeReference=('cfb/research-results/week-08-foundation-full.json' if league=='cfb' else f'nfl/research-results/week-{week:02d}.json'))
   old.append(row)
  with csvpath.open('w',newline='') as f:
-  writer=csv.DictWriter(f,fieldnames=fields,extrasaction='ignore');writer.writeheader();writer.writerows(old)
+  writer=csv.DictWriter(f,fieldnames=fields,extrasaction='ignore',lineterminator='\n');writer.writeheader();writer.writerows(old)
  return s
-cfb=read('cfb/research-results/week-08-foundation-full.json');markets={g['gameId']:g for g in read('cfb/validation/week-08-foundation-vs-markets-results.json')['games']};games=[]
-for g in cfb['games']:
- b=markets[g['gameId']].get('books',{}).get('draftkings');v=b['modelVsMarket'] if b else {};home=g['homeTeam'];away=g['awayTeam']
- games.append(dict(gameId=g['gameId'],date=g['gameId'][:10],awayTeam=away,homeTeam=home,status=g['status'],final=g['final'],projection=g['projection'],market=dict(spreadHome=b['marketSpreadHome'],total=b['marketTotal'],moneylineHome=b.get('marketMoneylineHome'),moneylineAway=b.get('marketMoneylineAway')) if b else {},ats=dict(pick=(home if v.get('spreadPosition')=='HOME' else away) if b else None,result=v.get('spreadResult','REVIEW')),totals=dict(pick=v.get('totalPosition'),result=v.get('totalResult','REVIEW')),straightUp=dict(pick=g['projection']['winner'],result=g['straightUp']['result'])))
-sync('cfb',8,games,'Week 8: frozen foundation research; DraftKings fixed benchmark for this display (FanDuel separately audited). Five games excluded from ATS/totals for missing locks; all 56 SU graded.')
-nfl=read('nfl/research-results/week-07.json');paired={r['game_id']:r for r in csv.DictReader((ROOT/'nfl_data/prospective/week7/20261021T114427Z/paired_projections.csv').open())};games=[]
-for g in nfl['games']:
- r=paired[g['gameId']];spread=float(r['canonical_home_spread']);total=float(r['canonical_total']);winner=g['homeTeam'] if spread<0 else g['awayTeam'];market=g.get('marketSpreadHome');mt=g.get('marketTotal')
- games.append(dict(gameId=g['gameId'],date=datetime.datetime.fromisoformat(r['kickoff_utc']).astimezone(__import__('zoneinfo').ZoneInfo('America/New_York')).date().isoformat(),awayTeam=g['awayTeam'],homeTeam=g['homeTeam'],status='FINAL',final=dict(awayScore=g['awayScore'],homeScore=g['homeScore']),projection=dict(spreadHome=spread,total=total,winner=winner),market=dict(spreadHome=market,total=mt),ats=dict(pick=(g['homeTeam'] if market>spread else g['awayTeam']) if market is not None else None,result=g['atsResult']),totals=dict(pick=('OVER' if total>mt else 'UNDER') if mt is not None else None,result=g['totalResult']),straightUp=dict(pick=winner,result=g['suResult'])))
-sync('nfl',7,games,'Week 7: frozen Canonical V1 research projections, qualifying first-capture market locks. Two games excluded from ATS/totals; all 14 SU graded.')
+if __name__ == '__main__':
+    cfb=read('cfb/research-results/week-08-foundation-full.json');markets={g['gameId']:g for g in read('cfb/validation/week-08-foundation-vs-markets-results.json')['games']};games=[]
+    for g in cfb['games']:
+     b=markets[g['gameId']].get('books',{}).get('draftkings');v=b['modelVsMarket'] if b else {};home=g['homeTeam'];away=g['awayTeam']
+     games.append(dict(gameId=g['gameId'],date=g['gameId'][:10],awayTeam=away,homeTeam=home,status=g['status'],final=g['final'],projection=g['projection'],market=dict(spreadHome=b['marketSpreadHome'],total=b['marketTotal'],moneylineHome=b.get('marketMoneylineHome'),moneylineAway=b.get('marketMoneylineAway')) if b else {},ats=dict(pick=(home if v.get('spreadPosition')=='HOME' else away) if b else None,result=v.get('spreadResult','REVIEW')),totals=dict(pick=v.get('totalPosition'),result=v.get('totalResult','REVIEW')),straightUp=dict(pick=g['projection']['winner'],result=g['straightUp']['result'])))
+    sync('cfb',8,games,'Week 8: frozen foundation research; DraftKings fixed benchmark for this display (FanDuel separately audited). Five games excluded from ATS/totals for missing locks; all 56 SU graded.')
+    nfl=read('nfl/research-results/week-07.json');paired={r['game_id']:r for r in csv.DictReader((ROOT/'nfl_data/prospective/week7/20261021T114427Z/paired_projections.csv').open())};games=[]
+    for g in nfl['games']:
+     r=paired[g['gameId']];spread=float(r['canonical_home_spread']);total=float(r['canonical_total']);winner=g['homeTeam'] if spread<0 else g['awayTeam'];market=g.get('marketSpreadHome');mt=g.get('marketTotal')
+     games.append(dict(gameId=g['gameId'],date=datetime.datetime.fromisoformat(r['kickoff_utc']).astimezone(__import__('zoneinfo').ZoneInfo('America/New_York')).date().isoformat(),awayTeam=g['awayTeam'],homeTeam=g['homeTeam'],status='FINAL',final=dict(awayScore=g['awayScore'],homeScore=g['homeScore']),projection=dict(spreadHome=spread,total=total,winner=winner),market=dict(spreadHome=market,total=mt),ats=dict(pick=(g['homeTeam'] if market>spread else g['awayTeam']) if market is not None else None,result=g['atsResult']),totals=dict(pick=('OVER' if total>mt else 'UNDER') if mt is not None else None,result=g['totalResult']),straightUp=dict(pick=winner,result=g['suResult'])))
+    sync('nfl',7,games,'Week 7: frozen Canonical V1 research projections, qualifying first-capture market locks. Two games excluded from ATS/totals; all 14 SU graded.')
