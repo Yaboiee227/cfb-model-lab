@@ -1,0 +1,59 @@
+name: CFB Week 11 research operations
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/10 * 10-17 11 *'
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: cfb-week11-research-operations
+  cancel-in-progress: false
+jobs:
+  operate:
+    if: github.event_name == 'workflow_dispatch' || (github.event.schedule && startsWith(github.ref, 'refs/heads/main'))
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Check active Week 11 date window
+        id: window
+        run: |
+          python - <<'PY'
+          import datetime, os
+          active = '2026-11-10' <= str(datetime.datetime.now(datetime.timezone.utc).date()) <= '2026-11-17'
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as stream:
+              print('active='+str(active).lower(), file=stream)
+          PY
+      - name: Capture eligible pregame book locks
+        if: steps.window.outputs.active == 'true'
+        run: |
+          python scripts/cfb_market_research_lock.py \
+            --foundation-lock cfb/research-locks/week-11-foundation-full.json \
+            --markets data/markets-sportsbooks.json \
+            --output cfb/research-market-locks/week-11-foundation-market.json
+      - name: Grade frozen forecasts and eligible markets
+        if: steps.window.outputs.active == 'true'
+        run: |
+          python scripts/grade_research_shadow.py cfb/research-locks/week-11-foundation-full.json \
+            --output cfb/research-results/week-11-foundation-full.json
+          python scripts/cfb_market_postgame.py \
+            --foundation-lock cfb/research-locks/week-11-foundation-full.json \
+            --market-lock cfb/research-market-locks/week-11-foundation-market.json \
+            --output cfb/validation/week-11-foundation-vs-markets-results.json
+      - name: Publish research tracking artifacts
+        if: steps.window.outputs.active == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name cb-model-research-bot
+          git config user.email actions@users.noreply.github.com
+          git add cfb/research-market-locks/week-11-foundation-market.json cfb/research-results/week-11-foundation-full.json cfb/validation/week-11-foundation-vs-markets-results.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update Week 11 frozen research tracking'
+            git pull --rebase origin main
+            git push
+            gh workflow run deploy-pages.yml --ref main
+          fi

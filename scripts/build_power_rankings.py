@@ -150,7 +150,7 @@ def market_status(graph: dict, observed_at: str | None, source: str) -> dict:
     }
 
 
-def build_cfb(output_dir: Path):
+def build_cfb(output_dir: Path, as_of=CFB_AS_OF, week=9, expected_comparisons=54):
     validation_path = ROOT / "cfb/validation/week-08-simple-foundation-validation.json"
     validation = json.loads(validation_path.read_text(encoding="utf-8"))
     locked = validation["lockedDevelopmentCandidate"]
@@ -159,10 +159,10 @@ def build_cfb(output_dir: Path):
     params = locked["params"]
     hfa = float(validation["structuralHfaResearch"]["for2026"]["value"])
 
-    completed = engine.fetch_completed_games(CFB_START, CFB_AS_OF)
+    completed = engine.fetch_completed_games(CFB_START, as_of)
     model = engine.fit_model(
         completed,
-        CFB_AS_OF,
+        as_of,
         alpha=float(params["alpha"]),
         half_life_days=params["halfLifeDays"],
         min_team_appearances=int(params["minTeamAppearances"]),
@@ -181,7 +181,7 @@ def build_cfb(output_dir: Path):
     edges = []
     observed = []
     for row in read_csv(projection_path):
-        if kickoff_from_projection(row) <= CFB_AS_OF:
+        if kickoff_from_projection(row) <= as_of:
             continue
         model_spread = as_float(row.get("modelSpreadHome"))
         market_spread = as_float(row.get("marketSpreadHome"))
@@ -207,8 +207,8 @@ def build_cfb(output_dir: Path):
         edges.append((away_code, home_code))
         if row.get("marketObservedAt"):
             observed.append(row["marketObservedAt"])
-    if len(remaining) != 54:
-        raise RuntimeError(f"Expected 54 remaining CFB market comparisons at fixed cutoff, got {len(remaining)}")
+    if len(remaining) != expected_comparisons:
+        raise RuntimeError(f"Expected {expected_comparisons} remaining CFB market comparisons at fixed cutoff, got {len(remaining)}")
 
     graph = graph_status(set(teams), edges)
     market = market_status(
@@ -239,15 +239,15 @@ def build_cfb(output_dir: Path):
         "schemaVersion": 1,
         "league": "cfb",
         "season": 2026,
-        "week": 9,
-        "snapshotAsOf": engine.iso(CFB_AS_OF),
+        "week": week,
+        "snapshotAsOf": engine.iso(as_of),
         "trainingWindowStart": engine.iso(CFB_START),
         "modelId": "cfb-rebuild-foundation-v1-shadow",
         "modelRole": "RESEARCH_POWER_RATING_ONLY",
         "canonicalInfluence": False,
         "canonicalPromotionAuthorized": False,
         "week8FrozenProjectionsRewritten": False,
-        "method": "Zero-mean schedule-adjusted team-strength coefficients from the frozen validated Week 8 foundation architecture, refit only on completed games before the October 28 morning cutoff.",
+        "method": "Zero-mean schedule-adjusted team-strength coefficients from the frozen validated Week 8 foundation architecture, refit only on completed games before the recorded snapshot cutoff.",
         "lockedParameters": params,
         "structuralHomeMarginAdvantage": hfa,
         "trainingGames": len(completed),

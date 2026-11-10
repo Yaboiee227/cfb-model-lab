@@ -1,0 +1,704 @@
+{
+  "schemaVersion": 2,
+  "league": "cfb",
+  "season": 2026,
+  "week": 11,
+  "role": "IMMUTABLE_PREGAME_MARKET_RESEARCH_LOCK",
+  "canonicalInfluence": false,
+  "canonicalRecordMerged": false,
+  "foundationModelId": "cfb-rebuild-foundation-v1-shadow",
+  "foundationLockDigest": "c4de1fe117bf28dffc164640ec97b3084ceb6ba9b005d5390dfd08b16aff1501",
+  "provider": "The Odds API",
+  "booksTracked": [
+    "fanduel",
+    "draftkings"
+  ],
+  "lockWindowMinutes": 30.0,
+  "maxObservationAgeMinutes": 35.0,
+  "scopeRestricted": false,
+  "updatedAt": "2026-11-10T22:55:37.900967Z",
+  "counts": {
+    "foundationGames": 67,
+    "activeScopeGames": 67,
+    "pausedGames": 0,
+    "preservedOutOfScopeLockedGames": 0,
+    "gamesWithMarketLock": 0,
+    "bookObservationsLocked": 0,
+    "newBookObservationsThisRun": 0,
+    "pendingGames": 67,
+    "missedGames": 0
+  },
+  "games": [
+    {
+      "gameId": "2026-11-10-KENTSTATE-BOWLINGGREEN",
+      "sourceGameId": "401866459",
+      "awayTeam": "Kent State",
+      "homeTeam": "Bowling Green",
+      "kickoff": "2026-11-11T00:00:00Z",
+      "projectionDigest": "67b681f9475163f44cd78cc293cdcd6e695c0878f125a4514388139c7bc773e0",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-10-WESTERNMICHIGAN-AKRON",
+      "sourceGameId": "401866458",
+      "awayTeam": "Western Michigan",
+      "homeTeam": "Akron",
+      "kickoff": "2026-11-11T00:00:00Z",
+      "projectionDigest": "f47a85130b7d413aaf425ea16f20c23641628303a95c2c4b331c880a59a0cfad",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-10-OHIO-MIAMIOH",
+      "sourceGameId": "401866460",
+      "awayTeam": "Ohio",
+      "homeTeam": "Miami (OH)",
+      "kickoff": "2026-11-11T01:00:00Z",
+      "projectionDigest": "e2ee2accabf16836071b634a26dc7d10f5fe07b65bc59e9ef15dc68bc45c92a7",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-11-BUFFALO-BALLSTATE",
+      "sourceGameId": "401866461",
+      "awayTeam": "Buffalo",
+      "homeTeam": "Ball State",
+      "kickoff": "2026-11-12T00:30:00Z",
+      "projectionDigest": "4ec88878d85194b8a57ee962f1869c4c801f218163d0fadd36f1e0b4174b8365",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-11-MASSACHUSETTS-TOLEDO",
+      "sourceGameId": "401866463",
+      "awayTeam": "Massachusetts",
+      "homeTeam": "Toledo",
+      "kickoff": "2026-11-12T00:30:00Z",
+      "projectionDigest": "8a86b4363f28b3c67a4c418119700018b7b9e0307ac8ec1b6fae245c6191186e",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-11-SACRAMENTOSTATE-CENTRALMICHIGAN",
+      "sourceGameId": "401866462",
+      "awayTeam": "Sacramento State",
+      "homeTeam": "Central Michigan",
+      "kickoff": "2026-11-12T00:30:00Z",
+      "projectionDigest": "9f1e6aaf6f7bd41399b378848f99fe816e2324a971bd82998cdeadbf56e85cee",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-12-MEMPHIS-SOUTHFLORIDA",
+      "sourceGameId": "401862824",
+      "awayTeam": "Memphis",
+      "homeTeam": "South Florida",
+      "kickoff": "2026-11-13T01:00:00Z",
+      "projectionDigest": "8f253ce2128bbf50eb8d26c7b1777ec6b0029338c7575d6d81e5f1ee474cf34a",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-12-LOUISIANA-ULMONROE",
+      "sourceGameId": "401869969",
+      "awayTeam": "Louisiana",
+      "homeTeam": "UL Monroe",
+      "kickoff": "2026-11-13T02:00:00Z",
+      "projectionDigest": "54c4ff040c001b4d1ddb28da6a57b925af9dee9cb3a2acad47cc6b837cb59417",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-13-FLORIDASTATE-PITTSBURGH",
+      "sourceGameId": "401858293",
+      "awayTeam": "Florida State",
+      "homeTeam": "Pittsburgh",
+      "kickoff": "2026-11-14T00:00:00Z",
+      "projectionDigest": "4fec135ecd14ccef56eec21d85da0b214ce0a555537d664853058d2e63725cd4",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-13-ILLINOIS-UCLA",
+      "sourceGameId": "401858526",
+      "awayTeam": "Illinois",
+      "homeTeam": "UCLA",
+      "kickoff": "2026-11-14T02:00:00Z",
+      "projectionDigest": "1bfec8bb094399bd606feca82d990dab87609bbae595e311e1ef51d8fa545e83",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-13-HOUSTON-COLORADO",
+      "sourceGameId": "401856860",
+      "awayTeam": "Houston",
+      "homeTeam": "Colorado",
+      "kickoff": "2026-11-14T03:15:00Z",
+      "projectionDigest": "8ac1b35b9fdfd7fe75a836e2f507bc341c68ba3693a1de2ec1f43df1dfa0efa6",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-AUBURN-MISSISSIPPISTATE",
+      "sourceGameId": "401856886",
+      "awayTeam": "Auburn",
+      "homeTeam": "Mississippi State",
+      "kickoff": "2026-11-14T17:00:00Z",
+      "projectionDigest": "468a538a375abfe7f1bf6e159d826a1bad87fdbb5361eb74b527fbe825fa7321",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-CINCINNATI-IOWASTATE",
+      "sourceGameId": "401856859",
+      "awayTeam": "Cincinnati",
+      "homeTeam": "Iowa State",
+      "kickoff": "2026-11-14T17:00:00Z",
+      "projectionDigest": "9a1ee54179b4a2a05ff5ea43117f630028953c49a9ca49a3b21f352007959e1e",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-DUKE-MIAMI",
+      "sourceGameId": "401858296",
+      "awayTeam": "Duke",
+      "homeTeam": "Miami",
+      "kickoff": "2026-11-14T17:00:00Z",
+      "projectionDigest": "25d842c0080d9093b190a0f167ecf2722c0096037374a48af4babfdda08d3093",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-JAMESMADISON-UCONN",
+      "sourceGameId": "401861967",
+      "awayTeam": "James Madison",
+      "homeTeam": "UConn",
+      "kickoff": "2026-11-14T17:00:00Z",
+      "projectionDigest": "f32f35913516e40d7db57880c9f16691051ae250f4b369af3be6fc6d582d8704",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-NORTHWESTERN-OHIOSTATE",
+      "sourceGameId": "401858522",
+      "awayTeam": "Northwestern",
+      "homeTeam": "Ohio State",
+      "kickoff": "2026-11-14T17:00:00Z",
+      "projectionDigest": "d521df3e0c12e94b74c655f6e0a5f69b12ce66bca26e757e2b09be31492b8a78",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-SYRACUSE-NCSTATE",
+      "sourceGameId": "401858300",
+      "awayTeam": "Syracuse",
+      "homeTeam": "NC State",
+      "kickoff": "2026-11-14T17:00:00Z",
+      "projectionDigest": "a81eef3f90d2ff4b137d9848b666e36420eefccba94a6cbd1c80ec9c92d95a43",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-WAKEFOREST-SMU",
+      "sourceGameId": "401858301",
+      "awayTeam": "Wake Forest",
+      "homeTeam": "SMU",
+      "kickoff": "2026-11-14T17:00:00Z",
+      "projectionDigest": "12d31b43b02bd98542bfeb661a1dd05e3d1748846666c596dad05a0dfec0519a",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-WISCONSIN-MARYLAND",
+      "sourceGameId": "401858520",
+      "awayTeam": "Wisconsin",
+      "homeTeam": "Maryland",
+      "kickoff": "2026-11-14T17:00:00Z",
+      "projectionDigest": "8712754a4f65bcef21cce5bd8ebda3de2d4cdc071cc03af654e1742fcf6b21d0",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-GEORGIATECH-CLEMSON",
+      "sourceGameId": "401858297",
+      "awayTeam": "Georgia Tech",
+      "homeTeam": "Clemson",
+      "kickoff": "2026-11-14T17:30:00Z",
+      "projectionDigest": "e5b9ed3d281fd3a2e23451170088ca01740b83c9b0f258ddeaf764cf564f4c1e",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-NEBRASKA-RUTGERS",
+      "sourceGameId": "401858525",
+      "awayTeam": "Nebraska",
+      "homeTeam": "Rutgers",
+      "kickoff": "2026-11-14T17:30:00Z",
+      "projectionDigest": "eed7b5ad72b5514dd67620559cca475233a4d033b3b660547217577eb857ed62",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-ALABAMA-VANDERBILT",
+      "sourceGameId": "401856889",
+      "awayTeam": "Alabama",
+      "homeTeam": "Vanderbilt",
+      "kickoff": "2026-11-14T17:45:00Z",
+      "projectionDigest": "f092bef3339b0efe253fe3517070ff2fbb5b182fd830d997879815a9a1435ec6",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-ARKANSASSTATE-COASTALCAROLINA",
+      "sourceGameId": "401869937",
+      "awayTeam": "Arkansas State",
+      "homeTeam": "Coastal Carolina",
+      "kickoff": "2026-11-14T18:00:00Z",
+      "projectionDigest": "23acaac6b8cb13de95090c36aa830e8b2524b82d1dcf392928d75ecd35b63c1c",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-EASTCAROLINA-CHARLOTTE",
+      "sourceGameId": "401862825",
+      "awayTeam": "East Carolina",
+      "homeTeam": "Charlotte",
+      "kickoff": "2026-11-14T18:00:00Z",
+      "projectionDigest": "267b8cda75d138e8a0f1e548439401adbcd28e738e22b4bee1f4cceed667de8c",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-UAB-TEMPLE",
+      "sourceGameId": "401862829",
+      "awayTeam": "UAB",
+      "homeTeam": "Temple",
+      "kickoff": "2026-11-14T18:00:00Z",
+      "projectionDigest": "94c0fc14a22e70f860b7cf77f08adbf8e59371c99b307c8943713206d3899cc0",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-KANSASSTATE-TCU",
+      "sourceGameId": "401856862",
+      "awayTeam": "Kansas State",
+      "homeTeam": "TCU",
+      "kickoff": "2026-11-14T19:00:00Z",
+      "projectionDigest": "fa5d23cc47104bb0a61a2ac5808df666aaaa93c7fa252477f0faa617a29c7f5e",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-KENNESAWSTATE-SAMHOUSTON",
+      "sourceGameId": "401870769",
+      "awayTeam": "Kennesaw State",
+      "homeTeam": "Sam Houston",
+      "kickoff": "2026-11-14T19:00:00Z",
+      "projectionDigest": "ef72b02dea6ac9703833b1fb367b47a142b920c211e6c996c1cefa676d8856e7",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-TULANE-RICE",
+      "sourceGameId": "401862828",
+      "awayTeam": "Tulane",
+      "homeTeam": "Rice",
+      "kickoff": "2026-11-14T19:00:00Z",
+      "projectionDigest": "4706a499a090ce6a992732cf96e0f02e7b8b95b7aa0a264d7fc174133619800a",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-FLORIDAINTERNATIONAL-DELAWARE",
+      "sourceGameId": "401871060",
+      "awayTeam": "Florida International",
+      "homeTeam": "Delaware",
+      "kickoff": "2026-11-14T20:00:00Z",
+      "projectionDigest": "9199f02ecff5dea16fe3dc423dd9ede86e8abd82446b862c1dec23e719224a6c",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-NEWMEXICOSTATE-MISSOURISTATE",
+      "sourceGameId": "401870796",
+      "awayTeam": "New Mexico State",
+      "homeTeam": "Missouri State",
+      "kickoff": "2026-11-14T20:00:00Z",
+      "projectionDigest": "68b407b559ac119c952daef7287eae85e513bd44fd220818199d327061a41d14",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-TENNESSEE-TEXASAM",
+      "sourceGameId": "401856888",
+      "awayTeam": "Tennessee",
+      "homeTeam": "Texas A&M",
+      "kickoff": "2026-11-14T20:00:00Z",
+      "projectionDigest": "3db1a99ddec7c4dc9f43fc3f24ced78647ce19fd80faf15523e8cb3526ed70ff",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-ARIZONASTATE-UCF",
+      "sourceGameId": "401856857",
+      "awayTeam": "Arizona State",
+      "homeTeam": "UCF",
+      "kickoff": "2026-11-14T20:30:00Z",
+      "projectionDigest": "b29ad8e04f7b6655d73e947eec2c6a5852bed3ea7e485ecdb2904686de0d508a",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-BAYLOR-BYU",
+      "sourceGameId": "401856858",
+      "awayTeam": "Baylor",
+      "homeTeam": "BYU",
+      "kickoff": "2026-11-14T20:30:00Z",
+      "projectionDigest": "35918b1dbe78358ce5361f0c0a5312eee235f135a7b18e88a52df484bdfaed15",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-BOSTONCOLLEGE-NOTREDAME",
+      "sourceGameId": "401858294",
+      "awayTeam": "Boston College",
+      "homeTeam": "Notre Dame",
+      "kickoff": "2026-11-14T20:30:00Z",
+      "projectionDigest": "ea320ba9c7fa00003e4eb4a3795845fcfed79a0617f6db192dbf3fc196796978",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-CALIFORNIA-VIRGINIA",
+      "sourceGameId": "401858295",
+      "awayTeam": "California",
+      "homeTeam": "Virginia",
+      "kickoff": "2026-11-14T20:30:00Z",
+      "projectionDigest": "c2edf4897ea95048c8659a7b00b325eeafdf6a706437f4326062edbfcf51b718",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-FLORIDAATLANTIC-TULSA",
+      "sourceGameId": "401862826",
+      "awayTeam": "Florida Atlantic",
+      "homeTeam": "Tulsa",
+      "kickoff": "2026-11-14T20:30:00Z",
+      "projectionDigest": "65d04e6a29a206d28c418777b20612f5fe67f327989f96a0694d121aa9bbc68d",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-GEORGIASOUTHERN-GEORGIASTATE",
+      "sourceGameId": "401869952",
+      "awayTeam": "Georgia Southern",
+      "homeTeam": "Georgia State",
+      "kickoff": "2026-11-14T20:30:00Z",
+      "projectionDigest": "a77e6b98864965ee79de29af3153621cd25119cac2b7db5de23b3fa425745d4f",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-JACKSONVILLESTATE-WESTERNKENTUCKY",
+      "sourceGameId": "401870752",
+      "awayTeam": "Jacksonville State",
+      "homeTeam": "Western Kentucky",
+      "kickoff": "2026-11-14T20:30:00Z",
+      "projectionDigest": "5647ad2ab864f210aaf221a80950c12ac45c9fe56ab2ad4fb1f164249085307f",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-MICHIGAN-OREGON",
+      "sourceGameId": "401858523",
+      "awayTeam": "Michigan",
+      "homeTeam": "Oregon",
+      "kickoff": "2026-11-14T20:30:00Z",
+      "projectionDigest": "bf921163b542f0b2d9a8fa508c4fff5a190c16577d7e5eff753cc67dbd5819c5",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-MIDDLETENNESSEE-LIBERTY",
+      "sourceGameId": "401871061",
+      "awayTeam": "Middle Tennessee",
+      "homeTeam": "Liberty",
+      "kickoff": "2026-11-14T20:30:00Z",
+      "projectionDigest": "e46b3dbe78ac2bc7ee70e3c1b6ed5e73eb82c0e5b635f7d4430c882bae56b6c5",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-MISSOURI-GEORGIA",
+      "sourceGameId": "401856883",
+      "awayTeam": "Missouri",
+      "homeTeam": "Georgia",
+      "kickoff": "2026-11-14T20:30:00Z",
+      "projectionDigest": "29d8beccbc6638b7dcc36b2caddbff5f586775499430c81ee6a70cf36ae1c539",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-NEVADA-NORTHERNILLINOIS",
+      "sourceGameId": "401864536",
+      "awayTeam": "Nevada",
+      "homeTeam": "Northern Illinois",
+      "kickoff": "2026-11-14T20:30:00Z",
+      "projectionDigest": "0f4425594938c0d1b3d55401d450cbc563660f4d86b6c1f825d5aef1819b3fa9",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-USC-INDIANA",
+      "sourceGameId": "401858518",
+      "awayTeam": "USC",
+      "homeTeam": "Indiana",
+      "kickoff": "2026-11-14T20:30:00Z",
+      "projectionDigest": "7f9caa191d9e173bf5e8fd733c92c96ebad7ab11ef3722effa7d6af1902861e3",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-FRESNOSTATE-TEXASSTATE",
+      "sourceGameId": "401860916",
+      "awayTeam": "Fresno State",
+      "homeTeam": "Texas State",
+      "kickoff": "2026-11-14T21:00:00Z",
+      "projectionDigest": "84bd0a955d342fefb4acd4d5f728cbed673bad59ef1c14bb1b2d3b95fa3e8285",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-OLEMISS-OKLAHOMA",
+      "sourceGameId": "401856887",
+      "awayTeam": "Ole Miss",
+      "homeTeam": "Oklahoma",
+      "kickoff": "2026-11-14T21:15:00Z",
+      "projectionDigest": "685ad1d5c3cfd4bb6eada861d07382c5f428abdf6c159153de5d7202d11e9421",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-WASHINGTON-MICHIGANSTATE",
+      "sourceGameId": "401858521",
+      "awayTeam": "Washington",
+      "homeTeam": "Michigan State",
+      "kickoff": "2026-11-14T21:15:00Z",
+      "projectionDigest": "85fc5f8367791b71ddb12816a365d2dde99fd96d6b237d613c639d315944ff14",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-SOUTHERNMISS-LOUISIANATECH",
+      "sourceGameId": "401871099",
+      "awayTeam": "Southern Miss",
+      "homeTeam": "Louisiana Tech",
+      "kickoff": "2026-11-14T22:00:00Z",
+      "projectionDigest": "5b10bfbe8c882c98cbb348049478020a1fb8d76a14a95860c2773b75609beec5",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-KANSAS-WESTVIRGINIA",
+      "sourceGameId": "401856861",
+      "awayTeam": "Kansas",
+      "homeTeam": "West Virginia",
+      "kickoff": "2026-11-14T22:30:00Z",
+      "projectionDigest": "cfd9d05c8c5e4abc26be6a071d2fc211cbef7ea24122e4a8619f4ddb724ae3b8",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-APPSTATE-MARSHALL",
+      "sourceGameId": "401869928",
+      "awayTeam": "App State",
+      "homeTeam": "Marshall",
+      "kickoff": "2026-11-14T23:00:00Z",
+      "projectionDigest": "f2056ecf1ec61d89cd4f0f236eb00377c79290877493fdf46eacee70a0574302",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-OREGONSTATE-BOISESTATE",
+      "sourceGameId": "401860914",
+      "awayTeam": "Oregon State",
+      "homeTeam": "Boise State",
+      "kickoff": "2026-11-14T23:00:00Z",
+      "projectionDigest": "50df4a50426a7d48ab07d419a35246719a50375ab82fb682522d5c7c68577bdc",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-FLORIDA-KENTUCKY",
+      "sourceGameId": "401856884",
+      "awayTeam": "Florida",
+      "homeTeam": "Kentucky",
+      "kickoff": "2026-11-14T23:15:00Z",
+      "projectionDigest": "b3801283c5af88082e158ad256a6834483df20f203eb69425c0ec5fd98f7b9bb",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-LOUISVILLE-NORTHCAROLINA",
+      "sourceGameId": "401858298",
+      "awayTeam": "Louisville",
+      "homeTeam": "North Carolina",
+      "kickoff": "2026-11-15T00:00:00Z",
+      "projectionDigest": "894164b800ced357676be113b477951d6f06469f4eeb6fc8d9929b1333e4e55e",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-MINNESOTA-PENNSTATE",
+      "sourceGameId": "401858524",
+      "awayTeam": "Minnesota",
+      "homeTeam": "Penn State",
+      "kickoff": "2026-11-15T00:00:00Z",
+      "projectionDigest": "ab03a26bff890679ef34208293b7a56a756f95e5dcd2ea2dd2c915b50659af2a",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-SANJOSSTATE-AIRFORCE",
+      "sourceGameId": "401864538",
+      "awayTeam": "San José State",
+      "homeTeam": "Air Force",
+      "kickoff": "2026-11-15T00:00:00Z",
+      "projectionDigest": "fcc07b6b653a7419e8078016528d847c446954c14fc8ce013bd14fd2c1d43209",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-TROY-SOUTHALABAMA",
+      "sourceGameId": "401871100",
+      "awayTeam": "Troy",
+      "homeTeam": "South Alabama",
+      "kickoff": "2026-11-15T00:00:00Z",
+      "projectionDigest": "e83f5424c51ef5af91808eeec598e654cd27461efd05f0416c93e1c0acc2acf2",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-PURDUE-IOWA",
+      "sourceGameId": "401858519",
+      "awayTeam": "Purdue",
+      "homeTeam": "Iowa",
+      "kickoff": "2026-11-15T00:30:00Z",
+      "projectionDigest": "a7988c1704ee4f3ad6927a8a25703a12f42038223867a8f2884d911feff6aec6",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-STANFORD-VIRGINIATECH",
+      "sourceGameId": "401858299",
+      "awayTeam": "Stanford",
+      "homeTeam": "Virginia Tech",
+      "kickoff": "2026-11-15T00:30:00Z",
+      "projectionDigest": "8df162ac110daf0bec006f15d563925bcc8192e839a2be64a0a401de451e8e76",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-TEXAS-LSU",
+      "sourceGameId": "401856885",
+      "awayTeam": "Texas",
+      "homeTeam": "LSU",
+      "kickoff": "2026-11-15T00:30:00Z",
+      "projectionDigest": "bfd9fa697a2205460165793b140d789ea46bca6cd6f8f7a3badcb7292334f78d",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-UNLV-NEWMEXICO",
+      "sourceGameId": "401864539",
+      "awayTeam": "UNLV",
+      "homeTeam": "New Mexico",
+      "kickoff": "2026-11-15T00:30:00Z",
+      "projectionDigest": "66818e3e84829906453390052ad084ab9d09e9cde03a28bdce653709717098fb",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-UTAH-ARIZONA",
+      "sourceGameId": "401856864",
+      "awayTeam": "Utah",
+      "homeTeam": "Arizona",
+      "kickoff": "2026-11-15T00:30:00Z",
+      "projectionDigest": "9f8b8f204f2b7f28ee69b23ee89936baf9e9cc8d139cf1f8e25f49be2460fe4e",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-SOUTHCAROLINA-ARKANSAS",
+      "sourceGameId": "401856882",
+      "awayTeam": "South Carolina",
+      "homeTeam": "Arkansas",
+      "kickoff": "2026-11-15T00:45:00Z",
+      "projectionDigest": "cee376980f034394e81b6f5fd9261c6f1ed01e4365b4dca1f6a7f9e1702e46ca",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-NORTHTEXAS-UTSA",
+      "sourceGameId": "401862827",
+      "awayTeam": "North Texas",
+      "homeTeam": "UTSA",
+      "kickoff": "2026-11-15T02:00:00Z",
+      "projectionDigest": "378854e975946e0bbab8a781415c761f49dcc018e42e5edd7629de34fbc5e15e",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-TEXASTECH-OKLAHOMASTATE",
+      "sourceGameId": "401856863",
+      "awayTeam": "Texas Tech",
+      "homeTeam": "Oklahoma State",
+      "kickoff": "2026-11-15T02:30:00Z",
+      "projectionDigest": "edb19ccc2c9aa8db659dc9f2d3a287648cdbfd66d77f3da06869387843d961c8",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-UTAHSTATE-SANDIEGOSTATE",
+      "sourceGameId": "401860915",
+      "awayTeam": "Utah State",
+      "homeTeam": "San Diego State",
+      "kickoff": "2026-11-15T02:30:00Z",
+      "projectionDigest": "372056fed6b33d522aaaa6f53f6b21c70b9fab418a38b1bf2e32160cacb02b30",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-WYOMING-UTEP",
+      "sourceGameId": "401864540",
+      "awayTeam": "Wyoming",
+      "homeTeam": "UTEP",
+      "kickoff": "2026-11-15T03:00:00Z",
+      "projectionDigest": "2ba46b064505a3e3b61b1db27e2dd7044f7db2ea58dea18fec106f5fbf3ec3bf",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-COLORADOSTATE-WASHINGTONSTATE",
+      "sourceGameId": "401860917",
+      "awayTeam": "Colorado State",
+      "homeTeam": "Washington State",
+      "kickoff": "2026-11-15T03:30:00Z",
+      "projectionDigest": "ab667dc1c57db7cc8b4592c9002fc71962266502e190fe03d86ace7c7e490fe0",
+      "books": {},
+      "status": "PENDING"
+    },
+    {
+      "gameId": "2026-11-14-NORTHDAKOTASTATE-HAWAII",
+      "sourceGameId": "401864537",
+      "awayTeam": "North Dakota State",
+      "homeTeam": "Hawai'i",
+      "kickoff": "2026-11-15T04:00:00Z",
+      "projectionDigest": "8706412c423bdf195aa0e01ac06278347fc4c17885624259914da1832abdc2ba",
+      "books": {},
+      "status": "PENDING"
+    }
+  ],
+  "policy": "Research-only per-book publication-window capture. FanDuel and DraftKings are preserved independently; no consensus or canonical benchmark is inferred. Existing book observations are immutable and post-kickoff reconstruction is prohibited. When an active scope is supplied, prior immutable locks remain preserved even if their games are no longer active, while unlocked out-of-scope games remain paused and cannot receive new observations."
+}

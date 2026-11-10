@@ -1,6 +1,7 @@
 from __future__ import annotations
 import json, urllib.parse, urllib.request
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 
 BASE={"nfl":"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard","cfb":"https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard"}
 
@@ -30,7 +31,12 @@ def _parse_event(event):
     return {"sourceGameId":str(event.get("id")),"awayTeam":away.get("team",{}).get("location") or away.get("team",{}).get("displayName") or away.get("team",{}).get("shortDisplayName"),"homeTeam":home.get("team",{}).get("location") or home.get("team",{}).get("displayName") or home.get("team",{}).get("shortDisplayName"),"awayScore":as_,"homeScore":hs,"status":_status(event),"overtime":period>4,"source":"ESPN","sourceUpdatedAt":datetime.now(timezone.utc).isoformat().replace('+00:00','Z')}
 
 def fetch_scores_for_projection(league,projection):
-    dates=sorted({str(g["kickoff"])[:10].replace("-","") for g in projection.get("games",[])})
+    dates = {str(g['kickoff'])[:10].replace('-', '') for g in projection.get('games', [])}
+    for game in projection.get('games', []):
+        kickoff = datetime.fromisoformat(str(game['kickoff']).replace('Z', '+00:00'))
+        if kickoff.tzinfo is not None:
+            dates.add(kickoff.astimezone(ZoneInfo('America/New_York')).strftime('%Y%m%d'))
+    dates = sorted(dates)
     out={}
     for d in dates:
         url=BASE[league]+"?"+urllib.parse.urlencode({"dates":d,"limit":1000,**({"groups":80} if league=="cfb" else {})})

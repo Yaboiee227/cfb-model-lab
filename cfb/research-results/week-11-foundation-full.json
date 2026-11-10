@@ -1,0 +1,1254 @@
+{
+  "schemaVersion": 1,
+  "league": "cfb",
+  "season": 2026,
+  "week": 11,
+  "role": "PROSPECTIVE_RESEARCH_SHADOW_RESULTS",
+  "canonicalInfluence": false,
+  "canonicalRecordMerged": false,
+  "modelId": "cfb-rebuild-foundation-v1-shadow",
+  "sourceLockDigest": "c4de1fe117bf28dffc164640ec97b3084ceb6ba9b005d5390dfd08b16aff1501",
+  "sourceLockedAt": "2026-11-10T22:51:32.601559Z",
+  "gradedAt": "2026-11-10T22:57:17.157614Z",
+  "status": "IN_PROGRESS",
+  "counts": {
+    "games": 67,
+    "final": 0,
+    "pending": 36,
+    "review": 31,
+    "void": 0
+  },
+  "metrics": {
+    "margin": {
+      "games": 0,
+      "mae": null,
+      "rmse": null,
+      "bias": null
+    },
+    "total": {
+      "games": 0,
+      "mae": null,
+      "rmse": null,
+      "bias": null
+    },
+    "straightUp": {
+      "wins": 0,
+      "losses": 0,
+      "graded": 0,
+      "accuracyPct": null
+    },
+    "winProbability": {
+      "games": 0,
+      "brierScore": null
+    }
+  },
+  "games": [
+    {
+      "gameId": "2026-11-10-KENTSTATE-BOWLINGGREEN",
+      "awayTeam": "Kent State",
+      "homeTeam": "Bowling Green",
+      "kickoff": "2026-11-11T00:00:00Z",
+      "projectionDigest": "67b681f9475163f44cd78cc293cdcd6e695c0878f125a4514388139c7bc773e0",
+      "projection": {
+        "awayPoints": 17.372617205511418,
+        "homePoints": 27.949708128746778,
+        "marginHome": 10.57709092323536,
+        "spreadHome": -10.57709092323536,
+        "total": 45.322325334258196,
+        "homeWinProbability": 74.78415378802077,
+        "winner": "Bowling Green"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-10-WESTERNMICHIGAN-AKRON",
+      "awayTeam": "Western Michigan",
+      "homeTeam": "Akron",
+      "kickoff": "2026-11-11T00:00:00Z",
+      "projectionDigest": "f47a85130b7d413aaf425ea16f20c23641628303a95c2c4b331c880a59a0cfad",
+      "projection": {
+        "awayPoints": 28.944156684617546,
+        "homePoints": 18.306150776569936,
+        "marginHome": -10.63800590804761,
+        "spreadHome": 10.63800590804761,
+        "total": 47.25030746118748,
+        "homeWinProbability": 25.09324742922383,
+        "winner": "Western Michigan"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-10-OHIO-MIAMIOH",
+      "awayTeam": "Ohio",
+      "homeTeam": "Miami (OH)",
+      "kickoff": "2026-11-11T01:00:00Z",
+      "projectionDigest": "e2ee2accabf16836071b634a26dc7d10f5fe07b65bc59e9ef15dc68bc45c92a7",
+      "projection": {
+        "awayPoints": 27.307479379775305,
+        "homePoints": 26.31562509901214,
+        "marginHome": -0.9918542807631638,
+        "spreadHome": 0.9918542807631638,
+        "total": 53.62310447878745,
+        "homeWinProbability": 47.503694613617704,
+        "winner": "Ohio"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-11-BUFFALO-BALLSTATE",
+      "awayTeam": "Buffalo",
+      "homeTeam": "Ball State",
+      "kickoff": "2026-11-12T00:30:00Z",
+      "projectionDigest": "4ec88878d85194b8a57ee962f1869c4c801f218163d0fadd36f1e0b4174b8365",
+      "projection": {
+        "awayPoints": 29.692853562482306,
+        "homePoints": 27.163221495425702,
+        "marginHome": -2.5296320670566033,
+        "spreadHome": 2.5296320670566033,
+        "total": 56.85607505790801,
+        "homeWinProbability": 43.656218817792976,
+        "winner": "Buffalo"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-11-MASSACHUSETTS-TOLEDO",
+      "awayTeam": "Massachusetts",
+      "homeTeam": "Toledo",
+      "kickoff": "2026-11-12T00:30:00Z",
+      "projectionDigest": "8a86b4363f28b3c67a4c418119700018b7b9e0307ac8ec1b6fae245c6191186e",
+      "projection": {
+        "awayPoints": 21.779773821139898,
+        "homePoints": 31.711799161642624,
+        "marginHome": 9.932025340502726,
+        "spreadHome": -9.932025340502726,
+        "total": 53.49157298278252,
+        "homeWinProbability": 73.46674278850853,
+        "winner": "Toledo"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-11-SACRAMENTOSTATE-CENTRALMICHIGAN",
+      "awayTeam": "Sacramento State",
+      "homeTeam": "Central Michigan",
+      "kickoff": "2026-11-12T00:30:00Z",
+      "projectionDigest": "9f1e6aaf6f7bd41399b378848f99fe816e2324a971bd82998cdeadbf56e85cee",
+      "projection": {
+        "awayPoints": 13.530322662820446,
+        "homePoints": 30.883747901827903,
+        "marginHome": 17.353425239007457,
+        "spreadHome": -17.353425239007457,
+        "total": 44.41407056464835,
+        "homeWinProbability": 86.33491367319695,
+        "winner": "Central Michigan"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-12-MEMPHIS-SOUTHFLORIDA",
+      "awayTeam": "Memphis",
+      "homeTeam": "South Florida",
+      "kickoff": "2026-11-13T01:00:00Z",
+      "projectionDigest": "8f253ce2128bbf50eb8d26c7b1777ec6b0029338c7575d6d81e5f1ee474cf34a",
+      "projection": {
+        "awayPoints": 25.16890173027995,
+        "homePoints": 24.150362866223325,
+        "marginHome": -1.018538864056623,
+        "spreadHome": 1.018538864056623,
+        "total": 49.319264596503274,
+        "homeWinProbability": 47.43662596871928,
+        "winner": "Memphis"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-12-LOUISIANA-ULMONROE",
+      "awayTeam": "Louisiana",
+      "homeTeam": "UL Monroe",
+      "kickoff": "2026-11-13T02:00:00Z",
+      "projectionDigest": "54c4ff040c001b4d1ddb28da6a57b925af9dee9cb3a2acad47cc6b837cb59417",
+      "projection": {
+        "awayPoints": 27.698229391480776,
+        "homePoints": 20.05570220495763,
+        "marginHome": -7.6425271865231466,
+        "spreadHome": 7.6425271865231466,
+        "total": 47.753931596438406,
+        "homeWinProbability": 31.473993584024534,
+        "winner": "Louisiana"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-13-FLORIDASTATE-PITTSBURGH",
+      "awayTeam": "Florida State",
+      "homeTeam": "Pittsburgh",
+      "kickoff": "2026-11-14T00:00:00Z",
+      "projectionDigest": "4fec135ecd14ccef56eec21d85da0b214ce0a555537d664853058d2e63725cd4",
+      "projection": {
+        "awayPoints": 25.748251404705567,
+        "homePoints": 30.61790050719139,
+        "marginHome": 4.869649102485823,
+        "spreadHome": -4.869649102485823,
+        "total": 56.36615191189696,
+        "homeWinProbability": 62.07351909924825,
+        "winner": "Pittsburgh"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-13-ILLINOIS-UCLA",
+      "awayTeam": "Illinois",
+      "homeTeam": "UCLA",
+      "kickoff": "2026-11-14T02:00:00Z",
+      "projectionDigest": "1bfec8bb094399bd606feca82d990dab87609bbae595e311e1ef51d8fa545e83",
+      "projection": {
+        "awayPoints": 16.16339601892976,
+        "homePoints": 30.052470085453358,
+        "marginHome": 13.889074066523598,
+        "spreadHome": -13.889074066523598,
+        "total": 46.21586610438312,
+        "homeWinProbability": 80.97002933579584,
+        "winner": "UCLA"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-13-HOUSTON-COLORADO",
+      "awayTeam": "Houston",
+      "homeTeam": "Colorado",
+      "kickoff": "2026-11-14T03:15:00Z",
+      "projectionDigest": "8ac1b35b9fdfd7fe75a836e2f507bc341c68ba3693a1de2ec1f43df1dfa0efa6",
+      "projection": {
+        "awayPoints": 25.703203001656277,
+        "homePoints": 16.832480577517494,
+        "marginHome": -8.870722424138783,
+        "spreadHome": 8.870722424138783,
+        "total": 42.53568357917377,
+        "homeWinProbability": 28.774216359739825,
+        "winner": "Houston"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-14-AUBURN-MISSISSIPPISTATE",
+      "awayTeam": "Auburn",
+      "homeTeam": "Mississippi State",
+      "kickoff": "2026-11-14T17:00:00Z",
+      "projectionDigest": "468a538a375abfe7f1bf6e159d826a1bad87fdbb5361eb74b527fbe825fa7321",
+      "projection": {
+        "awayPoints": 24.126902390359096,
+        "homePoints": 27.447840142549236,
+        "marginHome": 3.32093775219014,
+        "spreadHome": -3.32093775219014,
+        "total": 51.57474253290833,
+        "homeWinProbability": 58.30275667080622,
+        "winner": "Mississippi State"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-14-CINCINNATI-IOWASTATE",
+      "awayTeam": "Cincinnati",
+      "homeTeam": "Iowa State",
+      "kickoff": "2026-11-14T17:00:00Z",
+      "projectionDigest": "9a1ee54179b4a2a05ff5ea43117f630028953c49a9ca49a3b21f352007959e1e",
+      "projection": {
+        "awayPoints": 27.932908066172214,
+        "homePoints": 33.86979247214745,
+        "marginHome": 5.936884405975238,
+        "spreadHome": -5.936884405975238,
+        "total": 61.80270053831967,
+        "homeWinProbability": 64.60897729260672,
+        "winner": "Iowa State"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-14-DUKE-MIAMI",
+      "awayTeam": "Duke",
+      "homeTeam": "Miami",
+      "kickoff": "2026-11-14T17:00:00Z",
+      "projectionDigest": "25d842c0080d9093b190a0f167ecf2722c0096037374a48af4babfdda08d3093",
+      "projection": {
+        "awayPoints": 21.734932308170503,
+        "homePoints": 32.38852202713634,
+        "marginHome": 10.653589718965836,
+        "spreadHome": -10.653589718965836,
+        "total": 54.123454335306846,
+        "homeWinProbability": 74.93806612349276,
+        "winner": "Miami"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-14-JAMESMADISON-UCONN",
+      "awayTeam": "James Madison",
+      "homeTeam": "UConn",
+      "kickoff": "2026-11-14T17:00:00Z",
+      "projectionDigest": "f32f35913516e40d7db57880c9f16691051ae250f4b369af3be6fc6d582d8704",
+      "projection": {
+        "awayPoints": 32.79505619739905,
+        "homePoints": 27.630654827228753,
+        "marginHome": -5.164401370170296,
+        "spreadHome": 5.164401370170296,
+        "total": 60.4257110246278,
+        "homeWinProbability": 37.22048324632294,
+        "winner": "James Madison"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-14-NORTHWESTERN-OHIOSTATE",
+      "awayTeam": "Northwestern",
+      "homeTeam": "Ohio State",
+      "kickoff": "2026-11-14T17:00:00Z",
+      "projectionDigest": "d521df3e0c12e94b74c655f6e0a5f69b12ce66bca26e757e2b09be31492b8a78",
+      "projection": {
+        "awayPoints": 23.344611807900932,
+        "homePoints": 31.65022429932015,
+        "marginHome": 8.305612491419218,
+        "spreadHome": -8.305612491419218,
+        "total": 54.99483610722108,
+        "homeWinProbability": 69.99714677944334,
+        "winner": "Ohio State"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-14-SYRACUSE-NCSTATE",
+      "awayTeam": "Syracuse",
+      "homeTeam": "NC State",
+      "kickoff": "2026-11-14T17:00:00Z",
+      "projectionDigest": "a81eef3f90d2ff4b137d9848b666e36420eefccba94a6cbd1c80ec9c92d95a43",
+      "projection": {
+        "awayPoints": 27.21099121510904,
+        "homePoints": 26.02654474340983,
+        "marginHome": -1.1844464716992107,
+        "spreadHome": 1.1844464716992107,
+        "total": 53.23753595851887,
+        "homeWinProbability": 47.019806563811294,
+        "winner": "Syracuse"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-14-WAKEFOREST-SMU",
+      "awayTeam": "Wake Forest",
+      "homeTeam": "SMU",
+      "kickoff": "2026-11-14T17:00:00Z",
+      "projectionDigest": "12d31b43b02bd98542bfeb661a1dd05e3d1748846666c596dad05a0dfec0519a",
+      "projection": {
+        "awayPoints": 31.61107599172488,
+        "homePoints": 27.278732447371397,
+        "marginHome": -4.332343544353485,
+        "spreadHome": 4.332343544353485,
+        "total": 58.88980843909628,
+        "homeWinProbability": 39.22370998156528,
+        "winner": "Wake Forest"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-14-WISCONSIN-MARYLAND",
+      "awayTeam": "Wisconsin",
+      "homeTeam": "Maryland",
+      "kickoff": "2026-11-14T17:00:00Z",
+      "projectionDigest": "8712754a4f65bcef21cce5bd8ebda3de2d4cdc071cc03af654e1742fcf6b21d0",
+      "projection": {
+        "awayPoints": 27.29854225107509,
+        "homePoints": 19.479244558254337,
+        "marginHome": -7.819297692820754,
+        "spreadHome": 7.819297692820754,
+        "total": 46.77778680932943,
+        "homeWinProbability": 31.078789772020656,
+        "winner": "Wisconsin"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-14-GEORGIATECH-CLEMSON",
+      "awayTeam": "Georgia Tech",
+      "homeTeam": "Clemson",
+      "kickoff": "2026-11-14T17:30:00Z",
+      "projectionDigest": "e5b9ed3d281fd3a2e23451170088ca01740b83c9b0f258ddeaf764cf564f4c1e",
+      "projection": {
+        "awayPoints": 16.349440257307442,
+        "homePoints": 32.155392548667415,
+        "marginHome": 15.805952291359972,
+        "spreadHome": -15.805952291359972,
+        "total": 48.50483280597486,
+        "homeWinProbability": 84.08121842673508,
+        "winner": "Clemson"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-14-NEBRASKA-RUTGERS",
+      "awayTeam": "Nebraska",
+      "homeTeam": "Rutgers",
+      "kickoff": "2026-11-14T17:30:00Z",
+      "projectionDigest": "eed7b5ad72b5514dd67620559cca475233a4d033b3b660547217577eb857ed62",
+      "projection": {
+        "awayPoints": 31.544413247189212,
+        "homePoints": 21.7888132350177,
+        "marginHome": -9.755600012171513,
+        "spreadHome": 9.755600012171513,
+        "total": 53.33322648220691,
+        "homeWinProbability": 26.899558372621975,
+        "winner": "Nebraska"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-14-ALABAMA-VANDERBILT",
+      "awayTeam": "Alabama",
+      "homeTeam": "Vanderbilt",
+      "kickoff": "2026-11-14T17:45:00Z",
+      "projectionDigest": "f092bef3339b0efe253fe3517070ff2fbb5b182fd830d997879815a9a1435ec6",
+      "projection": {
+        "awayPoints": 35.92695510092743,
+        "homePoints": 19.68809233259679,
+        "marginHome": -16.23886276833064,
+        "spreadHome": 16.23886276833064,
+        "total": 55.61504743352422,
+        "homeWinProbability": 15.265084440942989,
+        "winner": "Alabama"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-14-ARKANSASSTATE-COASTALCAROLINA",
+      "awayTeam": "Arkansas State",
+      "homeTeam": "Coastal Carolina",
+      "kickoff": "2026-11-14T18:00:00Z",
+      "projectionDigest": "23acaac6b8cb13de95090c36aa830e8b2524b82d1dcf392928d75ecd35b63c1c",
+      "projection": {
+        "awayPoints": 21.723582095601195,
+        "homePoints": 26.45997985894318,
+        "marginHome": 4.736397763341984,
+        "spreadHome": -4.736397763341984,
+        "total": 48.18356195454437,
+        "homeWinProbability": 61.75300972290248,
+        "winner": "Coastal Carolina"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-14-EASTCAROLINA-CHARLOTTE",
+      "awayTeam": "East Carolina",
+      "homeTeam": "Charlotte",
+      "kickoff": "2026-11-14T18:00:00Z",
+      "projectionDigest": "267b8cda75d138e8a0f1e548439401adbcd28e738e22b4bee1f4cceed667de8c",
+      "projection": {
+        "awayPoints": 27.832499900148814,
+        "homePoints": 21.528924324397234,
+        "marginHome": -6.30357557575158,
+        "spreadHome": 6.30357557575158,
+        "total": 49.36142422454605,
+        "homeWinProbability": 34.53396228948048,
+        "winner": "East Carolina"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-14-UAB-TEMPLE",
+      "awayTeam": "UAB",
+      "homeTeam": "Temple",
+      "kickoff": "2026-11-14T18:00:00Z",
+      "projectionDigest": "94c0fc14a22e70f860b7cf77f08adbf8e59371c99b307c8943713206d3899cc0",
+      "projection": {
+        "awayPoints": 22.75791831150272,
+        "homePoints": 25.82700884380847,
+        "marginHome": 3.0690905323057507,
+        "spreadHome": -3.0690905323057507,
+        "total": 48.58492715531119,
+        "homeWinProbability": 57.68126897980195,
+        "winner": "Temple"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-14-KANSASSTATE-TCU",
+      "awayTeam": "Kansas State",
+      "homeTeam": "TCU",
+      "kickoff": "2026-11-14T19:00:00Z",
+      "projectionDigest": "fa5d23cc47104bb0a61a2ac5808df666aaaa93c7fa252477f0faa617a29c7f5e",
+      "projection": {
+        "awayPoints": 15.414067223011568,
+        "homePoints": 28.345037036027403,
+        "marginHome": 12.930969813015835,
+        "spreadHome": -12.930969813015835,
+        "total": 43.75910425903897,
+        "homeWinProbability": 79.28382810587932,
+        "winner": "TCU"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-14-KENNESAWSTATE-SAMHOUSTON",
+      "awayTeam": "Kennesaw State",
+      "homeTeam": "Sam Houston",
+      "kickoff": "2026-11-14T19:00:00Z",
+      "projectionDigest": "ef72b02dea6ac9703833b1fb367b47a142b920c211e6c996c1cefa676d8856e7",
+      "projection": {
+        "awayPoints": 25.883340927832233,
+        "homePoints": 21.139999697459128,
+        "marginHome": -4.743341230373105,
+        "spreadHome": 4.743341230373105,
+        "total": 47.02334062529136,
+        "homeWinProbability": 38.23026904684894,
+        "winner": "Kennesaw State"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-14-TULANE-RICE",
+      "awayTeam": "Tulane",
+      "homeTeam": "Rice",
+      "kickoff": "2026-11-14T19:00:00Z",
+      "projectionDigest": "4706a499a090ce6a992732cf96e0f02e7b8b95b7aa0a264d7fc174133619800a",
+      "projection": {
+        "awayPoints": 24.46650614711552,
+        "homePoints": 28.406255579113957,
+        "marginHome": 3.939749431998436,
+        "spreadHome": -3.939749431998436,
+        "total": 52.87276172622948,
+        "homeWinProbability": 59.82071847778322,
+        "winner": "Rice"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-14-FLORIDAINTERNATIONAL-DELAWARE",
+      "awayTeam": "Florida International",
+      "homeTeam": "Delaware",
+      "kickoff": "2026-11-14T20:00:00Z",
+      "projectionDigest": "9199f02ecff5dea16fe3dc423dd9ede86e8abd82446b862c1dec23e719224a6c",
+      "projection": {
+        "awayPoints": 23.977289811843058,
+        "homePoints": 29.417956399773054,
+        "marginHome": 5.4406665879299965,
+        "spreadHome": -5.4406665879299965,
+        "total": 53.39524621161611,
+        "homeWinProbability": 63.437361491736524,
+        "winner": "Delaware"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-14-NEWMEXICOSTATE-MISSOURISTATE",
+      "awayTeam": "New Mexico State",
+      "homeTeam": "Missouri State",
+      "kickoff": "2026-11-14T20:00:00Z",
+      "projectionDigest": "68b407b559ac119c952daef7287eae85e513bd44fd220818199d327061a41d14",
+      "projection": {
+        "awayPoints": 22.35979974896638,
+        "homePoints": 25.65378895652674,
+        "marginHome": 3.293989207560358,
+        "spreadHome": -3.293989207560358,
+        "total": 48.01358870549312,
+        "homeWinProbability": 58.236351443595545,
+        "winner": "Missouri State"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-14-TENNESSEE-TEXASAM",
+      "awayTeam": "Tennessee",
+      "homeTeam": "Texas A&M",
+      "kickoff": "2026-11-14T20:00:00Z",
+      "projectionDigest": "3db1a99ddec7c4dc9f43fc3f24ced78647ce19fd80faf15523e8cb3526ed70ff",
+      "projection": {
+        "awayPoints": 21.09891404912351,
+        "homePoints": 18.28656612470022,
+        "marginHome": -2.8123479244232925,
+        "spreadHome": 2.8123479244232925,
+        "total": 39.38548017382373,
+        "homeWinProbability": 42.95427167881535,
+        "winner": "Tennessee"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-14-ARIZONASTATE-UCF",
+      "awayTeam": "Arizona State",
+      "homeTeam": "UCF",
+      "kickoff": "2026-11-14T20:30:00Z",
+      "projectionDigest": "b29ad8e04f7b6655d73e947eec2c6a5852bed3ea7e485ecdb2904686de0d508a",
+      "projection": {
+        "awayPoints": 23.33045984880961,
+        "homePoints": 31.05045894890271,
+        "marginHome": 7.719999100093098,
+        "spreadHome": -7.719999100093098,
+        "total": 54.38091879771232,
+        "homeWinProbability": 68.69947433616885,
+        "winner": "UCF"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-BAYLOR-BYU",
+      "awayTeam": "Baylor",
+      "homeTeam": "BYU",
+      "kickoff": "2026-11-14T20:30:00Z",
+      "projectionDigest": "35918b1dbe78358ce5361f0c0a5312eee235f135a7b18e88a52df484bdfaed15",
+      "projection": {
+        "awayPoints": 23.350588190767382,
+        "homePoints": 25.07745099346792,
+        "marginHome": 1.7268628027005377,
+        "spreadHome": -1.7268628027005377,
+        "total": 48.4280391842353,
+        "homeWinProbability": 54.340421110515905,
+        "winner": "BYU"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-14-BOSTONCOLLEGE-NOTREDAME",
+      "awayTeam": "Boston College",
+      "homeTeam": "Notre Dame",
+      "kickoff": "2026-11-14T20:30:00Z",
+      "projectionDigest": "ea320ba9c7fa00003e4eb4a3795845fcfed79a0617f6db192dbf3fc196796978",
+      "projection": {
+        "awayPoints": 12.38202528945979,
+        "homePoints": 37.98236278191648,
+        "marginHome": 25.60033749245669,
+        "spreadHome": -25.60033749245669,
+        "total": 50.36438807137627,
+        "homeWinProbability": 94.69640302710765,
+        "winner": "Notre Dame"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-14-CALIFORNIA-VIRGINIA",
+      "awayTeam": "California",
+      "homeTeam": "Virginia",
+      "kickoff": "2026-11-14T20:30:00Z",
+      "projectionDigest": "c2edf4897ea95048c8659a7b00b325eeafdf6a706437f4326062edbfcf51b718",
+      "projection": {
+        "awayPoints": 17.625189708278562,
+        "homePoints": 29.4210261977312,
+        "marginHome": 11.79583648945264,
+        "spreadHome": -11.79583648945264,
+        "total": 47.04621590600976,
+        "homeWinProbability": 77.17583479538968,
+        "winner": "Virginia"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-FLORIDAATLANTIC-TULSA",
+      "awayTeam": "Florida Atlantic",
+      "homeTeam": "Tulsa",
+      "kickoff": "2026-11-14T20:30:00Z",
+      "projectionDigest": "65d04e6a29a206d28c418777b20612f5fe67f327989f96a0694d121aa9bbc68d",
+      "projection": {
+        "awayPoints": 30.465162279013327,
+        "homePoints": 40.73139814203034,
+        "marginHome": 10.266235863017016,
+        "spreadHome": -10.266235863017016,
+        "total": 71.19656042104367,
+        "homeWinProbability": 74.15363374715139,
+        "winner": "Tulsa"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-GEORGIASOUTHERN-GEORGIASTATE",
+      "awayTeam": "Georgia Southern",
+      "homeTeam": "Georgia State",
+      "kickoff": "2026-11-14T20:30:00Z",
+      "projectionDigest": "a77e6b98864965ee79de29af3153621cd25119cac2b7db5de23b3fa425745d4f",
+      "projection": {
+        "awayPoints": 28.11898121440256,
+        "homePoints": 28.527795649455193,
+        "marginHome": 0.4088144350526335,
+        "spreadHome": -0.4088144350526335,
+        "total": 56.64677686385775,
+        "homeWinProbability": 51.02946493487703,
+        "winner": "Georgia State"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-JACKSONVILLESTATE-WESTERNKENTUCKY",
+      "awayTeam": "Jacksonville State",
+      "homeTeam": "Western Kentucky",
+      "kickoff": "2026-11-14T20:30:00Z",
+      "projectionDigest": "5647ad2ab864f210aaf221a80950c12ac45c9fe56ab2ad4fb1f164249085307f",
+      "projection": {
+        "awayPoints": 31.80330640044228,
+        "homePoints": 22.70805157115427,
+        "marginHome": -9.09525482928801,
+        "spreadHome": 9.09525482928801,
+        "total": 54.51135797159655,
+        "homeWinProbability": 28.292734470095237,
+        "winner": "Jacksonville State"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-MICHIGAN-OREGON",
+      "awayTeam": "Michigan",
+      "homeTeam": "Oregon",
+      "kickoff": "2026-11-14T20:30:00Z",
+      "projectionDigest": "bf921163b542f0b2d9a8fa508c4fff5a190c16577d7e5eff753cc67dbd5819c5",
+      "projection": {
+        "awayPoints": 14.733735622305385,
+        "homePoints": 26.5593504642281,
+        "marginHome": 11.825614841922715,
+        "spreadHome": -11.825614841922715,
+        "total": 41.293086086533485,
+        "homeWinProbability": 77.2326312298209,
+        "winner": "Oregon"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-14-MIDDLETENNESSEE-LIBERTY",
+      "awayTeam": "Middle Tennessee",
+      "homeTeam": "Liberty",
+      "kickoff": "2026-11-14T20:30:00Z",
+      "projectionDigest": "e46b3dbe78ac2bc7ee70e3c1b6ed5e73eb82c0e5b635f7d4430c882bae56b6c5",
+      "projection": {
+        "awayPoints": 15.223039594198566,
+        "homePoints": 40.45959458103971,
+        "marginHome": 25.236554986841142,
+        "spreadHome": -25.236554986841142,
+        "total": 55.68263417523828,
+        "homeWinProbability": 94.44354438985953,
+        "winner": "Liberty"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-MISSOURI-GEORGIA",
+      "awayTeam": "Missouri",
+      "homeTeam": "Georgia",
+      "kickoff": "2026-11-14T20:30:00Z",
+      "projectionDigest": "29d8beccbc6638b7dcc36b2caddbff5f586775499430c81ee6a70cf36ae1c539",
+      "projection": {
+        "awayPoints": 16.4407340087526,
+        "homePoints": 31.9067652169336,
+        "marginHome": 15.466031208181,
+        "spreadHome": -15.466031208181,
+        "total": 48.3474992256862,
+        "homeWinProbability": 83.55527094353683,
+        "winner": "Georgia"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-14-NEVADA-NORTHERNILLINOIS",
+      "awayTeam": "Nevada",
+      "homeTeam": "Northern Illinois",
+      "kickoff": "2026-11-14T20:30:00Z",
+      "projectionDigest": "0f4425594938c0d1b3d55401d450cbc563660f4d86b6c1f825d5aef1819b3fa9",
+      "projection": {
+        "awayPoints": 28.67571921405831,
+        "homePoints": 22.816750561638514,
+        "marginHome": -5.858968652419797,
+        "spreadHome": 5.858968652419797,
+        "total": 51.492469775696826,
+        "homeWinProbability": 35.57410912222878,
+        "winner": "Nevada"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-USC-INDIANA",
+      "awayTeam": "USC",
+      "homeTeam": "Indiana",
+      "kickoff": "2026-11-14T20:30:00Z",
+      "projectionDigest": "7f9caa191d9e173bf5e8fd733c92c96ebad7ab11ef3722effa7d6af1902861e3",
+      "projection": {
+        "awayPoints": 20.004696233941544,
+        "homePoints": 27.72990092266182,
+        "marginHome": 7.725204688720275,
+        "spreadHome": -7.725204688720275,
+        "total": 47.734597156603364,
+        "homeWinProbability": 68.71111543606652,
+        "winner": "Indiana"
+      },
+      "status": "PENDING",
+      "final": null
+    },
+    {
+      "gameId": "2026-11-14-FRESNOSTATE-TEXASSTATE",
+      "awayTeam": "Fresno State",
+      "homeTeam": "Texas State",
+      "kickoff": "2026-11-14T21:00:00Z",
+      "projectionDigest": "84bd0a955d342fefb4acd4d5f728cbed673bad59ef1c14bb1b2d3b95fa3e8285",
+      "projection": {
+        "awayPoints": 25.42823745764729,
+        "homePoints": 31.759320505322282,
+        "marginHome": 6.331083047674994,
+        "spreadHome": -6.331083047674994,
+        "total": 57.18755796296957,
+        "homeWinProbability": 65.5300183347319,
+        "winner": "Texas State"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-OLEMISS-OKLAHOMA",
+      "awayTeam": "Ole Miss",
+      "homeTeam": "Oklahoma",
+      "kickoff": "2026-11-14T21:15:00Z",
+      "projectionDigest": "685ad1d5c3cfd4bb6eada861d07382c5f428abdf6c159153de5d7202d11e9421",
+      "projection": {
+        "awayPoints": 24.198785533080642,
+        "homePoints": 25.641401441380307,
+        "marginHome": 1.4426159082996648,
+        "spreadHome": -1.4426159082996648,
+        "total": 49.84018697446095,
+        "homeWinProbability": 53.628141983888646,
+        "winner": "Oklahoma"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-WASHINGTON-MICHIGANSTATE",
+      "awayTeam": "Washington",
+      "homeTeam": "Michigan State",
+      "kickoff": "2026-11-14T21:15:00Z",
+      "projectionDigest": "85fc5f8367791b71ddb12816a365d2dde99fd96d6b237d613c639d315944ff14",
+      "projection": {
+        "awayPoints": 21.686168420106796,
+        "homePoints": 24.178713581386667,
+        "marginHome": 2.492545161279871,
+        "spreadHome": -2.492545161279871,
+        "total": 45.86488200149346,
+        "homeWinProbability": 56.251545830672946,
+        "winner": "Michigan State"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-SOUTHERNMISS-LOUISIANATECH",
+      "awayTeam": "Southern Miss",
+      "homeTeam": "Louisiana Tech",
+      "kickoff": "2026-11-14T22:00:00Z",
+      "projectionDigest": "5b10bfbe8c882c98cbb348049478020a1fb8d76a14a95860c2773b75609beec5",
+      "projection": {
+        "awayPoints": 18.29933769147384,
+        "homePoints": 38.768561822313714,
+        "marginHome": 20.469224130839873,
+        "spreadHome": -20.469224130839873,
+        "total": 57.06789951378755,
+        "homeWinProbability": 90.18535419083216,
+        "winner": "Louisiana Tech"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-KANSAS-WESTVIRGINIA",
+      "awayTeam": "Kansas",
+      "homeTeam": "West Virginia",
+      "kickoff": "2026-11-14T22:30:00Z",
+      "projectionDigest": "cfd9d05c8c5e4abc26be6a071d2fc211cbef7ea24122e4a8619f4ddb724ae3b8",
+      "projection": {
+        "awayPoints": 32.2204807831052,
+        "homePoints": 36.13388791001107,
+        "marginHome": 3.9134071269058666,
+        "spreadHome": -3.9134071269058666,
+        "total": 68.35436869311627,
+        "homeWinProbability": 59.75638381927172,
+        "winner": "West Virginia"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-APPSTATE-MARSHALL",
+      "awayTeam": "App State",
+      "homeTeam": "Marshall",
+      "kickoff": "2026-11-14T23:00:00Z",
+      "projectionDigest": "f2056ecf1ec61d89cd4f0f236eb00377c79290877493fdf46eacee70a0574302",
+      "projection": {
+        "awayPoints": 24.23032302284707,
+        "homePoints": 26.49689715348836,
+        "marginHome": 2.2665741306412883,
+        "spreadHome": -2.2665741306412883,
+        "total": 50.72722017633543,
+        "homeWinProbability": 55.688838297703946,
+        "winner": "Marshall"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-OREGONSTATE-BOISESTATE",
+      "awayTeam": "Oregon State",
+      "homeTeam": "Boise State",
+      "kickoff": "2026-11-14T23:00:00Z",
+      "projectionDigest": "50df4a50426a7d48ab07d419a35246719a50375ab82fb682522d5c7c68577bdc",
+      "projection": {
+        "awayPoints": 28.253896201788994,
+        "homePoints": 40.11985729372843,
+        "marginHome": 11.865961091939436,
+        "spreadHome": -11.865961091939436,
+        "total": 68.37375349551742,
+        "homeWinProbability": 77.30945679724609,
+        "winner": "Boise State"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-FLORIDA-KENTUCKY",
+      "awayTeam": "Florida",
+      "homeTeam": "Kentucky",
+      "kickoff": "2026-11-14T23:15:00Z",
+      "projectionDigest": "b3801283c5af88082e158ad256a6834483df20f203eb69425c0ec5fd98f7b9bb",
+      "projection": {
+        "awayPoints": 24.841631888322553,
+        "homePoints": 31.491846888560914,
+        "marginHome": 6.6502150002383615,
+        "spreadHome": -6.6502150002383615,
+        "total": 56.33347877688347,
+        "homeWinProbability": 66.2690124968347,
+        "winner": "Kentucky"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-LOUISVILLE-NORTHCAROLINA",
+      "awayTeam": "Louisville",
+      "homeTeam": "North Carolina",
+      "kickoff": "2026-11-15T00:00:00Z",
+      "projectionDigest": "894164b800ced357676be113b477951d6f06469f4eeb6fc8d9929b1333e4e55e",
+      "projection": {
+        "awayPoints": 29.440116430325148,
+        "homePoints": 31.326507247637252,
+        "marginHome": 1.8863908173121047,
+        "spreadHome": -1.8863908173121047,
+        "total": 60.7666236779624,
+        "homeWinProbability": 54.739578537758874,
+        "winner": "North Carolina"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-MINNESOTA-PENNSTATE",
+      "awayTeam": "Minnesota",
+      "homeTeam": "Penn State",
+      "kickoff": "2026-11-15T00:00:00Z",
+      "projectionDigest": "ab03a26bff890679ef34208293b7a56a756f95e5dcd2ea2dd2c915b50659af2a",
+      "projection": {
+        "awayPoints": 17.929171696403138,
+        "homePoints": 29.002115844215965,
+        "marginHome": 11.072944147812827,
+        "spreadHome": -11.072944147812827,
+        "total": 46.9312875406191,
+        "homeWinProbability": 75.77287178746197,
+        "winner": "Penn State"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-SANJOSSTATE-AIRFORCE",
+      "awayTeam": "San José State",
+      "homeTeam": "Air Force",
+      "kickoff": "2026-11-15T00:00:00Z",
+      "projectionDigest": "fcc07b6b653a7419e8078016528d847c446954c14fc8ce013bd14fd2c1d43209",
+      "projection": {
+        "awayPoints": 17.81736377645509,
+        "homePoints": 26.98504746363028,
+        "marginHome": 9.167683687175192,
+        "spreadHome": -9.167683687175192,
+        "total": 44.80241124008537,
+        "homeWinProbability": 71.8617508590936,
+        "winner": "Air Force"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-TROY-SOUTHALABAMA",
+      "awayTeam": "Troy",
+      "homeTeam": "South Alabama",
+      "kickoff": "2026-11-15T00:00:00Z",
+      "projectionDigest": "e83f5424c51ef5af91808eeec598e654cd27461efd05f0416c93e1c0acc2acf2",
+      "projection": {
+        "awayPoints": 26.25693787474117,
+        "homePoints": 33.756365890243934,
+        "marginHome": 7.499428015502765,
+        "spreadHome": -7.499428015502765,
+        "total": 60.0133037649851,
+        "homeWinProbability": 68.2045168841514,
+        "winner": "South Alabama"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-PURDUE-IOWA",
+      "awayTeam": "Purdue",
+      "homeTeam": "Iowa",
+      "kickoff": "2026-11-15T00:30:00Z",
+      "projectionDigest": "a7988c1704ee4f3ad6927a8a25703a12f42038223867a8f2884d911feff6aec6",
+      "projection": {
+        "awayPoints": 17.099807367052055,
+        "homePoints": 32.5723068718423,
+        "marginHome": 15.472499504790246,
+        "spreadHome": -15.472499504790246,
+        "total": 49.67211423889435,
+        "homeWinProbability": 83.5653830650833,
+        "winner": "Iowa"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-STANFORD-VIRGINIATECH",
+      "awayTeam": "Stanford",
+      "homeTeam": "Virginia Tech",
+      "kickoff": "2026-11-15T00:30:00Z",
+      "projectionDigest": "8df162ac110daf0bec006f15d563925bcc8192e839a2be64a0a401de451e8e76",
+      "projection": {
+        "awayPoints": 22.573232637770623,
+        "homePoints": 37.771886591785496,
+        "marginHome": 15.198653954014873,
+        "spreadHome": -15.198653954014873,
+        "total": 60.34511922955612,
+        "homeWinProbability": 83.13374323203661,
+        "winner": "Virginia Tech"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-TEXAS-LSU",
+      "awayTeam": "Texas",
+      "homeTeam": "LSU",
+      "kickoff": "2026-11-15T00:30:00Z",
+      "projectionDigest": "bfd9fa697a2205460165793b140d789ea46bca6cd6f8f7a3badcb7292334f78d",
+      "projection": {
+        "awayPoints": 22.027101791748475,
+        "homePoints": 26.708085847821284,
+        "marginHome": 4.680984056072809,
+        "spreadHome": -4.680984056072809,
+        "total": 48.73518763956976,
+        "homeWinProbability": 61.619484353477795,
+        "winner": "LSU"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-UNLV-NEWMEXICO",
+      "awayTeam": "UNLV",
+      "homeTeam": "New Mexico",
+      "kickoff": "2026-11-15T00:30:00Z",
+      "projectionDigest": "66818e3e84829906453390052ad084ab9d09e9cde03a28bdce653709717098fb",
+      "projection": {
+        "awayPoints": 15.705635616778423,
+        "homePoints": 33.469201458833076,
+        "marginHome": 17.763565842054653,
+        "spreadHome": -17.763565842054653,
+        "total": 49.1748370756115,
+        "homeWinProbability": 86.89373786072309,
+        "winner": "New Mexico"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-UTAH-ARIZONA",
+      "awayTeam": "Utah",
+      "homeTeam": "Arizona",
+      "kickoff": "2026-11-15T00:30:00Z",
+      "projectionDigest": "9f8b8f204f2b7f28ee69b23ee89936baf9e9cc8d139cf1f8e25f49be2460fe4e",
+      "projection": {
+        "awayPoints": 26.39437057105068,
+        "homePoints": 28.072290756235603,
+        "marginHome": 1.6779201851849237,
+        "spreadHome": -1.6779201851849237,
+        "total": 54.46666132728628,
+        "homeWinProbability": 54.21787131023148,
+        "winner": "Arizona"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-SOUTHCAROLINA-ARKANSAS",
+      "awayTeam": "South Carolina",
+      "homeTeam": "Arkansas",
+      "kickoff": "2026-11-15T00:45:00Z",
+      "projectionDigest": "cee376980f034394e81b6f5fd9261c6f1ed01e4365b4dca1f6a7f9e1702e46ca",
+      "projection": {
+        "awayPoints": 30.526864916690272,
+        "homePoints": 24.43824770693937,
+        "marginHome": -6.0886172097509,
+        "spreadHome": 6.0886172097509,
+        "total": 54.96511262362964,
+        "homeWinProbability": 35.03545216394202,
+        "winner": "South Carolina"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-NORTHTEXAS-UTSA",
+      "awayTeam": "North Texas",
+      "homeTeam": "UTSA",
+      "kickoff": "2026-11-15T02:00:00Z",
+      "projectionDigest": "378854e975946e0bbab8a781415c761f49dcc018e42e5edd7629de34fbc5e15e",
+      "projection": {
+        "awayPoints": 37.61854858112222,
+        "homePoints": 34.11642359644234,
+        "marginHome": -3.502124984679881,
+        "spreadHome": 3.502124984679881,
+        "total": 71.73497217756456,
+        "homeWinProbability": 41.251394898999514,
+        "winner": "North Texas"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-TEXASTECH-OKLAHOMASTATE",
+      "awayTeam": "Texas Tech",
+      "homeTeam": "Oklahoma State",
+      "kickoff": "2026-11-15T02:30:00Z",
+      "projectionDigest": "edb19ccc2c9aa8db659dc9f2d3a287648cdbfd66d77f3da06869387843d961c8",
+      "projection": {
+        "awayPoints": 34.002378413668175,
+        "homePoints": 42.29130328140044,
+        "marginHome": 8.288924867732263,
+        "spreadHome": -8.288924867732263,
+        "total": 76.29368169506861,
+        "homeWinProbability": 69.96050707226239,
+        "winner": "Oklahoma State"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-UTAHSTATE-SANDIEGOSTATE",
+      "awayTeam": "Utah State",
+      "homeTeam": "San Diego State",
+      "kickoff": "2026-11-15T02:30:00Z",
+      "projectionDigest": "372056fed6b33d522aaaa6f53f6b21c70b9fab418a38b1bf2e32160cacb02b30",
+      "projection": {
+        "awayPoints": 22.51378382800653,
+        "homePoints": 19.49869859698275,
+        "marginHome": -3.0150852310237823,
+        "spreadHome": 3.0150852310237823,
+        "total": 42.01248242498928,
+        "homeWinProbability": 42.45225564069916,
+        "winner": "Utah State"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-WYOMING-UTEP",
+      "awayTeam": "Wyoming",
+      "homeTeam": "UTEP",
+      "kickoff": "2026-11-15T03:00:00Z",
+      "projectionDigest": "2ba46b064505a3e3b61b1db27e2dd7044f7db2ea58dea18fec106f5fbf3ec3bf",
+      "projection": {
+        "awayPoints": 29.293999756799927,
+        "homePoints": 17.89874388475149,
+        "marginHome": -11.395255872048438,
+        "spreadHome": 11.395255872048438,
+        "total": 47.19274364155142,
+        "homeWinProbability": 23.595891801710955,
+        "winner": "Wyoming"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-COLORADOSTATE-WASHINGTONSTATE",
+      "awayTeam": "Colorado State",
+      "homeTeam": "Washington State",
+      "kickoff": "2026-11-15T03:30:00Z",
+      "projectionDigest": "ab667dc1c57db7cc8b4592c9002fc71962266502e190fe03d86ace7c7e490fe0",
+      "projection": {
+        "awayPoints": 30.081877592922304,
+        "homePoints": 36.893310457750836,
+        "marginHome": 6.811432864828532,
+        "spreadHome": -6.811432864828532,
+        "total": 66.97518805067314,
+        "homeWinProbability": 66.63998396476806,
+        "winner": "Washington State"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    },
+    {
+      "gameId": "2026-11-14-NORTHDAKOTASTATE-HAWAII",
+      "awayTeam": "North Dakota State",
+      "homeTeam": "Hawai'i",
+      "kickoff": "2026-11-15T04:00:00Z",
+      "projectionDigest": "8706412c423bdf195aa0e01ac06278347fc4c17885624259914da1832abdc2ba",
+      "projection": {
+        "awayPoints": 23.17449570850563,
+        "homePoints": 16.79641568581792,
+        "marginHome": -6.378080022687712,
+        "spreadHome": 6.378080022687712,
+        "total": 39.97091139432355,
+        "homeWinProbability": 34.36077249470843,
+        "winner": "North Dakota State"
+      },
+      "status": "REVIEW",
+      "reviewReason": "No score source match; no guess made"
+    }
+  ],
+  "policy": "Research-only prospective performance. Never merge these results into the established canonical record or use postgame outcomes to rewrite the frozen projections."
+}
