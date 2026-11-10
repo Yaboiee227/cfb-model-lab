@@ -1,6 +1,11 @@
 name: CFB Week 11 research operations
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/cfb-week11-operations.yml'
+      - 'cfb/research-locks/week-11-foundation-full.json'
   schedule:
     - cron: '*/10 * 10-17 11 *'
 permissions:
@@ -11,7 +16,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   operate:
-    if: github.event_name == 'workflow_dispatch' || (github.event.schedule && startsWith(github.ref, 'refs/heads/main'))
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
