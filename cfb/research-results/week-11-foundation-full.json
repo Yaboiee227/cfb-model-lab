@@ -9,13 +9,13 @@
   "modelId": "cfb-rebuild-foundation-v1-shadow",
   "sourceLockDigest": "c4de1fe117bf28dffc164640ec97b3084ceb6ba9b005d5390dfd08b16aff1501",
   "sourceLockedAt": "2026-11-10T22:51:32.601559Z",
-  "gradedAt": "2026-11-10T22:57:17.157614Z",
+  "gradedAt": "2026-11-10T22:59:52.729726Z",
   "status": "IN_PROGRESS",
   "counts": {
     "games": 67,
     "final": 0,
-    "pending": 36,
-    "review": 31,
+    "pending": 67,
+    "review": 0,
     "void": 0
   },
   "metrics": {
@@ -616,8 +616,8 @@
         "homeWinProbability": 68.69947433616885,
         "winner": "UCF"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-BAYLOR-BYU",
@@ -670,8 +670,8 @@
         "homeWinProbability": 77.17583479538968,
         "winner": "Virginia"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-FLORIDAATLANTIC-TULSA",
@@ -688,8 +688,8 @@
         "homeWinProbability": 74.15363374715139,
         "winner": "Tulsa"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-GEORGIASOUTHERN-GEORGIASTATE",
@@ -706,8 +706,8 @@
         "homeWinProbability": 51.02946493487703,
         "winner": "Georgia State"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-JACKSONVILLESTATE-WESTERNKENTUCKY",
@@ -724,8 +724,8 @@
         "homeWinProbability": 28.292734470095237,
         "winner": "Jacksonville State"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-MICHIGAN-OREGON",
@@ -760,8 +760,8 @@
         "homeWinProbability": 94.44354438985953,
         "winner": "Liberty"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-MISSOURI-GEORGIA",
@@ -796,8 +796,8 @@
         "homeWinProbability": 35.57410912222878,
         "winner": "Nevada"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-USC-INDIANA",
@@ -832,8 +832,8 @@
         "homeWinProbability": 65.5300183347319,
         "winner": "Texas State"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-OLEMISS-OKLAHOMA",
@@ -850,8 +850,8 @@
         "homeWinProbability": 53.628141983888646,
         "winner": "Oklahoma"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-WASHINGTON-MICHIGANSTATE",
@@ -868,8 +868,8 @@
         "homeWinProbability": 56.251545830672946,
         "winner": "Michigan State"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-SOUTHERNMISS-LOUISIANATECH",
@@ -886,8 +886,8 @@
         "homeWinProbability": 90.18535419083216,
         "winner": "Louisiana Tech"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-KANSAS-WESTVIRGINIA",
@@ -904,8 +904,8 @@
         "homeWinProbability": 59.75638381927172,
         "winner": "West Virginia"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-APPSTATE-MARSHALL",
@@ -922,8 +922,8 @@
         "homeWinProbability": 55.688838297703946,
         "winner": "Marshall"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-OREGONSTATE-BOISESTATE",
@@ -940,8 +940,8 @@
         "homeWinProbability": 77.30945679724609,
         "winner": "Boise State"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-FLORIDA-KENTUCKY",
@@ -958,8 +958,8 @@
         "homeWinProbability": 66.2690124968347,
         "winner": "Kentucky"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-LOUISVILLE-NORTHCAROLINA",
@@ -976,8 +976,8 @@
         "homeWinProbability": 54.739578537758874,
         "winner": "North Carolina"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-MINNESOTA-PENNSTATE",
@@ -994,8 +994,8 @@
         "homeWinProbability": 75.77287178746197,
         "winner": "Penn State"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-SANJOSSTATE-AIRFORCE",
@@ -1012,8 +1012,8 @@
         "homeWinProbability": 71.8617508590936,
         "winner": "Air Force"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-TROY-SOUTHALABAMA",
@@ -1030,8 +1030,8 @@
         "homeWinProbability": 68.2045168841514,
         "winner": "South Alabama"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-PURDUE-IOWA",
@@ -1048,8 +1048,8 @@
         "homeWinProbability": 83.5653830650833,
         "winner": "Iowa"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-STANFORD-VIRGINIATECH",
@@ -1066,8 +1066,8 @@
         "homeWinProbability": 83.13374323203661,
         "winner": "Virginia Tech"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-TEXAS-LSU",
@@ -1084,8 +1084,8 @@
         "homeWinProbability": 61.619484353477795,
         "winner": "LSU"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-UNLV-NEWMEXICO",
@@ -1102,8 +1102,8 @@
         "homeWinProbability": 86.89373786072309,
         "winner": "New Mexico"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-UTAH-ARIZONA",
@@ -1120,8 +1120,8 @@
         "homeWinProbability": 54.21787131023148,
         "winner": "Arizona"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-SOUTHCAROLINA-ARKANSAS",
@@ -1138,8 +1138,8 @@
         "homeWinProbability": 35.03545216394202,
         "winner": "South Carolina"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-NORTHTEXAS-UTSA",
@@ -1156,8 +1156,8 @@
         "homeWinProbability": 41.251394898999514,
         "winner": "North Texas"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-TEXASTECH-OKLAHOMASTATE",
@@ -1174,8 +1174,8 @@
         "homeWinProbability": 69.96050707226239,
         "winner": "Oklahoma State"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-UTAHSTATE-SANDIEGOSTATE",
@@ -1192,8 +1192,8 @@
         "homeWinProbability": 42.45225564069916,
         "winner": "Utah State"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-WYOMING-UTEP",
@@ -1210,8 +1210,8 @@
         "homeWinProbability": 23.595891801710955,
         "winner": "Wyoming"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-COLORADOSTATE-WASHINGTONSTATE",
@@ -1228,8 +1228,8 @@
         "homeWinProbability": 66.63998396476806,
         "winner": "Washington State"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     },
     {
       "gameId": "2026-11-14-NORTHDAKOTASTATE-HAWAII",
@@ -1246,8 +1246,8 @@
         "homeWinProbability": 34.36077249470843,
         "winner": "North Dakota State"
       },
-      "status": "REVIEW",
-      "reviewReason": "No score source match; no guess made"
+      "status": "PENDING",
+      "final": null
     }
   ],
   "policy": "Research-only prospective performance. Never merge these results into the established canonical record or use postgame outcomes to rewrite the frozen projections."
