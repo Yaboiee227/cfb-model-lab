@@ -2,6 +2,7 @@ name: Refresh sportsbook markets
 
 on:
   push:
+    branches: [main]
     paths:
       - '.github/workflows/refresh-sportsbook-markets.yml'
       - 'cfb/pregame/week-08-active-full-week.json'
