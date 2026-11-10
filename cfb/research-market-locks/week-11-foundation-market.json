@@ -16,16 +16,16 @@
   "lockWindowMinutes": 30.0,
   "maxObservationAgeMinutes": 35.0,
   "scopeRestricted": false,
-  "updatedAt": "2026-11-10T22:55:37.900967Z",
+  "updatedAt": "2026-11-10T23:40:13.714995Z",
   "counts": {
     "foundationGames": 67,
     "activeScopeGames": 67,
     "pausedGames": 0,
     "preservedOutOfScopeLockedGames": 0,
-    "gamesWithMarketLock": 0,
-    "bookObservationsLocked": 0,
-    "newBookObservationsThisRun": 0,
-    "pendingGames": 67,
+    "gamesWithMarketLock": 2,
+    "bookObservationsLocked": 4,
+    "newBookObservationsThisRun": 4,
+    "pendingGames": 65,
     "missedGames": 0
   },
   "games": [
@@ -36,8 +36,35 @@
       "homeTeam": "Bowling Green",
       "kickoff": "2026-11-11T00:00:00Z",
       "projectionDigest": "67b681f9475163f44cd78cc293cdcd6e695c0878f125a4514388139c7bc773e0",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-11-10T23:35:36Z",
+          "lockedAt": "2026-11-10T23:40:13.714995Z",
+          "marketSpreadHome": -3.5,
+          "marketTotal": 41.5,
+          "marketMoneylineHome": -194,
+          "marketMoneylineAway": 162,
+          "spreadHomePrice": -115,
+          "totalOverPrice": -115,
+          "totalUnderPrice": -105,
+          "observationDigest": "099e068e0cef9a4b2e7774df262fdca6398fda2614f9291abff68f92b1237cfc"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-11-10T23:34:58Z",
+          "lockedAt": "2026-11-10T23:40:13.714995Z",
+          "marketSpreadHome": -3.5,
+          "marketTotal": 41.5,
+          "marketMoneylineHome": -198,
+          "marketMoneylineAway": 164,
+          "spreadHomePrice": -112,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "795d17055ab96755ba55043fd1b5e6ff709323bf70cba405050fae2d4698e12d"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-11-10-WESTERNMICHIGAN-AKRON",
@@ -46,8 +73,35 @@
       "homeTeam": "Akron",
       "kickoff": "2026-11-11T00:00:00Z",
       "projectionDigest": "f47a85130b7d413aaf425ea16f20c23641628303a95c2c4b331c880a59a0cfad",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-11-10T23:35:36Z",
+          "lockedAt": "2026-11-10T23:40:13.714995Z",
+          "marketSpreadHome": 14.5,
+          "marketTotal": 50.5,
+          "marketMoneylineHome": 550,
+          "marketMoneylineAway": -780,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -115,
+          "totalUnderPrice": -105,
+          "observationDigest": "6672d2fc8a6f3aea8718b84ac62a85d5bae9a490873eb97bd1168f1342c22d3a"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-11-10T23:34:58Z",
+          "lockedAt": "2026-11-10T23:40:13.714995Z",
+          "marketSpreadHome": 15.5,
+          "marketTotal": 50.5,
+          "marketMoneylineHome": 525,
+          "marketMoneylineAway": -750,
+          "spreadHomePrice": -112,
+          "totalOverPrice": -118,
+          "totalUnderPrice": -102,
+          "observationDigest": "565ecd090970b29ea3ed10dd66615862e882eeb77c15de0c22302f3a6d11e441"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-11-10-OHIO-MIAMIOH",
