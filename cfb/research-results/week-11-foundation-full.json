@@ -9,37 +9,37 @@
   "modelId": "cfb-rebuild-foundation-v1-shadow",
   "sourceLockDigest": "c4de1fe117bf28dffc164640ec97b3084ceb6ba9b005d5390dfd08b16aff1501",
   "sourceLockedAt": "2026-11-10T22:51:32.601559Z",
-  "gradedAt": "2026-11-11T03:22:24.222064Z",
+  "gradedAt": "2026-11-11T04:26:51.445215Z",
   "status": "IN_PROGRESS",
   "counts": {
     "games": 67,
-    "final": 1,
-    "pending": 66,
+    "final": 2,
+    "pending": 65,
     "review": 0,
     "void": 0
   },
   "metrics": {
     "margin": {
-      "games": 1,
-      "mae": 17.36199409195239,
-      "rmse": 17.36199409195239,
-      "bias": 17.36199409195239
+      "games": 2,
+      "mae": 11.469542507593875,
+      "rmse": 12.894626439238632,
+      "bias": 11.469542507593875
     },
     "total": {
-      "games": 1,
-      "mae": 8.749692538812518,
-      "rmse": 8.749692538812518,
-      "bias": -8.749692538812518
+      "games": 2,
+      "mae": 12.213683602277161,
+      "rmse": 12.695404728652683,
+      "bias": -12.213683602277161
     },
     "straightUp": {
-      "wins": 1,
+      "wins": 2,
       "losses": 0,
-      "graded": 1,
+      "graded": 2,
       "accuracyPct": 100.0
     },
     "winProbability": {
-      "games": 1,
-      "brierScore": 0.06296710665442484
+      "games": 2,
+      "brierScore": 0.0632754983365218
     }
   },
   "games": [
@@ -58,8 +58,24 @@
         "homeWinProbability": 74.78415378802077,
         "winner": "Bowling Green"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 28,
+        "homeScore": 33,
+        "marginHome": 5,
+        "total": 61,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 5.57709092323536,
+        "absoluteMargin": 5.57709092323536,
+        "total": -15.677674665741804,
+        "absoluteTotal": 15.677674665741804
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-10-WESTERNMICHIGAN-AKRON",

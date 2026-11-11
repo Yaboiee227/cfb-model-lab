@@ -9,128 +9,128 @@
   "foundationModelId": "cfb-rebuild-foundation-v1-shadow",
   "foundationLockDigest": "c4de1fe117bf28dffc164640ec97b3084ceb6ba9b005d5390dfd08b16aff1501",
   "marketLockUpdatedAt": "2026-11-11T01:35:16.296319Z",
-  "gradedAt": "2026-11-11T03:22:26.798556Z",
-  "status": "IN_PROGRESS",
+  "gradedAt": "2026-11-11T04:26:52.373234Z",
+  "status": "COMPLETE",
   "counts": {
     "games": 67,
-    "final": 1,
-    "pending": 1,
+    "final": 2,
+    "pending": 0,
     "review": 0,
     "void": 0,
     "noLockedMarket": 65
   },
   "books": {
     "fanduel": {
-      "games": 1,
+      "games": 2,
       "cbMargin": {
-        "games": 1,
-        "mae": 17.36199409195239,
-        "rmse": 17.36199409195239,
-        "bias": 17.36199409195239
+        "games": 2,
+        "mae": 11.469542507593875,
+        "rmse": 12.894626439238632,
+        "bias": 11.469542507593875
       },
       "marketMargin": {
-        "games": 1,
-        "mae": 13.5,
-        "rmse": 13.5,
-        "bias": 13.5
+        "games": 2,
+        "mae": 7.5,
+        "rmse": 9.604686356149273,
+        "bias": 6.0
       },
-      "cbMinusMarketMarginMae": 3.86199409195239,
+      "cbMinusMarketMarginMae": 3.969542507593875,
       "cbTotal": {
-        "games": 1,
-        "mae": 8.749692538812518,
-        "rmse": 8.749692538812518,
-        "bias": -8.749692538812518
+        "games": 2,
+        "mae": 12.213683602277161,
+        "rmse": 12.695404728652683,
+        "bias": -12.213683602277161
       },
       "marketTotal": {
-        "games": 1,
-        "mae": 5.5,
-        "rmse": 5.5,
-        "bias": -5.5
+        "games": 2,
+        "mae": 12.5,
+        "rmse": 14.326548781894402,
+        "bias": -12.5
       },
-      "cbMinusMarketTotalMae": 3.2496925388125177,
+      "cbMinusMarketTotalMae": -0.2863163977228389,
       "spreadPositionRecord": {
-        "wins": 0,
+        "wins": 1,
         "losses": 1,
         "pushes": 0,
         "noPosition": 0
       },
       "totalPositionRecord": {
-        "wins": 0,
+        "wins": 1,
         "losses": 1,
         "pushes": 0,
         "noPosition": 0
       },
       "closerMarginForecast": {
         "CB": 0,
-        "MARKET": 1,
+        "MARKET": 2,
         "TIE": 0
       },
       "closerTotalForecast": {
-        "CB": 0,
+        "CB": 1,
         "MARKET": 1,
         "TIE": 0
       },
       "straightUp": {
-        "correct": 1,
+        "correct": 2,
         "wrong": 0,
-        "graded": 1,
+        "graded": 2,
         "accuracyPct": 100.0
       }
     },
     "draftkings": {
-      "games": 1,
+      "games": 2,
       "cbMargin": {
-        "games": 1,
-        "mae": 17.36199409195239,
-        "rmse": 17.36199409195239,
-        "bias": 17.36199409195239
+        "games": 2,
+        "mae": 11.469542507593875,
+        "rmse": 12.894626439238632,
+        "bias": 11.469542507593875
       },
       "marketMargin": {
-        "games": 1,
-        "mae": 12.5,
-        "rmse": 12.5,
-        "bias": 12.5
+        "games": 2,
+        "mae": 7.0,
+        "rmse": 8.902246907382429,
+        "bias": 5.5
       },
-      "cbMinusMarketMarginMae": 4.86199409195239,
+      "cbMinusMarketMarginMae": 4.469542507593875,
       "cbTotal": {
-        "games": 1,
-        "mae": 8.749692538812518,
-        "rmse": 8.749692538812518,
-        "bias": -8.749692538812518
+        "games": 2,
+        "mae": 12.213683602277161,
+        "rmse": 12.695404728652683,
+        "bias": -12.213683602277161
       },
       "marketTotal": {
-        "games": 1,
-        "mae": 5.5,
-        "rmse": 5.5,
-        "bias": -5.5
+        "games": 2,
+        "mae": 12.5,
+        "rmse": 14.326548781894402,
+        "bias": -12.5
       },
-      "cbMinusMarketTotalMae": 3.2496925388125177,
+      "cbMinusMarketTotalMae": -0.2863163977228389,
       "spreadPositionRecord": {
-        "wins": 0,
+        "wins": 1,
         "losses": 1,
         "pushes": 0,
         "noPosition": 0
       },
       "totalPositionRecord": {
-        "wins": 0,
+        "wins": 1,
         "losses": 1,
         "pushes": 0,
         "noPosition": 0
       },
       "closerMarginForecast": {
         "CB": 0,
-        "MARKET": 1,
+        "MARKET": 2,
         "TIE": 0
       },
       "closerTotalForecast": {
-        "CB": 0,
+        "CB": 1,
         "MARKET": 1,
         "TIE": 0
       },
       "straightUp": {
-        "correct": 1,
+        "correct": 2,
         "wrong": 0,
-        "graded": 1,
+        "graded": 2,
         "accuracyPct": 100.0
       }
     }
@@ -143,8 +143,70 @@
       "homeTeam": "Bowling Green",
       "kickoff": "2026-11-11T00:00:00Z",
       "projectionDigest": "67b681f9475163f44cd78cc293cdcd6e695c0878f125a4514388139c7bc773e0",
-      "status": "PENDING",
-      "books": {}
+      "status": "FINAL",
+      "final": {
+        "awayScore": 28,
+        "homeScore": 33,
+        "homeMargin": 5.0,
+        "total": 61.0,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "foundation": {
+        "projectedHomeMargin": 10.57709092323536,
+        "projectedTotal": 45.322325334258196,
+        "projectedWinner": "Bowling Green"
+      },
+      "books": {
+        "fanduel": {
+          "marketObservedAt": "2026-11-10T23:35:36Z",
+          "marketSpreadHome": -3.5,
+          "marketImpliedHomeMargin": 3.5,
+          "marketTotal": 41.5,
+          "marketMoneylineHome": -194,
+          "marketMoneylineAway": 162,
+          "modelVsMarket": {
+            "homeMarginDifference": 7.07709092323536,
+            "totalDifference": 3.8223253342581955,
+            "spreadPosition": "HOME",
+            "spreadResult": "WIN",
+            "totalPosition": "OVER",
+            "totalResult": "WIN"
+          },
+          "accuracy": {
+            "cbMarginError": 5.57709092323536,
+            "marketMarginError": -1.5,
+            "closerMarginForecast": "MARKET",
+            "cbTotalError": -15.677674665741804,
+            "marketTotalError": -19.5,
+            "closerTotalForecast": "CB"
+          }
+        },
+        "draftkings": {
+          "marketObservedAt": "2026-11-10T23:34:58Z",
+          "marketSpreadHome": -3.5,
+          "marketImpliedHomeMargin": 3.5,
+          "marketTotal": 41.5,
+          "marketMoneylineHome": -198,
+          "marketMoneylineAway": 164,
+          "modelVsMarket": {
+            "homeMarginDifference": 7.07709092323536,
+            "totalDifference": 3.8223253342581955,
+            "spreadPosition": "HOME",
+            "spreadResult": "WIN",
+            "totalPosition": "OVER",
+            "totalResult": "WIN"
+          },
+          "accuracy": {
+            "cbMarginError": 5.57709092323536,
+            "marketMarginError": -1.5,
+            "closerMarginForecast": "MARKET",
+            "cbTotalError": -15.677674665741804,
+            "marketTotalError": -19.5,
+            "closerTotalForecast": "CB"
+          }
+        }
+      }
     },
     {
       "gameId": "2026-11-10-WESTERNMICHIGAN-AKRON",
