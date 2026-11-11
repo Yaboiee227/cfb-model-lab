@@ -9,37 +9,37 @@
   "modelId": "cfb-rebuild-foundation-v1-shadow",
   "sourceLockDigest": "c4de1fe117bf28dffc164640ec97b3084ceb6ba9b005d5390dfd08b16aff1501",
   "sourceLockedAt": "2026-11-10T22:51:32.601559Z",
-  "gradedAt": "2026-11-11T04:26:51.445215Z",
+  "gradedAt": "2026-11-11T05:28:04.332493Z",
   "status": "IN_PROGRESS",
   "counts": {
     "games": 67,
-    "final": 2,
-    "pending": 65,
+    "final": 3,
+    "pending": 64,
     "review": 0,
     "void": 0
   },
   "metrics": {
     "margin": {
-      "games": 2,
-      "mae": 11.469542507593875,
-      "rmse": 12.894626439238632,
-      "bias": 11.469542507593875
+      "games": 3,
+      "mae": 13.643646431983639,
+      "rmse": 14.790194978151796,
+      "bias": 1.649076911474862
     },
     "total": {
-      "games": 2,
-      "mae": 12.213683602277161,
-      "rmse": 12.695404728652683,
-      "bias": -12.213683602277161
+      "games": 3,
+      "mae": 9.016823894447256,
+      "rmse": 10.47580195108754,
+      "bias": -7.268087575255625
     },
     "straightUp": {
       "wins": 2,
-      "losses": 0,
-      "graded": 2,
-      "accuracyPct": 100.0
+      "losses": 1,
+      "graded": 3,
+      "accuracyPct": 66.66666666666667
     },
     "winProbability": {
-      "games": 2,
-      "brierScore": 0.0632754983365218
+      "games": 3,
+      "brierScore": 0.1340457348650249
     }
   },
   "games": [
@@ -126,8 +126,24 @@
         "homeWinProbability": 47.503694613617704,
         "winner": "Ohio"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 17,
+        "homeScore": 34,
+        "marginHome": 17,
+        "total": 51,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -17.991854280763164,
+        "absoluteMargin": 17.991854280763164,
+        "total": 2.6231044787874467,
+        "absoluteTotal": 2.6231044787874467
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
     },
     {
       "gameId": "2026-11-11-BUFFALO-BALLSTATE",
