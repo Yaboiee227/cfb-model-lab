@@ -9,37 +9,37 @@
   "modelId": "cfb-rebuild-foundation-v1-shadow",
   "sourceLockDigest": "c4de1fe117bf28dffc164640ec97b3084ceb6ba9b005d5390dfd08b16aff1501",
   "sourceLockedAt": "2026-11-10T22:51:32.601559Z",
-  "gradedAt": "2026-11-12T03:37:34.570735Z",
+  "gradedAt": "2026-11-12T04:38:02.158088Z",
   "status": "IN_PROGRESS",
   "counts": {
     "games": 67,
-    "final": 4,
-    "pending": 63,
+    "final": 6,
+    "pending": 61,
     "review": 0,
     "void": 0
   },
   "metrics": {
     "margin": {
-      "games": 4,
-      "mae": 11.144378514235864,
-      "rmse": 12.937804198962313,
-      "bias": 0.3251639933580108
+      "games": 6,
+      "mae": 12.852642774897355,
+      "rmse": 14.192776992548644,
+      "bias": 0.9505082078130277
     },
     "total": {
-      "games": 4,
-      "mae": 9.11613556199753,
-      "rmse": 10.220714311526947,
-      "bias": -3.097548040279632
+      "games": 6,
+      "mae": 14.635365048113442,
+      "rmse": 17.152710660840672,
+      "bias": 6.492909313262
     },
     "straightUp": {
-      "wins": 3,
+      "wins": 5,
       "losses": 1,
-      "graded": 4,
-      "accuracyPct": 75.0
+      "graded": 6,
+      "accuracyPct": 83.33333333333333
     },
     "winProbability": {
-      "games": 4,
-      "brierScore": 0.10520266575674317
+      "games": 6,
+      "brierScore": 0.11363309683313189
     }
   },
   "games": [
@@ -160,8 +160,24 @@
         "homeWinProbability": 43.656218817792976,
         "winner": "Buffalo"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 28,
+        "homeScore": 7,
+        "marginHome": -21,
+        "total": 35,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 18.470367932943397,
+        "absoluteMargin": 18.470367932943397,
+        "total": 21.856075057908008,
+        "absoluteTotal": 21.856075057908008
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-11-MASSACHUSETTS-TOLEDO",
@@ -178,8 +194,24 @@
         "homeWinProbability": 73.46674278850853,
         "winner": "Toledo"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 0,
+        "homeScore": 24,
+        "marginHome": 24,
+        "total": 24,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -14.067974659497274,
+        "absoluteMargin": 14.067974659497274,
+        "total": 29.49157298278252,
+        "absoluteTotal": 29.49157298278252
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-11-SACRAMENTOSTATE-CENTRALMICHIGAN",
