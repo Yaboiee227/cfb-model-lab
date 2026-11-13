@@ -1,0 +1,59 @@
+{
+  "gameId": "fixture",
+  "league": "cfb",
+  "kickoff": "2026-10-02T20:00:00Z",
+  "baseline": {
+    "homePoints": 30,
+    "awayPoints": 20
+  },
+  "baselineEvidence": {
+    "gameId": "fixture",
+    "league": "cfb",
+    "source": "SYNTHETIC TEST ONLY",
+    "observedAt": "2026-10-01T10:00:00Z"
+  },
+  "availabilityEvidence": {
+    "gameId": "fixture",
+    "league": "cfb",
+    "source": "SYNTHETIC TEST ONLY",
+    "observedAt": "2026-10-01T10:00:00Z"
+  },
+  "exposureEvidence": {
+    "gameId": "fixture",
+    "league": "cfb",
+    "source": "SYNTHETIC TEST ONLY",
+    "observedAt": "2026-10-01T10:00:00Z"
+  },
+  "valuationEvidence": {
+    "gameId": "fixture",
+    "league": "cfb",
+    "source": "SYNTHETIC TEST ONLY",
+    "observedAt": "2026-10-01T10:00:00Z",
+    "trainingCutoff": "2026-09-30T00:00:00Z",
+    "methodStatus": "UNVALIDATED_RESEARCH"
+  },
+  "affectedSide": "home",
+  "baselineQbShares": {
+    "starter": 1
+  },
+  "quarterbackValues": {
+    "starter": {
+      "low": 4,
+      "estimate": 5,
+      "high": 6
+    },
+    "backup": {
+      "low": 0,
+      "estimate": 1,
+      "high": 2
+    }
+  },
+  "scenarios": [
+    {
+      "name": "backup",
+      "qbShares": {
+        "backup": 1
+      }
+    }
+  ]
+}
