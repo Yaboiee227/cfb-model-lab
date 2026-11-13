@@ -9,37 +9,37 @@
   "modelId": "cfb-rebuild-foundation-v1-shadow",
   "sourceLockDigest": "c4de1fe117bf28dffc164640ec97b3084ceb6ba9b005d5390dfd08b16aff1501",
   "sourceLockedAt": "2026-11-10T22:51:32.601559Z",
-  "gradedAt": "2026-11-13T05:28:52.438183Z",
+  "gradedAt": "2026-11-13T06:30:35.251505Z",
   "status": "IN_PROGRESS",
   "counts": {
     "games": 67,
-    "final": 7,
-    "pending": 60,
+    "final": 8,
+    "pending": 59,
     "review": 0,
     "void": 0
   },
   "metrics": {
     "margin": {
-      "games": 7,
-      "mae": 12.4424739693325,
-      "rmse": 13.67081917793024,
-      "bias": 2.2406443404030774
+      "games": 8,
+      "mae": 12.556848824850544,
+      "rmse": 13.632044779362843,
+      "bias": 3.6302478995372995
     },
     "total": {
-      "games": 7,
-      "mae": 18.784703670311053,
-      "rmse": 22.907576860934636,
-      "bias": -0.6747542177035319
+      "games": 8,
+      "mae": 18.34237426196737,
+      "rmse": 22.095650435219923,
+      "bias": -2.4961684909357897
     },
     "straightUp": {
-      "wins": 6,
+      "wins": 7,
       "losses": 1,
-      "graded": 7,
-      "accuracyPct": 85.71428571428571
+      "graded": 8,
+      "accuracyPct": 87.5
     },
     "winProbability": {
-      "games": 7,
-      "brierScore": 0.12954598990405836
+      "games": 8,
+      "brierScore": 0.12573539456764127
     }
   },
   "games": [
@@ -296,8 +296,24 @@
         "homeWinProbability": 31.473993584024534,
         "winner": "Louisiana"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 42,
+        "homeScore": 21,
+        "marginHome": -21,
+        "total": 63,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 13.357472813476853,
+        "absoluteMargin": 13.357472813476853,
+        "total": -15.246068403561594,
+        "absoluteTotal": 15.246068403561594
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-13-FLORIDASTATE-PITTSBURGH",
