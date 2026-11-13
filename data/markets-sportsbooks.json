@@ -1,28 +1,28 @@
 {
-  "generatedAt": "2026-11-12T23:13:31.366Z",
-  "lastCoreRefresh": "2026-11-12T23:13:31.366Z",
-  "lastMoneylineRefresh": "2026-11-12T23:13:31.366Z",
+  "generatedAt": "2026-11-13T00:44:24.951Z",
+  "lastCoreRefresh": "2026-11-13T00:44:24.951Z",
+  "lastMoneylineRefresh": "2026-11-13T00:44:24.951Z",
   "provider": "The Odds API",
   "books": [
     "fanduel",
     "draftkings"
   ],
   "quota": {
-    "remaining": 438,
-    "used": 62,
+    "remaining": 435,
+    "used": 65,
     "lastCost": 1,
     "usageThisRun": 3,
     "reserveCredits": 30
   },
   "refreshPolicy": {
-    "phase": "pregame-3h",
+    "phase": "kickoff-soon",
     "coreMarkets": [
       "spreads",
       "totals"
     ],
     "moneylineMarket": "h2h",
-    "coreIntervalMinutes": 45,
-    "moneylineIntervalMinutes": 90,
+    "coreIntervalMinutes": 20,
+    "moneylineIntervalMinutes": 60,
     "quotaFactor": 1,
     "manualOverride": false
   },
@@ -35,16 +35,16 @@
       "awayTeam": "Memphis Tigers",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
-            "home": 160,
-            "away": -192
+            "home": 168,
+            "away": -205
           },
           "spread": {
-            "home": 3.5,
-            "homePrice": 100,
-            "away": -3.5,
-            "awayPrice": -120
+            "home": 4.5,
+            "homePrice": -105,
+            "away": -4.5,
+            "awayPrice": -115
           },
           "total": {
             "point": 50.5,
@@ -113,25 +113,32 @@
               "total": 50.5,
               "homeMl": 160,
               "awayMl": -192
+            },
+            {
+              "ts": "2026-11-13T00:44:24.951Z",
+              "spreadHome": 4.5,
+              "total": 50.5,
+              "homeMl": 168,
+              "awayMl": -205
             }
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
-            "home": 160,
-            "away": -192
+            "home": 180,
+            "away": -218
           },
           "spread": {
-            "home": 4,
-            "homePrice": -110,
-            "away": -4,
-            "awayPrice": -110
+            "home": 5.5,
+            "homePrice": -115,
+            "away": -5.5,
+            "awayPrice": -105
           },
           "total": {
-            "point": 50.5,
-            "overPrice": -112,
-            "underPrice": -108
+            "point": 51.5,
+            "overPrice": 100,
+            "underPrice": -120
           },
           "opening": {
             "moneyline": {
@@ -223,6 +230,13 @@
               "total": 50.5,
               "homeMl": 160,
               "awayMl": -192
+            },
+            {
+              "ts": "2026-11-13T00:44:24.951Z",
+              "spreadHome": 5.5,
+              "total": 51.5,
+              "homeMl": 180,
+              "awayMl": -218
             }
           ]
         }
@@ -236,16 +250,16 @@
       "awayTeam": "Louisiana Ragin Cajuns",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
-            "home": 350,
+            "home": 340,
             "away": -450
           },
           "spread": {
             "home": 10.5,
-            "homePrice": -105,
+            "homePrice": -110,
             "away": -10.5,
-            "awayPrice": -115
+            "awayPrice": -110
           },
           "total": {
             "point": 47.5,
@@ -314,20 +328,27 @@
               "total": 47.5,
               "homeMl": 350,
               "awayMl": -450
+            },
+            {
+              "ts": "2026-11-13T00:44:24.951Z",
+              "spreadHome": 10.5,
+              "total": 47.5,
+              "homeMl": 340,
+              "awayMl": -450
             }
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": 310,
             "away": -395
           },
           "spread": {
-            "home": 10.5,
-            "homePrice": -112,
-            "away": -10.5,
-            "awayPrice": -108
+            "home": 10,
+            "homePrice": -108,
+            "away": -10,
+            "awayPrice": -112
           },
           "total": {
             "point": 47.5,
@@ -396,6 +417,13 @@
               "total": 47.5,
               "homeMl": 310,
               "awayMl": -395
+            },
+            {
+              "ts": "2026-11-13T00:44:24.951Z",
+              "spreadHome": 10,
+              "total": 47.5,
+              "homeMl": 310,
+              "awayMl": -395
             }
           ]
         }
@@ -409,7 +437,7 @@
       "awayTeam": "Florida State Seminoles",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": -166,
             "away": 138
@@ -498,7 +526,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -170,
             "away": 142
@@ -554,7 +582,7 @@
       "awayTeam": "Illinois Fighting Illini",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": -385,
             "away": 310
@@ -629,7 +657,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -395,
             "away": 310
@@ -685,7 +713,7 @@
       "awayTeam": "Houston Cougars",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": 310,
             "away": -385
@@ -739,7 +767,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": 285,
             "away": -360
@@ -809,7 +837,7 @@
       "awayTeam": "Auburn Tigers",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": 120,
             "away": -142
@@ -863,7 +891,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": 120,
             "away": -142
@@ -876,8 +904,8 @@
           },
           "total": {
             "point": 50.5,
-            "overPrice": -115,
-            "underPrice": -105
+            "overPrice": -110,
+            "underPrice": -110
           },
           "opening": {
             "moneyline": {
@@ -912,7 +940,7 @@
       "awayTeam": "Cincinnati Bearcats",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:16Z",
           "moneyline": {
             "home": -142,
             "away": 120
@@ -980,7 +1008,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -148,
             "away": 124
@@ -1043,7 +1071,7 @@
       "awayTeam": "Duke Blue Devils",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": -550,
             "away": 420
@@ -1090,7 +1118,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -550,
             "away": 410
@@ -1153,7 +1181,7 @@
       "awayTeam": "James Madison Dukes",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": 152,
             "away": -182
@@ -1200,7 +1228,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": 160,
             "away": -192
@@ -1249,7 +1277,7 @@
       "awayTeam": "Wisconsin Badgers",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": 270,
             "away": -335
@@ -1310,7 +1338,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": 275,
             "away": -345
@@ -1380,7 +1408,7 @@
       "awayTeam": "Syracuse Orange",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": 120,
             "away": -142
@@ -1441,7 +1469,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": 124,
             "away": -148
@@ -1532,7 +1560,7 @@
       "awayTeam": "Northwestern Wildcats",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": -630,
             "away": 460
@@ -1614,7 +1642,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -550,
             "away": 410
@@ -1670,7 +1698,7 @@
       "awayTeam": "Wake Forest Demon Deacons",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": -113,
             "away": -104
@@ -1766,7 +1794,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -115,
             "away": -105
@@ -1843,7 +1871,7 @@
       "awayTeam": "Georgia Tech Yellow Jackets",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": -630,
             "away": 460
@@ -1904,7 +1932,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -575,
             "away": 425
@@ -1967,7 +1995,7 @@
       "awayTeam": "Nebraska Cornhuskers",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": 530,
             "away": -750
@@ -2049,7 +2077,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": 490,
             "away": -675
@@ -2140,7 +2168,7 @@
       "awayTeam": "Alabama Crimson Tide",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": 660,
             "away": -1000
@@ -2208,7 +2236,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": 625,
             "away": -950
@@ -2285,7 +2313,7 @@
       "awayTeam": "Arkansas State Red Wolves",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": -113,
             "away": -106
@@ -2339,7 +2367,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -118,
             "away": -102
@@ -2395,7 +2423,7 @@
       "awayTeam": "East Carolina Pirates",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": 340,
             "away": -450
@@ -2456,7 +2484,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": 350,
             "away": -455
@@ -2526,7 +2554,7 @@
       "awayTeam": "UAB Blazers",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": -132,
             "away": 110
@@ -2538,9 +2566,9 @@
             "awayPrice": -115
           },
           "total": {
-            "point": 48.5,
-            "overPrice": 100,
-            "underPrice": -120
+            "point": 47.5,
+            "overPrice": -110,
+            "underPrice": -110
           },
           "opening": {
             "moneyline": {
@@ -2576,11 +2604,18 @@
               "total": 48.5,
               "homeMl": -132,
               "awayMl": 110
+            },
+            {
+              "ts": "2026-11-13T00:44:24.951Z",
+              "spreadHome": -2.5,
+              "total": 47.5,
+              "homeMl": -132,
+              "awayMl": 110
             }
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -135,
             "away": 114
@@ -2593,8 +2628,8 @@
           },
           "total": {
             "point": 47.5,
-            "overPrice": -115,
-            "underPrice": -105
+            "overPrice": -110,
+            "underPrice": -110
           },
           "opening": {
             "moneyline": {
@@ -2636,7 +2671,7 @@
       "awayTeam": "Kansas State Wildcats",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:16Z",
           "moneyline": {
             "home": -410,
             "away": 320
@@ -2683,7 +2718,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -395,
             "away": 310
@@ -2746,7 +2781,7 @@
       "awayTeam": "Kennesaw State Owls",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": 240,
             "away": -300
@@ -2786,7 +2821,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": 225,
             "away": -278
@@ -2849,7 +2884,7 @@
       "awayTeam": "Tulane Green Wave",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": -132,
             "away": 110
@@ -2924,7 +2959,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -135,
             "away": 114
@@ -2994,7 +3029,7 @@
       "awayTeam": "Florida International Panthers",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": -188,
             "away": 158
@@ -3048,7 +3083,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -205,
             "away": 170
@@ -3111,7 +3146,7 @@
       "awayTeam": "New Mexico State Aggies",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": -118,
             "away": -102
@@ -3179,7 +3214,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -120,
             "away": 100
@@ -3235,7 +3270,7 @@
       "awayTeam": "Tennessee Volunteers",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": 116,
             "away": -138
@@ -3275,7 +3310,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": 114,
             "away": -135
@@ -3324,9 +3359,9 @@
       "awayTeam": "Arizona State Sun Devils",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:16Z",
           "moneyline": {
-            "home": -156,
+            "home": -152,
             "away": 128
           },
           "spread": {
@@ -3336,9 +3371,9 @@
             "awayPrice": -120
           },
           "total": {
-            "point": 49.5,
-            "overPrice": -105,
-            "underPrice": -115
+            "point": 48.5,
+            "overPrice": -110,
+            "underPrice": -110
           },
           "opening": {
             "moneyline": {
@@ -3395,11 +3430,18 @@
               "total": 49.5,
               "homeMl": -156,
               "awayMl": 128
+            },
+            {
+              "ts": "2026-11-13T00:44:24.951Z",
+              "spreadHome": -3.5,
+              "total": 48.5,
+              "homeMl": -152,
+              "awayMl": 128
             }
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -155,
             "away": 130
@@ -3412,8 +3454,8 @@
           },
           "total": {
             "point": 48.5,
-            "overPrice": -112,
-            "underPrice": -108
+            "overPrice": -108,
+            "underPrice": -112
           },
           "opening": {
             "moneyline": {
@@ -3504,7 +3546,7 @@
       "awayTeam": "Baylor Bears",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:16Z",
           "moneyline": {
             "home": -285,
             "away": 230
@@ -3517,8 +3559,8 @@
           },
           "total": {
             "point": 48.5,
-            "overPrice": -110,
-            "underPrice": -110
+            "overPrice": -115,
+            "underPrice": -105
           },
           "opening": {
             "moneyline": {
@@ -3565,7 +3607,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -285,
             "away": 230
@@ -3635,7 +3677,7 @@
       "awayTeam": "Boston College Eagles",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": -8000,
             "away": 2000
@@ -3689,7 +3731,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -5000,
             "away": 1800
@@ -3738,7 +3780,7 @@
       "awayTeam": "California Golden Bears",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": -385,
             "away": 310
@@ -3778,7 +3820,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -410,
             "away": 320
@@ -3848,7 +3890,7 @@
       "awayTeam": "Florida Atlantic Owls",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": -220,
             "away": 184
@@ -3902,7 +3944,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -218,
             "away": 180
@@ -3979,10 +4021,10 @@
       "awayTeam": "Missouri Tigers",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
-            "home": -800,
-            "away": 570
+            "home": -780,
+            "away": 550
           },
           "spread": {
             "home": -15.5,
@@ -4022,11 +4064,18 @@
               "total": 47.5,
               "homeMl": -800,
               "awayMl": 570
+            },
+            {
+              "ts": "2026-11-13T00:44:24.951Z",
+              "spreadHome": -15.5,
+              "total": 47.5,
+              "homeMl": -780,
+              "awayMl": 550
             }
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -750,
             "away": 525
@@ -4082,7 +4131,7 @@
       "awayTeam": "Georgia Southern Eagles",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": 195,
             "away": -235
@@ -4143,7 +4192,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": 185,
             "away": -225
@@ -4206,7 +4255,7 @@
       "awayTeam": "USC Trojans",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": -320,
             "away": 260
@@ -4288,7 +4337,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -340,
             "away": 270
@@ -4372,7 +4421,7 @@
       "awayTeam": "Jacksonville State Gamecocks",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": 240,
             "away": -295
@@ -4426,7 +4475,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": 240,
             "away": -298
@@ -4482,7 +4531,7 @@
       "awayTeam": "Middle Tennessee Blue Raiders",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": -2000,
             "away": 1060
@@ -4529,7 +4578,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -1650,
             "away": 950
@@ -4585,7 +4634,7 @@
       "awayTeam": "Michigan Wolverines",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": -450,
             "away": 330
@@ -4674,7 +4723,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -425,
             "away": 330
@@ -4744,7 +4793,7 @@
       "awayTeam": "Nevada Wolf Pack",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": 202,
             "away": -245
@@ -4805,7 +4854,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": 220,
             "away": -270
@@ -4854,7 +4903,7 @@
       "awayTeam": "Fresno State Bulldogs",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": -360,
             "away": 280
@@ -4936,7 +4985,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -375,
             "away": 295
@@ -4992,7 +5041,7 @@
       "awayTeam": "Washington Huskies",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": 130,
             "away": -156
@@ -5046,7 +5095,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": 142,
             "away": -170
@@ -5109,7 +5158,7 @@
       "awayTeam": "Ole Miss Rebels",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": -110,
             "away": -110
@@ -5184,7 +5233,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -112,
             "away": -108
@@ -5261,7 +5310,7 @@
       "awayTeam": "Southern Mississippi Golden Eagles",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": -880,
             "away": 590
@@ -5315,7 +5364,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -950,
             "away": 625
@@ -5385,7 +5434,7 @@
       "awayTeam": "Kansas Jayhawks",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:16Z",
           "moneyline": {
             "home": -142,
             "away": 120
@@ -5439,7 +5488,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -142,
             "away": 120
@@ -5488,7 +5537,7 @@
       "awayTeam": "Appalachian State Mountaineers",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": 100,
             "away": -120
@@ -5542,7 +5591,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": 100,
             "away": -120
@@ -5598,7 +5647,7 @@
       "awayTeam": "Oregon State Beavers",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": -710,
             "away": 520
@@ -5694,7 +5743,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -650,
             "away": 470
@@ -5771,10 +5820,10 @@
       "awayTeam": "Florida Gators",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
-            "home": -150,
-            "away": 126
+            "home": -152,
+            "away": 128
           },
           "spread": {
             "home": -3.5,
@@ -5842,11 +5891,18 @@
               "total": 52.5,
               "homeMl": -150,
               "awayMl": 126
+            },
+            {
+              "ts": "2026-11-13T00:44:24.951Z",
+              "spreadHome": -3.5,
+              "total": 52.5,
+              "homeMl": -152,
+              "awayMl": 128
             }
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -166,
             "away": 140
@@ -5902,7 +5958,7 @@
       "awayTeam": "San Jose State Spartans",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": -520,
             "away": 390
@@ -5977,16 +6033,16 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -470,
             "away": 360
           },
           "spread": {
-            "home": -11.5,
-            "homePrice": -112,
-            "away": 11.5,
-            "awayPrice": -108
+            "home": -12.5,
+            "homePrice": -108,
+            "away": 12.5,
+            "awayPrice": -112
           },
           "total": {
             "point": 47.5,
@@ -6020,6 +6076,13 @@
               "total": 47.5,
               "homeMl": -470,
               "awayMl": 360
+            },
+            {
+              "ts": "2026-11-13T00:44:24.951Z",
+              "spreadHome": -12.5,
+              "total": 47.5,
+              "homeMl": -470,
+              "awayMl": 360
             }
           ]
         }
@@ -6033,7 +6096,7 @@
       "awayTeam": "Louisville Cardinals",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": 142,
             "away": -170
@@ -6046,8 +6109,8 @@
           },
           "total": {
             "point": 59.5,
-            "overPrice": -110,
-            "underPrice": -110
+            "overPrice": -105,
+            "underPrice": -115
           },
           "opening": {
             "moneyline": {
@@ -6087,7 +6150,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": 150,
             "away": -180
@@ -6150,7 +6213,7 @@
       "awayTeam": "Minnesota Golden Gophers",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": -360,
             "away": 280
@@ -6218,7 +6281,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -355,
             "away": 280
@@ -6288,7 +6351,7 @@
       "awayTeam": "Troy Trojans",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": -146,
             "away": 122
@@ -6349,7 +6412,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -155,
             "away": 130
@@ -6398,7 +6461,7 @@
       "awayTeam": "Utah Utes",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:16Z",
           "moneyline": {
             "home": 112,
             "away": -134
@@ -6445,7 +6508,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": 114,
             "away": -135
@@ -6501,7 +6564,7 @@
       "awayTeam": "Purdue Boilermakers",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": -1050,
             "away": 720
@@ -6555,7 +6618,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -950,
             "away": 625
@@ -6625,7 +6688,7 @@
       "awayTeam": "Texas Longhorns",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": -176,
             "away": 146
@@ -6693,7 +6756,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -185,
             "away": 154
@@ -6749,7 +6812,7 @@
       "awayTeam": "UNLV Rebels",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": -690,
             "away": 500
@@ -6789,7 +6852,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -625,
             "away": 455
@@ -6852,7 +6915,7 @@
       "awayTeam": "Stanford Cardinal",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:15Z",
           "moneyline": {
             "home": -670,
             "away": 490
@@ -6906,7 +6969,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -700,
             "away": 500
@@ -6983,16 +7046,16 @@
       "awayTeam": "South Carolina Gamecocks",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:16Z",
           "moneyline": {
-            "home": 215,
-            "away": -265
+            "home": 250,
+            "away": -310
           },
           "spread": {
             "home": 7.5,
-            "homePrice": -120,
+            "homePrice": -110,
             "away": -7.5,
-            "awayPrice": 100
+            "awayPrice": -110
           },
           "total": {
             "point": 51.5,
@@ -7054,20 +7117,27 @@
               "total": 51.5,
               "homeMl": 215,
               "awayMl": -265
+            },
+            {
+              "ts": "2026-11-13T00:44:24.951Z",
+              "spreadHome": 7.5,
+              "total": 51.5,
+              "homeMl": 250,
+              "awayMl": -310
             }
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
-            "home": 235,
-            "away": -290
+            "home": 260,
+            "away": -325
           },
           "spread": {
-            "home": 7,
-            "homePrice": -108,
-            "away": -7,
-            "awayPrice": -112
+            "home": 7.5,
+            "homePrice": -110,
+            "away": -7.5,
+            "awayPrice": -110
           },
           "total": {
             "point": 51.5,
@@ -7108,6 +7178,13 @@
               "total": 51.5,
               "homeMl": 235,
               "awayMl": -290
+            },
+            {
+              "ts": "2026-11-13T00:44:24.951Z",
+              "spreadHome": 7.5,
+              "total": 51.5,
+              "homeMl": 260,
+              "awayMl": -325
             }
           ]
         }
@@ -7121,10 +7198,10 @@
       "awayTeam": "North Texas Mean Green",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:16Z",
           "moneyline": {
             "home": 104,
-            "away": -122
+            "away": -125
           },
           "spread": {
             "home": 2.5,
@@ -7134,8 +7211,8 @@
           },
           "total": {
             "point": 76.5,
-            "overPrice": -105,
-            "underPrice": -115
+            "overPrice": -110,
+            "underPrice": -110
           },
           "opening": {
             "moneyline": {
@@ -7206,11 +7283,18 @@
               "total": 76.5,
               "homeMl": 104,
               "awayMl": -122
+            },
+            {
+              "ts": "2026-11-13T00:44:24.951Z",
+              "spreadHome": 2.5,
+              "total": 76.5,
+              "homeMl": 104,
+              "awayMl": -125
             }
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": 105,
             "away": -125
@@ -7280,10 +7364,10 @@
       "awayTeam": "Texas Tech Red Raiders",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:16Z",
           "moneyline": {
-            "home": -156,
-            "away": 130
+            "home": -160,
+            "away": 132
           },
           "spread": {
             "home": -3.5,
@@ -7344,11 +7428,18 @@
               "total": 73.5,
               "homeMl": -156,
               "awayMl": 130
+            },
+            {
+              "ts": "2026-11-13T00:44:24.951Z",
+              "spreadHome": -3.5,
+              "total": 73.5,
+              "homeMl": -160,
+              "awayMl": 132
             }
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -170,
             "away": 142
@@ -7360,9 +7451,9 @@
             "awayPrice": -115
           },
           "total": {
-            "point": 72.5,
-            "overPrice": -115,
-            "underPrice": -105
+            "point": 73.5,
+            "overPrice": -105,
+            "underPrice": -115
           },
           "opening": {
             "moneyline": {
@@ -7384,6 +7475,13 @@
               "total": 72.5,
               "homeMl": -170,
               "awayMl": 142
+            },
+            {
+              "ts": "2026-11-13T00:44:24.951Z",
+              "spreadHome": -3.5,
+              "total": 73.5,
+              "homeMl": -170,
+              "awayMl": 142
             }
           ]
         }
@@ -7397,7 +7495,7 @@
       "awayTeam": "Utah State Aggies",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:16Z",
           "moneyline": {
             "home": 122,
             "away": -146
@@ -7437,7 +7535,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": 120,
             "away": -142
@@ -7493,21 +7591,21 @@
       "awayTeam": "Wyoming Cowboys",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:16Z",
           "moneyline": {
-            "home": 280,
-            "away": -350
+            "home": 260,
+            "away": -320
           },
           "spread": {
             "home": 7.5,
-            "homePrice": -105,
+            "homePrice": -110,
             "away": -7.5,
-            "awayPrice": -115
+            "awayPrice": -110
           },
           "total": {
             "point": 39.5,
-            "overPrice": -115,
-            "underPrice": -105
+            "overPrice": -110,
+            "underPrice": -110
           },
           "opening": {
             "moneyline": {
@@ -7536,14 +7634,21 @@
               "total": 39.5,
               "homeMl": 280,
               "awayMl": -350
+            },
+            {
+              "ts": "2026-11-13T00:44:24.951Z",
+              "spreadHome": 7.5,
+              "total": 39.5,
+              "homeMl": 260,
+              "awayMl": -320
             }
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
-            "home": 260,
-            "away": -325
+            "home": 250,
+            "away": -310
           },
           "spread": {
             "home": 8.5,
@@ -7583,6 +7688,13 @@
               "total": 39.5,
               "homeMl": 260,
               "awayMl": -325
+            },
+            {
+              "ts": "2026-11-13T00:44:24.951Z",
+              "spreadHome": 8.5,
+              "total": 39.5,
+              "homeMl": 250,
+              "awayMl": -310
             }
           ]
         }
@@ -7596,10 +7708,10 @@
       "awayTeam": "Colorado State Rams",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:16Z",
           "moneyline": {
-            "home": -345,
-            "away": 275
+            "home": -335,
+            "away": 265
           },
           "spread": {
             "home": -8.5,
@@ -7646,11 +7758,18 @@
               "total": 66.5,
               "homeMl": -345,
               "awayMl": 275
+            },
+            {
+              "ts": "2026-11-13T00:44:24.951Z",
+              "spreadHome": -8.5,
+              "total": 66.5,
+              "homeMl": -335,
+              "awayMl": 265
             }
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": -340,
             "away": 270
@@ -7720,7 +7839,7 @@
       "awayTeam": "North Dakota State Bison",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-12T23:13:01Z",
+          "updatedAt": "2026-11-13T00:44:16Z",
           "moneyline": {
             "home": 198,
             "away": -240
@@ -7767,7 +7886,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-12T23:13:20Z",
+          "updatedAt": "2026-11-13T00:43:24Z",
           "moneyline": {
             "home": 200,
             "away": -245
