@@ -16,17 +16,17 @@
   "lockWindowMinutes": 30.0,
   "maxObservationAgeMinutes": 35.0,
   "scopeRestricted": false,
-  "updatedAt": "2026-11-12T00:39:57.170648Z",
+  "updatedAt": "2026-11-13T01:40:55.223346Z",
   "counts": {
     "foundationGames": 67,
     "activeScopeGames": 67,
     "pausedGames": 0,
     "preservedOutOfScopeLockedGames": 0,
-    "gamesWithMarketLock": 2,
-    "bookObservationsLocked": 4,
-    "newBookObservationsThisRun": 0,
-    "pendingGames": 61,
-    "missedGames": 4
+    "gamesWithMarketLock": 3,
+    "bookObservationsLocked": 6,
+    "newBookObservationsThisRun": 2,
+    "pendingGames": 59,
+    "missedGames": 5
   },
   "games": [
     {
@@ -151,7 +151,7 @@
       "kickoff": "2026-11-13T01:00:00Z",
       "projectionDigest": "8f253ce2128bbf50eb8d26c7b1777ec6b0029338c7575d6d81e5f1ee474cf34a",
       "books": {},
-      "status": "PENDING"
+      "status": "MISSED"
     },
     {
       "gameId": "2026-11-12-LOUISIANA-ULMONROE",
@@ -160,8 +160,35 @@
       "homeTeam": "UL Monroe",
       "kickoff": "2026-11-13T02:00:00Z",
       "projectionDigest": "54c4ff040c001b4d1ddb28da6a57b925af9dee9cb3a2acad47cc6b837cb59417",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-11-13T01:18:07Z",
+          "lockedAt": "2026-11-13T01:40:55.223346Z",
+          "marketSpreadHome": 10.5,
+          "marketTotal": 47.5,
+          "marketMoneylineHome": 340,
+          "marketMoneylineAway": -450,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "c2eb5258616cc6c4cae951dfc04dc59535c31ef75afb3b52035d0f2e63bb36c4"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-11-13T01:18:24Z",
+          "lockedAt": "2026-11-13T01:40:55.223346Z",
+          "marketSpreadHome": 10.0,
+          "marketTotal": 47.5,
+          "marketMoneylineHome": 310,
+          "marketMoneylineAway": -395,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "6c0fc34af1ce72b892b8491d1652889882eaf38f6746e6ab69c028efd45ffcbf"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-11-13-FLORIDASTATE-PITTSBURGH",
