@@ -9,37 +9,37 @@
   "modelId": "cfb-rebuild-foundation-v1-shadow",
   "sourceLockDigest": "c4de1fe117bf28dffc164640ec97b3084ceb6ba9b005d5390dfd08b16aff1501",
   "sourceLockedAt": "2026-11-10T22:51:32.601559Z",
-  "gradedAt": "2026-11-12T04:38:02.158088Z",
+  "gradedAt": "2026-11-13T05:28:52.438183Z",
   "status": "IN_PROGRESS",
   "counts": {
     "games": 67,
-    "final": 6,
-    "pending": 61,
+    "final": 7,
+    "pending": 60,
     "review": 0,
     "void": 0
   },
   "metrics": {
     "margin": {
-      "games": 6,
-      "mae": 12.852642774897355,
-      "rmse": 14.192776992548644,
-      "bias": 0.9505082078130277
+      "games": 7,
+      "mae": 12.4424739693325,
+      "rmse": 13.67081917793024,
+      "bias": 2.2406443404030774
     },
     "total": {
-      "games": 6,
-      "mae": 14.635365048113442,
-      "rmse": 17.152710660840672,
-      "bias": 6.492909313262
+      "games": 7,
+      "mae": 18.784703670311053,
+      "rmse": 22.907576860934636,
+      "bias": -0.6747542177035319
     },
     "straightUp": {
-      "wins": 5,
+      "wins": 6,
       "losses": 1,
-      "graded": 6,
-      "accuracyPct": 83.33333333333333
+      "graded": 7,
+      "accuracyPct": 85.71428571428571
     },
     "winProbability": {
-      "games": 6,
-      "brierScore": 0.11363309683313189
+      "games": 7,
+      "brierScore": 0.12954598990405836
     }
   },
   "games": [
@@ -262,8 +262,24 @@
         "homeWinProbability": 47.43662596871928,
         "winner": "Memphis"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 52,
+        "homeScore": 41,
+        "marginHome": -11,
+        "total": 93,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 9.981461135943377,
+        "absoluteMargin": 9.981461135943377,
+        "total": -43.680735403496726,
+        "absoluteTotal": 43.680735403496726
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-12-LOUISIANA-ULMONROE",
