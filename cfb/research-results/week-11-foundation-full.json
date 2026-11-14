@@ -9,37 +9,37 @@
   "modelId": "cfb-rebuild-foundation-v1-shadow",
   "sourceLockDigest": "c4de1fe117bf28dffc164640ec97b3084ceb6ba9b005d5390dfd08b16aff1501",
   "sourceLockedAt": "2026-11-10T22:51:32.601559Z",
-  "gradedAt": "2026-11-14T22:43:12.780460Z",
+  "gradedAt": "2026-11-14T23:19:39.679497Z",
   "status": "IN_PROGRESS",
   "counts": {
     "games": 67,
-    "final": 26,
-    "pending": 41,
+    "final": 28,
+    "pending": 39,
     "review": 0,
     "void": 0
   },
   "metrics": {
     "margin": {
-      "games": 26,
-      "mae": 13.260314253746454,
-      "rmse": 16.76088390397805,
-      "bias": 3.531792780457011
+      "games": 28,
+      "mae": 12.83982700303766,
+      "rmse": 16.32176134024083,
+      "bias": 3.6233903912638925
     },
     "total": {
-      "games": 26,
-      "mae": 14.863926928450285,
-      "rmse": 18.383321147777032,
-      "bias": 3.9525250700317476
+      "games": 28,
+      "mae": 14.651529518755257,
+      "rmse": 18.001884550642654,
+      "bias": 4.519513507366617
     },
     "straightUp": {
-      "wins": 19,
+      "wins": 21,
       "losses": 7,
-      "graded": 26,
-      "accuracyPct": 73.07692307692308
+      "graded": 28,
+      "accuracyPct": 75.0
     },
     "winProbability": {
-      "games": 26,
-      "brierScore": 0.1941088206412345
+      "games": 28,
+      "brierScore": 0.19160781913165859
     }
   },
   "games": [
@@ -978,8 +978,24 @@
         "homeWinProbability": 63.437361491736524,
         "winner": "Delaware"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 16,
+        "homeScore": 24,
+        "marginHome": 8,
+        "total": 40,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -2.5593334120700035,
+        "absoluteMargin": 2.5593334120700035,
+        "total": 13.395246211616112,
+        "absoluteTotal": 13.395246211616112
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-14-NEWMEXICOSTATE-MISSOURISTATE",
@@ -1014,8 +1030,24 @@
         "homeWinProbability": 42.95427167881535,
         "winner": "Tennessee"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 22,
+        "homeScore": 7,
+        "marginHome": -15,
+        "total": 29,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 12.187652075576707,
+        "absoluteMargin": 12.187652075576707,
+        "total": 10.38548017382373,
+        "absoluteTotal": 10.38548017382373
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-14-ARIZONASTATE-UCF",
