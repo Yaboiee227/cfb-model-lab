@@ -9,37 +9,37 @@
   "modelId": "cfb-rebuild-foundation-v1-shadow",
   "sourceLockDigest": "c4de1fe117bf28dffc164640ec97b3084ceb6ba9b005d5390dfd08b16aff1501",
   "sourceLockedAt": "2026-11-10T22:51:32.601559Z",
-  "gradedAt": "2026-11-14T07:35:15.010948Z",
+  "gradedAt": "2026-11-14T20:43:05.731793Z",
   "status": "IN_PROGRESS",
   "counts": {
     "games": 67,
-    "final": 11,
-    "pending": 56,
+    "final": 19,
+    "pending": 48,
     "review": 0,
     "void": 0
   },
   "metrics": {
     "margin": {
-      "games": 11,
-      "mae": 12.371294199268414,
-      "rmse": 13.469142473593267,
-      "bias": 2.448180358288094
+      "games": 19,
+      "mae": 13.678918874229426,
+      "rmse": 16.739602665672994,
+      "bias": 1.293156919279688
     },
     "total": {
-      "games": 11,
-      "mae": 19.88957532116775,
-      "rmse": 23.2030806247643,
-      "bias": -0.986513302912043
+      "games": 19,
+      "mae": 15.14720976792448,
+      "rmse": 18.918535624441937,
+      "bias": 0.30175859803128485
     },
     "straightUp": {
-      "wins": 8,
-      "losses": 3,
-      "graded": 11,
-      "accuracyPct": 72.72727272727273
+      "wins": 14,
+      "losses": 5,
+      "graded": 19,
+      "accuracyPct": 73.6842105263158
     },
     "winProbability": {
-      "games": 11,
-      "brierScore": 0.1758836852493242
+      "games": 19,
+      "brierScore": 0.18574921270778103
     }
   },
   "games": [
@@ -450,8 +450,24 @@
         "homeWinProbability": 64.60897729260672,
         "winner": "Iowa State"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 13,
+        "homeScore": 41,
+        "marginHome": 28,
+        "total": 54,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -22.06311559402476,
+        "absoluteMargin": 22.06311559402476,
+        "total": 7.8027005383196695,
+        "absoluteTotal": 7.8027005383196695
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-14-DUKE-MIAMI",
@@ -468,8 +484,24 @@
         "homeWinProbability": 74.93806612349276,
         "winner": "Miami"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 25,
+        "homeScore": 36,
+        "marginHome": 11,
+        "total": 61,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -0.3464102810341636,
+        "absoluteMargin": 0.3464102810341636,
+        "total": -6.876545664693154,
+        "absoluteTotal": 6.876545664693154
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-14-JAMESMADISON-UCONN",
@@ -486,8 +518,24 @@
         "homeWinProbability": 37.22048324632294,
         "winner": "James Madison"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 22,
+        "homeScore": 46,
+        "marginHome": 24,
+        "total": 68,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -29.164401370170296,
+        "absoluteMargin": 29.164401370170296,
+        "total": -7.574288975372198,
+        "absoluteTotal": 7.574288975372198
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
     },
     {
       "gameId": "2026-11-14-NORTHWESTERN-OHIOSTATE",
@@ -504,8 +552,24 @@
         "homeWinProbability": 69.99714677944334,
         "winner": "Ohio State"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 19,
+        "homeScore": 28,
+        "marginHome": 9,
+        "total": 47,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -0.6943875085807818,
+        "absoluteMargin": 0.6943875085807818,
+        "total": 7.994836107221083,
+        "absoluteTotal": 7.994836107221083
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-14-SYRACUSE-NCSTATE",
@@ -522,8 +586,24 @@
         "homeWinProbability": 47.019806563811294,
         "winner": "Syracuse"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 34,
+        "homeScore": 31,
+        "marginHome": -3,
+        "total": 65,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 1.8155535283007893,
+        "absoluteMargin": 1.8155535283007893,
+        "total": -11.762464041481131,
+        "absoluteTotal": 11.762464041481131
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-14-WAKEFOREST-SMU",
@@ -540,8 +620,24 @@
         "homeWinProbability": 39.22370998156528,
         "winner": "Wake Forest"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 49,
+        "homeScore": 7,
+        "marginHome": -42,
+        "total": 56,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 37.667656455646515,
+        "absoluteMargin": 37.667656455646515,
+        "total": 2.889808439096278,
+        "absoluteTotal": 2.889808439096278
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-14-WISCONSIN-MARYLAND",
@@ -558,8 +654,24 @@
         "homeWinProbability": 31.078789772020656,
         "winner": "Wisconsin"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 21,
+        "homeScore": 24,
+        "marginHome": 3,
+        "total": 45,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -10.819297692820754,
+        "absoluteMargin": 10.819297692820754,
+        "total": 1.7777868093294273,
+        "absoluteTotal": 1.7777868093294273
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
     },
     {
       "gameId": "2026-11-14-GEORGIATECH-CLEMSON",
@@ -594,8 +706,24 @@
         "homeWinProbability": 26.899558372621975,
         "winner": "Nebraska"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 31,
+        "homeScore": 0,
+        "marginHome": -31,
+        "total": 31,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 21.244399987828487,
+        "absoluteMargin": 21.244399987828487,
+        "total": 22.33322648220691,
+        "absoluteTotal": 22.33322648220691
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-14-ALABAMA-VANDERBILT",

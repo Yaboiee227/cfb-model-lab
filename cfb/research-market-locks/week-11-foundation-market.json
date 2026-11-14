@@ -16,17 +16,17 @@
   "lockWindowMinutes": 30.0,
   "maxObservationAgeMinutes": 35.0,
   "scopeRestricted": false,
-  "updatedAt": "2026-11-14T20:04:00.396582Z",
+  "updatedAt": "2026-11-14T20:43:04.700732Z",
   "counts": {
     "foundationGames": 67,
     "activeScopeGames": 67,
     "pausedGames": 0,
     "preservedOutOfScopeLockedGames": 0,
-    "gamesWithMarketLock": 19,
-    "bookObservationsLocked": 38,
-    "newBookObservationsThisRun": 0,
-    "pendingGames": 38,
-    "missedGames": 10
+    "gamesWithMarketLock": 20,
+    "bookObservationsLocked": 40,
+    "newBookObservationsThisRun": 2,
+    "pendingGames": 27,
+    "missedGames": 20
   },
   "games": [
     {
@@ -884,7 +884,7 @@
       "kickoff": "2026-11-14T20:30:00Z",
       "projectionDigest": "ea320ba9c7fa00003e4eb4a3795845fcfed79a0617f6db192dbf3fc196796978",
       "books": {},
-      "status": "PENDING"
+      "status": "MISSED"
     },
     {
       "gameId": "2026-11-14-CALIFORNIA-VIRGINIA",
@@ -894,7 +894,7 @@
       "kickoff": "2026-11-14T20:30:00Z",
       "projectionDigest": "c2edf4897ea95048c8659a7b00b325eeafdf6a706437f4326062edbfcf51b718",
       "books": {},
-      "status": "PENDING"
+      "status": "MISSED"
     },
     {
       "gameId": "2026-11-14-FLORIDAATLANTIC-TULSA",
@@ -915,7 +915,7 @@
       "kickoff": "2026-11-14T20:30:00Z",
       "projectionDigest": "a77e6b98864965ee79de29af3153621cd25119cac2b7db5de23b3fa425745d4f",
       "books": {},
-      "status": "PENDING"
+      "status": "MISSED"
     },
     {
       "gameId": "2026-11-14-JACKSONVILLESTATE-WESTERNKENTUCKY",
@@ -925,7 +925,7 @@
       "kickoff": "2026-11-14T20:30:00Z",
       "projectionDigest": "5647ad2ab864f210aaf221a80950c12ac45c9fe56ab2ad4fb1f164249085307f",
       "books": {},
-      "status": "PENDING"
+      "status": "MISSED"
     },
     {
       "gameId": "2026-11-14-MICHIGAN-OREGON",
@@ -935,7 +935,7 @@
       "kickoff": "2026-11-14T20:30:00Z",
       "projectionDigest": "bf921163b542f0b2d9a8fa508c4fff5a190c16577d7e5eff753cc67dbd5819c5",
       "books": {},
-      "status": "PENDING"
+      "status": "MISSED"
     },
     {
       "gameId": "2026-11-14-MIDDLETENNESSEE-LIBERTY",
@@ -945,7 +945,7 @@
       "kickoff": "2026-11-14T20:30:00Z",
       "projectionDigest": "e46b3dbe78ac2bc7ee70e3c1b6ed5e73eb82c0e5b635f7d4430c882bae56b6c5",
       "books": {},
-      "status": "PENDING"
+      "status": "MISSED"
     },
     {
       "gameId": "2026-11-14-MISSOURI-GEORGIA",
@@ -955,7 +955,7 @@
       "kickoff": "2026-11-14T20:30:00Z",
       "projectionDigest": "29d8beccbc6638b7dcc36b2caddbff5f586775499430c81ee6a70cf36ae1c539",
       "books": {},
-      "status": "PENDING"
+      "status": "MISSED"
     },
     {
       "gameId": "2026-11-14-NEVADA-NORTHERNILLINOIS",
@@ -965,7 +965,7 @@
       "kickoff": "2026-11-14T20:30:00Z",
       "projectionDigest": "0f4425594938c0d1b3d55401d450cbc563660f4d86b6c1f825d5aef1819b3fa9",
       "books": {},
-      "status": "PENDING"
+      "status": "MISSED"
     },
     {
       "gameId": "2026-11-14-USC-INDIANA",
@@ -975,7 +975,7 @@
       "kickoff": "2026-11-14T20:30:00Z",
       "projectionDigest": "7f9caa191d9e173bf5e8fd733c92c96ebad7ab11ef3722effa7d6af1902861e3",
       "books": {},
-      "status": "PENDING"
+      "status": "MISSED"
     },
     {
       "gameId": "2026-11-14-FRESNOSTATE-TEXASSTATE",
@@ -984,8 +984,35 @@
       "homeTeam": "Texas State",
       "kickoff": "2026-11-14T21:00:00Z",
       "projectionDigest": "84bd0a955d342fefb4acd4d5f728cbed673bad59ef1c14bb1b2d3b95fa3e8285",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-11-14T20:39:27Z",
+          "lockedAt": "2026-11-14T20:43:04.700732Z",
+          "marketSpreadHome": -10.5,
+          "marketTotal": 59.5,
+          "marketMoneylineHome": -400,
+          "marketMoneylineAway": 310,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "2d2eafc1cea3d304e7b9e3c945700a8aec397d7aea30e7673b0c86856509ef95"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-11-14T20:38:54Z",
+          "lockedAt": "2026-11-14T20:43:04.700732Z",
+          "marketSpreadHome": -11.5,
+          "marketTotal": 60.5,
+          "marketMoneylineHome": -425,
+          "marketMoneylineAway": 330,
+          "spreadHomePrice": -105,
+          "totalOverPrice": -108,
+          "totalUnderPrice": -112,
+          "observationDigest": "42a4171f9aedd1d38119d6f08a61677bb0c6c86a5b2e415686754995688dbb8b"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-11-14-OLEMISS-OKLAHOMA",
@@ -1028,7 +1055,7 @@
       "effectiveKickoff": "2026-11-14T20:30Z",
       "projectionDigest": "cfd9d05c8c5e4abc26be6a071d2fc211cbef7ea24122e4a8619f4ddb724ae3b8",
       "books": {},
-      "status": "PENDING"
+      "status": "MISSED"
     },
     {
       "gameId": "2026-11-14-APPSTATE-MARSHALL",
