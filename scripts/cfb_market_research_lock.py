@@ -141,8 +141,16 @@ def merge_market_lock(
     lock_window_minutes: float = 30.0,
     max_observation_age_minutes: float = 35.0,
     active_game_ids: set[str] | None = None,
+    schedule: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     verify_research_lock(foundation_lock)
+    scheduled_games = {}
+    if schedule is not None:
+        if any(schedule.get(key) != foundation_lock.get(key) for key in ('league', 'season', 'week')):
+            raise ValueError('Current schedule belongs to a different slate')
+        scheduled_games = {g['gameId']: g for g in schedule['games']}
+        if len(scheduled_games) != len(schedule['games']):
+            raise ValueError('Duplicate current schedule game ID')
     if existing:
         verify_existing(existing, foundation_lock)
         prior_games = {g["gameId"]: g for g in existing.get("games", [])}
@@ -153,13 +161,25 @@ def merge_market_lock(
     rows = []
     newly_locked = 0
     for game in foundation_lock.get("games", []):
-        kickoff = parse_dt(game["kickoff"])
+        current = scheduled_games.get(game['gameId'])
+        market_game = game
+        if current and parse_dt(current['kickoff']) != parse_dt(game['kickoff']):
+            identity = ('sourceGameId', 'homeTeam', 'awayTeam')
+            if not game.get('sourceGameId') or any(current.get(key) != game.get(key) for key in identity):
+                raise ValueError(f"Schedule identity mismatch: {game['gameId']}")
+            if parse_dt(current['originalKickoff']) != parse_dt(game['kickoff']):
+                raise ValueError(f"Schedule original kickoff mismatch: {game['gameId']}")
+            observed = parse_dt(current['scheduleObservedAt'])
+            if observed > now or observed >= min(parse_dt(game['kickoff']), parse_dt(current['kickoff'])):
+                raise ValueError(f"Invalid pregame schedule observation: {game['gameId']}")
+            market_game = {**game, 'kickoff': current['kickoff']}
+        kickoff = parse_dt(market_game['kickoff'])
         prior = prior_games.get(game["gameId"], {})
         books = dict(prior.get("books") or {})
         active = active_game_ids is None or game["gameId"] in active_game_ids
         seconds_to_kickoff = (kickoff - now).total_seconds()
         in_window = active and 0 < seconds_to_kickoff <= lock_window_minutes * 60
-        market = match_market_game(game, market_games, aliases) if in_window else None
+        market = match_market_game(market_game, market_games, aliases) if in_window else None
 
         if in_window and market is not None:
             for book_name in BOOKS:
@@ -168,7 +188,7 @@ def merge_market_lock(
                 raw_book = (market.get("books") or {}).get(book_name)
                 if not raw_book:
                     continue
-                observation = make_book_lock(game, book_name, raw_book, now, max_observation_age_minutes)
+                observation = make_book_lock(market_game, book_name, raw_book, now, max_observation_age_minutes)
                 if observation:
                     books[book_name] = observation
                     newly_locked += 1
@@ -187,6 +207,7 @@ def merge_market_lock(
                 "awayTeam": game["awayTeam"],
                 "homeTeam": game["homeTeam"],
                 "kickoff": game["kickoff"],
+                **({'effectiveKickoff': market_game['kickoff']} if market_game is not game else {}),
                 "projectionDigest": game["projectionDigest"],
                 "books": books,
                 "status": status,
@@ -308,6 +329,7 @@ def main() -> None:
     ap.add_argument("--markets", default="data/markets-sportsbooks.json")
     ap.add_argument("--output", default="cfb/research-market-locks/week-08-foundation-market.json")
     ap.add_argument("--scope", help="Optional active processing scope. Out-of-scope games are preserved but paused.")
+    ap.add_argument('--schedule', type=Path, help='Current slate schedule with verified pregame kickoff changes.')
     ap.add_argument("--lock-window-minutes", type=float, default=30.0)
     ap.add_argument("--max-observation-age-minutes", type=float, default=35.0)
     ap.add_argument("--now", help="UTC/offset timestamp; tests/replay only. Defaults to current time.")
@@ -333,6 +355,7 @@ def main() -> None:
         args.lock_window_minutes,
         args.max_observation_age_minutes,
         active_game_ids,
+        json.loads(args.schedule.read_text()) if args.schedule else None,
     )
     out = preserve_updated_at_if_unchanged(out, existing)
     atomic_json(output, out)
