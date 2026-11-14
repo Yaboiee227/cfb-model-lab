@@ -16,16 +16,16 @@
   "lockWindowMinutes": 30.0,
   "maxObservationAgeMinutes": 35.0,
   "scopeRestricted": false,
-  "updatedAt": "2026-11-14T02:05:51.246043Z",
+  "updatedAt": "2026-11-14T02:54:17.630027Z",
   "counts": {
     "foundationGames": 67,
     "activeScopeGames": 67,
     "pausedGames": 0,
     "preservedOutOfScopeLockedGames": 0,
-    "gamesWithMarketLock": 3,
-    "bookObservationsLocked": 6,
-    "newBookObservationsThisRun": 0,
-    "pendingGames": 57,
+    "gamesWithMarketLock": 4,
+    "bookObservationsLocked": 8,
+    "newBookObservationsThisRun": 2,
+    "pendingGames": 56,
     "missedGames": 7
   },
   "games": [
@@ -217,8 +217,35 @@
       "homeTeam": "Colorado",
       "kickoff": "2026-11-14T03:15:00Z",
       "projectionDigest": "8ac1b35b9fdfd7fe75a836e2f507bc341c68ba3693a1de2ec1f43df1dfa0efa6",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-11-14T02:32:09Z",
+          "lockedAt": "2026-11-14T02:54:17.630027Z",
+          "marketSpreadHome": 8.5,
+          "marketTotal": 51.5,
+          "marketMoneylineHome": 240,
+          "marketMoneylineAway": -300,
+          "spreadHomePrice": -120,
+          "totalOverPrice": -120,
+          "totalUnderPrice": 100,
+          "observationDigest": "c49d11c572b25d4bcd41b74d3b3aa08d020f3719a3f064a8bc29e5f890600200"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-11-14T02:32:46Z",
+          "lockedAt": "2026-11-14T02:54:17.630027Z",
+          "marketSpreadHome": 7.5,
+          "marketTotal": 53.5,
+          "marketMoneylineHome": 260,
+          "marketMoneylineAway": -325,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -108,
+          "totalUnderPrice": -112,
+          "observationDigest": "8d47937975622edd53974ad02e1e61e675f9e6c64c2db92336c2646246dfd75d"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-11-14-AUBURN-MISSISSIPPISTATE",
