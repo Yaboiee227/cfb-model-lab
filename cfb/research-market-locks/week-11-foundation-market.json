@@ -16,17 +16,17 @@
   "lockWindowMinutes": 30.0,
   "maxObservationAgeMinutes": 35.0,
   "scopeRestricted": false,
-  "updatedAt": "2026-11-14T20:43:04.700732Z",
+  "updatedAt": "2026-11-14T21:21:46.806058Z",
   "counts": {
     "foundationGames": 67,
     "activeScopeGames": 67,
     "pausedGames": 0,
     "preservedOutOfScopeLockedGames": 0,
-    "gamesWithMarketLock": 20,
-    "bookObservationsLocked": 40,
+    "gamesWithMarketLock": 21,
+    "bookObservationsLocked": 42,
     "newBookObservationsThisRun": 2,
-    "pendingGames": 27,
-    "missedGames": 20
+    "pendingGames": 25,
+    "missedGames": 21
   },
   "games": [
     {
@@ -256,7 +256,7 @@
       "effectiveKickoff": "2026-11-14T21:15Z",
       "projectionDigest": "468a538a375abfe7f1bf6e159d826a1bad87fdbb5361eb74b527fbe825fa7321",
       "books": {},
-      "status": "PENDING"
+      "status": "MISSED"
     },
     {
       "gameId": "2026-11-14-CINCINNATI-IOWASTATE",
@@ -821,8 +821,35 @@
       "kickoff": "2026-11-14T19:00:00Z",
       "effectiveKickoff": "2026-11-14T21:30Z",
       "projectionDigest": "4706a499a090ce6a992732cf96e0f02e7b8b95b7aa0a264d7fc174133619800a",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-11-14T21:16:32Z",
+          "lockedAt": "2026-11-14T21:21:46.806058Z",
+          "marketSpreadHome": -3.5,
+          "marketTotal": 48.5,
+          "marketMoneylineHome": -178,
+          "marketMoneylineAway": 146,
+          "spreadHomePrice": -115,
+          "totalOverPrice": -120,
+          "totalUnderPrice": 100,
+          "observationDigest": "cdf6ad267b0ed811f0d43202d0a71ee25ff0abc9d80fbb3392c7b03b9504abbc"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-11-14T21:16:05Z",
+          "lockedAt": "2026-11-14T21:21:46.806058Z",
+          "marketSpreadHome": -4.0,
+          "marketTotal": 49.5,
+          "marketMoneylineHome": -180,
+          "marketMoneylineAway": 150,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "aeaa231122ac64d80ae7d4b01124b215e8886d782e2702bf4fd3625504b38f65"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-11-14-FLORIDAINTERNATIONAL-DELAWARE",
