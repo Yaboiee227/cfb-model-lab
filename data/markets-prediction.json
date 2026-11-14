@@ -1,30 +1,78 @@
 {
-  "generatedAt": "2026-11-14T06:06:04.185Z",
+  "generatedAt": "2026-11-14T11:29:43.404Z",
   "sources": [
     "kalshi",
     "polymarket"
   ],
   "games": [
     {
-      "eventId": "401856860",
-      "date": "2026-11-14T03:15Z",
-      "homeTeam": "Colorado",
-      "awayTeam": "Houston",
+      "eventId": "401858296",
+      "date": "2026-11-14T17:00Z",
+      "homeTeam": "Miami",
+      "awayTeam": "Duke",
       "kalshi": {
         "matched": false,
         "error": "No market listed / no reliable match"
       },
       "polymarket": {
         "matched": true,
-        "updatedAt": "2026-11-14T06:06:04.185Z",
+        "updatedAt": "2026-11-14T11:29:42.566Z",
         "homeProbability": 0,
         "awayProbability": 1,
-        "volume": 4991285.772860003,
-        "liquidity": 1315283.57434,
+        "volume": 39187.260433999996,
+        "liquidity": 1098214.403230003,
         "history": [
           {
-            "ts": "2026-11-13T21:23:52.273Z",
+            "ts": "2026-11-14T11:29:42.566Z",
             "home": 0
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "401858301",
+      "date": "2026-11-14T17:00Z",
+      "homeTeam": "SMU",
+      "awayTeam": "Wake Forest",
+      "kalshi": {
+        "matched": false,
+        "error": "No market listed / no reliable match"
+      },
+      "polymarket": {
+        "matched": true,
+        "updatedAt": "2026-11-14T11:29:42.931Z",
+        "homeProbability": 0,
+        "awayProbability": 1,
+        "volume": 582239.2407300001,
+        "liquidity": 1346396.2942000036,
+        "history": [
+          {
+            "ts": "2026-11-14T11:29:42.931Z",
+            "home": 0
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "401858522",
+      "date": "2026-11-14T17:00Z",
+      "homeTeam": "Ohio State",
+      "awayTeam": "Northwestern",
+      "kalshi": {
+        "matched": false,
+        "error": "No market listed / no reliable match"
+      },
+      "polymarket": {
+        "matched": true,
+        "updatedAt": "2026-11-14T11:29:43.404Z",
+        "homeProbability": 1,
+        "awayProbability": 0,
+        "volume": 486907.6043490002,
+        "liquidity": 1703190.7495700016,
+        "history": [
+          {
+            "ts": "2026-11-14T11:29:43.404Z",
+            "home": 1
           }
         ]
       }
