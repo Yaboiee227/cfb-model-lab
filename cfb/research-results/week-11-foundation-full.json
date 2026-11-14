@@ -9,37 +9,37 @@
   "modelId": "cfb-rebuild-foundation-v1-shadow",
   "sourceLockDigest": "c4de1fe117bf28dffc164640ec97b3084ceb6ba9b005d5390dfd08b16aff1501",
   "sourceLockedAt": "2026-11-10T22:51:32.601559Z",
-  "gradedAt": "2026-11-14T02:54:19.777372Z",
+  "gradedAt": "2026-11-14T03:42:47.201868Z",
   "status": "IN_PROGRESS",
   "counts": {
     "games": 67,
-    "final": 8,
-    "pending": 59,
+    "final": 9,
+    "pending": 58,
     "review": 0,
     "void": 0
   },
   "metrics": {
     "margin": {
-      "games": 8,
-      "mae": 12.556848824850544,
-      "rmse": 13.632044779362843,
-      "bias": 3.6302478995372995
+      "games": 9,
+      "mae": 12.369382189032242,
+      "rmse": 13.353361751274475,
+      "bias": 4.434625810976025
     },
     "total": {
-      "games": 8,
-      "mae": 18.34237426196737,
-      "rmse": 22.095650435219923,
-      "bias": -2.4961684909357897
+      "games": 9,
+      "mae": 19.678349556403994,
+      "rmse": 23.16089934729526,
+      "bias": 1.1552004427122933
     },
     "straightUp": {
       "wins": 7,
-      "losses": 1,
-      "graded": 8,
-      "accuracyPct": 87.5
+      "losses": 2,
+      "graded": 9,
+      "accuracyPct": 77.77777777777777
     },
     "winProbability": {
-      "games": 8,
-      "brierScore": 0.12573539456764127
+      "games": 9,
+      "brierScore": 0.15457725931973376
     }
   },
   "games": [
@@ -330,8 +330,24 @@
         "homeWinProbability": 62.07351909924825,
         "winner": "Pittsburgh"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 16,
+        "homeScore": 10,
+        "marginHome": -6,
+        "total": 26,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 10.869649102485823,
+        "absoluteMargin": 10.869649102485823,
+        "total": 30.366151911896957,
+        "absoluteTotal": 30.366151911896957
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
     },
     {
       "gameId": "2026-11-13-ILLINOIS-UCLA",
