@@ -69,7 +69,7 @@ def main():
         week = freeze['week']
         # These baseline weeks were published without grading locks. New formats
         # require an explicit market-lock adapter before this policy can expand.
-        if week not in (8, 9):
+        if week not in (8, 9, 10):
             continue
         url = f"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?week={week}&seasontype=2&dates={freeze['season']}&limit=100"
         scoreboard = json.loads((args.capture/f'week-{week:02d}-scoreboard.json').read_text()) if args.capture else fetch(url)

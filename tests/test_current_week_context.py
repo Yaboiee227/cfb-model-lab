@@ -43,7 +43,7 @@ def copied_root(tmp):
         "nfl_data/site/config.json",
         "nfl_data/site/projections.csv",
         "nfl_data/site/personnel-gates.json",
-        "nfl/research-projections/week-09.json",
+        json.loads((ROOT / "nfl_data/site/config.json").read_text())["finalAuditArtifact"],
     ]:
         p = tmp / f
         p.parent.mkdir(parents=True, exist_ok=True)
@@ -70,18 +70,18 @@ def test_after_kickoff_qb_report_cannot_validate_a_pregame_flag(tmp_path):
     p = root / "nfl_data/site/personnel-gates.json"
     d = json.loads(p.read_text())
     r = next(g for g in d["games"] if g.get("qbChange"))
-    r["observedAt"] = "2026-11-09T23:00:00Z"
+    r["observedAt"] = "2026-11-18T23:00:00Z"
     p.write_text(json.dumps(d))
     with unittest.TestCase().assertRaisesRegex(ValueError, "QB break lacks"):
         audit(root)
 
 
 def test_current_qb_break_does_not_change_projection_numbers_or_probabilities():
-    assert audit(ROOT)["games"] == 14
+    assert audit(ROOT)["games"] == 13
     rows = list(csv.DictReader((ROOT / "nfl_data/site/projections.csv").open()))
     flag = [g for g in rows if g["hardQbStateBreak"] == "true"]
     assert {g["gameId"] for g in flag} == {
-        "2026_09_CLE_NO", "2026_09_ARI_SEA", "2026_09_BUF_MIN",
+        "2026_10_HOU_CLE", "2026_10_LA_ARI", "2026_10_MIN_GB", "2026_10_LAC_BAL",
     }
     assert all(
         not r["qbOperationalPointAdjustment"] and not r["homeWinProbability"]
