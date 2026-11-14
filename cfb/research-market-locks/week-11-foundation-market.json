@@ -16,16 +16,16 @@
   "lockWindowMinutes": 30.0,
   "maxObservationAgeMinutes": 35.0,
   "scopeRestricted": false,
-  "updatedAt": "2026-11-14T17:53:07.311832Z",
+  "updatedAt": "2026-11-14T18:31:36.730891Z",
   "counts": {
     "foundationGames": 67,
     "activeScopeGames": 67,
     "pausedGames": 0,
     "preservedOutOfScopeLockedGames": 0,
-    "gamesWithMarketLock": 17,
-    "bookObservationsLocked": 34,
-    "newBookObservationsThisRun": 6,
-    "pendingGames": 43,
+    "gamesWithMarketLock": 19,
+    "bookObservationsLocked": 38,
+    "newBookObservationsThisRun": 4,
+    "pendingGames": 41,
     "missedGames": 7
   },
   "games": [
@@ -746,8 +746,35 @@
       "homeTeam": "TCU",
       "kickoff": "2026-11-14T19:00:00Z",
       "projectionDigest": "fa5d23cc47104bb0a61a2ac5808df666aaaa93c7fa252477f0faa617a29c7f5e",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-11-14T18:03:26Z",
+          "lockedAt": "2026-11-14T18:31:36.730891Z",
+          "marketSpreadHome": -13.5,
+          "marketTotal": 44.5,
+          "marketMoneylineHome": -580,
+          "marketMoneylineAway": 430,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "b2687051f1bc115b2c84964ea424e70bf2090332550fca69d92266f89d633927"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-11-14T18:02:55Z",
+          "lockedAt": "2026-11-14T18:31:36.730891Z",
+          "marketSpreadHome": -13.5,
+          "marketTotal": 44.5,
+          "marketMoneylineHome": -535,
+          "marketMoneylineAway": 400,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -112,
+          "totalUnderPrice": -108,
+          "observationDigest": "18fbdacef889d55d88d70c0ee7f246ebb8bc0ba654a6d5682e8ff0ea023255f9"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-11-14-KENNESAWSTATE-SAMHOUSTON",
@@ -756,8 +783,35 @@
       "homeTeam": "Sam Houston",
       "kickoff": "2026-11-14T19:00:00Z",
       "projectionDigest": "ef72b02dea6ac9703833b1fb367b47a142b920c211e6c996c1cefa676d8856e7",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-11-14T18:03:26Z",
+          "lockedAt": "2026-11-14T18:31:36.730891Z",
+          "marketSpreadHome": 7.5,
+          "marketTotal": 45.5,
+          "marketMoneylineHome": 240,
+          "marketMoneylineAway": -300,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -105,
+          "totalUnderPrice": -115,
+          "observationDigest": "eccbeb904cf006296f64aa2e2c800e735f0b68d95821d6f93c5a1dcf7e56d465"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-11-14T18:02:55Z",
+          "lockedAt": "2026-11-14T18:31:36.730891Z",
+          "marketSpreadHome": 7.5,
+          "marketTotal": 45.5,
+          "marketMoneylineHome": 235,
+          "marketMoneylineAway": -290,
+          "spreadHomePrice": -118,
+          "totalOverPrice": -112,
+          "totalUnderPrice": -108,
+          "observationDigest": "07bd93d9269997060784a7dc72eb08067d862b319055bbfbe8b188eea3e153b2"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-11-14-TULANE-RICE",
