@@ -9,37 +9,37 @@
   "modelId": "cfb-rebuild-foundation-v1-shadow",
   "sourceLockDigest": "c4de1fe117bf28dffc164640ec97b3084ceb6ba9b005d5390dfd08b16aff1501",
   "sourceLockedAt": "2026-11-10T22:51:32.601559Z",
-  "gradedAt": "2026-11-14T06:22:09.234786Z",
+  "gradedAt": "2026-11-14T07:35:15.010948Z",
   "status": "IN_PROGRESS",
   "counts": {
     "games": 67,
-    "final": 10,
-    "pending": 57,
+    "final": 11,
+    "pending": 56,
     "review": 0,
     "void": 0
   },
   "metrics": {
     "margin": {
-      "games": 10,
-      "mae": 11.721351376781378,
-      "rmse": 12.804263445839442,
-      "bias": 4.580070636530782
+      "games": 11,
+      "mae": 12.371294199268414,
+      "rmse": 13.469142473593267,
+      "bias": 2.448180358288094
     },
     "total": {
-      "games": 10,
-      "mae": 18.732101211201904,
-      "rmse": 22.20857772898247,
-      "bias": 2.0612670088793754
+      "games": 11,
+      "mae": 19.88957532116775,
+      "rmse": 23.2030806247643,
+      "bias": -0.986513302912043
     },
     "straightUp": {
       "wins": 8,
-      "losses": 2,
-      "graded": 10,
-      "accuracyPct": 80.0
+      "losses": 3,
+      "graded": 11,
+      "accuracyPct": 72.72727272727273
     },
     "winProbability": {
-      "games": 10,
-      "brierScore": 0.1427409312225651
+      "games": 11,
+      "brierScore": 0.1758836852493242
     }
   },
   "games": [
@@ -398,8 +398,24 @@
         "homeWinProbability": 28.774216359739825,
         "winner": "Houston"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 32,
+        "homeScore": 42,
+        "marginHome": 10,
+        "total": 74,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -18.870722424138783,
+        "absoluteMargin": 18.870722424138783,
+        "total": -31.46431642082623,
+        "absoluteTotal": 31.46431642082623
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
     },
     {
       "gameId": "2026-11-14-AUBURN-MISSISSIPPISTATE",
