@@ -85,9 +85,11 @@ def audit(root=ROOT):
             if len(matches)!=1:
                 raise ValueError("QB break requires unique current-game evidence")
             gate=matches[0]
+            if not gate.get('observedAt'):
+                raise ValueError('QB break lacks a pregame observation timestamp')
             observed=datetime.fromisoformat(gate['observedAt'].replace('Z','+00:00'))
             kickoff=datetime.fromisoformat(next(g for g in doc['games'] if g['gameId']==row['gameId'])['kickoffUTC'].replace('Z','+00:00'))
-            if not (observed.tzinfo and observed<kickoff and gate.get('qbChange') is True and gate.get('source','').startswith('https://') and gate.get('personnelAdjusted') is False and 'QB_CHANGE_NOT_REPRESENTED_IN_FORECAST' in gate.get('blockers',[])):
+            if not (observed.tzinfo and observed<kickoff and gate.get('qbChange') is True and (gate.get('source') or '').startswith('https://') and gate.get('personnelAdjusted') is False and 'QB_CHANGE_NOT_REPRESENTED_IN_FORECAST' in gate.get('blockers',[])):
                 raise ValueError("QB break lacks dated evidence or incorrectly claims adjustment")
         if row["executionVerified"] != "false" or not row["releaseBlockers"]:
             raise ValueError("unsupported clearance")
