@@ -114,6 +114,21 @@ class TestCfbMarketResearchLock(unittest.TestCase):
         self.assertEqual(out["counts"]["gamesWithMarketLock"], 0)
         self.assertEqual(out["games"][0]["status"], "PENDING")
 
+    def test_rescheduled_game_locks_against_revised_kickoff(self):
+        foundation = self._foundation()
+        original = copy.deepcopy(foundation)
+        game = dict(foundation['games'][0], originalKickoff='2026-10-20T23:00:00Z',
+                    kickoff='2026-10-21T01:00:00Z', scheduleObservedAt='2026-10-20T22:00:00Z')
+        schedule = dict(league='cfb', season=2026, week=8, games=[game])
+        markets = self._markets(fd_updated='2026-10-21T00:40:00Z', include_dk=False)
+        markets['games'][0]['commenceTime'] = game['kickoff']
+        out = merge_market_lock(foundation, markets, None, self._aliases(),
+                                datetime(2026, 10, 21, 0, 45, tzinfo=timezone.utc), schedule=schedule)
+        self.assertEqual(out['games'][0]['status'], 'LOCKED')
+        self.assertEqual(out['games'][0]['kickoff'], game['originalKickoff'])
+        self.assertEqual(out['games'][0]['effectiveKickoff'], game['kickoff'])
+        self.assertEqual(foundation, original)
+
     def test_locks_both_fresh_books_with_mascot_name_matching(self):
         foundation = self._foundation()
         out = merge_market_lock(

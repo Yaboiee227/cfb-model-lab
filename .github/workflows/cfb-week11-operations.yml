@@ -38,6 +38,7 @@ jobs:
           python scripts/cfb_market_research_lock.py \
             --foundation-lock cfb/research-locks/week-11-foundation-full.json \
             --markets data/markets-sportsbooks.json \
+            --schedule cfb/pregame/week-11-schedule.json \
             --output cfb/research-market-locks/week-11-foundation-market.json
       - name: Grade frozen forecasts and eligible markets
         if: steps.window.outputs.active == 'true'
