@@ -2388,7 +2388,8 @@
             {
               "name": "Daiyan Henley",
               "position": "LB",
-              "rosterStatus": "active"
+              "rosterStatus": "active",
+              "statusConflict": true
             }
           ]
         }
@@ -2486,7 +2487,15 @@
           "sha256": "0422ea16061c55c8e12bc8a57c43e5d93b42126bb4a67944bed8546f97b81085"
         }
       },
-      "practiceReport": "nfl/production/week-10-monday-practice.json"
+      "practiceReport": "nfl/production/week-10-monday-practice.json",
+      "rosterConflict": {
+        "player": "Daiyan Henley",
+        "leagueLedger": "Chargers to Broncos, November 10",
+        "clubAnnouncement": "Trade pending physical",
+        "clubSource": "https://www.chargers.com/news/trade-daiyan-henley-denver-broncos-2026",
+        "conflictingListings": "Chargers practice report and ESPN roster still list Henley",
+        "status": "UNRESOLVED_FOR_GAME_DAY"
+      }
     }
   ],
   "transactionCoverage": "Displayed league transaction ledger rows since November 10, plus all published November trade rows. Practice squad and reserve entries do not establish game-day eligibility."
