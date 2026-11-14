@@ -16,16 +16,16 @@
   "lockWindowMinutes": 30.0,
   "maxObservationAgeMinutes": 35.0,
   "scopeRestricted": false,
-  "updatedAt": "2026-11-14T17:15:59.806566Z",
+  "updatedAt": "2026-11-14T17:53:07.311832Z",
   "counts": {
     "foundationGames": 67,
     "activeScopeGames": 67,
     "pausedGames": 0,
     "preservedOutOfScopeLockedGames": 0,
-    "gamesWithMarketLock": 14,
-    "bookObservationsLocked": 28,
+    "gamesWithMarketLock": 17,
+    "bookObservationsLocked": 34,
     "newBookObservationsThisRun": 6,
-    "pendingGames": 46,
+    "pendingGames": 43,
     "missedGames": 7
   },
   "games": [
@@ -635,8 +635,35 @@
       "homeTeam": "Coastal Carolina",
       "kickoff": "2026-11-14T18:00:00Z",
       "projectionDigest": "23acaac6b8cb13de95090c36aa830e8b2524b82d1dcf392928d75ecd35b63c1c",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-11-14T17:27:33Z",
+          "lockedAt": "2026-11-14T17:53:07.311832Z",
+          "marketSpreadHome": -1.5,
+          "marketTotal": 53.5,
+          "marketMoneylineHome": -118,
+          "marketMoneylineAway": -102,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "1a16a1ae7d68eb514ac2e522df494285f9cd31517ee56762bcc30d6a37d7d9b2"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-11-14T17:27:47Z",
+          "lockedAt": "2026-11-14T17:53:07.311832Z",
+          "marketSpreadHome": -1.5,
+          "marketTotal": 53.5,
+          "marketMoneylineHome": -118,
+          "marketMoneylineAway": -102,
+          "spreadHomePrice": -105,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "62321194c0f3c4b8b8b34a9fe39fe3e0986084f6d0977fd5756a60a79ca978d6"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-11-14-EASTCAROLINA-CHARLOTTE",
@@ -645,8 +672,35 @@
       "homeTeam": "Charlotte",
       "kickoff": "2026-11-14T18:00:00Z",
       "projectionDigest": "267b8cda75d138e8a0f1e548439401adbcd28e738e22b4bee1f4cceed667de8c",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-11-14T17:27:33Z",
+          "lockedAt": "2026-11-14T17:53:07.311832Z",
+          "marketSpreadHome": 10.5,
+          "marketTotal": 45.5,
+          "marketMoneylineHome": 320,
+          "marketMoneylineAway": -410,
+          "spreadHomePrice": -115,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "4523108c578003008f02c13b07b7f938314376c615a639237b36401f6b7818ea"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-11-14T17:27:47Z",
+          "lockedAt": "2026-11-14T17:53:07.311832Z",
+          "marketSpreadHome": 10.5,
+          "marketTotal": 45.5,
+          "marketMoneylineHome": 320,
+          "marketMoneylineAway": -410,
+          "spreadHomePrice": -112,
+          "totalOverPrice": -115,
+          "totalUnderPrice": -105,
+          "observationDigest": "725c2b1c60f6fa94a56375540ef87ec370dd4d76faf2242a94fa3424ba07636a"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-11-14-UAB-TEMPLE",
@@ -655,8 +709,35 @@
       "homeTeam": "Temple",
       "kickoff": "2026-11-14T18:00:00Z",
       "projectionDigest": "94c0fc14a22e70f860b7cf77f08adbf8e59371c99b307c8943713206d3899cc0",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-11-14T17:27:33Z",
+          "lockedAt": "2026-11-14T17:53:07.311832Z",
+          "marketSpreadHome": -2.5,
+          "marketTotal": 47.5,
+          "marketMoneylineHome": -122,
+          "marketMoneylineAway": 104,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "b20b6d0b45c8357c5490f3bf51ddcf19b58dcafcfdbbc5446651c225b839bbaf"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-11-14T17:27:47Z",
+          "lockedAt": "2026-11-14T17:53:07.311832Z",
+          "marketSpreadHome": -2.5,
+          "marketTotal": 48.5,
+          "marketMoneylineHome": -135,
+          "marketMoneylineAway": 114,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -105,
+          "totalUnderPrice": -115,
+          "observationDigest": "23a51bb4f3ae64c4421462d492ccd5e1fe27914380564bbb4cb4a5f54dd5410c"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-11-14-KANSASSTATE-TCU",
