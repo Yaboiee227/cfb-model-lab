@@ -9,37 +9,37 @@
   "modelId": "cfb-rebuild-foundation-v1-shadow",
   "sourceLockDigest": "c4de1fe117bf28dffc164640ec97b3084ceb6ba9b005d5390dfd08b16aff1501",
   "sourceLockedAt": "2026-11-10T22:51:32.601559Z",
-  "gradedAt": "2026-11-14T22:05:30.515215Z",
+  "gradedAt": "2026-11-14T22:43:12.780460Z",
   "status": "IN_PROGRESS",
   "counts": {
     "games": 67,
-    "final": 24,
-    "pending": 43,
+    "final": 26,
+    "pending": 41,
     "review": 0,
     "void": 0
   },
   "metrics": {
     "margin": {
-      "games": 24,
-      "mae": 13.64918925061521,
-      "rmse": 17.19043466702486,
-      "bias": 3.109957654551648
+      "games": 26,
+      "mae": 13.260314253746454,
+      "rmse": 16.76088390397805,
+      "bias": 3.531792780457011
     },
     "total": {
-      "games": 24,
-      "mae": 14.94498563564071,
-      "rmse": 18.709001704478062,
-      "bias": 3.124300289020629
+      "games": 26,
+      "mae": 14.863926928450285,
+      "rmse": 18.383321147777032,
+      "bias": 3.9525250700317476
     },
     "straightUp": {
-      "wins": 17,
+      "wins": 19,
       "losses": 7,
-      "graded": 24,
-      "accuracyPct": 70.83333333333333
+      "graded": 26,
+      "accuracyPct": 73.07692307692308
     },
     "winProbability": {
-      "games": 24,
-      "brierScore": 0.2024065838224157
+      "games": 26,
+      "brierScore": 0.1941088206412345
     }
   },
   "games": [
@@ -892,8 +892,24 @@
         "homeWinProbability": 79.28382810587932,
         "winner": "TCU"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 10,
+        "homeScore": 20,
+        "marginHome": 10,
+        "total": 30,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 2.9309698130158353,
+        "absoluteMargin": 2.9309698130158353,
+        "total": 13.75910425903897,
+        "absoluteTotal": 13.75910425903897
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-14-KENNESAWSTATE-SAMHOUSTON",
@@ -910,8 +926,24 @@
         "homeWinProbability": 38.23026904684894,
         "winner": "Kennesaw State"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 26,
+        "homeScore": 7,
+        "marginHome": -19,
+        "total": 33,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 14.256658769626895,
+        "absoluteMargin": 14.256658769626895,
+        "total": 14.023340625291361,
+        "absoluteTotal": 14.023340625291361
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-14-TULANE-RICE",

@@ -16,16 +16,16 @@
   "lockWindowMinutes": 30.0,
   "maxObservationAgeMinutes": 35.0,
   "scopeRestricted": false,
-  "updatedAt": "2026-11-14T22:05:29.366258Z",
+  "updatedAt": "2026-11-14T22:43:11.752272Z",
   "counts": {
     "foundationGames": 67,
     "activeScopeGames": 67,
     "pausedGames": 0,
     "preservedOutOfScopeLockedGames": 0,
-    "gamesWithMarketLock": 23,
-    "bookObservationsLocked": 46,
+    "gamesWithMarketLock": 25,
+    "bookObservationsLocked": 50,
     "newBookObservationsThisRun": 4,
-    "pendingGames": 22,
+    "pendingGames": 20,
     "missedGames": 22
   },
   "games": [
@@ -1145,8 +1145,35 @@
       "homeTeam": "Marshall",
       "kickoff": "2026-11-14T23:00:00Z",
       "projectionDigest": "f2056ecf1ec61d89cd4f0f236eb00377c79290877493fdf46eacee70a0574302",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-11-14T22:24:43Z",
+          "lockedAt": "2026-11-14T22:43:11.752272Z",
+          "marketSpreadHome": -1.5,
+          "marketTotal": 54.5,
+          "marketMoneylineHome": -113,
+          "marketMoneylineAway": -106,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -105,
+          "totalUnderPrice": -115,
+          "observationDigest": "091019ca727eaa2fe092528398e272a94f692da37f1f6156a41b2fcf6a9f18cd"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-11-14T22:24:27Z",
+          "lockedAt": "2026-11-14T22:43:11.752272Z",
+          "marketSpreadHome": -1.5,
+          "marketTotal": 54.5,
+          "marketMoneylineHome": -115,
+          "marketMoneylineAway": -105,
+          "spreadHomePrice": -102,
+          "totalOverPrice": -108,
+          "totalUnderPrice": -112,
+          "observationDigest": "3d643e8c0d263f37c60daef3b3643415a7a911dddc7431ddb38e674bc7de8e39"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-11-14-OREGONSTATE-BOISESTATE",
@@ -1155,8 +1182,35 @@
       "homeTeam": "Boise State",
       "kickoff": "2026-11-14T23:00:00Z",
       "projectionDigest": "50df4a50426a7d48ab07d419a35246719a50375ab82fb682522d5c7c68577bdc",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-11-14T22:24:43Z",
+          "lockedAt": "2026-11-14T22:43:11.752272Z",
+          "marketSpreadHome": -16.5,
+          "marketTotal": 65.5,
+          "marketMoneylineHome": -750,
+          "marketMoneylineAway": 530,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "d36a325cb23d785e343f90252e3dd7c71258b691740fea1103027d69306b7189"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-11-14T22:24:27Z",
+          "lockedAt": "2026-11-14T22:43:11.752272Z",
+          "marketSpreadHome": -16.5,
+          "marketTotal": 65.5,
+          "marketMoneylineHome": -700,
+          "marketMoneylineAway": 500,
+          "spreadHomePrice": -112,
+          "totalOverPrice": -115,
+          "totalUnderPrice": -105,
+          "observationDigest": "3e2d48fbfec30e6b7480877179cced7a62aeb8e48a8eac8115f95e1f13416588"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-11-14-FLORIDA-KENTUCKY",
