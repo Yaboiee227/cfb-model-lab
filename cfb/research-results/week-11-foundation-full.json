@@ -9,37 +9,37 @@
   "modelId": "cfb-rebuild-foundation-v1-shadow",
   "sourceLockDigest": "c4de1fe117bf28dffc164640ec97b3084ceb6ba9b005d5390dfd08b16aff1501",
   "sourceLockedAt": "2026-11-10T22:51:32.601559Z",
-  "gradedAt": "2026-11-14T21:21:47.871990Z",
+  "gradedAt": "2026-11-14T22:05:30.515215Z",
   "status": "IN_PROGRESS",
   "counts": {
     "games": 67,
-    "final": 22,
-    "pending": 45,
+    "final": 24,
+    "pending": 43,
     "review": 0,
     "void": 0
   },
   "metrics": {
     "margin": {
-      "games": 22,
-      "mae": 14.546062009197977,
-      "rmse": 17.912683733773793,
-      "bias": 3.7366437055295068
+      "games": 24,
+      "mae": 13.64918925061521,
+      "rmse": 17.19043466702486,
+      "bias": 3.109957654551648
     },
     "total": {
-      "games": 22,
-      "mae": 15.522808772062518,
-      "rmse": 19.226259387687694,
-      "bias": 2.701737307154758
+      "games": 24,
+      "mae": 14.94498563564071,
+      "rmse": 18.709001704478062,
+      "bias": 3.124300289020629
     },
     "straightUp": {
-      "wins": 15,
+      "wins": 17,
       "losses": 7,
-      "graded": 22,
-      "accuracyPct": 68.18181818181819
+      "graded": 24,
+      "accuracyPct": 70.83333333333333
     },
     "winProbability": {
-      "games": 22,
-      "brierScore": 0.20873706045778231
+      "games": 24,
+      "brierScore": 0.2024065838224157
     }
   },
   "games": [
@@ -790,8 +790,24 @@
         "homeWinProbability": 61.75300972290248,
         "winner": "Coastal Carolina"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 21,
+        "homeScore": 28,
+        "marginHome": 7,
+        "total": 49,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -2.2636022366580164,
+        "absoluteMargin": 2.2636022366580164,
+        "total": -0.8164380454556266,
+        "absoluteTotal": 0.8164380454556266
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-14-EASTCAROLINA-CHARLOTTE",
@@ -808,8 +824,24 @@
         "homeWinProbability": 34.53396228948048,
         "winner": "East Carolina"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 17,
+        "homeScore": 16,
+        "marginHome": -1,
+        "total": 33,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -5.30357557575158,
+        "absoluteMargin": 5.30357557575158,
+        "total": 16.36142422454605,
+        "absoluteTotal": 16.36142422454605
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-14-UAB-TEMPLE",

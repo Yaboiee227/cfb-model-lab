@@ -16,17 +16,17 @@
   "lockWindowMinutes": 30.0,
   "maxObservationAgeMinutes": 35.0,
   "scopeRestricted": false,
-  "updatedAt": "2026-11-14T21:21:46.806058Z",
+  "updatedAt": "2026-11-14T22:05:29.366258Z",
   "counts": {
     "foundationGames": 67,
     "activeScopeGames": 67,
     "pausedGames": 0,
     "preservedOutOfScopeLockedGames": 0,
-    "gamesWithMarketLock": 21,
-    "bookObservationsLocked": 42,
-    "newBookObservationsThisRun": 2,
-    "pendingGames": 25,
-    "missedGames": 21
+    "gamesWithMarketLock": 23,
+    "bookObservationsLocked": 46,
+    "newBookObservationsThisRun": 4,
+    "pendingGames": 22,
+    "missedGames": 22
   },
   "games": [
     {
@@ -889,8 +889,35 @@
       "kickoff": "2026-11-14T20:30:00Z",
       "effectiveKickoff": "2026-11-14T22:30Z",
       "projectionDigest": "b29ad8e04f7b6655d73e947eec2c6a5852bed3ea7e485ecdb2904686de0d508a",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-11-14T21:54:41Z",
+          "lockedAt": "2026-11-14T22:05:29.366258Z",
+          "marketSpreadHome": -3.5,
+          "marketTotal": 46.5,
+          "marketMoneylineHome": -172,
+          "marketMoneylineAway": 142,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "9a028443a1b181148b08bd4f758cb919f3c34d529cd5e329adef64398ca7835f"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-11-14T21:54:39Z",
+          "lockedAt": "2026-11-14T22:05:29.366258Z",
+          "marketSpreadHome": -3.5,
+          "marketTotal": 46.5,
+          "marketMoneylineHome": -175,
+          "marketMoneylineAway": 145,
+          "spreadHomePrice": -105,
+          "totalOverPrice": -112,
+          "totalUnderPrice": -108,
+          "observationDigest": "d694baec96b80d563d127ec1f8be4b6eb2dfc21042cca13cc22396fc45d0e543"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-11-14-BAYLOR-BYU",
@@ -1060,8 +1087,35 @@
       "kickoff": "2026-11-14T21:15:00Z",
       "effectiveKickoff": "2026-11-14T22:30Z",
       "projectionDigest": "85fc5f8367791b71ddb12816a365d2dde99fd96d6b237d613c639d315944ff14",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-11-14T21:54:41Z",
+          "lockedAt": "2026-11-14T22:05:29.366258Z",
+          "marketSpreadHome": 2.5,
+          "marketTotal": 43.5,
+          "marketMoneylineHome": 112,
+          "marketMoneylineAway": -134,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -105,
+          "totalUnderPrice": -115,
+          "observationDigest": "8c18e8b8f9fdc2dcfeb67b52dbf5c2ec1e227f4565bb4274761ab78ab38dce79"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-11-14T21:54:39Z",
+          "lockedAt": "2026-11-14T22:05:29.366258Z",
+          "marketSpreadHome": 2.5,
+          "marketTotal": 44.5,
+          "marketMoneylineHome": 114,
+          "marketMoneylineAway": -135,
+          "spreadHomePrice": -108,
+          "totalOverPrice": -102,
+          "totalUnderPrice": -118,
+          "observationDigest": "5f9ccba8b49f14d82634df38f2205116126baa2b377c6286acc30b0017086d47"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-11-14-SOUTHERNMISS-LOUISIANATECH",
@@ -1071,7 +1125,7 @@
       "kickoff": "2026-11-14T22:00:00Z",
       "projectionDigest": "5b10bfbe8c882c98cbb348049478020a1fb8d76a14a95860c2773b75609beec5",
       "books": {},
-      "status": "PENDING"
+      "status": "MISSED"
     },
     {
       "gameId": "2026-11-14-KANSAS-WESTVIRGINIA",
