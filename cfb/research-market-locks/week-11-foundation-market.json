@@ -16,17 +16,17 @@
   "lockWindowMinutes": 30.0,
   "maxObservationAgeMinutes": 35.0,
   "scopeRestricted": false,
-  "updatedAt": "2026-11-15T00:46:17.588631Z",
+  "updatedAt": "2026-11-15T02:43:54.940674Z",
   "counts": {
     "foundationGames": 67,
     "activeScopeGames": 67,
     "pausedGames": 0,
     "preservedOutOfScopeLockedGames": 0,
-    "gamesWithMarketLock": 31,
-    "bookObservationsLocked": 62,
-    "newBookObservationsThisRun": 0,
-    "pendingGames": 8,
-    "missedGames": 28
+    "gamesWithMarketLock": 32,
+    "bookObservationsLocked": 64,
+    "newBookObservationsThisRun": 2,
+    "pendingGames": 4,
+    "missedGames": 31
   },
   "games": [
     {
@@ -1493,7 +1493,7 @@
       "kickoff": "2026-11-15T02:00:00Z",
       "projectionDigest": "378854e975946e0bbab8a781415c761f49dcc018e42e5edd7629de34fbc5e15e",
       "books": {},
-      "status": "PENDING"
+      "status": "MISSED"
     },
     {
       "gameId": "2026-11-14-TEXASTECH-OKLAHOMASTATE",
@@ -1503,7 +1503,7 @@
       "kickoff": "2026-11-15T02:30:00Z",
       "projectionDigest": "edb19ccc2c9aa8db659dc9f2d3a287648cdbfd66d77f3da06869387843d961c8",
       "books": {},
-      "status": "PENDING"
+      "status": "MISSED"
     },
     {
       "gameId": "2026-11-14-UTAHSTATE-SANDIEGOSTATE",
@@ -1513,7 +1513,7 @@
       "kickoff": "2026-11-15T02:30:00Z",
       "projectionDigest": "372056fed6b33d522aaaa6f53f6b21c70b9fab418a38b1bf2e32160cacb02b30",
       "books": {},
-      "status": "PENDING"
+      "status": "MISSED"
     },
     {
       "gameId": "2026-11-14-WYOMING-UTEP",
@@ -1522,8 +1522,35 @@
       "homeTeam": "UTEP",
       "kickoff": "2026-11-15T03:00:00Z",
       "projectionDigest": "2ba46b064505a3e3b61b1db27e2dd7044f7db2ea58dea18fec106f5fbf3ec3bf",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-11-15T02:10:12Z",
+          "lockedAt": "2026-11-15T02:43:54.940674Z",
+          "marketSpreadHome": 7.5,
+          "marketTotal": 40.5,
+          "marketMoneylineHome": 215,
+          "marketMoneylineAway": -265,
+          "spreadHomePrice": -125,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "9dd444ca00c09bca7d74386c54f4b2bb66227cae712332f2af624c6f71d05364"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-11-15T02:08:58Z",
+          "lockedAt": "2026-11-15T02:43:54.940674Z",
+          "marketSpreadHome": 7.0,
+          "marketTotal": 40.5,
+          "marketMoneylineHome": 230,
+          "marketMoneylineAway": -285,
+          "spreadHomePrice": -112,
+          "totalOverPrice": -112,
+          "totalUnderPrice": -108,
+          "observationDigest": "5b7fd689d9148ff28ab4a2733cc60f741695c0904690e61a4a3074d56f9e7911"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-11-14-COLORADOSTATE-WASHINGTONSTATE",

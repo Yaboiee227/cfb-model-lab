@@ -8,130 +8,130 @@
   "canonicalRecordMerged": false,
   "foundationModelId": "cfb-rebuild-foundation-v1-shadow",
   "foundationLockDigest": "c4de1fe117bf28dffc164640ec97b3084ceb6ba9b005d5390dfd08b16aff1501",
-  "marketLockUpdatedAt": "2026-11-15T00:46:17.588631Z",
-  "gradedAt": "2026-11-15T01:51:30.953021Z",
+  "marketLockUpdatedAt": "2026-11-15T02:43:54.940674Z",
+  "gradedAt": "2026-11-15T02:43:57.673030Z",
   "status": "IN_PROGRESS",
   "counts": {
     "games": 67,
-    "final": 21,
-    "pending": 10,
+    "final": 25,
+    "pending": 7,
     "review": 0,
     "void": 0,
-    "noLockedMarket": 36
+    "noLockedMarket": 35
   },
   "books": {
     "fanduel": {
-      "games": 21,
+      "games": 25,
       "cbMargin": {
-        "games": 21,
-        "mae": 13.101049863711049,
-        "rmse": 17.24128434190442,
-        "bias": 4.456823630233929
+        "games": 25,
+        "mae": 12.738685064875432,
+        "rmse": 16.550936831882375,
+        "bias": 5.477535028754647
       },
       "marketMargin": {
-        "games": 21,
-        "mae": 13.357142857142858,
-        "rmse": 17.573315810382187,
-        "bias": 3.7857142857142856
+        "games": 25,
+        "mae": 12.74,
+        "rmse": 16.661632573070385,
+        "bias": 4.7
       },
-      "cbMinusMarketMarginMae": -0.2560929934318086,
+      "cbMinusMarketMarginMae": -0.0013149351245687058,
       "cbTotal": {
-        "games": 21,
-        "mae": 12.83332035233639,
-        "rmse": 15.244892771132859,
-        "bias": 2.0733269434816575
+        "games": 25,
+        "mae": 13.16395979516352,
+        "rmse": 15.230217680133563,
+        "bias": 2.6354656113669375
       },
       "marketTotal": {
-        "games": 21,
-        "mae": 11.357142857142858,
-        "rmse": 13.225606476327151,
-        "bias": 0.9761904761904762
+        "games": 25,
+        "mae": 11.78,
+        "rmse": 13.573871960498227,
+        "bias": 1.34
       },
-      "cbMinusMarketTotalMae": 1.4761774951935323,
-      "spreadPositionRecord": {
-        "wins": 11,
-        "losses": 10,
-        "pushes": 0,
-        "noPosition": 0
-      },
-      "totalPositionRecord": {
-        "wins": 8,
-        "losses": 13,
-        "pushes": 0,
-        "noPosition": 0
-      },
-      "closerMarginForecast": {
-        "CB": 9,
-        "MARKET": 12,
-        "TIE": 0
-      },
-      "closerTotalForecast": {
-        "CB": 7,
-        "MARKET": 14,
-        "TIE": 0
-      },
-      "straightUp": {
-        "correct": 15,
-        "wrong": 6,
-        "graded": 21,
-        "accuracyPct": 71.42857142857143
-      }
-    },
-    "draftkings": {
-      "games": 21,
-      "cbMargin": {
-        "games": 21,
-        "mae": 13.101049863711049,
-        "rmse": 17.24128434190442,
-        "bias": 4.456823630233929
-      },
-      "marketMargin": {
-        "games": 21,
-        "mae": 13.452380952380953,
-        "rmse": 17.667228203115293,
-        "bias": 3.9761904761904763
-      },
-      "cbMinusMarketMarginMae": -0.3513310886699035,
-      "cbTotal": {
-        "games": 21,
-        "mae": 12.83332035233639,
-        "rmse": 15.244892771132859,
-        "bias": 2.0733269434816575
-      },
-      "marketTotal": {
-        "games": 21,
-        "mae": 11.261904761904763,
-        "rmse": 13.058932356273015,
-        "bias": 1.1666666666666667
-      },
-      "cbMinusMarketTotalMae": 1.5714155904316272,
+      "cbMinusMarketTotalMae": 1.3839597951635199,
       "spreadPositionRecord": {
         "wins": 12,
-        "losses": 8,
-        "pushes": 1,
+        "losses": 13,
+        "pushes": 0,
         "noPosition": 0
       },
       "totalPositionRecord": {
-        "wins": 8,
-        "losses": 13,
+        "wins": 10,
+        "losses": 15,
         "pushes": 0,
         "noPosition": 0
       },
       "closerMarginForecast": {
         "CB": 10,
-        "MARKET": 11,
+        "MARKET": 15,
         "TIE": 0
       },
       "closerTotalForecast": {
-        "CB": 7,
-        "MARKET": 14,
+        "CB": 9,
+        "MARKET": 16,
         "TIE": 0
       },
       "straightUp": {
-        "correct": 15,
-        "wrong": 6,
-        "graded": 21,
-        "accuracyPct": 71.42857142857143
+        "correct": 16,
+        "wrong": 9,
+        "graded": 25,
+        "accuracyPct": 64.0
+      }
+    },
+    "draftkings": {
+      "games": 25,
+      "cbMargin": {
+        "games": 25,
+        "mae": 12.738685064875432,
+        "rmse": 16.550936831882375,
+        "bias": 5.477535028754647
+      },
+      "marketMargin": {
+        "games": 25,
+        "mae": 12.82,
+        "rmse": 16.74484995453826,
+        "bias": 4.86
+      },
+      "cbMinusMarketMarginMae": -0.08131493512456878,
+      "cbTotal": {
+        "games": 25,
+        "mae": 13.16395979516352,
+        "rmse": 15.230217680133563,
+        "bias": 2.6354656113669375
+      },
+      "marketTotal": {
+        "games": 25,
+        "mae": 11.74,
+        "rmse": 13.464397498588639,
+        "bias": 1.54
+      },
+      "cbMinusMarketTotalMae": 1.423959795163519,
+      "spreadPositionRecord": {
+        "wins": 13,
+        "losses": 11,
+        "pushes": 1,
+        "noPosition": 0
+      },
+      "totalPositionRecord": {
+        "wins": 10,
+        "losses": 15,
+        "pushes": 0,
+        "noPosition": 0
+      },
+      "closerMarginForecast": {
+        "CB": 11,
+        "MARKET": 14,
+        "TIE": 0
+      },
+      "closerTotalForecast": {
+        "CB": 9,
+        "MARKET": 16,
+        "TIE": 0
+      },
+      "straightUp": {
+        "correct": 16,
+        "wrong": 9,
+        "graded": 25,
+        "accuracyPct": 64.0
       }
     }
   },
@@ -1693,8 +1693,70 @@
       "homeTeam": "UCF",
       "kickoff": "2026-11-14T20:30:00Z",
       "projectionDigest": "b29ad8e04f7b6655d73e947eec2c6a5852bed3ea7e485ecdb2904686de0d508a",
-      "status": "PENDING",
-      "books": {}
+      "status": "FINAL",
+      "final": {
+        "awayScore": 26,
+        "homeScore": 13,
+        "homeMargin": -13.0,
+        "total": 39.0,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "foundation": {
+        "projectedHomeMargin": 7.719999100093098,
+        "projectedTotal": 54.38091879771232,
+        "projectedWinner": "UCF"
+      },
+      "books": {
+        "fanduel": {
+          "marketObservedAt": "2026-11-14T21:54:41Z",
+          "marketSpreadHome": -3.5,
+          "marketImpliedHomeMargin": 3.5,
+          "marketTotal": 46.5,
+          "marketMoneylineHome": -172,
+          "marketMoneylineAway": 142,
+          "modelVsMarket": {
+            "homeMarginDifference": 4.219999100093098,
+            "totalDifference": 7.880918797712319,
+            "spreadPosition": "HOME",
+            "spreadResult": "LOSS",
+            "totalPosition": "OVER",
+            "totalResult": "LOSS"
+          },
+          "accuracy": {
+            "cbMarginError": 20.719999100093098,
+            "marketMarginError": 16.5,
+            "closerMarginForecast": "MARKET",
+            "cbTotalError": 15.380918797712319,
+            "marketTotalError": 7.5,
+            "closerTotalForecast": "MARKET"
+          }
+        },
+        "draftkings": {
+          "marketObservedAt": "2026-11-14T21:54:39Z",
+          "marketSpreadHome": -3.5,
+          "marketImpliedHomeMargin": 3.5,
+          "marketTotal": 46.5,
+          "marketMoneylineHome": -175,
+          "marketMoneylineAway": 145,
+          "modelVsMarket": {
+            "homeMarginDifference": 4.219999100093098,
+            "totalDifference": 7.880918797712319,
+            "spreadPosition": "HOME",
+            "spreadResult": "LOSS",
+            "totalPosition": "OVER",
+            "totalResult": "LOSS"
+          },
+          "accuracy": {
+            "cbMarginError": 20.719999100093098,
+            "marketMarginError": 16.5,
+            "closerMarginForecast": "MARKET",
+            "cbTotalError": 15.380918797712319,
+            "marketTotalError": 7.5,
+            "closerTotalForecast": "MARKET"
+          }
+        }
+      }
     },
     {
       "gameId": "2026-11-14-BAYLOR-BYU",
@@ -1895,8 +1957,70 @@
       "homeTeam": "Michigan State",
       "kickoff": "2026-11-14T21:15:00Z",
       "projectionDigest": "85fc5f8367791b71ddb12816a365d2dde99fd96d6b237d613c639d315944ff14",
-      "status": "PENDING",
-      "books": {}
+      "status": "FINAL",
+      "final": {
+        "awayScore": 21,
+        "homeScore": 14,
+        "homeMargin": -7.0,
+        "total": 35.0,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "foundation": {
+        "projectedHomeMargin": 2.492545161279871,
+        "projectedTotal": 45.86488200149346,
+        "projectedWinner": "Michigan State"
+      },
+      "books": {
+        "fanduel": {
+          "marketObservedAt": "2026-11-14T21:54:41Z",
+          "marketSpreadHome": 2.5,
+          "marketImpliedHomeMargin": -2.5,
+          "marketTotal": 43.5,
+          "marketMoneylineHome": 112,
+          "marketMoneylineAway": -134,
+          "modelVsMarket": {
+            "homeMarginDifference": 4.992545161279871,
+            "totalDifference": 2.364882001493463,
+            "spreadPosition": "HOME",
+            "spreadResult": "LOSS",
+            "totalPosition": "OVER",
+            "totalResult": "LOSS"
+          },
+          "accuracy": {
+            "cbMarginError": 9.492545161279871,
+            "marketMarginError": 4.5,
+            "closerMarginForecast": "MARKET",
+            "cbTotalError": 10.864882001493463,
+            "marketTotalError": 8.5,
+            "closerTotalForecast": "MARKET"
+          }
+        },
+        "draftkings": {
+          "marketObservedAt": "2026-11-14T21:54:39Z",
+          "marketSpreadHome": 2.5,
+          "marketImpliedHomeMargin": -2.5,
+          "marketTotal": 44.5,
+          "marketMoneylineHome": 114,
+          "marketMoneylineAway": -135,
+          "modelVsMarket": {
+            "homeMarginDifference": 4.992545161279871,
+            "totalDifference": 1.3648820014934628,
+            "spreadPosition": "HOME",
+            "spreadResult": "LOSS",
+            "totalPosition": "OVER",
+            "totalResult": "LOSS"
+          },
+          "accuracy": {
+            "cbMarginError": 9.492545161279871,
+            "marketMarginError": 4.5,
+            "closerMarginForecast": "MARKET",
+            "cbTotalError": 10.864882001493463,
+            "marketTotalError": 9.5,
+            "closerTotalForecast": "MARKET"
+          }
+        }
+      }
     },
     {
       "gameId": "2026-11-14-SOUTHERNMISS-LOUISIANATECH",
@@ -1925,8 +2049,70 @@
       "homeTeam": "Marshall",
       "kickoff": "2026-11-14T23:00:00Z",
       "projectionDigest": "f2056ecf1ec61d89cd4f0f236eb00377c79290877493fdf46eacee70a0574302",
-      "status": "PENDING",
-      "books": {}
+      "status": "FINAL",
+      "final": {
+        "awayScore": 20,
+        "homeScore": 16,
+        "homeMargin": -4.0,
+        "total": 36.0,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "foundation": {
+        "projectedHomeMargin": 2.2665741306412883,
+        "projectedTotal": 50.72722017633543,
+        "projectedWinner": "Marshall"
+      },
+      "books": {
+        "fanduel": {
+          "marketObservedAt": "2026-11-14T22:24:43Z",
+          "marketSpreadHome": -1.5,
+          "marketImpliedHomeMargin": 1.5,
+          "marketTotal": 54.5,
+          "marketMoneylineHome": -113,
+          "marketMoneylineAway": -106,
+          "modelVsMarket": {
+            "homeMarginDifference": 0.7665741306412883,
+            "totalDifference": -3.772779823664571,
+            "spreadPosition": "HOME",
+            "spreadResult": "LOSS",
+            "totalPosition": "UNDER",
+            "totalResult": "WIN"
+          },
+          "accuracy": {
+            "cbMarginError": 6.266574130641288,
+            "marketMarginError": 5.5,
+            "closerMarginForecast": "MARKET",
+            "cbTotalError": 14.727220176335429,
+            "marketTotalError": 18.5,
+            "closerTotalForecast": "CB"
+          }
+        },
+        "draftkings": {
+          "marketObservedAt": "2026-11-14T22:24:27Z",
+          "marketSpreadHome": -1.5,
+          "marketImpliedHomeMargin": 1.5,
+          "marketTotal": 54.5,
+          "marketMoneylineHome": -115,
+          "marketMoneylineAway": -105,
+          "modelVsMarket": {
+            "homeMarginDifference": 0.7665741306412883,
+            "totalDifference": -3.772779823664571,
+            "spreadPosition": "HOME",
+            "spreadResult": "LOSS",
+            "totalPosition": "UNDER",
+            "totalResult": "WIN"
+          },
+          "accuracy": {
+            "cbMarginError": 6.266574130641288,
+            "marketMarginError": 5.5,
+            "closerMarginForecast": "MARKET",
+            "cbTotalError": 14.727220176335429,
+            "marketTotalError": 18.5,
+            "closerTotalForecast": "CB"
+          }
+        }
+      }
     },
     {
       "gameId": "2026-11-14-OREGONSTATE-BOISESTATE",
@@ -1935,8 +2121,70 @@
       "homeTeam": "Boise State",
       "kickoff": "2026-11-14T23:00:00Z",
       "projectionDigest": "50df4a50426a7d48ab07d419a35246719a50375ab82fb682522d5c7c68577bdc",
-      "status": "PENDING",
-      "books": {}
+      "status": "FINAL",
+      "final": {
+        "awayScore": 41,
+        "homeScore": 46,
+        "homeMargin": 5.0,
+        "total": 87.0,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "foundation": {
+        "projectedHomeMargin": 11.865961091939436,
+        "projectedTotal": 68.37375349551742,
+        "projectedWinner": "Boise State"
+      },
+      "books": {
+        "fanduel": {
+          "marketObservedAt": "2026-11-14T22:24:43Z",
+          "marketSpreadHome": -16.5,
+          "marketImpliedHomeMargin": 16.5,
+          "marketTotal": 65.5,
+          "marketMoneylineHome": -750,
+          "marketMoneylineAway": 530,
+          "modelVsMarket": {
+            "homeMarginDifference": -4.634038908060564,
+            "totalDifference": 2.8737534955174198,
+            "spreadPosition": "AWAY",
+            "spreadResult": "WIN",
+            "totalPosition": "OVER",
+            "totalResult": "WIN"
+          },
+          "accuracy": {
+            "cbMarginError": 6.865961091939436,
+            "marketMarginError": 11.5,
+            "closerMarginForecast": "CB",
+            "cbTotalError": -18.62624650448258,
+            "marketTotalError": -21.5,
+            "closerTotalForecast": "CB"
+          }
+        },
+        "draftkings": {
+          "marketObservedAt": "2026-11-14T22:24:27Z",
+          "marketSpreadHome": -16.5,
+          "marketImpliedHomeMargin": 16.5,
+          "marketTotal": 65.5,
+          "marketMoneylineHome": -700,
+          "marketMoneylineAway": 500,
+          "modelVsMarket": {
+            "homeMarginDifference": -4.634038908060564,
+            "totalDifference": 2.8737534955174198,
+            "spreadPosition": "AWAY",
+            "spreadResult": "WIN",
+            "totalPosition": "OVER",
+            "totalResult": "WIN"
+          },
+          "accuracy": {
+            "cbMarginError": 6.865961091939436,
+            "marketMarginError": 11.5,
+            "closerMarginForecast": "CB",
+            "cbTotalError": -18.62624650448258,
+            "marketTotalError": -21.5,
+            "closerTotalForecast": "CB"
+          }
+        }
+      }
     },
     {
       "gameId": "2026-11-14-FLORIDA-KENTUCKY",
@@ -2085,7 +2333,7 @@
       "homeTeam": "UTEP",
       "kickoff": "2026-11-15T03:00:00Z",
       "projectionDigest": "2ba46b064505a3e3b61b1db27e2dd7044f7db2ea58dea18fec106f5fbf3ec3bf",
-      "status": "NO_LOCKED_MARKET",
+      "status": "PENDING",
       "books": {}
     },
     {
