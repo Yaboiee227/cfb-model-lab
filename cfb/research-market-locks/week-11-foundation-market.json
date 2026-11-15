@@ -16,7 +16,7 @@
   "lockWindowMinutes": 30.0,
   "maxObservationAgeMinutes": 35.0,
   "scopeRestricted": false,
-  "updatedAt": "2026-11-15T03:35:49.750264Z",
+  "updatedAt": "2026-11-15T04:33:49.719977Z",
   "counts": {
     "foundationGames": 67,
     "activeScopeGames": 67,
@@ -25,8 +25,8 @@
     "gamesWithMarketLock": 32,
     "bookObservationsLocked": 64,
     "newBookObservationsThisRun": 0,
-    "pendingGames": 2,
-    "missedGames": 33
+    "pendingGames": 1,
+    "missedGames": 34
   },
   "games": [
     {
@@ -1570,7 +1570,7 @@
       "kickoff": "2026-11-15T04:00:00Z",
       "projectionDigest": "8706412c423bdf195aa0e01ac06278347fc4c17885624259914da1832abdc2ba",
       "books": {},
-      "status": "PENDING"
+      "status": "MISSED"
     }
   ],
   "policy": "Research-only per-book publication-window capture. FanDuel and DraftKings are preserved independently; no consensus or canonical benchmark is inferred. Existing book observations are immutable and post-kickoff reconstruction is prohibited. When an active scope is supplied, prior immutable locks remain preserved even if their games are no longer active, while unlocked out-of-scope games remain paused and cannot receive new observations."
