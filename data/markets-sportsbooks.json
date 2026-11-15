@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-11-15T13:01:33.269Z",
-  "lastCoreRefresh": "2026-11-15T13:01:33.269Z",
-  "lastMoneylineRefresh": "2026-11-15T13:01:33.269Z",
+  "generatedAt": "2026-11-15T15:06:18.478Z",
+  "lastCoreRefresh": "2026-11-15T15:06:18.478Z",
+  "lastMoneylineRefresh": "2026-11-15T15:06:18.478Z",
   "provider": "The Odds API",
   "books": [
     "fanduel",
     "draftkings"
   ],
   "quota": {
-    "remaining": 309,
-    "used": 191,
+    "remaining": 306,
+    "used": 194,
     "lastCost": 1,
     "usageThisRun": 3,
     "reserveCredits": 30
   },
   "refreshPolicy": {
-    "phase": "pregame-6h",
+    "phase": "pregame-3h",
     "coreMarkets": [
       "spreads",
       "totals"
     ],
     "moneylineMarket": "h2h",
-    "coreIntervalMinutes": 90,
-    "moneylineIntervalMinutes": 180,
+    "coreIntervalMinutes": 45,
+    "moneylineIntervalMinutes": 90,
     "quotaFactor": 1,
-    "manualOverride": true
+    "manualOverride": false
   },
   "games": [
     {
@@ -35,16 +35,16 @@
       "awayTeam": "Ole Miss Rebels",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-15T13:01:25Z",
+          "updatedAt": "2026-11-15T15:06:15Z",
           "moneyline": {
-            "home": -150,
-            "away": 125
+            "home": -138,
+            "away": 116
           },
           "spread": {
             "home": -2.5,
-            "homePrice": -115,
+            "homePrice": -110,
             "away": 2.5,
-            "awayPrice": -105
+            "awayPrice": -110
           },
           "total": {
             "point": 48.5,
@@ -176,25 +176,32 @@
               "total": 48.5,
               "homeMl": -150,
               "awayMl": 125
+            },
+            {
+              "ts": "2026-11-15T15:06:18.478Z",
+              "spreadHome": -2.5,
+              "total": 48.5,
+              "homeMl": -138,
+              "awayMl": 116
             }
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-15T13:01:02Z",
+          "updatedAt": "2026-11-15T15:05:58Z",
           "moneyline": {
             "home": -142,
             "away": 120
           },
           "spread": {
             "home": -2.5,
-            "homePrice": -118,
+            "homePrice": -115,
             "away": 2.5,
-            "awayPrice": -102
+            "awayPrice": -105
           },
           "total": {
             "point": 48.5,
-            "overPrice": -112,
-            "underPrice": -108
+            "overPrice": -108,
+            "underPrice": -112
           },
           "opening": {
             "moneyline": {
