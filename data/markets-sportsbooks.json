@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-11-15T08:57:40.050Z",
-  "lastCoreRefresh": "2026-11-15T08:57:40.050Z",
-  "lastMoneylineRefresh": "2026-11-15T08:57:40.050Z",
+  "generatedAt": "2026-11-15T12:45:07.980Z",
+  "lastCoreRefresh": "2026-11-15T12:45:07.980Z",
+  "lastMoneylineRefresh": "2026-11-15T12:45:07.980Z",
   "provider": "The Odds API",
   "books": [
     "fanduel",
     "draftkings"
   ],
   "quota": {
-    "remaining": 315,
-    "used": 185,
+    "remaining": 312,
+    "used": 188,
     "lastCost": 1,
     "usageThisRun": 3,
     "reserveCredits": 30
   },
   "refreshPolicy": {
-    "phase": "quiet",
+    "phase": "pregame-6h",
     "coreMarkets": [
       "spreads",
       "totals"
     ],
     "moneylineMarket": "h2h",
-    "coreIntervalMinutes": null,
-    "moneylineIntervalMinutes": null,
+    "coreIntervalMinutes": 90,
+    "moneylineIntervalMinutes": 180,
     "quotaFactor": 1,
-    "manualOverride": true
+    "manualOverride": false
   },
   "games": [
     {
@@ -35,7 +35,7 @@
       "awayTeam": "Ole Miss Rebels",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-15T08:57:24Z",
+          "updatedAt": "2026-11-15T12:44:44Z",
           "moneyline": {
             "home": -150,
             "away": 125
@@ -180,7 +180,7 @@
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-15T08:57:01Z",
+          "updatedAt": "2026-11-15T12:44:28Z",
           "moneyline": {
             "home": -142,
             "away": 120
