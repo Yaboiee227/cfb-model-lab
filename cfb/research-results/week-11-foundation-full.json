@@ -9,37 +9,37 @@
   "modelId": "cfb-rebuild-foundation-v1-shadow",
   "sourceLockDigest": "c4de1fe117bf28dffc164640ec97b3084ceb6ba9b005d5390dfd08b16aff1501",
   "sourceLockedAt": "2026-11-10T22:51:32.601559Z",
-  "gradedAt": "2026-11-15T04:33:50.636462Z",
+  "gradedAt": "2026-11-15T06:24:58.680634Z",
   "status": "IN_PROGRESS",
   "counts": {
     "games": 67,
-    "final": 59,
-    "pending": 8,
+    "final": 62,
+    "pending": 5,
     "review": 0,
     "void": 0
   },
   "metrics": {
     "margin": {
-      "games": 59,
-      "mae": 13.493789886878835,
-      "rmse": 16.526013068580006,
-      "bias": 2.7198206487859684
+      "games": 62,
+      "mae": 14.063544167891727,
+      "rmse": 17.099584579518478,
+      "bias": 2.4393731117806565
     },
     "total": {
-      "games": 59,
-      "mae": 13.501943574524057,
-      "rmse": 16.508678979699567,
-      "bias": 5.126223261991568
+      "games": 62,
+      "mae": 13.242636757329453,
+      "rmse": 16.32230358038954,
+      "bias": 5.153037237985886
     },
     "straightUp": {
       "wins": 38,
-      "losses": 21,
-      "graded": 59,
-      "accuracyPct": 64.40677966101696
+      "losses": 24,
+      "graded": 62,
+      "accuracyPct": 61.29032258064516
     },
     "winProbability": {
-      "games": 59,
-      "brierScore": 0.21248523048770188
+      "games": 62,
+      "brierScore": 0.22100629035436922
     }
   },
   "games": [
@@ -2100,8 +2100,24 @@
         "homeWinProbability": 41.251394898999514,
         "winner": "North Texas"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 16,
+        "homeScore": 35,
+        "marginHome": 19,
+        "total": 51,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -22.50212498467988,
+        "absoluteMargin": 22.50212498467988,
+        "total": 20.734972177564558,
+        "absoluteTotal": 20.734972177564558
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
     },
     {
       "gameId": "2026-11-14-TEXASTECH-OKLAHOMASTATE",
@@ -2118,8 +2134,24 @@
         "homeWinProbability": 69.96050707226239,
         "winner": "Oklahoma State"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 52,
+        "homeScore": 27,
+        "marginHome": -25,
+        "total": 79,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 33.28892486773226,
+        "absoluteMargin": 33.28892486773226,
+        "total": -2.7063183049313864,
+        "absoluteTotal": 2.7063183049313864
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
     },
     {
       "gameId": "2026-11-14-UTAHSTATE-SANDIEGOSTATE",
@@ -2136,8 +2168,24 @@
         "homeWinProbability": 42.45225564069916,
         "winner": "Utah State"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 13,
+        "homeScore": 30,
+        "marginHome": 17,
+        "total": 43,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -20.015085231023782,
+        "absoluteMargin": 20.015085231023782,
+        "total": -0.9875175750107203,
+        "absoluteTotal": 0.9875175750107203
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
     },
     {
       "gameId": "2026-11-14-WYOMING-UTEP",
