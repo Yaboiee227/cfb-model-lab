@@ -9,37 +9,37 @@
   "modelId": "cfb-rebuild-foundation-v1-shadow",
   "sourceLockDigest": "c4de1fe117bf28dffc164640ec97b3084ceb6ba9b005d5390dfd08b16aff1501",
   "sourceLockedAt": "2026-11-10T22:51:32.601559Z",
-  "gradedAt": "2026-11-15T06:24:58.680634Z",
+  "gradedAt": "2026-11-15T07:37:36.022835Z",
   "status": "IN_PROGRESS",
   "counts": {
     "games": 67,
-    "final": 62,
-    "pending": 5,
+    "final": 66,
+    "pending": 1,
     "review": 0,
     "void": 0
   },
   "metrics": {
     "margin": {
-      "games": 62,
-      "mae": 14.063544167891727,
-      "rmse": 17.099584579518478,
-      "bias": 2.4393731117806565
+      "games": 66,
+      "mae": 14.182316512650111,
+      "rmse": 18.108257462230686,
+      "bias": 1.4690477285708792
     },
     "total": {
-      "games": 62,
-      "mae": 13.242636757329453,
-      "rmse": 16.32230358038954,
-      "bias": 5.153037237985886
+      "games": 66,
+      "mae": 13.178261888065784,
+      "rmse": 16.214489237190485,
+      "bias": 4.440815351044838
     },
     "straightUp": {
-      "wins": 38,
-      "losses": 24,
-      "graded": 62,
-      "accuracyPct": 61.29032258064516
+      "wins": 41,
+      "losses": 25,
+      "graded": 66,
+      "accuracyPct": 62.121212121212125
     },
     "winProbability": {
-      "games": 62,
-      "brierScore": 0.22100629035436922
+      "games": 66,
+      "brierScore": 0.2163845409929452
     }
   },
   "games": [
@@ -2048,8 +2048,24 @@
         "homeWinProbability": 54.21787131023148,
         "winner": "Arizona"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 40,
+        "homeScore": 39,
+        "marginHome": -1,
+        "total": 79,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 2.6779201851849237,
+        "absoluteMargin": 2.6779201851849237,
+        "total": -24.533338672713718,
+        "absoluteTotal": 24.533338672713718
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
     },
     {
       "gameId": "2026-11-14-SOUTHCAROLINA-ARKANSAS",
@@ -2202,8 +2218,24 @@
         "homeWinProbability": 23.595891801710955,
         "winner": "Wyoming"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 27,
+        "homeScore": 15,
+        "marginHome": -12,
+        "total": 42,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 0.6047441279515624,
+        "absoluteMargin": 0.6047441279515624,
+        "total": 5.1927436415514165,
+        "absoluteTotal": 5.1927436415514165
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-14-COLORADOSTATE-WASHINGTONSTATE",
@@ -2220,8 +2252,24 @@
         "homeWinProbability": 66.63998396476806,
         "winner": "Washington State"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 7,
+        "homeScore": 73,
+        "marginHome": 66,
+        "total": 80,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -59.18856713517147,
+        "absoluteMargin": 59.18856713517147,
+        "total": -13.02481194932686,
+        "absoluteTotal": 13.02481194932686
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-14-NORTHDAKOTASTATE-HAWAII",
@@ -2238,8 +2286,24 @@
         "homeWinProbability": 34.36077249470843,
         "winner": "North Dakota State"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 21,
+        "homeScore": 13,
+        "marginHome": -8,
+        "total": 34,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 1.621919977312288,
+        "absoluteMargin": 1.621919977312288,
+        "total": 5.970911394323551,
+        "absoluteTotal": 5.970911394323551
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     }
   ],
   "policy": "Research-only prospective performance. Never merge these results into the established canonical record or use postgame outcomes to rewrite the frozen projections."
