@@ -9,37 +9,37 @@
   "modelId": "cfb-rebuild-foundation-v1-shadow",
   "sourceLockDigest": "c4de1fe117bf28dffc164640ec97b3084ceb6ba9b005d5390dfd08b16aff1501",
   "sourceLockedAt": "2026-11-10T22:51:32.601559Z",
-  "gradedAt": "2026-11-14T23:55:37.464753Z",
+  "gradedAt": "2026-11-15T00:46:19.487698Z",
   "status": "IN_PROGRESS",
   "counts": {
     "games": 67,
-    "final": 34,
-    "pending": 33,
+    "final": 40,
+    "pending": 27,
     "review": 0,
     "void": 0
   },
   "metrics": {
     "margin": {
-      "games": 34,
-      "mae": 13.27373488196481,
-      "rmse": 16.33200332843255,
-      "bias": 3.3892912527231753
+      "games": 40,
+      "mae": 13.048357198252592,
+      "rmse": 16.001892905362524,
+      "bias": 2.6774395249612377
     },
     "total": {
-      "games": 34,
-      "mae": 13.076857469995483,
-      "rmse": 16.65237759792838,
-      "bias": 4.527630047181105
+      "games": 40,
+      "mae": 12.7956134199705,
+      "rmse": 16.170653568117398,
+      "bias": 3.705522970011068
     },
     "straightUp": {
-      "wins": 25,
-      "losses": 9,
-      "graded": 34,
-      "accuracyPct": 73.52941176470588
+      "wins": 30,
+      "losses": 10,
+      "graded": 40,
+      "accuracyPct": 75.0
     },
     "winProbability": {
-      "games": 34,
-      "brierScore": 0.19105195257352478
+      "games": 40,
+      "brierScore": 0.17878143387680576
     }
   },
   "games": [
@@ -1116,8 +1116,24 @@
         "homeWinProbability": 94.69640302710765,
         "winner": "Notre Dame"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 7,
+        "homeScore": 41,
+        "marginHome": 34,
+        "total": 48,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -8.399662507543312,
+        "absoluteMargin": 8.399662507543312,
+        "total": 2.3643880713762684,
+        "absoluteTotal": 2.3643880713762684
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-14-CALIFORNIA-VIRGINIA",
@@ -1223,17 +1239,17 @@
       "status": "FINAL",
       "final": {
         "awayScore": 24,
-        "homeScore": 34,
-        "marginHome": 10,
-        "total": 58,
+        "homeScore": 35,
+        "marginHome": 11,
+        "total": 59,
         "overtime": false,
         "source": "ESPN"
       },
       "errors": {
-        "margin": -19.09525482928801,
-        "absoluteMargin": 19.09525482928801,
-        "total": -3.488642028403447,
-        "absoluteTotal": 3.488642028403447
+        "margin": -20.09525482928801,
+        "absoluteMargin": 20.09525482928801,
+        "total": -4.488642028403447,
+        "absoluteTotal": 4.488642028403447
       },
       "straightUp": {
         "result": "LOSS"
@@ -1254,8 +1270,24 @@
         "homeWinProbability": 77.2326312298209,
         "winner": "Oregon"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 7,
+        "homeScore": 31,
+        "marginHome": 24,
+        "total": 38,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -12.174385158077285,
+        "absoluteMargin": 12.174385158077285,
+        "total": 3.293086086533485,
+        "absoluteTotal": 3.293086086533485
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-14-MIDDLETENNESSEE-LIBERTY",
@@ -1306,8 +1338,24 @@
         "homeWinProbability": 83.55527094353683,
         "winner": "Georgia"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 21,
+        "homeScore": 48,
+        "marginHome": 27,
+        "total": 69,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -11.533968791819,
+        "absoluteMargin": 11.533968791819,
+        "total": -20.6525007743138,
+        "absoluteTotal": 20.6525007743138
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-14-NEVADA-NORTHERNILLINOIS",
@@ -1358,8 +1406,24 @@
         "homeWinProbability": 68.71111543606652,
         "winner": "Indiana"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 13,
+        "homeScore": 27,
+        "marginHome": 14,
+        "total": 40,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -6.274795311279725,
+        "absoluteMargin": 6.274795311279725,
+        "total": 7.734597156603364,
+        "absoluteTotal": 7.734597156603364
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-14-FRESNOSTATE-TEXASSTATE",
@@ -1376,8 +1440,24 @@
         "homeWinProbability": 65.5300183347319,
         "winner": "Texas State"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 35,
+        "homeScore": 37,
+        "marginHome": 2,
+        "total": 72,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 4.331083047674994,
+        "absoluteMargin": 4.331083047674994,
+        "total": -14.81244203703043,
+        "absoluteTotal": 14.81244203703043
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-14-OLEMISS-OKLAHOMA",
@@ -1448,8 +1528,24 @@
         "homeWinProbability": 59.75638381927172,
         "winner": "West Virginia"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 37,
+        "homeScore": 14,
+        "marginHome": -23,
+        "total": 51,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 26.913407126905867,
+        "absoluteMargin": 26.913407126905867,
+        "total": 17.35436869311627,
+        "absoluteTotal": 17.35436869311627
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
     },
     {
       "gameId": "2026-11-14-APPSTATE-MARSHALL",
