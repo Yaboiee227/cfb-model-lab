@@ -9,37 +9,37 @@
   "modelId": "cfb-rebuild-foundation-v1-shadow",
   "sourceLockDigest": "c4de1fe117bf28dffc164640ec97b3084ceb6ba9b005d5390dfd08b16aff1501",
   "sourceLockedAt": "2026-11-10T22:51:32.601559Z",
-  "gradedAt": "2026-11-15T00:46:19.487698Z",
+  "gradedAt": "2026-11-15T01:51:29.435743Z",
   "status": "IN_PROGRESS",
   "counts": {
     "games": 67,
-    "final": 40,
-    "pending": 27,
+    "final": 43,
+    "pending": 24,
     "review": 0,
     "void": 0
   },
   "metrics": {
     "margin": {
-      "games": 40,
-      "mae": 13.048357198252592,
-      "rmse": 16.001892905362524,
-      "bias": 2.6774395249612377
+      "games": 43,
+      "mae": 13.365715139150055,
+      "rmse": 16.447181217847596,
+      "bias": 3.2285463328715798
     },
     "total": {
-      "games": 40,
-      "mae": 12.7956134199705,
-      "rmse": 16.170653568117398,
-      "bias": 3.705522970011068
+      "games": 43,
+      "mae": 13.144282361492332,
+      "rmse": 16.75405443046216,
+      "bias": 3.017123780776002
     },
     "straightUp": {
-      "wins": 30,
-      "losses": 10,
-      "graded": 40,
-      "accuracyPct": 75.0
+      "wins": 31,
+      "losses": 12,
+      "graded": 43,
+      "accuracyPct": 72.09302325581395
     },
     "winProbability": {
-      "games": 40,
-      "brierScore": 0.17878143387680576
+      "games": 43,
+      "brierScore": 0.18275960608766315
     }
   },
   "games": [
@@ -432,8 +432,24 @@
         "homeWinProbability": 58.30275667080622,
         "winner": "Mississippi State"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 41,
+        "homeScore": 9,
+        "marginHome": -32,
+        "total": 50,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 35.32093775219014,
+        "absoluteMargin": 35.32093775219014,
+        "total": 1.5747425329083313,
+        "absoluteTotal": 1.5747425329083313
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
     },
     {
       "gameId": "2026-11-14-CINCINNATI-IOWASTATE",
@@ -960,8 +976,24 @@
         "homeWinProbability": 59.82071847778322,
         "winner": "Rice"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 20,
+        "homeScore": 17,
+        "marginHome": -3,
+        "total": 37,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 6.939749431998436,
+        "absoluteMargin": 6.939749431998436,
+        "total": 15.872761726229477,
+        "absoluteTotal": 15.872761726229477
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
     },
     {
       "gameId": "2026-11-14-FLORIDAINTERNATIONAL-DELAWARE",
@@ -1239,17 +1271,17 @@
       "status": "FINAL",
       "final": {
         "awayScore": 24,
-        "homeScore": 35,
-        "marginHome": 11,
-        "total": 59,
+        "homeScore": 34,
+        "marginHome": 10,
+        "total": 58,
         "overtime": false,
         "source": "ESPN"
       },
       "errors": {
-        "margin": -20.09525482928801,
-        "absoluteMargin": 20.09525482928801,
-        "total": -4.488642028403447,
-        "absoluteTotal": 4.488642028403447
+        "margin": -19.09525482928801,
+        "absoluteMargin": 19.09525482928801,
+        "total": -3.488642028403447,
+        "absoluteTotal": 3.488642028403447
       },
       "straightUp": {
         "result": "LOSS"
@@ -1510,8 +1542,24 @@
         "homeWinProbability": 90.18535419083216,
         "winner": "Louisiana Tech"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 31,
+        "homeScore": 63,
+        "marginHome": 32,
+        "total": 94,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -11.530775869160127,
+        "absoluteMargin": 11.530775869160127,
+        "total": -36.93210048621245,
+        "absoluteTotal": 36.93210048621245
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-14-KANSAS-WESTVIRGINIA",
