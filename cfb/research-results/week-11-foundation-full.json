@@ -9,37 +9,37 @@
   "modelId": "cfb-rebuild-foundation-v1-shadow",
   "sourceLockDigest": "c4de1fe117bf28dffc164640ec97b3084ceb6ba9b005d5390dfd08b16aff1501",
   "sourceLockedAt": "2026-11-10T22:51:32.601559Z",
-  "gradedAt": "2026-11-15T07:37:36.022835Z",
-  "status": "IN_PROGRESS",
+  "gradedAt": "2026-11-15T21:45:16.147718Z",
+  "status": "COMPLETE",
   "counts": {
     "games": 67,
-    "final": 66,
-    "pending": 1,
+    "final": 67,
+    "pending": 0,
     "review": 0,
     "void": 0
   },
   "metrics": {
     "margin": {
-      "games": 66,
-      "mae": 14.182316512650111,
-      "rmse": 18.108257462230686,
-      "bias": 1.4690477285708792
+      "games": 67,
+      "mae": 14.05358617800907,
+      "rmse": 17.985432640557995,
+      "bias": 1.3641756118504134
     },
     "total": {
-      "games": 66,
-      "mae": 13.178261888065784,
-      "rmse": 16.214489237190485,
-      "bias": 4.440815351044838
+      "games": 67,
+      "mae": 13.113514501295562,
+      "rmse": 16.129229306041054,
+      "bias": 4.5064776140809
     },
     "straightUp": {
-      "wins": 41,
+      "wins": 42,
       "losses": 25,
-      "graded": 66,
-      "accuracyPct": 62.121212121212125
+      "graded": 67,
+      "accuracyPct": 62.6865671641791
     },
     "winProbability": {
-      "games": 66,
-      "brierScore": 0.2163845409929452
+      "games": 67,
+      "brierScore": 0.21636439741971678
     }
   },
   "games": [
@@ -1554,8 +1554,24 @@
         "homeWinProbability": 53.628141983888646,
         "winner": "Oklahoma"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 17,
+        "homeScore": 24,
+        "marginHome": 7,
+        "total": 41,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -5.557384091700335,
+        "absoluteMargin": 5.557384091700335,
+        "total": 8.840186974460948,
+        "absoluteTotal": 8.840186974460948
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-14-WASHINGTON-MICHIGANSTATE",
