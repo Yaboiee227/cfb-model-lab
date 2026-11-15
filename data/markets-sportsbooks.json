@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-11-15T16:21:27.684Z",
-  "lastCoreRefresh": "2026-11-15T16:21:27.684Z",
-  "lastMoneylineRefresh": "2026-11-15T15:06:18.478Z",
+  "generatedAt": "2026-11-15T16:50:26.686Z",
+  "lastCoreRefresh": "2026-11-15T16:50:26.686Z",
+  "lastMoneylineRefresh": "2026-11-15T16:50:26.686Z",
   "provider": "The Odds API",
   "books": [
     "fanduel",
     "draftkings"
   ],
   "quota": {
-    "remaining": 304,
-    "used": 196,
-    "lastCost": 2,
-    "usageThisRun": 2,
+    "remaining": 301,
+    "used": 199,
+    "lastCost": 1,
+    "usageThisRun": 3,
     "reserveCredits": 30
   },
   "refreshPolicy": {
@@ -24,7 +24,7 @@
     "coreIntervalMinutes": 45,
     "moneylineIntervalMinutes": 90,
     "quotaFactor": 1,
-    "manualOverride": false
+    "manualOverride": true
   },
   "games": [
     {
@@ -35,16 +35,16 @@
       "awayTeam": "Ole Miss Rebels",
       "books": {
         "fanduel": {
-          "updatedAt": "2026-11-15T16:21:15Z",
+          "updatedAt": "2026-11-15T16:50:23Z",
           "moneyline": {
-            "home": -138,
-            "away": 116
+            "home": -137,
+            "away": 114
           },
           "spread": {
             "home": -2.5,
-            "homePrice": -110,
+            "homePrice": -115,
             "away": 2.5,
-            "awayPrice": -110
+            "awayPrice": -105
           },
           "total": {
             "point": 48.5,
@@ -183,14 +183,21 @@
               "total": 48.5,
               "homeMl": -138,
               "awayMl": 116
+            },
+            {
+              "ts": "2026-11-15T16:50:26.686Z",
+              "spreadHome": -2.5,
+              "total": 48.5,
+              "homeMl": -137,
+              "awayMl": 114
             }
           ]
         },
         "draftkings": {
-          "updatedAt": "2026-11-15T16:20:41Z",
+          "updatedAt": "2026-11-15T16:50:21Z",
           "moneyline": {
-            "home": -142,
-            "away": 120
+            "home": -135,
+            "away": 114
           },
           "spread": {
             "home": -2.5,
@@ -300,6 +307,13 @@
               "total": 48.5,
               "homeMl": -142,
               "awayMl": 120
+            },
+            {
+              "ts": "2026-11-15T16:50:26.686Z",
+              "spreadHome": -2.5,
+              "total": 48.5,
+              "homeMl": -135,
+              "awayMl": 114
             }
           ]
         }
