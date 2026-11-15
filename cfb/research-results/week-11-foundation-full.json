@@ -9,37 +9,37 @@
   "modelId": "cfb-rebuild-foundation-v1-shadow",
   "sourceLockDigest": "c4de1fe117bf28dffc164640ec97b3084ceb6ba9b005d5390dfd08b16aff1501",
   "sourceLockedAt": "2026-11-10T22:51:32.601559Z",
-  "gradedAt": "2026-11-15T02:43:56.846935Z",
+  "gradedAt": "2026-11-15T03:35:50.862144Z",
   "status": "IN_PROGRESS",
   "counts": {
     "games": 67,
-    "final": 48,
-    "pending": 19,
+    "final": 53,
+    "pending": 14,
     "review": 0,
     "void": 0
   },
   "metrics": {
     "margin": {
-      "games": 48,
-      "mae": 13.160855113909259,
-      "rmse": 16.088354114530382,
-      "bias": 4.079641391618125
+      "games": 53,
+      "mae": 13.002651276071042,
+      "rmse": 15.821784422067806,
+      "bias": 2.758039552229687
     },
     "total": {
-      "games": 48,
-      "mae": 13.46118516252245,
-      "rmse": 16.7354366587242,
-      "bias": 3.6128453296106287
+      "games": 53,
+      "mae": 13.890867511843899,
+      "rmse": 17.007857678009998,
+      "bias": 4.629400777909386
     },
     "straightUp": {
-      "wins": 32,
-      "losses": 16,
-      "graded": 48,
-      "accuracyPct": 66.66666666666667
+      "wins": 36,
+      "losses": 17,
+      "graded": 53,
+      "accuracyPct": 67.9245283018868
     },
     "winProbability": {
-      "games": 48,
-      "brierScore": 0.19682952974831433
+      "games": 53,
+      "brierScore": 0.19235671780143404
     }
   },
   "games": [
@@ -1146,8 +1146,24 @@
         "homeWinProbability": 54.340421110515905,
         "winner": "BYU"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 7,
+        "homeScore": 28,
+        "marginHome": 21,
+        "total": 35,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -19.273137197299462,
+        "absoluteMargin": 19.273137197299462,
+        "total": 13.428039184235303,
+        "absoluteTotal": 13.428039184235303
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-14-BOSTONCOLLEGE-NOTREDAME",
@@ -1744,8 +1760,24 @@
         "homeWinProbability": 54.739578537758874,
         "winner": "North Carolina"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 16,
+        "homeScore": 14,
+        "marginHome": -2,
+        "total": 30,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 3.8863908173121047,
+        "absoluteMargin": 3.8863908173121047,
+        "total": 30.7666236779624,
+        "absoluteTotal": 30.7666236779624
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
     },
     {
       "gameId": "2026-11-14-MINNESOTA-PENNSTATE",
@@ -1762,8 +1794,24 @@
         "homeWinProbability": 75.77287178746197,
         "winner": "Penn State"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 14,
+        "homeScore": 42,
+        "marginHome": 28,
+        "total": 56,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -16.927055852187173,
+        "absoluteMargin": 16.927055852187173,
+        "total": -9.068712459380897,
+        "absoluteTotal": 9.068712459380897
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-14-SANJOSSTATE-AIRFORCE",
@@ -1780,8 +1828,24 @@
         "homeWinProbability": 71.8617508590936,
         "winner": "Air Force"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 3,
+        "homeScore": 24,
+        "marginHome": 21,
+        "total": 27,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -11.832316312824808,
+        "absoluteMargin": 11.832316312824808,
+        "total": 17.80241124008537,
+        "absoluteTotal": 17.80241124008537
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-14-TROY-SOUTHALABAMA",
@@ -1798,8 +1862,24 @@
         "homeWinProbability": 68.2045168841514,
         "winner": "South Alabama"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 14,
+        "homeScore": 27,
+        "marginHome": 13,
+        "total": 41,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -5.500571984497235,
+        "absoluteMargin": 5.500571984497235,
+        "total": 19.013303764985103,
+        "absoluteTotal": 19.013303764985103
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-14-PURDUE-IOWA",
