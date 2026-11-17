@@ -1,11 +1,11 @@
 {
   "league": "nfl",
-  "week": 10,
+  "week": 11,
   "canonicalInfluence": false,
   "policy": "Unknown current-week personnel remains HOLD; no prior-week context carried forward.",
   "games": [
     {
-      "gameId": "2026_10_NE_DET",
+      "gameId": "2026_11_IND_HOU",
       "source": null,
       "observedAt": null,
       "reportType": "NO_VERIFIED_REPORT",
@@ -24,7 +24,7 @@
       "fullReleaseCertified": false
     },
     {
-      "gameId": "2026_10_BUF_NYJ",
+      "gameId": "2026_11_ARI_KC",
       "source": null,
       "observedAt": null,
       "reportType": "NO_VERIFIED_REPORT",
@@ -43,7 +43,7 @@
       "fullReleaseCertified": false
     },
     {
-      "gameId": "2026_10_CAR_NO",
+      "gameId": "2026_11_BAL_CAR",
       "source": null,
       "observedAt": null,
       "reportType": "NO_VERIFIED_REPORT",
@@ -62,24 +62,7 @@
       "fullReleaseCertified": false
     },
     {
-      "gameId": "2026_10_HOU_CLE",
-      "source": "https://www.clevelandbrowns.com/news/deshaun-watson-set-to-start-week-10-against-the-texans",
-      "observedAt": "2026-11-14T13:02:24.092082+00:00",
-      "reportType": "NO_VERIFIED_REPORT",
-      "finalAvailabilityVerified": false,
-      "qbChange": true,
-      "summary": "Cleveland announced Deshaun Watson as the starter.",
-      "status": "HOLD",
-      "blockers": [
-        "FINAL_AVAILABILITY_UNVERIFIED",
-        "QB_CHANGE_NOT_REPRESENTED_IN_FORECAST"
-      ],
-      "personnelAdjusted": false,
-      "baselineResearchDisplayAllowed": true,
-      "fullReleaseCertified": false
-    },
-    {
-      "gameId": "2026_10_JAX_TEN",
+      "gameId": "2026_11_JAX_NYG",
       "source": null,
       "observedAt": null,
       "reportType": "NO_VERIFIED_REPORT",
@@ -98,7 +81,7 @@
       "fullReleaseCertified": false
     },
     {
-      "gameId": "2026_10_KC_ATL",
+      "gameId": "2026_11_MIA_BUF",
       "source": null,
       "observedAt": null,
       "reportType": "NO_VERIFIED_REPORT",
@@ -117,7 +100,7 @@
       "fullReleaseCertified": false
     },
     {
-      "gameId": "2026_10_MIA_IND",
+      "gameId": "2026_11_NO_CHI",
       "source": null,
       "observedAt": null,
       "reportType": "NO_VERIFIED_REPORT",
@@ -136,41 +119,7 @@
       "fullReleaseCertified": false
     },
     {
-      "gameId": "2026_10_MIN_GB",
-      "source": "https://www.vikings.com/news/kirk-cousins-starting-packers-week-10-game-2026",
-      "observedAt": "2026-11-14T13:02:25.273655+00:00",
-      "reportType": "NO_VERIFIED_REPORT",
-      "finalAvailabilityVerified": false,
-      "qbChange": true,
-      "summary": "Minnesota announced Kirk Cousins as the starter.",
-      "status": "HOLD",
-      "blockers": [
-        "FINAL_AVAILABILITY_UNVERIFIED",
-        "QB_CHANGE_NOT_REPRESENTED_IN_FORECAST"
-      ],
-      "personnelAdjusted": false,
-      "baselineResearchDisplayAllowed": true,
-      "fullReleaseCertified": false
-    },
-    {
-      "gameId": "2026_10_LA_ARI",
-      "source": "https://fantasy-www.nfl.com/news/nfl-news-roundup-latest-league-updates-from-wednesday-nov-11",
-      "observedAt": "2026-11-14T13:02:30.173591+00:00",
-      "reportType": "NO_VERIFIED_REPORT",
-      "finalAvailabilityVerified": false,
-      "qbChange": true,
-      "summary": "Arizona announced Carson Beck will make his first NFL start.",
-      "status": "HOLD",
-      "blockers": [
-        "FINAL_AVAILABILITY_UNVERIFIED",
-        "QB_CHANGE_NOT_REPRESENTED_IN_FORECAST"
-      ],
-      "personnelAdjusted": false,
-      "baselineResearchDisplayAllowed": true,
-      "fullReleaseCertified": false
-    },
-    {
-      "gameId": "2026_10_SEA_LV",
+      "gameId": "2026_11_TB_DET",
       "source": null,
       "observedAt": null,
       "reportType": "NO_VERIFIED_REPORT",
@@ -189,7 +138,7 @@
       "fullReleaseCertified": false
     },
     {
-      "gameId": "2026_10_SF_DAL",
+      "gameId": "2026_11_TEN_DAL",
       "source": null,
       "observedAt": null,
       "reportType": "NO_VERIFIED_REPORT",
@@ -208,7 +157,7 @@
       "fullReleaseCertified": false
     },
     {
-      "gameId": "2026_10_PIT_CIN",
+      "gameId": "2026_11_NYJ_LAC",
       "source": null,
       "observedAt": null,
       "reportType": "NO_VERIFIED_REPORT",
@@ -227,22 +176,80 @@
       "fullReleaseCertified": false
     },
     {
-      "gameId": "2026_10_LAC_BAL",
-      "source": "https://www.baltimoreravens.com/news/kyle-hamilton-injury-update-jacoby-brissett-starting-against-chargers-monday-night-minter-lamar-jackson-injury-conversations-private",
-      "observedAt": "2026-11-14T13:02:28.177017+00:00",
+      "gameId": "2026_11_LV_DEN",
+      "source": null,
+      "observedAt": null,
       "reportType": "NO_VERIFIED_REPORT",
       "finalAvailabilityVerified": false,
-      "qbChange": true,
-      "summary": "Baltimore expects Jacoby Brissett to start Monday.",
+      "qbChange": null,
+      "summary": "No current game-specific final personnel evidence supplied.",
       "status": "HOLD",
       "blockers": [
+        "MISSING_OR_NON_PREGAME_TIMESTAMP",
+        "REPORT_GAME_SCOPE_MISMATCH",
         "FINAL_AVAILABILITY_UNVERIFIED",
-        "QB_CHANGE_NOT_REPRESENTED_IN_FORECAST"
+        "QB_STATE_UNVERIFIED"
+      ],
+      "personnelAdjusted": false,
+      "baselineResearchDisplayAllowed": true,
+      "fullReleaseCertified": false
+    },
+    {
+      "gameId": "2026_11_PIT_PHI",
+      "source": null,
+      "observedAt": null,
+      "reportType": "NO_VERIFIED_REPORT",
+      "finalAvailabilityVerified": false,
+      "qbChange": null,
+      "summary": "No current game-specific final personnel evidence supplied.",
+      "status": "HOLD",
+      "blockers": [
+        "MISSING_OR_NON_PREGAME_TIMESTAMP",
+        "REPORT_GAME_SCOPE_MISMATCH",
+        "FINAL_AVAILABILITY_UNVERIFIED",
+        "QB_STATE_UNVERIFIED"
+      ],
+      "personnelAdjusted": false,
+      "baselineResearchDisplayAllowed": true,
+      "fullReleaseCertified": false
+    },
+    {
+      "gameId": "2026_11_MIN_SF",
+      "source": null,
+      "observedAt": null,
+      "reportType": "NO_VERIFIED_REPORT",
+      "finalAvailabilityVerified": false,
+      "qbChange": null,
+      "summary": "No current game-specific final personnel evidence supplied.",
+      "status": "HOLD",
+      "blockers": [
+        "MISSING_OR_NON_PREGAME_TIMESTAMP",
+        "REPORT_GAME_SCOPE_MISMATCH",
+        "FINAL_AVAILABILITY_UNVERIFIED",
+        "QB_STATE_UNVERIFIED"
+      ],
+      "personnelAdjusted": false,
+      "baselineResearchDisplayAllowed": true,
+      "fullReleaseCertified": false
+    },
+    {
+      "gameId": "2026_11_CIN_WAS",
+      "source": null,
+      "observedAt": null,
+      "reportType": "NO_VERIFIED_REPORT",
+      "finalAvailabilityVerified": false,
+      "qbChange": null,
+      "summary": "No current game-specific final personnel evidence supplied.",
+      "status": "HOLD",
+      "blockers": [
+        "MISSING_OR_NON_PREGAME_TIMESTAMP",
+        "REPORT_GAME_SCOPE_MISMATCH",
+        "FINAL_AVAILABILITY_UNVERIFIED",
+        "QB_STATE_UNVERIFIED"
       ],
       "personnelAdjusted": false,
       "baselineResearchDisplayAllowed": true,
       "fullReleaseCertified": false
     }
-  ],
-  "updatedAt": "2026-11-14T13:04:08.889755+00:00"
+  ]
 }
