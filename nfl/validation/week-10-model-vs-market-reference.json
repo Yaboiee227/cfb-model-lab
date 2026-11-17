@@ -1,0 +1,565 @@
+{
+  "season": 2026,
+  "week": 10,
+  "league": "nfl",
+  "role": "FROZEN_PROJECTION_MARKET_BENCHMARK",
+  "canonicalInfluence": false,
+  "eligibleForOfficialRecord": false,
+  "executionVerified": false,
+  "projectionFreeze": "nfl/research-projections/week-10.json",
+  "sourceFreezeSha256": "2b94c09ff4f5d7abd17cc097358a94db774d55810d6ed48d0d3d801ef424d984",
+  "frozenAt": "2026-11-14T13:02:16.012623+00:00",
+  "sourceResults": "nfl/research-results/week-10.json",
+  "sourceMarketArchive": "nfl_data/site/market-reference.json",
+  "sourceMarketArchiveGitBlob": "50ef2d9d88959a7b398e4dc33f796f1be06cbedb",
+  "marketProvider": "DraftKings via ESPN",
+  "officialScoreCrossCheck": "https://www.nfl.com/schedules?icampaign=Schedule_release_HP_CP2",
+  "excludedAlreadyStartedGameIds": [
+    "2026_10_WAS_NYG"
+  ],
+  "summary": {
+    "games": 13,
+    "ats": {
+      "win": 6,
+      "loss": 7,
+      "push": 0,
+      "no_position": 0
+    },
+    "totals": {
+      "win": 6,
+      "loss": 7,
+      "push": 0,
+      "no_position": 0
+    },
+    "straightUp": {
+      "win": 9,
+      "loss": 4,
+      "push": 0,
+      "no_position": 0
+    },
+    "marginMAE": 11.202485406447312,
+    "totalMAE": 8.50792871312108
+  },
+  "games": [
+    {
+      "gameId": "2026_10_NE_DET",
+      "away": "NE",
+      "home": "DET",
+      "kickoffUTC": "2026-11-15T14:30:00+00:00",
+      "final": {
+        "awayScore": 10,
+        "homeScore": 35,
+        "sourceGameId": "401873053",
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -1.802610933280096,
+        "total": 45.77501583135186,
+        "winner": "DET"
+      },
+      "marketReference": {
+        "homeSpread": -2.5,
+        "total": 49.5,
+        "observedAt": "2026-11-14T13:02:12.134010+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873053",
+        "sourceSha256": "bef00c34643e9eec5c2c9556c96187b8baf05b45af87aa0a17ad57053f90e870"
+      },
+      "ats": {
+        "pick": "NE",
+        "result": "LOSS"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "WIN"
+      },
+      "straightUp": {
+        "pick": "DET",
+        "result": "WIN"
+      },
+      "errors": {
+        "margin": -23.197389066719904,
+        "total": 0.7750158313518583
+      }
+    },
+    {
+      "gameId": "2026_10_BUF_NYJ",
+      "away": "BUF",
+      "home": "NYJ",
+      "kickoffUTC": "2026-11-15T18:00:00+00:00",
+      "final": {
+        "awayScore": 31,
+        "homeScore": 12,
+        "sourceGameId": "401873054",
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 10.999283035973926,
+        "total": 47.570010393488595,
+        "winner": "BUF"
+      },
+      "marketReference": {
+        "homeSpread": 8.5,
+        "total": 50.5,
+        "observedAt": "2026-11-14T13:02:12.254548+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873054",
+        "sourceSha256": "80cc0565220669ccd89ab976b8026510d215dd24228002473e543a4d54ee7c7b"
+      },
+      "ats": {
+        "pick": "BUF",
+        "result": "WIN"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "WIN"
+      },
+      "straightUp": {
+        "pick": "BUF",
+        "result": "WIN"
+      },
+      "errors": {
+        "margin": 8.000716964026074,
+        "total": 4.5700103934885945
+      }
+    },
+    {
+      "gameId": "2026_10_CAR_NO",
+      "away": "CAR",
+      "home": "NO",
+      "kickoffUTC": "2026-11-15T18:00:00+00:00",
+      "final": {
+        "awayScore": 20,
+        "homeScore": 17,
+        "sourceGameId": "401873055",
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -0.5891169171641557,
+        "total": 44.890388756413984,
+        "winner": "NO"
+      },
+      "marketReference": {
+        "homeSpread": -2.5,
+        "total": 48.5,
+        "observedAt": "2026-11-14T13:02:12.182633+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873055",
+        "sourceSha256": "7f39dff8d528aed1fa35cadbb71a873ff6077cd6e055f6bce3817f9461374309"
+      },
+      "ats": {
+        "pick": "CAR",
+        "result": "WIN"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "WIN"
+      },
+      "straightUp": {
+        "pick": "NO",
+        "result": "LOSS"
+      },
+      "errors": {
+        "margin": 3.589116917164156,
+        "total": 7.890388756413984
+      }
+    },
+    {
+      "gameId": "2026_10_HOU_CLE",
+      "away": "HOU",
+      "home": "CLE",
+      "kickoffUTC": "2026-11-15T18:00:00+00:00",
+      "final": {
+        "awayScore": 24,
+        "homeScore": 27,
+        "sourceGameId": "401873056",
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 3.375850396273883,
+        "total": 43.70659121197353,
+        "winner": "HOU"
+      },
+      "marketReference": {
+        "homeSpread": 4.5,
+        "total": 40.5,
+        "observedAt": "2026-11-14T13:02:12.289407+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873056",
+        "sourceSha256": "b535bab3676889b44aab4eea7b136d6045b9078f5f22ffb8e362045f189aff5a"
+      },
+      "ats": {
+        "pick": "CLE",
+        "result": "WIN"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "WIN"
+      },
+      "straightUp": {
+        "pick": "HOU",
+        "result": "LOSS"
+      },
+      "errors": {
+        "margin": -6.375850396273883,
+        "total": -7.293408788026468
+      }
+    },
+    {
+      "gameId": "2026_10_JAX_TEN",
+      "away": "JAX",
+      "home": "TEN",
+      "kickoffUTC": "2026-11-15T18:00:00+00:00",
+      "final": {
+        "awayScore": 40,
+        "homeScore": 23,
+        "sourceGameId": "401873057",
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 10.129346420316335,
+        "total": 44.18102562511473,
+        "winner": "JAX"
+      },
+      "marketReference": {
+        "homeSpread": 10.5,
+        "total": 46.5,
+        "observedAt": "2026-11-14T13:02:12.284998+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873057",
+        "sourceSha256": "28eebecf44b2c6e32244574d430b46f0ff8ae9cadeef4971ec82bdaf1a764120"
+      },
+      "ats": {
+        "pick": "TEN",
+        "result": "LOSS"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "LOSS"
+      },
+      "straightUp": {
+        "pick": "JAX",
+        "result": "WIN"
+      },
+      "errors": {
+        "margin": 6.870653579683665,
+        "total": -18.818974374885272
+      }
+    },
+    {
+      "gameId": "2026_10_KC_ATL",
+      "away": "KC",
+      "home": "ATL",
+      "kickoffUTC": "2026-11-15T18:00:00+00:00",
+      "final": {
+        "awayScore": 35,
+        "homeScore": 13,
+        "sourceGameId": "401873058",
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 4.370229546203841,
+        "total": 44.568977609769945,
+        "winner": "KC"
+      },
+      "marketReference": {
+        "homeSpread": 3,
+        "total": 47.5,
+        "observedAt": "2026-11-14T13:02:12.321755+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873058",
+        "sourceSha256": "38f8fa1a9a7f78e9df11ff00d097d865574fbfa747b7921fcea7b316f27ff6fd"
+      },
+      "ats": {
+        "pick": "KC",
+        "result": "WIN"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "LOSS"
+      },
+      "straightUp": {
+        "pick": "KC",
+        "result": "WIN"
+      },
+      "errors": {
+        "margin": 17.62977045379616,
+        "total": -3.431022390230055
+      }
+    },
+    {
+      "gameId": "2026_10_MIA_IND",
+      "away": "MIA",
+      "home": "IND",
+      "kickoffUTC": "2026-11-15T18:00:00+00:00",
+      "final": {
+        "awayScore": 22,
+        "homeScore": 24,
+        "sourceGameId": "401873059",
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -1.8491221753306366,
+        "total": 44.22540382347868,
+        "winner": "IND"
+      },
+      "marketReference": {
+        "homeSpread": -3.5,
+        "total": 38.5,
+        "observedAt": "2026-11-14T13:02:12.288651+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873059",
+        "sourceSha256": "aff70dbfd5c4c3e6e0eab58385c29b67acab84b2d59c9c386795bd652c2cd695"
+      },
+      "ats": {
+        "pick": "MIA",
+        "result": "WIN"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "WIN"
+      },
+      "straightUp": {
+        "pick": "IND",
+        "result": "WIN"
+      },
+      "errors": {
+        "margin": -0.1508778246693634,
+        "total": -1.774596176521321
+      }
+    },
+    {
+      "gameId": "2026_10_MIN_GB",
+      "away": "MIN",
+      "home": "GB",
+      "kickoffUTC": "2026-11-15T18:00:00+00:00",
+      "final": {
+        "awayScore": 30,
+        "homeScore": 10,
+        "sourceGameId": "401873060",
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -8.117447586564912,
+        "total": 43.1078580928459,
+        "winner": "GB"
+      },
+      "marketReference": {
+        "homeSpread": -2.5,
+        "total": 42.5,
+        "observedAt": "2026-11-14T13:02:12.054237+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873060",
+        "sourceSha256": "40a13eec58681ebaba3e866eb3e87ab4927ea4e56cd857a51089e6530aadb2ab"
+      },
+      "ats": {
+        "pick": "GB",
+        "result": "LOSS"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "LOSS"
+      },
+      "straightUp": {
+        "pick": "GB",
+        "result": "LOSS"
+      },
+      "errors": {
+        "margin": 28.117447586564914,
+        "total": 3.107858092845902
+      }
+    },
+    {
+      "gameId": "2026_10_LA_ARI",
+      "away": "LA",
+      "home": "ARI",
+      "kickoffUTC": "2026-11-15T21:05:00+00:00",
+      "final": {
+        "awayScore": 34,
+        "homeScore": 6,
+        "sourceGameId": "401873061",
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 8.171027230626953,
+        "total": 46.10841678051542,
+        "winner": "LA"
+      },
+      "marketReference": {
+        "homeSpread": 9.5,
+        "total": 39.5,
+        "observedAt": "2026-11-14T13:02:12.218980+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873061",
+        "sourceSha256": "f45881cd316afa818976b2219bfed8070e195dd1aa36ec5b3f1a3042d8edbd48"
+      },
+      "ats": {
+        "pick": "ARI",
+        "result": "LOSS"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "WIN"
+      },
+      "straightUp": {
+        "pick": "LA",
+        "result": "WIN"
+      },
+      "errors": {
+        "margin": 19.828972769373046,
+        "total": 6.1084167805154195
+      }
+    },
+    {
+      "gameId": "2026_10_SEA_LV",
+      "away": "SEA",
+      "home": "LV",
+      "kickoffUTC": "2026-11-15T21:05:00+00:00",
+      "final": {
+        "awayScore": 21,
+        "homeScore": 13,
+        "sourceGameId": "401873062",
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 5.478030172309568,
+        "total": 43.029009414640036,
+        "winner": "SEA"
+      },
+      "marketReference": {
+        "homeSpread": 6.5,
+        "total": 40.5,
+        "observedAt": "2026-11-14T13:02:12.286295+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873062",
+        "sourceSha256": "abf536021ca72a0d38ccb2492cdcb0ba94c1fef6de85163715c19d60d5489165"
+      },
+      "ats": {
+        "pick": "LV",
+        "result": "LOSS"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "LOSS"
+      },
+      "straightUp": {
+        "pick": "SEA",
+        "result": "WIN"
+      },
+      "errors": {
+        "margin": 2.521969827690432,
+        "total": 9.029009414640036
+      }
+    },
+    {
+      "gameId": "2026_10_SF_DAL",
+      "away": "SF",
+      "home": "DAL",
+      "kickoffUTC": "2026-11-15T21:25:00+00:00",
+      "final": {
+        "awayScore": 46,
+        "homeScore": 40,
+        "sourceGameId": "401873063",
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 4.775042486347921,
+        "total": 50.84271641568605,
+        "winner": "SF"
+      },
+      "marketReference": {
+        "homeSpread": 4.5,
+        "total": 55.5,
+        "observedAt": "2026-11-14T13:02:12.198056+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873063",
+        "sourceSha256": "7633f55d6fd5a217e4e0599a6a3092c4d8f8831dd3f5df3702fa961ad0c25b8d"
+      },
+      "ats": {
+        "pick": "SF",
+        "result": "WIN"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "LOSS"
+      },
+      "straightUp": {
+        "pick": "SF",
+        "result": "WIN"
+      },
+      "errors": {
+        "margin": 1.224957513652079,
+        "total": -35.15728358431395
+      }
+    },
+    {
+      "gameId": "2026_10_PIT_CIN",
+      "away": "PIT",
+      "home": "CIN",
+      "kickoffUTC": "2026-11-16T01:20:00+00:00",
+      "final": {
+        "awayScore": 18,
+        "homeScore": 38,
+        "sourceGameId": "401873064",
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -1.2468987996211336,
+        "total": 48.463406433787,
+        "winner": "CIN"
+      },
+      "marketReference": {
+        "homeSpread": -3.5,
+        "total": 49.5,
+        "observedAt": "2026-11-14T13:02:12.250451+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873064",
+        "sourceSha256": "52208a8876655073c052809addd9e0da0c46d70b3dcd87fcb6382c73cac32ff3"
+      },
+      "ats": {
+        "pick": "PIT",
+        "result": "LOSS"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "LOSS"
+      },
+      "straightUp": {
+        "pick": "CIN",
+        "result": "WIN"
+      },
+      "errors": {
+        "margin": -18.753101200378865,
+        "total": -7.536593566213
+      }
+    },
+    {
+      "gameId": "2026_10_LAC_BAL",
+      "away": "LAC",
+      "home": "BAL",
+      "kickoffUTC": "2026-11-17T01:15:00+00:00",
+      "final": {
+        "awayScore": 23,
+        "homeScore": 20,
+        "sourceGameId": "401873065",
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -6.371486183822533,
+        "total": 37.88950487887182,
+        "winner": "BAL"
+      },
+      "marketReference": {
+        "homeSpread": -4.5,
+        "total": 38.5,
+        "observedAt": "2026-11-14T13:02:12.166692+00:00",
+        "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873065",
+        "sourceSha256": "34c5b44f809dee8e45263c40414c00fe75f2a4fb25da0fa8c5fbcf0215c20239"
+      },
+      "ats": {
+        "pick": "BAL",
+        "result": "LOSS"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "LOSS"
+      },
+      "straightUp": {
+        "pick": "BAL",
+        "result": "LOSS"
+      },
+      "errors": {
+        "margin": 9.371486183822533,
+        "total": -5.1104951211281815
+      }
+    }
+  ]
+}
