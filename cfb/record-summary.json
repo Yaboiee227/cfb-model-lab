@@ -1,31 +1,31 @@
 {
   "schemaVersion": 1,
   "league": "cfb",
-  "generatedAt": "2026-11-08T12:13:26.583684+00:00",
-  "currentWeek": 10,
+  "generatedAt": "2026-11-17T14:02:24.851874+00:00",
+  "currentWeek": 11,
   "label": "Published projection performance; research only, not wagers. Missing market locks excluded.",
-  "sourceNote": "Published-model cumulative display combining historical audited and labeled frozen research weeks. Frozen Week 10 foundation research graded against the original pregame ESPN-carried DraftKings references. Research benchmark grades. Execution locks were unverified.",
+  "sourceNote": "Published-model cumulative display, combining historical audited weeks and explicitly labeled frozen research weeks. Not a single validated model backtest. Week 11 frozen foundation research. DraftKings publication-time locks graded where saved (32 games); 35 games without qualifying locks excluded from ATS and totals. All 67 games graded straight up; benchmark grades remain noncanonical research.",
   "overall": {
     "ats": {
-      "wins": 109,
-      "losses": 110,
-      "pushes": 3,
-      "winPct": 49.8,
-      "graded": 222
+      "wins": 126,
+      "losses": 124,
+      "pushes": 4,
+      "graded": 254,
+      "winPct": 50.4
     },
     "totals": {
-      "wins": 99,
-      "losses": 118,
+      "wins": 114,
+      "losses": 135,
       "pushes": 0,
-      "winPct": 45.6,
-      "graded": 217
+      "graded": 249,
+      "winPct": 45.8
     },
     "straightUp": {
-      "wins": 139,
-      "losses": 88,
+      "wins": 181,
+      "losses": 113,
       "pushes": 0,
-      "winPct": 61.2,
-      "graded": 227
+      "graded": 294,
+      "winPct": 61.6
     }
   },
   "weeks": [
@@ -147,8 +147,38 @@
         "winPct": 59.7,
         "graded": 62
       }
+    },
+    {
+      "season": 2026,
+      "week": 11,
+      "status": "COMPLETE_WITH_EXCLUSIONS",
+      "pending": 0,
+      "review": 35,
+      "recordType": "Frozen research",
+      "note": "Week 11 frozen foundation research. DraftKings publication-time locks graded where saved (32 games); 35 games without qualifying locks excluded from ATS and totals. All 67 games graded straight up; benchmark grades remain noncanonical research.",
+      "ats": {
+        "wins": 17,
+        "losses": 14,
+        "pushes": 1,
+        "graded": 32,
+        "winPct": 54.8
+      },
+      "totals": {
+        "wins": 15,
+        "losses": 17,
+        "pushes": 0,
+        "graded": 32,
+        "winPct": 46.9
+      },
+      "straightUp": {
+        "wins": 42,
+        "losses": 25,
+        "pushes": 0,
+        "graded": 67,
+        "winPct": 62.7
+      }
     }
   ],
   "pending": 0,
-  "review": 0
+  "review": 35
 }
