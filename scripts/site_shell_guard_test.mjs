@@ -130,10 +130,25 @@ for (const tc of cases) {
 
     await toggle.click();
     await page.waitForTimeout(80);
-    await page.locator('#home').click({ position: { x: 10, y: 10 }, force: true });
-    await page.waitForTimeout(120);
-    const outside = await page.evaluate(() => document.body.dataset.navOpen);
-    if (outside === 'true') errors.push('outside click did not close compact navigation');
+    const outsidePoint = await page.evaluate(() => {
+      const header = document.querySelector('.site-header');
+      for (const y of [8, innerHeight - 8]) {
+        for (const x of [8, innerWidth - 8]) {
+          const target = document.elementFromPoint(x, y);
+          if (target && !header.contains(target) && !target.closest('a, button, input')) return { x, y };
+        }
+      }
+      return null;
+    });
+    if (!outsidePoint) {
+      errors.push('no clickable area outside compact navigation');
+    } else {
+      await page.mouse.click(outsidePoint.x, outsidePoint.y);
+      await page.waitForTimeout(120);
+      if (await page.evaluate(() => document.body.dataset.navOpen === 'true')) {
+        errors.push('outside click did not close compact navigation');
+      }
+    }
   } else {
     if (initial.navDisplay === 'none') errors.push('desktop primary navigation is hidden');
     if (initial.toggleDisplay !== 'none') errors.push(`desktop nav toggle should be hidden, got ${initial.toggleDisplay}`);
