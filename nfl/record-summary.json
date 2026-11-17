@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "league": "nfl",
-  "generatedAt": "2026-11-10T22:40:41.623854+00:00",
-  "currentWeek": 9,
+  "generatedAt": "2026-11-17T13:53:23.018503+00:00",
+  "currentWeek": 10,
   "label": "Published projection performance; research only, not wagers. Missing market locks excluded.",
-  "sourceNote": "Published-model cumulative display, combining historical audited weeks and explicitly labeled frozen research weeks. Not a single validated model backtest. Week 9 frozen baseline research. All 14 games graded straight up. ATS and totals excluded for missing original market locks.",
+  "sourceNote": "Published-model cumulative display, combining historical audited weeks and explicitly labeled frozen research weeks. Not a single validated model backtest. Week 10 frozen baseline research. All 13 games graded straight up. ATS and totals excluded for missing original market locks.",
   "overall": {
     "ats": {
       "wins": 8,
@@ -21,11 +21,11 @@
       "winPct": 66.7
     },
     "straightUp": {
-      "wins": 40,
-      "losses": 15,
+      "wins": 49,
+      "losses": 19,
       "pushes": 0,
-      "graded": 55,
-      "winPct": 72.7
+      "graded": 68,
+      "winPct": 72.1
     }
   },
   "weeks": [
@@ -147,8 +147,38 @@
         "graded": 14,
         "winPct": 92.9
       }
+    },
+    {
+      "season": 2026,
+      "week": 10,
+      "status": "COMPLETE_WITH_EXCLUSIONS",
+      "pending": 0,
+      "review": 13,
+      "recordType": "Frozen research",
+      "note": "Week 10 frozen baseline research. All 13 games graded straight up. ATS and totals excluded for missing original market locks.",
+      "ats": {
+        "wins": 0,
+        "losses": 0,
+        "pushes": 0,
+        "graded": 0,
+        "winPct": null
+      },
+      "totals": {
+        "wins": 0,
+        "losses": 0,
+        "pushes": 0,
+        "graded": 0,
+        "winPct": null
+      },
+      "straightUp": {
+        "wins": 9,
+        "losses": 4,
+        "pushes": 0,
+        "graded": 13,
+        "winPct": 69.2
+      }
     }
   ],
   "pending": 0,
-  "review": 14
+  "review": 13
 }
