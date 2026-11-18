@@ -9,37 +9,37 @@
   "modelId": "cfb-rebuild-foundation-v1-shadow",
   "sourceLockDigest": "b976d6b288a81f075b0d2f45cba75471c9909bd569f079e6ba826b158a2df65e",
   "sourceLockedAt": "2026-11-17T14:16:22.891673Z",
-  "gradedAt": "2026-11-17T14:22:03.174725Z",
+  "gradedAt": "2026-11-18T03:50:49.173035Z",
   "status": "IN_PROGRESS",
   "counts": {
     "games": 66,
-    "final": 0,
-    "pending": 66,
+    "final": 3,
+    "pending": 63,
     "review": 0,
     "void": 0
   },
   "metrics": {
     "margin": {
-      "games": 0,
-      "mae": null,
-      "rmse": null,
-      "bias": null
+      "games": 3,
+      "mae": 8.988791681903516,
+      "rmse": 9.087043244462192,
+      "bias": 8.988791681903516
     },
     "total": {
-      "games": 0,
-      "mae": null,
-      "rmse": null,
-      "bias": null
+      "games": 3,
+      "mae": 16.291274294922175,
+      "rmse": 18.140901457325054,
+      "bias": 1.856015805049689
     },
     "straightUp": {
-      "wins": 0,
+      "wins": 3,
       "losses": 0,
-      "graded": 0,
-      "accuracyPct": null
+      "graded": 3,
+      "accuracyPct": 100.0
     },
     "winProbability": {
-      "games": 0,
-      "brierScore": null
+      "games": 3,
+      "brierScore": 0.05488122131554238
     }
   },
   "games": [
@@ -58,8 +58,24 @@
         "homeWinProbability": 85.57946655887201,
         "winner": "Western Michigan"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 27,
+        "homeScore": 34,
+        "marginHome": 7,
+        "total": 61,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 9.816802254741255,
+        "absoluteMargin": 9.816802254741255,
+        "total": -13.263022717637988,
+        "absoluteTotal": 13.263022717637988
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-17-BALLSTATE-OHIO",
@@ -76,8 +92,24 @@
         "homeWinProbability": 81.34413217193051,
         "winner": "Ohio"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 28,
+        "homeScore": 35,
+        "marginHome": 7,
+        "total": 63,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 7.10857788113416,
+        "absoluteMargin": 7.10857788113416,
+        "total": -8.389865017170742,
+        "absoluteTotal": 8.389865017170742
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-17-MIAMIOH-KENTSTATE",
@@ -94,8 +126,24 @@
         "homeWinProbability": 33.02186321698372,
         "winner": "Miami (OH)"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 20,
+        "homeScore": 3,
+        "marginHome": -17,
+        "total": 23,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 10.040994909835135,
+        "absoluteMargin": 10.040994909835135,
+        "total": 27.220935149957796,
+        "absoluteTotal": 27.220935149957796
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-18-AKRON-MASSACHUSETTS",
