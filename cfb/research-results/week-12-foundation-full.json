@@ -9,37 +9,37 @@
   "modelId": "cfb-rebuild-foundation-v1-shadow",
   "sourceLockDigest": "b976d6b288a81f075b0d2f45cba75471c9909bd569f079e6ba826b158a2df65e",
   "sourceLockedAt": "2026-11-17T14:16:22.891673Z",
-  "gradedAt": "2026-11-18T03:50:49.173035Z",
+  "gradedAt": "2026-11-19T10:27:09.947223Z",
   "status": "IN_PROGRESS",
   "counts": {
     "games": 66,
-    "final": 3,
-    "pending": 63,
+    "final": 5,
+    "pending": 61,
     "review": 0,
     "void": 0
   },
   "metrics": {
     "margin": {
-      "games": 3,
-      "mae": 8.988791681903516,
-      "rmse": 9.087043244462192,
-      "bias": 8.988791681903516
+      "games": 5,
+      "mae": 10.52461498959038,
+      "rmse": 10.744590944471728,
+      "bias": 5.566476187684424
     },
     "total": {
-      "games": 3,
-      "mae": 16.291274294922175,
-      "rmse": 18.140901457325054,
-      "bias": 1.856015805049689
+      "games": 5,
+      "mae": 16.9434220230351,
+      "rmse": 18.088900198789407,
+      "bias": -6.055047963051981
     },
     "straightUp": {
-      "wins": 3,
-      "losses": 0,
-      "graded": 3,
-      "accuracyPct": 100.0
+      "wins": 4,
+      "losses": 1,
+      "graded": 5,
+      "accuracyPct": 80.0
     },
     "winProbability": {
-      "games": 3,
-      "brierScore": 0.05488122131554238
+      "games": 5,
+      "brierScore": 0.17767668365813447
     }
   },
   "games": [
@@ -160,8 +160,24 @@
         "homeWinProbability": 78.05456229010552,
         "winner": "Massachusetts"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 34,
+        "homeScore": 33,
+        "marginHome": -1,
+        "total": 67,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 13.261352897476463,
+        "absoluteMargin": 13.261352897476463,
+        "total": -19.709661402431884,
+        "absoluteTotal": 19.709661402431884
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
     },
     {
       "gameId": "2026-11-18-CENTRALMICHIGAN-BUFFALO",
@@ -178,8 +194,24 @@
         "homeWinProbability": 66.16388247537124,
         "winner": "Buffalo"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 21,
+        "homeScore": 40,
+        "marginHome": 19,
+        "total": 61,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -12.395347004764893,
+        "absoluteMargin": 12.395347004764893,
+        "total": -16.13362582797709,
+        "absoluteTotal": 16.13362582797709
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-19-RICE-TEMPLE",
