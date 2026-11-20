@@ -9,37 +9,37 @@
   "modelId": "cfb-rebuild-foundation-v1-shadow",
   "sourceLockDigest": "b976d6b288a81f075b0d2f45cba75471c9909bd569f079e6ba826b158a2df65e",
   "sourceLockedAt": "2026-11-17T14:16:22.891673Z",
-  "gradedAt": "2026-11-19T10:27:09.947223Z",
+  "gradedAt": "2026-11-20T08:38:36.870679Z",
   "status": "IN_PROGRESS",
   "counts": {
     "games": 66,
-    "final": 5,
-    "pending": 61,
+    "final": 6,
+    "pending": 60,
     "review": 0,
     "void": 0
   },
   "metrics": {
     "margin": {
-      "games": 5,
-      "mae": 10.52461498959038,
-      "rmse": 10.744590944471728,
-      "bias": 5.566476187684424
+      "games": 6,
+      "mae": 10.336140840548916,
+      "rmse": 10.531493162765456,
+      "bias": 6.204358505627284
     },
     "total": {
-      "games": 5,
-      "mae": 16.9434220230351,
-      "rmse": 18.088900198789407,
-      "bias": -6.055047963051981
+      "games": 6,
+      "mae": 14.760997403509279,
+      "rmse": 16.587421868347924,
+      "bias": -5.6873523535233454
     },
     "straightUp": {
       "wins": 4,
-      "losses": 1,
-      "graded": 5,
-      "accuracyPct": 80.0
+      "losses": 2,
+      "graded": 6,
+      "accuracyPct": 66.66666666666667
     },
     "winProbability": {
-      "games": 5,
-      "brierScore": 0.17767668365813447
+      "games": 6,
+      "brierScore": 0.214900196689365
     }
   },
   "games": [
@@ -228,8 +228,24 @@
         "homeWinProbability": 63.32596322564052,
         "winner": "Temple"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 31,
+        "homeScore": 27,
+        "marginHome": -4,
+        "total": 58,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 9.393770095341587,
+        "absoluteMargin": 9.393770095341587,
+        "total": -3.848874305880166,
+        "absoluteTotal": 3.848874305880166
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
     },
     {
       "gameId": "2026-11-20-IOWASTATE-UCF",
