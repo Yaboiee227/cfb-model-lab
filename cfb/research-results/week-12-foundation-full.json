@@ -9,37 +9,37 @@
   "modelId": "cfb-rebuild-foundation-v1-shadow",
   "sourceLockDigest": "b976d6b288a81f075b0d2f45cba75471c9909bd569f079e6ba826b158a2df65e",
   "sourceLockedAt": "2026-11-17T14:16:22.891673Z",
-  "gradedAt": "2026-11-21T21:02:38.156461Z",
+  "gradedAt": "2026-11-21T21:37:18.748322Z",
   "status": "IN_PROGRESS",
   "counts": {
     "games": 66,
-    "final": 24,
-    "pending": 42,
+    "final": 26,
+    "pending": 40,
     "review": 0,
     "void": 0
   },
   "metrics": {
     "margin": {
-      "games": 24,
-      "mae": 12.399588187723651,
-      "rmse": 15.743761505946445,
-      "bias": 0.9130057703026382
+      "games": 26,
+      "mae": 11.791048019093658,
+      "rmse": 15.220512302877259,
+      "bias": 0.5247519040628573
     },
     "total": {
-      "games": 24,
-      "mae": 13.270796182618314,
-      "rmse": 15.790736866418538,
-      "bias": -1.8884988235321953
+      "games": 26,
+      "mae": 12.464768026176838,
+      "rmse": 15.210533997594254,
+      "bias": -1.956936927098242
     },
     "straightUp": {
-      "wins": 13,
+      "wins": 15,
       "losses": 11,
-      "graded": 24,
-      "accuracyPct": 54.166666666666664
+      "graded": 26,
+      "accuracyPct": 57.69230769230769
     },
     "winProbability": {
-      "games": 24,
-      "brierScore": 0.23899098294524682
+      "games": 26,
+      "brierScore": 0.22808007199426314
     }
   },
   "games": [
@@ -472,7 +472,7 @@
         "homeScore": 29,
         "marginHome": -2,
         "total": 60,
-        "overtime": true,
+        "overtime": false,
         "source": "ESPN"
       },
       "errors": {
@@ -874,8 +874,24 @@
         "homeWinProbability": 43.367711476203134,
         "winner": "Houston"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 34,
+        "homeScore": 31,
+        "marginHome": -3,
+        "total": 65,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 0.3542715047192466,
+        "absoluteMargin": 0.3542715047192466,
+        "total": 0.014235978988281772,
+        "absoluteTotal": 0.014235978988281772
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-WESTERNKENTUCKY-LIBERTY",
@@ -892,8 +908,24 @@
         "homeWinProbability": 92.11175476002569,
         "winner": "Liberty"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 14,
+        "homeScore": 45,
+        "marginHome": 31,
+        "total": 59,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -8.622860486348273,
+        "absoluteMargin": 8.622860486348273,
+        "total": -5.570624318769887,
+        "absoluteTotal": 5.570624318769887
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-CHARLOTTE-TULSA",
