@@ -61,7 +61,9 @@ def test_06_current_comparisons_match_captured_games_without_overwriting_archive
                 expected = {r['gameId'] for r in csv.DictReader(stream) if r['marketSpreadHome']}
 
         assert {g['gameId'] for g in load(f"{league}.json")['remainingMatchupComparisons']} == expected
-    assert len(load("archive/cfb-previous.json")["remainingMatchupComparisons"]) == 50
+    previous = load("archive/cfb-previous.json")
+    assert previous["week"] < load("cfb.json")["week"]
+    assert len({g["gameId"] for g in previous["remainingMatchupComparisons"]}) == len(previous["remainingMatchupComparisons"])
     assert load("archive/nfl-previous.json")["week"] == 8
 
 
@@ -101,7 +103,9 @@ def test_10_manifest_hashes_and_snapshot_provenance_match_files():
     assert manifest["canonicalInfluence"] is False
     assert manifest["canonicalPromotionAuthorized"] is False
     assert manifest["leagues"]["cfb"]["snapshotAsOf"] == load("cfb.json")["snapshotAsOf"]
-    assert load("archive/cfb-previous.json")["snapshotAsOf"] == "2026-11-07T12:20:00.149834+00:00"
+    from datetime import datetime
+    assert datetime.fromisoformat(load("archive/cfb-previous.json")["snapshotAsOf"].replace("Z", "+00:00")) < datetime.fromisoformat(load("cfb.json")["snapshotAsOf"].replace("Z", "+00:00"))
+    assert load("archive/cfb-before-20261121.json")["snapshotAsOf"] == "2026-11-07T12:20:00.149834+00:00"
     assert manifest["leagues"]["nfl"]["sourceCommit"] == "0721b59b5f461ad590bd348bd655c4963265856c"
     for name, expected in manifest["files"].items():
         actual = hashlib.sha256((DIR / name).read_bytes()).hexdigest()
