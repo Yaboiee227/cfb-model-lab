@@ -1,6 +1,9 @@
 name: CFB Week 12 research operations
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows: ['Refresh sportsbook markets']
+    types: [completed]
   push:
     branches: [main]
     paths:
@@ -17,7 +20,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   operate:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
