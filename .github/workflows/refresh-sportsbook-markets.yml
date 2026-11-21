@@ -1,4 +1,5 @@
 name: Refresh sportsbook markets
+# Pushes to this workflow also request an adaptive, quota-aware snapshot refresh.
 
 on:
   push:
