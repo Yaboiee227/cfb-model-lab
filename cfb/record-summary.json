@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "league": "cfb",
-  "generatedAt": "2026-11-17T14:02:24.851874+00:00",
-  "currentWeek": 11,
+  "generatedAt": "2026-11-21T15:58:51.689792+00:00",
+  "currentWeek": 12,
   "label": "Published projection performance; research only, not wagers. Missing market locks excluded.",
-  "sourceNote": "Published-model cumulative display, combining historical audited weeks and explicitly labeled frozen research weeks. Not a single validated model backtest. Week 11 frozen foundation research. DraftKings publication-time locks graded where saved (32 games); 35 games without qualifying locks excluded from ATS and totals. All 67 games graded straight up; benchmark grades remain noncanonical research.",
+  "sourceNote": "Published-model cumulative display, combining historical audited weeks and explicitly labeled frozen research weeks. Not a single validated model backtest. Week 12 in progress. Completed frozen foundation forecasts graded with original DraftKings pregame locks where saved. Remaining games await final results.",
   "overall": {
     "ats": {
       "wins": 126,
@@ -21,11 +21,11 @@
       "winPct": 45.8
     },
     "straightUp": {
-      "wins": 181,
-      "losses": 113,
+      "wins": 189,
+      "losses": 117,
       "pushes": 0,
-      "graded": 294,
-      "winPct": 61.6
+      "graded": 306,
+      "winPct": 61.8
     }
   },
   "weeks": [
@@ -177,8 +177,38 @@
         "graded": 67,
         "winPct": 62.7
       }
+    },
+    {
+      "season": 2026,
+      "week": 12,
+      "status": "IN_PROGRESS",
+      "pending": 54,
+      "review": 12,
+      "recordType": "Frozen research",
+      "note": "Week 12 in progress. Completed frozen foundation forecasts graded with original DraftKings pregame locks where saved. Remaining games await final results.",
+      "ats": {
+        "wins": 0,
+        "losses": 0,
+        "pushes": 0,
+        "graded": 0,
+        "winPct": null
+      },
+      "totals": {
+        "wins": 0,
+        "losses": 0,
+        "pushes": 0,
+        "graded": 0,
+        "winPct": null
+      },
+      "straightUp": {
+        "wins": 8,
+        "losses": 4,
+        "pushes": 0,
+        "graded": 12,
+        "winPct": 66.7
+      }
     }
   ],
-  "pending": 0,
-  "review": 35
+  "pending": 54,
+  "review": 12
 }
