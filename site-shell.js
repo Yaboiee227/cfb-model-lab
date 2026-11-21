@@ -96,7 +96,7 @@
           <span class="cb-product-state" id="cbProductState">Loading preserved model state…</span>
         </div>
         <nav class="cb-product-links" aria-label="Model sections">
-          <a href="index.html" ${league === 'cfb' ? 'aria-current="page"' : ''}>CFB</a>
+          <a href="index.html?league=cfb" ${league === 'cfb' ? 'aria-current="page"' : ''}>CFB</a>
           <a href="index.html?league=nfl" ${league === 'nfl' ? 'aria-current="page"' : ''}>NFL</a>
           <a href="recap.html${leagueQuery}">Recap</a>
           <a href="ratings.html${leagueQuery}">${league === 'nfl' ? 'Benchmarks' : 'Ratings'}</a>
