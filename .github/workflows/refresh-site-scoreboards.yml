@@ -25,6 +25,11 @@ jobs:
           python-version: '3.12'
       - name: Refresh CFB and NFL scoreboard snapshots
         run: python scripts/refresh_site_scoreboards.py
+      - name: Refresh NFL Week 11 comparison reference
+        run: |
+          if [ "$(python -c "import json; print(json.load(open('nfl_data/site/config.json'))['currentWeek'])")" = '11' ]; then
+            python scripts/refresh_nfl_week11_reference.py
+          fi
       - name: Validate league isolation
         run: |
           python - <<'PY'
@@ -41,7 +46,7 @@ jobs:
         run: |
           git config user.name "cb-model-live-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/live-scoreboard.json nfl_data/site/live-scoreboard.json
+          git add data/live-scoreboard.json nfl_data/site/live-scoreboard.json nfl_data/site/market-reference.json
           if git diff --cached --quiet; then
             echo 'No scoreboard state change.'
             exit 0
