@@ -9,37 +9,37 @@
   "modelId": "cfb-rebuild-foundation-v1-shadow",
   "sourceLockDigest": "b976d6b288a81f075b0d2f45cba75471c9909bd569f079e6ba826b158a2df65e",
   "sourceLockedAt": "2026-11-17T14:16:22.891673Z",
-  "gradedAt": "2026-11-21T03:57:23.074032Z",
+  "gradedAt": "2026-11-21T12:14:46.494867Z",
   "status": "IN_PROGRESS",
   "counts": {
     "games": 66,
-    "final": 8,
-    "pending": 58,
+    "final": 12,
+    "pending": 54,
     "review": 0,
     "void": 0
   },
   "metrics": {
     "margin": {
-      "games": 8,
-      "mae": 12.423284571169248,
-      "rmse": 14.577812180081859,
-      "bias": -0.017910061537096844
+      "games": 12,
+      "mae": 15.448151009737819,
+      "rmse": 18.47587845220276,
+      "bias": 2.9211797201949423
     },
     "total": {
-      "games": 8,
-      "mae": 16.378315293342634,
-      "rmse": 18.978889993988155,
-      "bias": -1.0577010627282464
+      "games": 12,
+      "mae": 13.002069834179075,
+      "rmse": 15.95531616777494,
+      "bias": -0.9901807089128726
     },
     "straightUp": {
-      "wins": 5,
-      "losses": 3,
-      "graded": 8,
-      "accuracyPct": 62.5
+      "wins": 8,
+      "losses": 4,
+      "graded": 12,
+      "accuracyPct": 66.66666666666667
     },
     "winProbability": {
-      "games": 8,
-      "brierScore": 0.1995585986379831
+      "games": 12,
+      "brierScore": 0.21580152237647932
     }
   },
   "games": [
@@ -330,8 +330,24 @@
         "homeWinProbability": 84.54076726057276,
         "winner": "Duke"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 20,
+        "homeScore": 10,
+        "marginHome": -10,
+        "total": 30,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 26.10903202994257,
+        "absoluteMargin": 26.10903202994257,
+        "total": 8.002307535635268,
+        "absoluteTotal": 8.002307535635268
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
     },
     {
       "gameId": "2026-11-20-OREGON-MICHIGANSTATE",
@@ -348,8 +364,24 @@
         "homeWinProbability": 36.78247523454314,
         "winner": "Oregon"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 45,
+        "homeScore": 7,
+        "marginHome": -38,
+        "total": 52,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 32.651835011763396,
+        "absoluteMargin": 32.651835011763396,
+        "total": -6.593209750939174,
+        "absoluteTotal": 6.593209750939174
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-20-UTEP-AIRFORCE",
@@ -366,8 +398,24 @@
         "homeWinProbability": 93.18894654054581,
         "winner": "Air Force"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 3,
+        "homeScore": 52,
+        "marginHome": 49,
+        "total": 55,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -25.397049206431873,
+        "absoluteMargin": 25.397049206431873,
+        "total": -7.616228083328991,
+        "absoluteTotal": 7.616228083328991
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-20-NEWMEXICO-WYOMING",
@@ -384,8 +432,24 @@
         "homeWinProbability": 37.215756495404136,
         "winner": "New Mexico"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 24,
+        "homeScore": 17,
+        "marginHome": -7,
+        "total": 41,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 1.8336192993619918,
+        "absoluteMargin": 1.8336192993619918,
+        "total": 2.786570293504397,
+        "absoluteTotal": 2.786570293504397
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-BYU-KANSAS",
