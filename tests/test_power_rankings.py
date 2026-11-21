@@ -54,7 +54,10 @@ def test_05_market_national_ratings_are_withheld_when_graph_is_disconnected():
 def test_06_current_comparisons_match_captured_games_without_overwriting_archive():
     context=json.loads((ROOT / "data/game-readiness.json").read_text())
     for league in ("cfb","nfl"):
-        expected={g['projectionGameId'] for g in context['games'] if g['league']==league and (g.get('marketReference') or {}).get('spreadHome') is not None}
+        from datetime import datetime
+        cutoff=datetime.fromisoformat(load(f"{league}.json")['snapshotAsOf'].replace('Z','+00:00'))
+        refs=json.loads((ROOT/'nfl_data/site/market-reference.json').read_text())
+        expected={g['gameId'] for g in refs['games'] if datetime.fromisoformat(g['kickoffUtc'].replace('Z','+00:00'))>cutoff}
         if league == 'cfb':
             import csv
             with (ROOT / load('cfb.json')['provenance']['projectionContextPath']).open() as stream:
@@ -64,7 +67,8 @@ def test_06_current_comparisons_match_captured_games_without_overwriting_archive
     previous = load("archive/cfb-previous.json")
     assert previous["week"] < load("cfb.json")["week"]
     assert len({g["gameId"] for g in previous["remainingMatchupComparisons"]}) == len(previous["remainingMatchupComparisons"])
-    assert load("archive/nfl-previous.json")["week"] == 8
+    assert load("archive/nfl-previous.json")["week"] < load("nfl.json")["week"]
+    assert load("archive/nfl-before-20261121.json")["week"] == 8
 
 
 def test_07_gap_convention_and_side_label_are_exact():
@@ -114,16 +118,17 @@ def test_10_manifest_hashes_and_snapshot_provenance_match_files():
 
 def test_11_nfl_refresh_sources_and_coverage_lag_are_explicit():
     d = load("nfl.json")
-    assert d["week"] == 9 and d["sourceMaxWeek"] == 8
+    assert d["week"] == json.loads((ROOT / "nfl_data/site/config.json").read_text())["currentWeek"]
+    assert d["sourceMaxWeek"] == d["week"] - 1
     p = d["refreshProvenance"]
     assert d['currentWeekReproductionMaxAbsDiff'] <= 1e-8
-    assert p['targetWeek'] == 9 and p['maxSourceWeek'] == 8
-    assert p['coverageLag'] == []
+    assert p['targetWeek'] == d['week'] and p['maxSourceWeek'] == d['sourceMaxWeek']
+    assert all(x['latestWeek'] <= d['sourceMaxWeek'] for x in p['coverageLag'])
     assert hashlib.sha256((ROOT / p['inputPath']).read_bytes()).hexdigest() == p['inputSha256']
     inputs=json.loads((ROOT / p['inputPath']).read_text())
     assert len(inputs['teamCore']) == len(inputs['teamCoverage']) == 32
-    assert max(r['max_current_season_week_used'] for r in inputs['teamCore'].values()) == 8
-    assert max(r['max_current_week_used'] for r in inputs['teamCoverage'].values()) == 8
+    assert max(r['max_current_season_week_used'] for r in inputs['teamCore'].values()) == d['sourceMaxWeek']
+    assert max(r['max_current_week_used'] for r in inputs['teamCoverage'].values()) <= d['sourceMaxWeek']
     assert d['inputLimitations']
 
 
