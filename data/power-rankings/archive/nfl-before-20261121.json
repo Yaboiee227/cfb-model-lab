@@ -1,0 +1,559 @@
+{
+  "schemaVersion": 1,
+  "league": "nfl",
+  "season": 2026,
+  "week": 8,
+  "snapshotAsOf": "2026-10-28T12:46:11.530652+00:00",
+  "sourceCommit": "0721b59b5f461ad590bd348bd655c4963265856c",
+  "sourceSnapshotId": "20261021T114427Z",
+  "modelRole": "RESEARCH_POWER_RATING_ONLY",
+  "canonicalInfluence": false,
+  "canonicalPromotionAuthorized": false,
+  "method": "Established canonical spread architecture with efficiency, Elo and margin state updated through completed Week 7; defensive coverage uses the latest available report for each team. All 992 neutral-field orientations are summarized as zero-mean team points. No injury, referee or weather adjustment is included in this baseline rating.",
+  "modelComponents": [
+    "efficiency",
+    "defensive coverage",
+    "win Elo",
+    "margin rating"
+  ],
+  "teamCount": 32,
+  "allPairsNeutralMatchups": 992,
+  "pointScaleFitResidualRmse": 3.0453715192319565e-15,
+  "frozenRegression": {
+    "games": 14,
+    "maxAbsDiff": 0.0,
+    "pass": true,
+    "rows": [
+      {
+        "gameId": "2026_07_NE_CHI",
+        "reproduced": 1.2775707065437034,
+        "frozen": 1.2775707065437034,
+        "absDiff": 0.0
+      },
+      {
+        "gameId": "2026_07_PIT_NO",
+        "reproduced": -3.343270535808349,
+        "frozen": -3.343270535808349,
+        "absDiff": 0.0
+      },
+      {
+        "gameId": "2026_07_CIN_BAL",
+        "reproduced": 4.027868612055471,
+        "frozen": 4.027868612055471,
+        "absDiff": 0.0
+      },
+      {
+        "gameId": "2026_07_CLE_TEN",
+        "reproduced": 0.6869115555417418,
+        "frozen": 0.6869115555417418,
+        "absDiff": 0.0
+      },
+      {
+        "gameId": "2026_07_IND_MIN",
+        "reproduced": 5.999961118837756,
+        "frozen": 5.999961118837756,
+        "absDiff": 0.0
+      },
+      {
+        "gameId": "2026_07_MIA_NYJ",
+        "reproduced": -0.4735792690094778,
+        "frozen": -0.4735792690094778,
+        "absDiff": 0.0
+      },
+      {
+        "gameId": "2026_07_NYG_HOU",
+        "reproduced": 3.733754200358406,
+        "frozen": 3.733754200358406,
+        "absDiff": 0.0
+      },
+      {
+        "gameId": "2026_07_SF_ATL",
+        "reproduced": -5.68334261203569,
+        "frozen": -5.68334261203569,
+        "absDiff": 0.0
+      },
+      {
+        "gameId": "2026_07_TB_CAR",
+        "reproduced": 6.121991712398631,
+        "frozen": 6.121991712398631,
+        "absDiff": 0.0
+      },
+      {
+        "gameId": "2026_07_DEN_ARI",
+        "reproduced": -2.679316394749109,
+        "frozen": -2.679316394749109,
+        "absDiff": 0.0
+      },
+      {
+        "gameId": "2026_07_GB_DET",
+        "reproduced": 4.081636347229041,
+        "frozen": 4.081636347229041,
+        "absDiff": 0.0
+      },
+      {
+        "gameId": "2026_07_LA_LV",
+        "reproduced": -5.957699832058012,
+        "frozen": -5.957699832058012,
+        "absDiff": 0.0
+      },
+      {
+        "gameId": "2026_07_KC_SEA",
+        "reproduced": 1.602236252102505,
+        "frozen": 1.602236252102505,
+        "absDiff": 0.0
+      },
+      {
+        "gameId": "2026_07_DAL_PHI",
+        "reproduced": -0.6253648897420163,
+        "frozen": -0.6253648897420163,
+        "absDiff": 0.0
+      }
+    ]
+  },
+  "marketNationalRatingStatus": "WITHHELD_UNTIL_CONNECTED_TIMESTAMPED_MARKET_GRAPH",
+  "teams": [
+    {
+      "rank": 1,
+      "team": "SF",
+      "teamName": "San Francisco 49ers",
+      "cbPoints": 6.1039,
+      "movement": 0,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 2,
+      "team": "BUF",
+      "teamName": "Buffalo Bills",
+      "cbPoints": 5.7197,
+      "movement": 1,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 3,
+      "team": "SEA",
+      "teamName": "Seattle Seahawks",
+      "cbPoints": 5.5563,
+      "movement": 2,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 4,
+      "team": "JAX",
+      "teamName": "Jacksonville Jaguars",
+      "cbPoints": 4.9704,
+      "movement": 0,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 5,
+      "team": "LA",
+      "teamName": "Los Angeles Rams",
+      "cbPoints": 4.63,
+      "movement": 1,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 6,
+      "team": "KC",
+      "teamName": "Kansas City Chiefs",
+      "cbPoints": 4.1396,
+      "movement": -4,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 7,
+      "team": "DET",
+      "teamName": "Detroit Lions",
+      "cbPoints": 3.8126,
+      "movement": 2,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 8,
+      "team": "CHI",
+      "teamName": "Chicago Bears",
+      "cbPoints": 3.2892,
+      "movement": 0,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 9,
+      "team": "NE",
+      "teamName": "New England Patriots",
+      "cbPoints": 3.1117,
+      "movement": -2,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 10,
+      "team": "DEN",
+      "teamName": "Denver Broncos",
+      "cbPoints": 2.2027,
+      "movement": 2,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 11,
+      "team": "GB",
+      "teamName": "Green Bay Packers",
+      "cbPoints": 1.6989,
+      "movement": -1,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 12,
+      "team": "PIT",
+      "teamName": "Pittsburgh Steelers",
+      "cbPoints": 0.7397,
+      "movement": 4,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 13,
+      "team": "BAL",
+      "teamName": "Baltimore Ravens",
+      "cbPoints": 0.6638,
+      "movement": -2,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 14,
+      "team": "NYG",
+      "teamName": "New York Giants",
+      "cbPoints": 0.5115,
+      "movement": 3,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 15,
+      "team": "DAL",
+      "teamName": "Dallas Cowboys",
+      "cbPoints": 0.4495,
+      "movement": 3,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "COVERAGE_LAG_WEEK6"
+    },
+    {
+      "rank": 16,
+      "team": "HOU",
+      "teamName": "Houston Texans",
+      "cbPoints": 0.0014,
+      "movement": -3,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 17,
+      "team": "MIN",
+      "teamName": "Minnesota Vikings",
+      "cbPoints": -0.0053,
+      "movement": -2,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 18,
+      "team": "CIN",
+      "teamName": "Cincinnati Bengals",
+      "cbPoints": -0.2412,
+      "movement": 1,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 19,
+      "team": "CAR",
+      "teamName": "Carolina Panthers",
+      "cbPoints": -0.8649,
+      "movement": -5,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 20,
+      "team": "ATL",
+      "teamName": "Atlanta Falcons",
+      "cbPoints": -1.4675,
+      "movement": 0,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 21,
+      "team": "TB",
+      "teamName": "Tampa Bay Buccaneers",
+      "cbPoints": -1.5298,
+      "movement": 3,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 22,
+      "team": "MIA",
+      "teamName": "Miami Dolphins",
+      "cbPoints": -2.3495,
+      "movement": 5,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 23,
+      "team": "IND",
+      "teamName": "Indianapolis Colts",
+      "cbPoints": -2.6907,
+      "movement": -2,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 24,
+      "team": "CLE",
+      "teamName": "Cleveland Browns",
+      "cbPoints": -2.9205,
+      "movement": 7,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 25,
+      "team": "WAS",
+      "teamName": "Washington Commanders",
+      "cbPoints": -3.0618,
+      "movement": -2,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 26,
+      "team": "LAC",
+      "teamName": "Los Angeles Chargers",
+      "cbPoints": -3.8982,
+      "movement": 2,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 27,
+      "team": "NO",
+      "teamName": "New Orleans Saints",
+      "cbPoints": -3.972,
+      "movement": -2,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 28,
+      "team": "ARI",
+      "teamName": "Arizona Cardinals",
+      "cbPoints": -4.0793,
+      "movement": -6,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 29,
+      "team": "PHI",
+      "teamName": "Philadelphia Eagles",
+      "cbPoints": -4.251,
+      "movement": -3,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "COVERAGE_LAG_WEEK6"
+    },
+    {
+      "rank": 30,
+      "team": "NYJ",
+      "teamName": "New York Jets",
+      "cbPoints": -4.4006,
+      "movement": 0,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 31,
+      "team": "LV",
+      "teamName": "Las Vegas Raiders",
+      "cbPoints": -5.3298,
+      "movement": -2,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    },
+    {
+      "rank": 32,
+      "team": "TEN",
+      "teamName": "Tennessee Titans",
+      "cbPoints": -6.5389,
+      "movement": 0,
+      "marketRank": null,
+      "marketPoints": null,
+      "marketGap": null,
+      "evidenceStatus": "UPDATED_THROUGH_WEEK7"
+    }
+  ],
+  "sourceMaxWeek": 7,
+  "refreshProvenance": {
+    "asOf": "2026-10-28T12:46:11.530652+00:00",
+    "targetWeek": 8,
+    "maxSourceWeek": 7,
+    "coverageLag": [
+      {
+        "team": "PHI",
+        "latestCoverageWeek": 6,
+        "expectedWeek": 7
+      },
+      {
+        "team": "DAL",
+        "latestCoverageWeek": 6,
+        "expectedWeek": 7
+      }
+    ],
+    "week7FinalsCrossChecked": [
+      "2026_07_NE_CHI",
+      "2026_07_PIT_NO",
+      "2026_07_CIN_BAL",
+      "2026_07_CLE_TEN",
+      "2026_07_IND_MIN",
+      "2026_07_MIA_NYJ",
+      "2026_07_NYG_HOU",
+      "2026_07_SF_ATL",
+      "2026_07_TB_CAR",
+      "2026_07_DEN_ARI",
+      "2026_07_GB_DET",
+      "2026_07_LA_LV",
+      "2026_07_KC_SEA",
+      "2026_07_DAL_PHI"
+    ],
+    "sources": [
+      {
+        "file": "play_by_play_2025.csv.gz",
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2025.csv.gz",
+        "bytes": 19105296,
+        "sha256": "2f135887790a013fd004e609e37096bb4816d5cc80b9f19122e1bad478961978",
+        "retrievedAt": "2026-10-27T22:18:46.222673+00:00"
+      },
+      {
+        "file": "play_by_play_2026.csv.gz",
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2026.csv.gz",
+        "bytes": 7359438,
+        "sha256": "5badd819b0c4c836dc0d5406f4a3e40af2244cbc8221e1f7389a098ec55eecc4",
+        "retrievedAt": "2026-10-28T12:44:58.490462+00:00"
+      },
+      {
+        "file": "advstats_week_def_2025.parquet",
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_def_2025.parquet",
+        "bytes": 155798,
+        "sha256": "a1224b47bd23840a9c0e072d6ed91dd0298777fd53570290b273080975bdb7ea",
+        "retrievedAt": "2026-10-27T22:18:45.747225+00:00"
+      },
+      {
+        "file": "advstats_week_def_2026.parquet",
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_def_2026.parquet",
+        "bytes": 79915,
+        "sha256": "861bea30b69ebd539b8cc893f3a82448bd8623831f6d210cb80c9f421115239f",
+        "retrievedAt": "2026-10-28T12:45:04.429661+00:00"
+      }
+    ],
+    "files": {
+      "core_inputs.csv": "a1c85d16d0ce76346a92f67eed38d3b119357a1bccf379116218a525fd478d23",
+      "coverage_inputs.csv": "e1db0e5bcb739348274e7172b87dc91b738671aaa3b53035ab151034d9c38a51"
+    }
+  },
+  "inputLimitations": "Dallas and Philadelphia defensive coverage remains through Week 6; all other Week 7 participants have Week 7 coverage. Efficiency and final-score ratings include all 14 Week 7 games.",
+  "previousSnapshotAsOf": "2026-10-21T11:44:27Z",
+  "marketNationalRatings": {
+    "nationalRatingStatus": "WITHHELD_DISCONNECTED_MARKET_GRAPH",
+    "reason": "Current Week 8 matchup comparisons await fresh market snapshots and matching projections; completed Week 7 lines are archived.",
+    "observedAt": "2026-10-25T16:37:36.743636+00:00",
+    "source": "Per-game FanDuel via The Odds API in projections.csv",
+    "graph": {
+      "connected": false,
+      "teamCount": 32,
+      "coveredTeams": 0,
+      "edgeCount": 0,
+      "components": 32,
+      "minimumEdgesForConnectivity": 31
+    }
+  },
+  "remainingMatchupComparisons": [],
+  "marketReferenceProvenance": {
+    "path": "nfl_data/site/market-reference.json",
+    "sha256": "da8ebf175e9e3592b868f2e1a5c31f1dfcea91bf73c3263f2e93c5f503b4789b",
+    "eligibleForGrading": false,
+    "executionVerified": false
+  }
+}
