@@ -131,6 +131,7 @@ def test_shell_preserves_four_model_information_layers():
 def test_shell_keeps_cfb_and_nfl_navigation():
     script = read("site-shell.js")
     assert 'index.html?league=nfl' in script
+    assert 'index.html?league=cfb' in script
     assert "CB_ACTIVE_LEAGUE" in script
     assert "league-switch" in read("site-shell.css")
 
@@ -146,8 +147,8 @@ def test_shared_navigation_exposes_league_aware_power_rankings():
 
 def test_recap_is_league_aware_and_uses_preserved_result_sources():
     page = read("recap.html")
-    assert "cfb/record-summary.json" in page
-    assert "nfl_data/site/results.csv" in page
+    assert "${league}/record-summary.json" in page
+    assert "nfl_data/site/config.json" in page
     assert "model-registry.json" in page
     assert "Poor weeks remain visible" in page
 
