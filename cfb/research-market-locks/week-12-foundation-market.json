@@ -13,19 +13,19 @@
     "fanduel",
     "draftkings"
   ],
-  "lockWindowMinutes": 30.0,
-  "maxObservationAgeMinutes": 35.0,
+  "lockWindowMinutes": 30,
+  "maxObservationAgeMinutes": 35,
   "scopeRestricted": false,
-  "updatedAt": "2026-11-21T03:57:19.894920Z",
+  "updatedAt": "2026-11-21T16:30:09.581067Z",
   "counts": {
     "foundationGames": 66,
     "activeScopeGames": 66,
     "pausedGames": 0,
     "preservedOutOfScopeLockedGames": 0,
-    "gamesWithMarketLock": 0,
-    "bookObservationsLocked": 0,
-    "newBookObservationsThisRun": 0,
-    "pendingGames": 54,
+    "gamesWithMarketLock": 11,
+    "bookObservationsLocked": 22,
+    "newBookObservationsThisRun": 22,
+    "pendingGames": 43,
     "missedGames": 12
   },
   "games": [
@@ -156,8 +156,35 @@
       "homeTeam": "Kansas",
       "kickoff": "2026-11-21T17:00:00Z",
       "projectionDigest": "a7d4f9756bb5120e1302b54c2144f463df0676138fd0cf64c80aec6f86182254",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-11-21T16:08:03Z",
+          "lockedAt": "2026-11-21T16:30:09.581067Z",
+          "marketSpreadHome": 4.5,
+          "marketTotal": 46.5,
+          "marketMoneylineHome": 162,
+          "marketMoneylineAway": -194,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -115,
+          "totalUnderPrice": -105,
+          "observationDigest": "bbc3c9b11201dab4ed4ff99a9338fc583f1549d3337f58ada25f1f080d2057ca"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-11-21T16:07:25Z",
+          "lockedAt": "2026-11-21T16:30:09.581067Z",
+          "marketSpreadHome": 5.5,
+          "marketTotal": 46.5,
+          "marketMoneylineHome": 170,
+          "marketMoneylineAway": -205,
+          "spreadHomePrice": -115,
+          "totalOverPrice": -115,
+          "totalUnderPrice": -105,
+          "observationDigest": "2237d6289049d900793020efaacaf9bcebfcc741707ca8ead15cffe1f3243dee"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-11-21-COLORADO-CINCINNATI",
@@ -166,8 +193,35 @@
       "homeTeam": "Cincinnati",
       "kickoff": "2026-11-21T17:00:00Z",
       "projectionDigest": "14654af40fd98707138a7d1e4401657fc13d4d6eb1dc064c398b5b4766efcac3",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-11-21T16:08:03Z",
+          "lockedAt": "2026-11-21T16:30:09.581067Z",
+          "marketSpreadHome": -2.5,
+          "marketTotal": 56.5,
+          "marketMoneylineHome": -142,
+          "marketMoneylineAway": 120,
+          "spreadHomePrice": -120,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "800581bac3c3bb73c7f93828863ddfa5a8939bcb57aebc8f862890eff091bcdd"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-11-21T16:07:25Z",
+          "lockedAt": "2026-11-21T16:30:09.581067Z",
+          "marketSpreadHome": -3,
+          "marketTotal": 56.5,
+          "marketMoneylineHome": -155,
+          "marketMoneylineAway": 130,
+          "spreadHomePrice": -115,
+          "totalOverPrice": -108,
+          "totalUnderPrice": -112,
+          "observationDigest": "09065ba11ce437996e8715b7a6e0bdc086806d03d366df45e68298c09a8d112c"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-11-21-EASTCAROLINA-ARMY",
@@ -176,8 +230,35 @@
       "homeTeam": "Army",
       "kickoff": "2026-11-21T17:00:00Z",
       "projectionDigest": "2e648a1f8c3b20d209e9a2290e669977f6541ae502a50e4499ae92ea11c4d621",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-11-21T16:08:03Z",
+          "lockedAt": "2026-11-21T16:30:09.581067Z",
+          "marketSpreadHome": -4.5,
+          "marketTotal": 45.5,
+          "marketMoneylineHome": -200,
+          "marketMoneylineAway": 164,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -115,
+          "totalUnderPrice": -105,
+          "observationDigest": "aebe67152772a3f20cd43244ac1bd077c60d5123dfb7f5bdc21d4b6e1a9334d5"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-11-21T16:07:25Z",
+          "lockedAt": "2026-11-21T16:30:09.581067Z",
+          "marketSpreadHome": -4.5,
+          "marketTotal": 45.5,
+          "marketMoneylineHome": -205,
+          "marketMoneylineAway": 170,
+          "spreadHomePrice": -115,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "10d0e45363b9e36cfd3c46db7b9e3df81ac7e90a5173a022b0011f151e12bd66"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-11-21-MEMPHIS-NAVY",
@@ -186,8 +267,35 @@
       "homeTeam": "Navy",
       "kickoff": "2026-11-21T17:00:00Z",
       "projectionDigest": "5cf1fe571608397e723bf6ef23ff6ad97a1eccb51aff7c126afb26163bdb6ea7",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-11-21T16:08:03Z",
+          "lockedAt": "2026-11-21T16:30:09.581067Z",
+          "marketSpreadHome": 2.5,
+          "marketTotal": 68.5,
+          "marketMoneylineHome": 116,
+          "marketMoneylineAway": -138,
+          "spreadHomePrice": -106,
+          "totalOverPrice": -106,
+          "totalUnderPrice": -114,
+          "observationDigest": "bfc834d021f194988630c290b53c7f9ee237c4a63be3db1cd40a1e968f86c923"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-11-21T16:07:25Z",
+          "lockedAt": "2026-11-21T16:30:09.581067Z",
+          "marketSpreadHome": 2.5,
+          "marketTotal": 68.5,
+          "marketMoneylineHome": 120,
+          "marketMoneylineAway": -142,
+          "spreadHomePrice": -105,
+          "totalOverPrice": -108,
+          "totalUnderPrice": -112,
+          "observationDigest": "3baf3f2522e5b1bdfdab61d902781c612174f8fe9166d5b08aa7952b608e434e"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-11-21-NORTHTEXAS-TULANE",
@@ -196,8 +304,35 @@
       "homeTeam": "Tulane",
       "kickoff": "2026-11-21T17:00:00Z",
       "projectionDigest": "7406b4665630c15ff026a2d6872222f9fd915897f5205f557c7f658c22630839",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-11-21T16:08:03Z",
+          "lockedAt": "2026-11-21T16:30:09.581067Z",
+          "marketSpreadHome": 7.5,
+          "marketTotal": 56.5,
+          "marketMoneylineHome": 240,
+          "marketMoneylineAway": -295,
+          "spreadHomePrice": -115,
+          "totalOverPrice": -105,
+          "totalUnderPrice": -115,
+          "observationDigest": "8014acffc31f1b210d07c0c7442fce1f75a41ba3a9d82a5f3ecd936a5060a01e"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-11-21T16:07:25Z",
+          "lockedAt": "2026-11-21T16:30:09.581067Z",
+          "marketSpreadHome": 7.5,
+          "marketTotal": 56.5,
+          "marketMoneylineHome": 235,
+          "marketMoneylineAway": -290,
+          "spreadHomePrice": -115,
+          "totalOverPrice": -108,
+          "totalUnderPrice": -112,
+          "observationDigest": "fd2ece809b1b7f1b5577a0b40ccfc74d45b568e6daa1e2146890d3131062572d"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-11-21-NORTHWESTERN-MINNESOTA",
@@ -206,8 +341,35 @@
       "homeTeam": "Minnesota",
       "kickoff": "2026-11-21T17:00:00Z",
       "projectionDigest": "e99ec7e3946450b7a7d4295b8bd08a16ca6b230c2674af77f0097edf5349f0e1",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-11-21T16:08:03Z",
+          "lockedAt": "2026-11-21T16:30:09.581067Z",
+          "marketSpreadHome": 2.5,
+          "marketTotal": 41.5,
+          "marketMoneylineHome": 112,
+          "marketMoneylineAway": -134,
+          "spreadHomePrice": -106,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "97669708276eec150cc2ad3dff2531109c9d779f1aeff81199fc7876c9abc012"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-11-21T16:07:25Z",
+          "lockedAt": "2026-11-21T16:30:09.581067Z",
+          "marketSpreadHome": 3,
+          "marketTotal": 41.5,
+          "marketMoneylineHome": 124,
+          "marketMoneylineAway": -148,
+          "spreadHomePrice": -118,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "6a9338488d5b5e201b34bcfa87d87027af722d36eb254aae7442186959bdd794"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-11-21-OHIOSTATE-NEBRASKA",
@@ -216,8 +378,35 @@
       "homeTeam": "Nebraska",
       "kickoff": "2026-11-21T17:00:00Z",
       "projectionDigest": "ec833ab0e69a6c28056939cdb8f6350c4b71c2d11979a11de29acee5ae6caae1",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-11-21T16:08:03Z",
+          "lockedAt": "2026-11-21T16:30:09.581067Z",
+          "marketSpreadHome": 3.5,
+          "marketTotal": 41.5,
+          "marketMoneylineHome": 155,
+          "marketMoneylineAway": -188,
+          "spreadHomePrice": 100,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "4623cbb5ba1b7ca954cf017d6d00f5fd5c4f38bfc951417a532ab8c4a2f975dc"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-11-21T16:07:25Z",
+          "lockedAt": "2026-11-21T16:30:09.581067Z",
+          "marketSpreadHome": 3.5,
+          "marketTotal": 41.5,
+          "marketMoneylineHome": 145,
+          "marketMoneylineAway": -175,
+          "spreadHomePrice": -108,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "0416070af31e53bdf2edc5627d30a23c69d3244347329291963c0262a4d7183e"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-11-21-SYRACUSE-BOSTONCOLLEGE",
@@ -226,8 +415,35 @@
       "homeTeam": "Boston College",
       "kickoff": "2026-11-21T17:00:00Z",
       "projectionDigest": "0b01d6d1e0b7db679ae59ef5db2364572e3060a129d2f07a065ae08345fd6966",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-11-21T16:08:03Z",
+          "lockedAt": "2026-11-21T16:30:09.581067Z",
+          "marketSpreadHome": 2.5,
+          "marketTotal": 52.5,
+          "marketMoneylineHome": 125,
+          "marketMoneylineAway": -150,
+          "spreadHomePrice": 104,
+          "totalOverPrice": -106,
+          "totalUnderPrice": -114,
+          "observationDigest": "df6de369ac4a8b5af1051253bba8b76e114530e74811e0858cabc2cdf33e8a19"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-11-21T16:07:25Z",
+          "lockedAt": "2026-11-21T16:30:09.581067Z",
+          "marketSpreadHome": 3,
+          "marketTotal": 52.5,
+          "marketMoneylineHome": 130,
+          "marketMoneylineAway": -155,
+          "spreadHomePrice": -112,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "761da14b8b047f88fee6606da0ae0876cc61137a24f160fdee42f73c620d3b2a"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-11-21-VANDERBILT-FLORIDA",
@@ -236,8 +452,35 @@
       "homeTeam": "Florida",
       "kickoff": "2026-11-21T17:00:00Z",
       "projectionDigest": "34a50ad03b21c6084bcbb9ed12ca501a4237c5d70cbb8a2021d75ed7acdd1a33",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-11-21T16:08:03Z",
+          "lockedAt": "2026-11-21T16:30:09.581067Z",
+          "marketSpreadHome": -13.5,
+          "marketTotal": 47.5,
+          "marketMoneylineHome": -550,
+          "marketMoneylineAway": 420,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -115,
+          "totalUnderPrice": -105,
+          "observationDigest": "4b0358809a50eb88eb4452bd8d4e5978149863deab3f7470e3a19a4c7a71732a"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-11-21T16:07:25Z",
+          "lockedAt": "2026-11-21T16:30:09.581067Z",
+          "marketSpreadHome": -13.5,
+          "marketTotal": 47.5,
+          "marketMoneylineHome": -575,
+          "marketMoneylineAway": 425,
+          "spreadHomePrice": -115,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "bd395ebf2f0e92f1e5b3f4968c6337dc5de13811d0a8a547bf2f6235d3582a6f"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-11-21-WAKEFOREST-GEORGIATECH",
@@ -246,8 +489,35 @@
       "homeTeam": "Georgia Tech",
       "kickoff": "2026-11-21T17:00:00Z",
       "projectionDigest": "c340841538b2a261da196df64a433f511da5a819a328d29213ac1f1c0a151281",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-11-21T16:08:03Z",
+          "lockedAt": "2026-11-21T16:30:09.581067Z",
+          "marketSpreadHome": 21.5,
+          "marketTotal": 56.5,
+          "marketMoneylineHome": 1060,
+          "marketMoneylineAway": -2000,
+          "spreadHomePrice": -108,
+          "totalOverPrice": -108,
+          "totalUnderPrice": -112,
+          "observationDigest": "120364633a580dc1a93d2fa8aaff11f3156b37be21baa2eb947bb747f1c65683"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-11-21T16:07:25Z",
+          "lockedAt": "2026-11-21T16:30:09.581067Z",
+          "marketSpreadHome": 21.5,
+          "marketTotal": 55.5,
+          "marketMoneylineHome": 1000,
+          "marketMoneylineAway": -1800,
+          "spreadHomePrice": -108,
+          "totalOverPrice": -112,
+          "totalUnderPrice": -108,
+          "observationDigest": "53e3f9cf2531d38d9220a5bae7edd5b88f563a81c03775eaaff2ea67cceeca23"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-11-21-WISCONSIN-PURDUE",
@@ -256,8 +526,35 @@
       "homeTeam": "Purdue",
       "kickoff": "2026-11-21T17:00:00Z",
       "projectionDigest": "d3a3d6b3717a25d265add8f12b3599ae5b2709ce422255a904d3a37bdace1a21",
-      "books": {},
-      "status": "PENDING"
+      "books": {
+        "fanduel": {
+          "book": "fanduel",
+          "marketObservedAt": "2026-11-21T16:08:03Z",
+          "lockedAt": "2026-11-21T16:30:09.581067Z",
+          "marketSpreadHome": 4.5,
+          "marketTotal": 46.5,
+          "marketMoneylineHome": 162,
+          "marketMoneylineAway": -194,
+          "spreadHomePrice": -110,
+          "totalOverPrice": -110,
+          "totalUnderPrice": -110,
+          "observationDigest": "2b846a8edd16dec03efbd819d1b1477b1872d759fabafb82bcc4a25f0d4d653f"
+        },
+        "draftkings": {
+          "book": "draftkings",
+          "marketObservedAt": "2026-11-21T16:07:25Z",
+          "lockedAt": "2026-11-21T16:30:09.581067Z",
+          "marketSpreadHome": 4.5,
+          "marketTotal": 46.5,
+          "marketMoneylineHome": 170,
+          "marketMoneylineAway": -205,
+          "spreadHomePrice": -108,
+          "totalOverPrice": -108,
+          "totalUnderPrice": -112,
+          "observationDigest": "439748a9cb0af6b50264242ed43ef828bea21e13bc8475945da2b6e3cd407c0e"
+        }
+      },
+      "status": "LOCKED"
     },
     {
       "gameId": "2026-11-21-NORTHCAROLINA-VIRGINIA",
