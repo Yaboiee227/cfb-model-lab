@@ -95,7 +95,7 @@
 
   function renderMatchups() {
     const games = [...(doc.remainingMatchupComparisons || [])].sort((a,b) => Number(b.gapMagnitude || 0) - Number(a.gapMagnitude || 0));
-    $('matchupCount').textContent = `${games.length} current comparisons`;
+    $('matchupCount').textContent = `${games.length} snapshot comparisons · ${dateLabel(doc.snapshotAsOf)} · newer markets may differ`;
     $('matchupsBody').innerHTML = games.length ? games.map(g => `
       <tr>
         <td>${matchupCell(g)}</td>
