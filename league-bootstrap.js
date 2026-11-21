@@ -278,7 +278,7 @@
     setText('.brand-copy small', 'NFL intelligence');
     setText('.hero-kicker-row .eyebrow', 'NFL MODEL • PROSPECTIVE VALIDATION');
     setText('.hero-kicker-row .research-chip', 'Research preview • HOLD');
-    setText('.hero-lede', 'Independent NFL projections for score, spread and total—paired with calibrated research win probability, market comparison, reliability, personnel, weather and transparent validation gates.');
+    setText('.hero-lede', 'Independent NFL projections for score, spread and total, with market comparisons, personnel, weather and transparent validation gates. Win probabilities are shown when available.');
     setText('#footerDisclaimer', REQUIRED_DISCLAIMER);
     setText('#projectionDisclaimer', REQUIRED_DISCLAIMER);
 
