@@ -9,37 +9,37 @@
   "modelId": "cfb-rebuild-foundation-v1-shadow",
   "sourceLockDigest": "b976d6b288a81f075b0d2f45cba75471c9909bd569f079e6ba826b158a2df65e",
   "sourceLockedAt": "2026-11-17T14:16:22.891673Z",
-  "gradedAt": "2026-11-22T01:35:43.874862Z",
-  "status": "IN_PROGRESS",
+  "gradedAt": "2026-11-22T07:58:07.398945Z",
+  "status": "COMPLETE",
   "counts": {
     "games": 66,
-    "final": 48,
-    "pending": 18,
+    "final": 66,
+    "pending": 0,
     "review": 0,
     "void": 0
   },
   "metrics": {
     "margin": {
-      "games": 48,
-      "mae": 11.978272471387932,
-      "rmse": 15.181633750317634,
-      "bias": 1.5497111512775612
+      "games": 66,
+      "mae": 11.636402644767362,
+      "rmse": 14.866913797928673,
+      "bias": 1.6704238471304205
     },
     "total": {
-      "games": 48,
-      "mae": 10.966980030400757,
-      "rmse": 13.611760574753204,
-      "bias": -1.0485170957776673
+      "games": 66,
+      "mae": 11.126599003042916,
+      "rmse": 13.774189252590173,
+      "bias": 0.4803303229843796
     },
     "straightUp": {
-      "wins": 31,
-      "losses": 17,
-      "graded": 48,
-      "accuracyPct": 64.58333333333333
+      "wins": 46,
+      "losses": 20,
+      "graded": 66,
+      "accuracyPct": 69.6969696969697
     },
     "winProbability": {
-      "games": 48,
-      "brierScore": 0.21560166909338377
+      "games": 66,
+      "brierScore": 0.19543607116367068
     }
   },
   "games": [
@@ -1690,8 +1690,24 @@
         "homeWinProbability": 72.13894919757638,
         "winner": "Texas State"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 14,
+        "homeScore": 42,
+        "marginHome": 28,
+        "total": 56,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -18.701871261889746,
+        "absoluteMargin": 18.701871261889746,
+        "total": 1.829184052275508,
+        "absoluteTotal": 1.829184052275508
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-MARYLAND-USC",
@@ -1708,8 +1724,24 @@
         "homeWinProbability": 81.88384746979587,
         "winner": "USC"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 21,
+        "homeScore": 35,
+        "marginHome": 14,
+        "total": 56,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 0.43011717221974877,
+        "absoluteMargin": 0.43011717221974877,
+        "total": 1.3187379769665881,
+        "absoluteTotal": 1.3187379769665881
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-ARIZONA-KANSASSTATE",
@@ -1726,8 +1758,24 @@
         "homeWinProbability": 29.09932742486615,
         "winner": "Arizona"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 35,
+        "homeScore": 28,
+        "marginHome": -7,
+        "total": 63,
+        "overtime": true,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -1.7201159108334814,
+        "absoluteMargin": 1.7201159108334814,
+        "total": -5.098162548244048,
+        "absoluteTotal": 5.098162548244048
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-ARKANSASSTATE-LOUISIANATECH",
@@ -1744,8 +1792,24 @@
         "homeWinProbability": 83.92178950786389,
         "winner": "Louisiana Tech"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 3,
+        "homeScore": 48,
+        "marginHome": 45,
+        "total": 51,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -29.297850628287396,
+        "absoluteMargin": 29.297850628287396,
+        "total": 2.2184194521412337,
+        "absoluteTotal": 2.2184194521412337
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-UNLV-SANJOSSTATE",
@@ -1762,8 +1826,24 @@
         "homeWinProbability": 50.02592228374431,
         "winner": "San José State"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 24,
+        "homeScore": 22,
+        "marginHome": -2,
+        "total": 46,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 2.010292947247031,
+        "absoluteMargin": 2.010292947247031,
+        "total": -1.301443901183788,
+        "absoluteTotal": 1.301443901183788
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
     },
     {
       "gameId": "2026-11-21-VIRGINIATECH-MIAMI",
@@ -1780,8 +1860,24 @@
         "homeWinProbability": 93.90619537931767,
         "winner": "Miami"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 20,
+        "homeScore": 28,
+        "marginHome": 8,
+        "total": 48,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 16.50484048555083,
+        "absoluteMargin": 16.50484048555083,
+        "total": 17.08420026702275,
+        "absoluteTotal": 17.08420026702275
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-COLORADOSTATE-FRESNOSTATE",
@@ -1798,8 +1894,24 @@
         "homeWinProbability": 93.24223935851505,
         "winner": "Fresno State"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 42,
+        "homeScore": 49,
+        "marginHome": 7,
+        "total": 91,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 16.667359952642187,
+        "absoluteMargin": 16.667359952642187,
+        "total": -20.033930172140032,
+        "absoluteTotal": 20.033930172140032
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-GEORGIA-SOUTHCAROLINA",
@@ -1816,8 +1928,24 @@
         "homeWinProbability": 25.593886955415083,
         "winner": "Georgia"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 34,
+        "homeScore": 6,
+        "marginHome": -28,
+        "total": 40,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 17.60976923071496,
+        "absoluteMargin": 17.60976923071496,
+        "total": 17.463127911659456,
+        "absoluteTotal": 17.463127911659456
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-KENTUCKY-MISSOURI",
@@ -1834,8 +1962,24 @@
         "homeWinProbability": 65.48724848006367,
         "winner": "Missouri"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 14,
+        "homeScore": 28,
+        "marginHome": 14,
+        "total": 42,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -7.68730729468745,
+        "absoluteMargin": 7.68730729468745,
+        "total": 10.53479138054194,
+        "absoluteTotal": 10.53479138054194
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-PITTSBURGH-LOUISVILLE",
@@ -1852,8 +1996,24 @@
         "homeWinProbability": 77.92840621045185,
         "winner": "Louisville"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 10,
+        "homeScore": 42,
+        "marginHome": 32,
+        "total": 52,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -19.806124761671725,
+        "absoluteMargin": 19.806124761671725,
+        "total": -1.2255442925637396,
+        "absoluteTotal": 1.2255442925637396
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-SMU-NOTREDAME",
@@ -1870,8 +2030,24 @@
         "homeWinProbability": 90.39800086305041,
         "winner": "Notre Dame"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 3,
+        "homeScore": 24,
+        "marginHome": 21,
+        "total": 27,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -0.33462686949075504,
+        "absoluteMargin": 0.33462686949075504,
+        "total": 29.82729690265625,
+        "absoluteTotal": 29.82729690265625
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-STANFORD-CALIFORNIA",
@@ -1888,8 +2064,24 @@
         "homeWinProbability": 47.92529243950382,
         "winner": "Stanford"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 44,
+        "homeScore": 28,
+        "marginHome": -16,
+        "total": 72,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 15.175825357375714,
+        "absoluteMargin": 15.175825357375714,
+        "total": -14.94540047817192,
+        "absoluteTotal": 14.94540047817192
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-UTSA-UAB",
@@ -1906,8 +2098,24 @@
         "homeWinProbability": 55.91223863761101,
         "winner": "UAB"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 19,
+        "homeScore": 17,
+        "marginHome": -2,
+        "total": 36,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 4.356229056001389,
+        "absoluteMargin": 4.356229056001389,
+        "total": 13.630666843628255,
+        "absoluteTotal": 13.630666843628255
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
     },
     {
       "gameId": "2026-11-21-UTAH-TCU",
@@ -1924,8 +2132,24 @@
         "homeWinProbability": 39.44703799355684,
         "winner": "Utah"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 38,
+        "homeScore": 17,
+        "marginHome": -21,
+        "total": 55,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 16.759639860535962,
+        "absoluteMargin": 16.759639860535962,
+        "total": -11.992372439078004,
+        "absoluteTotal": 11.992372439078004
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-SANDIEGOSTATE-BOISESTATE",
@@ -1942,8 +2166,24 @@
         "homeWinProbability": 88.83522094442802,
         "winner": "Boise State"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 22,
+        "homeScore": 20,
+        "marginHome": -2,
+        "total": 42,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 21.291083598546578,
+        "absoluteMargin": 21.291083598546578,
+        "total": 23.559135526735403,
+        "absoluteTotal": 23.559135526735403
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
     },
     {
       "gameId": "2026-11-21-OKLAHOMASTATE-ARIZONASTATE",
@@ -1960,8 +2200,24 @@
         "homeWinProbability": 41.67737255733663,
         "winner": "Oklahoma State"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 30,
+        "homeScore": 27,
+        "marginHome": -3,
+        "total": 57,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -0.329003566561763,
+        "absoluteMargin": 0.329003566561763,
+        "total": 9.633779039733383,
+        "absoluteTotal": 9.633779039733383
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-HAWAII-NEVADA",
@@ -1978,8 +2234,24 @@
         "homeWinProbability": 67.72036799847373,
         "winner": "Nevada"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 8,
+        "homeScore": 16,
+        "marginHome": 8,
+        "total": 24,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -0.7149283459479037,
+        "absoluteMargin": 0.7149283459479037,
+        "total": 17.886217974585875,
+        "absoluteTotal": 17.886217974585875
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-UTAHSTATE-OREGONSTATE",
@@ -1996,8 +2268,24 @@
         "homeWinProbability": 74.92786064441496,
         "winner": "Oregon State"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 24,
+        "homeScore": 31,
+        "marginHome": 7,
+        "total": 55,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 3.648509627820637,
+        "absoluteMargin": 3.648509627820637,
+        "total": -8.358081582268028,
+        "absoluteTotal": 8.358081582268028
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     }
   ],
   "policy": "Research-only prospective performance. Never merge these results into the established canonical record or use postgame outcomes to rewrite the frozen projections."
