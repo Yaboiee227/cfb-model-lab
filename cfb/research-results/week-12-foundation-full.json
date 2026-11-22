@@ -9,37 +9,37 @@
   "modelId": "cfb-rebuild-foundation-v1-shadow",
   "sourceLockDigest": "b976d6b288a81f075b0d2f45cba75471c9909bd569f079e6ba826b158a2df65e",
   "sourceLockedAt": "2026-11-17T14:16:22.891673Z",
-  "gradedAt": "2026-11-21T21:37:18.748322Z",
+  "gradedAt": "2026-11-22T01:09:03.023198Z",
   "status": "IN_PROGRESS",
   "counts": {
     "games": 66,
-    "final": 26,
-    "pending": 40,
+    "final": 47,
+    "pending": 19,
     "review": 0,
     "void": 0
   },
   "metrics": {
     "margin": {
-      "games": 26,
-      "mae": 11.791048019093658,
-      "rmse": 15.220512302877259,
-      "bias": 0.5247519040628573
+      "games": 47,
+      "mae": 11.825744801505703,
+      "rmse": 15.085942277642417,
+      "bias": 1.9900682599399042
     },
     "total": {
-      "games": 26,
-      "mae": 12.464768026176838,
-      "rmse": 15.210533997594254,
-      "bias": -1.956936927098242
+      "games": 47,
+      "mae": 10.914857082270547,
+      "rmse": 13.61587921087501,
+      "bias": -1.3562889189329483
     },
     "straightUp": {
-      "wins": 15,
-      "losses": 11,
-      "graded": 26,
-      "accuracyPct": 57.69230769230769
+      "wins": 30,
+      "losses": 17,
+      "graded": 47,
+      "accuracyPct": 63.829787234042556
     },
     "winProbability": {
-      "games": 26,
-      "brierScore": 0.22808007199426314
+      "games": 47,
+      "brierScore": 0.21581428201972633
     }
   },
   "games": [
@@ -472,7 +472,7 @@
         "homeScore": 29,
         "marginHome": -2,
         "total": 60,
-        "overtime": false,
+        "overtime": true,
         "source": "ESPN"
       },
       "errors": {
@@ -942,8 +942,24 @@
         "homeWinProbability": 91.69243245918493,
         "winner": "Tulsa"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 14,
+        "homeScore": 42,
+        "marginHome": 28,
+        "total": 56,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -6.065643270674798,
+        "absoluteMargin": 6.065643270674798,
+        "total": -1.9559960818647824,
+        "absoluteTotal": 1.9559960818647824
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-MIDDLETENNESSEE-SAMHOUSTON",
@@ -960,8 +976,24 @@
         "homeWinProbability": 36.557150403814425,
         "winner": "Middle Tennessee"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 31,
+        "homeScore": 28,
+        "marginHome": -3,
+        "total": 59,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -2.4429782021978212,
+        "absoluteMargin": 2.4429782021978212,
+        "total": -8.380917158987522,
+        "absoluteTotal": 8.380917158987522
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-MISSOURISTATE-JACKSONVILLESTATE",
@@ -978,8 +1010,24 @@
         "homeWinProbability": 80.45039251345452,
         "winner": "Jacksonville State"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 20,
+        "homeScore": 25,
+        "marginHome": 5,
+        "total": 45,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 8.588528450976376,
+        "absoluteMargin": 8.588528450976376,
+        "total": 7.436776916089421,
+        "absoluteTotal": 7.436776916089421
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-IOWA-ILLINOIS",
@@ -996,8 +1044,24 @@
         "homeWinProbability": 46.23237806313206,
         "winner": "Iowa"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 34,
+        "homeScore": 17,
+        "marginHome": -17,
+        "total": 51,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 15.501761716256759,
+        "absoluteMargin": 15.501761716256759,
+        "total": -11.612181097026493,
+        "absoluteTotal": 11.612181097026493
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-SOUTHFLORIDA-FLORIDAATLANTIC",
@@ -1032,8 +1096,24 @@
         "homeWinProbability": 76.66386481981739,
         "winner": "App State"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 16,
+        "homeScore": 17,
+        "marginHome": 1,
+        "total": 33,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 10.529263278145969,
+        "absoluteMargin": 10.529263278145969,
+        "total": 14.129345608266611,
+        "absoluteTotal": 14.129345608266611
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-COASTALCAROLINA-LOUISIANA",
@@ -1050,8 +1130,24 @@
         "homeWinProbability": 75.18581445621646,
         "winner": "Louisiana"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 24,
+        "homeScore": 38,
+        "marginHome": 14,
+        "total": 62,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -3.2227473126393136,
+        "absoluteMargin": 3.2227473126393136,
+        "total": -11.845876929210505,
+        "absoluteTotal": 11.845876929210505
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-DELAWARE-NEWMEXICOSTATE",
@@ -1068,8 +1164,24 @@
         "homeWinProbability": 45.36754493581016,
         "winner": "Delaware"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 42,
+        "homeScore": 30,
+        "marginHome": -12,
+        "total": 72,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 10.156440467377507,
+        "absoluteMargin": 10.156440467377507,
+        "total": -17.976924513782535,
+        "absoluteTotal": 17.976924513782535
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-FLORIDAINTERNATIONAL-KENNESAWSTATE",
@@ -1086,8 +1198,24 @@
         "homeWinProbability": 63.669030199481846,
         "winner": "Kennesaw State"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 24,
+        "homeScore": 35,
+        "marginHome": 11,
+        "total": 59,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -5.461651970288841,
+        "absoluteMargin": 5.461651970288841,
+        "total": -15.043326815119315,
+        "absoluteTotal": 15.043326815119315
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-ARKANSAS-TEXAS",
@@ -1104,8 +1232,24 @@
         "homeWinProbability": 81.80543276100921,
         "winner": "Texas"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 3,
+        "homeScore": 45,
+        "marginHome": 42,
+        "total": 48,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -27.616966553318967,
+        "absoluteMargin": 27.616966553318967,
+        "total": -3.029239990947346,
+        "absoluteTotal": 3.029239990947346
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-INDIANA-WASHINGTON",
@@ -1122,8 +1266,24 @@
         "homeWinProbability": 44.74217011676566,
         "winner": "Indiana"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 24,
+        "homeScore": 27,
+        "marginHome": 3,
+        "total": 51,
+        "overtime": true,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -5.0938044182929545,
+        "absoluteMargin": 5.0938044182929545,
+        "total": -8.821486094743605,
+        "absoluteTotal": 8.821486094743605
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
     },
     {
       "gameId": "2026-11-21-LSU-TENNESSEE",
@@ -1140,8 +1300,24 @@
         "homeWinProbability": 65.10009121750281,
         "winner": "Tennessee"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 13,
+        "homeScore": 27,
+        "marginHome": 14,
+        "total": 40,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -7.8533956690453905,
+        "absoluteMargin": 7.8533956690453905,
+        "total": 4.885519610891009,
+        "absoluteTotal": 4.885519610891009
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-NCSTATE-FLORIDASTATE",
@@ -1158,8 +1334,24 @@
         "homeWinProbability": 78.13269216391897,
         "winner": "Florida State"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 28,
+        "homeScore": 10,
+        "marginHome": -18,
+        "total": 38,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 30.303254326633912,
+        "absoluteMargin": 30.303254326633912,
+        "total": 19.68505202398044,
+        "absoluteTotal": 19.68505202398044
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
     },
     {
       "gameId": "2026-11-21-OLDDOMINION-UCONN",
@@ -1176,8 +1368,24 @@
         "homeWinProbability": 80.65697370739629,
         "winner": "UConn"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 21,
+        "homeScore": 29,
+        "marginHome": 8,
+        "total": 50,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 5.707418998806432,
+        "absoluteMargin": 5.707418998806432,
+        "total": -0.32620359763345874,
+        "absoluteTotal": 0.32620359763345874
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-RUTGERS-PENNSTATE",
@@ -1194,8 +1402,24 @@
         "homeWinProbability": 91.30394784108856,
         "winner": "Penn State"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 25,
+        "homeScore": 24,
+        "marginHome": -1,
+        "total": 49,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 22.538898460070946,
+        "absoluteMargin": 22.538898460070946,
+        "total": 5.437033496343993,
+        "absoluteTotal": 5.437033496343993
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
     },
     {
       "gameId": "2026-11-21-TEXASTECH-BAYLOR",
@@ -1212,8 +1436,24 @@
         "homeWinProbability": 53.69000316255562,
         "winner": "Baylor"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 20,
+        "homeScore": 10,
+        "marginHome": -10,
+        "total": 30,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 11.46728292174437,
+        "absoluteMargin": 11.46728292174437,
+        "total": 28.723897789461468,
+        "absoluteTotal": 28.723897789461468
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
     },
     {
       "gameId": "2026-11-21-UCLA-MICHIGAN",
@@ -1230,8 +1470,24 @@
         "homeWinProbability": 30.039325681078378,
         "winner": "UCLA"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 16,
+        "homeScore": 18,
+        "marginHome": 2,
+        "total": 34,
+        "overtime": true,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -10.28900101962926,
+        "absoluteMargin": 10.28900101962926,
+        "total": 3.9147541500274627,
+        "absoluteTotal": 3.9147541500274627
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
     },
     {
       "gameId": "2026-11-21-TEXASAM-OKLAHOMA",
@@ -1248,8 +1504,24 @@
         "homeWinProbability": 65.48402582535823,
         "winner": "Oklahoma"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 7,
+        "homeScore": 28,
+        "marginHome": 21,
+        "total": 35,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -14.688692638888012,
+        "absoluteMargin": 14.688692638888012,
+        "total": 2.504703441798462,
+        "absoluteTotal": 2.504703441798462
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-GEORGIASOUTHERN-TROY",
@@ -1266,8 +1538,24 @@
         "homeWinProbability": 32.25585600016118,
         "winner": "Georgia Southern"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 45,
+        "homeScore": 7,
+        "marginHome": -38,
+        "total": 52,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 30.704432956484816,
+        "absoluteMargin": 30.704432956484816,
+        "total": -6.200457253649773,
+        "absoluteTotal": 6.200457253649773
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-GEORGIASTATE-MARSHALL",
@@ -1284,8 +1572,24 @@
         "homeWinProbability": 47.62985065432516,
         "winner": "Georgia State"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 27,
+        "homeScore": 28,
+        "marginHome": 1,
+        "total": 55,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -1.9416681764205208,
+        "absoluteMargin": 1.9416681764205208,
+        "total": 1.3074645135530147,
+        "absoluteTotal": 1.3074645135530147
+      },
+      "straightUp": {
+        "result": "LOSS"
+      }
     },
     {
       "gameId": "2026-11-21-NORTHERNILLINOIS-NORTHDAKOTASTATE",
@@ -1302,8 +1606,24 @@
         "homeWinProbability": 94.12469591759513,
         "winner": "North Dakota State"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 25,
+        "homeScore": 31,
+        "marginHome": 6,
+        "total": 56,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 18.796010079244105,
+        "absoluteMargin": 18.796010079244105,
+        "total": -9.632563235727751,
+        "absoluteTotal": 9.632563235727751
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-SOUTHALABAMA-SOUTHERNMISS",
@@ -1320,8 +1640,24 @@
         "homeWinProbability": 38.26942377852849,
         "winner": "South Alabama"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 40,
+        "homeScore": 35,
+        "marginHome": -5,
+        "total": 75,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": 0.27291628719589767,
+        "absoluteMargin": 0.27291628719589767,
+        "total": -6.064593867013073,
+        "absoluteTotal": 6.064593867013073
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-WASHINGTONSTATE-TEXASSTATE",
