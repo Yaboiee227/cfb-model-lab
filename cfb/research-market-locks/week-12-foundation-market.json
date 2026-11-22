@@ -16,7 +16,7 @@
   "lockWindowMinutes": 30.0,
   "maxObservationAgeMinutes": 35.0,
   "scopeRestricted": false,
-  "updatedAt": "2026-11-22T01:35:38.953458Z",
+  "updatedAt": "2026-11-22T07:58:02.337620Z",
   "counts": {
     "foundationGames": 66,
     "activeScopeGames": 66,
@@ -24,9 +24,9 @@
     "preservedOutOfScopeLockedGames": 0,
     "gamesWithMarketLock": 12,
     "bookObservationsLocked": 24,
-    "newBookObservationsThisRun": 2,
-    "pendingGames": 4,
-    "missedGames": 50
+    "newBookObservationsThisRun": 0,
+    "pendingGames": 0,
+    "missedGames": 54
   },
   "games": [
     {
@@ -981,7 +981,7 @@
       "kickoff": "2026-11-22T02:30:00Z",
       "projectionDigest": "d477005e18d00eddaba78a73404e259ddb4b9512dda91819ee6ad2db906393fc",
       "books": {},
-      "status": "PENDING"
+      "status": "MISSED"
     },
     {
       "gameId": "2026-11-21-OKLAHOMASTATE-ARIZONASTATE",
@@ -991,7 +991,7 @@
       "kickoff": "2026-11-22T03:15:00Z",
       "projectionDigest": "33b038d990be558013ffd035cea2e8df052e009bc15be48c8dac4ce0633f222f",
       "books": {},
-      "status": "PENDING"
+      "status": "MISSED"
     },
     {
       "gameId": "2026-11-21-HAWAII-NEVADA",
@@ -1001,7 +1001,7 @@
       "kickoff": "2026-11-22T03:30:00Z",
       "projectionDigest": "8c1b2da3363f6f1675626a455d9ce5f85b47b2530e3c21978dc77522eebedfab",
       "books": {},
-      "status": "PENDING"
+      "status": "MISSED"
     },
     {
       "gameId": "2026-11-21-UTAHSTATE-OREGONSTATE",
@@ -1011,7 +1011,7 @@
       "kickoff": "2026-11-22T03:30:00Z",
       "projectionDigest": "705b768d51b46d43f0ad028c1acbc5f52f5ff7835c2f02aedb5de48b9ad1d87e",
       "books": {},
-      "status": "PENDING"
+      "status": "MISSED"
     }
   ],
   "policy": "Research-only per-book publication-window capture. FanDuel and DraftKings are preserved independently; no consensus or canonical benchmark is inferred. Existing book observations are immutable and post-kickoff reconstruction is prohibited. When an active scope is supplied, prior immutable locks remain preserved even if their games are no longer active, while unlocked out-of-scope games remain paused and cannot receive new observations."
