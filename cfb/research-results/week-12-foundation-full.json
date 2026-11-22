@@ -9,37 +9,37 @@
   "modelId": "cfb-rebuild-foundation-v1-shadow",
   "sourceLockDigest": "b976d6b288a81f075b0d2f45cba75471c9909bd569f079e6ba826b158a2df65e",
   "sourceLockedAt": "2026-11-17T14:16:22.891673Z",
-  "gradedAt": "2026-11-22T01:09:03.023198Z",
+  "gradedAt": "2026-11-22T01:35:43.874862Z",
   "status": "IN_PROGRESS",
   "counts": {
     "games": 66,
-    "final": 47,
-    "pending": 19,
+    "final": 48,
+    "pending": 18,
     "review": 0,
     "void": 0
   },
   "metrics": {
     "margin": {
-      "games": 47,
-      "mae": 11.825744801505703,
-      "rmse": 15.085942277642417,
-      "bias": 1.9900682599399042
+      "games": 48,
+      "mae": 11.978272471387932,
+      "rmse": 15.181633750317634,
+      "bias": 1.5497111512775612
     },
     "total": {
-      "games": 47,
-      "mae": 10.914857082270547,
-      "rmse": 13.61587921087501,
-      "bias": -1.3562889189329483
+      "games": 48,
+      "mae": 10.966980030400757,
+      "rmse": 13.611760574753204,
+      "bias": -1.0485170957776673
     },
     "straightUp": {
-      "wins": 30,
+      "wins": 31,
       "losses": 17,
-      "graded": 47,
-      "accuracyPct": 63.829787234042556
+      "graded": 48,
+      "accuracyPct": 64.58333333333333
     },
     "winProbability": {
-      "games": 47,
-      "brierScore": 0.21581428201972633
+      "games": 48,
+      "brierScore": 0.21560166909338377
     }
   },
   "games": [
@@ -1078,8 +1078,24 @@
         "homeWinProbability": 54.65588664939146,
         "winner": "Florida Atlantic"
       },
-      "status": "PENDING",
-      "final": null
+      "status": "FINAL",
+      "final": {
+        "awayScore": 14,
+        "homeScore": 35,
+        "marginHome": 21,
+        "total": 49,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "errors": {
+        "margin": -19.14707295585257,
+        "absoluteMargin": 19.14707295585257,
+        "total": 13.416758592520537,
+        "absoluteTotal": 13.416758592520537
+      },
+      "straightUp": {
+        "result": "WIN"
+      }
     },
     {
       "gameId": "2026-11-21-ULMONROE-APPSTATE",
