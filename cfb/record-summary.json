@@ -1,31 +1,31 @@
 {
   "schemaVersion": 1,
   "league": "cfb",
-  "generatedAt": "2026-11-21T15:58:51.689792+00:00",
+  "generatedAt": "2026-11-22T12:09:41.841Z",
   "currentWeek": 12,
   "label": "Published projection performance; research only, not wagers. Missing market locks excluded.",
-  "sourceNote": "Published-model cumulative display, combining historical audited weeks and explicitly labeled frozen research weeks. Not a single validated model backtest. Week 12 in progress. Completed frozen foundation forecasts graded with original DraftKings pregame locks where saved. Remaining games await final results.",
+  "sourceNote": "Week 12 complete. Frozen foundation projections graded against final ESPN results; DraftKings fixed research benchmark used only where qualifying publication-time locks were saved (12 games). Fifty-four games excluded from ATS/totals. All 66 graded straight up. No postgame market reconstruction.",
   "overall": {
     "ats": {
-      "wins": 126,
-      "losses": 124,
+      "wins": 133,
+      "losses": 129,
       "pushes": 4,
-      "graded": 254,
-      "winPct": 50.4
+      "graded": 266,
+      "winPct": 50.8
     },
     "totals": {
-      "wins": 114,
-      "losses": 135,
+      "wins": 118,
+      "losses": 143,
       "pushes": 0,
-      "graded": 249,
-      "winPct": 45.8
+      "graded": 261,
+      "winPct": 45.2
     },
     "straightUp": {
-      "wins": 189,
-      "losses": 117,
+      "wins": 235,
+      "losses": 137,
       "pushes": 0,
-      "graded": 306,
-      "winPct": 61.8
+      "graded": 372,
+      "winPct": 63.2
     }
   },
   "weeks": [
@@ -71,7 +71,7 @@
         "losses": 25,
         "pushes": 0,
         "graded": 51,
-        "winPct": 51.0
+        "winPct": 51
       },
       "totals": {
         "wins": 20,
@@ -137,7 +137,7 @@
         "wins": 31,
         "losses": 31,
         "pushes": 0,
-        "winPct": 50.0,
+        "winPct": 50,
         "graded": 62
       },
       "straightUp": {
@@ -181,34 +181,34 @@
     {
       "season": 2026,
       "week": 12,
-      "status": "IN_PROGRESS",
-      "pending": 54,
-      "review": 12,
+      "status": "COMPLETE_WITH_EXCLUSIONS",
+      "pending": 0,
+      "review": 54,
       "recordType": "Frozen research",
-      "note": "Week 12 in progress. Completed frozen foundation forecasts graded with original DraftKings pregame locks where saved. Remaining games await final results.",
+      "note": "Week 12 frozen foundation research. DraftKings publication-time locks graded where saved (12 games); 54 games without qualifying locks excluded from ATS/totals. All 66 games graded straight up. FanDuel comparison separately audited; benchmark grades remain noncanonical research.",
       "ats": {
-        "wins": 0,
-        "losses": 0,
-        "pushes": 0,
-        "graded": 0,
-        "winPct": null
-      },
-      "totals": {
-        "wins": 0,
-        "losses": 0,
-        "pushes": 0,
-        "graded": 0,
-        "winPct": null
-      },
-      "straightUp": {
-        "wins": 8,
-        "losses": 4,
+        "wins": 7,
+        "losses": 5,
         "pushes": 0,
         "graded": 12,
-        "winPct": 66.7
+        "winPct": 58.3
+      },
+      "totals": {
+        "wins": 4,
+        "losses": 8,
+        "pushes": 0,
+        "graded": 12,
+        "winPct": 33.3
+      },
+      "straightUp": {
+        "wins": 46,
+        "losses": 20,
+        "pushes": 0,
+        "graded": 66,
+        "winPct": 69.7
       }
     }
   ],
-  "pending": 54,
-  "review": 12
+  "pending": 0,
+  "review": 54
 }
