@@ -1,29 +1,57 @@
 {
+  "schemaVersion": 1,
   "league": "cfb",
   "season": 2026,
   "week": 12,
-  "role": "PUBLISHED_RESEARCH_RESULTS_COMPATIBILITY",
+  "generatedAt": "2026-11-22T12:09:41.841Z",
+  "status": "COMPLETE_WITH_EXCLUSIONS",
+  "role": "FROZEN_RESEARCH_WEEKLY_RESULTS",
   "canonicalInfluence": false,
+  "canonicalRecordMerged": false,
+  "sourceLockDigest": "b976d6b288a81f075b0d2f45cba75471c9909bd569f079e6ba826b158a2df65e",
+  "marketLockUpdatedAt": "2026-11-22T07:58:02.337620Z",
+  "sourceNote": "All 66 frozen forecasts graded against final ESPN scores. DraftKings fixed research benchmark used where a qualifying immutable pregame lock exists (12 games); 54 games without saved locks excluded from ATS/totals. All 66 graded straight up. FanDuel comparison is separately preserved in the market-validation artifact. Noncanonical research only.",
+  "counts": {
+    "games": 66,
+    "final": 66,
+    "pending": 0,
+    "review": 54,
+    "void": 0,
+    "noLockedMarket": 54
+  },
+  "record": {
+    "ats": {
+      "wins": 7,
+      "losses": 5,
+      "pushes": 0,
+      "review": 54,
+      "graded": 12,
+      "winPct": 58.3
+    },
+    "totals": {
+      "wins": 4,
+      "losses": 8,
+      "pushes": 0,
+      "review": 54,
+      "graded": 12,
+      "winPct": 33.3
+    },
+    "straightUp": {
+      "wins": 46,
+      "losses": 20,
+      "pushes": 0,
+      "review": 0,
+      "graded": 66,
+      "winPct": 69.7
+    }
+  },
   "games": [
     {
       "gameId": "2026-11-17-EASTERNMICHIGAN-WESTERNMICHIGAN",
+      "date": "2026-11-17",
       "awayTeam": "Eastern Michigan",
       "homeTeam": "Western Michigan",
-      "kickoff": "2026-11-17T23:00:00Z",
-      "projection": {
-        "spreadHome": -16.816802254741255,
-        "total": 47.73697728236201,
-        "winner": "Western Michigan",
-        "homeWinProbability": 85.57946655887201
-      },
-      "market": {
-        "spreadHome": null,
-        "total": null,
-        "moneylineHome": null,
-        "moneylineAway": null,
-        "source": null,
-        "observedAt": null
-      },
+      "conference": null,
       "status": "FINAL",
       "final": {
         "awayScore": 27,
@@ -32,33 +60,11 @@
         "overtime": false,
         "source": "ESPN"
       },
-      "ats": {
-        "pick": null,
-        "result": "REVIEW",
-        "detail": "Missing saved market spread"
-      },
-      "totals": {
-        "pick": null,
-        "result": "REVIEW",
-        "detail": "Missing saved market total"
-      },
-      "straightUp": {
-        "pick": "Western Michigan",
-        "result": "WIN",
-        "position": "Western Michigan SU"
-      },
-      "date": "2026-11-17"
-    },
-    {
-      "gameId": "2026-11-17-BALLSTATE-OHIO",
-      "awayTeam": "Ball State",
-      "homeTeam": "Ohio",
-      "kickoff": "2026-11-18T00:00:00Z",
       "projection": {
-        "spreadHome": -14.10857788113416,
-        "total": 54.61013498282926,
-        "winner": "Ohio",
-        "homeWinProbability": 81.34413217193051
+        "spreadHome": -16.816802254741255,
+        "total": 47.73697728236201,
+        "homeWinProbability": 85.57946655887201,
+        "winner": "Western Michigan"
       },
       "market": {
         "spreadHome": null,
@@ -68,6 +74,30 @@
         "source": null,
         "observedAt": null
       },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Western Michigan",
+        "result": "WIN",
+        "position": "Western Michigan SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-17-BALLSTATE-OHIO",
+      "date": "2026-11-18",
+      "awayTeam": "Ball State",
+      "homeTeam": "Ohio",
+      "conference": null,
       "status": "FINAL",
       "final": {
         "awayScore": 28,
@@ -76,33 +106,11 @@
         "overtime": false,
         "source": "ESPN"
       },
-      "ats": {
-        "pick": null,
-        "result": "REVIEW",
-        "detail": "Missing saved market spread"
-      },
-      "totals": {
-        "pick": null,
-        "result": "REVIEW",
-        "detail": "Missing saved market total"
-      },
-      "straightUp": {
-        "pick": "Ohio",
-        "result": "WIN",
-        "position": "Ohio SU"
-      },
-      "date": "2026-11-17"
-    },
-    {
-      "gameId": "2026-11-17-MIAMIOH-KENTSTATE",
-      "awayTeam": "Miami (OH)",
-      "homeTeam": "Kent State",
-      "kickoff": "2026-11-18T00:00:00Z",
       "projection": {
-        "spreadHome": 6.959005090164865,
-        "total": 50.220935149957796,
-        "winner": "Miami (OH)",
-        "homeWinProbability": 33.02186321698372
+        "spreadHome": -14.10857788113416,
+        "total": 54.61013498282926,
+        "homeWinProbability": 81.34413217193051,
+        "winner": "Ohio"
       },
       "market": {
         "spreadHome": null,
@@ -112,6 +120,30 @@
         "source": null,
         "observedAt": null
       },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Ohio",
+        "result": "WIN",
+        "position": "Ohio SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-17-MIAMIOH-KENTSTATE",
+      "date": "2026-11-18",
+      "awayTeam": "Miami (OH)",
+      "homeTeam": "Kent State",
+      "conference": null,
       "status": "FINAL",
       "final": {
         "awayScore": 20,
@@ -120,33 +152,11 @@
         "overtime": false,
         "source": "ESPN"
       },
-      "ats": {
-        "pick": null,
-        "result": "REVIEW",
-        "detail": "Missing saved market spread"
-      },
-      "totals": {
-        "pick": null,
-        "result": "REVIEW",
-        "detail": "Missing saved market total"
-      },
-      "straightUp": {
-        "pick": "Miami (OH)",
-        "result": "WIN",
-        "position": "Miami (OH) SU"
-      },
-      "date": "2026-11-17"
-    },
-    {
-      "gameId": "2026-11-18-AKRON-MASSACHUSETTS",
-      "awayTeam": "Akron",
-      "homeTeam": "Massachusetts",
-      "kickoff": "2026-11-19T00:00:00Z",
       "projection": {
-        "spreadHome": -12.261352897476463,
-        "total": 47.290338597568116,
-        "winner": "Massachusetts",
-        "homeWinProbability": 78.05456229010552
+        "spreadHome": 6.959005090164865,
+        "total": 50.220935149957796,
+        "homeWinProbability": 33.02186321698372,
+        "winner": "Miami (OH)"
       },
       "market": {
         "spreadHome": null,
@@ -156,6 +166,30 @@
         "source": null,
         "observedAt": null
       },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Miami (OH)",
+        "result": "WIN",
+        "position": "Miami (OH) SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-18-AKRON-MASSACHUSETTS",
+      "date": "2026-11-19",
+      "awayTeam": "Akron",
+      "homeTeam": "Massachusetts",
+      "conference": null,
       "status": "FINAL",
       "final": {
         "awayScore": 34,
@@ -164,33 +198,11 @@
         "overtime": false,
         "source": "ESPN"
       },
-      "ats": {
-        "pick": null,
-        "result": "REVIEW",
-        "detail": "Missing saved market spread"
-      },
-      "totals": {
-        "pick": null,
-        "result": "REVIEW",
-        "detail": "Missing saved market total"
-      },
-      "straightUp": {
-        "pick": "Massachusetts",
-        "result": "LOSS",
-        "position": "Massachusetts SU"
-      },
-      "date": "2026-11-18"
-    },
-    {
-      "gameId": "2026-11-18-CENTRALMICHIGAN-BUFFALO",
-      "awayTeam": "Central Michigan",
-      "homeTeam": "Buffalo",
-      "kickoff": "2026-11-19T00:30:00Z",
       "projection": {
-        "spreadHome": -6.6046529952351065,
-        "total": 44.86637417202291,
-        "winner": "Buffalo",
-        "homeWinProbability": 66.16388247537124
+        "spreadHome": -12.261352897476463,
+        "total": 47.290338597568116,
+        "homeWinProbability": 78.05456229010552,
+        "winner": "Massachusetts"
       },
       "market": {
         "spreadHome": null,
@@ -200,6 +212,30 @@
         "source": null,
         "observedAt": null
       },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Massachusetts",
+        "result": "LOSS",
+        "position": "Massachusetts SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-18-CENTRALMICHIGAN-BUFFALO",
+      "date": "2026-11-19",
+      "awayTeam": "Central Michigan",
+      "homeTeam": "Buffalo",
+      "conference": null,
       "status": "FINAL",
       "final": {
         "awayScore": 21,
@@ -208,33 +244,11 @@
         "overtime": false,
         "source": "ESPN"
       },
-      "ats": {
-        "pick": null,
-        "result": "REVIEW",
-        "detail": "Missing saved market spread"
-      },
-      "totals": {
-        "pick": null,
-        "result": "REVIEW",
-        "detail": "Missing saved market total"
-      },
-      "straightUp": {
-        "pick": "Buffalo",
-        "result": "WIN",
-        "position": "Buffalo SU"
-      },
-      "date": "2026-11-18"
-    },
-    {
-      "gameId": "2026-11-19-RICE-TEMPLE",
-      "awayTeam": "Rice",
-      "homeTeam": "Temple",
-      "kickoff": "2026-11-20T00:30:00Z",
       "projection": {
-        "spreadHome": -5.393770095341587,
-        "total": 54.151125694119834,
-        "winner": "Temple",
-        "homeWinProbability": 63.32596322564052
+        "spreadHome": -6.6046529952351065,
+        "total": 44.86637417202291,
+        "homeWinProbability": 66.16388247537124,
+        "winner": "Buffalo"
       },
       "market": {
         "spreadHome": null,
@@ -244,6 +258,30 @@
         "source": null,
         "observedAt": null
       },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Buffalo",
+        "result": "WIN",
+        "position": "Buffalo SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-19-RICE-TEMPLE",
+      "date": "2026-11-20",
+      "awayTeam": "Rice",
+      "homeTeam": "Temple",
+      "conference": null,
       "status": "FINAL",
       "final": {
         "awayScore": 31,
@@ -252,33 +290,11 @@
         "overtime": false,
         "source": "ESPN"
       },
-      "ats": {
-        "pick": null,
-        "result": "REVIEW",
-        "detail": "Missing saved market spread"
-      },
-      "totals": {
-        "pick": null,
-        "result": "REVIEW",
-        "detail": "Missing saved market total"
-      },
-      "straightUp": {
-        "pick": "Temple",
-        "result": "LOSS",
-        "position": "Temple SU"
-      },
-      "date": "2026-11-19"
-    },
-    {
-      "gameId": "2026-11-20-IOWASTATE-UCF",
-      "awayTeam": "Iowa State",
-      "homeTeam": "UCF",
-      "kickoff": "2026-11-20T23:00:00Z",
       "projection": {
-        "spreadHome": 0.653708938046357,
-        "total": 56.60098384681435,
-        "winner": "Iowa State",
-        "homeWinProbability": 48.35413309277512
+        "spreadHome": -5.393770095341587,
+        "total": 54.151125694119834,
+        "homeWinProbability": 63.32596322564052,
+        "winner": "Temple"
       },
       "market": {
         "spreadHome": null,
@@ -288,6 +304,30 @@
         "source": null,
         "observedAt": null
       },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Temple",
+        "result": "LOSS",
+        "position": "Temple SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-20-IOWASTATE-UCF",
+      "date": "2026-11-20",
+      "awayTeam": "Iowa State",
+      "homeTeam": "UCF",
+      "conference": null,
       "status": "FINAL",
       "final": {
         "awayScore": 17,
@@ -296,33 +336,11 @@
         "overtime": false,
         "source": "ESPN"
       },
-      "ats": {
-        "pick": null,
-        "result": "REVIEW",
-        "detail": "Missing saved market spread"
-      },
-      "totals": {
-        "pick": null,
-        "result": "REVIEW",
-        "detail": "Missing saved market total"
-      },
-      "straightUp": {
-        "pick": "Iowa State",
-        "result": "LOSS",
-        "position": "Iowa State SU"
-      },
-      "date": "2026-11-20"
-    },
-    {
-      "gameId": "2026-11-20-BOWLINGGREEN-TOLEDO",
-      "awayTeam": "Bowling Green",
-      "homeTeam": "Toledo",
-      "kickoff": "2026-11-21T00:30:00Z",
       "projection": {
-        "spreadHome": -13.284277411985876,
-        "total": 53.06152177249975,
-        "winner": "Toledo",
-        "homeWinProbability": 79.91566478376842
+        "spreadHome": 0.653708938046357,
+        "total": 56.60098384681435,
+        "homeWinProbability": 48.35413309277512,
+        "winner": "Iowa State"
       },
       "market": {
         "spreadHome": null,
@@ -332,6 +350,30 @@
         "source": null,
         "observedAt": null
       },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Iowa State",
+        "result": "LOSS",
+        "position": "Iowa State SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-20-BOWLINGGREEN-TOLEDO",
+      "date": "2026-11-21",
+      "awayTeam": "Bowling Green",
+      "homeTeam": "Toledo",
+      "conference": null,
       "status": "FINAL",
       "final": {
         "awayScore": 0,
@@ -340,33 +382,11 @@
         "overtime": false,
         "source": "ESPN"
       },
-      "ats": {
-        "pick": null,
-        "result": "REVIEW",
-        "detail": "Missing saved market spread"
-      },
-      "totals": {
-        "pick": null,
-        "result": "REVIEW",
-        "detail": "Missing saved market total"
-      },
-      "straightUp": {
-        "pick": "Toledo",
-        "result": "WIN",
-        "position": "Toledo SU"
-      },
-      "date": "2026-11-20"
-    },
-    {
-      "gameId": "2026-11-20-CLEMSON-DUKE",
-      "awayTeam": "Clemson",
-      "homeTeam": "Duke",
-      "kickoff": "2026-11-21T00:30:00Z",
       "projection": {
-        "spreadHome": -16.10903202994257,
-        "total": 38.00230753563527,
-        "winner": "Duke",
-        "homeWinProbability": 84.54076726057276
+        "spreadHome": -13.284277411985876,
+        "total": 53.06152177249975,
+        "homeWinProbability": 79.91566478376842,
+        "winner": "Toledo"
       },
       "market": {
         "spreadHome": null,
@@ -376,6 +396,30 @@
         "source": null,
         "observedAt": null
       },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Toledo",
+        "result": "WIN",
+        "position": "Toledo SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-20-CLEMSON-DUKE",
+      "date": "2026-11-21",
+      "awayTeam": "Clemson",
+      "homeTeam": "Duke",
+      "conference": null,
       "status": "FINAL",
       "final": {
         "awayScore": 20,
@@ -384,33 +428,11 @@
         "overtime": false,
         "source": "ESPN"
       },
-      "ats": {
-        "pick": null,
-        "result": "REVIEW",
-        "detail": "Missing saved market spread"
-      },
-      "totals": {
-        "pick": null,
-        "result": "REVIEW",
-        "detail": "Missing saved market total"
-      },
-      "straightUp": {
-        "pick": "Duke",
-        "result": "LOSS",
-        "position": "Duke SU"
-      },
-      "date": "2026-11-20"
-    },
-    {
-      "gameId": "2026-11-20-OREGON-MICHIGANSTATE",
-      "awayTeam": "Oregon",
-      "homeTeam": "Michigan State",
-      "kickoff": "2026-11-21T01:00:00Z",
       "projection": {
-        "spreadHome": 5.348164988236604,
-        "total": 45.406790249060826,
-        "winner": "Oregon",
-        "homeWinProbability": 36.78247523454314
+        "spreadHome": -16.10903202994257,
+        "total": 38.00230753563527,
+        "homeWinProbability": 84.54076726057276,
+        "winner": "Duke"
       },
       "market": {
         "spreadHome": null,
@@ -420,6 +442,30 @@
         "source": null,
         "observedAt": null
       },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Duke",
+        "result": "LOSS",
+        "position": "Duke SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-20-OREGON-MICHIGANSTATE",
+      "date": "2026-11-21",
+      "awayTeam": "Oregon",
+      "homeTeam": "Michigan State",
+      "conference": null,
       "status": "FINAL",
       "final": {
         "awayScore": 45,
@@ -428,33 +474,11 @@
         "overtime": false,
         "source": "ESPN"
       },
-      "ats": {
-        "pick": null,
-        "result": "REVIEW",
-        "detail": "Missing saved market spread"
-      },
-      "totals": {
-        "pick": null,
-        "result": "REVIEW",
-        "detail": "Missing saved market total"
-      },
-      "straightUp": {
-        "pick": "Oregon",
-        "result": "WIN",
-        "position": "Oregon SU"
-      },
-      "date": "2026-11-20"
-    },
-    {
-      "gameId": "2026-11-20-UTEP-AIRFORCE",
-      "awayTeam": "UTEP",
-      "homeTeam": "Air Force",
-      "kickoff": "2026-11-21T01:00:00Z",
       "projection": {
-        "spreadHome": -23.602950793568127,
-        "total": 47.38377191667101,
-        "winner": "Air Force",
-        "homeWinProbability": 93.18894654054581
+        "spreadHome": 5.348164988236604,
+        "total": 45.406790249060826,
+        "homeWinProbability": 36.78247523454314,
+        "winner": "Oregon"
       },
       "market": {
         "spreadHome": null,
@@ -464,6 +488,30 @@
         "source": null,
         "observedAt": null
       },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Oregon",
+        "result": "WIN",
+        "position": "Oregon SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-20-UTEP-AIRFORCE",
+      "date": "2026-11-21",
+      "awayTeam": "UTEP",
+      "homeTeam": "Air Force",
+      "conference": null,
       "status": "FINAL",
       "final": {
         "awayScore": 3,
@@ -472,33 +520,11 @@
         "overtime": false,
         "source": "ESPN"
       },
-      "ats": {
-        "pick": null,
-        "result": "REVIEW",
-        "detail": "Missing saved market spread"
-      },
-      "totals": {
-        "pick": null,
-        "result": "REVIEW",
-        "detail": "Missing saved market total"
-      },
-      "straightUp": {
-        "pick": "Air Force",
-        "result": "WIN",
-        "position": "Air Force SU"
-      },
-      "date": "2026-11-20"
-    },
-    {
-      "gameId": "2026-11-20-NEWMEXICO-WYOMING",
-      "awayTeam": "New Mexico",
-      "homeTeam": "Wyoming",
-      "kickoff": "2026-11-21T02:00:00Z",
       "projection": {
-        "spreadHome": 5.166380700638008,
-        "total": 43.7865702935044,
-        "winner": "New Mexico",
-        "homeWinProbability": 37.215756495404136
+        "spreadHome": -23.602950793568127,
+        "total": 47.38377191667101,
+        "homeWinProbability": 93.18894654054581,
+        "winner": "Air Force"
       },
       "market": {
         "spreadHome": null,
@@ -508,6 +534,30 @@
         "source": null,
         "observedAt": null
       },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Air Force",
+        "result": "WIN",
+        "position": "Air Force SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-20-NEWMEXICO-WYOMING",
+      "date": "2026-11-21",
+      "awayTeam": "New Mexico",
+      "homeTeam": "Wyoming",
+      "conference": null,
       "status": "FINAL",
       "final": {
         "awayScore": 24,
@@ -516,27 +566,2521 @@
         "overtime": false,
         "source": "ESPN"
       },
+      "projection": {
+        "spreadHome": 5.166380700638008,
+        "total": 43.7865702935044,
+        "homeWinProbability": 37.215756495404136,
+        "winner": "New Mexico"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
       "ats": {
         "pick": null,
         "result": "REVIEW",
-        "detail": "Missing saved market spread"
+        "detail": "No qualifying saved DraftKings pregame market lock"
       },
       "totals": {
         "pick": null,
         "result": "REVIEW",
-        "detail": "Missing saved market total"
+        "detail": "No qualifying saved DraftKings pregame market lock"
       },
       "straightUp": {
         "pick": "New Mexico",
         "result": "WIN",
         "position": "New Mexico SU"
       },
-      "date": "2026-11-20"
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-BYU-KANSAS",
+      "date": "2026-11-21",
+      "awayTeam": "BYU",
+      "homeTeam": "Kansas",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 31,
+        "homeScore": 29,
+        "total": 60,
+        "overtime": true,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -0.023183856761399113,
+        "total": 47.383962613531786,
+        "homeWinProbability": 50.05838739153848,
+        "winner": "Kansas"
+      },
+      "market": {
+        "spreadHome": 5.5,
+        "total": 46.5,
+        "moneylineHome": 170,
+        "moneylineAway": -205,
+        "source": "DraftKings",
+        "observedAt": "2026-11-21T16:07:25Z"
+      },
+      "ats": {
+        "pick": "Kansas",
+        "result": "WIN",
+        "position": "Kansas +5.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "WIN",
+        "position": "OVER 46.5"
+      },
+      "straightUp": {
+        "pick": "Kansas",
+        "result": "LOSS",
+        "position": "Kansas SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "DraftKings publication-time lock"
+    },
+    {
+      "gameId": "2026-11-21-COLORADO-CINCINNATI",
+      "date": "2026-11-21",
+      "awayTeam": "Colorado",
+      "homeTeam": "Cincinnati",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 28,
+        "homeScore": 35,
+        "total": 63,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -5.111379991729869,
+        "total": 52.24951363459557,
+        "homeWinProbability": 62.65282730750652,
+        "winner": "Cincinnati"
+      },
+      "market": {
+        "spreadHome": -3,
+        "total": 56.5,
+        "moneylineHome": -155,
+        "moneylineAway": 130,
+        "source": "DraftKings",
+        "observedAt": "2026-11-21T16:07:25Z"
+      },
+      "ats": {
+        "pick": "Cincinnati",
+        "result": "WIN",
+        "position": "Cincinnati -3"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "LOSS",
+        "position": "UNDER 56.5"
+      },
+      "straightUp": {
+        "pick": "Cincinnati",
+        "result": "WIN",
+        "position": "Cincinnati SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "DraftKings publication-time lock"
+    },
+    {
+      "gameId": "2026-11-21-EASTCAROLINA-ARMY",
+      "date": "2026-11-21",
+      "awayTeam": "East Carolina",
+      "homeTeam": "Army",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 10,
+        "homeScore": 6,
+        "total": 16,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -8.34823776256912,
+        "total": 48.12286716066273,
+        "homeWinProbability": 70.09064383443724,
+        "winner": "Army"
+      },
+      "market": {
+        "spreadHome": -4.5,
+        "total": 45.5,
+        "moneylineHome": -205,
+        "moneylineAway": 170,
+        "source": "DraftKings",
+        "observedAt": "2026-11-21T16:07:25Z"
+      },
+      "ats": {
+        "pick": "Army",
+        "result": "LOSS",
+        "position": "Army -4.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "LOSS",
+        "position": "OVER 45.5"
+      },
+      "straightUp": {
+        "pick": "Army",
+        "result": "LOSS",
+        "position": "Army SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "DraftKings publication-time lock"
+    },
+    {
+      "gameId": "2026-11-21-MEMPHIS-NAVY",
+      "date": "2026-11-21",
+      "awayTeam": "Memphis",
+      "homeTeam": "Navy",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 34,
+        "homeScore": 38,
+        "total": 72,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 5.236578903303339,
+        "total": 67.75524710031871,
+        "homeWinProbability": 37.04824434066426,
+        "winner": "Memphis"
+      },
+      "market": {
+        "spreadHome": 2.5,
+        "total": 68.5,
+        "moneylineHome": 120,
+        "moneylineAway": -142,
+        "source": "DraftKings",
+        "observedAt": "2026-11-21T16:07:25Z"
+      },
+      "ats": {
+        "pick": "Memphis",
+        "result": "LOSS",
+        "position": "Memphis -2.5"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "LOSS",
+        "position": "UNDER 68.5"
+      },
+      "straightUp": {
+        "pick": "Memphis",
+        "result": "LOSS",
+        "position": "Memphis SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "DraftKings publication-time lock"
+    },
+    {
+      "gameId": "2026-11-21-NORTHTEXAS-TULANE",
+      "date": "2026-11-21",
+      "awayTeam": "North Texas",
+      "homeTeam": "Tulane",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 24,
+        "homeScore": 28,
+        "total": 52,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 7.057255795092317,
+        "total": 60.726447024018285,
+        "homeWinProbability": 32.79749206122508,
+        "winner": "North Texas"
+      },
+      "market": {
+        "spreadHome": 7.5,
+        "total": 56.5,
+        "moneylineHome": 235,
+        "moneylineAway": -290,
+        "source": "DraftKings",
+        "observedAt": "2026-11-21T16:07:25Z"
+      },
+      "ats": {
+        "pick": "Tulane",
+        "result": "WIN",
+        "position": "Tulane +7.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "LOSS",
+        "position": "OVER 56.5"
+      },
+      "straightUp": {
+        "pick": "North Texas",
+        "result": "LOSS",
+        "position": "North Texas SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "DraftKings publication-time lock"
+    },
+    {
+      "gameId": "2026-11-21-NORTHWESTERN-MINNESOTA",
+      "date": "2026-11-21",
+      "awayTeam": "Northwestern",
+      "homeTeam": "Minnesota",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 17,
+        "homeScore": 20,
+        "total": 37,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 5.5516746563530575,
+        "total": 49.562662033660885,
+        "homeWinProbability": 36.29940186826867,
+        "winner": "Northwestern"
+      },
+      "market": {
+        "spreadHome": 3,
+        "total": 41.5,
+        "moneylineHome": 124,
+        "moneylineAway": -148,
+        "source": "DraftKings",
+        "observedAt": "2026-11-21T16:07:25Z"
+      },
+      "ats": {
+        "pick": "Northwestern",
+        "result": "LOSS",
+        "position": "Northwestern -3"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "LOSS",
+        "position": "OVER 41.5"
+      },
+      "straightUp": {
+        "pick": "Northwestern",
+        "result": "LOSS",
+        "position": "Northwestern SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "DraftKings publication-time lock"
+    },
+    {
+      "gameId": "2026-11-21-OHIOSTATE-NEBRASKA",
+      "date": "2026-11-21",
+      "awayTeam": "Ohio State",
+      "homeTeam": "Nebraska",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 28,
+        "homeScore": 31,
+        "total": 59,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -1.7833273018004903,
+        "total": 48.03687104834494,
+        "homeWinProbability": 54.481753971342684,
+        "winner": "Nebraska"
+      },
+      "market": {
+        "spreadHome": 3.5,
+        "total": 41.5,
+        "moneylineHome": 145,
+        "moneylineAway": -175,
+        "source": "DraftKings",
+        "observedAt": "2026-11-21T16:07:25Z"
+      },
+      "ats": {
+        "pick": "Nebraska",
+        "result": "WIN",
+        "position": "Nebraska +3.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "WIN",
+        "position": "OVER 41.5"
+      },
+      "straightUp": {
+        "pick": "Nebraska",
+        "result": "WIN",
+        "position": "Nebraska SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "DraftKings publication-time lock"
+    },
+    {
+      "gameId": "2026-11-21-SYRACUSE-BOSTONCOLLEGE",
+      "date": "2026-11-21",
+      "awayTeam": "Syracuse",
+      "homeTeam": "Boston College",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 15,
+        "homeScore": 27,
+        "total": 42,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 0.21985051821884838,
+        "total": 53.10425733909433,
+        "homeWinProbability": 49.44633496839009,
+        "winner": "Syracuse"
+      },
+      "market": {
+        "spreadHome": 3,
+        "total": 52.5,
+        "moneylineHome": 130,
+        "moneylineAway": -155,
+        "source": "DraftKings",
+        "observedAt": "2026-11-21T16:07:25Z"
+      },
+      "ats": {
+        "pick": "Boston College",
+        "result": "WIN",
+        "position": "Boston College +3"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "LOSS",
+        "position": "OVER 52.5"
+      },
+      "straightUp": {
+        "pick": "Syracuse",
+        "result": "LOSS",
+        "position": "Syracuse SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "DraftKings publication-time lock"
+    },
+    {
+      "gameId": "2026-11-21-VANDERBILT-FLORIDA",
+      "date": "2026-11-21",
+      "awayTeam": "Vanderbilt",
+      "homeTeam": "Florida",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 27,
+        "homeScore": 34,
+        "total": 61,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -12.010405596111376,
+        "total": 49.43362724734572,
+        "homeWinProbability": 77.58329961324742,
+        "winner": "Florida"
+      },
+      "market": {
+        "spreadHome": -13.5,
+        "total": 47.5,
+        "moneylineHome": -575,
+        "moneylineAway": 425,
+        "source": "DraftKings",
+        "observedAt": "2026-11-21T16:07:25Z"
+      },
+      "ats": {
+        "pick": "Vanderbilt",
+        "result": "WIN",
+        "position": "Vanderbilt +13.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "WIN",
+        "position": "OVER 47.5"
+      },
+      "straightUp": {
+        "pick": "Florida",
+        "result": "WIN",
+        "position": "Florida SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "DraftKings publication-time lock"
+    },
+    {
+      "gameId": "2026-11-21-WAKEFOREST-GEORGIATECH",
+      "date": "2026-11-21",
+      "awayTeam": "Wake Forest",
+      "homeTeam": "Georgia Tech",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 50,
+        "homeScore": 29,
+        "total": 79,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 20.73260859130996,
+        "total": 55.06017111168562,
+        "homeWinProbability": 9.529893967298186,
+        "winner": "Wake Forest"
+      },
+      "market": {
+        "spreadHome": 21.5,
+        "total": 55.5,
+        "moneylineHome": 1000,
+        "moneylineAway": -1800,
+        "source": "DraftKings",
+        "observedAt": "2026-11-21T16:07:25Z"
+      },
+      "ats": {
+        "pick": "Georgia Tech",
+        "result": "WIN",
+        "position": "Georgia Tech +21.5"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "LOSS",
+        "position": "UNDER 55.5"
+      },
+      "straightUp": {
+        "pick": "Wake Forest",
+        "result": "WIN",
+        "position": "Wake Forest SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "DraftKings publication-time lock"
+    },
+    {
+      "gameId": "2026-11-21-WISCONSIN-PURDUE",
+      "date": "2026-11-21",
+      "awayTeam": "Wisconsin",
+      "homeTeam": "Purdue",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 42,
+        "homeScore": 10,
+        "total": 52,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 2.1140755074130197,
+        "total": 48.28957065611,
+        "homeWinProbability": 44.69156668301107,
+        "winner": "Wisconsin"
+      },
+      "market": {
+        "spreadHome": 4.5,
+        "total": 46.5,
+        "moneylineHome": 170,
+        "moneylineAway": -205,
+        "source": "DraftKings",
+        "observedAt": "2026-11-21T16:07:25Z"
+      },
+      "ats": {
+        "pick": "Purdue",
+        "result": "LOSS",
+        "position": "Purdue +4.5"
+      },
+      "totals": {
+        "pick": "OVER",
+        "result": "WIN",
+        "position": "OVER 46.5"
+      },
+      "straightUp": {
+        "pick": "Wisconsin",
+        "result": "WIN",
+        "position": "Wisconsin SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "DraftKings publication-time lock"
+    },
+    {
+      "gameId": "2026-11-21-NORTHCAROLINA-VIRGINIA",
+      "date": "2026-11-21",
+      "awayTeam": "North Carolina",
+      "homeTeam": "Virginia",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 24,
+        "homeScore": 41,
+        "total": 65,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 1.5065086923577056,
+        "total": 44.8329997728132,
+        "homeWinProbability": 46.211642909414216,
+        "winner": "North Carolina"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "North Carolina",
+        "result": "LOSS",
+        "position": "North Carolina SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-HOUSTON-WESTVIRGINIA",
+      "date": "2026-11-21",
+      "awayTeam": "Houston",
+      "homeTeam": "West Virginia",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 34,
+        "homeScore": 31,
+        "total": 65,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 2.6457284952807534,
+        "total": 65.01423597898828,
+        "homeWinProbability": 43.367711476203134,
+        "winner": "Houston"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Houston",
+        "result": "WIN",
+        "position": "Houston SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-WESTERNKENTUCKY-LIBERTY",
+      "date": "2026-11-21",
+      "awayTeam": "Western Kentucky",
+      "homeTeam": "Liberty",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 14,
+        "homeScore": 45,
+        "total": 59,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -22.377139513651727,
+        "total": 53.42937568123011,
+        "homeWinProbability": 92.11175476002569,
+        "winner": "Liberty"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Liberty",
+        "result": "WIN",
+        "position": "Liberty SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-CHARLOTTE-TULSA",
+      "date": "2026-11-21",
+      "awayTeam": "Charlotte",
+      "homeTeam": "Tulsa",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 14,
+        "homeScore": 42,
+        "total": 56,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -21.934356729325202,
+        "total": 54.04400391813522,
+        "homeWinProbability": 91.69243245918493,
+        "winner": "Tulsa"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Tulsa",
+        "result": "WIN",
+        "position": "Tulsa SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-MIDDLETENNESSEE-SAMHOUSTON",
+      "date": "2026-11-21",
+      "awayTeam": "Middle Tennessee",
+      "homeTeam": "Sam Houston",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 31,
+        "homeScore": 28,
+        "total": 59,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 5.442978202197821,
+        "total": 50.61908284101248,
+        "homeWinProbability": 36.557150403814425,
+        "winner": "Middle Tennessee"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Middle Tennessee",
+        "result": "WIN",
+        "position": "Middle Tennessee SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-MISSOURISTATE-JACKSONVILLESTATE",
+      "date": "2026-11-21",
+      "awayTeam": "Missouri State",
+      "homeTeam": "Jacksonville State",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 20,
+        "homeScore": 25,
+        "total": 45,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -13.588528450976376,
+        "total": 52.43677691608942,
+        "homeWinProbability": 80.45039251345452,
+        "winner": "Jacksonville State"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Jacksonville State",
+        "result": "WIN",
+        "position": "Jacksonville State SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-IOWA-ILLINOIS",
+      "date": "2026-11-21",
+      "awayTeam": "Iowa",
+      "homeTeam": "Illinois",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 34,
+        "homeScore": 17,
+        "total": 51,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 1.498238283743241,
+        "total": 39.38781890297351,
+        "homeWinProbability": 46.23237806313206,
+        "winner": "Iowa"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Iowa",
+        "result": "WIN",
+        "position": "Iowa SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-SOUTHFLORIDA-FLORIDAATLANTIC",
+      "date": "2026-11-21",
+      "awayTeam": "South Florida",
+      "homeTeam": "Florida Atlantic",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 14,
+        "homeScore": 35,
+        "total": 49,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -1.8529270441474317,
+        "total": 62.41675859252054,
+        "homeWinProbability": 54.65588664939146,
+        "winner": "Florida Atlantic"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Florida Atlantic",
+        "result": "WIN",
+        "position": "Florida Atlantic SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-ULMONROE-APPSTATE",
+      "date": "2026-11-21",
+      "awayTeam": "UL Monroe",
+      "homeTeam": "App State",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 16,
+        "homeScore": 17,
+        "total": 33,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -11.529263278145969,
+        "total": 47.12934560826661,
+        "homeWinProbability": 76.66386481981739,
+        "winner": "App State"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "App State",
+        "result": "WIN",
+        "position": "App State SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-COASTALCAROLINA-LOUISIANA",
+      "date": "2026-11-21",
+      "awayTeam": "Coastal Carolina",
+      "homeTeam": "Louisiana",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 24,
+        "homeScore": 38,
+        "total": 62,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -10.777252687360686,
+        "total": 50.154123070789495,
+        "homeWinProbability": 75.18581445621646,
+        "winner": "Louisiana"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Louisiana",
+        "result": "WIN",
+        "position": "Louisiana SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-DELAWARE-NEWMEXICOSTATE",
+      "date": "2026-11-21",
+      "awayTeam": "Delaware",
+      "homeTeam": "New Mexico State",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 42,
+        "homeScore": 30,
+        "total": 72,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 1.8435595326224927,
+        "total": 54.023075486217465,
+        "homeWinProbability": 45.36754493581016,
+        "winner": "Delaware"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Delaware",
+        "result": "WIN",
+        "position": "Delaware SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-FLORIDAINTERNATIONAL-KENNESAWSTATE",
+      "date": "2026-11-21",
+      "awayTeam": "Florida International",
+      "homeTeam": "Kennesaw State",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 24,
+        "homeScore": 35,
+        "total": 59,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -5.538348029711159,
+        "total": 43.956673184880685,
+        "homeWinProbability": 63.669030199481846,
+        "winner": "Kennesaw State"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Kennesaw State",
+        "result": "WIN",
+        "position": "Kennesaw State SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-ARKANSAS-TEXAS",
+      "date": "2026-11-21",
+      "awayTeam": "Arkansas",
+      "homeTeam": "Texas",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 3,
+        "homeScore": 45,
+        "total": 48,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -14.383033446681033,
+        "total": 44.970760009052654,
+        "homeWinProbability": 81.80543276100921,
+        "winner": "Texas"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Texas",
+        "result": "WIN",
+        "position": "Texas SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-INDIANA-WASHINGTON",
+      "date": "2026-11-21",
+      "awayTeam": "Indiana",
+      "homeTeam": "Washington",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 24,
+        "homeScore": 27,
+        "total": 51,
+        "overtime": true,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 2.0938044182929545,
+        "total": 42.178513905256395,
+        "homeWinProbability": 44.74217011676566,
+        "winner": "Indiana"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Indiana",
+        "result": "LOSS",
+        "position": "Indiana SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-LSU-TENNESSEE",
+      "date": "2026-11-21",
+      "awayTeam": "LSU",
+      "homeTeam": "Tennessee",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 13,
+        "homeScore": 27,
+        "total": 40,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -6.1466043309546095,
+        "total": 44.88551961089101,
+        "homeWinProbability": 65.10009121750281,
+        "winner": "Tennessee"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Tennessee",
+        "result": "WIN",
+        "position": "Tennessee SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-NCSTATE-FLORIDASTATE",
+      "date": "2026-11-21",
+      "awayTeam": "NC State",
+      "homeTeam": "Florida State",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 28,
+        "homeScore": 10,
+        "total": 38,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -12.303254326633912,
+        "total": 57.68505202398044,
+        "homeWinProbability": 78.13269216391897,
+        "winner": "Florida State"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Florida State",
+        "result": "LOSS",
+        "position": "Florida State SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-OLDDOMINION-UCONN",
+      "date": "2026-11-21",
+      "awayTeam": "Old Dominion",
+      "homeTeam": "UConn",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 21,
+        "homeScore": 29,
+        "total": 50,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -13.707418998806432,
+        "total": 49.67379640236654,
+        "homeWinProbability": 80.65697370739629,
+        "winner": "UConn"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "UConn",
+        "result": "WIN",
+        "position": "UConn SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-RUTGERS-PENNSTATE",
+      "date": "2026-11-21",
+      "awayTeam": "Rutgers",
+      "homeTeam": "Penn State",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 25,
+        "homeScore": 24,
+        "total": 49,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -21.538898460070946,
+        "total": 54.43703349634399,
+        "homeWinProbability": 91.30394784108856,
+        "winner": "Penn State"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Penn State",
+        "result": "LOSS",
+        "position": "Penn State SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-TEXASTECH-BAYLOR",
+      "date": "2026-11-21",
+      "awayTeam": "Texas Tech",
+      "homeTeam": "Baylor",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 20,
+        "homeScore": 10,
+        "total": 30,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -1.4672829217443706,
+        "total": 58.72389778946147,
+        "homeWinProbability": 53.69000316255562,
+        "winner": "Baylor"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Baylor",
+        "result": "LOSS",
+        "position": "Baylor SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-UCLA-MICHIGAN",
+      "date": "2026-11-21",
+      "awayTeam": "UCLA",
+      "homeTeam": "Michigan",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 16,
+        "homeScore": 18,
+        "total": 34,
+        "overtime": true,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 8.28900101962926,
+        "total": 37.91475415002746,
+        "homeWinProbability": 30.039325681078378,
+        "winner": "UCLA"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "UCLA",
+        "result": "LOSS",
+        "position": "UCLA SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-TEXASAM-OKLAHOMA",
+      "date": "2026-11-21",
+      "awayTeam": "Texas A&M",
+      "homeTeam": "Oklahoma",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 7,
+        "homeScore": 28,
+        "total": 35,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -6.311307361111988,
+        "total": 37.50470344179846,
+        "homeWinProbability": 65.48402582535823,
+        "winner": "Oklahoma"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Oklahoma",
+        "result": "WIN",
+        "position": "Oklahoma SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-GEORGIASOUTHERN-TROY",
+      "date": "2026-11-21",
+      "awayTeam": "Georgia Southern",
+      "homeTeam": "Troy",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 45,
+        "homeScore": 7,
+        "total": 52,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 7.2955670435151845,
+        "total": 45.79954274635023,
+        "homeWinProbability": 32.25585600016118,
+        "winner": "Georgia Southern"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Georgia Southern",
+        "result": "WIN",
+        "position": "Georgia Southern SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-GEORGIASTATE-MARSHALL",
+      "date": "2026-11-21",
+      "awayTeam": "Georgia State",
+      "homeTeam": "Marshall",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 27,
+        "homeScore": 28,
+        "total": 55,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 0.9416681764205208,
+        "total": 56.307464513553015,
+        "homeWinProbability": 47.62985065432516,
+        "winner": "Georgia State"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Georgia State",
+        "result": "LOSS",
+        "position": "Georgia State SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-NORTHERNILLINOIS-NORTHDAKOTASTATE",
+      "date": "2026-11-21",
+      "awayTeam": "Northern Illinois",
+      "homeTeam": "North Dakota State",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 25,
+        "homeScore": 31,
+        "total": 56,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -24.796010079244105,
+        "total": 46.36743676427225,
+        "homeWinProbability": 94.12469591759513,
+        "winner": "North Dakota State"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "North Dakota State",
+        "result": "WIN",
+        "position": "North Dakota State SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-SOUTHALABAMA-SOUTHERNMISS",
+      "date": "2026-11-21",
+      "awayTeam": "South Alabama",
+      "homeTeam": "Southern Miss",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 40,
+        "homeScore": 35,
+        "total": 75,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 4.727083712804102,
+        "total": 68.93540613298693,
+        "homeWinProbability": 38.26942377852849,
+        "winner": "South Alabama"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "South Alabama",
+        "result": "WIN",
+        "position": "South Alabama SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-WASHINGTONSTATE-TEXASSTATE",
+      "date": "2026-11-21",
+      "awayTeam": "Washington State",
+      "homeTeam": "Texas State",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 14,
+        "homeScore": 42,
+        "total": 56,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -9.298128738110254,
+        "total": 57.82918405227551,
+        "homeWinProbability": 72.13894919757638,
+        "winner": "Texas State"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Texas State",
+        "result": "WIN",
+        "position": "Texas State SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-MARYLAND-USC",
+      "date": "2026-11-21",
+      "awayTeam": "Maryland",
+      "homeTeam": "USC",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 21,
+        "homeScore": 35,
+        "total": 56,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -14.430117172219749,
+        "total": 57.31873797696659,
+        "homeWinProbability": 81.88384746979587,
+        "winner": "USC"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "USC",
+        "result": "WIN",
+        "position": "USC SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-ARIZONA-KANSASSTATE",
+      "date": "2026-11-22",
+      "awayTeam": "Arizona",
+      "homeTeam": "Kansas State",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 35,
+        "homeScore": 28,
+        "total": 63,
+        "overtime": true,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 8.720115910833481,
+        "total": 57.90183745175595,
+        "homeWinProbability": 29.09932742486615,
+        "winner": "Arizona"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Arizona",
+        "result": "WIN",
+        "position": "Arizona SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-ARKANSASSTATE-LOUISIANATECH",
+      "date": "2026-11-22",
+      "awayTeam": "Arkansas State",
+      "homeTeam": "Louisiana Tech",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 3,
+        "homeScore": 48,
+        "total": 51,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -15.702149371712604,
+        "total": 53.218419452141234,
+        "homeWinProbability": 83.92178950786389,
+        "winner": "Louisiana Tech"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Louisiana Tech",
+        "result": "WIN",
+        "position": "Louisiana Tech SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-UNLV-SANJOSSTATE",
+      "date": "2026-11-22",
+      "awayTeam": "UNLV",
+      "homeTeam": "San José State",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 24,
+        "homeScore": 22,
+        "total": 46,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -0.010292947247030781,
+        "total": 44.69855609881621,
+        "homeWinProbability": 50.02592228374431,
+        "winner": "San José State"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "San José State",
+        "result": "LOSS",
+        "position": "San José State SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-VIRGINIATECH-MIAMI",
+      "date": "2026-11-22",
+      "awayTeam": "Virginia Tech",
+      "homeTeam": "Miami",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 20,
+        "homeScore": 28,
+        "total": 48,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -24.50484048555083,
+        "total": 65.08420026702275,
+        "homeWinProbability": 93.90619537931767,
+        "winner": "Miami"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Miami",
+        "result": "WIN",
+        "position": "Miami SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-COLORADOSTATE-FRESNOSTATE",
+      "date": "2026-11-22",
+      "awayTeam": "Colorado State",
+      "homeTeam": "Fresno State",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 42,
+        "homeScore": 49,
+        "total": 91,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -23.667359952642187,
+        "total": 70.96606982785997,
+        "homeWinProbability": 93.24223935851505,
+        "winner": "Fresno State"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Fresno State",
+        "result": "WIN",
+        "position": "Fresno State SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-GEORGIA-SOUTHCAROLINA",
+      "date": "2026-11-22",
+      "awayTeam": "Georgia",
+      "homeTeam": "South Carolina",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 34,
+        "homeScore": 6,
+        "total": 40,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 10.39023076928504,
+        "total": 57.463127911659456,
+        "homeWinProbability": 25.593886955415083,
+        "winner": "Georgia"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Georgia",
+        "result": "WIN",
+        "position": "Georgia SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-KENTUCKY-MISSOURI",
+      "date": "2026-11-22",
+      "awayTeam": "Kentucky",
+      "homeTeam": "Missouri",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 14,
+        "homeScore": 28,
+        "total": 42,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -6.31269270531255,
+        "total": 52.53479138054194,
+        "homeWinProbability": 65.48724848006367,
+        "winner": "Missouri"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Missouri",
+        "result": "WIN",
+        "position": "Missouri SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-PITTSBURGH-LOUISVILLE",
+      "date": "2026-11-22",
+      "awayTeam": "Pittsburgh",
+      "homeTeam": "Louisville",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 10,
+        "homeScore": 42,
+        "total": 52,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -12.193875238328275,
+        "total": 50.77445570743626,
+        "homeWinProbability": 77.92840621045185,
+        "winner": "Louisville"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Louisville",
+        "result": "WIN",
+        "position": "Louisville SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-SMU-NOTREDAME",
+      "date": "2026-11-22",
+      "awayTeam": "SMU",
+      "homeTeam": "Notre Dame",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 3,
+        "homeScore": 24,
+        "total": 27,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -20.665373130509245,
+        "total": 56.82729690265625,
+        "homeWinProbability": 90.39800086305041,
+        "winner": "Notre Dame"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Notre Dame",
+        "result": "WIN",
+        "position": "Notre Dame SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-STANFORD-CALIFORNIA",
+      "date": "2026-11-22",
+      "awayTeam": "Stanford",
+      "homeTeam": "California",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 44,
+        "homeScore": 28,
+        "total": 72,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 0.8241746426242855,
+        "total": 57.05459952182808,
+        "homeWinProbability": 47.92529243950382,
+        "winner": "Stanford"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Stanford",
+        "result": "WIN",
+        "position": "Stanford SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-UTSA-UAB",
+      "date": "2026-11-22",
+      "awayTeam": "UTSA",
+      "homeTeam": "UAB",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 19,
+        "homeScore": 17,
+        "total": 36,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -2.356229056001389,
+        "total": 49.630666843628255,
+        "homeWinProbability": 55.91223863761101,
+        "winner": "UAB"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "UAB",
+        "result": "LOSS",
+        "position": "UAB SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-UTAH-TCU",
+      "date": "2026-11-22",
+      "awayTeam": "Utah",
+      "homeTeam": "TCU",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 38,
+        "homeScore": 17,
+        "total": 55,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 4.240360139464038,
+        "total": 43.007627560921996,
+        "homeWinProbability": 39.44703799355684,
+        "winner": "Utah"
+      },
+      "market": {
+        "spreadHome": 8.5,
+        "total": 46.5,
+        "moneylineHome": 270,
+        "moneylineAway": -340,
+        "source": "DraftKings",
+        "observedAt": "2026-11-22T01:08:32Z"
+      },
+      "ats": {
+        "pick": "TCU",
+        "result": "LOSS",
+        "position": "TCU +8.5"
+      },
+      "totals": {
+        "pick": "UNDER",
+        "result": "LOSS",
+        "position": "UNDER 46.5"
+      },
+      "straightUp": {
+        "pick": "Utah",
+        "result": "WIN",
+        "position": "Utah SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "DraftKings publication-time lock"
+    },
+    {
+      "gameId": "2026-11-21-SANDIEGOSTATE-BOISESTATE",
+      "date": "2026-11-22",
+      "awayTeam": "San Diego State",
+      "homeTeam": "Boise State",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 22,
+        "homeScore": 20,
+        "total": 42,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -19.291083598546578,
+        "total": 65.5591355267354,
+        "homeWinProbability": 88.83522094442802,
+        "winner": "Boise State"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Boise State",
+        "result": "LOSS",
+        "position": "Boise State SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-OKLAHOMASTATE-ARIZONASTATE",
+      "date": "2026-11-22",
+      "awayTeam": "Oklahoma State",
+      "homeTeam": "Arizona State",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 30,
+        "homeScore": 27,
+        "total": 57,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 3.329003566561763,
+        "total": 66.63377903973338,
+        "homeWinProbability": 41.67737255733663,
+        "winner": "Oklahoma State"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Oklahoma State",
+        "result": "WIN",
+        "position": "Oklahoma State SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-HAWAII-NEVADA",
+      "date": "2026-11-22",
+      "awayTeam": "Hawai'i",
+      "homeTeam": "Nevada",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 8,
+        "homeScore": 16,
+        "total": 24,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -7.285071654052096,
+        "total": 41.886217974585875,
+        "homeWinProbability": 67.72036799847373,
+        "winner": "Nevada"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Nevada",
+        "result": "WIN",
+        "position": "Nevada SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
+    },
+    {
+      "gameId": "2026-11-21-UTAHSTATE-OREGONSTATE",
+      "date": "2026-11-22",
+      "awayTeam": "Utah State",
+      "homeTeam": "Oregon State",
+      "conference": null,
+      "status": "FINAL",
+      "final": {
+        "awayScore": 24,
+        "homeScore": 31,
+        "total": 55,
+        "overtime": false,
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -10.648509627820637,
+        "total": 46.64191841773197,
+        "homeWinProbability": 74.92786064441496,
+        "winner": "Oregon State"
+      },
+      "market": {
+        "spreadHome": null,
+        "total": null,
+        "moneylineHome": null,
+        "moneylineAway": null,
+        "source": null,
+        "observedAt": null
+      },
+      "ats": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW",
+        "detail": "No qualifying saved DraftKings pregame market lock"
+      },
+      "straightUp": {
+        "pick": "Oregon State",
+        "result": "WIN",
+        "position": "Oregon State SU"
+      },
+      "trackingClass": "FROZEN_RESEARCH",
+      "gradeReference": "No qualifying pregame market lock; ATS/totals excluded"
     }
-  ],
-  "sourceNote": "Week 12 in progress. Completed frozen foundation forecasts graded with original DraftKings pregame locks where saved. Remaining games await final results.",
-  "status": "IN_PROGRESS",
-  "sourceLockDigest": "b976d6b288a81f075b0d2f45cba75471c9909bd569f079e6ba826b158a2df65e",
-  "sourceLock": "cfb/research-locks/week-12-foundation-full.json",
-  "sourceScores": "cfb/research-results/week-12-foundation-full.json"
+  ]
 }
