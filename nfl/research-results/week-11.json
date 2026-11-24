@@ -1,0 +1,506 @@
+{
+  "league": "nfl",
+  "season": 2026,
+  "week": 11,
+  "role": "FROZEN_RESEARCH_RESULTS",
+  "canonicalInfluence": false,
+  "canonicalRecordMerged": false,
+  "sourceFreezeSha256": "3a4030422bd48c21cd7ff2e2e1cc20f162597552b66e22f86bb6d925f695655e",
+  "scoreSource": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?week=11&seasontype=2&dates=2026&limit=100",
+  "games": [
+    {
+      "gameId": "2026_11_IND_HOU",
+      "date": "2026-11-19",
+      "awayTeam": "IND",
+      "homeTeam": "HOU",
+      "status": "FINAL",
+      "final": {
+        "awayScore": 3,
+        "homeScore": 26,
+        "sourceGameId": "401873066",
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -6.0025414963036425,
+        "total": 43.95129785473745,
+        "winner": "HOU"
+      },
+      "market": {},
+      "ats": {
+        "pick": null,
+        "result": "REVIEW"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW"
+      },
+      "straightUp": {
+        "pick": "HOU",
+        "result": "WIN"
+      },
+      "errors": {
+        "margin": -16.997458503696357,
+        "total": 14.951297854737447
+      },
+      "savedKickoff": "2026-11-20T01:15:00+00:00",
+      "finalSourceKickoff": "2026-11-20T01:15Z",
+      "exclusionReason": "No eligible publication-time market lock archived for this frozen forecast."
+    },
+    {
+      "gameId": "2026_11_ARI_KC",
+      "date": "2026-11-22",
+      "awayTeam": "ARI",
+      "homeTeam": "KC",
+      "status": "FINAL",
+      "final": {
+        "awayScore": 7,
+        "homeScore": 34,
+        "sourceGameId": "401873067",
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -13.827903865273882,
+        "total": 46.44429147237596,
+        "winner": "KC"
+      },
+      "market": {},
+      "ats": {
+        "pick": null,
+        "result": "REVIEW"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW"
+      },
+      "straightUp": {
+        "pick": "KC",
+        "result": "WIN"
+      },
+      "errors": {
+        "margin": -13.172096134726118,
+        "total": 5.444291472375959
+      },
+      "savedKickoff": "2026-11-22T18:00:00+00:00",
+      "finalSourceKickoff": "2026-11-22T18:00Z",
+      "exclusionReason": "No eligible publication-time market lock archived for this frozen forecast."
+    },
+    {
+      "gameId": "2026_11_BAL_CAR",
+      "date": "2026-11-22",
+      "awayTeam": "BAL",
+      "homeTeam": "CAR",
+      "status": "FINAL",
+      "final": {
+        "awayScore": 33,
+        "homeScore": 35,
+        "sourceGameId": "401873068",
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -3.9377159386813836,
+        "total": 44.10552933160459,
+        "winner": "CAR"
+      },
+      "market": {},
+      "ats": {
+        "pick": null,
+        "result": "REVIEW"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW"
+      },
+      "straightUp": {
+        "pick": "CAR",
+        "result": "WIN"
+      },
+      "errors": {
+        "margin": 1.9377159386813836,
+        "total": -23.894470668395407
+      },
+      "savedKickoff": "2026-11-22T18:00:00+00:00",
+      "finalSourceKickoff": "2026-11-22T18:00Z",
+      "exclusionReason": "No eligible publication-time market lock archived for this frozen forecast."
+    },
+    {
+      "gameId": "2026_11_JAX_NYG",
+      "date": "2026-11-22",
+      "awayTeam": "JAX",
+      "homeTeam": "NYG",
+      "status": "FINAL",
+      "final": {
+        "awayScore": 18,
+        "homeScore": 23,
+        "sourceGameId": "401873069",
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 5.827991295678736,
+        "total": 47.2214880635135,
+        "winner": "JAX"
+      },
+      "market": {},
+      "ats": {
+        "pick": null,
+        "result": "REVIEW"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW"
+      },
+      "straightUp": {
+        "pick": "JAX",
+        "result": "LOSS"
+      },
+      "errors": {
+        "margin": -10.827991295678736,
+        "total": 6.2214880635134975
+      },
+      "savedKickoff": "2026-11-22T21:25:00Z",
+      "finalSourceKickoff": "2026-11-22T21:25Z",
+      "exclusionReason": "No eligible publication-time market lock archived for this frozen forecast."
+    },
+    {
+      "gameId": "2026_11_MIA_BUF",
+      "date": "2026-11-22",
+      "awayTeam": "MIA",
+      "homeTeam": "BUF",
+      "status": "FINAL",
+      "final": {
+        "awayScore": 9,
+        "homeScore": 26,
+        "sourceGameId": "401873070",
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -14.374124533610257,
+        "total": 46.937154581613015,
+        "winner": "BUF"
+      },
+      "market": {},
+      "ats": {
+        "pick": null,
+        "result": "REVIEW"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW"
+      },
+      "straightUp": {
+        "pick": "BUF",
+        "result": "WIN"
+      },
+      "errors": {
+        "margin": -2.6258754663897435,
+        "total": 11.937154581613015
+      },
+      "savedKickoff": "2026-11-22T18:00:00+00:00",
+      "finalSourceKickoff": "2026-11-22T18:00Z",
+      "exclusionReason": "No eligible publication-time market lock archived for this frozen forecast."
+    },
+    {
+      "gameId": "2026_11_NO_CHI",
+      "date": "2026-11-22",
+      "awayTeam": "NO",
+      "homeTeam": "CHI",
+      "status": "FINAL",
+      "final": {
+        "awayScore": 13,
+        "homeScore": 21,
+        "sourceGameId": "401873071",
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -11.920688013441023,
+        "total": 44.4559886241311,
+        "winner": "CHI"
+      },
+      "market": {},
+      "ats": {
+        "pick": null,
+        "result": "REVIEW"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW"
+      },
+      "straightUp": {
+        "pick": "CHI",
+        "result": "WIN"
+      },
+      "errors": {
+        "margin": 3.9206880134410227,
+        "total": 10.455988624131102
+      },
+      "savedKickoff": "2026-11-22T18:00:00+00:00",
+      "finalSourceKickoff": "2026-11-22T18:00Z",
+      "exclusionReason": "No eligible publication-time market lock archived for this frozen forecast."
+    },
+    {
+      "gameId": "2026_11_TB_DET",
+      "date": "2026-11-22",
+      "awayTeam": "TB",
+      "homeTeam": "DET",
+      "status": "FINAL",
+      "final": {
+        "awayScore": 21,
+        "homeScore": 31,
+        "sourceGameId": "401873072",
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -5.4260232981572605,
+        "total": 44.06956163993351,
+        "winner": "DET"
+      },
+      "market": {},
+      "ats": {
+        "pick": null,
+        "result": "REVIEW"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW"
+      },
+      "straightUp": {
+        "pick": "DET",
+        "result": "WIN"
+      },
+      "errors": {
+        "margin": -4.5739767018427395,
+        "total": -7.930438360066489
+      },
+      "savedKickoff": "2026-11-22T18:00:00+00:00",
+      "finalSourceKickoff": "2026-11-22T18:00Z",
+      "exclusionReason": "No eligible publication-time market lock archived for this frozen forecast."
+    },
+    {
+      "gameId": "2026_11_TEN_DAL",
+      "date": "2026-11-22",
+      "awayTeam": "TEN",
+      "homeTeam": "DAL",
+      "status": "FINAL",
+      "final": {
+        "awayScore": 30,
+        "homeScore": 51,
+        "sourceGameId": "401873073",
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -8.049906337359257,
+        "total": 46.96310801792807,
+        "winner": "DAL"
+      },
+      "market": {},
+      "ats": {
+        "pick": null,
+        "result": "REVIEW"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW"
+      },
+      "straightUp": {
+        "pick": "DAL",
+        "result": "WIN"
+      },
+      "errors": {
+        "margin": -12.950093662640743,
+        "total": -34.03689198207193
+      },
+      "savedKickoff": "2026-11-22T18:00:00+00:00",
+      "finalSourceKickoff": "2026-11-22T18:00Z",
+      "exclusionReason": "No eligible publication-time market lock archived for this frozen forecast."
+    },
+    {
+      "gameId": "2026_11_NYJ_LAC",
+      "date": "2026-11-22",
+      "awayTeam": "NYJ",
+      "homeTeam": "LAC",
+      "status": "FINAL",
+      "final": {
+        "awayScore": 27,
+        "homeScore": 24,
+        "sourceGameId": "401873074",
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -3.738990594250594,
+        "total": 41.3610799244503,
+        "winner": "LAC"
+      },
+      "market": {},
+      "ats": {
+        "pick": null,
+        "result": "REVIEW"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW"
+      },
+      "straightUp": {
+        "pick": "LAC",
+        "result": "LOSS"
+      },
+      "errors": {
+        "margin": 6.738990594250594,
+        "total": -9.638920075549699
+      },
+      "savedKickoff": "2026-11-22T21:05:00+00:00",
+      "finalSourceKickoff": "2026-11-22T21:05Z",
+      "exclusionReason": "No eligible publication-time market lock archived for this frozen forecast."
+    },
+    {
+      "gameId": "2026_11_LV_DEN",
+      "date": "2026-11-22",
+      "awayTeam": "LV",
+      "homeTeam": "DEN",
+      "status": "FINAL",
+      "final": {
+        "awayScore": 24,
+        "homeScore": 38,
+        "sourceGameId": "401873075",
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -11.629288778891032,
+        "total": 43.60625734572144,
+        "winner": "DEN"
+      },
+      "market": {},
+      "ats": {
+        "pick": null,
+        "result": "REVIEW"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW"
+      },
+      "straightUp": {
+        "pick": "DEN",
+        "result": "WIN"
+      },
+      "errors": {
+        "margin": -2.3707112211089676,
+        "total": -18.39374265427856
+      },
+      "savedKickoff": "2026-11-22T21:25:00+00:00",
+      "finalSourceKickoff": "2026-11-22T21:25Z",
+      "exclusionReason": "No eligible publication-time market lock archived for this frozen forecast."
+    },
+    {
+      "gameId": "2026_11_PIT_PHI",
+      "date": "2026-11-22",
+      "awayTeam": "PIT",
+      "homeTeam": "PHI",
+      "status": "FINAL",
+      "final": {
+        "awayScore": 16,
+        "homeScore": 19,
+        "sourceGameId": "401873076",
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 2.094746447776201,
+        "total": 44.059860960932006,
+        "winner": "PIT"
+      },
+      "market": {},
+      "ats": {
+        "pick": null,
+        "result": "REVIEW"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW"
+      },
+      "straightUp": {
+        "pick": "PIT",
+        "result": "LOSS"
+      },
+      "errors": {
+        "margin": -5.094746447776201,
+        "total": 9.059860960932006
+      },
+      "savedKickoff": "2026-11-22T18:00:00Z",
+      "finalSourceKickoff": "2026-11-22T18:00Z",
+      "exclusionReason": "No eligible publication-time market lock archived for this frozen forecast."
+    },
+    {
+      "gameId": "2026_11_MIN_SF",
+      "date": "2026-11-22",
+      "awayTeam": "MIN",
+      "homeTeam": "SF",
+      "status": "FINAL",
+      "final": {
+        "awayScore": 10,
+        "homeScore": 35,
+        "sourceGameId": "401873077",
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": -8.196305504720712,
+        "total": 43.683722502613186,
+        "winner": "SF"
+      },
+      "market": {},
+      "ats": {
+        "pick": null,
+        "result": "REVIEW"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW"
+      },
+      "straightUp": {
+        "pick": "SF",
+        "result": "WIN"
+      },
+      "errors": {
+        "margin": -16.803694495279288,
+        "total": -1.3162774973868139
+      },
+      "savedKickoff": "2026-11-23T01:20:00+00:00",
+      "finalSourceKickoff": "2026-11-23T01:20Z",
+      "exclusionReason": "No eligible publication-time market lock archived for this frozen forecast."
+    },
+    {
+      "gameId": "2026_11_CIN_WAS",
+      "date": "2026-11-23",
+      "awayTeam": "CIN",
+      "homeTeam": "WAS",
+      "status": "FINAL",
+      "final": {
+        "awayScore": 20,
+        "homeScore": 22,
+        "sourceGameId": "401873078",
+        "source": "ESPN"
+      },
+      "projection": {
+        "spreadHome": 1.242273124438202,
+        "total": 48.84923067223961,
+        "winner": "CIN"
+      },
+      "market": {},
+      "ats": {
+        "pick": null,
+        "result": "REVIEW"
+      },
+      "totals": {
+        "pick": null,
+        "result": "REVIEW"
+      },
+      "straightUp": {
+        "pick": "CIN",
+        "result": "LOSS"
+      },
+      "errors": {
+        "margin": -3.242273124438202,
+        "total": 6.849230672239607
+      },
+      "savedKickoff": "2026-11-24T01:15:00+00:00",
+      "finalSourceKickoff": "2026-11-24T01:15Z",
+      "exclusionReason": "No eligible publication-time market lock archived for this frozen forecast."
+    }
+  ]
+}
