@@ -1,30 +1,92 @@
 {
-  "generatedAt": "2026-11-27T01:54:31.991Z",
+  "generatedAt": "2026-11-27T19:33:45.594Z",
   "sources": [
     "kalshi",
     "polymarket"
   ],
   "games": [
     {
-      "eventId": "401856879",
-      "date": "2026-11-27T01:00Z",
-      "homeTeam": "Texas Tech",
-      "awayTeam": "TCU",
+      "eventId": "401856762",
+      "date": "2026-11-27T17:00Z",
+      "homeTeam": "Ole Miss",
+      "awayTeam": "Mississippi St",
+      "kalshi": {
+        "matched": false,
+        "error": "No market listed / no reliable match"
+      },
+      "polymarket": {
+        "matched": false,
+        "error": "No market listed / no reliable match"
+      }
+    },
+    {
+      "eventId": "401858536",
+      "date": "2026-11-27T17:08Z",
+      "homeTeam": "Iowa",
+      "awayTeam": "Nebraska",
       "kalshi": {
         "matched": false,
         "error": "No market listed / no reliable match"
       },
       "polymarket": {
         "matched": true,
-        "updatedAt": "2026-11-27T01:54:31.991Z",
+        "updatedAt": "2026-11-27T19:33:44.506Z",
         "homeProbability": 1,
         "awayProbability": 0,
-        "volume": 386982.1971200001,
-        "liquidity": 782052.2923700002,
+        "volume": 7874800.933174994,
+        "liquidity": 812743.4774300001,
         "history": [
           {
-            "ts": "2026-11-27T01:54:31.991Z",
+            "ts": "2026-11-27T19:33:44.506Z",
             "home": 1
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "401856759",
+      "date": "2026-11-27T20:30Z",
+      "homeTeam": "Florida St",
+      "awayTeam": "Florida",
+      "kalshi": {
+        "matched": false,
+        "error": "No market listed / no reliable match"
+      },
+      "polymarket": {
+        "matched": true,
+        "updatedAt": "2026-11-27T19:33:45.273Z",
+        "homeProbability": 0,
+        "awayProbability": 0,
+        "volume": 57571.672419999995,
+        "liquidity": 42321.28826,
+        "history": [
+          {
+            "ts": "2026-11-27T19:33:45.273Z",
+            "home": 0
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "401856756",
+      "date": "2026-11-28T00:30Z",
+      "homeTeam": "Texas A&M",
+      "awayTeam": "Texas",
+      "kalshi": {
+        "matched": false,
+        "error": "No market listed / no reliable match"
+      },
+      "polymarket": {
+        "matched": true,
+        "updatedAt": "2026-11-27T19:33:45.594Z",
+        "homeProbability": 0.5,
+        "awayProbability": 0.5,
+        "volume": 7363707.057771,
+        "liquidity": 2084573.1351,
+        "history": [
+          {
+            "ts": "2026-11-27T19:33:45.594Z",
+            "home": 0.5
           }
         ]
       }
